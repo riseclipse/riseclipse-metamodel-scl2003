@@ -1,0 +1,42 @@
+/**
+ *  Copyright (c) 2017 CentraleSupélec & EDF.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ *
+ *  This file is part of the RiseClipse tool
+ * 
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec : initial implementation
+ *  Contacts:
+ *      Dominique.Marcadet@centralesupelec.fr
+ */
+package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.eclipse.emf.ecore.xmi.XMLHelper;
+import org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class SclLoadImpl extends XMLLoadImpl {
+
+    public SclLoadImpl( XMLHelper helper ) {
+        super( helper );
+    }
+
+    public DefaultHandler makeDefaultHandler() {
+        return new SCLXMLHandler( resource, helper, options );
+    }
+
+    @Override
+    protected SAXParser makeParser() throws ParserConfigurationException, SAXException {
+        SAXParserFactory f = SAXParserFactory.newInstance();
+        f.setNamespaceAware( true );
+        return f.newSAXParser();
+    }
+}

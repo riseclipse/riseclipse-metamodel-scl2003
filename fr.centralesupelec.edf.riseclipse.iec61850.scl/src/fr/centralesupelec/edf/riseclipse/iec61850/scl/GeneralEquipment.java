@@ -1,0 +1,277 @@
+/**
+ *  Copyright (c) 2017 CentraleSupélec & EDF.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  This file is part of the RiseClipse tool
+ *  
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec : initial implementation
+ *  Contacts:
+ *      Dominique.Marcadet@centralesupelec.fr
+ * 
+ */
+package fr.centralesupelec.edf.riseclipse.iec61850.scl;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>General Equipment</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getType <em>Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer <em>Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction <em>Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getGeneralEquipmentContainer <em>General Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getSubFunction <em>Sub Function</em>}</li>
+ * </ul>
+ *
+ * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment()
+ * @model
+ * @generated
+ */
+public interface GeneralEquipment extends Equipment {
+    /**
+     * Returns the value of the '<em><b>Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Type</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Type</em>' attribute.
+     * @see #isSetType()
+     * @see #unsetType()
+     * @see #setType(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_Type()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getType();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getType <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Type</em>' attribute.
+     * @see #isSetType()
+     * @see #unsetType()
+     * @see #getType()
+     * @generated
+     */
+    void setType( String value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getType <em>Type</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetType()
+     * @see #getType()
+     * @see #setType(String)
+     * @generated
+     */
+    void unsetType();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getType <em>Type</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Type</em>' attribute is set.
+     * @see #unsetType()
+     * @see #getType()
+     * @see #setType(String)
+     * @generated
+     */
+    boolean isSetType();
+
+    /**
+     * Returns the value of the '<em><b>Abstract Eq Func Sub Func</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getSubGeneralEquipment <em>Sub General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Abstract Eq Func Sub Func</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Abstract Eq Func Sub Func</em>' container reference.
+     * @see #setAbstractEqFuncSubFunc(AbstractEqFuncSubFunc)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_AbstractEqFuncSubFunc()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getSubGeneralEquipment
+     * @model opposite="SubGeneralEquipment" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    AbstractEqFuncSubFunc getAbstractEqFuncSubFunc();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Abstract Eq Func Sub Func</em>' container reference.
+     * @see #getAbstractEqFuncSubFunc()
+     * @generated
+     */
+    void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc value );
+
+    /**
+     * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Eq Function</em>' containment reference list.
+     * @see #isSetEqFunction()
+     * @see #unsetEqFunction()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_EqFunction()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment
+     * @model opposite="GeneralEquipment" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    EList<EqFunction> getEqFunction();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetEqFunction()
+     * @see #getEqFunction()
+     * @generated
+     */
+    void unsetEqFunction();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}' containment reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Eq Function</em>' containment reference list is set.
+     * @see #unsetEqFunction()
+     * @see #getEqFunction()
+     * @generated
+     */
+    boolean isSetEqFunction();
+
+    /**
+     * Returns the value of the '<em><b>Equipment Container</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getGeneralEquipment <em>General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Equipment Container</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Equipment Container</em>' container reference.
+     * @see #setEquipmentContainer(EquipmentContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_EquipmentContainer()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getGeneralEquipment
+     * @model opposite="GeneralEquipment" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    EquipmentContainer getEquipmentContainer();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer <em>Equipment Container</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Equipment Container</em>' container reference.
+     * @see #getEquipmentContainer()
+     * @generated
+     */
+    void setEquipmentContainer( EquipmentContainer value );
+
+    /**
+     * Returns the value of the '<em><b>Function</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipment <em>General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Function</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Function</em>' container reference.
+     * @see #setFunction(Function)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_Function()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipment
+     * @model opposite="GeneralEquipment" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    Function getFunction();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction <em>Function</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Function</em>' container reference.
+     * @see #getFunction()
+     * @generated
+     */
+    void setFunction( Function value );
+
+    /**
+     * Returns the value of the '<em><b>General Equipment Container</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getGeneralEquipment <em>General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>General Equipment Container</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>General Equipment Container</em>' container reference.
+     * @see #setGeneralEquipmentContainer(GeneralEquipmentContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_GeneralEquipmentContainer()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getGeneralEquipment
+     * @model opposite="GeneralEquipment" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    GeneralEquipmentContainer getGeneralEquipmentContainer();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getGeneralEquipmentContainer <em>General Equipment Container</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>General Equipment Container</em>' container reference.
+     * @see #getGeneralEquipmentContainer()
+     * @generated
+     */
+    void setGeneralEquipmentContainer( GeneralEquipmentContainer value );
+
+    /**
+     * Returns the value of the '<em><b>Sub Function</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getGeneralEquipment <em>General Equipment</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Sub Function</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Sub Function</em>' container reference.
+     * @see #setSubFunction(SubFunction)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGeneralEquipment_SubFunction()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getGeneralEquipment
+     * @model opposite="GeneralEquipment" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    SubFunction getSubFunction();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getSubFunction <em>Sub Function</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Sub Function</em>' container reference.
+     * @see #getSubFunction()
+     * @generated
+     */
+    void setSubFunction( SubFunction value );
+
+} // GeneralEquipment

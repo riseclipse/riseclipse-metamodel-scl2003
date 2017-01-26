@@ -1,0 +1,2220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scl" nsURI="http://www.iec.ch/61850/2003/SCL" nsPrefix="scl">
+  <eClassifiers xsi:type="ecore:EClass" name="AnyContentFromOtherNamespace" abstract="true"
+      eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="AnyContentFromOtherNamespace"/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="group:1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":2"/>
+        <details key="processing" value="lax"/>
+        <details key="group" value="#group:1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyAttribute" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attributeWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":3"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BaseElement" abstract="true" eSuperTypes="#//ExplicitLinkResolver">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Private" ordered="false"
+        upperBound="-1" eType="#//Private" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Private/BaseElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Text" ordered="false" eType="#//Text"
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//Text/BaseElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":0"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyAttribute" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attributeWildcard"/>
+        <details key="wildcards" value="##other"/>
+        <details key="name" value=":3"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Header" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameStructure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Header"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Text" ordered="false" eType="#//Text"
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//Text/Header"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="History" ordered="false"
+        eType="#//History" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//History/Header"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="History" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Header" ordered="false"
+        eType="#//Header" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Header/History"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Hitem" ordered="false"
+        upperBound="-1" eType="#//Hitem" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Hitem/History"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hitem" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="what" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="when" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="who" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="why" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="History" ordered="false"
+        eType="#//History" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//History/Hitem"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IDNaming" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//GeneralEquipmentContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Process" ordered="false"
+        eType="#//Process" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Process/Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectivityNode" ordered="false"
+        upperBound="-1" eType="#//ConnectivityNode" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConnectivityNode/Line"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConductingEquipment/Line"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Private" eSuperTypes="#//AnyContentFromOtherNamespace">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BaseElement" ordered="false"
+        eType="#//BaseElement" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//BaseElement/Private"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//GeneralEquipmentContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line" ordered="false" upperBound="-1"
+        eType="#//Line" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Line/Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConductingEquipment/Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
+        upperBound="-1" eType="#//Substation" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//Substation/Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubProcesses" ordered="false"
+        upperBound="-1" eType="#//Process" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Process/ParentProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentProcess" ordered="false"
+        eType="#//Process" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Process/SubProcesses"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SCL" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Header" ordered="false"
+        eType="#//Header" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Header/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line" ordered="false" upperBound="-1"
+        eType="#//Line" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Line/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Process" ordered="false"
+        upperBound="-1" eType="#//Process" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Process/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" upperBound="-1"
+        eType="#//IED" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//IED/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
+        eType="#//DataTypeTemplates" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DataTypeTemplates/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Communication" ordered="false"
+        eType="#//Communication" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Communication/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
+        upperBound="-1" eType="#//Substation" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//Substation/SCL"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="release" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BaseElement" ordered="false"
+        eType="#//BaseElement" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//BaseElement/Text"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Header" ordered="false"
+        eType="#//Header" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Header/Text"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Address" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectedAP" ordered="false"
+        eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConnectedAP/Address"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlBlock" ordered="false"
+        eType="#//ControlBlock" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ControlBlock/Address"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="P" ordered="false" upperBound="-1"
+        eType="#//P" unsettable="true" containment="true" resolveProxies="false" eOpposite="#//P/Address"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Communication" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubNetwork" ordered="false"
+        upperBound="-1" eType="#//SubNetwork" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SubNetwork/Communication"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Communication"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectedAP" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="redProt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Address" ordered="false"
+        eType="#//Address" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Address/ConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubNetwork" ordered="false"
+        eType="#//SubNetwork" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SubNetwork/ConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/ReferredByConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PhysConn" ordered="false"
+        upperBound="-1" eType="#//PhysConn" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//PhysConn/ConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GSE" ordered="false" upperBound="-1"
+        eType="#//GSE" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GSE/ConnectedAP"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SMV" ordered="false" upperBound="-1"
+        eType="#//SMV" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SMV/ConnectedAP"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlBlock" abstract="true" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Address" ordered="false"
+        eType="#//Address" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Address/ControlBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLDevice" ordered="false"
+        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LDevice/ReferredByControlBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControlWithIEDName"
+        ordered="false" eType="#//ControlWithIEDName" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlWithIEDName/ReferredByControlBlock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSE" eSuperTypes="#//ControlBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectedAP" ordered="false"
+        eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConnectedAP/GSE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MinTime" eType="#//MinTime"
+        unsettable="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="MaxTime" eType="#//MaxTime"
+        unsettable="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P" eSuperTypes="#//PAddr">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Address" ordered="false"
+        eType="#//Address" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Address/P"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PAddr" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="P_PhysConn" eSuperTypes="#//PAddr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PhysConn" ordered="false"
+        eType="#//PhysConn" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//PhysConn/P"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhysConn" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectedAP" ordered="false"
+        eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConnectedAP/PhysConn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="P" ordered="false" upperBound="-1"
+        eType="#//P_PhysConn" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//P_PhysConn/PhysConn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SMV" eSuperTypes="#//ControlBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectedAP" ordered="false"
+        eType="#//ConnectedAP" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConnectedAP/SMV"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubNetwork" eSuperTypes="#//Naming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BitRate" eType="#//BitRate"
+        unsettable="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Communication" ordered="false"
+        eType="#//Communication" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Communication/SubNetwork"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectedAP" ordered="false"
+        upperBound="-1" eType="#//ConnectedAP" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConnectedAP/SubNetwork"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDataAttribute" abstract="true"
+      eSuperTypes="#//DataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valImport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valKind" eType="#//ValKindEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToEnumType" ordered="false"
+        eType="#//EnumType" unsettable="true" resolveProxies="false" eOpposite="#//EnumType/ReferredByAbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Val" ordered="false" upperBound="-1"
+        eType="#//Val" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Val/AbstractDataAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BDA" eSuperTypes="#//AbstractDataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
+        eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DAType/BDA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="#//AbstractDataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dupd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fc" eType="#//FCEnum" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDAType" ordered="false"
+        eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DAType/ReferredByDA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/DA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ProtNs" ordered="false"
+        upperBound="-1" eType="#//ProtNs" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ProtNs/DA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DAType" eSuperTypes="#//IDNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="BDA" ordered="false" upperBound="-1"
+        eType="#//BDA" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//BDA/DAType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDA" ordered="false"
+        upperBound="-1" eType="#//DA" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DA/RefersToDAType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
+        eType="#//DataTypeTemplates" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataTypeTemplates/DAType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ProtNs" ordered="false"
+        upperBound="-1" eType="#//ProtNs" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ProtNs/DAType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//DataObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeType" ordered="false"
+        eType="#//LNodeType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNodeType/DO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/ReferredByDO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DOType" eSuperTypes="#//IDNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DA" ordered="false" upperBound="-1"
+        eType="#//DA" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DA/DOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDO" ordered="false"
+        upperBound="-1" eType="#//DO" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DO/RefersToDOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
+        eType="#//DataTypeTemplates" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataTypeTemplates/DOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SDO" ordered="false" upperBound="-1"
+        eType="#//SDO" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SDO/DOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDO" ordered="false"
+        upperBound="-1" eType="#//SDO" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SDO/RefersToDOType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeTemplates" eSuperTypes="#//ExplicitLinkResolver">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
+        upperBound="-1" eType="#//DAType" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DAType/DataTypeTemplates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOType" ordered="false"
+        upperBound="-1" eType="#//DOType" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DOType/DataTypeTemplates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EnumType" ordered="false"
+        upperBound="-1" eType="#//EnumType" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//EnumType/DataTypeTemplates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeType" ordered="false"
+        upperBound="-1" eType="#//LNodeType" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//LNodeType/DataTypeTemplates"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/DataTypeTemplates"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumType" eSuperTypes="#//IDNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAbstractDataAttribute"
+        ordered="false" upperBound="-1" eType="#//AbstractDataAttribute" transient="true"
+        unsettable="true" resolveProxies="false" eOpposite="#//AbstractDataAttribute/RefersToEnumType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
+        eType="#//DataTypeTemplates" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataTypeTemplates/EnumType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EnumVal" ordered="false"
+        upperBound="-1" eType="#//EnumVal" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//EnumVal/EnumType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumVal" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ord" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EnumType" ordered="false"
+        eType="#//EnumType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//EnumType/EnumVal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DO" ordered="false" upperBound="-1"
+        eType="#//DO" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DO/LNodeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
+        eType="#//DataTypeTemplates" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataTypeTemplates/LNodeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAnyLN" ordered="false"
+        upperBound="-1" eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/RefersToLNodeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtNs" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DA" ordered="false" eType="#//DA"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DA/ProtNs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
+        eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DAType/ProtNs"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDO" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/SDO"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/ReferredBySDO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Val" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sGroup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractDataAttribute"
+        ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractDataAttribute/Val"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAI" ordered="false" eType="#//DAI"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DAI/Val"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessControl" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
+        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LDevice/AccessControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessPoint" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="router" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
+        eType="#//LN" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LN/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SMVSecurity" ordered="false"
+        upperBound="7" eType="#//SMVSecurity" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SMVSecurity/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ServerAt" ordered="false"
+        eType="#//ServerAt" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ServerAt/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Server" ordered="false"
+        eType="#//Server" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Server/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Services/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GOOSESecurity" ordered="false"
+        upperBound="7" eType="#//GOOSESecurity" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GOOSESecurity/AccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByServerAt" ordered="false"
+        upperBound="-1" eType="#//ServerAt" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ServerAt/RefersToAccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByConnectedAP"
+        ordered="false" upperBound="-1" eType="#//ConnectedAP" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ConnectedAP/RefersToAccessPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByKDC" ordered="false"
+        upperBound="-1" eType="#//KDC" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//KDC/RefersToAccessPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyLN" abstract="true" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLNodeType" ordered="false"
+        eType="#//LNodeType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNodeType/ReferredByAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inputs" ordered="false"
+        eType="#//Inputs" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Inputs/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Log" ordered="false" upperBound="-1"
+        eType="#//Log" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Log/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOI" ordered="false" upperBound="-1"
+        eType="#//DOI" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DOI/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReportControl" ordered="false"
+        upperBound="-1" eType="#//ReportControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ReportControl/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LogControl" ordered="false"
+        upperBound="-1" eType="#//LogControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//LogControl/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
+        upperBound="-1" eType="#//DataSet" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DataSet/AnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
+        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//FCDA/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByClientLN" ordered="false"
+        upperBound="-1" eType="#//ClientLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ClientLN/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLogControl" ordered="false"
+        upperBound="-1" eType="#//LogControl" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LogControl/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAssociation"
+        ordered="false" upperBound="-1" eType="#//Association" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//Association/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredIEDName" ordered="false"
+        upperBound="-1" eType="#//IEDName" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//IEDName/RefersToAnyLN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//AssociationKindEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Server" ordered="false"
+        eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Server/Association"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByAssociation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Authentication" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="certificate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="none" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strong" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weak" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Server" ordered="false"
+        eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Server/Authentication"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Certificate" eSuperTypes="#//Naming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serialNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xferNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Subject" ordered="false"
+        eType="#//Subject" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Subject/Certificate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IssuerName" ordered="false"
+        eType="#//IssuerName" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//IssuerName/Certificate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClientLN" eSuperTypes="#//ExplicitLinkResolver">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RptEnabled" ordered="false"
+        eType="#//RptEnabled" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//RptEnabled/ClientLN"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByClientLN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClientServices" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufReport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gsse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxAttributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxGOOSE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxReports" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSMV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readLog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supportsLdName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unbufReport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ClientServices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TimeSyncProt" ordered="false"
+        eType="#//TimeSyncProt" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//TimeSyncProt/ClientServices"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommProt" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipv6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/CommProt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfDataSet" eSuperTypes="#//ServiceForConfDataSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfDataSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfLNs" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixLnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfLNs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfLdName" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfLdName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfLogControl" eSuperTypes="#//ServiceWithMaxNonZero">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfLogControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfReportControl" eSuperTypes="#//ServiceConfReportControl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfReportControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfSG" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SettingGroups" ordered="false"
+        eType="#//SettingGroups" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SettingGroups/ConfSG"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfSigRef" eSuperTypes="#//ServiceWithMaxNonZero">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ConfSigRef"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Control" abstract="true" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataSet" ordered="false"
+        eType="#//DataSet" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataSet/ReferredByControl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlWithIEDName" eSuperTypes="#//Control">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="confRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IEDName" ordered="false"
+        upperBound="-1" eType="#//IEDName" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//IEDName/ControlWithIEDName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByControlBlock"
+        ordered="false" upperBound="-1" eType="#//ControlBlock" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlBlock/RefersToControlWithIEDName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Protocol" ordered="false"
+        eType="#//Protocol" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Protocol/ControlWithIEDName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlWithTriggerOpt" abstract="true"
+      eSuperTypes="#//Control">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TrgOps" ordered="false"
+        eType="#//TrgOps" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//TrgOps/ControlWithTriggerOpt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DAI" eSuperTypes="#//DataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valImport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valKind" eType="#//ValKindEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Val" ordered="false" upperBound="-1"
+        eType="#//Val" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Val/DAI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOI" ordered="false" eType="#//DOI"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DOI/DAI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SDI" ordered="false" eType="#//SDI"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SDI/DAI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//DataObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/DOI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAI" ordered="false" upperBound="-1"
+        eType="#//DAI" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DAI/DOI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SDI" ordered="false" upperBound="-1"
+        eType="#//SDI" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SDI/DOI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataObjectDirectory" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/DataObjectDirectory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSet" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/DataSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByControl" ordered="false"
+        upperBound="-1" eType="#//Control" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Control/RefersToDataSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FCDA" ordered="false" upperBound="-1"
+        eType="#//FCDA" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//FCDA/DataSet"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataSetDirectory" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/DataSetDirectory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynAssociation" eSuperTypes="#//ServiceWithOptionalMax">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/DynAssociation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynDataSet" eSuperTypes="#//ServiceWithMaxAndMaxAttributes">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/DynDataSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtRef" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceType" eType="#//ServiceType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcCBName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcLDInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcLNClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcLNInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Inputs" ordered="false"
+        eType="#//Inputs" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Inputs/ExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataAttribute"
+        ordered="false" eType="#//DataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//DataAttribute/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataObject" ordered="false"
+        eType="#//DataObject" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataObject/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FCDA" eSuperTypes="#//ExplicitLinkResolver">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="doName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fc" eType="#//FCEnum" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataAttribute"
+        ordered="false" eType="#//DataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//DataAttribute/ReferredByFCDA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataObject" ordered="false"
+        eType="#//DataObject" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataObject/ReferredByFCDA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
+        eType="#//DataSet" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DataSet/FCDA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByFCDA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FileHandling" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/FileHandling"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GOOSE" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixedOffs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GOOSE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GOOSESecurity" eSuperTypes="#//Certificate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/GOOSESecurity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSEControl" eSuperTypes="#//ControlWithIEDName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixedOffs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityEnable" eType="#//PredefinedTypeOfSecurityEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GSEControlTypeEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN0/GSEControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSEDir" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GSEDir"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSESettings" eSuperTypes="#//ServiceSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appID" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLabel" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GSESettings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GSSE" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GSSE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetCBValues" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GetCBValues"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetDataObjectDefinition" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GetDataObjectDefinition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetDataSetValue" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GetDataSetValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetDirectory" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/GetDirectory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IED" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="engRight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manufacturer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRevision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclVersion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="owner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        upperBound="-1" eType="#//AccessPoint" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//AccessPoint/IED"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
+        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNode/IED"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="KDC" ordered="false" upperBound="-1"
+        eType="#//KDC" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//KDC/IED"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Services/IED"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/IED"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRelease" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IEDName" eSuperTypes="#//ExplicitLinkResolver">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlWithIEDName" ordered="false"
+        eType="#//ControlWithIEDName" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ControlWithIEDName/IEDName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredIEDName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inputs" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/Inputs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ExtRef/Inputs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IssuerName" eSuperTypes="#//Cert">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Certificate" ordered="false"
+        eType="#//Certificate" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Certificate/IssuerName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KDC" eSuperTypes="#//ExplicitLinkResolver">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/KDC"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/ReferredByKDC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LDevice" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByControlBlock"
+        ordered="false" upperBound="-1" eType="#//ControlBlock" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlBlock/RefersToLDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessControl" ordered="false"
+        eType="#//AccessControl" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//AccessControl/LDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Server" ordered="false"
+        eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Server/LDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
+        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNode/LDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
+        eType="#//LN" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LN/LDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//LN0/LDevice"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LN" eSuperTypes="#//AnyLN">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/LN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
+        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LDevice/LN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
+        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNode/LN"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LN0" eSuperTypes="#//AnyLN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GSEControl" ordered="false"
+        upperBound="-1" eType="#//GSEControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GSEControl/LN0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
+        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LDevice/LN0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SampledValueControl" ordered="false"
+        upperBound="-1" eType="#//SampledValueControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SampledValueControl/LN0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SettingControl" ordered="false"
+        eType="#//SettingControl" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SettingControl/LN0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/Log"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogControl" eSuperTypes="#//ControlWithTriggerOpt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logEna" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasonCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/LogControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByLogControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogSettings" eSuperTypes="#//ServiceSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logEna" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trgOps" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/LogSettings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptFields" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufOvfl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entryID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasonCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seqNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReportControl" ordered="false"
+        eType="#//ReportControl" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ReportControl/OptFields"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Protocol" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mustUnderstand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlWithIEDName" ordered="false"
+        eType="#//ControlWithIEDName" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ControlWithIEDName/Protocol"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadWrite" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ReadWrite"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedProt" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hsr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rstp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/RedProt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportControl" eSuperTypes="#//ControlWithTriggerOpt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="confRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indexed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rptID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReportControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="OptFields" ordered="false"
+        eType="#//OptFields" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//OptFields/ReportControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RptEnabled" ordered="false"
+        eType="#//RptEnabled" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//RptEnabled/ReportControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReportSettings" eSuperTypes="#//ServiceSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optFields" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="owner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rptID" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trgOps" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ReportSettings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RptEnabled" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ClientLN" ordered="false"
+        upperBound="-1" eType="#//ClientLN" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ClientLN/RptEnabled"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReportControl" ordered="false"
+        eType="#//ReportControl" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ReportControl/RptEnabled"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SDI" eSuperTypes="#//DataAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DAI" ordered="false" upperBound="-1"
+        eType="#//DAI" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DAI/SDI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DOI" ordered="false" eType="#//DOI"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DOI/SDI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubSDI" ordered="false"
+        upperBound="-1" eType="#//SDI" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SDI/ParentSDI">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="SDI"/>
+        <details key="namespace" value="http://www.iec.ch/61850/2003/SCL"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDI" ordered="false"
+        eType="#//SDI" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SDI/SubSDI"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SGEdit" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SettingGroups" ordered="false"
+        eType="#//SettingGroups" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SettingGroups/SGEdit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SMVSecurity" eSuperTypes="#//Certificate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/SMVSecurity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SMVSettings" eSuperTypes="#//ServiceSettings">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="svID" ordered="false" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optFields" ordered="false"
+        eType="#//ServiceSettingsEnum" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpRateAttribute" ordered="false"
+        eType="#//ServiceSettingsEnum" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="smpRate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="samplesPerSecAttribute"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="SamplesPerSec"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pdcTimeStamp" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SmpRate" ordered="false"
+        upperBound="-1" eType="#//SmpRate" unsettable="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SamplesPerSec" ordered="false"
+        upperBound="-1" eType="#//SamplesPerSec" unsettable="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SecPerSamples" ordered="false"
+        upperBound="-1" eType="#//SecPerSamples" unsettable="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SMVsc" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//SMVDeliveryEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deliveryConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/SMVsc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SampledValueControl" eSuperTypes="#//ControlWithIEDName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multicast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nofASDU" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityEnable" eType="#//PredefinedTypeOfSecurityEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpMod" eType="#//SmpMod"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smvID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN0/SampledValueControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SmvOpts" ordered="false"
+        eType="#//SmvOpts" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SmvOpts/SampledValueControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Server" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/Server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Association" ordered="false"
+        upperBound="-1" eType="#//Association" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//Association/Server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Authentication" ordered="false"
+        eType="#//Authentication" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Authentication/Server"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
+        upperBound="-1" eType="#//LDevice" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LDevice/Server"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerAt" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/ServerAt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/ReferredByServerAt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceSettings" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbName" eType="#//ServiceSettingsNoDynEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datSet" eType="#//ServiceSettingsEnum"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMax" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Services" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
+        eType="#//AccessPoint" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AccessPoint/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ClientServices" ordered="false"
+        eType="#//ClientServices" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ClientServices/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CommProt" ordered="false"
+        eType="#//CommProt" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//CommProt/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfDataSet" ordered="false"
+        eType="#//ConfDataSet" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfDataSet/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfLNs" ordered="false"
+        eType="#//ConfLNs" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfLNs/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfLdName" ordered="false"
+        eType="#//ConfLdName" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfLdName/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfLogControl" ordered="false"
+        eType="#//ConfLogControl" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfLogControl/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfReportControl" ordered="false"
+        eType="#//ConfReportControl" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfReportControl/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfSigRef" ordered="false"
+        eType="#//ConfSigRef" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfSigRef/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataObjectDirectory" ordered="false"
+        eType="#//DataObjectDirectory" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DataObjectDirectory/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DataSetDirectory" ordered="false"
+        eType="#//DataSetDirectory" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DataSetDirectory/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DynAssociation" ordered="false"
+        eType="#//DynAssociation" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DynAssociation/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DynDataSet" ordered="false"
+        eType="#//DynDataSet" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//DynDataSet/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="FileHandling" ordered="false"
+        eType="#//FileHandling" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//FileHandling/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GOOSE" ordered="false"
+        eType="#//GOOSE" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GOOSE/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GSEDir" ordered="false"
+        eType="#//GSEDir" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GSEDir/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GSESettings" ordered="false"
+        eType="#//GSESettings" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GSESettings/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GSSE" ordered="false" eType="#//GSSE"
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//GSSE/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GetCBValues" ordered="false"
+        eType="#//GetCBValues" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GetCBValues/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GetDataObjectDefinition"
+        ordered="false" eType="#//GetDataObjectDefinition" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GetDataObjectDefinition/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GetDataSetValue" ordered="false"
+        eType="#//GetDataSetValue" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GetDataSetValue/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GetDirectory" ordered="false"
+        eType="#//GetDirectory" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GetDirectory/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LogSettings" ordered="false"
+        eType="#//LogSettings" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LogSettings/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReadWrite" ordered="false"
+        eType="#//ReadWrite" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ReadWrite/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RedProt" ordered="false"
+        eType="#//RedProt" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//RedProt/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReportSettings" ordered="false"
+        eType="#//ReportSettings" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ReportSettings/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SMVsc" ordered="false"
+        eType="#//SMVsc" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SMVsc/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SupSubscription" ordered="false"
+        eType="#//SupSubscription" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SupSubscription/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ValueHandling" ordered="false"
+        eType="#//ValueHandling" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ValueHandling/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SetDataSetValue" ordered="false"
+        eType="#//SetDataSetValue" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SetDataSetValue/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SettingGroups" ordered="false"
+        eType="#//SettingGroups" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SettingGroups/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TimeSyncProt" ordered="false"
+        eType="#//TimeSyncProt" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//TimeSyncProt/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TimerActivatedControl"
+        ordered="false" eType="#//TimerActivatedControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//TimerActivatedControl/Services"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetDataSetValue" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/SetDataSetValue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SettingControl" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actSG" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfSGs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShortObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN0/SettingControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SettingGroups" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConfSG" ordered="false"
+        eType="#//ConfSG" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//ConfSG/SettingGroups"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SGEdit" ordered="false"
+        eType="#//SGEdit" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SGEdit/SettingGroups"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/SettingGroups"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmvOpts" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataSet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refreshTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sampleSynchronized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="security" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SampledValueControl" ordered="false"
+        eType="#//SampledValueControl" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SampledValueControl/SmvOpts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="#//Cert">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Certificate" ordered="false"
+        eType="#//Certificate" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Certificate/Subject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupSubscription" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxGo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/SupSubscription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeSyncProt" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="c37_238" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="other" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sntp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ClientServices" ordered="false"
+        eType="#//ClientServices" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ClientServices/TimeSyncProt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/TimeSyncProt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimerActivatedControl" eSuperTypes="#//ServiceYesNo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/TimerActivatedControl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrgOps" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dupd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="period" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ControlWithTriggerOpt"
+        ordered="false" eType="#//ControlWithTriggerOpt" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ControlWithTriggerOpt/TrgOps"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueHandling" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setToRO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/ValueHandling"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractConductingEquipment" eSuperTypes="#//Equipment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubEquipment" ordered="false"
+        upperBound="-1" eType="#//SubEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SubEquipment/AbstractConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+        upperBound="2" eType="#//Terminal" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Terminal/AbstractConductingEquipment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractEqFuncSubFunc" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqSubFunction" ordered="false"
+        upperBound="-1" eType="#//EqSubFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqSubFunction/AbstractEqFuncSubFunc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubGeneralEquipment" ordered="false"
+        upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipment/AbstractEqFuncSubFunc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bay" eSuperTypes="#//EquipmentContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
+        eType="#//VoltageLevel" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//VoltageLevel/Bay"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        upperBound="-1" eType="#//Function" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Function/Bay"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectivityNode" ordered="false"
+        upperBound="-1" eType="#//ConnectivityNode" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConnectivityNode/Bay"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Terminal/Bay"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConductingEquipment/Bay"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConductingEquipment" eSuperTypes="#//AbstractConductingEquipment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/ConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Function/ConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubFunction" ordered="false"
+        eType="#//SubFunction" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SubFunction/ConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/ConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line" ordered="false" eType="#//Line"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Line/ConductingEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Process" ordered="false"
+        eType="#//Process" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Process/ConductingEquipment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectivityNode" eSuperTypes="#//LNodeContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pathName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/ConnectivityNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Terminal/cNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Line" ordered="false" eType="#//Line"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Line/ConnectivityNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EqFunction" eSuperTypes="#//AbstractEqFuncSubFunc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        eType="#//ConductingEquipment" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConductingEquipment/EqFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
+        eType="#//GeneralEquipment" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//GeneralEquipment/EqFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PowerTransformer" ordered="false"
+        eType="#//PowerTransformer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//PowerTransformer/EqFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubEquipment" ordered="false"
+        eType="#//SubEquipment" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SubEquipment/EqFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerWinding" ordered="false"
+        eType="#//TransformerWinding" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//TransformerWinding/EqFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TapChanger" ordered="false"
+        eType="#//TapChanger" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//TapChanger/EqFunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EqSubFunction" eSuperTypes="#//AbstractEqFuncSubFunc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractEqFuncSubFunc"
+        ordered="false" eType="#//AbstractEqFuncSubFunc" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractEqFuncSubFunc/EqSubFunction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equipment" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EquipmentContainer" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PowerTransformer" ordered="false"
+        upperBound="-1" eType="#//PowerTransformer" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//PowerTransformer/EquipmentContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
+        upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipment/EquipmentContainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConductingEquipment/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipmentContainer"
+        ordered="false" eType="#//GeneralEquipmentContainer" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipmentContainer/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
+        eType="#//Substation" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Substation/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
+        eType="#//VoltageLevel" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//VoltageLevel/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubFunction" ordered="false"
+        upperBound="-1" eType="#//SubFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SubFunction/Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
+        upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipment/Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralEquipment" eSuperTypes="#//Equipment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractEqFuncSubFunc"
+        ordered="false" eType="#//AbstractEqFuncSubFunc" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractEqFuncSubFunc/SubGeneralEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/GeneralEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EquipmentContainer" ordered="false"
+        eType="#//EquipmentContainer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//EquipmentContainer/GeneralEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Function/GeneralEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipmentContainer"
+        ordered="false" eType="#//GeneralEquipmentContainer" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipmentContainer/GeneralEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubFunction" ordered="false"
+        eType="#//SubFunction" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SubFunction/GeneralEquipment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralEquipmentContainer" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        upperBound="-1" eType="#//Function" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Function/GeneralEquipmentContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
+        upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipment/GeneralEquipmentContainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LNode" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="" unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/LNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
+        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LDevice/LNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" eType="#//LN"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN/LNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeContainer" ordered="false"
+        eType="#//LNodeContainer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNodeContainer/LNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LNodeContainer" eSuperTypes="#//Naming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
+        upperBound="-1" eType="#//LNode" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LNode/LNodeContainer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NeutralPoint" eSuperTypes="#//Terminal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerWinding" ordered="false"
+        eType="#//TransformerWinding" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//TransformerWinding/NeutralPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PowerSystemResource" eSuperTypes="#//LNodeContainer"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PowerTransformer" eSuperTypes="#//Equipment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/PowerTransformer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EquipmentContainer" ordered="false"
+        eType="#//EquipmentContainer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//EquipmentContainer/PowerTransformer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubEquipment" ordered="false"
+        upperBound="-1" eType="#//SubEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SubEquipment/PowerTransformer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerWinding" ordered="false"
+        upperBound="-1" eType="#//TransformerWinding" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//TransformerWinding/PowerTransformer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubEquipment" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//PhaseEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractConductingEquipment"
+        ordered="false" eType="#//AbstractConductingEquipment" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractConductingEquipment/SubEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/SubEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PowerTransformer" ordered="false"
+        eType="#//PowerTransformer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//PowerTransformer/SubEquipment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TapChanger" ordered="false"
+        eType="#//TapChanger" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//TapChanger/SubEquipment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubFunction" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
+        upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ConductingEquipment/SubFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        eType="#//Function" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Function/SubFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GeneralEquipment" ordered="false"
+        upperBound="-1" eType="#//GeneralEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GeneralEquipment/SubFunction"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubSubFunctions" ordered="false"
+        upperBound="-1" eType="#//SubFunction" unsettable="true" containment="true"
+        resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Substation" eSuperTypes="#//EquipmentContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        upperBound="-1" eType="#//Function" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Function/Substation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
+        upperBound="-1" eType="#//VoltageLevel" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//VoltageLevel/Substation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Terminal/Substation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Process" ordered="false"
+        eType="#//Process" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Process/Substation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SCL" ordered="false" eType="#//SCL"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/Substation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TapChanger" eSuperTypes="#//PowerSystemResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/TapChanger"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SubEquipment" ordered="false"
+        upperBound="-1" eType="#//SubEquipment" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SubEquipment/TapChanger"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TransformerWinding" ordered="false"
+        eType="#//TransformerWinding" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//TransformerWinding/TapChanger"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cNodeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectivityNode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="processName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="substationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltageLevelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractConductingEquipment"
+        ordered="false" eType="#//AbstractConductingEquipment" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractConductingEquipment/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
+        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cNode" ordered="false"
+        eType="#//ConnectivityNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ConnectivityNode/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
+        eType="#//Substation" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Substation/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
+        eType="#//VoltageLevel" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//VoltageLevel/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformerWinding" eSuperTypes="#//AbstractConductingEquipment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
+        upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//EqFunction/TransformerWinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="NeutralPoint" ordered="false"
+        eType="#//NeutralPoint" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//NeutralPoint/TransformerWinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="PowerTransformer" ordered="false"
+        eType="#//PowerTransformer" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//PowerTransformer/TransformerWinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="TapChanger" ordered="false"
+        eType="#//TapChanger" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//TapChanger/TransformerWinding"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Voltage" eSuperTypes="#//ValueWithUnit">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VoltageLevel" eSuperTypes="#//EquipmentContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" upperBound="-1"
+        eType="#//Bay" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Bay/VoltageLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Function" ordered="false"
+        upperBound="-1" eType="#//Function" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//Function/VoltageLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
+        eType="#//Substation" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Substation/VoltageLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Voltage" ordered="false"
+        eType="#//Voltage" unsettable="true" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Terminal/VoltageLevel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssociationKindEnum">
+    <eLiterals name="pre_established"/>
+    <eLiterals name="predefined" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FCEnum">
+    <eLiterals name="ST"/>
+    <eLiterals name="MX" value="1"/>
+    <eLiterals name="CO" value="2"/>
+    <eLiterals name="SP" value="3"/>
+    <eLiterals name="SG" value="4"/>
+    <eLiterals name="SE" value="5"/>
+    <eLiterals name="SV" value="6"/>
+    <eLiterals name="CF" value="7"/>
+    <eLiterals name="DC" value="8"/>
+    <eLiterals name="EX" value="9"/>
+    <eLiterals name="SR" value="10"/>
+    <eLiterals name="BL" value="11"/>
+    <eLiterals name="OR" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GSEControlTypeEnum">
+    <eLiterals name="GSSE"/>
+    <eLiterals name="GOOSE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PhaseEnum">
+    <eLiterals name="A"/>
+    <eLiterals name="B" value="1"/>
+    <eLiterals name="C" value="2"/>
+    <eLiterals name="N" value="3"/>
+    <eLiterals name="all" value="4"/>
+    <eLiterals name="none" value="5"/>
+    <eLiterals name="AB" value="6"/>
+    <eLiterals name="BC" value="7"/>
+    <eLiterals name="CA" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PredefinedTypeOfSecurityEnum">
+    <eLiterals name="None"/>
+    <eLiterals name="Signature" value="1"/>
+    <eLiterals name="SignatureAndEncryption" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SMVDeliveryEnum">
+    <eLiterals name="unicast"/>
+    <eLiterals name="multicast" value="1"/>
+    <eLiterals name="both" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ServiceSettingsEnum">
+    <eLiterals name="Dyn"/>
+    <eLiterals name="Conf" value="1"/>
+    <eLiterals name="Fix" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ServiceSettingsNoDynEnum">
+    <eLiterals name="Conf"/>
+    <eLiterals name="Fix" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ServiceType">
+    <eLiterals name="Poll"/>
+    <eLiterals name="Report" value="1"/>
+    <eLiterals name="GOOSE" value="2"/>
+    <eLiterals name="SMV" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SmpMod">
+    <eLiterals name="SmpPerPeriod"/>
+    <eLiterals name="SmpPerSec" value="1"/>
+    <eLiterals name="SecPerSmp" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnitMultiplierEnum">
+    <eLiterals name="milli" literal="m"/>
+    <eLiterals name="k" value="1"/>
+    <eLiterals name="M" value="2"/>
+    <eLiterals name="mu" value="3"/>
+    <eLiterals name="yocto" value="4" literal="y"/>
+    <eLiterals name="zepto" value="5" literal="z"/>
+    <eLiterals name="a" value="6"/>
+    <eLiterals name="f" value="7"/>
+    <eLiterals name="pico" value="8" literal="p"/>
+    <eLiterals name="n" value="9"/>
+    <eLiterals name="c" value="10"/>
+    <eLiterals name="d" value="11"/>
+    <eLiterals name="da" value="12"/>
+    <eLiterals name="h" value="13"/>
+    <eLiterals name="G" value="14"/>
+    <eLiterals name="T" value="15"/>
+    <eLiterals name="P" value="16"/>
+    <eLiterals name="E" value="17"/>
+    <eLiterals name="Z" value="18"/>
+    <eLiterals name="Y" value="19"/>
+    <eLiterals name="None" value="20"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValKindEnum">
+    <eLiterals name="Spec"/>
+    <eLiterals name="Conf" value="1"/>
+    <eLiterals name="RO" value="2"/>
+    <eLiterals name="Set" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="bufModeEnum">
+    <eLiterals name="unbuffered"/>
+    <eLiterals name="buffered" value="1"/>
+    <eLiterals name="both" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExplicitLinkResolver" abstract="true"
+      eSuperTypes="#//SclObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataObject" abstract="true" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
+        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//FCDA/RefersToDataObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToDataObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAttribute" abstract="true" eSuperTypes="#//UnNaming">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
+        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//FCDA/RefersToDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToDataAttribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SclObject" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" transient="true"
+        defaultValueLiteral="-1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnNaming" abstract="true" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceYesNo" eSuperTypes="#//SclObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceWithOptionalMax" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMaxNonZero" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceConfReportControl" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufMode" eType="#//bufModeEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMaxAndMaxAttributes" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxAttributes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMaxAndModify" eSuperTypes="#//ServiceWithMax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modify" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceForConfDataSet" eSuperTypes="#//ServiceWithMaxAndMaxAttributes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modify" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cert" eSuperTypes="#//SclObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commonName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idHierarchy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueWithUnit" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplier" eType="#//UnitMultiplierEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationInSec" eSuperTypes="#//ValueWithUnit">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DurationInMilliSec" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplier" eType="#//UnitMultiplierEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BitRateInMbPerSec" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplier" eType="#//UnitMultiplierEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MinTime" eSuperTypes="#//DurationInMilliSec">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaxTime" eSuperTypes="#//DurationInMilliSec">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BitRate" eSuperTypes="#//BitRateInMbPerSec">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmpRate" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SamplesPerSec" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecPerSamples" eSuperTypes="#//SclObject">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="simple"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>
