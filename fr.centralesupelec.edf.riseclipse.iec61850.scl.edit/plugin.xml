@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+/**
+ *  Copyright (c) 2017 CentraleSupélec & EDF.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  This file is part of the RiseClipse tool
+ *  
+ *  Contributors:
+ *      Computer Science Department, CentraleSupélec : initial implementation
+ *  Contacts:
+ *      Dominique.Marcadet@centralesupelec.fr
+ * 
+ */
+ 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated SCL -->
+      <factory
+            uri="http://www.iec.ch/61850/2003/SCL"
+            class="fr.centralesupelec.edf.riseclipse.iec61850.scl.provider.SclItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+   <extension
+         point="fr.centralesupelec.edf.riseclipse.main.meta_models">
+      <meta_model
+            adapterFactory="fr.centralesupelec.edf.riseclipse.iec61850.scl.provider.SclItemProviderAdapterFactory"
+            name="IEC61850 SCL v2.1"
+            uri="http://www.iec.ch/61850/2003/SCL">
+      </meta_model>
+   </extension>
+
+</plugin>
