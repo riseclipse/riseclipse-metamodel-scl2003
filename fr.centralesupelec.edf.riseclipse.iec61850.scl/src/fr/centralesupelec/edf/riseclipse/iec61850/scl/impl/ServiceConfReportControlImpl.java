@@ -17,13 +17,18 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,258 +46,285 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum;
  */
 public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements ServiceConfReportControl {
     /**
-     * The default value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufMode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufMode()
+	 * @generated
+	 * @ordered
+	 */
     protected static final bufModeEnum BUF_MODE_EDEFAULT = bufModeEnum.UNBUFFERED;
 
     /**
-     * The cached value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufMode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufMode()
+	 * @generated
+	 * @ordered
+	 */
     protected bufModeEnum bufMode = BUF_MODE_EDEFAULT;
 
     /**
-     * This is true if the Buf Mode attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buf Mode attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufModeESet;
 
     /**
-     * The default value of the '{@link #getBufConf() <em>Buf Conf</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBufConf() <em>Buf Conf</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufConf()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufConf()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean BUF_CONF_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBufConf() <em>Buf Conf</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBufConf() <em>Buf Conf</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufConf()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufConf()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean bufConf = BUF_CONF_EDEFAULT;
 
     /**
-     * This is true if the Buf Conf attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buf Conf attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufConfESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ServiceConfReportControlImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getServiceConfReportControl();
-    }
+		return SclPackage.eINSTANCE.getServiceConfReportControl();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public bufModeEnum getBufMode() {
-        return bufMode;
-    }
+		return bufMode;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBufMode(bufModeEnum newBufMode) {
-        bufModeEnum oldBufMode = bufMode;
-        bufMode = newBufMode == null ? BUF_MODE_EDEFAULT : newBufMode;
-        boolean oldBufModeESet = bufModeESet;
-        bufModeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE, oldBufMode, bufMode, !oldBufModeESet));
-    }
+		bufModeEnum oldBufMode = bufMode;
+		bufMode = newBufMode == null ? BUF_MODE_EDEFAULT : newBufMode;
+		boolean oldBufModeESet = bufModeESet;
+		bufModeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE, oldBufMode, bufMode, !oldBufModeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBufMode() {
-        bufModeEnum oldBufMode = bufMode;
-        boolean oldBufModeESet = bufModeESet;
-        bufMode = BUF_MODE_EDEFAULT;
-        bufModeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE, oldBufMode, BUF_MODE_EDEFAULT, oldBufModeESet));
-    }
+		bufModeEnum oldBufMode = bufMode;
+		boolean oldBufModeESet = bufModeESet;
+		bufMode = BUF_MODE_EDEFAULT;
+		bufModeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE, oldBufMode, BUF_MODE_EDEFAULT, oldBufModeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBufMode() {
-        return bufModeESet;
-    }
+		return bufModeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getBufConf() {
-        return bufConf;
-    }
+		return bufConf;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBufConf(Boolean newBufConf) {
-        Boolean oldBufConf = bufConf;
-        bufConf = newBufConf;
-        boolean oldBufConfESet = bufConfESet;
-        bufConfESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF, oldBufConf, bufConf, !oldBufConfESet));
-    }
+		Boolean oldBufConf = bufConf;
+		bufConf = newBufConf;
+		boolean oldBufConfESet = bufConfESet;
+		bufConfESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF, oldBufConf, bufConf, !oldBufConfESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBufConf() {
-        Boolean oldBufConf = bufConf;
-        boolean oldBufConfESet = bufConfESet;
-        bufConf = BUF_CONF_EDEFAULT;
-        bufConfESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF, oldBufConf, BUF_CONF_EDEFAULT, oldBufConfESet));
-    }
+		Boolean oldBufConf = bufConf;
+		boolean oldBufConfESet = bufConfESet;
+		bufConf = BUF_CONF_EDEFAULT;
+		bufConfESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF, oldBufConf, BUF_CONF_EDEFAULT, oldBufConfESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBufConf() {
-        return bufConfESet;
-    }
+		return bufConfESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceConfReportControl_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv ServiceConfReportControl_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
-                return getBufMode();
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
-                return getBufConf();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
+				return getBufMode();
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+				return getBufConf();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
-                setBufMode((bufModeEnum)newValue);
-                return;
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
-                setBufConf((Boolean)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
+				setBufMode((bufModeEnum)newValue);
+				return;
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+				setBufConf((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
-                unsetBufMode();
-                return;
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
-                unsetBufConf();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
+				unsetBufMode();
+				return;
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+				unsetBufConf();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
-                return isSetBufMode();
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
-                return isSetBufConf();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
+				return isSetBufMode();
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+				return isSetBufConf();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.SERVICE_CONF_REPORT_CONTROL___VALIDATE_SERVICE_CONF_REPORT_CONTROL_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateServiceConfReportControl_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (bufMode: ");
-        if (bufModeESet) result.append(bufMode); else result.append("<unset>");
-        result.append(", bufConf: ");
-        if (bufConfESet) result.append(bufConf); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bufMode: ");
+		if (bufModeESet) result.append(bufMode); else result.append("<unset>");
+		result.append(", bufConf: ");
+		if (bufConfESet) result.append(bufConf); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ServiceConfReportControlImpl

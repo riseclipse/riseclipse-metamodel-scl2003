@@ -17,16 +17,21 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,425 +50,452 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
  */
 public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
     /**
-     * The cached value of the '{@link #getConfSG() <em>Conf SG</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfSG() <em>Conf SG</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfSG()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfSG()
+	 * @generated
+	 * @ordered
+	 */
     protected ConfSG confSG;
 
     /**
-     * This is true if the Conf SG containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Conf SG containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean confSGESet;
 
     /**
-     * The cached value of the '{@link #getSGEdit() <em>SG Edit</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSGEdit() <em>SG Edit</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSGEdit()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSGEdit()
+	 * @generated
+	 * @ordered
+	 */
     protected SGEdit sgEdit;
 
     /**
-     * This is true if the SG Edit containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the SG Edit containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean sgEditESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected SettingGroupsImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSettingGroups();
-    }
+		return SclPackage.eINSTANCE.getSettingGroups();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ConfSG getConfSG() {
-        return confSG;
-    }
+		return confSG;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetConfSG( ConfSG newConfSG, NotificationChain msgs ) {
-        ConfSG oldConfSG = confSG;
-        confSG = newConfSG;
-        boolean oldConfSGESet = confSGESet;
-        confSGESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, newConfSG, !oldConfSGESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ConfSG oldConfSG = confSG;
+		confSG = newConfSG;
+		boolean oldConfSGESet = confSGESet;
+		confSGESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, newConfSG, !oldConfSGESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConfSG( ConfSG newConfSG ) {
-        if (newConfSG != confSG) {
-            NotificationChain msgs = null;
-            if (confSG != null)
-                msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
-            if (newConfSG != null)
-                msgs = ((InternalEObject)newConfSG).eInverseAdd(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
-            msgs = basicSetConfSG(newConfSG, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldConfSGESet = confSGESet;
-            confSGESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, newConfSG, newConfSG, !oldConfSGESet));
-        }
-    }
+		if (newConfSG != confSG) {
+			NotificationChain msgs = null;
+			if (confSG != null)
+				msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
+			if (newConfSG != null)
+				msgs = ((InternalEObject)newConfSG).eInverseAdd(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
+			msgs = basicSetConfSG(newConfSG, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldConfSGESet = confSGESet;
+			confSGESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, newConfSG, newConfSG, !oldConfSGESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetConfSG( NotificationChain msgs ) {
-        ConfSG oldConfSG = confSG;
-        confSG = null;
-        boolean oldConfSGESet = confSGESet;
-        confSGESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, null, oldConfSGESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ConfSG oldConfSG = confSG;
+		confSG = null;
+		boolean oldConfSGESet = confSGESet;
+		confSGESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, null, oldConfSGESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetConfSG() {
-        if (confSG != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
-            msgs = basicUnsetConfSG(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldConfSGESet = confSGESet;
-            confSGESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, null, null, oldConfSGESet));
-        }
-    }
+		if (confSG != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__SETTING_GROUPS, ConfSG.class, msgs);
+			msgs = basicUnsetConfSG(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldConfSGESet = confSGESet;
+			confSGESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, null, null, oldConfSGESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetConfSG() {
-        return confSGESet;
-    }
+		return confSGESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SGEdit getSGEdit() {
-        return sgEdit;
-    }
+		return sgEdit;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSGEdit( SGEdit newSGEdit, NotificationChain msgs ) {
-        SGEdit oldSGEdit = sgEdit;
-        sgEdit = newSGEdit;
-        boolean oldSGEditESet = sgEditESet;
-        sgEditESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, newSGEdit, !oldSGEditESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		SGEdit oldSGEdit = sgEdit;
+		sgEdit = newSGEdit;
+		boolean oldSGEditESet = sgEditESet;
+		sgEditESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, newSGEdit, !oldSGEditESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSGEdit( SGEdit newSGEdit ) {
-        if (newSGEdit != sgEdit) {
-            NotificationChain msgs = null;
-            if (sgEdit != null)
-                msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
-            if (newSGEdit != null)
-                msgs = ((InternalEObject)newSGEdit).eInverseAdd(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
-            msgs = basicSetSGEdit(newSGEdit, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSGEditESet = sgEditESet;
-            sgEditESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, newSGEdit, newSGEdit, !oldSGEditESet));
-        }
-    }
+		if (newSGEdit != sgEdit) {
+			NotificationChain msgs = null;
+			if (sgEdit != null)
+				msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
+			if (newSGEdit != null)
+				msgs = ((InternalEObject)newSGEdit).eInverseAdd(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
+			msgs = basicSetSGEdit(newSGEdit, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldSGEditESet = sgEditESet;
+			sgEditESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, newSGEdit, newSGEdit, !oldSGEditESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetSGEdit( NotificationChain msgs ) {
-        SGEdit oldSGEdit = sgEdit;
-        sgEdit = null;
-        boolean oldSGEditESet = sgEditESet;
-        sgEditESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, null, oldSGEditESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		SGEdit oldSGEdit = sgEdit;
+		sgEdit = null;
+		boolean oldSGEditESet = sgEditESet;
+		sgEditESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, null, oldSGEditESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSGEdit() {
-        if (sgEdit != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
-            msgs = basicUnsetSGEdit(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSGEditESet = sgEditESet;
-            sgEditESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, null, null, oldSGEditESet));
-        }
-    }
+		if (sgEdit != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__SETTING_GROUPS, SGEdit.class, msgs);
+			msgs = basicUnsetSGEdit(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldSGEditESet = sgEditESet;
+			sgEditESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, null, null, oldSGEditESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSGEdit() {
-        return sgEditESet;
-    }
+		return sgEditESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES) return null;
-        return (Services)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES) return null;
+		return (Services)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.SETTING_GROUPS__SERVICES, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.SETTING_GROUPS__SERVICES, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SERVICES, newServices, newServices));
-    }
+		if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES && newServices != null)) {
+			if (EcoreUtil.isAncestor(this, newServices))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SERVICES, newServices, newServices));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSettingGroups_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv SettingGroups_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                if (confSG != null)
-                    msgs = ((InternalEObject)confSG).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__CONF_SG, null, msgs);
-                return basicSetConfSG((ConfSG)otherEnd, msgs);
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                if (sgEdit != null)
-                    msgs = ((InternalEObject)sgEdit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__SG_EDIT, null, msgs);
-                return basicSetSGEdit((SGEdit)otherEnd, msgs);
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				if (confSG != null)
+					msgs = ((InternalEObject)confSG).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__CONF_SG, null, msgs);
+				return basicSetConfSG((ConfSG)otherEnd, msgs);
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				if (sgEdit != null)
+					msgs = ((InternalEObject)sgEdit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__SG_EDIT, null, msgs);
+				return basicSetSGEdit((SGEdit)otherEnd, msgs);
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return basicUnsetConfSG(msgs);
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return basicUnsetSGEdit(msgs);
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                return basicSetServices(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				return basicUnsetConfSG(msgs);
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				return basicUnsetSGEdit(msgs);
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				return basicSetServices(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return getConfSG();
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return getSGEdit();
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                return getServices();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				return getConfSG();
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				return getSGEdit();
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                setConfSG((ConfSG)newValue);
-                return;
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                setSGEdit((SGEdit)newValue);
-                return;
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                setServices((Services)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				setConfSG((ConfSG)newValue);
+				return;
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				setSGEdit((SGEdit)newValue);
+				return;
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				setServices((Services)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                unsetConfSG();
-                return;
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                unsetSGEdit();
-                return;
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                setServices((Services)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				unsetConfSG();
+				return;
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				unsetSGEdit();
+				return;
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				setServices((Services)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return isSetConfSG();
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return isSetSGEdit();
-            case SclPackage.SETTING_GROUPS__SERVICES:
-                return getServices() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SETTING_GROUPS__CONF_SG:
+				return isSetConfSG();
+			case SclPackage.SETTING_GROUPS__SG_EDIT:
+				return isSetSGEdit();
+			case SclPackage.SETTING_GROUPS__SERVICES:
+				return getServices() != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.SETTING_GROUPS___VALIDATE_SETTING_GROUPS_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateSettingGroups_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
 } //SettingGroupsImpl

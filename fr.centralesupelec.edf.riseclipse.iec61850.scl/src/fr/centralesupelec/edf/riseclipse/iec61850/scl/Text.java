@@ -36,138 +36,142 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface Text extends SclObject {
     /**
-     * Returns the value of the '<em><b>Source</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Source</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Source</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Source</em>' attribute.
-     * @see #isSetSource()
-     * @see #unsetSource()
-     * @see #setSource(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Source()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Source</em>' attribute.
+	 * @see #isSetSource()
+	 * @see #unsetSource()
+	 * @see #setSource(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Source()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!Text!source'"
+	 * @generated
+	 */
     String getSource();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Source</em>' attribute.
-     * @see #isSetSource()
-     * @see #unsetSource()
-     * @see #getSource()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Source</em>' attribute.
+	 * @see #isSetSource()
+	 * @see #unsetSource()
+	 * @see #getSource()
+	 * @generated
+	 */
     void setSource( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSource()
-     * @see #getSource()
-     * @see #setSource(String)
-     * @generated
-     */
+	 * @see #isSetSource()
+	 * @see #getSource()
+	 * @see #setSource(String)
+	 * @generated
+	 */
     void unsetSource();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Source</em>' attribute is set.
-     * @see #unsetSource()
-     * @see #getSource()
-     * @see #setSource(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Source</em>' attribute is set.
+	 * @see #unsetSource()
+	 * @see #getSource()
+	 * @see #setSource(String)
+	 * @generated
+	 */
     boolean isSetSource();
 
     /**
-     * Returns the value of the '<em><b>Base Element</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText <em>Text</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Base Element</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Base Element</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Base Element</em>' container reference.
-     * @see #setBaseElement(BaseElement)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_BaseElement()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText
-     * @model opposite="Text" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Base Element</em>' container reference.
+	 * @see #setBaseElement(BaseElement)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_BaseElement()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText
+	 * @model opposite="Text" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!Text!BaseElement'"
+	 * @generated
+	 */
     BaseElement getBaseElement();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Base Element</em>' container reference.
-     * @see #getBaseElement()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Base Element</em>' container reference.
+	 * @see #getBaseElement()
+	 * @generated
+	 */
     void setBaseElement( BaseElement value );
 
     /**
-     * Returns the value of the '<em><b>Header</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Header</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Header</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Header</em>' container reference.
-     * @see #setHeader(Header)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Header()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText
-     * @model opposite="Text" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Header</em>' container reference.
+	 * @see #setHeader(Header)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Header()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText
+	 * @model opposite="Text" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!Text!Header'"
+	 * @generated
+	 */
     Header getHeader();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Header</em>' container reference.
-     * @see #getHeader()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Header</em>' container reference.
+	 * @see #getHeader()
+	 * @generated
+	 */
     void setHeader( Header value );
 
     /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Value</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Value()
-     * @model extendedMetaData="kind='simple'"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Value()
+	 * @model extendedMetaData="kind='simple'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!Text!value'"
+	 * @generated
+	 */
     String getValue();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
     void setValue( String value );
 
 } // Text

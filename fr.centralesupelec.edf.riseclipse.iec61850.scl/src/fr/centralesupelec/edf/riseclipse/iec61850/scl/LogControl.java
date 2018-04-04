@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Log Control</b></em>'.
@@ -42,510 +45,583 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface LogControl extends ControlWithTriggerOpt {
     /**
-     * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Time</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Buf Time</em>' attribute.
-     * @see #isSetBufTime()
-     * @see #unsetBufTime()
-     * @see #setBufTime(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_BufTime()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Buf Time</em>' attribute.
+	 * @see #isSetBufTime()
+	 * @see #unsetBufTime()
+	 * @see #setBufTime(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_BufTime()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!bufTime'"
+	 * @generated
+	 */
     Integer getBufTime();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Buf Time</em>' attribute.
-     * @see #isSetBufTime()
-     * @see #unsetBufTime()
-     * @see #getBufTime()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Buf Time</em>' attribute.
+	 * @see #isSetBufTime()
+	 * @see #unsetBufTime()
+	 * @see #getBufTime()
+	 * @generated
+	 */
     void setBufTime( Integer value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetBufTime()
-     * @see #getBufTime()
-     * @see #setBufTime(Integer)
-     * @generated
-     */
+	 * @see #isSetBufTime()
+	 * @see #getBufTime()
+	 * @see #setBufTime(Integer)
+	 * @generated
+	 */
     void unsetBufTime();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getBufTime <em>Buf Time</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Buf Time</em>' attribute is set.
-     * @see #unsetBufTime()
-     * @see #getBufTime()
-     * @see #setBufTime(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Buf Time</em>' attribute is set.
+	 * @see #unsetBufTime()
+	 * @see #getBufTime()
+	 * @see #setBufTime(Integer)
+	 * @generated
+	 */
     boolean isSetBufTime();
 
     /**
-     * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ld Inst</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #setLdInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LdInst()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ld Inst</em>' attribute.
+	 * @see #isSetLdInst()
+	 * @see #unsetLdInst()
+	 * @see #setLdInst(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LdInst()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!ldInst'"
+	 * @generated
+	 */
     String getLdInst();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ld Inst</em>' attribute.
+	 * @see #isSetLdInst()
+	 * @see #unsetLdInst()
+	 * @see #getLdInst()
+	 * @generated
+	 */
     void setLdInst( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
+	 * @see #isSetLdInst()
+	 * @see #getLdInst()
+	 * @see #setLdInst(String)
+	 * @generated
+	 */
     void unsetLdInst();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLdInst <em>Ld Inst</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ld Inst</em>' attribute is set.
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ld Inst</em>' attribute is set.
+	 * @see #unsetLdInst()
+	 * @see #getLdInst()
+	 * @see #setLdInst(String)
+	 * @generated
+	 */
     boolean isSetLdInst();
 
     /**
-     * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Class</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #setLnClass(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LnClass()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ln Class</em>' attribute.
+	 * @see #isSetLnClass()
+	 * @see #unsetLnClass()
+	 * @see #setLnClass(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LnClass()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!lnClass'"
+	 * @generated
+	 */
     String getLnClass();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ln Class</em>' attribute.
+	 * @see #isSetLnClass()
+	 * @see #unsetLnClass()
+	 * @see #getLnClass()
+	 * @generated
+	 */
     void setLnClass( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
+	 * @see #isSetLnClass()
+	 * @see #getLnClass()
+	 * @see #setLnClass(String)
+	 * @generated
+	 */
     void unsetLnClass();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnClass <em>Ln Class</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Class</em>' attribute is set.
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ln Class</em>' attribute is set.
+	 * @see #unsetLnClass()
+	 * @see #getLnClass()
+	 * @see #setLnClass(String)
+	 * @generated
+	 */
     boolean isSetLnClass();
 
     /**
-     * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Inst</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #setLnInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LnInst()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ln Inst</em>' attribute.
+	 * @see #isSetLnInst()
+	 * @see #unsetLnInst()
+	 * @see #setLnInst(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LnInst()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!lnInst'"
+	 * @generated
+	 */
     String getLnInst();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ln Inst</em>' attribute.
+	 * @see #isSetLnInst()
+	 * @see #unsetLnInst()
+	 * @see #getLnInst()
+	 * @generated
+	 */
     void setLnInst( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
+	 * @see #isSetLnInst()
+	 * @see #getLnInst()
+	 * @see #setLnInst(String)
+	 * @generated
+	 */
     void unsetLnInst();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLnInst <em>Ln Inst</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Inst</em>' attribute is set.
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ln Inst</em>' attribute is set.
+	 * @see #unsetLnInst()
+	 * @see #getLnInst()
+	 * @see #setLnInst(String)
+	 * @generated
+	 */
     boolean isSetLnInst();
 
     /**
-     * Returns the value of the '<em><b>Log Ena</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Log Ena</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log Ena</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Log Ena</em>' attribute.
-     * @see #isSetLogEna()
-     * @see #unsetLogEna()
-     * @see #setLogEna(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LogEna()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Log Ena</em>' attribute.
+	 * @see #isSetLogEna()
+	 * @see #unsetLogEna()
+	 * @see #setLogEna(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LogEna()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!logEna'"
+	 * @generated
+	 */
     Boolean getLogEna();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Log Ena</em>' attribute.
-     * @see #isSetLogEna()
-     * @see #unsetLogEna()
-     * @see #getLogEna()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Log Ena</em>' attribute.
+	 * @see #isSetLogEna()
+	 * @see #unsetLogEna()
+	 * @see #getLogEna()
+	 * @generated
+	 */
     void setLogEna( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetLogEna()
-     * @see #getLogEna()
-     * @see #setLogEna(Boolean)
-     * @generated
-     */
+	 * @see #isSetLogEna()
+	 * @see #getLogEna()
+	 * @see #setLogEna(Boolean)
+	 * @generated
+	 */
     void unsetLogEna();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogEna <em>Log Ena</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Log Ena</em>' attribute is set.
-     * @see #unsetLogEna()
-     * @see #getLogEna()
-     * @see #setLogEna(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Log Ena</em>' attribute is set.
+	 * @see #unsetLogEna()
+	 * @see #getLogEna()
+	 * @see #setLogEna(Boolean)
+	 * @generated
+	 */
     boolean isSetLogEna();
 
     /**
-     * Returns the value of the '<em><b>Log Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Log Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log Name</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Log Name</em>' attribute.
-     * @see #isSetLogName()
-     * @see #unsetLogName()
-     * @see #setLogName(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LogName()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Log Name</em>' attribute.
+	 * @see #isSetLogName()
+	 * @see #unsetLogName()
+	 * @see #setLogName(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LogName()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!logName'"
+	 * @generated
+	 */
     String getLogName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Log Name</em>' attribute.
-     * @see #isSetLogName()
-     * @see #unsetLogName()
-     * @see #getLogName()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Log Name</em>' attribute.
+	 * @see #isSetLogName()
+	 * @see #unsetLogName()
+	 * @see #getLogName()
+	 * @generated
+	 */
     void setLogName( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLogName()
-     * @see #getLogName()
-     * @see #setLogName(String)
-     * @generated
-     */
+	 * @see #isSetLogName()
+	 * @see #getLogName()
+	 * @see #setLogName(String)
+	 * @generated
+	 */
     void unsetLogName();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getLogName <em>Log Name</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Log Name</em>' attribute is set.
-     * @see #unsetLogName()
-     * @see #getLogName()
-     * @see #setLogName(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Log Name</em>' attribute is set.
+	 * @see #unsetLogName()
+	 * @see #getLogName()
+	 * @see #setLogName(String)
+	 * @generated
+	 */
     boolean isSetLogName();
 
     /**
-     * Returns the value of the '<em><b>Prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #setPrefix(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_Prefix()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Prefix</em>' attribute.
+	 * @see #isSetPrefix()
+	 * @see #unsetPrefix()
+	 * @see #setPrefix(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_Prefix()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!prefix'"
+	 * @generated
+	 */
     String getPrefix();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Prefix</em>' attribute.
+	 * @see #isSetPrefix()
+	 * @see #unsetPrefix()
+	 * @see #getPrefix()
+	 * @generated
+	 */
     void setPrefix( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
+	 * @see #isSetPrefix()
+	 * @see #getPrefix()
+	 * @see #setPrefix(String)
+	 * @generated
+	 */
     void unsetPrefix();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getPrefix <em>Prefix</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Prefix</em>' attribute is set.
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Prefix</em>' attribute is set.
+	 * @see #unsetPrefix()
+	 * @see #getPrefix()
+	 * @see #setPrefix(String)
+	 * @generated
+	 */
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Reason Code</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Reason Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Reason Code</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Reason Code</em>' attribute.
-     * @see #isSetReasonCode()
-     * @see #unsetReasonCode()
-     * @see #setReasonCode(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_ReasonCode()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Reason Code</em>' attribute.
+	 * @see #isSetReasonCode()
+	 * @see #unsetReasonCode()
+	 * @see #setReasonCode(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_ReasonCode()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!reasonCode'"
+	 * @generated
+	 */
     Boolean getReasonCode();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Reason Code</em>' attribute.
-     * @see #isSetReasonCode()
-     * @see #unsetReasonCode()
-     * @see #getReasonCode()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Reason Code</em>' attribute.
+	 * @see #isSetReasonCode()
+	 * @see #unsetReasonCode()
+	 * @see #getReasonCode()
+	 * @generated
+	 */
     void setReasonCode( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetReasonCode()
-     * @see #getReasonCode()
-     * @see #setReasonCode(Boolean)
-     * @generated
-     */
+	 * @see #isSetReasonCode()
+	 * @see #getReasonCode()
+	 * @see #setReasonCode(Boolean)
+	 * @generated
+	 */
     void unsetReasonCode();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Reason Code</em>' attribute is set.
-     * @see #unsetReasonCode()
-     * @see #getReasonCode()
-     * @see #setReasonCode(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Reason Code</em>' attribute is set.
+	 * @see #unsetReasonCode()
+	 * @see #getReasonCode()
+	 * @see #setReasonCode(Boolean)
+	 * @generated
+	 */
     boolean isSetReasonCode();
 
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLogControl <em>Log Control</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLogControl <em>Log Control</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_AnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLogControl
-     * @model opposite="LogControl" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Any LN</em>' container reference.
+	 * @see #setAnyLN(AnyLN)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_AnyLN()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLogControl
+	 * @model opposite="LogControl" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!AnyLN'"
+	 * @generated
+	 */
     AnyLN getAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN <em>Any LN</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN <em>Any LN</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Any LN</em>' container reference.
+	 * @see #getAnyLN()
+	 * @generated
+	 */
     void setAnyLN( AnyLN value );
 
     /**
-     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl
-     * @model opposite="ReferredByLogControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Refers To Any LN</em>' reference.
+	 * @see #isSetRefersToAnyLN()
+	 * @see #unsetRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_RefersToAnyLN()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl
+	 * @model opposite="ReferredByLogControl" resolveProxies="false" unsettable="true" transient="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!LogControl!RefersToAnyLN'"
+	 * @generated
+	 */
     AnyLN getRefersToAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Refers To Any LN</em>' reference.
+	 * @see #isSetRefersToAnyLN()
+	 * @see #unsetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 */
     void setRefersToAnyLN(AnyLN value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
+	 * @see #isSetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @generated
+	 */
     void unsetRefersToAnyLN();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
+	 * @see #unsetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @generated
+	 */
     boolean isSetRefersToAnyLN();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_logName_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_logName_required:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_logName_required\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[1] = self.logName &lt;&gt; null\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'logName attribute shall be present in LogControl (line \' +\n *               self.lineNumber.toString() + \')\', status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_logName_required\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_logName_required);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; logName = this.getLogName();\n\tfinal /*@NonInvalid\052/ boolean status = logName != null;\n\t/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\tif (status) {\n\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t}\n\telse {\n\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_logName_32_attribute_32_shall_32_be_32_present_32_in_32_LogControl_32_o_line_32, toString);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e);\n\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_0, status);\n\t\tsymbol_1 = symbol_0;\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_logName_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_logName_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_logName_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_logName_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_logName_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.logName &lt;&gt; null implies\n *           self.validSclLogName(logName)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'logName attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.logName.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_logName_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_logName_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; logName_0 = this.getLogName();\n\t\tfinal /*@NonInvalid\052/ boolean ne = logName_0 != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclLogName = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclLogName(logName_0);\n\t\t\tstatus = validSclLogName;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_logName_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(logName_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_logName_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_logName_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_ldInst_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_ldInst_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_ldInst_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.ldInst &lt;&gt; null implies\n *           self.validSclLDInst(ldInst)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'ldInst attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.ldInst.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_ldInst_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_ldInst_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; ldInst_0 = this.getLdInst();\n\t\tfinal /*@NonInvalid\052/ boolean ne = ldInst_0 != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclLDInst = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclLDInst(ldInst_0);\n\t\t\tstatus = validSclLDInst;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_ldInst_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(ldInst_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_ldInst_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_ldInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_prefix_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_prefix_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_prefix_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.prefix &lt;&gt; null implies\n *           self.validSclPrefix(prefix)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'prefix attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.prefix.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_prefix_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_prefix_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; prefix = this.getPrefix();\n\t\tfinal /*@NonInvalid\052/ boolean ne = prefix != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclPrefix = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclPrefix(prefix);\n\t\t\tstatus = validSclPrefix;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_prefix_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(prefix);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_prefix_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_prefix_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_lnClass_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_lnClass_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_lnClass_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.lnClass &lt;&gt; null implies\n *           self.validSclLNClassEnum(lnClass)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'lnClass attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.lnClass.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_lnClass_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_lnClass_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; lnClass = this.getLnClass();\n\t\tfinal /*@NonInvalid\052/ boolean ne = lnClass != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclLNClassEnum = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclLNClassEnum(lnClass);\n\t\t\tstatus = validSclLNClassEnum;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_lnClass_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(lnClass);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_lnClass_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_lnClass_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_lnInst_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_lnInst_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_lnInst_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.lnInst &lt;&gt; null implies\n *           self.validSclLNInst(lnInst)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'lnInst attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.lnInst.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_lnInst_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_lnInst_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; lnInst = this.getLnInst();\n\t\tfinal /*@NonInvalid\052/ boolean ne = lnInst != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclLNInst = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclLNInst(lnInst);\n\t\t\tstatus = validSclLNInst;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_lnInst_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(lnInst);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_lnInst_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_lnInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LogControl_bufTime_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv LogControl_bufTime_valid:\n *   let\n *     severity : Integer[1] = \'LogControl::LogControl_bufTime_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.bufTime &lt;&gt; null implies self.bufTime &gt;= 0\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'bufTime attribute shall be valid in LogControl (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.bufTime.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'LogControl::LogControl_bufTime_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_bufTime_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.Integer%&gt; bufTime = this.getBufTime();\n\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_bufTime = bufTime == null ? null : &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(bufTime);\n\t\tfinal /*@NonInvalid\052/ boolean ne = BOXED_bufTime != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean ge = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation%&gt;.INSTANCE.evaluate(executor, BOXED_bufTime, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\t\t\tstatus = ge;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_bufTime_32_attribute_32_shall_32_be_32_valid_32_in_32_LogControl_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_bufTime);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_LogControl_c_c_LogControl_bufTime_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateLogControl_bufTime_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // LogControl

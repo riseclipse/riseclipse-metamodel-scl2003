@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Report Settings</b></em>'.
@@ -40,417 +43,434 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ReportSettings extends ServiceSettings {
     /**
-     * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Time</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Buf Time</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetBufTime()
-     * @see #unsetBufTime()
-     * @see #setBufTime(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_BufTime()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Buf Time</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetBufTime()
+	 * @see #unsetBufTime()
+	 * @see #setBufTime(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_BufTime()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!bufTime'"
+	 * @generated
+	 */
     ServiceSettingsEnum getBufTime();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Buf Time</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetBufTime()
-     * @see #unsetBufTime()
-     * @see #getBufTime()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Buf Time</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetBufTime()
+	 * @see #unsetBufTime()
+	 * @see #getBufTime()
+	 * @generated
+	 */
     void setBufTime( ServiceSettingsEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetBufTime()
-     * @see #getBufTime()
-     * @see #setBufTime(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetBufTime()
+	 * @see #getBufTime()
+	 * @see #setBufTime(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetBufTime();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getBufTime <em>Buf Time</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Buf Time</em>' attribute is set.
-     * @see #unsetBufTime()
-     * @see #getBufTime()
-     * @see #setBufTime(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Buf Time</em>' attribute is set.
+	 * @see #unsetBufTime()
+	 * @see #getBufTime()
+	 * @see #setBufTime(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetBufTime();
 
     /**
-     * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Intg Pd</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Intg Pd</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetIntgPd()
-     * @see #unsetIntgPd()
-     * @see #setIntgPd(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_IntgPd()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Intg Pd</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetIntgPd()
+	 * @see #unsetIntgPd()
+	 * @see #setIntgPd(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_IntgPd()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!intgPd'"
+	 * @generated
+	 */
     ServiceSettingsEnum getIntgPd();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Intg Pd</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetIntgPd()
-     * @see #unsetIntgPd()
-     * @see #getIntgPd()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Intg Pd</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetIntgPd()
+	 * @see #unsetIntgPd()
+	 * @see #getIntgPd()
+	 * @generated
+	 */
     void setIntgPd( ServiceSettingsEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetIntgPd()
-     * @see #getIntgPd()
-     * @see #setIntgPd(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetIntgPd()
+	 * @see #getIntgPd()
+	 * @see #setIntgPd(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetIntgPd();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getIntgPd <em>Intg Pd</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Intg Pd</em>' attribute is set.
-     * @see #unsetIntgPd()
-     * @see #getIntgPd()
-     * @see #setIntgPd(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Intg Pd</em>' attribute is set.
+	 * @see #unsetIntgPd()
+	 * @see #getIntgPd()
+	 * @see #setIntgPd(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetIntgPd();
 
     /**
-     * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Opt Fields</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Opt Fields</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetOptFields()
-     * @see #unsetOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_OptFields()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Opt Fields</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetOptFields()
+	 * @see #unsetOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_OptFields()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!optFields'"
+	 * @generated
+	 */
     ServiceSettingsEnum getOptFields();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Opt Fields</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetOptFields()
-     * @see #unsetOptFields()
-     * @see #getOptFields()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Opt Fields</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetOptFields()
+	 * @see #unsetOptFields()
+	 * @see #getOptFields()
+	 * @generated
+	 */
     void setOptFields( ServiceSettingsEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetOptFields()
-     * @see #getOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetOptFields()
+	 * @see #getOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetOptFields();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOptFields <em>Opt Fields</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Opt Fields</em>' attribute is set.
-     * @see #unsetOptFields()
-     * @see #getOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Opt Fields</em>' attribute is set.
+	 * @see #unsetOptFields()
+	 * @see #getOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetOptFields();
 
     /**
-     * Returns the value of the '<em><b>Owner</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Owner</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Owner</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Owner</em>' attribute.
-     * @see #isSetOwner()
-     * @see #unsetOwner()
-     * @see #setOwner(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_Owner()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Owner</em>' attribute.
+	 * @see #isSetOwner()
+	 * @see #unsetOwner()
+	 * @see #setOwner(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_Owner()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!owner'"
+	 * @generated
+	 */
     Boolean getOwner();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Owner</em>' attribute.
-     * @see #isSetOwner()
-     * @see #unsetOwner()
-     * @see #getOwner()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Owner</em>' attribute.
+	 * @see #isSetOwner()
+	 * @see #unsetOwner()
+	 * @see #getOwner()
+	 * @generated
+	 */
     void setOwner( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetOwner()
-     * @see #getOwner()
-     * @see #setOwner(Boolean)
-     * @generated
-     */
+	 * @see #isSetOwner()
+	 * @see #getOwner()
+	 * @see #setOwner(Boolean)
+	 * @generated
+	 */
     void unsetOwner();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getOwner <em>Owner</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Owner</em>' attribute is set.
-     * @see #unsetOwner()
-     * @see #getOwner()
-     * @see #setOwner(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Owner</em>' attribute is set.
+	 * @see #unsetOwner()
+	 * @see #getOwner()
+	 * @see #setOwner(Boolean)
+	 * @generated
+	 */
     boolean isSetOwner();
 
     /**
-     * Returns the value of the '<em><b>Resv Tms</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Resv Tms</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Resv Tms</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Resv Tms</em>' attribute.
-     * @see #isSetResvTms()
-     * @see #unsetResvTms()
-     * @see #setResvTms(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_ResvTms()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Resv Tms</em>' attribute.
+	 * @see #isSetResvTms()
+	 * @see #unsetResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_ResvTms()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!resvTms'"
+	 * @generated
+	 */
     Boolean getResvTms();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Resv Tms</em>' attribute.
-     * @see #isSetResvTms()
-     * @see #unsetResvTms()
-     * @see #getResvTms()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Resv Tms</em>' attribute.
+	 * @see #isSetResvTms()
+	 * @see #unsetResvTms()
+	 * @see #getResvTms()
+	 * @generated
+	 */
     void setResvTms( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetResvTms()
-     * @see #getResvTms()
-     * @see #setResvTms(Boolean)
-     * @generated
-     */
+	 * @see #isSetResvTms()
+	 * @see #getResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @generated
+	 */
     void unsetResvTms();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getResvTms <em>Resv Tms</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Resv Tms</em>' attribute is set.
-     * @see #unsetResvTms()
-     * @see #getResvTms()
-     * @see #setResvTms(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Resv Tms</em>' attribute is set.
+	 * @see #unsetResvTms()
+	 * @see #getResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @generated
+	 */
     boolean isSetResvTms();
 
     /**
-     * Returns the value of the '<em><b>Rpt ID</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Rpt ID</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Rpt ID</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Rpt ID</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetRptID()
-     * @see #unsetRptID()
-     * @see #setRptID(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_RptID()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Rpt ID</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetRptID()
+	 * @see #unsetRptID()
+	 * @see #setRptID(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_RptID()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!rptID'"
+	 * @generated
+	 */
     ServiceSettingsEnum getRptID();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Rpt ID</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetRptID()
-     * @see #unsetRptID()
-     * @see #getRptID()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Rpt ID</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetRptID()
+	 * @see #unsetRptID()
+	 * @see #getRptID()
+	 * @generated
+	 */
     void setRptID( ServiceSettingsEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRptID()
-     * @see #getRptID()
-     * @see #setRptID(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetRptID()
+	 * @see #getRptID()
+	 * @see #setRptID(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetRptID();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getRptID <em>Rpt ID</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Rpt ID</em>' attribute is set.
-     * @see #unsetRptID()
-     * @see #getRptID()
-     * @see #setRptID(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Rpt ID</em>' attribute is set.
+	 * @see #unsetRptID()
+	 * @see #getRptID()
+	 * @see #setRptID(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetRptID();
 
     /**
-     * Returns the value of the '<em><b>Trg Ops</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Trg Ops</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Trg Ops</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Trg Ops</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetTrgOps()
-     * @see #unsetTrgOps()
-     * @see #setTrgOps(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_TrgOps()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Trg Ops</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetTrgOps()
+	 * @see #unsetTrgOps()
+	 * @see #setTrgOps(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_TrgOps()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!trgOps'"
+	 * @generated
+	 */
     ServiceSettingsEnum getTrgOps();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Trg Ops</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetTrgOps()
-     * @see #unsetTrgOps()
-     * @see #getTrgOps()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Trg Ops</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetTrgOps()
+	 * @see #unsetTrgOps()
+	 * @see #getTrgOps()
+	 * @generated
+	 */
     void setTrgOps( ServiceSettingsEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetTrgOps()
-     * @see #getTrgOps()
-     * @see #setTrgOps(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetTrgOps()
+	 * @see #getTrgOps()
+	 * @see #setTrgOps(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetTrgOps();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getTrgOps <em>Trg Ops</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Trg Ops</em>' attribute is set.
-     * @see #unsetTrgOps()
-     * @see #getTrgOps()
-     * @see #setTrgOps(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Trg Ops</em>' attribute is set.
+	 * @see #unsetTrgOps()
+	 * @see #getTrgOps()
+	 * @see #setTrgOps(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetTrgOps();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReportSettings <em>Report Settings</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Services</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReportSettings <em>Report Settings</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReportSettings
-     * @model opposite="ReportSettings" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Services</em>' container reference.
+	 * @see #setServices(Services)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_Services()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReportSettings
+	 * @model opposite="ReportSettings" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!ReportSettings!Services'"
+	 * @generated
+	 */
     Services getServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices <em>Services</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices <em>Services</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Services</em>' container reference.
+	 * @see #getServices()
+	 * @generated
+	 */
     void setServices( Services value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ReportSettings_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv ReportSettings_nothing: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
+	 * @generated
+	 */
+	boolean validateReportSettings_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ReportSettings

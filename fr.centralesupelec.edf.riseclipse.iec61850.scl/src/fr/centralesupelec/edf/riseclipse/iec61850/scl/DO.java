@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>DO</b></em>'.
@@ -36,192 +39,214 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface DO extends DataObject {
     /**
-     * Returns the value of the '<em><b>Transient</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Transient</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Transient</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Transient</em>' attribute.
-     * @see #isSetTransient()
-     * @see #unsetTransient()
-     * @see #setTransient(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Transient()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Transient</em>' attribute.
+	 * @see #isSetTransient()
+	 * @see #unsetTransient()
+	 * @see #setTransient(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Transient()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!DO!transient'"
+	 * @generated
+	 */
     Boolean getTransient();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Transient</em>' attribute.
-     * @see #isSetTransient()
-     * @see #unsetTransient()
-     * @see #getTransient()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Transient</em>' attribute.
+	 * @see #isSetTransient()
+	 * @see #unsetTransient()
+	 * @see #getTransient()
+	 * @generated
+	 */
     void setTransient( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetTransient()
-     * @see #getTransient()
-     * @see #setTransient(Boolean)
-     * @generated
-     */
+	 * @see #isSetTransient()
+	 * @see #getTransient()
+	 * @see #setTransient(Boolean)
+	 * @generated
+	 */
     void unsetTransient();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Transient</em>' attribute is set.
-     * @see #unsetTransient()
-     * @see #getTransient()
-     * @see #setTransient(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Transient</em>' attribute is set.
+	 * @see #unsetTransient()
+	 * @see #getTransient()
+	 * @see #setTransient(Boolean)
+	 * @generated
+	 */
     boolean isSetTransient();
 
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #setType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Type()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #setType(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Type()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!DO!type'"
+	 * @generated
+	 */
     String getType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #getType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @generated
+	 */
     void setType( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @see #isSetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     void unsetType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Type</em>' attribute is set.
-     * @see #unsetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Type</em>' attribute is set.
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>LNode Type</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>LNode Type</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LNode Type</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode Type</em>' container reference.
-     * @see #setLNodeType(LNodeType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_LNodeType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO
-     * @model opposite="DO" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>LNode Type</em>' container reference.
+	 * @see #setLNodeType(LNodeType)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_LNodeType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO
+	 * @model opposite="DO" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!DO!LNodeType'"
+	 * @generated
+	 */
     LNodeType getLNodeType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LNode Type</em>' container reference.
-     * @see #getLNodeType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>LNode Type</em>' container reference.
+	 * @see #getLNodeType()
+	 * @generated
+	 */
     void setLNodeType( LNodeType value );
 
     /**
-     * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO <em>Referred By DO</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO <em>Referred By DO</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Refers To DO Type</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_RefersToDOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO
-     * @model opposite="ReferredByDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Refers To DO Type</em>' reference.
+	 * @see #isSetRefersToDOType()
+	 * @see #unsetRefersToDOType()
+	 * @see #setRefersToDOType(DOType)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_RefersToDOType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO
+	 * @model opposite="ReferredByDO" resolveProxies="false" unsettable="true" transient="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!DO!RefersToDOType'"
+	 * @generated
+	 */
     DOType getRefersToDOType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Refers To DO Type</em>' reference.
+	 * @see #isSetRefersToDOType()
+	 * @see #unsetRefersToDOType()
+	 * @see #getRefersToDOType()
+	 * @generated
+	 */
     void setRefersToDOType(DOType value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @generated
-     */
+	 * @see #isSetRefersToDOType()
+	 * @see #getRefersToDOType()
+	 * @see #setRefersToDOType(DOType)
+	 * @generated
+	 */
     void unsetRefersToDOType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
+	 * @see #unsetRefersToDOType()
+	 * @see #getRefersToDOType()
+	 * @see #setRefersToDOType(DOType)
+	 * @generated
+	 */
     boolean isSetRefersToDOType();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='DO_type_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv DO_type_required:\n *   let severity : Integer[1] = \'DO::DO_type_required\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[1] = self.type &lt;&gt; null\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'type attribute shall be present in DO (line \' +\n *               self.lineNumber.toString() + \')\', status = status\n *             }\n *           endif\n *       in\n *         \'DO::DO_type_required\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_DO_c_c_DO_type_required);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; type = this.getType();\n\tfinal /*@NonInvalid\052/ boolean status = type != null;\n\t/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\tif (status) {\n\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t}\n\telse {\n\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_type_32_attribute_32_shall_32_be_32_present_32_in_32_DO_32_o_line_32, toString);\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e);\n\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_0, status);\n\t\tsymbol_1 = symbol_0;\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_DO_c_c_DO_type_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateDO_type_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='DO_type_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv DO_type_valid:\n *   let severity : Integer[1] = \'DO::DO_type_valid\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : OclAny[1] = let status : Boolean[?] = self.type &lt;&gt; null implies\n *           self.validSclName(type)\n *         in\n *           if status = true\n *           then true\n *           else\n *             Tuple{message = \'type attribute shall be valid in DO (line \' +\n *               self.lineNumber.toString() + \'). \' + \'Current value is \' +\n *               self.type.toString(), status = status\n *             }\n *           endif\n *       in\n *         \'DO::DO_type_valid\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_DO_c_c_DO_type_valid);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ &lt;%java.lang.Object%&gt; symbol_2;\nif (le) {\n\tsymbol_2 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\t/*@Caught\052/ /*@NonNull\052/ &lt;%java.lang.Object%&gt; CAUGHT_symbol_1;\n\ttry {\n\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; type_0 = this.getType();\n\t\tfinal /*@NonInvalid\052/ boolean ne = type_0 != null;\n\t\t/*@Thrown\052/ boolean status;\n\t\tif (ne) {\n\t\t\tfinal /*@Thrown\052/ boolean validSclName = ((&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject%&gt;)this).validSclName(type_0);\n\t\t\tstatus = validSclName;\n\t\t}\n\t\telse {\n\t\t\tstatus = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\t/*@Thrown\052/ &lt;%java.lang.Object%&gt; symbol_1;\n\t\tif (status) {\n\t\t\tsymbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n\t\t}\n\t\telse {\n\t\t\tfinal /*@NonInvalid\052/ int lineNumber = this.getLineNumber();\n\t\t\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; BOXED_lineNumber = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.integerValueOf(lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; toString = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(BOXED_lineNumber);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_type_32_attribute_32_shall_32_be_32_valid_32_in_32_DO_32_o_line_32, toString);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_0 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR__e__32);\n\t\t\tfinal /*@NonInvalid\052/ &lt;%java.lang.String%&gt; sum_1 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_0, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_Current_32_value_32_is_32);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; toString_0 = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation%&gt;.INSTANCE.evaluate(type_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%java.lang.String%&gt; sum_2 = &lt;%org.eclipse.ocl.pivot.library.string.StringConcatOperation%&gt;.INSTANCE.evaluate(sum_1, toString_0);\n\t\t\tfinal /*@Thrown\052/ &lt;%org.eclipse.ocl.pivot.values.TupleValue%&gt; symbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createTupleOfEach(&lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.TUPLid_, sum_2, status);\n\t\t\tsymbol_1 = symbol_0;\n\t\t}\n\t\tCAUGHT_symbol_1 = symbol_1;\n\t}\n\tcatch (&lt;%java.lang.Exception%&gt; e) {\n\t\tCAUGHT_symbol_1 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.createInvalidValue(e);\n\t}\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.STR_DO_c_c_DO_type_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, &lt;%fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables%&gt;.INT_0).booleanValue();\n\tsymbol_2 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_2;'"
+	 * @generated
+	 */
+	boolean validateDO_type_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // DO

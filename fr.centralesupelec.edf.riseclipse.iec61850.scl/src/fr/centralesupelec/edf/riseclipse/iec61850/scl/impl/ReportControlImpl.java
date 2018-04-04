@@ -17,16 +17,34 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,206 +68,206 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class ReportControlImpl extends ControlWithTriggerOptImpl implements ReportControl {
     /**
-     * The default value of the '{@link #getBuffered() <em>Buffered</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBuffered() <em>Buffered</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBuffered()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBuffered()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean BUFFERED_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBuffered() <em>Buffered</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBuffered() <em>Buffered</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBuffered()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBuffered()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean buffered = BUFFERED_EDEFAULT;
 
     /**
-     * This is true if the Buffered attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buffered attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufferedESet;
 
     /**
-     * The default value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufTime()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer BUF_TIME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufTime()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer bufTime = BUF_TIME_EDEFAULT;
 
     /**
-     * This is true if the Buf Time attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buf Time attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufTimeESet;
 
     /**
-     * The default value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfRev()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfRev()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer CONF_REV_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfRev()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfRev()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer confRev = CONF_REV_EDEFAULT;
 
     /**
-     * This is true if the Conf Rev attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Conf Rev attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean confRevESet;
 
     /**
-     * The default value of the '{@link #getIndexed() <em>Indexed</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIndexed() <em>Indexed</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIndexed()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIndexed()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean INDEXED_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIndexed() <em>Indexed</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIndexed() <em>Indexed</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIndexed()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIndexed()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean indexed = INDEXED_EDEFAULT;
 
     /**
-     * This is true if the Indexed attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Indexed attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean indexedESet;
 
     /**
-     * The default value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRptID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRptID()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String RPT_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRptID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRptID()
+	 * @generated
+	 * @ordered
+	 */
     protected String rptID = RPT_ID_EDEFAULT;
 
     /**
-     * This is true if the Rpt ID attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Rpt ID attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean rptIDESet;
 
     /**
-     * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOptFields()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOptFields()
+	 * @generated
+	 * @ordered
+	 */
     protected OptFields optFields;
 
     /**
-     * This is true if the Opt Fields containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Opt Fields containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean optFieldsESet;
 
     /**
-     * The cached value of the '{@link #getRptEnabled() <em>Rpt Enabled</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRptEnabled() <em>Rpt Enabled</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRptEnabled()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRptEnabled()
+	 * @generated
+	 * @ordered
+	 */
     protected RptEnabled rptEnabled;
 
     /**
-     * This is true if the Rpt Enabled containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Rpt Enabled containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean rptEnabledESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ReportControlImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getReportControl();
-    }
+		return SclPackage.eINSTANCE.getReportControl();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -264,41 +282,41 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBuffered( Boolean newBuffered ) {
-        Boolean oldBuffered = buffered;
-        buffered = newBuffered;
-        boolean oldBufferedESet = bufferedESet;
-        bufferedESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered, buffered, !oldBufferedESet));
-    }
+		Boolean oldBuffered = buffered;
+		buffered = newBuffered;
+		boolean oldBufferedESet = bufferedESet;
+		bufferedESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered, buffered, !oldBufferedESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBuffered() {
-        Boolean oldBuffered = buffered;
-        boolean oldBufferedESet = bufferedESet;
-        buffered = BUFFERED_EDEFAULT;
-        bufferedESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered, BUFFERED_EDEFAULT, oldBufferedESet));
-    }
+		Boolean oldBuffered = buffered;
+		boolean oldBufferedESet = bufferedESet;
+		buffered = BUFFERED_EDEFAULT;
+		bufferedESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUFFERED, oldBuffered, BUFFERED_EDEFAULT, oldBufferedESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBuffered() {
-        return bufferedESet;
-    }
+		return bufferedESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -313,87 +331,87 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBufTime( Integer newBufTime ) {
-        Integer oldBufTime = bufTime;
-        bufTime = newBufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
-    }
+		Integer oldBufTime = bufTime;
+		bufTime = newBufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTimeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBufTime() {
-        Integer oldBufTime = bufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTime = BUF_TIME_EDEFAULT;
-        bufTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
-    }
+		Integer oldBufTime = bufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTime = BUF_TIME_EDEFAULT;
+		bufTimeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBufTime() {
-        return bufTimeESet;
-    }
+		return bufTimeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getConfRev() {
-        return confRev;
-    }
+		return confRev;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConfRev( Integer newConfRev ) {
-        Integer oldConfRev = confRev;
-        confRev = newConfRev;
-        boolean oldConfRevESet = confRevESet;
-        confRevESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev, confRev, !oldConfRevESet));
-    }
+		Integer oldConfRev = confRev;
+		confRev = newConfRev;
+		boolean oldConfRevESet = confRevESet;
+		confRevESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev, confRev, !oldConfRevESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetConfRev() {
-        Integer oldConfRev = confRev;
-        boolean oldConfRevESet = confRevESet;
-        confRev = CONF_REV_EDEFAULT;
-        confRevESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet));
-    }
+		Integer oldConfRev = confRev;
+		boolean oldConfRevESet = confRevESet;
+		confRev = CONF_REV_EDEFAULT;
+		confRevESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__CONF_REV, oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetConfRev() {
-        return confRevESet;
-    }
+		return confRevESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -408,525 +426,899 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIndexed( Boolean newIndexed ) {
-        Boolean oldIndexed = indexed;
-        indexed = newIndexed;
-        boolean oldIndexedESet = indexedESet;
-        indexedESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed, indexed, !oldIndexedESet));
-    }
+		Boolean oldIndexed = indexed;
+		indexed = newIndexed;
+		boolean oldIndexedESet = indexedESet;
+		indexedESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed, indexed, !oldIndexedESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIndexed() {
-        Boolean oldIndexed = indexed;
-        boolean oldIndexedESet = indexedESet;
-        indexed = INDEXED_EDEFAULT;
-        indexedESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed, INDEXED_EDEFAULT, oldIndexedESet));
-    }
+		Boolean oldIndexed = indexed;
+		boolean oldIndexedESet = indexedESet;
+		indexed = INDEXED_EDEFAULT;
+		indexedESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__INDEXED, oldIndexed, INDEXED_EDEFAULT, oldIndexedESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIndexed() {
-        return indexedESet;
-    }
+		return indexedESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getRptID() {
-        return rptID;
-    }
+		return rptID;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRptID( String newRptID ) {
-        String oldRptID = rptID;
-        rptID = newRptID;
-        boolean oldRptIDESet = rptIDESet;
-        rptIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID, rptID, !oldRptIDESet));
-    }
+		String oldRptID = rptID;
+		rptID = newRptID;
+		boolean oldRptIDESet = rptIDESet;
+		rptIDESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID, rptID, !oldRptIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRptID() {
-        String oldRptID = rptID;
-        boolean oldRptIDESet = rptIDESet;
-        rptID = RPT_ID_EDEFAULT;
-        rptIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID, RPT_ID_EDEFAULT, oldRptIDESet));
-    }
+		String oldRptID = rptID;
+		boolean oldRptIDESet = rptIDESet;
+		rptID = RPT_ID_EDEFAULT;
+		rptIDESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ID, oldRptID, RPT_ID_EDEFAULT, oldRptIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRptID() {
-        return rptIDESet;
-    }
+		return rptIDESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getAnyLN() {
-        if (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN) return null;
+		return (AnyLN)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetAnyLN( AnyLN newAnyLN, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.REPORT_CONTROL__ANY_LN, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.REPORT_CONTROL__ANY_LN, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAnyLN( AnyLN newAnyLN ) {
-        if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN && newAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAnyLN != null)
-                msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REPORT_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetAnyLN(newAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__ANY_LN, newAnyLN, newAnyLN));
-    }
+		if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN && newAnyLN != null)) {
+			if (EcoreUtil.isAncestor(this, newAnyLN))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newAnyLN != null)
+				msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REPORT_CONTROL, AnyLN.class, msgs);
+			msgs = basicSetAnyLN(newAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__ANY_LN, newAnyLN, newAnyLN));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public OptFields getOptFields() {
-        return optFields;
-    }
+		return optFields;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetOptFields( OptFields newOptFields, NotificationChain msgs ) {
-        OptFields oldOptFields = optFields;
-        optFields = newOptFields;
-        boolean oldOptFieldsESet = optFieldsESet;
-        optFieldsESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, newOptFields, !oldOptFieldsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		OptFields oldOptFields = optFields;
+		optFields = newOptFields;
+		boolean oldOptFieldsESet = optFieldsESet;
+		optFieldsESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, newOptFields, !oldOptFieldsESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOptFields( OptFields newOptFields ) {
-        if (newOptFields != optFields) {
-            NotificationChain msgs = null;
-            if (optFields != null)
-                msgs = ((InternalEObject)optFields).eInverseRemove(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
-            if (newOptFields != null)
-                msgs = ((InternalEObject)newOptFields).eInverseAdd(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
-            msgs = basicSetOptFields(newOptFields, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldOptFieldsESet = optFieldsESet;
-            optFieldsESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__OPT_FIELDS, newOptFields, newOptFields, !oldOptFieldsESet));
-        }
-    }
+		if (newOptFields != optFields) {
+			NotificationChain msgs = null;
+			if (optFields != null)
+				msgs = ((InternalEObject)optFields).eInverseRemove(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
+			if (newOptFields != null)
+				msgs = ((InternalEObject)newOptFields).eInverseAdd(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
+			msgs = basicSetOptFields(newOptFields, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldOptFieldsESet = optFieldsESet;
+			optFieldsESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__OPT_FIELDS, newOptFields, newOptFields, !oldOptFieldsESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetOptFields( NotificationChain msgs ) {
-        OptFields oldOptFields = optFields;
-        optFields = null;
-        boolean oldOptFieldsESet = optFieldsESet;
-        optFieldsESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, null, oldOptFieldsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		OptFields oldOptFields = optFields;
+		optFields = null;
+		boolean oldOptFieldsESet = optFieldsESet;
+		optFieldsESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__OPT_FIELDS, oldOptFields, null, oldOptFieldsESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOptFields() {
-        if (optFields != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)optFields).eInverseRemove(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
-            msgs = basicUnsetOptFields(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldOptFieldsESet = optFieldsESet;
-            optFieldsESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__OPT_FIELDS, null, null, oldOptFieldsESet));
-        }
-    }
+		if (optFields != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)optFields).eInverseRemove(this, SclPackage.OPT_FIELDS__REPORT_CONTROL, OptFields.class, msgs);
+			msgs = basicUnsetOptFields(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldOptFieldsESet = optFieldsESet;
+			optFieldsESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__OPT_FIELDS, null, null, oldOptFieldsESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOptFields() {
-        return optFieldsESet;
-    }
+		return optFieldsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public RptEnabled getRptEnabled() {
-        return rptEnabled;
-    }
+		return rptEnabled;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRptEnabled( RptEnabled newRptEnabled, NotificationChain msgs ) {
-        RptEnabled oldRptEnabled = rptEnabled;
-        rptEnabled = newRptEnabled;
-        boolean oldRptEnabledESet = rptEnabledESet;
-        rptEnabledESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, newRptEnabled, !oldRptEnabledESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		RptEnabled oldRptEnabled = rptEnabled;
+		rptEnabled = newRptEnabled;
+		boolean oldRptEnabledESet = rptEnabledESet;
+		rptEnabledESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, newRptEnabled, !oldRptEnabledESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRptEnabled( RptEnabled newRptEnabled ) {
-        if (newRptEnabled != rptEnabled) {
-            NotificationChain msgs = null;
-            if (rptEnabled != null)
-                msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
-            if (newRptEnabled != null)
-                msgs = ((InternalEObject)newRptEnabled).eInverseAdd(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
-            msgs = basicSetRptEnabled(newRptEnabled, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRptEnabledESet = rptEnabledESet;
-            rptEnabledESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ENABLED, newRptEnabled, newRptEnabled, !oldRptEnabledESet));
-        }
-    }
+		if (newRptEnabled != rptEnabled) {
+			NotificationChain msgs = null;
+			if (rptEnabled != null)
+				msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
+			if (newRptEnabled != null)
+				msgs = ((InternalEObject)newRptEnabled).eInverseAdd(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
+			msgs = basicSetRptEnabled(newRptEnabled, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRptEnabledESet = rptEnabledESet;
+			rptEnabledESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_CONTROL__RPT_ENABLED, newRptEnabled, newRptEnabled, !oldRptEnabledESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRptEnabled( NotificationChain msgs ) {
-        RptEnabled oldRptEnabled = rptEnabled;
-        rptEnabled = null;
-        boolean oldRptEnabledESet = rptEnabledESet;
-        rptEnabledESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, null, oldRptEnabledESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		RptEnabled oldRptEnabled = rptEnabled;
+		rptEnabled = null;
+		boolean oldRptEnabledESet = rptEnabledESet;
+		rptEnabledESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ENABLED, oldRptEnabled, null, oldRptEnabledESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRptEnabled() {
-        if (rptEnabled != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
-            msgs = basicUnsetRptEnabled(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRptEnabledESet = rptEnabledESet;
-            rptEnabledESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ENABLED, null, null, oldRptEnabledESet));
-        }
-    }
+		if (rptEnabled != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, SclPackage.RPT_ENABLED__REPORT_CONTROL, RptEnabled.class, msgs);
+			msgs = basicUnsetRptEnabled(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRptEnabledESet = rptEnabledESet;
+			rptEnabledESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_CONTROL__RPT_ENABLED, null, null, oldRptEnabledESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRptEnabled() {
-        return rptEnabledESet;
-    }
+		return rptEnabledESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportControl_confRev_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ReportControl_confRev_required:
+		 *   let
+		 *     severity : Integer[1] = 'ReportControl::ReportControl_confRev_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.confRev <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'confRev attribute shall be present in ReportControl (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'ReportControl::ReportControl_confRev_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_ReportControl_c_c_ReportControl_confRev_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ Integer confRev = this.getConfRev();
+			final /*@NonInvalid*/ IntegerValue BOXED_confRev = confRev == null ? null : ValueUtil.integerValueOf(confRev);
+			final /*@NonInvalid*/ boolean status = BOXED_confRev != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_confRev_32_attribute_32_shall_32_be_32_present_32_in_32_ReportControl_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_ReportControl_c_c_ReportControl_confRev_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportControl_confRev_unsigned_int(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ReportControl_confRev_unsigned_int:
+		 *   let
+		 *     severity : Integer[1] = 'ReportControl::ReportControl_confRev_unsigned_int'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.confRev <> null implies self.confRev >= 0
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'confRev attribute shall be an unsigned int in ReportControl (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.confRev.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'ReportControl::ReportControl_confRev_unsigned_int'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_ReportControl_c_c_ReportControl_confRev_unsigned_int);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ Integer confRev = this.getConfRev();
+				final /*@NonInvalid*/ IntegerValue BOXED_confRev = confRev == null ? null : ValueUtil.integerValueOf(confRev);
+				final /*@NonInvalid*/ boolean ne = BOXED_confRev != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					final /*@Thrown*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_confRev, SclTables.INT_0).booleanValue();
+					status = ge;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_confRev_32_attribute_32_shall_32_be_32_an_32_unsigned_32_int_32_in_32_ReportControl_32_o_lin, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_confRev);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_ReportControl_c_c_ReportControl_confRev_unsigned_int, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportControl_rptID_valid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ReportControl_rptID_valid:
+		 *   let
+		 *     severity : Integer[1] = 'ReportControl::ReportControl_rptID_valid'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.rptID <> null implies
+		 *           self.validSclMessageID(rptID)
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'rptID attribute shall be valid in ReportControl (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.rptID.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'ReportControl::ReportControl_rptID_valid'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_ReportControl_c_c_ReportControl_rptID_valid);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ String rptID = this.getRptID();
+				final /*@NonInvalid*/ boolean ne = rptID != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					final /*@Thrown*/ boolean validSclMessageID = ((SclObject)this).validSclMessageID(rptID);
+					status = validSclMessageID;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_rptID_32_attribute_32_shall_32_be_32_valid_32_in_32_ReportControl_32_o_line_32, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(rptID);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_ReportControl_c_c_ReportControl_rptID_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportControl_bufTime_valid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ReportControl_bufTime_valid:
+		 *   let
+		 *     severity : Integer[1] = 'ReportControl::ReportControl_bufTime_valid'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.bufTime <> null implies self.bufTime >= 0
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'bufTime attribute shall be valid in ReportControl (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.bufTime.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'ReportControl::ReportControl_bufTime_valid'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_ReportControl_c_c_ReportControl_bufTime_valid);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ Integer bufTime = this.getBufTime();
+				final /*@NonInvalid*/ IntegerValue BOXED_bufTime = bufTime == null ? null : ValueUtil.integerValueOf(bufTime);
+				final /*@NonInvalid*/ boolean ne = BOXED_bufTime != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					final /*@Thrown*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_bufTime, SclTables.INT_0).booleanValue();
+					status = ge;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_bufTime_32_attribute_32_shall_32_be_32_valid_32_in_32_ReportControl_32_o_line_32, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_bufTime);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_ReportControl_c_c_ReportControl_bufTime_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportControl_one_OptFields_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv ReportControl_one_OptFields_required:
+		 *   let
+		 *     severity : Integer[1] = 'ReportControl::ReportControl_one_OptFields_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.OptFields <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'ReportControl shall contain an OptFields (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'ReportControl::ReportControl_one_OptFields_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_ReportControl_c_c_ReportControl_one_OptFields_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ OptFields OptFields = this.getOptFields();
+			final /*@NonInvalid*/ boolean status = OptFields != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_ReportControl_32_shall_32_contain_32_an_32_OptFields_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_ReportControl_c_c_ReportControl_one_OptFields_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                if (optFields != null)
-                    msgs = ((InternalEObject)optFields).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__OPT_FIELDS, null, msgs);
-                return basicSetOptFields((OptFields)otherEnd, msgs);
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                if (rptEnabled != null)
-                    msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__RPT_ENABLED, null, msgs);
-                return basicSetRptEnabled((RptEnabled)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetAnyLN((AnyLN)otherEnd, msgs);
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				if (optFields != null)
+					msgs = ((InternalEObject)optFields).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__OPT_FIELDS, null, msgs);
+				return basicSetOptFields((OptFields)otherEnd, msgs);
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				if (rptEnabled != null)
+					msgs = ((InternalEObject)rptEnabled).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.REPORT_CONTROL__RPT_ENABLED, null, msgs);
+				return basicSetRptEnabled((RptEnabled)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                return basicSetAnyLN(null, msgs);
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                return basicUnsetOptFields(msgs);
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                return basicUnsetRptEnabled(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				return basicSetAnyLN(null, msgs);
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				return basicUnsetOptFields(msgs);
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				return basicUnsetRptEnabled(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__REPORT_CONTROL, AnyLN.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__REPORT_CONTROL, AnyLN.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__BUFFERED:
-                return getBuffered();
-            case SclPackage.REPORT_CONTROL__BUF_TIME:
-                return getBufTime();
-            case SclPackage.REPORT_CONTROL__CONF_REV:
-                return getConfRev();
-            case SclPackage.REPORT_CONTROL__INDEXED:
-                return getIndexed();
-            case SclPackage.REPORT_CONTROL__RPT_ID:
-                return getRptID();
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                return getAnyLN();
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                return getOptFields();
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                return getRptEnabled();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__BUFFERED:
+				return getBuffered();
+			case SclPackage.REPORT_CONTROL__BUF_TIME:
+				return getBufTime();
+			case SclPackage.REPORT_CONTROL__CONF_REV:
+				return getConfRev();
+			case SclPackage.REPORT_CONTROL__INDEXED:
+				return getIndexed();
+			case SclPackage.REPORT_CONTROL__RPT_ID:
+				return getRptID();
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				return getAnyLN();
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				return getOptFields();
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				return getRptEnabled();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__BUFFERED:
-                setBuffered((Boolean)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__BUF_TIME:
-                setBufTime((Integer)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__CONF_REV:
-                setConfRev((Integer)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__INDEXED:
-                setIndexed((Boolean)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__RPT_ID:
-                setRptID((String)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                setOptFields((OptFields)newValue);
-                return;
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                setRptEnabled((RptEnabled)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__BUFFERED:
+				setBuffered((Boolean)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__BUF_TIME:
+				setBufTime((Integer)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__CONF_REV:
+				setConfRev((Integer)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__INDEXED:
+				setIndexed((Boolean)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__RPT_ID:
+				setRptID((String)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				setAnyLN((AnyLN)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				setOptFields((OptFields)newValue);
+				return;
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				setRptEnabled((RptEnabled)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__BUFFERED:
-                unsetBuffered();
-                return;
-            case SclPackage.REPORT_CONTROL__BUF_TIME:
-                unsetBufTime();
-                return;
-            case SclPackage.REPORT_CONTROL__CONF_REV:
-                unsetConfRev();
-                return;
-            case SclPackage.REPORT_CONTROL__INDEXED:
-                unsetIndexed();
-                return;
-            case SclPackage.REPORT_CONTROL__RPT_ID:
-                unsetRptID();
-                return;
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)null);
-                return;
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                unsetOptFields();
-                return;
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                unsetRptEnabled();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__BUFFERED:
+				unsetBuffered();
+				return;
+			case SclPackage.REPORT_CONTROL__BUF_TIME:
+				unsetBufTime();
+				return;
+			case SclPackage.REPORT_CONTROL__CONF_REV:
+				unsetConfRev();
+				return;
+			case SclPackage.REPORT_CONTROL__INDEXED:
+				unsetIndexed();
+				return;
+			case SclPackage.REPORT_CONTROL__RPT_ID:
+				unsetRptID();
+				return;
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				setAnyLN((AnyLN)null);
+				return;
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				unsetOptFields();
+				return;
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				unsetRptEnabled();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.REPORT_CONTROL__BUFFERED:
-                return isSetBuffered();
-            case SclPackage.REPORT_CONTROL__BUF_TIME:
-                return isSetBufTime();
-            case SclPackage.REPORT_CONTROL__CONF_REV:
-                return isSetConfRev();
-            case SclPackage.REPORT_CONTROL__INDEXED:
-                return isSetIndexed();
-            case SclPackage.REPORT_CONTROL__RPT_ID:
-                return isSetRptID();
-            case SclPackage.REPORT_CONTROL__ANY_LN:
-                return getAnyLN() != null;
-            case SclPackage.REPORT_CONTROL__OPT_FIELDS:
-                return isSetOptFields();
-            case SclPackage.REPORT_CONTROL__RPT_ENABLED:
-                return isSetRptEnabled();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_CONTROL__BUFFERED:
+				return isSetBuffered();
+			case SclPackage.REPORT_CONTROL__BUF_TIME:
+				return isSetBufTime();
+			case SclPackage.REPORT_CONTROL__CONF_REV:
+				return isSetConfRev();
+			case SclPackage.REPORT_CONTROL__INDEXED:
+				return isSetIndexed();
+			case SclPackage.REPORT_CONTROL__RPT_ID:
+				return isSetRptID();
+			case SclPackage.REPORT_CONTROL__ANY_LN:
+				return getAnyLN() != null;
+			case SclPackage.REPORT_CONTROL__OPT_FIELDS:
+				return isSetOptFields();
+			case SclPackage.REPORT_CONTROL__RPT_ENABLED:
+				return isSetRptEnabled();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.REPORT_CONTROL___VALIDATE_REPORT_CONTROL_CONF_REV_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateReportControl_confRev_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.REPORT_CONTROL___VALIDATE_REPORT_CONTROL_CONF_REV_UNSIGNED_INT__DIAGNOSTICCHAIN_MAP:
+				return validateReportControl_confRev_unsigned_int((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.REPORT_CONTROL___VALIDATE_REPORT_CONTROL_RPT_ID_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateReportControl_rptID_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.REPORT_CONTROL___VALIDATE_REPORT_CONTROL_BUF_TIME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateReportControl_bufTime_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.REPORT_CONTROL___VALIDATE_REPORT_CONTROL_ONE_OPT_FIELDS_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateReportControl_one_OptFields_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (buffered: ");
-        if (bufferedESet) result.append(buffered); else result.append("<unset>");
-        result.append(", bufTime: ");
-        if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
-        result.append(", confRev: ");
-        if (confRevESet) result.append(confRev); else result.append("<unset>");
-        result.append(", indexed: ");
-        if (indexedESet) result.append(indexed); else result.append("<unset>");
-        result.append(", rptID: ");
-        if (rptIDESet) result.append(rptID); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (buffered: ");
+		if (bufferedESet) result.append(buffered); else result.append("<unset>");
+		result.append(", bufTime: ");
+		if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
+		result.append(", confRev: ");
+		if (confRevESet) result.append(confRev); else result.append("<unset>");
+		result.append(", indexed: ");
+		if (indexedESet) result.append(indexed); else result.append("<unset>");
+		result.append(", rptID: ");
+		if (rptIDESet) result.append(rptID); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ReportControlImpl

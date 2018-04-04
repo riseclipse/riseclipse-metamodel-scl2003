@@ -33,31 +33,32 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface GSSE extends ServiceWithMax {
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSSE <em>GSSE</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Services</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSSE <em>GSSE</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSSE_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSSE
-     * @model opposite="GSSE" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Services</em>' container reference.
+	 * @see #setServices(Services)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSSE_Services()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSSE
+	 * @model opposite="GSSE" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!GSSE!Services'"
+	 * @generated
+	 */
     Services getServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices <em>Services</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices <em>Services</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Services</em>' container reference.
+	 * @see #getServices()
+	 * @generated
+	 */
     void setServices( Services value );
 
 } // GSSE

@@ -34,56 +34,57 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface UnNaming extends BaseElement {
     /**
-     * Returns the value of the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Desc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Desc</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #setDesc(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getUnNaming_Desc()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Desc</em>' attribute.
+	 * @see #isSetDesc()
+	 * @see #unsetDesc()
+	 * @see #setDesc(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getUnNaming_Desc()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!UnNaming!desc'"
+	 * @generated
+	 */
     String getDesc();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Desc</em>' attribute.
+	 * @see #isSetDesc()
+	 * @see #unsetDesc()
+	 * @see #getDesc()
+	 * @generated
+	 */
     void setDesc(String value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
+	 * @see #isSetDesc()
+	 * @see #getDesc()
+	 * @see #setDesc(String)
+	 * @generated
+	 */
     void unsetDesc();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Desc</em>' attribute is set.
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Desc</em>' attribute is set.
+	 * @see #unsetDesc()
+	 * @see #getDesc()
+	 * @see #setDesc(String)
+	 * @generated
+	 */
     boolean isSetDesc();
 
 } // UnNaming

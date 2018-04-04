@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Eq Function</b></em>'.
@@ -38,171 +41,186 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface EqFunction extends AbstractEqFuncSubFunc {
     /**
-     * Returns the value of the '<em><b>Conducting Equipment</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Conducting Equipment</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Conducting Equipment</em>' container reference.
-     * @see #setConductingEquipment(ConductingEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Conducting Equipment</em>' container reference.
+	 * @see #setConductingEquipment(ConductingEquipment)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ConductingEquipment()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!ConductingEquipment'"
+	 * @generated
+	 */
     ConductingEquipment getConductingEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Conducting Equipment</em>' container reference.
-     * @see #getConductingEquipment()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Conducting Equipment</em>' container reference.
+	 * @see #getConductingEquipment()
+	 * @generated
+	 */
     void setConductingEquipment( ConductingEquipment value );
 
     /**
-     * Returns the value of the '<em><b>General Equipment</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>General Equipment</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>General Equipment</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>General Equipment</em>' container reference.
-     * @see #setGeneralEquipment(GeneralEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_GeneralEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>General Equipment</em>' container reference.
+	 * @see #setGeneralEquipment(GeneralEquipment)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_GeneralEquipment()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!GeneralEquipment'"
+	 * @generated
+	 */
     GeneralEquipment getGeneralEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>General Equipment</em>' container reference.
-     * @see #getGeneralEquipment()
-     * @generated
-     */
+	 * @param value the new value of the '<em>General Equipment</em>' container reference.
+	 * @see #getGeneralEquipment()
+	 * @generated
+	 */
     void setGeneralEquipment( GeneralEquipment value );
 
     /**
-     * Returns the value of the '<em><b>Power Transformer</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Power Transformer</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power Transformer</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Power Transformer</em>' container reference.
-     * @see #setPowerTransformer(PowerTransformer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_PowerTransformer()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Power Transformer</em>' container reference.
+	 * @see #setPowerTransformer(PowerTransformer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_PowerTransformer()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!PowerTransformer'"
+	 * @generated
+	 */
     PowerTransformer getPowerTransformer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Power Transformer</em>' container reference.
-     * @see #getPowerTransformer()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Power Transformer</em>' container reference.
+	 * @see #getPowerTransformer()
+	 * @generated
+	 */
     void setPowerTransformer( PowerTransformer value );
 
     /**
-     * Returns the value of the '<em><b>Sub Equipment</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Sub Equipment</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Equipment</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sub Equipment</em>' container reference.
-     * @see #setSubEquipment(SubEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_SubEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Sub Equipment</em>' container reference.
+	 * @see #setSubEquipment(SubEquipment)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_SubEquipment()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!SubEquipment'"
+	 * @generated
+	 */
     SubEquipment getSubEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sub Equipment</em>' container reference.
-     * @see #getSubEquipment()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Sub Equipment</em>' container reference.
+	 * @see #getSubEquipment()
+	 * @generated
+	 */
     void setSubEquipment( SubEquipment value );
 
     /**
-     * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Transformer Winding</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Transformer Winding</em>' container reference.
-     * @see #setTransformerWinding(TransformerWinding)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TransformerWinding()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Transformer Winding</em>' container reference.
+	 * @see #setTransformerWinding(TransformerWinding)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TransformerWinding()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!TransformerWinding'"
+	 * @generated
+	 */
     TransformerWinding getTransformerWinding();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Transformer Winding</em>' container reference.
-     * @see #getTransformerWinding()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Transformer Winding</em>' container reference.
+	 * @see #getTransformerWinding()
+	 * @generated
+	 */
     void setTransformerWinding( TransformerWinding value );
 
     /**
-     * Returns the value of the '<em><b>Tap Changer</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Tap Changer</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Tap Changer</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Tap Changer</em>' container reference.
-     * @see #setTapChanger(TapChanger)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TapChanger()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction
-     * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Tap Changer</em>' container reference.
+	 * @see #setTapChanger(TapChanger)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TapChanger()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction
+	 * @model opposite="EqFunction" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!EqFunction!TapChanger'"
+	 * @generated
+	 */
     TapChanger getTapChanger();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Tap Changer</em>' container reference.
-     * @see #getTapChanger()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Tap Changer</em>' container reference.
+	 * @see #getTapChanger()
+	 * @generated
+	 */
     void setTapChanger( TapChanger value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='EqFunction_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv EqFunction_nothing: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
+	 * @generated
+	 */
+	boolean validateEqFunction_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // EqFunction

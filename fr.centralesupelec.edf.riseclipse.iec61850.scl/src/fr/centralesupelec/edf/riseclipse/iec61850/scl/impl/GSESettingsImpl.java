@@ -17,15 +17,20 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,22 +59,22 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     protected static final ServiceSettingsEnum APP_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getAppID() <em>App ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAppID() <em>App ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAppID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAppID()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum appID = APP_ID_EDEFAULT;
 
     /**
-     * This is true if the App ID attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the App ID attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean appIDESet;
 
     /**
@@ -83,314 +88,341 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     protected static final ServiceSettingsEnum DATA_LABEL_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDataLabel() <em>Data Label</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDataLabel() <em>Data Label</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDataLabel()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDataLabel()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum dataLabel = DATA_LABEL_EDEFAULT;
 
     /**
-     * This is true if the Data Label attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Data Label attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean dataLabelESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected GSESettingsImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getGSESettings();
-    }
+		return SclPackage.eINSTANCE.getGSESettings();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getAppID() {
-        return appID;
-    }
+		return appID;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAppID( ServiceSettingsEnum newAppID ) {
-        ServiceSettingsEnum oldAppID = appID;
-        appID = newAppID == null ? APP_ID_EDEFAULT : newAppID;
-        boolean oldAppIDESet = appIDESet;
-        appIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID, appID, !oldAppIDESet));
-    }
+		ServiceSettingsEnum oldAppID = appID;
+		appID = newAppID == null ? APP_ID_EDEFAULT : newAppID;
+		boolean oldAppIDESet = appIDESet;
+		appIDESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID, appID, !oldAppIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetAppID() {
-        ServiceSettingsEnum oldAppID = appID;
-        boolean oldAppIDESet = appIDESet;
-        appID = APP_ID_EDEFAULT;
-        appIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID, APP_ID_EDEFAULT, oldAppIDESet));
-    }
+		ServiceSettingsEnum oldAppID = appID;
+		boolean oldAppIDESet = appIDESet;
+		appID = APP_ID_EDEFAULT;
+		appIDESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__APP_ID, oldAppID, APP_ID_EDEFAULT, oldAppIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetAppID() {
-        return appIDESet;
-    }
+		return appIDESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getDataLabel() {
-        return dataLabel;
-    }
+		return dataLabel;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDataLabel( ServiceSettingsEnum newDataLabel ) {
-        ServiceSettingsEnum oldDataLabel = dataLabel;
-        dataLabel = newDataLabel == null ? DATA_LABEL_EDEFAULT : newDataLabel;
-        boolean oldDataLabelESet = dataLabelESet;
-        dataLabelESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel, dataLabel, !oldDataLabelESet));
-    }
+		ServiceSettingsEnum oldDataLabel = dataLabel;
+		dataLabel = newDataLabel == null ? DATA_LABEL_EDEFAULT : newDataLabel;
+		boolean oldDataLabelESet = dataLabelESet;
+		dataLabelESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel, dataLabel, !oldDataLabelESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDataLabel() {
-        ServiceSettingsEnum oldDataLabel = dataLabel;
-        boolean oldDataLabelESet = dataLabelESet;
-        dataLabel = DATA_LABEL_EDEFAULT;
-        dataLabelESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel, DATA_LABEL_EDEFAULT, oldDataLabelESet));
-    }
+		ServiceSettingsEnum oldDataLabel = dataLabel;
+		boolean oldDataLabelESet = dataLabelESet;
+		dataLabel = DATA_LABEL_EDEFAULT;
+		dataLabelESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__DATA_LABEL, oldDataLabel, DATA_LABEL_EDEFAULT, oldDataLabelESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDataLabel() {
-        return dataLabelESet;
-    }
+		return dataLabelESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES) return null;
-        return (Services)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES) return null;
+		return (Services)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.GSE_SETTINGS__SERVICES, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.GSE_SETTINGS__SERVICES, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__SERVICES, newServices, newServices));
-    }
+		if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES && newServices != null)) {
+			if (EcoreUtil.isAncestor(this, newServices))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__SERVICES, newServices, newServices));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGSESettings_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv GSESettings_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return basicSetServices(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				return basicSetServices(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-                return getAppID();
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
-                return getDataLabel();
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return getServices();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__APP_ID:
+				return getAppID();
+			case SclPackage.GSE_SETTINGS__DATA_LABEL:
+				return getDataLabel();
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-                setAppID((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
-                setDataLabel((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                setServices((Services)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__APP_ID:
+				setAppID((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.GSE_SETTINGS__DATA_LABEL:
+				setDataLabel((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				setServices((Services)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-                unsetAppID();
-                return;
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
-                unsetDataLabel();
-                return;
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                setServices((Services)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__APP_ID:
+				unsetAppID();
+				return;
+			case SclPackage.GSE_SETTINGS__DATA_LABEL:
+				unsetDataLabel();
+				return;
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				setServices((Services)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-                return isSetAppID();
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
-                return isSetDataLabel();
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return getServices() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GSE_SETTINGS__APP_ID:
+				return isSetAppID();
+			case SclPackage.GSE_SETTINGS__DATA_LABEL:
+				return isSetDataLabel();
+			case SclPackage.GSE_SETTINGS__SERVICES:
+				return getServices() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.GSE_SETTINGS___VALIDATE_GSE_SETTINGS_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateGSESettings_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (appID: ");
-        if (appIDESet) result.append(appID); else result.append("<unset>");
-        result.append(", dataLabel: ");
-        if (dataLabelESet) result.append(dataLabel); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (appID: ");
+		if (appIDESet) result.append(appID); else result.append("<unset>");
+		result.append(", dataLabel: ");
+		if (dataLabelESet) result.append(dataLabel); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //GSESettingsImpl
