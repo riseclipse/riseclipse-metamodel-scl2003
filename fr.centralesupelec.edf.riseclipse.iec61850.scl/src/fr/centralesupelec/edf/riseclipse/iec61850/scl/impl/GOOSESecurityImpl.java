@@ -41,165 +41,165 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class GOOSESecurityImpl extends CertificateImpl implements GOOSESecurity {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected GOOSESecurityImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getGOOSESecurity();
-    }
+		return SclPackage.Literals.GOOSE_SECURITY;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AccessPoint getAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.GOOSE_SECURITY__ACCESS_POINT) return null;
-        return (AccessPoint)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.GOOSE_SECURITY__ACCESS_POINT) return null;
+		return (AccessPoint)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetAccessPoint( AccessPoint newAccessPoint, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAccessPoint, SclPackage.GOOSE_SECURITY__ACCESS_POINT, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newAccessPoint, SclPackage.GOOSE_SECURITY__ACCESS_POINT, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAccessPoint( AccessPoint newAccessPoint ) {
-        if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.GOOSE_SECURITY__ACCESS_POINT && newAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newAccessPoint))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAccessPoint != null)
-                msgs = ((InternalEObject)newAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, AccessPoint.class, msgs);
-            msgs = basicSetAccessPoint(newAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE_SECURITY__ACCESS_POINT, newAccessPoint, newAccessPoint));
-    }
+		if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.GOOSE_SECURITY__ACCESS_POINT && newAccessPoint != null)) {
+			if (EcoreUtil.isAncestor(this, newAccessPoint))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newAccessPoint != null)
+				msgs = ((InternalEObject)newAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, AccessPoint.class, msgs);
+			msgs = basicSetAccessPoint(newAccessPoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE_SECURITY__ACCESS_POINT, newAccessPoint, newAccessPoint));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAccessPoint((AccessPoint)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetAccessPoint((AccessPoint)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                return basicSetAccessPoint(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				return basicSetAccessPoint(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, AccessPoint.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, AccessPoint.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                return getAccessPoint();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				return getAccessPoint();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                setAccessPoint((AccessPoint)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				setAccessPoint((AccessPoint)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                setAccessPoint((AccessPoint)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				setAccessPoint((AccessPoint)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
-                return getAccessPoint() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GOOSE_SECURITY__ACCESS_POINT:
+				return getAccessPoint() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //GOOSESecurityImpl

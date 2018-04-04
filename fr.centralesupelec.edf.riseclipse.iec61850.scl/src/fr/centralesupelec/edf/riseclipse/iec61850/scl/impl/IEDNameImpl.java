@@ -17,23 +17,40 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,833 +74,925 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     /**
-     * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApRef()
-     * @generated
-     * @ordered
-     */
+	 * @see #getApRef()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String AP_REF_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApRef()
-     * @generated
-     * @ordered
-     */
+	 * @see #getApRef()
+	 * @generated
+	 * @ordered
+	 */
     protected String apRef = AP_REF_EDEFAULT;
 
     /**
-     * This is true if the Ap Ref attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ap Ref attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean apRefESet;
 
     /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String ldInst = LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ld Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ldInstESet;
 
     /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnClass = LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnClassESet;
 
     /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnInst = LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnInstESet;
 
     /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREFIX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String prefix = PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 * @ordered
+	 */
     protected AnyLN refersToAnyLN;
 
     /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Any LN reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAnyLNESet;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VALUE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected String value = VALUE_EDEFAULT;
 
     /**
-     * This is true if the Value attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Value attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean valueESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected IEDNameImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getIEDName();
-    }
+		return SclPackage.Literals.IED_NAME;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getApRef() {
-        return apRef;
-    }
+		return apRef;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setApRef( String newApRef ) {
-        String oldApRef = apRef;
-        apRef = newApRef;
-        boolean oldApRefESet = apRefESet;
-        apRefESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__AP_REF, oldApRef, apRef, !oldApRefESet));
-    }
+		String oldApRef = apRef;
+		apRef = newApRef;
+		boolean oldApRefESet = apRefESet;
+		apRefESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__AP_REF, oldApRef, apRef, !oldApRefESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetApRef() {
-        String oldApRef = apRef;
-        boolean oldApRefESet = apRefESet;
-        apRef = AP_REF_EDEFAULT;
-        apRefESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__AP_REF, oldApRef, AP_REF_EDEFAULT, oldApRefESet));
-    }
+		String oldApRef = apRef;
+		boolean oldApRefESet = apRefESet;
+		apRef = AP_REF_EDEFAULT;
+		apRefESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__AP_REF, oldApRef, AP_REF_EDEFAULT, oldApRefESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetApRef() {
-        return apRefESet;
-    }
+		return apRefESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLdInst() {
-        return ldInst;
-    }
+		return ldInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		ldInst = newLdInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInst = LD_INST_EDEFAULT;
+		ldInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLdInst() {
-        return ldInstESet;
-    }
+		return ldInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnClass() {
-        return lnClass;
-    }
+		return lnClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		lnClass = newLnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClass = LN_CLASS_EDEFAULT;
+		lnClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnClass() {
-        return lnClassESet;
-    }
+		return lnClassESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnInst() {
-        return lnInst;
-    }
+		return lnInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		lnInst = newLnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInst = LN_INST_EDEFAULT;
+		lnInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnInst() {
-        return lnInstESet;
-    }
+		return lnInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getPrefix() {
-        return prefix;
-    }
+		return prefix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__PREFIX, oldPrefix, prefix, !oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		prefix = newPrefix;
+		boolean oldPrefixESet = prefixESet;
+		prefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		boolean oldPrefixESet = prefixESet;
+		prefix = PREFIX_EDEFAULT;
+		prefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrefix() {
-        return prefixESet;
-    }
+		return prefixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ControlWithIEDName getControlWithIEDName() {
-        if (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME) return null;
-        return (ControlWithIEDName)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME) return null;
+		return (ControlWithIEDName)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetControlWithIEDName( ControlWithIEDName newControlWithIEDName,
             NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newControlWithIEDName, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newControlWithIEDName, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setControlWithIEDName( ControlWithIEDName newControlWithIEDName ) {
-        if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
-            if (EcoreUtil.isAncestor(this, newControlWithIEDName))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newControlWithIEDName != null)
-                msgs = ((InternalEObject)newControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
-            msgs = basicSetControlWithIEDName(newControlWithIEDName, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, newControlWithIEDName, newControlWithIEDName));
-    }
+		if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
+			if (EcoreUtil.isAncestor(this, newControlWithIEDName))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newControlWithIEDName != null)
+				msgs = ((InternalEObject)newControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
+			msgs = basicSetControlWithIEDName(newControlWithIEDName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, newControlWithIEDName, newControlWithIEDName));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
+		return refersToAnyLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = newRefersToAnyLN;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
+		if (newRefersToAnyLN != refersToAnyLN) {
+			NotificationChain msgs = null;
+			if (refersToAnyLN != null)
+				msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+			if (newRefersToAnyLN != null)
+				msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+			msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = null;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
-    }
+		if (refersToAnyLN != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+			msgs = basicUnsetRefersToAnyLN(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
+		return refersToAnyLNESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getValue() {
-        return value;
-    }
+		return value;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setValue(String newValue) {
-        String oldValue = value;
-        value = newValue;
-        boolean oldValueESet = valueESet;
-        valueESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__VALUE, oldValue, value, !oldValueESet));
-    }
+		String oldValue = value;
+		value = newValue;
+		boolean oldValueESet = valueESet;
+		valueESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__VALUE, oldValue, value, !oldValueESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetValue() {
-        String oldValue = value;
-        boolean oldValueESet = valueESet;
-        value = VALUE_EDEFAULT;
-        valueESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
-    }
+		String oldValue = value;
+		boolean oldValueESet = valueESet;
+		value = VALUE_EDEFAULT;
+		valueESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetValue() {
-        return valueESet;
-    }
+		return valueESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIEDName_value_valid(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv IEDName_value_valid:
+		 *   let severity : Integer[1] = 'IEDName::IEDName_value_valid'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.value <> null implies
+		 *           self.validSclIEDName(value)
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'value attribute shall be valid in IEDName (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.value.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'IEDName::IEDName_value_valid'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_IEDName_c_c_IEDName_value_valid);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ String value = this.getValue();
+				final /*@NonInvalid*/ boolean ne = value != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					final /*@Thrown*/ boolean validSclIEDName = ((SclObject)this).validSclIEDName(value);
+					status = validSclIEDName;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_value_32_attribute_32_shall_32_be_32_valid_32_in_32_IEDName_32_o_line_32, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(value);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_IEDName_c_c_IEDName_value_valid, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				if (refersToAnyLN != null)
+					msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+				return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return basicSetControlWithIEDName(null, msgs);
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				return basicSetControlWithIEDName(null, msgs);
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				return basicUnsetRefersToAnyLN(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__AP_REF:
-                return getApRef();
-            case SclPackage.IED_NAME__LD_INST:
-                return getLdInst();
-            case SclPackage.IED_NAME__LN_CLASS:
-                return getLnClass();
-            case SclPackage.IED_NAME__LN_INST:
-                return getLnInst();
-            case SclPackage.IED_NAME__PREFIX:
-                return getPrefix();
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName();
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-            case SclPackage.IED_NAME__VALUE:
-                return getValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__AP_REF:
+				return getApRef();
+			case SclPackage.IED_NAME__LD_INST:
+				return getLdInst();
+			case SclPackage.IED_NAME__LN_CLASS:
+				return getLnClass();
+			case SclPackage.IED_NAME__LN_INST:
+				return getLnInst();
+			case SclPackage.IED_NAME__PREFIX:
+				return getPrefix();
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				return getControlWithIEDName();
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				return getRefersToAnyLN();
+			case SclPackage.IED_NAME__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__AP_REF:
-                setApRef((String)newValue);
-                return;
-            case SclPackage.IED_NAME__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.IED_NAME__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.IED_NAME__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.IED_NAME__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)newValue);
-                return;
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.IED_NAME__VALUE:
-                setValue((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__AP_REF:
+				setApRef((String)newValue);
+				return;
+			case SclPackage.IED_NAME__LD_INST:
+				setLdInst((String)newValue);
+				return;
+			case SclPackage.IED_NAME__LN_CLASS:
+				setLnClass((String)newValue);
+				return;
+			case SclPackage.IED_NAME__LN_INST:
+				setLnInst((String)newValue);
+				return;
+			case SclPackage.IED_NAME__PREFIX:
+				setPrefix((String)newValue);
+				return;
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				setControlWithIEDName((ControlWithIEDName)newValue);
+				return;
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				setRefersToAnyLN((AnyLN)newValue);
+				return;
+			case SclPackage.IED_NAME__VALUE:
+				setValue((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__AP_REF:
-                unsetApRef();
-                return;
-            case SclPackage.IED_NAME__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.IED_NAME__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.IED_NAME__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.IED_NAME__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)null);
-                return;
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-            case SclPackage.IED_NAME__VALUE:
-                unsetValue();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__AP_REF:
+				unsetApRef();
+				return;
+			case SclPackage.IED_NAME__LD_INST:
+				unsetLdInst();
+				return;
+			case SclPackage.IED_NAME__LN_CLASS:
+				unsetLnClass();
+				return;
+			case SclPackage.IED_NAME__LN_INST:
+				unsetLnInst();
+				return;
+			case SclPackage.IED_NAME__PREFIX:
+				unsetPrefix();
+				return;
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				setControlWithIEDName((ControlWithIEDName)null);
+				return;
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				unsetRefersToAnyLN();
+				return;
+			case SclPackage.IED_NAME__VALUE:
+				unsetValue();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED_NAME__AP_REF:
-                return isSetApRef();
-            case SclPackage.IED_NAME__LD_INST:
-                return isSetLdInst();
-            case SclPackage.IED_NAME__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.IED_NAME__LN_INST:
-                return isSetLnInst();
-            case SclPackage.IED_NAME__PREFIX:
-                return isSetPrefix();
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName() != null;
-            case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-            case SclPackage.IED_NAME__VALUE:
-                return isSetValue();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.IED_NAME__AP_REF:
+				return isSetApRef();
+			case SclPackage.IED_NAME__LD_INST:
+				return isSetLdInst();
+			case SclPackage.IED_NAME__LN_CLASS:
+				return isSetLnClass();
+			case SclPackage.IED_NAME__LN_INST:
+				return isSetLnInst();
+			case SclPackage.IED_NAME__PREFIX:
+				return isSetPrefix();
+			case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+				return getControlWithIEDName() != null;
+			case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
+				return isSetRefersToAnyLN();
+			case SclPackage.IED_NAME__VALUE:
+				return isSetValue();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.IED_NAME___VALIDATE_IED_NAME_VALUE_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateIEDName_value_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (apRef: ");
-        if (apRefESet) result.append(apRef); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", value: ");
-        if (valueESet) result.append(value); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (apRef: ");
+		if (apRefESet) result.append(apRef); else result.append("<unset>");
+		result.append(", ldInst: ");
+		if (ldInstESet) result.append(ldInst); else result.append("<unset>");
+		result.append(", lnClass: ");
+		if (lnClassESet) result.append(lnClass); else result.append("<unset>");
+		result.append(", lnInst: ");
+		if (lnInstESet) result.append(lnInst); else result.append("<unset>");
+		result.append(", prefix: ");
+		if (prefixESet) result.append(prefix); else result.append("<unset>");
+		result.append(", value: ");
+		if (valueESet) result.append(value); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

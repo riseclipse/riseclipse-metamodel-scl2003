@@ -17,14 +17,19 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,266 +47,293 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
  */
 public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
     /**
-     * The default value of the '{@link #getSetToRO() <em>Set To RO</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSetToRO() <em>Set To RO</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSetToRO()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSetToRO()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean SET_TO_RO_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSetToRO() <em>Set To RO</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSetToRO() <em>Set To RO</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSetToRO()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSetToRO()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean setToRO = SET_TO_RO_EDEFAULT;
 
     /**
-     * This is true if the Set To RO attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Set To RO attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean setToROESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ValueHandlingImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getValueHandling();
-    }
+		return SclPackage.Literals.VALUE_HANDLING;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getSetToRO() {
-        return setToRO;
-    }
+		return setToRO;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSetToRO( Boolean newSetToRO ) {
-        Boolean oldSetToRO = setToRO;
-        setToRO = newSetToRO;
-        boolean oldSetToROESet = setToROESet;
-        setToROESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_HANDLING__SET_TO_RO, oldSetToRO, setToRO, !oldSetToROESet));
-    }
+		Boolean oldSetToRO = setToRO;
+		setToRO = newSetToRO;
+		boolean oldSetToROESet = setToROESet;
+		setToROESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_HANDLING__SET_TO_RO, oldSetToRO, setToRO, !oldSetToROESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSetToRO() {
-        Boolean oldSetToRO = setToRO;
-        boolean oldSetToROESet = setToROESet;
-        setToRO = SET_TO_RO_EDEFAULT;
-        setToROESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.VALUE_HANDLING__SET_TO_RO, oldSetToRO, SET_TO_RO_EDEFAULT, oldSetToROESet));
-    }
+		Boolean oldSetToRO = setToRO;
+		boolean oldSetToROESet = setToROESet;
+		setToRO = SET_TO_RO_EDEFAULT;
+		setToROESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.VALUE_HANDLING__SET_TO_RO, oldSetToRO, SET_TO_RO_EDEFAULT, oldSetToROESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSetToRO() {
-        return setToROESet;
-    }
+		return setToROESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES) return null;
-        return (Services)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES) return null;
+		return (Services)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.VALUE_HANDLING__SERVICES, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.VALUE_HANDLING__SERVICES, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__VALUE_HANDLING, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_HANDLING__SERVICES, newServices, newServices));
-    }
+		if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES && newServices != null)) {
+			if (EcoreUtil.isAncestor(this, newServices))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__VALUE_HANDLING, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_HANDLING__SERVICES, newServices, newServices));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateValueHandling_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv ValueHandling_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                return basicSetServices(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				return basicSetServices(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__VALUE_HANDLING, Services.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__VALUE_HANDLING, Services.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SET_TO_RO:
-                return getSetToRO();
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                return getServices();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SET_TO_RO:
+				return getSetToRO();
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SET_TO_RO:
-                setSetToRO((Boolean)newValue);
-                return;
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                setServices((Services)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SET_TO_RO:
+				setSetToRO((Boolean)newValue);
+				return;
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				setServices((Services)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SET_TO_RO:
-                unsetSetToRO();
-                return;
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                setServices((Services)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SET_TO_RO:
+				unsetSetToRO();
+				return;
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				setServices((Services)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.VALUE_HANDLING__SET_TO_RO:
-                return isSetSetToRO();
-            case SclPackage.VALUE_HANDLING__SERVICES:
-                return getServices() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.VALUE_HANDLING__SET_TO_RO:
+				return isSetSetToRO();
+			case SclPackage.VALUE_HANDLING__SERVICES:
+				return getServices() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.VALUE_HANDLING___VALIDATE_VALUE_HANDLING_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateValueHandling_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (setToRO: ");
-        if (setToROESet) result.append(setToRO); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (setToRO: ");
+		if (setToROESet) result.append(setToRO); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ValueHandlingImpl

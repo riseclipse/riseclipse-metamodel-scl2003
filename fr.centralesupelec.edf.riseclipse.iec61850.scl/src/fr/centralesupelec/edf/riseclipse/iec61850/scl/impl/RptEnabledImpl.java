@@ -16,8 +16,10 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -26,10 +28,24 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,323 +64,416 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
     /**
-     * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getMax()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMax()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer MAX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getMax()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMax()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer max = MAX_EDEFAULT;
 
     /**
-     * This is true if the Max attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Max attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean maxESet;
 
     /**
-     * The cached value of the '{@link #getClientLN() <em>Client LN</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getClientLN() <em>Client LN</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getClientLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getClientLN()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ClientLN> clientLN;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected RptEnabledImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getRptEnabled();
-    }
+		return SclPackage.Literals.RPT_ENABLED;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getMax() {
-        return max;
-    }
+		return max;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setMax( Integer newMax ) {
-        Integer oldMax = max;
-        max = newMax;
-        boolean oldMaxESet = maxESet;
-        maxESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RPT_ENABLED__MAX, oldMax, max, !oldMaxESet));
-    }
+		Integer oldMax = max;
+		max = newMax;
+		boolean oldMaxESet = maxESet;
+		maxESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RPT_ENABLED__MAX, oldMax, max, !oldMaxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetMax() {
-        Integer oldMax = max;
-        boolean oldMaxESet = maxESet;
-        max = MAX_EDEFAULT;
-        maxESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RPT_ENABLED__MAX, oldMax, MAX_EDEFAULT, oldMaxESet));
-    }
+		Integer oldMax = max;
+		boolean oldMaxESet = maxESet;
+		max = MAX_EDEFAULT;
+		maxESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RPT_ENABLED__MAX, oldMax, MAX_EDEFAULT, oldMaxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetMax() {
-        return maxESet;
-    }
+		return maxESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ClientLN> getClientLN() {
-        if (clientLN == null) {
-            clientLN = new EObjectContainmentWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.RPT_ENABLED__CLIENT_LN, SclPackage.CLIENT_LN__RPT_ENABLED);
-        }
-        return clientLN;
-    }
+		if (clientLN == null) {
+			clientLN = new EObjectContainmentWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.RPT_ENABLED__CLIENT_LN, SclPackage.CLIENT_LN__RPT_ENABLED);
+		}
+		return clientLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetClientLN() {
-        if (clientLN != null) ((InternalEList.Unsettable<?>)clientLN).unset();
-    }
+		if (clientLN != null) ((InternalEList.Unsettable<?>)clientLN).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetClientLN() {
-        return clientLN != null && ((InternalEList.Unsettable<?>)clientLN).isSet();
-    }
+		return clientLN != null && ((InternalEList.Unsettable<?>)clientLN).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ReportControl getReportControl() {
-        if (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL) return null;
-        return (ReportControl)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL) return null;
+		return (ReportControl)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetReportControl( ReportControl newReportControl, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newReportControl, SclPackage.RPT_ENABLED__REPORT_CONTROL, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newReportControl, SclPackage.RPT_ENABLED__REPORT_CONTROL, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setReportControl( ReportControl newReportControl ) {
-        if (newReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL && newReportControl != null)) {
-            if (EcoreUtil.isAncestor(this, newReportControl))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newReportControl != null)
-                msgs = ((InternalEObject)newReportControl).eInverseAdd(this, SclPackage.REPORT_CONTROL__RPT_ENABLED, ReportControl.class, msgs);
-            msgs = basicSetReportControl(newReportControl, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RPT_ENABLED__REPORT_CONTROL, newReportControl, newReportControl));
-    }
+		if (newReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL && newReportControl != null)) {
+			if (EcoreUtil.isAncestor(this, newReportControl))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newReportControl != null)
+				msgs = ((InternalEObject)newReportControl).eInverseAdd(this, SclPackage.REPORT_CONTROL__RPT_ENABLED, ReportControl.class, msgs);
+			msgs = basicSetReportControl(newReportControl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RPT_ENABLED__REPORT_CONTROL, newReportControl, newReportControl));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRptEnabled_max_unsigned_int(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv RptEnabled_max_unsigned_int:
+		 *   let
+		 *     severity : Integer[1] = 'RptEnabled::RptEnabled_max_unsigned_int'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.max <> null implies self.max >= 0
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'max attribute shall be valid in RptEnabled (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.max.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'RptEnabled::RptEnabled_max_unsigned_int'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_RptEnabled_c_c_RptEnabled_max_unsigned_int);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ Integer max = this.getMax();
+				final /*@NonInvalid*/ IntegerValue BOXED_max = max == null ? null : ValueUtil.integerValueOf(max);
+				final /*@NonInvalid*/ boolean ne = BOXED_max != null;
+				/*@Thrown*/ boolean status;
+				if (ne) {
+					final /*@Thrown*/ boolean ge = OclComparableGreaterThanEqualOperation.INSTANCE.evaluate(executor, BOXED_max, SclTables.INT_0).booleanValue();
+					status = ge;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_max_32_attribute_32_shall_32_be_32_valid_32_in_32_RptEnabled_32_o_line_32, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_max);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_RptEnabled_c_c_RptEnabled_max_unsigned_int, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getClientLN()).basicAdd(otherEnd, msgs);
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetReportControl((ReportControl)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getClientLN()).basicAdd(otherEnd, msgs);
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetReportControl((ReportControl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                return ((InternalEList<?>)getClientLN()).basicRemove(otherEnd, msgs);
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                return basicSetReportControl(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				return ((InternalEList<?>)getClientLN()).basicRemove(otherEnd, msgs);
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				return basicSetReportControl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.REPORT_CONTROL__RPT_ENABLED, ReportControl.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				return eInternalContainer().eInverseRemove(this, SclPackage.REPORT_CONTROL__RPT_ENABLED, ReportControl.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__MAX:
-                return getMax();
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                return getClientLN();
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                return getReportControl();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__MAX:
+				return getMax();
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				return getClientLN();
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				return getReportControl();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__MAX:
-                setMax((Integer)newValue);
-                return;
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                getClientLN().clear();
-                getClientLN().addAll((Collection<? extends ClientLN>)newValue);
-                return;
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                setReportControl((ReportControl)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__MAX:
+				setMax((Integer)newValue);
+				return;
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				getClientLN().clear();
+				getClientLN().addAll((Collection<? extends ClientLN>)newValue);
+				return;
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				setReportControl((ReportControl)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__MAX:
-                unsetMax();
-                return;
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                unsetClientLN();
-                return;
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                setReportControl((ReportControl)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__MAX:
+				unsetMax();
+				return;
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				unsetClientLN();
+				return;
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				setReportControl((ReportControl)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.RPT_ENABLED__MAX:
-                return isSetMax();
-            case SclPackage.RPT_ENABLED__CLIENT_LN:
-                return isSetClientLN();
-            case SclPackage.RPT_ENABLED__REPORT_CONTROL:
-                return getReportControl() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.RPT_ENABLED__MAX:
+				return isSetMax();
+			case SclPackage.RPT_ENABLED__CLIENT_LN:
+				return isSetClientLN();
+			case SclPackage.RPT_ENABLED__REPORT_CONTROL:
+				return getReportControl() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.RPT_ENABLED___VALIDATE_RPT_ENABLED_MAX_UNSIGNED_INT__DIAGNOSTICCHAIN_MAP:
+				return validateRptEnabled_max_unsigned_int((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (max: ");
-        if (maxESet) result.append(max); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (max: ");
+		if (maxESet) result.append(max); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //RptEnabledImpl

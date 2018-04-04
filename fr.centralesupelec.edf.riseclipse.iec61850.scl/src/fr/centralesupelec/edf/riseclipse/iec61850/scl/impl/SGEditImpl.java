@@ -42,266 +42,266 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
  */
 public class SGEditImpl extends SclObjectImpl implements SGEdit {
     /**
-     * The default value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getResvTms()
-     * @generated
-     * @ordered
-     */
+	 * @see #getResvTms()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean RESV_TMS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getResvTms()
-     * @generated
-     * @ordered
-     */
+	 * @see #getResvTms()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean resvTms = RESV_TMS_EDEFAULT;
 
     /**
-     * This is true if the Resv Tms attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Resv Tms attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean resvTmsESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected SGEditImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSGEdit();
-    }
+		return SclPackage.Literals.SG_EDIT;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getResvTms() {
-        return resvTms;
-    }
+		return resvTms;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setResvTms( Boolean newResvTms ) {
-        Boolean oldResvTms = resvTms;
-        resvTms = newResvTms;
-        boolean oldResvTmsESet = resvTmsESet;
-        resvTmsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, resvTms, !oldResvTmsESet));
-    }
+		Boolean oldResvTms = resvTms;
+		resvTms = newResvTms;
+		boolean oldResvTmsESet = resvTmsESet;
+		resvTmsESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, resvTms, !oldResvTmsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetResvTms() {
-        Boolean oldResvTms = resvTms;
-        boolean oldResvTmsESet = resvTmsESet;
-        resvTms = RESV_TMS_EDEFAULT;
-        resvTmsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, RESV_TMS_EDEFAULT, oldResvTmsESet));
-    }
+		Boolean oldResvTms = resvTms;
+		boolean oldResvTmsESet = resvTmsESet;
+		resvTms = RESV_TMS_EDEFAULT;
+		resvTmsESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, RESV_TMS_EDEFAULT, oldResvTmsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetResvTms() {
-        return resvTmsESet;
-    }
+		return resvTmsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SettingGroups getSettingGroups() {
-        if (eContainerFeatureID() != SclPackage.SG_EDIT__SETTING_GROUPS) return null;
-        return (SettingGroups)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.SG_EDIT__SETTING_GROUPS) return null;
+		return (SettingGroups)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSettingGroups( SettingGroups newSettingGroups, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSettingGroups, SclPackage.SG_EDIT__SETTING_GROUPS, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSettingGroups, SclPackage.SG_EDIT__SETTING_GROUPS, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSettingGroups( SettingGroups newSettingGroups ) {
-        if (newSettingGroups != eInternalContainer() || (eContainerFeatureID() != SclPackage.SG_EDIT__SETTING_GROUPS && newSettingGroups != null)) {
-            if (EcoreUtil.isAncestor(this, newSettingGroups))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSettingGroups != null)
-                msgs = ((InternalEObject)newSettingGroups).eInverseAdd(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
-            msgs = basicSetSettingGroups(newSettingGroups, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__SETTING_GROUPS, newSettingGroups, newSettingGroups));
-    }
+		if (newSettingGroups != eInternalContainer() || (eContainerFeatureID() != SclPackage.SG_EDIT__SETTING_GROUPS && newSettingGroups != null)) {
+			if (EcoreUtil.isAncestor(this, newSettingGroups))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSettingGroups != null)
+				msgs = ((InternalEObject)newSettingGroups).eInverseAdd(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
+			msgs = basicSetSettingGroups(newSettingGroups, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__SETTING_GROUPS, newSettingGroups, newSettingGroups));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSettingGroups((SettingGroups)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSettingGroups((SettingGroups)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                return basicSetSettingGroups(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				return basicSetSettingGroups(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                return getResvTms();
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                return getSettingGroups();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__RESV_TMS:
+				return getResvTms();
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				return getSettingGroups();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                setResvTms((Boolean)newValue);
-                return;
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                setSettingGroups((SettingGroups)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__RESV_TMS:
+				setResvTms((Boolean)newValue);
+				return;
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				setSettingGroups((SettingGroups)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                unsetResvTms();
-                return;
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                setSettingGroups((SettingGroups)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__RESV_TMS:
+				unsetResvTms();
+				return;
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				setSettingGroups((SettingGroups)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                return isSetResvTms();
-            case SclPackage.SG_EDIT__SETTING_GROUPS:
-                return getSettingGroups() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SG_EDIT__RESV_TMS:
+				return isSetResvTms();
+			case SclPackage.SG_EDIT__SETTING_GROUPS:
+				return getSettingGroups() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (resvTms: ");
-        if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (resvTms: ");
+		if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //SGEditImpl

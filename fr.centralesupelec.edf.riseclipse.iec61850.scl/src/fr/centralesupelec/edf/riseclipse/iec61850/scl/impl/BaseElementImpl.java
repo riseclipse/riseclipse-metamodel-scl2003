@@ -50,369 +50,369 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  */
 public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implements BaseElement {
     /**
-     * The cached value of the '{@link #getPrivate() <em>Private</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrivate() <em>Private</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrivate()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrivate()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Private> private_;
 
     /**
-     * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getText()
-     * @generated
-     * @ordered
-     */
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
     protected Text text;
 
     /**
-     * This is true if the Text containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Text containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean textESet;
 
     /**
-     * The cached value of the '{@link #getAny() <em>Any</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAny() <em>Any</em>}' attribute list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAny()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAny()
+	 * @generated
+	 * @ordered
+	 */
     protected FeatureMap any;
 
     /**
-     * The cached value of the '{@link #getAnyAttribute() <em>Any Attribute</em>}' attribute list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAnyAttribute() <em>Any Attribute</em>}' attribute list.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #getAnyAttribute()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAnyAttribute()
+	 * @generated
+	 * @ordered
+	 */
     protected FeatureMap anyAttribute;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected BaseElementImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getBaseElement();
-    }
+		return SclPackage.Literals.BASE_ELEMENT;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Private> getPrivate() {
-        if (private_ == null) {
-            private_ = new EObjectContainmentWithInverseEList.Unsettable<Private>(Private.class, this, SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__BASE_ELEMENT);
-        }
-        return private_;
-    }
+		if (private_ == null) {
+			private_ = new EObjectContainmentWithInverseEList.Unsettable<Private>(Private.class, this, SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__BASE_ELEMENT);
+		}
+		return private_;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrivate() {
-        if (private_ != null) ((InternalEList.Unsettable<?>)private_).unset();
-    }
+		if (private_ != null) ((InternalEList.Unsettable<?>)private_).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrivate() {
-        return private_ != null && ((InternalEList.Unsettable<?>)private_).isSet();
-    }
+		return private_ != null && ((InternalEList.Unsettable<?>)private_).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Text getText() {
-        return text;
-    }
+		return text;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetText( Text newText, NotificationChain msgs ) {
-        Text oldText = text;
-        text = newText;
-        boolean oldTextESet = textESet;
-        textESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.BASE_ELEMENT__TEXT, oldText, newText, !oldTextESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Text oldText = text;
+		text = newText;
+		boolean oldTextESet = textESet;
+		textESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.BASE_ELEMENT__TEXT, oldText, newText, !oldTextESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setText( Text newText ) {
-        if (newText != text) {
-            NotificationChain msgs = null;
-            if (text != null)
-                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
-            if (newText != null)
-                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
-            msgs = basicSetText(newText, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BASE_ELEMENT__TEXT, newText, newText, !oldTextESet));
-        }
-    }
+		if (newText != text) {
+			NotificationChain msgs = null;
+			if (text != null)
+				msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+			if (newText != null)
+				msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+			msgs = basicSetText(newText, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTextESet = textESet;
+			textESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BASE_ELEMENT__TEXT, newText, newText, !oldTextESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetText( NotificationChain msgs ) {
-        Text oldText = text;
-        text = null;
-        boolean oldTextESet = textESet;
-        textESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.BASE_ELEMENT__TEXT, oldText, null, oldTextESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Text oldText = text;
+		text = null;
+		boolean oldTextESet = textESet;
+		textESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.BASE_ELEMENT__TEXT, oldText, null, oldTextESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetText() {
-        if (text != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
-            msgs = basicUnsetText(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.BASE_ELEMENT__TEXT, null, null, oldTextESet));
-        }
-    }
+		if (text != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+			msgs = basicUnsetText(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTextESet = textESet;
+			textESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.BASE_ELEMENT__TEXT, null, null, oldTextESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetText() {
-        return textESet;
-    }
+		return textESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public FeatureMap getAny() {
-        if (any == null) {
-            any = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY);
-        }
-        return any;
-    }
+		if (any == null) {
+			any = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY);
+		}
+		return any;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public FeatureMap getAnyAttribute() {
-        if (anyAttribute == null) {
-            anyAttribute = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE);
-        }
-        return anyAttribute;
-    }
+		if (anyAttribute == null) {
+			anyAttribute = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE);
+		}
+		return anyAttribute;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrivate()).basicAdd(otherEnd, msgs);
-            case SclPackage.BASE_ELEMENT__TEXT:
-                if (text != null)
-                    msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.BASE_ELEMENT__TEXT, null, msgs);
-                return basicSetText((Text)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrivate()).basicAdd(otherEnd, msgs);
+			case SclPackage.BASE_ELEMENT__TEXT:
+				if (text != null)
+					msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.BASE_ELEMENT__TEXT, null, msgs);
+				return basicSetText((Text)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                return ((InternalEList<?>)getPrivate()).basicRemove(otherEnd, msgs);
-            case SclPackage.BASE_ELEMENT__TEXT:
-                return basicUnsetText(msgs);
-            case SclPackage.BASE_ELEMENT__ANY:
-                return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                return ((InternalEList<?>)getAnyAttribute()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				return ((InternalEList<?>)getPrivate()).basicRemove(otherEnd, msgs);
+			case SclPackage.BASE_ELEMENT__TEXT:
+				return basicUnsetText(msgs);
+			case SclPackage.BASE_ELEMENT__ANY:
+				return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
+			case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
+				return ((InternalEList<?>)getAnyAttribute()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                return getPrivate();
-            case SclPackage.BASE_ELEMENT__TEXT:
-                return getText();
-            case SclPackage.BASE_ELEMENT__ANY:
-                if (coreType) return getAny();
-                return ((FeatureMap.Internal)getAny()).getWrapper();
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                if (coreType) return getAnyAttribute();
-                return ((FeatureMap.Internal)getAnyAttribute()).getWrapper();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				return getPrivate();
+			case SclPackage.BASE_ELEMENT__TEXT:
+				return getText();
+			case SclPackage.BASE_ELEMENT__ANY:
+				if (coreType) return getAny();
+				return ((FeatureMap.Internal)getAny()).getWrapper();
+			case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
+				if (coreType) return getAnyAttribute();
+				return ((FeatureMap.Internal)getAnyAttribute()).getWrapper();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                getPrivate().clear();
-                getPrivate().addAll((Collection<? extends Private>)newValue);
-                return;
-            case SclPackage.BASE_ELEMENT__TEXT:
-                setText((Text)newValue);
-                return;
-            case SclPackage.BASE_ELEMENT__ANY:
-                ((FeatureMap.Internal)getAny()).set(newValue);
-                return;
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                ((FeatureMap.Internal)getAnyAttribute()).set(newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				getPrivate().clear();
+				getPrivate().addAll((Collection<? extends Private>)newValue);
+				return;
+			case SclPackage.BASE_ELEMENT__TEXT:
+				setText((Text)newValue);
+				return;
+			case SclPackage.BASE_ELEMENT__ANY:
+				((FeatureMap.Internal)getAny()).set(newValue);
+				return;
+			case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
+				((FeatureMap.Internal)getAnyAttribute()).set(newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                unsetPrivate();
-                return;
-            case SclPackage.BASE_ELEMENT__TEXT:
-                unsetText();
-                return;
-            case SclPackage.BASE_ELEMENT__ANY:
-                getAny().clear();
-                return;
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                getAnyAttribute().clear();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				unsetPrivate();
+				return;
+			case SclPackage.BASE_ELEMENT__TEXT:
+				unsetText();
+				return;
+			case SclPackage.BASE_ELEMENT__ANY:
+				getAny().clear();
+				return;
+			case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
+				getAnyAttribute().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.BASE_ELEMENT__PRIVATE:
-                return isSetPrivate();
-            case SclPackage.BASE_ELEMENT__TEXT:
-                return isSetText();
-            case SclPackage.BASE_ELEMENT__ANY:
-                return any != null && !any.isEmpty();
-            case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
-                return anyAttribute != null && !anyAttribute.isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.BASE_ELEMENT__PRIVATE:
+				return isSetPrivate();
+			case SclPackage.BASE_ELEMENT__TEXT:
+				return isSetText();
+			case SclPackage.BASE_ELEMENT__ANY:
+				return any != null && !any.isEmpty();
+			case SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE:
+				return anyAttribute != null && !anyAttribute.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (any: ");
-        result.append(any);
-        result.append(", anyAttribute: ");
-        result.append(anyAttribute);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (any: ");
+		result.append(any);
+		result.append(", anyAttribute: ");
+		result.append(anyAttribute);
+		result.append(')');
+		return result.toString();
+	}
 
 } //BaseElementImpl

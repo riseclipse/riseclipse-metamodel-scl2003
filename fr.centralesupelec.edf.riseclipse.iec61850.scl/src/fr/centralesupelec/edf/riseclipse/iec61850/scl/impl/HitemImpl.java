@@ -17,14 +17,30 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,701 +63,891 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class HitemImpl extends SclObjectImpl implements Hitem {
     /**
-     * The default value of the '{@link #getRevision() <em>Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRevision() <em>Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String REVISION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getRevision() <em>Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRevision() <em>Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected String revision = REVISION_EDEFAULT;
 
     /**
-     * This is true if the Revision attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Revision attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean revisionESet;
 
     /**
-     * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VERSION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected String version = VERSION_EDEFAULT;
 
     /**
-     * This is true if the Version attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Version attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean versionESet;
 
     /**
-     * The default value of the '{@link #getWhat() <em>What</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getWhat() <em>What</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhat()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhat()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String WHAT_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getWhat() <em>What</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getWhat() <em>What</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhat()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhat()
+	 * @generated
+	 * @ordered
+	 */
     protected String what = WHAT_EDEFAULT;
 
     /**
-     * This is true if the What attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the What attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean whatESet;
 
     /**
-     * The default value of the '{@link #getWhen() <em>When</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getWhen() <em>When</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhen()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhen()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String WHEN_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getWhen() <em>When</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getWhen() <em>When</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhen()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhen()
+	 * @generated
+	 * @ordered
+	 */
     protected String when = WHEN_EDEFAULT;
 
     /**
-     * This is true if the When attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the When attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean whenESet;
 
     /**
-     * The default value of the '{@link #getWho() <em>Who</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getWho() <em>Who</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWho()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWho()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String WHO_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getWho() <em>Who</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getWho() <em>Who</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWho()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWho()
+	 * @generated
+	 * @ordered
+	 */
     protected String who = WHO_EDEFAULT;
 
     /**
-     * This is true if the Who attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Who attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean whoESet;
 
     /**
-     * The default value of the '{@link #getWhy() <em>Why</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getWhy() <em>Why</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhy()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhy()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String WHY_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getWhy() <em>Why</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getWhy() <em>Why</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getWhy()
-     * @generated
-     * @ordered
-     */
+	 * @see #getWhy()
+	 * @generated
+	 * @ordered
+	 */
     protected String why = WHY_EDEFAULT;
 
     /**
-     * This is true if the Why attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Why attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean whyESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected HitemImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getHitem();
-    }
+		return SclPackage.Literals.HITEM;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getRevision() {
-        return revision;
-    }
+		return revision;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRevision( String newRevision ) {
-        String oldRevision = revision;
-        revision = newRevision;
-        boolean oldRevisionESet = revisionESet;
-        revisionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__REVISION, oldRevision, revision, !oldRevisionESet));
-    }
+		String oldRevision = revision;
+		revision = newRevision;
+		boolean oldRevisionESet = revisionESet;
+		revisionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__REVISION, oldRevision, revision, !oldRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRevision() {
-        String oldRevision = revision;
-        boolean oldRevisionESet = revisionESet;
-        revision = REVISION_EDEFAULT;
-        revisionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__REVISION, oldRevision, REVISION_EDEFAULT, oldRevisionESet));
-    }
+		String oldRevision = revision;
+		boolean oldRevisionESet = revisionESet;
+		revision = REVISION_EDEFAULT;
+		revisionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__REVISION, oldRevision, REVISION_EDEFAULT, oldRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRevision() {
-        return revisionESet;
-    }
+		return revisionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getVersion() {
-        return version;
-    }
+		return version;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setVersion( String newVersion ) {
-        String oldVersion = version;
-        version = newVersion;
-        boolean oldVersionESet = versionESet;
-        versionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__VERSION, oldVersion, version, !oldVersionESet));
-    }
+		String oldVersion = version;
+		version = newVersion;
+		boolean oldVersionESet = versionESet;
+		versionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__VERSION, oldVersion, version, !oldVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetVersion() {
-        String oldVersion = version;
-        boolean oldVersionESet = versionESet;
-        version = VERSION_EDEFAULT;
-        versionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__VERSION, oldVersion, VERSION_EDEFAULT, oldVersionESet));
-    }
+		String oldVersion = version;
+		boolean oldVersionESet = versionESet;
+		version = VERSION_EDEFAULT;
+		versionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__VERSION, oldVersion, VERSION_EDEFAULT, oldVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetVersion() {
-        return versionESet;
-    }
+		return versionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getWhat() {
-        return what;
-    }
+		return what;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setWhat( String newWhat ) {
-        String oldWhat = what;
-        what = newWhat;
-        boolean oldWhatESet = whatESet;
-        whatESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHAT, oldWhat, what, !oldWhatESet));
-    }
+		String oldWhat = what;
+		what = newWhat;
+		boolean oldWhatESet = whatESet;
+		whatESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHAT, oldWhat, what, !oldWhatESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetWhat() {
-        String oldWhat = what;
-        boolean oldWhatESet = whatESet;
-        what = WHAT_EDEFAULT;
-        whatESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHAT, oldWhat, WHAT_EDEFAULT, oldWhatESet));
-    }
+		String oldWhat = what;
+		boolean oldWhatESet = whatESet;
+		what = WHAT_EDEFAULT;
+		whatESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHAT, oldWhat, WHAT_EDEFAULT, oldWhatESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetWhat() {
-        return whatESet;
-    }
+		return whatESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getWhen() {
-        return when;
-    }
+		return when;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setWhen( String newWhen ) {
-        String oldWhen = when;
-        when = newWhen;
-        boolean oldWhenESet = whenESet;
-        whenESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHEN, oldWhen, when, !oldWhenESet));
-    }
+		String oldWhen = when;
+		when = newWhen;
+		boolean oldWhenESet = whenESet;
+		whenESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHEN, oldWhen, when, !oldWhenESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetWhen() {
-        String oldWhen = when;
-        boolean oldWhenESet = whenESet;
-        when = WHEN_EDEFAULT;
-        whenESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHEN, oldWhen, WHEN_EDEFAULT, oldWhenESet));
-    }
+		String oldWhen = when;
+		boolean oldWhenESet = whenESet;
+		when = WHEN_EDEFAULT;
+		whenESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHEN, oldWhen, WHEN_EDEFAULT, oldWhenESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetWhen() {
-        return whenESet;
-    }
+		return whenESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getWho() {
-        return who;
-    }
+		return who;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setWho( String newWho ) {
-        String oldWho = who;
-        who = newWho;
-        boolean oldWhoESet = whoESet;
-        whoESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHO, oldWho, who, !oldWhoESet));
-    }
+		String oldWho = who;
+		who = newWho;
+		boolean oldWhoESet = whoESet;
+		whoESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHO, oldWho, who, !oldWhoESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetWho() {
-        String oldWho = who;
-        boolean oldWhoESet = whoESet;
-        who = WHO_EDEFAULT;
-        whoESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHO, oldWho, WHO_EDEFAULT, oldWhoESet));
-    }
+		String oldWho = who;
+		boolean oldWhoESet = whoESet;
+		who = WHO_EDEFAULT;
+		whoESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHO, oldWho, WHO_EDEFAULT, oldWhoESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetWho() {
-        return whoESet;
-    }
+		return whoESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getWhy() {
-        return why;
-    }
+		return why;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setWhy( String newWhy ) {
-        String oldWhy = why;
-        why = newWhy;
-        boolean oldWhyESet = whyESet;
-        whyESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHY, oldWhy, why, !oldWhyESet));
-    }
+		String oldWhy = why;
+		why = newWhy;
+		boolean oldWhyESet = whyESet;
+		whyESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__WHY, oldWhy, why, !oldWhyESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetWhy() {
-        String oldWhy = why;
-        boolean oldWhyESet = whyESet;
-        why = WHY_EDEFAULT;
-        whyESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHY, oldWhy, WHY_EDEFAULT, oldWhyESet));
-    }
+		String oldWhy = why;
+		boolean oldWhyESet = whyESet;
+		why = WHY_EDEFAULT;
+		whyESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HITEM__WHY, oldWhy, WHY_EDEFAULT, oldWhyESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetWhy() {
-        return whyESet;
-    }
+		return whyESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public History getHistory() {
-        if (eContainerFeatureID() != SclPackage.HITEM__HISTORY) return null;
-        return (History)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.HITEM__HISTORY) return null;
+		return (History)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetHistory( History newHistory, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newHistory, SclPackage.HITEM__HISTORY, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newHistory, SclPackage.HITEM__HISTORY, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setHistory( History newHistory ) {
-        if (newHistory != eInternalContainer() || (eContainerFeatureID() != SclPackage.HITEM__HISTORY && newHistory != null)) {
-            if (EcoreUtil.isAncestor(this, newHistory))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newHistory != null)
-                msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HITEM, History.class, msgs);
-            msgs = basicSetHistory(newHistory, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__HISTORY, newHistory, newHistory));
-    }
+		if (newHistory != eInternalContainer() || (eContainerFeatureID() != SclPackage.HITEM__HISTORY && newHistory != null)) {
+			if (EcoreUtil.isAncestor(this, newHistory))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newHistory != null)
+				msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HITEM, History.class, msgs);
+			msgs = basicSetHistory(newHistory, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__HISTORY, newHistory, newHistory));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHitem_version_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv Hitem_version_required:
+		 *   let severity : Integer[1] = 'Hitem::Hitem_version_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.version <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'version attribute shall be present in Hitem (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Hitem::Hitem_version_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_Hitem_c_c_Hitem_version_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ String version = this.getVersion();
+			final /*@NonInvalid*/ boolean status = version != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_version_32_attribute_32_shall_32_be_32_present_32_in_32_Hitem_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_Hitem_c_c_Hitem_version_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHitem_revision_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv Hitem_revision_required:
+		 *   let severity : Integer[1] = 'Hitem::Hitem_revision_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.revision <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'revision attribute shall be present in Hitem (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Hitem::Hitem_revision_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_Hitem_c_c_Hitem_revision_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ String revision = this.getRevision();
+			final /*@NonInvalid*/ boolean status = revision != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_revision_32_attribute_32_shall_32_be_32_present_32_in_32_Hitem_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_Hitem_c_c_Hitem_revision_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHitem_when_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv Hitem_when_required:
+		 *   let severity : Integer[1] = 'Hitem::Hitem_when_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.when <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'when attribute shall be present in Hitem (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Hitem::Hitem_when_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_Hitem_c_c_Hitem_when_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ String when = this.getWhen();
+			final /*@NonInvalid*/ boolean status = when != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_when_32_attribute_32_shall_32_be_32_present_32_in_32_Hitem_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_Hitem_c_c_Hitem_when_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HITEM__HISTORY:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetHistory((History)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__HISTORY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetHistory((History)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HITEM__HISTORY:
-                return basicSetHistory(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__HISTORY:
+				return basicSetHistory(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.HITEM__HISTORY:
-                return eInternalContainer().eInverseRemove(this, SclPackage.HISTORY__HITEM, History.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.HITEM__HISTORY:
+				return eInternalContainer().eInverseRemove(this, SclPackage.HISTORY__HITEM, History.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.HITEM__REVISION:
-                return getRevision();
-            case SclPackage.HITEM__VERSION:
-                return getVersion();
-            case SclPackage.HITEM__WHAT:
-                return getWhat();
-            case SclPackage.HITEM__WHEN:
-                return getWhen();
-            case SclPackage.HITEM__WHO:
-                return getWho();
-            case SclPackage.HITEM__WHY:
-                return getWhy();
-            case SclPackage.HITEM__HISTORY:
-                return getHistory();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__REVISION:
+				return getRevision();
+			case SclPackage.HITEM__VERSION:
+				return getVersion();
+			case SclPackage.HITEM__WHAT:
+				return getWhat();
+			case SclPackage.HITEM__WHEN:
+				return getWhen();
+			case SclPackage.HITEM__WHO:
+				return getWho();
+			case SclPackage.HITEM__WHY:
+				return getWhy();
+			case SclPackage.HITEM__HISTORY:
+				return getHistory();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.HITEM__REVISION:
-                setRevision((String)newValue);
-                return;
-            case SclPackage.HITEM__VERSION:
-                setVersion((String)newValue);
-                return;
-            case SclPackage.HITEM__WHAT:
-                setWhat((String)newValue);
-                return;
-            case SclPackage.HITEM__WHEN:
-                setWhen((String)newValue);
-                return;
-            case SclPackage.HITEM__WHO:
-                setWho((String)newValue);
-                return;
-            case SclPackage.HITEM__WHY:
-                setWhy((String)newValue);
-                return;
-            case SclPackage.HITEM__HISTORY:
-                setHistory((History)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__REVISION:
+				setRevision((String)newValue);
+				return;
+			case SclPackage.HITEM__VERSION:
+				setVersion((String)newValue);
+				return;
+			case SclPackage.HITEM__WHAT:
+				setWhat((String)newValue);
+				return;
+			case SclPackage.HITEM__WHEN:
+				setWhen((String)newValue);
+				return;
+			case SclPackage.HITEM__WHO:
+				setWho((String)newValue);
+				return;
+			case SclPackage.HITEM__WHY:
+				setWhy((String)newValue);
+				return;
+			case SclPackage.HITEM__HISTORY:
+				setHistory((History)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HITEM__REVISION:
-                unsetRevision();
-                return;
-            case SclPackage.HITEM__VERSION:
-                unsetVersion();
-                return;
-            case SclPackage.HITEM__WHAT:
-                unsetWhat();
-                return;
-            case SclPackage.HITEM__WHEN:
-                unsetWhen();
-                return;
-            case SclPackage.HITEM__WHO:
-                unsetWho();
-                return;
-            case SclPackage.HITEM__WHY:
-                unsetWhy();
-                return;
-            case SclPackage.HITEM__HISTORY:
-                setHistory((History)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__REVISION:
+				unsetRevision();
+				return;
+			case SclPackage.HITEM__VERSION:
+				unsetVersion();
+				return;
+			case SclPackage.HITEM__WHAT:
+				unsetWhat();
+				return;
+			case SclPackage.HITEM__WHEN:
+				unsetWhen();
+				return;
+			case SclPackage.HITEM__WHO:
+				unsetWho();
+				return;
+			case SclPackage.HITEM__WHY:
+				unsetWhy();
+				return;
+			case SclPackage.HITEM__HISTORY:
+				setHistory((History)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HITEM__REVISION:
-                return isSetRevision();
-            case SclPackage.HITEM__VERSION:
-                return isSetVersion();
-            case SclPackage.HITEM__WHAT:
-                return isSetWhat();
-            case SclPackage.HITEM__WHEN:
-                return isSetWhen();
-            case SclPackage.HITEM__WHO:
-                return isSetWho();
-            case SclPackage.HITEM__WHY:
-                return isSetWhy();
-            case SclPackage.HITEM__HISTORY:
-                return getHistory() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.HITEM__REVISION:
+				return isSetRevision();
+			case SclPackage.HITEM__VERSION:
+				return isSetVersion();
+			case SclPackage.HITEM__WHAT:
+				return isSetWhat();
+			case SclPackage.HITEM__WHEN:
+				return isSetWhen();
+			case SclPackage.HITEM__WHO:
+				return isSetWho();
+			case SclPackage.HITEM__WHY:
+				return isSetWhy();
+			case SclPackage.HITEM__HISTORY:
+				return getHistory() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.HITEM___VALIDATE_HITEM_VERSION_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateHitem_version_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.HITEM___VALIDATE_HITEM_REVISION_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateHitem_revision_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.HITEM___VALIDATE_HITEM_WHEN_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateHitem_when_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (revision: ");
-        if (revisionESet) result.append(revision); else result.append("<unset>");
-        result.append(", version: ");
-        if (versionESet) result.append(version); else result.append("<unset>");
-        result.append(", what: ");
-        if (whatESet) result.append(what); else result.append("<unset>");
-        result.append(", when: ");
-        if (whenESet) result.append(when); else result.append("<unset>");
-        result.append(", who: ");
-        if (whoESet) result.append(who); else result.append("<unset>");
-        result.append(", why: ");
-        if (whyESet) result.append(why); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (revision: ");
+		if (revisionESet) result.append(revision); else result.append("<unset>");
+		result.append(", version: ");
+		if (versionESet) result.append(version); else result.append("<unset>");
+		result.append(", what: ");
+		if (whatESet) result.append(what); else result.append("<unset>");
+		result.append(", when: ");
+		if (whenESet) result.append(when); else result.append("<unset>");
+		result.append(", who: ");
+		if (whoESet) result.append(who); else result.append("<unset>");
+		result.append(", why: ");
+		if (whyESet) result.append(why); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //HitemImpl

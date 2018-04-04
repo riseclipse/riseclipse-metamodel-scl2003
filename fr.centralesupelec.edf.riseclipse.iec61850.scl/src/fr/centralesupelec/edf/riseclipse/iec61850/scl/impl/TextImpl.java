@@ -45,378 +45,378 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  */
 public class TextImpl extends SclObjectImpl implements Text {
     /**
-     * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSource()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SOURCE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSource()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
     protected String source = SOURCE_EDEFAULT;
 
     /**
-     * This is true if the Source attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Source attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean sourceESet;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VALUE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected String value = VALUE_EDEFAULT;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected TextImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getText();
-    }
+		return SclPackage.Literals.TEXT;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSource() {
-        return source;
-    }
+		return source;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSource( String newSource ) {
-        String oldSource = source;
-        source = newSource;
-        boolean oldSourceESet = sourceESet;
-        sourceESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__SOURCE, oldSource, source, !oldSourceESet));
-    }
+		String oldSource = source;
+		source = newSource;
+		boolean oldSourceESet = sourceESet;
+		sourceESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__SOURCE, oldSource, source, !oldSourceESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSource() {
-        String oldSource = source;
-        boolean oldSourceESet = sourceESet;
-        source = SOURCE_EDEFAULT;
-        sourceESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TEXT__SOURCE, oldSource, SOURCE_EDEFAULT, oldSourceESet));
-    }
+		String oldSource = source;
+		boolean oldSourceESet = sourceESet;
+		source = SOURCE_EDEFAULT;
+		sourceESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TEXT__SOURCE, oldSource, SOURCE_EDEFAULT, oldSourceESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSource() {
-        return sourceESet;
-    }
+		return sourceESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public BaseElement getBaseElement() {
-        if (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT) return null;
-        return (BaseElement)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT) return null;
+		return (BaseElement)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetBaseElement( BaseElement newBaseElement, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBaseElement, SclPackage.TEXT__BASE_ELEMENT, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newBaseElement, SclPackage.TEXT__BASE_ELEMENT, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBaseElement( BaseElement newBaseElement ) {
-        if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT && newBaseElement != null)) {
-            if (EcoreUtil.isAncestor(this, newBaseElement))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newBaseElement != null)
-                msgs = ((InternalEObject)newBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
-            msgs = basicSetBaseElement(newBaseElement, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__BASE_ELEMENT, newBaseElement, newBaseElement));
-    }
+		if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT && newBaseElement != null)) {
+			if (EcoreUtil.isAncestor(this, newBaseElement))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newBaseElement != null)
+				msgs = ((InternalEObject)newBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
+			msgs = basicSetBaseElement(newBaseElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__BASE_ELEMENT, newBaseElement, newBaseElement));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Header getHeader() {
-        if (eContainerFeatureID() != SclPackage.TEXT__HEADER) return null;
-        return (Header)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.TEXT__HEADER) return null;
+		return (Header)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetHeader( Header newHeader, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newHeader, SclPackage.TEXT__HEADER, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newHeader, SclPackage.TEXT__HEADER, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setHeader( Header newHeader ) {
-        if (newHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__HEADER && newHeader != null)) {
-            if (EcoreUtil.isAncestor(this, newHeader))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newHeader != null)
-                msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__TEXT, Header.class, msgs);
-            msgs = basicSetHeader(newHeader, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__HEADER, newHeader, newHeader));
-    }
+		if (newHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__HEADER && newHeader != null)) {
+			if (EcoreUtil.isAncestor(this, newHeader))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newHeader != null)
+				msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__TEXT, Header.class, msgs);
+			msgs = basicSetHeader(newHeader, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__HEADER, newHeader, newHeader));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getValue() {
-        return value;
-    }
+		return value;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setValue( String newValue ) {
-        String oldValue = value;
-        value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__VALUE, oldValue, value));
-    }
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__VALUE, oldValue, value));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TEXT__BASE_ELEMENT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBaseElement((BaseElement)otherEnd, msgs);
-            case SclPackage.TEXT__HEADER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetHeader((Header)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__BASE_ELEMENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetBaseElement((BaseElement)otherEnd, msgs);
+			case SclPackage.TEXT__HEADER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetHeader((Header)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return basicSetBaseElement(null, msgs);
-            case SclPackage.TEXT__HEADER:
-                return basicSetHeader(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__BASE_ELEMENT:
+				return basicSetBaseElement(null, msgs);
+			case SclPackage.TEXT__HEADER:
+				return basicSetHeader(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
-            case SclPackage.TEXT__HEADER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.HEADER__TEXT, Header.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.TEXT__BASE_ELEMENT:
+				return eInternalContainer().eInverseRemove(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
+			case SclPackage.TEXT__HEADER:
+				return eInternalContainer().eInverseRemove(this, SclPackage.HEADER__TEXT, Header.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TEXT__SOURCE:
-                return getSource();
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return getBaseElement();
-            case SclPackage.TEXT__HEADER:
-                return getHeader();
-            case SclPackage.TEXT__VALUE:
-                return getValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__SOURCE:
+				return getSource();
+			case SclPackage.TEXT__BASE_ELEMENT:
+				return getBaseElement();
+			case SclPackage.TEXT__HEADER:
+				return getHeader();
+			case SclPackage.TEXT__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TEXT__SOURCE:
-                setSource((String)newValue);
-                return;
-            case SclPackage.TEXT__BASE_ELEMENT:
-                setBaseElement((BaseElement)newValue);
-                return;
-            case SclPackage.TEXT__HEADER:
-                setHeader((Header)newValue);
-                return;
-            case SclPackage.TEXT__VALUE:
-                setValue((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__SOURCE:
+				setSource((String)newValue);
+				return;
+			case SclPackage.TEXT__BASE_ELEMENT:
+				setBaseElement((BaseElement)newValue);
+				return;
+			case SclPackage.TEXT__HEADER:
+				setHeader((Header)newValue);
+				return;
+			case SclPackage.TEXT__VALUE:
+				setValue((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TEXT__SOURCE:
-                unsetSource();
-                return;
-            case SclPackage.TEXT__BASE_ELEMENT:
-                setBaseElement((BaseElement)null);
-                return;
-            case SclPackage.TEXT__HEADER:
-                setHeader((Header)null);
-                return;
-            case SclPackage.TEXT__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__SOURCE:
+				unsetSource();
+				return;
+			case SclPackage.TEXT__BASE_ELEMENT:
+				setBaseElement((BaseElement)null);
+				return;
+			case SclPackage.TEXT__HEADER:
+				setHeader((Header)null);
+				return;
+			case SclPackage.TEXT__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TEXT__SOURCE:
-                return isSetSource();
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return getBaseElement() != null;
-            case SclPackage.TEXT__HEADER:
-                return getHeader() != null;
-            case SclPackage.TEXT__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TEXT__SOURCE:
+				return isSetSource();
+			case SclPackage.TEXT__BASE_ELEMENT:
+				return getBaseElement() != null;
+			case SclPackage.TEXT__HEADER:
+				return getHeader() != null;
+			case SclPackage.TEXT__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (source: ");
-        if (sourceESet) result.append(source); else result.append("<unset>");
-        result.append(", value: ");
-        result.append(value);
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (source: ");
+		if (sourceESet) result.append(source); else result.append("<unset>");
+		result.append(", value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
 
 } //TextImpl

@@ -17,16 +17,21 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,417 +50,444 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class GSEImpl extends ControlBlockImpl implements GSE {
     /**
-     * The cached value of the '{@link #getMinTime() <em>Min Time</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMinTime() <em>Min Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #getMinTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMinTime()
+	 * @generated
+	 * @ordered
+	 */
     protected MinTime minTime;
 
     /**
-     * This is true if the Min Time containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Min Time containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean minTimeESet;
 
     /**
-     * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getMaxTime() <em>Max Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #getMaxTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getMaxTime()
+	 * @generated
+	 * @ordered
+	 */
     protected MaxTime maxTime;
 
     /**
-     * This is true if the Max Time containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Max Time containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean maxTimeESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected GSEImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getGSE();
-    }
+		return SclPackage.Literals.GSE;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public MaxTime getMaxTime() {
-        return maxTime;
-    }
+		return maxTime;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetMaxTime(MaxTime newMaxTime, NotificationChain msgs) {
-        MaxTime oldMaxTime = maxTime;
-        maxTime = newMaxTime;
-        boolean oldMaxTimeESet = maxTimeESet;
-        maxTimeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MAX_TIME, oldMaxTime, newMaxTime, !oldMaxTimeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		MaxTime oldMaxTime = maxTime;
+		maxTime = newMaxTime;
+		boolean oldMaxTimeESet = maxTimeESet;
+		maxTimeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MAX_TIME, oldMaxTime, newMaxTime, !oldMaxTimeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setMaxTime(MaxTime newMaxTime) {
-        if (newMaxTime != maxTime) {
-            NotificationChain msgs = null;
-            if (maxTime != null)
-                msgs = ((InternalEObject)maxTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
-            if (newMaxTime != null)
-                msgs = ((InternalEObject)newMaxTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
-            msgs = basicSetMaxTime(newMaxTime, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldMaxTimeESet = maxTimeESet;
-            maxTimeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MAX_TIME, newMaxTime, newMaxTime, !oldMaxTimeESet));
-        }
-    }
+		if (newMaxTime != maxTime) {
+			NotificationChain msgs = null;
+			if (maxTime != null)
+				msgs = ((InternalEObject)maxTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
+			if (newMaxTime != null)
+				msgs = ((InternalEObject)newMaxTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
+			msgs = basicSetMaxTime(newMaxTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldMaxTimeESet = maxTimeESet;
+			maxTimeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MAX_TIME, newMaxTime, newMaxTime, !oldMaxTimeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetMaxTime(NotificationChain msgs) {
-        MaxTime oldMaxTime = maxTime;
-        maxTime = null;
-        boolean oldMaxTimeESet = maxTimeESet;
-        maxTimeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MAX_TIME, oldMaxTime, null, oldMaxTimeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		MaxTime oldMaxTime = maxTime;
+		maxTime = null;
+		boolean oldMaxTimeESet = maxTimeESet;
+		maxTimeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MAX_TIME, oldMaxTime, null, oldMaxTimeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetMaxTime() {
-        if (maxTime != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)maxTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
-            msgs = basicUnsetMaxTime(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldMaxTimeESet = maxTimeESet;
-            maxTimeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MAX_TIME, null, null, oldMaxTimeESet));
-        }
-    }
+		if (maxTime != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)maxTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MAX_TIME, null, msgs);
+			msgs = basicUnsetMaxTime(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldMaxTimeESet = maxTimeESet;
+			maxTimeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MAX_TIME, null, null, oldMaxTimeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetMaxTime() {
-        return maxTimeESet;
-    }
+		return maxTimeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGSE_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv GSE_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public MinTime getMinTime() {
-        return minTime;
-    }
+		return minTime;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetMinTime(MinTime newMinTime, NotificationChain msgs) {
-        MinTime oldMinTime = minTime;
-        minTime = newMinTime;
-        boolean oldMinTimeESet = minTimeESet;
-        minTimeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MIN_TIME, oldMinTime, newMinTime, !oldMinTimeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		MinTime oldMinTime = minTime;
+		minTime = newMinTime;
+		boolean oldMinTimeESet = minTimeESet;
+		minTimeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MIN_TIME, oldMinTime, newMinTime, !oldMinTimeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setMinTime(MinTime newMinTime) {
-        if (newMinTime != minTime) {
-            NotificationChain msgs = null;
-            if (minTime != null)
-                msgs = ((InternalEObject)minTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
-            if (newMinTime != null)
-                msgs = ((InternalEObject)newMinTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
-            msgs = basicSetMinTime(newMinTime, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldMinTimeESet = minTimeESet;
-            minTimeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MIN_TIME, newMinTime, newMinTime, !oldMinTimeESet));
-        }
-    }
+		if (newMinTime != minTime) {
+			NotificationChain msgs = null;
+			if (minTime != null)
+				msgs = ((InternalEObject)minTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
+			if (newMinTime != null)
+				msgs = ((InternalEObject)newMinTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
+			msgs = basicSetMinTime(newMinTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldMinTimeESet = minTimeESet;
+			minTimeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__MIN_TIME, newMinTime, newMinTime, !oldMinTimeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetMinTime(NotificationChain msgs) {
-        MinTime oldMinTime = minTime;
-        minTime = null;
-        boolean oldMinTimeESet = minTimeESet;
-        minTimeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MIN_TIME, oldMinTime, null, oldMinTimeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		MinTime oldMinTime = minTime;
+		minTime = null;
+		boolean oldMinTimeESet = minTimeESet;
+		minTimeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MIN_TIME, oldMinTime, null, oldMinTimeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetMinTime() {
-        if (minTime != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)minTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
-            msgs = basicUnsetMinTime(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldMinTimeESet = minTimeESet;
-            minTimeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MIN_TIME, null, null, oldMinTimeESet));
-        }
-    }
+		if (minTime != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)minTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE__MIN_TIME, null, msgs);
+			msgs = basicUnsetMinTime(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldMinTimeESet = minTimeESet;
+			minTimeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE__MIN_TIME, null, null, oldMinTimeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetMinTime() {
-        return minTimeESet;
-    }
+		return minTimeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ConnectedAP getConnectedAP() {
-        if (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP) return null;
-        return (ConnectedAP)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP) return null;
+		return (ConnectedAP)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetConnectedAP( ConnectedAP newConnectedAP, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newConnectedAP, SclPackage.GSE__CONNECTED_AP, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newConnectedAP, SclPackage.GSE__CONNECTED_AP, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
-        if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP && newConnectedAP != null)) {
-            if (EcoreUtil.isAncestor(this, newConnectedAP))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newConnectedAP != null)
-                msgs = ((InternalEObject)newConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__GSE, ConnectedAP.class, msgs);
-            msgs = basicSetConnectedAP(newConnectedAP, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__CONNECTED_AP, newConnectedAP, newConnectedAP));
-    }
+		if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP && newConnectedAP != null)) {
+			if (EcoreUtil.isAncestor(this, newConnectedAP))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newConnectedAP != null)
+				msgs = ((InternalEObject)newConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__GSE, ConnectedAP.class, msgs);
+			msgs = basicSetConnectedAP(newConnectedAP, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE__CONNECTED_AP, newConnectedAP, newConnectedAP));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetConnectedAP((ConnectedAP)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetConnectedAP((ConnectedAP)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return basicSetConnectedAP(null, msgs);
-            case SclPackage.GSE__MIN_TIME:
-                return basicUnsetMinTime(msgs);
-            case SclPackage.GSE__MAX_TIME:
-                return basicUnsetMaxTime(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				return basicSetConnectedAP(null, msgs);
+			case SclPackage.GSE__MIN_TIME:
+				return basicUnsetMinTime(msgs);
+			case SclPackage.GSE__MAX_TIME:
+				return basicUnsetMaxTime(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__GSE, ConnectedAP.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.GSE__CONNECTED_AP:
+				return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__GSE, ConnectedAP.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return getConnectedAP();
-            case SclPackage.GSE__MIN_TIME:
-                return getMinTime();
-            case SclPackage.GSE__MAX_TIME:
-                return getMaxTime();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				return getConnectedAP();
+			case SclPackage.GSE__MIN_TIME:
+				return getMinTime();
+			case SclPackage.GSE__MAX_TIME:
+				return getMaxTime();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)newValue);
-                return;
-            case SclPackage.GSE__MIN_TIME:
-                setMinTime((MinTime)newValue);
-                return;
-            case SclPackage.GSE__MAX_TIME:
-                setMaxTime((MaxTime)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				setConnectedAP((ConnectedAP)newValue);
+				return;
+			case SclPackage.GSE__MIN_TIME:
+				setMinTime((MinTime)newValue);
+				return;
+			case SclPackage.GSE__MAX_TIME:
+				setMaxTime((MaxTime)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)null);
-                return;
-            case SclPackage.GSE__MIN_TIME:
-                unsetMinTime();
-                return;
-            case SclPackage.GSE__MAX_TIME:
-                unsetMaxTime();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				setConnectedAP((ConnectedAP)null);
+				return;
+			case SclPackage.GSE__MIN_TIME:
+				unsetMinTime();
+				return;
+			case SclPackage.GSE__MAX_TIME:
+				unsetMaxTime();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return getConnectedAP() != null;
-            case SclPackage.GSE__MIN_TIME:
-                return isSetMinTime();
-            case SclPackage.GSE__MAX_TIME:
-                return isSetMaxTime();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.GSE__CONNECTED_AP:
+				return getConnectedAP() != null;
+			case SclPackage.GSE__MIN_TIME:
+				return isSetMinTime();
+			case SclPackage.GSE__MAX_TIME:
+				return isSetMaxTime();
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.GSE___VALIDATE_GSE_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateGSE_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
 } //GSEImpl

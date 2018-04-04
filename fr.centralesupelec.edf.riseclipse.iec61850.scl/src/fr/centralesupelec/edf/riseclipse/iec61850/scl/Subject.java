@@ -33,31 +33,32 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface Subject extends Cert {
     /**
-     * Returns the value of the '<em><b>Certificate</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate#getSubject <em>Subject</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Certificate</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate#getSubject <em>Subject</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Certificate</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Certificate</em>' container reference.
-     * @see #setCertificate(Certificate)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubject_Certificate()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate#getSubject
-     * @model opposite="Subject" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Certificate</em>' container reference.
+	 * @see #setCertificate(Certificate)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubject_Certificate()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate#getSubject
+	 * @model opposite="Subject" resolveProxies="false" unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!Subject!Certificate'"
+	 * @generated
+	 */
     Certificate getCertificate();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate <em>Certificate</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate <em>Certificate</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Certificate</em>' container reference.
-     * @see #getCertificate()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Certificate</em>' container reference.
+	 * @see #getCertificate()
+	 * @generated
+	 */
     void setCertificate( Certificate value );
 
 } // Subject

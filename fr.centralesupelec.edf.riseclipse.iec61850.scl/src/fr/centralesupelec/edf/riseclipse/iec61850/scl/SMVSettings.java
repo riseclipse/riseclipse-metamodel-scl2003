@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -43,395 +45,412 @@ import org.eclipse.emf.common.util.EList;
 public interface SMVSettings extends ServiceSettings {
 
     /**
-     * Returns the value of the '<em><b>Sv ID</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Sv ID</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sv ID</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sv ID</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetSvID()
-     * @see #unsetSvID()
-     * @see #setSvID(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SvID()
-     * @model unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Sv ID</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetSvID()
+	 * @see #unsetSvID()
+	 * @see #setSvID(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SvID()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!svID'"
+	 * @generated
+	 */
     ServiceSettingsEnum getSvID();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sv ID</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetSvID()
-     * @see #unsetSvID()
-     * @see #getSvID()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Sv ID</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetSvID()
+	 * @see #unsetSvID()
+	 * @see #getSvID()
+	 * @generated
+	 */
     void setSvID(ServiceSettingsEnum value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSvID()
-     * @see #getSvID()
-     * @see #setSvID(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetSvID()
+	 * @see #getSvID()
+	 * @see #setSvID(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetSvID();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Sv ID</em>' attribute is set.
-     * @see #unsetSvID()
-     * @see #getSvID()
-     * @see #setSvID(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Sv ID</em>' attribute is set.
+	 * @see #unsetSvID()
+	 * @see #getSvID()
+	 * @see #setSvID(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetSvID();
 
     /**
-     * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Opt Fields</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Opt Fields</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetOptFields()
-     * @see #unsetOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_OptFields()
-     * @model unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Opt Fields</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetOptFields()
+	 * @see #unsetOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_OptFields()
+	 * @model unsettable="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!optFields'"
+	 * @generated
+	 */
     ServiceSettingsEnum getOptFields();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Opt Fields</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetOptFields()
-     * @see #unsetOptFields()
-     * @see #getOptFields()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Opt Fields</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetOptFields()
+	 * @see #unsetOptFields()
+	 * @see #getOptFields()
+	 * @generated
+	 */
     void setOptFields(ServiceSettingsEnum value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetOptFields()
-     * @see #getOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetOptFields()
+	 * @see #getOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetOptFields();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Opt Fields</em>' attribute is set.
-     * @see #unsetOptFields()
-     * @see #getOptFields()
-     * @see #setOptFields(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Opt Fields</em>' attribute is set.
+	 * @see #unsetOptFields()
+	 * @see #getOptFields()
+	 * @see #setOptFields(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetOptFields();
 
     /**
-     * Returns the value of the '<em><b>Smp Rate Attribute</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Smp Rate Attribute</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Smp Rate Attribute</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Smp Rate Attribute</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetSmpRateAttribute()
-     * @see #unsetSmpRateAttribute()
-     * @see #setSmpRateAttribute(ServiceSettingsEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRateAttribute()
-     * @model unsettable="true" ordered="false"
-     *        extendedMetaData="name='smpRate'"
-     * @generated
-     */
+	 * @return the value of the '<em>Smp Rate Attribute</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetSmpRateAttribute()
+	 * @see #unsetSmpRateAttribute()
+	 * @see #setSmpRateAttribute(ServiceSettingsEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRateAttribute()
+	 * @model unsettable="true"
+	 *        extendedMetaData="name='smpRate'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!smpRateAttribute'"
+	 * @generated
+	 */
     ServiceSettingsEnum getSmpRateAttribute();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Smp Rate Attribute</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
-     * @see #isSetSmpRateAttribute()
-     * @see #unsetSmpRateAttribute()
-     * @see #getSmpRateAttribute()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Smp Rate Attribute</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum
+	 * @see #isSetSmpRateAttribute()
+	 * @see #unsetSmpRateAttribute()
+	 * @see #getSmpRateAttribute()
+	 * @generated
+	 */
     void setSmpRateAttribute(ServiceSettingsEnum value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSmpRateAttribute()
-     * @see #getSmpRateAttribute()
-     * @see #setSmpRateAttribute(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @see #isSetSmpRateAttribute()
+	 * @see #getSmpRateAttribute()
+	 * @see #setSmpRateAttribute(ServiceSettingsEnum)
+	 * @generated
+	 */
     void unsetSmpRateAttribute();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Smp Rate Attribute</em>' attribute is set.
-     * @see #unsetSmpRateAttribute()
-     * @see #getSmpRateAttribute()
-     * @see #setSmpRateAttribute(ServiceSettingsEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Smp Rate Attribute</em>' attribute is set.
+	 * @see #unsetSmpRateAttribute()
+	 * @see #getSmpRateAttribute()
+	 * @see #setSmpRateAttribute(ServiceSettingsEnum)
+	 * @generated
+	 */
     boolean isSetSmpRateAttribute();
 
     /**
-     * Returns the value of the '<em><b>Samples Per Sec Attribute</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Samples Per Sec Attribute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Samples Per Sec Attribute</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Samples Per Sec Attribute</em>' attribute.
-     * @see #isSetSamplesPerSecAttribute()
-     * @see #unsetSamplesPerSecAttribute()
-     * @see #setSamplesPerSecAttribute(boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSecAttribute()
-     * @model unsettable="true" ordered="false"
-     *        extendedMetaData="name='SamplesPerSec'"
-     * @generated
-     */
+	 * @return the value of the '<em>Samples Per Sec Attribute</em>' attribute.
+	 * @see #isSetSamplesPerSecAttribute()
+	 * @see #unsetSamplesPerSecAttribute()
+	 * @see #setSamplesPerSecAttribute(boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSecAttribute()
+	 * @model unsettable="true" required="true"
+	 *        extendedMetaData="name='SamplesPerSec'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!samplesPerSecAttribute'"
+	 * @generated
+	 */
     boolean isSamplesPerSecAttribute();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Samples Per Sec Attribute</em>' attribute.
-     * @see #isSetSamplesPerSecAttribute()
-     * @see #unsetSamplesPerSecAttribute()
-     * @see #isSamplesPerSecAttribute()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Samples Per Sec Attribute</em>' attribute.
+	 * @see #isSetSamplesPerSecAttribute()
+	 * @see #unsetSamplesPerSecAttribute()
+	 * @see #isSamplesPerSecAttribute()
+	 * @generated
+	 */
     void setSamplesPerSecAttribute(boolean value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSamplesPerSecAttribute()
-     * @see #isSamplesPerSecAttribute()
-     * @see #setSamplesPerSecAttribute(boolean)
-     * @generated
-     */
+	 * @see #isSetSamplesPerSecAttribute()
+	 * @see #isSamplesPerSecAttribute()
+	 * @see #setSamplesPerSecAttribute(boolean)
+	 * @generated
+	 */
     void unsetSamplesPerSecAttribute();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Samples Per Sec Attribute</em>' attribute is set.
-     * @see #unsetSamplesPerSecAttribute()
-     * @see #isSamplesPerSecAttribute()
-     * @see #setSamplesPerSecAttribute(boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Samples Per Sec Attribute</em>' attribute is set.
+	 * @see #unsetSamplesPerSecAttribute()
+	 * @see #isSamplesPerSecAttribute()
+	 * @see #setSamplesPerSecAttribute(boolean)
+	 * @generated
+	 */
     boolean isSetSamplesPerSecAttribute();
 
     /**
-     * Returns the value of the '<em><b>Pdc Time Stamp</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Pdc Time Stamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Pdc Time Stamp</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Pdc Time Stamp</em>' attribute.
-     * @see #isSetPdcTimeStamp()
-     * @see #unsetPdcTimeStamp()
-     * @see #setPdcTimeStamp(boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_PdcTimeStamp()
-     * @model unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Pdc Time Stamp</em>' attribute.
+	 * @see #isSetPdcTimeStamp()
+	 * @see #unsetPdcTimeStamp()
+	 * @see #setPdcTimeStamp(boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_PdcTimeStamp()
+	 * @model unsettable="true" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!pdcTimeStamp'"
+	 * @generated
+	 */
     boolean isPdcTimeStamp();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Pdc Time Stamp</em>' attribute.
-     * @see #isSetPdcTimeStamp()
-     * @see #unsetPdcTimeStamp()
-     * @see #isPdcTimeStamp()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Pdc Time Stamp</em>' attribute.
+	 * @see #isSetPdcTimeStamp()
+	 * @see #unsetPdcTimeStamp()
+	 * @see #isPdcTimeStamp()
+	 * @generated
+	 */
     void setPdcTimeStamp(boolean value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetPdcTimeStamp()
-     * @see #isPdcTimeStamp()
-     * @see #setPdcTimeStamp(boolean)
-     * @generated
-     */
+	 * @see #isSetPdcTimeStamp()
+	 * @see #isPdcTimeStamp()
+	 * @see #setPdcTimeStamp(boolean)
+	 * @generated
+	 */
     void unsetPdcTimeStamp();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Pdc Time Stamp</em>' attribute is set.
-     * @see #unsetPdcTimeStamp()
-     * @see #isPdcTimeStamp()
-     * @see #setPdcTimeStamp(boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Pdc Time Stamp</em>' attribute is set.
+	 * @see #unsetPdcTimeStamp()
+	 * @see #isPdcTimeStamp()
+	 * @see #setPdcTimeStamp(boolean)
+	 * @generated
+	 */
     boolean isSetPdcTimeStamp();
 
     /**
-     * Returns the value of the '<em><b>Smp Rate</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Smp Rate</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Smp Rate</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Smp Rate</em>' containment reference list.
-     * @see #isSetSmpRate()
-     * @see #unsetSmpRate()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRate()
-     * @model containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Smp Rate</em>' containment reference list.
+	 * @see #isSetSmpRate()
+	 * @see #unsetSmpRate()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRate()
+	 * @model containment="true" unsettable="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!SmpRate'"
+	 * @generated
+	 */
     EList<SmpRate> getSmpRate();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSmpRate()
-     * @see #getSmpRate()
-     * @generated
-     */
+	 * @see #isSetSmpRate()
+	 * @see #getSmpRate()
+	 * @generated
+	 */
     void unsetSmpRate();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Smp Rate</em>' containment reference list is set.
-     * @see #unsetSmpRate()
-     * @see #getSmpRate()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Smp Rate</em>' containment reference list is set.
+	 * @see #unsetSmpRate()
+	 * @see #getSmpRate()
+	 * @generated
+	 */
     boolean isSetSmpRate();
 
     /**
-     * Returns the value of the '<em><b>Samples Per Sec</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Samples Per Sec</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Samples Per Sec</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Samples Per Sec</em>' containment reference list.
-     * @see #isSetSamplesPerSec()
-     * @see #unsetSamplesPerSec()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSec()
-     * @model containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Samples Per Sec</em>' containment reference list.
+	 * @see #isSetSamplesPerSec()
+	 * @see #unsetSamplesPerSec()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSec()
+	 * @model containment="true" unsettable="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!SamplesPerSec'"
+	 * @generated
+	 */
     EList<SamplesPerSec> getSamplesPerSec();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSamplesPerSec()
-     * @see #getSamplesPerSec()
-     * @generated
-     */
+	 * @see #isSetSamplesPerSec()
+	 * @see #getSamplesPerSec()
+	 * @generated
+	 */
     void unsetSamplesPerSec();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Samples Per Sec</em>' containment reference list is set.
-     * @see #unsetSamplesPerSec()
-     * @see #getSamplesPerSec()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Samples Per Sec</em>' containment reference list is set.
+	 * @see #unsetSamplesPerSec()
+	 * @see #getSamplesPerSec()
+	 * @generated
+	 */
     boolean isSetSamplesPerSec();
 
     /**
-     * Returns the value of the '<em><b>Sec Per Samples</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Sec Per Samples</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sec Per Samples</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sec Per Samples</em>' containment reference list.
-     * @see #isSetSecPerSamples()
-     * @see #unsetSecPerSamples()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SecPerSamples()
-     * @model containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Sec Per Samples</em>' containment reference list.
+	 * @see #isSetSecPerSamples()
+	 * @see #unsetSecPerSamples()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SecPerSamples()
+	 * @model containment="true" unsettable="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://www.iec.ch/61850/2003/SCL!SMVSettings!SecPerSamples'"
+	 * @generated
+	 */
     EList<SecPerSamples> getSecPerSamples();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetSecPerSamples()
-     * @see #getSecPerSamples()
-     * @generated
-     */
+	 * @see #isSetSecPerSamples()
+	 * @see #getSecPerSamples()
+	 * @generated
+	 */
     void unsetSecPerSamples();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Sec Per Samples</em>' containment reference list is set.
-     * @see #unsetSecPerSamples()
-     * @see #getSecPerSamples()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Sec Per Samples</em>' containment reference list is set.
+	 * @see #unsetSecPerSamples()
+	 * @see #getSecPerSamples()
+	 * @generated
+	 */
     boolean isSetSecPerSamples();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SMVSettings_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv SMVSettings_nothing: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
+	 * @generated
+	 */
+	boolean validateSMVSettings_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // SMVSettings

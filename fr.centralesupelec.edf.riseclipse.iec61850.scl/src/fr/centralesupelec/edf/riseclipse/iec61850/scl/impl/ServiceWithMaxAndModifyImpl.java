@@ -17,12 +17,17 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,171 +44,198 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify;
  */
 public class ServiceWithMaxAndModifyImpl extends ServiceWithMaxImpl implements ServiceWithMaxAndModify {
     /**
-     * The default value of the '{@link #getModify() <em>Modify</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getModify() <em>Modify</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getModify()
-     * @generated
-     * @ordered
-     */
+	 * @see #getModify()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean MODIFY_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getModify() <em>Modify</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getModify() <em>Modify</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getModify()
-     * @generated
-     * @ordered
-     */
+	 * @see #getModify()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean modify = MODIFY_EDEFAULT;
 
     /**
-     * This is true if the Modify attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Modify attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean modifyESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ServiceWithMaxAndModifyImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getServiceWithMaxAndModify();
-    }
+		return SclPackage.Literals.SERVICE_WITH_MAX_AND_MODIFY;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getModify() {
-        return modify;
-    }
+		return modify;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setModify(Boolean newModify) {
-        Boolean oldModify = modify;
-        modify = newModify;
-        boolean oldModifyESet = modifyESet;
-        modifyESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY, oldModify, modify, !oldModifyESet));
-    }
+		Boolean oldModify = modify;
+		modify = newModify;
+		boolean oldModifyESet = modifyESet;
+		modifyESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY, oldModify, modify, !oldModifyESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetModify() {
-        Boolean oldModify = modify;
-        boolean oldModifyESet = modifyESet;
-        modify = MODIFY_EDEFAULT;
-        modifyESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY, oldModify, MODIFY_EDEFAULT, oldModifyESet));
-    }
+		Boolean oldModify = modify;
+		boolean oldModifyESet = modifyESet;
+		modify = MODIFY_EDEFAULT;
+		modifyESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY, oldModify, MODIFY_EDEFAULT, oldModifyESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetModify() {
-        return modifyESet;
-    }
+		return modifyESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateServiceWithMaxAndModify_nothing(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 * inv ServiceWithMaxAndModify_nothing: true
+		 */
+		return ValueUtil.TRUE_VALUE;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
-                return getModify();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
+				return getModify();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
-                setModify((Boolean)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
+				setModify((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
-                unsetModify();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
+				unsetModify();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
-                return isSetModify();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
+				return isSetModify();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.SERVICE_WITH_MAX_AND_MODIFY___VALIDATE_SERVICE_WITH_MAX_AND_MODIFY_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateServiceWithMaxAndModify_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (modify: ");
-        if (modifyESet) result.append(modify); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (modify: ");
+		if (modifyESet) result.append(modify); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ServiceWithMaxAndModifyImpl

@@ -48,206 +48,206 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
  */
 public class AbstractConductingEquipmentImpl extends EquipmentImpl implements AbstractConductingEquipment {
     /**
-     * The cached value of the '{@link #getSubEquipment() <em>Sub Equipment</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubEquipment() <em>Sub Equipment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubEquipment()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubEquipment()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<SubEquipment> subEquipment;
 
     /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTerminal()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTerminal()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Terminal> terminal;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected AbstractConductingEquipmentImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getAbstractConductingEquipment();
-    }
+		return SclPackage.Literals.ABSTRACT_CONDUCTING_EQUIPMENT;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<SubEquipment> getSubEquipment() {
-        if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT);
-        }
-        return subEquipment;
-    }
+		if (subEquipment == null) {
+			subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT);
+		}
+		return subEquipment;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubEquipment() {
-        if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
-    }
+		if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSubEquipment() {
-        return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
-    }
+		return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT);
-        }
-        return terminal;
-    }
+		if (terminal == null) {
+			terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT);
+		}
+		return terminal;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
-    }
+		if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
-    }
+		return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return getSubEquipment();
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return getTerminal();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				return getSubEquipment();
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				return getTerminal();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                getSubEquipment().clear();
-                getSubEquipment().addAll((Collection<? extends SubEquipment>)newValue);
-                return;
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				getSubEquipment().clear();
+				getSubEquipment().addAll((Collection<? extends SubEquipment>)newValue);
+				return;
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				getTerminal().clear();
+				getTerminal().addAll((Collection<? extends Terminal>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                unsetSubEquipment();
-                return;
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                unsetTerminal();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				unsetSubEquipment();
+				return;
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				unsetTerminal();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return isSetSubEquipment();
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return isSetTerminal();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+				return isSetSubEquipment();
+			case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+				return isSetTerminal();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //AbstractConductingEquipmentImpl

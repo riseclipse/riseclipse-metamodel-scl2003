@@ -17,16 +17,32 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyToStringOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.library.string.StringConcatOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.TupleValue;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclTables;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,252 +66,252 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  */
 public class HeaderImpl extends SclObjectImpl implements Header {
     /**
-     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getId()
-     * @generated
-     * @ordered
-     */
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
     protected String id = ID_EDEFAULT;
 
     /**
-     * This is true if the Id attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Id attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean idESet;
 
     /**
-     * The default value of the '{@link #getNameStructure() <em>Name Structure</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getNameStructure() <em>Name Structure</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getNameStructure()
-     * @generated
-     * @ordered
-     */
+	 * @see #getNameStructure()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_STRUCTURE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getNameStructure() <em>Name Structure</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNameStructure() <em>Name Structure</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getNameStructure()
-     * @generated
-     * @ordered
-     */
+	 * @see #getNameStructure()
+	 * @generated
+	 * @ordered
+	 */
     protected String nameStructure = NAME_STRUCTURE_EDEFAULT;
 
     /**
-     * This is true if the Name Structure attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Name Structure attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean nameStructureESet;
 
     /**
-     * The default value of the '{@link #getRevision() <em>Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRevision() <em>Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String REVISION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getRevision() <em>Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRevision() <em>Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected String revision = REVISION_EDEFAULT;
 
     /**
-     * This is true if the Revision attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Revision attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean revisionESet;
 
     /**
-     * The default value of the '{@link #getToolID() <em>Tool ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getToolID() <em>Tool ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getToolID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getToolID()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String TOOL_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getToolID() <em>Tool ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getToolID() <em>Tool ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getToolID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getToolID()
+	 * @generated
+	 * @ordered
+	 */
     protected String toolID = TOOL_ID_EDEFAULT;
 
     /**
-     * This is true if the Tool ID attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Tool ID attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean toolIDESet;
 
     /**
-     * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VERSION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected String version = VERSION_EDEFAULT;
 
     /**
-     * This is true if the Version attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Version attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean versionESet;
 
     /**
-     * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getText()
-     * @generated
-     * @ordered
-     */
+	 * @see #getText()
+	 * @generated
+	 * @ordered
+	 */
     protected Text text;
 
     /**
-     * This is true if the Text containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Text containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean textESet;
 
     /**
-     * The cached value of the '{@link #getHistory() <em>History</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHistory() <em>History</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getHistory()
-     * @generated
-     * @ordered
-     */
+	 * @see #getHistory()
+	 * @generated
+	 * @ordered
+	 */
     protected History history;
 
     /**
-     * This is true if the History containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the History containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean historyESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected HeaderImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getHeader();
-    }
+		return SclPackage.Literals.HEADER;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getId() {
-        return id;
-    }
+		return id;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setId( String newId ) {
-        String oldId = id;
-        id = newId;
-        boolean oldIdESet = idESet;
-        idESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__ID, oldId, id, !oldIdESet));
-    }
+		String oldId = id;
+		id = newId;
+		boolean oldIdESet = idESet;
+		idESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__ID, oldId, id, !oldIdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetId() {
-        String oldId = id;
-        boolean oldIdESet = idESet;
-        id = ID_EDEFAULT;
-        idESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__ID, oldId, ID_EDEFAULT, oldIdESet));
-    }
+		String oldId = id;
+		boolean oldIdESet = idESet;
+		id = ID_EDEFAULT;
+		idESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__ID, oldId, ID_EDEFAULT, oldIdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetId() {
-        return idESet;
-    }
+		return idESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -310,41 +326,41 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setNameStructure( String newNameStructure ) {
-        String oldNameStructure = nameStructure;
-        nameStructure = newNameStructure;
-        boolean oldNameStructureESet = nameStructureESet;
-        nameStructureESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__NAME_STRUCTURE, oldNameStructure, nameStructure, !oldNameStructureESet));
-    }
+		String oldNameStructure = nameStructure;
+		nameStructure = newNameStructure;
+		boolean oldNameStructureESet = nameStructureESet;
+		nameStructureESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__NAME_STRUCTURE, oldNameStructure, nameStructure, !oldNameStructureESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetNameStructure() {
-        String oldNameStructure = nameStructure;
-        boolean oldNameStructureESet = nameStructureESet;
-        nameStructure = NAME_STRUCTURE_EDEFAULT;
-        nameStructureESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__NAME_STRUCTURE, oldNameStructure, NAME_STRUCTURE_EDEFAULT, oldNameStructureESet));
-    }
+		String oldNameStructure = nameStructure;
+		boolean oldNameStructureESet = nameStructureESet;
+		nameStructure = NAME_STRUCTURE_EDEFAULT;
+		nameStructureESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__NAME_STRUCTURE, oldNameStructure, NAME_STRUCTURE_EDEFAULT, oldNameStructureESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetNameStructure() {
-        return nameStructureESet;
-    }
+		return nameStructureESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -359,571 +375,722 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRevision( String newRevision ) {
-        String oldRevision = revision;
-        revision = newRevision;
-        boolean oldRevisionESet = revisionESet;
-        revisionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__REVISION, oldRevision, revision, !oldRevisionESet));
-    }
+		String oldRevision = revision;
+		revision = newRevision;
+		boolean oldRevisionESet = revisionESet;
+		revisionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__REVISION, oldRevision, revision, !oldRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRevision() {
-        String oldRevision = revision;
-        boolean oldRevisionESet = revisionESet;
-        revision = REVISION_EDEFAULT;
-        revisionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__REVISION, oldRevision, REVISION_EDEFAULT, oldRevisionESet));
-    }
+		String oldRevision = revision;
+		boolean oldRevisionESet = revisionESet;
+		revision = REVISION_EDEFAULT;
+		revisionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__REVISION, oldRevision, REVISION_EDEFAULT, oldRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRevision() {
-        return revisionESet;
-    }
+		return revisionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getToolID() {
-        return toolID;
-    }
+		return toolID;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setToolID( String newToolID ) {
-        String oldToolID = toolID;
-        toolID = newToolID;
-        boolean oldToolIDESet = toolIDESet;
-        toolIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TOOL_ID, oldToolID, toolID, !oldToolIDESet));
-    }
+		String oldToolID = toolID;
+		toolID = newToolID;
+		boolean oldToolIDESet = toolIDESet;
+		toolIDESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TOOL_ID, oldToolID, toolID, !oldToolIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetToolID() {
-        String oldToolID = toolID;
-        boolean oldToolIDESet = toolIDESet;
-        toolID = TOOL_ID_EDEFAULT;
-        toolIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TOOL_ID, oldToolID, TOOL_ID_EDEFAULT, oldToolIDESet));
-    }
+		String oldToolID = toolID;
+		boolean oldToolIDESet = toolIDESet;
+		toolID = TOOL_ID_EDEFAULT;
+		toolIDESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TOOL_ID, oldToolID, TOOL_ID_EDEFAULT, oldToolIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetToolID() {
-        return toolIDESet;
-    }
+		return toolIDESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getVersion() {
-        return version;
-    }
+		return version;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setVersion( String newVersion ) {
-        String oldVersion = version;
-        version = newVersion;
-        boolean oldVersionESet = versionESet;
-        versionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__VERSION, oldVersion, version, !oldVersionESet));
-    }
+		String oldVersion = version;
+		version = newVersion;
+		boolean oldVersionESet = versionESet;
+		versionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__VERSION, oldVersion, version, !oldVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetVersion() {
-        String oldVersion = version;
-        boolean oldVersionESet = versionESet;
-        version = VERSION_EDEFAULT;
-        versionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__VERSION, oldVersion, VERSION_EDEFAULT, oldVersionESet));
-    }
+		String oldVersion = version;
+		boolean oldVersionESet = versionESet;
+		version = VERSION_EDEFAULT;
+		versionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__VERSION, oldVersion, VERSION_EDEFAULT, oldVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetVersion() {
-        return versionESet;
-    }
+		return versionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.HEADER__SCL) return null;
-        return (SCL)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.HEADER__SCL) return null;
+		return (SCL)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.HEADER__SCL, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.HEADER__SCL, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.HEADER__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__HEADER, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__SCL, newSCL, newSCL));
-    }
+		if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.HEADER__SCL && newSCL != null)) {
+			if (EcoreUtil.isAncestor(this, newSCL))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSCL != null)
+				msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__HEADER, SCL.class, msgs);
+			msgs = basicSetSCL(newSCL, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__SCL, newSCL, newSCL));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Text getText() {
-        return text;
-    }
+		return text;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetText( Text newText, NotificationChain msgs ) {
-        Text oldText = text;
-        text = newText;
-        boolean oldTextESet = textESet;
-        textESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TEXT, oldText, newText, !oldTextESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Text oldText = text;
+		text = newText;
+		boolean oldTextESet = textESet;
+		textESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TEXT, oldText, newText, !oldTextESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setText( Text newText ) {
-        if (newText != text) {
-            NotificationChain msgs = null;
-            if (text != null)
-                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
-            if (newText != null)
-                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__HEADER, Text.class, msgs);
-            msgs = basicSetText(newText, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TEXT, newText, newText, !oldTextESet));
-        }
-    }
+		if (newText != text) {
+			NotificationChain msgs = null;
+			if (text != null)
+				msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+			if (newText != null)
+				msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+			msgs = basicSetText(newText, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTextESet = textESet;
+			textESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__TEXT, newText, newText, !oldTextESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetText( NotificationChain msgs ) {
-        Text oldText = text;
-        text = null;
-        boolean oldTextESet = textESet;
-        textESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TEXT, oldText, null, oldTextESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Text oldText = text;
+		text = null;
+		boolean oldTextESet = textESet;
+		textESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TEXT, oldText, null, oldTextESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetText() {
-        if (text != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
-            msgs = basicUnsetText(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTextESet = textESet;
-            textESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TEXT, null, null, oldTextESet));
-        }
-    }
+		if (text != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+			msgs = basicUnsetText(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTextESet = textESet;
+			textESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__TEXT, null, null, oldTextESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetText() {
-        return textESet;
-    }
+		return textESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public History getHistory() {
-        return history;
-    }
+		return history;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetHistory( History newHistory, NotificationChain msgs ) {
-        History oldHistory = history;
-        history = newHistory;
-        boolean oldHistoryESet = historyESet;
-        historyESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__HISTORY, oldHistory, newHistory, !oldHistoryESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		History oldHistory = history;
+		history = newHistory;
+		boolean oldHistoryESet = historyESet;
+		historyESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__HISTORY, oldHistory, newHistory, !oldHistoryESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setHistory( History newHistory ) {
-        if (newHistory != history) {
-            NotificationChain msgs = null;
-            if (history != null)
-                msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
-            if (newHistory != null)
-                msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HEADER, History.class, msgs);
-            msgs = basicSetHistory(newHistory, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldHistoryESet = historyESet;
-            historyESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__HISTORY, newHistory, newHistory, !oldHistoryESet));
-        }
-    }
+		if (newHistory != history) {
+			NotificationChain msgs = null;
+			if (history != null)
+				msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+			if (newHistory != null)
+				msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+			msgs = basicSetHistory(newHistory, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldHistoryESet = historyESet;
+			historyESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__HISTORY, newHistory, newHistory, !oldHistoryESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetHistory( NotificationChain msgs ) {
-        History oldHistory = history;
-        history = null;
-        boolean oldHistoryESet = historyESet;
-        historyESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__HISTORY, oldHistory, null, oldHistoryESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		History oldHistory = history;
+		history = null;
+		boolean oldHistoryESet = historyESet;
+		historyESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__HISTORY, oldHistory, null, oldHistoryESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetHistory() {
-        if (history != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
-            msgs = basicUnsetHistory(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldHistoryESet = historyESet;
-            historyESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__HISTORY, null, null, oldHistoryESet));
-        }
-    }
+		if (history != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+			msgs = basicUnsetHistory(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldHistoryESet = historyESet;
+			historyESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.HEADER__HISTORY, null, null, oldHistoryESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetHistory() {
-        return historyESet;
-    }
+		return historyESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHeader_id_required(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv Header_id_required:
+		 *   let severity : Integer[1] = 'Header::Header_id_required'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[1] = self.id <> null
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'id attribute shall be present in Header (line ' +
+		 *               self.lineNumber.toString() + ')', status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Header::Header_id_required'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_Header_c_c_Header_id_required);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ String id = this.getId();
+			final /*@NonInvalid*/ boolean status = id != null;
+			/*@NonInvalid*/ Object symbol_1;
+			if (status) {
+				symbol_1 = ValueUtil.TRUE_VALUE;
+			}
+			else {
+				final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+				final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+				final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+				final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_id_32_attribute_32_shall_32_be_32_present_32_in_32_Header_32_o_line_32, toString);
+				final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e);
+				final /*@NonInvalid*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_0, status);
+				symbol_1 = symbol_0;
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_Header_c_c_Header_id_required, this, (Object)null, diagnostics, context, (Object)null, severity_0, symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHeader_nameStructure_value_IEDName(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv Header_nameStructure_value_IEDName:
+		 *   let
+		 *     severity : Integer[1] = 'Header::Header_nameStructure_value_IEDName'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : OclAny[1] = let status : Boolean[?] = self.nameStructure <> null implies self.nameStructure = 'IEDName'
+		 *         in
+		 *           if status = true
+		 *           then true
+		 *           else
+		 *             Tuple{message = 'nameStructure attribute shall be equal to IEDName in Header (line ' +
+		 *               self.lineNumber.toString() + '). ' + 'Current value is ' +
+		 *               self.nameStructure.toString(), status = status
+		 *             }
+		 *           endif
+		 *       in
+		 *         'Header::Header_nameStructure_value_IEDName'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, SclTables.STR_Header_c_c_Header_nameStructure_value_IEDName);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, SclTables.INT_0).booleanValue();
+		/*@NonInvalid*/ Object symbol_2;
+		if (le) {
+			symbol_2 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_symbol_1;
+			try {
+				final /*@NonInvalid*/ String nameStructure_0 = this.getNameStructure();
+				final /*@NonInvalid*/ boolean ne = nameStructure_0 != null;
+				/*@NonInvalid*/ boolean status;
+				if (ne) {
+					final /*@NonInvalid*/ boolean eq = SclTables.STR_IEDName.equals(nameStructure_0);
+					status = eq;
+				}
+				else {
+					status = ValueUtil.TRUE_VALUE;
+				}
+				/*@Thrown*/ Object symbol_1;
+				if (status) {
+					symbol_1 = ValueUtil.TRUE_VALUE;
+				}
+				else {
+					final /*@NonInvalid*/ int lineNumber = this.getLineNumber();
+					final /*@NonInvalid*/ IntegerValue BOXED_lineNumber = ValueUtil.integerValueOf(lineNumber);
+					final /*@NonInvalid*/ String toString = OclAnyToStringOperation.INSTANCE.evaluate(BOXED_lineNumber);
+					final /*@NonInvalid*/ String sum = StringConcatOperation.INSTANCE.evaluate(SclTables.STR_nameStructure_32_attribute_32_shall_32_be_32_equal_32_to_32_IEDName_32_in_32_Header_32_o_lin, toString);
+					final /*@NonInvalid*/ String sum_0 = StringConcatOperation.INSTANCE.evaluate(sum, SclTables.STR__e__32);
+					final /*@NonInvalid*/ String sum_1 = StringConcatOperation.INSTANCE.evaluate(sum_0, SclTables.STR_Current_32_value_32_is_32);
+					final /*@Thrown*/ String toString_0 = OclAnyToStringOperation.INSTANCE.evaluate(nameStructure_0);
+					final /*@Thrown*/ String sum_2 = StringConcatOperation.INSTANCE.evaluate(sum_1, toString_0);
+					final /*@Thrown*/ TupleValue symbol_0 = ValueUtil.createTupleOfEach(SclTables.TUPLid_, sum_2, status);
+					symbol_1 = symbol_0;
+				}
+				CAUGHT_symbol_1 = symbol_1;
+			}
+			catch (Exception e) {
+				CAUGHT_symbol_1 = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, SclTables.STR_Header_c_c_Header_nameStructure_value_IEDName, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_symbol_1, SclTables.INT_0).booleanValue();
+			symbol_2 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_2;
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HEADER__SCL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
-            case SclPackage.HEADER__TEXT:
-                if (text != null)
-                    msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__TEXT, null, msgs);
-                return basicSetText((Text)otherEnd, msgs);
-            case SclPackage.HEADER__HISTORY:
-                if (history != null)
-                    msgs = ((InternalEObject)history).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__HISTORY, null, msgs);
-                return basicSetHistory((History)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__SCL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSCL((SCL)otherEnd, msgs);
+			case SclPackage.HEADER__TEXT:
+				if (text != null)
+					msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__TEXT, null, msgs);
+				return basicSetText((Text)otherEnd, msgs);
+			case SclPackage.HEADER__HISTORY:
+				if (history != null)
+					msgs = ((InternalEObject)history).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__HISTORY, null, msgs);
+				return basicSetHistory((History)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HEADER__SCL:
-                return basicSetSCL(null, msgs);
-            case SclPackage.HEADER__TEXT:
-                return basicUnsetText(msgs);
-            case SclPackage.HEADER__HISTORY:
-                return basicUnsetHistory(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__SCL:
+				return basicSetSCL(null, msgs);
+			case SclPackage.HEADER__TEXT:
+				return basicUnsetText(msgs);
+			case SclPackage.HEADER__HISTORY:
+				return basicUnsetHistory(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.HEADER__SCL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SCL__HEADER, SCL.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.HEADER__SCL:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SCL__HEADER, SCL.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.HEADER__ID:
-                return getId();
-            case SclPackage.HEADER__NAME_STRUCTURE:
-                return getNameStructure();
-            case SclPackage.HEADER__REVISION:
-                return getRevision();
-            case SclPackage.HEADER__TOOL_ID:
-                return getToolID();
-            case SclPackage.HEADER__VERSION:
-                return getVersion();
-            case SclPackage.HEADER__SCL:
-                return getSCL();
-            case SclPackage.HEADER__TEXT:
-                return getText();
-            case SclPackage.HEADER__HISTORY:
-                return getHistory();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__ID:
+				return getId();
+			case SclPackage.HEADER__NAME_STRUCTURE:
+				return getNameStructure();
+			case SclPackage.HEADER__REVISION:
+				return getRevision();
+			case SclPackage.HEADER__TOOL_ID:
+				return getToolID();
+			case SclPackage.HEADER__VERSION:
+				return getVersion();
+			case SclPackage.HEADER__SCL:
+				return getSCL();
+			case SclPackage.HEADER__TEXT:
+				return getText();
+			case SclPackage.HEADER__HISTORY:
+				return getHistory();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.HEADER__ID:
-                setId((String)newValue);
-                return;
-            case SclPackage.HEADER__NAME_STRUCTURE:
-                setNameStructure((String)newValue);
-                return;
-            case SclPackage.HEADER__REVISION:
-                setRevision((String)newValue);
-                return;
-            case SclPackage.HEADER__TOOL_ID:
-                setToolID((String)newValue);
-                return;
-            case SclPackage.HEADER__VERSION:
-                setVersion((String)newValue);
-                return;
-            case SclPackage.HEADER__SCL:
-                setSCL((SCL)newValue);
-                return;
-            case SclPackage.HEADER__TEXT:
-                setText((Text)newValue);
-                return;
-            case SclPackage.HEADER__HISTORY:
-                setHistory((History)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__ID:
+				setId((String)newValue);
+				return;
+			case SclPackage.HEADER__NAME_STRUCTURE:
+				setNameStructure((String)newValue);
+				return;
+			case SclPackage.HEADER__REVISION:
+				setRevision((String)newValue);
+				return;
+			case SclPackage.HEADER__TOOL_ID:
+				setToolID((String)newValue);
+				return;
+			case SclPackage.HEADER__VERSION:
+				setVersion((String)newValue);
+				return;
+			case SclPackage.HEADER__SCL:
+				setSCL((SCL)newValue);
+				return;
+			case SclPackage.HEADER__TEXT:
+				setText((Text)newValue);
+				return;
+			case SclPackage.HEADER__HISTORY:
+				setHistory((History)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HEADER__ID:
-                unsetId();
-                return;
-            case SclPackage.HEADER__NAME_STRUCTURE:
-                unsetNameStructure();
-                return;
-            case SclPackage.HEADER__REVISION:
-                unsetRevision();
-                return;
-            case SclPackage.HEADER__TOOL_ID:
-                unsetToolID();
-                return;
-            case SclPackage.HEADER__VERSION:
-                unsetVersion();
-                return;
-            case SclPackage.HEADER__SCL:
-                setSCL((SCL)null);
-                return;
-            case SclPackage.HEADER__TEXT:
-                unsetText();
-                return;
-            case SclPackage.HEADER__HISTORY:
-                unsetHistory();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__ID:
+				unsetId();
+				return;
+			case SclPackage.HEADER__NAME_STRUCTURE:
+				unsetNameStructure();
+				return;
+			case SclPackage.HEADER__REVISION:
+				unsetRevision();
+				return;
+			case SclPackage.HEADER__TOOL_ID:
+				unsetToolID();
+				return;
+			case SclPackage.HEADER__VERSION:
+				unsetVersion();
+				return;
+			case SclPackage.HEADER__SCL:
+				setSCL((SCL)null);
+				return;
+			case SclPackage.HEADER__TEXT:
+				unsetText();
+				return;
+			case SclPackage.HEADER__HISTORY:
+				unsetHistory();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HEADER__ID:
-                return isSetId();
-            case SclPackage.HEADER__NAME_STRUCTURE:
-                return isSetNameStructure();
-            case SclPackage.HEADER__REVISION:
-                return isSetRevision();
-            case SclPackage.HEADER__TOOL_ID:
-                return isSetToolID();
-            case SclPackage.HEADER__VERSION:
-                return isSetVersion();
-            case SclPackage.HEADER__SCL:
-                return getSCL() != null;
-            case SclPackage.HEADER__TEXT:
-                return isSetText();
-            case SclPackage.HEADER__HISTORY:
-                return isSetHistory();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.HEADER__ID:
+				return isSetId();
+			case SclPackage.HEADER__NAME_STRUCTURE:
+				return isSetNameStructure();
+			case SclPackage.HEADER__REVISION:
+				return isSetRevision();
+			case SclPackage.HEADER__TOOL_ID:
+				return isSetToolID();
+			case SclPackage.HEADER__VERSION:
+				return isSetVersion();
+			case SclPackage.HEADER__SCL:
+				return getSCL() != null;
+			case SclPackage.HEADER__TEXT:
+				return isSetText();
+			case SclPackage.HEADER__HISTORY:
+				return isSetHistory();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.HEADER___VALIDATE_HEADER_ID_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateHeader_id_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.HEADER___VALIDATE_HEADER_NAME_STRUCTURE_VALUE_IED_NAME__DIAGNOSTICCHAIN_MAP:
+				return validateHeader_nameStructure_value_IEDName((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (id: ");
-        if (idESet) result.append(id); else result.append("<unset>");
-        result.append(", nameStructure: ");
-        if (nameStructureESet) result.append(nameStructure); else result.append("<unset>");
-        result.append(", revision: ");
-        if (revisionESet) result.append(revision); else result.append("<unset>");
-        result.append(", toolID: ");
-        if (toolIDESet) result.append(toolID); else result.append("<unset>");
-        result.append(", version: ");
-        if (versionESet) result.append(version); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (id: ");
+		if (idESet) result.append(id); else result.append("<unset>");
+		result.append(", nameStructure: ");
+		if (nameStructureESet) result.append(nameStructure); else result.append("<unset>");
+		result.append(", revision: ");
+		if (revisionESet) result.append(revision); else result.append("<unset>");
+		result.append(", toolID: ");
+		if (toolIDESet) result.append(toolID); else result.append("<unset>");
+		result.append(", version: ");
+		if (versionESet) result.append(version); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //HeaderImpl
