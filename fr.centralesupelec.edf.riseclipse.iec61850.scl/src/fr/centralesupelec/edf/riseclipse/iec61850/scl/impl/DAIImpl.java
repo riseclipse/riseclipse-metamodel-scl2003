@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -32,6 +35,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,90 +59,90 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
  */
 public class DAIImpl extends DataAttributeImpl implements DAI {
     /**
-     * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer IX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer ix = IX_EDEFAULT;
 
     /**
-     * This is true if the Ix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ixESet;
 
     /**
-     * The default value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SADDR_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected String sAddr = SADDR_EDEFAULT;
 
     /**
-     * This is true if the SAddr attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the SAddr attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean sAddrESet;
 
     /**
-     * The default value of the '{@link #getValImport() <em>Val Import</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getValImport() <em>Val Import</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValImport()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValImport()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean VAL_IMPORT_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValImport() <em>Val Import</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValImport() <em>Val Import</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValImport()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValImport()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean valImport = VAL_IMPORT_EDEFAULT;
 
     /**
-     * This is true if the Val Import attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Val Import attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean valImportESet;
 
     /**
@@ -151,546 +156,677 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     protected static final ValKindEnum VAL_KIND_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getValKind() <em>Val Kind</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getValKind() <em>Val Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getValKind()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValKind()
+	 * @generated
+	 * @ordered
+	 */
     protected ValKindEnum valKind = VAL_KIND_EDEFAULT;
 
     /**
-     * This is true if the Val Kind attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Val Kind attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean valKindESet;
 
     /**
-     * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVal() <em>Val</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVal()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVal()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Val> val;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected DAIImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getDAI();
-    }
+		return SclPackage.eINSTANCE.getDAI();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getIx() {
-        return ix;
-    }
+		return ix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIx( Integer newIx ) {
-        Integer oldIx = ix;
-        ix = newIx;
-        boolean oldIxESet = ixESet;
-        ixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__IX, oldIx, ix, !oldIxESet));
-    }
+		Integer oldIx = ix;
+		ix = newIx;
+		boolean oldIxESet = ixESet;
+		ixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__IX, oldIx, ix, !oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIx() {
-        Integer oldIx = ix;
-        boolean oldIxESet = ixESet;
-        ix = IX_EDEFAULT;
-        ixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__IX, oldIx, IX_EDEFAULT, oldIxESet));
-    }
+		Integer oldIx = ix;
+		boolean oldIxESet = ixESet;
+		ix = IX_EDEFAULT;
+		ixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__IX, oldIx, IX_EDEFAULT, oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIx() {
-        return ixESet;
-    }
+		return ixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSAddr() {
-        return sAddr;
-    }
+		return sAddr;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSAddr( String newSAddr ) {
-        String oldSAddr = sAddr;
-        sAddr = newSAddr;
-        boolean oldSAddrESet = sAddrESet;
-        sAddrESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__SADDR, oldSAddr, sAddr, !oldSAddrESet));
-    }
+		String oldSAddr = sAddr;
+		sAddr = newSAddr;
+		boolean oldSAddrESet = sAddrESet;
+		sAddrESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__SADDR, oldSAddr, sAddr, !oldSAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSAddr() {
-        String oldSAddr = sAddr;
-        boolean oldSAddrESet = sAddrESet;
-        sAddr = SADDR_EDEFAULT;
-        sAddrESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__SADDR, oldSAddr, SADDR_EDEFAULT, oldSAddrESet));
-    }
+		String oldSAddr = sAddr;
+		boolean oldSAddrESet = sAddrESet;
+		sAddr = SADDR_EDEFAULT;
+		sAddrESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__SADDR, oldSAddr, SADDR_EDEFAULT, oldSAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSAddr() {
-        return sAddrESet;
-    }
+		return sAddrESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getValImport() {
-        return valImport;
-    }
+		return valImport;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setValImport( Boolean newValImport ) {
-        Boolean oldValImport = valImport;
-        valImport = newValImport;
-        boolean oldValImportESet = valImportESet;
-        valImportESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__VAL_IMPORT, oldValImport, valImport, !oldValImportESet));
-    }
+		Boolean oldValImport = valImport;
+		valImport = newValImport;
+		boolean oldValImportESet = valImportESet;
+		valImportESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__VAL_IMPORT, oldValImport, valImport, !oldValImportESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetValImport() {
-        Boolean oldValImport = valImport;
-        boolean oldValImportESet = valImportESet;
-        valImport = VAL_IMPORT_EDEFAULT;
-        valImportESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__VAL_IMPORT, oldValImport, VAL_IMPORT_EDEFAULT, oldValImportESet));
-    }
+		Boolean oldValImport = valImport;
+		boolean oldValImportESet = valImportESet;
+		valImport = VAL_IMPORT_EDEFAULT;
+		valImportESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__VAL_IMPORT, oldValImport, VAL_IMPORT_EDEFAULT, oldValImportESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetValImport() {
-        return valImportESet;
-    }
+		return valImportESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ValKindEnum getValKind() {
-        return valKind;
-    }
+		return valKind;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setValKind( ValKindEnum newValKind ) {
-        ValKindEnum oldValKind = valKind;
-        valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
-        boolean oldValKindESet = valKindESet;
-        valKindESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__VAL_KIND, oldValKind, valKind, !oldValKindESet));
-    }
+		ValKindEnum oldValKind = valKind;
+		valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
+		boolean oldValKindESet = valKindESet;
+		valKindESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__VAL_KIND, oldValKind, valKind, !oldValKindESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetValKind() {
-        ValKindEnum oldValKind = valKind;
-        boolean oldValKindESet = valKindESet;
-        valKind = VAL_KIND_EDEFAULT;
-        valKindESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__VAL_KIND, oldValKind, VAL_KIND_EDEFAULT, oldValKindESet));
-    }
+		ValKindEnum oldValKind = valKind;
+		boolean oldValKindESet = valKindESet;
+		valKind = VAL_KIND_EDEFAULT;
+		valKindESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__VAL_KIND, oldValKind, VAL_KIND_EDEFAULT, oldValKindESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetValKind() {
-        return valKindESet;
-    }
+		return valKindESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Val> getVal() {
-        if (val == null) {
-            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.DAI__VAL, SclPackage.VAL__DAI);
-        }
-        return val;
-    }
+		if (val == null) {
+			val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.DAI__VAL, SclPackage.VAL__DAI);
+		}
+		return val;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetVal() {
-        if (val != null) ((InternalEList.Unsettable<?>)val).unset();
-    }
+		if (val != null) ((InternalEList.Unsettable<?>)val).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetVal() {
-        return val != null && ((InternalEList.Unsettable<?>)val).isSet();
-    }
+		return val != null && ((InternalEList.Unsettable<?>)val).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DOI getDOI() {
-        if (eContainerFeatureID() != SclPackage.DAI__DOI) return null;
-        return (DOI)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.DAI__DOI) return null;
+		return (DOI)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetDOI( DOI newDOI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.DAI__DOI, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.DAI__DOI, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDOI( DOI newDOI ) {
-        if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__DOI && newDOI != null)) {
-            if (EcoreUtil.isAncestor(this, newDOI))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOI != null)
-                msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__DAI, DOI.class, msgs);
-            msgs = basicSetDOI(newDOI, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__DOI, newDOI, newDOI));
-    }
+		if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__DOI && newDOI != null)) {
+			if (EcoreUtil.isAncestor(this, newDOI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDOI != null)
+				msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__DAI, DOI.class, msgs);
+			msgs = basicSetDOI(newDOI, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__DOI, newDOI, newDOI));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SDI getSDI() {
-        if (eContainerFeatureID() != SclPackage.DAI__SDI) return null;
-        return (SDI)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.DAI__SDI) return null;
+		return (SDI)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSDI( SDI newSDI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSDI, SclPackage.DAI__SDI, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSDI, SclPackage.DAI__SDI, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSDI( SDI newSDI ) {
-        if (newSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__SDI && newSDI != null)) {
-            if (EcoreUtil.isAncestor(this, newSDI))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSDI != null)
-                msgs = ((InternalEObject)newSDI).eInverseAdd(this, SclPackage.SDI__DAI, SDI.class, msgs);
-            msgs = basicSetSDI(newSDI, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__SDI, newSDI, newSDI));
-    }
+		if (newSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__SDI && newSDI != null)) {
+			if (EcoreUtil.isAncestor(this, newSDI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSDI != null)
+				msgs = ((InternalEObject)newSDI).eInverseAdd(this, SclPackage.SDI__DAI, SDI.class, msgs);
+			msgs = basicSetSDI(newSDI, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__SDI, newSDI, newSDI));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateDAI_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DAI name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDAI_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DAI_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in DAI (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDAI_name_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDAI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDAI__ValidateDAI_name_required__DiagnosticChain_Map(),
+				 VALIDATE_DAI_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DAI__VALIDATE_DAI_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateDAI_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DAI name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDAI_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DAI_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be valid in DAI (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.name.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null implies self.validSclAttributeNameEnum( name )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDAI_name_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDAI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDAI__ValidateDAI_name_valid__DiagnosticChain_Map(),
+				 VALIDATE_DAI_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DAI__VALIDATE_DAI_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateDAI_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DAI ix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDAI_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DAI_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ix attribute shall be valid in DAI (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.ix <> null implies self.ix >= 0\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDAI_ix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDAI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDAI__ValidateDAI_ix_valid__DiagnosticChain_Map(),
+				 VALIDATE_DAI_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DAI__VALIDATE_DAI_IX_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DAI__VAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getVal()).basicAdd(otherEnd, msgs);
-            case SclPackage.DAI__DOI:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOI((DOI)otherEnd, msgs);
-            case SclPackage.DAI__SDI:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSDI((SDI)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__VAL:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVal()).basicAdd(otherEnd, msgs);
+			case SclPackage.DAI__DOI:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDOI((DOI)otherEnd, msgs);
+			case SclPackage.DAI__SDI:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSDI((SDI)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DAI__VAL:
-                return ((InternalEList<?>)getVal()).basicRemove(otherEnd, msgs);
-            case SclPackage.DAI__DOI:
-                return basicSetDOI(null, msgs);
-            case SclPackage.DAI__SDI:
-                return basicSetSDI(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__VAL:
+				return ((InternalEList<?>)getVal()).basicRemove(otherEnd, msgs);
+			case SclPackage.DAI__DOI:
+				return basicSetDOI(null, msgs);
+			case SclPackage.DAI__SDI:
+				return basicSetSDI(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DAI__DOI:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DOI__DAI, DOI.class, msgs);
-            case SclPackage.DAI__SDI:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SDI__DAI, SDI.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.DAI__DOI:
+				return eInternalContainer().eInverseRemove(this, SclPackage.DOI__DAI, DOI.class, msgs);
+			case SclPackage.DAI__SDI:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SDI__DAI, SDI.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DAI__IX:
-                return getIx();
-            case SclPackage.DAI__SADDR:
-                return getSAddr();
-            case SclPackage.DAI__VAL_IMPORT:
-                return getValImport();
-            case SclPackage.DAI__VAL_KIND:
-                return getValKind();
-            case SclPackage.DAI__VAL:
-                return getVal();
-            case SclPackage.DAI__DOI:
-                return getDOI();
-            case SclPackage.DAI__SDI:
-                return getSDI();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__IX:
+				return getIx();
+			case SclPackage.DAI__SADDR:
+				return getSAddr();
+			case SclPackage.DAI__VAL_IMPORT:
+				return getValImport();
+			case SclPackage.DAI__VAL_KIND:
+				return getValKind();
+			case SclPackage.DAI__VAL:
+				return getVal();
+			case SclPackage.DAI__DOI:
+				return getDOI();
+			case SclPackage.DAI__SDI:
+				return getSDI();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DAI__IX:
-                setIx((Integer)newValue);
-                return;
-            case SclPackage.DAI__SADDR:
-                setSAddr((String)newValue);
-                return;
-            case SclPackage.DAI__VAL_IMPORT:
-                setValImport((Boolean)newValue);
-                return;
-            case SclPackage.DAI__VAL_KIND:
-                setValKind((ValKindEnum)newValue);
-                return;
-            case SclPackage.DAI__VAL:
-                getVal().clear();
-                getVal().addAll((Collection<? extends Val>)newValue);
-                return;
-            case SclPackage.DAI__DOI:
-                setDOI((DOI)newValue);
-                return;
-            case SclPackage.DAI__SDI:
-                setSDI((SDI)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__IX:
+				setIx((Integer)newValue);
+				return;
+			case SclPackage.DAI__SADDR:
+				setSAddr((String)newValue);
+				return;
+			case SclPackage.DAI__VAL_IMPORT:
+				setValImport((Boolean)newValue);
+				return;
+			case SclPackage.DAI__VAL_KIND:
+				setValKind((ValKindEnum)newValue);
+				return;
+			case SclPackage.DAI__VAL:
+				getVal().clear();
+				getVal().addAll((Collection<? extends Val>)newValue);
+				return;
+			case SclPackage.DAI__DOI:
+				setDOI((DOI)newValue);
+				return;
+			case SclPackage.DAI__SDI:
+				setSDI((SDI)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DAI__IX:
-                unsetIx();
-                return;
-            case SclPackage.DAI__SADDR:
-                unsetSAddr();
-                return;
-            case SclPackage.DAI__VAL_IMPORT:
-                unsetValImport();
-                return;
-            case SclPackage.DAI__VAL_KIND:
-                unsetValKind();
-                return;
-            case SclPackage.DAI__VAL:
-                unsetVal();
-                return;
-            case SclPackage.DAI__DOI:
-                setDOI((DOI)null);
-                return;
-            case SclPackage.DAI__SDI:
-                setSDI((SDI)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__IX:
+				unsetIx();
+				return;
+			case SclPackage.DAI__SADDR:
+				unsetSAddr();
+				return;
+			case SclPackage.DAI__VAL_IMPORT:
+				unsetValImport();
+				return;
+			case SclPackage.DAI__VAL_KIND:
+				unsetValKind();
+				return;
+			case SclPackage.DAI__VAL:
+				unsetVal();
+				return;
+			case SclPackage.DAI__DOI:
+				setDOI((DOI)null);
+				return;
+			case SclPackage.DAI__SDI:
+				setSDI((SDI)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DAI__IX:
-                return isSetIx();
-            case SclPackage.DAI__SADDR:
-                return isSetSAddr();
-            case SclPackage.DAI__VAL_IMPORT:
-                return isSetValImport();
-            case SclPackage.DAI__VAL_KIND:
-                return isSetValKind();
-            case SclPackage.DAI__VAL:
-                return isSetVal();
-            case SclPackage.DAI__DOI:
-                return getDOI() != null;
-            case SclPackage.DAI__SDI:
-                return getSDI() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DAI__IX:
+				return isSetIx();
+			case SclPackage.DAI__SADDR:
+				return isSetSAddr();
+			case SclPackage.DAI__VAL_IMPORT:
+				return isSetValImport();
+			case SclPackage.DAI__VAL_KIND:
+				return isSetValKind();
+			case SclPackage.DAI__VAL:
+				return isSetVal();
+			case SclPackage.DAI__DOI:
+				return getDOI() != null;
+			case SclPackage.DAI__SDI:
+				return getSDI() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.DAI___VALIDATE_DAI_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateDAI_name_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.DAI___VALIDATE_DAI_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateDAI_name_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.DAI___VALIDATE_DAI_IX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateDAI_ix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (ix: ");
-        if (ixESet) result.append(ix); else result.append("<unset>");
-        result.append(", sAddr: ");
-        if (sAddrESet) result.append(sAddr); else result.append("<unset>");
-        result.append(", valImport: ");
-        if (valImportESet) result.append(valImport); else result.append("<unset>");
-        result.append(", valKind: ");
-        if (valKindESet) result.append(valKind); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ix: ");
+		if (ixESet) result.append(ix); else result.append("<unset>");
+		result.append(", sAddr: ");
+		if (sAddrESet) result.append(sAddr); else result.append("<unset>");
+		result.append(", valImport: ");
+		if (valImportESet) result.append(valImport); else result.append("<unset>");
+		result.append(", valKind: ");
+		if (valKindESet) result.append(valKind); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //DAIImpl

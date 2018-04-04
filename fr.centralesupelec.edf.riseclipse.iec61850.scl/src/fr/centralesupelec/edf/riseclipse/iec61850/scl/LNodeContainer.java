@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -35,44 +37,53 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface LNodeContainer extends Naming {
     /**
-     * Returns the value of the '<em><b>LNode</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>LNode</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LNode</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode</em>' containment reference list.
-     * @see #isSetLNode()
-     * @see #unsetLNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeContainer_LNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer
-     * @model opposite="LNodeContainer" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>LNode</em>' containment reference list.
+	 * @see #isSetLNode()
+	 * @see #unsetLNode()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeContainer_LNode()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer
+	 * @model opposite="LNodeContainer" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<LNode> getLNode();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLNode()
-     * @see #getLNode()
-     * @generated
-     */
+	 * @see #isSetLNode()
+	 * @see #getLNode()
+	 * @generated
+	 */
     void unsetLNode();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LNode</em>' containment reference list is set.
-     * @see #unsetLNode()
-     * @see #getLNode()
-     * @generated
-     */
+	 * @return whether the value of the '<em>LNode</em>' containment reference list is set.
+	 * @see #unsetLNode()
+	 * @see #getLNode()
+	 * @generated
+	 */
     boolean isSetLNode();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='LNodeContainer_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateLNodeContainer_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // LNodeContainer

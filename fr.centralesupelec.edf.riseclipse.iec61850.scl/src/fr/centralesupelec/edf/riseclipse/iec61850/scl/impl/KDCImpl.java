@@ -17,15 +17,21 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -50,100 +56,100 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     /**
-     * The default value of the '{@link #getApName() <em>Ap Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getApName() <em>Ap Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getApName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String AP_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getApName() <em>Ap Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getApName() <em>Ap Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getApName()
+	 * @generated
+	 * @ordered
+	 */
     protected String apName = AP_NAME_EDEFAULT;
 
     /**
-     * This is true if the Ap Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ap Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean apNameESet;
 
     /**
-     * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String IED_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected String iedName = IED_NAME_EDEFAULT;
 
     /**
-     * This is true if the Ied Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ied Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean iedNameESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAccessPoint() <em>Refers To Access Point</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAccessPoint() <em>Refers To Access Point</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAccessPoint()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAccessPoint()
+	 * @generated
+	 * @ordered
+	 */
     protected AccessPoint refersToAccessPoint;
 
     /**
-     * This is true if the Refers To Access Point reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Access Point reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAccessPointESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected KDCImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getKDC();
-    }
+		return SclPackage.eINSTANCE.getKDC();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -158,32 +164,32 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setApName( String newApName ) {
-        String oldApName = apName;
-        apName = newApName;
-        boolean oldApNameESet = apNameESet;
-        apNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__AP_NAME, oldApName, apName, !oldApNameESet));
-    }
+		String oldApName = apName;
+		apName = newApName;
+		boolean oldApNameESet = apNameESet;
+		apNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__AP_NAME, oldApName, apName, !oldApNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetApName() {
-        String oldApName = apName;
-        boolean oldApNameESet = apNameESet;
-        apName = AP_NAME_EDEFAULT;
-        apNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__AP_NAME, oldApName, AP_NAME_EDEFAULT, oldApNameESet));
-    }
+		String oldApName = apName;
+		boolean oldApNameESet = apNameESet;
+		apName = AP_NAME_EDEFAULT;
+		apNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__AP_NAME, oldApName, AP_NAME_EDEFAULT, oldApNameESet));
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -207,32 +213,32 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIedName( String newIedName ) {
-        String oldIedName = iedName;
-        iedName = newIedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__IED_NAME, oldIedName, iedName, !oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		iedName = newIedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIedName() {
-        String oldIedName = iedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedName = IED_NAME_EDEFAULT;
-        iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedName = IED_NAME_EDEFAULT;
+		iedNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -244,296 +250,466 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public IED getIED() {
-        if (eContainerFeatureID() != SclPackage.KDC__IED) return null;
-        return (IED)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.KDC__IED) return null;
+		return (IED)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetIED( IED newIED, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newIED, SclPackage.KDC__IED, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newIED, SclPackage.KDC__IED, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIED( IED newIED ) {
-        if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.KDC__IED && newIED != null)) {
-            if (EcoreUtil.isAncestor(this, newIED))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newIED != null)
-                msgs = ((InternalEObject)newIED).eInverseAdd(this, SclPackage.IED__KDC, IED.class, msgs);
-            msgs = basicSetIED(newIED, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__IED, newIED, newIED));
-    }
+		if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.KDC__IED && newIED != null)) {
+			if (EcoreUtil.isAncestor(this, newIED))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newIED != null)
+				msgs = ((InternalEObject)newIED).eInverseAdd(this, SclPackage.IED__KDC, IED.class, msgs);
+			msgs = basicSetIED(newIED, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__IED, newIED, newIED));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AccessPoint getRefersToAccessPoint() {
-        return refersToAccessPoint;
-    }
+		return refersToAccessPoint;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAccessPoint(AccessPoint newRefersToAccessPoint, NotificationChain msgs) {
-        AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
-        refersToAccessPoint = newRefersToAccessPoint;
-        boolean oldRefersToAccessPointESet = refersToAccessPointESet;
-        refersToAccessPointESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
+		refersToAccessPoint = newRefersToAccessPoint;
+		boolean oldRefersToAccessPointESet = refersToAccessPointESet;
+		refersToAccessPointESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAccessPoint(AccessPoint newRefersToAccessPoint) {
-        if (newRefersToAccessPoint != refersToAccessPoint) {
-            NotificationChain msgs = null;
-            if (refersToAccessPoint != null)
-                msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
-            if (newRefersToAccessPoint != null)
-                msgs = ((InternalEObject)newRefersToAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
-            msgs = basicSetRefersToAccessPoint(newRefersToAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAccessPointESet = refersToAccessPointESet;
-            refersToAccessPointESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, newRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet));
-        }
-    }
+		if (newRefersToAccessPoint != refersToAccessPoint) {
+			NotificationChain msgs = null;
+			if (refersToAccessPoint != null)
+				msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
+			if (newRefersToAccessPoint != null)
+				msgs = ((InternalEObject)newRefersToAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
+			msgs = basicSetRefersToAccessPoint(newRefersToAccessPoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAccessPointESet = refersToAccessPointESet;
+			refersToAccessPointESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, newRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAccessPoint(NotificationChain msgs) {
-        AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
-        refersToAccessPoint = null;
-        boolean oldRefersToAccessPointESet = refersToAccessPointESet;
-        refersToAccessPointESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, null, oldRefersToAccessPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
+		refersToAccessPoint = null;
+		boolean oldRefersToAccessPointESet = refersToAccessPointESet;
+		refersToAccessPointESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, null, oldRefersToAccessPointESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAccessPoint() {
-        if (refersToAccessPoint != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
-            msgs = basicUnsetRefersToAccessPoint(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAccessPointESet = refersToAccessPointESet;
-            refersToAccessPointESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, null, null, oldRefersToAccessPointESet));
-        }
-    }
+		if (refersToAccessPoint != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
+			msgs = basicUnsetRefersToAccessPoint(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAccessPointESet = refersToAccessPointESet;
+			refersToAccessPointESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.KDC__REFERS_TO_ACCESS_POINT, null, null, oldRefersToAccessPointESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAccessPoint() {
-        return refersToAccessPointESet;
-    }
+		return refersToAccessPointESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateKDC_iedName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate KDC ied Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateKDC_iedName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_KDC_IED_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'iedName attribute shall be present in KDC (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.iedName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKDC_iedName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getKDC(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getKDC__ValidateKDC_iedName_required__DiagnosticChain_Map(),
+				 VALIDATE_KDC_IED_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.KDC__VALIDATE_KDC_IED_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateKDC_iedName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate KDC ied Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateKDC_iedName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_KDC_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'iedName attribute shall have between 1 and 64 alphanumeric characters in KDC (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.iedName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.iedName <> null implies self.validSclIEDName( iedName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKDC_iedName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getKDC(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getKDC__ValidateKDC_iedName_valid__DiagnosticChain_Map(),
+				 VALIDATE_KDC_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.KDC__VALIDATE_KDC_IED_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateKDC_apName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate KDC ap Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateKDC_apName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_KDC_AP_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'apName attribute shall be present in KDC (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.apName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKDC_apName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getKDC(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getKDC__ValidateKDC_apName_required__DiagnosticChain_Map(),
+				 VALIDATE_KDC_AP_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.KDC__VALIDATE_KDC_AP_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateKDC_apName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate KDC ap Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateKDC_apName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_KDC_AP_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'apName attribute shall be valid in KDC (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.apName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.apName <> null implies self.validSclAccessPointName( apName )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKDC_apName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getKDC(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getKDC__ValidateKDC_apName_valid__DiagnosticChain_Map(),
+				 VALIDATE_KDC_AP_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.KDC__VALIDATE_KDC_AP_NAME_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.KDC__IED:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetIED((IED)otherEnd, msgs);
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                if (refersToAccessPoint != null)
-                    msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
-                return basicSetRefersToAccessPoint((AccessPoint)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__IED:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetIED((IED)otherEnd, msgs);
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				if (refersToAccessPoint != null)
+					msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
+				return basicSetRefersToAccessPoint((AccessPoint)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.KDC__IED:
-                return basicSetIED(null, msgs);
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                return basicUnsetRefersToAccessPoint(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__IED:
+				return basicSetIED(null, msgs);
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				return basicUnsetRefersToAccessPoint(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.KDC__IED:
-                return eInternalContainer().eInverseRemove(this, SclPackage.IED__KDC, IED.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.KDC__IED:
+				return eInternalContainer().eInverseRemove(this, SclPackage.IED__KDC, IED.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.KDC__AP_NAME:
-                return getApName();
-            case SclPackage.KDC__IED_NAME:
-                return getIedName();
-            case SclPackage.KDC__IED:
-                return getIED();
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                return getRefersToAccessPoint();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__AP_NAME:
+				return getApName();
+			case SclPackage.KDC__IED_NAME:
+				return getIedName();
+			case SclPackage.KDC__IED:
+				return getIED();
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				return getRefersToAccessPoint();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.KDC__AP_NAME:
-                setApName((String)newValue);
-                return;
-            case SclPackage.KDC__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.KDC__IED:
-                setIED((IED)newValue);
-                return;
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                setRefersToAccessPoint((AccessPoint)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__AP_NAME:
+				setApName((String)newValue);
+				return;
+			case SclPackage.KDC__IED_NAME:
+				setIedName((String)newValue);
+				return;
+			case SclPackage.KDC__IED:
+				setIED((IED)newValue);
+				return;
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				setRefersToAccessPoint((AccessPoint)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.KDC__AP_NAME:
-                unsetApName();
-                return;
-            case SclPackage.KDC__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.KDC__IED:
-                setIED((IED)null);
-                return;
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                unsetRefersToAccessPoint();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__AP_NAME:
+				unsetApName();
+				return;
+			case SclPackage.KDC__IED_NAME:
+				unsetIedName();
+				return;
+			case SclPackage.KDC__IED:
+				setIED((IED)null);
+				return;
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				unsetRefersToAccessPoint();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.KDC__AP_NAME:
-                return isSetApName();
-            case SclPackage.KDC__IED_NAME:
-                return isSetIedName();
-            case SclPackage.KDC__IED:
-                return getIED() != null;
-            case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
-                return isSetRefersToAccessPoint();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.KDC__AP_NAME:
+				return isSetApName();
+			case SclPackage.KDC__IED_NAME:
+				return isSetIedName();
+			case SclPackage.KDC__IED:
+				return getIED() != null;
+			case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
+				return isSetRefersToAccessPoint();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.KDC___VALIDATE_KDC_IED_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateKDC_iedName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.KDC___VALIDATE_KDC_IED_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateKDC_iedName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.KDC___VALIDATE_KDC_AP_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateKDC_apName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.KDC___VALIDATE_KDC_AP_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateKDC_apName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (apName: ");
-        if (apNameESet) result.append(apName); else result.append("<unset>");
-        result.append(", iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (apName: ");
+		if (apNameESet) result.append(apName); else result.append("<unset>");
+		result.append(", iedName: ");
+		if (iedNameESet) result.append(iedName); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     public void resolveLinks() {

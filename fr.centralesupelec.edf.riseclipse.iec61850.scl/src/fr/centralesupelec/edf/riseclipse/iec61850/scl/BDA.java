@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>BDA</b></em>'.
@@ -33,31 +36,40 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface BDA extends AbstractDataAttribute {
     /**
-     * Returns the value of the '<em><b>DA Type</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>DA Type</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DA Type</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DA Type</em>' container reference.
-     * @see #setDAType(DAType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBDA_DAType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA
-     * @model opposite="BDA" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>DA Type</em>' container reference.
+	 * @see #setDAType(DAType)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBDA_DAType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA
+	 * @model opposite="BDA" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     DAType getDAType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DA Type</em>' container reference.
-     * @see #getDAType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>DA Type</em>' container reference.
+	 * @see #getDAType()
+	 * @generated
+	 */
     void setDAType( DAType value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='BDA_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateBDA_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // BDA

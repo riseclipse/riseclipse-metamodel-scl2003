@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Voltage</b></em>'.
@@ -26,5 +29,14 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @generated
  */
 public interface Voltage extends ValueWithUnit {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Voltage_unit_value_fixed'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'unit attribute shall be V in Voltage (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.unit.toString()\n        ,\n\tstatus : Boolean = \n        self.unit &lt;&gt; null implies self.unit = \'V\'\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateVoltage_unit_value_fixed(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Voltage

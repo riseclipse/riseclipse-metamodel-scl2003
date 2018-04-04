@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -36,72 +38,81 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface History extends SclObject {
     /**
-     * Returns the value of the '<em><b>Header</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory <em>History</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Header</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory <em>History</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Header</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Header</em>' container reference.
-     * @see #setHeader(Header)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHistory_Header()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory
-     * @model opposite="History" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Header</em>' container reference.
+	 * @see #setHeader(Header)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHistory_Header()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory
+	 * @model opposite="History" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     Header getHeader();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader <em>Header</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader <em>Header</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Header</em>' container reference.
-     * @see #getHeader()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Header</em>' container reference.
+	 * @see #getHeader()
+	 * @generated
+	 */
     void setHeader( Header value );
 
     /**
-     * Returns the value of the '<em><b>Hitem</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory <em>History</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Hitem</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory <em>History</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Hitem</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Hitem</em>' containment reference list.
-     * @see #isSetHitem()
-     * @see #unsetHitem()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHistory_Hitem()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory
-     * @model opposite="History" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Hitem</em>' containment reference list.
+	 * @see #isSetHitem()
+	 * @see #unsetHitem()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHistory_Hitem()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory
+	 * @model opposite="History" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<Hitem> getHitem();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetHitem()
-     * @see #getHitem()
-     * @generated
-     */
+	 * @see #isSetHitem()
+	 * @see #getHitem()
+	 * @generated
+	 */
     void unsetHitem();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Hitem</em>' containment reference list is set.
-     * @see #unsetHitem()
-     * @see #getHitem()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Hitem</em>' containment reference list is set.
+	 * @see #unsetHitem()
+	 * @see #getHitem()
+	 * @generated
+	 */
     boolean isSetHitem();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='History_at_least_one_Hitem_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'History shall contain at least one Hitem (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.Hitem-&gt;notEmpty()\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateHistory_at_least_one_Hitem_required(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // History

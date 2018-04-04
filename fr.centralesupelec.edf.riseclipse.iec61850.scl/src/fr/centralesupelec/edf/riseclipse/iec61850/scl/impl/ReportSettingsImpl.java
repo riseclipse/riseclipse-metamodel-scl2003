@@ -17,6 +17,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -26,6 +29,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,22 +65,22 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     protected static final ServiceSettingsEnum BUF_TIME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufTime()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum bufTime = BUF_TIME_EDEFAULT;
 
     /**
-     * This is true if the Buf Time attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buf Time attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufTimeESet;
 
     /**
@@ -88,22 +94,22 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     protected static final ServiceSettingsEnum INTG_PD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIntgPd()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIntgPd()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum intgPd = INTG_PD_EDEFAULT;
 
     /**
-     * This is true if the Intg Pd attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Intg Pd attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean intgPdESet;
 
     /**
@@ -117,80 +123,80 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     protected static final ServiceSettingsEnum OPT_FIELDS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOptFields()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOptFields()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum optFields = OPT_FIELDS_EDEFAULT;
 
     /**
-     * This is true if the Opt Fields attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Opt Fields attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean optFieldsESet;
 
     /**
-     * The default value of the '{@link #getOwner() <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOwner() <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOwner()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOwner()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean OWNER_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOwner() <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOwner()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOwner()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean owner = OWNER_EDEFAULT;
 
     /**
-     * This is true if the Owner attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Owner attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ownerESet;
 
     /**
-     * The default value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getResvTms()
-     * @generated
-     * @ordered
-     */
+	 * @see #getResvTms()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean RESV_TMS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getResvTms()
-     * @generated
-     * @ordered
-     */
+	 * @see #getResvTms()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean resvTms = RESV_TMS_EDEFAULT;
 
     /**
-     * This is true if the Resv Tms attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Resv Tms attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean resvTmsESet;
 
     /**
@@ -204,22 +210,22 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     protected static final ServiceSettingsEnum RPT_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRptID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRptID()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum rptID = RPT_ID_EDEFAULT;
 
     /**
-     * This is true if the Rpt ID attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Rpt ID attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean rptIDESet;
 
     /**
@@ -233,604 +239,652 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     protected static final ServiceSettingsEnum TRG_OPS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTrgOps()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTrgOps()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceSettingsEnum trgOps = TRG_OPS_EDEFAULT;
 
     /**
-     * This is true if the Trg Ops attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Trg Ops attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean trgOpsESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ReportSettingsImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getReportSettings();
-    }
+		return SclPackage.eINSTANCE.getReportSettings();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getBufTime() {
-        return bufTime;
-    }
+		return bufTime;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBufTime( ServiceSettingsEnum newBufTime ) {
-        ServiceSettingsEnum oldBufTime = bufTime;
-        bufTime = newBufTime == null ? BUF_TIME_EDEFAULT : newBufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
-    }
+		ServiceSettingsEnum oldBufTime = bufTime;
+		bufTime = newBufTime == null ? BUF_TIME_EDEFAULT : newBufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTimeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBufTime() {
-        ServiceSettingsEnum oldBufTime = bufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTime = BUF_TIME_EDEFAULT;
-        bufTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
-    }
+		ServiceSettingsEnum oldBufTime = bufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTime = BUF_TIME_EDEFAULT;
+		bufTimeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBufTime() {
-        return bufTimeESet;
-    }
+		return bufTimeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getIntgPd() {
-        return intgPd;
-    }
+		return intgPd;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIntgPd( ServiceSettingsEnum newIntgPd ) {
-        ServiceSettingsEnum oldIntgPd = intgPd;
-        intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
-        boolean oldIntgPdESet = intgPdESet;
-        intgPdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
-    }
+		ServiceSettingsEnum oldIntgPd = intgPd;
+		intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
+		boolean oldIntgPdESet = intgPdESet;
+		intgPdESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIntgPd() {
-        ServiceSettingsEnum oldIntgPd = intgPd;
-        boolean oldIntgPdESet = intgPdESet;
-        intgPd = INTG_PD_EDEFAULT;
-        intgPdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
-    }
+		ServiceSettingsEnum oldIntgPd = intgPd;
+		boolean oldIntgPdESet = intgPdESet;
+		intgPd = INTG_PD_EDEFAULT;
+		intgPdESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIntgPd() {
-        return intgPdESet;
-    }
+		return intgPdESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getOptFields() {
-        return optFields;
-    }
+		return optFields;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOptFields( ServiceSettingsEnum newOptFields ) {
-        ServiceSettingsEnum oldOptFields = optFields;
-        optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
-        boolean oldOptFieldsESet = optFieldsESet;
-        optFieldsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__OPT_FIELDS, oldOptFields, optFields, !oldOptFieldsESet));
-    }
+		ServiceSettingsEnum oldOptFields = optFields;
+		optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
+		boolean oldOptFieldsESet = optFieldsESet;
+		optFieldsESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__OPT_FIELDS, oldOptFields, optFields, !oldOptFieldsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOptFields() {
-        ServiceSettingsEnum oldOptFields = optFields;
-        boolean oldOptFieldsESet = optFieldsESet;
-        optFields = OPT_FIELDS_EDEFAULT;
-        optFieldsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OPT_FIELDS, oldOptFields, OPT_FIELDS_EDEFAULT, oldOptFieldsESet));
-    }
+		ServiceSettingsEnum oldOptFields = optFields;
+		boolean oldOptFieldsESet = optFieldsESet;
+		optFields = OPT_FIELDS_EDEFAULT;
+		optFieldsESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OPT_FIELDS, oldOptFields, OPT_FIELDS_EDEFAULT, oldOptFieldsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOptFields() {
-        return optFieldsESet;
-    }
+		return optFieldsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getOwner() {
-        return owner;
-    }
+		return owner;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOwner( Boolean newOwner ) {
-        Boolean oldOwner = owner;
-        owner = newOwner;
-        boolean oldOwnerESet = ownerESet;
-        ownerESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner, owner, !oldOwnerESet));
-    }
+		Boolean oldOwner = owner;
+		owner = newOwner;
+		boolean oldOwnerESet = ownerESet;
+		ownerESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner, owner, !oldOwnerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOwner() {
-        Boolean oldOwner = owner;
-        boolean oldOwnerESet = ownerESet;
-        owner = OWNER_EDEFAULT;
-        ownerESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner, OWNER_EDEFAULT, oldOwnerESet));
-    }
+		Boolean oldOwner = owner;
+		boolean oldOwnerESet = ownerESet;
+		owner = OWNER_EDEFAULT;
+		ownerESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__OWNER, oldOwner, OWNER_EDEFAULT, oldOwnerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOwner() {
-        return ownerESet;
-    }
+		return ownerESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getResvTms() {
-        return resvTms;
-    }
+		return resvTms;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setResvTms( Boolean newResvTms ) {
-        Boolean oldResvTms = resvTms;
-        resvTms = newResvTms;
-        boolean oldResvTmsESet = resvTmsESet;
-        resvTmsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms, resvTms, !oldResvTmsESet));
-    }
+		Boolean oldResvTms = resvTms;
+		resvTms = newResvTms;
+		boolean oldResvTmsESet = resvTmsESet;
+		resvTmsESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms, resvTms, !oldResvTmsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetResvTms() {
-        Boolean oldResvTms = resvTms;
-        boolean oldResvTmsESet = resvTmsESet;
-        resvTms = RESV_TMS_EDEFAULT;
-        resvTmsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms, RESV_TMS_EDEFAULT, oldResvTmsESet));
-    }
+		Boolean oldResvTms = resvTms;
+		boolean oldResvTmsESet = resvTmsESet;
+		resvTms = RESV_TMS_EDEFAULT;
+		resvTmsESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RESV_TMS, oldResvTms, RESV_TMS_EDEFAULT, oldResvTmsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetResvTms() {
-        return resvTmsESet;
-    }
+		return resvTmsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getRptID() {
-        return rptID;
-    }
+		return rptID;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRptID( ServiceSettingsEnum newRptID ) {
-        ServiceSettingsEnum oldRptID = rptID;
-        rptID = newRptID == null ? RPT_ID_EDEFAULT : newRptID;
-        boolean oldRptIDESet = rptIDESet;
-        rptIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID, rptID, !oldRptIDESet));
-    }
+		ServiceSettingsEnum oldRptID = rptID;
+		rptID = newRptID == null ? RPT_ID_EDEFAULT : newRptID;
+		boolean oldRptIDESet = rptIDESet;
+		rptIDESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID, rptID, !oldRptIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRptID() {
-        ServiceSettingsEnum oldRptID = rptID;
-        boolean oldRptIDESet = rptIDESet;
-        rptID = RPT_ID_EDEFAULT;
-        rptIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID, RPT_ID_EDEFAULT, oldRptIDESet));
-    }
+		ServiceSettingsEnum oldRptID = rptID;
+		boolean oldRptIDESet = rptIDESet;
+		rptID = RPT_ID_EDEFAULT;
+		rptIDESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__RPT_ID, oldRptID, RPT_ID_EDEFAULT, oldRptIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRptID() {
-        return rptIDESet;
-    }
+		return rptIDESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceSettingsEnum getTrgOps() {
-        return trgOps;
-    }
+		return trgOps;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTrgOps( ServiceSettingsEnum newTrgOps ) {
-        ServiceSettingsEnum oldTrgOps = trgOps;
-        trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
-        boolean oldTrgOpsESet = trgOpsESet;
-        trgOpsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps, trgOps, !oldTrgOpsESet));
-    }
+		ServiceSettingsEnum oldTrgOps = trgOps;
+		trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
+		boolean oldTrgOpsESet = trgOpsESet;
+		trgOpsESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps, trgOps, !oldTrgOpsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetTrgOps() {
-        ServiceSettingsEnum oldTrgOps = trgOps;
-        boolean oldTrgOpsESet = trgOpsESet;
-        trgOps = TRG_OPS_EDEFAULT;
-        trgOpsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps, TRG_OPS_EDEFAULT, oldTrgOpsESet));
-    }
+		ServiceSettingsEnum oldTrgOps = trgOps;
+		boolean oldTrgOpsESet = trgOpsESet;
+		trgOps = TRG_OPS_EDEFAULT;
+		trgOpsESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.REPORT_SETTINGS__TRG_OPS, oldTrgOps, TRG_OPS_EDEFAULT, oldTrgOpsESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetTrgOps() {
-        return trgOpsESet;
-    }
+		return trgOpsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES) return null;
-        return (Services)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES) return null;
+		return (Services)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.REPORT_SETTINGS__SERVICES, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.REPORT_SETTINGS__SERVICES, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__SERVICES, newServices, newServices));
-    }
+		if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES && newServices != null)) {
+			if (EcoreUtil.isAncestor(this, newServices))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__SERVICES, newServices, newServices));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateReportSettings_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Report Settings nothing</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateReportSettings_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_REPORT_SETTINGS_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        true\n" +
+		"\n" +
+		"";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReportSettings_nothing(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getReportSettings(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getReportSettings__ValidateReportSettings_nothing__DiagnosticChain_Map(),
+				 VALIDATE_REPORT_SETTINGS_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.REPORT_SETTINGS__VALIDATE_REPORT_SETTINGS_NOTHING);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return basicSetServices(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				return basicSetServices(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__BUF_TIME:
-                return getBufTime();
-            case SclPackage.REPORT_SETTINGS__INTG_PD:
-                return getIntgPd();
-            case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
-                return getOptFields();
-            case SclPackage.REPORT_SETTINGS__OWNER:
-                return getOwner();
-            case SclPackage.REPORT_SETTINGS__RESV_TMS:
-                return getResvTms();
-            case SclPackage.REPORT_SETTINGS__RPT_ID:
-                return getRptID();
-            case SclPackage.REPORT_SETTINGS__TRG_OPS:
-                return getTrgOps();
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return getServices();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__BUF_TIME:
+				return getBufTime();
+			case SclPackage.REPORT_SETTINGS__INTG_PD:
+				return getIntgPd();
+			case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
+				return getOptFields();
+			case SclPackage.REPORT_SETTINGS__OWNER:
+				return getOwner();
+			case SclPackage.REPORT_SETTINGS__RESV_TMS:
+				return getResvTms();
+			case SclPackage.REPORT_SETTINGS__RPT_ID:
+				return getRptID();
+			case SclPackage.REPORT_SETTINGS__TRG_OPS:
+				return getTrgOps();
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__BUF_TIME:
-                setBufTime((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__INTG_PD:
-                setIntgPd((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
-                setOptFields((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__OWNER:
-                setOwner((Boolean)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__RESV_TMS:
-                setResvTms((Boolean)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__RPT_ID:
-                setRptID((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__TRG_OPS:
-                setTrgOps((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                setServices((Services)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__BUF_TIME:
+				setBufTime((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__INTG_PD:
+				setIntgPd((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
+				setOptFields((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__OWNER:
+				setOwner((Boolean)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__RESV_TMS:
+				setResvTms((Boolean)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__RPT_ID:
+				setRptID((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__TRG_OPS:
+				setTrgOps((ServiceSettingsEnum)newValue);
+				return;
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				setServices((Services)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__BUF_TIME:
-                unsetBufTime();
-                return;
-            case SclPackage.REPORT_SETTINGS__INTG_PD:
-                unsetIntgPd();
-                return;
-            case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
-                unsetOptFields();
-                return;
-            case SclPackage.REPORT_SETTINGS__OWNER:
-                unsetOwner();
-                return;
-            case SclPackage.REPORT_SETTINGS__RESV_TMS:
-                unsetResvTms();
-                return;
-            case SclPackage.REPORT_SETTINGS__RPT_ID:
-                unsetRptID();
-                return;
-            case SclPackage.REPORT_SETTINGS__TRG_OPS:
-                unsetTrgOps();
-                return;
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                setServices((Services)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__BUF_TIME:
+				unsetBufTime();
+				return;
+			case SclPackage.REPORT_SETTINGS__INTG_PD:
+				unsetIntgPd();
+				return;
+			case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
+				unsetOptFields();
+				return;
+			case SclPackage.REPORT_SETTINGS__OWNER:
+				unsetOwner();
+				return;
+			case SclPackage.REPORT_SETTINGS__RESV_TMS:
+				unsetResvTms();
+				return;
+			case SclPackage.REPORT_SETTINGS__RPT_ID:
+				unsetRptID();
+				return;
+			case SclPackage.REPORT_SETTINGS__TRG_OPS:
+				unsetTrgOps();
+				return;
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				setServices((Services)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__BUF_TIME:
-                return isSetBufTime();
-            case SclPackage.REPORT_SETTINGS__INTG_PD:
-                return isSetIntgPd();
-            case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
-                return isSetOptFields();
-            case SclPackage.REPORT_SETTINGS__OWNER:
-                return isSetOwner();
-            case SclPackage.REPORT_SETTINGS__RESV_TMS:
-                return isSetResvTms();
-            case SclPackage.REPORT_SETTINGS__RPT_ID:
-                return isSetRptID();
-            case SclPackage.REPORT_SETTINGS__TRG_OPS:
-                return isSetTrgOps();
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return getServices() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.REPORT_SETTINGS__BUF_TIME:
+				return isSetBufTime();
+			case SclPackage.REPORT_SETTINGS__INTG_PD:
+				return isSetIntgPd();
+			case SclPackage.REPORT_SETTINGS__OPT_FIELDS:
+				return isSetOptFields();
+			case SclPackage.REPORT_SETTINGS__OWNER:
+				return isSetOwner();
+			case SclPackage.REPORT_SETTINGS__RESV_TMS:
+				return isSetResvTms();
+			case SclPackage.REPORT_SETTINGS__RPT_ID:
+				return isSetRptID();
+			case SclPackage.REPORT_SETTINGS__TRG_OPS:
+				return isSetTrgOps();
+			case SclPackage.REPORT_SETTINGS__SERVICES:
+				return getServices() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.REPORT_SETTINGS___VALIDATE_REPORT_SETTINGS_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateReportSettings_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (bufTime: ");
-        if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
-        result.append(", intgPd: ");
-        if (intgPdESet) result.append(intgPd); else result.append("<unset>");
-        result.append(", optFields: ");
-        if (optFieldsESet) result.append(optFields); else result.append("<unset>");
-        result.append(", owner: ");
-        if (ownerESet) result.append(owner); else result.append("<unset>");
-        result.append(", resvTms: ");
-        if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
-        result.append(", rptID: ");
-        if (rptIDESet) result.append(rptID); else result.append("<unset>");
-        result.append(", trgOps: ");
-        if (trgOpsESet) result.append(trgOps); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bufTime: ");
+		if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
+		result.append(", intgPd: ");
+		if (intgPdESet) result.append(intgPd); else result.append("<unset>");
+		result.append(", optFields: ");
+		if (optFieldsESet) result.append(optFields); else result.append("<unset>");
+		result.append(", owner: ");
+		if (ownerESet) result.append(owner); else result.append("<unset>");
+		result.append(", resvTms: ");
+		if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
+		result.append(", rptID: ");
+		if (rptIDESet) result.append(rptID); else result.append("<unset>");
+		result.append(", trgOps: ");
+		if (trgOpsESet) result.append(trgOps); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ReportSettingsImpl

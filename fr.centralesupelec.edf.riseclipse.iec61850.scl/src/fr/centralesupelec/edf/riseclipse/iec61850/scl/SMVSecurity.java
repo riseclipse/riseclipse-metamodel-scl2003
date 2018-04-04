@@ -33,31 +33,31 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SMVSecurity extends Certificate {
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getSMVSecurity <em>SMV Security</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getSMVSecurity <em>SMV Security</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSecurity_AccessPoint()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getSMVSecurity
-     * @model opposite="SMVSecurity" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Access Point</em>' container reference.
+	 * @see #setAccessPoint(AccessPoint)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSecurity_AccessPoint()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getSMVSecurity
+	 * @model opposite="SMVSecurity" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     AccessPoint getAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint <em>Access Point</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint <em>Access Point</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Access Point</em>' container reference.
+	 * @see #getAccessPoint()
+	 * @generated
+	 */
     void setAccessPoint( AccessPoint value );
 
 } // SMVSecurity

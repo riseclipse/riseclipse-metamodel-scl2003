@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Equipment</b></em>'.
@@ -33,56 +36,65 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface Equipment extends PowerSystemResource {
     /**
-     * Returns the value of the '<em><b>Virtual</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Virtual</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Virtual</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Virtual</em>' attribute.
-     * @see #isSetVirtual()
-     * @see #unsetVirtual()
-     * @see #setVirtual(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipment_Virtual()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Virtual</em>' attribute.
+	 * @see #isSetVirtual()
+	 * @see #unsetVirtual()
+	 * @see #setVirtual(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipment_Virtual()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getVirtual();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Virtual</em>' attribute.
-     * @see #isSetVirtual()
-     * @see #unsetVirtual()
-     * @see #getVirtual()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Virtual</em>' attribute.
+	 * @see #isSetVirtual()
+	 * @see #unsetVirtual()
+	 * @see #getVirtual()
+	 * @generated
+	 */
     void setVirtual( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetVirtual()
-     * @see #getVirtual()
-     * @see #setVirtual(Boolean)
-     * @generated
-     */
+	 * @see #isSetVirtual()
+	 * @see #getVirtual()
+	 * @see #setVirtual(Boolean)
+	 * @generated
+	 */
     void unsetVirtual();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Virtual</em>' attribute is set.
-     * @see #unsetVirtual()
-     * @see #getVirtual()
-     * @see #setVirtual(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Virtual</em>' attribute is set.
+	 * @see #unsetVirtual()
+	 * @see #getVirtual()
+	 * @see #setVirtual(Boolean)
+	 * @generated
+	 */
     boolean isSetVirtual();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Equipment_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateEquipment_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Equipment

@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>SM Vsc</b></em>'.
@@ -35,140 +38,149 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SMVsc extends ServiceWithMax {
     /**
-     * Returns the value of the '<em><b>Delivery</b></em>' attribute.
-     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum}.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Delivery</b></em>' attribute.
+	 * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum}.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Delivery</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Delivery</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum
-     * @see #isSetDelivery()
-     * @see #unsetDelivery()
-     * @see #setDelivery(SMVDeliveryEnum)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Delivery()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Delivery</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum
+	 * @see #isSetDelivery()
+	 * @see #unsetDelivery()
+	 * @see #setDelivery(SMVDeliveryEnum)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Delivery()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     SMVDeliveryEnum getDelivery();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Delivery</em>' attribute.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum
-     * @see #isSetDelivery()
-     * @see #unsetDelivery()
-     * @see #getDelivery()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Delivery</em>' attribute.
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum
+	 * @see #isSetDelivery()
+	 * @see #unsetDelivery()
+	 * @see #getDelivery()
+	 * @generated
+	 */
     void setDelivery( SMVDeliveryEnum value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetDelivery()
-     * @see #getDelivery()
-     * @see #setDelivery(SMVDeliveryEnum)
-     * @generated
-     */
+	 * @see #isSetDelivery()
+	 * @see #getDelivery()
+	 * @see #setDelivery(SMVDeliveryEnum)
+	 * @generated
+	 */
     void unsetDelivery();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Delivery</em>' attribute is set.
-     * @see #unsetDelivery()
-     * @see #getDelivery()
-     * @see #setDelivery(SMVDeliveryEnum)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Delivery</em>' attribute is set.
+	 * @see #unsetDelivery()
+	 * @see #getDelivery()
+	 * @see #setDelivery(SMVDeliveryEnum)
+	 * @generated
+	 */
     boolean isSetDelivery();
 
     /**
-     * Returns the value of the '<em><b>Delivery Conf</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Delivery Conf</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Delivery Conf</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Delivery Conf</em>' attribute.
-     * @see #isSetDeliveryConf()
-     * @see #unsetDeliveryConf()
-     * @see #setDeliveryConf(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_DeliveryConf()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Delivery Conf</em>' attribute.
+	 * @see #isSetDeliveryConf()
+	 * @see #unsetDeliveryConf()
+	 * @see #setDeliveryConf(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_DeliveryConf()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getDeliveryConf();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Delivery Conf</em>' attribute.
-     * @see #isSetDeliveryConf()
-     * @see #unsetDeliveryConf()
-     * @see #getDeliveryConf()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Delivery Conf</em>' attribute.
+	 * @see #isSetDeliveryConf()
+	 * @see #unsetDeliveryConf()
+	 * @see #getDeliveryConf()
+	 * @generated
+	 */
     void setDeliveryConf( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetDeliveryConf()
-     * @see #getDeliveryConf()
-     * @see #setDeliveryConf(Boolean)
-     * @generated
-     */
+	 * @see #isSetDeliveryConf()
+	 * @see #getDeliveryConf()
+	 * @see #setDeliveryConf(Boolean)
+	 * @generated
+	 */
     void unsetDeliveryConf();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Delivery Conf</em>' attribute is set.
-     * @see #unsetDeliveryConf()
-     * @see #getDeliveryConf()
-     * @see #setDeliveryConf(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Delivery Conf</em>' attribute is set.
+	 * @see #unsetDeliveryConf()
+	 * @see #getDeliveryConf()
+	 * @see #setDeliveryConf(Boolean)
+	 * @generated
+	 */
     boolean isSetDeliveryConf();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVsc <em>SM Vsc</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Services</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVsc <em>SM Vsc</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVsc
-     * @model opposite="SMVsc" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Services</em>' container reference.
+	 * @see #setServices(Services)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Services()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVsc
+	 * @model opposite="SMVsc" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     Services getServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices <em>Services</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices <em>Services</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Services</em>' container reference.
+	 * @see #getServices()
+	 * @generated
+	 */
     void setServices( Services value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SMVsc_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateSMVsc_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // SMVsc

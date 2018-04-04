@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>IED Name</b></em>'.
@@ -40,405 +43,414 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface IEDName extends ExplicitLinkResolver {
     /**
-     * Returns the value of the '<em><b>Ap Ref</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ap Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ap Ref</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ap Ref</em>' attribute.
-     * @see #isSetApRef()
-     * @see #unsetApRef()
-     * @see #setApRef(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ApRef()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ap Ref</em>' attribute.
+	 * @see #isSetApRef()
+	 * @see #unsetApRef()
+	 * @see #setApRef(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ApRef()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getApRef();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ap Ref</em>' attribute.
-     * @see #isSetApRef()
-     * @see #unsetApRef()
-     * @see #getApRef()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ap Ref</em>' attribute.
+	 * @see #isSetApRef()
+	 * @see #unsetApRef()
+	 * @see #getApRef()
+	 * @generated
+	 */
     void setApRef( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetApRef()
-     * @see #getApRef()
-     * @see #setApRef(String)
-     * @generated
-     */
+	 * @see #isSetApRef()
+	 * @see #getApRef()
+	 * @see #setApRef(String)
+	 * @generated
+	 */
     void unsetApRef();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getApRef <em>Ap Ref</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ap Ref</em>' attribute is set.
-     * @see #unsetApRef()
-     * @see #getApRef()
-     * @see #setApRef(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ap Ref</em>' attribute is set.
+	 * @see #unsetApRef()
+	 * @see #getApRef()
+	 * @see #setApRef(String)
+	 * @generated
+	 */
     boolean isSetApRef();
 
     /**
-     * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ld Inst</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #setLdInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LdInst()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ld Inst</em>' attribute.
+	 * @see #isSetLdInst()
+	 * @see #unsetLdInst()
+	 * @see #setLdInst(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LdInst()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getLdInst();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ld Inst</em>' attribute.
-     * @see #isSetLdInst()
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ld Inst</em>' attribute.
+	 * @see #isSetLdInst()
+	 * @see #unsetLdInst()
+	 * @see #getLdInst()
+	 * @generated
+	 */
     void setLdInst( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
+	 * @see #isSetLdInst()
+	 * @see #getLdInst()
+	 * @see #setLdInst(String)
+	 * @generated
+	 */
     void unsetLdInst();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLdInst <em>Ld Inst</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ld Inst</em>' attribute is set.
-     * @see #unsetLdInst()
-     * @see #getLdInst()
-     * @see #setLdInst(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ld Inst</em>' attribute is set.
+	 * @see #unsetLdInst()
+	 * @see #getLdInst()
+	 * @see #setLdInst(String)
+	 * @generated
+	 */
     boolean isSetLdInst();
 
     /**
-     * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Class</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #setLnClass(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LnClass()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ln Class</em>' attribute.
+	 * @see #isSetLnClass()
+	 * @see #unsetLnClass()
+	 * @see #setLnClass(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LnClass()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getLnClass();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Class</em>' attribute.
-     * @see #isSetLnClass()
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ln Class</em>' attribute.
+	 * @see #isSetLnClass()
+	 * @see #unsetLnClass()
+	 * @see #getLnClass()
+	 * @generated
+	 */
     void setLnClass( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
+	 * @see #isSetLnClass()
+	 * @see #getLnClass()
+	 * @see #setLnClass(String)
+	 * @generated
+	 */
     void unsetLnClass();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Class</em>' attribute is set.
-     * @see #unsetLnClass()
-     * @see #getLnClass()
-     * @see #setLnClass(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ln Class</em>' attribute is set.
+	 * @see #unsetLnClass()
+	 * @see #getLnClass()
+	 * @see #setLnClass(String)
+	 * @generated
+	 */
     boolean isSetLnClass();
 
     /**
-     * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Inst</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #setLnInst(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LnInst()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ln Inst</em>' attribute.
+	 * @see #isSetLnInst()
+	 * @see #unsetLnInst()
+	 * @see #setLnInst(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_LnInst()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getLnInst();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ln Inst</em>' attribute.
-     * @see #isSetLnInst()
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ln Inst</em>' attribute.
+	 * @see #isSetLnInst()
+	 * @see #unsetLnInst()
+	 * @see #getLnInst()
+	 * @generated
+	 */
     void setLnInst( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
+	 * @see #isSetLnInst()
+	 * @see #getLnInst()
+	 * @see #setLnInst(String)
+	 * @generated
+	 */
     void unsetLnInst();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ln Inst</em>' attribute is set.
-     * @see #unsetLnInst()
-     * @see #getLnInst()
-     * @see #setLnInst(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ln Inst</em>' attribute is set.
+	 * @see #unsetLnInst()
+	 * @see #getLnInst()
+	 * @see #setLnInst(String)
+	 * @generated
+	 */
     boolean isSetLnInst();
 
     /**
-     * Returns the value of the '<em><b>Prefix</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #setPrefix(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_Prefix()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Prefix</em>' attribute.
+	 * @see #isSetPrefix()
+	 * @see #unsetPrefix()
+	 * @see #setPrefix(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_Prefix()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getPrefix();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Prefix</em>' attribute.
-     * @see #isSetPrefix()
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Prefix</em>' attribute.
+	 * @see #isSetPrefix()
+	 * @see #unsetPrefix()
+	 * @see #getPrefix()
+	 * @generated
+	 */
     void setPrefix( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
+	 * @see #isSetPrefix()
+	 * @see #getPrefix()
+	 * @see #setPrefix(String)
+	 * @generated
+	 */
     void unsetPrefix();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Prefix</em>' attribute is set.
-     * @see #unsetPrefix()
-     * @see #getPrefix()
-     * @see #setPrefix(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Prefix</em>' attribute is set.
+	 * @see #unsetPrefix()
+	 * @see #getPrefix()
+	 * @see #setPrefix(String)
+	 * @generated
+	 */
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Control With IED Name</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName <em>IED Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Control With IED Name</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName <em>IED Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Control With IED Name</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With IED Name</em>' container reference.
-     * @see #setControlWithIEDName(ControlWithIEDName)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ControlWithIEDName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName
-     * @model opposite="IEDName" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Control With IED Name</em>' container reference.
+	 * @see #setControlWithIEDName(ControlWithIEDName)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ControlWithIEDName()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName
+	 * @model opposite="IEDName" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     ControlWithIEDName getControlWithIEDName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Control With IED Name</em>' container reference.
-     * @see #getControlWithIEDName()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Control With IED Name</em>' container reference.
+	 * @see #getControlWithIEDName()
+	 * @generated
+	 */
     void setControlWithIEDName( ControlWithIEDName value );
 
     /**
-     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName
-     * @model opposite="ReferredIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Refers To Any LN</em>' reference.
+	 * @see #isSetRefersToAnyLN()
+	 * @see #unsetRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_RefersToAnyLN()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName
+	 * @model opposite="ReferredIEDName" resolveProxies="false" unsettable="true" transient="true"
+	 * @generated
+	 */
     AnyLN getRefersToAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Refers To Any LN</em>' reference.
+	 * @see #isSetRefersToAnyLN()
+	 * @see #unsetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 */
     void setRefersToAnyLN(AnyLN value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
+	 * @see #isSetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @generated
+	 */
     void unsetRefersToAnyLN();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
+	 * @see #unsetRefersToAnyLN()
+	 * @see #getRefersToAnyLN()
+	 * @see #setRefersToAnyLN(AnyLN)
+	 * @generated
+	 */
     boolean isSetRefersToAnyLN();
 
     /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Value</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #isSetValue()
-     * @see #unsetValue()
-     * @see #setValue(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_Value()
-     * @model unsettable="true"
-     *        extendedMetaData="kind='simple'"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #isSetValue()
+	 * @see #unsetValue()
+	 * @see #setValue(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_Value()
+	 * @model unsettable="true"
+	 *        extendedMetaData="kind='simple'"
+	 * @generated
+	 */
     String getValue();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #isSetValue()
-     * @see #unsetValue()
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #isSetValue()
+	 * @see #unsetValue()
+	 * @see #getValue()
+	 * @generated
+	 */
     void setValue(String value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetValue()
-     * @see #getValue()
-     * @see #setValue(String)
-     * @generated
-     */
+	 * @see #isSetValue()
+	 * @see #getValue()
+	 * @see #setValue(String)
+	 * @generated
+	 */
     void unsetValue();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Value</em>' attribute is set.
-     * @see #unsetValue()
-     * @see #getValue()
-     * @see #setValue(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Value</em>' attribute is set.
+	 * @see #unsetValue()
+	 * @see #getValue()
+	 * @see #setValue(String)
+	 * @generated
+	 */
     boolean isSetValue();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='IEDName_value_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'value attribute shall be valid in IEDName (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.value.toString()\n        ,\n\tstatus : Boolean = \n        self.value &lt;&gt; null implies self.validSclIEDName( value )\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateIEDName_value_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // IEDName

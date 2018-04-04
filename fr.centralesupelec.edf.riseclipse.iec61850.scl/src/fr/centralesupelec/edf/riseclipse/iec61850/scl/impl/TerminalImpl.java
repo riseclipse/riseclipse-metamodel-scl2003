@@ -17,6 +17,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
@@ -25,9 +26,14 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -60,302 +66,302 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class TerminalImpl extends UnNamingImpl implements Terminal {
     /**
-     * The default value of the '{@link #getBayName() <em>Bay Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBayName() <em>Bay Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBayName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBayName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String BAY_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBayName() <em>Bay Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBayName() <em>Bay Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBayName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBayName()
+	 * @generated
+	 * @ordered
+	 */
     protected String bayName = BAY_NAME_EDEFAULT;
 
     /**
-     * This is true if the Bay Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Bay Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bayNameESet;
 
     /**
-     * The default value of the '{@link #getCNodeName() <em>CNode Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getCNodeName() <em>CNode Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getCNodeName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getCNodeName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String CNODE_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getCNodeName() <em>CNode Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCNodeName() <em>CNode Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getCNodeName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getCNodeName()
+	 * @generated
+	 * @ordered
+	 */
     protected String cNodeName = CNODE_NAME_EDEFAULT;
 
     /**
-     * This is true if the CNode Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the CNode Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean cNodeNameESet;
 
     /**
-     * The default value of the '{@link #getConnectivityNode() <em>Connectivity Node</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getConnectivityNode() <em>Connectivity Node</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConnectivityNode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConnectivityNode()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String CONNECTIVITY_NODE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getConnectivityNode() <em>Connectivity Node</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConnectivityNode() <em>Connectivity Node</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConnectivityNode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConnectivityNode()
+	 * @generated
+	 * @ordered
+	 */
     protected String connectivityNode = CONNECTIVITY_NODE_EDEFAULT;
 
     /**
-     * This is true if the Connectivity Node attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Connectivity Node attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean connectivityNodeESet;
 
     /**
-     * The default value of the '{@link #getProcessName() <em>Process Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getProcessName() <em>Process Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProcessName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProcessName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PROCESS_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getProcessName() <em>Process Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProcessName() <em>Process Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProcessName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProcessName()
+	 * @generated
+	 * @ordered
+	 */
     protected String processName = PROCESS_NAME_EDEFAULT;
 
     /**
-     * This is true if the Process Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Process Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean processNameESet;
 
     /**
-     * The default value of the '{@link #getSubstationName() <em>Substation Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSubstationName() <em>Substation Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubstationName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubstationName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SUBSTATION_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSubstationName() <em>Substation Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubstationName() <em>Substation Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubstationName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubstationName()
+	 * @generated
+	 * @ordered
+	 */
     protected String substationName = SUBSTATION_NAME_EDEFAULT;
 
     /**
-     * This is true if the Substation Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Substation Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean substationNameESet;
 
     /**
-     * The default value of the '{@link #getVoltageLevelName() <em>Voltage Level Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getVoltageLevelName() <em>Voltage Level Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVoltageLevelName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVoltageLevelName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VOLTAGE_LEVEL_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getVoltageLevelName() <em>Voltage Level Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVoltageLevelName() <em>Voltage Level Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVoltageLevelName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVoltageLevelName()
+	 * @generated
+	 * @ordered
+	 */
     protected String voltageLevelName = VOLTAGE_LEVEL_NAME_EDEFAULT;
 
     /**
-     * This is true if the Voltage Level Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Voltage Level Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean voltageLevelNameESet;
 
     /**
-     * The cached value of the '{@link #getBay() <em>Bay</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBay() <em>Bay</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBay()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBay()
+	 * @generated
+	 * @ordered
+	 */
     protected Bay bay;
 
     /**
-     * This is true if the Bay reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Bay reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bayESet;
 
     /**
-     * The cached value of the '{@link #getCNode() <em>CNode</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCNode() <em>CNode</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getCNode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getCNode()
+	 * @generated
+	 * @ordered
+	 */
     protected ConnectivityNode cNode;
 
     /**
-     * This is true if the CNode reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the CNode reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean cNodeESet;
 
     /**
-     * The cached value of the '{@link #getSubstation() <em>Substation</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubstation() <em>Substation</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubstation()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubstation()
+	 * @generated
+	 * @ordered
+	 */
     protected Substation substation;
 
     /**
-     * This is true if the Substation reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Substation reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean substationESet;
 
     /**
-     * The cached value of the '{@link #getVoltageLevel() <em>Voltage Level</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getVoltageLevel() <em>Voltage Level</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getVoltageLevel()
-     * @generated
-     * @ordered
-     */
+	 * @see #getVoltageLevel()
+	 * @generated
+	 * @ordered
+	 */
     protected VoltageLevel voltageLevel;
 
     /**
-     * This is true if the Voltage Level reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Voltage Level reference has been set.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean voltageLevelESet;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean nameESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected TerminalImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getTerminal();
-    }
+		return SclPackage.eINSTANCE.getTerminal();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -370,32 +376,32 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBayName( String newBayName ) {
-        String oldBayName = bayName;
-        bayName = newBayName;
-        boolean oldBayNameESet = bayNameESet;
-        bayNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY_NAME, oldBayName, bayName, !oldBayNameESet));
-    }
+		String oldBayName = bayName;
+		bayName = newBayName;
+		boolean oldBayNameESet = bayNameESet;
+		bayNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY_NAME, oldBayName, bayName, !oldBayNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBayName() {
-        String oldBayName = bayName;
-        boolean oldBayNameESet = bayNameESet;
-        bayName = BAY_NAME_EDEFAULT;
-        bayNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY_NAME, oldBayName, BAY_NAME_EDEFAULT, oldBayNameESet));
-    }
+		String oldBayName = bayName;
+		boolean oldBayNameESet = bayNameESet;
+		bayName = BAY_NAME_EDEFAULT;
+		bayNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY_NAME, oldBayName, BAY_NAME_EDEFAULT, oldBayNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -419,32 +425,32 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setCNodeName( String newCNodeName ) {
-        String oldCNodeName = cNodeName;
-        cNodeName = newCNodeName;
-        boolean oldCNodeNameESet = cNodeNameESet;
-        cNodeNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName, cNodeName, !oldCNodeNameESet));
-    }
+		String oldCNodeName = cNodeName;
+		cNodeName = newCNodeName;
+		boolean oldCNodeNameESet = cNodeNameESet;
+		cNodeNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName, cNodeName, !oldCNodeNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetCNodeName() {
-        String oldCNodeName = cNodeName;
-        boolean oldCNodeNameESet = cNodeNameESet;
-        cNodeName = CNODE_NAME_EDEFAULT;
-        cNodeNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName, CNODE_NAME_EDEFAULT, oldCNodeNameESet));
-    }
+		String oldCNodeName = cNodeName;
+		boolean oldCNodeNameESet = cNodeNameESet;
+		cNodeName = CNODE_NAME_EDEFAULT;
+		cNodeNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE_NAME, oldCNodeName, CNODE_NAME_EDEFAULT, oldCNodeNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -468,32 +474,32 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConnectivityNode( String newConnectivityNode ) {
-        String oldConnectivityNode = connectivityNode;
-        connectivityNode = newConnectivityNode;
-        boolean oldConnectivityNodeESet = connectivityNodeESet;
-        connectivityNodeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CONNECTIVITY_NODE, oldConnectivityNode, connectivityNode, !oldConnectivityNodeESet));
-    }
+		String oldConnectivityNode = connectivityNode;
+		connectivityNode = newConnectivityNode;
+		boolean oldConnectivityNodeESet = connectivityNodeESet;
+		connectivityNodeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CONNECTIVITY_NODE, oldConnectivityNode, connectivityNode, !oldConnectivityNodeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetConnectivityNode() {
-        String oldConnectivityNode = connectivityNode;
-        boolean oldConnectivityNodeESet = connectivityNodeESet;
-        connectivityNode = CONNECTIVITY_NODE_EDEFAULT;
-        connectivityNodeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CONNECTIVITY_NODE, oldConnectivityNode, CONNECTIVITY_NODE_EDEFAULT, oldConnectivityNodeESet));
-    }
+		String oldConnectivityNode = connectivityNode;
+		boolean oldConnectivityNodeESet = connectivityNodeESet;
+		connectivityNode = CONNECTIVITY_NODE_EDEFAULT;
+		connectivityNodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CONNECTIVITY_NODE, oldConnectivityNode, CONNECTIVITY_NODE_EDEFAULT, oldConnectivityNodeESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -505,50 +511,50 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getProcessName() {
-        return processName;
-    }
+		return processName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setProcessName( String newProcessName ) {
-        String oldProcessName = processName;
-        processName = newProcessName;
-        boolean oldProcessNameESet = processNameESet;
-        processNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName, processName, !oldProcessNameESet));
-    }
+		String oldProcessName = processName;
+		processName = newProcessName;
+		boolean oldProcessNameESet = processNameESet;
+		processNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName, processName, !oldProcessNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetProcessName() {
-        String oldProcessName = processName;
-        boolean oldProcessNameESet = processNameESet;
-        processName = PROCESS_NAME_EDEFAULT;
-        processNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName, PROCESS_NAME_EDEFAULT, oldProcessNameESet));
-    }
+		String oldProcessName = processName;
+		boolean oldProcessNameESet = processNameESet;
+		processName = PROCESS_NAME_EDEFAULT;
+		processNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__PROCESS_NAME, oldProcessName, PROCESS_NAME_EDEFAULT, oldProcessNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetProcessName() {
-        return processNameESet;
-    }
+		return processNameESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -563,32 +569,32 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSubstationName( String newSubstationName ) {
-        String oldSubstationName = substationName;
-        substationName = newSubstationName;
-        boolean oldSubstationNameESet = substationNameESet;
-        substationNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION_NAME, oldSubstationName, substationName, !oldSubstationNameESet));
-    }
+		String oldSubstationName = substationName;
+		substationName = newSubstationName;
+		boolean oldSubstationNameESet = substationNameESet;
+		substationNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION_NAME, oldSubstationName, substationName, !oldSubstationNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubstationName() {
-        String oldSubstationName = substationName;
-        boolean oldSubstationNameESet = substationNameESet;
-        substationName = SUBSTATION_NAME_EDEFAULT;
-        substationNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION_NAME, oldSubstationName, SUBSTATION_NAME_EDEFAULT, oldSubstationNameESet));
-    }
+		String oldSubstationName = substationName;
+		boolean oldSubstationNameESet = substationNameESet;
+		substationName = SUBSTATION_NAME_EDEFAULT;
+		substationNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION_NAME, oldSubstationName, SUBSTATION_NAME_EDEFAULT, oldSubstationNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -612,32 +618,32 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setVoltageLevelName( String newVoltageLevelName ) {
-        String oldVoltageLevelName = voltageLevelName;
-        voltageLevelName = newVoltageLevelName;
-        boolean oldVoltageLevelNameESet = voltageLevelNameESet;
-        voltageLevelNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME, oldVoltageLevelName, voltageLevelName, !oldVoltageLevelNameESet));
-    }
+		String oldVoltageLevelName = voltageLevelName;
+		voltageLevelName = newVoltageLevelName;
+		boolean oldVoltageLevelNameESet = voltageLevelNameESet;
+		voltageLevelNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME, oldVoltageLevelName, voltageLevelName, !oldVoltageLevelNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetVoltageLevelName() {
-        String oldVoltageLevelName = voltageLevelName;
-        boolean oldVoltageLevelNameESet = voltageLevelNameESet;
-        voltageLevelName = VOLTAGE_LEVEL_NAME_EDEFAULT;
-        voltageLevelNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME, oldVoltageLevelName, VOLTAGE_LEVEL_NAME_EDEFAULT, oldVoltageLevelNameESet));
-    }
+		String oldVoltageLevelName = voltageLevelName;
+		boolean oldVoltageLevelNameESet = voltageLevelNameESet;
+		voltageLevelName = VOLTAGE_LEVEL_NAME_EDEFAULT;
+		voltageLevelNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME, oldVoltageLevelName, VOLTAGE_LEVEL_NAME_EDEFAULT, oldVoltageLevelNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -649,736 +655,1230 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AbstractConductingEquipment getAbstractConductingEquipment() {
-        if (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
-        return (AbstractConductingEquipment)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
+		return (AbstractConductingEquipment)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetAbstractConductingEquipment(
             AbstractConductingEquipment newAbstractConductingEquipment, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractConductingEquipment, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newAbstractConductingEquipment, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAbstractConductingEquipment( AbstractConductingEquipment newAbstractConductingEquipment ) {
-        if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractConductingEquipment != null)
-                msgs = ((InternalEObject)newAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
-            msgs = basicSetAbstractConductingEquipment(newAbstractConductingEquipment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, newAbstractConductingEquipment, newAbstractConductingEquipment));
-    }
+		if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
+			if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newAbstractConductingEquipment != null)
+				msgs = ((InternalEObject)newAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
+			msgs = basicSetAbstractConductingEquipment(newAbstractConductingEquipment, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, newAbstractConductingEquipment, newAbstractConductingEquipment));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Bay getBay() {
-        return bay;
-    }
+		return bay;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        Bay oldBay = bay;
-        bay = newBay;
-        boolean oldBayESet = bayESet;
-        bayESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, oldBay, newBay, !oldBayESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Bay oldBay = bay;
+		bay = newBay;
+		boolean oldBayESet = bayESet;
+		bayESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, oldBay, newBay, !oldBayESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBay( Bay newBay ) {
-        if (newBay != bay) {
-            NotificationChain msgs = null;
-            if (bay != null)
-                msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldBayESet = bayESet;
-            bayESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, newBay, newBay, !oldBayESet));
-        }
-    }
+		if (newBay != bay) {
+			NotificationChain msgs = null;
+			if (bay != null)
+				msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
+			if (newBay != null)
+				msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
+			msgs = basicSetBay(newBay, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldBayESet = bayESet;
+			bayESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, newBay, newBay, !oldBayESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetBay( NotificationChain msgs ) {
-        Bay oldBay = bay;
-        bay = null;
-        boolean oldBayESet = bayESet;
-        bayESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, oldBay, null, oldBayESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Bay oldBay = bay;
+		bay = null;
+		boolean oldBayESet = bayESet;
+		bayESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, oldBay, null, oldBayESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBay() {
-        if (bay != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            msgs = basicUnsetBay(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldBayESet = bayESet;
-            bayESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, null, null, oldBayESet));
-        }
-    }
+		if (bay != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
+			msgs = basicUnsetBay(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldBayESet = bayESet;
+			bayESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, null, null, oldBayESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBay() {
-        return bayESet;
-    }
+		return bayESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ConnectivityNode getCNode() {
-        return cNode;
-    }
+		return cNode;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetCNode( ConnectivityNode newCNode, NotificationChain msgs ) {
-        ConnectivityNode oldCNode = cNode;
-        cNode = newCNode;
-        boolean oldCNodeESet = cNodeESet;
-        cNodeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, oldCNode, newCNode, !oldCNodeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ConnectivityNode oldCNode = cNode;
+		cNode = newCNode;
+		boolean oldCNodeESet = cNodeESet;
+		cNodeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, oldCNode, newCNode, !oldCNodeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setCNode( ConnectivityNode newCNode ) {
-        if (newCNode != cNode) {
-            NotificationChain msgs = null;
-            if (cNode != null)
-                msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            if (newCNode != null)
-                msgs = ((InternalEObject)newCNode).eInverseAdd(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            msgs = basicSetCNode(newCNode, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldCNodeESet = cNodeESet;
-            cNodeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, newCNode, newCNode, !oldCNodeESet));
-        }
-    }
+		if (newCNode != cNode) {
+			NotificationChain msgs = null;
+			if (cNode != null)
+				msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
+			if (newCNode != null)
+				msgs = ((InternalEObject)newCNode).eInverseAdd(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
+			msgs = basicSetCNode(newCNode, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldCNodeESet = cNodeESet;
+			cNodeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, newCNode, newCNode, !oldCNodeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetCNode( NotificationChain msgs ) {
-        ConnectivityNode oldCNode = cNode;
-        cNode = null;
-        boolean oldCNodeESet = cNodeESet;
-        cNodeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, oldCNode, null, oldCNodeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		ConnectivityNode oldCNode = cNode;
+		cNode = null;
+		boolean oldCNodeESet = cNodeESet;
+		cNodeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, oldCNode, null, oldCNodeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetCNode() {
-        if (cNode != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            msgs = basicUnsetCNode(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldCNodeESet = cNodeESet;
-            cNodeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, null, null, oldCNodeESet));
-        }
-    }
+		if (cNode != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
+			msgs = basicUnsetCNode(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldCNodeESet = cNodeESet;
+			cNodeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, null, null, oldCNodeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetCNode() {
-        return cNodeESet;
-    }
+		return cNodeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Substation getSubstation() {
-        return substation;
-    }
+		return substation;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSubstation( Substation newSubstation, NotificationChain msgs ) {
-        Substation oldSubstation = substation;
-        substation = newSubstation;
-        boolean oldSubstationESet = substationESet;
-        substationESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, newSubstation, !oldSubstationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Substation oldSubstation = substation;
+		substation = newSubstation;
+		boolean oldSubstationESet = substationESet;
+		substationESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, newSubstation, !oldSubstationESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSubstation( Substation newSubstation ) {
-        if (newSubstation != substation) {
-            NotificationChain msgs = null;
-            if (substation != null)
-                msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            if (newSubstation != null)
-                msgs = ((InternalEObject)newSubstation).eInverseAdd(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            msgs = basicSetSubstation(newSubstation, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSubstationESet = substationESet;
-            substationESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, newSubstation, newSubstation, !oldSubstationESet));
-        }
-    }
+		if (newSubstation != substation) {
+			NotificationChain msgs = null;
+			if (substation != null)
+				msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
+			if (newSubstation != null)
+				msgs = ((InternalEObject)newSubstation).eInverseAdd(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
+			msgs = basicSetSubstation(newSubstation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldSubstationESet = substationESet;
+			substationESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, newSubstation, newSubstation, !oldSubstationESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetSubstation( NotificationChain msgs ) {
-        Substation oldSubstation = substation;
-        substation = null;
-        boolean oldSubstationESet = substationESet;
-        substationESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, null, oldSubstationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Substation oldSubstation = substation;
+		substation = null;
+		boolean oldSubstationESet = substationESet;
+		substationESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, null, oldSubstationESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubstation() {
-        if (substation != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            msgs = basicUnsetSubstation(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSubstationESet = substationESet;
-            substationESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, null, null, oldSubstationESet));
-        }
-    }
+		if (substation != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
+			msgs = basicUnsetSubstation(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldSubstationESet = substationESet;
+			substationESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, null, null, oldSubstationESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSubstation() {
-        return substationESet;
-    }
+		return substationESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public VoltageLevel getVoltageLevel() {
-        return voltageLevel;
-    }
+		return voltageLevel;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetVoltageLevel( VoltageLevel newVoltageLevel, NotificationChain msgs ) {
-        VoltageLevel oldVoltageLevel = voltageLevel;
-        voltageLevel = newVoltageLevel;
-        boolean oldVoltageLevelESet = voltageLevelESet;
-        voltageLevelESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, newVoltageLevel, !oldVoltageLevelESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		VoltageLevel oldVoltageLevel = voltageLevel;
+		voltageLevel = newVoltageLevel;
+		boolean oldVoltageLevelESet = voltageLevelESet;
+		voltageLevelESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, newVoltageLevel, !oldVoltageLevelESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setVoltageLevel( VoltageLevel newVoltageLevel ) {
-        if (newVoltageLevel != voltageLevel) {
-            NotificationChain msgs = null;
-            if (voltageLevel != null)
-                msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            if (newVoltageLevel != null)
-                msgs = ((InternalEObject)newVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            msgs = basicSetVoltageLevel(newVoltageLevel, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldVoltageLevelESet = voltageLevelESet;
-            voltageLevelESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, newVoltageLevel, newVoltageLevel, !oldVoltageLevelESet));
-        }
-    }
+		if (newVoltageLevel != voltageLevel) {
+			NotificationChain msgs = null;
+			if (voltageLevel != null)
+				msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
+			if (newVoltageLevel != null)
+				msgs = ((InternalEObject)newVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
+			msgs = basicSetVoltageLevel(newVoltageLevel, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldVoltageLevelESet = voltageLevelESet;
+			voltageLevelESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, newVoltageLevel, newVoltageLevel, !oldVoltageLevelESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetVoltageLevel( NotificationChain msgs ) {
-        VoltageLevel oldVoltageLevel = voltageLevel;
-        voltageLevel = null;
-        boolean oldVoltageLevelESet = voltageLevelESet;
-        voltageLevelESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, null, oldVoltageLevelESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		VoltageLevel oldVoltageLevel = voltageLevel;
+		voltageLevel = null;
+		boolean oldVoltageLevelESet = voltageLevelESet;
+		voltageLevelESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, null, oldVoltageLevelESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetVoltageLevel() {
-        if (voltageLevel != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            msgs = basicUnsetVoltageLevel(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldVoltageLevelESet = voltageLevelESet;
-            voltageLevelESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, null, null, oldVoltageLevelESet));
-        }
-    }
+		if (voltageLevel != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
+			msgs = basicUnsetVoltageLevel(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldVoltageLevelESet = voltageLevelESet;
+			voltageLevelESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, null, null, oldVoltageLevelESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetVoltageLevel() {
-        return voltageLevelESet;
-    }
+		return voltageLevelESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        boolean oldNameESet = nameESet;
-        nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__NAME, oldName, name, !oldNameESet));
-    }
+		String oldName = name;
+		name = newName;
+		boolean oldNameESet = nameESet;
+		nameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__NAME, oldName, name, !oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetName() {
-        String oldName = name;
-        boolean oldNameESet = nameESet;
-        name = NAME_EDEFAULT;
-        nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__NAME, oldName, NAME_EDEFAULT, oldNameESet));
-    }
+		String oldName = name;
+		boolean oldNameESet = nameESet;
+		name = NAME_EDEFAULT;
+		nameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetName() {
-        return nameESet;
-    }
+		return nameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateTerminal_connectivityNode_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal connectivity Node required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_connectivityNode_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_CONNECTIVITY_NODE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'connectivityNode attribute shall be present in Terminal (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.connectivityNode <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_connectivityNode_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_connectivityNode_required__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_CONNECTIVITY_NODE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_CONNECTIVITY_NODE_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_connectivityNode_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal connectivity Node valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_connectivityNode_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'connectivityNode attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + ')). '\n" +
+		"          + 'Current value is ' + self.connectivityNode.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.connectivityNode <> null implies self.validSclRef( connectivityNode )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_connectivityNode_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_connectivityNode_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_connectivityNode_value_shall_be_pathname(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal connectivity Node value shall be pathname</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_connectivityNode_value_shall_be_pathname(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALUE_SHALL_BE_PATHNAME_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'connectivityNode attribute value shall be the pathName in Terminal (line ' + self.lineNumber.toString() + ')). '\n" +
+		"          + 'Current value is ' + self.connectivityNode.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        (  self.connectivityNode <> null\n" +
+		"        and self.substationName <> null\n" +
+		"        and self.voltageLevelName <> null\n" +
+		"        and self.bayName <> null\n" +
+		"        and self.cNodeName <> null\n" +
+		"        ) \n" +
+		"        implies\n" +
+		"            self.connectivityNode = self.substationName\n" +
+		"                            + '/' + self.voltageLevelName\n" +
+		"                            + '/' + self.bayName\n" +
+		"                            + '/' + self.cNodeName\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_connectivityNode_value_shall_be_pathname(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_connectivityNode_value_shall_be_pathname__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALUE_SHALL_BE_PATHNAME_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALUE_SHALL_BE_PATHNAME);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_substationName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal substation Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_substationName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_SUBSTATION_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'substationName attribute shall be present in Terminal (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.substationName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_substationName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_substationName_required__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_SUBSTATION_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_SUBSTATION_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_substationName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal substation Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_substationName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_SUBSTATION_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'substationName attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.substationName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.substationName <> null implies self.validSclName( substationName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_substationName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_substationName_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_SUBSTATION_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_SUBSTATION_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_voltageLevelName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal voltage Level Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_voltageLevelName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'voltageLevelName attribute shall be present in Terminal (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.voltageLevelName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_voltageLevelName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_voltageLevelName_required__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_voltageLevelName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal voltage Level Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_voltageLevelName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'voltageLevelName attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.voltageLevelName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.voltageLevelName <> null implies self.validSclName( voltageLevelName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_voltageLevelName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_voltageLevelName_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_bayName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal bay Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_bayName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_BAY_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'bayName attribute shall be present in Terminal (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.bayName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_bayName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_bayName_required__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_BAY_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_BAY_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_bayName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal bay Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_bayName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_BAY_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'bayName attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.bayName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.bayName <> null implies self.validSclName( bayName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_bayName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_bayName_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_BAY_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_BAY_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_cNodeName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal cNode Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_cNodeName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_CNODE_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'cNodeName attribute shall be present in Terminal (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.cNodeName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_cNodeName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_cNodeName_required__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_CNODE_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_CNODE_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_cNodeName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal cNode Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_cNodeName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_CNODE_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'cNodeName attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.cNodeName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.cNodeName <> null implies self.validSclName( cNodeName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_cNodeName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_cNodeName_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_CNODE_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_CNODE_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateTerminal_processName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Terminal process Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTerminal_processName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TERMINAL_PROCESS_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'processName attribute shall be valid in Terminal (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.processName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.processName <> null implies self.validSclProcessName( processName )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTerminal_processName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTerminal(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTerminal__ValidateTerminal_processName_valid__DiagnosticChain_Map(),
+				 VALIDATE_TERMINAL_PROCESS_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TERMINAL__VALIDATE_TERMINAL_PROCESS_NAME_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
-            case SclPackage.TERMINAL__BAY:
-                if (bay != null)
-                    msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
-            case SclPackage.TERMINAL__CNODE:
-                if (cNode != null)
-                    msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-                return basicSetCNode((ConnectivityNode)otherEnd, msgs);
-            case SclPackage.TERMINAL__SUBSTATION:
-                if (substation != null)
-                    msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-                return basicSetSubstation((Substation)otherEnd, msgs);
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                if (voltageLevel != null)
-                    msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-                return basicSetVoltageLevel((VoltageLevel)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
+			case SclPackage.TERMINAL__BAY:
+				if (bay != null)
+					msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
+				return basicSetBay((Bay)otherEnd, msgs);
+			case SclPackage.TERMINAL__CNODE:
+				if (cNode != null)
+					msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
+				return basicSetCNode((ConnectivityNode)otherEnd, msgs);
+			case SclPackage.TERMINAL__SUBSTATION:
+				if (substation != null)
+					msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
+				return basicSetSubstation((Substation)otherEnd, msgs);
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				if (voltageLevel != null)
+					msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
+				return basicSetVoltageLevel((VoltageLevel)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return basicSetAbstractConductingEquipment(null, msgs);
-            case SclPackage.TERMINAL__BAY:
-                return basicUnsetBay(msgs);
-            case SclPackage.TERMINAL__CNODE:
-                return basicUnsetCNode(msgs);
-            case SclPackage.TERMINAL__SUBSTATION:
-                return basicUnsetSubstation(msgs);
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return basicUnsetVoltageLevel(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				return basicSetAbstractConductingEquipment(null, msgs);
+			case SclPackage.TERMINAL__BAY:
+				return basicUnsetBay(msgs);
+			case SclPackage.TERMINAL__CNODE:
+				return basicUnsetCNode(msgs);
+			case SclPackage.TERMINAL__SUBSTATION:
+				return basicUnsetSubstation(msgs);
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				return basicUnsetVoltageLevel(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__BAY_NAME:
-                return getBayName();
-            case SclPackage.TERMINAL__CNODE_NAME:
-                return getCNodeName();
-            case SclPackage.TERMINAL__CONNECTIVITY_NODE:
-                return getConnectivityNode();
-            case SclPackage.TERMINAL__PROCESS_NAME:
-                return getProcessName();
-            case SclPackage.TERMINAL__SUBSTATION_NAME:
-                return getSubstationName();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
-                return getVoltageLevelName();
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment();
-            case SclPackage.TERMINAL__BAY:
-                return getBay();
-            case SclPackage.TERMINAL__CNODE:
-                return getCNode();
-            case SclPackage.TERMINAL__SUBSTATION:
-                return getSubstation();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return getVoltageLevel();
-            case SclPackage.TERMINAL__NAME:
-                return getName();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__BAY_NAME:
+				return getBayName();
+			case SclPackage.TERMINAL__CNODE_NAME:
+				return getCNodeName();
+			case SclPackage.TERMINAL__CONNECTIVITY_NODE:
+				return getConnectivityNode();
+			case SclPackage.TERMINAL__PROCESS_NAME:
+				return getProcessName();
+			case SclPackage.TERMINAL__SUBSTATION_NAME:
+				return getSubstationName();
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
+				return getVoltageLevelName();
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				return getAbstractConductingEquipment();
+			case SclPackage.TERMINAL__BAY:
+				return getBay();
+			case SclPackage.TERMINAL__CNODE:
+				return getCNode();
+			case SclPackage.TERMINAL__SUBSTATION:
+				return getSubstation();
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				return getVoltageLevel();
+			case SclPackage.TERMINAL__NAME:
+				return getName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__BAY_NAME:
-                setBayName((String)newValue);
-                return;
-            case SclPackage.TERMINAL__CNODE_NAME:
-                setCNodeName((String)newValue);
-                return;
-            case SclPackage.TERMINAL__CONNECTIVITY_NODE:
-                setConnectivityNode((String)newValue);
-                return;
-            case SclPackage.TERMINAL__PROCESS_NAME:
-                setProcessName((String)newValue);
-                return;
-            case SclPackage.TERMINAL__SUBSTATION_NAME:
-                setSubstationName((String)newValue);
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
-                setVoltageLevelName((String)newValue);
-                return;
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
-                return;
-            case SclPackage.TERMINAL__BAY:
-                setBay((Bay)newValue);
-                return;
-            case SclPackage.TERMINAL__CNODE:
-                setCNode((ConnectivityNode)newValue);
-                return;
-            case SclPackage.TERMINAL__SUBSTATION:
-                setSubstation((Substation)newValue);
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                setVoltageLevel((VoltageLevel)newValue);
-                return;
-            case SclPackage.TERMINAL__NAME:
-                setName((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__BAY_NAME:
+				setBayName((String)newValue);
+				return;
+			case SclPackage.TERMINAL__CNODE_NAME:
+				setCNodeName((String)newValue);
+				return;
+			case SclPackage.TERMINAL__CONNECTIVITY_NODE:
+				setConnectivityNode((String)newValue);
+				return;
+			case SclPackage.TERMINAL__PROCESS_NAME:
+				setProcessName((String)newValue);
+				return;
+			case SclPackage.TERMINAL__SUBSTATION_NAME:
+				setSubstationName((String)newValue);
+				return;
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
+				setVoltageLevelName((String)newValue);
+				return;
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
+				return;
+			case SclPackage.TERMINAL__BAY:
+				setBay((Bay)newValue);
+				return;
+			case SclPackage.TERMINAL__CNODE:
+				setCNode((ConnectivityNode)newValue);
+				return;
+			case SclPackage.TERMINAL__SUBSTATION:
+				setSubstation((Substation)newValue);
+				return;
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				setVoltageLevel((VoltageLevel)newValue);
+				return;
+			case SclPackage.TERMINAL__NAME:
+				setName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__BAY_NAME:
-                unsetBayName();
-                return;
-            case SclPackage.TERMINAL__CNODE_NAME:
-                unsetCNodeName();
-                return;
-            case SclPackage.TERMINAL__CONNECTIVITY_NODE:
-                unsetConnectivityNode();
-                return;
-            case SclPackage.TERMINAL__PROCESS_NAME:
-                unsetProcessName();
-                return;
-            case SclPackage.TERMINAL__SUBSTATION_NAME:
-                unsetSubstationName();
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
-                unsetVoltageLevelName();
-                return;
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)null);
-                return;
-            case SclPackage.TERMINAL__BAY:
-                unsetBay();
-                return;
-            case SclPackage.TERMINAL__CNODE:
-                unsetCNode();
-                return;
-            case SclPackage.TERMINAL__SUBSTATION:
-                unsetSubstation();
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                unsetVoltageLevel();
-                return;
-            case SclPackage.TERMINAL__NAME:
-                unsetName();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__BAY_NAME:
+				unsetBayName();
+				return;
+			case SclPackage.TERMINAL__CNODE_NAME:
+				unsetCNodeName();
+				return;
+			case SclPackage.TERMINAL__CONNECTIVITY_NODE:
+				unsetConnectivityNode();
+				return;
+			case SclPackage.TERMINAL__PROCESS_NAME:
+				unsetProcessName();
+				return;
+			case SclPackage.TERMINAL__SUBSTATION_NAME:
+				unsetSubstationName();
+				return;
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
+				unsetVoltageLevelName();
+				return;
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				setAbstractConductingEquipment((AbstractConductingEquipment)null);
+				return;
+			case SclPackage.TERMINAL__BAY:
+				unsetBay();
+				return;
+			case SclPackage.TERMINAL__CNODE:
+				unsetCNode();
+				return;
+			case SclPackage.TERMINAL__SUBSTATION:
+				unsetSubstation();
+				return;
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				unsetVoltageLevel();
+				return;
+			case SclPackage.TERMINAL__NAME:
+				unsetName();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TERMINAL__BAY_NAME:
-                return isSetBayName();
-            case SclPackage.TERMINAL__CNODE_NAME:
-                return isSetCNodeName();
-            case SclPackage.TERMINAL__CONNECTIVITY_NODE:
-                return isSetConnectivityNode();
-            case SclPackage.TERMINAL__PROCESS_NAME:
-                return isSetProcessName();
-            case SclPackage.TERMINAL__SUBSTATION_NAME:
-                return isSetSubstationName();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
-                return isSetVoltageLevelName();
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment() != null;
-            case SclPackage.TERMINAL__BAY:
-                return isSetBay();
-            case SclPackage.TERMINAL__CNODE:
-                return isSetCNode();
-            case SclPackage.TERMINAL__SUBSTATION:
-                return isSetSubstation();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return isSetVoltageLevel();
-            case SclPackage.TERMINAL__NAME:
-                return isSetName();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TERMINAL__BAY_NAME:
+				return isSetBayName();
+			case SclPackage.TERMINAL__CNODE_NAME:
+				return isSetCNodeName();
+			case SclPackage.TERMINAL__CONNECTIVITY_NODE:
+				return isSetConnectivityNode();
+			case SclPackage.TERMINAL__PROCESS_NAME:
+				return isSetProcessName();
+			case SclPackage.TERMINAL__SUBSTATION_NAME:
+				return isSetSubstationName();
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
+				return isSetVoltageLevelName();
+			case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+				return getAbstractConductingEquipment() != null;
+			case SclPackage.TERMINAL__BAY:
+				return isSetBay();
+			case SclPackage.TERMINAL__CNODE:
+				return isSetCNode();
+			case SclPackage.TERMINAL__SUBSTATION:
+				return isSetSubstation();
+			case SclPackage.TERMINAL__VOLTAGE_LEVEL:
+				return isSetVoltageLevel();
+			case SclPackage.TERMINAL__NAME:
+				return isSetName();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_CONNECTIVITY_NODE_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_connectivityNode_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_connectivityNode_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_CONNECTIVITY_NODE_VALUE_SHALL_BE_PATHNAME__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_connectivityNode_value_shall_be_pathname((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_SUBSTATION_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_substationName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_SUBSTATION_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_substationName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_voltageLevelName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_VOLTAGE_LEVEL_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_voltageLevelName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_BAY_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_bayName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_BAY_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_bayName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_CNODE_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_cNodeName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_CNODE_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_cNodeName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.TERMINAL___VALIDATE_TERMINAL_PROCESS_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateTerminal_processName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (bayName: ");
-        if (bayNameESet) result.append(bayName); else result.append("<unset>");
-        result.append(", cNodeName: ");
-        if (cNodeNameESet) result.append(cNodeName); else result.append("<unset>");
-        result.append(", connectivityNode: ");
-        if (connectivityNodeESet) result.append(connectivityNode); else result.append("<unset>");
-        result.append(", processName: ");
-        if (processNameESet) result.append(processName); else result.append("<unset>");
-        result.append(", substationName: ");
-        if (substationNameESet) result.append(substationName); else result.append("<unset>");
-        result.append(", voltageLevelName: ");
-        if (voltageLevelNameESet) result.append(voltageLevelName); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bayName: ");
+		if (bayNameESet) result.append(bayName); else result.append("<unset>");
+		result.append(", cNodeName: ");
+		if (cNodeNameESet) result.append(cNodeName); else result.append("<unset>");
+		result.append(", connectivityNode: ");
+		if (connectivityNodeESet) result.append(connectivityNode); else result.append("<unset>");
+		result.append(", processName: ");
+		if (processNameESet) result.append(processName); else result.append("<unset>");
+		result.append(", substationName: ");
+		if (substationNameESet) result.append(substationName); else result.append("<unset>");
+		result.append(", voltageLevelName: ");
+		if (voltageLevelNameESet) result.append(voltageLevelName); else result.append("<unset>");
+		result.append(", name: ");
+		if (nameESet) result.append(name); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

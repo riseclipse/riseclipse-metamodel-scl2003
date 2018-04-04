@@ -17,14 +17,20 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -49,100 +55,100 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class DOImpl extends DataObjectImpl implements DO {
     /**
-     * The default value of the '{@link #getTransient() <em>Transient</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getTransient() <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTransient()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTransient()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean TRANSIENT_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getTransient() <em>Transient</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTransient() <em>Transient</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTransient()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTransient()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean transient_ = TRANSIENT_EDEFAULT;
 
     /**
-     * This is true if the Transient attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Transient attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean transientESet;
 
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected String type = TYPE_EDEFAULT;
 
     /**
-     * This is true if the Type attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Type attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean typeESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDOType() <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDOType() <em>Refers To DO Type</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDOType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDOType()
+	 * @generated
+	 * @ordered
+	 */
     protected DOType refersToDOType;
 
     /**
-     * This is true if the Refers To DO Type reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To DO Type reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDOTypeESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected DOImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getDO();
-    }
+		return SclPackage.eINSTANCE.getDO();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -157,41 +163,41 @@ public class DOImpl extends DataObjectImpl implements DO {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTransient( Boolean newTransient ) {
-        Boolean oldTransient = transient_;
-        transient_ = newTransient;
-        boolean oldTransientESet = transientESet;
-        transientESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__TRANSIENT, oldTransient, transient_, !oldTransientESet));
-    }
+		Boolean oldTransient = transient_;
+		transient_ = newTransient;
+		boolean oldTransientESet = transientESet;
+		transientESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__TRANSIENT, oldTransient, transient_, !oldTransientESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetTransient() {
-        Boolean oldTransient = transient_;
-        boolean oldTransientESet = transientESet;
-        transient_ = TRANSIENT_EDEFAULT;
-        transientESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__TRANSIENT, oldTransient, TRANSIENT_EDEFAULT, oldTransientESet));
-    }
+		Boolean oldTransient = transient_;
+		boolean oldTransientESet = transientESet;
+		transient_ = TRANSIENT_EDEFAULT;
+		transientESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__TRANSIENT, oldTransient, TRANSIENT_EDEFAULT, oldTransientESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetTransient() {
-        return transientESet;
-    }
+		return transientESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -206,32 +212,32 @@ public class DOImpl extends DataObjectImpl implements DO {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setType( String newType ) {
-        String oldType = type;
-        type = newType;
-        boolean oldTypeESet = typeESet;
-        typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__TYPE, oldType, type, !oldTypeESet));
-    }
+		String oldType = type;
+		type = newType;
+		boolean oldTypeESet = typeESet;
+		typeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__TYPE, oldType, type, !oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetType() {
-        String oldType = type;
-        boolean oldTypeESet = typeESet;
-        type = TYPE_EDEFAULT;
-        typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-    }
+		String oldType = type;
+		boolean oldTypeESet = typeESet;
+		type = TYPE_EDEFAULT;
+		typeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -243,296 +249,387 @@ public class DOImpl extends DataObjectImpl implements DO {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public LNodeType getLNodeType() {
-        if (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE) return null;
-        return (LNodeType)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE) return null;
+		return (LNodeType)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetLNodeType( LNodeType newLNodeType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLNodeType, SclPackage.DO__LNODE_TYPE, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newLNodeType, SclPackage.DO__LNODE_TYPE, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLNodeType( LNodeType newLNodeType ) {
-        if (newLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE && newLNodeType != null)) {
-            if (EcoreUtil.isAncestor(this, newLNodeType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newLNodeType != null)
-                msgs = ((InternalEObject)newLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
-            msgs = basicSetLNodeType(newLNodeType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__LNODE_TYPE, newLNodeType, newLNodeType));
-    }
+		if (newLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE && newLNodeType != null)) {
+			if (EcoreUtil.isAncestor(this, newLNodeType))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newLNodeType != null)
+				msgs = ((InternalEObject)newLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
+			msgs = basicSetLNodeType(newLNodeType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__LNODE_TYPE, newLNodeType, newLNodeType));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DOType getRefersToDOType() {
-        return refersToDOType;
-    }
+		return refersToDOType;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDOType(DOType newRefersToDOType, NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = newRefersToDOType;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.DO__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DOType oldRefersToDOType = refersToDOType;
+		refersToDOType = newRefersToDOType;
+		boolean oldRefersToDOTypeESet = refersToDOTypeESet;
+		refersToDOTypeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.DO__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDOType(DOType newRefersToDOType) {
-        if (newRefersToDOType != refersToDOType) {
-            NotificationChain msgs = null;
-            if (refersToDOType != null)
-                msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
-            if (newRefersToDOType != null)
-                msgs = ((InternalEObject)newRefersToDOType).eInverseAdd(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
-            msgs = basicSetRefersToDOType(newRefersToDOType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet));
-        }
-    }
+		if (newRefersToDOType != refersToDOType) {
+			NotificationChain msgs = null;
+			if (refersToDOType != null)
+				msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
+			if (newRefersToDOType != null)
+				msgs = ((InternalEObject)newRefersToDOType).eInverseAdd(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
+			msgs = basicSetRefersToDOType(newRefersToDOType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDOTypeESet = refersToDOTypeESet;
+			refersToDOTypeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDOType(NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = null;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__REFERS_TO_DO_TYPE, oldRefersToDOType, null, oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DOType oldRefersToDOType = refersToDOType;
+		refersToDOType = null;
+		boolean oldRefersToDOTypeESet = refersToDOTypeESet;
+		refersToDOTypeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__REFERS_TO_DO_TYPE, oldRefersToDOType, null, oldRefersToDOTypeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDOType() {
-        if (refersToDOType != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
-            msgs = basicUnsetRefersToDOType(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet));
-        }
-    }
+		if (refersToDOType != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
+			msgs = basicUnsetRefersToDOType(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDOTypeESet = refersToDOTypeESet;
+			refersToDOTypeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDOType() {
-        return refersToDOTypeESet;
-    }
+		return refersToDOTypeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateDO_type_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DO type required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDO_type_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DO_TYPE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'type attribute shall be present in DO (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.type <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDO_type_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDO(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDO__ValidateDO_type_required__DiagnosticChain_Map(),
+				 VALIDATE_DO_TYPE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DO__VALIDATE_DO_TYPE_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateDO_type_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate DO type valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDO_type_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DO_TYPE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'type attribute shall be valid in DO (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.type.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.type <> null implies self.validSclName( type )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDO_type_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDO(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDO__ValidateDO_type_valid__DiagnosticChain_Map(),
+				 VALIDATE_DO_TYPE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DO__VALIDATE_DO_TYPE_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO__LNODE_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLNodeType((LNodeType)otherEnd, msgs);
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                if (refersToDOType != null)
-                    msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
-                return basicSetRefersToDOType((DOType)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DO__LNODE_TYPE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetLNodeType((LNodeType)otherEnd, msgs);
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				if (refersToDOType != null)
+					msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
+				return basicSetRefersToDOType((DOType)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO__LNODE_TYPE:
-                return basicSetLNodeType(null, msgs);
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                return basicUnsetRefersToDOType(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DO__LNODE_TYPE:
+				return basicSetLNodeType(null, msgs);
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				return basicUnsetRefersToDOType(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DO__LNODE_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.DO__LNODE_TYPE:
+				return eInternalContainer().eInverseRemove(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                return getTransient();
-            case SclPackage.DO__TYPE:
-                return getType();
-            case SclPackage.DO__LNODE_TYPE:
-                return getLNodeType();
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                return getRefersToDOType();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.DO__TRANSIENT:
+				return getTransient();
+			case SclPackage.DO__TYPE:
+				return getType();
+			case SclPackage.DO__LNODE_TYPE:
+				return getLNodeType();
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				return getRefersToDOType();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                setTransient((Boolean)newValue);
-                return;
-            case SclPackage.DO__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.DO__LNODE_TYPE:
-                setLNodeType((LNodeType)newValue);
-                return;
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                setRefersToDOType((DOType)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.DO__TRANSIENT:
+				setTransient((Boolean)newValue);
+				return;
+			case SclPackage.DO__TYPE:
+				setType((String)newValue);
+				return;
+			case SclPackage.DO__LNODE_TYPE:
+				setLNodeType((LNodeType)newValue);
+				return;
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				setRefersToDOType((DOType)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                unsetTransient();
-                return;
-            case SclPackage.DO__TYPE:
-                unsetType();
-                return;
-            case SclPackage.DO__LNODE_TYPE:
-                setLNodeType((LNodeType)null);
-                return;
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                unsetRefersToDOType();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DO__TRANSIENT:
+				unsetTransient();
+				return;
+			case SclPackage.DO__TYPE:
+				unsetType();
+				return;
+			case SclPackage.DO__LNODE_TYPE:
+				setLNodeType((LNodeType)null);
+				return;
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				unsetRefersToDOType();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                return isSetTransient();
-            case SclPackage.DO__TYPE:
-                return isSetType();
-            case SclPackage.DO__LNODE_TYPE:
-                return getLNodeType() != null;
-            case SclPackage.DO__REFERS_TO_DO_TYPE:
-                return isSetRefersToDOType();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DO__TRANSIENT:
+				return isSetTransient();
+			case SclPackage.DO__TYPE:
+				return isSetType();
+			case SclPackage.DO__LNODE_TYPE:
+				return getLNodeType() != null;
+			case SclPackage.DO__REFERS_TO_DO_TYPE:
+				return isSetRefersToDOType();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.DO___VALIDATE_DO_TYPE_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateDO_type_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.DO___VALIDATE_DO_TYPE_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateDO_type_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (transient: ");
-        if (transientESet) result.append(transient_); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (transient: ");
+		if (transientESet) result.append(transient_); else result.append("<unset>");
+		result.append(", type: ");
+		if (typeESet) result.append(type); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

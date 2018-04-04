@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -31,6 +34,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,382 +55,522 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
  */
 public class ConnectivityNodeImpl extends LNodeContainerImpl implements ConnectivityNode {
     /**
-     * The default value of the '{@link #getPathName() <em>Path Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPathName() <em>Path Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPathName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPathName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PATH_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPathName() <em>Path Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPathName() <em>Path Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPathName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPathName()
+	 * @generated
+	 * @ordered
+	 */
     protected String pathName = PATH_NAME_EDEFAULT;
 
     /**
-     * This is true if the Path Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Path Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean pathNameESet;
 
     /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTerminal()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTerminal()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<Terminal> terminal;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ConnectivityNodeImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getConnectivityNode();
-    }
+		return SclPackage.eINSTANCE.getConnectivityNode();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getPathName() {
-        return pathName;
-    }
+		return pathName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPathName( String newPathName ) {
-        String oldPathName = pathName;
-        pathName = newPathName;
-        boolean oldPathNameESet = pathNameESet;
-        pathNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__PATH_NAME, oldPathName, pathName, !oldPathNameESet));
-    }
+		String oldPathName = pathName;
+		pathName = newPathName;
+		boolean oldPathNameESet = pathNameESet;
+		pathNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__PATH_NAME, oldPathName, pathName, !oldPathNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPathName() {
-        String oldPathName = pathName;
-        boolean oldPathNameESet = pathNameESet;
-        pathName = PATH_NAME_EDEFAULT;
-        pathNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONNECTIVITY_NODE__PATH_NAME, oldPathName, PATH_NAME_EDEFAULT, oldPathNameESet));
-    }
+		String oldPathName = pathName;
+		boolean oldPathNameESet = pathNameESet;
+		pathName = PATH_NAME_EDEFAULT;
+		pathNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONNECTIVITY_NODE__PATH_NAME, oldPathName, PATH_NAME_EDEFAULT, oldPathNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPathName() {
-        return pathNameESet;
-    }
+		return pathNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Bay getBay() {
-        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY) return null;
-        return (Bay)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY) return null;
+		return (Bay)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBay, SclPackage.CONNECTIVITY_NODE__BAY, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newBay, SclPackage.CONNECTIVITY_NODE__BAY, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBay( Bay newBay ) {
-        if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY && newBay != null)) {
-            if (EcoreUtil.isAncestor(this, newBay))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__BAY, newBay, newBay));
-    }
+		if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY && newBay != null)) {
+			if (EcoreUtil.isAncestor(this, newBay))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newBay != null)
+				msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
+			msgs = basicSetBay(newBay, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__BAY, newBay, newBay));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.CONNECTIVITY_NODE__TERMINAL, SclPackage.TERMINAL__CNODE);
-        }
-        return terminal;
-    }
+		if (terminal == null) {
+			terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.CONNECTIVITY_NODE__TERMINAL, SclPackage.TERMINAL__CNODE);
+		}
+		return terminal;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
-    }
+		if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
-    }
+		return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Line getLine() {
-        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE) return null;
-        return (Line)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE) return null;
+		return (Line)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetLine( Line newLine, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLine, SclPackage.CONNECTIVITY_NODE__LINE, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newLine, SclPackage.CONNECTIVITY_NODE__LINE, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLine( Line newLine ) {
-        if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE && newLine != null)) {
-            if (EcoreUtil.isAncestor(this, newLine))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newLine != null)
-                msgs = ((InternalEObject)newLine).eInverseAdd(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
-            msgs = basicSetLine(newLine, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__LINE, newLine, newLine));
-    }
+		if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE && newLine != null)) {
+			if (EcoreUtil.isAncestor(this, newLine))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newLine != null)
+				msgs = ((InternalEObject)newLine).eInverseAdd(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
+			msgs = basicSetLine(newLine, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__LINE, newLine, newLine));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateConnectivityNode_pathName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Connectivity Node path Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateConnectivityNode_pathName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONNECTIVITY_NODE_PATH_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in ConnectivityNode (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.pathName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectivityNode_pathName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getConnectivityNode(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getConnectivityNode__ValidateConnectivityNode_pathName_required__DiagnosticChain_Map(),
+				 VALIDATE_CONNECTIVITY_NODE_PATH_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONNECTIVITY_NODE__VALIDATE_CONNECTIVITY_NODE_PATH_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateConnectivityNode_pathName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Connectivity Node path Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateConnectivityNode_pathName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be valid in ConnectivityNode (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.pathName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.pathName <> null implies self.validSclRef( pathName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectivityNode_pathName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getConnectivityNode(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getConnectivityNode__ValidateConnectivityNode_pathName_valid__DiagnosticChain_Map(),
+				 VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONNECTIVITY_NODE__VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateConnectivityNode_pathName_value(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Connectivity Node path Name value</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateConnectivityNode_pathName_value(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALUE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'pathName of ConnectivityNode shall be its path starting from Substation (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is '  + self.pathName + ', '\n" +
+		"          + 'expected value is ' + self.Bay.VoltageLevel.Substation.name\n" +
+		"                           + '/' + self.Bay.VoltageLevel.name\n" +
+		"                           + '/' + self.Bay.name\n" +
+		"                           + '/' + self.name\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.pathName <> null\n" +
+		"        implies\n" +
+		"        self.pathName = self.Bay.VoltageLevel.Substation.name\n" +
+		"                + '/' + self.Bay.VoltageLevel.name\n" +
+		"                + '/' + self.Bay.name\n" +
+		"                + '/' + self.name\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectivityNode_pathName_value(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getConnectivityNode(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getConnectivityNode__ValidateConnectivityNode_pathName_value__DiagnosticChain_Map(),
+				 VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALUE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONNECTIVITY_NODE__VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALUE);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLine((Line)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetBay((Bay)otherEnd, msgs);
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetLine((Line)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return basicSetBay(null, msgs);
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return basicSetLine(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				return basicSetBay(null, msgs);
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				return basicSetLine(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return eInternalContainer().eInverseRemove(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				return eInternalContainer().eInverseRemove(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				return eInternalContainer().eInverseRemove(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
-                return getPathName();
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return getBay();
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return getTerminal();
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return getLine();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
+				return getPathName();
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				return getBay();
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				return getTerminal();
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				return getLine();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
-                setPathName((String)newValue);
-                return;
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                setBay((Bay)newValue);
-                return;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                setLine((Line)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
+				setPathName((String)newValue);
+				return;
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				setBay((Bay)newValue);
+				return;
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				getTerminal().clear();
+				getTerminal().addAll((Collection<? extends Terminal>)newValue);
+				return;
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				setLine((Line)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
-                unsetPathName();
-                return;
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                setBay((Bay)null);
-                return;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                unsetTerminal();
-                return;
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                setLine((Line)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
+				unsetPathName();
+				return;
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				setBay((Bay)null);
+				return;
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				unsetTerminal();
+				return;
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				setLine((Line)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
-                return isSetPathName();
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return getBay() != null;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return isSetTerminal();
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return getLine() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
+				return isSetPathName();
+			case SclPackage.CONNECTIVITY_NODE__BAY:
+				return getBay() != null;
+			case SclPackage.CONNECTIVITY_NODE__TERMINAL:
+				return isSetTerminal();
+			case SclPackage.CONNECTIVITY_NODE__LINE:
+				return getLine() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.CONNECTIVITY_NODE___VALIDATE_CONNECTIVITY_NODE_PATH_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateConnectivityNode_pathName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.CONNECTIVITY_NODE___VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateConnectivityNode_pathName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.CONNECTIVITY_NODE___VALIDATE_CONNECTIVITY_NODE_PATH_NAME_VALUE__DIAGNOSTICCHAIN_MAP:
+				return validateConnectivityNode_pathName_value((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (pathName: ");
-        if (pathNameESet) result.append(pathName); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (pathName: ");
+		if (pathNameESet) result.append(pathName); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ConnectivityNodeImpl

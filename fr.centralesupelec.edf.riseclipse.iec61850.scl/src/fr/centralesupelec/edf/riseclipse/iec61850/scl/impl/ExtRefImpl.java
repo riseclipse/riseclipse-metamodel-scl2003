@@ -18,6 +18,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.Collections;
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
@@ -35,10 +36,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -78,235 +84,235 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     /**
-     * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDaName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDaName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DA_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDaName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDaName()
+	 * @generated
+	 * @ordered
+	 */
     protected String daName = DA_NAME_EDEFAULT;
 
     /**
-     * This is true if the Da Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Da Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean daNameESet;
 
     /**
-     * The default value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDoName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DO_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDoName()
+	 * @generated
+	 * @ordered
+	 */
     protected String doName = DO_NAME_EDEFAULT;
 
     /**
-     * This is true if the Do Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Do Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean doNameESet;
 
     /**
-     * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String IED_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected String iedName = IED_NAME_EDEFAULT;
 
     /**
-     * This is true if the Ied Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ied Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean iedNameESet;
 
     /**
-     * The default value of the '{@link #getIntAddr() <em>Int Addr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIntAddr() <em>Int Addr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIntAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIntAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String INT_ADDR_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIntAddr() <em>Int Addr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIntAddr() <em>Int Addr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIntAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIntAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected String intAddr = INT_ADDR_EDEFAULT;
 
     /**
-     * This is true if the Int Addr attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Int Addr attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean intAddrESet;
 
     /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String ldInst = LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ld Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ldInstESet;
 
     /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnClass = LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnClassESet;
 
     /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnInst = LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnInstESet;
 
     /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREFIX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String prefix = PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prefixESet;
 
     /**
@@ -320,595 +326,595 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     protected static final ServiceType SERVICE_TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getServiceType() <em>Service Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getServiceType() <em>Service Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getServiceType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getServiceType()
+	 * @generated
+	 * @ordered
+	 */
     protected ServiceType serviceType = SERVICE_TYPE_EDEFAULT;
 
     /**
-     * This is true if the Service Type attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Service Type attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean serviceTypeESet;
 
     /**
-     * The default value of the '{@link #getSrcCBName() <em>Src CB Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSrcCBName() <em>Src CB Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcCBName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcCBName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SRC_CB_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSrcCBName() <em>Src CB Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSrcCBName() <em>Src CB Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcCBName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcCBName()
+	 * @generated
+	 * @ordered
+	 */
     protected String srcCBName = SRC_CB_NAME_EDEFAULT;
 
     /**
-     * This is true if the Src CB Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Src CB Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean srcCBNameESet;
 
     /**
-     * The default value of the '{@link #getSrcLDInst() <em>Src LD Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSrcLDInst() <em>Src LD Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLDInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLDInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SRC_LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSrcLDInst() <em>Src LD Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSrcLDInst() <em>Src LD Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLDInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLDInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String srcLDInst = SRC_LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Src LD Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Src LD Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean srcLDInstESet;
 
     /**
-     * The default value of the '{@link #getSrcLNClass() <em>Src LN Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSrcLNClass() <em>Src LN Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLNClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLNClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SRC_LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSrcLNClass() <em>Src LN Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSrcLNClass() <em>Src LN Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLNClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLNClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String srcLNClass = SRC_LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Src LN Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Src LN Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean srcLNClassESet;
 
     /**
-     * The default value of the '{@link #getSrcLNInst() <em>Src LN Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSrcLNInst() <em>Src LN Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLNInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLNInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SRC_LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSrcLNInst() <em>Src LN Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSrcLNInst() <em>Src LN Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcLNInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcLNInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String srcLNInst = SRC_LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Src LN Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Src LN Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean srcLNInstESet;
 
     /**
-     * The default value of the '{@link #getSrcPrefix() <em>Src Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSrcPrefix() <em>Src Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SRC_PREFIX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSrcPrefix() <em>Src Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSrcPrefix() <em>Src Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSrcPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSrcPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String srcPrefix = SRC_PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Src Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Src Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean srcPrefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 * @ordered
+	 */
     protected AnyLN refersToAnyLN;
 
     /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Any LN reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAnyLNESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataAttribute()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDataAttribute()
+	 * @generated
+	 * @ordered
+	 */
     protected DataAttribute refersToDataAttribute;
 
     /**
-     * This is true if the Refers To Data Attribute reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Data Attribute reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDataAttributeESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataObject()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDataObject()
+	 * @generated
+	 * @ordered
+	 */
     protected DataObject refersToDataObject;
 
     /**
-     * This is true if the Refers To Data Object reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Data Object reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDataObjectESet;
 
     /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDesc()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DESC_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDesc()
+	 * @generated
+	 * @ordered
+	 */
     protected String desc = DESC_EDEFAULT;
 
     /**
-     * This is true if the Desc attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Desc attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean descESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ExtRefImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getExtRef();
-    }
+		return SclPackage.eINSTANCE.getExtRef();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getDaName() {
-        return daName;
-    }
+		return daName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDaName( String newDaName ) {
-        String oldDaName = daName;
-        daName = newDaName;
-        boolean oldDaNameESet = daNameESet;
-        daNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DA_NAME, oldDaName, daName, !oldDaNameESet));
-    }
+		String oldDaName = daName;
+		daName = newDaName;
+		boolean oldDaNameESet = daNameESet;
+		daNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DA_NAME, oldDaName, daName, !oldDaNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDaName() {
-        String oldDaName = daName;
-        boolean oldDaNameESet = daNameESet;
-        daName = DA_NAME_EDEFAULT;
-        daNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DA_NAME, oldDaName, DA_NAME_EDEFAULT, oldDaNameESet));
-    }
+		String oldDaName = daName;
+		boolean oldDaNameESet = daNameESet;
+		daName = DA_NAME_EDEFAULT;
+		daNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DA_NAME, oldDaName, DA_NAME_EDEFAULT, oldDaNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDaName() {
-        return daNameESet;
-    }
+		return daNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getDoName() {
-        return doName;
-    }
+		return doName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDoName( String newDoName ) {
-        String oldDoName = doName;
-        doName = newDoName;
-        boolean oldDoNameESet = doNameESet;
-        doNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DO_NAME, oldDoName, doName, !oldDoNameESet));
-    }
+		String oldDoName = doName;
+		doName = newDoName;
+		boolean oldDoNameESet = doNameESet;
+		doNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DO_NAME, oldDoName, doName, !oldDoNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDoName() {
-        String oldDoName = doName;
-        boolean oldDoNameESet = doNameESet;
-        doName = DO_NAME_EDEFAULT;
-        doNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DO_NAME, oldDoName, DO_NAME_EDEFAULT, oldDoNameESet));
-    }
+		String oldDoName = doName;
+		boolean oldDoNameESet = doNameESet;
+		doName = DO_NAME_EDEFAULT;
+		doNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DO_NAME, oldDoName, DO_NAME_EDEFAULT, oldDoNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDoName() {
-        return doNameESet;
-    }
+		return doNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getIedName() {
-        return iedName;
-    }
+		return iedName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIedName( String newIedName ) {
-        String oldIedName = iedName;
-        iedName = newIedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__IED_NAME, oldIedName, iedName, !oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		iedName = newIedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIedName() {
-        String oldIedName = iedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedName = IED_NAME_EDEFAULT;
-        iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedName = IED_NAME_EDEFAULT;
+		iedNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIedName() {
-        return iedNameESet;
-    }
+		return iedNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getIntAddr() {
-        return intAddr;
-    }
+		return intAddr;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIntAddr( String newIntAddr ) {
-        String oldIntAddr = intAddr;
-        intAddr = newIntAddr;
-        boolean oldIntAddrESet = intAddrESet;
-        intAddrESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr, intAddr, !oldIntAddrESet));
-    }
+		String oldIntAddr = intAddr;
+		intAddr = newIntAddr;
+		boolean oldIntAddrESet = intAddrESet;
+		intAddrESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr, intAddr, !oldIntAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIntAddr() {
-        String oldIntAddr = intAddr;
-        boolean oldIntAddrESet = intAddrESet;
-        intAddr = INT_ADDR_EDEFAULT;
-        intAddrESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr, INT_ADDR_EDEFAULT, oldIntAddrESet));
-    }
+		String oldIntAddr = intAddr;
+		boolean oldIntAddrESet = intAddrESet;
+		intAddr = INT_ADDR_EDEFAULT;
+		intAddrESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__INT_ADDR, oldIntAddr, INT_ADDR_EDEFAULT, oldIntAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIntAddr() {
-        return intAddrESet;
-    }
+		return intAddrESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLdInst() {
-        return ldInst;
-    }
+		return ldInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		ldInst = newLdInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInst = LD_INST_EDEFAULT;
+		ldInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLdInst() {
-        return ldInstESet;
-    }
+		return ldInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnClass() {
-        return lnClass;
-    }
+		return lnClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		lnClass = newLnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClass = LN_CLASS_EDEFAULT;
+		lnClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnClass() {
-        return lnClassESet;
-    }
+		return lnClassESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnInst() {
-        return lnInst;
-    }
+		return lnInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		lnInst = newLnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInst = LN_INST_EDEFAULT;
+		lnInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnInst() {
-        return lnInstESet;
-    }
+		return lnInstESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -923,1033 +929,1527 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PREFIX, oldPrefix, prefix, !oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		prefix = newPrefix;
+		boolean oldPrefixESet = prefixESet;
+		prefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		boolean oldPrefixESet = prefixESet;
+		prefix = PREFIX_EDEFAULT;
+		prefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrefix() {
-        return prefixESet;
-    }
+		return prefixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ServiceType getServiceType() {
-        return serviceType;
-    }
+		return serviceType;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServiceType( ServiceType newServiceType ) {
-        ServiceType oldServiceType = serviceType;
-        serviceType = newServiceType == null ? SERVICE_TYPE_EDEFAULT : newServiceType;
-        boolean oldServiceTypeESet = serviceTypeESet;
-        serviceTypeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType, serviceType, !oldServiceTypeESet));
-    }
+		ServiceType oldServiceType = serviceType;
+		serviceType = newServiceType == null ? SERVICE_TYPE_EDEFAULT : newServiceType;
+		boolean oldServiceTypeESet = serviceTypeESet;
+		serviceTypeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType, serviceType, !oldServiceTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetServiceType() {
-        ServiceType oldServiceType = serviceType;
-        boolean oldServiceTypeESet = serviceTypeESet;
-        serviceType = SERVICE_TYPE_EDEFAULT;
-        serviceTypeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType, SERVICE_TYPE_EDEFAULT, oldServiceTypeESet));
-    }
+		ServiceType oldServiceType = serviceType;
+		boolean oldServiceTypeESet = serviceTypeESet;
+		serviceType = SERVICE_TYPE_EDEFAULT;
+		serviceTypeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SERVICE_TYPE, oldServiceType, SERVICE_TYPE_EDEFAULT, oldServiceTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetServiceType() {
-        return serviceTypeESet;
-    }
+		return serviceTypeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSrcCBName() {
-        return srcCBName;
-    }
+		return srcCBName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSrcCBName( String newSrcCBName ) {
-        String oldSrcCBName = srcCBName;
-        srcCBName = newSrcCBName;
-        boolean oldSrcCBNameESet = srcCBNameESet;
-        srcCBNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName, srcCBName, !oldSrcCBNameESet));
-    }
+		String oldSrcCBName = srcCBName;
+		srcCBName = newSrcCBName;
+		boolean oldSrcCBNameESet = srcCBNameESet;
+		srcCBNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName, srcCBName, !oldSrcCBNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSrcCBName() {
-        String oldSrcCBName = srcCBName;
-        boolean oldSrcCBNameESet = srcCBNameESet;
-        srcCBName = SRC_CB_NAME_EDEFAULT;
-        srcCBNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName, SRC_CB_NAME_EDEFAULT, oldSrcCBNameESet));
-    }
+		String oldSrcCBName = srcCBName;
+		boolean oldSrcCBNameESet = srcCBNameESet;
+		srcCBName = SRC_CB_NAME_EDEFAULT;
+		srcCBNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_CB_NAME, oldSrcCBName, SRC_CB_NAME_EDEFAULT, oldSrcCBNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSrcCBName() {
-        return srcCBNameESet;
-    }
+		return srcCBNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSrcLDInst() {
-        return srcLDInst;
-    }
+		return srcLDInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSrcLDInst( String newSrcLDInst ) {
-        String oldSrcLDInst = srcLDInst;
-        srcLDInst = newSrcLDInst;
-        boolean oldSrcLDInstESet = srcLDInstESet;
-        srcLDInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst, srcLDInst, !oldSrcLDInstESet));
-    }
+		String oldSrcLDInst = srcLDInst;
+		srcLDInst = newSrcLDInst;
+		boolean oldSrcLDInstESet = srcLDInstESet;
+		srcLDInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst, srcLDInst, !oldSrcLDInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSrcLDInst() {
-        String oldSrcLDInst = srcLDInst;
-        boolean oldSrcLDInstESet = srcLDInstESet;
-        srcLDInst = SRC_LD_INST_EDEFAULT;
-        srcLDInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst, SRC_LD_INST_EDEFAULT, oldSrcLDInstESet));
-    }
+		String oldSrcLDInst = srcLDInst;
+		boolean oldSrcLDInstESet = srcLDInstESet;
+		srcLDInst = SRC_LD_INST_EDEFAULT;
+		srcLDInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LD_INST, oldSrcLDInst, SRC_LD_INST_EDEFAULT, oldSrcLDInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSrcLDInst() {
-        return srcLDInstESet;
-    }
+		return srcLDInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSrcLNClass() {
-        return srcLNClass;
-    }
+		return srcLNClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSrcLNClass( String newSrcLNClass ) {
-        String oldSrcLNClass = srcLNClass;
-        srcLNClass = newSrcLNClass;
-        boolean oldSrcLNClassESet = srcLNClassESet;
-        srcLNClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass, srcLNClass, !oldSrcLNClassESet));
-    }
+		String oldSrcLNClass = srcLNClass;
+		srcLNClass = newSrcLNClass;
+		boolean oldSrcLNClassESet = srcLNClassESet;
+		srcLNClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass, srcLNClass, !oldSrcLNClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSrcLNClass() {
-        String oldSrcLNClass = srcLNClass;
-        boolean oldSrcLNClassESet = srcLNClassESet;
-        srcLNClass = SRC_LN_CLASS_EDEFAULT;
-        srcLNClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass, SRC_LN_CLASS_EDEFAULT, oldSrcLNClassESet));
-    }
+		String oldSrcLNClass = srcLNClass;
+		boolean oldSrcLNClassESet = srcLNClassESet;
+		srcLNClass = SRC_LN_CLASS_EDEFAULT;
+		srcLNClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_CLASS, oldSrcLNClass, SRC_LN_CLASS_EDEFAULT, oldSrcLNClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSrcLNClass() {
-        return srcLNClassESet;
-    }
+		return srcLNClassESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSrcLNInst() {
-        return srcLNInst;
-    }
+		return srcLNInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSrcLNInst( String newSrcLNInst ) {
-        String oldSrcLNInst = srcLNInst;
-        srcLNInst = newSrcLNInst;
-        boolean oldSrcLNInstESet = srcLNInstESet;
-        srcLNInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst, srcLNInst, !oldSrcLNInstESet));
-    }
+		String oldSrcLNInst = srcLNInst;
+		srcLNInst = newSrcLNInst;
+		boolean oldSrcLNInstESet = srcLNInstESet;
+		srcLNInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst, srcLNInst, !oldSrcLNInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSrcLNInst() {
-        String oldSrcLNInst = srcLNInst;
-        boolean oldSrcLNInstESet = srcLNInstESet;
-        srcLNInst = SRC_LN_INST_EDEFAULT;
-        srcLNInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst, SRC_LN_INST_EDEFAULT, oldSrcLNInstESet));
-    }
+		String oldSrcLNInst = srcLNInst;
+		boolean oldSrcLNInstESet = srcLNInstESet;
+		srcLNInst = SRC_LN_INST_EDEFAULT;
+		srcLNInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_LN_INST, oldSrcLNInst, SRC_LN_INST_EDEFAULT, oldSrcLNInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSrcLNInst() {
-        return srcLNInstESet;
-    }
+		return srcLNInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSrcPrefix() {
-        return srcPrefix;
-    }
+		return srcPrefix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSrcPrefix( String newSrcPrefix ) {
-        String oldSrcPrefix = srcPrefix;
-        srcPrefix = newSrcPrefix;
-        boolean oldSrcPrefixESet = srcPrefixESet;
-        srcPrefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix, srcPrefix, !oldSrcPrefixESet));
-    }
+		String oldSrcPrefix = srcPrefix;
+		srcPrefix = newSrcPrefix;
+		boolean oldSrcPrefixESet = srcPrefixESet;
+		srcPrefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix, srcPrefix, !oldSrcPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSrcPrefix() {
-        String oldSrcPrefix = srcPrefix;
-        boolean oldSrcPrefixESet = srcPrefixESet;
-        srcPrefix = SRC_PREFIX_EDEFAULT;
-        srcPrefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix, SRC_PREFIX_EDEFAULT, oldSrcPrefixESet));
-    }
+		String oldSrcPrefix = srcPrefix;
+		boolean oldSrcPrefixESet = srcPrefixESet;
+		srcPrefix = SRC_PREFIX_EDEFAULT;
+		srcPrefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__SRC_PREFIX, oldSrcPrefix, SRC_PREFIX_EDEFAULT, oldSrcPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSrcPrefix() {
-        return srcPrefixESet;
-    }
+		return srcPrefixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Inputs getInputs() {
-        if (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS) return null;
-        return (Inputs)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS) return null;
+		return (Inputs)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetInputs( Inputs newInputs, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newInputs, SclPackage.EXT_REF__INPUTS, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newInputs, SclPackage.EXT_REF__INPUTS, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setInputs( Inputs newInputs ) {
-        if (newInputs != eInternalContainer() || (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS && newInputs != null)) {
-            if (EcoreUtil.isAncestor(this, newInputs))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newInputs != null)
-                msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
-            msgs = basicSetInputs(newInputs, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__INPUTS, newInputs, newInputs));
-    }
+		if (newInputs != eInternalContainer() || (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS && newInputs != null)) {
+			if (EcoreUtil.isAncestor(this, newInputs))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newInputs != null)
+				msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
+			msgs = basicSetInputs(newInputs, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__INPUTS, newInputs, newInputs));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
+		return refersToAnyLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = newRefersToAnyLN;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
+		if (newRefersToAnyLN != refersToAnyLN) {
+			NotificationChain msgs = null;
+			if (refersToAnyLN != null)
+				msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
+			if (newRefersToAnyLN != null)
+				msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
+			msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = null;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
-    }
+		if (refersToAnyLN != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
+			msgs = basicUnsetRefersToAnyLN(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
+		return refersToAnyLNESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataAttribute getRefersToDataAttribute() {
-        return refersToDataAttribute;
-    }
+		return refersToDataAttribute;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDataAttribute(DataAttribute newRefersToDataAttribute, NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = newRefersToDataAttribute;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
+		refersToDataAttribute = newRefersToDataAttribute;
+		boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+		refersToDataAttributeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
-        if (newRefersToDataAttribute != refersToDataAttribute) {
-            NotificationChain msgs = null;
-            if (refersToDataAttribute != null)
-                msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
-            if (newRefersToDataAttribute != null)
-                msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
-            msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
-        }
-    }
+		if (newRefersToDataAttribute != refersToDataAttribute) {
+			NotificationChain msgs = null;
+			if (refersToDataAttribute != null)
+				msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
+			if (newRefersToDataAttribute != null)
+				msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
+			msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+			refersToDataAttributeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDataAttribute(NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = null;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
+		refersToDataAttribute = null;
+		boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+		refersToDataAttributeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDataAttribute() {
-        if (refersToDataAttribute != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
-            msgs = basicUnsetRefersToDataAttribute(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
-        }
-    }
+		if (refersToDataAttribute != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
+			msgs = basicUnsetRefersToDataAttribute(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+			refersToDataAttributeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDataAttribute() {
-        return refersToDataAttributeESet;
-    }
+		return refersToDataAttributeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataObject getRefersToDataObject() {
-        return refersToDataObject;
-    }
+		return refersToDataObject;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDataObject(DataObject newRefersToDataObject, NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = newRefersToDataObject;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataObject oldRefersToDataObject = refersToDataObject;
+		refersToDataObject = newRefersToDataObject;
+		boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+		refersToDataObjectESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDataObject(DataObject newRefersToDataObject) {
-        if (newRefersToDataObject != refersToDataObject) {
-            NotificationChain msgs = null;
-            if (refersToDataObject != null)
-                msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
-            if (newRefersToDataObject != null)
-                msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
-            msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
-        }
-    }
+		if (newRefersToDataObject != refersToDataObject) {
+			NotificationChain msgs = null;
+			if (refersToDataObject != null)
+				msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
+			if (newRefersToDataObject != null)
+				msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
+			msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+			refersToDataObjectESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDataObject(NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = null;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataObject oldRefersToDataObject = refersToDataObject;
+		refersToDataObject = null;
+		boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+		refersToDataObjectESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDataObject() {
-        if (refersToDataObject != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
-            msgs = basicUnsetRefersToDataObject(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
-        }
-    }
+		if (refersToDataObject != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
+			msgs = basicUnsetRefersToDataObject(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+			refersToDataObjectESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDataObject() {
-        return refersToDataObjectESet;
-    }
+		return refersToDataObjectESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getDesc() {
-        return desc;
-    }
+		return desc;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDesc(String newDesc) {
-        String oldDesc = desc;
-        desc = newDesc;
-        boolean oldDescESet = descESet;
-        descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DESC, oldDesc, desc, !oldDescESet));
-    }
+		String oldDesc = desc;
+		desc = newDesc;
+		boolean oldDescESet = descESet;
+		descESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__DESC, oldDesc, desc, !oldDescESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDesc() {
-        String oldDesc = desc;
-        boolean oldDescESet = descESet;
-        desc = DESC_EDEFAULT;
-        descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
-    }
+		String oldDesc = desc;
+		boolean oldDescESet = descESet;
+		desc = DESC_EDEFAULT;
+		descESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDesc() {
-        return descESet;
-    }
+		return descESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateExtRef_iedName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref ied Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_iedName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'iedName attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.iedName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.iedName <> null implies self.validSclIEDNameOrRelative( iedName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_iedName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_iedName_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_IED_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref ld Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ldInst attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ldInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.ldInst <> null implies self.validSclLDInst( ldInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_ldInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_ldInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_LD_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref prefix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'prefix attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.prefix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.prefix <> null implies self.validSclPrefix( prefix )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_prefix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_prefix_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_PREFIX_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref ln Class valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnClass attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnClass.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.lnClass <> null implies self.validSclLNClassEnum( lnClass )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_lnClass_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_lnClass_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_LN_CLASS_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref ln Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnInst attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.lnInst <> null implies self.validSclLNInstOrEmpty( lnInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_lnInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_lnInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_LN_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_doName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA do Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_doName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_DO_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'doName attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.doName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.doName <> null implies self.validSclFullDOName( doName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_doName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateFCDA_doName_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_DO_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_FCDA_DO_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_daName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA da Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_daName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_DA_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'daName attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.daName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.daName <> null implies self.validSclFullAttributeName( daName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_daName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateFCDA_daName_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_DA_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_FCDA_DA_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_srcLDInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref src LD Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_srcLDInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_SRC_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'srcLDInst attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.srcLDInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.srcLDInst <> null implies self.validSclLDInst( srcLDInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_srcLDInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_srcLDInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_SRC_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_SRC_LD_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_srcPrefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref src Prefix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_srcPrefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_SRC_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'srcPrefix attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.srcPrefix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.srcPrefix <> null implies self.validSclPrefix( srcPrefix )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_srcPrefix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_srcPrefix_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_SRC_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_SRC_PREFIX_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_srcLNClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref src LN Class valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_srcLNClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_SRC_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'srcLNClass attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.srcLNClass.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.srcLNClass <> null implies self.validSclLNClassEnum( srcLNClass )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_srcLNClass_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_srcLNClass_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_SRC_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_SRC_LN_CLASS_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_srcLNInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref src LN Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_srcLNInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_SRC_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'srcLNInst attribute shall be valid in ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.srcLNInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.srcLNInst <> null implies self.validSclLNInstOrEmpty( srcLNInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_srcLNInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_srcLNInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_SRC_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_SRC_LN_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateExtRef_srcCBName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Ext Ref src CB Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateExtRef_srcCBName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_EXT_REF_SRC_CB_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'srcCBName attribute shall be valid ExtRef (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.srcCBName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.srcCBName <> null implies self.validSclCBName( srcCBName )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExtRef_srcCBName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getExtRef(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getExtRef__ValidateExtRef_srcCBName_valid__DiagnosticChain_Map(),
+				 VALIDATE_EXT_REF_SRC_CB_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.EXT_REF__VALIDATE_EXT_REF_SRC_CB_NAME_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__INPUTS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetInputs((Inputs)otherEnd, msgs);
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                if (refersToDataAttribute != null)
-                    msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
-                return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                if (refersToDataObject != null)
-                    msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
-                return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__INPUTS:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetInputs((Inputs)otherEnd, msgs);
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				if (refersToAnyLN != null)
+					msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, AnyLN.class, msgs);
+				return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				if (refersToDataAttribute != null)
+					msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, DataAttribute.class, msgs);
+				return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				if (refersToDataObject != null)
+					msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF, DataObject.class, msgs);
+				return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__INPUTS:
-                return basicSetInputs(null, msgs);
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                return basicUnsetRefersToDataAttribute(msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                return basicUnsetRefersToDataObject(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__INPUTS:
+				return basicSetInputs(null, msgs);
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				return basicUnsetRefersToAnyLN(msgs);
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				return basicUnsetRefersToDataAttribute(msgs);
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				return basicUnsetRefersToDataObject(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.EXT_REF__INPUTS:
-                return eInternalContainer().eInverseRemove(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.EXT_REF__INPUTS:
+				return eInternalContainer().eInverseRemove(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__DA_NAME:
-                return getDaName();
-            case SclPackage.EXT_REF__DO_NAME:
-                return getDoName();
-            case SclPackage.EXT_REF__IED_NAME:
-                return getIedName();
-            case SclPackage.EXT_REF__INT_ADDR:
-                return getIntAddr();
-            case SclPackage.EXT_REF__LD_INST:
-                return getLdInst();
-            case SclPackage.EXT_REF__LN_CLASS:
-                return getLnClass();
-            case SclPackage.EXT_REF__LN_INST:
-                return getLnInst();
-            case SclPackage.EXT_REF__PREFIX:
-                return getPrefix();
-            case SclPackage.EXT_REF__SERVICE_TYPE:
-                return getServiceType();
-            case SclPackage.EXT_REF__SRC_CB_NAME:
-                return getSrcCBName();
-            case SclPackage.EXT_REF__SRC_LD_INST:
-                return getSrcLDInst();
-            case SclPackage.EXT_REF__SRC_LN_CLASS:
-                return getSrcLNClass();
-            case SclPackage.EXT_REF__SRC_LN_INST:
-                return getSrcLNInst();
-            case SclPackage.EXT_REF__SRC_PREFIX:
-                return getSrcPrefix();
-            case SclPackage.EXT_REF__INPUTS:
-                return getInputs();
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                return getRefersToDataAttribute();
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                return getRefersToDataObject();
-            case SclPackage.EXT_REF__DESC:
-                return getDesc();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__DA_NAME:
+				return getDaName();
+			case SclPackage.EXT_REF__DO_NAME:
+				return getDoName();
+			case SclPackage.EXT_REF__IED_NAME:
+				return getIedName();
+			case SclPackage.EXT_REF__INT_ADDR:
+				return getIntAddr();
+			case SclPackage.EXT_REF__LD_INST:
+				return getLdInst();
+			case SclPackage.EXT_REF__LN_CLASS:
+				return getLnClass();
+			case SclPackage.EXT_REF__LN_INST:
+				return getLnInst();
+			case SclPackage.EXT_REF__PREFIX:
+				return getPrefix();
+			case SclPackage.EXT_REF__SERVICE_TYPE:
+				return getServiceType();
+			case SclPackage.EXT_REF__SRC_CB_NAME:
+				return getSrcCBName();
+			case SclPackage.EXT_REF__SRC_LD_INST:
+				return getSrcLDInst();
+			case SclPackage.EXT_REF__SRC_LN_CLASS:
+				return getSrcLNClass();
+			case SclPackage.EXT_REF__SRC_LN_INST:
+				return getSrcLNInst();
+			case SclPackage.EXT_REF__SRC_PREFIX:
+				return getSrcPrefix();
+			case SclPackage.EXT_REF__INPUTS:
+				return getInputs();
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				return getRefersToAnyLN();
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				return getRefersToDataAttribute();
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				return getRefersToDataObject();
+			case SclPackage.EXT_REF__DESC:
+				return getDesc();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__DA_NAME:
-                setDaName((String)newValue);
-                return;
-            case SclPackage.EXT_REF__DO_NAME:
-                setDoName((String)newValue);
-                return;
-            case SclPackage.EXT_REF__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.EXT_REF__INT_ADDR:
-                setIntAddr((String)newValue);
-                return;
-            case SclPackage.EXT_REF__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.EXT_REF__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.EXT_REF__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.EXT_REF__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.EXT_REF__SERVICE_TYPE:
-                setServiceType((ServiceType)newValue);
-                return;
-            case SclPackage.EXT_REF__SRC_CB_NAME:
-                setSrcCBName((String)newValue);
-                return;
-            case SclPackage.EXT_REF__SRC_LD_INST:
-                setSrcLDInst((String)newValue);
-                return;
-            case SclPackage.EXT_REF__SRC_LN_CLASS:
-                setSrcLNClass((String)newValue);
-                return;
-            case SclPackage.EXT_REF__SRC_LN_INST:
-                setSrcLNInst((String)newValue);
-                return;
-            case SclPackage.EXT_REF__SRC_PREFIX:
-                setSrcPrefix((String)newValue);
-                return;
-            case SclPackage.EXT_REF__INPUTS:
-                setInputs((Inputs)newValue);
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                setRefersToDataAttribute((DataAttribute)newValue);
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                setRefersToDataObject((DataObject)newValue);
-                return;
-            case SclPackage.EXT_REF__DESC:
-                setDesc((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__DA_NAME:
+				setDaName((String)newValue);
+				return;
+			case SclPackage.EXT_REF__DO_NAME:
+				setDoName((String)newValue);
+				return;
+			case SclPackage.EXT_REF__IED_NAME:
+				setIedName((String)newValue);
+				return;
+			case SclPackage.EXT_REF__INT_ADDR:
+				setIntAddr((String)newValue);
+				return;
+			case SclPackage.EXT_REF__LD_INST:
+				setLdInst((String)newValue);
+				return;
+			case SclPackage.EXT_REF__LN_CLASS:
+				setLnClass((String)newValue);
+				return;
+			case SclPackage.EXT_REF__LN_INST:
+				setLnInst((String)newValue);
+				return;
+			case SclPackage.EXT_REF__PREFIX:
+				setPrefix((String)newValue);
+				return;
+			case SclPackage.EXT_REF__SERVICE_TYPE:
+				setServiceType((ServiceType)newValue);
+				return;
+			case SclPackage.EXT_REF__SRC_CB_NAME:
+				setSrcCBName((String)newValue);
+				return;
+			case SclPackage.EXT_REF__SRC_LD_INST:
+				setSrcLDInst((String)newValue);
+				return;
+			case SclPackage.EXT_REF__SRC_LN_CLASS:
+				setSrcLNClass((String)newValue);
+				return;
+			case SclPackage.EXT_REF__SRC_LN_INST:
+				setSrcLNInst((String)newValue);
+				return;
+			case SclPackage.EXT_REF__SRC_PREFIX:
+				setSrcPrefix((String)newValue);
+				return;
+			case SclPackage.EXT_REF__INPUTS:
+				setInputs((Inputs)newValue);
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				setRefersToAnyLN((AnyLN)newValue);
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				setRefersToDataAttribute((DataAttribute)newValue);
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				setRefersToDataObject((DataObject)newValue);
+				return;
+			case SclPackage.EXT_REF__DESC:
+				setDesc((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__DA_NAME:
-                unsetDaName();
-                return;
-            case SclPackage.EXT_REF__DO_NAME:
-                unsetDoName();
-                return;
-            case SclPackage.EXT_REF__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.EXT_REF__INT_ADDR:
-                unsetIntAddr();
-                return;
-            case SclPackage.EXT_REF__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.EXT_REF__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.EXT_REF__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.EXT_REF__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.EXT_REF__SERVICE_TYPE:
-                unsetServiceType();
-                return;
-            case SclPackage.EXT_REF__SRC_CB_NAME:
-                unsetSrcCBName();
-                return;
-            case SclPackage.EXT_REF__SRC_LD_INST:
-                unsetSrcLDInst();
-                return;
-            case SclPackage.EXT_REF__SRC_LN_CLASS:
-                unsetSrcLNClass();
-                return;
-            case SclPackage.EXT_REF__SRC_LN_INST:
-                unsetSrcLNInst();
-                return;
-            case SclPackage.EXT_REF__SRC_PREFIX:
-                unsetSrcPrefix();
-                return;
-            case SclPackage.EXT_REF__INPUTS:
-                setInputs((Inputs)null);
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                unsetRefersToDataAttribute();
-                return;
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                unsetRefersToDataObject();
-                return;
-            case SclPackage.EXT_REF__DESC:
-                unsetDesc();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__DA_NAME:
+				unsetDaName();
+				return;
+			case SclPackage.EXT_REF__DO_NAME:
+				unsetDoName();
+				return;
+			case SclPackage.EXT_REF__IED_NAME:
+				unsetIedName();
+				return;
+			case SclPackage.EXT_REF__INT_ADDR:
+				unsetIntAddr();
+				return;
+			case SclPackage.EXT_REF__LD_INST:
+				unsetLdInst();
+				return;
+			case SclPackage.EXT_REF__LN_CLASS:
+				unsetLnClass();
+				return;
+			case SclPackage.EXT_REF__LN_INST:
+				unsetLnInst();
+				return;
+			case SclPackage.EXT_REF__PREFIX:
+				unsetPrefix();
+				return;
+			case SclPackage.EXT_REF__SERVICE_TYPE:
+				unsetServiceType();
+				return;
+			case SclPackage.EXT_REF__SRC_CB_NAME:
+				unsetSrcCBName();
+				return;
+			case SclPackage.EXT_REF__SRC_LD_INST:
+				unsetSrcLDInst();
+				return;
+			case SclPackage.EXT_REF__SRC_LN_CLASS:
+				unsetSrcLNClass();
+				return;
+			case SclPackage.EXT_REF__SRC_LN_INST:
+				unsetSrcLNInst();
+				return;
+			case SclPackage.EXT_REF__SRC_PREFIX:
+				unsetSrcPrefix();
+				return;
+			case SclPackage.EXT_REF__INPUTS:
+				setInputs((Inputs)null);
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				unsetRefersToAnyLN();
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				unsetRefersToDataAttribute();
+				return;
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				unsetRefersToDataObject();
+				return;
+			case SclPackage.EXT_REF__DESC:
+				unsetDesc();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.EXT_REF__DA_NAME:
-                return isSetDaName();
-            case SclPackage.EXT_REF__DO_NAME:
-                return isSetDoName();
-            case SclPackage.EXT_REF__IED_NAME:
-                return isSetIedName();
-            case SclPackage.EXT_REF__INT_ADDR:
-                return isSetIntAddr();
-            case SclPackage.EXT_REF__LD_INST:
-                return isSetLdInst();
-            case SclPackage.EXT_REF__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.EXT_REF__LN_INST:
-                return isSetLnInst();
-            case SclPackage.EXT_REF__PREFIX:
-                return isSetPrefix();
-            case SclPackage.EXT_REF__SERVICE_TYPE:
-                return isSetServiceType();
-            case SclPackage.EXT_REF__SRC_CB_NAME:
-                return isSetSrcCBName();
-            case SclPackage.EXT_REF__SRC_LD_INST:
-                return isSetSrcLDInst();
-            case SclPackage.EXT_REF__SRC_LN_CLASS:
-                return isSetSrcLNClass();
-            case SclPackage.EXT_REF__SRC_LN_INST:
-                return isSetSrcLNInst();
-            case SclPackage.EXT_REF__SRC_PREFIX:
-                return isSetSrcPrefix();
-            case SclPackage.EXT_REF__INPUTS:
-                return getInputs() != null;
-            case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-            case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
-                return isSetRefersToDataAttribute();
-            case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
-                return isSetRefersToDataObject();
-            case SclPackage.EXT_REF__DESC:
-                return isSetDesc();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.EXT_REF__DA_NAME:
+				return isSetDaName();
+			case SclPackage.EXT_REF__DO_NAME:
+				return isSetDoName();
+			case SclPackage.EXT_REF__IED_NAME:
+				return isSetIedName();
+			case SclPackage.EXT_REF__INT_ADDR:
+				return isSetIntAddr();
+			case SclPackage.EXT_REF__LD_INST:
+				return isSetLdInst();
+			case SclPackage.EXT_REF__LN_CLASS:
+				return isSetLnClass();
+			case SclPackage.EXT_REF__LN_INST:
+				return isSetLnInst();
+			case SclPackage.EXT_REF__PREFIX:
+				return isSetPrefix();
+			case SclPackage.EXT_REF__SERVICE_TYPE:
+				return isSetServiceType();
+			case SclPackage.EXT_REF__SRC_CB_NAME:
+				return isSetSrcCBName();
+			case SclPackage.EXT_REF__SRC_LD_INST:
+				return isSetSrcLDInst();
+			case SclPackage.EXT_REF__SRC_LN_CLASS:
+				return isSetSrcLNClass();
+			case SclPackage.EXT_REF__SRC_LN_INST:
+				return isSetSrcLNInst();
+			case SclPackage.EXT_REF__SRC_PREFIX:
+				return isSetSrcPrefix();
+			case SclPackage.EXT_REF__INPUTS:
+				return getInputs() != null;
+			case SclPackage.EXT_REF__REFERS_TO_ANY_LN:
+				return isSetRefersToAnyLN();
+			case SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE:
+				return isSetRefersToDataAttribute();
+			case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
+				return isSetRefersToDataObject();
+			case SclPackage.EXT_REF__DESC:
+				return isSetDesc();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_IED_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_iedName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_LD_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_ldInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_PREFIX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_prefix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_LN_CLASS_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_lnClass_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_LN_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_lnInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_FCDA_DO_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_doName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_FCDA_DA_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_daName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_SRC_LD_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_srcLDInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_SRC_PREFIX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_srcPrefix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_SRC_LN_CLASS_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_srcLNClass_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_SRC_LN_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_srcLNInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.EXT_REF___VALIDATE_EXT_REF_SRC_CB_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateExtRef_srcCBName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (daName: ");
-        if (daNameESet) result.append(daName); else result.append("<unset>");
-        result.append(", doName: ");
-        if (doNameESet) result.append(doName); else result.append("<unset>");
-        result.append(", iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", intAddr: ");
-        if (intAddrESet) result.append(intAddr); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", serviceType: ");
-        if (serviceTypeESet) result.append(serviceType); else result.append("<unset>");
-        result.append(", srcCBName: ");
-        if (srcCBNameESet) result.append(srcCBName); else result.append("<unset>");
-        result.append(", srcLDInst: ");
-        if (srcLDInstESet) result.append(srcLDInst); else result.append("<unset>");
-        result.append(", srcLNClass: ");
-        if (srcLNClassESet) result.append(srcLNClass); else result.append("<unset>");
-        result.append(", srcLNInst: ");
-        if (srcLNInstESet) result.append(srcLNInst); else result.append("<unset>");
-        result.append(", srcPrefix: ");
-        if (srcPrefixESet) result.append(srcPrefix); else result.append("<unset>");
-        result.append(", desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (daName: ");
+		if (daNameESet) result.append(daName); else result.append("<unset>");
+		result.append(", doName: ");
+		if (doNameESet) result.append(doName); else result.append("<unset>");
+		result.append(", iedName: ");
+		if (iedNameESet) result.append(iedName); else result.append("<unset>");
+		result.append(", intAddr: ");
+		if (intAddrESet) result.append(intAddr); else result.append("<unset>");
+		result.append(", ldInst: ");
+		if (ldInstESet) result.append(ldInst); else result.append("<unset>");
+		result.append(", lnClass: ");
+		if (lnClassESet) result.append(lnClass); else result.append("<unset>");
+		result.append(", lnInst: ");
+		if (lnInstESet) result.append(lnInst); else result.append("<unset>");
+		result.append(", prefix: ");
+		if (prefixESet) result.append(prefix); else result.append("<unset>");
+		result.append(", serviceType: ");
+		if (serviceTypeESet) result.append(serviceType); else result.append("<unset>");
+		result.append(", srcCBName: ");
+		if (srcCBNameESet) result.append(srcCBName); else result.append("<unset>");
+		result.append(", srcLDInst: ");
+		if (srcLDInstESet) result.append(srcLDInst); else result.append("<unset>");
+		result.append(", srcLNClass: ");
+		if (srcLNClassESet) result.append(srcLNClass); else result.append("<unset>");
+		result.append(", srcLNInst: ");
+		if (srcLNInstESet) result.append(srcLNInst); else result.append("<unset>");
+		result.append(", srcPrefix: ");
+		if (srcPrefixESet) result.append(srcPrefix); else result.append("<unset>");
+		result.append(", desc: ");
+		if (descESet) result.append(desc); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

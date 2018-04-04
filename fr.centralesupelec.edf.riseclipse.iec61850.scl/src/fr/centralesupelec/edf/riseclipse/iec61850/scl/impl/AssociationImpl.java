@@ -17,6 +17,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum;
@@ -26,10 +27,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -59,61 +65,61 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class AssociationImpl extends BaseElementImpl implements Association {
     /**
-     * The default value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAssociationID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAssociationID()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ASSOCIATION_ID_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAssociationID()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAssociationID()
+	 * @generated
+	 * @ordered
+	 */
     protected String associationID = ASSOCIATION_ID_EDEFAULT;
 
     /**
-     * This is true if the Association ID attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Association ID attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean associationIDESet;
 
     /**
-     * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String IED_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIedName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIedName()
+	 * @generated
+	 * @ordered
+	 */
     protected String iedName = IED_NAME_EDEFAULT;
 
     /**
-     * This is true if the Ied Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ied Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean iedNameESet;
 
     /**
@@ -127,850 +133,943 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     protected static final AssociationKindEnum KIND_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getKind()
-     * @generated
-     * @ordered
-     */
+	 * @see #getKind()
+	 * @generated
+	 * @ordered
+	 */
     protected AssociationKindEnum kind = KIND_EDEFAULT;
 
     /**
-     * This is true if the Kind attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Kind attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean kindESet;
 
     /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String ldInst = LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ld Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ldInstESet;
 
     /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnClass = LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnClassESet;
 
     /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnInst = LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnInstESet;
 
     /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREFIX_EDEFAULT = null;
     /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String prefix = PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 * @ordered
+	 */
     protected AnyLN refersToAnyLN;
 
     /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Any LN reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAnyLNESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected AssociationImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getAssociation();
-    }
+		return SclPackage.eINSTANCE.getAssociation();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getAssociationID() {
-        return associationID;
-    }
+		return associationID;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAssociationID( String newAssociationID ) {
-        String oldAssociationID = associationID;
-        associationID = newAssociationID;
-        boolean oldAssociationIDESet = associationIDESet;
-        associationIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, associationID, !oldAssociationIDESet));
-    }
+		String oldAssociationID = associationID;
+		associationID = newAssociationID;
+		boolean oldAssociationIDESet = associationIDESet;
+		associationIDESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, associationID, !oldAssociationIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetAssociationID() {
-        String oldAssociationID = associationID;
-        boolean oldAssociationIDESet = associationIDESet;
-        associationID = ASSOCIATION_ID_EDEFAULT;
-        associationIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, ASSOCIATION_ID_EDEFAULT, oldAssociationIDESet));
-    }
+		String oldAssociationID = associationID;
+		boolean oldAssociationIDESet = associationIDESet;
+		associationID = ASSOCIATION_ID_EDEFAULT;
+		associationIDESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, ASSOCIATION_ID_EDEFAULT, oldAssociationIDESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetAssociationID() {
-        return associationIDESet;
-    }
+		return associationIDESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getIedName() {
-        return iedName;
-    }
+		return iedName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIedName( String newIedName ) {
-        String oldIedName = iedName;
-        iedName = newIedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, iedName, !oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		iedName = newIedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIedName() {
-        String oldIedName = iedName;
-        boolean oldIedNameESet = iedNameESet;
-        iedName = IED_NAME_EDEFAULT;
-        iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
-    }
+		String oldIedName = iedName;
+		boolean oldIedNameESet = iedNameESet;
+		iedName = IED_NAME_EDEFAULT;
+		iedNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIedName() {
-        return iedNameESet;
-    }
+		return iedNameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AssociationKindEnum getKind() {
-        return kind;
-    }
+		return kind;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setKind( AssociationKindEnum newKind ) {
-        AssociationKindEnum oldKind = kind;
-        kind = newKind == null ? KIND_EDEFAULT : newKind;
-        boolean oldKindESet = kindESet;
-        kindESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__KIND, oldKind, kind, !oldKindESet));
-    }
+		AssociationKindEnum oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
+		boolean oldKindESet = kindESet;
+		kindESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__KIND, oldKind, kind, !oldKindESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetKind() {
-        AssociationKindEnum oldKind = kind;
-        boolean oldKindESet = kindESet;
-        kind = KIND_EDEFAULT;
-        kindESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__KIND, oldKind, KIND_EDEFAULT, oldKindESet));
-    }
+		AssociationKindEnum oldKind = kind;
+		boolean oldKindESet = kindESet;
+		kind = KIND_EDEFAULT;
+		kindESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__KIND, oldKind, KIND_EDEFAULT, oldKindESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetKind() {
-        return kindESet;
-    }
+		return kindESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLdInst() {
-        return ldInst;
-    }
+		return ldInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		ldInst = newLdInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInst = LD_INST_EDEFAULT;
+		ldInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLdInst() {
-        return ldInstESet;
-    }
+		return ldInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnClass() {
-        return lnClass;
-    }
+		return lnClass;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		lnClass = newLnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClass = LN_CLASS_EDEFAULT;
+		lnClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnClass() {
-        return lnClassESet;
-    }
+		return lnClassESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnInst() {
-        return lnInst;
-    }
+		return lnInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		lnInst = newLnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInst = LN_INST_EDEFAULT;
+		lnInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnInst() {
-        return lnInstESet;
-    }
+		return lnInstESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getPrefix() {
-        return prefix;
-    }
+		return prefix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, prefix, !oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		prefix = newPrefix;
+		boolean oldPrefixESet = prefixESet;
+		prefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		boolean oldPrefixESet = prefixESet;
+		prefix = PREFIX_EDEFAULT;
+		prefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrefix() {
-        return prefixESet;
-    }
+		return prefixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Server getServer() {
-        if (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER) return null;
-        return (Server)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER) return null;
+		return (Server)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServer( Server newServer, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServer, SclPackage.ASSOCIATION__SERVER, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServer, SclPackage.ASSOCIATION__SERVER, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServer( Server newServer ) {
-        if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER && newServer != null)) {
-            if (EcoreUtil.isAncestor(this, newServer))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServer != null)
-                msgs = ((InternalEObject)newServer).eInverseAdd(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
-            msgs = basicSetServer(newServer, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__SERVER, newServer, newServer));
-    }
+		if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER && newServer != null)) {
+			if (EcoreUtil.isAncestor(this, newServer))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServer != null)
+				msgs = ((InternalEObject)newServer).eInverseAdd(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
+			msgs = basicSetServer(newServer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__SERVER, newServer, newServer));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
+		return refersToAnyLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAnyLN( AnyLN newRefersToAnyLN, NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = newRefersToAnyLN;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
+		if (newRefersToAnyLN != refersToAnyLN) {
+			NotificationChain msgs = null;
+			if (refersToAnyLN != null)
+				msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
+			if (newRefersToAnyLN != null)
+				msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
+			msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAnyLN( NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = null;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
-    }
+		if (refersToAnyLN != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
+			msgs = basicUnsetRefersToAnyLN(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
+		return refersToAnyLNESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateAssociation_kind_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Association kind required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAssociation_kind_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ASSOCIATION_KIND_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'kind attribute shall be present in Association (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.kind <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociation_kind_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getAssociation(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getAssociation__ValidateAssociation_kind_required__DiagnosticChain_Map(),
+				 VALIDATE_ASSOCIATION_KIND_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.ASSOCIATION__VALIDATE_ASSOCIATION_KIND_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateAssociation_associationID_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Association association ID valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAssociation_associationID_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ASSOCIATION_ASSOCIATION_ID_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'The length of the association ID shall be at least one (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.associationID.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.associationID <> null implies self.validSclAssociationID( associationID )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssociation_associationID_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getAssociation(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getAssociation__ValidateAssociation_associationID_valid__DiagnosticChain_Map(),
+				 VALIDATE_ASSOCIATION_ASSOCIATION_ID_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.ASSOCIATION__VALIDATE_ASSOCIATION_ASSOCIATION_ID_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__SERVER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServer((Server)otherEnd, msgs);
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__SERVER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServer((Server)otherEnd, msgs);
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				if (refersToAnyLN != null)
+					msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
+				return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__SERVER:
-                return basicSetServer(null, msgs);
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__SERVER:
+				return basicSetServer(null, msgs);
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				return basicUnsetRefersToAnyLN(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ASSOCIATION__SERVER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.ASSOCIATION__SERVER:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return getAssociationID();
-            case SclPackage.ASSOCIATION__IED_NAME:
-                return getIedName();
-            case SclPackage.ASSOCIATION__KIND:
-                return getKind();
-            case SclPackage.ASSOCIATION__LD_INST:
-                return getLdInst();
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                return getLnClass();
-            case SclPackage.ASSOCIATION__LN_INST:
-                return getLnInst();
-            case SclPackage.ASSOCIATION__PREFIX:
-                return getPrefix();
-            case SclPackage.ASSOCIATION__SERVER:
-                return getServer();
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+				return getAssociationID();
+			case SclPackage.ASSOCIATION__IED_NAME:
+				return getIedName();
+			case SclPackage.ASSOCIATION__KIND:
+				return getKind();
+			case SclPackage.ASSOCIATION__LD_INST:
+				return getLdInst();
+			case SclPackage.ASSOCIATION__LN_CLASS:
+				return getLnClass();
+			case SclPackage.ASSOCIATION__LN_INST:
+				return getLnInst();
+			case SclPackage.ASSOCIATION__PREFIX:
+				return getPrefix();
+			case SclPackage.ASSOCIATION__SERVER:
+				return getServer();
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				return getRefersToAnyLN();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                setAssociationID((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                setKind((AssociationKindEnum)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__SERVER:
-                setServer((Server)newValue);
-                return;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+				setAssociationID((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__IED_NAME:
+				setIedName((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__KIND:
+				setKind((AssociationKindEnum)newValue);
+				return;
+			case SclPackage.ASSOCIATION__LD_INST:
+				setLdInst((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__LN_CLASS:
+				setLnClass((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__LN_INST:
+				setLnInst((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__PREFIX:
+				setPrefix((String)newValue);
+				return;
+			case SclPackage.ASSOCIATION__SERVER:
+				setServer((Server)newValue);
+				return;
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				setRefersToAnyLN((AnyLN)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                unsetAssociationID();
-                return;
-            case SclPackage.ASSOCIATION__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                unsetKind();
-                return;
-            case SclPackage.ASSOCIATION__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.ASSOCIATION__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.ASSOCIATION__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.ASSOCIATION__SERVER:
-                setServer((Server)null);
-                return;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+				unsetAssociationID();
+				return;
+			case SclPackage.ASSOCIATION__IED_NAME:
+				unsetIedName();
+				return;
+			case SclPackage.ASSOCIATION__KIND:
+				unsetKind();
+				return;
+			case SclPackage.ASSOCIATION__LD_INST:
+				unsetLdInst();
+				return;
+			case SclPackage.ASSOCIATION__LN_CLASS:
+				unsetLnClass();
+				return;
+			case SclPackage.ASSOCIATION__LN_INST:
+				unsetLnInst();
+				return;
+			case SclPackage.ASSOCIATION__PREFIX:
+				unsetPrefix();
+				return;
+			case SclPackage.ASSOCIATION__SERVER:
+				setServer((Server)null);
+				return;
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				unsetRefersToAnyLN();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return isSetAssociationID();
-            case SclPackage.ASSOCIATION__IED_NAME:
-                return isSetIedName();
-            case SclPackage.ASSOCIATION__KIND:
-                return isSetKind();
-            case SclPackage.ASSOCIATION__LD_INST:
-                return isSetLdInst();
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.ASSOCIATION__LN_INST:
-                return isSetLnInst();
-            case SclPackage.ASSOCIATION__PREFIX:
-                return isSetPrefix();
-            case SclPackage.ASSOCIATION__SERVER:
-                return getServer() != null;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+				return isSetAssociationID();
+			case SclPackage.ASSOCIATION__IED_NAME:
+				return isSetIedName();
+			case SclPackage.ASSOCIATION__KIND:
+				return isSetKind();
+			case SclPackage.ASSOCIATION__LD_INST:
+				return isSetLdInst();
+			case SclPackage.ASSOCIATION__LN_CLASS:
+				return isSetLnClass();
+			case SclPackage.ASSOCIATION__LN_INST:
+				return isSetLnInst();
+			case SclPackage.ASSOCIATION__PREFIX:
+				return isSetPrefix();
+			case SclPackage.ASSOCIATION__SERVER:
+				return getServer() != null;
+			case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+				return isSetRefersToAnyLN();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.ASSOCIATION___VALIDATE_ASSOCIATION_KIND_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateAssociation_kind_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.ASSOCIATION___VALIDATE_ASSOCIATION_ASSOCIATION_ID_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateAssociation_associationID_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (associationID: ");
-        if (associationIDESet) result.append(associationID); else result.append("<unset>");
-        result.append(", iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", kind: ");
-        if (kindESet) result.append(kind); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (associationID: ");
+		if (associationIDESet) result.append(associationID); else result.append("<unset>");
+		result.append(", iedName: ");
+		if (iedNameESet) result.append(iedName); else result.append("<unset>");
+		result.append(", kind: ");
+		if (kindESet) result.append(kind); else result.append("<unset>");
+		result.append(", ldInst: ");
+		if (ldInstESet) result.append(ldInst); else result.append("<unset>");
+		result.append(", lnClass: ");
+		if (lnClassESet) result.append(lnClass); else result.append("<unset>");
+		result.append(", lnInst: ");
+		if (lnInstESet) result.append(lnInst); else result.append("<unset>");
+		result.append(", prefix: ");
+		if (prefixESet) result.append(prefix); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

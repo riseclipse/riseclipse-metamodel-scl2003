@@ -38,296 +38,296 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface Authentication extends SclObject {
     /**
-     * Returns the value of the '<em><b>Certificate</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Certificate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Certificate</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Certificate</em>' attribute.
-     * @see #isSetCertificate()
-     * @see #unsetCertificate()
-     * @see #setCertificate(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Certificate()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Certificate</em>' attribute.
+	 * @see #isSetCertificate()
+	 * @see #unsetCertificate()
+	 * @see #setCertificate(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Certificate()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getCertificate();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Certificate</em>' attribute.
-     * @see #isSetCertificate()
-     * @see #unsetCertificate()
-     * @see #getCertificate()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Certificate</em>' attribute.
+	 * @see #isSetCertificate()
+	 * @see #unsetCertificate()
+	 * @see #getCertificate()
+	 * @generated
+	 */
     void setCertificate( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetCertificate()
-     * @see #getCertificate()
-     * @see #setCertificate(Boolean)
-     * @generated
-     */
+	 * @see #isSetCertificate()
+	 * @see #getCertificate()
+	 * @see #setCertificate(Boolean)
+	 * @generated
+	 */
     void unsetCertificate();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Certificate</em>' attribute is set.
-     * @see #unsetCertificate()
-     * @see #getCertificate()
-     * @see #setCertificate(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Certificate</em>' attribute is set.
+	 * @see #unsetCertificate()
+	 * @see #getCertificate()
+	 * @see #setCertificate(Boolean)
+	 * @generated
+	 */
     boolean isSetCertificate();
 
     /**
-     * Returns the value of the '<em><b>None</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>None</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>None</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>None</em>' attribute.
-     * @see #isSetNone()
-     * @see #unsetNone()
-     * @see #setNone(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_None()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>None</em>' attribute.
+	 * @see #isSetNone()
+	 * @see #unsetNone()
+	 * @see #setNone(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_None()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getNone();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>None</em>' attribute.
-     * @see #isSetNone()
-     * @see #unsetNone()
-     * @see #getNone()
-     * @generated
-     */
+	 * @param value the new value of the '<em>None</em>' attribute.
+	 * @see #isSetNone()
+	 * @see #unsetNone()
+	 * @see #getNone()
+	 * @generated
+	 */
     void setNone( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetNone()
-     * @see #getNone()
-     * @see #setNone(Boolean)
-     * @generated
-     */
+	 * @see #isSetNone()
+	 * @see #getNone()
+	 * @see #setNone(Boolean)
+	 * @generated
+	 */
     void unsetNone();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>None</em>' attribute is set.
-     * @see #unsetNone()
-     * @see #getNone()
-     * @see #setNone(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>None</em>' attribute is set.
+	 * @see #unsetNone()
+	 * @see #getNone()
+	 * @see #setNone(Boolean)
+	 * @generated
+	 */
     boolean isSetNone();
 
     /**
-     * Returns the value of the '<em><b>Password</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Password</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Password</em>' attribute.
-     * @see #isSetPassword()
-     * @see #unsetPassword()
-     * @see #setPassword(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Password()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Password</em>' attribute.
+	 * @see #isSetPassword()
+	 * @see #unsetPassword()
+	 * @see #setPassword(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Password()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getPassword();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Password</em>' attribute.
-     * @see #isSetPassword()
-     * @see #unsetPassword()
-     * @see #getPassword()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Password</em>' attribute.
+	 * @see #isSetPassword()
+	 * @see #unsetPassword()
+	 * @see #getPassword()
+	 * @generated
+	 */
     void setPassword( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetPassword()
-     * @see #getPassword()
-     * @see #setPassword(Boolean)
-     * @generated
-     */
+	 * @see #isSetPassword()
+	 * @see #getPassword()
+	 * @see #setPassword(Boolean)
+	 * @generated
+	 */
     void unsetPassword();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Password</em>' attribute is set.
-     * @see #unsetPassword()
-     * @see #getPassword()
-     * @see #setPassword(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Password</em>' attribute is set.
+	 * @see #unsetPassword()
+	 * @see #getPassword()
+	 * @see #setPassword(Boolean)
+	 * @generated
+	 */
     boolean isSetPassword();
 
     /**
-     * Returns the value of the '<em><b>Strong</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Strong</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Strong</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Strong</em>' attribute.
-     * @see #isSetStrong()
-     * @see #unsetStrong()
-     * @see #setStrong(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Strong()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Strong</em>' attribute.
+	 * @see #isSetStrong()
+	 * @see #unsetStrong()
+	 * @see #setStrong(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Strong()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getStrong();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Strong</em>' attribute.
-     * @see #isSetStrong()
-     * @see #unsetStrong()
-     * @see #getStrong()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Strong</em>' attribute.
+	 * @see #isSetStrong()
+	 * @see #unsetStrong()
+	 * @see #getStrong()
+	 * @generated
+	 */
     void setStrong( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetStrong()
-     * @see #getStrong()
-     * @see #setStrong(Boolean)
-     * @generated
-     */
+	 * @see #isSetStrong()
+	 * @see #getStrong()
+	 * @see #setStrong(Boolean)
+	 * @generated
+	 */
     void unsetStrong();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Strong</em>' attribute is set.
-     * @see #unsetStrong()
-     * @see #getStrong()
-     * @see #setStrong(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Strong</em>' attribute is set.
+	 * @see #unsetStrong()
+	 * @see #getStrong()
+	 * @see #setStrong(Boolean)
+	 * @generated
+	 */
     boolean isSetStrong();
 
     /**
-     * Returns the value of the '<em><b>Weak</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Weak</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Weak</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Weak</em>' attribute.
-     * @see #isSetWeak()
-     * @see #unsetWeak()
-     * @see #setWeak(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Weak()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Weak</em>' attribute.
+	 * @see #isSetWeak()
+	 * @see #unsetWeak()
+	 * @see #setWeak(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Weak()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getWeak();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Weak</em>' attribute.
-     * @see #isSetWeak()
-     * @see #unsetWeak()
-     * @see #getWeak()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Weak</em>' attribute.
+	 * @see #isSetWeak()
+	 * @see #unsetWeak()
+	 * @see #getWeak()
+	 * @generated
+	 */
     void setWeak( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetWeak()
-     * @see #getWeak()
-     * @see #setWeak(Boolean)
-     * @generated
-     */
+	 * @see #isSetWeak()
+	 * @see #getWeak()
+	 * @see #setWeak(Boolean)
+	 * @generated
+	 */
     void unsetWeak();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Weak</em>' attribute is set.
-     * @see #unsetWeak()
-     * @see #getWeak()
-     * @see #setWeak(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Weak</em>' attribute is set.
+	 * @see #unsetWeak()
+	 * @see #getWeak()
+	 * @see #setWeak(Boolean)
+	 * @generated
+	 */
     boolean isSetWeak();
 
     /**
-     * Returns the value of the '<em><b>Server</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication <em>Authentication</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Server</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication <em>Authentication</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Server</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Server</em>' container reference.
-     * @see #setServer(Server)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Server()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication
-     * @model opposite="Authentication" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Server</em>' container reference.
+	 * @see #setServer(Server)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Server()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication
+	 * @model opposite="Authentication" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     Server getServer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Server</em>' container reference.
-     * @see #getServer()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Server</em>' container reference.
+	 * @see #getServer()
+	 * @generated
+	 */
     void setServer( Server value );
 
 } // Authentication

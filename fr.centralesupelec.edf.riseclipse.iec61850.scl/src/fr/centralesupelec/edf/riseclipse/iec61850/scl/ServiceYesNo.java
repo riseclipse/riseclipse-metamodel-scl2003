@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -27,4 +30,13 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @generated
  */
 public interface ServiceYesNo extends SclObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ServiceYesNo_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateServiceYesNo_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 } // ServiceYesNo

@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -34,56 +37,65 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ServiceWithMaxAndModify extends ServiceWithMax {
     /**
-     * Returns the value of the '<em><b>Modify</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Modify</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Modify</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Modify</em>' attribute.
-     * @see #isSetModify()
-     * @see #unsetModify()
-     * @see #setModify(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceWithMaxAndModify_Modify()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Modify</em>' attribute.
+	 * @see #isSetModify()
+	 * @see #unsetModify()
+	 * @see #setModify(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceWithMaxAndModify_Modify()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getModify();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Modify</em>' attribute.
-     * @see #isSetModify()
-     * @see #unsetModify()
-     * @see #getModify()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Modify</em>' attribute.
+	 * @see #isSetModify()
+	 * @see #unsetModify()
+	 * @see #getModify()
+	 * @generated
+	 */
     void setModify(Boolean value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetModify()
-     * @see #getModify()
-     * @see #setModify(Boolean)
-     * @generated
-     */
+	 * @see #isSetModify()
+	 * @see #getModify()
+	 * @see #setModify(Boolean)
+	 * @generated
+	 */
     void unsetModify();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify#getModify <em>Modify</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Modify</em>' attribute is set.
-     * @see #unsetModify()
-     * @see #getModify()
-     * @see #setModify(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Modify</em>' attribute is set.
+	 * @see #unsetModify()
+	 * @see #getModify()
+	 * @see #setModify(Boolean)
+	 * @generated
+	 */
     boolean isSetModify();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ServiceWithMaxAndModify_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateServiceWithMaxAndModify_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ServiceWithMaxAndModify

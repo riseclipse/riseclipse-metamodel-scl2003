@@ -33,31 +33,31 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface NeutralPoint extends Terminal {
     /**
-     * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getNeutralPoint <em>Neutral Point</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getNeutralPoint <em>Neutral Point</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Transformer Winding</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Transformer Winding</em>' container reference.
-     * @see #setTransformerWinding(TransformerWinding)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getNeutralPoint_TransformerWinding()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getNeutralPoint
-     * @model opposite="NeutralPoint" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Transformer Winding</em>' container reference.
+	 * @see #setTransformerWinding(TransformerWinding)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getNeutralPoint_TransformerWinding()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getNeutralPoint
+	 * @model opposite="NeutralPoint" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     TransformerWinding getTransformerWinding();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding <em>Transformer Winding</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding <em>Transformer Winding</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Transformer Winding</em>' container reference.
-     * @see #getTransformerWinding()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Transformer Winding</em>' container reference.
+	 * @see #getTransformerWinding()
+	 * @generated
+	 */
     void setTransformerWinding( TransformerWinding value );
 
 } // NeutralPoint

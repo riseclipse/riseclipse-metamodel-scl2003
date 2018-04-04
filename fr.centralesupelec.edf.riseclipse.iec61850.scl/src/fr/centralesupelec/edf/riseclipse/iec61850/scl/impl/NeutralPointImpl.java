@@ -41,166 +41,166 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  */
 public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected NeutralPointImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getNeutralPoint();
-    }
+		return SclPackage.eINSTANCE.getNeutralPoint();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public TransformerWinding getTransformerWinding() {
-        if (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING) return null;
-        return (TransformerWinding)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING) return null;
+		return (TransformerWinding)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetTransformerWinding( TransformerWinding newTransformerWinding,
             NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newTransformerWinding, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newTransformerWinding, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
-        if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING && newTransformerWinding != null)) {
-            if (EcoreUtil.isAncestor(this, newTransformerWinding))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newTransformerWinding != null)
-                msgs = ((InternalEObject)newTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
-            msgs = basicSetTransformerWinding(newTransformerWinding, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, newTransformerWinding, newTransformerWinding));
-    }
+		if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING && newTransformerWinding != null)) {
+			if (EcoreUtil.isAncestor(this, newTransformerWinding))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newTransformerWinding != null)
+				msgs = ((InternalEObject)newTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
+			msgs = basicSetTransformerWinding(newTransformerWinding, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, newTransformerWinding, newTransformerWinding));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetTransformerWinding((TransformerWinding)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetTransformerWinding((TransformerWinding)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return basicSetTransformerWinding(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				return basicSetTransformerWinding(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return eInternalContainer().eInverseRemove(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				return eInternalContainer().eInverseRemove(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return getTransformerWinding();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				return getTransformerWinding();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				setTransformerWinding((TransformerWinding)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				setTransformerWinding((TransformerWinding)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return getTransformerWinding() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+				return getTransformerWinding() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //NeutralPointImpl

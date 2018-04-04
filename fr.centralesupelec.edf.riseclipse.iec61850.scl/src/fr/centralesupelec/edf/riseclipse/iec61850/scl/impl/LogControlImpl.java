@@ -17,6 +17,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
@@ -24,10 +25,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -58,274 +64,274 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class LogControlImpl extends ControlWithTriggerOptImpl implements LogControl {
     /**
-     * The default value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufTime()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer BUF_TIME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBufTime()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBufTime()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer bufTime = BUF_TIME_EDEFAULT;
 
     /**
-     * This is true if the Buf Time attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Buf Time attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean bufTimeESet;
 
     /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String ldInst = LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ld Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ldInstESet;
 
     /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnClass = LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnClassESet;
 
     /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnInst = LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnInstESet;
 
     /**
-     * The default value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLogEna()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLogEna()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean LOG_ENA_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLogEna()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLogEna()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean logEna = LOG_ENA_EDEFAULT;
 
     /**
-     * This is true if the Log Ena attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Log Ena attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean logEnaESet;
 
     /**
-     * The default value of the '{@link #getLogName() <em>Log Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLogName() <em>Log Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLogName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLogName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LOG_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLogName() <em>Log Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLogName() <em>Log Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLogName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLogName()
+	 * @generated
+	 * @ordered
+	 */
     protected String logName = LOG_NAME_EDEFAULT;
 
     /**
-     * This is true if the Log Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Log Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean logNameESet;
 
     /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREFIX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String prefix = PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prefixESet;
 
     /**
-     * The default value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReasonCode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReasonCode()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean REASON_CODE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReasonCode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReasonCode()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean reasonCode = REASON_CODE_EDEFAULT;
 
     /**
-     * This is true if the Reason Code attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Reason Code attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean reasonCodeESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 * @ordered
+	 */
     protected AnyLN refersToAnyLN;
 
     /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Any LN reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAnyLNESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected LogControlImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getLogControl();
-    }
+		return SclPackage.eINSTANCE.getLogControl();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -340,87 +346,87 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setBufTime( Integer newBufTime ) {
-        Integer oldBufTime = bufTime;
-        bufTime = newBufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
-    }
+		Integer oldBufTime = bufTime;
+		bufTime = newBufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTimeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetBufTime() {
-        Integer oldBufTime = bufTime;
-        boolean oldBufTimeESet = bufTimeESet;
-        bufTime = BUF_TIME_EDEFAULT;
-        bufTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
-    }
+		Integer oldBufTime = bufTime;
+		boolean oldBufTimeESet = bufTimeESet;
+		bufTime = BUF_TIME_EDEFAULT;
+		bufTimeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetBufTime() {
-        return bufTimeESet;
-    }
+		return bufTimeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLdInst() {
-        return ldInst;
-    }
+		return ldInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		ldInst = newLdInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInst = LD_INST_EDEFAULT;
+		ldInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLdInst() {
-        return ldInstESet;
-    }
+		return ldInstESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -435,87 +441,87 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		lnClass = newLnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClass = LN_CLASS_EDEFAULT;
+		lnClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnClass() {
-        return lnClassESet;
-    }
+		return lnClassESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLnInst() {
-        return lnInst;
-    }
+		return lnInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		lnInst = newLnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInst = LN_INST_EDEFAULT;
+		lnInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLnInst() {
-        return lnInstESet;
-    }
+		return lnInstESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -530,87 +536,87 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLogEna( Boolean newLogEna ) {
-        Boolean oldLogEna = logEna;
-        logEna = newLogEna;
-        boolean oldLogEnaESet = logEnaESet;
-        logEnaESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, logEna, !oldLogEnaESet));
-    }
+		Boolean oldLogEna = logEna;
+		logEna = newLogEna;
+		boolean oldLogEnaESet = logEnaESet;
+		logEnaESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, logEna, !oldLogEnaESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLogEna() {
-        Boolean oldLogEna = logEna;
-        boolean oldLogEnaESet = logEnaESet;
-        logEna = LOG_ENA_EDEFAULT;
-        logEnaESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, LOG_ENA_EDEFAULT, oldLogEnaESet));
-    }
+		Boolean oldLogEna = logEna;
+		boolean oldLogEnaESet = logEnaESet;
+		logEna = LOG_ENA_EDEFAULT;
+		logEnaESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, LOG_ENA_EDEFAULT, oldLogEnaESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLogEna() {
-        return logEnaESet;
-    }
+		return logEnaESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLogName() {
-        return logName;
-    }
+		return logName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLogName( String newLogName ) {
-        String oldLogName = logName;
-        logName = newLogName;
-        boolean oldLogNameESet = logNameESet;
-        logNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, logName, !oldLogNameESet));
-    }
+		String oldLogName = logName;
+		logName = newLogName;
+		boolean oldLogNameESet = logNameESet;
+		logNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, logName, !oldLogNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLogName() {
-        String oldLogName = logName;
-        boolean oldLogNameESet = logNameESet;
-        logName = LOG_NAME_EDEFAULT;
-        logNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, LOG_NAME_EDEFAULT, oldLogNameESet));
-    }
+		String oldLogName = logName;
+		boolean oldLogNameESet = logNameESet;
+		logName = LOG_NAME_EDEFAULT;
+		logNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, LOG_NAME_EDEFAULT, oldLogNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLogName() {
-        return logNameESet;
-    }
+		return logNameESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -625,41 +631,41 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, prefix, !oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		prefix = newPrefix;
+		boolean oldPrefixESet = prefixESet;
+		prefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		boolean oldPrefixESet = prefixESet;
+		prefix = PREFIX_EDEFAULT;
+		prefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrefix() {
-        return prefixESet;
-    }
+		return prefixESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -674,405 +680,697 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setReasonCode( Boolean newReasonCode ) {
-        Boolean oldReasonCode = reasonCode;
-        reasonCode = newReasonCode;
-        boolean oldReasonCodeESet = reasonCodeESet;
-        reasonCodeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, reasonCode, !oldReasonCodeESet));
-    }
+		Boolean oldReasonCode = reasonCode;
+		reasonCode = newReasonCode;
+		boolean oldReasonCodeESet = reasonCodeESet;
+		reasonCodeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, reasonCode, !oldReasonCodeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetReasonCode() {
-        Boolean oldReasonCode = reasonCode;
-        boolean oldReasonCodeESet = reasonCodeESet;
-        reasonCode = REASON_CODE_EDEFAULT;
-        reasonCodeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, REASON_CODE_EDEFAULT, oldReasonCodeESet));
-    }
+		Boolean oldReasonCode = reasonCode;
+		boolean oldReasonCodeESet = reasonCodeESet;
+		reasonCode = REASON_CODE_EDEFAULT;
+		reasonCodeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, REASON_CODE_EDEFAULT, oldReasonCodeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetReasonCode() {
-        return reasonCodeESet;
-    }
+		return reasonCodeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getAnyLN() {
-        if (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN) return null;
+		return (AnyLN)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetAnyLN( AnyLN newAnyLN, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.LOG_CONTROL__ANY_LN, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.LOG_CONTROL__ANY_LN, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setAnyLN( AnyLN newAnyLN ) {
-        if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN && newAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAnyLN != null)
-                msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetAnyLN(newAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__ANY_LN, newAnyLN, newAnyLN));
-    }
+		if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN && newAnyLN != null)) {
+			if (EcoreUtil.isAncestor(this, newAnyLN))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newAnyLN != null)
+				msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
+			msgs = basicSetAnyLN(newAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__ANY_LN, newAnyLN, newAnyLN));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
+		return refersToAnyLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAnyLN( AnyLN newRefersToAnyLN, NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = newRefersToAnyLN;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
+		if (newRefersToAnyLN != refersToAnyLN) {
+			NotificationChain msgs = null;
+			if (refersToAnyLN != null)
+				msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
+			if (newRefersToAnyLN != null)
+				msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
+			msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAnyLN( NotificationChain msgs ) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = null;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
-    }
+		if (refersToAnyLN != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
+			msgs = basicUnsetRefersToAnyLN(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
+		return refersToAnyLNESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateLogControl_logName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control log Name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_logName_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_LOG_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'logName attribute shall be present in LogControl (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.logName <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_logName_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_logName_required__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_LOG_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_LOG_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_logName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control log Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_logName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_LOG_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'logName attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.logName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.logName <> null implies self.validSclLogName( logName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_logName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_logName_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_LOG_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_LOG_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control ld Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ldInst attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ldInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.ldInst <> null implies self.validSclLDInst( ldInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_ldInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_ldInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_LD_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control prefix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'prefix attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.prefix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.prefix <> null implies self.validSclPrefix( prefix )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_prefix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_prefix_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_PREFIX_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control ln Class valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnClass attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnClass.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.lnClass <> null implies self.validSclLNClassEnum( lnClass )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_lnClass_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_lnClass_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_LN_CLASS_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control ln Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnInst attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"       self.lnInst <> null implies self.validSclLNInst( lnInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_lnInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_lnInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_LN_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateLogControl_bufTime_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Log Control buf Time valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateLogControl_bufTime_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_LOG_CONTROL_BUF_TIME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'bufTime attribute shall be valid in LogControl (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.bufTime.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.bufTime <> null implies self.bufTime >= 0\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateLogControl_bufTime_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getLogControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getLogControl__ValidateLogControl_bufTime_valid__DiagnosticChain_Map(),
+				 VALIDATE_LOG_CONTROL_BUF_TIME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.LOG_CONTROL__VALIDATE_LOG_CONTROL_BUF_TIME_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetAnyLN((AnyLN)otherEnd, msgs);
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				if (refersToAnyLN != null)
+					msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
+				return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return basicSetAnyLN(null, msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				return basicSetAnyLN(null, msgs);
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				return basicUnsetRefersToAnyLN(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                return getBufTime();
-            case SclPackage.LOG_CONTROL__LD_INST:
-                return getLdInst();
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                return getLnClass();
-            case SclPackage.LOG_CONTROL__LN_INST:
-                return getLnInst();
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                return getLogEna();
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                return getLogName();
-            case SclPackage.LOG_CONTROL__PREFIX:
-                return getPrefix();
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                return getReasonCode();
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return getAnyLN();
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__BUF_TIME:
+				return getBufTime();
+			case SclPackage.LOG_CONTROL__LD_INST:
+				return getLdInst();
+			case SclPackage.LOG_CONTROL__LN_CLASS:
+				return getLnClass();
+			case SclPackage.LOG_CONTROL__LN_INST:
+				return getLnInst();
+			case SclPackage.LOG_CONTROL__LOG_ENA:
+				return getLogEna();
+			case SclPackage.LOG_CONTROL__LOG_NAME:
+				return getLogName();
+			case SclPackage.LOG_CONTROL__PREFIX:
+				return getPrefix();
+			case SclPackage.LOG_CONTROL__REASON_CODE:
+				return getReasonCode();
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				return getAnyLN();
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				return getRefersToAnyLN();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                setBufTime((Integer)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                setLogEna((Boolean)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                setLogName((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                setReasonCode((Boolean)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__BUF_TIME:
+				setBufTime((Integer)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__LD_INST:
+				setLdInst((String)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__LN_CLASS:
+				setLnClass((String)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__LN_INST:
+				setLnInst((String)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__LOG_ENA:
+				setLogEna((Boolean)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__LOG_NAME:
+				setLogName((String)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__PREFIX:
+				setPrefix((String)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__REASON_CODE:
+				setReasonCode((Boolean)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				setAnyLN((AnyLN)newValue);
+				return;
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				setRefersToAnyLN((AnyLN)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                unsetBufTime();
-                return;
-            case SclPackage.LOG_CONTROL__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.LOG_CONTROL__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                unsetLogEna();
-                return;
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                unsetLogName();
-                return;
-            case SclPackage.LOG_CONTROL__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                unsetReasonCode();
-                return;
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)null);
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__BUF_TIME:
+				unsetBufTime();
+				return;
+			case SclPackage.LOG_CONTROL__LD_INST:
+				unsetLdInst();
+				return;
+			case SclPackage.LOG_CONTROL__LN_CLASS:
+				unsetLnClass();
+				return;
+			case SclPackage.LOG_CONTROL__LN_INST:
+				unsetLnInst();
+				return;
+			case SclPackage.LOG_CONTROL__LOG_ENA:
+				unsetLogEna();
+				return;
+			case SclPackage.LOG_CONTROL__LOG_NAME:
+				unsetLogName();
+				return;
+			case SclPackage.LOG_CONTROL__PREFIX:
+				unsetPrefix();
+				return;
+			case SclPackage.LOG_CONTROL__REASON_CODE:
+				unsetReasonCode();
+				return;
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				setAnyLN((AnyLN)null);
+				return;
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				unsetRefersToAnyLN();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                return isSetBufTime();
-            case SclPackage.LOG_CONTROL__LD_INST:
-                return isSetLdInst();
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.LOG_CONTROL__LN_INST:
-                return isSetLnInst();
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                return isSetLogEna();
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                return isSetLogName();
-            case SclPackage.LOG_CONTROL__PREFIX:
-                return isSetPrefix();
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                return isSetReasonCode();
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return getAnyLN() != null;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.LOG_CONTROL__BUF_TIME:
+				return isSetBufTime();
+			case SclPackage.LOG_CONTROL__LD_INST:
+				return isSetLdInst();
+			case SclPackage.LOG_CONTROL__LN_CLASS:
+				return isSetLnClass();
+			case SclPackage.LOG_CONTROL__LN_INST:
+				return isSetLnInst();
+			case SclPackage.LOG_CONTROL__LOG_ENA:
+				return isSetLogEna();
+			case SclPackage.LOG_CONTROL__LOG_NAME:
+				return isSetLogName();
+			case SclPackage.LOG_CONTROL__PREFIX:
+				return isSetPrefix();
+			case SclPackage.LOG_CONTROL__REASON_CODE:
+				return isSetReasonCode();
+			case SclPackage.LOG_CONTROL__ANY_LN:
+				return getAnyLN() != null;
+			case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+				return isSetRefersToAnyLN();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_LOG_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_logName_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_LOG_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_logName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_LD_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_ldInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_PREFIX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_prefix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_LN_CLASS_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_lnClass_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_LN_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_lnInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.LOG_CONTROL___VALIDATE_LOG_CONTROL_BUF_TIME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateLogControl_bufTime_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (bufTime: ");
-        if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", logEna: ");
-        if (logEnaESet) result.append(logEna); else result.append("<unset>");
-        result.append(", logName: ");
-        if (logNameESet) result.append(logName); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", reasonCode: ");
-        if (reasonCodeESet) result.append(reasonCode); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (bufTime: ");
+		if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
+		result.append(", ldInst: ");
+		if (ldInstESet) result.append(ldInst); else result.append("<unset>");
+		result.append(", lnClass: ");
+		if (lnClassESet) result.append(lnClass); else result.append("<unset>");
+		result.append(", lnInst: ");
+		if (lnInstESet) result.append(lnInst); else result.append("<unset>");
+		result.append(", logEna: ");
+		if (logEnaESet) result.append(logEna); else result.append("<unset>");
+		result.append(", logName: ");
+		if (logNameESet) result.append(logName); else result.append("<unset>");
+		result.append(", prefix: ");
+		if (prefixESet) result.append(prefix); else result.append("<unset>");
+		result.append(", reasonCode: ");
+		if (reasonCodeESet) result.append(reasonCode); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -30,6 +33,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,323 +53,415 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected String type = TYPE_EDEFAULT;
 
     /**
-     * This is true if the Type attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Type attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean typeESet;
 
     /**
-     * The cached value of the '{@link #getP() <em>P</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getP() <em>P</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getP()
-     * @generated
-     * @ordered
-     */
+	 * @see #getP()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<P_PhysConn> p;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected PhysConnImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getPhysConn();
-    }
+		return SclPackage.eINSTANCE.getPhysConn();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getType() {
-        return type;
-    }
+		return type;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setType( String newType ) {
-        String oldType = type;
-        type = newType;
-        boolean oldTypeESet = typeESet;
-        typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__TYPE, oldType, type, !oldTypeESet));
-    }
+		String oldType = type;
+		type = newType;
+		boolean oldTypeESet = typeESet;
+		typeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__TYPE, oldType, type, !oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetType() {
-        String oldType = type;
-        boolean oldTypeESet = typeESet;
-        type = TYPE_EDEFAULT;
-        typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PHYS_CONN__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-    }
+		String oldType = type;
+		boolean oldTypeESet = typeESet;
+		type = TYPE_EDEFAULT;
+		typeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PHYS_CONN__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetType() {
-        return typeESet;
-    }
+		return typeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ConnectedAP getConnectedAP() {
-        if (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP) return null;
-        return (ConnectedAP)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP) return null;
+		return (ConnectedAP)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetConnectedAP( ConnectedAP newConnectedAP, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newConnectedAP, SclPackage.PHYS_CONN__CONNECTED_AP, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newConnectedAP, SclPackage.PHYS_CONN__CONNECTED_AP, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
-        if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP && newConnectedAP != null)) {
-            if (EcoreUtil.isAncestor(this, newConnectedAP))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newConnectedAP != null)
-                msgs = ((InternalEObject)newConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
-            msgs = basicSetConnectedAP(newConnectedAP, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__CONNECTED_AP, newConnectedAP, newConnectedAP));
-    }
+		if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP && newConnectedAP != null)) {
+			if (EcoreUtil.isAncestor(this, newConnectedAP))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newConnectedAP != null)
+				msgs = ((InternalEObject)newConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
+			msgs = basicSetConnectedAP(newConnectedAP, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__CONNECTED_AP, newConnectedAP, newConnectedAP));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<P_PhysConn> getP() {
-        if (p == null) {
-            p = new EObjectContainmentWithInverseEList.Unsettable<P_PhysConn>(P_PhysConn.class, this, SclPackage.PHYS_CONN__P, SclPackage.PPHYS_CONN__PHYS_CONN);
-        }
-        return p;
-    }
+		if (p == null) {
+			p = new EObjectContainmentWithInverseEList.Unsettable<P_PhysConn>(P_PhysConn.class, this, SclPackage.PHYS_CONN__P, SclPackage.PPHYS_CONN__PHYS_CONN);
+		}
+		return p;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetP() {
-        if (p != null) ((InternalEList.Unsettable<?>)p).unset();
-    }
+		if (p != null) ((InternalEList.Unsettable<?>)p).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetP() {
-        return p != null && ((InternalEList.Unsettable<?>)p).isSet();
-    }
+		return p != null && ((InternalEList.Unsettable<?>)p).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validatePhysConn_type_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Phys Conn type required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validatePhysConn_type_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PHYS_CONN_TYPE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'type attribute shall be present in PhysConn (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.type <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePhysConn_type_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getPhysConn(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getPhysConn__ValidatePhysConn_type_required__DiagnosticChain_Map(),
+				 VALIDATE_PHYS_CONN_TYPE_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.PHYS_CONN__VALIDATE_PHYS_CONN_TYPE_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validatePhysConn_type_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Phys Conn type valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validatePhysConn_type_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_PHYS_CONN_TYPE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'type attribute shall start with a capital letter, and contain only alphanumeric characters in PhysConn (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.type.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.type <> null implies self.validSclPhysConnTypeEnum( type )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePhysConn_type_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getPhysConn(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getPhysConn__ValidatePhysConn_type_valid__DiagnosticChain_Map(),
+				 VALIDATE_PHYS_CONN_TYPE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.PHYS_CONN__VALIDATE_PHYS_CONN_TYPE_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetConnectedAP((ConnectedAP)otherEnd, msgs);
-            case SclPackage.PHYS_CONN__P:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getP()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetConnectedAP((ConnectedAP)otherEnd, msgs);
+			case SclPackage.PHYS_CONN__P:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getP()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return basicSetConnectedAP(null, msgs);
-            case SclPackage.PHYS_CONN__P:
-                return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				return basicSetConnectedAP(null, msgs);
+			case SclPackage.PHYS_CONN__P:
+				return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__TYPE:
-                return getType();
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return getConnectedAP();
-            case SclPackage.PHYS_CONN__P:
-                return getP();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__TYPE:
+				return getType();
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				return getConnectedAP();
+			case SclPackage.PHYS_CONN__P:
+				return getP();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)newValue);
-                return;
-            case SclPackage.PHYS_CONN__P:
-                getP().clear();
-                getP().addAll((Collection<? extends P_PhysConn>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__TYPE:
+				setType((String)newValue);
+				return;
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				setConnectedAP((ConnectedAP)newValue);
+				return;
+			case SclPackage.PHYS_CONN__P:
+				getP().clear();
+				getP().addAll((Collection<? extends P_PhysConn>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__TYPE:
-                unsetType();
-                return;
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)null);
-                return;
-            case SclPackage.PHYS_CONN__P:
-                unsetP();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__TYPE:
+				unsetType();
+				return;
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				setConnectedAP((ConnectedAP)null);
+				return;
+			case SclPackage.PHYS_CONN__P:
+				unsetP();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PHYS_CONN__TYPE:
-                return isSetType();
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return getConnectedAP() != null;
-            case SclPackage.PHYS_CONN__P:
-                return isSetP();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.PHYS_CONN__TYPE:
+				return isSetType();
+			case SclPackage.PHYS_CONN__CONNECTED_AP:
+				return getConnectedAP() != null;
+			case SclPackage.PHYS_CONN__P:
+				return isSetP();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.PHYS_CONN___VALIDATE_PHYS_CONN_TYPE_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validatePhysConn_type_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.PHYS_CONN___VALIDATE_PHYS_CONN_TYPE_VALID__DIAGNOSTICCHAIN_MAP:
+				return validatePhysConn_type_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (type: ");
+		if (typeESet) result.append(type); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //PhysConnImpl

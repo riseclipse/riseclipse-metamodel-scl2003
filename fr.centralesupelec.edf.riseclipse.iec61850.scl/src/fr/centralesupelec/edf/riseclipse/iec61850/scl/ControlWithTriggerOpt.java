@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control With Trigger Opt</b></em>'.
@@ -34,111 +37,120 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ControlWithTriggerOpt extends Control {
     /**
-     * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Intg Pd</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Intg Pd</em>' attribute.
-     * @see #isSetIntgPd()
-     * @see #unsetIntgPd()
-     * @see #setIntgPd(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_IntgPd()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Intg Pd</em>' attribute.
+	 * @see #isSetIntgPd()
+	 * @see #unsetIntgPd()
+	 * @see #setIntgPd(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_IntgPd()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Integer getIntgPd();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Intg Pd</em>' attribute.
-     * @see #isSetIntgPd()
-     * @see #unsetIntgPd()
-     * @see #getIntgPd()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Intg Pd</em>' attribute.
+	 * @see #isSetIntgPd()
+	 * @see #unsetIntgPd()
+	 * @see #getIntgPd()
+	 * @generated
+	 */
     void setIntgPd( Integer value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetIntgPd()
-     * @see #getIntgPd()
-     * @see #setIntgPd(Integer)
-     * @generated
-     */
+	 * @see #isSetIntgPd()
+	 * @see #getIntgPd()
+	 * @see #setIntgPd(Integer)
+	 * @generated
+	 */
     void unsetIntgPd();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getIntgPd <em>Intg Pd</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Intg Pd</em>' attribute is set.
-     * @see #unsetIntgPd()
-     * @see #getIntgPd()
-     * @see #setIntgPd(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Intg Pd</em>' attribute is set.
+	 * @see #unsetIntgPd()
+	 * @see #getIntgPd()
+	 * @see #setIntgPd(Integer)
+	 * @generated
+	 */
     boolean isSetIntgPd();
 
     /**
-     * Returns the value of the '<em><b>Trg Ops</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Trg Ops</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Trg Ops</em>' containment reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Trg Ops</em>' containment reference.
-     * @see #isSetTrgOps()
-     * @see #unsetTrgOps()
-     * @see #setTrgOps(TrgOps)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_TrgOps()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt
-     * @model opposite="ControlWithTriggerOpt" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Trg Ops</em>' containment reference.
+	 * @see #isSetTrgOps()
+	 * @see #unsetTrgOps()
+	 * @see #setTrgOps(TrgOps)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_TrgOps()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt
+	 * @model opposite="ControlWithTriggerOpt" containment="true" unsettable="true"
+	 * @generated
+	 */
     TrgOps getTrgOps();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Trg Ops</em>' containment reference.
-     * @see #isSetTrgOps()
-     * @see #unsetTrgOps()
-     * @see #getTrgOps()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Trg Ops</em>' containment reference.
+	 * @see #isSetTrgOps()
+	 * @see #unsetTrgOps()
+	 * @see #getTrgOps()
+	 * @generated
+	 */
     void setTrgOps( TrgOps value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetTrgOps()
-     * @see #getTrgOps()
-     * @see #setTrgOps(TrgOps)
-     * @generated
-     */
+	 * @see #isSetTrgOps()
+	 * @see #getTrgOps()
+	 * @see #setTrgOps(TrgOps)
+	 * @generated
+	 */
     void unsetTrgOps();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}' containment reference is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Trg Ops</em>' containment reference is set.
-     * @see #unsetTrgOps()
-     * @see #getTrgOps()
-     * @see #setTrgOps(TrgOps)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Trg Ops</em>' containment reference is set.
+	 * @see #unsetTrgOps()
+	 * @see #getTrgOps()
+	 * @see #setTrgOps(TrgOps)
+	 * @generated
+	 */
     boolean isSetTrgOps();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ControlWithTriggerOpt_intgPd_unsigned_int'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'intgPd attribute shall be valid in ControlWithTriggerOpt (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.intgPd.toString()\n        ,\n\tstatus : Boolean = \n        self.intgPd &lt;&gt; null implies self.intgPd &gt;= 0\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateControlWithTriggerOpt_intgPd_unsigned_int(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ControlWithTriggerOpt

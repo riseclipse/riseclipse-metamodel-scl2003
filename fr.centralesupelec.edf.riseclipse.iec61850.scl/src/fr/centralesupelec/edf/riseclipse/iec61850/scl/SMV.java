@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>SMV</b></em>'.
@@ -33,31 +36,40 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SMV extends ControlBlock {
     /**
-     * Returns the value of the '<em><b>Connected AP</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV <em>SMV</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Connected AP</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV <em>SMV</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connected AP</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Connected AP</em>' container reference.
-     * @see #setConnectedAP(ConnectedAP)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMV_ConnectedAP()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV
-     * @model opposite="SMV" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Connected AP</em>' container reference.
+	 * @see #setConnectedAP(ConnectedAP)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMV_ConnectedAP()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV
+	 * @model opposite="SMV" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     ConnectedAP getConnectedAP();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP <em>Connected AP</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP <em>Connected AP</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Connected AP</em>' container reference.
-     * @see #getConnectedAP()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Connected AP</em>' container reference.
+	 * @see #getConnectedAP()
+	 * @generated
+	 */
     void setConnectedAP( ConnectedAP value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SMV_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateSMV_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // SMV

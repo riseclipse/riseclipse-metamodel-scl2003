@@ -34,84 +34,84 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ConfSG extends SclObject {
     /**
-     * Returns the value of the '<em><b>Resv Tms</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Resv Tms</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Resv Tms</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Resv Tms</em>' attribute.
-     * @see #isSetResvTms()
-     * @see #unsetResvTms()
-     * @see #setResvTms(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfSG_ResvTms()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Resv Tms</em>' attribute.
+	 * @see #isSetResvTms()
+	 * @see #unsetResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfSG_ResvTms()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Boolean getResvTms();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Resv Tms</em>' attribute.
-     * @see #isSetResvTms()
-     * @see #unsetResvTms()
-     * @see #getResvTms()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Resv Tms</em>' attribute.
+	 * @see #isSetResvTms()
+	 * @see #unsetResvTms()
+	 * @see #getResvTms()
+	 * @generated
+	 */
     void setResvTms( Boolean value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetResvTms()
-     * @see #getResvTms()
-     * @see #setResvTms(Boolean)
-     * @generated
-     */
+	 * @see #isSetResvTms()
+	 * @see #getResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @generated
+	 */
     void unsetResvTms();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getResvTms <em>Resv Tms</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Resv Tms</em>' attribute is set.
-     * @see #unsetResvTms()
-     * @see #getResvTms()
-     * @see #setResvTms(Boolean)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Resv Tms</em>' attribute is set.
+	 * @see #unsetResvTms()
+	 * @see #getResvTms()
+	 * @see #setResvTms(Boolean)
+	 * @generated
+	 */
     boolean isSetResvTms();
 
     /**
-     * Returns the value of the '<em><b>Setting Groups</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getConfSG <em>Conf SG</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Setting Groups</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getConfSG <em>Conf SG</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Setting Groups</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Setting Groups</em>' container reference.
-     * @see #setSettingGroups(SettingGroups)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfSG_SettingGroups()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getConfSG
-     * @model opposite="ConfSG" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Setting Groups</em>' container reference.
+	 * @see #setSettingGroups(SettingGroups)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConfSG_SettingGroups()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getConfSG
+	 * @model opposite="ConfSG" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     SettingGroups getSettingGroups();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups <em>Setting Groups</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups <em>Setting Groups</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Setting Groups</em>' container reference.
-     * @see #getSettingGroups()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Setting Groups</em>' container reference.
+	 * @see #getSettingGroups()
+	 * @generated
+	 */
     void setSettingGroups( SettingGroups value );
 
 } // ConfSG

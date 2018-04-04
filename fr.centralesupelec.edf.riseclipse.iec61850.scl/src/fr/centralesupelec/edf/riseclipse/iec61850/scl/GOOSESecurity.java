@@ -33,31 +33,31 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface GOOSESecurity extends Certificate {
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getGOOSESecurity <em>GOOSE Security</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getGOOSESecurity <em>GOOSE Security</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSESecurity_AccessPoint()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getGOOSESecurity
-     * @model opposite="GOOSESecurity" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Access Point</em>' container reference.
+	 * @see #setAccessPoint(AccessPoint)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSESecurity_AccessPoint()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getGOOSESecurity
+	 * @model opposite="GOOSESecurity" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     AccessPoint getAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint <em>Access Point</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint <em>Access Point</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Access Point</em>' container reference.
+	 * @see #getAccessPoint()
+	 * @generated
+	 */
     void setAccessPoint( AccessPoint value );
 
 } // GOOSESecurity

@@ -9,7 +9,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.edit" editorPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.editor"
     operationReflection="true" importOrganizing="true">
-  <foreignModel>file:/Z:/CEI/Model4SCL/SCL.ecore</foreignModel>
+  <foreignModel>../../Application_a_SCL/OCLinEcore/SCL.ecore</foreignModel>
   <genPackages prefix="Scl" basePackage="fr.centralesupelec.edf.riseclipse.iec61850"
       resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"
       fileExtensions="scl,scd,xml" ecorePackage="SCL.ecore#/">
@@ -132,10 +132,22 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Header/SCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Header/Text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Header/History"/>
+      <genOperations ecoreOperation="SCL.ecore#//Header/validateHeader_id_required">
+        <genParameters ecoreParameter="SCL.ecore#//Header/validateHeader_id_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Header/validateHeader_id_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Header/validateHeader_nameStructure_value_IEDName">
+        <genParameters ecoreParameter="SCL.ecore#//Header/validateHeader_nameStructure_value_IEDName/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Header/validateHeader_nameStructure_value_IEDName/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//History">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//History/Header"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//History/Hitem"/>
+      <genOperations ecoreOperation="SCL.ecore#//History/validateHistory_at_least_one_Hitem_required">
+        <genParameters ecoreParameter="SCL.ecore#//History/validateHistory_at_least_one_Hitem_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//History/validateHistory_at_least_one_Hitem_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Hitem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/revision"/>
@@ -145,10 +157,30 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/who"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/why"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Hitem/History"/>
+      <genOperations ecoreOperation="SCL.ecore#//Hitem/validateHitem_version_required">
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_version_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_version_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Hitem/validateHitem_revision_required">
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_revision_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_revision_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Hitem/validateHitem_when_required">
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_when_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Hitem/validateHitem_when_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IDNaming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IDNaming/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IDNaming/desc"/>
+      <genOperations ecoreOperation="SCL.ecore#//IDNaming/validateIDNaming_id_required">
+        <genParameters ecoreParameter="SCL.ecore#//IDNaming/validateIDNaming_id_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IDNaming/validateIDNaming_id_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IDNaming/validateIDNaming_id_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IDNaming/validateIDNaming_id_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IDNaming/validateIDNaming_id_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Line">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Line/type"/>
@@ -156,15 +188,35 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/SCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConnectivityNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConductingEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//Line/validateLine_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Line/validateLine_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Line/validateLine_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Naming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Naming/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Naming/desc"/>
+      <genOperations ecoreOperation="SCL.ecore#//Naming/validateNaming_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//Naming/validateNaming_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Naming/validateNaming_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Naming/validateNaming_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Naming/validateNaming_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Naming/validateNaming_name_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Private">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Private/BaseElement"/>
+      <genOperations ecoreOperation="SCL.ecore#//Private/validatePrivate_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//Private/validatePrivate_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Private/validatePrivate_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Private/validatePrivate_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Private/validatePrivate_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Private/validatePrivate_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Process/type"/>
@@ -174,6 +226,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/Substation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/SubProcesses"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Process/ParentProcess"/>
+      <genOperations ecoreOperation="SCL.ecore#//Process/validateProcess_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Process/validateProcess_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Process/validateProcess_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SCL">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SCL/revision"/>
@@ -186,6 +242,38 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SCL/Communication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SCL/Substation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SCL/release"/>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_version_required">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_version_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_version_value_2007">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_value_2007/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_version_value_2007/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_revision_required">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_revision_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_revision_value_B">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_value_B/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_revision_value_B/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_release_value_1">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_release_value_1/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_release_value_1/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SCL/validateSCL_one_Header_required">
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_one_Header_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SCL/validateSCL_one_Header_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Text">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Text/source"/>
@@ -197,10 +285,26 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ConnectedAP"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ControlBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Address/P"/>
+      <genOperations ecoreOperation="SCL.ecore#//Address/validateAddress_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Address/validateAddress_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Address/validateAddress_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Address/validateAddress_at_least_one_P_required">
+        <genParameters ecoreParameter="SCL.ecore#//Address/validateAddress_at_least_one_P_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Address/validateAddress_at_least_one_P_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Communication">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SubNetwork"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SCL"/>
+      <genOperations ecoreOperation="SCL.ecore#//Communication/validateCommunication_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Communication/validateCommunication_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Communication/validateCommunication_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Communication/validateCommunication_at_least_one_SubNetwork_required">
+        <genParameters ecoreParameter="SCL.ecore#//Communication/validateCommunication_at_least_one_SubNetwork_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Communication/validateCommunication_at_least_one_SubNetwork_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectedAP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/apName"/>
@@ -212,6 +316,34 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/PhysConn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/GSE"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/SMV"/>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_iedName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_apName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_redProt_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_redProt_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_redProt_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeRedConn_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeRedConn_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeRedConn_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeConnection_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeConnection_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectedAP/validateConnectedAP_at_most_one_PhysConnTypeConnection_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ControlBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>
@@ -219,14 +351,46 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToLDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_ldInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/validateControlBlock_cbName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_cbName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_cbName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/validateControlBlock_cbName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_cbName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlBlock/validateControlBlock_cbName_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSE">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSE/ConnectedAP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MinTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MaxTime"/>
+      <genOperations ecoreOperation="SCL.ecore#//GSE/validateGSE_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//GSE/validateGSE_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSE/validateGSE_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//P">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P/Address"/>
+      <genOperations ecoreOperation="SCL.ecore#//P/validateP_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//P/validateP_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_type_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//P/validateP_value">
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//P/validateP_value/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PAddr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PAddr/type"/>
@@ -234,20 +398,48 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//P_PhysConn">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P_PhysConn/PhysConn"/>
+      <genOperations ecoreOperation="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//P_PhysConn/validateP_PhysConn_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PhysConn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PhysConn/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PhysConn/ConnectedAP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PhysConn/P"/>
+      <genOperations ecoreOperation="SCL.ecore#//PhysConn/validatePhysConn_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//PhysConn/validatePhysConn_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//PhysConn/validatePhysConn_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//PhysConn/validatePhysConn_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//PhysConn/validatePhysConn_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//PhysConn/validatePhysConn_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMV">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMV/ConnectedAP"/>
+      <genOperations ecoreOperation="SCL.ecore#//SMV/validateSMV_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SMV/validateSMV_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SMV/validateSMV_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubNetwork">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubNetwork/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/BitRate"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/Communication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/ConnectedAP"/>
+      <genOperations ecoreOperation="SCL.ecore#//SubNetwork/validateSubNetwork_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SubNetwork/validateSubNetwork_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SubNetwork/validateSubNetwork_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SubNetwork/validateSubNetwork_at_least_one_ConnectedAP_required">
+        <genParameters ecoreParameter="SCL.ecore#//SubNetwork/validateSubNetwork_at_least_one_ConnectedAP_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SubNetwork/validateSubNetwork_at_least_one_ConnectedAP_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AbstractDataAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataAttribute/bType"/>
@@ -258,9 +450,29 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataAttribute/valKind"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/RefersToEnumType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/Val"/>
+      <genOperations ecoreOperation="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_required">
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_bType_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_type_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_count_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_count_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AbstractDataAttribute/validateAbstractDataAttribute_count_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BDA">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BDA/DAType"/>
+      <genOperations ecoreOperation="SCL.ecore#//BDA/validateBDA_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//BDA/validateBDA_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//BDA/validateBDA_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DA/dchg"/>
@@ -270,6 +482,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DA/RefersToDAType"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DA/DOType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DA/ProtNs"/>
+      <genOperations ecoreOperation="SCL.ecore#//DA/validateDA_fc_required">
+        <genParameters ecoreParameter="SCL.ecore#//DA/validateDA_fc_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DA/validateDA_fc_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DAType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAType/iedType"/>
@@ -277,12 +493,28 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ReferredByDA"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAType/DataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ProtNs"/>
+      <genOperations ecoreOperation="SCL.ecore#//DAType/validateDAType_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//DAType/validateDAType_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DAType/validateDAType_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DAType/validateDAType_at_least_one_BDA_required">
+        <genParameters ecoreParameter="SCL.ecore#//DAType/validateDAType_at_least_one_BDA_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DAType/validateDAType_at_least_one_BDA_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/transient"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DO/LNodeType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DO/RefersToDOType"/>
+      <genOperations ecoreOperation="SCL.ecore#//DO/validateDO_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//DO/validateDO_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DO/validateDO_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DO/validateDO_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DO/validateDO_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DO/validateDO_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOType/cdc"/>
@@ -292,6 +524,22 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOType/DataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/SDO"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredBySDO"/>
+      <genOperations ecoreOperation="SCL.ecore#//DOType/validateDOType_cdc_required">
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_cdc_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_cdc_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DOType/validateDOType_cdc_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_cdc_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_cdc_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DOType/validateDOType_iedType_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_iedType_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_iedType_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DOType/validateDOType_at_least_one_SDO_or_DA_required">
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_at_least_one_SDO_or_DA_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOType/validateDOType_at_least_one_SDO_or_DA_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataTypeTemplates">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/DAType"/>
@@ -299,17 +547,41 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/EnumType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/LNodeType"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/SCL"/>
+      <genOperations ecoreOperation="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_LNodeType_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_LNodeType_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_LNodeType_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_DOType_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_DOType_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataTypeTemplates/validateDataTypeTemplates_at_least_one_DOType_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EnumType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/ReferredByAbstractDataAttribute"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/DataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/EnumVal"/>
+      <genOperations ecoreOperation="SCL.ecore#//EnumType/validateEnumType_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//EnumType/validateEnumType_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EnumType/validateEnumType_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//EnumType/validateEnumType_at_least_one_EnumVal_required">
+        <genParameters ecoreParameter="SCL.ecore#//EnumType/validateEnumType_at_least_one_EnumVal_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EnumType/validateEnumType_at_least_one_EnumVal_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EnumVal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//EnumVal/ord"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumVal/EnumType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//EnumVal/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//EnumVal/desc"/>
+      <genOperations ecoreOperation="SCL.ecore#//EnumVal/validateEnumVal_ord_required">
+        <genParameters ecoreParameter="SCL.ecore#//EnumVal/validateEnumVal_ord_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EnumVal/validateEnumVal_ord_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNodeType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNodeType/iedType"/>
@@ -317,12 +589,36 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/DO"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/DataTypeTemplates"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ReferredByAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//LNodeType/validateLNodeType_lnClass_required">
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateLNodeType_lnClass_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateLNodeType_lnClass_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNodeType/validateLNodeType_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateLNodeType_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateLNodeType_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNodeType/validateHistory_at_least_one_DO_required">
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateHistory_at_least_one_DO_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNodeType/validateHistory_at_least_one_DO_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ProtNs">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ProtNs/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/DA"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/DAType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ProtNs/value"/>
+      <genOperations ecoreOperation="SCL.ecore#//ProtNs/validateProtNs_value_required">
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_value_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_value_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ProtNs/validateProtNs_value_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_value_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_value_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ProtNs/validateProtNs_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ProtNs/validateProtNs_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SDO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/count"/>
@@ -330,15 +626,43 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDO/DOType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDO/RefersToDOType"/>
+      <genOperations ecoreOperation="SCL.ecore#//SDO/validateSDO_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDO/validateSDO_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDO/validateSDO_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDO/validateSDO_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_type_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDO/validateSDO_count_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_count_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDO/validateSDO_count_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Val">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Val/sGroup"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/AbstractDataAttribute"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/DAI"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Val/value"/>
+      <genOperations ecoreOperation="SCL.ecore#//Val/validateVal_sGroup_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Val/validateVal_sGroup_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Val/validateVal_sGroup_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AccessControl">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//AccessControl/LDevice"/>
+      <genOperations ecoreOperation="SCL.ecore#//AccessControl/validateAccessControl_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//AccessControl/validateAccessControl_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessControl/validateAccessControl_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AccessPoint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AccessPoint/clock"/>
@@ -355,6 +679,26 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AccessPoint/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/ReferredByConnectedAP"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/ReferredByKDC"/>
+      <genOperations ecoreOperation="SCL.ecore#//AccessPoint/validateAccessPoint_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AccessPoint/validateAccessPoint_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AccessPoint/validateAccessPoint_restriction_on_content">
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_restriction_on_content/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_restriction_on_content/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AccessPoint/validateAccessPoint_at_most_securities">
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_at_most_securities/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_at_most_securities/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AccessPoint/validateAccessPoint_securities_allowed">
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_securities_allowed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AccessPoint/validateAccessPoint_securities_allowed/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AnyLN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AnyLN/inst"/>
@@ -373,6 +717,26 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLogControl"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByAssociation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredIEDName"/>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/validateLN_lnClass_required">
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_lnClass_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_lnClass_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/validateLN_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/validateLN_inst_required">
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_inst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateLN_inst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/validateAnyLN_lnType_required">
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateAnyLN_lnType_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateAnyLN_lnType_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/validateAnyLN_lnType_valid">
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateAnyLN_lnType_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AnyLN/validateAnyLN_lnType_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Association">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Association/associationID"/>
@@ -384,6 +748,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Association/prefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Association/Server"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Association/RefersToAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//Association/validateAssociation_kind_required">
+        <genParameters ecoreParameter="SCL.ecore#//Association/validateAssociation_kind_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Association/validateAssociation_kind_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Association/validateAssociation_associationID_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Association/validateAssociation_associationID_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Association/validateAssociation_associationID_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Authentication">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Authentication/certificate"/>
@@ -398,6 +770,26 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Certificate/xferNumber"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Certificate/Subject"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Certificate/IssuerName"/>
+      <genOperations ecoreOperation="SCL.ecore#//Certificate/validateCertificate_serialNumber_required">
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_serialNumber_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_serialNumber_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Certificate/validateCertificate_serialNumber_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_serialNumber_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_serialNumber_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Certificate/validateCertificate_xferNumber_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_xferNumber_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_xferNumber_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Certificate/validateCertificate_one_Subject_required">
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_one_Subject_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_one_Subject_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Certificate/validateCertificate_one_IssuerName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_one_IssuerName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Certificate/validateCertificate_one_IssuerName_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ClientLN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientLN/apRef"/>
@@ -409,6 +801,50 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientLN/RptEnabled"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientLN/desc"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientLN/RefersToAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_apRef_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_apRef_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_apRef_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_iedName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_iedName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_iedName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_iedName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_iedName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_iedName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_ldInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_ldInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_ldInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_ldInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_ldInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_ldInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_lnClass_required">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnClass_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnClass_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_lnInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_lnInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_lnInst_empty_for_LLN0">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_empty_for_LLN0/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_lnInst_empty_for_LLN0/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientLN/validateClientLN_prefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_prefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientLN/validateClientLN_prefix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ClientServices">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/bufReport"/>
@@ -424,10 +860,30 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/unbufReport"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/Services"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/TimeSyncProt"/>
+      <genOperations ecoreOperation="SCL.ecore#//ClientServices/validateClientServices_maxAttributes_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxAttributes_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxAttributes_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientServices/validateClientServices_maxReports_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxReports_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxReports_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientServices/validateClientServices_maxGOOSE_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxGOOSE_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxGOOSE_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ClientServices/validateClientServices_maxSMV_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxSMV_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ClientServices/validateClientServices_maxSMV_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//CommProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//CommProt/ipv6"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//CommProt/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//CommProt/validateCommProt_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//CommProt/validateCommProt_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//CommProt/validateCommProt_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfDataSet">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfDataSet/Services"/>
@@ -436,6 +892,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConfLNs/fixLnInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConfLNs/fixPrefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLNs/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//ConfLNs/validateConfLNs_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ConfLNs/validateConfLNs_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConfLNs/validateConfLNs_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfLdName">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLdName/Services"/>
@@ -457,16 +917,36 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Control/datSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Control/RefersToDataSet"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Control/name"/>
+      <genOperations ecoreOperation="SCL.ecore#//Control/validateControl_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Control/validateControl_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Control/validateControl_datSet_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_datSet_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Control/validateControl_datSet_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ControlWithIEDName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlWithIEDName/confRev"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlWithIEDName/IEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlWithIEDName/ReferredByControlBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlWithIEDName/Protocol"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlWithIEDName/validateControlWithIEDName_confRev_unsignedInt">
+        <genParameters ecoreParameter="SCL.ecore#//ControlWithIEDName/validateControlWithIEDName_confRev_unsignedInt/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlWithIEDName/validateControlWithIEDName_confRev_unsignedInt/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ControlWithTriggerOpt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlWithTriggerOpt/intgPd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlWithTriggerOpt/TrgOps"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlWithTriggerOpt/validateControlWithTriggerOpt_intgPd_unsigned_int">
+        <genParameters ecoreParameter="SCL.ecore#//ControlWithTriggerOpt/validateControlWithTriggerOpt_intgPd_unsigned_int/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ControlWithTriggerOpt/validateControlWithTriggerOpt_intgPd_unsigned_int/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DAI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAI/ix"/>
@@ -476,12 +956,36 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAI/Val"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/DOI"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/SDI"/>
+      <genOperations ecoreOperation="SCL.ecore#//DAI/validateDAI_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DAI/validateDAI_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DAI/validateDAI_ix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_ix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DAI/validateDAI_ix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/ix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOI/AnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/DAI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/SDI"/>
+      <genOperations ecoreOperation="SCL.ecore#//DOI/validateDOI_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DOI/validateDOI_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DOI/validateDOI_ix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_ix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DOI/validateDOI_ix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataObjectDirectory">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataObjectDirectory/Services"/>
@@ -491,6 +995,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/ReferredByControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/FCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataSet/name"/>
+      <genOperations ecoreOperation="SCL.ecore#//DataSet/validateDataSet_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataSet/validateDataSet_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataSet/validateDataSet_at_least_one_FCDA_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_at_least_one_FCDA_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataSet/validateDataSet_at_least_one_FCDA_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataSetDirectory">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataSetDirectory/Services"/>
@@ -521,6 +1037,54 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDataAttribute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDataObject"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/desc"/>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_iedName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_iedName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_iedName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_ldInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_ldInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_ldInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_prefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_prefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_prefix_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_lnInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_lnInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_lnInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateFCDA_doName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateFCDA_doName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateFCDA_doName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateFCDA_daName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateFCDA_daName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateFCDA_daName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_srcLDInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLDInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLDInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_srcPrefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcPrefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcPrefix_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_srcLNClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLNClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLNClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_srcLNInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLNInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcLNInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ExtRef/validateExtRef_srcCBName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcCBName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ExtRef/validateExtRef_srcCBName_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FCDA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/daName"/>
@@ -535,16 +1099,72 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToDataObject"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/DataSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_fc_required">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_fc_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_fc_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_ldInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ldInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ldInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_lnClass_required">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnClass_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnClass_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_lnInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_lnInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_lnInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_empty_attributes_only_if_GSSE">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_empty_attributes_only_if_GSSE/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_empty_attributes_only_if_GSSE/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_ldInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ldInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ldInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_prefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_prefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_prefix_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_doName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_doName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_doName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_daName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_daName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_daName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//FCDA/validateFCDA_ix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FCDA/validateFCDA_ix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FileHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftps"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/mms"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FileHandling/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//FileHandling/validateFileHandling_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//FileHandling/validateFileHandling_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//FileHandling/validateFileHandling_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GOOSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/fixedOffs"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSE/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//GOOSE/validateGOOSE_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//GOOSE/validateGOOSE_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GOOSE/validateGOOSE_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GOOSESecurity">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSESecurity/AccessPoint"/>
@@ -555,6 +1175,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/securityEnable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEControl/LN0"/>
+      <genOperations ecoreOperation="SCL.ecore#//GSEControl/validateGSEControl_appID_required">
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_appID_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_appID_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//GSEControl/validateGSEControl_appID_valid">
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_appID_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_appID_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//GSEControl/validateGSEControl_confRev_required">
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_confRev_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_confRev_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//GSEControl/validateGSEControl_confRev_unsignedInt">
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_confRev_unsignedInt/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSEControl/validateGSEControl_confRev_unsignedInt/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSEDir">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEDir/Services"/>
@@ -563,6 +1199,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/appID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/dataLabel"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//GSESettings/validateGSESettings_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//GSESettings/validateGSESettings_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GSESettings/validateGSESettings_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSSE">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSSE/Services"/>
@@ -594,6 +1234,34 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IED/SCL"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IED/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IED/originalSclRelease"/>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_originalSclVersion_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclVersion_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclVersion_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_originalSclRevision_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclRevision_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclRevision_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_originalSclRelease_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclRelease_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_originalSclRelease_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateengRight_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateengRight_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateengRight_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//IED/validateIED_at_least_one_AccessPoint_required">
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_at_least_one_AccessPoint_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IED/validateIED_at_least_one_AccessPoint_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IEDName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/apRef"/>
@@ -604,10 +1272,22 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/ControlWithIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/RefersToAnyLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/value"/>
+      <genOperations ecoreOperation="SCL.ecore#//IEDName/validateIEDName_value_valid">
+        <genParameters ecoreParameter="SCL.ecore#//IEDName/validateIEDName_value_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//IEDName/validateIEDName_value_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Inputs">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Inputs/AnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Inputs/ExtRef"/>
+      <genOperations ecoreOperation="SCL.ecore#//Inputs/validateInputs_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Inputs/validateInputs_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Inputs/validateInputs_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Inputs/validateInputs_at_least_one_ExtRef_required">
+        <genParameters ecoreParameter="SCL.ecore#//Inputs/validateInputs_at_least_one_ExtRef_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Inputs/validateInputs_at_least_one_ExtRef_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IssuerName">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IssuerName/Certificate"/>
@@ -617,6 +1297,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//KDC/iedName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//KDC/IED"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//KDC/RefersToAccessPoint"/>
+      <genOperations ecoreOperation="SCL.ecore#//KDC/validateKDC_iedName_required">
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_iedName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_iedName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//KDC/validateKDC_iedName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_iedName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_iedName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//KDC/validateKDC_apName_required">
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_apName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_apName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//KDC/validateKDC_apName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_apName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//KDC/validateKDC_apName_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LDevice">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LDevice/inst"/>
@@ -627,22 +1323,58 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN0"/>
+      <genOperations ecoreOperation="SCL.ecore#//LDevice/validateLDevice_inst_required">
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_inst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_inst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LDevice/validateLDevice_inst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_inst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_inst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LDevice/validateLDevice_ldName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_ldName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_ldName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LDevice/validateLDevice_one_LN0_required">
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_one_LN0_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LDevice/validateLDevice_one_LN0_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN/prefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/AccessPoint"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/LDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LN/LNode"/>
+      <genOperations ecoreOperation="SCL.ecore#//LN/validateLN_inst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LN/validateLN_inst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LN/validateLN_inst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LN/validateLN_prefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LN/validateLN_prefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LN/validateLN_prefix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN0">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/GSEControl"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN0/LDevice"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SampledValueControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SettingControl"/>
+      <genOperations ecoreOperation="SCL.ecore#//LN0/validateLN0_lnClass_value">
+        <genParameters ecoreParameter="SCL.ecore#//LN0/validateLN0_lnClass_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LN0/validateLN0_lnClass_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LN0/validateLN0_inst_empty">
+        <genParameters ecoreParameter="SCL.ecore#//LN0/validateLN0_inst_empty/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LN0/validateLN0_inst_empty/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Log">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Log/AnyLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Log/name"/>
+      <genOperations ecoreOperation="SCL.ecore#//Log/validateLog_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Log/validateLog_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Log/validateLog_name_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LogControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/bufTime"/>
@@ -655,12 +1387,44 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/reasonCode"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/AnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_logName_required">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_logName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_logName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_logName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_logName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_logName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_ldInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_ldInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_ldInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_prefix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_prefix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_prefix_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_lnClass_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_lnClass_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_lnClass_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_lnInst_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_lnInst_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_lnInst_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LogControl/validateLogControl_bufTime_valid">
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_bufTime_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogControl/validateLogControl_bufTime_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LogSettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/intgPd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/logEna"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/trgOps"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogSettings/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//LogSettings/validateLogSettings_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//LogSettings/validateLogSettings_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LogSettings/validateLogSettings_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//OptFields">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//OptFields/bufOvfl"/>
@@ -676,6 +1440,14 @@
     <genClasses ecoreClass="SCL.ecore#//Protocol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Protocol/mustUnderstand"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Protocol/ControlWithIEDName"/>
+      <genOperations ecoreOperation="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_required">
+        <genParameters ecoreParameter="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_value_fixed">
+        <genParameters ecoreParameter="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_value_fixed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Protocol/validateVoltage_mustUnderstand_value_fixed/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReadWrite">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReadWrite/Services"/>
@@ -685,6 +1457,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RedProt/prp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RedProt/rstp"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RedProt/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//RedProt/validateRedProt_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//RedProt/validateRedProt_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//RedProt/validateRedProt_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReportControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportControl/buffered"/>
@@ -695,6 +1471,26 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/AnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/OptFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/RptEnabled"/>
+      <genOperations ecoreOperation="SCL.ecore#//ReportControl/validateReportControl_confRev_required">
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_confRev_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_confRev_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ReportControl/validateReportControl_confRev_unsigned_int">
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_confRev_unsigned_int/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_confRev_unsigned_int/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ReportControl/validateReportControl_rptID_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_rptID_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_rptID_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ReportControl/validateReportControl_bufTime_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_bufTime_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_bufTime_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ReportControl/validateReportControl_one_OptFields_required">
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_one_OptFields_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportControl/validateReportControl_one_OptFields_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReportSettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/bufTime"/>
@@ -705,11 +1501,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/rptID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/trgOps"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportSettings/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//ReportSettings/validateReportSettings_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ReportSettings/validateReportSettings_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ReportSettings/validateReportSettings_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//RptEnabled">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RptEnabled/max"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//RptEnabled/ClientLN"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RptEnabled/ReportControl"/>
+      <genOperations ecoreOperation="SCL.ecore#//RptEnabled/validateRptEnabled_max_unsigned_int">
+        <genParameters ecoreParameter="SCL.ecore#//RptEnabled/validateRptEnabled_max_unsigned_int/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//RptEnabled/validateRptEnabled_max_unsigned_int/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SDI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDI/ix"/>
@@ -718,6 +1522,18 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/DOI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/SubSDI"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/ParentSDI"/>
+      <genOperations ecoreOperation="SCL.ecore#//SDI/validateSDI_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDI/validateSDI_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_name_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SDI/validateSDI_ix_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_ix_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SDI/validateSDI_ix_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SGEdit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SGEdit/resvTms"/>
@@ -735,11 +1551,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SmpRate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SamplesPerSec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SecPerSamples"/>
+      <genOperations ecoreOperation="SCL.ecore#//SMVSettings/validateSMVSettings_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SMVSettings/validateSMVSettings_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SMVSettings/validateSMVSettings_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVsc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/delivery"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/deliveryConf"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVsc/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//SMVsc/validateSMVsc_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SMVsc/validateSMVsc_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SMVsc/validateSMVsc_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SampledValueControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/multicast"/>
@@ -750,6 +1574,46 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/smvID"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SampledValueControl/LN0"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SampledValueControl/SmvOpts"/>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_required">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smvID_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_required">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_smpRate_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_required">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_nofASDU_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_required">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_unsignedInt">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_unsignedInt/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_confRev_unsignedInt/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_one_SmvOpts_required">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_one_SmvOpts_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_one_SmvOpts_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SampledValueControl/validateSampledValueControl_multicast">
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_multicast/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SampledValueControl/validateSampledValueControl_multicast/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Server">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Server/timeout"/>
@@ -757,18 +1621,50 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/Association"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/Authentication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/LDevice"/>
+      <genOperations ecoreOperation="SCL.ecore#//Server/validateServer_timeout_unsigned_int">
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_timeout_unsigned_int/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_timeout_unsigned_int/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Server/validateServer_one_Authentication_required">
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_one_Authentication_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_one_Authentication_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Server/validateServer_at_least_one_LDevice_required">
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_at_least_one_LDevice_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Server/validateServer_at_least_one_LDevice_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServerAt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServerAt/apName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ServerAt/AccessPoint"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ServerAt/RefersToAccessPoint"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServerAt/validateServerAt_apName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ServerAt/validateServerAt_apName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServerAt/validateServerAt_apName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ServerAt/validateServerAt_apName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ServerAt/validateServerAt_apName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServerAt/validateServerAt_apName_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceSettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceSettings/cbName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceSettings/datSet"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceSettings/validateServiceSettings_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceSettings/validateServiceSettings_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceSettings/validateServiceSettings_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithMax">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithMax/max"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_required">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMax/validateServiceWithMax_max_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Services">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Services/nameLength"/>
@@ -806,6 +1702,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/SettingGroups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/TimeSyncProt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/TimerActivatedControl"/>
+      <genOperations ecoreOperation="SCL.ecore#//Services/validateServices_nameLength_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Services/validateServices_nameLength_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Services/validateServices_nameLength_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SetDataSetValue">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SetDataSetValue/Services"/>
@@ -815,11 +1715,31 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SettingControl/numOfSGs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SettingControl/resvTms"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingControl/LN0"/>
+      <genOperations ecoreOperation="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_required">
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_numOfSGs_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SettingControl/validateSettingControl_actSG_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_actSG_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_actSG_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SettingControl/validateSettingControl_resvTms_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_resvTms_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SettingControl/validateSettingControl_resvTms_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SettingGroups">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/ConfSG"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/SGEdit"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//SettingGroups/validateSettingGroups_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SettingGroups/validateSettingGroups_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SettingGroups/validateSettingGroups_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SmvOpts">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmvOpts/dataSet"/>
@@ -837,6 +1757,22 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SupSubscription/maxGo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SupSubscription/maxSv"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SupSubscription/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_required">
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxGo_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_required">
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_valid">
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SupSubscription/validateSupSubscription_maxSv_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TimeSyncProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/c37_238"/>
@@ -844,6 +1780,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/sntp"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/ClientServices"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//TimeSyncProt/validateTimeSyncProt_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//TimeSyncProt/validateTimeSyncProt_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TimeSyncProt/validateTimeSyncProt_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TimerActivatedControl">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimerActivatedControl/Services"/>
@@ -855,10 +1795,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/period"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/qchg"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TrgOps/ControlWithTriggerOpt"/>
+      <genOperations ecoreOperation="SCL.ecore#//TrgOps/validateTrgOps_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//TrgOps/validateTrgOps_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TrgOps/validateTrgOps_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ValueHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueHandling/setToRO"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ValueHandling/Services"/>
+      <genOperations ecoreOperation="SCL.ecore#//ValueHandling/validateValueHandling_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ValueHandling/validateValueHandling_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ValueHandling/validateValueHandling_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AbstractConductingEquipment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractConductingEquipment/SubEquipment"/>
@@ -868,6 +1816,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractEqFuncSubFunc/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractEqFuncSubFunc/EqSubFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractEqFuncSubFunc/SubGeneralEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//AbstractEqFuncSubFunc/validateAbstractEqFuncSubFunc_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//AbstractEqFuncSubFunc/validateAbstractEqFuncSubFunc_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//AbstractEqFuncSubFunc/validateAbstractEqFuncSubFunc_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Bay">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Bay/VoltageLevel"/>
@@ -875,6 +1827,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConnectivityNode"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/Terminal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConductingEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//Bay/validateBay_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Bay/validateBay_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Bay/validateBay_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConductingEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConductingEquipment/type"/>
@@ -884,12 +1840,32 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/EqFunction"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Line"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Process"/>
+      <genOperations ecoreOperation="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConductingEquipment/validateConductingEquipment_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectivityNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectivityNode/pathName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Bay"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Terminal"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Line"/>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_required">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_value">
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ConnectivityNode/validateConnectivityNode_pathName_value/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EqFunction">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ConductingEquipment"/>
@@ -898,16 +1874,32 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/SubEquipment"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/TransformerWinding"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/TapChanger"/>
+      <genOperations ecoreOperation="SCL.ecore#//EqFunction/validateEqFunction_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//EqFunction/validateEqFunction_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EqFunction/validateEqFunction_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EqSubFunction">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqSubFunction/AbstractEqFuncSubFunc"/>
+      <genOperations ecoreOperation="SCL.ecore#//EqSubFunction/validateEqSubFunction_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//EqSubFunction/validateEqSubFunction_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EqSubFunction/validateEqSubFunction_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Equipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Equipment/virtual"/>
+      <genOperations ecoreOperation="SCL.ecore#//Equipment/validateEquipment_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Equipment/validateEquipment_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Equipment/validateEquipment_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EquipmentContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//EquipmentContainer/PowerTransformer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//EquipmentContainer/GeneralEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//EquipmentContainer/validateEquipmentContainer_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//EquipmentContainer/validateEquipmentContainer_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//EquipmentContainer/validateEquipmentContainer_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Function/type"/>
@@ -918,6 +1910,10 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/VoltageLevel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Function/SubFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Function/GeneralEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//Function/validateFunction_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Function/validateFunction_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Function/validateFunction_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GeneralEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GeneralEquipment/type"/>
@@ -927,10 +1923,22 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/Function"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/GeneralEquipmentContainer"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/SubFunction"/>
+      <genOperations ecoreOperation="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipment/validateGeneralEquipment_type_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GeneralEquipmentContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipmentContainer/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipmentContainer/GeneralEquipment"/>
+      <genOperations ecoreOperation="SCL.ecore#//GeneralEquipmentContainer/validateGeneralEquipmentContainer_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipmentContainer/validateGeneralEquipmentContainer_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//GeneralEquipmentContainer/validateGeneralEquipmentContainer_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNode/iedName"/>
@@ -943,20 +1951,69 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNode/LDevice"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNode/LN"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNode/LNodeContainer"/>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_lnClass_required">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnClass_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnClass_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_lnClass_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnClass_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnClass_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_lnInst_required">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnInst_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnInst_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_iedName_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_iedName_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_iedName_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_ldInst_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_ldInst_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_ldInst_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_prefix_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_prefix_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_prefix_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_lnInst_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnInst_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnInst_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//LNode/validateLNode_lnType_value">
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnType_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNode/validateLNode_lnType_value/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNodeContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeContainer/LNode"/>
+      <genOperations ecoreOperation="SCL.ecore#//LNodeContainer/validateLNodeContainer_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//LNodeContainer/validateLNodeContainer_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//LNodeContainer/validateLNodeContainer_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//NeutralPoint">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//NeutralPoint/TransformerWinding"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//PowerSystemResource"/>
+    <genClasses ecoreClass="SCL.ecore#//PowerSystemResource">
+      <genOperations ecoreOperation="SCL.ecore#//PowerSystemResource/validatePowerSystemResource_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//PowerSystemResource/validatePowerSystemResource_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//PowerSystemResource/validatePowerSystemResource_nothing/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PowerTransformer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PowerTransformer/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/EqFunction"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/EquipmentContainer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/SubEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/TransformerWinding"/>
+      <genOperations ecoreOperation="SCL.ecore#//PowerTransformer/validatePowerTransformer_type_value">
+        <genParameters ecoreParameter="SCL.ecore#//PowerTransformer/validatePowerTransformer_type_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//PowerTransformer/validatePowerTransformer_type_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//PowerTransformer/validatePowerTransformer_at_least_one_TransformerWinding_required">
+        <genParameters ecoreParameter="SCL.ecore#//PowerTransformer/validatePowerTransformer_at_least_one_TransformerWinding_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//PowerTransformer/validatePowerTransformer_at_least_one_TransformerWinding_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubEquipment/phase"/>
@@ -965,6 +2022,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/EqFunction"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/PowerTransformer"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/TapChanger"/>
+      <genOperations ecoreOperation="SCL.ecore#//SubEquipment/validateSubEquipment_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SubEquipment/validateSubEquipment_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SubEquipment/validateSubEquipment_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubFunction/type"/>
@@ -972,6 +2033,10 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/GeneralEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/SubSubFunctions"/>
+      <genOperations ecoreOperation="SCL.ecore#//SubFunction/validateSubFunction_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//SubFunction/validateSubFunction_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//SubFunction/validateSubFunction_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Substation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Function"/>
@@ -979,6 +2044,14 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Terminal"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Process"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/SCL"/>
+      <genOperations ecoreOperation="SCL.ecore#//Substation/validateSubstation_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//Substation/validateSubstation_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Substation/validateSubstation_nothing/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Substation/validateSubstation_at_least_one_VoltageLevel_required">
+        <genParameters ecoreParameter="SCL.ecore#//Substation/validateSubstation_at_least_one_VoltageLevel_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Substation/validateSubstation_at_least_one_VoltageLevel_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TapChanger">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TapChanger/type"/>
@@ -986,6 +2059,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/EqFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/SubEquipment"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/TransformerWinding"/>
+      <genOperations ecoreOperation="SCL.ecore#//TapChanger/validateTapChanger_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//TapChanger/validateTapChanger_type_valid">
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//TapChanger/validateTapChanger_type_value">
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TapChanger/validateTapChanger_type_value/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Terminal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/bayName"/>
@@ -1000,6 +2085,54 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/Substation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/VoltageLevel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/name"/>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_connectivityNode_required">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_connectivityNode_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_connectivityNode_value_shall_be_pathname">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_value_shall_be_pathname/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_connectivityNode_value_shall_be_pathname/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_substationName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_substationName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_substationName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_substationName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_substationName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_substationName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_voltageLevelName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_bayName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_bayName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_bayName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_bayName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_bayName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_bayName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_cNodeName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_cNodeName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_cNodeName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_cNodeName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_cNodeName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_cNodeName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Terminal/validateTerminal_processName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_processName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Terminal/validateTerminal_processName_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TransformerWinding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TransformerWinding/type"/>
@@ -1007,8 +2140,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/NeutralPoint"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/PowerTransformer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/TapChanger"/>
+      <genOperations ecoreOperation="SCL.ecore#//TransformerWinding/validateTransformerWinding_type_required">
+        <genParameters ecoreParameter="SCL.ecore#//TransformerWinding/validateTransformerWinding_type_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//TransformerWinding/validateTransformerWinding_type_required/context"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//Voltage"/>
+    <genClasses ecoreClass="SCL.ecore#//Voltage">
+      <genOperations ecoreOperation="SCL.ecore#//Voltage/validateVoltage_unit_value_fixed">
+        <genParameters ecoreParameter="SCL.ecore#//Voltage/validateVoltage_unit_value_fixed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Voltage/validateVoltage_unit_value_fixed/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//VoltageLevel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/nomFreq"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/numPhases"/>
@@ -1017,6 +2159,18 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Substation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Voltage"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Terminal"/>
+      <genOperations ecoreOperation="SCL.ecore#//VoltageLevel/validateVoltageLevel_nomFreq_value">
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_nomFreq_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_nomFreq_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//VoltageLevel/validateVoltageLevel_numPhases_value">
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_numPhases_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_numPhases_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//VoltageLevel/validateVoltageLevel_at_least_one_Bay_required">
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_at_least_one_Bay_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//VoltageLevel/validateVoltageLevel_at_least_one_Bay_required/context"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
     <genClasses image="false" ecoreClass="SCL.ecore#//DataObject">
@@ -1024,60 +2178,442 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataObject/ReferredByFCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataObject/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataObject/ReferredByExtRef"/>
+      <genOperations ecoreOperation="SCL.ecore#//DataObject/validateDataObject_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataObject/validateDataObject_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataObject/validateDataObject_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataObject/validateDataObject_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DataObject/validateDataObject_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataObject/validateDataObject_name_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//DataAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataAttribute/ReferredByFCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataAttribute/ReferredByExtRef"/>
+      <genOperations ecoreOperation="SCL.ecore#//DataAttribute/validateDataAttribute_name_required">
+        <genParameters ecoreParameter="SCL.ecore#//DataAttribute/validateDataAttribute_name_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataAttribute/validateDataAttribute_name_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DataAttribute/validateDataAttribute_name_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DataAttribute/validateDataAttribute_name_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DataAttribute/validateDataAttribute_name_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//SclObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/lineNumber"/>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAccessPointName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAccessPointName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAcsiName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAcsiName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAnyName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAnyName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAssociationID">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAssociationID/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAttributeNameEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAttributeNameEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclAuthenticationEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclAuthenticationEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclBasicTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclBasicTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclCBName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclCBName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclCDCEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclCDCEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclCommonConductingEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclCommonConductingEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDACount">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDACount/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDataName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDataName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDataSetName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDataSetName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupAEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupAEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupCEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupCEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupFEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupFEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupGEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupGEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupIEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupIEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupKEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupKEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupMEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupMEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupPEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupPEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupQEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupQEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupREnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupREnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupSEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupSEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupTEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupTEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupXEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupXEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupYEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupYEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclDomainLNGroupZEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclDomainLNGroupZEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclEmpty">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclEmpty/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionAttributeNameEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionAttributeNameEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionCDCEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionCDCEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionGeneralEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionGeneralEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionLNClassEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionLNClassEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionPTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionPTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclExtensionPhysConnTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclExtensionPhysConnTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclFullAttributeName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclFullAttributeName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclFullDOName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclFullDOName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclGeneralEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclGeneralEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclIEDName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclIEDName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclIEDNameOrRelative">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclIEDNameOrRelative/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLDInst">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLDInst/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLDInstOrEmpty">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLDInstOrEmpty/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLDName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLDName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLLN0Enum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLLN0Enum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLNClassEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLNClassEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLNInst">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLNInst/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLNInstOrEmpty">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLNInstOrEmpty/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLPHDEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLPHDEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLineType">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLineType/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclLogName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclLogName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclMessageID">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclMessageID/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclNamespaceName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclNamespaceName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclOnlyRelativeIEDName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclOnlyRelativeIEDName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPAddr">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPAddr/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPTypePhysConnEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPTypePhysConnEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPhysConnTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPhysConnTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPowerTransformerEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPowerTransformerEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedAttributeNameEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedAttributeNameEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedBasicTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedBasicTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedCDCEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedCDCEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedCommonConductingEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedCommonConductingEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedGeneralEquipmentEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedGeneralEquipmentEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedLNClassEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedLNClassEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedPTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedPTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedPTypePhysConnEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedPTypePhysConnEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPredefinedPhysConnTypeEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPredefinedPhysConnTypeEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclPrefix">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclPrefix/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclProcessName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclProcessName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclProcessType">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclProcessType/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRedProtEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRedProtEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRef">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRef/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRelease">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRelease/i"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRestrName1stL">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRestrName1stL/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRestrName1stU">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRestrName1stU/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRevision">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRevision/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclRightEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclRightEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclSDOCount">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclSDOCount/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclSubDataName">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclSubDataName/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclSystemLNGroupEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclSystemLNGroupEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclTransformerWindingEnum">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclTransformerWindingEnum/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclVersion">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclVersion/s"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/validSclVisibleBasicLatin">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/validSclVisibleBasicLatin/s"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//UnNaming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//UnNaming/desc"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//ServiceYesNo"/>
+    <genClasses ecoreClass="SCL.ecore#//ServiceYesNo">
+      <genOperations ecoreOperation="SCL.ecore#//ServiceYesNo/validateServiceYesNo_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceYesNo/validateServiceYesNo_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceYesNo/validateServiceYesNo_nothing/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithOptionalMax">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithOptionalMax/max"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithOptionalMax/validateServiceWithOptionalMax_max_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithOptionalMax/validateServiceWithOptionalMax_max_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithOptionalMax/validateServiceWithOptionalMax_max_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithMaxNonZero">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithMaxNonZero/max"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_required">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxNonZero/validateServiceWithMaxNonZero_max_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceConfReportControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceConfReportControl/bufMode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceConfReportControl/bufConf"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceConfReportControl/validateServiceConfReportControl_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceConfReportControl/validateServiceConfReportControl_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceConfReportControl/validateServiceConfReportControl_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithMaxAndMaxAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithMaxAndMaxAttributes/maxAttributes"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMaxAndMaxAttributes/validateServiceWithMax_maxAttributes_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxAndMaxAttributes/validateServiceWithMax_maxAttributes_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxAndMaxAttributes/validateServiceWithMax_maxAttributes_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithMaxAndModify">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithMaxAndModify/modify"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceWithMaxAndModify/validateServiceWithMaxAndModify_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxAndModify/validateServiceWithMaxAndModify_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceWithMaxAndModify/validateServiceWithMaxAndModify_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceForConfDataSet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceForConfDataSet/modify"/>
+      <genOperations ecoreOperation="SCL.ecore#//ServiceForConfDataSet/validateServiceForConfDataSet_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//ServiceForConfDataSet/validateServiceForConfDataSet_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ServiceForConfDataSet/validateServiceForConfDataSet_nothing/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Cert">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Cert/commonName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Cert/idHierarchy"/>
+      <genOperations ecoreOperation="SCL.ecore#//Cert/validateCert_commonName_required">
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_commonName_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_commonName_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Cert/validateCert_commonName_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_commonName_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_commonName_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Cert/validateCert_idHierarchy_required">
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_idHierarchy_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_idHierarchy_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//Cert/validateCert_idHierarchy_valid">
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_idHierarchy_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//Cert/validateCert_idHierarchy_valid/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ValueWithUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueWithUnit/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueWithUnit/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueWithUnit/unit"/>
+      <genOperations ecoreOperation="SCL.ecore#//ValueWithUnit/validateValueWithUnit_value_required">
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_value_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_value_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_required">
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_valid">
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//ValueWithUnit/validateValueWithUnit_unit_valid/context"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//DurationInSec"/>
+    <genClasses ecoreClass="SCL.ecore#//DurationInSec">
+      <genOperations ecoreOperation="SCL.ecore#//DurationInSec/validateDurationInSec_unit_value_fixed">
+        <genParameters ecoreParameter="SCL.ecore#//DurationInSec/validateDurationInSec_unit_value_fixed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DurationInSec/validateDurationInSec_unit_value_fixed/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DurationInMilliSec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInMilliSec/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInMilliSec/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DurationInMilliSec/unit"/>
+      <genOperations ecoreOperation="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_required">
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_valid">
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_value_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_unit_value_fixed">
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_unit_value_fixed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_unit_value_fixed/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_multiplier_value_fixed">
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_multiplier_value_fixed/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//DurationInMilliSec/validateDurationInMilliSec_multiplier_value_fixed/context"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BitRateInMbPerSec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/multiplier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//BitRateInMbPerSec/unit"/>
+      <genOperations ecoreOperation="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_required">
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_required/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_required/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_valid">
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_valid/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_value_valid/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_unit_value">
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_unit_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_unit_value/context"/>
+      </genOperations>
+      <genOperations ecoreOperation="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_multiplier_value">
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_multiplier_value/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//BitRateInMbPerSec/validateBitRateInMbPerSec_multiplier_value/context"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//MinTime"/>
-    <genClasses ecoreClass="SCL.ecore#//MaxTime"/>
+    <genClasses ecoreClass="SCL.ecore#//MinTime">
+      <genOperations ecoreOperation="SCL.ecore#//MinTime/validateMinTime_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//MinTime/validateMinTime_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//MinTime/validateMinTime_nothing/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//MaxTime">
+      <genOperations ecoreOperation="SCL.ecore#//MaxTime/validateMaxTime_nothing">
+        <genParameters ecoreParameter="SCL.ecore#//MaxTime/validateMaxTime_nothing/diagnostics"/>
+        <genParameters ecoreParameter="SCL.ecore#//MaxTime/validateMaxTime_nothing/context"/>
+      </genOperations>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BitRate"/>
     <genClasses ecoreClass="SCL.ecore#//SmpRate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmpRate/value"/>

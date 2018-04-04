@@ -17,6 +17,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,6 +28,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,440 +50,489 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  */
 public class RedProtImpl extends SclObjectImpl implements RedProt {
     /**
-     * The default value of the '{@link #getHsr() <em>Hsr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getHsr() <em>Hsr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getHsr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getHsr()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean HSR_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getHsr() <em>Hsr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getHsr() <em>Hsr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getHsr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getHsr()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean hsr = HSR_EDEFAULT;
 
     /**
-     * This is true if the Hsr attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Hsr attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean hsrESet;
 
     /**
-     * The default value of the '{@link #getPrp() <em>Prp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrp() <em>Prp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrp()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrp()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean PRP_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPrp() <em>Prp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrp() <em>Prp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrp()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrp()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean prp = PRP_EDEFAULT;
 
     /**
-     * This is true if the Prp attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prp attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prpESet;
 
     /**
-     * The default value of the '{@link #getRstp() <em>Rstp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getRstp() <em>Rstp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRstp()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRstp()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean RSTP_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getRstp() <em>Rstp</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRstp() <em>Rstp</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRstp()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRstp()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean rstp = RSTP_EDEFAULT;
 
     /**
-     * This is true if the Rstp attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Rstp attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean rstpESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected RedProtImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getRedProt();
-    }
+		return SclPackage.eINSTANCE.getRedProt();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getHsr() {
-        return hsr;
-    }
+		return hsr;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setHsr( Boolean newHsr ) {
-        Boolean oldHsr = hsr;
-        hsr = newHsr;
-        boolean oldHsrESet = hsrESet;
-        hsrESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__HSR, oldHsr, hsr, !oldHsrESet));
-    }
+		Boolean oldHsr = hsr;
+		hsr = newHsr;
+		boolean oldHsrESet = hsrESet;
+		hsrESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__HSR, oldHsr, hsr, !oldHsrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetHsr() {
-        Boolean oldHsr = hsr;
-        boolean oldHsrESet = hsrESet;
-        hsr = HSR_EDEFAULT;
-        hsrESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__HSR, oldHsr, HSR_EDEFAULT, oldHsrESet));
-    }
+		Boolean oldHsr = hsr;
+		boolean oldHsrESet = hsrESet;
+		hsr = HSR_EDEFAULT;
+		hsrESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__HSR, oldHsr, HSR_EDEFAULT, oldHsrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetHsr() {
-        return hsrESet;
-    }
+		return hsrESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getPrp() {
-        return prp;
-    }
+		return prp;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrp( Boolean newPrp ) {
-        Boolean oldPrp = prp;
-        prp = newPrp;
-        boolean oldPrpESet = prpESet;
-        prpESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__PRP, oldPrp, prp, !oldPrpESet));
-    }
+		Boolean oldPrp = prp;
+		prp = newPrp;
+		boolean oldPrpESet = prpESet;
+		prpESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__PRP, oldPrp, prp, !oldPrpESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrp() {
-        Boolean oldPrp = prp;
-        boolean oldPrpESet = prpESet;
-        prp = PRP_EDEFAULT;
-        prpESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__PRP, oldPrp, PRP_EDEFAULT, oldPrpESet));
-    }
+		Boolean oldPrp = prp;
+		boolean oldPrpESet = prpESet;
+		prp = PRP_EDEFAULT;
+		prpESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__PRP, oldPrp, PRP_EDEFAULT, oldPrpESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrp() {
-        return prpESet;
-    }
+		return prpESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getRstp() {
-        return rstp;
-    }
+		return rstp;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRstp( Boolean newRstp ) {
-        Boolean oldRstp = rstp;
-        rstp = newRstp;
-        boolean oldRstpESet = rstpESet;
-        rstpESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__RSTP, oldRstp, rstp, !oldRstpESet));
-    }
+		Boolean oldRstp = rstp;
+		rstp = newRstp;
+		boolean oldRstpESet = rstpESet;
+		rstpESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__RSTP, oldRstp, rstp, !oldRstpESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRstp() {
-        Boolean oldRstp = rstp;
-        boolean oldRstpESet = rstpESet;
-        rstp = RSTP_EDEFAULT;
-        rstpESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__RSTP, oldRstp, RSTP_EDEFAULT, oldRstpESet));
-    }
+		Boolean oldRstp = rstp;
+		boolean oldRstpESet = rstpESet;
+		rstp = RSTP_EDEFAULT;
+		rstpESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.RED_PROT__RSTP, oldRstp, RSTP_EDEFAULT, oldRstpESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRstp() {
-        return rstpESet;
-    }
+		return rstpESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES) return null;
-        return (Services)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES) return null;
+		return (Services)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.RED_PROT__SERVICES, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.RED_PROT__SERVICES, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__RED_PROT, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__SERVICES, newServices, newServices));
-    }
+		if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES && newServices != null)) {
+			if (EcoreUtil.isAncestor(this, newServices))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__RED_PROT, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.RED_PROT__SERVICES, newServices, newServices));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateRedProt_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Red Prot nothing</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateRedProt_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_RED_PROT_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        true\n" +
+		"\n" +
+		"\n" +
+		"";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRedProt_nothing(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getRedProt(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getRedProt__ValidateRedProt_nothing__DiagnosticChain_Map(),
+				 VALIDATE_RED_PROT_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.RED_PROT__VALIDATE_RED_PROT_NOTHING);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__SERVICES:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__SERVICES:
-                return basicSetServices(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__SERVICES:
+				return basicSetServices(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.RED_PROT__SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__RED_PROT, Services.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.RED_PROT__SERVICES:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__RED_PROT, Services.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__HSR:
-                return getHsr();
-            case SclPackage.RED_PROT__PRP:
-                return getPrp();
-            case SclPackage.RED_PROT__RSTP:
-                return getRstp();
-            case SclPackage.RED_PROT__SERVICES:
-                return getServices();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__HSR:
+				return getHsr();
+			case SclPackage.RED_PROT__PRP:
+				return getPrp();
+			case SclPackage.RED_PROT__RSTP:
+				return getRstp();
+			case SclPackage.RED_PROT__SERVICES:
+				return getServices();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__HSR:
-                setHsr((Boolean)newValue);
-                return;
-            case SclPackage.RED_PROT__PRP:
-                setPrp((Boolean)newValue);
-                return;
-            case SclPackage.RED_PROT__RSTP:
-                setRstp((Boolean)newValue);
-                return;
-            case SclPackage.RED_PROT__SERVICES:
-                setServices((Services)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__HSR:
+				setHsr((Boolean)newValue);
+				return;
+			case SclPackage.RED_PROT__PRP:
+				setPrp((Boolean)newValue);
+				return;
+			case SclPackage.RED_PROT__RSTP:
+				setRstp((Boolean)newValue);
+				return;
+			case SclPackage.RED_PROT__SERVICES:
+				setServices((Services)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__HSR:
-                unsetHsr();
-                return;
-            case SclPackage.RED_PROT__PRP:
-                unsetPrp();
-                return;
-            case SclPackage.RED_PROT__RSTP:
-                unsetRstp();
-                return;
-            case SclPackage.RED_PROT__SERVICES:
-                setServices((Services)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__HSR:
+				unsetHsr();
+				return;
+			case SclPackage.RED_PROT__PRP:
+				unsetPrp();
+				return;
+			case SclPackage.RED_PROT__RSTP:
+				unsetRstp();
+				return;
+			case SclPackage.RED_PROT__SERVICES:
+				setServices((Services)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.RED_PROT__HSR:
-                return isSetHsr();
-            case SclPackage.RED_PROT__PRP:
-                return isSetPrp();
-            case SclPackage.RED_PROT__RSTP:
-                return isSetRstp();
-            case SclPackage.RED_PROT__SERVICES:
-                return getServices() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.RED_PROT__HSR:
+				return isSetHsr();
+			case SclPackage.RED_PROT__PRP:
+				return isSetPrp();
+			case SclPackage.RED_PROT__RSTP:
+				return isSetRstp();
+			case SclPackage.RED_PROT__SERVICES:
+				return getServices() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.RED_PROT___VALIDATE_RED_PROT_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateRedProt_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (hsr: ");
-        if (hsrESet) result.append(hsr); else result.append("<unset>");
-        result.append(", prp: ");
-        if (prpESet) result.append(prp); else result.append("<unset>");
-        result.append(", rstp: ");
-        if (rstpESet) result.append(rstp); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (hsr: ");
+		if (hsrESet) result.append(hsr); else result.append("<unset>");
+		result.append(", prp: ");
+		if (prpESet) result.append(prp); else result.append("<unset>");
+		result.append(", rstp: ");
+		if (rstpESet) result.append(rstp); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //RedProtImpl

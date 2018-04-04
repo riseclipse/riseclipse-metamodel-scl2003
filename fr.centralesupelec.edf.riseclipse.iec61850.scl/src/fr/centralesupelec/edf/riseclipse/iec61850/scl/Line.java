@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -39,194 +41,203 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Line extends GeneralEquipmentContainer {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #setType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Type()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #setType(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Type()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #getType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @generated
+	 */
     void setType( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @see #isSetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     void unsetType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Type</em>' attribute is set.
-     * @see #unsetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Type</em>' attribute is set.
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Process</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine <em>Line</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Process</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine <em>Line</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Process</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Process</em>' container reference.
-     * @see #setProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Process()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine
-     * @model opposite="Line" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Process</em>' container reference.
+	 * @see #setProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Process()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine
+	 * @model opposite="Line" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Process</em>' container reference.
-     * @see #getProcess()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Process</em>' container reference.
+	 * @see #getProcess()
+	 * @generated
+	 */
     void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine <em>Line</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>SCL</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine <em>Line</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SCL</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_SCL()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine
-     * @model opposite="Line" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>SCL</em>' container reference.
+	 * @see #setSCL(SCL)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_SCL()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine
+	 * @model opposite="Line" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     SCL getSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
-     * @generated
-     */
+	 * @param value the new value of the '<em>SCL</em>' container reference.
+	 * @see #getSCL()
+	 * @generated
+	 */
     void setSCL( SCL value );
 
     /**
-     * Returns the value of the '<em><b>Connectivity Node</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Connectivity Node</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connectivity Node</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Connectivity Node</em>' containment reference list.
-     * @see #isSetConnectivityNode()
-     * @see #unsetConnectivityNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConnectivityNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine
-     * @model opposite="Line" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Connectivity Node</em>' containment reference list.
+	 * @see #isSetConnectivityNode()
+	 * @see #unsetConnectivityNode()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConnectivityNode()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine
+	 * @model opposite="Line" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<ConnectivityNode> getConnectivityNode();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetConnectivityNode()
-     * @see #getConnectivityNode()
-     * @generated
-     */
+	 * @see #isSetConnectivityNode()
+	 * @see #getConnectivityNode()
+	 * @generated
+	 */
     void unsetConnectivityNode();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Connectivity Node</em>' containment reference list is set.
-     * @see #unsetConnectivityNode()
-     * @see #getConnectivityNode()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Connectivity Node</em>' containment reference list is set.
+	 * @see #unsetConnectivityNode()
+	 * @see #getConnectivityNode()
+	 * @generated
+	 */
     boolean isSetConnectivityNode();
 
     /**
-     * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Conducting Equipment</em>' containment reference list.
-     * @see #isSetConductingEquipment()
-     * @see #unsetConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine
-     * @model opposite="Line" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Conducting Equipment</em>' containment reference list.
+	 * @see #isSetConductingEquipment()
+	 * @see #unsetConductingEquipment()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConductingEquipment()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine
+	 * @model opposite="Line" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<ConductingEquipment> getConductingEquipment();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetConductingEquipment()
-     * @see #getConductingEquipment()
-     * @generated
-     */
+	 * @see #isSetConductingEquipment()
+	 * @see #getConductingEquipment()
+	 * @generated
+	 */
     void unsetConductingEquipment();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Conducting Equipment</em>' containment reference list is set.
-     * @see #unsetConductingEquipment()
-     * @see #getConductingEquipment()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Conducting Equipment</em>' containment reference list is set.
+	 * @see #unsetConductingEquipment()
+	 * @see #getConductingEquipment()
+	 * @generated
+	 */
     boolean isSetConductingEquipment();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='Line_type_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'type attribute shall be valid in Line (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.type.toString()\n        ,\n\tstatus : Boolean = \n        self.type &lt;&gt; null implies self.validSclLineType( type )\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateLine_type_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Line

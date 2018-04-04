@@ -34,30 +34,30 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SecPerSamples extends SclObject {
     /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Value</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSecPerSamples_Value()
-     * @model required="true"
-     *        extendedMetaData="kind='simple'"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSecPerSamples_Value()
+	 * @model required="true"
+	 *        extendedMetaData="kind='simple'"
+	 * @generated
+	 */
     Integer getValue();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
     void setValue(Integer value);
 
 } // SecPerSamples

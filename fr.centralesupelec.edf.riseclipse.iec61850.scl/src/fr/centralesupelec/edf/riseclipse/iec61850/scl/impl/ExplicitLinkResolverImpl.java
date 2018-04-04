@@ -41,23 +41,23 @@ public abstract class ExplicitLinkResolverImpl extends SclObjectImpl implements 
     private boolean isResolved;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ExplicitLinkResolverImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getExplicitLinkResolver();
-    }
+		return SclPackage.eINSTANCE.getExplicitLinkResolver();
+	}
 
     /**
      */

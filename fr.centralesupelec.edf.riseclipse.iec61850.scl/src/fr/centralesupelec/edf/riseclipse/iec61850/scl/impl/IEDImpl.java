@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -34,6 +37,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,1259 +68,1550 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  */
 public class IEDImpl extends UnNamingImpl implements IED {
     /**
-     * The default value of the '{@link #getConfigVersion() <em>Config Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getConfigVersion() <em>Config Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfigVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfigVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String CONFIG_VERSION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getConfigVersion() <em>Config Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfigVersion() <em>Config Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfigVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfigVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected String configVersion = CONFIG_VERSION_EDEFAULT;
 
     /**
-     * This is true if the Config Version attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Config Version attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean configVersionESet;
 
     /**
-     * The default value of the '{@link #getEngRight() <em>Eng Right</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getEngRight() <em>Eng Right</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEngRight()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEngRight()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ENG_RIGHT_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getEngRight() <em>Eng Right</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEngRight() <em>Eng Right</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEngRight()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEngRight()
+	 * @generated
+	 * @ordered
+	 */
     protected String engRight = ENG_RIGHT_EDEFAULT;
 
     /**
-     * This is true if the Eng Right attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Eng Right attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean engRightESet;
 
     /**
-     * The default value of the '{@link #getManufacturer() <em>Manufacturer</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getManufacturer() <em>Manufacturer</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getManufacturer()
-     * @generated
-     * @ordered
-     */
+	 * @see #getManufacturer()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String MANUFACTURER_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getManufacturer() <em>Manufacturer</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getManufacturer() <em>Manufacturer</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getManufacturer()
-     * @generated
-     * @ordered
-     */
+	 * @see #getManufacturer()
+	 * @generated
+	 * @ordered
+	 */
     protected String manufacturer = MANUFACTURER_EDEFAULT;
 
     /**
-     * This is true if the Manufacturer attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Manufacturer attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean manufacturerESet;
 
     /**
-     * The default value of the '{@link #getOriginalSclRevision() <em>Original Scl Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOriginalSclRevision() <em>Original Scl Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ORIGINAL_SCL_REVISION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOriginalSclRevision() <em>Original Scl Revision</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOriginalSclRevision() <em>Original Scl Revision</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclRevision()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclRevision()
+	 * @generated
+	 * @ordered
+	 */
     protected String originalSclRevision = ORIGINAL_SCL_REVISION_EDEFAULT;
 
     /**
-     * This is true if the Original Scl Revision attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Original Scl Revision attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean originalSclRevisionESet;
 
     /**
-     * The default value of the '{@link #getOriginalSclVersion() <em>Original Scl Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOriginalSclVersion() <em>Original Scl Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String ORIGINAL_SCL_VERSION_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOriginalSclVersion() <em>Original Scl Version</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOriginalSclVersion() <em>Original Scl Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclVersion()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclVersion()
+	 * @generated
+	 * @ordered
+	 */
     protected String originalSclVersion = ORIGINAL_SCL_VERSION_EDEFAULT;
 
     /**
-     * This is true if the Original Scl Version attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Original Scl Version attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean originalSclVersionESet;
 
     /**
-     * The default value of the '{@link #getOwner() <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOwner() <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOwner()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOwner()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String OWNER_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOwner() <em>Owner</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOwner()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOwner()
+	 * @generated
+	 * @ordered
+	 */
     protected String owner = OWNER_EDEFAULT;
 
     /**
-     * This is true if the Owner attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Owner attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ownerESet;
 
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected String type = TYPE_EDEFAULT;
 
     /**
-     * This is true if the Type attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Type attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean typeESet;
 
     /**
-     * The cached value of the '{@link #getAccessPoint() <em>Access Point</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAccessPoint() <em>Access Point</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAccessPoint()
-     * @generated
-     * @ordered
-     */
+	 * @see #getAccessPoint()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<AccessPoint> accessPoint;
 
     /**
-     * The cached value of the '{@link #getLNode() <em>LNode</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLNode() <em>LNode</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLNode()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLNode()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<LNode> lNode;
 
     /**
-     * The cached value of the '{@link #getKDC() <em>KDC</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getKDC() <em>KDC</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getKDC()
-     * @generated
-     * @ordered
-     */
+	 * @see #getKDC()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<KDC> kdc;
 
     /**
-     * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getServices()
-     * @generated
-     * @ordered
-     */
+	 * @see #getServices()
+	 * @generated
+	 * @ordered
+	 */
     protected Services services;
 
     /**
-     * This is true if the Services containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Services containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean servicesESet;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean nameESet;
 
     /**
-     * The default value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclRelease()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclRelease()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Byte ORIGINAL_SCL_RELEASE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getOriginalSclRelease()
-     * @generated
-     * @ordered
-     */
+	 * @see #getOriginalSclRelease()
+	 * @generated
+	 * @ordered
+	 */
     protected Byte originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
 
     /**
-     * This is true if the Original Scl Release attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Original Scl Release attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean originalSclReleaseESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected IEDImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getIED();
-    }
+		return SclPackage.eINSTANCE.getIED();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getConfigVersion() {
-        return configVersion;
-    }
+		return configVersion;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConfigVersion( String newConfigVersion ) {
-        String oldConfigVersion = configVersion;
-        configVersion = newConfigVersion;
-        boolean oldConfigVersionESet = configVersionESet;
-        configVersionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, configVersion, !oldConfigVersionESet));
-    }
+		String oldConfigVersion = configVersion;
+		configVersion = newConfigVersion;
+		boolean oldConfigVersionESet = configVersionESet;
+		configVersionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, configVersion, !oldConfigVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetConfigVersion() {
-        String oldConfigVersion = configVersion;
-        boolean oldConfigVersionESet = configVersionESet;
-        configVersion = CONFIG_VERSION_EDEFAULT;
-        configVersionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, CONFIG_VERSION_EDEFAULT, oldConfigVersionESet));
-    }
+		String oldConfigVersion = configVersion;
+		boolean oldConfigVersionESet = configVersionESet;
+		configVersion = CONFIG_VERSION_EDEFAULT;
+		configVersionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, CONFIG_VERSION_EDEFAULT, oldConfigVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetConfigVersion() {
-        return configVersionESet;
-    }
+		return configVersionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getEngRight() {
-        return engRight;
-    }
+		return engRight;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setEngRight(String newEngRight) {
-        String oldEngRight = engRight;
-        engRight = newEngRight;
-        boolean oldEngRightESet = engRightESet;
-        engRightESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ENG_RIGHT, oldEngRight, engRight, !oldEngRightESet));
-    }
+		String oldEngRight = engRight;
+		engRight = newEngRight;
+		boolean oldEngRightESet = engRightESet;
+		engRightESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ENG_RIGHT, oldEngRight, engRight, !oldEngRightESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetEngRight() {
-        String oldEngRight = engRight;
-        boolean oldEngRightESet = engRightESet;
-        engRight = ENG_RIGHT_EDEFAULT;
-        engRightESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ENG_RIGHT, oldEngRight, ENG_RIGHT_EDEFAULT, oldEngRightESet));
-    }
+		String oldEngRight = engRight;
+		boolean oldEngRightESet = engRightESet;
+		engRight = ENG_RIGHT_EDEFAULT;
+		engRightESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ENG_RIGHT, oldEngRight, ENG_RIGHT_EDEFAULT, oldEngRightESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetEngRight() {
-        return engRightESet;
-    }
+		return engRightESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getManufacturer() {
-        return manufacturer;
-    }
+		return manufacturer;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setManufacturer( String newManufacturer ) {
-        String oldManufacturer = manufacturer;
-        manufacturer = newManufacturer;
-        boolean oldManufacturerESet = manufacturerESet;
-        manufacturerESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__MANUFACTURER, oldManufacturer, manufacturer, !oldManufacturerESet));
-    }
+		String oldManufacturer = manufacturer;
+		manufacturer = newManufacturer;
+		boolean oldManufacturerESet = manufacturerESet;
+		manufacturerESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__MANUFACTURER, oldManufacturer, manufacturer, !oldManufacturerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetManufacturer() {
-        String oldManufacturer = manufacturer;
-        boolean oldManufacturerESet = manufacturerESet;
-        manufacturer = MANUFACTURER_EDEFAULT;
-        manufacturerESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__MANUFACTURER, oldManufacturer, MANUFACTURER_EDEFAULT, oldManufacturerESet));
-    }
+		String oldManufacturer = manufacturer;
+		boolean oldManufacturerESet = manufacturerESet;
+		manufacturer = MANUFACTURER_EDEFAULT;
+		manufacturerESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__MANUFACTURER, oldManufacturer, MANUFACTURER_EDEFAULT, oldManufacturerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetManufacturer() {
-        return manufacturerESet;
-    }
+		return manufacturerESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getOriginalSclRevision() {
-        return originalSclRevision;
-    }
+		return originalSclRevision;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOriginalSclRevision(String newOriginalSclRevision) {
-        String oldOriginalSclRevision = originalSclRevision;
-        originalSclRevision = newOriginalSclRevision;
-        boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
-        originalSclRevisionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, originalSclRevision, !oldOriginalSclRevisionESet));
-    }
+		String oldOriginalSclRevision = originalSclRevision;
+		originalSclRevision = newOriginalSclRevision;
+		boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
+		originalSclRevisionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, originalSclRevision, !oldOriginalSclRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOriginalSclRevision() {
-        String oldOriginalSclRevision = originalSclRevision;
-        boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
-        originalSclRevision = ORIGINAL_SCL_REVISION_EDEFAULT;
-        originalSclRevisionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, ORIGINAL_SCL_REVISION_EDEFAULT, oldOriginalSclRevisionESet));
-    }
+		String oldOriginalSclRevision = originalSclRevision;
+		boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
+		originalSclRevision = ORIGINAL_SCL_REVISION_EDEFAULT;
+		originalSclRevisionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, ORIGINAL_SCL_REVISION_EDEFAULT, oldOriginalSclRevisionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOriginalSclRevision() {
-        return originalSclRevisionESet;
-    }
+		return originalSclRevisionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getOriginalSclVersion() {
-        return originalSclVersion;
-    }
+		return originalSclVersion;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOriginalSclVersion(String newOriginalSclVersion) {
-        String oldOriginalSclVersion = originalSclVersion;
-        originalSclVersion = newOriginalSclVersion;
-        boolean oldOriginalSclVersionESet = originalSclVersionESet;
-        originalSclVersionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, originalSclVersion, !oldOriginalSclVersionESet));
-    }
+		String oldOriginalSclVersion = originalSclVersion;
+		originalSclVersion = newOriginalSclVersion;
+		boolean oldOriginalSclVersionESet = originalSclVersionESet;
+		originalSclVersionESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, originalSclVersion, !oldOriginalSclVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOriginalSclVersion() {
-        String oldOriginalSclVersion = originalSclVersion;
-        boolean oldOriginalSclVersionESet = originalSclVersionESet;
-        originalSclVersion = ORIGINAL_SCL_VERSION_EDEFAULT;
-        originalSclVersionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, ORIGINAL_SCL_VERSION_EDEFAULT, oldOriginalSclVersionESet));
-    }
+		String oldOriginalSclVersion = originalSclVersion;
+		boolean oldOriginalSclVersionESet = originalSclVersionESet;
+		originalSclVersion = ORIGINAL_SCL_VERSION_EDEFAULT;
+		originalSclVersionESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, ORIGINAL_SCL_VERSION_EDEFAULT, oldOriginalSclVersionESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOriginalSclVersion() {
-        return originalSclVersionESet;
-    }
+		return originalSclVersionESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getOwner() {
-        return owner;
-    }
+		return owner;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOwner( String newOwner ) {
-        String oldOwner = owner;
-        owner = newOwner;
-        boolean oldOwnerESet = ownerESet;
-        ownerESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__OWNER, oldOwner, owner, !oldOwnerESet));
-    }
+		String oldOwner = owner;
+		owner = newOwner;
+		boolean oldOwnerESet = ownerESet;
+		ownerESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__OWNER, oldOwner, owner, !oldOwnerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOwner() {
-        String oldOwner = owner;
-        boolean oldOwnerESet = ownerESet;
-        owner = OWNER_EDEFAULT;
-        ownerESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__OWNER, oldOwner, OWNER_EDEFAULT, oldOwnerESet));
-    }
+		String oldOwner = owner;
+		boolean oldOwnerESet = ownerESet;
+		owner = OWNER_EDEFAULT;
+		ownerESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__OWNER, oldOwner, OWNER_EDEFAULT, oldOwnerESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOwner() {
-        return ownerESet;
-    }
+		return ownerESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getType() {
-        return type;
-    }
+		return type;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setType( String newType ) {
-        String oldType = type;
-        type = newType;
-        boolean oldTypeESet = typeESet;
-        typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__TYPE, oldType, type, !oldTypeESet));
-    }
+		String oldType = type;
+		type = newType;
+		boolean oldTypeESet = typeESet;
+		typeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__TYPE, oldType, type, !oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetType() {
-        String oldType = type;
-        boolean oldTypeESet = typeESet;
-        type = TYPE_EDEFAULT;
-        typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-    }
+		String oldType = type;
+		boolean oldTypeESet = typeESet;
+		type = TYPE_EDEFAULT;
+		typeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetType() {
-        return typeESet;
-    }
+		return typeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<AccessPoint> getAccessPoint() {
-        if (accessPoint == null) {
-            accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__IED);
-        }
-        return accessPoint;
-    }
+		if (accessPoint == null) {
+			accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__IED);
+		}
+		return accessPoint;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetAccessPoint() {
-        if (accessPoint != null) ((InternalEList.Unsettable<?>)accessPoint).unset();
-    }
+		if (accessPoint != null) ((InternalEList.Unsettable<?>)accessPoint).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetAccessPoint() {
-        return accessPoint != null && ((InternalEList.Unsettable<?>)accessPoint).isSet();
-    }
+		return accessPoint != null && ((InternalEList.Unsettable<?>)accessPoint).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<LNode> getLNode() {
-        if (lNode == null) {
-            lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.IED__LNODE, SclPackage.LNODE__IED);
-        }
-        return lNode;
-    }
+		if (lNode == null) {
+			lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.IED__LNODE, SclPackage.LNODE__IED);
+		}
+		return lNode;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLNode() {
-        if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
-    }
+		if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLNode() {
-        return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
-    }
+		return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<KDC> getKDC() {
-        if (kdc == null) {
-            kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__IED);
-        }
-        return kdc;
-    }
+		if (kdc == null) {
+			kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__IED);
+		}
+		return kdc;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetKDC() {
-        if (kdc != null) ((InternalEList.Unsettable<?>)kdc).unset();
-    }
+		if (kdc != null) ((InternalEList.Unsettable<?>)kdc).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetKDC() {
-        return kdc != null && ((InternalEList.Unsettable<?>)kdc).isSet();
-    }
+		return kdc != null && ((InternalEList.Unsettable<?>)kdc).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Services getServices() {
-        return services;
-    }
+		return services;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        Services oldServices = services;
-        services = newServices;
-        boolean oldServicesESet = servicesESet;
-        servicesESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, oldServices, newServices, !oldServicesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Services oldServices = services;
+		services = newServices;
+		boolean oldServicesESet = servicesESet;
+		servicesESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, oldServices, newServices, !oldServicesESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setServices( Services newServices ) {
-        if (newServices != services) {
-            NotificationChain msgs = null;
-            if (services != null)
-                msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__IED, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldServicesESet = servicesESet;
-            servicesESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, newServices, newServices, !oldServicesESet));
-        }
-    }
+		if (newServices != services) {
+			NotificationChain msgs = null;
+			if (services != null)
+				msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__IED, Services.class, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldServicesESet = servicesESet;
+			servicesESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, newServices, newServices, !oldServicesESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetServices( NotificationChain msgs ) {
-        Services oldServices = services;
-        services = null;
-        boolean oldServicesESet = servicesESet;
-        servicesESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, oldServices, null, oldServicesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Services oldServices = services;
+		services = null;
+		boolean oldServicesESet = servicesESet;
+		servicesESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, oldServices, null, oldServicesESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetServices() {
-        if (services != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
-            msgs = basicUnsetServices(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldServicesESet = servicesESet;
-            servicesESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, null, null, oldServicesESet));
-        }
-    }
+		if (services != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
+			msgs = basicUnsetServices(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldServicesESet = servicesESet;
+			servicesESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, null, null, oldServicesESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetServices() {
-        return servicesESet;
-    }
+		return servicesESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.IED__SCL) return null;
-        return (SCL)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.IED__SCL) return null;
+		return (SCL)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.IED__SCL, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.IED__SCL, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__IED, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SCL, newSCL, newSCL));
-    }
+		if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__SCL && newSCL != null)) {
+			if (EcoreUtil.isAncestor(this, newSCL))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSCL != null)
+				msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__IED, SCL.class, msgs);
+			msgs = basicSetSCL(newSCL, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SCL, newSCL, newSCL));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        boolean oldNameESet = nameESet;
-        nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__NAME, oldName, name, !oldNameESet));
-    }
+		String oldName = name;
+		name = newName;
+		boolean oldNameESet = nameESet;
+		nameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__NAME, oldName, name, !oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetName() {
-        String oldName = name;
-        boolean oldNameESet = nameESet;
-        name = NAME_EDEFAULT;
-        nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__NAME, oldName, NAME_EDEFAULT, oldNameESet));
-    }
+		String oldName = name;
+		boolean oldNameESet = nameESet;
+		name = NAME_EDEFAULT;
+		nameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetName() {
-        return nameESet;
-    }
+		return nameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Byte getOriginalSclRelease() {
-        return originalSclRelease;
-    }
+		return originalSclRelease;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setOriginalSclRelease(Byte newOriginalSclRelease) {
-        Byte oldOriginalSclRelease = originalSclRelease;
-        originalSclRelease = newOriginalSclRelease;
-        boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
-        originalSclReleaseESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, originalSclRelease, !oldOriginalSclReleaseESet));
-    }
+		Byte oldOriginalSclRelease = originalSclRelease;
+		originalSclRelease = newOriginalSclRelease;
+		boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
+		originalSclReleaseESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, originalSclRelease, !oldOriginalSclReleaseESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetOriginalSclRelease() {
-        Byte oldOriginalSclRelease = originalSclRelease;
-        boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
-        originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
-        originalSclReleaseESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, ORIGINAL_SCL_RELEASE_EDEFAULT, oldOriginalSclReleaseESet));
-    }
+		Byte oldOriginalSclRelease = originalSclRelease;
+		boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
+		originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
+		originalSclReleaseESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, ORIGINAL_SCL_RELEASE_EDEFAULT, oldOriginalSclReleaseESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetOriginalSclRelease() {
-        return originalSclReleaseESet;
-    }
+		return originalSclReleaseESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateIED_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in IED (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_name_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_name_required__DiagnosticChain_Map(),
+				 VALIDATE_IED_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateIED_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall have between 1 and 64 alphanumeric characters in IED (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.name.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null implies self.validSclIEDName( name )\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_name_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_name_valid__DiagnosticChain_Map(),
+				 VALIDATE_IED_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateIED_originalSclVersion_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED original Scl Version valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_originalSclVersion_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_ORIGINAL_SCL_VERSION_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'originalSclVersion attribute shall be valid in IED (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.originalSclVersion.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.originalSclVersion <> null implies self.validSclVersion( originalSclVersion )\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_originalSclVersion_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_originalSclVersion_valid__DiagnosticChain_Map(),
+				 VALIDATE_IED_ORIGINAL_SCL_VERSION_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_ORIGINAL_SCL_VERSION_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateIED_originalSclRevision_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED original Scl Revision valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_originalSclRevision_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_ORIGINAL_SCL_REVISION_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'originalSclRevision attribute shall be an uppercase letter in IED (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.originalSclRevision.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.originalSclRevision <> null implies self.validSclRevision( originalSclRevision )\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_originalSclRevision_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_originalSclRevision_valid__DiagnosticChain_Map(),
+				 VALIDATE_IED_ORIGINAL_SCL_REVISION_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_ORIGINAL_SCL_REVISION_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateIED_originalSclRelease_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED original Scl Release valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_originalSclRelease_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_ORIGINAL_SCL_RELEASE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'originalSclRelease attribute shall be an uppercase letter in IED (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.originalSclRelease.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.originalSclRelease <> null implies self.originalSclRelease > 0\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_originalSclRelease_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_originalSclRelease_valid__DiagnosticChain_Map(),
+				 VALIDATE_IED_ORIGINAL_SCL_RELEASE_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_ORIGINAL_SCL_RELEASE_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateengRight_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validateeng Right valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateengRight_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATEENG_RIGHT_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'engRight attribute shall be valid in IED (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.engRight.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.engRight <> null implies self.validSclRightEnum( engRight )\n" +
+		"    \n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateengRight_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateengRight_valid__DiagnosticChain_Map(),
+				 VALIDATEENG_RIGHT_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATEENG_RIGHT_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateIED_at_least_one_AccessPoint_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate IED at least one Access Point required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateIED_at_least_one_AccessPoint_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_IED_AT_LEAST_ONE_ACCESS_POINT_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'IED shall contain at least one AccessPoint (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.AccessPoint->notEmpty()\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIED_at_least_one_AccessPoint_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getIED(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getIED__ValidateIED_at_least_one_AccessPoint_required__DiagnosticChain_Map(),
+				 VALIDATE_IED_AT_LEAST_ONE_ACCESS_POINT_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.IED__VALIDATE_IED_AT_LEAST_ONE_ACCESS_POINT_REQUIRED);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED__ACCESS_POINT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessPoint()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__LNODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNode()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__KDC:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getKDC()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__SERVICES:
-                if (services != null)
-                    msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-            case SclPackage.IED__SCL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.IED__ACCESS_POINT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessPoint()).basicAdd(otherEnd, msgs);
+			case SclPackage.IED__LNODE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNode()).basicAdd(otherEnd, msgs);
+			case SclPackage.IED__KDC:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getKDC()).basicAdd(otherEnd, msgs);
+			case SclPackage.IED__SERVICES:
+				if (services != null)
+					msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs);
+				return basicSetServices((Services)otherEnd, msgs);
+			case SclPackage.IED__SCL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSCL((SCL)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED__ACCESS_POINT:
-                return ((InternalEList<?>)getAccessPoint()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__LNODE:
-                return ((InternalEList<?>)getLNode()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__KDC:
-                return ((InternalEList<?>)getKDC()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__SERVICES:
-                return basicUnsetServices(msgs);
-            case SclPackage.IED__SCL:
-                return basicSetSCL(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.IED__ACCESS_POINT:
+				return ((InternalEList<?>)getAccessPoint()).basicRemove(otherEnd, msgs);
+			case SclPackage.IED__LNODE:
+				return ((InternalEList<?>)getLNode()).basicRemove(otherEnd, msgs);
+			case SclPackage.IED__KDC:
+				return ((InternalEList<?>)getKDC()).basicRemove(otherEnd, msgs);
+			case SclPackage.IED__SERVICES:
+				return basicUnsetServices(msgs);
+			case SclPackage.IED__SCL:
+				return basicSetSCL(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.IED__SCL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SCL__IED, SCL.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.IED__SCL:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SCL__IED, SCL.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                return getConfigVersion();
-            case SclPackage.IED__ENG_RIGHT:
-                return getEngRight();
-            case SclPackage.IED__MANUFACTURER:
-                return getManufacturer();
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                return getOriginalSclRevision();
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                return getOriginalSclVersion();
-            case SclPackage.IED__OWNER:
-                return getOwner();
-            case SclPackage.IED__TYPE:
-                return getType();
-            case SclPackage.IED__ACCESS_POINT:
-                return getAccessPoint();
-            case SclPackage.IED__LNODE:
-                return getLNode();
-            case SclPackage.IED__KDC:
-                return getKDC();
-            case SclPackage.IED__SERVICES:
-                return getServices();
-            case SclPackage.IED__SCL:
-                return getSCL();
-            case SclPackage.IED__NAME:
-                return getName();
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                return getOriginalSclRelease();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.IED__CONFIG_VERSION:
+				return getConfigVersion();
+			case SclPackage.IED__ENG_RIGHT:
+				return getEngRight();
+			case SclPackage.IED__MANUFACTURER:
+				return getManufacturer();
+			case SclPackage.IED__ORIGINAL_SCL_REVISION:
+				return getOriginalSclRevision();
+			case SclPackage.IED__ORIGINAL_SCL_VERSION:
+				return getOriginalSclVersion();
+			case SclPackage.IED__OWNER:
+				return getOwner();
+			case SclPackage.IED__TYPE:
+				return getType();
+			case SclPackage.IED__ACCESS_POINT:
+				return getAccessPoint();
+			case SclPackage.IED__LNODE:
+				return getLNode();
+			case SclPackage.IED__KDC:
+				return getKDC();
+			case SclPackage.IED__SERVICES:
+				return getServices();
+			case SclPackage.IED__SCL:
+				return getSCL();
+			case SclPackage.IED__NAME:
+				return getName();
+			case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+				return getOriginalSclRelease();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                setConfigVersion((String)newValue);
-                return;
-            case SclPackage.IED__ENG_RIGHT:
-                setEngRight((String)newValue);
-                return;
-            case SclPackage.IED__MANUFACTURER:
-                setManufacturer((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                setOriginalSclRevision((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                setOriginalSclVersion((String)newValue);
-                return;
-            case SclPackage.IED__OWNER:
-                setOwner((String)newValue);
-                return;
-            case SclPackage.IED__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.IED__ACCESS_POINT:
-                getAccessPoint().clear();
-                getAccessPoint().addAll((Collection<? extends AccessPoint>)newValue);
-                return;
-            case SclPackage.IED__LNODE:
-                getLNode().clear();
-                getLNode().addAll((Collection<? extends LNode>)newValue);
-                return;
-            case SclPackage.IED__KDC:
-                getKDC().clear();
-                getKDC().addAll((Collection<? extends KDC>)newValue);
-                return;
-            case SclPackage.IED__SERVICES:
-                setServices((Services)newValue);
-                return;
-            case SclPackage.IED__SCL:
-                setSCL((SCL)newValue);
-                return;
-            case SclPackage.IED__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                setOriginalSclRelease((Byte)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.IED__CONFIG_VERSION:
+				setConfigVersion((String)newValue);
+				return;
+			case SclPackage.IED__ENG_RIGHT:
+				setEngRight((String)newValue);
+				return;
+			case SclPackage.IED__MANUFACTURER:
+				setManufacturer((String)newValue);
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_REVISION:
+				setOriginalSclRevision((String)newValue);
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_VERSION:
+				setOriginalSclVersion((String)newValue);
+				return;
+			case SclPackage.IED__OWNER:
+				setOwner((String)newValue);
+				return;
+			case SclPackage.IED__TYPE:
+				setType((String)newValue);
+				return;
+			case SclPackage.IED__ACCESS_POINT:
+				getAccessPoint().clear();
+				getAccessPoint().addAll((Collection<? extends AccessPoint>)newValue);
+				return;
+			case SclPackage.IED__LNODE:
+				getLNode().clear();
+				getLNode().addAll((Collection<? extends LNode>)newValue);
+				return;
+			case SclPackage.IED__KDC:
+				getKDC().clear();
+				getKDC().addAll((Collection<? extends KDC>)newValue);
+				return;
+			case SclPackage.IED__SERVICES:
+				setServices((Services)newValue);
+				return;
+			case SclPackage.IED__SCL:
+				setSCL((SCL)newValue);
+				return;
+			case SclPackage.IED__NAME:
+				setName((String)newValue);
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+				setOriginalSclRelease((Byte)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                unsetConfigVersion();
-                return;
-            case SclPackage.IED__ENG_RIGHT:
-                unsetEngRight();
-                return;
-            case SclPackage.IED__MANUFACTURER:
-                unsetManufacturer();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                unsetOriginalSclRevision();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                unsetOriginalSclVersion();
-                return;
-            case SclPackage.IED__OWNER:
-                unsetOwner();
-                return;
-            case SclPackage.IED__TYPE:
-                unsetType();
-                return;
-            case SclPackage.IED__ACCESS_POINT:
-                unsetAccessPoint();
-                return;
-            case SclPackage.IED__LNODE:
-                unsetLNode();
-                return;
-            case SclPackage.IED__KDC:
-                unsetKDC();
-                return;
-            case SclPackage.IED__SERVICES:
-                unsetServices();
-                return;
-            case SclPackage.IED__SCL:
-                setSCL((SCL)null);
-                return;
-            case SclPackage.IED__NAME:
-                unsetName();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                unsetOriginalSclRelease();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.IED__CONFIG_VERSION:
+				unsetConfigVersion();
+				return;
+			case SclPackage.IED__ENG_RIGHT:
+				unsetEngRight();
+				return;
+			case SclPackage.IED__MANUFACTURER:
+				unsetManufacturer();
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_REVISION:
+				unsetOriginalSclRevision();
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_VERSION:
+				unsetOriginalSclVersion();
+				return;
+			case SclPackage.IED__OWNER:
+				unsetOwner();
+				return;
+			case SclPackage.IED__TYPE:
+				unsetType();
+				return;
+			case SclPackage.IED__ACCESS_POINT:
+				unsetAccessPoint();
+				return;
+			case SclPackage.IED__LNODE:
+				unsetLNode();
+				return;
+			case SclPackage.IED__KDC:
+				unsetKDC();
+				return;
+			case SclPackage.IED__SERVICES:
+				unsetServices();
+				return;
+			case SclPackage.IED__SCL:
+				setSCL((SCL)null);
+				return;
+			case SclPackage.IED__NAME:
+				unsetName();
+				return;
+			case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+				unsetOriginalSclRelease();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                return isSetConfigVersion();
-            case SclPackage.IED__ENG_RIGHT:
-                return isSetEngRight();
-            case SclPackage.IED__MANUFACTURER:
-                return isSetManufacturer();
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                return isSetOriginalSclRevision();
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                return isSetOriginalSclVersion();
-            case SclPackage.IED__OWNER:
-                return isSetOwner();
-            case SclPackage.IED__TYPE:
-                return isSetType();
-            case SclPackage.IED__ACCESS_POINT:
-                return isSetAccessPoint();
-            case SclPackage.IED__LNODE:
-                return isSetLNode();
-            case SclPackage.IED__KDC:
-                return isSetKDC();
-            case SclPackage.IED__SERVICES:
-                return isSetServices();
-            case SclPackage.IED__SCL:
-                return getSCL() != null;
-            case SclPackage.IED__NAME:
-                return isSetName();
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                return isSetOriginalSclRelease();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.IED__CONFIG_VERSION:
+				return isSetConfigVersion();
+			case SclPackage.IED__ENG_RIGHT:
+				return isSetEngRight();
+			case SclPackage.IED__MANUFACTURER:
+				return isSetManufacturer();
+			case SclPackage.IED__ORIGINAL_SCL_REVISION:
+				return isSetOriginalSclRevision();
+			case SclPackage.IED__ORIGINAL_SCL_VERSION:
+				return isSetOriginalSclVersion();
+			case SclPackage.IED__OWNER:
+				return isSetOwner();
+			case SclPackage.IED__TYPE:
+				return isSetType();
+			case SclPackage.IED__ACCESS_POINT:
+				return isSetAccessPoint();
+			case SclPackage.IED__LNODE:
+				return isSetLNode();
+			case SclPackage.IED__KDC:
+				return isSetKDC();
+			case SclPackage.IED__SERVICES:
+				return isSetServices();
+			case SclPackage.IED__SCL:
+				return getSCL() != null;
+			case SclPackage.IED__NAME:
+				return isSetName();
+			case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+				return isSetOriginalSclRelease();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.IED___VALIDATE_IED_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateIED_name_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATE_IED_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateIED_name_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATE_IED_ORIGINAL_SCL_VERSION_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateIED_originalSclVersion_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATE_IED_ORIGINAL_SCL_REVISION_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateIED_originalSclRevision_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATE_IED_ORIGINAL_SCL_RELEASE_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateIED_originalSclRelease_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATEENG_RIGHT_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateengRight_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.IED___VALIDATE_IED_AT_LEAST_ONE_ACCESS_POINT_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateIED_at_least_one_AccessPoint_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (configVersion: ");
-        if (configVersionESet) result.append(configVersion); else result.append("<unset>");
-        result.append(", engRight: ");
-        if (engRightESet) result.append(engRight); else result.append("<unset>");
-        result.append(", manufacturer: ");
-        if (manufacturerESet) result.append(manufacturer); else result.append("<unset>");
-        result.append(", originalSclRevision: ");
-        if (originalSclRevisionESet) result.append(originalSclRevision); else result.append("<unset>");
-        result.append(", originalSclVersion: ");
-        if (originalSclVersionESet) result.append(originalSclVersion); else result.append("<unset>");
-        result.append(", owner: ");
-        if (ownerESet) result.append(owner); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(", originalSclRelease: ");
-        if (originalSclReleaseESet) result.append(originalSclRelease); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (configVersion: ");
+		if (configVersionESet) result.append(configVersion); else result.append("<unset>");
+		result.append(", engRight: ");
+		if (engRightESet) result.append(engRight); else result.append("<unset>");
+		result.append(", manufacturer: ");
+		if (manufacturerESet) result.append(manufacturer); else result.append("<unset>");
+		result.append(", originalSclRevision: ");
+		if (originalSclRevisionESet) result.append(originalSclRevision); else result.append("<unset>");
+		result.append(", originalSclVersion: ");
+		if (originalSclVersionESet) result.append(originalSclVersion); else result.append("<unset>");
+		result.append(", owner: ");
+		if (ownerESet) result.append(owner); else result.append("<unset>");
+		result.append(", type: ");
+		if (typeESet) result.append(type); else result.append("<unset>");
+		result.append(", name: ");
+		if (nameESet) result.append(name); else result.append("<unset>");
+		result.append(", originalSclRelease: ");
+		if (originalSclReleaseESet) result.append(originalSclRelease); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //IEDImpl

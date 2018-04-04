@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -39,195 +41,222 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DataTypeTemplates extends ExplicitLinkResolver {
     /**
-     * Returns the value of the '<em><b>DA Type</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>DA Type</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DA Type</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DA Type</em>' containment reference list.
-     * @see #isSetDAType()
-     * @see #unsetDAType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DAType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>DA Type</em>' containment reference list.
+	 * @see #isSetDAType()
+	 * @see #unsetDAType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DAType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates
+	 * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<DAType> getDAType();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetDAType()
-     * @see #getDAType()
-     * @generated
-     */
+	 * @see #isSetDAType()
+	 * @see #getDAType()
+	 * @generated
+	 */
     void unsetDAType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>DA Type</em>' containment reference list is set.
-     * @see #unsetDAType()
-     * @see #getDAType()
-     * @generated
-     */
+	 * @return whether the value of the '<em>DA Type</em>' containment reference list is set.
+	 * @see #unsetDAType()
+	 * @see #getDAType()
+	 * @generated
+	 */
     boolean isSetDAType();
 
     /**
-     * Returns the value of the '<em><b>DO Type</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>DO Type</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DO Type</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DO Type</em>' containment reference list.
-     * @see #isSetDOType()
-     * @see #unsetDOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>DO Type</em>' containment reference list.
+	 * @see #isSetDOType()
+	 * @see #unsetDOType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DOType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates
+	 * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<DOType> getDOType();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetDOType()
-     * @see #getDOType()
-     * @generated
-     */
+	 * @see #isSetDOType()
+	 * @see #getDOType()
+	 * @generated
+	 */
     void unsetDOType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>DO Type</em>' containment reference list is set.
-     * @see #unsetDOType()
-     * @see #getDOType()
-     * @generated
-     */
+	 * @return whether the value of the '<em>DO Type</em>' containment reference list is set.
+	 * @see #unsetDOType()
+	 * @see #getDOType()
+	 * @generated
+	 */
     boolean isSetDOType();
 
     /**
-     * Returns the value of the '<em><b>Enum Type</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Enum Type</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Enum Type</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Enum Type</em>' containment reference list.
-     * @see #isSetEnumType()
-     * @see #unsetEnumType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_EnumType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Enum Type</em>' containment reference list.
+	 * @see #isSetEnumType()
+	 * @see #unsetEnumType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_EnumType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates
+	 * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<EnumType> getEnumType();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetEnumType()
-     * @see #getEnumType()
-     * @generated
-     */
+	 * @see #isSetEnumType()
+	 * @see #getEnumType()
+	 * @generated
+	 */
     void unsetEnumType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Enum Type</em>' containment reference list is set.
-     * @see #unsetEnumType()
-     * @see #getEnumType()
-     * @generated
-     */
+	 * @return whether the value of the '<em>Enum Type</em>' containment reference list is set.
+	 * @see #unsetEnumType()
+	 * @see #getEnumType()
+	 * @generated
+	 */
     boolean isSetEnumType();
 
     /**
-     * Returns the value of the '<em><b>LNode Type</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>LNode Type</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LNode Type</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode Type</em>' containment reference list.
-     * @see #isSetLNodeType()
-     * @see #unsetLNodeType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_LNodeType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>LNode Type</em>' containment reference list.
+	 * @see #isSetLNodeType()
+	 * @see #unsetLNodeType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_LNodeType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates
+	 * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<LNodeType> getLNodeType();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLNodeType()
-     * @see #getLNodeType()
-     * @generated
-     */
+	 * @see #isSetLNodeType()
+	 * @see #getLNodeType()
+	 * @generated
+	 */
     void unsetLNodeType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LNode Type</em>' containment reference list is set.
-     * @see #unsetLNodeType()
-     * @see #getLNodeType()
-     * @generated
-     */
+	 * @return whether the value of the '<em>LNode Type</em>' containment reference list is set.
+	 * @see #unsetLNodeType()
+	 * @see #getLNodeType()
+	 * @generated
+	 */
     boolean isSetLNodeType();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates <em>Data Type Templates</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>SCL</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates <em>Data Type Templates</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SCL</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_SCL()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>SCL</em>' container reference.
+	 * @see #setSCL(SCL)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_SCL()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates
+	 * @model opposite="DataTypeTemplates" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     SCL getSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
-     * @generated
-     */
+	 * @param value the new value of the '<em>SCL</em>' container reference.
+	 * @see #getSCL()
+	 * @generated
+	 */
     void setSCL( SCL value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='DataTypeTemplates_nothing'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n        true\n\n\n'"
+	 * @generated
+	 */
+	boolean validateDataTypeTemplates_nothing(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='DataTypeTemplates_at_least_one_LNodeType_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'DataTypeTemplates shall contain at least one LNodeType (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.LNodeType-&gt;notEmpty()\n\n    \n}.status'"
+	 * @generated
+	 */
+	boolean validateDataTypeTemplates_at_least_one_LNodeType_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='DataTypeTemplates_at_least_one_DOType_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'DataTypeTemplates shall contain at least one DOType (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.DOType-&gt;notEmpty()\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateDataTypeTemplates_at_least_one_DOType_required(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // DataTypeTemplates

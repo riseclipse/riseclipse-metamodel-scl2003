@@ -15,6 +15,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -37,125 +39,143 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface PhysConn extends UnNaming {
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Type</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #setType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_Type()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #setType(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_Type()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #getType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #isSetType()
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @generated
+	 */
     void setType( String value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @see #isSetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     void unsetType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Type</em>' attribute is set.
-     * @see #unsetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Type</em>' attribute is set.
+	 * @see #unsetType()
+	 * @see #getType()
+	 * @see #setType(String)
+	 * @generated
+	 */
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Connected AP</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Connected AP</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connected AP</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Connected AP</em>' container reference.
-     * @see #setConnectedAP(ConnectedAP)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_ConnectedAP()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn
-     * @model opposite="PhysConn" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Connected AP</em>' container reference.
+	 * @see #setConnectedAP(ConnectedAP)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_ConnectedAP()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn
+	 * @model opposite="PhysConn" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     ConnectedAP getConnectedAP();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Connected AP</em>' container reference.
-     * @see #getConnectedAP()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Connected AP</em>' container reference.
+	 * @see #getConnectedAP()
+	 * @generated
+	 */
     void setConnectedAP( ConnectedAP value );
 
     /**
-     * Returns the value of the '<em><b>P</b></em>' containment reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn <em>Phys Conn</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>P</b></em>' containment reference list.
+	 * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn}.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn <em>Phys Conn</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>P</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>P</em>' containment reference list.
-     * @see #isSetP()
-     * @see #unsetP()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_P()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn
-     * @model opposite="PhysConn" containment="true" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>P</em>' containment reference list.
+	 * @see #isSetP()
+	 * @see #unsetP()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_P()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn
+	 * @model opposite="PhysConn" containment="true" unsettable="true" ordered="false"
+	 * @generated
+	 */
     EList<P_PhysConn> getP();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetP()
-     * @see #getP()
-     * @generated
-     */
+	 * @see #isSetP()
+	 * @see #getP()
+	 * @generated
+	 */
     void unsetP();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}' containment reference list is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>P</em>' containment reference list is set.
-     * @see #unsetP()
-     * @see #getP()
-     * @generated
-     */
+	 * @return whether the value of the '<em>P</em>' containment reference list is set.
+	 * @see #unsetP()
+	 * @see #getP()
+	 * @generated
+	 */
     boolean isSetP();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='PhysConn_type_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'type attribute shall be present in PhysConn (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.type &lt;&gt; null\n\n    \n}.status'"
+	 * @generated
+	 */
+	boolean validatePhysConn_type_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='PhysConn_type_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'type attribute shall start with a capital letter, and contain only alphanumeric characters in PhysConn (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.type.toString()\n        ,\n\tstatus : Boolean = \n        self.type &lt;&gt; null implies self.validSclPhysConnTypeEnum( type )\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validatePhysConn_type_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // PhysConn

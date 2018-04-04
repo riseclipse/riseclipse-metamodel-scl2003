@@ -17,9 +17,12 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -34,6 +37,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -52,307 +57,356 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implements AbstractEqFuncSubFunc {
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String TYPE_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
     protected String type = TYPE_EDEFAULT;
 
     /**
-     * This is true if the Type attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Type attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean typeESet;
 
     /**
-     * The cached value of the '{@link #getEqSubFunction() <em>Eq Sub Function</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEqSubFunction() <em>Eq Sub Function</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getEqSubFunction()
-     * @generated
-     * @ordered
-     */
+	 * @see #getEqSubFunction()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<EqSubFunction> eqSubFunction;
 
     /**
-     * The cached value of the '{@link #getSubGeneralEquipment() <em>Sub General Equipment</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubGeneralEquipment() <em>Sub General Equipment</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubGeneralEquipment()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubGeneralEquipment()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<GeneralEquipment> subGeneralEquipment;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected AbstractEqFuncSubFuncImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getAbstractEqFuncSubFunc();
-    }
+		return SclPackage.eINSTANCE.getAbstractEqFuncSubFunc();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getType() {
-        return type;
-    }
+		return type;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setType( String newType ) {
-        String oldType = type;
-        type = newType;
-        boolean oldTypeESet = typeESet;
-        typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, type, !oldTypeESet));
-    }
+		String oldType = type;
+		type = newType;
+		boolean oldTypeESet = typeESet;
+		typeESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, type, !oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetType() {
-        String oldType = type;
-        boolean oldTypeESet = typeESet;
-        type = TYPE_EDEFAULT;
-        typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-    }
+		String oldType = type;
+		boolean oldTypeESet = typeESet;
+		type = TYPE_EDEFAULT;
+		typeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetType() {
-        return typeESet;
-    }
+		return typeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<EqSubFunction> getEqSubFunction() {
-        if (eqSubFunction == null) {
-            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC);
-        }
-        return eqSubFunction;
-    }
+		if (eqSubFunction == null) {
+			eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC);
+		}
+		return eqSubFunction;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetEqSubFunction() {
-        if (eqSubFunction != null) ((InternalEList.Unsettable<?>)eqSubFunction).unset();
-    }
+		if (eqSubFunction != null) ((InternalEList.Unsettable<?>)eqSubFunction).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetEqSubFunction() {
-        return eqSubFunction != null && ((InternalEList.Unsettable<?>)eqSubFunction).isSet();
-    }
+		return eqSubFunction != null && ((InternalEList.Unsettable<?>)eqSubFunction).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<GeneralEquipment> getSubGeneralEquipment() {
-        if (subGeneralEquipment == null) {
-            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC);
-        }
-        return subGeneralEquipment;
-    }
+		if (subGeneralEquipment == null) {
+			subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC);
+		}
+		return subGeneralEquipment;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubGeneralEquipment() {
-        if (subGeneralEquipment != null) ((InternalEList.Unsettable<?>)subGeneralEquipment).unset();
-    }
+		if (subGeneralEquipment != null) ((InternalEList.Unsettable<?>)subGeneralEquipment).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSubGeneralEquipment() {
-        return subGeneralEquipment != null && ((InternalEList.Unsettable<?>)subGeneralEquipment).isSet();
-    }
+		return subGeneralEquipment != null && ((InternalEList.Unsettable<?>)subGeneralEquipment).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateAbstractEqFuncSubFunc_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Abstract Eq Func Sub Func nothing</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateAbstractEqFuncSubFunc_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_ABSTRACT_EQ_FUNC_SUB_FUNC_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        true\n" +
+		"\n" +
+		"\n" +
+		"";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAbstractEqFuncSubFunc_nothing(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getAbstractEqFuncSubFunc(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getAbstractEqFuncSubFunc__ValidateAbstractEqFuncSubFunc_nothing__DiagnosticChain_Map(),
+				 VALIDATE_ABSTRACT_EQ_FUNC_SUB_FUNC_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.ABSTRACT_EQ_FUNC_SUB_FUNC__VALIDATE_ABSTRACT_EQ_FUNC_SUB_FUNC_NOTHING);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqSubFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubGeneralEquipment()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqSubFunction()).basicAdd(otherEnd, msgs);
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubGeneralEquipment()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return ((InternalEList<?>)getEqSubFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return ((InternalEList<?>)getSubGeneralEquipment()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				return ((InternalEList<?>)getEqSubFunction()).basicRemove(otherEnd, msgs);
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				return ((InternalEList<?>)getSubGeneralEquipment()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                return getType();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return getEqSubFunction();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return getSubGeneralEquipment();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+				return getType();
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				return getEqSubFunction();
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				return getSubGeneralEquipment();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                getEqSubFunction().clear();
-                getEqSubFunction().addAll((Collection<? extends EqSubFunction>)newValue);
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                getSubGeneralEquipment().clear();
-                getSubGeneralEquipment().addAll((Collection<? extends GeneralEquipment>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+				setType((String)newValue);
+				return;
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				getEqSubFunction().clear();
+				getEqSubFunction().addAll((Collection<? extends EqSubFunction>)newValue);
+				return;
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				getSubGeneralEquipment().clear();
+				getSubGeneralEquipment().addAll((Collection<? extends GeneralEquipment>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                unsetType();
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                unsetEqSubFunction();
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                unsetSubGeneralEquipment();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+				unsetType();
+				return;
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				unsetEqSubFunction();
+				return;
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				unsetSubGeneralEquipment();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                return isSetType();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return isSetEqSubFunction();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return isSetSubGeneralEquipment();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+				return isSetType();
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+				return isSetEqSubFunction();
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+				return isSetSubGeneralEquipment();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC___VALIDATE_ABSTRACT_EQ_FUNC_SUB_FUNC_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateAbstractEqFuncSubFunc_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (type: ");
+		if (typeESet) result.append(type); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //AbstractEqFuncSubFuncImpl

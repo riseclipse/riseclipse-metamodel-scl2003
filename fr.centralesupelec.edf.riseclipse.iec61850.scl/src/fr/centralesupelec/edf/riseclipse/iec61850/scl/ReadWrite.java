@@ -33,31 +33,31 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ReadWrite extends ServiceYesNo {
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReadWrite <em>Read Write</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Services</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReadWrite <em>Read Write</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReadWrite_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReadWrite
-     * @model opposite="ReadWrite" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Services</em>' container reference.
+	 * @see #setServices(Services)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReadWrite_Services()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReadWrite
+	 * @model opposite="ReadWrite" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     Services getServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices <em>Services</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices <em>Services</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Services</em>' container reference.
+	 * @see #getServices()
+	 * @generated
+	 */
     void setServices( Services value );
 
 } // ReadWrite

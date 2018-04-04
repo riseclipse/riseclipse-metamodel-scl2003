@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Sup Subscription</b></em>'.
@@ -35,137 +38,173 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SupSubscription extends SclObject {
     /**
-     * Returns the value of the '<em><b>Max Go</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Max Go</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Max Go</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Max Go</em>' attribute.
-     * @see #isSetMaxGo()
-     * @see #unsetMaxGo()
-     * @see #setMaxGo(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_MaxGo()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Max Go</em>' attribute.
+	 * @see #isSetMaxGo()
+	 * @see #unsetMaxGo()
+	 * @see #setMaxGo(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_MaxGo()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Integer getMaxGo();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Max Go</em>' attribute.
-     * @see #isSetMaxGo()
-     * @see #unsetMaxGo()
-     * @see #getMaxGo()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Max Go</em>' attribute.
+	 * @see #isSetMaxGo()
+	 * @see #unsetMaxGo()
+	 * @see #getMaxGo()
+	 * @generated
+	 */
     void setMaxGo( Integer value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetMaxGo()
-     * @see #getMaxGo()
-     * @see #setMaxGo(Integer)
-     * @generated
-     */
+	 * @see #isSetMaxGo()
+	 * @see #getMaxGo()
+	 * @see #setMaxGo(Integer)
+	 * @generated
+	 */
     void unsetMaxGo();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Max Go</em>' attribute is set.
-     * @see #unsetMaxGo()
-     * @see #getMaxGo()
-     * @see #setMaxGo(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Max Go</em>' attribute is set.
+	 * @see #unsetMaxGo()
+	 * @see #getMaxGo()
+	 * @see #setMaxGo(Integer)
+	 * @generated
+	 */
     boolean isSetMaxGo();
 
     /**
-     * Returns the value of the '<em><b>Max Sv</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Max Sv</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Max Sv</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Max Sv</em>' attribute.
-     * @see #isSetMaxSv()
-     * @see #unsetMaxSv()
-     * @see #setMaxSv(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_MaxSv()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Max Sv</em>' attribute.
+	 * @see #isSetMaxSv()
+	 * @see #unsetMaxSv()
+	 * @see #setMaxSv(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_MaxSv()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Integer getMaxSv();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Max Sv</em>' attribute.
-     * @see #isSetMaxSv()
-     * @see #unsetMaxSv()
-     * @see #getMaxSv()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Max Sv</em>' attribute.
+	 * @see #isSetMaxSv()
+	 * @see #unsetMaxSv()
+	 * @see #getMaxSv()
+	 * @generated
+	 */
     void setMaxSv( Integer value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetMaxSv()
-     * @see #getMaxSv()
-     * @see #setMaxSv(Integer)
-     * @generated
-     */
+	 * @see #isSetMaxSv()
+	 * @see #getMaxSv()
+	 * @see #setMaxSv(Integer)
+	 * @generated
+	 */
     void unsetMaxSv();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Max Sv</em>' attribute is set.
-     * @see #unsetMaxSv()
-     * @see #getMaxSv()
-     * @see #setMaxSv(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Max Sv</em>' attribute is set.
+	 * @see #unsetMaxSv()
+	 * @see #getMaxSv()
+	 * @see #setMaxSv(Integer)
+	 * @generated
+	 */
     boolean isSetMaxSv();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription <em>Sup Subscription</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Services</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription <em>Sup Subscription</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription
-     * @model opposite="SupSubscription" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Services</em>' container reference.
+	 * @see #setServices(Services)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_Services()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription
+	 * @model opposite="SupSubscription" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     Services getServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Services</em>' container reference.
+	 * @see #getServices()
+	 * @generated
+	 */
     void setServices( Services value );
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SupSubscription_maxGo_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'maxGo attribute shall be present in SupSubscription (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.maxGo &lt;&gt; null\n\n    \n}.status'"
+	 * @generated
+	 */
+	boolean validateSupSubscription_maxGo_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SupSubscription_maxGo_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'maxGo attribute shall be valid in SupSubscription (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.maxGo.toString()\n        ,\n\tstatus : Boolean = \n        self.maxGo &lt;&gt; null implies self.maxGo &gt;= 0\n\n    \n}.status'"
+	 * @generated
+	 */
+	boolean validateSupSubscription_maxGo_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SupSubscription_maxSv_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'maxSv attribute shall be present in SupSubscription (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.maxSv &lt;&gt; null\n\n    \n}.status'"
+	 * @generated
+	 */
+	boolean validateSupSubscription_maxSv_required(DiagnosticChain diagnostics, Map<Object, Object> context);
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SupSubscription_maxSv_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'maxSv attribute shall be valid in SupSubscription (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.maxSv.toString()\n        ,\n\tstatus : Boolean = \n        self.maxSv &lt;&gt; null implies self.maxSv &gt;= 0\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateSupSubscription_maxSv_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // SupSubscription

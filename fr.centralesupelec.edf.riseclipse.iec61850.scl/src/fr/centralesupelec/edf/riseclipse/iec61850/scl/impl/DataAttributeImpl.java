@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -29,6 +32,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,305 +52,396 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttribute {
     /**
-     * The cached value of the '{@link #getReferredByFCDA() <em>Referred By FCDA</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReferredByFCDA() <em>Referred By FCDA</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReferredByFCDA()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReferredByFCDA()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<FCDA> referredByFCDA;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
     /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean nameESet;
 
     /**
-     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReferredByExtRef()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReferredByExtRef()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ExtRef> referredByExtRef;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected DataAttributeImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getDataAttribute();
-    }
+		return SclPackage.eINSTANCE.getDataAttribute();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<FCDA> getReferredByFCDA() {
-        if (referredByFCDA == null) {
-            referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE);
-        }
-        return referredByFCDA;
-    }
+		if (referredByFCDA == null) {
+			referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE);
+		}
+		return referredByFCDA;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetReferredByFCDA() {
-        if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
-    }
+		if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetReferredByFCDA() {
-        return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
-    }
+		return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        boolean oldNameESet = nameESet;
-        nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_ATTRIBUTE__NAME, oldName, name, !oldNameESet));
-    }
+		String oldName = name;
+		name = newName;
+		boolean oldNameESet = nameESet;
+		nameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_ATTRIBUTE__NAME, oldName, name, !oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetName() {
-        String oldName = name;
-        boolean oldNameESet = nameESet;
-        name = NAME_EDEFAULT;
-        nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DATA_ATTRIBUTE__NAME, oldName, NAME_EDEFAULT, oldNameESet));
-    }
+		String oldName = name;
+		boolean oldNameESet = nameESet;
+		name = NAME_EDEFAULT;
+		nameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DATA_ATTRIBUTE__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetName() {
-        return nameESet;
-    }
+		return nameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE);
-        }
-        return referredByExtRef;
-    }
+		if (referredByExtRef == null) {
+			referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE);
+		}
+		return referredByExtRef;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
-    }
+		if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
-    }
+		return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateDataAttribute_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Data Attribute name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDataAttribute_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DATA_ATTRIBUTE_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in ' + self.oclType().toString() + ' (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDataAttribute_name_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDataAttribute(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDataAttribute__ValidateDataAttribute_name_required__DiagnosticChain_Map(),
+				 VALIDATE_DATA_ATTRIBUTE_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DATA_ATTRIBUTE__VALIDATE_DATA_ATTRIBUTE_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateDataAttribute_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Data Attribute name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateDataAttribute_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_DATA_ATTRIBUTE_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be valid in ' + self.oclType().toString() + ' (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.name.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null implies self.validSclAttributeNameEnum( name )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDataAttribute_name_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getDataAttribute(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getDataAttribute__ValidateDataAttribute_name_valid__DiagnosticChain_Map(),
+				 VALIDATE_DATA_ATTRIBUTE_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.DATA_ATTRIBUTE__VALIDATE_DATA_ATTRIBUTE_NAME_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return getReferredByFCDA();
-            case SclPackage.DATA_ATTRIBUTE__NAME:
-                return getName();
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				return getReferredByFCDA();
+			case SclPackage.DATA_ATTRIBUTE__NAME:
+				return getName();
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				return getReferredByExtRef();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                getReferredByFCDA().clear();
-                getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
-                return;
-            case SclPackage.DATA_ATTRIBUTE__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				getReferredByFCDA().clear();
+				getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
+				return;
+			case SclPackage.DATA_ATTRIBUTE__NAME:
+				setName((String)newValue);
+				return;
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				getReferredByExtRef().clear();
+				getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                unsetReferredByFCDA();
-                return;
-            case SclPackage.DATA_ATTRIBUTE__NAME:
-                unsetName();
-                return;
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				unsetReferredByFCDA();
+				return;
+			case SclPackage.DATA_ATTRIBUTE__NAME:
+				unsetName();
+				return;
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				unsetReferredByExtRef();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return isSetReferredByFCDA();
-            case SclPackage.DATA_ATTRIBUTE__NAME:
-                return isSetName();
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+				return isSetReferredByFCDA();
+			case SclPackage.DATA_ATTRIBUTE__NAME:
+				return isSetName();
+			case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+				return isSetReferredByExtRef();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.DATA_ATTRIBUTE___VALIDATE_DATA_ATTRIBUTE_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateDataAttribute_name_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.DATA_ATTRIBUTE___VALIDATE_DATA_ATTRIBUTE_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateDataAttribute_name_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		if (nameESet) result.append(name); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //DataAttributeImpl

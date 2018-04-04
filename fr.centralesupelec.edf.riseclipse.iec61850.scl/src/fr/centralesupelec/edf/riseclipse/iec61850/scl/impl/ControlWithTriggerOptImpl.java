@@ -18,6 +18,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -26,6 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,325 +49,379 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
  */
 public abstract class ControlWithTriggerOptImpl extends ControlImpl implements ControlWithTriggerOpt {
     /**
-     * The default value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIntgPd()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIntgPd()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer INTG_PD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIntgPd()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIntgPd()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer intgPd = INTG_PD_EDEFAULT;
 
     /**
-     * This is true if the Intg Pd attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Intg Pd attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean intgPdESet;
 
     /**
-     * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTrgOps()
-     * @generated
-     * @ordered
-     */
+	 * @see #getTrgOps()
+	 * @generated
+	 * @ordered
+	 */
     protected TrgOps trgOps;
 
     /**
-     * This is true if the Trg Ops containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Trg Ops containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean trgOpsESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ControlWithTriggerOptImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getControlWithTriggerOpt();
-    }
+		return SclPackage.eINSTANCE.getControlWithTriggerOpt();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getIntgPd() {
-        return intgPd;
-    }
+		return intgPd;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIntgPd( Integer newIntgPd ) {
-        Integer oldIntgPd = intgPd;
-        intgPd = newIntgPd;
-        boolean oldIntgPdESet = intgPdESet;
-        intgPdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
-    }
+		Integer oldIntgPd = intgPd;
+		intgPd = newIntgPd;
+		boolean oldIntgPdESet = intgPdESet;
+		intgPdESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIntgPd() {
-        Integer oldIntgPd = intgPd;
-        boolean oldIntgPdESet = intgPdESet;
-        intgPd = INTG_PD_EDEFAULT;
-        intgPdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
-    }
+		Integer oldIntgPd = intgPd;
+		boolean oldIntgPdESet = intgPdESet;
+		intgPd = INTG_PD_EDEFAULT;
+		intgPdESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIntgPd() {
-        return intgPdESet;
-    }
+		return intgPdESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public TrgOps getTrgOps() {
-        return trgOps;
-    }
+		return trgOps;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetTrgOps( TrgOps newTrgOps, NotificationChain msgs ) {
-        TrgOps oldTrgOps = trgOps;
-        trgOps = newTrgOps;
-        boolean oldTrgOpsESet = trgOpsESet;
-        trgOpsESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, newTrgOps, !oldTrgOpsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		TrgOps oldTrgOps = trgOps;
+		trgOps = newTrgOps;
+		boolean oldTrgOpsESet = trgOpsESet;
+		trgOpsESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, newTrgOps, !oldTrgOpsESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setTrgOps( TrgOps newTrgOps ) {
-        if (newTrgOps != trgOps) {
-            NotificationChain msgs = null;
-            if (trgOps != null)
-                msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            if (newTrgOps != null)
-                msgs = ((InternalEObject)newTrgOps).eInverseAdd(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            msgs = basicSetTrgOps(newTrgOps, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTrgOpsESet = trgOpsESet;
-            trgOpsESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, newTrgOps, newTrgOps, !oldTrgOpsESet));
-        }
-    }
+		if (newTrgOps != trgOps) {
+			NotificationChain msgs = null;
+			if (trgOps != null)
+				msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+			if (newTrgOps != null)
+				msgs = ((InternalEObject)newTrgOps).eInverseAdd(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+			msgs = basicSetTrgOps(newTrgOps, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTrgOpsESet = trgOpsESet;
+			trgOpsESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, newTrgOps, newTrgOps, !oldTrgOpsESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetTrgOps( NotificationChain msgs ) {
-        TrgOps oldTrgOps = trgOps;
-        trgOps = null;
-        boolean oldTrgOpsESet = trgOpsESet;
-        trgOpsESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, null, oldTrgOpsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		TrgOps oldTrgOps = trgOps;
+		trgOps = null;
+		boolean oldTrgOpsESet = trgOpsESet;
+		trgOpsESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, null, oldTrgOpsESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetTrgOps() {
-        if (trgOps != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            msgs = basicUnsetTrgOps(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldTrgOpsESet = trgOpsESet;
-            trgOpsESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, null, oldTrgOpsESet));
-        }
-    }
+		if (trgOps != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+			msgs = basicUnsetTrgOps(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldTrgOpsESet = trgOpsESet;
+			trgOpsESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, null, oldTrgOpsESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetTrgOps() {
-        return trgOpsESet;
-    }
+		return trgOpsESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateControlWithTriggerOpt_intgPd_unsigned_int(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Control With Trigger Opt intg Pd unsigned int</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateControlWithTriggerOpt_intgPd_unsigned_int(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTROL_WITH_TRIGGER_OPT_INTG_PD_UNSIGNED_INT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'intgPd attribute shall be valid in ControlWithTriggerOpt (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.intgPd.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.intgPd <> null implies self.intgPd >= 0\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControlWithTriggerOpt_intgPd_unsigned_int(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getControlWithTriggerOpt(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getControlWithTriggerOpt__ValidateControlWithTriggerOpt_intgPd_unsigned_int__DiagnosticChain_Map(),
+				 VALIDATE_CONTROL_WITH_TRIGGER_OPT_INTG_PD_UNSIGNED_INT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONTROL_WITH_TRIGGER_OPT__VALIDATE_CONTROL_WITH_TRIGGER_OPT_INTG_PD_UNSIGNED_INT);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                if (trgOps != null)
-                    msgs = ((InternalEObject)trgOps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, msgs);
-                return basicSetTrgOps((TrgOps)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				if (trgOps != null)
+					msgs = ((InternalEObject)trgOps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, msgs);
+				return basicSetTrgOps((TrgOps)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return basicUnsetTrgOps(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				return basicUnsetTrgOps(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                return getIntgPd();
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return getTrgOps();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+				return getIntgPd();
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				return getTrgOps();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                setIntgPd((Integer)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                setTrgOps((TrgOps)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+				setIntgPd((Integer)newValue);
+				return;
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				setTrgOps((TrgOps)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                unsetIntgPd();
-                return;
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                unsetTrgOps();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+				unsetIntgPd();
+				return;
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				unsetTrgOps();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                return isSetIntgPd();
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return isSetTrgOps();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+				return isSetIntgPd();
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+				return isSetTrgOps();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.CONTROL_WITH_TRIGGER_OPT___VALIDATE_CONTROL_WITH_TRIGGER_OPT_INTG_PD_UNSIGNED_INT__DIAGNOSTICCHAIN_MAP:
+				return validateControlWithTriggerOpt_intgPd_unsigned_int((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (intgPd: ");
-        if (intgPdESet) result.append(intgPd); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (intgPd: ");
+		if (intgPdESet) result.append(intgPd); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //ControlWithTriggerOptImpl

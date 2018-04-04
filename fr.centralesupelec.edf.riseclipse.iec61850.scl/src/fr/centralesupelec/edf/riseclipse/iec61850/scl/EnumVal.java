@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Enum Val</b></em>'.
@@ -36,165 +39,174 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface EnumVal extends SclObject {
     /**
-     * Returns the value of the '<em><b>Ord</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ord</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ord</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Ord</em>' attribute.
-     * @see #isSetOrd()
-     * @see #unsetOrd()
-     * @see #setOrd(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Ord()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Ord</em>' attribute.
+	 * @see #isSetOrd()
+	 * @see #unsetOrd()
+	 * @see #setOrd(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Ord()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Integer getOrd();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Ord</em>' attribute.
-     * @see #isSetOrd()
-     * @see #unsetOrd()
-     * @see #getOrd()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Ord</em>' attribute.
+	 * @see #isSetOrd()
+	 * @see #unsetOrd()
+	 * @see #getOrd()
+	 * @generated
+	 */
     void setOrd( Integer value );
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @see #isSetOrd()
-     * @see #getOrd()
-     * @see #setOrd(Integer)
-     * @generated
-     */
+	 * @see #isSetOrd()
+	 * @see #getOrd()
+	 * @see #setOrd(Integer)
+	 * @generated
+	 */
     void unsetOrd();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Ord</em>' attribute is set.
-     * @see #unsetOrd()
-     * @see #getOrd()
-     * @see #setOrd(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Ord</em>' attribute is set.
+	 * @see #unsetOrd()
+	 * @see #getOrd()
+	 * @see #setOrd(Integer)
+	 * @generated
+	 */
     boolean isSetOrd();
 
     /**
-     * Returns the value of the '<em><b>Enum Type</b></em>' container reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}'.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Enum Type</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}'.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Enum Type</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Enum Type</em>' container reference.
-     * @see #setEnumType(EnumType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_EnumType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal
-     * @model opposite="EnumVal" resolveProxies="false" unsettable="true" ordered="false"
-     * @generated
-     */
+	 * @return the value of the '<em>Enum Type</em>' container reference.
+	 * @see #setEnumType(EnumType)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_EnumType()
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal
+	 * @model opposite="EnumVal" resolveProxies="false" unsettable="true"
+	 * @generated
+	 */
     EnumType getEnumType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}' container reference.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}' container reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Enum Type</em>' container reference.
-     * @see #getEnumType()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Enum Type</em>' container reference.
+	 * @see #getEnumType()
+	 * @generated
+	 */
     void setEnumType( EnumType value );
 
     /**
-     * Returns the value of the '<em><b>Value</b></em>' attribute.
-     * The default value is <code>""</code>.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Value</em>' attribute isn't clear,
     * there really should be more of a description here...
     * </p>
     * <!-- end-user-doc -->
-     * @return the value of the '<em>Value</em>' attribute.
-     * @see #setValue(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Value()
-     * @model default="" required="true"
-     *        extendedMetaData="kind='simple'"
-     * @generated
-     */
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Value()
+	 * @model default="" required="true"
+	 *        extendedMetaData="kind='simple'"
+	 * @generated
+	 */
     String getValue();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getValue <em>Value</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Value</em>' attribute.
-     * @see #getValue()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
     void setValue( String value );
 
     /**
-     * Returns the value of the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Desc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Desc</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #setDesc(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Desc()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Desc</em>' attribute.
+	 * @see #isSetDesc()
+	 * @see #unsetDesc()
+	 * @see #setDesc(String)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_Desc()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     String getDesc();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Desc</em>' attribute.
+	 * @see #isSetDesc()
+	 * @see #unsetDesc()
+	 * @see #getDesc()
+	 * @generated
+	 */
     void setDesc(String value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
+	 * @see #isSetDesc()
+	 * @see #getDesc()
+	 * @see #setDesc(String)
+	 * @generated
+	 */
     void unsetDesc();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Desc</em>' attribute is set.
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Desc</em>' attribute is set.
+	 * @see #unsetDesc()
+	 * @see #getDesc()
+	 * @see #setDesc(String)
+	 * @generated
+	 */
     boolean isSetDesc();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='EnumVal_ord_required'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'ord attribute shall be present in EnumVal (line \' + self.lineNumber.toString() + \')\' ,\n\tstatus : Boolean = \n        self.ord &lt;&gt; null\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateEnumVal_ord_required(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // EnumVal

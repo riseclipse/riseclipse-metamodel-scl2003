@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -30,6 +33,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,524 +56,655 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class SDIImpl extends DataAttributeImpl implements SDI {
     /**
-     * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer IX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer ix = IX_EDEFAULT;
 
     /**
-     * This is true if the Ix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ixESet;
 
     /**
-     * The default value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String SADDR_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSAddr() <em>SAddr</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSAddr()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSAddr()
+	 * @generated
+	 * @ordered
+	 */
     protected String sAddr = SADDR_EDEFAULT;
 
     /**
-     * This is true if the SAddr attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the SAddr attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean sAddrESet;
 
     /**
-     * The cached value of the '{@link #getDAI() <em>DAI</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDAI() <em>DAI</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDAI()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDAI()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<DAI> dai;
 
     /**
-     * The cached value of the '{@link #getSubSDI() <em>Sub SDI</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubSDI() <em>Sub SDI</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubSDI()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubSDI()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<SDI> subSDI;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected SDIImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getSDI();
-    }
+		return SclPackage.eINSTANCE.getSDI();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getIx() {
-        return ix;
-    }
+		return ix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIx( Integer newIx ) {
-        Integer oldIx = ix;
-        ix = newIx;
-        boolean oldIxESet = ixESet;
-        ixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__IX, oldIx, ix, !oldIxESet));
-    }
+		Integer oldIx = ix;
+		ix = newIx;
+		boolean oldIxESet = ixESet;
+		ixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__IX, oldIx, ix, !oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIx() {
-        Integer oldIx = ix;
-        boolean oldIxESet = ixESet;
-        ix = IX_EDEFAULT;
-        ixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__IX, oldIx, IX_EDEFAULT, oldIxESet));
-    }
+		Integer oldIx = ix;
+		boolean oldIxESet = ixESet;
+		ix = IX_EDEFAULT;
+		ixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__IX, oldIx, IX_EDEFAULT, oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIx() {
-        return ixESet;
-    }
+		return ixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getSAddr() {
-        return sAddr;
-    }
+		return sAddr;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSAddr( String newSAddr ) {
-        String oldSAddr = sAddr;
-        sAddr = newSAddr;
-        boolean oldSAddrESet = sAddrESet;
-        sAddrESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__SADDR, oldSAddr, sAddr, !oldSAddrESet));
-    }
+		String oldSAddr = sAddr;
+		sAddr = newSAddr;
+		boolean oldSAddrESet = sAddrESet;
+		sAddrESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__SADDR, oldSAddr, sAddr, !oldSAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSAddr() {
-        String oldSAddr = sAddr;
-        boolean oldSAddrESet = sAddrESet;
-        sAddr = SADDR_EDEFAULT;
-        sAddrESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__SADDR, oldSAddr, SADDR_EDEFAULT, oldSAddrESet));
-    }
+		String oldSAddr = sAddr;
+		boolean oldSAddrESet = sAddrESet;
+		sAddr = SADDR_EDEFAULT;
+		sAddrESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__SADDR, oldSAddr, SADDR_EDEFAULT, oldSAddrESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSAddr() {
-        return sAddrESet;
-    }
+		return sAddrESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<DAI> getDAI() {
-        if (dai == null) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.SDI__DAI, SclPackage.DAI__SDI);
-        }
-        return dai;
-    }
+		if (dai == null) {
+			dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.SDI__DAI, SclPackage.DAI__SDI);
+		}
+		return dai;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDAI() {
-        if (dai != null) ((InternalEList.Unsettable<?>)dai).unset();
-    }
+		if (dai != null) ((InternalEList.Unsettable<?>)dai).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDAI() {
-        return dai != null && ((InternalEList.Unsettable<?>)dai).isSet();
-    }
+		return dai != null && ((InternalEList.Unsettable<?>)dai).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DOI getDOI() {
-        if (eContainerFeatureID() != SclPackage.SDI__DOI) return null;
-        return (DOI)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.SDI__DOI) return null;
+		return (DOI)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetDOI( DOI newDOI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.SDI__DOI, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.SDI__DOI, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDOI( DOI newDOI ) {
-        if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__DOI && newDOI != null)) {
-            if (EcoreUtil.isAncestor(this, newDOI))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOI != null)
-                msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__SDI, DOI.class, msgs);
-            msgs = basicSetDOI(newDOI, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__DOI, newDOI, newDOI));
-    }
+		if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__DOI && newDOI != null)) {
+			if (EcoreUtil.isAncestor(this, newDOI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDOI != null)
+				msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__SDI, DOI.class, msgs);
+			msgs = basicSetDOI(newDOI, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__DOI, newDOI, newDOI));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<SDI> getSubSDI() {
-        if (subSDI == null) {
-            subSDI = new EObjectContainmentWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.SDI__SUB_SDI, SclPackage.SDI__PARENT_SDI);
-        }
-        return subSDI;
-    }
+		if (subSDI == null) {
+			subSDI = new EObjectContainmentWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.SDI__SUB_SDI, SclPackage.SDI__PARENT_SDI);
+		}
+		return subSDI;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubSDI() {
-        if (subSDI != null) ((InternalEList.Unsettable<?>)subSDI).unset();
-    }
+		if (subSDI != null) ((InternalEList.Unsettable<?>)subSDI).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSubSDI() {
-        return subSDI != null && ((InternalEList.Unsettable<?>)subSDI).isSet();
-    }
+		return subSDI != null && ((InternalEList.Unsettable<?>)subSDI).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SDI getParentSDI() {
-        if (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI) return null;
-        return (SDI)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI) return null;
+		return (SDI)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetParentSDI( SDI newParentSDI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newParentSDI, SclPackage.SDI__PARENT_SDI, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newParentSDI, SclPackage.SDI__PARENT_SDI, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setParentSDI( SDI newParentSDI ) {
-        if (newParentSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI && newParentSDI != null)) {
-            if (EcoreUtil.isAncestor(this, newParentSDI))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentSDI != null)
-                msgs = ((InternalEObject)newParentSDI).eInverseAdd(this, SclPackage.SDI__SUB_SDI, SDI.class, msgs);
-            msgs = basicSetParentSDI(newParentSDI, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__PARENT_SDI, newParentSDI, newParentSDI));
-    }
+		if (newParentSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI && newParentSDI != null)) {
+			if (EcoreUtil.isAncestor(this, newParentSDI))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentSDI != null)
+				msgs = ((InternalEObject)newParentSDI).eInverseAdd(this, SclPackage.SDI__SUB_SDI, SDI.class, msgs);
+			msgs = basicSetParentSDI(newParentSDI, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__PARENT_SDI, newParentSDI, newParentSDI));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateSDI_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SDI name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateSDI_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_SDI_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in SDI (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSDI_name_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getSDI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getSDI__ValidateSDI_name_required__DiagnosticChain_Map(),
+				 VALIDATE_SDI_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.SDI__VALIDATE_SDI_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateSDI_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SDI name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateSDI_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_SDI_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be \\'SIUnit\\' or begin with a lower-case letter in SDI (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.name.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null implies self.validSclAttributeNameEnum( name )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSDI_name_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getSDI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getSDI__ValidateSDI_name_valid__DiagnosticChain_Map(),
+				 VALIDATE_SDI_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.SDI__VALIDATE_SDI_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateSDI_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate SDI ix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateSDI_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_SDI_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ix attribute shall be valid in SDI (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.ix <> null implies self.ix >= 0\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSDI_ix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getSDI(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getSDI__ValidateSDI_ix_valid__DiagnosticChain_Map(),
+				 VALIDATE_SDI_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.SDI__VALIDATE_SDI_IX_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SDI__DAI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDAI()).basicAdd(otherEnd, msgs);
-            case SclPackage.SDI__DOI:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOI((DOI)otherEnd, msgs);
-            case SclPackage.SDI__SUB_SDI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubSDI()).basicAdd(otherEnd, msgs);
-            case SclPackage.SDI__PARENT_SDI:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentSDI((SDI)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__DAI:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDAI()).basicAdd(otherEnd, msgs);
+			case SclPackage.SDI__DOI:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDOI((DOI)otherEnd, msgs);
+			case SclPackage.SDI__SUB_SDI:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubSDI()).basicAdd(otherEnd, msgs);
+			case SclPackage.SDI__PARENT_SDI:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentSDI((SDI)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SDI__DAI:
-                return ((InternalEList<?>)getDAI()).basicRemove(otherEnd, msgs);
-            case SclPackage.SDI__DOI:
-                return basicSetDOI(null, msgs);
-            case SclPackage.SDI__SUB_SDI:
-                return ((InternalEList<?>)getSubSDI()).basicRemove(otherEnd, msgs);
-            case SclPackage.SDI__PARENT_SDI:
-                return basicSetParentSDI(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__DAI:
+				return ((InternalEList<?>)getDAI()).basicRemove(otherEnd, msgs);
+			case SclPackage.SDI__DOI:
+				return basicSetDOI(null, msgs);
+			case SclPackage.SDI__SUB_SDI:
+				return ((InternalEList<?>)getSubSDI()).basicRemove(otherEnd, msgs);
+			case SclPackage.SDI__PARENT_SDI:
+				return basicSetParentSDI(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SDI__DOI:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DOI__SDI, DOI.class, msgs);
-            case SclPackage.SDI__PARENT_SDI:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SDI__SUB_SDI, SDI.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.SDI__DOI:
+				return eInternalContainer().eInverseRemove(this, SclPackage.DOI__SDI, DOI.class, msgs);
+			case SclPackage.SDI__PARENT_SDI:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SDI__SUB_SDI, SDI.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SDI__IX:
-                return getIx();
-            case SclPackage.SDI__SADDR:
-                return getSAddr();
-            case SclPackage.SDI__DAI:
-                return getDAI();
-            case SclPackage.SDI__DOI:
-                return getDOI();
-            case SclPackage.SDI__SUB_SDI:
-                return getSubSDI();
-            case SclPackage.SDI__PARENT_SDI:
-                return getParentSDI();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__IX:
+				return getIx();
+			case SclPackage.SDI__SADDR:
+				return getSAddr();
+			case SclPackage.SDI__DAI:
+				return getDAI();
+			case SclPackage.SDI__DOI:
+				return getDOI();
+			case SclPackage.SDI__SUB_SDI:
+				return getSubSDI();
+			case SclPackage.SDI__PARENT_SDI:
+				return getParentSDI();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SDI__IX:
-                setIx((Integer)newValue);
-                return;
-            case SclPackage.SDI__SADDR:
-                setSAddr((String)newValue);
-                return;
-            case SclPackage.SDI__DAI:
-                getDAI().clear();
-                getDAI().addAll((Collection<? extends DAI>)newValue);
-                return;
-            case SclPackage.SDI__DOI:
-                setDOI((DOI)newValue);
-                return;
-            case SclPackage.SDI__SUB_SDI:
-                getSubSDI().clear();
-                getSubSDI().addAll((Collection<? extends SDI>)newValue);
-                return;
-            case SclPackage.SDI__PARENT_SDI:
-                setParentSDI((SDI)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__IX:
+				setIx((Integer)newValue);
+				return;
+			case SclPackage.SDI__SADDR:
+				setSAddr((String)newValue);
+				return;
+			case SclPackage.SDI__DAI:
+				getDAI().clear();
+				getDAI().addAll((Collection<? extends DAI>)newValue);
+				return;
+			case SclPackage.SDI__DOI:
+				setDOI((DOI)newValue);
+				return;
+			case SclPackage.SDI__SUB_SDI:
+				getSubSDI().clear();
+				getSubSDI().addAll((Collection<? extends SDI>)newValue);
+				return;
+			case SclPackage.SDI__PARENT_SDI:
+				setParentSDI((SDI)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SDI__IX:
-                unsetIx();
-                return;
-            case SclPackage.SDI__SADDR:
-                unsetSAddr();
-                return;
-            case SclPackage.SDI__DAI:
-                unsetDAI();
-                return;
-            case SclPackage.SDI__DOI:
-                setDOI((DOI)null);
-                return;
-            case SclPackage.SDI__SUB_SDI:
-                unsetSubSDI();
-                return;
-            case SclPackage.SDI__PARENT_SDI:
-                setParentSDI((SDI)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__IX:
+				unsetIx();
+				return;
+			case SclPackage.SDI__SADDR:
+				unsetSAddr();
+				return;
+			case SclPackage.SDI__DAI:
+				unsetDAI();
+				return;
+			case SclPackage.SDI__DOI:
+				setDOI((DOI)null);
+				return;
+			case SclPackage.SDI__SUB_SDI:
+				unsetSubSDI();
+				return;
+			case SclPackage.SDI__PARENT_SDI:
+				setParentSDI((SDI)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SDI__IX:
-                return isSetIx();
-            case SclPackage.SDI__SADDR:
-                return isSetSAddr();
-            case SclPackage.SDI__DAI:
-                return isSetDAI();
-            case SclPackage.SDI__DOI:
-                return getDOI() != null;
-            case SclPackage.SDI__SUB_SDI:
-                return isSetSubSDI();
-            case SclPackage.SDI__PARENT_SDI:
-                return getParentSDI() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.SDI__IX:
+				return isSetIx();
+			case SclPackage.SDI__SADDR:
+				return isSetSAddr();
+			case SclPackage.SDI__DAI:
+				return isSetDAI();
+			case SclPackage.SDI__DOI:
+				return getDOI() != null;
+			case SclPackage.SDI__SUB_SDI:
+				return isSetSubSDI();
+			case SclPackage.SDI__PARENT_SDI:
+				return getParentSDI() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.SDI___VALIDATE_SDI_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateSDI_name_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.SDI___VALIDATE_SDI_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateSDI_name_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.SDI___VALIDATE_SDI_IX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateSDI_ix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (ix: ");
-        if (ixESet) result.append(ix); else result.append("<unset>");
-        result.append(", sAddr: ");
-        if (sAddrESet) result.append(sAddr); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ix: ");
+		if (ixESet) result.append(ix); else result.append("<unset>");
+		result.append(", sAddr: ");
+		if (sAddrESet) result.append(sAddr); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //SDIImpl

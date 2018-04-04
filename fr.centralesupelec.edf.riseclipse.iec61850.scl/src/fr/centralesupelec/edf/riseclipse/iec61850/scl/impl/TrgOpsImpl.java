@@ -17,6 +17,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -25,6 +28,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,615 +52,664 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
  */
 public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     /**
-     * The default value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDchg()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDchg()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean DCHG_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDchg()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDchg()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean dchg = DCHG_EDEFAULT;
 
     /**
-     * This is true if the Dchg attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Dchg attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean dchgESet;
 
     /**
-     * The default value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDupd()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDupd()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean DUPD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDupd()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDupd()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean dupd = DUPD_EDEFAULT;
 
     /**
-     * This is true if the Dupd attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Dupd attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean dupdESet;
 
     /**
-     * The default value of the '{@link #getGi() <em>Gi</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getGi() <em>Gi</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getGi()
-     * @generated
-     * @ordered
-     */
+	 * @see #getGi()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean GI_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getGi() <em>Gi</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getGi() <em>Gi</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getGi()
-     * @generated
-     * @ordered
-     */
+	 * @see #getGi()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean gi = GI_EDEFAULT;
 
     /**
-     * This is true if the Gi attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Gi attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean giESet;
 
     /**
-     * The default value of the '{@link #getPeriod() <em>Period</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPeriod() <em>Period</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPeriod()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPeriod()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean PERIOD_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPeriod()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPeriod()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean period = PERIOD_EDEFAULT;
 
     /**
-     * This is true if the Period attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Period attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean periodESet;
 
     /**
-     * The default value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getQchg()
-     * @generated
-     * @ordered
-     */
+	 * @see #getQchg()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Boolean QCHG_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getQchg()
-     * @generated
-     * @ordered
-     */
+	 * @see #getQchg()
+	 * @generated
+	 * @ordered
+	 */
     protected Boolean qchg = QCHG_EDEFAULT;
 
     /**
-     * This is true if the Qchg attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Qchg attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean qchgESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected TrgOpsImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getTrgOps();
-    }
+		return SclPackage.eINSTANCE.getTrgOps();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getDchg() {
-        return dchg;
-    }
+		return dchg;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDchg( Boolean newDchg ) {
-        Boolean oldDchg = dchg;
-        dchg = newDchg;
-        boolean oldDchgESet = dchgESet;
-        dchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DCHG, oldDchg, dchg, !oldDchgESet));
-    }
+		Boolean oldDchg = dchg;
+		dchg = newDchg;
+		boolean oldDchgESet = dchgESet;
+		dchgESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DCHG, oldDchg, dchg, !oldDchgESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDchg() {
-        Boolean oldDchg = dchg;
-        boolean oldDchgESet = dchgESet;
-        dchg = DCHG_EDEFAULT;
-        dchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DCHG, oldDchg, DCHG_EDEFAULT, oldDchgESet));
-    }
+		Boolean oldDchg = dchg;
+		boolean oldDchgESet = dchgESet;
+		dchg = DCHG_EDEFAULT;
+		dchgESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DCHG, oldDchg, DCHG_EDEFAULT, oldDchgESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDchg() {
-        return dchgESet;
-    }
+		return dchgESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getDupd() {
-        return dupd;
-    }
+		return dupd;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDupd( Boolean newDupd ) {
-        Boolean oldDupd = dupd;
-        dupd = newDupd;
-        boolean oldDupdESet = dupdESet;
-        dupdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DUPD, oldDupd, dupd, !oldDupdESet));
-    }
+		Boolean oldDupd = dupd;
+		dupd = newDupd;
+		boolean oldDupdESet = dupdESet;
+		dupdESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DUPD, oldDupd, dupd, !oldDupdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDupd() {
-        Boolean oldDupd = dupd;
-        boolean oldDupdESet = dupdESet;
-        dupd = DUPD_EDEFAULT;
-        dupdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DUPD, oldDupd, DUPD_EDEFAULT, oldDupdESet));
-    }
+		Boolean oldDupd = dupd;
+		boolean oldDupdESet = dupdESet;
+		dupd = DUPD_EDEFAULT;
+		dupdESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DUPD, oldDupd, DUPD_EDEFAULT, oldDupdESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetDupd() {
-        return dupdESet;
-    }
+		return dupdESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getGi() {
-        return gi;
-    }
+		return gi;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setGi( Boolean newGi ) {
-        Boolean oldGi = gi;
-        gi = newGi;
-        boolean oldGiESet = giESet;
-        giESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__GI, oldGi, gi, !oldGiESet));
-    }
+		Boolean oldGi = gi;
+		gi = newGi;
+		boolean oldGiESet = giESet;
+		giESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__GI, oldGi, gi, !oldGiESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetGi() {
-        Boolean oldGi = gi;
-        boolean oldGiESet = giESet;
-        gi = GI_EDEFAULT;
-        giESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__GI, oldGi, GI_EDEFAULT, oldGiESet));
-    }
+		Boolean oldGi = gi;
+		boolean oldGiESet = giESet;
+		gi = GI_EDEFAULT;
+		giESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__GI, oldGi, GI_EDEFAULT, oldGiESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetGi() {
-        return giESet;
-    }
+		return giESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getPeriod() {
-        return period;
-    }
+		return period;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPeriod( Boolean newPeriod ) {
-        Boolean oldPeriod = period;
-        period = newPeriod;
-        boolean oldPeriodESet = periodESet;
-        periodESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__PERIOD, oldPeriod, period, !oldPeriodESet));
-    }
+		Boolean oldPeriod = period;
+		period = newPeriod;
+		boolean oldPeriodESet = periodESet;
+		periodESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__PERIOD, oldPeriod, period, !oldPeriodESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPeriod() {
-        Boolean oldPeriod = period;
-        boolean oldPeriodESet = periodESet;
-        period = PERIOD_EDEFAULT;
-        periodESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__PERIOD, oldPeriod, PERIOD_EDEFAULT, oldPeriodESet));
-    }
+		Boolean oldPeriod = period;
+		boolean oldPeriodESet = periodESet;
+		period = PERIOD_EDEFAULT;
+		periodESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__PERIOD, oldPeriod, PERIOD_EDEFAULT, oldPeriodESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPeriod() {
-        return periodESet;
-    }
+		return periodESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Boolean getQchg() {
-        return qchg;
-    }
+		return qchg;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setQchg( Boolean newQchg ) {
-        Boolean oldQchg = qchg;
-        qchg = newQchg;
-        boolean oldQchgESet = qchgESet;
-        qchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__QCHG, oldQchg, qchg, !oldQchgESet));
-    }
+		Boolean oldQchg = qchg;
+		qchg = newQchg;
+		boolean oldQchgESet = qchgESet;
+		qchgESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__QCHG, oldQchg, qchg, !oldQchgESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetQchg() {
-        Boolean oldQchg = qchg;
-        boolean oldQchgESet = qchgESet;
-        qchg = QCHG_EDEFAULT;
-        qchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__QCHG, oldQchg, QCHG_EDEFAULT, oldQchgESet));
-    }
+		Boolean oldQchg = qchg;
+		boolean oldQchgESet = qchgESet;
+		qchg = QCHG_EDEFAULT;
+		qchgESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__QCHG, oldQchg, QCHG_EDEFAULT, oldQchgESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetQchg() {
-        return qchgESet;
-    }
+		return qchgESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public ControlWithTriggerOpt getControlWithTriggerOpt() {
-        if (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT) return null;
-        return (ControlWithTriggerOpt)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT) return null;
+		return (ControlWithTriggerOpt)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetControlWithTriggerOpt( ControlWithTriggerOpt newControlWithTriggerOpt,
             NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newControlWithTriggerOpt, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newControlWithTriggerOpt, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setControlWithTriggerOpt( ControlWithTriggerOpt newControlWithTriggerOpt ) {
-        if (newControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT && newControlWithTriggerOpt != null)) {
-            if (EcoreUtil.isAncestor(this, newControlWithTriggerOpt))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newControlWithTriggerOpt != null)
-                msgs = ((InternalEObject)newControlWithTriggerOpt).eInverseAdd(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
-            msgs = basicSetControlWithTriggerOpt(newControlWithTriggerOpt, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, newControlWithTriggerOpt, newControlWithTriggerOpt));
-    }
+		if (newControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT && newControlWithTriggerOpt != null)) {
+			if (EcoreUtil.isAncestor(this, newControlWithTriggerOpt))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newControlWithTriggerOpt != null)
+				msgs = ((InternalEObject)newControlWithTriggerOpt).eInverseAdd(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
+			msgs = basicSetControlWithTriggerOpt(newControlWithTriggerOpt, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, newControlWithTriggerOpt, newControlWithTriggerOpt));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateTrgOps_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Trg Ops nothing</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateTrgOps_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_TRG_OPS_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        true\n" +
+		"\n" +
+		"\n" +
+		"";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTrgOps_nothing(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getTrgOps(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getTrgOps__ValidateTrgOps_nothing__DiagnosticChain_Map(),
+				 VALIDATE_TRG_OPS_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.TRG_OPS__VALIDATE_TRG_OPS_NOTHING);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetControlWithTriggerOpt((ControlWithTriggerOpt)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetControlWithTriggerOpt((ControlWithTriggerOpt)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return basicSetControlWithTriggerOpt(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				return basicSetControlWithTriggerOpt(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                return getDchg();
-            case SclPackage.TRG_OPS__DUPD:
-                return getDupd();
-            case SclPackage.TRG_OPS__GI:
-                return getGi();
-            case SclPackage.TRG_OPS__PERIOD:
-                return getPeriod();
-            case SclPackage.TRG_OPS__QCHG:
-                return getQchg();
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return getControlWithTriggerOpt();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__DCHG:
+				return getDchg();
+			case SclPackage.TRG_OPS__DUPD:
+				return getDupd();
+			case SclPackage.TRG_OPS__GI:
+				return getGi();
+			case SclPackage.TRG_OPS__PERIOD:
+				return getPeriod();
+			case SclPackage.TRG_OPS__QCHG:
+				return getQchg();
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				return getControlWithTriggerOpt();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                setDchg((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__DUPD:
-                setDupd((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__GI:
-                setGi((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__PERIOD:
-                setPeriod((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__QCHG:
-                setQchg((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                setControlWithTriggerOpt((ControlWithTriggerOpt)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__DCHG:
+				setDchg((Boolean)newValue);
+				return;
+			case SclPackage.TRG_OPS__DUPD:
+				setDupd((Boolean)newValue);
+				return;
+			case SclPackage.TRG_OPS__GI:
+				setGi((Boolean)newValue);
+				return;
+			case SclPackage.TRG_OPS__PERIOD:
+				setPeriod((Boolean)newValue);
+				return;
+			case SclPackage.TRG_OPS__QCHG:
+				setQchg((Boolean)newValue);
+				return;
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				setControlWithTriggerOpt((ControlWithTriggerOpt)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                unsetDchg();
-                return;
-            case SclPackage.TRG_OPS__DUPD:
-                unsetDupd();
-                return;
-            case SclPackage.TRG_OPS__GI:
-                unsetGi();
-                return;
-            case SclPackage.TRG_OPS__PERIOD:
-                unsetPeriod();
-                return;
-            case SclPackage.TRG_OPS__QCHG:
-                unsetQchg();
-                return;
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                setControlWithTriggerOpt((ControlWithTriggerOpt)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__DCHG:
+				unsetDchg();
+				return;
+			case SclPackage.TRG_OPS__DUPD:
+				unsetDupd();
+				return;
+			case SclPackage.TRG_OPS__GI:
+				unsetGi();
+				return;
+			case SclPackage.TRG_OPS__PERIOD:
+				unsetPeriod();
+				return;
+			case SclPackage.TRG_OPS__QCHG:
+				unsetQchg();
+				return;
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				setControlWithTriggerOpt((ControlWithTriggerOpt)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                return isSetDchg();
-            case SclPackage.TRG_OPS__DUPD:
-                return isSetDupd();
-            case SclPackage.TRG_OPS__GI:
-                return isSetGi();
-            case SclPackage.TRG_OPS__PERIOD:
-                return isSetPeriod();
-            case SclPackage.TRG_OPS__QCHG:
-                return isSetQchg();
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return getControlWithTriggerOpt() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.TRG_OPS__DCHG:
+				return isSetDchg();
+			case SclPackage.TRG_OPS__DUPD:
+				return isSetDupd();
+			case SclPackage.TRG_OPS__GI:
+				return isSetGi();
+			case SclPackage.TRG_OPS__PERIOD:
+				return isSetPeriod();
+			case SclPackage.TRG_OPS__QCHG:
+				return isSetQchg();
+			case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+				return getControlWithTriggerOpt() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.TRG_OPS___VALIDATE_TRG_OPS_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateTrgOps_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (dchg: ");
-        if (dchgESet) result.append(dchg); else result.append("<unset>");
-        result.append(", dupd: ");
-        if (dupdESet) result.append(dupd); else result.append("<unset>");
-        result.append(", gi: ");
-        if (giESet) result.append(gi); else result.append("<unset>");
-        result.append(", period: ");
-        if (periodESet) result.append(period); else result.append("<unset>");
-        result.append(", qchg: ");
-        if (qchgESet) result.append(qchg); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (dchg: ");
+		if (dchgESet) result.append(dchg); else result.append("<unset>");
+		result.append(", dupd: ");
+		if (dupdESet) result.append(dupd); else result.append("<unset>");
+		result.append(", gi: ");
+		if (giESet) result.append(gi); else result.append("<unset>");
+		result.append(", period: ");
+		if (periodESet) result.append(period); else result.append("<unset>");
+		result.append(", qchg: ");
+		if (qchgESet) result.append(qchg); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
 } //TrgOpsImpl

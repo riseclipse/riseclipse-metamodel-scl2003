@@ -17,14 +17,20 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -47,100 +53,100 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class ControlImpl extends UnNamingImpl implements Control {
     /**
-     * The default value of the '{@link #getDatSet() <em>Dat Set</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDatSet() <em>Dat Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDatSet()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDatSet()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DAT_SET_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDatSet() <em>Dat Set</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDatSet() <em>Dat Set</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDatSet()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDatSet()
+	 * @generated
+	 * @ordered
+	 */
     protected String datSet = DAT_SET_EDEFAULT;
 
     /**
-     * This is true if the Dat Set attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Dat Set attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean datSetESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataSet() <em>Refers To Data Set</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDataSet() <em>Refers To Data Set</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataSet()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDataSet()
+	 * @generated
+	 * @ordered
+	 */
     protected DataSet refersToDataSet;
 
     /**
-     * This is true if the Refers To Data Set reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Data Set reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDataSetESet;
 
     /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected String name = NAME_EDEFAULT;
 
     /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean nameESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ControlImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getControl();
-    }
+		return SclPackage.eINSTANCE.getControl();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -155,32 +161,32 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDatSet( String newDatSet ) {
-        String oldDatSet = datSet;
-        datSet = newDatSet;
-        boolean oldDatSetESet = datSetESet;
-        datSetESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__DAT_SET, oldDatSet, datSet, !oldDatSetESet));
-    }
+		String oldDatSet = datSet;
+		datSet = newDatSet;
+		boolean oldDatSetESet = datSetESet;
+		datSetESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__DAT_SET, oldDatSet, datSet, !oldDatSetESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDatSet() {
-        String oldDatSet = datSet;
-        boolean oldDatSetESet = datSetESet;
-        datSet = DAT_SET_EDEFAULT;
-        datSetESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__DAT_SET, oldDatSet, DAT_SET_EDEFAULT, oldDatSetESet));
-    }
+		String oldDatSet = datSet;
+		boolean oldDatSetESet = datSetESet;
+		datSet = DAT_SET_EDEFAULT;
+		datSetESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__DAT_SET, oldDatSet, DAT_SET_EDEFAULT, oldDatSetESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -192,271 +198,403 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataSet getRefersToDataSet() {
-        return refersToDataSet;
-    }
+		return refersToDataSet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDataSet(DataSet newRefersToDataSet, NotificationChain msgs) {
-        DataSet oldRefersToDataSet = refersToDataSet;
-        refersToDataSet = newRefersToDataSet;
-        boolean oldRefersToDataSetESet = refersToDataSetESet;
-        refersToDataSetESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, newRefersToDataSet, !oldRefersToDataSetESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataSet oldRefersToDataSet = refersToDataSet;
+		refersToDataSet = newRefersToDataSet;
+		boolean oldRefersToDataSetESet = refersToDataSetESet;
+		refersToDataSetESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, newRefersToDataSet, !oldRefersToDataSetESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDataSet(DataSet newRefersToDataSet) {
-        if (newRefersToDataSet != refersToDataSet) {
-            NotificationChain msgs = null;
-            if (refersToDataSet != null)
-                msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
-            if (newRefersToDataSet != null)
-                msgs = ((InternalEObject)newRefersToDataSet).eInverseAdd(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
-            msgs = basicSetRefersToDataSet(newRefersToDataSet, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataSetESet = refersToDataSetESet;
-            refersToDataSetESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__REFERS_TO_DATA_SET, newRefersToDataSet, newRefersToDataSet, !oldRefersToDataSetESet));
-        }
-    }
+		if (newRefersToDataSet != refersToDataSet) {
+			NotificationChain msgs = null;
+			if (refersToDataSet != null)
+				msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
+			if (newRefersToDataSet != null)
+				msgs = ((InternalEObject)newRefersToDataSet).eInverseAdd(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
+			msgs = basicSetRefersToDataSet(newRefersToDataSet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataSetESet = refersToDataSetESet;
+			refersToDataSetESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__REFERS_TO_DATA_SET, newRefersToDataSet, newRefersToDataSet, !oldRefersToDataSetESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDataSet(NotificationChain msgs) {
-        DataSet oldRefersToDataSet = refersToDataSet;
-        refersToDataSet = null;
-        boolean oldRefersToDataSetESet = refersToDataSetESet;
-        refersToDataSetESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, null, oldRefersToDataSetESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataSet oldRefersToDataSet = refersToDataSet;
+		refersToDataSet = null;
+		boolean oldRefersToDataSetESet = refersToDataSetESet;
+		refersToDataSetESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__REFERS_TO_DATA_SET, oldRefersToDataSet, null, oldRefersToDataSetESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDataSet() {
-        if (refersToDataSet != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
-            msgs = basicUnsetRefersToDataSet(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataSetESet = refersToDataSetESet;
-            refersToDataSetESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__REFERS_TO_DATA_SET, null, null, oldRefersToDataSetESet));
-        }
-    }
+		if (refersToDataSet != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
+			msgs = basicUnsetRefersToDataSet(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataSetESet = refersToDataSetESet;
+			refersToDataSetESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__REFERS_TO_DATA_SET, null, null, oldRefersToDataSetESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDataSet() {
-        return refersToDataSetESet;
-    }
+		return refersToDataSetESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getName() {
-        return name;
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        boolean oldNameESet = nameESet;
-        nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__NAME, oldName, name, !oldNameESet));
-    }
+		String oldName = name;
+		name = newName;
+		boolean oldNameESet = nameESet;
+		nameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL__NAME, oldName, name, !oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetName() {
-        String oldName = name;
-        boolean oldNameESet = nameESet;
-        name = NAME_EDEFAULT;
-        nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__NAME, oldName, NAME_EDEFAULT, oldNameESet));
-    }
+		String oldName = name;
+		boolean oldNameESet = nameESet;
+		name = NAME_EDEFAULT;
+		nameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetName() {
-        return nameESet;
-    }
+		return nameESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateControl_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Control name required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateControl_name_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTROL_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be present in Control (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControl_name_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getControl__ValidateControl_name_required__DiagnosticChain_Map(),
+				 VALIDATE_CONTROL_NAME_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONTROL__VALIDATE_CONTROL_NAME_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateControl_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Control name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateControl_name_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTROL_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'name attribute shall be valid in Control (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.name.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.name <> null implies self.validSclCBName( name )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControl_name_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getControl__ValidateControl_name_valid__DiagnosticChain_Map(),
+				 VALIDATE_CONTROL_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONTROL__VALIDATE_CONTROL_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateControl_datSet_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Control dat Set valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateControl_datSet_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTROL_DAT_SET_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'datSet attribute shall be valid in Control (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.datSet.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.datSet <> null implies self.validSclDataSetName( datSet )\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControl_datSet_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getControl(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getControl__ValidateControl_datSet_valid__DiagnosticChain_Map(),
+				 VALIDATE_CONTROL_DAT_SET_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONTROL__VALIDATE_CONTROL_DAT_SET_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                if (refersToDataSet != null)
-                    msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
-                return basicSetRefersToDataSet((DataSet)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				if (refersToDataSet != null)
+					msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
+				return basicSetRefersToDataSet((DataSet)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                return basicUnsetRefersToDataSet(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				return basicUnsetRefersToDataSet(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__DAT_SET:
-                return getDatSet();
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                return getRefersToDataSet();
-            case SclPackage.CONTROL__NAME:
-                return getName();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__DAT_SET:
+				return getDatSet();
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				return getRefersToDataSet();
+			case SclPackage.CONTROL__NAME:
+				return getName();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__DAT_SET:
-                setDatSet((String)newValue);
-                return;
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                setRefersToDataSet((DataSet)newValue);
-                return;
-            case SclPackage.CONTROL__NAME:
-                setName((String)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__DAT_SET:
+				setDatSet((String)newValue);
+				return;
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				setRefersToDataSet((DataSet)newValue);
+				return;
+			case SclPackage.CONTROL__NAME:
+				setName((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__DAT_SET:
-                unsetDatSet();
-                return;
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                unsetRefersToDataSet();
-                return;
-            case SclPackage.CONTROL__NAME:
-                unsetName();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__DAT_SET:
+				unsetDatSet();
+				return;
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				unsetRefersToDataSet();
+				return;
+			case SclPackage.CONTROL__NAME:
+				unsetName();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL__DAT_SET:
-                return isSetDatSet();
-            case SclPackage.CONTROL__REFERS_TO_DATA_SET:
-                return isSetRefersToDataSet();
-            case SclPackage.CONTROL__NAME:
-                return isSetName();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL__DAT_SET:
+				return isSetDatSet();
+			case SclPackage.CONTROL__REFERS_TO_DATA_SET:
+				return isSetRefersToDataSet();
+			case SclPackage.CONTROL__NAME:
+				return isSetName();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.CONTROL___VALIDATE_CONTROL_NAME_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateControl_name_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.CONTROL___VALIDATE_CONTROL_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateControl_name_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.CONTROL___VALIDATE_CONTROL_DAT_SET_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateControl_datSet_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (datSet: ");
-        if (datSetESet) result.append(datSet); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (datSet: ");
+		if (datSetESet) result.append(datSet); else result.append("<unset>");
+		result.append(", name: ");
+		if (nameESet) result.append(name); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {

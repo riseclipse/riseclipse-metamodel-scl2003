@@ -32,29 +32,29 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 public class SclXMLProcessor extends XMLProcessor {
 
     /**
-     * Public constructor to instantiate the helper.
-     * <!-- begin-user-doc -->
+	 * Public constructor to instantiate the helper.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SclXMLProcessor() {
-        super((EPackage.Registry.INSTANCE));
-        SclPackage.eINSTANCE.eClass();
-    }
+		super((EPackage.Registry.INSTANCE));
+		SclPackage.eINSTANCE.eClass();
+	}
 
     /**
-     * Register for "*" and "xml" file extensions the SclResourceFactoryImpl factory.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
+	 * Register for "*" and "xml" file extensions the SclResourceFactoryImpl factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected Map<String, Resource.Factory> getRegistrations() {
-        if (registrations == null) {
-            super.getRegistrations();
-            registrations.put(XML_EXTENSION, new SclResourceFactoryImpl());
-            registrations.put(STAR_EXTENSION, new SclResourceFactoryImpl());
-        }
-        return registrations;
-    }
+		if (registrations == null) {
+			super.getRegistrations();
+			registrations.put(XML_EXTENSION, new SclResourceFactoryImpl());
+			registrations.put(STAR_EXTENSION, new SclResourceFactoryImpl());
+		}
+		return registrations;
+	}
 
 } // SclXMLProcessor

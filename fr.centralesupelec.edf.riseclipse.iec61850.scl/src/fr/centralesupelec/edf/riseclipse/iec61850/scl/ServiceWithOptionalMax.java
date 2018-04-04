@@ -15,6 +15,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -34,56 +37,65 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface ServiceWithOptionalMax extends SclObject {
     /**
-     * Returns the value of the '<em><b>Max</b></em>' attribute.
-     * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Max</em>' attribute isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Max</em>' attribute.
-     * @see #isSetMax()
-     * @see #unsetMax()
-     * @see #setMax(Integer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceWithOptionalMax_Max()
-     * @model unsettable="true"
-     * @generated
-     */
+	 * @return the value of the '<em>Max</em>' attribute.
+	 * @see #isSetMax()
+	 * @see #unsetMax()
+	 * @see #setMax(Integer)
+	 * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceWithOptionalMax_Max()
+	 * @model unsettable="true"
+	 * @generated
+	 */
     Integer getMax();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Max</em>' attribute.
-     * @see #isSetMax()
-     * @see #unsetMax()
-     * @see #getMax()
-     * @generated
-     */
+	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * @see #isSetMax()
+	 * @see #unsetMax()
+	 * @see #getMax()
+	 * @generated
+	 */
     void setMax(Integer value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetMax()
-     * @see #getMax()
-     * @see #setMax(Integer)
-     * @generated
-     */
+	 * @see #isSetMax()
+	 * @see #getMax()
+	 * @see #setMax(Integer)
+	 * @generated
+	 */
     void unsetMax();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute is set.
-     * <!-- begin-user-doc -->
+	 * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax#getMax <em>Max</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Max</em>' attribute is set.
-     * @see #unsetMax()
-     * @see #getMax()
-     * @see #setMax(Integer)
-     * @generated
-     */
+	 * @return whether the value of the '<em>Max</em>' attribute is set.
+	 * @see #unsetMax()
+	 * @see #getMax()
+	 * @see #setMax(Integer)
+	 * @generated
+	 */
     boolean isSetMax();
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='ServiceWithOptionalMax_max_valid'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='Tuple {\n\tmessage : String = \'max attribute shall be valid in ServiceWithOptionalMax (line \' + self.lineNumber.toString() + \'). \'\n          + \'Current value is \' + self.max.toString()\n        ,\n\tstatus : Boolean = \n        self.max &lt;&gt; null implies self.max &gt;= 0\n\n\n\n}.status'"
+	 * @generated
+	 */
+	boolean validateServiceWithOptionalMax_max_valid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ServiceWithOptionalMax

@@ -16,8 +16,11 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -30,6 +33,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,222 +52,310 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
  */
 public class CommunicationImpl extends UnNamingImpl implements Communication {
     /**
-     * The cached value of the '{@link #getSubNetwork() <em>Sub Network</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getSubNetwork() <em>Sub Network</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getSubNetwork()
-     * @generated
-     * @ordered
-     */
+	 * @see #getSubNetwork()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<SubNetwork> subNetwork;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected CommunicationImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getCommunication();
-    }
+		return SclPackage.eINSTANCE.getCommunication();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<SubNetwork> getSubNetwork() {
-        if (subNetwork == null) {
-            subNetwork = new EObjectContainmentWithInverseEList.Unsettable<SubNetwork>(SubNetwork.class, this, SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__COMMUNICATION);
-        }
-        return subNetwork;
-    }
+		if (subNetwork == null) {
+			subNetwork = new EObjectContainmentWithInverseEList.Unsettable<SubNetwork>(SubNetwork.class, this, SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__COMMUNICATION);
+		}
+		return subNetwork;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetSubNetwork() {
-        if (subNetwork != null) ((InternalEList.Unsettable<?>)subNetwork).unset();
-    }
+		if (subNetwork != null) ((InternalEList.Unsettable<?>)subNetwork).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetSubNetwork() {
-        return subNetwork != null && ((InternalEList.Unsettable<?>)subNetwork).isSet();
-    }
+		return subNetwork != null && ((InternalEList.Unsettable<?>)subNetwork).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL) return null;
-        return (SCL)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL) return null;
+		return (SCL)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.COMMUNICATION__SCL, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.COMMUNICATION__SCL, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.COMMUNICATION__SCL, newSCL, newSCL));
-    }
+		if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL && newSCL != null)) {
+			if (EcoreUtil.isAncestor(this, newSCL))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSCL != null)
+				msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
+			msgs = basicSetSCL(newSCL, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.COMMUNICATION__SCL, newSCL, newSCL));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateCommunication_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Communication nothing</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCommunication_nothing(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_COMMUNICATION_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        true\n" +
+		"\n" +
+		"\n" +
+		"";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommunication_nothing(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getCommunication(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getCommunication__ValidateCommunication_nothing__DiagnosticChain_Map(),
+				 VALIDATE_COMMUNICATION_NOTHING_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.COMMUNICATION__VALIDATE_COMMUNICATION_NOTHING);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateCommunication_at_least_one_SubNetwork_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Communication at least one Sub Network required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateCommunication_at_least_one_SubNetwork_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_COMMUNICATION_AT_LEAST_ONE_SUB_NETWORK_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'Communication shall contain at least one SubNetwork (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.SubNetwork->notEmpty()\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCommunication_at_least_one_SubNetwork_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getCommunication(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getCommunication__ValidateCommunication_at_least_one_SubNetwork_required__DiagnosticChain_Map(),
+				 VALIDATE_COMMUNICATION_AT_LEAST_ONE_SUB_NETWORK_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.COMMUNICATION__VALIDATE_COMMUNICATION_AT_LEAST_ONE_SUB_NETWORK_REQUIRED);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubNetwork()).basicAdd(otherEnd, msgs);
-            case SclPackage.COMMUNICATION__SCL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubNetwork()).basicAdd(otherEnd, msgs);
+			case SclPackage.COMMUNICATION__SCL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSCL((SCL)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return ((InternalEList<?>)getSubNetwork()).basicRemove(otherEnd, msgs);
-            case SclPackage.COMMUNICATION__SCL:
-                return basicSetSCL(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				return ((InternalEList<?>)getSubNetwork()).basicRemove(otherEnd, msgs);
+			case SclPackage.COMMUNICATION__SCL:
+				return basicSetSCL(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.COMMUNICATION__SCL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.COMMUNICATION__SCL:
+				return eInternalContainer().eInverseRemove(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return getSubNetwork();
-            case SclPackage.COMMUNICATION__SCL:
-                return getSCL();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				return getSubNetwork();
+			case SclPackage.COMMUNICATION__SCL:
+				return getSCL();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                getSubNetwork().clear();
-                getSubNetwork().addAll((Collection<? extends SubNetwork>)newValue);
-                return;
-            case SclPackage.COMMUNICATION__SCL:
-                setSCL((SCL)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				getSubNetwork().clear();
+				getSubNetwork().addAll((Collection<? extends SubNetwork>)newValue);
+				return;
+			case SclPackage.COMMUNICATION__SCL:
+				setSCL((SCL)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                unsetSubNetwork();
-                return;
-            case SclPackage.COMMUNICATION__SCL:
-                setSCL((SCL)null);
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				unsetSubNetwork();
+				return;
+			case SclPackage.COMMUNICATION__SCL:
+				setSCL((SCL)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return isSetSubNetwork();
-            case SclPackage.COMMUNICATION__SCL:
-                return getSCL() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.COMMUNICATION__SUB_NETWORK:
+				return isSetSubNetwork();
+			case SclPackage.COMMUNICATION__SCL:
+				return getSCL() != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.COMMUNICATION___VALIDATE_COMMUNICATION_NOTHING__DIAGNOSTICCHAIN_MAP:
+				return validateCommunication_nothing((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.COMMUNICATION___VALIDATE_COMMUNICATION_AT_LEAST_ONE_SUB_NETWORK_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateCommunication_at_least_one_SubNetwork_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
 } //CommunicationImpl

@@ -17,8 +17,11 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -34,6 +37,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,438 +58,492 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  */
 public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIEDName {
     /**
-     * The default value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfRev()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfRev()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer CONF_REV_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConfRev() <em>Conf Rev</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getConfRev()
-     * @generated
-     * @ordered
-     */
+	 * @see #getConfRev()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer confRev = CONF_REV_EDEFAULT;
 
     /**
-     * This is true if the Conf Rev attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Conf Rev attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean confRevESet;
 
     /**
-     * The cached value of the '{@link #getIEDName() <em>IED Name</em>}' containment reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIEDName() <em>IED Name</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIEDName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIEDName()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<IEDName> iedName;
 
     /**
-     * The cached value of the '{@link #getReferredByControlBlock() <em>Referred By Control Block</em>}' reference list.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getReferredByControlBlock() <em>Referred By Control Block</em>}' reference list.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReferredByControlBlock()
-     * @generated
-     * @ordered
-     */
+	 * @see #getReferredByControlBlock()
+	 * @generated
+	 * @ordered
+	 */
     protected EList<ControlBlock> referredByControlBlock;
 
     /**
-     * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' containment reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' containment reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getProtocol()
-     * @generated
-     * @ordered
-     */
+	 * @see #getProtocol()
+	 * @generated
+	 * @ordered
+	 */
     protected Protocol protocol;
 
     /**
-     * This is true if the Protocol containment reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Protocol containment reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean protocolESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected ControlWithIEDNameImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getControlWithIEDName();
-    }
+		return SclPackage.eINSTANCE.getControlWithIEDName();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getConfRev() {
-        return confRev;
-    }
+		return confRev;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setConfRev( Integer newConfRev ) {
-        Integer oldConfRev = confRev;
-        confRev = newConfRev;
-        boolean oldConfRevESet = confRevESet;
-        confRevESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, confRev, !oldConfRevESet));
-    }
+		Integer oldConfRev = confRev;
+		confRev = newConfRev;
+		boolean oldConfRevESet = confRevESet;
+		confRevESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, confRev, !oldConfRevESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetConfRev() {
-        Integer oldConfRev = confRev;
-        boolean oldConfRevESet = confRevESet;
-        confRev = CONF_REV_EDEFAULT;
-        confRevESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet));
-    }
+		Integer oldConfRev = confRev;
+		boolean oldConfRevESet = confRevESet;
+		confRev = CONF_REV_EDEFAULT;
+		confRevESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetConfRev() {
-        return confRevESet;
-    }
+		return confRevESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<IEDName> getIEDName() {
-        if (iedName == null) {
-            iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME);
-        }
-        return iedName;
-    }
+		if (iedName == null) {
+			iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME);
+		}
+		return iedName;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIEDName() {
-        if (iedName != null) ((InternalEList.Unsettable<?>)iedName).unset();
-    }
+		if (iedName != null) ((InternalEList.Unsettable<?>)iedName).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIEDName() {
-        return iedName != null && ((InternalEList.Unsettable<?>)iedName).isSet();
-    }
+		return iedName != null && ((InternalEList.Unsettable<?>)iedName).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public EList<ControlBlock> getReferredByControlBlock() {
-        if (referredByControlBlock == null) {
-            referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME);
-        }
-        return referredByControlBlock;
-    }
+		if (referredByControlBlock == null) {
+			referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME);
+		}
+		return referredByControlBlock;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetReferredByControlBlock() {
-        if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
-    }
+		if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetReferredByControlBlock() {
-        return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
-    }
+		return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Protocol getProtocol() {
-        return protocol;
-    }
+		return protocol;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetProtocol( Protocol newProtocol, NotificationChain msgs ) {
-        Protocol oldProtocol = protocol;
-        protocol = newProtocol;
-        boolean oldProtocolESet = protocolESet;
-        protocolESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, newProtocol, !oldProtocolESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Protocol oldProtocol = protocol;
+		protocol = newProtocol;
+		boolean oldProtocolESet = protocolESet;
+		protocolESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, newProtocol, !oldProtocolESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setProtocol( Protocol newProtocol ) {
-        if (newProtocol != protocol) {
-            NotificationChain msgs = null;
-            if (protocol != null)
-                msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            if (newProtocol != null)
-                msgs = ((InternalEObject)newProtocol).eInverseAdd(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            msgs = basicSetProtocol(newProtocol, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldProtocolESet = protocolESet;
-            protocolESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, newProtocol, newProtocol, !oldProtocolESet));
-        }
-    }
+		if (newProtocol != protocol) {
+			NotificationChain msgs = null;
+			if (protocol != null)
+				msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+			if (newProtocol != null)
+				msgs = ((InternalEObject)newProtocol).eInverseAdd(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+			msgs = basicSetProtocol(newProtocol, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldProtocolESet = protocolESet;
+			protocolESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, newProtocol, newProtocol, !oldProtocolESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetProtocol( NotificationChain msgs ) {
-        Protocol oldProtocol = protocol;
-        protocol = null;
-        boolean oldProtocolESet = protocolESet;
-        protocolESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, null, oldProtocolESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		Protocol oldProtocol = protocol;
+		protocol = null;
+		boolean oldProtocolESet = protocolESet;
+		protocolESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, null, oldProtocolESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetProtocol() {
-        if (protocol != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            msgs = basicUnsetProtocol(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldProtocolESet = protocolESet;
-            protocolESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, null, oldProtocolESet));
-        }
-    }
+		if (protocol != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+			msgs = basicUnsetProtocol(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldProtocolESet = protocolESet;
+			protocolESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, null, oldProtocolESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetProtocol() {
-        return protocolESet;
-    }
+		return protocolESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateControlWithIEDName_confRev_unsignedInt(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate Control With IED Name conf Rev unsigned Int</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateControlWithIEDName_confRev_unsignedInt(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_CONTROL_WITH_IED_NAME_CONF_REV_UNSIGNED_INT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'confRev attribute shall be valid in ControlWithIEDName (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.confRev.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.confRev <> null implies self.confRev >= 0\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateControlWithIEDName_confRev_unsignedInt(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getControlWithIEDName(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getControlWithIEDName__ValidateControlWithIEDName_confRev_unsignedInt__DiagnosticChain_Map(),
+				 VALIDATE_CONTROL_WITH_IED_NAME_CONF_REV_UNSIGNED_INT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.CONTROL_WITH_IED_NAME__VALIDATE_CONTROL_WITH_IED_NAME_CONF_REV_UNSIGNED_INT);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getIEDName()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByControlBlock()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                if (protocol != null)
-                    msgs = ((InternalEObject)protocol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, msgs);
-                return basicSetProtocol((Protocol)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIEDName()).basicAdd(otherEnd, msgs);
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByControlBlock()).basicAdd(otherEnd, msgs);
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				if (protocol != null)
+					msgs = ((InternalEObject)protocol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, msgs);
+				return basicSetProtocol((Protocol)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return ((InternalEList<?>)getIEDName()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<?>)getReferredByControlBlock()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return basicUnsetProtocol(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				return ((InternalEList<?>)getIEDName()).basicRemove(otherEnd, msgs);
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				return ((InternalEList<?>)getReferredByControlBlock()).basicRemove(otherEnd, msgs);
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				return basicUnsetProtocol(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                return getConfRev();
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return getIEDName();
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return getReferredByControlBlock();
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return getProtocol();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+				return getConfRev();
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				return getIEDName();
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				return getReferredByControlBlock();
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				return getProtocol();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                setConfRev((Integer)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                getIEDName().clear();
-                getIEDName().addAll((Collection<? extends IEDName>)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                getReferredByControlBlock().clear();
-                getReferredByControlBlock().addAll((Collection<? extends ControlBlock>)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                setProtocol((Protocol)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+				setConfRev((Integer)newValue);
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				getIEDName().clear();
+				getIEDName().addAll((Collection<? extends IEDName>)newValue);
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				getReferredByControlBlock().clear();
+				getReferredByControlBlock().addAll((Collection<? extends ControlBlock>)newValue);
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				setProtocol((Protocol)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                unsetConfRev();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                unsetIEDName();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                unsetReferredByControlBlock();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                unsetProtocol();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+				unsetConfRev();
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				unsetIEDName();
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				unsetReferredByControlBlock();
+				return;
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				unsetProtocol();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                return isSetConfRev();
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return isSetIEDName();
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return isSetReferredByControlBlock();
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return isSetProtocol();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+				return isSetConfRev();
+			case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+				return isSetIEDName();
+			case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+				return isSetReferredByControlBlock();
+			case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+				return isSetProtocol();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.CONTROL_WITH_IED_NAME___VALIDATE_CONTROL_WITH_IED_NAME_CONF_REV_UNSIGNED_INT__DIAGNOSTICCHAIN_MAP:
+				return validateControlWithIEDName_confRev_unsignedInt((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (confRev: ");
-        if (confRevESet) result.append(confRev); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (confRev: ");
+		if (confRevESet) result.append(confRev); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     public LN0 getLN0() {
         return null;

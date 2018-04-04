@@ -18,6 +18,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.Collections;
 import java.util.List;
 
+import java.util.Map;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
@@ -35,10 +36,15 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclValidator;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -71,61 +77,61 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
-     * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDaName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDaName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DA_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDaName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDaName()
+	 * @generated
+	 * @ordered
+	 */
     protected String daName = DA_NAME_EDEFAULT;
 
     /**
-     * This is true if the Da Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Da Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean daNameESet;
 
     /**
-     * The default value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDoName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String DO_NAME_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getDoName() <em>Do Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDoName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getDoName()
+	 * @generated
+	 * @ordered
+	 */
     protected String doName = DO_NAME_EDEFAULT;
 
     /**
-     * This is true if the Do Name attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Do Name attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean doNameESet;
 
     /**
@@ -139,244 +145,244 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     protected static final FCEnum FC_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getFc() <em>Fc</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getFc() <em>Fc</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getFc()
-     * @generated
-     * @ordered
-     */
+	 * @see #getFc()
+	 * @generated
+	 * @ordered
+	 */
     protected FCEnum fc = FC_EDEFAULT;
 
     /**
-     * This is true if the Fc attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Fc attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean fcESet;
 
     /**
-     * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected static final Integer IX_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIx() <em>Ix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getIx()
-     * @generated
-     * @ordered
-     */
+	 * @see #getIx()
+	 * @generated
+	 * @ordered
+	 */
     protected Integer ix = IX_EDEFAULT;
 
     /**
-     * This is true if the Ix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ixESet;
 
     /**
-     * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LD_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLdInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLdInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String ldInst = LD_INST_EDEFAULT;
 
     /**
-     * This is true if the Ld Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ld Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean ldInstESet;
 
     /**
-     * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_CLASS_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnClass()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnClass()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnClass = LN_CLASS_EDEFAULT;
 
     /**
-     * This is true if the Ln Class attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Class attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnClassESet;
 
     /**
-     * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String LN_INST_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getLnInst()
-     * @generated
-     * @ordered
-     */
+	 * @see #getLnInst()
+	 * @generated
+	 * @ordered
+	 */
     protected String lnInst = LN_INST_EDEFAULT;
 
     /**
-     * This is true if the Ln Inst attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Ln Inst attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean lnInstESet;
 
     /**
-     * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String PREFIX_EDEFAULT = "";
 
     /**
-     * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getPrefix()
-     * @generated
-     * @ordered
-     */
+	 * @see #getPrefix()
+	 * @generated
+	 * @ordered
+	 */
     protected String prefix = PREFIX_EDEFAULT;
 
     /**
-     * This is true if the Prefix attribute has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Prefix attribute has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataAttribute()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDataAttribute()
+	 * @generated
+	 * @ordered
+	 */
     protected DataAttribute refersToDataAttribute;
 
     /**
-     * This is true if the Refers To Data Attribute reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Data Attribute reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDataAttributeESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataObject()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToDataObject()
+	 * @generated
+	 * @ordered
+	 */
     protected DataObject refersToDataObject;
 
     /**
-     * This is true if the Refers To Data Object reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Data Object reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToDataObjectESet;
 
     /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
+	 * @see #getRefersToAnyLN()
+	 * @generated
+	 * @ordered
+	 */
     protected AnyLN refersToAnyLN;
 
     /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
+	 * This is true if the Refers To Any LN reference has been set.
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
+	 * @generated
+	 * @ordered
+	 */
     protected boolean refersToAnyLNESet;
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     protected FCDAImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return SclPackage.eINSTANCE.getFCDA();
-    }
+		return SclPackage.eINSTANCE.getFCDA();
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -392,32 +398,32 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDaName( String newDaName ) {
-        String oldDaName = daName;
-        daName = newDaName;
-        boolean oldDaNameESet = daNameESet;
-        daNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DA_NAME, oldDaName, daName, !oldDaNameESet));
-    }
+		String oldDaName = daName;
+		daName = newDaName;
+		boolean oldDaNameESet = daNameESet;
+		daNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DA_NAME, oldDaName, daName, !oldDaNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDaName() {
-        String oldDaName = daName;
-        boolean oldDaNameESet = daNameESet;
-        daName = DA_NAME_EDEFAULT;
-        daNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DA_NAME, oldDaName, DA_NAME_EDEFAULT, oldDaNameESet));
-    }
+		String oldDaName = daName;
+		boolean oldDaNameESet = daNameESet;
+		daName = DA_NAME_EDEFAULT;
+		daNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DA_NAME, oldDaName, DA_NAME_EDEFAULT, oldDaNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -442,32 +448,32 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDoName( String newDoName ) {
-        String oldDoName = doName;
-        doName = newDoName;
-        boolean oldDoNameESet = doNameESet;
-        doNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DO_NAME, oldDoName, doName, !oldDoNameESet));
-    }
+		String oldDoName = doName;
+		doName = newDoName;
+		boolean oldDoNameESet = doNameESet;
+		doNameESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DO_NAME, oldDoName, doName, !oldDoNameESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetDoName() {
-        String oldDoName = doName;
-        boolean oldDoNameESet = doNameESet;
-        doName = DO_NAME_EDEFAULT;
-        doNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DO_NAME, oldDoName, DO_NAME_EDEFAULT, oldDoNameESet));
-    }
+		String oldDoName = doName;
+		boolean oldDoNameESet = doNameESet;
+		doName = DO_NAME_EDEFAULT;
+		doNameESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DO_NAME, oldDoName, DO_NAME_EDEFAULT, oldDoNameESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -479,142 +485,142 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public FCEnum getFc() {
-        return fc;
-    }
+		return fc;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setFc( FCEnum newFc ) {
-        FCEnum oldFc = fc;
-        fc = newFc == null ? FC_EDEFAULT : newFc;
-        boolean oldFcESet = fcESet;
-        fcESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__FC, oldFc, fc, !oldFcESet));
-    }
+		FCEnum oldFc = fc;
+		fc = newFc == null ? FC_EDEFAULT : newFc;
+		boolean oldFcESet = fcESet;
+		fcESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__FC, oldFc, fc, !oldFcESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetFc() {
-        FCEnum oldFc = fc;
-        boolean oldFcESet = fcESet;
-        fc = FC_EDEFAULT;
-        fcESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__FC, oldFc, FC_EDEFAULT, oldFcESet));
-    }
+		FCEnum oldFc = fc;
+		boolean oldFcESet = fcESet;
+		fc = FC_EDEFAULT;
+		fcESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__FC, oldFc, FC_EDEFAULT, oldFcESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetFc() {
-        return fcESet;
-    }
+		return fcESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public Integer getIx() {
-        return ix;
-    }
+		return ix;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setIx( Integer newIx ) {
-        Integer oldIx = ix;
-        ix = newIx;
-        boolean oldIxESet = ixESet;
-        ixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__IX, oldIx, ix, !oldIxESet));
-    }
+		Integer oldIx = ix;
+		ix = newIx;
+		boolean oldIxESet = ixESet;
+		ixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__IX, oldIx, ix, !oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetIx() {
-        Integer oldIx = ix;
-        boolean oldIxESet = ixESet;
-        ix = IX_EDEFAULT;
-        ixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__IX, oldIx, IX_EDEFAULT, oldIxESet));
-    }
+		Integer oldIx = ix;
+		boolean oldIxESet = ixESet;
+		ix = IX_EDEFAULT;
+		ixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__IX, oldIx, IX_EDEFAULT, oldIxESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetIx() {
-        return ixESet;
-    }
+		return ixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public String getLdInst() {
-        return ldInst;
-    }
+		return ldInst;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLdInst( String newLdInst ) {
-        String oldLdInst = ldInst;
-        ldInst = newLdInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		ldInst = newLdInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLdInst() {
-        String oldLdInst = ldInst;
-        boolean oldLdInstESet = ldInstESet;
-        ldInst = LD_INST_EDEFAULT;
-        ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
-    }
+		String oldLdInst = ldInst;
+		boolean oldLdInstESet = ldInstESet;
+		ldInst = LD_INST_EDEFAULT;
+		ldInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetLdInst() {
-        return ldInstESet;
-    }
+		return ldInstESet;
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -629,32 +635,32 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnClass( String newLnClass ) {
-        String oldLnClass = lnClass;
-        lnClass = newLnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		lnClass = newLnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClassESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnClass() {
-        String oldLnClass = lnClass;
-        boolean oldLnClassESet = lnClassESet;
-        lnClass = LN_CLASS_EDEFAULT;
-        lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
-    }
+		String oldLnClass = lnClass;
+		boolean oldLnClassESet = lnClassESet;
+		lnClass = LN_CLASS_EDEFAULT;
+		lnClassESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+	}
 
     /**
     * <!-- begin-user-doc -->
@@ -678,32 +684,32 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setLnInst( String newLnInst ) {
-        String oldLnInst = lnInst;
-        lnInst = newLnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		lnInst = newLnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInstESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetLnInst() {
-        String oldLnInst = lnInst;
-        boolean oldLnInstESet = lnInstESet;
-        lnInst = LN_INST_EDEFAULT;
-        lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
-    }
+		String oldLnInst = lnInst;
+		boolean oldLnInstESet = lnInstESet;
+		lnInst = LN_INST_EDEFAULT;
+		lnInstESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+	}
 
     /**
      * <!-- begin-user-doc -->
@@ -728,627 +734,1120 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setPrefix( String newPrefix ) {
-        String oldPrefix = prefix;
-        prefix = newPrefix;
-        boolean oldPrefixESet = prefixESet;
-        prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__PREFIX, oldPrefix, prefix, !oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		prefix = newPrefix;
+		boolean oldPrefixESet = prefixESet;
+		prefixESet = true;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetPrefix() {
-        String oldPrefix = prefix;
-        boolean oldPrefixESet = prefixESet;
-        prefix = PREFIX_EDEFAULT;
-        prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
-    }
+		String oldPrefix = prefix;
+		boolean oldPrefixESet = prefixESet;
+		prefix = PREFIX_EDEFAULT;
+		prefixESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetPrefix() {
-        return prefixESet;
-    }
+		return prefixESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataAttribute getRefersToDataAttribute() {
-        return refersToDataAttribute;
-    }
+		return refersToDataAttribute;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDataAttribute(DataAttribute newRefersToDataAttribute, NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = newRefersToDataAttribute;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
+		refersToDataAttribute = newRefersToDataAttribute;
+		boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+		refersToDataAttributeESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
-        if (newRefersToDataAttribute != refersToDataAttribute) {
-            NotificationChain msgs = null;
-            if (refersToDataAttribute != null)
-                msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            if (newRefersToDataAttribute != null)
-                msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
-        }
-    }
+		if (newRefersToDataAttribute != refersToDataAttribute) {
+			NotificationChain msgs = null;
+			if (refersToDataAttribute != null)
+				msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
+			if (newRefersToDataAttribute != null)
+				msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
+			msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+			refersToDataAttributeESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDataAttribute(NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = null;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
+		refersToDataAttribute = null;
+		boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+		refersToDataAttributeESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDataAttribute() {
-        if (refersToDataAttribute != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicUnsetRefersToDataAttribute(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
-        }
-    }
+		if (refersToDataAttribute != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
+			msgs = basicUnsetRefersToDataAttribute(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
+			refersToDataAttributeESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDataAttribute() {
-        return refersToDataAttributeESet;
-    }
+		return refersToDataAttributeESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataObject getRefersToDataObject() {
-        return refersToDataObject;
-    }
+		return refersToDataObject;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToDataObject(DataObject newRefersToDataObject, NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = newRefersToDataObject;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataObject oldRefersToDataObject = refersToDataObject;
+		refersToDataObject = newRefersToDataObject;
+		boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+		refersToDataObjectESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToDataObject(DataObject newRefersToDataObject) {
-        if (newRefersToDataObject != refersToDataObject) {
-            NotificationChain msgs = null;
-            if (refersToDataObject != null)
-                msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            if (newRefersToDataObject != null)
-                msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
-        }
-    }
+		if (newRefersToDataObject != refersToDataObject) {
+			NotificationChain msgs = null;
+			if (refersToDataObject != null)
+				msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
+			if (newRefersToDataObject != null)
+				msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
+			msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+			refersToDataObjectESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToDataObject(NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = null;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		DataObject oldRefersToDataObject = refersToDataObject;
+		refersToDataObject = null;
+		boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+		refersToDataObjectESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToDataObject() {
-        if (refersToDataObject != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicUnsetRefersToDataObject(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
-        }
-    }
+		if (refersToDataObject != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
+			msgs = basicUnsetRefersToDataObject(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToDataObjectESet = refersToDataObjectESet;
+			refersToDataObjectESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToDataObject() {
-        return refersToDataObjectESet;
-    }
+		return refersToDataObjectESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public DataSet getDataSet() {
-        if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
-        return (DataSet)eInternalContainer();
-    }
+		if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
+		return (DataSet)eInternalContainer();
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetDataSet( DataSet newDataSet, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDataSet, SclPackage.FCDA__DATA_SET, msgs);
-        return msgs;
-    }
+		msgs = eBasicSetContainer((InternalEObject)newDataSet, SclPackage.FCDA__DATA_SET, msgs);
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setDataSet( DataSet newDataSet ) {
-        if (newDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__DATA_SET && newDataSet != null)) {
-            if (EcoreUtil.isAncestor(this, newDataSet))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataSet != null)
-                msgs = ((InternalEObject)newDataSet).eInverseAdd(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
-            msgs = basicSetDataSet(newDataSet, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DATA_SET, newDataSet, newDataSet));
-    }
+		if (newDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__DATA_SET && newDataSet != null)) {
+			if (EcoreUtil.isAncestor(this, newDataSet))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDataSet != null)
+				msgs = ((InternalEObject)newDataSet).eInverseAdd(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
+			msgs = basicSetDataSet(newDataSet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DATA_SET, newDataSet, newDataSet));
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
+		return refersToAnyLN;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = newRefersToAnyLN;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = true;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
+		if (newRefersToAnyLN != refersToAnyLN) {
+			NotificationChain msgs = null;
+			if (refersToAnyLN != null)
+				msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
+			if (newRefersToAnyLN != null)
+				msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
+			msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = true;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
+		AnyLN oldRefersToAnyLN = refersToAnyLN;
+		refersToAnyLN = null;
+		boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+		refersToAnyLNESet = false;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
-    }
+		if (refersToAnyLN != null) {
+			NotificationChain msgs = null;
+			msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
+			msgs = basicUnsetRefersToAnyLN(msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else {
+			boolean oldRefersToAnyLNESet = refersToAnyLNESet;
+			refersToAnyLNESet = false;
+			if (eNotificationRequired())
+				eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+		}
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
+		return refersToAnyLNESet;
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * The cached validation expression for the '{@link #validateFCDA_fc_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA fc required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_fc_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_FC_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'fc attribute shall be present in FCDA (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.fc <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_fc_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_fc_required__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_FC_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_FC_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_ldInst_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ld Inst required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_ldInst_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LD_INST_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ldInst attribute shall always be specified except for GSSE in FCDA (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        ( self.fc <> null and self.fc <> FCEnum::ST ) implies self.ldInst <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_ldInst_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_ldInst_required__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LD_INST_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LD_INST_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_lnClass_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ln Class required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_lnClass_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LN_CLASS_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnClass attribute shall always be specified except for GSSE in FCDA (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        ( self.fc <> null and self.fc <> FCEnum::ST ) implies self.lnClass <> null\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_lnClass_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_lnClass_required__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LN_CLASS_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LN_CLASS_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ln Class valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_lnClass_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnClass attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnClass.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.lnClass <> null implies self.validSclLNClassEnum( lnClass )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_lnClass_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_lnClass_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LN_CLASS_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LN_CLASS_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_lnInst_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ln Inst required</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_lnInst_required(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LN_INST_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnInst attribute shall be specified except for LLN0 in FCDA (line ' + self.lineNumber.toString() + ')' ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        not self.DataSet.AnyLN.oclIsTypeOf( scl::LN0 )\n" +
+		"        implies\n" +
+		"        self.lnInst <> null\n" +
+		"    \n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_lnInst_required(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_lnInst_required__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LN_INST_REQUIRED_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LN_INST_REQUIRED);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ln Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_lnInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'lnInst attribute shall be a number with no more than 7 digits in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.lnInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        not self.DataSet.AnyLN.oclIsTypeOf( scl::LN0 )\n" +
+		"        implies\n" +
+		"        ( self.lnInst <> null implies self.validSclLNInst( lnInst ) )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_lnInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_lnInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LN_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LN_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_empty_attributes_only_if_GSSE(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA empty attributes only if GSSE</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_empty_attributes_only_if_GSSE(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_EMPTY_ATTRIBUTES_ONLY_IF_GSSE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" +
+		"        (       ( self.doName  = null or self.doName.size()  = 0 )\n" +
+		"            and ( self.daName  = null or self.daName.size()  = 0 )\n" +
+		"            and ( self.ix      = null                            )\n" +
+		"            and ( self.ldInst  = null or self.ldInst.size()  = 0 )\n" +
+		"            and ( self.lnClass = null or self.lnClass.size() = 0 )\n" +
+		"            and ( self.lnInst  = null or self.lnInst.size()  = 0 )\n" +
+		"            and ( self.prefix  = null or self.prefix.size()  = 0 )\n" +
+		"        )\n" +
+		"        implies self.fc = FCEnum::ST\n" +
+		"\n" +
+		"    ";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_empty_attributes_only_if_GSSE(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_empty_attributes_only_if_GSSE__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_EMPTY_ATTRIBUTES_ONLY_IF_GSSE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_EMPTY_ATTRIBUTES_ONLY_IF_GSSE);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ld Inst valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_ldInst_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ldInst attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ldInst.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.ldInst <> null implies self.validSclLDInst( ldInst )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_ldInst_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_ldInst_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_LD_INST_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_LD_INST_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA prefix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_prefix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'prefix attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.prefix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.prefix <> null implies self.validSclPrefix( prefix )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_prefix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_prefix_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_PREFIX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_PREFIX_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_doName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA do Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_doName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_DO_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'doName attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.doName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.doName <> null implies self.validSclFullDOName( doName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_doName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_doName_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_DO_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_DO_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_daName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA da Name valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_daName_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_DA_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'daName attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.daName.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.daName <> null implies self.validSclFullAttributeName( daName )\n" +
+		"\n" +
+		"    \n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_daName_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_daName_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_DA_NAME_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_DA_NAME_VALID);
+	}
+
+				/**
+	 * The cached validation expression for the '{@link #validateFCDA_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate FCDA ix valid</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validateFCDA_ix_valid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALIDATE_FCDA_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'ix attribute shall be valid in FCDA (line ' + self.lineNumber.toString() + '). '\n" +
+		"          + 'Current value is ' + self.ix.toString()\n" +
+		"        ,\n" +
+		"\tstatus : Boolean = \n" +
+		"        self.ix <> null implies self.ix >= 0\n" +
+		"\n" +
+		"\n" +
+		"\n" +
+		"}.status";
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFCDA_ix_valid(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			SclValidator.validate
+				(SclPackage.eINSTANCE.getFCDA(),
+				 this,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 SclPackage.eINSTANCE.getFCDA__ValidateFCDA_ix_valid__DiagnosticChain_Map(),
+				 VALIDATE_FCDA_IX_VALID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 SclValidator.DIAGNOSTIC_SOURCE,
+				 SclValidator.FCDA__VALIDATE_FCDA_IX_VALID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                if (refersToDataAttribute != null)
-                    msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-                return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                if (refersToDataObject != null)
-                    msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-                return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
-            case SclPackage.FCDA__DATA_SET:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDataSet((DataSet)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				if (refersToDataAttribute != null)
+					msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
+				return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				if (refersToDataObject != null)
+					msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
+				return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
+			case SclPackage.FCDA__DATA_SET:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDataSet((DataSet)otherEnd, msgs);
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				if (refersToAnyLN != null)
+					msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
+				return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return basicUnsetRefersToDataAttribute(msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return basicUnsetRefersToDataObject(msgs);
-            case SclPackage.FCDA__DATA_SET:
-                return basicSetDataSet(null, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				return basicUnsetRefersToDataAttribute(msgs);
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				return basicUnsetRefersToDataObject(msgs);
+			case SclPackage.FCDA__DATA_SET:
+				return basicSetDataSet(null, msgs);
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				return basicUnsetRefersToAnyLN(msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.FCDA__DATA_SET:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
-        }
-        return super.eBasicRemoveFromContainerFeature(msgs);
-    }
+		switch (eContainerFeatureID()) {
+			case SclPackage.FCDA__DATA_SET:
+				return eInternalContainer().eInverseRemove(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                return getDaName();
-            case SclPackage.FCDA__DO_NAME:
-                return getDoName();
-            case SclPackage.FCDA__FC:
-                return getFc();
-            case SclPackage.FCDA__IX:
-                return getIx();
-            case SclPackage.FCDA__LD_INST:
-                return getLdInst();
-            case SclPackage.FCDA__LN_CLASS:
-                return getLnClass();
-            case SclPackage.FCDA__LN_INST:
-                return getLnInst();
-            case SclPackage.FCDA__PREFIX:
-                return getPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return getRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return getRefersToDataObject();
-            case SclPackage.FCDA__DATA_SET:
-                return getDataSet();
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__DA_NAME:
+				return getDaName();
+			case SclPackage.FCDA__DO_NAME:
+				return getDoName();
+			case SclPackage.FCDA__FC:
+				return getFc();
+			case SclPackage.FCDA__IX:
+				return getIx();
+			case SclPackage.FCDA__LD_INST:
+				return getLdInst();
+			case SclPackage.FCDA__LN_CLASS:
+				return getLnClass();
+			case SclPackage.FCDA__LN_INST:
+				return getLnInst();
+			case SclPackage.FCDA__PREFIX:
+				return getPrefix();
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				return getRefersToDataAttribute();
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				return getRefersToDataObject();
+			case SclPackage.FCDA__DATA_SET:
+				return getDataSet();
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				return getRefersToAnyLN();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                setDaName((String)newValue);
-                return;
-            case SclPackage.FCDA__DO_NAME:
-                setDoName((String)newValue);
-                return;
-            case SclPackage.FCDA__FC:
-                setFc((FCEnum)newValue);
-                return;
-            case SclPackage.FCDA__IX:
-                setIx((Integer)newValue);
-                return;
-            case SclPackage.FCDA__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.FCDA__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.FCDA__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.FCDA__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                setRefersToDataAttribute((DataAttribute)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                setRefersToDataObject((DataObject)newValue);
-                return;
-            case SclPackage.FCDA__DATA_SET:
-                setDataSet((DataSet)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__DA_NAME:
+				setDaName((String)newValue);
+				return;
+			case SclPackage.FCDA__DO_NAME:
+				setDoName((String)newValue);
+				return;
+			case SclPackage.FCDA__FC:
+				setFc((FCEnum)newValue);
+				return;
+			case SclPackage.FCDA__IX:
+				setIx((Integer)newValue);
+				return;
+			case SclPackage.FCDA__LD_INST:
+				setLdInst((String)newValue);
+				return;
+			case SclPackage.FCDA__LN_CLASS:
+				setLnClass((String)newValue);
+				return;
+			case SclPackage.FCDA__LN_INST:
+				setLnInst((String)newValue);
+				return;
+			case SclPackage.FCDA__PREFIX:
+				setPrefix((String)newValue);
+				return;
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				setRefersToDataAttribute((DataAttribute)newValue);
+				return;
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				setRefersToDataObject((DataObject)newValue);
+				return;
+			case SclPackage.FCDA__DATA_SET:
+				setDataSet((DataSet)newValue);
+				return;
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				setRefersToAnyLN((AnyLN)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                unsetDaName();
-                return;
-            case SclPackage.FCDA__DO_NAME:
-                unsetDoName();
-                return;
-            case SclPackage.FCDA__FC:
-                unsetFc();
-                return;
-            case SclPackage.FCDA__IX:
-                unsetIx();
-                return;
-            case SclPackage.FCDA__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.FCDA__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.FCDA__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.FCDA__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                unsetRefersToDataAttribute();
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                unsetRefersToDataObject();
-                return;
-            case SclPackage.FCDA__DATA_SET:
-                setDataSet((DataSet)null);
-                return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-        }
-        super.eUnset(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__DA_NAME:
+				unsetDaName();
+				return;
+			case SclPackage.FCDA__DO_NAME:
+				unsetDoName();
+				return;
+			case SclPackage.FCDA__FC:
+				unsetFc();
+				return;
+			case SclPackage.FCDA__IX:
+				unsetIx();
+				return;
+			case SclPackage.FCDA__LD_INST:
+				unsetLdInst();
+				return;
+			case SclPackage.FCDA__LN_CLASS:
+				unsetLnClass();
+				return;
+			case SclPackage.FCDA__LN_INST:
+				unsetLnInst();
+				return;
+			case SclPackage.FCDA__PREFIX:
+				unsetPrefix();
+				return;
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				unsetRefersToDataAttribute();
+				return;
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				unsetRefersToDataObject();
+				return;
+			case SclPackage.FCDA__DATA_SET:
+				setDataSet((DataSet)null);
+				return;
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				unsetRefersToAnyLN();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                return isSetDaName();
-            case SclPackage.FCDA__DO_NAME:
-                return isSetDoName();
-            case SclPackage.FCDA__FC:
-                return isSetFc();
-            case SclPackage.FCDA__IX:
-                return isSetIx();
-            case SclPackage.FCDA__LD_INST:
-                return isSetLdInst();
-            case SclPackage.FCDA__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.FCDA__LN_INST:
-                return isSetLnInst();
-            case SclPackage.FCDA__PREFIX:
-                return isSetPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return isSetRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return isSetRefersToDataObject();
-            case SclPackage.FCDA__DATA_SET:
-                return getDataSet() != null;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-        }
-        return super.eIsSet(featureID);
-    }
+		switch (featureID) {
+			case SclPackage.FCDA__DA_NAME:
+				return isSetDaName();
+			case SclPackage.FCDA__DO_NAME:
+				return isSetDoName();
+			case SclPackage.FCDA__FC:
+				return isSetFc();
+			case SclPackage.FCDA__IX:
+				return isSetIx();
+			case SclPackage.FCDA__LD_INST:
+				return isSetLdInst();
+			case SclPackage.FCDA__LN_CLASS:
+				return isSetLnClass();
+			case SclPackage.FCDA__LN_INST:
+				return isSetLnInst();
+			case SclPackage.FCDA__PREFIX:
+				return isSetPrefix();
+			case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
+				return isSetRefersToDataAttribute();
+			case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
+				return isSetRefersToDataObject();
+			case SclPackage.FCDA__DATA_SET:
+				return getDataSet() != null;
+			case SclPackage.FCDA__REFERS_TO_ANY_LN:
+				return isSetRefersToAnyLN();
+		}
+		return super.eIsSet(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case SclPackage.FCDA___VALIDATE_FCDA_FC_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_fc_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LD_INST_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_ldInst_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LN_CLASS_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_lnClass_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LN_CLASS_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_lnClass_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LN_INST_REQUIRED__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_lnInst_required((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LN_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_lnInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_EMPTY_ATTRIBUTES_ONLY_IF_GSSE__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_empty_attributes_only_if_GSSE((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_LD_INST_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_ldInst_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_PREFIX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_prefix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_DO_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_doName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_DA_NAME_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_daName_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+			case SclPackage.FCDA___VALIDATE_FCDA_IX_VALID__DIAGNOSTICCHAIN_MAP:
+				return validateFCDA_ix_valid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
+	 * @generated
+	 */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (daName: ");
-        if (daNameESet) result.append(daName); else result.append("<unset>");
-        result.append(", doName: ");
-        if (doNameESet) result.append(doName); else result.append("<unset>");
-        result.append(", fc: ");
-        if (fcESet) result.append(fc); else result.append("<unset>");
-        result.append(", ix: ");
-        if (ixESet) result.append(ix); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(')');
-        return result.toString();
-    }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (daName: ");
+		if (daNameESet) result.append(daName); else result.append("<unset>");
+		result.append(", doName: ");
+		if (doNameESet) result.append(doName); else result.append("<unset>");
+		result.append(", fc: ");
+		if (fcESet) result.append(fc); else result.append("<unset>");
+		result.append(", ix: ");
+		if (ixESet) result.append(ix); else result.append("<unset>");
+		result.append(", ldInst: ");
+		if (ldInstESet) result.append(ldInst); else result.append("<unset>");
+		result.append(", lnClass: ");
+		if (lnClassESet) result.append(lnClass); else result.append("<unset>");
+		result.append(", lnInst: ");
+		if (lnInstESet) result.append(lnInst); else result.append("<unset>");
+		result.append(", prefix: ");
+		if (prefixESet) result.append(prefix); else result.append("<unset>");
+		result.append(')');
+		return result.toString();
+	}
 
     @Override
     protected void doResolveLinks() {
