@@ -1355,6 +1355,9 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
         // lnClass  LN class of the LN where the DO resides; shall always be specified except for GSSE DataLabel empty string

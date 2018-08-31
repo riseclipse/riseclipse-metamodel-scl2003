@@ -980,6 +980,9 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // iedName The name of the IED where the LN resides
         // apRef   The name of the access point via which the IED shall be accessed. Optional, not needed if the IED has only one access point.
         // ldInst  The instance identification of the LD where the LN resides

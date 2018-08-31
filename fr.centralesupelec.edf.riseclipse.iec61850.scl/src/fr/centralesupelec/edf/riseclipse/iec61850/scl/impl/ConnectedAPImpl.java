@@ -936,6 +936,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // iedName a name identifying the IED
         // apName  a name identifying this access point within the IED
         // desc    some descriptive text for this access point at this subnetwork

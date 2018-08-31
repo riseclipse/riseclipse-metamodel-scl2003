@@ -1956,6 +1956,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
         // prefix       The LN prefix

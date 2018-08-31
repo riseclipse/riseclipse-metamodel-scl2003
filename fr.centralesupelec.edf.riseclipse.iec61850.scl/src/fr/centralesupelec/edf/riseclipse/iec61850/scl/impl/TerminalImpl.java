@@ -1385,6 +1385,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
         // desc             Descriptive text to the terminal

@@ -1315,6 +1315,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // lnType  The instantiable type definition of this logical node, reference to a LNodeType definition
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer

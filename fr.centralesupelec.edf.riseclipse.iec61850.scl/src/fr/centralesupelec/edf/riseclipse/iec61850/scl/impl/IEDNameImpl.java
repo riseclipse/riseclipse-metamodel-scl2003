@@ -890,6 +890,9 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         
         LDevice lDevice = getControlWithIEDName().getAnyLN().getLDevice();
         IED ied = lDevice.getIED();

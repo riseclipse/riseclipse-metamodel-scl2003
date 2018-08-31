@@ -212,6 +212,9 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // desc    Some descriptive text for the attribute
         // name    The attribute name; the type tAttributeEnum restricts to the attribute names from IEC 61850-7-3, plus new ones starting with lower case letters
         // sAddr   an optional short address of this BDA attribute
