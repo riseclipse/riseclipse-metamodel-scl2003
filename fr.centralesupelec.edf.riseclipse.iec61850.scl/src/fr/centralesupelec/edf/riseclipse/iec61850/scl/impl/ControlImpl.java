@@ -463,6 +463,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // name    Name of the report control block. This name is relative to the LN hosting the RCB, and shall be unique within the LN
         // desc    The description text 
         // datSet  The name of the data set to be sent by the report control block; datSet should only be missing within an ICD-File,

@@ -539,6 +539,9 @@ public class DOImpl extends DataObjectImpl implements DO {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // name             The data object name as specified for example in IEC 61850-7-4
         // type             The type references the id of a DOType definition
         // accessControl    Access control definition for this DO. If it is missing then any higher-level

@@ -1173,6 +1173,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // lnInst   The LN instance identification. Can only be missing for lnClass=LLN0, meaning as value here the empty string
         // lnClass  The LN class as defined in IEC 61850-7-x
         // iedName  The name of the IED which contains the LN, none if used for specification (default if attribute is not specified)

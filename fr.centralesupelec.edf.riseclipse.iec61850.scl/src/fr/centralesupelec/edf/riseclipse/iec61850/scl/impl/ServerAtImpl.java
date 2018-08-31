@@ -447,6 +447,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // Resolve only if attribute has been read
         // Cannot use isSetApName() Here
         if( !apNameESet ) return;

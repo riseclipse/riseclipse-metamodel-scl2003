@@ -977,6 +977,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // kind            The kind of pre-configured association, pre-established or predefined
         // associationID   The identification of a pre-configured association (otherwise empty)
         // iedName         The reference identifying the IED on which the client resides

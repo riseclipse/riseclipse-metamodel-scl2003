@@ -1079,6 +1079,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
 
         LDevice lDevice = getAnyLN().getLDevice();
         IED ied = lDevice.getIED();

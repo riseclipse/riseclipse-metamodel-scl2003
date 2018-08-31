@@ -624,6 +624,9 @@ public class SDOImpl extends UnNamingImpl implements SDO {
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // Resolve only if attribute has been read
         if( ! typeESet ) return;
 

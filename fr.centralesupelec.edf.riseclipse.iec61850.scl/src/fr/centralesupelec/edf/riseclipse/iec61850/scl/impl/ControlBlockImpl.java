@@ -735,6 +735,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
     @Override
     protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
         // desc    Textual description
         // ldInst  The instance identification of the LD within this IED, on which the control block is located.
         //         An LN is not necessary, as these control blocks are only in LLN0.
