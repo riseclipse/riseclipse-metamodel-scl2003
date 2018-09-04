@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -58,6 +59,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSynchSrcId <em>Synch Src Id</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getNofASDU <em>Nof ASDU</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getKdaParticipant <em>Kda Participant</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getMcSecurity <em>Mc Security</em>}</li>
  * </ul>
  *
  * @generated
@@ -299,6 +301,24 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @ordered
      */
     protected boolean kdaParticipantESet;
+
+    /**
+     * The cached value of the '{@link #getMcSecurity() <em>Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMcSecurity()
+     * @generated
+     * @ordered
+     */
+    protected McSecurity mcSecurity;
+    /**
+     * This is true if the Mc Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean mcSecurityESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -838,6 +858,101 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    public McSecurity getMcSecurity() {
+        return mcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetMcSecurity(McSecurity newMcSecurity, NotificationChain msgs) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = newMcSecurity;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMcSecurity(McSecurity newMcSecurity) {
+        if (newMcSecurity != mcSecurity) {
+            NotificationChain msgs = null;
+            if (mcSecurity != null)
+                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__SMV_SETTINGS, McSecurity.class, msgs);
+            if (newMcSecurity != null)
+                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__SMV_SETTINGS, McSecurity.class, msgs);
+            msgs = basicSetMcSecurity(newMcSecurity, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__MC_SECURITY, newMcSecurity, newMcSecurity, !oldMcSecurityESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetMcSecurity(NotificationChain msgs) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = null;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetMcSecurity() {
+        if (mcSecurity != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__SMV_SETTINGS, McSecurity.class, msgs);
+            msgs = basicUnsetMcSecurity(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__MC_SECURITY, null, null, oldMcSecurityESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetMcSecurity() {
+        return mcSecurityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -845,6 +960,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetServices((Services)otherEnd, msgs);
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                if (mcSecurity != null)
+                    msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SMV_SETTINGS__MC_SECURITY, null, msgs);
+                return basicSetMcSecurity((McSecurity)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -865,6 +984,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return ((InternalEList<?>)getSecPerSamples()).basicRemove(otherEnd, msgs);
             case SclPackage.SMV_SETTINGS__SERVICES:
                 return basicSetServices(null, msgs);
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                return basicUnsetMcSecurity(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -915,6 +1036,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return getNofASDU();
             case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
                 return getKdaParticipant();
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                return getMcSecurity();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -967,6 +1090,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
             case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
                 setKdaParticipant((Boolean)newValue);
                 return;
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                setMcSecurity((McSecurity)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -1015,6 +1141,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
             case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
                 unsetKdaParticipant();
                 return;
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                unsetMcSecurity();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1051,6 +1180,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return isSetNofASDU();
             case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
                 return isSetKdaParticipant();
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
+                return isSetMcSecurity();
         }
         return super.eIsSet(featureID);
     }

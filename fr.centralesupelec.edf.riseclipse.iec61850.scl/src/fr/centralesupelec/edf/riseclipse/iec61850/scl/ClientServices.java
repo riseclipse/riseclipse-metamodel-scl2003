@@ -43,6 +43,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices()
@@ -874,5 +875,60 @@ public interface ClientServices extends SclObject {
      * @generated
      */
     boolean isSetNoIctBinding();
+
+    /**
+     * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Mc Security</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Mc Security</em>' containment reference.
+     * @see #isSetMcSecurity()
+     * @see #unsetMcSecurity()
+     * @see #setMcSecurity(McSecurity)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_McSecurity()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices
+     * @model opposite="ClientServices" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    McSecurity getMcSecurity();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Mc Security</em>' containment reference.
+     * @see #isSetMcSecurity()
+     * @see #unsetMcSecurity()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    void setMcSecurity(McSecurity value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetMcSecurity()
+     * @see #getMcSecurity()
+     * @see #setMcSecurity(McSecurity)
+     * @generated
+     */
+    void unsetMcSecurity();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Mc Security</em>' containment reference is set.
+     * @see #unsetMcSecurity()
+     * @see #getMcSecurity()
+     * @see #setMcSecurity(McSecurity)
+     * @generated
+     */
+    boolean isSetMcSecurity();
 
 } // ClientServices

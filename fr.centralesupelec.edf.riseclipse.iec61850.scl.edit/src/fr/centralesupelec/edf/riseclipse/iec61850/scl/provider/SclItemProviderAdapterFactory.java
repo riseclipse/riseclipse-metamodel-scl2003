@@ -962,6 +962,29 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected McSecurityItemProvider mcSecurityItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createMcSecurityAdapter() {
+        if (mcSecurityItemProvider == null) {
+            mcSecurityItemProvider = new McSecurityItemProvider(this);
+        }
+
+        return mcSecurityItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3762,6 +3785,7 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
         if (smpRateItemProvider != null) smpRateItemProvider.dispose();
         if (samplesPerSecItemProvider != null) samplesPerSecItemProvider.dispose();
         if (secPerSamplesItemProvider != null) secPerSamplesItemProvider.dispose();
+        if (mcSecurityItemProvider != null) mcSecurityItemProvider.dispose();
     }
 
 }

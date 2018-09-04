@@ -355,6 +355,13 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass mcSecurityEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass durationInMilliSecEClass = null;
 
     /**
@@ -3321,6 +3328,63 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EClass getMcSecurity() {
+        if (mcSecurityEClass == null) {
+            mcSecurityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(175);
+        }
+        return mcSecurityEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getMcSecurity_ClientServices() {
+        return (EReference)getMcSecurity().getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getMcSecurity_GSESettings() {
+        return (EReference)getMcSecurity().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getMcSecurity_SMVSettings() {
+        return (EReference)getMcSecurity().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMcSecurity_Signature() {
+        return (EAttribute)getMcSecurity().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMcSecurity_Encryption() {
+        return (EAttribute)getMcSecurity().getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getDurationInMilliSec() {
         if (durationInMilliSecEClass == null) {
             durationInMilliSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(167);
@@ -4124,6 +4188,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EAttribute getClientServices_NoIctBinding() {
         return (EAttribute)getClientServices().getEStructuralFeatures().get(15);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getClientServices_McSecurity() {
+        return (EReference)getClientServices().getEStructuralFeatures().get(16);
     }
 
     /**
@@ -5273,6 +5346,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getGSESettings_Services() {
         return (EReference)getGSESettings().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getGSESettings_McSecurity() {
+        return (EReference)getGSESettings().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -6695,6 +6777,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EAttribute getSMVSettings_KdaParticipant() {
         return (EAttribute)getSMVSettings().getEStructuralFeatures().get(11);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getSMVSettings_McSecurity() {
+        return (EReference)getSMVSettings().getEStructuralFeatures().get(12);
     }
 
     /**

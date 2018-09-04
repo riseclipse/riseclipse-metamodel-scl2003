@@ -7071,13 +7071,22 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES__NO_ICT_BINDING = SCL_OBJECT_FEATURE_COUNT + 15;
 
     /**
+     * The feature id for the '<em><b>Mc Security</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__MC_SECURITY = SCL_OBJECT_FEATURE_COUNT + 16;
+
+    /**
      * The number of structural features of the '<em>Client Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 16;
+    int CLIENT_SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 17;
 
     /**
      * The number of operations of the '<em>Client Services</em>' class.
@@ -9768,13 +9777,22 @@ public interface SclPackage extends EPackage {
     int GSE_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Mc Security</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS__MC_SECURITY = SERVICE_SETTINGS_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>GSE Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 3;
+    int GSE_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>GSE Settings</em>' class.
@@ -12676,13 +12694,22 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS__KDA_PARTICIPANT = SERVICE_SETTINGS_FEATURE_COUNT + 11;
 
     /**
+     * The feature id for the '<em><b>Mc Security</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__MC_SECURITY = SERVICE_SETTINGS_FEATURE_COUNT + 12;
+
+    /**
      * The number of structural features of the '<em>SMV Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 12;
+    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 13;
 
     /**
      * The number of operations of the '<em>SMV Settings</em>' class.
@@ -17975,6 +18002,88 @@ public interface SclPackage extends EPackage {
     int SEC_PER_SAMPLES_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl <em>Mc Security</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getMcSecurity()
+     * @generated
+     */
+    int MC_SECURITY = 162;
+
+    /**
+     * The feature id for the '<em><b>Line Number</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Client Services</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__CLIENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>GSE Settings</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__GSE_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>SMV Settings</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Signature</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__SIGNATURE = SCL_OBJECT_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Encryption</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__ENCRYPTION = SCL_OBJECT_FEATURE_COUNT + 4;
+
+    /**
+     * The number of structural features of the '<em>Mc Security</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 5;
+
+    /**
+     * The number of operations of the '<em>Mc Security</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum <em>Association Kind Enum</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17982,7 +18091,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAssociationKindEnum()
      * @generated
      */
-    int ASSOCIATION_KIND_ENUM = 162;
+    int ASSOCIATION_KIND_ENUM = 163;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum <em>FC Enum</em>}' enum.
@@ -17992,7 +18101,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getFCEnum()
      * @generated
      */
-    int FC_ENUM = 163;
+    int FC_ENUM = 164;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum <em>GSE Control Type Enum</em>}' enum.
@@ -18002,7 +18111,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getGSEControlTypeEnum()
      * @generated
      */
-    int GSE_CONTROL_TYPE_ENUM = 164;
+    int GSE_CONTROL_TYPE_ENUM = 165;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum <em>Phase Enum</em>}' enum.
@@ -18012,7 +18121,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPhaseEnum()
      * @generated
      */
-    int PHASE_ENUM = 165;
+    int PHASE_ENUM = 166;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum <em>Predefined Type Of Security Enum</em>}' enum.
@@ -18022,7 +18131,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPredefinedTypeOfSecurityEnum()
      * @generated
      */
-    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 166;
+    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 167;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum <em>SMV Delivery Enum</em>}' enum.
@@ -18032,7 +18141,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSMVDeliveryEnum()
      * @generated
      */
-    int SMV_DELIVERY_ENUM = 167;
+    int SMV_DELIVERY_ENUM = 168;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum <em>Service Settings Enum</em>}' enum.
@@ -18042,7 +18151,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_ENUM = 168;
+    int SERVICE_SETTINGS_ENUM = 169;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum <em>Service Settings No Dyn Enum</em>}' enum.
@@ -18052,7 +18161,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsNoDynEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_NO_DYN_ENUM = 169;
+    int SERVICE_SETTINGS_NO_DYN_ENUM = 170;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType <em>Service Type</em>}' enum.
@@ -18062,7 +18171,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceType()
      * @generated
      */
-    int SERVICE_TYPE = 170;
+    int SERVICE_TYPE = 171;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpMod <em>Smp Mod</em>}' enum.
@@ -18072,7 +18181,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSmpMod()
      * @generated
      */
-    int SMP_MOD = 171;
+    int SMP_MOD = 172;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum <em>Unit Multiplier Enum</em>}' enum.
@@ -18082,7 +18191,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getUnitMultiplierEnum()
      * @generated
      */
-    int UNIT_MULTIPLIER_ENUM = 172;
+    int UNIT_MULTIPLIER_ENUM = 173;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum <em>Val Kind Enum</em>}' enum.
@@ -18092,7 +18201,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getValKindEnum()
      * @generated
      */
-    int VAL_KIND_ENUM = 173;
+    int VAL_KIND_ENUM = 174;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum <em>buf Mode Enum</em>}' enum.
@@ -18102,7 +18211,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getbufModeEnum()
      * @generated
      */
-    int BUF_MODE_ENUM = 174;
+    int BUF_MODE_ENUM = 175;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace <em>Any Content From Other Namespace</em>}'.
@@ -20328,6 +20437,71 @@ public interface SclPackage extends EPackage {
     EAttribute getSecPerSamples_Value();
 
     /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity <em>Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity
+     * @generated
+     */
+    EClass getMcSecurity();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Client Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    EReference getMcSecurity_ClientServices();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings <em>GSE Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>GSE Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    EReference getMcSecurity_GSESettings();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings <em>SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    EReference getMcSecurity_SMVSettings();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSignature <em>Signature</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Signature</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSignature()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    EAttribute getMcSecurity_Signature();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getEncryption <em>Encryption</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Encryption</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getEncryption()
+     * @see #getMcSecurity()
+     * @generated
+     */
+    EAttribute getMcSecurity_Encryption();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec <em>Duration In Milli Sec</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21274,6 +21448,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getClientServices_NoIctBinding();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity()
+     * @see #getClientServices()
+     * @generated
+     */
+    EReference getClientServices_McSecurity();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt <em>Comm Prot</em>}'.
@@ -22557,6 +22742,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getGSESettings_Services();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity()
+     * @see #getGSESettings()
+     * @generated
+     */
+    EReference getGSESettings_McSecurity();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE <em>GSSE</em>}'.
@@ -24169,6 +24365,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSMVSettings_KdaParticipant();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getMcSecurity <em>Mc Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Mc Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getMcSecurity()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    EReference getSMVSettings_McSecurity();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc <em>SM Vsc</em>}'.

@@ -15,39 +15,39 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      http://wdi.supelec.fr/software/RiseClipse/
+ * 
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclFactory;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum;
-
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
+public class McSecurityItemProvider extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public GSESettingsItemProvider(AdapterFactory adapterFactory) {
+    public McSecurityItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -62,26 +62,26 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addAppIDPropertyDescriptor(object);
-            addDataLabelPropertyDescriptor(object);
+            addSignaturePropertyDescriptor(object);
+            addEncryptionPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
 
     /**
-     * This adds a property descriptor for the App ID feature.
+     * This adds a property descriptor for the Signature feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addAppIDPropertyDescriptor(Object object) {
+    protected void addSignaturePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_GSESettings_appID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_appID_feature", "_UI_GSESettings_type"),
-                 SclPackage.eINSTANCE.getGSESettings_AppID(),
+                 getString("_UI_McSecurity_signature_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_McSecurity_signature_feature", "_UI_McSecurity_type"),
+                 SclPackage.eINSTANCE.getMcSecurity_Signature(),
                  true,
                  false,
                  false,
@@ -91,19 +91,19 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Data Label feature.
+     * This adds a property descriptor for the Encryption feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataLabelPropertyDescriptor(Object object) {
+    protected void addEncryptionPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_GSESettings_dataLabel_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_dataLabel_feature", "_UI_GSESettings_type"),
-                 SclPackage.eINSTANCE.getGSESettings_DataLabel(),
+                 getString("_UI_McSecurity_encryption_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_McSecurity_encryption_feature", "_UI_McSecurity_type"),
+                 SclPackage.eINSTANCE.getMcSecurity_Encryption(),
                  true,
                  false,
                  false,
@@ -113,44 +113,14 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
     }
 
     /**
-     * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-     * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-     * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getGSESettings_McSecurity());
-        }
-        return childrenFeatures;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
-        // Check the type of the specified child object and return the proper feature to use for
-        // adding (see {@link AddCommand}) it as a child.
-
-        return super.getChildFeature(object, child);
-    }
-
-    /**
-     * This returns GSESettings.gif.
+     * This returns McSecurity.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/GSESettings"));
+        return overlayImage(object, getResourceLocator().getImage("full/obj16/McSecurity"));
     }
 
     /**
@@ -161,13 +131,10 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      */
     @Override
     public String getText(Object object) {
-        ServiceSettingsNoDynEnum labelValue = ((GSESettings)object).getCbName();
-        String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_GSESettings_type") :
-            getString("_UI_GSESettings_type") + " " + label;
+        McSecurity mcSecurity = (McSecurity)object;
+        return getString("_UI_McSecurity_type") + " " + mcSecurity.getLineNumber();
     }
-    
+
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -180,13 +147,10 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
 
-        switch (notification.getFeatureID(GSESettings.class)) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
+        switch (notification.getFeatureID(McSecurity.class)) {
+            case SclPackage.MC_SECURITY__SIGNATURE:
+            case SclPackage.MC_SECURITY__ENCRYPTION:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.GSE_SETTINGS__MC_SECURITY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
         super.notifyChanged(notification);
@@ -202,11 +166,6 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
     @Override
     protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
-
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getGSESettings_McSecurity(),
-                 SclFactory.eINSTANCE.createMcSecurity()));
     }
 
 }
