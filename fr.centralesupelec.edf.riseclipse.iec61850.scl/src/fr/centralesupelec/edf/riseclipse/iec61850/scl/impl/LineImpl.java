@@ -34,6 +34,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,6 +49,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getSCL <em>SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getVoltage <em>Voltage</em>}</li>
  * </ul>
  *
  * @generated
@@ -101,6 +103,25 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @ordered
      */
     protected EList<ConductingEquipment> conductingEquipment;
+
+    /**
+     * The cached value of the '{@link #getVoltage() <em>Voltage</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVoltage()
+     * @generated
+     * @ordered
+     */
+    protected Voltage voltage;
+
+    /**
+     * This is true if the Voltage containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean voltageESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -315,6 +336,101 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Voltage getVoltage() {
+        return voltage;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetVoltage(Voltage newVoltage, NotificationChain msgs) {
+        Voltage oldVoltage = voltage;
+        voltage = newVoltage;
+        boolean oldVoltageESet = voltageESet;
+        voltageESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LINE__VOLTAGE, oldVoltage, newVoltage, !oldVoltageESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setVoltage(Voltage newVoltage) {
+        if (newVoltage != voltage) {
+            NotificationChain msgs = null;
+            if (voltage != null)
+                msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+            if (newVoltage != null)
+                msgs = ((InternalEObject)newVoltage).eInverseAdd(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+            msgs = basicSetVoltage(newVoltage, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldVoltageESet = voltageESet;
+            voltageESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__VOLTAGE, newVoltage, newVoltage, !oldVoltageESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetVoltage(NotificationChain msgs) {
+        Voltage oldVoltage = voltage;
+        voltage = null;
+        boolean oldVoltageESet = voltageESet;
+        voltageESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LINE__VOLTAGE, oldVoltage, null, oldVoltageESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetVoltage() {
+        if (voltage != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+            msgs = basicUnsetVoltage(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldVoltageESet = voltageESet;
+            voltageESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LINE__VOLTAGE, null, null, oldVoltageESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetVoltage() {
+        return voltageESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -331,6 +447,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectivityNode()).basicAdd(otherEnd, msgs);
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConductingEquipment()).basicAdd(otherEnd, msgs);
+            case SclPackage.LINE__VOLTAGE:
+                if (voltage != null)
+                    msgs = ((InternalEObject)voltage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.LINE__VOLTAGE, null, msgs);
+                return basicSetVoltage((Voltage)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -351,6 +471,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return ((InternalEList<?>)getConnectivityNode()).basicRemove(otherEnd, msgs);
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<?>)getConductingEquipment()).basicRemove(otherEnd, msgs);
+            case SclPackage.LINE__VOLTAGE:
+                return basicUnsetVoltage(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -389,6 +511,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return getConnectivityNode();
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
                 return getConductingEquipment();
+            case SclPackage.LINE__VOLTAGE:
+                return getVoltage();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -419,6 +543,9 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 getConductingEquipment().clear();
                 getConductingEquipment().addAll((Collection<? extends ConductingEquipment>)newValue);
                 return;
+            case SclPackage.LINE__VOLTAGE:
+                setVoltage((Voltage)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -446,6 +573,9 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
                 unsetConductingEquipment();
                 return;
+            case SclPackage.LINE__VOLTAGE:
+                unsetVoltage();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -468,6 +598,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return isSetConnectivityNode();
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
                 return isSetConductingEquipment();
+            case SclPackage.LINE__VOLTAGE:
+                return isSetVoltage();
         }
         return super.eIsSet(featureID);
     }

@@ -1710,6 +1710,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getLine_Voltage() {
+        return (EReference)getLine().getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getNaming() {
         if (namingEClass == null) {
             namingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(7);
@@ -8780,6 +8789,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
             voltageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(137);
         }
         return voltageEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getVoltage_Line() {
+        return (EReference)getVoltage().getEStructuralFeatures().get(0);
     }
 
     /**
