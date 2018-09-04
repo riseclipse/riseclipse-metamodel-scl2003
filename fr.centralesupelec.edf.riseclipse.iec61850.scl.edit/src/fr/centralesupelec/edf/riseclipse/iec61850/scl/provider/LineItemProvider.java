@@ -102,6 +102,7 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
             super.getChildrenFeatures(object);
             childrenFeatures.add(SclPackage.eINSTANCE.getLine_ConnectivityNode());
             childrenFeatures.add(SclPackage.eINSTANCE.getLine_ConductingEquipment());
+            childrenFeatures.add(SclPackage.eINSTANCE.getLine_Voltage());
         }
         return childrenFeatures;
     }
@@ -162,6 +163,7 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
                 return;
             case SclPackage.LINE__CONNECTIVITY_NODE:
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
+            case SclPackage.LINE__VOLTAGE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -188,6 +190,11 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
             (createChildParameter
                 (SclPackage.eINSTANCE.getLine_ConductingEquipment(),
                  SclFactory.eINSTANCE.createConductingEquipment()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (SclPackage.eINSTANCE.getLine_Voltage(),
+                 SclFactory.eINSTANCE.createVoltage()));
     }
 
 }

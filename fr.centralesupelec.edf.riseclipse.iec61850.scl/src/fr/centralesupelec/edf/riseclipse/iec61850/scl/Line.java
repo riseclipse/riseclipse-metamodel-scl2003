@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine()
@@ -231,5 +232,60 @@ public interface Line extends GeneralEquipmentContainer {
      * @generated
      */
     boolean isSetConductingEquipment();
+
+    /**
+     * Returns the value of the '<em><b>Voltage</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Voltage</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Voltage</em>' containment reference.
+     * @see #isSetVoltage()
+     * @see #unsetVoltage()
+     * @see #setVoltage(Voltage)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Voltage()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine
+     * @model opposite="Line" containment="true" unsettable="true"
+     * @generated
+     */
+    Voltage getVoltage();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Voltage</em>' containment reference.
+     * @see #isSetVoltage()
+     * @see #unsetVoltage()
+     * @see #getVoltage()
+     * @generated
+     */
+    void setVoltage(Voltage value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetVoltage()
+     * @see #getVoltage()
+     * @see #setVoltage(Voltage)
+     * @generated
+     */
+    void unsetVoltage();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Voltage</em>' containment reference is set.
+     * @see #unsetVoltage()
+     * @see #getVoltage()
+     * @see #setVoltage(Voltage)
+     * @generated
+     */
+    boolean isSetVoltage();
 
 } // Line

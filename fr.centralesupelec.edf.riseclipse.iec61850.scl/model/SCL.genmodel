@@ -156,6 +156,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/SCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConnectivityNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConductingEquipment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/Voltage"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Naming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Naming/name"/>
@@ -1008,7 +1009,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/PowerTransformer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/TapChanger"/>
     </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//Voltage"/>
+    <genClasses ecoreClass="SCL.ecore#//Voltage">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Voltage/Line"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//VoltageLevel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/nomFreq"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/numPhases"/>

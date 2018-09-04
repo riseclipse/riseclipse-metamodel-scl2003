@@ -1203,13 +1203,22 @@ public interface SclPackage extends EPackage {
     int LINE__CONDUCTING_EQUIPMENT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
+     * The feature id for the '<em><b>Voltage</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__VOLTAGE = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>Line</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINE_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
+    int LINE_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>Line</em>' class.
@@ -17015,13 +17024,22 @@ public interface SclPackage extends EPackage {
     int VOLTAGE__UNIT = VALUE_WITH_UNIT__UNIT;
 
     /**
+     * The feature id for the '<em><b>Line</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE__LINE = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Voltage</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VOLTAGE_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
+    int VOLTAGE_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 1;
 
     /**
      * The number of operations of the '<em>Voltage</em>' class.
@@ -18291,6 +18309,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLine_ConductingEquipment();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Voltage</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage()
+     * @see #getLine()
+     * @generated
+     */
+    EReference getLine_Voltage();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming <em>Naming</em>}'.
@@ -26292,6 +26321,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getVoltage();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Line</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine()
+     * @see #getVoltage()
+     * @generated
+     */
+    EReference getVoltage_Line();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel <em>Voltage Level</em>}'.
