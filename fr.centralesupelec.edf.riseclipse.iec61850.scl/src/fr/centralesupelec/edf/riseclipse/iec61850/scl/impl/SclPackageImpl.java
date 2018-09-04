@@ -6567,6 +6567,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getSMVSettings_Services() {
+        return (EReference)getSMVSettings().getEStructuralFeatures().get(8);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getSMVsc() {
         if (smVscEClass == null) {
             smVscEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(97);
@@ -7157,6 +7166,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getServices_TimerActivatedControl() {
         return (EReference)getServices().getEStructuralFeatures().get(34);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getServices_SMVSettings() {
+        return (EReference)getServices().getEStructuralFeatures().get(35);
     }
 
     /**

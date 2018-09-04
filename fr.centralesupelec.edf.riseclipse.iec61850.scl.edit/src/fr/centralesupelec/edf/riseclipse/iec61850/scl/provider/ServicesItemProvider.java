@@ -133,6 +133,7 @@ public class ServicesItemProvider
             childrenFeatures.add(SclPackage.eINSTANCE.getServices_SettingGroups());
             childrenFeatures.add(SclPackage.eINSTANCE.getServices_TimeSyncProt());
             childrenFeatures.add(SclPackage.eINSTANCE.getServices_TimerActivatedControl());
+            childrenFeatures.add(SclPackage.eINSTANCE.getServices_SMVSettings());
         }
         return childrenFeatures;
     }
@@ -224,6 +225,7 @@ public class ServicesItemProvider
             case SclPackage.SERVICES__SETTING_GROUPS:
             case SclPackage.SERVICES__TIME_SYNC_PROT:
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
+            case SclPackage.SERVICES__SMV_SETTINGS:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -400,6 +402,11 @@ public class ServicesItemProvider
             (createChildParameter
                 (SclPackage.eINSTANCE.getServices_TimerActivatedControl(),
                  SclFactory.eINSTANCE.createTimerActivatedControl()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (SclPackage.eINSTANCE.getServices_SMVSettings(),
+                 SclFactory.eINSTANCE.createSMVSettings()));
     }
 
 }

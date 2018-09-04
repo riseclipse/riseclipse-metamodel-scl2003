@@ -1352,6 +1352,9 @@
         upperBound="-1" eType="#//SamplesPerSec" unsettable="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SecPerSamples" ordered="false"
         upperBound="-1" eType="#//SecPerSamples" unsettable="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
+        eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Services/SMVSettings"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SMVsc" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//SMVDeliveryEnum"
@@ -1520,6 +1523,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="TimerActivatedControl"
         ordered="false" eType="#//TimerActivatedControl" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//TimerActivatedControl/Services"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="SMVSettings" ordered="false"
+        eType="#//SMVSettings" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SMVSettings/Services"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SetDataSetValue" eSuperTypes="#//ServiceYesNo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"

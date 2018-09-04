@@ -736,6 +736,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SmpRate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SamplesPerSec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SecPerSamples"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/Services"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVsc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/delivery"/>
@@ -807,6 +808,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/SettingGroups"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/TimeSyncProt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/TimerActivatedControl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/SMVSettings"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SetDataSetValue">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SetDataSetValue/Services"/>

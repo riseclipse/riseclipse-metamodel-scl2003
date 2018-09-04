@@ -12523,13 +12523,22 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS__SEC_PER_SAMPLES = SERVICE_SETTINGS_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>SMV Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 8;
+    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>SMV Settings</em>' class.
@@ -13351,13 +13360,22 @@ public interface SclPackage extends EPackage {
     int SERVICES__TIMER_ACTIVATED_CONTROL = SCL_OBJECT_FEATURE_COUNT + 34;
 
     /**
+     * The feature id for the '<em><b>SMV Settings</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES__SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 35;
+
+    /**
      * The number of structural features of the '<em>Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 35;
+    int SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 36;
 
     /**
      * The number of operations of the '<em>Services</em>' class.
@@ -23790,6 +23808,17 @@ public interface SclPackage extends EPackage {
     EReference getSMVSettings_SecPerSamples();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    EReference getSMVSettings_Services();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc <em>SM Vsc</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -24485,6 +24514,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getServices_TimerActivatedControl();
+
+    /**
+     * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings()
+     * @see #getServices()
+     * @generated
+     */
+    EReference getServices_SMVSettings();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue <em>Set Data Set Value</em>}'.
