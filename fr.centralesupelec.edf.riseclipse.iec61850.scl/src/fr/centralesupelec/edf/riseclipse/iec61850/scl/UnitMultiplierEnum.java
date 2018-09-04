@@ -242,7 +242,7 @@ public enum UnitMultiplierEnum implements Enumerator {
      * @generated
      * @ordered
      */
-    NONE( 20, "None", "None" );
+    NONE( 20, "None", "" );
 
     /**
      * The '<em><b>Milli</b></em>' literal value.
@@ -553,7 +553,7 @@ public enum UnitMultiplierEnum implements Enumerator {
      * </p>
      * <!-- end-user-doc -->
      * @see #NONE
-     * @model name="None"
+     * @model name="None" literal=""
      * @generated
      * @ordered
      */
