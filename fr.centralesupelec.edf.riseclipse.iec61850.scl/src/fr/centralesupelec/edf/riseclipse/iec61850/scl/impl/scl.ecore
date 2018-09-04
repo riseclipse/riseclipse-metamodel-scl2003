@@ -2105,7 +2105,7 @@
     <eLiterals name="E" value="17"/>
     <eLiterals name="Z" value="18"/>
     <eLiterals name="Y" value="19"/>
-    <eLiterals name="None" value="20"/>
+    <eLiterals name="None" value="20" literal=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ValKindEnum">
     <eLiterals name="Spec"/>
