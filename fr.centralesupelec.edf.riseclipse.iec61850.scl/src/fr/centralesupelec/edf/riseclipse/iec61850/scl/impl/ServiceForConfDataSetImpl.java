@@ -202,7 +202,7 @@ public class ServiceForConfDataSetImpl extends ServiceWithMaxAndMaxAttributesImp
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (modify: ");
         if (modifyESet) result.append(modify); else result.append("<unset>");
         result.append(')');

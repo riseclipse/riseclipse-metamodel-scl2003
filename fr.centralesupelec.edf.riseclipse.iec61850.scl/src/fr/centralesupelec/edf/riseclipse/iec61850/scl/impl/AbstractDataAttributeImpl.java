@@ -866,7 +866,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (bType: ");
         if (bTypeESet) result.append(bType); else result.append("<unset>");
         result.append(", count: ");

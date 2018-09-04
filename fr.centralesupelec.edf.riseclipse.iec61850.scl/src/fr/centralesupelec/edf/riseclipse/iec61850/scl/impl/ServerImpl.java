@@ -552,7 +552,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (timeout: ");
         if (timeoutESet) result.append(timeout); else result.append("<unset>");
         result.append(')');

@@ -623,7 +623,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (cdc: ");
         if (cdcESet) result.append(cdc); else result.append("<unset>");
         result.append(", iedType: ");

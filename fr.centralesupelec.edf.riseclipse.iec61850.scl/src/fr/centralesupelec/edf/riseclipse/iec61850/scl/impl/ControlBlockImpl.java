@@ -724,7 +724,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (cbName: ");
         if (cbNameESet) result.append(cbName); else result.append("<unset>");
         result.append(", ldInst: ");

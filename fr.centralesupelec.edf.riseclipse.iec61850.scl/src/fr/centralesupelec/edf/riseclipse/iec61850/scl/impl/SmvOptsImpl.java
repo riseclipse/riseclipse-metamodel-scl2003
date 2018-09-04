@@ -731,7 +731,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (dataSet: ");
         if (dataSetESet) result.append(dataSet); else result.append("<unset>");
         result.append(", refreshTime: ");

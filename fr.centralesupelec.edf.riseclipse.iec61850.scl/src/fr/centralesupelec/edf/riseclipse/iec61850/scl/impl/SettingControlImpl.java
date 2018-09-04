@@ -475,7 +475,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (actSG: ");
         if (actSGESet) result.append(actSG); else result.append("<unset>");
         result.append(", numOfSGs: ");

@@ -1292,7 +1292,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (bufReport: ");
         if (bufReportESet) result.append(bufReport); else result.append("<unset>");
         result.append(", goose: ");

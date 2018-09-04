@@ -202,7 +202,7 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (maxAttributes: ");
         if (maxAttributesESet) result.append(maxAttributes); else result.append("<unset>");
         result.append(')');

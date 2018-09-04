@@ -386,7 +386,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (maxGo: ");
         if (maxGoESet) result.append(maxGo); else result.append("<unset>");
         result.append(", maxSv: ");

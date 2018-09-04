@@ -1056,7 +1056,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (bufTime: ");
         if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
         result.append(", ldInst: ");

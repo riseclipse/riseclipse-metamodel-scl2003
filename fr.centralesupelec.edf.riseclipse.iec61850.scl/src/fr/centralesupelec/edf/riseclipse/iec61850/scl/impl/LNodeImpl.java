@@ -1154,7 +1154,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (iedName: ");
         if (iedNameESet) result.append(iedName); else result.append("<unset>");
         result.append(", ldInst: ");

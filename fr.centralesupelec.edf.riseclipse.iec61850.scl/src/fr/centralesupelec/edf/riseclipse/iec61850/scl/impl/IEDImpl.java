@@ -1298,7 +1298,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (configVersion: ");
         if (configVersionESet) result.append(configVersion); else result.append("<unset>");
         result.append(", engRight: ");

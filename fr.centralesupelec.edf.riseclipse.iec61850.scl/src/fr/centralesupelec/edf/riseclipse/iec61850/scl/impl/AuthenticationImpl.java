@@ -644,7 +644,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (certificate: ");
         if (certificateESet) result.append(certificate); else result.append("<unset>");
         result.append(", none: ");

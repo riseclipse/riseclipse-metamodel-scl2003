@@ -360,7 +360,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (intgPd: ");
         if (intgPdESet) result.append(intgPd); else result.append("<unset>");
         result.append(')');

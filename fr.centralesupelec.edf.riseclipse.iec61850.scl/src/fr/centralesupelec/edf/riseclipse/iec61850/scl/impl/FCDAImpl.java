@@ -1332,7 +1332,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (daName: ");
         if (daNameESet) result.append(daName); else result.append("<unset>");
         result.append(", doName: ");

@@ -833,7 +833,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (inst: ");
         if (instESet) result.append(inst); else result.append("<unset>");
         result.append(", ldName: ");

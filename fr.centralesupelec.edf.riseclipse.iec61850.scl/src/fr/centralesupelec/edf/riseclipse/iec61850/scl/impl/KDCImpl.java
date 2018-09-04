@@ -529,7 +529,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (apName: ");
         if (apNameESet) result.append(apName); else result.append("<unset>");
         result.append(", iedName: ");

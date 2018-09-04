@@ -956,7 +956,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (associationID: ");
         if (associationIDESet) result.append(associationID); else result.append("<unset>");
         result.append(", iedName: ");

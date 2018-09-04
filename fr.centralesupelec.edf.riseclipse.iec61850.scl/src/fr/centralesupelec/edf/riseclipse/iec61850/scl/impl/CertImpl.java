@@ -288,7 +288,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (commonName: ");
         if (commonNameESet) result.append(commonName); else result.append("<unset>");
         result.append(", idHierarchy: ");
