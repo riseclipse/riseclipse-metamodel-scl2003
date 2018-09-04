@@ -43,6 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getDataLabel <em>Data Label</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getServices <em>Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getMcSecurity <em>Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
  *
  * @generated
@@ -124,6 +125,35 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * @ordered
      */
     protected boolean mcSecurityESet;
+
+    /**
+     * The default value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKdaParticipant()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKdaParticipant()
+     * @generated
+     * @ordered
+     */
+    protected Boolean kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
+
+    /**
+     * This is true if the Kda Participant attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean kdaParticipantESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -377,6 +407,52 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getKdaParticipant() {
+        return kdaParticipant;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setKdaParticipant(Boolean newKdaParticipant) {
+        Boolean oldKdaParticipant = kdaParticipant;
+        kdaParticipant = newKdaParticipant;
+        boolean oldKdaParticipantESet = kdaParticipantESet;
+        kdaParticipantESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, kdaParticipant, !oldKdaParticipantESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetKdaParticipant() {
+        Boolean oldKdaParticipant = kdaParticipant;
+        boolean oldKdaParticipantESet = kdaParticipantESet;
+        kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
+        kdaParticipantESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, KDA_PARTICIPANT_EDEFAULT, oldKdaParticipantESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetKdaParticipant() {
+        return kdaParticipantESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -438,6 +514,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return getServices();
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 return getMcSecurity();
+            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
+                return getKdaParticipant();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -461,6 +539,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 setMcSecurity((McSecurity)newValue);
+                return;
+            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
+                setKdaParticipant((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -486,6 +567,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 unsetMcSecurity();
                 return;
+            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
+                unsetKdaParticipant();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -506,6 +590,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return getServices() != null;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 return isSetMcSecurity();
+            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
+                return isSetKdaParticipant();
         }
         return super.eIsSet(featureID);
     }
@@ -524,6 +610,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         if (appIDESet) result.append(appID); else result.append("<unset>");
         result.append(", dataLabel: ");
         if (dataLabelESet) result.append(dataLabel); else result.append("<unset>");
+        result.append(", kdaParticipant: ");
+        if (kdaParticipantESet) result.append(kdaParticipant); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

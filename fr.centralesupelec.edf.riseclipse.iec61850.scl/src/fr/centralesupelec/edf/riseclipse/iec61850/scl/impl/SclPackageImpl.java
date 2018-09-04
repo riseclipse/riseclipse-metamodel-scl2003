@@ -5362,6 +5362,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getGSESettings_KdaParticipant() {
+        return (EAttribute)getGSESettings().getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getGSSE() {
         if (gsseEClass == null) {
             gsseEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(70);

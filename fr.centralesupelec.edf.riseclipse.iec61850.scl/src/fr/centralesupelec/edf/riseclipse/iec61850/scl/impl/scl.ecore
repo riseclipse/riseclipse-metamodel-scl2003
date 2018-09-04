@@ -1023,6 +1023,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="McSecurity" ordered="false"
         eType="#//McSecurity" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//McSecurity/GSESettings"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdaParticipant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSSE" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"

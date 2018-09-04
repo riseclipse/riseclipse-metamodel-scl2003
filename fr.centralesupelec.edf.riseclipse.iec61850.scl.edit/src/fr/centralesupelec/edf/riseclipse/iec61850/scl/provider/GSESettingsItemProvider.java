@@ -64,6 +64,7 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
 
             addAppIDPropertyDescriptor(object);
             addDataLabelPropertyDescriptor(object);
+            addKdaParticipantPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -104,6 +105,28 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
                  getString("_UI_GSESettings_dataLabel_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_dataLabel_feature", "_UI_GSESettings_type"),
                  SclPackage.eINSTANCE.getGSESettings_DataLabel(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Kda Participant feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addKdaParticipantPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_GSESettings_kdaParticipant_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_kdaParticipant_feature", "_UI_GSESettings_type"),
+                 SclPackage.eINSTANCE.getGSESettings_KdaParticipant(),
                  true,
                  false,
                  false,
@@ -183,6 +206,7 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
         switch (notification.getFeatureID(GSESettings.class)) {
             case SclPackage.GSE_SETTINGS__APP_ID:
             case SclPackage.GSE_SETTINGS__DATA_LABEL:
+            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
