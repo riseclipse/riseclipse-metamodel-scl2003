@@ -34,6 +34,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
 
@@ -54,6 +55,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSamplesPerSec <em>Samples Per Sec</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSecPerSamples <em>Sec Per Samples</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSynchSrcId <em>Synch Src Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getNofASDU <em>Nof ASDU</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
  *
  * @generated
@@ -216,6 +220,85 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @ordered
      */
     protected EList<SecPerSamples> secPerSamples;
+
+    /**
+     * The default value of the '{@link #getSynchSrcId() <em>Synch Src Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSynchSrcId()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean SYNCH_SRC_ID_EDEFAULT = null;
+    /**
+     * The cached value of the '{@link #getSynchSrcId() <em>Synch Src Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSynchSrcId()
+     * @generated
+     * @ordered
+     */
+    protected Boolean synchSrcId = SYNCH_SRC_ID_EDEFAULT;
+    /**
+     * This is true if the Synch Src Id attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean synchSrcIdESet;
+    /**
+     * The default value of the '{@link #getNofASDU() <em>Nof ASDU</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNofASDU()
+     * @generated
+     * @ordered
+     */
+    protected static final ServiceSettingsNoDynEnum NOF_ASDU_EDEFAULT = ServiceSettingsNoDynEnum.CONF;
+    /**
+     * The cached value of the '{@link #getNofASDU() <em>Nof ASDU</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNofASDU()
+     * @generated
+     * @ordered
+     */
+    protected ServiceSettingsNoDynEnum nofASDU = NOF_ASDU_EDEFAULT;
+    /**
+     * This is true if the Nof ASDU attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nofASDUESet;
+    /**
+     * The default value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKdaParticipant()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = null;
+    /**
+     * The cached value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKdaParticipant()
+     * @generated
+     * @ordered
+     */
+    protected Boolean kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
+    /**
+     * This is true if the Kda Participant attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean kdaParticipantESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -617,6 +700,144 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getSynchSrcId() {
+        return synchSrcId;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setSynchSrcId(Boolean newSynchSrcId) {
+        Boolean oldSynchSrcId = synchSrcId;
+        synchSrcId = newSynchSrcId;
+        boolean oldSynchSrcIdESet = synchSrcIdESet;
+        synchSrcIdESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID, oldSynchSrcId, synchSrcId, !oldSynchSrcIdESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetSynchSrcId() {
+        Boolean oldSynchSrcId = synchSrcId;
+        boolean oldSynchSrcIdESet = synchSrcIdESet;
+        synchSrcId = SYNCH_SRC_ID_EDEFAULT;
+        synchSrcIdESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID, oldSynchSrcId, SYNCH_SRC_ID_EDEFAULT, oldSynchSrcIdESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetSynchSrcId() {
+        return synchSrcIdESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ServiceSettingsNoDynEnum getNofASDU() {
+        return nofASDU;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setNofASDU(ServiceSettingsNoDynEnum newNofASDU) {
+        ServiceSettingsNoDynEnum oldNofASDU = nofASDU;
+        nofASDU = newNofASDU == null ? NOF_ASDU_EDEFAULT : newNofASDU;
+        boolean oldNofASDUESet = nofASDUESet;
+        nofASDUESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU, nofASDU, !oldNofASDUESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetNofASDU() {
+        ServiceSettingsNoDynEnum oldNofASDU = nofASDU;
+        boolean oldNofASDUESet = nofASDUESet;
+        nofASDU = NOF_ASDU_EDEFAULT;
+        nofASDUESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU, NOF_ASDU_EDEFAULT, oldNofASDUESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetNofASDU() {
+        return nofASDUESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getKdaParticipant() {
+        return kdaParticipant;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setKdaParticipant(Boolean newKdaParticipant) {
+        Boolean oldKdaParticipant = kdaParticipant;
+        kdaParticipant = newKdaParticipant;
+        boolean oldKdaParticipantESet = kdaParticipantESet;
+        kdaParticipantESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, kdaParticipant, !oldKdaParticipantESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetKdaParticipant() {
+        Boolean oldKdaParticipant = kdaParticipant;
+        boolean oldKdaParticipantESet = kdaParticipantESet;
+        kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
+        kdaParticipantESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, KDA_PARTICIPANT_EDEFAULT, oldKdaParticipantESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetKdaParticipant() {
+        return kdaParticipantESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -688,6 +909,12 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return getSecPerSamples();
             case SclPackage.SMV_SETTINGS__SERVICES:
                 return getServices();
+            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+                return getSynchSrcId();
+            case SclPackage.SMV_SETTINGS__NOF_ASDU:
+                return getNofASDU();
+            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+                return getKdaParticipant();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -731,6 +958,15 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
             case SclPackage.SMV_SETTINGS__SERVICES:
                 setServices((Services)newValue);
                 return;
+            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+                setSynchSrcId((Boolean)newValue);
+                return;
+            case SclPackage.SMV_SETTINGS__NOF_ASDU:
+                setNofASDU((ServiceSettingsNoDynEnum)newValue);
+                return;
+            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+                setKdaParticipant((Boolean)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -770,6 +1006,15 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
             case SclPackage.SMV_SETTINGS__SERVICES:
                 setServices((Services)null);
                 return;
+            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+                unsetSynchSrcId();
+                return;
+            case SclPackage.SMV_SETTINGS__NOF_ASDU:
+                unsetNofASDU();
+                return;
+            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+                unsetKdaParticipant();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -800,6 +1045,12 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return isSetSecPerSamples();
             case SclPackage.SMV_SETTINGS__SERVICES:
                 return getServices() != null;
+            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+                return isSetSynchSrcId();
+            case SclPackage.SMV_SETTINGS__NOF_ASDU:
+                return isSetNofASDU();
+            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+                return isSetKdaParticipant();
         }
         return super.eIsSet(featureID);
     }
@@ -824,6 +1075,12 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         if (samplesPerSecAttributeESet) result.append(samplesPerSecAttribute); else result.append("<unset>");
         result.append(", pdcTimeStamp: ");
         if (pdcTimeStampESet) result.append(pdcTimeStamp); else result.append("<unset>");
+        result.append(", synchSrcId: ");
+        if (synchSrcIdESet) result.append(synchSrcId); else result.append("<unset>");
+        result.append(", nofASDU: ");
+        if (nofASDUESet) result.append(nofASDU); else result.append("<unset>");
+        result.append(", kdaParticipant: ");
+        if (kdaParticipantESet) result.append(kdaParticipant); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

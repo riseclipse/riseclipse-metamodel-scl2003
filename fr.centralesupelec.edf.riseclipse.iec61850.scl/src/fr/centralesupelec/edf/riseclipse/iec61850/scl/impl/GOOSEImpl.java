@@ -39,6 +39,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getFixedOffs <em>Fixed Offs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getGoose <em>Goose</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getRGOOSE <em>RGOOSE</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +74,64 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @ordered
      */
     protected boolean fixedOffsESet;
+
+    /**
+     * The default value of the '{@link #getGoose() <em>Goose</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getGoose()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean GOOSE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getGoose() <em>Goose</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getGoose()
+     * @generated
+     * @ordered
+     */
+    protected Boolean goose = GOOSE_EDEFAULT;
+
+    /**
+     * This is true if the Goose attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean gooseESet;
+
+    /**
+     * The default value of the '{@link #getRGOOSE() <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRGOOSE()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean RGOOSE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getRGOOSE() <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRGOOSE()
+     * @generated
+     * @ordered
+     */
+    protected Boolean rGOOSE = RGOOSE_EDEFAULT;
+
+    /**
+     * This is true if the RGOOSE attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean rGOOSEESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -184,6 +244,98 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getGoose() {
+        return goose;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setGoose(Boolean newGoose) {
+        Boolean oldGoose = goose;
+        goose = newGoose;
+        boolean oldGooseESet = gooseESet;
+        gooseESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE__GOOSE, oldGoose, goose, !oldGooseESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetGoose() {
+        Boolean oldGoose = goose;
+        boolean oldGooseESet = gooseESet;
+        goose = GOOSE_EDEFAULT;
+        gooseESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GOOSE__GOOSE, oldGoose, GOOSE_EDEFAULT, oldGooseESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetGoose() {
+        return gooseESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getRGOOSE() {
+        return rGOOSE;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRGOOSE(Boolean newRGOOSE) {
+        Boolean oldRGOOSE = rGOOSE;
+        rGOOSE = newRGOOSE;
+        boolean oldRGOOSEESet = rGOOSEESet;
+        rGOOSEESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE__RGOOSE, oldRGOOSE, rGOOSE, !oldRGOOSEESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetRGOOSE() {
+        Boolean oldRGOOSE = rGOOSE;
+        boolean oldRGOOSEESet = rGOOSEESet;
+        rGOOSE = RGOOSE_EDEFAULT;
+        rGOOSEESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GOOSE__RGOOSE, oldRGOOSE, RGOOSE_EDEFAULT, oldRGOOSEESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetRGOOSE() {
+        return rGOOSEESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -235,6 +387,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
                 return getFixedOffs();
             case SclPackage.GOOSE__SERVICES:
                 return getServices();
+            case SclPackage.GOOSE__GOOSE:
+                return getGoose();
+            case SclPackage.GOOSE__RGOOSE:
+                return getRGOOSE();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -252,6 +408,12 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
                 return;
             case SclPackage.GOOSE__SERVICES:
                 setServices((Services)newValue);
+                return;
+            case SclPackage.GOOSE__GOOSE:
+                setGoose((Boolean)newValue);
+                return;
+            case SclPackage.GOOSE__RGOOSE:
+                setRGOOSE((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -271,6 +433,12 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
             case SclPackage.GOOSE__SERVICES:
                 setServices((Services)null);
                 return;
+            case SclPackage.GOOSE__GOOSE:
+                unsetGoose();
+                return;
+            case SclPackage.GOOSE__RGOOSE:
+                unsetRGOOSE();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -287,6 +455,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
                 return isSetFixedOffs();
             case SclPackage.GOOSE__SERVICES:
                 return getServices() != null;
+            case SclPackage.GOOSE__GOOSE:
+                return isSetGoose();
+            case SclPackage.GOOSE__RGOOSE:
+                return isSetRGOOSE();
         }
         return super.eIsSet(featureID);
     }
@@ -303,6 +475,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (fixedOffs: ");
         if (fixedOffsESet) result.append(fixedOffs); else result.append("<unset>");
+        result.append(", goose: ");
+        if (gooseESet) result.append(goose); else result.append("<unset>");
+        result.append(", rGOOSE: ");
+        if (rGOOSEESet) result.append(rGOOSE); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

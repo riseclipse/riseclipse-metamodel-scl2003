@@ -73,6 +73,9 @@ public class ClientServicesItemProvider
             addSupportsLdNamePropertyDescriptor(object);
             addSvPropertyDescriptor(object);
             addUnbufReportPropertyDescriptor(object);
+            addRGOOSEPropertyDescriptor(object);
+            addRSVPropertyDescriptor(object);
+            addNoIctBindingPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -320,6 +323,72 @@ public class ClientServicesItemProvider
     }
 
     /**
+     * This adds a property descriptor for the RGOOSE feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRGOOSEPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ClientServices_rGOOSE_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_rGOOSE_feature", "_UI_ClientServices_type"),
+                 SclPackage.eINSTANCE.getClientServices_RGOOSE(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the RSV feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRSVPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ClientServices_rSV_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_rSV_feature", "_UI_ClientServices_type"),
+                 SclPackage.eINSTANCE.getClientServices_RSV(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the No Ict Binding feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNoIctBindingPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ClientServices_noIctBinding_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_noIctBinding_feature", "_UI_ClientServices_type"),
+                 SclPackage.eINSTANCE.getClientServices_NoIctBinding(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -399,6 +468,9 @@ public class ClientServicesItemProvider
             case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
             case SclPackage.CLIENT_SERVICES__SV:
             case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+            case SclPackage.CLIENT_SERVICES__RGOOSE:
+            case SclPackage.CLIENT_SERVICES__RSV:
+            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:

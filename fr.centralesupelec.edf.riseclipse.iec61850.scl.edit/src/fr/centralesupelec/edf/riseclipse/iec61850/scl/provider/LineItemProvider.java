@@ -62,6 +62,8 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
             super.getPropertyDescriptors(object);
 
             addTypePropertyDescriptor(object);
+            addNomFreqPropertyDescriptor(object);
+            addNumPhasesPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -80,6 +82,50 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
                  getString("_UI_Line_type_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_Line_type_feature", "_UI_Line_type"),
                  SclPackage.eINSTANCE.getLine_Type(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Nom Freq feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNomFreqPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Line_nomFreq_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Line_nomFreq_feature", "_UI_Line_type"),
+                 SclPackage.eINSTANCE.getLine_NomFreq(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Num Phases feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNumPhasesPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_Line_numPhases_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Line_numPhases_feature", "_UI_Line_type"),
+                 SclPackage.eINSTANCE.getLine_NumPhases(),
                  true,
                  false,
                  false,
@@ -159,6 +205,8 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
 
         switch (notification.getFeatureID(Line.class)) {
             case SclPackage.LINE__TYPE:
+            case SclPackage.LINE__NOM_FREQ:
+            case SclPackage.LINE__NUM_PHASES:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.LINE__CONNECTIVITY_NODE:

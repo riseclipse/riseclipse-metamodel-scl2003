@@ -67,6 +67,9 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
             addSmpRateAttributePropertyDescriptor(object);
             addSamplesPerSecAttributePropertyDescriptor(object);
             addPdcTimeStampPropertyDescriptor(object);
+            addSynchSrcIdPropertyDescriptor(object);
+            addNofASDUPropertyDescriptor(object);
+            addKdaParticipantPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -182,6 +185,72 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Synch Src Id feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addSynchSrcIdPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SMVSettings_synchSrcId_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_synchSrcId_feature", "_UI_SMVSettings_type"),
+                 SclPackage.eINSTANCE.getSMVSettings_SynchSrcId(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Nof ASDU feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNofASDUPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SMVSettings_nofASDU_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_nofASDU_feature", "_UI_SMVSettings_type"),
+                 SclPackage.eINSTANCE.getSMVSettings_NofASDU(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Kda Participant feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addKdaParticipantPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SMVSettings_kdaParticipant_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_kdaParticipant_feature", "_UI_SMVSettings_type"),
+                 SclPackage.eINSTANCE.getSMVSettings_KdaParticipant(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -257,6 +326,9 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
             case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
             case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
             case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+            case SclPackage.SMV_SETTINGS__NOF_ASDU:
+            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.SMV_SETTINGS__SMP_RATE:

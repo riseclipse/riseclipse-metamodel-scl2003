@@ -32,6 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getSntp <em>Sntp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices <em>Client Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt()
@@ -253,5 +254,58 @@ public interface TimeSyncProt extends SclObject {
      * @generated
      */
     void setServices( Services value );
+
+    /**
+     * Returns the value of the '<em><b>Iec61850 93</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Iec61850 93</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Iec61850 93</em>' attribute.
+     * @see #isSetIec61850_9_3()
+     * @see #unsetIec61850_9_3()
+     * @see #setIec61850_9_3(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_Iec61850_9_3()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getIec61850_9_3();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Iec61850 93</em>' attribute.
+     * @see #isSetIec61850_9_3()
+     * @see #unsetIec61850_9_3()
+     * @see #getIec61850_9_3()
+     * @generated
+     */
+    void setIec61850_9_3(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetIec61850_9_3()
+     * @see #getIec61850_9_3()
+     * @see #setIec61850_9_3(Boolean)
+     * @generated
+     */
+    void unsetIec61850_9_3();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Iec61850 93</em>' attribute is set.
+     * @see #unsetIec61850_9_3()
+     * @see #getIec61850_9_3()
+     * @see #setIec61850_9_3(Boolean)
+     * @generated
+     */
+    boolean isSetIec61850_9_3();
 
 } // TimeSyncProt

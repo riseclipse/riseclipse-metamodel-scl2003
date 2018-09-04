@@ -157,6 +157,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConnectivityNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConductingEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/Voltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Line/nomFreq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Line/numPhases"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Naming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Naming/name"/>
@@ -425,6 +427,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/unbufReport"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/Services"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/TimeSyncProt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rGOOSE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rSV"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/noIctBinding"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//CommProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//CommProt/ipv6"/>
@@ -522,6 +527,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDataAttribute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDataObject"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pServT"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pLN"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pDO"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pDA"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FCDA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/daName"/>
@@ -546,6 +555,8 @@
     <genClasses ecoreClass="SCL.ecore#//GOOSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/fixedOffs"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSE/Services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/goose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/rGOOSE"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GOOSESecurity">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSESecurity/AccessPoint"/>
@@ -737,11 +748,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SamplesPerSec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SecPerSamples"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/Services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/synchSrcId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/nofASDU"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/kdaParticipant"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVsc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/delivery"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/deliveryConf"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVsc/Services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/sv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/rSV"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SampledValueControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/multicast"/>
@@ -832,6 +848,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmvOpts/security"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmvOpts/timestamp"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SmvOpts/SampledValueControl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmvOpts/synchSourceId"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Subject">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Subject/Certificate"/>
@@ -847,6 +864,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/sntp"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/ClientServices"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/Services"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/iec61850_9_3"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TimerActivatedControl">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimerActivatedControl/Services"/>
@@ -1003,6 +1021,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/Substation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/VoltageLevel"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/lineName"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TransformerWinding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TransformerWinding/type"/>
@@ -1051,6 +1070,7 @@
     <genClasses ecoreClass="SCL.ecore#//ServiceConfReportControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceConfReportControl/bufMode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceConfReportControl/bufConf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceConfReportControl/maxBuf"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceWithMaxAndMaxAttributes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServiceWithMaxAndMaxAttributes/maxAttributes"/>

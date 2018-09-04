@@ -1212,13 +1212,31 @@ public interface SclPackage extends EPackage {
     int LINE__VOLTAGE = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
 
     /**
+     * The feature id for the '<em><b>Nom Freq</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__NOM_FREQ = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Num Phases</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__NUM_PHASES = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 7;
+
+    /**
      * The number of structural features of the '<em>Line</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINE_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
+    int LINE_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 8;
 
     /**
      * The number of operations of the '<em>Line</em>' class.
@@ -7026,13 +7044,40 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES__TIME_SYNC_PROT = SCL_OBJECT_FEATURE_COUNT + 12;
 
     /**
+     * The feature id for the '<em><b>RGOOSE</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__RGOOSE = SCL_OBJECT_FEATURE_COUNT + 13;
+
+    /**
+     * The feature id for the '<em><b>RSV</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__RSV = SCL_OBJECT_FEATURE_COUNT + 14;
+
+    /**
+     * The feature id for the '<em><b>No Ict Binding</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__NO_ICT_BINDING = SCL_OBJECT_FEATURE_COUNT + 15;
+
+    /**
      * The number of structural features of the '<em>Client Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 13;
+    int CLIENT_SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 16;
 
     /**
      * The number of operations of the '<em>Client Services</em>' class.
@@ -7571,13 +7616,22 @@ public interface SclPackage extends EPackage {
     int SERVICE_CONF_REPORT_CONTROL__BUF_CONF = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Max Buf</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL__MAX_BUF = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>Service Conf Report Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
+    int SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>Service Conf Report Control</em>' class.
@@ -7623,6 +7677,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_REPORT_CONTROL__BUF_CONF = SERVICE_CONF_REPORT_CONTROL__BUF_CONF;
+
+    /**
+     * The feature id for the '<em><b>Max Buf</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL__MAX_BUF = SERVICE_CONF_REPORT_CONTROL__MAX_BUF;
 
     /**
      * The feature id for the '<em><b>Services</b></em>' container reference.
@@ -8940,13 +9003,49 @@ public interface SclPackage extends EPackage {
     int EXT_REF__DESC = BASE_ELEMENT_FEATURE_COUNT + 18;
 
     /**
+     * The feature id for the '<em><b>PServ T</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PSERV_T = BASE_ELEMENT_FEATURE_COUNT + 19;
+
+    /**
+     * The feature id for the '<em><b>PLN</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PLN = BASE_ELEMENT_FEATURE_COUNT + 20;
+
+    /**
+     * The feature id for the '<em><b>PDO</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PDO = BASE_ELEMENT_FEATURE_COUNT + 21;
+
+    /**
+     * The feature id for the '<em><b>PDA</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__PDA = BASE_ELEMENT_FEATURE_COUNT + 22;
+
+    /**
      * The number of structural features of the '<em>Ext Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXT_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 19;
+    int EXT_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 23;
 
     /**
      * The number of operations of the '<em>Ext Ref</em>' class.
@@ -9192,13 +9291,31 @@ public interface SclPackage extends EPackage {
     int GOOSE__SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Goose</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE__GOOSE = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>RGOOSE</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE__RGOOSE = SERVICE_WITH_MAX_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>GOOSE</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GOOSE_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
+    int GOOSE_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>GOOSE</em>' class.
@@ -12532,13 +12649,40 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 8;
 
     /**
+     * The feature id for the '<em><b>Synch Src Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__SYNCH_SRC_ID = SERVICE_SETTINGS_FEATURE_COUNT + 9;
+
+    /**
+     * The feature id for the '<em><b>Nof ASDU</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__NOF_ASDU = SERVICE_SETTINGS_FEATURE_COUNT + 10;
+
+    /**
+     * The feature id for the '<em><b>Kda Participant</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__KDA_PARTICIPANT = SERVICE_SETTINGS_FEATURE_COUNT + 11;
+
+    /**
      * The number of structural features of the '<em>SMV Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 9;
+    int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 12;
 
     /**
      * The number of operations of the '<em>SMV Settings</em>' class.
@@ -12595,13 +12739,31 @@ public interface SclPackage extends EPackage {
     int SM_VSC__SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Sv</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC__SV = SERVICE_WITH_MAX_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>RSV</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC__RSV = SERVICE_WITH_MAX_FEATURE_COUNT + 4;
+
+    /**
      * The number of structural features of the '<em>SM Vsc</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SM_VSC_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 3;
+    int SM_VSC_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 5;
 
     /**
      * The number of operations of the '<em>SM Vsc</em>' class.
@@ -13657,13 +13819,22 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
+     * The feature id for the '<em><b>Synch Source Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__SYNCH_SOURCE_ID = SCL_OBJECT_FEATURE_COUNT + 7;
+
+    /**
      * The number of structural features of the '<em>Smv Opts</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_OPTS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 7;
+    int SMV_OPTS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The number of operations of the '<em>Smv Opts</em>' class.
@@ -13837,13 +14008,22 @@ public interface SclPackage extends EPackage {
     int TIME_SYNC_PROT__SERVICES = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The feature id for the '<em><b>Iec61850 93</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT__IEC61850_93 = SCL_OBJECT_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>Time Sync Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TIME_SYNC_PROT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 5;
+    int TIME_SYNC_PROT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>Time Sync Prot</em>' class.
@@ -15862,13 +16042,22 @@ public interface SclPackage extends EPackage {
     int TERMINAL__NAME = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
+     * The feature id for the '<em><b>Line Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL__LINE_NAME = UN_NAMING_FEATURE_COUNT + 12;
+
+    /**
      * The number of structural features of the '<em>Terminal</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TERMINAL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 12;
+    int TERMINAL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The number of operations of the '<em>Terminal</em>' class.
@@ -16040,6 +16229,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NEUTRAL_POINT__NAME = TERMINAL__NAME;
+
+    /**
+     * The feature id for the '<em><b>Line Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT__LINE_NAME = TERMINAL__LINE_NAME;
 
     /**
      * The feature id for the '<em><b>Transformer Winding</b></em>' container reference.
@@ -18338,6 +18536,28 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLine_Voltage();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Nom Freq</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq()
+     * @see #getLine()
+     * @generated
+     */
+    EAttribute getLine_NomFreq();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Num Phases</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases()
+     * @see #getLine()
+     * @generated
+     */
+    EAttribute getLine_NumPhases();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming <em>Naming</em>}'.
@@ -21023,6 +21243,39 @@ public interface SclPackage extends EPackage {
     EReference getClientServices_TimeSyncProt();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>RGOOSE</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE()
+     * @see #getClientServices()
+     * @generated
+     */
+    EAttribute getClientServices_RGOOSE();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>RSV</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV()
+     * @see #getClientServices()
+     * @generated
+     */
+    EAttribute getClientServices_RSV();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>No Ict Binding</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding()
+     * @see #getClientServices()
+     * @generated
+     */
+    EAttribute getClientServices_NoIctBinding();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt <em>Comm Prot</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21862,6 +22115,50 @@ public interface SclPackage extends EPackage {
     EAttribute getExtRef_Desc();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>PServ T</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT()
+     * @see #getExtRef()
+     * @generated
+     */
+    EAttribute getExtRef_PServT();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>PLN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN()
+     * @see #getExtRef()
+     * @generated
+     */
+    EAttribute getExtRef_PLN();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>PDO</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO()
+     * @see #getExtRef()
+     * @generated
+     */
+    EAttribute getExtRef_PDO();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>PDA</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA()
+     * @see #getExtRef()
+     * @generated
+     */
+    EAttribute getExtRef_PDA();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA <em>FCDA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22088,6 +22385,28 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getGOOSE_Services();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Goose</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose()
+     * @see #getGOOSE()
+     * @generated
+     */
+    EAttribute getGOOSE_Goose();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>RGOOSE</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE()
+     * @see #getGOOSE()
+     * @generated
+     */
+    EAttribute getGOOSE_RGOOSE();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity <em>GOOSE Security</em>}'.
@@ -23819,6 +24138,39 @@ public interface SclPackage extends EPackage {
     EReference getSMVSettings_Services();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Synch Src Id</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    EAttribute getSMVSettings_SynchSrcId();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Nof ASDU</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    EAttribute getSMVSettings_NofASDU();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Kda Participant</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    EAttribute getSMVSettings_KdaParticipant();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc <em>SM Vsc</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23860,6 +24212,28 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getSMVsc_Services();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Sv</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv()
+     * @see #getSMVsc()
+     * @generated
+     */
+    EAttribute getSMVsc_Sv();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>RSV</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV()
+     * @see #getSMVsc()
+     * @generated
+     */
+    EAttribute getSMVsc_RSV();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl <em>Sampled Value Control</em>}'.
@@ -24732,6 +25106,17 @@ public interface SclPackage extends EPackage {
     EReference getSmvOpts_SampledValueControl();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Synch Source Id</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId()
+     * @see #getSmvOpts()
+     * @generated
+     */
+    EAttribute getSmvOpts_SynchSourceId();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject <em>Subject</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -24859,6 +25244,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getTimeSyncProt_Services();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Iec61850 93</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3()
+     * @see #getTimeSyncProt()
+     * @generated
+     */
+    EAttribute getTimeSyncProt_Iec61850_9_3();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl <em>Timer Activated Control</em>}'.
@@ -26288,6 +26684,17 @@ public interface SclPackage extends EPackage {
     EAttribute getTerminal_Name();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Line Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName()
+     * @see #getTerminal()
+     * @generated
+     */
+    EAttribute getTerminal_LineName();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding <em>Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -26692,6 +27099,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getServiceConfReportControl_BufConf();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Max Buf</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf()
+     * @see #getServiceConfReportControl()
+     * @generated
+     */
+    EAttribute getServiceConfReportControl_MaxBuf();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndMaxAttributes <em>Service With Max And Max Attributes</em>}'.

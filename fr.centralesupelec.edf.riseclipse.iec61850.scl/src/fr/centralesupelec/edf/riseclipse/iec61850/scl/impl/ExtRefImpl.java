@@ -75,6 +75,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDataObject <em>Refers To Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPServT <em>PServ T</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPLN <em>PLN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPDO <em>PDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPDA <em>PDA</em>}</li>
  * </ul>
  *
  * @generated
@@ -571,6 +575,122 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @ordered
      */
     protected boolean descESet;
+
+    /**
+     * The default value of the '{@link #getPServT() <em>PServ T</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPServT()
+     * @generated
+     * @ordered
+     */
+    protected static final ServiceType PSERV_T_EDEFAULT = ServiceType.POLL;
+
+    /**
+     * The cached value of the '{@link #getPServT() <em>PServ T</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPServT()
+     * @generated
+     * @ordered
+     */
+    protected ServiceType pServT = PSERV_T_EDEFAULT;
+
+    /**
+     * This is true if the PServ T attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean pServTESet;
+
+    /**
+     * The default value of the '{@link #getPLN() <em>PLN</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPLN()
+     * @generated
+     * @ordered
+     */
+    protected static final String PLN_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPLN() <em>PLN</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPLN()
+     * @generated
+     * @ordered
+     */
+    protected String pLN = PLN_EDEFAULT;
+
+    /**
+     * This is true if the PLN attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean pLNESet;
+
+    /**
+     * The default value of the '{@link #getPDO() <em>PDO</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPDO()
+     * @generated
+     * @ordered
+     */
+    protected static final String PDO_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPDO() <em>PDO</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPDO()
+     * @generated
+     * @ordered
+     */
+    protected String pDO = PDO_EDEFAULT;
+
+    /**
+     * This is true if the PDO attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean pDOESet;
+
+    /**
+     * The default value of the '{@link #getPDA() <em>PDA</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPDA()
+     * @generated
+     * @ordered
+     */
+    protected static final String PDA_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getPDA() <em>PDA</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPDA()
+     * @generated
+     * @ordered
+     */
+    protected String pDA = PDA_EDEFAULT;
+
+    /**
+     * This is true if the PDA attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean pDAESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -1615,6 +1735,190 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    public ServiceType getPServT() {
+        return pServT;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setPServT(ServiceType newPServT) {
+        ServiceType oldPServT = pServT;
+        pServT = newPServT == null ? PSERV_T_EDEFAULT : newPServT;
+        boolean oldPServTESet = pServTESet;
+        pServTESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PSERV_T, oldPServT, pServT, !oldPServTESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetPServT() {
+        ServiceType oldPServT = pServT;
+        boolean oldPServTESet = pServTESet;
+        pServT = PSERV_T_EDEFAULT;
+        pServTESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PSERV_T, oldPServT, PSERV_T_EDEFAULT, oldPServTESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetPServT() {
+        return pServTESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getPLN() {
+        return pLN;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setPLN(String newPLN) {
+        String oldPLN = pLN;
+        pLN = newPLN;
+        boolean oldPLNESet = pLNESet;
+        pLNESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PLN, oldPLN, pLN, !oldPLNESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetPLN() {
+        String oldPLN = pLN;
+        boolean oldPLNESet = pLNESet;
+        pLN = PLN_EDEFAULT;
+        pLNESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PLN, oldPLN, PLN_EDEFAULT, oldPLNESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetPLN() {
+        return pLNESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getPDO() {
+        return pDO;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setPDO(String newPDO) {
+        String oldPDO = pDO;
+        pDO = newPDO;
+        boolean oldPDOESet = pDOESet;
+        pDOESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PDO, oldPDO, pDO, !oldPDOESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetPDO() {
+        String oldPDO = pDO;
+        boolean oldPDOESet = pDOESet;
+        pDO = PDO_EDEFAULT;
+        pDOESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PDO, oldPDO, PDO_EDEFAULT, oldPDOESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetPDO() {
+        return pDOESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getPDA() {
+        return pDA;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setPDA(String newPDA) {
+        String oldPDA = pDA;
+        pDA = newPDA;
+        boolean oldPDAESet = pDAESet;
+        pDAESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PDA, oldPDA, pDA, !oldPDAESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetPDA() {
+        String oldPDA = pDA;
+        boolean oldPDAESet = pDAESet;
+        pDA = PDA_EDEFAULT;
+        pDAESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__PDA, oldPDA, PDA_EDEFAULT, oldPDAESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetPDA() {
+        return pDAESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -1718,6 +2022,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return getRefersToDataObject();
             case SclPackage.EXT_REF__DESC:
                 return getDesc();
+            case SclPackage.EXT_REF__PSERV_T:
+                return getPServT();
+            case SclPackage.EXT_REF__PLN:
+                return getPLN();
+            case SclPackage.EXT_REF__PDO:
+                return getPDO();
+            case SclPackage.EXT_REF__PDA:
+                return getPDA();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1786,6 +2098,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return;
             case SclPackage.EXT_REF__DESC:
                 setDesc((String)newValue);
+                return;
+            case SclPackage.EXT_REF__PSERV_T:
+                setPServT((ServiceType)newValue);
+                return;
+            case SclPackage.EXT_REF__PLN:
+                setPLN((String)newValue);
+                return;
+            case SclPackage.EXT_REF__PDO:
+                setPDO((String)newValue);
+                return;
+            case SclPackage.EXT_REF__PDA:
+                setPDA((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -1856,6 +2180,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__DESC:
                 unsetDesc();
                 return;
+            case SclPackage.EXT_REF__PSERV_T:
+                unsetPServT();
+                return;
+            case SclPackage.EXT_REF__PLN:
+                unsetPLN();
+                return;
+            case SclPackage.EXT_REF__PDO:
+                unsetPDO();
+                return;
+            case SclPackage.EXT_REF__PDA:
+                unsetPDA();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1906,6 +2242,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return isSetRefersToDataObject();
             case SclPackage.EXT_REF__DESC:
                 return isSetDesc();
+            case SclPackage.EXT_REF__PSERV_T:
+                return isSetPServT();
+            case SclPackage.EXT_REF__PLN:
+                return isSetPLN();
+            case SclPackage.EXT_REF__PDO:
+                return isSetPDO();
+            case SclPackage.EXT_REF__PDA:
+                return isSetPDA();
         }
         return super.eIsSet(featureID);
     }
@@ -1950,6 +2294,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if (srcPrefixESet) result.append(srcPrefix); else result.append("<unset>");
         result.append(", desc: ");
         if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", pServT: ");
+        if (pServTESet) result.append(pServT); else result.append("<unset>");
+        result.append(", pLN: ");
+        if (pLNESet) result.append(pLN); else result.append("<unset>");
+        result.append(", pDO: ");
+        if (pDOESet) result.append(pDO); else result.append("<unset>");
+        result.append(", pDA: ");
+        if (pDAESet) result.append(pDA); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

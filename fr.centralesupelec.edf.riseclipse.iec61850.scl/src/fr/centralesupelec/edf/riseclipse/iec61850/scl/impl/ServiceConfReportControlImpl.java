@@ -38,6 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServiceConfReportControlImpl#getBufMode <em>Buf Mode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServiceConfReportControlImpl#getBufConf <em>Buf Conf</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServiceConfReportControlImpl#getMaxBuf <em>Max Buf</em>}</li>
  * </ul>
  *
  * @generated
@@ -100,6 +101,35 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * @ordered
      */
     protected boolean bufConfESet;
+
+    /**
+     * The default value of the '{@link #getMaxBuf() <em>Max Buf</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMaxBuf()
+     * @generated
+     * @ordered
+     */
+    protected static final Integer MAX_BUF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getMaxBuf() <em>Max Buf</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMaxBuf()
+     * @generated
+     * @ordered
+     */
+    protected Integer maxBuf = MAX_BUF_EDEFAULT;
+
+    /**
+     * This is true if the Max Buf attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean maxBufESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -217,6 +247,52 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    public Integer getMaxBuf() {
+        return maxBuf;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMaxBuf(Integer newMaxBuf) {
+        Integer oldMaxBuf = maxBuf;
+        maxBuf = newMaxBuf;
+        boolean oldMaxBufESet = maxBufESet;
+        maxBufESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF, oldMaxBuf, maxBuf, !oldMaxBufESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetMaxBuf() {
+        Integer oldMaxBuf = maxBuf;
+        boolean oldMaxBufESet = maxBufESet;
+        maxBuf = MAX_BUF_EDEFAULT;
+        maxBufESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF, oldMaxBuf, MAX_BUF_EDEFAULT, oldMaxBufESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetMaxBuf() {
+        return maxBufESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
@@ -224,6 +300,8 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
                 return getBufMode();
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
                 return getBufConf();
+            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
+                return getMaxBuf();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -241,6 +319,9 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
                 return;
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
                 setBufConf((Boolean)newValue);
+                return;
+            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
+                setMaxBuf((Integer)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -260,6 +341,9 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
                 unsetBufConf();
                 return;
+            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
+                unsetMaxBuf();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -276,6 +360,8 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
                 return isSetBufMode();
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
                 return isSetBufConf();
+            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
+                return isSetMaxBuf();
         }
         return super.eIsSet(featureID);
     }
@@ -294,6 +380,8 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
         if (bufModeESet) result.append(bufMode); else result.append("<unset>");
         result.append(", bufConf: ");
         if (bufConfESet) result.append(bufConf); else result.append("<unset>");
+        result.append(", maxBuf: ");
+        if (maxBufESet) result.append(maxBuf); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

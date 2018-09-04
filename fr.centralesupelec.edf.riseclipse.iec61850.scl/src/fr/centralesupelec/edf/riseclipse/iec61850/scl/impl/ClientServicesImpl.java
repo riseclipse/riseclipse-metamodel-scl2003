@@ -51,6 +51,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getUnbufReport <em>Unbuf Report</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getServices <em>Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getTimeSyncProt <em>Time Sync Prot</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getRGOOSE <em>RGOOSE</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getRSV <em>RSV</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientServicesImpl#getNoIctBinding <em>No Ict Binding</em>}</li>
  * </ul>
  *
  * @generated
@@ -393,6 +396,93 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @ordered
      */
     protected boolean timeSyncProtESet;
+
+    /**
+     * The default value of the '{@link #getRGOOSE() <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRGOOSE()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean RGOOSE_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getRGOOSE() <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRGOOSE()
+     * @generated
+     * @ordered
+     */
+    protected Boolean rGOOSE = RGOOSE_EDEFAULT;
+
+    /**
+     * This is true if the RGOOSE attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean rGOOSEESet;
+
+    /**
+     * The default value of the '{@link #getRSV() <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRSV()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean RSV_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getRSV() <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRSV()
+     * @generated
+     * @ordered
+     */
+    protected Boolean rSV = RSV_EDEFAULT;
+
+    /**
+     * This is true if the RSV attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean rSVESet;
+
+    /**
+     * The default value of the '{@link #getNoIctBinding() <em>No Ict Binding</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNoIctBinding()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean NO_ICT_BINDING_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getNoIctBinding() <em>No Ict Binding</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNoIctBinding()
+     * @generated
+     * @ordered
+     */
+    protected Boolean noIctBinding = NO_ICT_BINDING_EDEFAULT;
+
+    /**
+     * This is true if the No Ict Binding attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean noIctBindingESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -1060,6 +1150,144 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getRGOOSE() {
+        return rGOOSE;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRGOOSE(Boolean newRGOOSE) {
+        Boolean oldRGOOSE = rGOOSE;
+        rGOOSE = newRGOOSE;
+        boolean oldRGOOSEESet = rGOOSEESet;
+        rGOOSEESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE, rGOOSE, !oldRGOOSEESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetRGOOSE() {
+        Boolean oldRGOOSE = rGOOSE;
+        boolean oldRGOOSEESet = rGOOSEESet;
+        rGOOSE = RGOOSE_EDEFAULT;
+        rGOOSEESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE, RGOOSE_EDEFAULT, oldRGOOSEESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetRGOOSE() {
+        return rGOOSEESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getRSV() {
+        return rSV;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRSV(Boolean newRSV) {
+        Boolean oldRSV = rSV;
+        rSV = newRSV;
+        boolean oldRSVESet = rSVESet;
+        rSVESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__RSV, oldRSV, rSV, !oldRSVESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetRSV() {
+        Boolean oldRSV = rSV;
+        boolean oldRSVESet = rSVESet;
+        rSV = RSV_EDEFAULT;
+        rSVESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RSV, oldRSV, RSV_EDEFAULT, oldRSVESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetRSV() {
+        return rSVESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getNoIctBinding() {
+        return noIctBinding;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setNoIctBinding(Boolean newNoIctBinding) {
+        Boolean oldNoIctBinding = noIctBinding;
+        noIctBinding = newNoIctBinding;
+        boolean oldNoIctBindingESet = noIctBindingESet;
+        noIctBindingESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING, oldNoIctBinding, noIctBinding, !oldNoIctBindingESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetNoIctBinding() {
+        Boolean oldNoIctBinding = noIctBinding;
+        boolean oldNoIctBindingESet = noIctBindingESet;
+        noIctBinding = NO_ICT_BINDING_EDEFAULT;
+        noIctBindingESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING, oldNoIctBinding, NO_ICT_BINDING_EDEFAULT, oldNoIctBindingESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetNoIctBinding() {
+        return noIctBindingESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -1139,6 +1367,12 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
                 return getServices();
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
                 return getTimeSyncProt();
+            case SclPackage.CLIENT_SERVICES__RGOOSE:
+                return getRGOOSE();
+            case SclPackage.CLIENT_SERVICES__RSV:
+                return getRSV();
+            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+                return getNoIctBinding();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1189,6 +1423,15 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
                 return;
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
                 setTimeSyncProt((TimeSyncProt)newValue);
+                return;
+            case SclPackage.CLIENT_SERVICES__RGOOSE:
+                setRGOOSE((Boolean)newValue);
+                return;
+            case SclPackage.CLIENT_SERVICES__RSV:
+                setRSV((Boolean)newValue);
+                return;
+            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+                setNoIctBinding((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -1241,6 +1484,15 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
                 unsetTimeSyncProt();
                 return;
+            case SclPackage.CLIENT_SERVICES__RGOOSE:
+                unsetRGOOSE();
+                return;
+            case SclPackage.CLIENT_SERVICES__RSV:
+                unsetRSV();
+                return;
+            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+                unsetNoIctBinding();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1279,6 +1531,12 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
                 return getServices() != null;
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
                 return isSetTimeSyncProt();
+            case SclPackage.CLIENT_SERVICES__RGOOSE:
+                return isSetRGOOSE();
+            case SclPackage.CLIENT_SERVICES__RSV:
+                return isSetRSV();
+            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+                return isSetNoIctBinding();
         }
         return super.eIsSet(featureID);
     }
@@ -1315,6 +1573,12 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         if (svESet) result.append(sv); else result.append("<unset>");
         result.append(", unbufReport: ");
         if (unbufReportESet) result.append(unbufReport); else result.append("<unset>");
+        result.append(", rGOOSE: ");
+        if (rGOOSEESet) result.append(rGOOSE); else result.append("<unset>");
+        result.append(", rSV: ");
+        if (rSVESet) result.append(rSV); else result.append("<unset>");
+        result.append(", noIctBinding: ");
+        if (noIctBindingESet) result.append(noIctBinding); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

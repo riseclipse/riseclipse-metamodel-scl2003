@@ -46,6 +46,10 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef()
@@ -1043,5 +1047,220 @@ public interface ExtRef extends BaseElement {
      * @generated
      */
     boolean isSetDesc();
+
+    /**
+     * Returns the value of the '<em><b>PServ T</b></em>' attribute.
+     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>PServ T</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>PServ T</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType
+     * @see #isSetPServT()
+     * @see #unsetPServT()
+     * @see #setPServT(ServiceType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PServT()
+     * @model unsettable="true"
+     * @generated
+     */
+    ServiceType getPServT();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>PServ T</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType
+     * @see #isSetPServT()
+     * @see #unsetPServT()
+     * @see #getPServT()
+     * @generated
+     */
+    void setPServT(ServiceType value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetPServT()
+     * @see #getPServT()
+     * @see #setPServT(ServiceType)
+     * @generated
+     */
+    void unsetPServT();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>PServ T</em>' attribute is set.
+     * @see #unsetPServT()
+     * @see #getPServT()
+     * @see #setPServT(ServiceType)
+     * @generated
+     */
+    boolean isSetPServT();
+
+    /**
+     * Returns the value of the '<em><b>PLN</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>PLN</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>PLN</em>' attribute.
+     * @see #isSetPLN()
+     * @see #unsetPLN()
+     * @see #setPLN(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PLN()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getPLN();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>PLN</em>' attribute.
+     * @see #isSetPLN()
+     * @see #unsetPLN()
+     * @see #getPLN()
+     * @generated
+     */
+    void setPLN(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetPLN()
+     * @see #getPLN()
+     * @see #setPLN(String)
+     * @generated
+     */
+    void unsetPLN();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>PLN</em>' attribute is set.
+     * @see #unsetPLN()
+     * @see #getPLN()
+     * @see #setPLN(String)
+     * @generated
+     */
+    boolean isSetPLN();
+
+    /**
+     * Returns the value of the '<em><b>PDO</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>PDO</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>PDO</em>' attribute.
+     * @see #isSetPDO()
+     * @see #unsetPDO()
+     * @see #setPDO(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PDO()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getPDO();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>PDO</em>' attribute.
+     * @see #isSetPDO()
+     * @see #unsetPDO()
+     * @see #getPDO()
+     * @generated
+     */
+    void setPDO(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetPDO()
+     * @see #getPDO()
+     * @see #setPDO(String)
+     * @generated
+     */
+    void unsetPDO();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>PDO</em>' attribute is set.
+     * @see #unsetPDO()
+     * @see #getPDO()
+     * @see #setPDO(String)
+     * @generated
+     */
+    boolean isSetPDO();
+
+    /**
+     * Returns the value of the '<em><b>PDA</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>PDA</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>PDA</em>' attribute.
+     * @see #isSetPDA()
+     * @see #unsetPDA()
+     * @see #setPDA(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_PDA()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getPDA();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>PDA</em>' attribute.
+     * @see #isSetPDA()
+     * @see #unsetPDA()
+     * @see #getPDA()
+     * @generated
+     */
+    void setPDA(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetPDA()
+     * @see #getPDA()
+     * @see #setPDA(String)
+     * @generated
+     */
+    void unsetPDA();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>PDA</em>' attribute is set.
+     * @see #unsetPDA()
+     * @see #getPDA()
+     * @see #setPDA(String)
+     * @generated
+     */
+    boolean isSetPDA();
 
 } // ExtRef

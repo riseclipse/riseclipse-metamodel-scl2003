@@ -63,6 +63,7 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
 
             addBufModePropertyDescriptor(object);
             addBufConfPropertyDescriptor(object);
+            addMaxBufPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -112,6 +113,28 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
     }
 
     /**
+     * This adds a property descriptor for the Max Buf feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addMaxBufPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ServiceConfReportControl_maxBuf_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_maxBuf_feature", "_UI_ServiceConfReportControl_type"),
+                 SclPackage.eINSTANCE.getServiceConfReportControl_MaxBuf(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns ServiceConfReportControl.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -149,6 +172,7 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
         switch (notification.getFeatureID(ServiceConfReportControl.class)) {
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
             case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

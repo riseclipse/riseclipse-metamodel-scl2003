@@ -44,6 +44,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampledValueControl <em>Sampled Value Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSynchSourceId <em>Synch Source Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -222,6 +223,35 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @ordered
      */
     protected boolean timestampESet;
+
+    /**
+     * The default value of the '{@link #getSynchSourceId() <em>Synch Source Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSynchSourceId()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean SYNCH_SOURCE_ID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getSynchSourceId() <em>Synch Source Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSynchSourceId()
+     * @generated
+     * @ordered
+     */
+    protected Boolean synchSourceId = SYNCH_SOURCE_ID_EDEFAULT;
+
+    /**
+     * This is true if the Synch Source Id attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean synchSourceIdESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -565,6 +595,52 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getSynchSourceId() {
+        return synchSourceId;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setSynchSourceId(Boolean newSynchSourceId) {
+        Boolean oldSynchSourceId = synchSourceId;
+        synchSourceId = newSynchSourceId;
+        boolean oldSynchSourceIdESet = synchSourceIdESet;
+        synchSourceIdESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetSynchSourceId() {
+        Boolean oldSynchSourceId = synchSourceId;
+        boolean oldSynchSourceIdESet = synchSourceIdESet;
+        synchSourceId = SYNCH_SOURCE_ID_EDEFAULT;
+        synchSourceIdESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetSynchSourceId() {
+        return synchSourceIdESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -626,6 +702,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return getTimestamp();
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 return getSampledValueControl();
+            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+                return getSynchSourceId();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -658,6 +736,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return;
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 setSampledValueControl((SampledValueControl)newValue);
+                return;
+            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+                setSynchSourceId((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -692,6 +773,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 setSampledValueControl((SampledValueControl)null);
                 return;
+            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+                unsetSynchSourceId();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -718,6 +802,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return isSetTimestamp();
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 return getSampledValueControl() != null;
+            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+                return isSetSynchSourceId();
         }
         return super.eIsSet(featureID);
     }
@@ -744,6 +830,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         if (securityESet) result.append(security); else result.append("<unset>");
         result.append(", timestamp: ");
         if (timestampESet) result.append(timestamp); else result.append("<unset>");
+        result.append(", synchSourceId: ");
+        if (synchSourceIdESet) result.append(synchSourceId); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

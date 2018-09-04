@@ -1719,6 +1719,24 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getLine_NomFreq() {
+        return (EAttribute)getLine().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getLine_NumPhases() {
+        return (EAttribute)getLine().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getNaming() {
         if (namingEClass == null) {
             namingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(7);
@@ -4086,6 +4104,33 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getClientServices_RGOOSE() {
+        return (EAttribute)getClientServices().getEStructuralFeatures().get(13);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getClientServices_RSV() {
+        return (EAttribute)getClientServices().getEStructuralFeatures().get(14);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getClientServices_NoIctBinding() {
+        return (EAttribute)getClientServices().getEStructuralFeatures().get(15);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getCommProt() {
         if (commProtEClass == null) {
             commProtEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(44);
@@ -4845,6 +4890,42 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getExtRef_PServT() {
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(19);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtRef_PLN() {
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(20);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtRef_PDO() {
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(21);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getExtRef_PDA() {
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(22);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getFCDA() {
         if (fcdaEClass == null) {
             fcdaEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(63);
@@ -5036,6 +5117,24 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getGOOSE_Services() {
         return (EReference)getGOOSE().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getGOOSE_Goose() {
+        return (EAttribute)getGOOSE().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getGOOSE_RGOOSE() {
+        return (EAttribute)getGOOSE().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -6576,6 +6675,33 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getSMVSettings_SynchSrcId() {
+        return (EAttribute)getSMVSettings().getEStructuralFeatures().get(9);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getSMVSettings_NofASDU() {
+        return (EAttribute)getSMVSettings().getEStructuralFeatures().get(10);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getSMVSettings_KdaParticipant() {
+        return (EAttribute)getSMVSettings().getEStructuralFeatures().get(11);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getSMVsc() {
         if (smVscEClass == null) {
             smVscEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(97);
@@ -6608,6 +6734,24 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getSMVsc_Services() {
         return (EReference)getSMVsc().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getSMVsc_Sv() {
+        return (EAttribute)getSMVsc().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getSMVsc_RSV() {
+        return (EAttribute)getSMVsc().getEStructuralFeatures().get(4);
     }
 
     /**
@@ -7365,6 +7509,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getSmvOpts_SynchSourceId() {
+        return (EAttribute)getSmvOpts().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getSubject() {
         if (subjectEClass == null) {
             subjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(108);
@@ -7475,6 +7628,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getTimeSyncProt_Services() {
         return (EReference)getTimeSyncProt().getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTimeSyncProt_Iec61850_9_3() {
+        return (EAttribute)getTimeSyncProt().getEStructuralFeatures().get(5);
     }
 
     /**
@@ -8742,6 +8904,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getTerminal_LineName() {
+        return (EAttribute)getTerminal().getEStructuralFeatures().get(12);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -9116,6 +9287,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EAttribute getServiceConfReportControl_BufConf() {
         return (EAttribute)getServiceConfReportControl().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getServiceConfReportControl_MaxBuf() {
+        return (EAttribute)getServiceConfReportControl().getEStructuralFeatures().get(2);
     }
 
     /**

@@ -29,6 +29,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getFixedOffs <em>Fixed Offs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE()
@@ -116,5 +118,111 @@ public interface GOOSE extends ServiceWithMax {
      * @generated
      */
     void setServices( Services value );
+
+    /**
+     * Returns the value of the '<em><b>Goose</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Goose</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Goose</em>' attribute.
+     * @see #isSetGoose()
+     * @see #unsetGoose()
+     * @see #setGoose(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE_Goose()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getGoose();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Goose</em>' attribute.
+     * @see #isSetGoose()
+     * @see #unsetGoose()
+     * @see #getGoose()
+     * @generated
+     */
+    void setGoose(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetGoose()
+     * @see #getGoose()
+     * @see #setGoose(Boolean)
+     * @generated
+     */
+    void unsetGoose();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Goose</em>' attribute is set.
+     * @see #unsetGoose()
+     * @see #getGoose()
+     * @see #setGoose(Boolean)
+     * @generated
+     */
+    boolean isSetGoose();
+
+    /**
+     * Returns the value of the '<em><b>RGOOSE</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>RGOOSE</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>RGOOSE</em>' attribute.
+     * @see #isSetRGOOSE()
+     * @see #unsetRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGOOSE_RGOOSE()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getRGOOSE();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>RGOOSE</em>' attribute.
+     * @see #isSetRGOOSE()
+     * @see #unsetRGOOSE()
+     * @see #getRGOOSE()
+     * @generated
+     */
+    void setRGOOSE(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRGOOSE()
+     * @see #getRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @generated
+     */
+    void unsetRGOOSE();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>RGOOSE</em>' attribute is set.
+     * @see #unsetRGOOSE()
+     * @see #getRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @generated
+     */
+    boolean isSetRGOOSE();
 
 } // GOOSE
