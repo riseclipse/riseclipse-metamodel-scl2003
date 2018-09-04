@@ -31,6 +31,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getDataLabel <em>Data Label</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices <em>Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings()
@@ -232,5 +233,58 @@ public interface GSESettings extends ServiceSettings {
      * @generated
      */
     boolean isSetMcSecurity();
+
+    /**
+     * Returns the value of the '<em><b>Kda Participant</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Kda Participant</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Kda Participant</em>' attribute.
+     * @see #isSetKdaParticipant()
+     * @see #unsetKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_KdaParticipant()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getKdaParticipant();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Kda Participant</em>' attribute.
+     * @see #isSetKdaParticipant()
+     * @see #unsetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @generated
+     */
+    void setKdaParticipant(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @generated
+     */
+    void unsetKdaParticipant();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Kda Participant</em>' attribute is set.
+     * @see #unsetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @generated
+     */
+    boolean isSetKdaParticipant();
 
 } // GSESettings

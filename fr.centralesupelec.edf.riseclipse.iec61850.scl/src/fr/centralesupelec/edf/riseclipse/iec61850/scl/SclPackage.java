@@ -9786,13 +9786,22 @@ public interface SclPackage extends EPackage {
     int GSE_SETTINGS__MC_SECURITY = SERVICE_SETTINGS_FEATURE_COUNT + 3;
 
     /**
+     * The feature id for the '<em><b>Kda Participant</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS__KDA_PARTICIPANT = SERVICE_SETTINGS_FEATURE_COUNT + 4;
+
+    /**
      * The number of structural features of the '<em>GSE Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 4;
+    int GSE_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 5;
 
     /**
      * The number of operations of the '<em>GSE Settings</em>' class.
@@ -22753,6 +22762,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getGSESettings_McSecurity();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Kda Participant</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant()
+     * @see #getGSESettings()
+     * @generated
+     */
+    EAttribute getGSESettings_KdaParticipant();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE <em>GSSE</em>}'.
