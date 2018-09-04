@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
@@ -33,6 +34,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
 
 /**
@@ -51,6 +53,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSmpRate <em>Smp Rate</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSamplesPerSec <em>Samples Per Sec</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getSecPerSamples <em>Sec Per Samples</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVSettingsImpl#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -573,6 +576,63 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    public Services getServices() {
+        if (eContainerFeatureID() != SclPackage.SMV_SETTINGS__SERVICES) return null;
+        return (Services)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetServices(Services newServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.SMV_SETTINGS__SERVICES, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setServices(Services newServices) {
+        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_SETTINGS__SERVICES && newServices != null)) {
+            if (EcoreUtil.isAncestor(this, newServices))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newServices != null)
+                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__SMV_SETTINGS, Services.class, msgs);
+            msgs = basicSetServices(newServices, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SERVICES, newServices, newServices));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+        switch (featureID) {
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                if (eInternalContainer() != null)
+                    msgs = eBasicRemoveFromContainer(msgs);
+                return basicSetServices((Services)otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -582,8 +642,24 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return ((InternalEList<?>)getSamplesPerSec()).basicRemove(otherEnd, msgs);
             case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
                 return ((InternalEList<?>)getSecPerSamples()).basicRemove(otherEnd, msgs);
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                return basicSetServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+        switch (eContainerFeatureID()) {
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SMV_SETTINGS, Services.class, msgs);
+        }
+        return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
@@ -610,6 +686,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return getSamplesPerSec();
             case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
                 return getSecPerSamples();
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                return getServices();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -650,6 +728,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 getSecPerSamples().clear();
                 getSecPerSamples().addAll((Collection<? extends SecPerSamples>)newValue);
                 return;
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                setServices((Services)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -686,6 +767,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
             case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
                 unsetSecPerSamples();
                 return;
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                setServices((Services)null);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -714,6 +798,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
                 return isSetSamplesPerSec();
             case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
                 return isSetSecPerSamples();
+            case SclPackage.SMV_SETTINGS__SERVICES:
+                return getServices() != null;
         }
         return super.eIsSet(featureID);
     }

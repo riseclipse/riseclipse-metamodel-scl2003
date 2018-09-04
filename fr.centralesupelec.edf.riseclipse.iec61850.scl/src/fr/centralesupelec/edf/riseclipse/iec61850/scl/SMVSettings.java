@@ -37,6 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings()
@@ -437,4 +438,32 @@ public interface SMVSettings extends ServiceSettings {
      * @generated
      */
     boolean isSetSecPerSamples();
+
+    /**
+     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Services</em>' container reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Services</em>' container reference.
+     * @see #setServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_Services()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings
+     * @model opposite="SMVSettings" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    Services getServices();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Services</em>' container reference.
+     * @see #getServices()
+     * @generated
+     */
+    void setServices(Services value);
 } // SMVSettings

@@ -62,6 +62,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSettingGroups <em>Setting Groups</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimeSyncProt <em>Time Sync Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimerActivatedControl <em>Timer Activated Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices()
@@ -1937,5 +1938,60 @@ public interface Services extends SclObject {
      * @generated
      */
     boolean isSetTimerActivatedControl();
+
+    /**
+     * Returns the value of the '<em><b>SMV Settings</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>SMV Settings</em>' containment reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>SMV Settings</em>' containment reference.
+     * @see #isSetSMVSettings()
+     * @see #unsetSMVSettings()
+     * @see #setSMVSettings(SMVSettings)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SMVSettings()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices
+     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @generated
+     */
+    SMVSettings getSMVSettings();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>SMV Settings</em>' containment reference.
+     * @see #isSetSMVSettings()
+     * @see #unsetSMVSettings()
+     * @see #getSMVSettings()
+     * @generated
+     */
+    void setSMVSettings(SMVSettings value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSMVSettings()
+     * @see #getSMVSettings()
+     * @see #setSMVSettings(SMVSettings)
+     * @generated
+     */
+    void unsetSMVSettings();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}' containment reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>SMV Settings</em>' containment reference is set.
+     * @see #unsetSMVSettings()
+     * @see #getSMVSettings()
+     * @see #setSMVSettings(SMVSettings)
+     * @generated
+     */
+    boolean isSetSMVSettings();
 
 } // Services

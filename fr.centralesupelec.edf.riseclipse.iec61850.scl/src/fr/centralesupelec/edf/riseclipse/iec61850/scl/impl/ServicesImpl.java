@@ -52,6 +52,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
@@ -105,6 +106,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getSettingGroups <em>Setting Groups</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getTimeSyncProt <em>Time Sync Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getTimerActivatedControl <em>Timer Activated Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getSMVSettings <em>SMV Settings</em>}</li>
  * </ul>
  *
  * @generated
@@ -746,6 +748,25 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @ordered
      */
     protected boolean timerActivatedControlESet;
+
+    /**
+     * The cached value of the '{@link #getSMVSettings() <em>SMV Settings</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSMVSettings()
+     * @generated
+     * @ordered
+     */
+    protected SMVSettings smvSettings;
+
+    /**
+     * This is true if the SMV Settings containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean smvSettingsESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -3942,6 +3963,101 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    public SMVSettings getSMVSettings() {
+        return smvSettings;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetSMVSettings(SMVSettings newSMVSettings, NotificationChain msgs) {
+        SMVSettings oldSMVSettings = smvSettings;
+        smvSettings = newSMVSettings;
+        boolean oldSMVSettingsESet = smvSettingsESet;
+        smvSettingsESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__SMV_SETTINGS, oldSMVSettings, newSMVSettings, !oldSMVSettingsESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setSMVSettings(SMVSettings newSMVSettings) {
+        if (newSMVSettings != smvSettings) {
+            NotificationChain msgs = null;
+            if (smvSettings != null)
+                msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+            if (newSMVSettings != null)
+                msgs = ((InternalEObject)newSMVSettings).eInverseAdd(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+            msgs = basicSetSMVSettings(newSMVSettings, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldSMVSettingsESet = smvSettingsESet;
+            smvSettingsESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__SMV_SETTINGS, newSMVSettings, newSMVSettings, !oldSMVSettingsESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetSMVSettings(NotificationChain msgs) {
+        SMVSettings oldSMVSettings = smvSettings;
+        smvSettings = null;
+        boolean oldSMVSettingsESet = smvSettingsESet;
+        smvSettingsESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICES__SMV_SETTINGS, oldSMVSettings, null, oldSMVSettingsESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetSMVSettings() {
+        if (smvSettings != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+            msgs = basicUnsetSMVSettings(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldSMVSettingsESet = smvSettingsESet;
+            smvSettingsESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICES__SMV_SETTINGS, null, null, oldSMVSettingsESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetSMVSettings() {
+        return smvSettingsESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -4081,6 +4197,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 if (timerActivatedControl != null)
                     msgs = ((InternalEObject)timerActivatedControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL, null, msgs);
                 return basicSetTimerActivatedControl((TimerActivatedControl)otherEnd, msgs);
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                if (smvSettings != null)
+                    msgs = ((InternalEObject)smvSettings).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__SMV_SETTINGS, null, msgs);
+                return basicSetSMVSettings((SMVSettings)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -4161,6 +4281,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return basicUnsetTimeSyncProt(msgs);
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
                 return basicUnsetTimerActivatedControl(msgs);
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                return basicUnsetSMVSettings(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -4259,6 +4381,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return getTimeSyncProt();
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
                 return getTimerActivatedControl();
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                return getSMVSettings();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -4375,6 +4499,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return;
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
                 setTimerActivatedControl((TimerActivatedControl)newValue);
+                return;
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                setSMVSettings((SMVSettings)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -4493,6 +4620,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
                 unsetTimerActivatedControl();
                 return;
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                unsetSMVSettings();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -4575,6 +4705,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return isSetTimeSyncProt();
             case SclPackage.SERVICES__TIMER_ACTIVATED_CONTROL:
                 return isSetTimerActivatedControl();
+            case SclPackage.SERVICES__SMV_SETTINGS:
+                return isSetSMVSettings();
         }
         return super.eIsSet(featureID);
     }
