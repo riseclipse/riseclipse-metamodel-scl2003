@@ -430,6 +430,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rGOOSE"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rSV"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/noIctBinding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/McSecurity"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//CommProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//CommProt/ipv6"/>
@@ -575,6 +576,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/appID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/dataLabel"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/Services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/McSecurity"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSSE">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSSE/Services"/>
@@ -751,6 +753,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/synchSrcId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/nofASDU"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/kdaParticipant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/McSecurity"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVsc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/delivery"/>
@@ -1112,6 +1115,13 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SecPerSamples">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SecPerSamples/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//McSecurity">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/ClientServices"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/GSESettings"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/SMVSettings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//McSecurity/signature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//McSecurity/encryption"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

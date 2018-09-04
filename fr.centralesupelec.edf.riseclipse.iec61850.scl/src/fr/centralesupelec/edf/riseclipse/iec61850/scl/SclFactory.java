@@ -380,6 +380,15 @@ public interface SclFactory extends EFactory {
     SecPerSamples createSecPerSamples();
 
     /**
+     * Returns a new object of class '<em>Mc Security</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Mc Security</em>'.
+     * @generated
+     */
+    McSecurity createMcSecurity();
+
+    /**
      * Returns a new object of class '<em>Duration In Milli Sec</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

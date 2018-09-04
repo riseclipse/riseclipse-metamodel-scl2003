@@ -265,6 +265,7 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
             childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SmpRate());
             childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SamplesPerSec());
             childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SecPerSamples());
+            childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_McSecurity());
         }
         return childrenFeatures;
     }
@@ -334,6 +335,7 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
             case SclPackage.SMV_SETTINGS__SMP_RATE:
             case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
             case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            case SclPackage.SMV_SETTINGS__MC_SECURITY:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -365,6 +367,11 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
             (createChildParameter
                 (SclPackage.eINSTANCE.getSMVSettings_SecPerSamples(),
                  SclFactory.eINSTANCE.createSecPerSamples()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
+                 SclFactory.eINSTANCE.createMcSecurity()));
     }
 
 }

@@ -401,6 +401,7 @@ public class ClientServicesItemProvider
         if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
             childrenFeatures.add(SclPackage.eINSTANCE.getClientServices_TimeSyncProt());
+            childrenFeatures.add(SclPackage.eINSTANCE.getClientServices_McSecurity());
         }
         return childrenFeatures;
     }
@@ -474,6 +475,7 @@ public class ClientServicesItemProvider
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -495,6 +497,11 @@ public class ClientServicesItemProvider
             (createChildParameter
                 (SclPackage.eINSTANCE.getClientServices_TimeSyncProt(),
                  SclFactory.eINSTANCE.createTimeSyncProt()));
+
+        newChildDescriptors.add
+            (createChildParameter
+                (SclPackage.eINSTANCE.getClientServices_McSecurity(),
+                 SclFactory.eINSTANCE.createMcSecurity()));
     }
 
 }

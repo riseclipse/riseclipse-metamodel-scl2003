@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
@@ -41,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getAppID <em>App ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getDataLabel <em>Data Label</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getMcSecurity <em>Mc Security</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,25 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * @ordered
      */
     protected boolean dataLabelESet;
+
+    /**
+     * The cached value of the '{@link #getMcSecurity() <em>Mc Security</em>}' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMcSecurity()
+     * @generated
+     * @ordered
+     */
+    protected McSecurity mcSecurity;
+
+    /**
+     * This is true if the Mc Security containment reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean mcSecurityESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -261,6 +282,101 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    public McSecurity getMcSecurity() {
+        return mcSecurity;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetMcSecurity(McSecurity newMcSecurity, NotificationChain msgs) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = newMcSecurity;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMcSecurity(McSecurity newMcSecurity) {
+        if (newMcSecurity != mcSecurity) {
+            NotificationChain msgs = null;
+            if (mcSecurity != null)
+                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+            if (newMcSecurity != null)
+                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+            msgs = basicSetMcSecurity(newMcSecurity, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__MC_SECURITY, newMcSecurity, newMcSecurity, !oldMcSecurityESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetMcSecurity(NotificationChain msgs) {
+        McSecurity oldMcSecurity = mcSecurity;
+        mcSecurity = null;
+        boolean oldMcSecurityESet = mcSecurityESet;
+        mcSecurityESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetMcSecurity() {
+        if (mcSecurity != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+            msgs = basicUnsetMcSecurity(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldMcSecurityESet = mcSecurityESet;
+            mcSecurityESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.GSE_SETTINGS__MC_SECURITY, null, null, oldMcSecurityESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetMcSecurity() {
+        return mcSecurityESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -268,6 +384,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetServices((Services)otherEnd, msgs);
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                if (mcSecurity != null)
+                    msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE_SETTINGS__MC_SECURITY, null, msgs);
+                return basicSetMcSecurity((McSecurity)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -282,6 +402,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         switch (featureID) {
             case SclPackage.GSE_SETTINGS__SERVICES:
                 return basicSetServices(null, msgs);
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                return basicUnsetMcSecurity(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -314,6 +436,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return getDataLabel();
             case SclPackage.GSE_SETTINGS__SERVICES:
                 return getServices();
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                return getMcSecurity();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -334,6 +458,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return;
             case SclPackage.GSE_SETTINGS__SERVICES:
                 setServices((Services)newValue);
+                return;
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                setMcSecurity((McSecurity)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -356,6 +483,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
             case SclPackage.GSE_SETTINGS__SERVICES:
                 setServices((Services)null);
                 return;
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                unsetMcSecurity();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -374,6 +504,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return isSetDataLabel();
             case SclPackage.GSE_SETTINGS__SERVICES:
                 return getServices() != null;
+            case SclPackage.GSE_SETTINGS__MC_SECURITY:
+                return isSetMcSecurity();
         }
         return super.eIsSet(featureID);
     }
