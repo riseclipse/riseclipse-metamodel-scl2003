@@ -57,6 +57,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getVoltageLevel <em>Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getLineName <em>Line Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -340,6 +341,35 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * @ordered
      */
     protected boolean nameESet;
+
+    /**
+     * The default value of the '{@link #getLineName() <em>Line Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLineName()
+     * @generated
+     * @ordered
+     */
+    protected static final String LINE_NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getLineName() <em>Line Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLineName()
+     * @generated
+     * @ordered
+     */
+    protected String lineName = LINE_NAME_EDEFAULT;
+
+    /**
+     * This is true if the Line Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean lineNameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -1121,6 +1151,52 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getLineName() {
+        return lineName;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setLineName(String newLineName) {
+        String oldLineName = lineName;
+        lineName = newLineName;
+        boolean oldLineNameESet = lineNameESet;
+        lineNameESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__LINE_NAME, oldLineName, lineName, !oldLineNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetLineName() {
+        String oldLineName = lineName;
+        boolean oldLineNameESet = lineNameESet;
+        lineName = LINE_NAME_EDEFAULT;
+        lineNameESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__LINE_NAME, oldLineName, LINE_NAME_EDEFAULT, oldLineNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetLineName() {
+        return lineNameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -1219,6 +1295,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return getVoltageLevel();
             case SclPackage.TERMINAL__NAME:
                 return getName();
+            case SclPackage.TERMINAL__LINE_NAME:
+                return getLineName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1266,6 +1344,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return;
             case SclPackage.TERMINAL__NAME:
                 setName((String)newValue);
+                return;
+            case SclPackage.TERMINAL__LINE_NAME:
+                setLineName((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -1315,6 +1396,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             case SclPackage.TERMINAL__NAME:
                 unsetName();
                 return;
+            case SclPackage.TERMINAL__LINE_NAME:
+                unsetLineName();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1351,6 +1435,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return isSetVoltageLevel();
             case SclPackage.TERMINAL__NAME:
                 return isSetName();
+            case SclPackage.TERMINAL__LINE_NAME:
+                return isSetLineName();
         }
         return super.eIsSet(featureID);
     }
@@ -1379,6 +1465,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         if (voltageLevelNameESet) result.append(voltageLevelName); else result.append("<unset>");
         result.append(", name: ");
         if (nameESet) result.append(name); else result.append("<unset>");
+        result.append(", lineName: ");
+        if (lineNameESet) result.append(lineName); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

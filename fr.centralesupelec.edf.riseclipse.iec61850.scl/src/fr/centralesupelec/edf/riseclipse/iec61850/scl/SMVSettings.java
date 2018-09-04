@@ -38,6 +38,9 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings()
@@ -466,4 +469,166 @@ public interface SMVSettings extends ServiceSettings {
      * @generated
      */
     void setServices(Services value);
+
+    /**
+     * Returns the value of the '<em><b>Synch Src Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Synch Src Id</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Synch Src Id</em>' attribute.
+     * @see #isSetSynchSrcId()
+     * @see #unsetSynchSrcId()
+     * @see #setSynchSrcId(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SynchSrcId()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getSynchSrcId();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Synch Src Id</em>' attribute.
+     * @see #isSetSynchSrcId()
+     * @see #unsetSynchSrcId()
+     * @see #getSynchSrcId()
+     * @generated
+     */
+    void setSynchSrcId(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSynchSrcId()
+     * @see #getSynchSrcId()
+     * @see #setSynchSrcId(Boolean)
+     * @generated
+     */
+    void unsetSynchSrcId();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Synch Src Id</em>' attribute is set.
+     * @see #unsetSynchSrcId()
+     * @see #getSynchSrcId()
+     * @see #setSynchSrcId(Boolean)
+     * @generated
+     */
+    boolean isSetSynchSrcId();
+
+    /**
+     * Returns the value of the '<em><b>Nof ASDU</b></em>' attribute.
+     * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Nof ASDU</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Nof ASDU</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum
+     * @see #isSetNofASDU()
+     * @see #unsetNofASDU()
+     * @see #setNofASDU(ServiceSettingsNoDynEnum)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_NofASDU()
+     * @model unsettable="true"
+     * @generated
+     */
+    ServiceSettingsNoDynEnum getNofASDU();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Nof ASDU</em>' attribute.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum
+     * @see #isSetNofASDU()
+     * @see #unsetNofASDU()
+     * @see #getNofASDU()
+     * @generated
+     */
+    void setNofASDU(ServiceSettingsNoDynEnum value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetNofASDU()
+     * @see #getNofASDU()
+     * @see #setNofASDU(ServiceSettingsNoDynEnum)
+     * @generated
+     */
+    void unsetNofASDU();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Nof ASDU</em>' attribute is set.
+     * @see #unsetNofASDU()
+     * @see #getNofASDU()
+     * @see #setNofASDU(ServiceSettingsNoDynEnum)
+     * @generated
+     */
+    boolean isSetNofASDU();
+
+    /**
+     * Returns the value of the '<em><b>Kda Participant</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Kda Participant</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Kda Participant</em>' attribute.
+     * @see #isSetKdaParticipant()
+     * @see #unsetKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_KdaParticipant()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getKdaParticipant();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Kda Participant</em>' attribute.
+     * @see #isSetKdaParticipant()
+     * @see #unsetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @generated
+     */
+    void setKdaParticipant(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @generated
+     */
+    void unsetKdaParticipant();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Kda Participant</em>' attribute is set.
+     * @see #unsetKdaParticipant()
+     * @see #getKdaParticipant()
+     * @see #setKdaParticipant(Boolean)
+     * @generated
+     */
+    boolean isSetKdaParticipant();
 } // SMVSettings

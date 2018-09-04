@@ -30,6 +30,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getBufMode <em>Buf Mode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getBufConf <em>Buf Conf</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceConfReportControl()
@@ -145,5 +146,58 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @generated
      */
     boolean isSetBufConf();
+
+    /**
+     * Returns the value of the '<em><b>Max Buf</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Max Buf</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Max Buf</em>' attribute.
+     * @see #isSetMaxBuf()
+     * @see #unsetMaxBuf()
+     * @see #setMaxBuf(Integer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceConfReportControl_MaxBuf()
+     * @model unsettable="true"
+     * @generated
+     */
+    Integer getMaxBuf();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Max Buf</em>' attribute.
+     * @see #isSetMaxBuf()
+     * @see #unsetMaxBuf()
+     * @see #getMaxBuf()
+     * @generated
+     */
+    void setMaxBuf(Integer value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetMaxBuf()
+     * @see #getMaxBuf()
+     * @see #setMaxBuf(Integer)
+     * @generated
+     */
+    void unsetMaxBuf();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Max Buf</em>' attribute is set.
+     * @see #unsetMaxBuf()
+     * @see #getMaxBuf()
+     * @see #setMaxBuf(Integer)
+     * @generated
+     */
+    boolean isSetMaxBuf();
 
 } // ServiceConfReportControl

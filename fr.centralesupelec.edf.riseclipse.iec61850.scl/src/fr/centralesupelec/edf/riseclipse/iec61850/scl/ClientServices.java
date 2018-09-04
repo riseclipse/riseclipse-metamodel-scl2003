@@ -40,6 +40,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getUnbufReport <em>Unbuf Report</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices <em>Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getTimeSyncProt <em>Time Sync Prot</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices()
@@ -712,5 +715,164 @@ public interface ClientServices extends SclObject {
      * @generated
      */
     boolean isSetTimeSyncProt();
+
+    /**
+     * Returns the value of the '<em><b>RGOOSE</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>RGOOSE</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>RGOOSE</em>' attribute.
+     * @see #isSetRGOOSE()
+     * @see #unsetRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_RGOOSE()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getRGOOSE();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>RGOOSE</em>' attribute.
+     * @see #isSetRGOOSE()
+     * @see #unsetRGOOSE()
+     * @see #getRGOOSE()
+     * @generated
+     */
+    void setRGOOSE(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRGOOSE()
+     * @see #getRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @generated
+     */
+    void unsetRGOOSE();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>RGOOSE</em>' attribute is set.
+     * @see #unsetRGOOSE()
+     * @see #getRGOOSE()
+     * @see #setRGOOSE(Boolean)
+     * @generated
+     */
+    boolean isSetRGOOSE();
+
+    /**
+     * Returns the value of the '<em><b>RSV</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>RSV</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>RSV</em>' attribute.
+     * @see #isSetRSV()
+     * @see #unsetRSV()
+     * @see #setRSV(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_RSV()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getRSV();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>RSV</em>' attribute.
+     * @see #isSetRSV()
+     * @see #unsetRSV()
+     * @see #getRSV()
+     * @generated
+     */
+    void setRSV(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRSV()
+     * @see #getRSV()
+     * @see #setRSV(Boolean)
+     * @generated
+     */
+    void unsetRSV();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>RSV</em>' attribute is set.
+     * @see #unsetRSV()
+     * @see #getRSV()
+     * @see #setRSV(Boolean)
+     * @generated
+     */
+    boolean isSetRSV();
+
+    /**
+     * Returns the value of the '<em><b>No Ict Binding</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>No Ict Binding</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>No Ict Binding</em>' attribute.
+     * @see #isSetNoIctBinding()
+     * @see #unsetNoIctBinding()
+     * @see #setNoIctBinding(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_NoIctBinding()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getNoIctBinding();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>No Ict Binding</em>' attribute.
+     * @see #isSetNoIctBinding()
+     * @see #unsetNoIctBinding()
+     * @see #getNoIctBinding()
+     * @generated
+     */
+    void setNoIctBinding(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetNoIctBinding()
+     * @see #getNoIctBinding()
+     * @see #setNoIctBinding(Boolean)
+     * @generated
+     */
+    void unsetNoIctBinding();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>No Ict Binding</em>' attribute is set.
+     * @see #unsetNoIctBinding()
+     * @see #getNoIctBinding()
+     * @see #setNoIctBinding(Boolean)
+     * @generated
+     */
+    boolean isSetNoIctBinding();
 
 } // ClientServices

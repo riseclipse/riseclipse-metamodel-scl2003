@@ -39,6 +39,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal()
@@ -664,5 +665,58 @@ public interface Terminal extends UnNaming {
      * @generated
      */
     boolean isSetName();
+
+    /**
+     * Returns the value of the '<em><b>Line Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Line Name</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Line Name</em>' attribute.
+     * @see #isSetLineName()
+     * @see #unsetLineName()
+     * @see #setLineName(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_LineName()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getLineName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Line Name</em>' attribute.
+     * @see #isSetLineName()
+     * @see #unsetLineName()
+     * @see #getLineName()
+     * @generated
+     */
+    void setLineName(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetLineName()
+     * @see #getLineName()
+     * @see #setLineName(String)
+     * @generated
+     */
+    void unsetLineName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Line Name</em>' attribute is set.
+     * @see #unsetLineName()
+     * @see #getLineName()
+     * @see #setLineName(String)
+     * @generated
+     */
+    boolean isSetLineName();
 
 } // Terminal

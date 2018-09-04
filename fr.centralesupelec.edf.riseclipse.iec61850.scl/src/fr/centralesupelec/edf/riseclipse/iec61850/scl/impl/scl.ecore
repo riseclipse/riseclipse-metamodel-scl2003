@@ -134,6 +134,10 @@
         resolveProxies="false" eOpposite="#//ConductingEquipment/Line"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Voltage" eType="#//Voltage"
         unsettable="true" containment="true" resolveProxies="false" eOpposite="#//Voltage/Line"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -732,6 +736,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="TimeSyncProt" ordered="false"
         eType="#//TimeSyncProt" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//TimeSyncProt/ClientServices"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rGOOSE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rSV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noIctBinding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommProt" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ipv6" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -917,6 +927,14 @@
         eOpposite="#//DataObject/ReferredByExtRef"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pServT" eType="#//ServiceType"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pLN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pDO" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pDA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FCDA" eSuperTypes="#//ExplicitLinkResolver">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -964,6 +982,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/GOOSE"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goose" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rGOOSE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GOOSESecurity" eSuperTypes="#//Certificate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
@@ -1355,6 +1377,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/SMVSettings"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchSrcId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nofASDU" eType="#//ServiceSettingsNoDynEnum"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdaParticipant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SMVsc" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//SMVDeliveryEnum"
@@ -1364,6 +1392,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/SMVsc"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rSV" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SampledValueControl" eSuperTypes="#//ControlWithIEDName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multicast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -1569,6 +1601,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SampledValueControl" ordered="false"
         eType="#//SampledValueControl" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//SampledValueControl/SmvOpts"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchSourceId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Subject" eSuperTypes="#//Cert">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Certificate" ordered="false"
@@ -1597,6 +1631,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/TimeSyncProt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iec61850_9_3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimerActivatedControl" eSuperTypes="#//ServiceYesNo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
@@ -1927,6 +1963,8 @@
         eOpposite="#//VoltageLevel/Terminal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransformerWinding" eSuperTypes="#//AbstractConductingEquipment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2115,6 +2153,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufMode" eType="#//bufModeEnum"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBuf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMaxAndMaxAttributes" eSuperTypes="#//ServiceWithMax">

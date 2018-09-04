@@ -63,6 +63,7 @@ public class TimeSyncProtItemProvider
             addC37_238PropertyDescriptor(object);
             addOtherPropertyDescriptor(object);
             addSntpPropertyDescriptor(object);
+            addIec61850_9_3PropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -134,6 +135,28 @@ public class TimeSyncProtItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Iec61850 93 feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addIec61850_9_3PropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_TimeSyncProt_iec61850_9_3_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_iec61850_9_3_feature", "_UI_TimeSyncProt_type"),
+                 SclPackage.eINSTANCE.getTimeSyncProt_Iec61850_9_3(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns TimeSyncProt.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -172,6 +195,7 @@ public class TimeSyncProtItemProvider
             case SclPackage.TIME_SYNC_PROT__C37_238:
             case SclPackage.TIME_SYNC_PROT__OTHER:
             case SclPackage.TIME_SYNC_PROT__SNTP:
+            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

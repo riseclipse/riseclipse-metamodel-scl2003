@@ -41,6 +41,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getDelivery <em>Delivery</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getDeliveryConf <em>Delivery Conf</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getSv <em>Sv</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getRSV <em>RSV</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,64 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @ordered
      */
     protected boolean deliveryConfESet;
+
+    /**
+     * The default value of the '{@link #getSv() <em>Sv</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSv()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean SV_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getSv() <em>Sv</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSv()
+     * @generated
+     * @ordered
+     */
+    protected Boolean sv = SV_EDEFAULT;
+
+    /**
+     * This is true if the Sv attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean svESet;
+
+    /**
+     * The default value of the '{@link #getRSV() <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRSV()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean RSV_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getRSV() <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRSV()
+     * @generated
+     * @ordered
+     */
+    protected Boolean rSV = RSV_EDEFAULT;
+
+    /**
+     * This is true if the RSV attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean rSVESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -261,6 +321,98 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getSv() {
+        return sv;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setSv(Boolean newSv) {
+        Boolean oldSv = sv;
+        sv = newSv;
+        boolean oldSvESet = svESet;
+        svESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__SV, oldSv, sv, !oldSvESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetSv() {
+        Boolean oldSv = sv;
+        boolean oldSvESet = svESet;
+        sv = SV_EDEFAULT;
+        svESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__SV, oldSv, SV_EDEFAULT, oldSvESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetSv() {
+        return svESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Boolean getRSV() {
+        return rSV;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRSV(Boolean newRSV) {
+        Boolean oldRSV = rSV;
+        rSV = newRSV;
+        boolean oldRSVESet = rSVESet;
+        rSVESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__RSV, oldRSV, rSV, !oldRSVESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetRSV() {
+        Boolean oldRSV = rSV;
+        boolean oldRSVESet = rSVESet;
+        rSV = RSV_EDEFAULT;
+        rSVESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__RSV, oldRSV, RSV_EDEFAULT, oldRSVESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetRSV() {
+        return rSVESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -314,6 +466,10 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
                 return getDeliveryConf();
             case SclPackage.SM_VSC__SERVICES:
                 return getServices();
+            case SclPackage.SM_VSC__SV:
+                return getSv();
+            case SclPackage.SM_VSC__RSV:
+                return getRSV();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -334,6 +490,12 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
                 return;
             case SclPackage.SM_VSC__SERVICES:
                 setServices((Services)newValue);
+                return;
+            case SclPackage.SM_VSC__SV:
+                setSv((Boolean)newValue);
+                return;
+            case SclPackage.SM_VSC__RSV:
+                setRSV((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -356,6 +518,12 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
             case SclPackage.SM_VSC__SERVICES:
                 setServices((Services)null);
                 return;
+            case SclPackage.SM_VSC__SV:
+                unsetSv();
+                return;
+            case SclPackage.SM_VSC__RSV:
+                unsetRSV();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -374,6 +542,10 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
                 return isSetDeliveryConf();
             case SclPackage.SM_VSC__SERVICES:
                 return getServices() != null;
+            case SclPackage.SM_VSC__SV:
+                return isSetSv();
+            case SclPackage.SM_VSC__RSV:
+                return isSetRSV();
         }
         return super.eIsSet(featureID);
     }
@@ -392,6 +564,10 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         if (deliveryESet) result.append(delivery); else result.append("<unset>");
         result.append(", deliveryConf: ");
         if (deliveryConfESet) result.append(deliveryConf); else result.append("<unset>");
+        result.append(", sv: ");
+        if (svESet) result.append(sv); else result.append("<unset>");
+        result.append(", rSV: ");
+        if (rSVESet) result.append(rSV); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

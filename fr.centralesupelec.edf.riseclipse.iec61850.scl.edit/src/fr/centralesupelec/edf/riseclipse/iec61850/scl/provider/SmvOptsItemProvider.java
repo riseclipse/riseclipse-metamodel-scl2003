@@ -66,6 +66,7 @@ public class SmvOptsItemProvider
             addSampleSynchronizedPropertyDescriptor(object);
             addSecurityPropertyDescriptor(object);
             addTimestampPropertyDescriptor(object);
+            addSynchSourceIdPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -203,6 +204,28 @@ public class SmvOptsItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Synch Source Id feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addSynchSourceIdPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SmvOpts_synchSourceId_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SmvOpts_synchSourceId_feature", "_UI_SmvOpts_type"),
+                 SclPackage.eINSTANCE.getSmvOpts_SynchSourceId(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns SmvOpts.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -244,6 +267,7 @@ public class SmvOptsItemProvider
             case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
             case SclPackage.SMV_OPTS__SECURITY:
             case SclPackage.SMV_OPTS__TIMESTAMP:
+            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

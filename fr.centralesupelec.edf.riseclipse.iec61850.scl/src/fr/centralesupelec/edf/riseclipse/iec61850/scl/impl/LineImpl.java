@@ -35,6 +35,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
+import java.math.BigDecimal;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,6 +51,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getVoltage <em>Voltage</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getNomFreq <em>Nom Freq</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getNumPhases <em>Num Phases</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,6 +125,64 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @ordered
      */
     protected boolean voltageESet;
+
+    /**
+     * The default value of the '{@link #getNomFreq() <em>Nom Freq</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNomFreq()
+     * @generated
+     * @ordered
+     */
+    protected static final BigDecimal NOM_FREQ_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getNomFreq() <em>Nom Freq</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNomFreq()
+     * @generated
+     * @ordered
+     */
+    protected BigDecimal nomFreq = NOM_FREQ_EDEFAULT;
+
+    /**
+     * This is true if the Nom Freq attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nomFreqESet;
+
+    /**
+     * The default value of the '{@link #getNumPhases() <em>Num Phases</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNumPhases()
+     * @generated
+     * @ordered
+     */
+    protected static final Byte NUM_PHASES_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getNumPhases() <em>Num Phases</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNumPhases()
+     * @generated
+     * @ordered
+     */
+    protected Byte numPhases = NUM_PHASES_EDEFAULT;
+
+    /**
+     * This is true if the Num Phases attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean numPhasesESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -431,6 +492,98 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    public BigDecimal getNomFreq() {
+        return nomFreq;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setNomFreq(BigDecimal newNomFreq) {
+        BigDecimal oldNomFreq = nomFreq;
+        nomFreq = newNomFreq;
+        boolean oldNomFreqESet = nomFreqESet;
+        nomFreqESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__NOM_FREQ, oldNomFreq, nomFreq, !oldNomFreqESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetNomFreq() {
+        BigDecimal oldNomFreq = nomFreq;
+        boolean oldNomFreqESet = nomFreqESet;
+        nomFreq = NOM_FREQ_EDEFAULT;
+        nomFreqESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LINE__NOM_FREQ, oldNomFreq, NOM_FREQ_EDEFAULT, oldNomFreqESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetNomFreq() {
+        return nomFreqESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Byte getNumPhases() {
+        return numPhases;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setNumPhases(Byte newNumPhases) {
+        Byte oldNumPhases = numPhases;
+        numPhases = newNumPhases;
+        boolean oldNumPhasesESet = numPhasesESet;
+        numPhasesESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__NUM_PHASES, oldNumPhases, numPhases, !oldNumPhasesESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetNumPhases() {
+        Byte oldNumPhases = numPhases;
+        boolean oldNumPhasesESet = numPhasesESet;
+        numPhases = NUM_PHASES_EDEFAULT;
+        numPhasesESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LINE__NUM_PHASES, oldNumPhases, NUM_PHASES_EDEFAULT, oldNumPhasesESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetNumPhases() {
+        return numPhasesESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -513,6 +666,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return getConductingEquipment();
             case SclPackage.LINE__VOLTAGE:
                 return getVoltage();
+            case SclPackage.LINE__NOM_FREQ:
+                return getNomFreq();
+            case SclPackage.LINE__NUM_PHASES:
+                return getNumPhases();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -546,6 +703,12 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
             case SclPackage.LINE__VOLTAGE:
                 setVoltage((Voltage)newValue);
                 return;
+            case SclPackage.LINE__NOM_FREQ:
+                setNomFreq((BigDecimal)newValue);
+                return;
+            case SclPackage.LINE__NUM_PHASES:
+                setNumPhases((Byte)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -576,6 +739,12 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
             case SclPackage.LINE__VOLTAGE:
                 unsetVoltage();
                 return;
+            case SclPackage.LINE__NOM_FREQ:
+                unsetNomFreq();
+                return;
+            case SclPackage.LINE__NUM_PHASES:
+                unsetNumPhases();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -600,6 +769,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
                 return isSetConductingEquipment();
             case SclPackage.LINE__VOLTAGE:
                 return isSetVoltage();
+            case SclPackage.LINE__NOM_FREQ:
+                return isSetNomFreq();
+            case SclPackage.LINE__NUM_PHASES:
+                return isSetNumPhases();
         }
         return super.eIsSet(featureID);
     }
@@ -616,6 +789,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (type: ");
         if (typeESet) result.append(type); else result.append("<unset>");
+        result.append(", nomFreq: ");
+        if (nomFreqESet) result.append(nomFreq); else result.append("<unset>");
+        result.append(", numPhases: ");
+        if (numPhasesESet) result.append(numPhases); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

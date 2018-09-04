@@ -34,6 +34,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmvOpts()
@@ -386,5 +387,58 @@ public interface SmvOpts extends SclObject {
      * @generated
      */
     void setSampledValueControl( SampledValueControl value );
+
+    /**
+     * Returns the value of the '<em><b>Synch Source Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Synch Source Id</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Synch Source Id</em>' attribute.
+     * @see #isSetSynchSourceId()
+     * @see #unsetSynchSourceId()
+     * @see #setSynchSourceId(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmvOpts_SynchSourceId()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getSynchSourceId();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Synch Source Id</em>' attribute.
+     * @see #isSetSynchSourceId()
+     * @see #unsetSynchSourceId()
+     * @see #getSynchSourceId()
+     * @generated
+     */
+    void setSynchSourceId(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSynchSourceId()
+     * @see #getSynchSourceId()
+     * @see #setSynchSourceId(Boolean)
+     * @generated
+     */
+    void unsetSynchSourceId();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Synch Source Id</em>' attribute is set.
+     * @see #unsetSynchSourceId()
+     * @see #getSynchSourceId()
+     * @see #setSynchSourceId(Boolean)
+     * @generated
+     */
+    boolean isSetSynchSourceId();
 
 } // SmvOpts

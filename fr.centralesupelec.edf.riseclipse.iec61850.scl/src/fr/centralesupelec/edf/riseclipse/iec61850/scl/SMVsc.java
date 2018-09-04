@@ -30,6 +30,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDelivery <em>Delivery</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getDeliveryConf <em>Delivery Conf</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc()
@@ -173,5 +175,111 @@ public interface SMVsc extends ServiceWithMax {
      * @generated
      */
     void setServices( Services value );
+
+    /**
+     * Returns the value of the '<em><b>Sv</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Sv</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Sv</em>' attribute.
+     * @see #isSetSv()
+     * @see #unsetSv()
+     * @see #setSv(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Sv()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getSv();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Sv</em>' attribute.
+     * @see #isSetSv()
+     * @see #unsetSv()
+     * @see #getSv()
+     * @generated
+     */
+    void setSv(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSv()
+     * @see #getSv()
+     * @see #setSv(Boolean)
+     * @generated
+     */
+    void unsetSv();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Sv</em>' attribute is set.
+     * @see #unsetSv()
+     * @see #getSv()
+     * @see #setSv(Boolean)
+     * @generated
+     */
+    boolean isSetSv();
+
+    /**
+     * Returns the value of the '<em><b>RSV</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>RSV</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>RSV</em>' attribute.
+     * @see #isSetRSV()
+     * @see #unsetRSV()
+     * @see #setRSV(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_RSV()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getRSV();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>RSV</em>' attribute.
+     * @see #isSetRSV()
+     * @see #unsetRSV()
+     * @see #getRSV()
+     * @generated
+     */
+    void setRSV(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRSV()
+     * @see #getRSV()
+     * @see #setRSV(Boolean)
+     * @generated
+     */
+    void unsetRSV();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>RSV</em>' attribute is set.
+     * @see #unsetRSV()
+     * @see #getRSV()
+     * @see #setRSV(Boolean)
+     * @generated
+     */
+    boolean isSetRSV();
 
 } // SMVsc

@@ -61,6 +61,8 @@ public class SMVscItemProvider extends ServiceWithMaxItemProvider {
 
             addDeliveryPropertyDescriptor(object);
             addDeliveryConfPropertyDescriptor(object);
+            addSvPropertyDescriptor(object);
+            addRSVPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -110,6 +112,50 @@ public class SMVscItemProvider extends ServiceWithMaxItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Sv feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addSvPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SMVsc_sv_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SMVsc_sv_feature", "_UI_SMVsc_type"),
+                 SclPackage.eINSTANCE.getSMVsc_Sv(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the RSV feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRSVPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SMVsc_rSV_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SMVsc_rSV_feature", "_UI_SMVsc_type"),
+                 SclPackage.eINSTANCE.getSMVsc_RSV(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns SMVsc.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -147,6 +193,8 @@ public class SMVscItemProvider extends ServiceWithMaxItemProvider {
         switch (notification.getFeatureID(SMVsc.class)) {
             case SclPackage.SM_VSC__DELIVERY:
             case SclPackage.SM_VSC__DELIVERY_CONF:
+            case SclPackage.SM_VSC__SV:
+            case SclPackage.SM_VSC__RSV:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

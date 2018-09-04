@@ -77,6 +77,10 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             addRefersToDataAttributePropertyDescriptor(object);
             addRefersToDataObjectPropertyDescriptor(object);
             addDescPropertyDescriptor(object);
+            addPServTPropertyDescriptor(object);
+            addPLNPropertyDescriptor(object);
+            addPDOPropertyDescriptor(object);
+            addPDAPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -478,6 +482,94 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the PServ T feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPServTPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ExtRef_pServT_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_pServT_feature", "_UI_ExtRef_type"),
+                 SclPackage.eINSTANCE.getExtRef_PServT(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the PLN feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPLNPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ExtRef_pLN_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_pLN_feature", "_UI_ExtRef_type"),
+                 SclPackage.eINSTANCE.getExtRef_PLN(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the PDO feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPDOPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ExtRef_pDO_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_pDO_feature", "_UI_ExtRef_type"),
+                 SclPackage.eINSTANCE.getExtRef_PDO(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the PDA feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addPDAPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_ExtRef_pDA_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_pDA_feature", "_UI_ExtRef_type"),
+                 SclPackage.eINSTANCE.getExtRef_PDA(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns ExtRef.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -530,6 +622,10 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             case SclPackage.EXT_REF__SRC_LN_INST:
             case SclPackage.EXT_REF__SRC_PREFIX:
             case SclPackage.EXT_REF__DESC:
+            case SclPackage.EXT_REF__PSERV_T:
+            case SclPackage.EXT_REF__PLN:
+            case SclPackage.EXT_REF__PDO:
+            case SclPackage.EXT_REF__PDA:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

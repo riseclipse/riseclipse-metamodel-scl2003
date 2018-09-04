@@ -43,6 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getSntp <em>Sntp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getClientServices <em>Client Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getIec61850_9_3 <em>Iec61850 93</em>}</li>
  * </ul>
  *
  * @generated
@@ -134,6 +135,35 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @ordered
      */
     protected boolean sntpESet;
+
+    /**
+     * The default value of the '{@link #getIec61850_9_3() <em>Iec61850 93</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getIec61850_9_3()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean IEC61850_93_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getIec61850_9_3() <em>Iec61850 93</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getIec61850_9_3()
+     * @generated
+     * @ordered
+     */
+    protected Boolean iec61850_9_3 = IEC61850_93_EDEFAULT;
+
+    /**
+     * This is true if the Iec61850 93 attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean iec61850_9_3ESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -379,6 +409,52 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    public Boolean getIec61850_9_3() {
+        return iec61850_9_3;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setIec61850_9_3(Boolean newIec61850_9_3) {
+        Boolean oldIec61850_9_3 = iec61850_9_3;
+        iec61850_9_3 = newIec61850_9_3;
+        boolean oldIec61850_9_3ESet = iec61850_9_3ESet;
+        iec61850_9_3ESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TIME_SYNC_PROT__IEC61850_93, oldIec61850_9_3, iec61850_9_3, !oldIec61850_9_3ESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetIec61850_9_3() {
+        Boolean oldIec61850_9_3 = iec61850_9_3;
+        boolean oldIec61850_9_3ESet = iec61850_9_3ESet;
+        iec61850_9_3 = IEC61850_93_EDEFAULT;
+        iec61850_9_3ESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TIME_SYNC_PROT__IEC61850_93, oldIec61850_9_3, IEC61850_93_EDEFAULT, oldIec61850_9_3ESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetIec61850_9_3() {
+        return iec61850_9_3ESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -444,6 +520,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
                 return getClientServices();
             case SclPackage.TIME_SYNC_PROT__SERVICES:
                 return getServices();
+            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
+                return getIec61850_9_3();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -470,6 +548,9 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
                 return;
             case SclPackage.TIME_SYNC_PROT__SERVICES:
                 setServices((Services)newValue);
+                return;
+            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
+                setIec61850_9_3((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -498,6 +579,9 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
             case SclPackage.TIME_SYNC_PROT__SERVICES:
                 setServices((Services)null);
                 return;
+            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
+                unsetIec61850_9_3();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -520,6 +604,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
                 return getClientServices() != null;
             case SclPackage.TIME_SYNC_PROT__SERVICES:
                 return getServices() != null;
+            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
+                return isSetIec61850_9_3();
         }
         return super.eIsSet(featureID);
     }
@@ -540,6 +626,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
         if (otherESet) result.append(other); else result.append("<unset>");
         result.append(", sntp: ");
         if (sntpESet) result.append(sntp); else result.append("<unset>");
+        result.append(", iec61850_9_3: ");
+        if (iec61850_9_3ESet) result.append(iec61850_9_3); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

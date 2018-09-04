@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import java.math.BigDecimal;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -35,6 +36,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine()
@@ -287,5 +290,111 @@ public interface Line extends GeneralEquipmentContainer {
      * @generated
      */
     boolean isSetVoltage();
+
+    /**
+     * Returns the value of the '<em><b>Nom Freq</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Nom Freq</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Nom Freq</em>' attribute.
+     * @see #isSetNomFreq()
+     * @see #unsetNomFreq()
+     * @see #setNomFreq(BigDecimal)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_NomFreq()
+     * @model unsettable="true"
+     * @generated
+     */
+    BigDecimal getNomFreq();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Nom Freq</em>' attribute.
+     * @see #isSetNomFreq()
+     * @see #unsetNomFreq()
+     * @see #getNomFreq()
+     * @generated
+     */
+    void setNomFreq(BigDecimal value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetNomFreq()
+     * @see #getNomFreq()
+     * @see #setNomFreq(BigDecimal)
+     * @generated
+     */
+    void unsetNomFreq();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Nom Freq</em>' attribute is set.
+     * @see #unsetNomFreq()
+     * @see #getNomFreq()
+     * @see #setNomFreq(BigDecimal)
+     * @generated
+     */
+    boolean isSetNomFreq();
+
+    /**
+     * Returns the value of the '<em><b>Num Phases</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Num Phases</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Num Phases</em>' attribute.
+     * @see #isSetNumPhases()
+     * @see #unsetNumPhases()
+     * @see #setNumPhases(Byte)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_NumPhases()
+     * @model unsettable="true"
+     * @generated
+     */
+    Byte getNumPhases();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Num Phases</em>' attribute.
+     * @see #isSetNumPhases()
+     * @see #unsetNumPhases()
+     * @see #getNumPhases()
+     * @generated
+     */
+    void setNumPhases(Byte value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetNumPhases()
+     * @see #getNumPhases()
+     * @see #setNumPhases(Byte)
+     * @generated
+     */
+    void unsetNumPhases();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Num Phases</em>' attribute is set.
+     * @see #unsetNumPhases()
+     * @see #getNumPhases()
+     * @see #setNumPhases(Byte)
+     * @generated
+     */
+    boolean isSetNumPhases();
 
 } // Line
