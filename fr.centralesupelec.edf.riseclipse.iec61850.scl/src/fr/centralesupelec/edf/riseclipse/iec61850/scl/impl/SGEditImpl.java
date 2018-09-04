@@ -300,7 +300,7 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (resvTms: ");
         if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
         result.append(')');

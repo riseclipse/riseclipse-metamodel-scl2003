@@ -4588,7 +4588,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (nameLength: ");
         if (nameLengthESet) result.append(nameLength); else result.append("<unset>");
         result.append(')');

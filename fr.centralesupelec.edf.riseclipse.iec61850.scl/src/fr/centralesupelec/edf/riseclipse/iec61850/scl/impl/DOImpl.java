@@ -528,7 +528,7 @@ public class DOImpl extends DataObjectImpl implements DO {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (transient: ");
         if (transientESet) result.append(transient_); else result.append("<unset>");
         result.append(", type: ");

@@ -873,7 +873,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (multicast: ");
         if (multicastESet) result.append(multicast); else result.append("<unset>");
         result.append(", nofASDU: ");

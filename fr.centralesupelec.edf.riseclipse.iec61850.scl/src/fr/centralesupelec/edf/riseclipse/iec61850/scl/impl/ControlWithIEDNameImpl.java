@@ -482,7 +482,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (confRev: ");
         if (confRevESet) result.append(confRev); else result.append("<unset>");
         result.append(')');

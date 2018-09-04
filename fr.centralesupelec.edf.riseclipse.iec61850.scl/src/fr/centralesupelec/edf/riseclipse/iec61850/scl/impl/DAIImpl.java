@@ -683,7 +683,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (ix: ");
         if (ixESet) result.append(ix); else result.append("<unset>");
         result.append(", sAddr: ");

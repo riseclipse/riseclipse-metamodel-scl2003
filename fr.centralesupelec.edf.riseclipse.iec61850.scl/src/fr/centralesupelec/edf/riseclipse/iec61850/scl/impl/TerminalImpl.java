@@ -1364,7 +1364,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (bayName: ");
         if (bayNameESet) result.append(bayName); else result.append("<unset>");
         result.append(", cNodeName: ");

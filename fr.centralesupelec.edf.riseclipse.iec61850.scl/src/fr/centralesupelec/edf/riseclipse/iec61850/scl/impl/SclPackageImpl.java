@@ -1302,7 +1302,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
 
     /**
      * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-     * 
+     *
      * <p>This method is used to initialize {@link SclPackage#eINSTANCE} when that field is accessed.
      * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
      * <!-- begin-user-doc -->
@@ -1314,7 +1314,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
         if (isInited) return (SclPackage)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI);
 
         // Obtain or create and register package
-        SclPackageImpl theSclPackage = (SclPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SclPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SclPackageImpl());
+        Object registeredSclPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+        SclPackageImpl theSclPackage = registeredSclPackage instanceof SclPackageImpl ? (SclPackageImpl)registeredSclPackage : new SclPackageImpl();
 
         isInited = true;
 
@@ -1327,7 +1328,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
         // Mark meta-data to indicate it can't be changed
         theSclPackage.freeze();
 
-  
         // Update the registry and return the package
         EPackage.Registry.INSTANCE.put(SclPackage.eNS_URI, theSclPackage);
         return theSclPackage;

@@ -533,7 +533,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (c37_238: ");
         if (c37_238ESet) result.append(c37_238); else result.append("<unset>");
         result.append(", other: ");

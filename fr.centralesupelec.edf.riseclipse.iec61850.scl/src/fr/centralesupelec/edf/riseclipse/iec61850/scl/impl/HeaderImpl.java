@@ -914,7 +914,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (id: ");
         if (idESet) result.append(id); else result.append("<unset>");
         result.append(", nameStructure: ");

@@ -478,7 +478,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (iedType: ");
         if (iedTypeESet) result.append(iedType); else result.append("<unset>");
         result.append(')');

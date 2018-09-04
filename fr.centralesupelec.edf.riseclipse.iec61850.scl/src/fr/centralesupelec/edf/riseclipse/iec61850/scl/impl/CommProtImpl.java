@@ -300,7 +300,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (ipv6: ");
         if (ipv6ESet) result.append(ipv6); else result.append("<unset>");
         result.append(')');

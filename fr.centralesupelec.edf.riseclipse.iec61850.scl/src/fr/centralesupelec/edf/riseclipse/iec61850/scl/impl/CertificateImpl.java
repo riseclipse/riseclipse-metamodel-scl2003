@@ -578,7 +578,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (serialNumber: ");
         if (serialNumberESet) result.append(serialNumber); else result.append("<unset>");
         result.append(", xferNumber: ");

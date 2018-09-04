@@ -300,7 +300,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (setToRO: ");
         if (setToROESet) result.append(setToRO); else result.append("<unset>");
         result.append(')');

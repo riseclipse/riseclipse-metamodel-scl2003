@@ -363,7 +363,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (type: ");
         if (typeESet) result.append(type); else result.append("<unset>");
         result.append(')');

@@ -645,7 +645,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (dchg: ");
         if (dchgESet) result.append(dchg); else result.append("<unset>");
         result.append(", dupd: ");

@@ -472,7 +472,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (ftp: ");
         if (ftpESet) result.append(ftp); else result.append("<unset>");
         result.append(", ftps: ");

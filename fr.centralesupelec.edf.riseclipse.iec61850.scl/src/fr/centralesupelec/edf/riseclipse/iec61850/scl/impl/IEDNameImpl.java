@@ -871,7 +871,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (apRef: ");
         if (apRefESet) result.append(apRef); else result.append("<unset>");
         result.append(", ldInst: ");

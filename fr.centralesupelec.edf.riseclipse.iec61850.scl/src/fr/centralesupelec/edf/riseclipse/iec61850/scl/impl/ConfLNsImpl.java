@@ -386,7 +386,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (fixLnInst: ");
         if (fixLnInstESet) result.append(fixLnInst); else result.append("<unset>");
         result.append(", fixPrefix: ");

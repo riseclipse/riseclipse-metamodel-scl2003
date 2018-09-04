@@ -386,7 +386,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (source: ");
         if (sourceESet) result.append(source); else result.append("<unset>");
         result.append(", type: ");

@@ -300,7 +300,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (fixedOffs: ");
         if (fixedOffsESet) result.append(fixedOffs); else result.append("<unset>");
         result.append(')');

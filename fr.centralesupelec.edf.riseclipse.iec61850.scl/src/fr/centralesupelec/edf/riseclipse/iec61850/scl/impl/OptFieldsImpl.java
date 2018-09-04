@@ -902,7 +902,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     public String toString() {
         if (eIsProxy()) return super.toString();
 
-        StringBuffer result = new StringBuffer(super.toString());
+        StringBuilder result = new StringBuilder(super.toString());
         result.append(" (bufOvfl: ");
         if (bufOvflESet) result.append(bufOvfl); else result.append("<unset>");
         result.append(", configRef: ");
