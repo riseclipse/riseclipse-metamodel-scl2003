@@ -31,7 +31,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getVoltageLevel <em>Voltage Level</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal <em>Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL <em>SCL</em>}</li>
  * </ul>
@@ -122,47 +121,6 @@ public interface Substation extends EquipmentContainer {
      * @generated
      */
     boolean isSetVoltageLevel();
-
-    /**
-     * Returns the value of the '<em><b>Terminal</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Terminal</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Terminal</em>' reference list.
-     * @see #isSetTerminal()
-     * @see #unsetTerminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_Terminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation
-     * @model opposite="Substation" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<Terminal> getTerminal();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetTerminal()
-     * @see #getTerminal()
-     * @generated
-     */
-    void unsetTerminal();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal <em>Terminal</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Terminal</em>' reference list is set.
-     * @see #unsetTerminal()
-     * @see #getTerminal()
-     * @generated
-     */
-    boolean isSetTerminal();
 
     /**
      * Returns the value of the '<em><b>Process</b></em>' container reference.

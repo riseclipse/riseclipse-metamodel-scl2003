@@ -32,7 +32,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel <em>Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConnectivityNode <em>Connectivity Node</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal <em>Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment <em>Conducting Equipment</em>}</li>
  * </ul>
  *
@@ -150,47 +149,6 @@ public interface Bay extends EquipmentContainer {
      * @generated
      */
     boolean isSetConnectivityNode();
-
-    /**
-     * Returns the value of the '<em><b>Terminal</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Terminal</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Terminal</em>' reference list.
-     * @see #isSetTerminal()
-     * @see #unsetTerminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_Terminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay
-     * @model opposite="Bay" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<Terminal> getTerminal();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetTerminal()
-     * @see #getTerminal()
-     * @generated
-     */
-    void unsetTerminal();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal <em>Terminal</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Terminal</em>' reference list is set.
-     * @see #unsetTerminal()
-     * @see #getTerminal()
-     * @generated
-     */
-    boolean isSetTerminal();
 
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.

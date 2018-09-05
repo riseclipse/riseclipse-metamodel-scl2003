@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +34,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 
 /**
@@ -49,7 +47,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BayImpl#getVoltageLevel <em>Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BayImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BayImpl#getConnectivityNode <em>Connectivity Node</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BayImpl#getTerminal <em>Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BayImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
  * </ul>
  *
@@ -75,16 +72,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @ordered
      */
     protected EList<ConnectivityNode> connectivityNode;
-
-    /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTerminal()
-     * @generated
-     * @ordered
-     */
-    protected EList<Terminal> terminal;
 
     /**
      * The cached value of the '{@link #getConductingEquipment() <em>Conducting Equipment</em>}' containment reference list.
@@ -221,36 +208,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.BAY__TERMINAL, SclPackage.TERMINAL__BAY);
-        }
-        return terminal;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
             conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.BAY__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__BAY);
@@ -293,8 +250,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getFunction()).basicAdd(otherEnd, msgs);
             case SclPackage.BAY__CONNECTIVITY_NODE:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectivityNode()).basicAdd(otherEnd, msgs);
-            case SclPackage.BAY__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConductingEquipment()).basicAdd(otherEnd, msgs);
         }
@@ -315,8 +270,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
                 return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
             case SclPackage.BAY__CONNECTIVITY_NODE:
                 return ((InternalEList<?>)getConnectivityNode()).basicRemove(otherEnd, msgs);
-            case SclPackage.BAY__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<?>)getConductingEquipment()).basicRemove(otherEnd, msgs);
         }
@@ -351,8 +304,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
                 return getFunction();
             case SclPackage.BAY__CONNECTIVITY_NODE:
                 return getConnectivityNode();
-            case SclPackage.BAY__TERMINAL:
-                return getTerminal();
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 return getConductingEquipment();
         }
@@ -379,10 +330,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
                 getConnectivityNode().clear();
                 getConnectivityNode().addAll((Collection<? extends ConnectivityNode>)newValue);
                 return;
-            case SclPackage.BAY__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 getConductingEquipment().clear();
                 getConductingEquipment().addAll((Collection<? extends ConductingEquipment>)newValue);
@@ -408,9 +355,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
             case SclPackage.BAY__CONNECTIVITY_NODE:
                 unsetConnectivityNode();
                 return;
-            case SclPackage.BAY__TERMINAL:
-                unsetTerminal();
-                return;
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 unsetConductingEquipment();
                 return;
@@ -432,8 +376,6 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
                 return isSetFunction();
             case SclPackage.BAY__CONNECTIVITY_NODE:
                 return isSetConnectivityNode();
-            case SclPackage.BAY__TERMINAL:
-                return isSetTerminal();
             case SclPackage.BAY__CONDUCTING_EQUIPMENT:
                 return isSetConductingEquipment();
         }

@@ -60,7 +60,7 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
             super.getPropertyDescriptors(object);
 
             addPathNamePropertyDescriptor(object);
-            addTerminalPropertyDescriptor(object);
+            addReferredByTerminalPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -88,19 +88,19 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Terminal feature.
+     * This adds a property descriptor for the Referred By Terminal feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTerminalPropertyDescriptor(Object object) {
+    protected void addReferredByTerminalPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ConnectivityNode_Terminal_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectivityNode_Terminal_feature", "_UI_ConnectivityNode_type"),
-                 SclPackage.eINSTANCE.getConnectivityNode_Terminal(),
+                 getString("_UI_ConnectivityNode_ReferredByTerminal_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectivityNode_ReferredByTerminal_feature", "_UI_ConnectivityNode_type"),
+                 SclPackage.eINSTANCE.getConnectivityNode_ReferredByTerminal(),
                  true,
                  false,
                  true,

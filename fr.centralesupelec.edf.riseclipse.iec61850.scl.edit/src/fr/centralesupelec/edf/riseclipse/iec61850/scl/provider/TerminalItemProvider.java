@@ -65,10 +65,7 @@ public class TerminalItemProvider extends UnNamingItemProvider {
             addProcessNamePropertyDescriptor(object);
             addSubstationNamePropertyDescriptor(object);
             addVoltageLevelNamePropertyDescriptor(object);
-            addBayPropertyDescriptor(object);
-            addCNodePropertyDescriptor(object);
-            addSubstationPropertyDescriptor(object);
-            addVoltageLevelPropertyDescriptor(object);
+            addRefersToConnectivityNodePropertyDescriptor(object);
             addNamePropertyDescriptor(object);
             addLineNamePropertyDescriptor(object);
         }
@@ -208,19 +205,19 @@ public class TerminalItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Bay feature.
+     * This adds a property descriptor for the Refers To Connectivity Node feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBayPropertyDescriptor(Object object) {
+    protected void addRefersToConnectivityNodePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Terminal_Bay_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_Bay_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_Bay(),
+                 getString("_UI_Terminal_RefersToConnectivityNode_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_RefersToConnectivityNode_feature", "_UI_Terminal_type"),
+                 SclPackage.eINSTANCE.getTerminal_RefersToConnectivityNode(),
                  true,
                  false,
                  true,
@@ -230,72 +227,6 @@ public class TerminalItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the CNode feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addCNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_cNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_cNode_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_CNode(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Substation feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addSubstationPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_Substation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_Substation_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_Substation(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Voltage Level feature.
-     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-     * @generated
-     */
-	protected void addVoltageLevelPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_VoltageLevel_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_VoltageLevel_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_VoltageLevel(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-				/**
      * This adds a property descriptor for the Name feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

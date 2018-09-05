@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getPathName <em>Path Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal <em>Terminal</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}</li>
  * </ul>
  *
@@ -122,45 +122,45 @@ public interface ConnectivityNode extends LNodeContainer {
     void setBay( Bay value );
 
     /**
-     * Returns the value of the '<em><b>Terminal</b></em>' reference list.
+     * Returns the value of the '<em><b>Referred By Terminal</b></em>' reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}'.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Terminal</em>' reference isn't clear,
+     * If the meaning of the '<em>Referred By Terminal</em>' reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Terminal</em>' reference list.
-     * @see #isSetTerminal()
-     * @see #unsetTerminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectivityNode_Terminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode
-     * @model opposite="cNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @return the value of the '<em>Referred By Terminal</em>' reference list.
+     * @see #isSetReferredByTerminal()
+     * @see #unsetReferredByTerminal()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectivityNode_ReferredByTerminal()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode
+     * @model opposite="RefersToConnectivityNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<Terminal> getTerminal();
+    EList<Terminal> getReferredByTerminal();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal <em>Terminal</em>}' reference list.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetTerminal()
-     * @see #getTerminal()
+     * @see #isSetReferredByTerminal()
+     * @see #getReferredByTerminal()
      * @generated
      */
-    void unsetTerminal();
+    void unsetReferredByTerminal();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal <em>Terminal</em>}' reference list is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}' reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Terminal</em>' reference list is set.
-     * @see #unsetTerminal()
-     * @see #getTerminal()
+     * @return whether the value of the '<em>Referred By Terminal</em>' reference list is set.
+     * @see #unsetReferredByTerminal()
+     * @see #getReferredByTerminal()
      * @generated
      */
-    boolean isSetTerminal();
+    boolean isSetReferredByTerminal();
 
     /**
      * Returns the value of the '<em><b>Line</b></em>' container reference.

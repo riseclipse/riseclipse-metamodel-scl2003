@@ -14791,22 +14791,13 @@ public interface SclPackage extends EPackage {
     int BAY__CONNECTIVITY_NODE = EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Terminal</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BAY__TERMINAL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
-
-    /**
      * The feature id for the '<em><b>Conducting Equipment</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BAY__CONDUCTING_EQUIPMENT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
+    int BAY__CONDUCTING_EQUIPMENT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Bay</em>' class.
@@ -14815,7 +14806,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BAY_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
+    int BAY_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>Bay</em>' class.
@@ -15097,13 +15088,13 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__BAY = LNODE_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Terminal</b></em>' reference list.
+     * The feature id for the '<em><b>Referred By Terminal</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTIVITY_NODE__TERMINAL = LNODE_CONTAINER_FEATURE_COUNT + 2;
+    int CONNECTIVITY_NODE__REFERRED_BY_TERMINAL = LNODE_CONTAINER_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Line</b></em>' container reference.
@@ -16033,40 +16024,13 @@ public interface SclPackage extends EPackage {
     int TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
-     * The feature id for the '<em><b>Bay</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Connectivity Node</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TERMINAL__BAY = UN_NAMING_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>CNode</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TERMINAL__CNODE = UN_NAMING_FEATURE_COUNT + 8;
-
-    /**
-     * The feature id for the '<em><b>Substation</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TERMINAL__SUBSTATION = UN_NAMING_FEATURE_COUNT + 9;
-
-    /**
-     * The feature id for the '<em><b>Voltage Level</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TERMINAL__VOLTAGE_LEVEL = UN_NAMING_FEATURE_COUNT + 10;
+    int TERMINAL__REFERS_TO_CONNECTIVITY_NODE = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -16075,7 +16039,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int TERMINAL__NAME = UN_NAMING_FEATURE_COUNT + 11;
+    int TERMINAL__NAME = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Line Name</b></em>' attribute.
@@ -16084,7 +16048,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int TERMINAL__LINE_NAME = UN_NAMING_FEATURE_COUNT + 12;
+    int TERMINAL__LINE_NAME = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Terminal</em>' class.
@@ -16093,7 +16057,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int TERMINAL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 13;
+    int TERMINAL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The number of operations of the '<em>Terminal</em>' class.
@@ -16222,40 +16186,13 @@ public interface SclPackage extends EPackage {
     int NEUTRAL_POINT__ABSTRACT_CONDUCTING_EQUIPMENT = TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT;
 
     /**
-     * The feature id for the '<em><b>Bay</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Connectivity Node</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int NEUTRAL_POINT__BAY = TERMINAL__BAY;
-
-    /**
-     * The feature id for the '<em><b>CNode</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int NEUTRAL_POINT__CNODE = TERMINAL__CNODE;
-
-    /**
-     * The feature id for the '<em><b>Substation</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int NEUTRAL_POINT__SUBSTATION = TERMINAL__SUBSTATION;
-
-    /**
-     * The feature id for the '<em><b>Voltage Level</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int NEUTRAL_POINT__VOLTAGE_LEVEL = TERMINAL__VOLTAGE_LEVEL;
+    int NEUTRAL_POINT__REFERS_TO_CONNECTIVITY_NODE = TERMINAL__REFERS_TO_CONNECTIVITY_NODE;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -16834,22 +16771,13 @@ public interface SclPackage extends EPackage {
     int SUBSTATION__VOLTAGE_LEVEL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Terminal</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUBSTATION__TERMINAL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
-
-    /**
      * The feature id for the '<em><b>Process</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUBSTATION__PROCESS = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
+    int SUBSTATION__PROCESS = EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>SCL</b></em>' container reference.
@@ -16858,7 +16786,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SUBSTATION__SCL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
+    int SUBSTATION__SCL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Substation</em>' class.
@@ -16867,7 +16795,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SUBSTATION_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
+    int SUBSTATION_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>Substation</em>' class.
@@ -17447,22 +17375,13 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_LEVEL__VOLTAGE = EQUIPMENT_CONTAINER_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Terminal</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int VOLTAGE_LEVEL__TERMINAL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
-
-    /**
      * The number of structural features of the '<em>Voltage Level</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VOLTAGE_LEVEL_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 7;
+    int VOLTAGE_LEVEL_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>Voltage Level</em>' class.
@@ -25731,17 +25650,6 @@ public interface SclPackage extends EPackage {
     EReference getBay_ConnectivityNode();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Terminal</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal()
-     * @see #getBay()
-     * @generated
-     */
-    EReference getBay_Terminal();
-
-    /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -25872,15 +25780,15 @@ public interface SclPackage extends EPackage {
     EReference getConnectivityNode_Bay();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal <em>Terminal</em>}'.
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Terminal</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal()
+     * @return the meta object for the reference list '<em>Referred By Terminal</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal()
      * @see #getConnectivityNode()
      * @generated
      */
-    EReference getConnectivityNode_Terminal();
+    EReference getConnectivityNode_ReferredByTerminal();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}'.
@@ -26671,17 +26579,6 @@ public interface SclPackage extends EPackage {
     EReference getSubstation_VoltageLevel();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Terminal</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal()
-     * @see #getSubstation()
-     * @generated
-     */
-    EReference getSubstation_Terminal();
-
-    /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -26856,48 +26753,15 @@ public interface SclPackage extends EPackage {
     EReference getTerminal_AbstractConductingEquipment();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}'.
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Bay</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay()
+     * @return the meta object for the reference '<em>Refers To Connectivity Node</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode()
      * @see #getTerminal()
      * @generated
      */
-    EReference getTerminal_Bay();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>CNode</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode()
-     * @see #getTerminal()
-     * @generated
-     */
-    EReference getTerminal_CNode();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Substation</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation()
-     * @see #getTerminal()
-     * @generated
-     */
-    EReference getTerminal_Substation();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Voltage Level</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel()
-     * @see #getTerminal()
-     * @generated
-     */
-    EReference getTerminal_VoltageLevel();
+    EReference getTerminal_RefersToConnectivityNode();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getName <em>Name</em>}'.
@@ -27082,17 +26946,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getVoltageLevel_Voltage();
-
-    /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Terminal</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getTerminal()
-     * @see #getVoltageLevel()
-     * @generated
-     */
-    EReference getVoltageLevel_Terminal();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver <em>Explicit Link Resolver</em>}'.

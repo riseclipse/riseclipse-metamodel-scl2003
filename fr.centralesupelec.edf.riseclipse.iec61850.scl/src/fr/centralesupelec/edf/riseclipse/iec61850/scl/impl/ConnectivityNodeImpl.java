@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getPathName <em>Path Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getTerminal <em>Terminal</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getReferredByTerminal <em>Referred By Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getLine <em>Line</em>}</li>
  * </ul>
  *
@@ -82,14 +82,14 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
     protected boolean pathNameESet;
 
     /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
+     * The cached value of the '{@link #getReferredByTerminal() <em>Referred By Terminal</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getTerminal()
+     * @see #getReferredByTerminal()
      * @generated
      * @ordered
      */
-    protected EList<Terminal> terminal;
+    protected EList<Terminal> referredByTerminal;
 
     /**
      * <!-- begin-user-doc -->
@@ -202,11 +202,11 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
-    public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.CONNECTIVITY_NODE__TERMINAL, SclPackage.TERMINAL__CNODE);
+    public EList<Terminal> getReferredByTerminal() {
+        if (referredByTerminal == null) {
+            referredByTerminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE);
         }
-        return terminal;
+        return referredByTerminal;
     }
 
     /**
@@ -214,8 +214,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
-    public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
+    public void unsetReferredByTerminal() {
+        if (referredByTerminal != null) ((InternalEList.Unsettable<?>)referredByTerminal).unset();
     }
 
     /**
@@ -223,8 +223,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
-    public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
+    public boolean isSetReferredByTerminal() {
+        return referredByTerminal != null && ((InternalEList.Unsettable<?>)referredByTerminal).isSet();
     }
 
     /**
@@ -281,8 +281,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetBay((Bay)otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByTerminal()).basicAdd(otherEnd, msgs);
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
@@ -301,8 +301,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
         switch (featureID) {
             case SclPackage.CONNECTIVITY_NODE__BAY:
                 return basicSetBay(null, msgs);
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                return ((InternalEList<?>)getReferredByTerminal()).basicRemove(otherEnd, msgs);
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 return basicSetLine(null, msgs);
         }
@@ -337,8 +337,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
                 return getPathName();
             case SclPackage.CONNECTIVITY_NODE__BAY:
                 return getBay();
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return getTerminal();
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                return getReferredByTerminal();
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 return getLine();
         }
@@ -360,9 +360,9 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
             case SclPackage.CONNECTIVITY_NODE__BAY:
                 setBay((Bay)newValue);
                 return;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                getReferredByTerminal().clear();
+                getReferredByTerminal().addAll((Collection<? extends Terminal>)newValue);
                 return;
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 setLine((Line)newValue);
@@ -385,8 +385,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
             case SclPackage.CONNECTIVITY_NODE__BAY:
                 setBay((Bay)null);
                 return;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                unsetTerminal();
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                unsetReferredByTerminal();
                 return;
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 setLine((Line)null);
@@ -407,8 +407,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
                 return isSetPathName();
             case SclPackage.CONNECTIVITY_NODE__BAY:
                 return getBay() != null;
-            case SclPackage.CONNECTIVITY_NODE__TERMINAL:
-                return isSetTerminal();
+            case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
+                return isSetReferredByTerminal();
             case SclPackage.CONNECTIVITY_NODE__LINE:
                 return getLine() != null;
         }
