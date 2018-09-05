@@ -1700,9 +1700,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ConnectivityNode" ordered="false"
         upperBound="-1" eType="#//ConnectivityNode" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//ConnectivityNode/Bay"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
-        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//Terminal/Bay"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ConductingEquipment" ordered="false"
         upperBound="-1" eType="#//ConductingEquipment" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//ConductingEquipment/Bay"/>
@@ -1732,9 +1729,9 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
         transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/ConnectivityNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByTerminal" ordered="false"
         upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//Terminal/cNode"/>
+        eOpposite="#//Terminal/RefersToConnectivityNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Line" ordered="false" eType="#//Line"
         transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Line/ConnectivityNode"/>
   </eClassifiers>
@@ -1921,9 +1918,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
         upperBound="-1" eType="#//VoltageLevel" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//VoltageLevel/Substation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
-        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//Terminal/Substation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Process" ordered="false"
         eType="#//Process" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Process/Substation"/>
@@ -1961,17 +1955,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractConductingEquipment"
         ordered="false" eType="#//AbstractConductingEquipment" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//AbstractConductingEquipment/Terminal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" eType="#//Bay"
-        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Bay/Terminal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cNode" ordered="false"
-        eType="#//ConnectivityNode" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//ConnectivityNode/Terminal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
-        eType="#//Substation" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//Substation/Terminal"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="VoltageLevel" ordered="false"
-        eType="#//VoltageLevel" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//VoltageLevel/Terminal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToConnectivityNode"
+        ordered="false" eType="#//ConnectivityNode" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//ConnectivityNode/ReferredByTerminal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2016,9 +2002,6 @@
         eOpposite="#//Substation/VoltageLevel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Voltage" ordered="false"
         eType="#//Voltage" unsettable="true" containment="true" resolveProxies="false"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Terminal" ordered="false"
-        upperBound="-1" eType="#//Terminal" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//Terminal/VoltageLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssociationKindEnum">
     <eLiterals name="pre_established"/>

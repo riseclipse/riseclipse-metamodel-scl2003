@@ -34,10 +34,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstationName <em>Substation Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevelName <em>Voltage Level Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}</li>
  * </ul>
@@ -394,224 +391,59 @@ public interface Terminal extends UnNaming {
     void setAbstractConductingEquipment( AbstractConductingEquipment value );
 
     /**
-     * Returns the value of the '<em><b>Bay</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal <em>Terminal</em>}'.
+     * Returns the value of the '<em><b>Refers To Connectivity Node</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}'.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Bay</em>' reference isn't clear,
+     * If the meaning of the '<em>Refers To Connectivity Node</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Bay</em>' reference.
-     * @see #isSetBay()
-     * @see #unsetBay()
-     * @see #setBay(Bay)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_Bay()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getTerminal
-     * @model opposite="Terminal" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @return the value of the '<em>Refers To Connectivity Node</em>' reference.
+     * @see #isSetRefersToConnectivityNode()
+     * @see #unsetRefersToConnectivityNode()
+     * @see #setRefersToConnectivityNode(ConnectivityNode)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_RefersToConnectivityNode()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal
+     * @model opposite="ReferredByTerminal" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    Bay getBay();
+    ConnectivityNode getRefersToConnectivityNode();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Bay</em>' reference.
-     * @see #isSetBay()
-     * @see #unsetBay()
-     * @see #getBay()
+     * @param value the new value of the '<em>Refers To Connectivity Node</em>' reference.
+     * @see #isSetRefersToConnectivityNode()
+     * @see #unsetRefersToConnectivityNode()
+     * @see #getRefersToConnectivityNode()
      * @generated
      */
-    void setBay( Bay value );
+    void setRefersToConnectivityNode(ConnectivityNode value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetBay()
-     * @see #getBay()
-     * @see #setBay(Bay)
+     * @see #isSetRefersToConnectivityNode()
+     * @see #getRefersToConnectivityNode()
+     * @see #setRefersToConnectivityNode(ConnectivityNode)
      * @generated
      */
-    void unsetBay();
+    void unsetRefersToConnectivityNode();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getBay <em>Bay</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Bay</em>' reference is set.
-     * @see #unsetBay()
-     * @see #getBay()
-     * @see #setBay(Bay)
+     * @return whether the value of the '<em>Refers To Connectivity Node</em>' reference is set.
+     * @see #unsetRefersToConnectivityNode()
+     * @see #getRefersToConnectivityNode()
+     * @see #setRefersToConnectivityNode(ConnectivityNode)
      * @generated
      */
-    boolean isSetBay();
-
-    /**
-     * Returns the value of the '<em><b>CNode</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>CNode</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>CNode</em>' reference.
-     * @see #isSetCNode()
-     * @see #unsetCNode()
-     * @see #setCNode(ConnectivityNode)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_CNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getTerminal
-     * @model opposite="Terminal" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    ConnectivityNode getCNode();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>CNode</em>' reference.
-     * @see #isSetCNode()
-     * @see #unsetCNode()
-     * @see #getCNode()
-     * @generated
-     */
-    void setCNode( ConnectivityNode value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetCNode()
-     * @see #getCNode()
-     * @see #setCNode(ConnectivityNode)
-     * @generated
-     */
-    void unsetCNode();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getCNode <em>CNode</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>CNode</em>' reference is set.
-     * @see #unsetCNode()
-     * @see #getCNode()
-     * @see #setCNode(ConnectivityNode)
-     * @generated
-     */
-    boolean isSetCNode();
-
-    /**
-     * Returns the value of the '<em><b>Substation</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Substation</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Substation</em>' reference.
-     * @see #isSetSubstation()
-     * @see #unsetSubstation()
-     * @see #setSubstation(Substation)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_Substation()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getTerminal
-     * @model opposite="Terminal" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    Substation getSubstation();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Substation</em>' reference.
-     * @see #isSetSubstation()
-     * @see #unsetSubstation()
-     * @see #getSubstation()
-     * @generated
-     */
-    void setSubstation( Substation value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetSubstation()
-     * @see #getSubstation()
-     * @see #setSubstation(Substation)
-     * @generated
-     */
-    void unsetSubstation();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstation <em>Substation</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Substation</em>' reference is set.
-     * @see #unsetSubstation()
-     * @see #getSubstation()
-     * @see #setSubstation(Substation)
-     * @generated
-     */
-    boolean isSetSubstation();
-
-    /**
-     * Returns the value of the '<em><b>Voltage Level</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getTerminal <em>Terminal</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Voltage Level</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Voltage Level</em>' reference.
-     * @see #isSetVoltageLevel()
-     * @see #unsetVoltageLevel()
-     * @see #setVoltageLevel(VoltageLevel)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_VoltageLevel()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getTerminal
-     * @model opposite="Terminal" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    VoltageLevel getVoltageLevel();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}' reference.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Voltage Level</em>' reference.
-     * @see #isSetVoltageLevel()
-     * @see #unsetVoltageLevel()
-     * @see #getVoltageLevel()
-     * @generated
-     */
-    void setVoltageLevel( VoltageLevel value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}' reference.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #isSetVoltageLevel()
-     * @see #getVoltageLevel()
-     * @see #setVoltageLevel(VoltageLevel)
-     * @generated
-     */
-    void unsetVoltageLevel();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevel <em>Voltage Level</em>}' reference is set.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Voltage Level</em>' reference is set.
-     * @see #unsetVoltageLevel()
-     * @see #getVoltageLevel()
-     * @see #setVoltageLevel(VoltageLevel)
-     * @generated
-     */
-    boolean isSetVoltageLevel();
+    boolean isSetRefersToConnectivityNode();
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

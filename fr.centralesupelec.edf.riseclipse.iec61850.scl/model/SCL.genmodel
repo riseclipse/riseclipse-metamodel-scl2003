@@ -898,7 +898,6 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Bay/VoltageLevel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConnectivityNode"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/Terminal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConductingEquipment"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConductingEquipment">
@@ -913,7 +912,7 @@
     <genClasses ecoreClass="SCL.ecore#//ConnectivityNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectivityNode/pathName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Bay"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Terminal"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/ReferredByTerminal"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Line"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EqFunction">
@@ -1001,7 +1000,6 @@
     <genClasses ecoreClass="SCL.ecore#//Substation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/VoltageLevel"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Terminal"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Process"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/SCL"/>
     </genClasses>
@@ -1020,10 +1018,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/substationName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/voltageLevelName"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/AbstractConductingEquipment"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/Bay"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/cNode"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/Substation"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/VoltageLevel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/RefersToConnectivityNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/lineName"/>
     </genClasses>
@@ -1044,7 +1039,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Function"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Substation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Voltage"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Terminal"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
     <genClasses image="false" ecoreClass="SCL.ecore#//DataObject">

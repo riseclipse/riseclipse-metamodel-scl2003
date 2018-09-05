@@ -7969,17 +7969,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getBay_Terminal() {
-        return (EReference)getBay().getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getBay_ConductingEquipment() {
-        return (EReference)getBay().getEStructuralFeatures().get(4);
+        return (EReference)getBay().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -8092,7 +8083,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getConnectivityNode_Terminal() {
+    public EReference getConnectivityNode_ReferredByTerminal() {
         return (EReference)getConnectivityNode().getEStructuralFeatures().get(2);
     }
 
@@ -8803,7 +8794,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getSubstation_Terminal() {
+    public EReference getSubstation_Process() {
         return (EReference)getSubstation().getEStructuralFeatures().get(2);
     }
 
@@ -8812,17 +8803,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getSubstation_Process() {
-        return (EReference)getSubstation().getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EReference getSubstation_SCL() {
-        return (EReference)getSubstation().getEStructuralFeatures().get(4);
+        return (EReference)getSubstation().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -8962,7 +8944,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getTerminal_Bay() {
+    public EReference getTerminal_RefersToConnectivityNode() {
         return (EReference)getTerminal().getEStructuralFeatures().get(7);
     }
 
@@ -8971,35 +8953,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    public EReference getTerminal_CNode() {
-        return (EReference)getTerminal().getEStructuralFeatures().get(8);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getTerminal_Substation() {
-        return (EReference)getTerminal().getEStructuralFeatures().get(9);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getTerminal_VoltageLevel() {
-        return (EReference)getTerminal().getEStructuralFeatures().get(10);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     public EAttribute getTerminal_Name() {
-        return (EAttribute)getTerminal().getEStructuralFeatures().get(11);
+        return (EAttribute)getTerminal().getEStructuralFeatures().get(8);
     }
 
     /**
@@ -9008,7 +8963,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     public EAttribute getTerminal_LineName() {
-        return (EAttribute)getTerminal().getEStructuralFeatures().get(12);
+        return (EAttribute)getTerminal().getEStructuralFeatures().get(9);
     }
 
     /**
@@ -9153,15 +9108,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getVoltageLevel_Voltage() {
         return (EReference)getVoltageLevel().getEStructuralFeatures().get(5);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EReference getVoltageLevel_Terminal() {
-        return (EReference)getVoltageLevel().getEStructuralFeatures().get(6);
     }
 
     /**

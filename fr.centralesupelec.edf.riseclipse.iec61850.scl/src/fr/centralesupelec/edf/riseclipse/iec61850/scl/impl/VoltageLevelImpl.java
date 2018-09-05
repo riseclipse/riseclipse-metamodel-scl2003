@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +34,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 
@@ -53,7 +51,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.VoltageLevelImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.VoltageLevelImpl#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.VoltageLevelImpl#getVoltage <em>Voltage</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.VoltageLevelImpl#getTerminal <em>Terminal</em>}</li>
  * </ul>
  *
  * @generated
@@ -155,16 +152,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * @ordered
      */
     protected boolean voltageESet;
-
-    /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTerminal()
-     * @generated
-     * @ordered
-     */
-    protected EList<Terminal> terminal;
 
     /**
      * <!-- begin-user-doc -->
@@ -475,36 +462,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
 
     /**
      * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.VOLTAGE_LEVEL__TERMINAL, SclPackage.TERMINAL__VOLTAGE_LEVEL);
-        }
-        return terminal;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -520,8 +477,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetSubstation((Substation)otherEnd, msgs);
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -542,8 +497,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
                 return basicSetSubstation(null, msgs);
             case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
                 return basicUnsetVoltage(msgs);
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -582,8 +535,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
                 return getSubstation();
             case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
                 return getVoltage();
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                return getTerminal();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -617,10 +568,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
             case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
                 setVoltage((Voltage)newValue);
                 return;
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -651,9 +598,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
             case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
                 unsetVoltage();
                 return;
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                unsetTerminal();
-                return;
         }
         super.eUnset(featureID);
     }
@@ -678,8 +622,6 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
                 return getSubstation() != null;
             case SclPackage.VOLTAGE_LEVEL__VOLTAGE:
                 return isSetVoltage();
-            case SclPackage.VOLTAGE_LEVEL__TERMINAL:
-                return isSetTerminal();
         }
         return super.eIsSet(featureID);
     }

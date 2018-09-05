@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,7 +33,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 
 /**
@@ -47,7 +45,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getVoltageLevel <em>Voltage Level</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getTerminal <em>Terminal</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getSCL <em>SCL</em>}</li>
  * </ul>
@@ -74,16 +71,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * @ordered
      */
     protected EList<VoltageLevel> voltageLevel;
-
-    /**
-     * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getTerminal()
-     * @generated
-     * @ordered
-     */
-    protected EList<Terminal> terminal;
 
     /**
      * <!-- begin-user-doc -->
@@ -162,36 +149,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      */
     public boolean isSetVoltageLevel() {
         return voltageLevel != null && ((InternalEList.Unsettable<?>)voltageLevel).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.SUBSTATION__TERMINAL, SclPackage.TERMINAL__SUBSTATION);
-        }
-        return terminal;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
     }
 
     /**
@@ -290,8 +247,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getFunction()).basicAdd(otherEnd, msgs);
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getVoltageLevel()).basicAdd(otherEnd, msgs);
-            case SclPackage.SUBSTATION__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
             case SclPackage.SUBSTATION__PROCESS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
@@ -316,8 +271,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return ((InternalEList<?>)getVoltageLevel()).basicRemove(otherEnd, msgs);
-            case SclPackage.SUBSTATION__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
             case SclPackage.SUBSTATION__PROCESS:
                 return basicSetProcess(null, msgs);
             case SclPackage.SUBSTATION__SCL:
@@ -354,8 +307,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return getFunction();
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return getVoltageLevel();
-            case SclPackage.SUBSTATION__TERMINAL:
-                return getTerminal();
             case SclPackage.SUBSTATION__PROCESS:
                 return getProcess();
             case SclPackage.SUBSTATION__SCL:
@@ -381,10 +332,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 getVoltageLevel().clear();
                 getVoltageLevel().addAll((Collection<? extends VoltageLevel>)newValue);
                 return;
-            case SclPackage.SUBSTATION__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
             case SclPackage.SUBSTATION__PROCESS:
                 setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
                 return;
@@ -409,9 +356,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 unsetVoltageLevel();
                 return;
-            case SclPackage.SUBSTATION__TERMINAL:
-                unsetTerminal();
-                return;
             case SclPackage.SUBSTATION__PROCESS:
                 setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
                 return;
@@ -434,8 +378,6 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return isSetFunction();
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return isSetVoltageLevel();
-            case SclPackage.SUBSTATION__TERMINAL:
-                return isSetTerminal();
             case SclPackage.SUBSTATION__PROCESS:
                 return getProcess() != null;
             case SclPackage.SUBSTATION__SCL:

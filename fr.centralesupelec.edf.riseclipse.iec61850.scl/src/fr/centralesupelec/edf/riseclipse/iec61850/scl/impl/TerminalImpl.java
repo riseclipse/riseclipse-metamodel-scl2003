@@ -18,17 +18,19 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.List;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -52,10 +54,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getSubstationName <em>Substation Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getVoltageLevelName <em>Voltage Level Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getCNode <em>CNode</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getSubstation <em>Substation</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getVoltageLevel <em>Voltage Level</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getLineName <em>Line Name</em>}</li>
  * </ul>
@@ -238,80 +237,23 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     protected boolean voltageLevelNameESet;
 
     /**
-     * The cached value of the '{@link #getBay() <em>Bay</em>}' reference.
+     * The cached value of the '{@link #getRefersToConnectivityNode() <em>Refers To Connectivity Node</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getBay()
+     * @see #getRefersToConnectivityNode()
      * @generated
      * @ordered
      */
-    protected Bay bay;
+    protected ConnectivityNode refersToConnectivityNode;
 
     /**
-     * This is true if the Bay reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean bayESet;
-
-    /**
-     * The cached value of the '{@link #getCNode() <em>CNode</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getCNode()
-     * @generated
-     * @ordered
-     */
-    protected ConnectivityNode cNode;
-
-    /**
-     * This is true if the CNode reference has been set.
+     * This is true if the Refers To Connectivity Node reference has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean cNodeESet;
-
-    /**
-     * The cached value of the '{@link #getSubstation() <em>Substation</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSubstation()
-     * @generated
-     * @ordered
-     */
-    protected Substation substation;
-
-    /**
-     * This is true if the Substation reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean substationESet;
-
-    /**
-     * The cached value of the '{@link #getVoltageLevel() <em>Voltage Level</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getVoltageLevel()
-     * @generated
-     * @ordered
-     */
-    protected VoltageLevel voltageLevel;
-
-    /**
-     * This is true if the Voltage Level reference has been set.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean voltageLevelESet;
+    protected boolean refersToConnectivityNodeESet;
 
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -393,13 +335,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getBayName() {
-        if( bay != null )
-            return bay.getName();
-        else
-            return bayName;
+        return bayName;
     }
 
     /**
@@ -431,24 +370,21 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-    * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * @generated
+     */
     public boolean isSetBayName() {
-        return isSetBay();
+        return bayNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getCNodeName() {
-        if( cNode != null )
-            return cNode.getName();
-        else
-            return cNodeName;
+        return cNodeName;
     }
 
     /**
@@ -480,24 +416,21 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-    * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * @generated
+     */
     public boolean isSetCNodeName() {
-        return isSetCNode();
+        return cNodeNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getConnectivityNode() {
-        if( cNode != null )
-            return cNode.getPathName();
-        else
-            return connectivityNode;
+        return connectivityNode;
     }
 
     /**
@@ -529,12 +462,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-    * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * @generated
+     */
     public boolean isSetConnectivityNode() {
-        return isSetCNode();
+        return connectivityNodeESet;
     }
 
     /**
@@ -586,13 +519,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getSubstationName() {
-        if( substation != null )
-            return substation.getName();
-        else
-            return substationName;
+        return substationName;
     }
 
     /**
@@ -624,24 +554,21 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-    * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * @generated
+     */
     public boolean isSetSubstationName() {
-        return isSetSubstation();
+        return substationNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getVoltageLevelName() {
-        if( voltageLevel != null )
-            return voltageLevel.getName();
-        else
-            return voltageLevelName;
+        return voltageLevelName;
     }
 
     /**
@@ -673,12 +600,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     /**
-    * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * @generated
+     */
     public boolean isSetVoltageLevelName() {
-        return isSetVoltageLevel();
+        return voltageLevelNameESet;
     }
 
     /**
@@ -728,8 +655,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Bay getBay() {
-        return bay;
+    public ConnectivityNode getRefersToConnectivityNode() {
+        return refersToConnectivityNode;
     }
 
     /**
@@ -737,13 +664,13 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        Bay oldBay = bay;
-        bay = newBay;
-        boolean oldBayESet = bayESet;
-        bayESet = true;
+    public NotificationChain basicSetRefersToConnectivityNode(ConnectivityNode newRefersToConnectivityNode, NotificationChain msgs) {
+        ConnectivityNode oldRefersToConnectivityNode = refersToConnectivityNode;
+        refersToConnectivityNode = newRefersToConnectivityNode;
+        boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
+        refersToConnectivityNodeESet = true;
         if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, oldBay, newBay, !oldBayESet);
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, oldRefersToConnectivityNode, newRefersToConnectivityNode, !oldRefersToConnectivityNodeESet);
             if (msgs == null) msgs = notification; else msgs.add(notification);
         }
         return msgs;
@@ -754,21 +681,21 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setBay( Bay newBay ) {
-        if (newBay != bay) {
+    public void setRefersToConnectivityNode(ConnectivityNode newRefersToConnectivityNode) {
+        if (newRefersToConnectivityNode != refersToConnectivityNode) {
             NotificationChain msgs = null;
-            if (bay != null)
-                msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
+            if (refersToConnectivityNode != null)
+                msgs = ((InternalEObject)refersToConnectivityNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs);
+            if (newRefersToConnectivityNode != null)
+                msgs = ((InternalEObject)newRefersToConnectivityNode).eInverseAdd(this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs);
+            msgs = basicSetRefersToConnectivityNode(newRefersToConnectivityNode, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else {
-            boolean oldBayESet = bayESet;
-            bayESet = true;
+            boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
+            refersToConnectivityNodeESet = true;
             if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__BAY, newBay, newBay, !oldBayESet));
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, newRefersToConnectivityNode, newRefersToConnectivityNode, !oldRefersToConnectivityNodeESet));
         }
     }
 
@@ -777,13 +704,13 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetBay( NotificationChain msgs ) {
-        Bay oldBay = bay;
-        bay = null;
-        boolean oldBayESet = bayESet;
-        bayESet = false;
+    public NotificationChain basicUnsetRefersToConnectivityNode(NotificationChain msgs) {
+        ConnectivityNode oldRefersToConnectivityNode = refersToConnectivityNode;
+        refersToConnectivityNode = null;
+        boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
+        refersToConnectivityNodeESet = false;
         if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, oldBay, null, oldBayESet);
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, oldRefersToConnectivityNode, null, oldRefersToConnectivityNodeESet);
             if (msgs == null) msgs = notification; else msgs.add(notification);
         }
         return msgs;
@@ -794,18 +721,18 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void unsetBay() {
-        if (bay != null) {
+    public void unsetRefersToConnectivityNode() {
+        if (refersToConnectivityNode != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-            msgs = basicUnsetBay(msgs);
+            msgs = ((InternalEObject)refersToConnectivityNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs);
+            msgs = basicUnsetRefersToConnectivityNode(msgs);
             if (msgs != null) msgs.dispatch();
         }
         else {
-            boolean oldBayESet = bayESet;
-            bayESet = false;
+            boolean oldRefersToConnectivityNodeESet = refersToConnectivityNodeESet;
+            refersToConnectivityNodeESet = false;
             if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__BAY, null, null, oldBayESet));
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE, null, null, oldRefersToConnectivityNodeESet));
         }
     }
 
@@ -814,293 +741,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public boolean isSetBay() {
-        return bayESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public ConnectivityNode getCNode() {
-        return cNode;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetCNode( ConnectivityNode newCNode, NotificationChain msgs ) {
-        ConnectivityNode oldCNode = cNode;
-        cNode = newCNode;
-        boolean oldCNodeESet = cNodeESet;
-        cNodeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, oldCNode, newCNode, !oldCNodeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setCNode( ConnectivityNode newCNode ) {
-        if (newCNode != cNode) {
-            NotificationChain msgs = null;
-            if (cNode != null)
-                msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            if (newCNode != null)
-                msgs = ((InternalEObject)newCNode).eInverseAdd(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            msgs = basicSetCNode(newCNode, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldCNodeESet = cNodeESet;
-            cNodeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__CNODE, newCNode, newCNode, !oldCNodeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetCNode( NotificationChain msgs ) {
-        ConnectivityNode oldCNode = cNode;
-        cNode = null;
-        boolean oldCNodeESet = cNodeESet;
-        cNodeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, oldCNode, null, oldCNodeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetCNode() {
-        if (cNode != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-            msgs = basicUnsetCNode(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldCNodeESet = cNodeESet;
-            cNodeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__CNODE, null, null, oldCNodeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetCNode() {
-        return cNodeESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public Substation getSubstation() {
-        return substation;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetSubstation( Substation newSubstation, NotificationChain msgs ) {
-        Substation oldSubstation = substation;
-        substation = newSubstation;
-        boolean oldSubstationESet = substationESet;
-        substationESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, newSubstation, !oldSubstationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setSubstation( Substation newSubstation ) {
-        if (newSubstation != substation) {
-            NotificationChain msgs = null;
-            if (substation != null)
-                msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            if (newSubstation != null)
-                msgs = ((InternalEObject)newSubstation).eInverseAdd(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            msgs = basicSetSubstation(newSubstation, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSubstationESet = substationESet;
-            substationESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__SUBSTATION, newSubstation, newSubstation, !oldSubstationESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetSubstation( NotificationChain msgs ) {
-        Substation oldSubstation = substation;
-        substation = null;
-        boolean oldSubstationESet = substationESet;
-        substationESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, oldSubstation, null, oldSubstationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetSubstation() {
-        if (substation != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-            msgs = basicUnsetSubstation(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldSubstationESet = substationESet;
-            substationESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__SUBSTATION, null, null, oldSubstationESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetSubstation() {
-        return substationESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public VoltageLevel getVoltageLevel() {
-        return voltageLevel;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetVoltageLevel( VoltageLevel newVoltageLevel, NotificationChain msgs ) {
-        VoltageLevel oldVoltageLevel = voltageLevel;
-        voltageLevel = newVoltageLevel;
-        boolean oldVoltageLevelESet = voltageLevelESet;
-        voltageLevelESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, newVoltageLevel, !oldVoltageLevelESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setVoltageLevel( VoltageLevel newVoltageLevel ) {
-        if (newVoltageLevel != voltageLevel) {
-            NotificationChain msgs = null;
-            if (voltageLevel != null)
-                msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            if (newVoltageLevel != null)
-                msgs = ((InternalEObject)newVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            msgs = basicSetVoltageLevel(newVoltageLevel, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldVoltageLevelESet = voltageLevelESet;
-            voltageLevelESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__VOLTAGE_LEVEL, newVoltageLevel, newVoltageLevel, !oldVoltageLevelESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetVoltageLevel( NotificationChain msgs ) {
-        VoltageLevel oldVoltageLevel = voltageLevel;
-        voltageLevel = null;
-        boolean oldVoltageLevelESet = voltageLevelESet;
-        voltageLevelESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, oldVoltageLevel, null, oldVoltageLevelESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public void unsetVoltageLevel() {
-        if (voltageLevel != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-            msgs = basicUnsetVoltageLevel(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldVoltageLevelESet = voltageLevelESet;
-            voltageLevelESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TERMINAL__VOLTAGE_LEVEL, null, null, oldVoltageLevelESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    public boolean isSetVoltageLevel() {
-        return voltageLevelESet;
+    public boolean isSetRefersToConnectivityNode() {
+        return refersToConnectivityNodeESet;
     }
 
     /**
@@ -1207,22 +849,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
-            case SclPackage.TERMINAL__BAY:
-                if (bay != null)
-                    msgs = ((InternalEObject)bay).eInverseRemove(this, SclPackage.BAY__TERMINAL, Bay.class, msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
-            case SclPackage.TERMINAL__CNODE:
-                if (cNode != null)
-                    msgs = ((InternalEObject)cNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__TERMINAL, ConnectivityNode.class, msgs);
-                return basicSetCNode((ConnectivityNode)otherEnd, msgs);
-            case SclPackage.TERMINAL__SUBSTATION:
-                if (substation != null)
-                    msgs = ((InternalEObject)substation).eInverseRemove(this, SclPackage.SUBSTATION__TERMINAL, Substation.class, msgs);
-                return basicSetSubstation((Substation)otherEnd, msgs);
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                if (voltageLevel != null)
-                    msgs = ((InternalEObject)voltageLevel).eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__TERMINAL, VoltageLevel.class, msgs);
-                return basicSetVoltageLevel((VoltageLevel)otherEnd, msgs);
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                if (refersToConnectivityNode != null)
+                    msgs = ((InternalEObject)refersToConnectivityNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs);
+                return basicSetRefersToConnectivityNode((ConnectivityNode)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -1237,14 +867,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         switch (featureID) {
             case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
                 return basicSetAbstractConductingEquipment(null, msgs);
-            case SclPackage.TERMINAL__BAY:
-                return basicUnsetBay(msgs);
-            case SclPackage.TERMINAL__CNODE:
-                return basicUnsetCNode(msgs);
-            case SclPackage.TERMINAL__SUBSTATION:
-                return basicUnsetSubstation(msgs);
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return basicUnsetVoltageLevel(msgs);
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                return basicUnsetRefersToConnectivityNode(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -1285,14 +909,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return getVoltageLevelName();
             case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
                 return getAbstractConductingEquipment();
-            case SclPackage.TERMINAL__BAY:
-                return getBay();
-            case SclPackage.TERMINAL__CNODE:
-                return getCNode();
-            case SclPackage.TERMINAL__SUBSTATION:
-                return getSubstation();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return getVoltageLevel();
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                return getRefersToConnectivityNode();
             case SclPackage.TERMINAL__NAME:
                 return getName();
             case SclPackage.TERMINAL__LINE_NAME:
@@ -1330,17 +948,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
                 setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
                 return;
-            case SclPackage.TERMINAL__BAY:
-                setBay((Bay)newValue);
-                return;
-            case SclPackage.TERMINAL__CNODE:
-                setCNode((ConnectivityNode)newValue);
-                return;
-            case SclPackage.TERMINAL__SUBSTATION:
-                setSubstation((Substation)newValue);
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                setVoltageLevel((VoltageLevel)newValue);
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                setRefersToConnectivityNode((ConnectivityNode)newValue);
                 return;
             case SclPackage.TERMINAL__NAME:
                 setName((String)newValue);
@@ -1381,17 +990,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
                 setAbstractConductingEquipment((AbstractConductingEquipment)null);
                 return;
-            case SclPackage.TERMINAL__BAY:
-                unsetBay();
-                return;
-            case SclPackage.TERMINAL__CNODE:
-                unsetCNode();
-                return;
-            case SclPackage.TERMINAL__SUBSTATION:
-                unsetSubstation();
-                return;
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                unsetVoltageLevel();
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                unsetRefersToConnectivityNode();
                 return;
             case SclPackage.TERMINAL__NAME:
                 unsetName();
@@ -1425,14 +1025,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return isSetVoltageLevelName();
             case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
                 return getAbstractConductingEquipment() != null;
-            case SclPackage.TERMINAL__BAY:
-                return isSetBay();
-            case SclPackage.TERMINAL__CNODE:
-                return isSetCNode();
-            case SclPackage.TERMINAL__SUBSTATION:
-                return isSetSubstation();
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL:
-                return isSetVoltageLevel();
+            case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
+                return isSetRefersToConnectivityNode();
             case SclPackage.TERMINAL__NAME:
                 return isSetName();
             case SclPackage.TERMINAL__LINE_NAME:
@@ -1475,7 +1069,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     protected void doResolveLinks() {
         // see Issue #13
         super.doResolveLinks();
-        
+
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
         // desc             Descriptive text to the terminal
@@ -1488,51 +1082,19 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
         // Resolve only if attribute has been read
-        // Cannot use isSetSubstationName() Here
-        if( !substationNameESet ) return;
+        if( isSetSubstationName() ) {
 
-        // find a Substation with
-        //   Substation.name == Terminal.substationName
-        SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseSubstation( Substation object ) {
-                return object.getName().equals( getSubstationName() );
+            if( isSetLineName() || isSetProcessName() ) {
+                // TODO: this error should be detected in OCL
             }
 
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< Substation > res1 = shallowSearchObjects( getSCLRoot().getSubstation(), s1 );
-        String mess = "Substation( name = " + getSubstationName() + " ) for Terminal on line " + getLineNumber()
-                + " ( name = " + getName() + " )";
-        if( res1.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
-        }
-        else if( res1.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
-        }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setSubstation( res1.get( 0 ) );
-        }
-
-        if( substation != null ) {
-            // Resolve only if attribute has been read
-            // Cannot use isSetVoltageLevelName() Here
-            if( !voltageLevelNameESet ) return;
-
-            // find a VoltageLevel with
-            //   VoltageLevel.name == Terminal.voltageLevelName
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+            // find a Substation with
+            //   Substation.name == Terminal.substationName
+            SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
 
                 @Override
-                public Boolean caseVoltageLevel( VoltageLevel object ) {
-                    return object.getName().equals( getVoltageLevelName() );
+                public Boolean caseSubstation( Substation object ) {
+                    return object.getName().equals( getSubstationName() );
                 }
 
                 @Override
@@ -1542,33 +1104,141 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             };
 
-            List< VoltageLevel > res2 = shallowSearchObjects( substation.getVoltageLevel(), s2 );
-            String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " ) for Terminal on line "
-                    + getLineNumber() + " ( name = " + getName() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            Substation  substation = null;
+            List< Substation > res1 = shallowSearchObjects( getSCLRoot().getSubstation(), s1 );
+            String mess = "Substation( name = " + getSubstationName() + " ) for Terminal on line " + getLineNumber()
+                        + " ( name = " + getName() + " )";
+            if( res1.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
             }
-            else if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            else if( res1.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
             }
             else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                setVoltageLevel( res2.get( 0 ) );
+                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+                substation = res1.get( 0 );
+            }
+
+            VoltageLevel voltageLevel = null;
+            if( substation  != null ) {
+                // Resolve only if attribute has been read
+                if( !isSetVoltageLevelName() ) return;
+
+                // find a VoltageLevel with
+                //   VoltageLevel.name == Terminal.voltageLevelName
+                SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+
+                    @Override
+                    public Boolean caseVoltageLevel( VoltageLevel object ) {
+                        return object.getName().equals( getVoltageLevelName() );
+                    }
+
+                    @Override
+                    public Boolean defaultCase( EObject object ) {
+                        return false;
+                    }
+
+                };
+
+                List< VoltageLevel > res2 = shallowSearchObjects( substation.getVoltageLevel(), s2 );
+                String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " ) for Terminal on line "
+                            + getLineNumber() + " ( name = " + getName() + " )";
+                if( res2.isEmpty() ) {
+                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                }
+                else if( res2.size() > 1 ) {
+                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                }
+                else {
+                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+                    voltageLevel = res2.get( 0 );
+                }
+            }
+
+            Bay bay = null;
+            if( voltageLevel != null ) {
+                // Resolve only if attribute has been read
+                if( !isSetBayName() ) return;
+
+                // find a Bay with
+                //   Bay.name == Terminal.bayName
+                SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+
+                    @Override
+                    public Boolean caseBay( Bay object ) {
+                        return object.getName().equals( getBayName() );
+                    }
+
+                    @Override
+                    public Boolean defaultCase( EObject object ) {
+                        return false;
+                    }
+
+                };
+
+                List< Bay > res3 = shallowSearchObjects( voltageLevel.getBay(), s3 );
+                String mess3 = "Bay( name = " + getBayName() + " ) for Terminal on line " + getLineNumber() + " ( name = "
+                            + getName() + " )";
+                if( res3.isEmpty() ) {
+                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+                }
+                else if( res3.size() > 1 ) {
+                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+                }
+                else {
+                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+                    bay = res3.get( 0 );
+                }
+            }
+
+            if( bay != null ) {
+                // Resolve only if attribute has been read
+                if( !isSetCNodeName() ) return;
+
+                // find a ConnectivityNode with
+                //   ConnectivityNode.name == Terminal.bayName
+                SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
+
+                    @Override
+                    public Boolean caseConnectivityNode( ConnectivityNode object ) {
+                        return object.getName().equals( getCNodeName() );
+                    }
+
+                    @Override
+                    public Boolean defaultCase( EObject object ) {
+                        return false;
+                    }
+
+                };
+
+                List< ConnectivityNode > res4 = shallowSearchObjects( bay.getConnectivityNode(), s4 );
+                String mess4 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
+                            + " ( name = " + getName() + " )";
+                if( res4.isEmpty() ) {
+                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
+                }
+                else if( res4.size() > 1 ) {
+                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
+                }
+                else {
+                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
+                    setRefersToConnectivityNode( res4.get( 0 ) );
+                }
             }
         }
+        else if( isSetLineName() ) {
 
-        if( voltageLevel != null ) {
-            // Resolve only if attribute has been read
-            // Cannot use isSetBayName() Here
-            if( !bayNameESet ) return;
+            if( isSetProcessName() ) {
+                // TODO: this error should be detected in OCL
+            }
 
-            // find a Bay with
-            //   Bay.name == Terminal.bayName
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+            // find a Line with
+            //   Line.name == Terminal.lineName
+            SclSwitch< Boolean > s5 = new SclSwitch< Boolean >() {
 
                 @Override
-                public Boolean caseBay( Bay object ) {
-                    return object.getName().equals( getBayName() );
+                public Boolean caseLine( Line object ) {
+                    return object.getName().equals( getLineName() );
                 }
 
                 @Override
@@ -1578,54 +1248,55 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             };
 
-            List< Bay > res3 = shallowSearchObjects( voltageLevel.getBay(), s3 );
-            String mess3 = "Bay( name = " + getBayName() + " ) for Terminal on line " + getLineNumber() + " ( name = "
-                    + getName() + " )";
-            if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+            Line line = null;
+            List< Line > res5 = shallowSearchObjects( getSCLRoot().getLine(), s5 );
+            String mess5 = "Line( name = " + getLineName() + " ) for Terminal on line " + getLineNumber()
+                        + " ( name = " + getName() + " )";
+            if( res5.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
             }
-            else if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
-            }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setBay( res3.get( 0 ) );
-            }
-        }
-
-        if( bay != null ) {
-            // Resolve only if attribute has been read
-            // Cannot use isSetCNodeName() Here
-            if( !cNodeNameESet ) return;
-
-            // find a ConnectivityNode with
-            //   ConnectivityNode.name == Terminal.bayName
-            SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseConnectivityNode( ConnectivityNode object ) {
-                    return object.getName().equals( getCNodeName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< ConnectivityNode > res4 = shallowSearchObjects( bay.getConnectivityNode(), s4 );
-            String mess4 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
-                    + " ( name = " + getName() + " )";
-            if( res4.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
-            }
-            else if( res4.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
+            else if( res5.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
             }
             else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
-                setCNode( res4.get( 0 ) );
+                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+                line = res5.get( 0 );
+            }
+
+
+            if( line != null ) {
+                // Resolve only if attribute has been read
+                if( !isSetCNodeName() ) return;
+
+                // find a ConnectivityNode with
+                //   ConnectivityNode.name == Terminal.bayName
+                SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
+
+                    @Override
+                    public Boolean caseConnectivityNode( ConnectivityNode object ) {
+                        return object.getName().equals( getCNodeName() );
+                    }
+
+                    @Override
+                    public Boolean defaultCase( EObject object ) {
+                        return false;
+                    }
+
+                };
+
+                List< ConnectivityNode > res6 = shallowSearchObjects( line.getConnectivityNode(), s6 );
+                String mess6 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
+                            + " ( name = " + getName() + " )";
+                if( res6.isEmpty() ) {
+                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
+                }
+                else if( res6.size() > 1 ) {
+                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
+                }
+                else {
+                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
+                    setRefersToConnectivityNode( res6.get( 0 ) );
+                }
             }
         }
     }
