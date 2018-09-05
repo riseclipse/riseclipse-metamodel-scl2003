@@ -89,7 +89,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @generated
      * @ordered
      */
-    protected static final String NAME_STRUCTURE_EDEFAULT = null;
+    protected static final String NAME_STRUCTURE_EDEFAULT = "IEDName";
 
     /**
      * The cached value of the '{@link #getNameStructure() <em>Name Structure</em>}' attribute.
@@ -118,7 +118,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @generated
      * @ordered
      */
-    protected static final String REVISION_EDEFAULT = null;
+    protected static final String REVISION_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getRevision() <em>Revision</em>}' attribute.
@@ -303,13 +303,10 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getNameStructure() {
-        if( isSetNameStructure() ) {
-            return nameStructure;
-        }
-        return "IEDName";
+        return nameStructure;
     }
 
     /**
@@ -352,13 +349,10 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getRevision() {
-        if( isSetRevision() ) {
-            return revision;
-        }
-        return "";
+        return revision;
     }
 
     /**

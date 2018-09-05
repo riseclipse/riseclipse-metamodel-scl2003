@@ -46,6 +46,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface LogControl extends ControlWithTriggerOpt {
     /**
      * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
+     * The default value is <code>"0"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Time</em>' attribute isn't clear,
@@ -57,7 +58,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #unsetBufTime()
      * @see #setBufTime(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_BufTime()
-     * @model unsettable="true"
+     * @model default="0" unsettable="true"
      * @generated
      */
     Integer getBufTime();
@@ -152,6 +153,7 @@ public interface LogControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Ln Class</b></em>' attribute.
+     * The default value is <code>"LLN0"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Class</em>' attribute isn't clear,
@@ -163,7 +165,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #unsetLnClass()
      * @see #setLnClass(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LnClass()
-     * @model unsettable="true"
+     * @model default="LLN0" unsettable="true"
      * @generated
      */
     String getLnClass();
@@ -258,6 +260,7 @@ public interface LogControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Log Ena</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log Ena</em>' attribute isn't clear,
@@ -269,7 +272,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #unsetLogEna()
      * @see #setLogEna(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_LogEna()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getLogEna();
@@ -364,6 +367,7 @@ public interface LogControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
@@ -375,7 +379,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #unsetPrefix()
      * @see #setPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_Prefix()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getPrefix();
@@ -417,6 +421,7 @@ public interface LogControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Reason Code</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Reason Code</em>' attribute isn't clear,
@@ -428,7 +433,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #unsetReasonCode()
      * @see #setReasonCode(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_ReasonCode()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getReasonCode();

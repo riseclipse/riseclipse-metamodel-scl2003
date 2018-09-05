@@ -46,6 +46,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface LNode extends UnNaming {
     /**
      * Returns the value of the '<em><b>Ied Name</b></em>' attribute.
+     * The default value is <code>"None"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ied Name</em>' attribute isn't clear,
@@ -57,7 +58,7 @@ public interface LNode extends UnNaming {
      * @see #unsetIedName()
      * @see #setIedName(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_IedName()
-     * @model unsettable="true"
+     * @model default="None" unsettable="true"
      * @generated
      */
     String getIedName();
@@ -99,6 +100,7 @@ public interface LNode extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Ld Inst</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ld Inst</em>' attribute isn't clear,
@@ -110,7 +112,7 @@ public interface LNode extends UnNaming {
      * @see #unsetLdInst()
      * @see #setLdInst(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LdInst()
-     * @model unique="false" unsettable="true"
+     * @model default="" unique="false" unsettable="true"
      * @generated
      */
     String getLdInst();
@@ -205,6 +207,7 @@ public interface LNode extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Ln Inst</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ln Inst</em>' attribute isn't clear,
@@ -216,7 +219,7 @@ public interface LNode extends UnNaming {
      * @see #unsetLnInst()
      * @see #setLnInst(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LnInst()
-     * @model unique="false" unsettable="true"
+     * @model default="" unique="false" unsettable="true"
      * @generated
      */
     String getLnInst();

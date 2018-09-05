@@ -79,7 +79,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * @generated
      * @ordered
      */
-    protected static final String DESC_EDEFAULT = null;
+    protected static final String DESC_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -168,13 +168,10 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDesc() {
-        if( isSetDesc() ) {
-            return desc;
-        }
-        return "";
+        return desc;
     }
 
     /**

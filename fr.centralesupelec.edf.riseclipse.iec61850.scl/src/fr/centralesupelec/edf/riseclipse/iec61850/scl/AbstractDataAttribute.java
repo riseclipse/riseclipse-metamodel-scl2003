@@ -99,6 +99,7 @@ public interface AbstractDataAttribute extends DataAttribute {
 
     /**
      * Returns the value of the '<em><b>Count</b></em>' attribute.
+     * The default value is <code>"0"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Count</em>' attribute isn't clear,
@@ -110,7 +111,7 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @see #unsetCount()
      * @see #setCount(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_Count()
-     * @model unsettable="true"
+     * @model default="0" unsettable="true"
      * @generated
      */
     String getCount();
@@ -258,6 +259,7 @@ public interface AbstractDataAttribute extends DataAttribute {
 
     /**
      * Returns the value of the '<em><b>Val Import</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Val Import</em>' attribute isn't clear,
@@ -269,7 +271,7 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @see #unsetValImport()
      * @see #setValImport(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_ValImport()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getValImport();
@@ -311,6 +313,7 @@ public interface AbstractDataAttribute extends DataAttribute {
 
     /**
      * Returns the value of the '<em><b>Val Kind</b></em>' attribute.
+     * The default value is <code>"Set"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -324,7 +327,7 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @see #unsetValKind()
      * @see #setValKind(ValKindEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_ValKind()
-     * @model unsettable="true"
+     * @model default="Set" unsettable="true"
      * @generated
      */
     ValKindEnum getValKind();

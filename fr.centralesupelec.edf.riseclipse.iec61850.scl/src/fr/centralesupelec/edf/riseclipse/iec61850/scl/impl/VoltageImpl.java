@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,16 +43,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
  * @generated
  */
 public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
-    /**
-     * The default value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getMultiplier()
-     * @generated NOT
-     * @ordered
-     */
-    protected static final UnitMultiplierEnum MULTIPLIER_EDEFAULT = null;
-
     /**
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->

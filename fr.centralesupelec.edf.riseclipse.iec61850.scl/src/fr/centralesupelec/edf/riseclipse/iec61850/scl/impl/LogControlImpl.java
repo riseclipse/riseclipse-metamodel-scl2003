@@ -68,7 +68,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Integer BUF_TIME_EDEFAULT = null;
+    protected static final Integer BUF_TIME_EDEFAULT = new Integer(0);
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -126,7 +126,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final String LN_CLASS_EDEFAULT = null;
+    protected static final String LN_CLASS_EDEFAULT = "LLN0";
 
     /**
      * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
@@ -184,7 +184,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Boolean LOG_ENA_EDEFAULT = null;
+    protected static final Boolean LOG_ENA_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
@@ -242,7 +242,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
@@ -271,7 +271,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Boolean REASON_CODE_EDEFAULT = null;
+    protected static final Boolean REASON_CODE_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
@@ -333,13 +333,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Integer getBufTime() {
-        if( isSetBufTime() ) {
-            return bufTime;
-        }
-        return 0;
+        return bufTime;
     }
 
     /**
@@ -428,13 +425,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( isSetLnClass() ) {
-            return lnClass;
-        }
-        return "LLN0";
+        return lnClass;
     }
 
     /**
@@ -523,13 +517,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getLogEna() {
-        if( isSetLogEna() ) {
-            return logEna;
-        }
-        return Boolean.TRUE;
+        return logEna;
     }
 
     /**
@@ -618,13 +609,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**
@@ -667,13 +655,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getReasonCode() {
-        if( isSetReasonCode() ) {
-            return reasonCode;
-        }
-        return Boolean.TRUE;
+        return reasonCode;
     }
 
     /**

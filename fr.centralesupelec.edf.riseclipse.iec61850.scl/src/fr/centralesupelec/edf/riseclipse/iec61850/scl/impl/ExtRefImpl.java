@@ -321,7 +321,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getServiceType()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final ServiceType SERVICE_TYPE_EDEFAULT = null;
@@ -555,7 +555,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      * @ordered
      */
-    protected static final String DESC_EDEFAULT = null;
+    protected static final String DESC_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -1036,13 +1036,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**

@@ -60,7 +60,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * @generated
      * @ordered
      */
-    protected static final Boolean BUFFERED_EDEFAULT = null;
+    protected static final Boolean BUFFERED_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getBuffered() <em>Buffered</em>}' attribute.
@@ -89,7 +89,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * @generated
      * @ordered
      */
-    protected static final Integer BUF_TIME_EDEFAULT = null;
+    protected static final Integer BUF_TIME_EDEFAULT = new Integer(0);
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -147,7 +147,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * @generated
      * @ordered
      */
-    protected static final Boolean INDEXED_EDEFAULT = null;
+    protected static final Boolean INDEXED_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getIndexed() <em>Indexed</em>}' attribute.
@@ -257,13 +257,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getBuffered() {
-        if( isSetBuffered() ) {
-            return buffered;
-        }
-        return Boolean.FALSE;
+        return buffered;
     }
 
     /**
@@ -306,13 +303,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Integer getBufTime() {
-        if( isSetBufTime() ) {
-            return bufTime;
-        }
-        return 0;
+        return bufTime;
     }
 
     /**
@@ -401,13 +395,10 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getIndexed() {
-        if( isSetIndexed() ) {
-            return indexed;
-        }
-        return Boolean.TRUE;
+        return indexed;
     }
 
     /**

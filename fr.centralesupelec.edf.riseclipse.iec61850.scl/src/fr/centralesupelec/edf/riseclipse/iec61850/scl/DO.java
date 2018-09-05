@@ -40,6 +40,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface DO extends DataObject {
     /**
      * Returns the value of the '<em><b>Transient</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Transient</em>' attribute isn't clear,
@@ -51,7 +52,7 @@ public interface DO extends DataObject {
      * @see #unsetTransient()
      * @see #setTransient(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Transient()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getTransient();

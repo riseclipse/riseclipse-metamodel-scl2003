@@ -90,7 +90,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      * @ordered
      */
-    protected static final Boolean VIRTUAL_EDEFAULT = null;
+    protected static final Boolean VIRTUAL_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
@@ -199,13 +199,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getVirtual() {
-        if( isSetVirtual() ) {
-            return virtual;
-        }
-        return Boolean.FALSE;
+        return virtual;
     }
 
     /**

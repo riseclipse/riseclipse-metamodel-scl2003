@@ -49,7 +49,7 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      * @ordered
      */
-    protected static final String DESC_EDEFAULT = null;
+    protected static final String DESC_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
@@ -92,13 +92,10 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDesc() {
-        if( isSetDesc() ) {
-            return desc;
-        }
-        return "";
+        return desc;
     }
 
     /**

@@ -136,7 +136,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getFc()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final FCEnum FC_EDEFAULT = null;
@@ -720,14 +720,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        // Default value is ""
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**

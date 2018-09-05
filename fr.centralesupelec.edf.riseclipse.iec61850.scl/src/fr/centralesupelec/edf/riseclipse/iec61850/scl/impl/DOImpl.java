@@ -59,7 +59,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * @generated
      * @ordered
      */
-    protected static final Boolean TRANSIENT_EDEFAULT = null;
+    protected static final Boolean TRANSIENT_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getTransient() <em>Transient</em>}' attribute.
@@ -150,13 +150,10 @@ public class DOImpl extends DataObjectImpl implements DO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getTransient() {
-        if( isSetTransient() ) {
-            return transient_;
-        }
-        return Boolean.FALSE;
+        return transient_;
     }
 
     /**

@@ -54,7 +54,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * @generated
      * @ordered
      */
-    protected static final Integer ACT_SG_EDEFAULT = null;
+    protected static final Integer ACT_SG_EDEFAULT = new Integer(1);
 
     /**
      * The cached value of the '{@link #getActSG() <em>Act SG</em>}' attribute.
@@ -155,13 +155,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Integer getActSG() {
-        if( isSetActSG() ) {
-            return actSG;
-        }
-        return 1;
+        return actSG;
     }
 
     /**

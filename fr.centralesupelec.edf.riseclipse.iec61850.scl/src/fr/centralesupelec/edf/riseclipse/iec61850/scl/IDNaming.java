@@ -91,6 +91,7 @@ public interface IDNaming extends BaseElement {
 
     /**
      * Returns the value of the '<em><b>Desc</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Desc</em>' attribute isn't clear,
@@ -102,7 +103,7 @@ public interface IDNaming extends BaseElement {
      * @see #unsetDesc()
      * @see #setDesc(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIDNaming_Desc()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getDesc();

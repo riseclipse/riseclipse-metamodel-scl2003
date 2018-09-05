@@ -56,10 +56,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getBufTime()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum BUF_TIME_EDEFAULT = null;
+    protected static final ServiceSettingsEnum BUF_TIME_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -85,10 +85,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getIntgPd()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum INTG_PD_EDEFAULT = null;
+    protected static final ServiceSettingsEnum INTG_PD_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
@@ -114,10 +114,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getOptFields()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum OPT_FIELDS_EDEFAULT = null;
+    protected static final ServiceSettingsEnum OPT_FIELDS_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' attribute.
@@ -146,7 +146,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * @generated
      * @ordered
      */
-    protected static final Boolean OWNER_EDEFAULT = null;
+    protected static final Boolean OWNER_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getOwner() <em>Owner</em>}' attribute.
@@ -175,7 +175,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * @generated
      * @ordered
      */
-    protected static final Boolean RESV_TMS_EDEFAULT = null;
+    protected static final Boolean RESV_TMS_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getResvTms() <em>Resv Tms</em>}' attribute.
@@ -201,10 +201,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getRptID()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum RPT_ID_EDEFAULT = null;
+    protected static final ServiceSettingsEnum RPT_ID_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getRptID() <em>Rpt ID</em>}' attribute.
@@ -230,10 +230,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getTrgOps()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum TRG_OPS_EDEFAULT = null;
+    protected static final ServiceSettingsEnum TRG_OPS_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' attribute.

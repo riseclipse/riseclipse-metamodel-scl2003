@@ -97,7 +97,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * @generated
      * @ordered
      */
-    protected static final String COUNT_EDEFAULT = null;
+    protected static final String COUNT_EDEFAULT = "0";
 
     /**
      * The cached value of the '{@link #getCount() <em>Count</em>}' attribute.
@@ -184,7 +184,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * @generated
      * @ordered
      */
-    protected static final Boolean VAL_IMPORT_EDEFAULT = null;
+    protected static final Boolean VAL_IMPORT_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getValImport() <em>Val Import</em>}' attribute.
@@ -210,10 +210,10 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getValKind()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ValKindEnum VAL_KIND_EDEFAULT = null;
+    protected static final ValKindEnum VAL_KIND_EDEFAULT = ValKindEnum.SET;
 
     /**
      * The cached value of the '{@link #getValKind() <em>Val Kind</em>}' attribute.
@@ -331,13 +331,10 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getCount() {
-        if( isSetCount() ) {
-            return count;
-        }
-        return "0";
+        return count;
     }
 
     /**
@@ -472,13 +469,10 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getValImport() {
-        if( isSetValImport() ) {
-            return valImport;
-        }
-        return Boolean.FALSE;
+        return valImport;
     }
 
     /**
@@ -521,13 +515,10 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public ValKindEnum getValKind() {
-        if( isSetValKind() ) {
-            return valKind;
-        }
-        return ValKindEnum.SET;
+        return valKind;
     }
 
     /**

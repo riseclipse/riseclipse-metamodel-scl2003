@@ -68,7 +68,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      * @ordered
      */
-    protected static final Boolean DCHG_EDEFAULT = null;
+    protected static final Boolean DCHG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDchg() <em>Dchg</em>}' attribute.
@@ -97,7 +97,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      * @ordered
      */
-    protected static final Boolean DUPD_EDEFAULT = null;
+    protected static final Boolean DUPD_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getDupd() <em>Dupd</em>}' attribute.
@@ -123,7 +123,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getFc()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final FCEnum FC_EDEFAULT = null;
@@ -155,7 +155,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      * @ordered
      */
-    protected static final Boolean QCHG_EDEFAULT = null;
+    protected static final Boolean QCHG_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
@@ -227,13 +227,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getDchg() {
-        if( isSetDchg() ) {
-            return dchg;
-        }
-        return Boolean.FALSE;
+        return dchg;
     }
 
     /**
@@ -276,13 +273,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getDupd() {
-        if( isSetDupd() ) {
-            return dupd;
-        }
-        return Boolean.FALSE;
+        return dupd;
     }
 
     /**
@@ -371,13 +365,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getQchg() {
-        if( isSetQchg() ) {
-            return qchg;
-        }
-        return Boolean.FALSE;
+        return qchg;
     }
 
     /**

@@ -148,7 +148,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getValKind()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final ValKindEnum VAL_KIND_EDEFAULT = null;

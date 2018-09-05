@@ -213,7 +213,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
@@ -534,13 +534,10 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**

@@ -44,6 +44,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ReportSettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -57,7 +58,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetBufTime()
      * @see #setBufTime(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_BufTime()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getBufTime();
@@ -100,6 +101,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -113,7 +115,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetIntgPd()
      * @see #setIntgPd(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_IntgPd()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getIntgPd();
@@ -156,6 +158,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -169,7 +172,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetOptFields()
      * @see #setOptFields(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_OptFields()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getOptFields();
@@ -212,6 +215,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Owner</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Owner</em>' attribute isn't clear,
@@ -223,7 +227,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetOwner()
      * @see #setOwner(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_Owner()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getOwner();
@@ -265,6 +269,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Resv Tms</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Resv Tms</em>' attribute isn't clear,
@@ -276,7 +281,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetResvTms()
      * @see #setResvTms(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_ResvTms()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getResvTms();
@@ -318,6 +323,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Rpt ID</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -331,7 +337,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetRptID()
      * @see #setRptID(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_RptID()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getRptID();
@@ -374,6 +380,7 @@ public interface ReportSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Trg Ops</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -387,7 +394,7 @@ public interface ReportSettings extends ServiceSettings {
      * @see #unsetTrgOps()
      * @see #setTrgOps(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportSettings_TrgOps()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getTrgOps();

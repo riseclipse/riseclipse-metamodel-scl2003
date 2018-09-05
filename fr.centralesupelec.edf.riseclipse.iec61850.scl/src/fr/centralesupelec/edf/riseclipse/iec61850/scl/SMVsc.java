@@ -41,6 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface SMVsc extends ServiceWithMax {
     /**
      * Returns the value of the '<em><b>Delivery</b></em>' attribute.
+     * The default value is <code>"multicast"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -54,7 +55,7 @@ public interface SMVsc extends ServiceWithMax {
      * @see #unsetDelivery()
      * @see #setDelivery(SMVDeliveryEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVsc_Delivery()
-     * @model unsettable="true"
+     * @model default="multicast" unsettable="true"
      * @generated
      */
     SMVDeliveryEnum getDelivery();

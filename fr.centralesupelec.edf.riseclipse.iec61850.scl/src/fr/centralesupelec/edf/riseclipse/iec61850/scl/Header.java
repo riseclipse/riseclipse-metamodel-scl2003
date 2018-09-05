@@ -97,6 +97,7 @@ public interface Header extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Name Structure</b></em>' attribute.
+     * The default value is <code>"IEDName"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Name Structure</em>' attribute isn't clear,
@@ -108,7 +109,7 @@ public interface Header extends SclObject {
      * @see #unsetNameStructure()
      * @see #setNameStructure(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_NameStructure()
-     * @model unsettable="true"
+     * @model default="IEDName" unsettable="true"
      * @generated
      */
     String getNameStructure();
@@ -150,6 +151,7 @@ public interface Header extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Revision</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Revision</em>' attribute isn't clear,
@@ -161,7 +163,7 @@ public interface Header extends SclObject {
      * @see #unsetRevision()
      * @see #setRevision(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_Revision()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getRevision();

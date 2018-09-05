@@ -124,7 +124,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getKind()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final AssociationKindEnum KIND_EDEFAULT = null;

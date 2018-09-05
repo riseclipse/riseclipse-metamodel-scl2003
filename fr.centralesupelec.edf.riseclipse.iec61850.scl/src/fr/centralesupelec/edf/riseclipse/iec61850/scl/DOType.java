@@ -98,6 +98,7 @@ public interface DOType extends IDNaming {
 
     /**
      * Returns the value of the '<em><b>Ied Type</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ied Type</em>' attribute isn't clear,
@@ -109,7 +110,7 @@ public interface DOType extends IDNaming {
      * @see #unsetIedType()
      * @see #setIedType(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_IedType()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getIedType();

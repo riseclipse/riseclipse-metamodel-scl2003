@@ -86,7 +86,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * @generated
      * @ordered
      */
-    protected static final Boolean FIXED_OFFS_EDEFAULT = null;
+    protected static final Boolean FIXED_OFFS_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getFixedOffs() <em>Fixed Offs</em>}' attribute.
@@ -112,10 +112,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getSecurityEnable()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final PredefinedTypeOfSecurityEnum SECURITY_ENABLE_EDEFAULT = null;
+    protected static final PredefinedTypeOfSecurityEnum SECURITY_ENABLE_EDEFAULT = PredefinedTypeOfSecurityEnum.NONE;
 
     /**
      * The cached value of the '{@link #getSecurityEnable() <em>Security Enable</em>}' attribute.
@@ -141,10 +141,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getType()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final GSEControlTypeEnum TYPE_EDEFAULT = null;
+    protected static final GSEControlTypeEnum TYPE_EDEFAULT = GSEControlTypeEnum.GOOSE;
 
     /**
      * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -233,13 +233,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getFixedOffs() {
-        if( isSetFixedOffs() ) {
-            return fixedOffs;
-        }
-        return Boolean.FALSE;
+        return fixedOffs;
     }
 
     /**
@@ -282,13 +279,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public PredefinedTypeOfSecurityEnum getSecurityEnable() {
-        if( isSetSecurityEnable() ) {
-            return securityEnable;
-        }
-        return PredefinedTypeOfSecurityEnum.NONE;
+        return securityEnable;
     }
 
     /**
@@ -331,13 +325,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public GSEControlTypeEnum getType() {
-        if( isSetType() ) {
-            return type;
-        }
-        return GSEControlTypeEnum.GOOSE;
+        return type;
     }
 
     /**

@@ -67,7 +67,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String IED_NAME_EDEFAULT = null;
+    protected static final String IED_NAME_EDEFAULT = "None";
 
     /**
      * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
@@ -96,7 +96,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String LD_INST_EDEFAULT = null;
+    protected static final String LD_INST_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
@@ -154,7 +154,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String LN_INST_EDEFAULT = null;
+    protected static final String LN_INST_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
@@ -318,10 +318,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( ied != null ) {
             return ied.getName();
         }
-        if( iedNameESet ) {
-            return iedName;
-        }
-        return "None";
+        return iedName;
     }
 
     /**
@@ -370,10 +367,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( lDevice != null ) {
             return lDevice.getInst();
         }
-        if( ldInstESet ) {
-            return ldInst;
-        }
-        return "";
+        return ldInst;
     }
 
     /**
@@ -465,16 +459,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnInst() {
-        if( ln != null ) {
-            return ln.getInst();
-        }
-        if( lnInstESet ) {
-            return lnInst;
-        }
-        return "";
+        return lnInst;
     }
 
     /**
@@ -563,13 +551,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**

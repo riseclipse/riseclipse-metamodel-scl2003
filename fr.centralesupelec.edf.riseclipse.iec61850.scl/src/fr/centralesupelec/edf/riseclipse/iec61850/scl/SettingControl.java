@@ -40,6 +40,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface SettingControl extends UnNaming {
     /**
      * Returns the value of the '<em><b>Act SG</b></em>' attribute.
+     * The default value is <code>"1"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Act SG</em>' attribute isn't clear,
@@ -51,7 +52,7 @@ public interface SettingControl extends UnNaming {
      * @see #unsetActSG()
      * @see #setActSG(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingControl_ActSG()
-     * @model unsettable="true"
+     * @model default="1" unsettable="true"
      * @generated
      */
     Integer getActSG();
