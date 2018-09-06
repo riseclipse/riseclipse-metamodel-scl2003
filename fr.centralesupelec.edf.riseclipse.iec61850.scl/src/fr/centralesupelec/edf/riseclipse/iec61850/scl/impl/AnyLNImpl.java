@@ -379,10 +379,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( refersToLNodeType != null ) return refersToLNodeType.getLnClass();
         return lnClass;
     }
 
@@ -417,22 +416,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetLnClass() {
-        return isSetRefersToLNodeType();
+        return lnClassESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnType() {
-        if( refersToLNodeType != null )
-            return refersToLNodeType.getId();
-        else
-            return lnType;
+        return lnType;
     }
 
     /**
@@ -466,10 +462,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetLnType() {
-        return isSetRefersToLNodeType();
+        return lnTypeESet;
     }
 
     /**

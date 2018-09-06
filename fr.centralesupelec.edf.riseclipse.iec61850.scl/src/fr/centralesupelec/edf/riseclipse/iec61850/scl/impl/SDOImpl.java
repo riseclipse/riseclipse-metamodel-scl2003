@@ -226,12 +226,9 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getType() {
-        if( isSetRefersToDOType() ) {
-            return getRefersToDOType().getId();
-        }
         return type;
     }
 
@@ -266,10 +263,10 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetType() {
-        return isSetRefersToDOType();
+        return typeESet;
     }
 
     /**

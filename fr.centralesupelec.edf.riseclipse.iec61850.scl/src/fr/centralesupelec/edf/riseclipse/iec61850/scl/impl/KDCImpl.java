@@ -151,12 +151,9 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getApName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getName();
-        }
         return apName;
     }
 
@@ -191,21 +188,18 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetApName() {
-        return isSetRefersToAccessPoint();
+        return apNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getIedName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getIED().getName();
-        }
         return iedName;
     }
 
@@ -240,10 +234,10 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetIedName() {
-        return isSetRefersToAccessPoint();
+        return iedNameESet;
     }
 
     /**

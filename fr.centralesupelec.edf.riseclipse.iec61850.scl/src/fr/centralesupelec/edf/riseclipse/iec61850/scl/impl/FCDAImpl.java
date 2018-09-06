@@ -384,14 +384,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDaName() {
-        // TODO: wrong because it does not take into account structured names
-        if( isSetRefersToDataAttribute() )
-            return getRefersToDataAttribute().getName();
-        else
-            return daName;
+        return daName;
     }
 
     /**
@@ -423,25 +419,21 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDaName() {
-        return isSetRefersToDataAttribute();
+        return daNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDoName() {
-        // TODO: wrong because it does not take into account structured names
-        if( isSetRefersToDataObject() )
-            return getRefersToDataObject().getName();
-        else
-            return doName;
+        return doName;
     }
 
     /**
@@ -473,12 +465,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDoName() {
-        return isSetRefersToDataObject();
+        return doNameESet;
     }
 
     /**
@@ -622,13 +614,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( isSetRefersToAnyLN() )
-            return getRefersToAnyLN().getLnClass();
-        else
-            return lnClass;
+        return lnClass;
     }
 
     /**
@@ -660,24 +649,21 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnClass() {
-        return isSetRefersToAnyLN();
+        return lnClassESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnInst() {
-        if( isSetRefersToAnyLN() )
-            return getRefersToAnyLN().getInst();
-        else
-            return lnInst;
+        return lnInst;
     }
 
     /**
@@ -711,10 +697,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetLnInst() {
-        return isSetRefersToAnyLN();
+        return lnInstESet;
     }
 
     /**

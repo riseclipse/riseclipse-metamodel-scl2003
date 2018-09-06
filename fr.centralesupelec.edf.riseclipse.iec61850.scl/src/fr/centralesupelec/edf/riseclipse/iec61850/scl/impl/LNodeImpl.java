@@ -312,12 +312,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getIedName() {
-        if( ied != null ) {
-            return ied.getName();
-        }
         return iedName;
     }
 
@@ -350,23 +347,20 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetIedName() {
-        return isSetIED();
+        return iedNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLdInst() {
-        if( lDevice != null ) {
-            return lDevice.getInst();
-        }
         return ldInst;
     }
 
@@ -399,23 +393,20 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLdInst() {
-        return isSetLDevice();
+        return ldInstESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( ln != null ) {
-            return ln.getLnClass();
-        }
         return lnClass;
     }
 
@@ -448,12 +439,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnClass() {
-        return isSetLN();
+        return lnClassESet;
     }
 
     /**
@@ -494,12 +485,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated not
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnInst() {
-        return isSetLN();
+        return lnInstESet;
     }
 
     /**

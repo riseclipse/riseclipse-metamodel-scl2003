@@ -241,12 +241,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getApName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getName();
-        }
         return apName;
     }
 
@@ -281,21 +278,18 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetApName() {
-        return isSetRefersToAccessPoint();
+        return apNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getIedName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getIED().getName();
-        }
         return iedName;
     }
 
@@ -328,12 +322,12 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetIedName() {
-        return isSetRefersToAccessPoint();
+        return iedNameESet;
     }
 
     /**

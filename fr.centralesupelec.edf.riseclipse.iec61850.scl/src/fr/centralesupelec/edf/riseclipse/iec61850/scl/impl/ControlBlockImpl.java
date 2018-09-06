@@ -194,13 +194,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getCbName() {
-        if( isSetRefersToControlWithIEDName() )
-            return getRefersToControlWithIEDName().getName();
-        else
-            return cbName;
+        return cbName;
     }
 
     /**
@@ -234,22 +231,19 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetCbName() {
-        return isSetRefersToControlWithIEDName();
+        return cbNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLdInst() {
-        if( isSetRefersToLDevice() )
-            return getRefersToLDevice().getInst();
-        else
-            return ldInst;
+        return ldInst;
     }
 
     /**
@@ -281,12 +275,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLdInst() {
-        return isSetRefersToLDevice();
+        return ldInstESet;
     }
 
     /**

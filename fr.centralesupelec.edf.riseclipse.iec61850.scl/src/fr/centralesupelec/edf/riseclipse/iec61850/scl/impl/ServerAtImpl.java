@@ -119,12 +119,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getApName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getName();
-        }
         return apName;
     }
 
@@ -159,10 +156,10 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetApName() {
-        return isSetRefersToAccessPoint();
+        return apNameESet;
     }
 
     /**

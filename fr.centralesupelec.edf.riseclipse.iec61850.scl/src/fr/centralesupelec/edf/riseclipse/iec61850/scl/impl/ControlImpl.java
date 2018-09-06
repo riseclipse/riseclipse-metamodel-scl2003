@@ -148,13 +148,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDatSet() {
-        if( isSetRefersToDataSet() )
-            return getRefersToDataSet().getName();
-        else
-            return datSet;
+        return datSet;
     }
 
     /**
@@ -186,12 +183,12 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDatSet() {
-        return isSetRefersToDataSet();
+        return datSetESet;
     }
 
     /**

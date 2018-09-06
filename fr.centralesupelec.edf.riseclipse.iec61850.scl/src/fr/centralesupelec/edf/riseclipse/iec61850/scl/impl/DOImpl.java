@@ -196,13 +196,10 @@ public class DOImpl extends DataObjectImpl implements DO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getType() {
-        if( isSetRefersToDOType() )
-            return getRefersToDOType().getId();
-        else
-            return type;
+        return type;
     }
 
     /**
@@ -236,10 +233,10 @@ public class DOImpl extends DataObjectImpl implements DO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetType() {
-        return isSetRefersToDOType();
+        return typeESet;
     }
 
     /**
