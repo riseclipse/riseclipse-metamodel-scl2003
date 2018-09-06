@@ -44,6 +44,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ReportControl extends ControlWithTriggerOpt {
     /**
      * Returns the value of the '<em><b>Buffered</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buffered</em>' attribute isn't clear,
@@ -55,7 +56,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #unsetBuffered()
      * @see #setBuffered(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_Buffered()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getBuffered();
@@ -97,6 +98,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Buf Time</b></em>' attribute.
+     * The default value is <code>"0"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Buf Time</em>' attribute isn't clear,
@@ -108,7 +110,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #unsetBufTime()
      * @see #setBufTime(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_BufTime()
-     * @model unsettable="true"
+     * @model default="0" unsettable="true"
      * @generated
      */
     Integer getBufTime();
@@ -203,6 +205,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Indexed</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Indexed</em>' attribute isn't clear,
@@ -214,7 +217,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #unsetIndexed()
      * @see #setIndexed(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_Indexed()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getIndexed();

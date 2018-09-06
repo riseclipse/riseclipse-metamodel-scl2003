@@ -38,6 +38,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface ServiceSettings extends SclObject {
     /**
      * Returns the value of the '<em><b>Cb Name</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -51,7 +52,7 @@ public interface ServiceSettings extends SclObject {
      * @see #unsetCbName()
      * @see #setCbName(ServiceSettingsNoDynEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceSettings_CbName()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsNoDynEnum getCbName();
@@ -94,6 +95,7 @@ public interface ServiceSettings extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Dat Set</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -107,7 +109,7 @@ public interface ServiceSettings extends SclObject {
      * @see #unsetDatSet()
      * @see #setDatSet(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServiceSettings_DatSet()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getDatSet();

@@ -47,10 +47,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getCbName()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsNoDynEnum CB_NAME_EDEFAULT = null;
+    protected static final ServiceSettingsNoDynEnum CB_NAME_EDEFAULT = ServiceSettingsNoDynEnum.FIX;
 
     /**
      * The cached value of the '{@link #getCbName() <em>Cb Name</em>}' attribute.
@@ -76,10 +76,10 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getDatSet()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum DAT_SET_EDEFAULT = null;
+    protected static final ServiceSettingsEnum DAT_SET_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getDatSet() <em>Dat Set</em>}' attribute.

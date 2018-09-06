@@ -22,6 +22,7 @@ import java.util.List;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
@@ -225,8 +226,9 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
         // TODO: put in AbstractDataType
 
-        // Resolve only if attribute has been read
-        if( !typeESet ) return;
+        if( getType() == null ) return;
+        DataTypeTemplates dtt = get_DataTypeTemplates();
+        if( dtt == null ) return;
 
         if( "Enum".equals( getBType() ) ) {
 
@@ -236,7 +238,7 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
                 @Override
                 public Boolean caseEnumType( EnumType object ) {
-                    return object.getId().equals( getType() );
+                    return getType().equals( object.getId() );
                 }
 
                 @Override
@@ -246,18 +248,18 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
             };
 
-            List< EnumType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getEnumType(), s );
+            List< EnumType > res = shallowSearchObjects( dtt.getEnumType(), s );
             String mess = "EnumType( id = " + getType() + " ) for BDA on line " + getLineNumber() + " )";
             if( res.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                return;
             }
-            else if( res.size() > 1 ) {
+            if( res.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                setRefersToEnumType( res.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            setRefersToEnumType( res.get( 0 ) );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -267,7 +269,7 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
                 @Override
                 public Boolean caseDAType( DAType object ) {
-                    return object.getId().equals( getType() );
+                    return getType().equals( object.getId() );
                 }
 
                 @Override
@@ -277,19 +279,19 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
 
             };
 
-            List< DAType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getDAType(), s );
+            List< DAType > res = shallowSearchObjects( dtt.getDAType(), s );
             String mess = "DAType( id = " + getType() + " ) for BDA on line " + getLineNumber() + " )";
             if( res.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                return;
             }
-            else if( res.size() > 1 ) {
+            if( res.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                // TODO
-                //daType = res.get( 0 );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            // TODO
+            //daType = res.get( 0 );
         }
     }
 } //BDAImpl

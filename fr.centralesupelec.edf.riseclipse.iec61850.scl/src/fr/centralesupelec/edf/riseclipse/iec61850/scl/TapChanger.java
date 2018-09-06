@@ -96,6 +96,7 @@ public interface TapChanger extends PowerSystemResource {
 
     /**
      * Returns the value of the '<em><b>Virtual</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Virtual</em>' attribute isn't clear,
@@ -107,7 +108,7 @@ public interface TapChanger extends PowerSystemResource {
      * @see #unsetVirtual()
      * @see #setVirtual(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_Virtual()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getVirtual();

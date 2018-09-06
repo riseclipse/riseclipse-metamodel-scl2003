@@ -52,10 +52,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getIntgPd()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum INTG_PD_EDEFAULT = null;
+    protected static final ServiceSettingsEnum INTG_PD_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getIntgPd() <em>Intg Pd</em>}' attribute.
@@ -81,10 +81,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getLogEna()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum LOG_ENA_EDEFAULT = null;
+    protected static final ServiceSettingsEnum LOG_ENA_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
@@ -110,10 +110,10 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getTrgOps()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum TRG_OPS_EDEFAULT = null;
+    protected static final ServiceSettingsEnum TRG_OPS_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getTrgOps() <em>Trg Ops</em>}' attribute.

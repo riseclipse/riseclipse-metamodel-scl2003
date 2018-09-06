@@ -148,13 +148,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDatSet() {
-        if( isSetRefersToDataSet() )
-            return getRefersToDataSet().getName();
-        else
-            return datSet;
+        return datSet;
     }
 
     /**
@@ -186,12 +183,12 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDatSet() {
-        return isSetRefersToDataSet();
+        return datSetESet;
     }
 
     /**
@@ -471,9 +468,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         // datSet  The name of the data set to be sent by the report control block; datSet should only be missing within an ICD-File,
         //         or to indicate an unused control block. The referenced data set must be in the same LN as the control block.
 
-        // Resolve only if attribute has been read
-        // Cannot use isSetDatSet() Here
-        if( !datSetESet ) return;
+        if( getDatSet() == null ) return;
+        if( getAnyLN() == null ) return;
 
         // find an DataSet with
         //   DataSet.name == Control.datSet
@@ -481,7 +477,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
 
             @Override
             public Boolean caseDataSet( DataSet object ) {
-                return object.getName().equals( getDatSet() );
+                return getDatSet().equals( object.getName() );
             }
 
             @Override
@@ -496,14 +492,14 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 + getName() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDataSet( res.get( 0 ) );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToDataSet( res.get( 0 ) );
     }
 
     // TODO: redesign this

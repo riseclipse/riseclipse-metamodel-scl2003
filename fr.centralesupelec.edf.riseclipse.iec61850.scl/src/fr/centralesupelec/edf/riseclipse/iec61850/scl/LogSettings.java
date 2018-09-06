@@ -40,6 +40,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface LogSettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>Intg Pd</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -53,7 +54,7 @@ public interface LogSettings extends ServiceSettings {
      * @see #unsetIntgPd()
      * @see #setIntgPd(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogSettings_IntgPd()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getIntgPd();
@@ -96,6 +97,7 @@ public interface LogSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Log Ena</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -109,7 +111,7 @@ public interface LogSettings extends ServiceSettings {
      * @see #unsetLogEna()
      * @see #setLogEna(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogSettings_LogEna()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getLogEna();
@@ -152,6 +154,7 @@ public interface LogSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Trg Ops</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -165,7 +168,7 @@ public interface LogSettings extends ServiceSettings {
      * @see #unsetTrgOps()
      * @see #setTrgOps(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogSettings_TrgOps()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getTrgOps();

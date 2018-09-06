@@ -255,7 +255,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated NOT because the default value must be computed
      */
     public String getLdName() {
         // the default is the IED name concatenated with the inst

@@ -119,12 +119,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getApName() {
-        if( isSetRefersToAccessPoint() ) {
-            return getRefersToAccessPoint().getName();
-        }
         return apName;
     }
 
@@ -159,10 +156,10 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetApName() {
-        return isSetRefersToAccessPoint();
+        return apNameESet;
     }
 
     /**
@@ -450,15 +447,15 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         // see Issue #13
         super.doResolveLinks();
         
-        // Resolve only if attribute has been read
-        // Cannot use isSetApName() Here
-        if( !apNameESet ) return;
+        if( getApName() == null ) return;
+        if( getAccessPoint() == null ) return;
+        if( getAccessPoint().getIED() == null ) return;
 
         SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
 
             @Override
             public Boolean caseAccessPoint( AccessPoint object ) {
-                return object.getName().equals( getApName() );
+                return getApName().equals( object.getName() );
             }
 
             @Override
@@ -472,14 +469,14 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         String mess = "AccessPoint( name = " + getApName() + " ) for ServerAt on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToAccessPoint( res.get( 0 ) );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToAccessPoint( res.get( 0 ) );
     }
 
 } //ServerAtImpl

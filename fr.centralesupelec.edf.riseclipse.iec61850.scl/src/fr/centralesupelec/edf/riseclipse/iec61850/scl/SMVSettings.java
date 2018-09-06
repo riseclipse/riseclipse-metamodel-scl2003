@@ -52,6 +52,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Sv ID</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -65,7 +66,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetSvID()
      * @see #setSvID(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SvID()
-     * @model unsettable="true" ordered="false"
+     * @model default="Fix" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSettingsEnum getSvID();
@@ -108,6 +109,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Opt Fields</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -121,7 +123,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetOptFields()
      * @see #setOptFields(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_OptFields()
-     * @model unsettable="true" ordered="false"
+     * @model default="Fix" unsettable="true" ordered="false"
      * @generated
      */
     ServiceSettingsEnum getOptFields();
@@ -164,6 +166,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Smp Rate Attribute</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -177,7 +180,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetSmpRateAttribute()
      * @see #setSmpRateAttribute(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRateAttribute()
-     * @model unsettable="true" ordered="false"
+     * @model default="Fix" unsettable="true" ordered="false"
      *        extendedMetaData="name='smpRate'"
      * @generated
      */
@@ -221,6 +224,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Samples Per Sec Attribute</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Samples Per Sec Attribute</em>' attribute isn't clear,
@@ -232,7 +236,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetSamplesPerSecAttribute()
      * @see #setSamplesPerSecAttribute(boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSecAttribute()
-     * @model unsettable="true" ordered="false"
+     * @model default="false" unsettable="true" ordered="false"
      *        extendedMetaData="name='SamplesPerSec'"
      * @generated
      */
@@ -275,6 +279,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Pdc Time Stamp</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Pdc Time Stamp</em>' attribute isn't clear,
@@ -286,7 +291,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetPdcTimeStamp()
      * @see #setPdcTimeStamp(boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_PdcTimeStamp()
-     * @model unsettable="true" ordered="false"
+     * @model default="false" unsettable="true" ordered="false"
      * @generated
      */
     boolean isPdcTimeStamp();
@@ -473,6 +478,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Synch Src Id</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Synch Src Id</em>' attribute isn't clear,
@@ -484,7 +490,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetSynchSrcId()
      * @see #setSynchSrcId(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SynchSrcId()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getSynchSrcId();
@@ -526,6 +532,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Nof ASDU</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -539,7 +546,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetNofASDU()
      * @see #setNofASDU(ServiceSettingsNoDynEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_NofASDU()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsNoDynEnum getNofASDU();
@@ -582,6 +589,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Kda Participant</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Kda Participant</em>' attribute isn't clear,
@@ -593,7 +601,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetKdaParticipant()
      * @see #setKdaParticipant(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_KdaParticipant()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getKdaParticipant();

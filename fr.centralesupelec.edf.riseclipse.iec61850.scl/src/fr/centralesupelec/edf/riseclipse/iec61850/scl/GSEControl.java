@@ -94,6 +94,7 @@ public interface GSEControl extends ControlWithIEDName {
 
     /**
      * Returns the value of the '<em><b>Fixed Offs</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Fixed Offs</em>' attribute isn't clear,
@@ -105,7 +106,7 @@ public interface GSEControl extends ControlWithIEDName {
      * @see #unsetFixedOffs()
      * @see #setFixedOffs(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSEControl_FixedOffs()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getFixedOffs();
@@ -147,6 +148,7 @@ public interface GSEControl extends ControlWithIEDName {
 
     /**
      * Returns the value of the '<em><b>Security Enable</b></em>' attribute.
+     * The default value is <code>"None"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -160,7 +162,7 @@ public interface GSEControl extends ControlWithIEDName {
      * @see #unsetSecurityEnable()
      * @see #setSecurityEnable(PredefinedTypeOfSecurityEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSEControl_SecurityEnable()
-     * @model unsettable="true"
+     * @model default="None" unsettable="true"
      * @generated
      */
     PredefinedTypeOfSecurityEnum getSecurityEnable();
@@ -203,6 +205,7 @@ public interface GSEControl extends ControlWithIEDName {
 
     /**
      * Returns the value of the '<em><b>Type</b></em>' attribute.
+     * The default value is <code>"GOOSE"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -216,7 +219,7 @@ public interface GSEControl extends ControlWithIEDName {
      * @see #unsetType()
      * @see #setType(GSEControlTypeEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSEControl_Type()
-     * @model unsettable="true"
+     * @model default="GOOSE" unsettable="true"
      * @generated
      */
     GSEControlTypeEnum getType();

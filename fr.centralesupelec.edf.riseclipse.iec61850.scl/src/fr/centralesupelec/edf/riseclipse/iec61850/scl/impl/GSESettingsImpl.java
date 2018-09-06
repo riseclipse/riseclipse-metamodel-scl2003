@@ -54,10 +54,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getAppID()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum APP_ID_EDEFAULT = null;
+    protected static final ServiceSettingsEnum APP_ID_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getAppID() <em>App ID</em>}' attribute.
@@ -83,10 +83,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getDataLabel()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum DATA_LABEL_EDEFAULT = null;
+    protected static final ServiceSettingsEnum DATA_LABEL_EDEFAULT = ServiceSettingsEnum.FIX;
 
     /**
      * The cached value of the '{@link #getDataLabel() <em>Data Label</em>}' attribute.

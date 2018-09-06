@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,16 +43,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum;
  * @generated
  */
 public class ConfReportControlImpl extends ServiceConfReportControlImpl implements ConfReportControl {
-    /**
-     * The default value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getBufMode()
-     * @generated NOT
-     * @ordered
-     */
-    protected static final bufModeEnum BUF_MODE_EDEFAULT = null;
-
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

@@ -52,6 +52,7 @@ import org.eclipse.emf.common.util.EList;
 public interface AccessPoint extends UnNaming {
     /**
      * Returns the value of the '<em><b>Clock</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Clock</em>' attribute isn't clear,
@@ -63,7 +64,7 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetClock()
      * @see #setClock(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Clock()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getClock();
@@ -105,6 +106,7 @@ public interface AccessPoint extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Kdc</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Kdc</em>' attribute isn't clear,
@@ -116,7 +118,7 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetKdc()
      * @see #setKdc(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Kdc()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getKdc();
@@ -158,6 +160,7 @@ public interface AccessPoint extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Router</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Router</em>' attribute isn't clear,
@@ -169,7 +172,7 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetRouter()
      * @see #setRouter(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Router()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getRouter();

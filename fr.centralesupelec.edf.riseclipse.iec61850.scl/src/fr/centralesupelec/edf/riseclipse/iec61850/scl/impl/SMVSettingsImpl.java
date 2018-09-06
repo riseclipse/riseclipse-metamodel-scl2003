@@ -73,7 +73,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum SV_ID_EDEFAULT = ServiceSettingsEnum.DYN;
+    protected static final ServiceSettingsEnum SV_ID_EDEFAULT = ServiceSettingsEnum.FIX;
     /**
      * The cached value of the '{@link #getSvID() <em>Sv ID</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -99,7 +99,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum OPT_FIELDS_EDEFAULT = ServiceSettingsEnum.DYN;
+    protected static final ServiceSettingsEnum OPT_FIELDS_EDEFAULT = ServiceSettingsEnum.FIX;
     /**
      * The cached value of the '{@link #getOptFields() <em>Opt Fields</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -125,7 +125,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final ServiceSettingsEnum SMP_RATE_ATTRIBUTE_EDEFAULT = ServiceSettingsEnum.DYN;
+    protected static final ServiceSettingsEnum SMP_RATE_ATTRIBUTE_EDEFAULT = ServiceSettingsEnum.FIX;
     /**
      * The cached value of the '{@link #getSmpRateAttribute() <em>Smp Rate Attribute</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -231,7 +231,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final Boolean SYNCH_SRC_ID_EDEFAULT = null;
+    protected static final Boolean SYNCH_SRC_ID_EDEFAULT = Boolean.FALSE;
     /**
      * The cached value of the '{@link #getSynchSrcId() <em>Synch Src Id</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -257,7 +257,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final ServiceSettingsNoDynEnum NOF_ASDU_EDEFAULT = ServiceSettingsNoDynEnum.CONF;
+    protected static final ServiceSettingsNoDynEnum NOF_ASDU_EDEFAULT = ServiceSettingsNoDynEnum.FIX;
     /**
      * The cached value of the '{@link #getNofASDU() <em>Nof ASDU</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -283,7 +283,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = null;
+    protected static final Boolean KDA_PARTICIPANT_EDEFAULT = Boolean.FALSE;
     /**
      * The cached value of the '{@link #getKdaParticipant() <em>Kda Participant</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -342,13 +342,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public ServiceSettingsEnum getSvID() {
-        if( isSetSvID() ) {
-            return svID;
-        }
-        return ServiceSettingsEnum.FIX;
+        return svID;
     }
 
     /**
@@ -391,13 +388,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public ServiceSettingsEnum getOptFields() {
-        if( isSetOptFields() ) {
-            return optFields;
-        }
-        return ServiceSettingsEnum.FIX;
+        return optFields;
     }
 
     /**
@@ -440,13 +434,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public ServiceSettingsEnum getSmpRateAttribute() {
-        if( isSetSmpRateAttribute() ) {
-            return smpRateAttribute;
-        }
-        return ServiceSettingsEnum.FIX;
+        return smpRateAttribute;
     }
 
     /**
@@ -489,13 +480,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSamplesPerSecAttribute() {
-        if( isSetSamplesPerSecAttribute() ) {
-            return samplesPerSecAttribute;
-        }
-        return false;
+        return samplesPerSecAttribute;
     }
 
     /**
@@ -538,13 +526,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isPdcTimeStamp() {
-        if( isSetPdcTimeStamp() ) {
-            return pdcTimeStamp;
-        }
-        return false;
+        return pdcTimeStamp;
     }
 
     /**

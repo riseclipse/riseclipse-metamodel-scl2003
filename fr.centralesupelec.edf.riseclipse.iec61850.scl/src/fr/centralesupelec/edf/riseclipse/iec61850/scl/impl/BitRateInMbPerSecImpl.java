@@ -66,7 +66,7 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getMultiplier()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final UnitMultiplierEnum MULTIPLIER_EDEFAULT = null;

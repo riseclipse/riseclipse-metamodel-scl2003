@@ -45,6 +45,7 @@ import org.eclipse.emf.common.util.EList;
 public interface DA extends AbstractDataAttribute {
     /**
      * Returns the value of the '<em><b>Dchg</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dchg</em>' attribute isn't clear,
@@ -56,7 +57,7 @@ public interface DA extends AbstractDataAttribute {
      * @see #unsetDchg()
      * @see #setDchg(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_Dchg()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDchg();
@@ -98,6 +99,7 @@ public interface DA extends AbstractDataAttribute {
 
     /**
      * Returns the value of the '<em><b>Dupd</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dupd</em>' attribute isn't clear,
@@ -109,7 +111,7 @@ public interface DA extends AbstractDataAttribute {
      * @see #unsetDupd()
      * @see #setDupd(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_Dupd()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getDupd();
@@ -207,6 +209,7 @@ public interface DA extends AbstractDataAttribute {
 
     /**
      * Returns the value of the '<em><b>Qchg</b></em>' attribute.
+     * The default value is <code>"false"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Qchg</em>' attribute isn't clear,
@@ -218,7 +221,7 @@ public interface DA extends AbstractDataAttribute {
      * @see #unsetQchg()
      * @see #setQchg(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_Qchg()
-     * @model unsettable="true"
+     * @model default="false" unsettable="true"
      * @generated
      */
     Boolean getQchg();

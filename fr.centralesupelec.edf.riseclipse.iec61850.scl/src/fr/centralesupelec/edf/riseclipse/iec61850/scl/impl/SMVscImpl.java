@@ -53,10 +53,10 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getDelivery()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final SMVDeliveryEnum DELIVERY_EDEFAULT = null;
+    protected static final SMVDeliveryEnum DELIVERY_EDEFAULT = SMVDeliveryEnum.MULTICAST;
 
     /**
      * The cached value of the '{@link #getDelivery() <em>Delivery</em>}' attribute.

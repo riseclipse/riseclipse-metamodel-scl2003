@@ -68,7 +68,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Integer BUF_TIME_EDEFAULT = null;
+    protected static final Integer BUF_TIME_EDEFAULT = new Integer(0);
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -126,7 +126,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final String LN_CLASS_EDEFAULT = null;
+    protected static final String LN_CLASS_EDEFAULT = "LLN0";
 
     /**
      * The cached value of the '{@link #getLnClass() <em>Ln Class</em>}' attribute.
@@ -184,7 +184,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Boolean LOG_ENA_EDEFAULT = null;
+    protected static final Boolean LOG_ENA_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getLogEna() <em>Log Ena</em>}' attribute.
@@ -242,7 +242,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
@@ -271,7 +271,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Boolean REASON_CODE_EDEFAULT = null;
+    protected static final Boolean REASON_CODE_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getReasonCode() <em>Reason Code</em>}' attribute.
@@ -333,13 +333,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Integer getBufTime() {
-        if( isSetBufTime() ) {
-            return bufTime;
-        }
-        return 0;
+        return bufTime;
     }
 
     /**
@@ -428,13 +425,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( isSetLnClass() ) {
-            return lnClass;
-        }
-        return "LLN0";
+        return lnClass;
     }
 
     /**
@@ -523,13 +517,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getLogEna() {
-        if( isSetLogEna() ) {
-            return logEna;
-        }
-        return Boolean.TRUE;
+        return logEna;
     }
 
     /**
@@ -618,13 +609,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**
@@ -667,13 +655,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getReasonCode() {
-        if( isSetReasonCode() ) {
-            return reasonCode;
-        }
-        return Boolean.TRUE;
+        return reasonCode;
     }
 
     /**
@@ -1082,22 +1067,25 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // see Issue #13
         super.doResolveLinks();
         
+        if( getLnClass() == null ) return;
 
+        if( getAnyLN() == null ) return;
         LDevice lDevice = getAnyLN().getLDevice();
+        if( lDevice == null ) return;
         IED ied = lDevice.getIED();
         
         // The following is copy/paste from ClientLN (with modification)
         // TODO: factor out ?
         
         // ldInst: The identification of the LD where the log resides; if missing, the same LD where this control block is placed
-        if( ! isSetLdInst() ) {
+        if( getLdInst() != null && ! getLdInst().isEmpty() ) {
             // find inside an LDevice with
             //   LDevice.name == LogControl.ldInst
             SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
     
                 @Override
                 public Boolean caseLDevice( LDevice object ) {
-                    return object.getInst().equals( getLdInst() );
+                    return getLdInst().equals( object.getInst() );
                 }
     
                 @Override
@@ -1114,14 +1102,12 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
                 return;
             }
-            else if( res1.size() > 1 ) {
+            if( res1.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                lDevice = res1.get( 0 );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+            lDevice = res1.get( 0 );
         }
         
         if( "LLN0".equals( getLnClass() ) ) {
@@ -1130,16 +1116,12 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                         + " ( in ied = " + ied.getName() + " )" );
                 return;
             }
-            else {
-                setRefersToAnyLN( lDevice.getLN0() );
-            }
+            setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == LogControl.lnClass
@@ -1149,7 +1131,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
                         if( object.getPrefix() == null ) return getPrefix() == null;
                         return object.getPrefix().equals( getPrefix() );
                     }
@@ -1170,14 +1152,12 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
                 return;
             }
-            else if( res2.size() > 1 ) {
+            if( res2.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setRefersToAnyLN( res2.get( 0 ));
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            setRefersToAnyLN( res2.get( 0 ));
         }
     }
 

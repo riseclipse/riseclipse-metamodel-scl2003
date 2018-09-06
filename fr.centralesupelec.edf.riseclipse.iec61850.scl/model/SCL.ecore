@@ -72,9 +72,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameStructure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="IEDName" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="revision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="toolID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -116,7 +116,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//GeneralEquipmentContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -143,7 +143,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Private" eSuperTypes="#//AnyContentFromOtherNamespace">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -350,15 +350,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="0" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valImport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valKind" eType="#//ValKindEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Set" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToEnumType" ordered="false"
         eType="#//EnumType" unsettable="true" resolveProxies="false" eOpposite="#//EnumType/ReferredByAbstractDataAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Val" ordered="false" upperBound="-1"
@@ -372,12 +372,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="#//AbstractDataAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dupd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fc" eType="#//FCEnum" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDAType" ordered="false"
         eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DAType/ReferredByDA"/>
@@ -406,7 +406,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//DataObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeType" ordered="false"
@@ -420,7 +420,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DA" ordered="false" upperBound="-1"
         eType="#//DA" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DA/DOType"/>
@@ -484,7 +484,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DO" ordered="false" upperBound="-1"
@@ -552,11 +552,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AccessPoint" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="router" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
         transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/AccessPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
@@ -697,7 +697,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RptEnabled" ordered="false"
         eType="#//RptEnabled" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//RptEnabled/ClientLN"/>
@@ -929,7 +929,7 @@
         eType="#//DataObject" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DataObject/ReferredByExtRef"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pServT" eType="#//ServiceType"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pLN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -999,11 +999,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixedOffs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityEnable" eType="#//PredefinedTypeOfSecurityEnum"
-        unsettable="true"/>
+        defaultValueLiteral="None" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GSEControlTypeEnum"
-        unsettable="true"/>
+        defaultValueLiteral="GOOSE" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
         transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN0/GSEControl"/>
   </eClassifiers>
@@ -1014,9 +1014,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GSESettings" eSuperTypes="#//ServiceSettings">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appID" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLabel" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/GSESettings"/>
@@ -1195,21 +1195,21 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogControl" eSuperTypes="#//ControlWithTriggerOpt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        unsettable="true"/>
+        defaultValueLiteral="0" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="LLN0" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logEna" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reasonCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
         eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AnyLN/LogControl"/>
@@ -1219,11 +1219,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogSettings" eSuperTypes="#//ServiceSettings">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logEna" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trgOps" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/LogSettings"/>
@@ -1274,13 +1274,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportControl" eSuperTypes="#//ControlWithTriggerOpt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        unsettable="true"/>
+        defaultValueLiteral="0" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="indexed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rptID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AnyLN" ordered="false"
@@ -1295,19 +1295,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReportSettings" eSuperTypes="#//ServiceSettings">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optFields" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="owner" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rptID" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trgOps" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/ReportSettings"/>
@@ -1358,24 +1358,25 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SMVSettings" eSuperTypes="#//ServiceSettings">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="svID" ordered="false" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optFields" ordered="false"
-        eType="#//ServiceSettingsEnum" unsettable="true"/>
+        eType="#//ServiceSettingsEnum" defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpRateAttribute" ordered="false"
-        eType="#//ServiceSettingsEnum" unsettable="true">
+        eType="#//ServiceSettingsEnum" defaultValueLiteral="Fix" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="smpRate"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="samplesPerSecAttribute"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        unsettable="true">
+        defaultValueLiteral="false" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="SamplesPerSec"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pdcTimeStamp" ordered="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" unsettable="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SmpRate" ordered="false"
         upperBound="-1" eType="#//SmpRate" unsettable="true" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SamplesPerSec" ordered="false"
@@ -1386,18 +1387,18 @@
         eType="#//Services" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Services/SMVSettings"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchSrcId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nofASDU" eType="#//ServiceSettingsNoDynEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kdaParticipant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="McSecurity" ordered="false"
         eType="#//McSecurity" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//McSecurity/SMVSettings"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SMVsc" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delivery" eType="#//SMVDeliveryEnum"
-        unsettable="true"/>
+        defaultValueLiteral="multicast" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="deliveryConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Services" ordered="false"
@@ -1410,13 +1411,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SampledValueControl" eSuperTypes="#//ControlWithIEDName">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multicast" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="true" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nofASDU" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityEnable" eType="#//PredefinedTypeOfSecurityEnum"
-        unsettable="true"/>
+        defaultValueLiteral="None" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpMod" eType="#//SmpMod"
-        unsettable="true"/>
+        defaultValueLiteral="SmpPerPeriod" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="smpRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="smvID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1455,9 +1456,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceSettings" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cbName" eType="#//ServiceSettingsNoDynEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="datSet" eType="#//ServiceSettingsEnum"
-        unsettable="true"/>
+        defaultValueLiteral="Fix" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceWithMax" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
@@ -1577,7 +1578,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SettingControl" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actSG" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        unsettable="true"/>
+        defaultValueLiteral="1" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfSGs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShortObject"
@@ -1828,13 +1829,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LNode" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="None" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldInst" unique="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" unique="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" unique="false"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""
+        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1879,7 +1882,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubEquipment" eSuperTypes="#//PowerSystemResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="#//PhaseEnum"
-        unsettable="true"/>
+        defaultValueLiteral="none" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="AbstractConductingEquipment"
@@ -1928,7 +1931,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
-        unsettable="true"/>
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EqFunction" ordered="false"
         upperBound="-1" eType="#//EqFunction" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//EqFunction/TapChanger"/>
@@ -2132,7 +2135,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnNaming" abstract="true" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceYesNo" eSuperTypes="#//SclObject"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceWithOptionalMax" eSuperTypes="#//SclObject">

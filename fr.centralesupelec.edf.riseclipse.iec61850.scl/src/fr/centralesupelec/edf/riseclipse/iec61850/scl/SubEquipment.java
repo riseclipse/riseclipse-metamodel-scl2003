@@ -44,6 +44,7 @@ import org.eclipse.emf.common.util.EList;
 public interface SubEquipment extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>Phase</b></em>' attribute.
+     * The default value is <code>"none"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -57,7 +58,7 @@ public interface SubEquipment extends PowerSystemResource {
      * @see #unsetPhase()
      * @see #setPhase(PhaseEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_Phase()
-     * @model unsettable="true"
+     * @model default="none" unsettable="true"
      * @generated
      */
     PhaseEnum getPhase();

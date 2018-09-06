@@ -124,7 +124,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getKind()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final AssociationKindEnum KIND_EDEFAULT = null;
@@ -988,8 +988,11 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         // prefix          The LN prefix
         // lnInst          The instance number of the client LN
 
-        // Resolve only if attribute has been read
-        if( !isSetIedName() ) return;
+        if( getIedName() == null ) return;
+        if( getLdInst() == null ) return;
+        if( getLnClass() == null ) return;
+        List< IED > ieds = get_IEDs();
+        if( ieds == null ) return;
 
         // find an IED with
         //   IED.name == Association.iedName
@@ -997,7 +1000,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -1008,20 +1011,18 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         };
 
         IED ied = null;
-        List< IED > res = shallowSearchObjects( getSCLRoot().getIED(), s );
+        List< IED > res = shallowSearchObjects( ieds, s );
         String mess = "IED( name = " + getIedName() + " ) for Association on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
             return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            ied = res.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        ied = res.get( 0 );
 
         // The following is copy/paste from ExtRef/FCDA
         // TODO: factor out ?
@@ -1032,7 +1033,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
             @Override
             public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
+                return getLdInst().equals( object.getInst() );
             }
 
             @Override
@@ -1050,14 +1051,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
             return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            lDevice = res1.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+        lDevice = res1.get( 0 );
 
         if( "LLN0".equals( getLnClass() ) ) {
             if( lDevice.getLN0() == null ) {
@@ -1066,16 +1065,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                                 + " )" );
                 return;
             }
-            else {
-                setRefersToAnyLN( lDevice.getLN0() );
-            }
+            setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == Association.lnClass
@@ -1085,9 +1080,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
-                        if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
+                        if( getPrefix() == null ) return object.getPrefix() == null;
+                        return getPrefix().equals( object.getPrefix() );
                     }
                     return false;
                 }
@@ -1106,14 +1101,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
                 return;
             }
-            else if( res2.size() > 1 ) {
+            if( res2.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setRefersToAnyLN( res2.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            setRefersToAnyLN( res2.get( 0 ) );
         }
     }
 

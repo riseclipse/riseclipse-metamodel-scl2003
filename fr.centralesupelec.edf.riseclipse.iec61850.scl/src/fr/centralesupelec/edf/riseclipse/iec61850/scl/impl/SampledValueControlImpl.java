@@ -61,7 +61,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * @generated
      * @ordered
      */
-    protected static final Boolean MULTICAST_EDEFAULT = null;
+    protected static final Boolean MULTICAST_EDEFAULT = Boolean.TRUE;
 
     /**
      * The cached value of the '{@link #getMulticast() <em>Multicast</em>}' attribute.
@@ -116,10 +116,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getSecurityEnable()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final PredefinedTypeOfSecurityEnum SECURITY_ENABLE_EDEFAULT = null;
+    protected static final PredefinedTypeOfSecurityEnum SECURITY_ENABLE_EDEFAULT = PredefinedTypeOfSecurityEnum.NONE;
 
     /**
      * The cached value of the '{@link #getSecurityEnable() <em>Security Enable</em>}' attribute.
@@ -145,10 +145,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getSmpMod()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final SmpMod SMP_MOD_EDEFAULT = null;
+    protected static final SmpMod SMP_MOD_EDEFAULT = SmpMod.SMP_PER_PERIOD;
 
     /**
      * The cached value of the '{@link #getSmpMod() <em>Smp Mod</em>}' attribute.
@@ -268,13 +268,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getMulticast() {
-        if( isSetMulticast() ) {
-            return multicast;
-        }
-        return Boolean.TRUE;
+        return multicast;
     }
 
     /**
@@ -363,13 +360,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public PredefinedTypeOfSecurityEnum getSecurityEnable() {
-        if( isSetSecurityEnable() ) {
-            return securityEnable;
-        }
-        return PredefinedTypeOfSecurityEnum.NONE;
+        return securityEnable;
     }
 
     /**
@@ -412,13 +406,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public SmpMod getSmpMod() {
-        if( isSetSmpMod() ) {
-            return smpMod;
-        }
-        return SmpMod.SMP_PER_PERIOD;
+        return smpMod;
     }
 
     /**

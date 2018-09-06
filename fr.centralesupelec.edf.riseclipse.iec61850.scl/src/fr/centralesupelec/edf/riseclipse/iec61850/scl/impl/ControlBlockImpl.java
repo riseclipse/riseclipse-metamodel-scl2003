@@ -194,13 +194,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getCbName() {
-        if( isSetRefersToControlWithIEDName() )
-            return getRefersToControlWithIEDName().getName();
-        else
-            return cbName;
+        return cbName;
     }
 
     /**
@@ -234,22 +231,19 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetCbName() {
-        return isSetRefersToControlWithIEDName();
+        return cbNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLdInst() {
-        if( isSetRefersToLDevice() )
-            return getRefersToLDevice().getInst();
-        else
-            return ldInst;
+        return ldInst;
     }
 
     /**
@@ -281,12 +275,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLdInst() {
-        return isSetRefersToLDevice();
+        return ldInstESet;
     }
 
     /**
@@ -746,20 +740,29 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         // TODO: update comment
         // Assumption : we need both an ied name and a ld instance to uniquely identify a LDevice.
         //              We will use the iedName provided by the enclosing connectedAP.
+
+        if( getLdInst() == null ) return;
+
         IED ied = null;
         // TODO: put connectedAP in ControlBlock
         if( this instanceof GSE ) {
-            ( ( GSE ) this ).getConnectedAP().resolveLinks();
-            ied = ( ( GSE ) this ).getConnectedAP().getRefersToAccessPoint().getIED();
+            GSE gse = ( ( GSE ) this );
+            if( gse.getConnectedAP() == null ) return;
+            gse.getConnectedAP().resolveLinks();
+            if( gse.getConnectedAP().getRefersToAccessPoint() == null ) return;
+            ied = gse.getConnectedAP().getRefersToAccessPoint().getIED();
         }
-        else {
-            ( ( SMV ) this ).getConnectedAP().resolveLinks();
+        else if( this instanceof SMV ) {
+            SMV smv = ( ( SMV ) this );
+            if( smv.getConnectedAP() == null ) return;
+            smv.getConnectedAP().resolveLinks();
+            if( smv.getConnectedAP().getRefersToAccessPoint() == null ) return;
             ied = ( ( SMV ) this ).getConnectedAP().getRefersToAccessPoint().getIED();
         }
-
-        // Resolve only if attribute has been read
-        // Cannot use isSetLdInst() Here
-        if( !ldInstESet ) return;
+        else {
+            return;
+        }
+        if( ied == null ) return;
 
         // find an LDevice with
         //   LDevice.inst == ControlBlock.ldInst
@@ -767,7 +770,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
             @Override
             public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
+                return getLdInst().equals( object.getInst() );
             }
 
             @Override
@@ -782,18 +785,16 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 + " ( cbName = " + getCbName() + " )";
         if( res1.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+            return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+            return;
         }
-        else {
-            // AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToLDevice( res1.get( 0 ) );
-        }
+        // AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToLDevice( res1.get( 0 ) );
 
-        // Resolve only if attribute has been read
-        // Cannot use isSetCbName() Here
-        if( !cbNameESet ) return;
+        if( getCbName() == null ) return;
 
         // Find a GSEControl inside LN0 of LDevice with
         //   GSEControl.name == ControlBlock.bName
@@ -801,7 +802,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
             @Override
             public Boolean caseControlWithIEDName( ControlWithIEDName object ) {
-                return object.getName().equals( getCbName() );
+                return getCbName().equals( object.getName() );
             }
 
             @Override
@@ -811,28 +812,27 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
         };
 
-        if( isSetRefersToLDevice() ) {
-            List< ControlWithIEDName > l2 = Collections.< ControlWithIEDName > unmodifiableList( getRefersToLDevice()
-                    .getLN0().getGSEControl() );
-            List< ControlWithIEDName > res2 = shallowSearchObjects( l2, s2 );
-            if( res2.isEmpty() ) {
-                l2 = Collections.< ControlWithIEDName > unmodifiableList( getRefersToLDevice().getLN0()
-                        .getSampledValueControl() );
-                res2 = shallowSearchObjects( l2, s2 );
-            }
-            String mess2 = "ControlWithIEDName( name = " + getCbName() + " ) for ControlBlock on line "
-                    + getLineNumber() + " ( ldInst = " + getLdInst() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
-            }
-            else if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
-            }
-            else {
-                // AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                setRefersToControlWithIEDName( res2.get( 0 ) );
-            }
+        if( getRefersToLDevice().getLN0() == null ) return;
+        List< ControlWithIEDName > l2 = Collections.< ControlWithIEDName > unmodifiableList(
+                getRefersToLDevice().getLN0().getGSEControl() );
+        List< ControlWithIEDName > res2 = shallowSearchObjects( l2, s2 );
+        if( res2.isEmpty() ) {
+            l2 = Collections.< ControlWithIEDName > unmodifiableList( 
+                    getRefersToLDevice().getLN0().getSampledValueControl() );
+            res2 = shallowSearchObjects( l2, s2 );
         }
+        String mess2 = "ControlWithIEDName( name = " + getCbName() + " ) for ControlBlock on line "
+                + getLineNumber() + " ( ldInst = " + getLdInst() + " )";
+        if( res2.isEmpty() ) {
+            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            return;
+        }
+        if( res2.size() > 1 ) {
+            AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            return;
+        }
+        // AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+        setRefersToControlWithIEDName( res2.get( 0 ) );
     }
 
 } //ControlBlockImpl

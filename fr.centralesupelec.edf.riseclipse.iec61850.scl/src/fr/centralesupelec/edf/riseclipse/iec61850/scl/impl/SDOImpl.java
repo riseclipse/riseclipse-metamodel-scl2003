@@ -21,6 +21,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.List;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
@@ -226,12 +227,9 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getType() {
-        if( isSetRefersToDOType() ) {
-            return getRefersToDOType().getId();
-        }
         return type;
     }
 
@@ -266,10 +264,10 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetType() {
-        return isSetRefersToDOType();
+        return typeESet;
     }
 
     /**
@@ -627,8 +625,9 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         // see Issue #13
         super.doResolveLinks();
         
-        // Resolve only if attribute has been read
-        if( ! typeESet ) return;
+        if( getType() == null ) return;
+        DataTypeTemplates dtt = get_DataTypeTemplates();
+        if( dtt == null ) return;
 
         // find an DOType with
         //   DOType.id      == SDO.type
@@ -636,7 +635,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
 
             @Override
             public Boolean caseDOType( DOType object ) {
-                return object.getId().equals( getType() );
+                return getType().equals( object.getId() );
             }
 
             @Override
@@ -646,18 +645,18 @@ public class SDOImpl extends UnNamingImpl implements SDO {
 
         };
 
-        List< DOType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getDOType(), s );
+        List< DOType > res = shallowSearchObjects( dtt.getDOType(), s );
         String mess = "DOType( id = " + getType() + " ) for SDO on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDOType( res.get( 0 ) );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToDOType( res.get( 0 ) );
     }
 
 } //SDOImpl

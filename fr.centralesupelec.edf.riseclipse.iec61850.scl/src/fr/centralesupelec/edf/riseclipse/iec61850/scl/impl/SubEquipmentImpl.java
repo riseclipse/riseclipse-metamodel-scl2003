@@ -61,10 +61,10 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getPhase()
-     * @generated NOT
+     * @generated
      * @ordered
      */
-    protected static final PhaseEnum PHASE_EDEFAULT = null;
+    protected static final PhaseEnum PHASE_EDEFAULT = PhaseEnum.NONE;
 
     /**
      * The cached value of the '{@link #getPhase() <em>Phase</em>}' attribute.

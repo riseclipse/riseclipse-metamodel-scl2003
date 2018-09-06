@@ -44,6 +44,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface SampledValueControl extends ControlWithIEDName {
     /**
      * Returns the value of the '<em><b>Multicast</b></em>' attribute.
+     * The default value is <code>"true"</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Multicast</em>' attribute isn't clear,
@@ -55,7 +56,7 @@ public interface SampledValueControl extends ControlWithIEDName {
      * @see #unsetMulticast()
      * @see #setMulticast(Boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_Multicast()
-     * @model unsettable="true"
+     * @model default="true" unsettable="true"
      * @generated
      */
     Boolean getMulticast();
@@ -150,6 +151,7 @@ public interface SampledValueControl extends ControlWithIEDName {
 
     /**
      * Returns the value of the '<em><b>Security Enable</b></em>' attribute.
+     * The default value is <code>"None"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -163,7 +165,7 @@ public interface SampledValueControl extends ControlWithIEDName {
      * @see #unsetSecurityEnable()
      * @see #setSecurityEnable(PredefinedTypeOfSecurityEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_SecurityEnable()
-     * @model unsettable="true"
+     * @model default="None" unsettable="true"
      * @generated
      */
     PredefinedTypeOfSecurityEnum getSecurityEnable();
@@ -206,6 +208,7 @@ public interface SampledValueControl extends ControlWithIEDName {
 
     /**
      * Returns the value of the '<em><b>Smp Mod</b></em>' attribute.
+     * The default value is <code>"SmpPerPeriod"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpMod}.
      * <!-- begin-user-doc -->
      * <p>
@@ -219,7 +222,7 @@ public interface SampledValueControl extends ControlWithIEDName {
      * @see #unsetSmpMod()
      * @see #setSmpMod(SmpMod)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_SmpMod()
-     * @model unsettable="true"
+     * @model default="SmpPerPeriod" unsettable="true"
      * @generated
      */
     SmpMod getSmpMod();

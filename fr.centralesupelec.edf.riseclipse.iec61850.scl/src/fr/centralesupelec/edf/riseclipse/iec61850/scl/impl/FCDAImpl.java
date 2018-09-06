@@ -136,7 +136,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getFc()
-     * @generated NOT
+     * @generated NOT because there is no default value in SCL
      * @ordered
      */
     protected static final FCEnum FC_EDEFAULT = null;
@@ -384,14 +384,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDaName() {
-        // TODO: wrong because it does not take into account structured names
-        if( isSetRefersToDataAttribute() )
-            return getRefersToDataAttribute().getName();
-        else
-            return daName;
+        return daName;
     }
 
     /**
@@ -423,25 +419,21 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDaName() {
-        return isSetRefersToDataAttribute();
+        return daNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getDoName() {
-        // TODO: wrong because it does not take into account structured names
-        if( isSetRefersToDataObject() )
-            return getRefersToDataObject().getName();
-        else
-            return doName;
+        return doName;
     }
 
     /**
@@ -473,12 +465,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetDoName() {
-        return isSetRefersToDataObject();
+        return doNameESet;
     }
 
     /**
@@ -622,13 +614,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( isSetRefersToAnyLN() )
-            return getRefersToAnyLN().getLnClass();
-        else
-            return lnClass;
+        return lnClass;
     }
 
     /**
@@ -660,24 +649,21 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnClass() {
-        return isSetRefersToAnyLN();
+        return lnClassESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnInst() {
-        if( isSetRefersToAnyLN() )
-            return getRefersToAnyLN().getInst();
-        else
-            return lnInst;
+        return lnInst;
     }
 
     /**
@@ -711,23 +697,19 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public boolean isSetLnInst() {
-        return isSetRefersToAnyLN();
+        return lnInstESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        // Default value is ""
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**
@@ -1374,12 +1356,14 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         // ix       An index to select an array element in case that one of the data elements is an array. The ix value shall be identical to the
         //          ArrayElementNumber value in the doName or daName part.
 
-        // Resolve only if attribute has been read
-        if( !ldInstESet ) return;
+        if( getLdInst() == null ) return;
+        if( getLnClass() == null ) return;
 
         // We need the IED to find the LN
+        if( getDataSet()                         == null ) return;
+        if( getDataSet().getAnyLN()              == null ) return;
+        if( getDataSet().getAnyLN().getLDevice() == null ) return;
         IED ied = getDataSet().getAnyLN().getLDevice().getIED();
-        // TODO: error message
         if( ied == null ) return;
 
         // find inside an LDevice with
@@ -1388,7 +1372,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
             @Override
             public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
+                return getLdInst().equals( object.getInst() );
             }
 
             @Override
@@ -1406,14 +1390,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
             return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            lDevice = res1.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+        lDevice = res1.get( 0 );
         
         if( "LLN0".equals( getLnClass() ) ) {
             if( lDevice.getLN0() == null ) {
@@ -1421,16 +1403,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                         + " ( in ied = " + ied.getName() + " )" );
                 return;
             }
-            else {
-                setRefersToAnyLN( lDevice.getLN0() );
-            }
+            setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == FCDA.lnClass
@@ -1440,9 +1418,9 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
                         if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
+                        return getPrefix().equals( object.getPrefix() );
                     }
                     return false;
                 }
@@ -1461,18 +1439,16 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
                 return;
             }
-            else if( res2.size() > 1 ) {
+            if( res2.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setRefersToAnyLN( res2.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            setRefersToAnyLN( res2.get( 0 ) );
         }
         getRefersToAnyLN().resolveLinks();
         
-        if( ! isSetDoName() ) return;
+        if( getDoName() == null ) return;
         
         // names of the SDI between DOI and DAI may be in doName, daName or both ! 
 
@@ -1489,12 +1465,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
             @Override
             public Boolean caseDO( DO object ) {
-                return object.getName().equals( doNames[0] );
+                return doNames[0].equals( object.getName() );
             }
 
             @Override
             public Boolean caseDOI( DOI object ) {
-                return object.getName().equals( doNames[0] );
+                return doNames[0].equals( object.getName() );
             }
 
             @Override
@@ -1509,7 +1485,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 + " ( in ied = " + ied.getName() + " )";
         if( res3.isEmpty() ) {
             // if we don't find the DOI, we have to look for a DO in the LNodeType if any
-            if( getRefersToAnyLN().isSetRefersToLNodeType() ) {
+            if( getRefersToAnyLN().getRefersToLNodeType() != null ) {
                 res3 = shallowSearchObjects(
                         Collections.< DataObject > unmodifiableList( getRefersToAnyLN().getRefersToLNodeType().getDO() ), s3 );
             }
@@ -1518,14 +1494,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
             return;
         }
-        else if( res3.size() > 1 ) {
+        if( res3.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDataObject( res3.get( 0 ) );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToDataObject( res3.get( 0 ) );
         
         if( daNames == null ) return;
 
@@ -1540,7 +1514,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
                     @Override
                     public Boolean caseSDI( SDI object ) {
-                        return object.getName().equals( sdiName );
+                        return sdiName.equals( object.getName() );
                     }
 
                     @Override
@@ -1563,21 +1537,19 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                     AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
                     return;
                 }
-                else if( res4.size() > 1 ) {
+                if( res4.size() > 1 ) {
                     AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
                     return;
                 }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                    sdi = res4.get( 0 );
-                }
+                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+                sdi = res4.get( 0 );
             }
 
             SclSwitch< Boolean > s5 = new SclSwitch< Boolean >() {
 
                 @Override
                 public Boolean caseDAI( DAI object ) {
-                    return object.getName().equals( daNames[daNames.length - 1] );
+                    return daNames[daNames.length - 1].equals( object.getName() );
                 }
 
                 @Override
@@ -1600,14 +1572,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
                 return;
             }
-            else if( res5.size() > 1 ) {
+            if( res5.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                setRefersToDataAttribute( res5.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            setRefersToDataAttribute( res5.get( 0 ) );
         }
 
         else {
@@ -1615,7 +1585,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             DO do_ = ( DO ) getRefersToDataObject();
             // Explicit link from DO to DOType may not be set
             do_.resolveLinks();
-            if( do_.isSetRefersToDOType() ) {
+            if( do_.getRefersToDOType() != null ) {
                 // daName may reference a BDA inside DAType
                 // find an DA with
                 //   DA.name      == FCDA.daName[0]
@@ -1623,7 +1593,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
                     @Override
                     public Boolean caseDA( DA object ) {
-                        return object.getName().equals( daNames[0] );
+                        return daNames[0].equals( object.getName() );
                     }
 
                     @Override
@@ -1638,9 +1608,11 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                         + " ( in ied = " + ied.getName() + " )";
                 if( res5.isEmpty() ) {
                     AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
+                    return;
                 }
-                else if( res5.size() > 1 ) {
+                if( res5.size() > 1 ) {
                     AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
+                    return;
                 }
                 else {
                     //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
@@ -1649,12 +1621,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                         // Explicit link from DA to DAType may not be set
                         res5.get( 0 ).resolveLinks();
 
-                        if( res5.get( 0 ).isSetRefersToDAType() ) {
+                        if( res5.get( 0 ).getRefersToDAType() != null ) {
                             SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
 
                                 @Override
                                 public Boolean caseBDA( BDA object ) {
-                                    return object.getName().equals( daNames[1] );
+                                    return daNames[1].equals( object.getName() );
                                 }
 
                                 @Override
@@ -1669,13 +1641,13 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                                     + " ( in ied = " + ied.getName() + " )";
                             if( res6.isEmpty() ) {
                                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
+                                return;
                             }
-                            else if( res6.size() > 1 ) {
+                            if( res6.size() > 1 ) {
                                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
+                                return;
                             }
-                            else {
-                                setRefersToDataAttribute( res6.get( 0 ) );
-                            }
+                            setRefersToDataAttribute( res6.get( 0 ) );
                         }
                         else {
                             String mess6 = "DA( name = " + getDaName() + " ) for FCDA on line " + getLineNumber()

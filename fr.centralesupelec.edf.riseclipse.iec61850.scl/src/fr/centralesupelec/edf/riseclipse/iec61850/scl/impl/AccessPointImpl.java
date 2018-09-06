@@ -77,7 +77,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * @generated
      * @ordered
      */
-    protected static final Boolean CLOCK_EDEFAULT = null;
+    protected static final Boolean CLOCK_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getClock() <em>Clock</em>}' attribute.
@@ -106,7 +106,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * @generated
      * @ordered
      */
-    protected static final Boolean KDC_EDEFAULT = null;
+    protected static final Boolean KDC_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getKdc() <em>Kdc</em>}' attribute.
@@ -135,7 +135,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * @generated
      * @ordered
      */
-    protected static final Boolean ROUTER_EDEFAULT = null;
+    protected static final Boolean ROUTER_EDEFAULT = Boolean.FALSE;
 
     /**
      * The cached value of the '{@link #getRouter() <em>Router</em>}' attribute.
@@ -324,13 +324,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getClock() {
-        if( isSetClock() ) {
-            return clock;
-        }
-        return false;
+        return clock;
     }
 
     /**
@@ -373,13 +370,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getKdc() {
-        if( isSetKdc() ) {
-            return kdc;
-        }
-        return false;
+        return kdc;
     }
 
     /**
@@ -422,13 +416,10 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public Boolean getRouter() {
-        if( isSetRouter() ) {
-            return router;
-        }
-        return false;
+        return router;
     }
 
     /**

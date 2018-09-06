@@ -67,7 +67,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String IED_NAME_EDEFAULT = null;
+    protected static final String IED_NAME_EDEFAULT = "None";
 
     /**
      * The cached value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
@@ -96,7 +96,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String LD_INST_EDEFAULT = null;
+    protected static final String LD_INST_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
@@ -154,7 +154,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      * @ordered
      */
-    protected static final String LN_INST_EDEFAULT = null;
+    protected static final String LN_INST_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getLnInst() <em>Ln Inst</em>}' attribute.
@@ -312,16 +312,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getIedName() {
-        if( ied != null ) {
-            return ied.getName();
-        }
-        if( iedNameESet ) {
-            return iedName;
-        }
-        return "None";
+        return iedName;
     }
 
     /**
@@ -353,27 +347,21 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetIedName() {
-        return isSetIED();
+        return iedNameESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLdInst() {
-        if( lDevice != null ) {
-            return lDevice.getInst();
-        }
-        if( ldInstESet ) {
-            return ldInst;
-        }
-        return "";
+        return ldInst;
     }
 
     /**
@@ -405,23 +393,20 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLdInst() {
-        return isSetLDevice();
+        return ldInstESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnClass() {
-        if( ln != null ) {
-            return ln.getLnClass();
-        }
         return lnClass;
     }
 
@@ -454,27 +439,21 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated NOT
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnClass() {
-        return isSetLN();
+        return lnClassESet;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getLnInst() {
-        if( ln != null ) {
-            return ln.getInst();
-        }
-        if( lnInstESet ) {
-            return lnInst;
-        }
-        return "";
+        return lnInst;
     }
 
     /**
@@ -506,12 +485,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated not
-    */
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public boolean isSetLnInst() {
-        return isSetLN();
+        return lnInstESet;
     }
 
     /**
@@ -563,13 +542,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getPrefix() {
-        if( isSetPrefix() ) {
-            return prefix;
-        }
-        return "";
+        return prefix;
     }
 
     /**
@@ -1185,12 +1161,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //          detailed function specification than possible by LN class alone, if the LN is not allocated to an IED
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
-        // Resolve only if attribute has been read
-        // Cannot use isSetIedName() Here
-        if( !iedNameESet ) return;
+        if( getIedName() == null ) return;
 
         // Resolve only if attribute is not None
-        if( "None".equals(  getIedName() )) return;
+        if( "None".equals( getIedName() )) return;
 
         // find an IED with
         //   IED.name == LNode.iedName
@@ -1198,7 +1172,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -1208,95 +1182,90 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
 
         };
 
-        List< IED > res1 = shallowSearchObjects( getSCLRoot().getIED(), s1 );
+        List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
         String mess1 = "IED( name = " + getIedName() + " ) for LNode on line " + getLineNumber() + " ( in container "
                 + getLNodeContainer().getName() + " )";
         if( res1.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+            return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setIED( res1.get( 0 ) );
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setIED( res1.get( 0 ) );
+
+        // find inside an LDevice with
+        //   LDevice.name == LNode.ldInst
+        SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+
+            @Override
+            public Boolean caseLDevice( LDevice object ) {
+                return object.getInst().equals( getLdInst() );
+            }
+
+            @Override
+            public Boolean defaultCase( EObject object ) {
+                return false;
+            }
+
+        };
+
+        List< LDevice > res2 = deepSearchObjects( getIED().getAccessPoint(), s2 );
+        String mess2 = "LDevice( inst = " + getLdInst() + " ) for LNode on line " + getLineNumber()
+                + " ( in container " + getLNodeContainer().getName() + " )";
+        if( res2.isEmpty() ) {
+            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            return;
         }
-
-        if( ied != null ) {
-            // find inside an LDevice with
-            //   LDevice.name == LNode.ldInst
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseLDevice( LDevice object ) {
-                    return object.getInst().equals( getLdInst() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LDevice > res2 = deepSearchObjects( ied.getAccessPoint(), s2 );
-            String mess2 = "LDevice( inst = " + getLdInst() + " ) for LNode on line " + getLineNumber()
-                    + " ( in container " + getLNodeContainer().getName() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
-            }
-            else if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
-            }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                setLDevice( res2.get( 0 ) );
-            }
+        if( res2.size() > 1 ) {
+            AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            return;
         }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+        setLDevice( res2.get( 0 ) );
 
-        if( lDevice != null ) {
-            // find inside an LN with
-            //   LN.lnClass == LNode.lnClass
-            //   LN.prefix == LNode.prefix
-            //   LN.inst == LNode.lnInst
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
-            // prefix is optional
-            //if( ! prefixESet ) return;
+        // find inside an LN with
+        //   LN.lnClass == LNode.lnClass
+        //   LN.prefix == LNode.prefix
+        //   LN.inst == LNode.lnInst
+        if( getLnClass() == null ) return;
+        if( getLnInst() == null ) return;
+        // prefix is optional
+        //if( ! prefixESet ) return;
 
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+        SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
 
-                @Override
-                public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
-                        if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
-                    }
-                    return false;
+            @Override
+            public Boolean caseLN( LN object ) {
+                if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
+                    if( object.getPrefix() == null ) return getPrefix() == null;
+                    return object.getPrefix().equals( getPrefix() );
                 }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LN > res3 = shallowSearchObjects( lDevice.getLN(), s3 );
-            String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for LNode on line "
-                    + getLineNumber() + " ( in container " + getLNodeContainer().getName() + " )";
-            if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+                return false;
             }
-            else if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+
+            @Override
+            public Boolean defaultCase( EObject object ) {
+                return false;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setLN( res3.get( 0 ) );
-            }
+
+        };
+
+        List< LN > res3 = shallowSearchObjects( lDevice.getLN(), s3 );
+        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for LNode on line "
+                + getLineNumber() + " ( in container " + getLNodeContainer().getName() + " )";
+        if( res3.isEmpty() ) {
+            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+            return;
         }
+        if( res3.size() > 1 ) {
+            AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+            return;
+        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+        setLN( res3.get( 0 ) );
     }
 
 } //LNodeImpl

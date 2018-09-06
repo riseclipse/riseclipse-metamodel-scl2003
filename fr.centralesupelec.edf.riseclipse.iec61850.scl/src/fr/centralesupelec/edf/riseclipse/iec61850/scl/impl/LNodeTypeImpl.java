@@ -62,7 +62,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * @generated
      * @ordered
      */
-    protected static final String IED_TYPE_EDEFAULT = null;
+    protected static final String IED_TYPE_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getIedType() <em>Ied Type</em>}' attribute.
@@ -154,13 +154,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated NOT
+     * @generated
      */
     public String getIedType() {
-        if( isSetIedType() ) {
-            return iedType;
-        }
-        return "";
+        return iedType;
     }
 
     /**

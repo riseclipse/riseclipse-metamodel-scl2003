@@ -41,6 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface GSESettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>App ID</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -54,7 +55,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #unsetAppID()
      * @see #setAppID(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_AppID()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getAppID();
@@ -97,6 +98,7 @@ public interface GSESettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Data Label</b></em>' attribute.
+     * The default value is <code>"Fix"</code>.
      * The literals are from the enumeration {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum}.
      * <!-- begin-user-doc -->
      * <p>
@@ -110,7 +112,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #unsetDataLabel()
      * @see #setDataLabel(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_DataLabel()
-     * @model unsettable="true"
+     * @model default="Fix" unsettable="true"
      * @generated
      */
     ServiceSettingsEnum getDataLabel();
