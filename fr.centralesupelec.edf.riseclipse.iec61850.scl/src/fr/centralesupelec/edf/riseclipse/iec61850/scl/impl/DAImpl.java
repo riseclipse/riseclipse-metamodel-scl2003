@@ -21,6 +21,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
@@ -801,8 +802,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         //                      A referenced attribute shall exist in the same type definition. The default value 0 states that the attribute is no array.
         // valKind              Determines how the value shall be interpreted if any is given
 
-        // Resolve only if attribute has been read
-        if( type == null ) return;
+        if( getType() == null ) return;
+        DataTypeTemplates dtt = get_DataTypeTemplates();
+        if( dtt == null ) return;
 
         // TODO: put in AbstractDataType
 
@@ -814,7 +816,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
 
                 @Override
                 public Boolean caseEnumType( EnumType object ) {
-                    return object.getId().equals( getType() );
+                    return getType().equals( object.getId() );
                 }
 
                 @Override
@@ -824,18 +826,18 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
 
             };
 
-            List< EnumType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getEnumType(), s );
+            List< EnumType > res = shallowSearchObjects( dtt.getEnumType(), s );
             String mess = "EnumType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
             if( res.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                return;
             }
-            else if( res.size() > 1 ) {
+            if( res.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                setRefersToEnumType( res.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            setRefersToEnumType( res.get( 0 ) );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -845,7 +847,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
 
                 @Override
                 public Boolean caseDAType( DAType object ) {
-                    return object.getId().equals( getType() );
+                    return getType().equals( object.getId() );
                 }
 
                 @Override
@@ -855,18 +857,18 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
 
             };
 
-            List< DAType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getDAType(), s );
+            List< DAType > res = shallowSearchObjects( dtt.getDAType(), s );
             String mess = "DAType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
             if( res.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                return;
             }
-            else if( res.size() > 1 ) {
+            if( res.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                setRefersToDAType( res.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            setRefersToDAType( res.get( 0 ) );
         }
     }
 

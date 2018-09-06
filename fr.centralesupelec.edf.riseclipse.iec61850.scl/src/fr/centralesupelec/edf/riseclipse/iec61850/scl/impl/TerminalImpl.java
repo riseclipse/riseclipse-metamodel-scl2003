@@ -1081,12 +1081,16 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // cNodeName        The (relative) name of the connectivityNode within its bay
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
-        // Resolve only if attribute has been read
-        if( isSetSubstationName() ) {
+        if( getCNodeName() == null ) return;
+
+        if( getSubstationName() != null && ! getSubstationName().isEmpty() ) {
 
             if( isSetLineName() || isSetProcessName() ) {
                 // TODO: this error should be detected in OCL
             }
+
+            if( getVoltageLevelName() == null ) return;
+            if( getBayName() == null ) return;
 
             // find a Substation with
             //   Substation.name == Terminal.substationName
@@ -1094,7 +1098,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
                 @Override
                 public Boolean caseSubstation( Substation object ) {
-                    return object.getName().equals( getSubstationName() );
+                    return getSubstationName().equals( object.getName() );
                 }
 
                 @Override
@@ -1104,129 +1108,114 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             };
 
-            Substation  substation = null;
-            List< Substation > res1 = shallowSearchObjects( getSCLRoot().getSubstation(), s1 );
+            Substation substation = null;
+            List< Substation > res1 = shallowSearchObjects( get_Substations(), s1 );
             String mess = "Substation( name = " + getSubstationName() + " ) for Terminal on line " + getLineNumber()
                         + " ( name = " + getName() + " )";
             if( res1.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                return;
             }
-            else if( res1.size() > 1 ) {
+            if( res1.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                substation = res1.get( 0 );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            substation = res1.get( 0 );
+
+            // find a VoltageLevel with
+            //   VoltageLevel.name == Terminal.voltageLevelName
+            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+
+                @Override
+                public Boolean caseVoltageLevel( VoltageLevel object ) {
+                    return getVoltageLevelName().equals( object.getName() );
+                }
+
+                @Override
+                public Boolean defaultCase( EObject object ) {
+                    return false;
+                }
+
+            };
 
             VoltageLevel voltageLevel = null;
-            if( substation  != null ) {
-                // Resolve only if attribute has been read
-                if( !isSetVoltageLevelName() ) return;
-
-                // find a VoltageLevel with
-                //   VoltageLevel.name == Terminal.voltageLevelName
-                SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseVoltageLevel( VoltageLevel object ) {
-                        return object.getName().equals( getVoltageLevelName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< VoltageLevel > res2 = shallowSearchObjects( substation.getVoltageLevel(), s2 );
-                String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " ) for Terminal on line "
-                            + getLineNumber() + " ( name = " + getName() + " )";
-                if( res2.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
-                }
-                else if( res2.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
-                }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                    voltageLevel = res2.get( 0 );
-                }
+            List< VoltageLevel > res2 = shallowSearchObjects( substation.getVoltageLevel(), s2 );
+            String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " ) for Terminal on line "
+                        + getLineNumber() + " ( name = " + getName() + " )";
+            if( res2.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                return;
             }
+            if( res2.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                return;
+            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+            voltageLevel = res2.get( 0 );
+
+            // find a Bay with
+            //   Bay.name == Terminal.bayName
+            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+
+                @Override
+                public Boolean caseBay( Bay object ) {
+                    return getBayName().equals( object.getName() );
+                }
+
+                @Override
+                public Boolean defaultCase( EObject object ) {
+                    return false;
+                }
+
+            };
 
             Bay bay = null;
-            if( voltageLevel != null ) {
-                // Resolve only if attribute has been read
-                if( !isSetBayName() ) return;
-
-                // find a Bay with
-                //   Bay.name == Terminal.bayName
-                SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseBay( Bay object ) {
-                        return object.getName().equals( getBayName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< Bay > res3 = shallowSearchObjects( voltageLevel.getBay(), s3 );
-                String mess3 = "Bay( name = " + getBayName() + " ) for Terminal on line " + getLineNumber() + " ( name = "
-                            + getName() + " )";
-                if( res3.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
-                }
-                else if( res3.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
-                }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                    bay = res3.get( 0 );
-                }
+            List< Bay > res3 = shallowSearchObjects( voltageLevel.getBay(), s3 );
+            String mess3 = "Bay( name = " + getBayName() + " ) for Terminal on line " + getLineNumber() + " ( name = "
+                        + getName() + " )";
+            if( res3.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+                return;
             }
-
-            if( bay != null ) {
-                // Resolve only if attribute has been read
-                if( !isSetCNodeName() ) return;
-
-                // find a ConnectivityNode with
-                //   ConnectivityNode.name == Terminal.bayName
-                SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseConnectivityNode( ConnectivityNode object ) {
-                        return object.getName().equals( getCNodeName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< ConnectivityNode > res4 = shallowSearchObjects( bay.getConnectivityNode(), s4 );
-                String mess4 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
-                            + " ( name = " + getName() + " )";
-                if( res4.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
-                }
-                else if( res4.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
-                }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
-                    setRefersToConnectivityNode( res4.get( 0 ) );
-                }
+            if( res3.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+                return;
             }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            bay = res3.get( 0 );
+
+            // find a ConnectivityNode with
+            //   ConnectivityNode.name == Terminal.bayName
+            SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
+
+                @Override
+                public Boolean caseConnectivityNode( ConnectivityNode object ) {
+                    return getCNodeName().equals( object.getName() );
+                }
+
+                @Override
+                public Boolean defaultCase( EObject object ) {
+                    return false;
+                }
+
+            };
+
+            List< ConnectivityNode > res4 = shallowSearchObjects( bay.getConnectivityNode(), s4 );
+            String mess4 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
+                        + " ( name = " + getName() + " )";
+            if( res4.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
+                return;
+            }
+            if( res4.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
+                return;
+            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
+            setRefersToConnectivityNode( res4.get( 0 ) );
         }
-        else if( isSetLineName() ) {
+        else if( getLineName() != null && ! getLineName().isEmpty() ) {
 
             if( isSetProcessName() ) {
                 // TODO: this error should be detected in OCL
@@ -1238,7 +1227,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
                 @Override
                 public Boolean caseLine( Line object ) {
-                    return object.getName().equals( getLineName() );
+                    return getLineName().equals( object.getName() );
                 }
 
                 @Override
@@ -1249,55 +1238,49 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             };
 
             Line line = null;
-            List< Line > res5 = shallowSearchObjects( getSCLRoot().getLine(), s5 );
+            List< Line > res5 = shallowSearchObjects( get_SCL().getLine(), s5 );
             String mess5 = "Line( name = " + getLineName() + " ) for Terminal on line " + getLineNumber()
                         + " ( name = " + getName() + " )";
             if( res5.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
+                return;
             }
-            else if( res5.size() > 1 ) {
+            if( res5.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
+                return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                line = res5.get( 0 );
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+            line = res5.get( 0 );
+
+            // find a ConnectivityNode with
+            //   ConnectivityNode.name == Terminal.bayName
+            SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
+
+                @Override
+                public Boolean caseConnectivityNode( ConnectivityNode object ) {
+                    return getCNodeName().equals( object.getName() );
+                }
+
+                @Override
+                public Boolean defaultCase( EObject object ) {
+                    return false;
+                }
+
+            };
+
+            List< ConnectivityNode > res6 = shallowSearchObjects( line.getConnectivityNode(), s6 );
+            String mess6 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
+                        + " ( name = " + getName() + " )";
+            if( res6.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
+                return;
             }
-
-
-            if( line != null ) {
-                // Resolve only if attribute has been read
-                if( !isSetCNodeName() ) return;
-
-                // find a ConnectivityNode with
-                //   ConnectivityNode.name == Terminal.bayName
-                SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseConnectivityNode( ConnectivityNode object ) {
-                        return object.getName().equals( getCNodeName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< ConnectivityNode > res6 = shallowSearchObjects( line.getConnectivityNode(), s6 );
-                String mess6 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
-                            + " ( name = " + getName() + " )";
-                if( res6.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
-                }
-                else if( res6.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
-                }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
-                    setRefersToConnectivityNode( res6.get( 0 ) );
-                }
+            if( res6.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
+                return;
             }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
+            setRefersToConnectivityNode( res6.get( 0 ) );
         }
     }
 

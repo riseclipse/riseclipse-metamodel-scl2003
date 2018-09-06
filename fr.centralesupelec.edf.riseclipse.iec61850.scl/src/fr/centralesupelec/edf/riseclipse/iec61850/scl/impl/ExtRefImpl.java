@@ -2327,16 +2327,21 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // srcLNInst    The LN instance number of the LN where the source control block resides – if missing, no instance number exists (LLN0)
         // srcCBName    The source CB name; if missing, then all othere srcXX attributes should also be missing, i.e. no source control block is given.
 
-        // Resolve only if attribute has been read
-        if( ! isSetIedName() ) return;
+        if( getIedName() == null ) return;
+        
+        /*
+         * Must be completely rewritten
+         */
+        return;
 
+/*
         // find an IED with
         //   IED.name == ExtRef.iedName
         SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -2347,7 +2352,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         };
 
         IED ied = null;
-        List< IED > res = shallowSearchObjects( getSCLRoot().getIED(), s );
+        List< IED > res = shallowSearchObjects( get_SCL().getIED(), s );
         String mess = "IED( name = " + getIedName() + " ) for ExtRef on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
@@ -2365,13 +2370,14 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // The following is copy/paste from FCDA
         // TODO: factor out ?
         
+        if( getLdInst() == null ) return;
         // find inside an LDevice with
         //   LDevice.name == ExtRef.ldInst
         SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
 
             @Override
             public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
+                return getLdInst().equals( object.getInst() );
             }
 
             @Override
@@ -2410,10 +2416,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         else {
             // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnClass() == null ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == ExtRef.lnClass
@@ -2423,9 +2429,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
                         if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
+                        return getPrefix().equals( object.getPrefix() );
                     }
                     return false;
                 }
@@ -2456,7 +2462,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         getRefersToAnyLN().resolveLinks();
         
         // doName is optional
-        if( ! isSetDoName() ) return;
+        if( getDoName() == null ) return;
         
         // names of the SDI between DOI and DAI may be in doName, daName or both ! 
 
@@ -2683,6 +2689,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                         "cannot find " + mess5 + " because there is no DOType" );
             }
         }
-    }
+*/    }
 
 } //ExtRefImpl

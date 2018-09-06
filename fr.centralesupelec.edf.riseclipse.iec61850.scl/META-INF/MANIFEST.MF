@@ -14,5 +14,6 @@ Export-Package: fr.centralesupelec.edf.riseclipse.iec61850.scl,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- fr.centralesupelec.edf.riseclipse.main
+ fr.centralesupelec.edf.riseclipse.main,
+ org.eclipse.jdt.annotation
 Bundle-ActivationPolicy: lazy

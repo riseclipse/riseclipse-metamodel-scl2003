@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import org.eclipse.jdt.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -27,9 +28,12 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 
 /**
@@ -64,7 +68,7 @@ public abstract class ExplicitLinkResolverImpl extends SclObjectImpl implements 
 
     /**
      */
-    public void resolveLinks() {
+    final public void resolveLinks() {
         if( isResolved ) return;
         doResolveLinks();
         isResolved = true;
@@ -87,16 +91,35 @@ public abstract class ExplicitLinkResolverImpl extends SclObjectImpl implements 
         isResolved = true;
     }
 
-    protected SCL getSCLRoot() {
+    // get_ to make a difference with standard EMF getters
+    protected SCL get_SCL() {
         EObject scl = this;
         while( ( scl != null ) && !( scl instanceof SCL ) ) {
             scl = scl.eContainer();
         }
         return ( SCL ) scl;
     }
+    
+    protected List< IED > get_IEDs() {
+        SCL scl = get_SCL();
+        if( scl == null ) return null;
+        return scl.getIED();
+    }
+    
+    protected List< Substation > get_Substations() {
+        SCL scl = get_SCL();
+        if( scl == null ) return null;
+        return scl.getSubstation();
+    }
+    
+    protected DataTypeTemplates get_DataTypeTemplates() {
+        SCL scl = get_SCL();
+        if( scl == null ) return null;
+        return scl.getDataTypeTemplates();
+    }
 
     @SuppressWarnings( "unchecked" )
-    protected < T > List< T > deepSearchObjects( EObject from, SclSwitch< Boolean > comparator ) {
+    @NonNull protected < T > List< T > deepSearchObjects( @NonNull EObject from, @NonNull SclSwitch< Boolean > comparator ) {
         ArrayList< T > res = new ArrayList< T >();
 
         if( comparator.doSwitch( from ) ) {
@@ -114,8 +137,9 @@ public abstract class ExplicitLinkResolverImpl extends SclObjectImpl implements 
         return res;
     }
 
-    protected < T > List< T > shallowSearchObjects( List< T > list, SclSwitch< Boolean > comparator ) {
+    @NonNull protected < T > List< T > shallowSearchObjects( List< T > list, @NonNull SclSwitch< Boolean > comparator ) {
         ArrayList< T > res = new ArrayList< T >();
+        if( list == null ) return res;
 
         for( T o : list ) {
             if( comparator.doSwitch( ( EObject ) o ) ) {
@@ -126,13 +150,14 @@ public abstract class ExplicitLinkResolverImpl extends SclObjectImpl implements 
         return res;
     }
 
-    protected < T, U extends EObject > List< T > deepSearchObjects( List< U > list, SclSwitch< Boolean > comparator ) {
+    @NonNull protected < T, U extends EObject > List< T > deepSearchObjects( List< U > list, @NonNull SclSwitch< Boolean > comparator ) {
         return deepSearchObjectsAux( Collections.< EObject > unmodifiableCollection( list ), comparator );
     }
 
     @SuppressWarnings( "unchecked" )
-    private < T > List< T > deepSearchObjectsAux( Collection< EObject > list, SclSwitch< Boolean > comparator ) {
+    @NonNull private < T > List< T > deepSearchObjectsAux( Collection< EObject > list, @NonNull SclSwitch< Boolean > comparator ) {
         ArrayList< T > res = new ArrayList< T >();
+        if( list == null ) return res;
 
         for( EObject o : list ) {
             if( comparator.doSwitch( o ) ) {

@@ -23,6 +23,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
@@ -46,6 +47,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -1318,9 +1320,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
-        // Resolve only if attribute has been read
-        // Cannot use isSetLnType() Here
-        if( !lnTypeESet ) return;
+        if( getLnType() == null ) return;
+        DataTypeTemplates dtt = get_DataTypeTemplates();
+        if( dtt == null ) return;
 
         // find an LNodeType with
         //   LNodeType.id      == AnyLN.lnType
@@ -1328,7 +1330,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
             @Override
             public Boolean caseLNodeType( LNodeType object ) {
-                return object.getId().equals( getLnType() );
+                return getLnType().equals( object.getId() );
             }
 
             @Override
@@ -1338,21 +1340,21 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         };
 
-        List< LNodeType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getLNodeType(), s );
+        List< LNodeType > res = shallowSearchObjects( dtt.getLNodeType(), s );
         String mess = "LNodeType( id = " + getLnType() + ", lnClass = " + getLnClass() + " ) for AnyLN on line "
                 + getLineNumber() + " ( inst = " + getInst() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToLNodeType( res.get( 0 ) );
-            if( ( lnClass != null ) && !lnClass.equals( refersToLNodeType.getLnClass() ) ) {
-                AbstractRiseClipseConsole.getConsole().error( "lnClass in " + mess + " is not " + lnClass );
-            }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToLNodeType( res.get( 0 ) );
+        if( ( getLnClass() != null ) && ! getLnClass().equals( refersToLNodeType.getLnClass() ) ) {
+            AbstractRiseClipseConsole.getConsole().error( "lnClass in " + mess + " is not " + lnClass );
         }
     }
 

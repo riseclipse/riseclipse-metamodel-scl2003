@@ -22,6 +22,7 @@ import java.util.List;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
@@ -542,8 +543,9 @@ public class DOImpl extends DataObjectImpl implements DO {
         //                  access control definition applies
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
-        // Resolve only if attribute has been read
-        if( type == null ) return;
+        if( getType() == null ) return;
+        DataTypeTemplates dtt = get_DataTypeTemplates();
+        if( dtt == null ) return;
 
         // find an DOType with
         //   DOType.id      == DO.type
@@ -551,7 +553,7 @@ public class DOImpl extends DataObjectImpl implements DO {
 
             @Override
             public Boolean caseDOType( DOType object ) {
-                return object.getId().equals( getType() );
+                return getType().equals( object.getId() );
             }
 
             @Override
@@ -561,18 +563,18 @@ public class DOImpl extends DataObjectImpl implements DO {
 
         };
 
-        List< DOType > res = shallowSearchObjects( getSCLRoot().getDataTypeTemplates().getDOType(), s );
+        List< DOType > res = shallowSearchObjects( dtt.getDOType(), s );
         String mess = "DOType( id = " + getType() + " ) for DO on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDOType( res.get( 0 ) );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToDOType( res.get( 0 ) );
     }
 
 } //DOImpl

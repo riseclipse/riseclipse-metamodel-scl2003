@@ -937,9 +937,10 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         // apName  a name identifying this access point within the IED
         // desc    some descriptive text for this access point at this subnetwork
 
-        // Resolve only if attribute has been read
-        // Cannot use isSetApName() Here
-        if( !apNameESet ) return;
+        if( getIedName() == null ) return;
+        if( getApName() == null ) return;
+        List< IED > ieds = get_IEDs();
+        if( ieds == null ) return;
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
@@ -947,7 +948,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -957,7 +958,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
 
         };
 
-        List< IED > res1 = shallowSearchObjects( getSCLRoot().getIED(), s1 );
+        List< IED > res1 = shallowSearchObjects( ieds, s1 );
         IED ied = null;
         String mess1 = "IED( name = " + getIedName() + " ) for ConnectedAP on line " + getLineNumber() + " ( apName = "
                 + getApName() + " )";
@@ -965,20 +966,18 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
             return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            ied = res1.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        ied = res1.get( 0 );
 
         SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
 
             @Override
             public Boolean caseAccessPoint( AccessPoint object ) {
-                return object.getName().equals( getApName() );
+                return getApName().equals( object.getName() );
             }
 
             @Override
@@ -995,14 +994,12 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
             return;
         }
-        else if( res2.size() > 1 ) {
+        if( res2.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToAccessPoint( res2.get( 0 ));
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToAccessPoint( res2.get( 0 ));
     }
 
 } //ConnectedAPImpl

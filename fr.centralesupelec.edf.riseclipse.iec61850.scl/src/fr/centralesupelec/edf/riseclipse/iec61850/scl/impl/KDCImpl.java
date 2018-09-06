@@ -533,12 +533,14 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     }
 
     @Override
-    public void resolveLinks() {
+    protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
     	// IED is the reference to the container IED (not the implicitly referenced one)
         
-        // Resolve only if attribute has been read
-        // Cannot use isSetApName() Here
-        if( !apNameESet ) return;
+        if( getIedName() == null ) return;
+        if( getApName() == null ) return;
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
@@ -546,7 +548,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -556,7 +558,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
 
         };
 
-        List< IED > res1 = shallowSearchObjects( getSCLRoot().getIED(), s1 );
+        List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
         IED ied = null;
         String mess1 = "IED( name = " + getIedName() + " ) for ConnectedAP on line " + getLineNumber() + " ( apName = "
                 + getApName() + " )";
@@ -564,20 +566,18 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
             return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            ied = res1.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        ied = res1.get( 0 );
 
         SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
 
             @Override
             public Boolean caseAccessPoint( AccessPoint object ) {
-                return object.getName().equals( getApName() );
+                return getApName().equals( object.getName() );
             }
 
             @Override
@@ -594,14 +594,12 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
             return;
         }
-        else if( res2.size() > 1 ) {
+        if( res2.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToAccessPoint( res2.get( 0 ));
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        setRefersToAccessPoint( res2.get( 0 ));
     }
 
 } //KDCImpl

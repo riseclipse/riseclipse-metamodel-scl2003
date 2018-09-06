@@ -988,8 +988,11 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
         // lnInst  The instance id of this LN instance of below LN class in the IED
         // desc    optional descriptive text, e.g. about purpose of the client
 
-        // Resolve only if attribute has been read
-        if( ! isSetIedName() ) return;
+        if( getIedName() == null ) return;
+        if( getLdInst() == null ) return;
+        if( getLnClass() == null ) return;
+        List< IED > ieds = get_IEDs();
+        if( ieds == null ) return;
 
         // find an IED with
         //   IED.name == ClientLN.iedName
@@ -997,7 +1000,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
 
             @Override
             public Boolean caseIED( IED object ) {
-                return object.getName().equals( getIedName() );
+                return getIedName().equals( object.getName() );
             }
 
             @Override
@@ -1008,20 +1011,18 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
         };
 
         IED ied = null;
-        List< IED > res = shallowSearchObjects( getSCLRoot().getIED(), s );
+        List< IED > res = shallowSearchObjects( ieds, s );
         String mess = "IED( name = " + getIedName() + " ) for ClientLN on line " + getLineNumber() + " )";
         if( res.isEmpty() ) {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
             return;
         }
-        else if( res.size() > 1 ) {
+        if( res.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            ied = res.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
+        ied = res.get( 0 );
         
         // The following is copy/paste from ExtRef/FCDA
         // TODO: factor out ?
@@ -1032,7 +1033,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
 
             @Override
             public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
+                return getLdInst().equals( object.getInst() );
             }
 
             @Override
@@ -1050,14 +1051,12 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
             AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
             return;
         }
-        else if( res1.size() > 1 ) {
+        if( res1.size() > 1 ) {
             AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
             return;
         }
-        else {
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            lDevice = res1.get( 0 );
-        }
+        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+        lDevice = res1.get( 0 );
         
         if( "LLN0".equals( getLnClass() ) ) {
             if( lDevice.getLN0() == null ) {
@@ -1065,16 +1064,12 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                         + " ( in ied = " + ied.getName() + " )" );
                 return;
             }
-            else {
-                setRefersToAnyLN( lDevice.getLN0() );
-            }
+            setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == ClientLN.lnClass
@@ -1084,7 +1079,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
                         if( object.getPrefix() == null ) return getPrefix() == null;
                         return object.getPrefix().equals( getPrefix() );
                     }
@@ -1105,14 +1100,12 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
                 return;
             }
-            else if( res2.size() > 1 ) {
+            if( res2.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setRefersToAnyLN( res2.get( 0 ) );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            setRefersToAnyLN( res2.get( 0 ) );
         }
     }
 

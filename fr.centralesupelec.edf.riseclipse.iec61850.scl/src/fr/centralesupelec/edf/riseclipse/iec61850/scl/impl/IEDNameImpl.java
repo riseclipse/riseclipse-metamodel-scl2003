@@ -893,16 +893,20 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         // see Issue #13
         super.doResolveLinks();
         
-        
+        if( getLnClass() == null ) return;
+
+        if( getControlWithIEDName()            == null ) return;
+        if( getControlWithIEDName().getAnyLN() == null ) return;
         LDevice lDevice = getControlWithIEDName().getAnyLN().getLDevice();
+        
         IED ied = lDevice.getIED();
         
-        if( isSetValue() ) {
+        if( getValue() != null && ! getValue().isEmpty() ) {
             SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
                 
                 @Override
                 public Boolean caseIED( IED object ) {
-                    return object.getName().equals( getValue() );
+                    return getValue().equals( object.getName() );
                 }
     
                 @Override
@@ -912,35 +916,33 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     
             };
     
-            List< IED > res1 = shallowSearchObjects( getSCLRoot().getIED(), s1 );
+            List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
             String mess1 = "IED( name = " + getValue() + " ) for IEDName on line " + getLineNumber()
                     + " ( in ied = " + ied.getName() + " )";
             if( res1.isEmpty() ) {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
                 return;
             }
-            else if( res1.size() > 1 ) {
+            if( res1.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                ied = res1.get( 0 );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+            ied = res1.get( 0 );
         }
 
         // The following is copy/paste from ClientLN (with modification)
         // TODO: factor out ?
         
         // ldInst: The identification of the LD where the log resides; if missing, the same LD where this control block is placed
-        if( isSetLdInst() ) {
+        if( getLdInst() != null ) {
             // find inside an LDevice with
             //   LDevice.name == IEDName.ldInst
             SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
     
                 @Override
                 public Boolean caseLDevice( LDevice object ) {
-                    return object.getInst().equals( getLdInst() );
+                    return getLdInst().equals( object.getInst() );
                 }
     
                 @Override
@@ -957,15 +959,14 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
                 return;
             }
-            else if( res2.size() > 1 ) {
+            if( res2.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-                lDevice = res2.get( 0 );
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+            lDevice = res2.get( 0 );
         }
+        if( lDevice == null ) return;
         
         if( "LLN0".equals( getLnClass() ) ) {
             if( lDevice.getLN0() == null ) {
@@ -973,16 +974,12 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                         + " ( in ied = " + ied.getName() + " )" );
                 return;
             }
-            else {
-                setRefersToAnyLN( lDevice.getLN0() );
-            }
+            setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
-            // Resolve only if attribute has been read
-            if( !lnClassESet ) return;
-            if( !lnInstESet ) return;
+            if( getLnInst() == null ) return;
             // prefix is optional
-            //if( ! prefixESet ) return;
+            //if( getPrefix() == null ) return;
 
             // find inside an LN with
             //   LN.lnClass == IEDName.lnClass
@@ -992,7 +989,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
 
                 @Override
                 public Boolean caseLN( LN object ) {
-                    if( object.getLnClass().equals( getLnClass() ) && object.getInst().equals( getLnInst() ) ) {
+                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
                         if( object.getPrefix() == null ) return getPrefix() == null;
                         return object.getPrefix().equals( getPrefix() );
                     }
@@ -1013,14 +1010,12 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
                 return;
             }
-            else if( res3.size() > 1 ) {
+            if( res3.size() > 1 ) {
                 AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
                 return;
             }
-            else {
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-                setRefersToAnyLN( res3.get( 0 ));
-            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            setRefersToAnyLN( res3.get( 0 ));
         }
     }
 
