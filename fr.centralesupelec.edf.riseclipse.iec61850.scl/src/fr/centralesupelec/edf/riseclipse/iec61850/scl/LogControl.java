@@ -37,6 +37,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl()
@@ -555,5 +556,60 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @generated
      */
     boolean isSetRefersToAnyLN();
+
+    /**
+     * Returns the value of the '<em><b>Refers To Log</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl <em>Referred By Log Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Refers To Log</em>' reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To Log</em>' reference.
+     * @see #isSetRefersToLog()
+     * @see #unsetRefersToLog()
+     * @see #setRefersToLog(Log)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLogControl_RefersToLog()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl
+     * @model opposite="ReferredByLogControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    Log getRefersToLog();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To Log</em>' reference.
+     * @see #isSetRefersToLog()
+     * @see #unsetRefersToLog()
+     * @see #getRefersToLog()
+     * @generated
+     */
+    void setRefersToLog(Log value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToLog()
+     * @see #getRefersToLog()
+     * @see #setRefersToLog(Log)
+     * @generated
+     */
+    void unsetRefersToLog();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To Log</em>' reference is set.
+     * @see #unsetRefersToLog()
+     * @see #getRefersToLog()
+     * @see #setRefersToLog(Log)
+     * @generated
+     */
+    boolean isSetRefersToLog();
 
 } // LogControl

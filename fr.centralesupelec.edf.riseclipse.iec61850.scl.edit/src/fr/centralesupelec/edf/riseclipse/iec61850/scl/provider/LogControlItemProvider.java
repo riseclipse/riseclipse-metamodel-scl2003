@@ -68,6 +68,7 @@ public class LogControlItemProvider extends ControlWithTriggerOptItemProvider {
             addPrefixPropertyDescriptor(object);
             addReasonCodePropertyDescriptor(object);
             addRefersToAnyLNPropertyDescriptor(object);
+            addRefersToLogPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -262,6 +263,28 @@ public class LogControlItemProvider extends ControlWithTriggerOptItemProvider {
                  getString("_UI_LogControl_RefersToAnyLN_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_LogControl_RefersToAnyLN_feature", "_UI_LogControl_type"),
                  SclPackage.eINSTANCE.getLogControl_RefersToAnyLN(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To Log feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToLogPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_LogControl_RefersToLog_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_LogControl_RefersToLog_feature", "_UI_LogControl_type"),
+                 SclPackage.eINSTANCE.getLogControl_RefersToLog(),
                  true,
                  false,
                  true,

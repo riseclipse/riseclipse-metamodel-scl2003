@@ -20,14 +20,19 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +44,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +76,16 @@ public class LogImpl extends UnNamingImpl implements Log {
      * @ordered
      */
     protected boolean nameESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByLogControl() <em>Referred By Log Control</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLogControl()
+     * @generated
+     * @ordered
+     */
+    protected EList<LogControl> referredByLogControl;
 
     /**
      * <!-- begin-user-doc -->
@@ -182,6 +198,37 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EList<LogControl> getReferredByLogControl() {
+        if (referredByLogControl == null) {
+            referredByLogControl = new EObjectWithInverseEList.Unsettable<LogControl>(LogControl.class, this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_LOG);
+        }
+        return referredByLogControl;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void unsetReferredByLogControl() {
+        if (referredByLogControl != null) ((InternalEList.Unsettable<?>)referredByLogControl).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isSetReferredByLogControl() {
+        return referredByLogControl != null && ((InternalEList.Unsettable<?>)referredByLogControl).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -189,6 +236,8 @@ public class LogImpl extends UnNamingImpl implements Log {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetAnyLN((AnyLN)otherEnd, msgs);
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLogControl()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -203,6 +252,8 @@ public class LogImpl extends UnNamingImpl implements Log {
         switch (featureID) {
             case SclPackage.LOG__ANY_LN:
                 return basicSetAnyLN(null, msgs);
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                return ((InternalEList<?>)getReferredByLogControl()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -233,6 +284,8 @@ public class LogImpl extends UnNamingImpl implements Log {
                 return getAnyLN();
             case SclPackage.LOG__NAME:
                 return getName();
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                return getReferredByLogControl();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -242,6 +295,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
@@ -250,6 +304,10 @@ public class LogImpl extends UnNamingImpl implements Log {
                 return;
             case SclPackage.LOG__NAME:
                 setName((String)newValue);
+                return;
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                getReferredByLogControl().clear();
+                getReferredByLogControl().addAll((Collection<? extends LogControl>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -269,6 +327,9 @@ public class LogImpl extends UnNamingImpl implements Log {
             case SclPackage.LOG__NAME:
                 unsetName();
                 return;
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                unsetReferredByLogControl();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -285,6 +346,8 @@ public class LogImpl extends UnNamingImpl implements Log {
                 return getAnyLN() != null;
             case SclPackage.LOG__NAME:
                 return isSetName();
+            case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
+                return isSetReferredByLogControl();
         }
         return super.eIsSet(featureID);
     }

@@ -658,6 +658,7 @@
     <genClasses ecoreClass="SCL.ecore#//Log">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Log/AnyLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Log/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Log/ReferredByLogControl"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LogControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/bufTime"/>
@@ -670,6 +671,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/reasonCode"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/AnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToAnyLN"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToLog"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LogSettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/intgPd"/>
