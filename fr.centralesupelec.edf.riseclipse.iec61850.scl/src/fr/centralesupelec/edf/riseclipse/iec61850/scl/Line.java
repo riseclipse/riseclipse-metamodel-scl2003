@@ -355,12 +355,12 @@ public interface Line extends GeneralEquipmentContainer {
      * @return the value of the '<em>Num Phases</em>' attribute.
      * @see #isSetNumPhases()
      * @see #unsetNumPhases()
-     * @see #setNumPhases(Byte)
+     * @see #setNumPhases(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_NumPhases()
      * @model unsettable="true"
      * @generated
      */
-    Byte getNumPhases();
+    Integer getNumPhases();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute.
@@ -372,7 +372,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getNumPhases()
      * @generated
      */
-    void setNumPhases(Byte value);
+    void setNumPhases(Integer value);
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute.
@@ -380,7 +380,7 @@ public interface Line extends GeneralEquipmentContainer {
      * <!-- end-user-doc -->
      * @see #isSetNumPhases()
      * @see #getNumPhases()
-     * @see #setNumPhases(Byte)
+     * @see #setNumPhases(Integer)
      * @generated
      */
     void unsetNumPhases();
@@ -392,7 +392,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @return whether the value of the '<em>Num Phases</em>' attribute is set.
      * @see #unsetNumPhases()
      * @see #getNumPhases()
-     * @see #setNumPhases(Byte)
+     * @see #setNumPhases(Integer)
      * @generated
      */
     boolean isSetNumPhases();

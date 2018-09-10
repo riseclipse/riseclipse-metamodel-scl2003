@@ -691,12 +691,12 @@ public interface IED extends UnNaming {
      * @return the value of the '<em>Original Scl Release</em>' attribute.
      * @see #isSetOriginalSclRelease()
      * @see #unsetOriginalSclRelease()
-     * @see #setOriginalSclRelease(Byte)
+     * @see #setOriginalSclRelease(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_OriginalSclRelease()
      * @model unsettable="true"
      * @generated
      */
-    Byte getOriginalSclRelease();
+    Integer getOriginalSclRelease();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}' attribute.
@@ -708,7 +708,7 @@ public interface IED extends UnNaming {
      * @see #getOriginalSclRelease()
      * @generated
      */
-    void setOriginalSclRelease(Byte value);
+    void setOriginalSclRelease(Integer value);
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}' attribute.
@@ -716,7 +716,7 @@ public interface IED extends UnNaming {
      * <!-- end-user-doc -->
      * @see #isSetOriginalSclRelease()
      * @see #getOriginalSclRelease()
-     * @see #setOriginalSclRelease(Byte)
+     * @see #setOriginalSclRelease(Integer)
      * @generated
      */
     void unsetOriginalSclRelease();
@@ -728,7 +728,7 @@ public interface IED extends UnNaming {
      * @return whether the value of the '<em>Original Scl Release</em>' attribute is set.
      * @see #unsetOriginalSclRelease()
      * @see #getOriginalSclRelease()
-     * @see #setOriginalSclRelease(Byte)
+     * @see #setOriginalSclRelease(Integer)
      * @generated
      */
     boolean isSetOriginalSclRelease();

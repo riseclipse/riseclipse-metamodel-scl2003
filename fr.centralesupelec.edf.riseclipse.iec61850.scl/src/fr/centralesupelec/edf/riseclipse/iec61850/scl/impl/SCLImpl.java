@@ -223,7 +223,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected static final Byte RELEASE_EDEFAULT = null;
+    protected static final Integer RELEASE_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getRelease() <em>Release</em>}' attribute.
@@ -233,7 +233,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected Byte release = RELEASE_EDEFAULT;
+    protected Integer release = RELEASE_EDEFAULT;
 
     /**
      * This is true if the Release attribute has been set.
@@ -765,7 +765,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Byte getRelease() {
+    public Integer getRelease() {
         return release;
     }
 
@@ -774,8 +774,8 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setRelease( Byte newRelease ) {
-        Byte oldRelease = release;
+    public void setRelease(Integer newRelease) {
+        Integer oldRelease = release;
         release = newRelease;
         boolean oldReleaseESet = releaseESet;
         releaseESet = true;
@@ -789,7 +789,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     public void unsetRelease() {
-        Byte oldRelease = release;
+        Integer oldRelease = release;
         boolean oldReleaseESet = releaseESet;
         release = RELEASE_EDEFAULT;
         releaseESet = false;
@@ -938,7 +938,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
                 getSubstation().addAll((Collection<? extends Substation>)newValue);
                 return;
             case SclPackage.SCL__RELEASE:
-                setRelease((Byte)newValue);
+                setRelease((Integer)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
