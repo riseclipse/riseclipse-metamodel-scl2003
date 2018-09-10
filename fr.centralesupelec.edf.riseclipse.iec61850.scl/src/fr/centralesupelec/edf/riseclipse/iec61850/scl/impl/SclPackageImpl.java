@@ -6007,6 +6007,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getLog_ReferredByLogControl() {
+        return (EReference)getLog().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getLogControl() {
         if (logControlEClass == null) {
             logControlEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(84);
@@ -6102,6 +6111,15 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     public EReference getLogControl_RefersToAnyLN() {
         return (EReference)getLogControl().getEStructuralFeatures().get(9);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getLogControl_RefersToLog() {
+        return (EReference)getLogControl().getEStructuralFeatures().get(10);
     }
 
     /**

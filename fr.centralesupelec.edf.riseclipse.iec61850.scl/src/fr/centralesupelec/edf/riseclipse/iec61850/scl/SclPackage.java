@@ -11281,13 +11281,22 @@ public interface SclPackage extends EPackage {
     int LOG__NAME = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>Log</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
+    int LOG_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>Log</em>' class.
@@ -11488,13 +11497,22 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL__REFERS_TO_ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 9;
 
     /**
+     * The feature id for the '<em><b>Refers To Log</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL__REFERS_TO_LOG = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 10;
+
+    /**
      * The number of structural features of the '<em>Log Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 10;
+    int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 11;
 
     /**
      * The number of operations of the '<em>Log Control</em>' class.
@@ -23406,6 +23424,17 @@ public interface SclPackage extends EPackage {
     EAttribute getLog_Name();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl <em>Referred By Log Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By Log Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl()
+     * @see #getLog()
+     * @generated
+     */
+    EReference getLog_ReferredByLogControl();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl <em>Log Control</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23524,6 +23553,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLogControl_RefersToAnyLN();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Log</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog()
+     * @see #getLogControl()
+     * @generated
+     */
+    EReference getLogControl_RefersToLog();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings <em>Log Settings</em>}'.

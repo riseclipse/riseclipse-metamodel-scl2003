@@ -1192,6 +1192,9 @@
         eOpposite="#//AnyLN/Log"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLogControl" ordered="false"
+        upperBound="-1" eType="#//LogControl" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LogControl/RefersToLog"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogControl" eSuperTypes="#//ControlWithTriggerOpt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
@@ -1216,6 +1219,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
         eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AnyLN/ReferredByLogControl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLog" ordered="false"
+        eType="#//Log" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//Log/ReferredByLogControl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogSettings" eSuperTypes="#//ServiceSettings">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intgPd" eType="#//ServiceSettingsEnum"
