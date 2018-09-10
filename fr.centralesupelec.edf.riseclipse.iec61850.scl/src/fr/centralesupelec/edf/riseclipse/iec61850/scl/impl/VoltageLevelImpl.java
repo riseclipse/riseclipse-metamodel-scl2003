@@ -93,7 +93,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * @generated
      * @ordered
      */
-    protected static final Byte NUM_PHASES_EDEFAULT = null;
+    protected static final Integer NUM_PHASES_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getNumPhases() <em>Num Phases</em>}' attribute.
@@ -103,7 +103,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * @generated
      * @ordered
      */
-    protected Byte numPhases = NUM_PHASES_EDEFAULT;
+    protected Integer numPhases = NUM_PHASES_EDEFAULT;
 
     /**
      * This is true if the Num Phases attribute has been set.
@@ -223,7 +223,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
-    public Byte getNumPhases() {
+    public Integer getNumPhases() {
         return numPhases;
     }
 
@@ -232,8 +232,8 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setNumPhases( Byte newNumPhases ) {
-        Byte oldNumPhases = numPhases;
+    public void setNumPhases(Integer newNumPhases) {
+        Integer oldNumPhases = numPhases;
         numPhases = newNumPhases;
         boolean oldNumPhasesESet = numPhasesESet;
         numPhasesESet = true;
@@ -247,7 +247,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * @generated
      */
     public void unsetNumPhases() {
-        Byte oldNumPhases = numPhases;
+        Integer oldNumPhases = numPhases;
         boolean oldNumPhasesESet = numPhasesESet;
         numPhases = NUM_PHASES_EDEFAULT;
         numPhasesESet = false;
@@ -552,7 +552,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
                 setNomFreq((BigDecimal)newValue);
                 return;
             case SclPackage.VOLTAGE_LEVEL__NUM_PHASES:
-                setNumPhases((Byte)newValue);
+                setNumPhases((Integer)newValue);
                 return;
             case SclPackage.VOLTAGE_LEVEL__BAY:
                 getBay().clear();

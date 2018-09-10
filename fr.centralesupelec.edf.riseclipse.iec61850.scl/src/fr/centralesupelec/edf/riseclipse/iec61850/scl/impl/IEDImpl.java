@@ -354,7 +354,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected static final Byte ORIGINAL_SCL_RELEASE_EDEFAULT = null;
+    protected static final Integer ORIGINAL_SCL_RELEASE_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getOriginalSclRelease() <em>Original Scl Release</em>}' attribute.
@@ -364,7 +364,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected Byte originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
+    protected Integer originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
 
     /**
      * This is true if the Original Scl Release attribute has been set.
@@ -993,7 +993,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Byte getOriginalSclRelease() {
+    public Integer getOriginalSclRelease() {
         return originalSclRelease;
     }
 
@@ -1002,8 +1002,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public void setOriginalSclRelease(Byte newOriginalSclRelease) {
-        Byte oldOriginalSclRelease = originalSclRelease;
+    public void setOriginalSclRelease(Integer newOriginalSclRelease) {
+        Integer oldOriginalSclRelease = originalSclRelease;
         originalSclRelease = newOriginalSclRelease;
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclReleaseESet = true;
@@ -1017,7 +1017,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     public void unsetOriginalSclRelease() {
-        Byte oldOriginalSclRelease = originalSclRelease;
+        Integer oldOriginalSclRelease = originalSclRelease;
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
         originalSclReleaseESet = false;
@@ -1189,7 +1189,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 setName((String)newValue);
                 return;
             case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                setOriginalSclRelease((Byte)newValue);
+                setOriginalSclRelease((Integer)newValue);
                 return;
         }
         super.eSet(featureID, newValue);

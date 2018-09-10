@@ -492,12 +492,12 @@ public interface SCL extends BaseElement {
      * @return the value of the '<em>Release</em>' attribute.
      * @see #isSetRelease()
      * @see #unsetRelease()
-     * @see #setRelease(Byte)
+     * @see #setRelease(Integer)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Release()
      * @model unsettable="true"
      * @generated
      */
-    Byte getRelease();
+    Integer getRelease();
 
     /**
      * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRelease <em>Release</em>}' attribute.
@@ -509,7 +509,7 @@ public interface SCL extends BaseElement {
      * @see #getRelease()
      * @generated
      */
-    void setRelease( Byte value );
+    void setRelease(Integer value);
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRelease <em>Release</em>}' attribute.
@@ -517,7 +517,7 @@ public interface SCL extends BaseElement {
      * <!-- end-user-doc -->
      * @see #isSetRelease()
      * @see #getRelease()
-     * @see #setRelease(Byte)
+     * @see #setRelease(Integer)
      * @generated
      */
     void unsetRelease();
@@ -529,7 +529,7 @@ public interface SCL extends BaseElement {
      * @return whether the value of the '<em>Release</em>' attribute is set.
      * @see #unsetRelease()
      * @see #getRelease()
-     * @see #setRelease(Byte)
+     * @see #setRelease(Integer)
      * @generated
      */
     boolean isSetRelease();

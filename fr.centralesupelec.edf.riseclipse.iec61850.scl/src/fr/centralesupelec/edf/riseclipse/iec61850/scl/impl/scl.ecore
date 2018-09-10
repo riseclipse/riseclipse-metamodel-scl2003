@@ -136,7 +136,7 @@
         unsettable="true" containment="true" resolveProxies="false" eOpposite="#//Voltage/Line"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Naming" abstract="true" eSuperTypes="#//BaseElement">
@@ -204,7 +204,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Substation" ordered="false"
         upperBound="-1" eType="#//Substation" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//Substation/SCL"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="release" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="release" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//SclObject">
@@ -1082,7 +1082,7 @@
         transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SCL/IED"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRelease" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="originalSclRelease" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IEDName" eSuperTypes="#//ExplicitLinkResolver">
@@ -1997,7 +1997,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="VoltageLevel" eSuperTypes="#//EquipmentContainer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomFreq" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numPhases" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Bay" ordered="false" upperBound="-1"
         eType="#//Bay" unsettable="true" containment="true" resolveProxies="false"
