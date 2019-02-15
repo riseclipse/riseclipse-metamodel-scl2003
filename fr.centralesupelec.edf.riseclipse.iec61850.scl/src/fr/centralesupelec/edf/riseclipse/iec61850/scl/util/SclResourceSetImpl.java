@@ -34,8 +34,8 @@ import fr.centralesupelec.edf.riseclipse.util.RiseClipseResourceSet;
 @SuppressWarnings( "unused" )
 public class SclResourceSetImpl extends RiseClipseResourceSet {
     
-    public SclResourceSetImpl( IRiseClipseConsole console ) {
-        super( console );
+    public SclResourceSetImpl( boolean strictContent, IRiseClipseConsole console ) {
+        super( strictContent, console );
     }
 
 }

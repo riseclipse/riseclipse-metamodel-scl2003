@@ -29,9 +29,9 @@ public class SclResourceSetFactory extends RiseClipseResourceSetFactory {
      * @see fr.centralesupelec.edf.riseclipse.util.RiseClipseResourceSetFactory#createResourceSet()
      */
     @Override
-    public IRiseClipseResourceSet createResourceSet( IRiseClipseConsole console ) {
+    public IRiseClipseResourceSet createResourceSet( boolean strictContent, IRiseClipseConsole console ) {
         // TODO Auto-generated method stub
-        return new SclResourceSetImpl( console );
+        return new SclResourceSetImpl( strictContent, console );
     }
 
 }
