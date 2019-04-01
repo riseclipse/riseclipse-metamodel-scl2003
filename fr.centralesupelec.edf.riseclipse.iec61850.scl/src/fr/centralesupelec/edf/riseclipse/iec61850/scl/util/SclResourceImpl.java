@@ -55,7 +55,7 @@ public class SclResourceImpl extends XMLResourceImpl implements IRiseClipseResou
     }
 
     @Override
-    public void finalizeLoad( boolean ignore_unresolved_reference ) {
+    public void finalizeLoad( IRiseClipseConsole console ) {
         if( getContents().size() > 0 ) {
             ExplicitLinkResolver scl = ( ExplicitLinkResolver ) getContents().get( 0 );
             scl.resolveLinks();

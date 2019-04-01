@@ -47,6 +47,7 @@
       <meta_model
             name="IEC61850 SCL v2.1"
             resourceFactory="fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceFactoryImpl"
+            resourceSetFactory="fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceSetFactory"
             uri="http://www.iec.ch/61850/2003/SCL">
       </meta_model>
    </extension>
