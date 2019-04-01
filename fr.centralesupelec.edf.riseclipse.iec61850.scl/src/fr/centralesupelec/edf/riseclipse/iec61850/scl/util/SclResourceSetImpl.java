@@ -38,4 +38,22 @@ public class SclResourceSetImpl extends RiseClipseResourceSet {
         super( strictContent, console );
     }
 
+    /* (non-Javadoc)
+     * @see fr.centralesupelec.edf.riseclipse.util.RiseClipseResourceSet#finalizeLoad(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole)
+     */
+    @Override
+    public void finalizeLoad( IRiseClipseConsole console ) {
+        buildExplicitLinks( console );
+    }
+
+    private void buildExplicitLinks( IRiseClipseConsole console ) {
+        for( Resource resource : getResources() ) {
+            if( resource instanceof SclResourceImpl ) {
+                SCL scl = ( SCL ) resource.getContents().get( 0 );
+                scl.resolveLinks();
+            }
+        }
+        
+    }
+
 }
