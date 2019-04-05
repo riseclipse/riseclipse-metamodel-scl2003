@@ -23,6 +23,7 @@
   <modules>
     <module>fr.centralesupelec.edf.riseclipse.iec61850.scl</module>
     <module>fr.centralesupelec.edf.riseclipse.iec61850.scl.edit</module>
+    <module>fr.centralesupelec.edf.riseclipse.iec61850.scl.utilities</module>
   </modules>
 
 </project>
