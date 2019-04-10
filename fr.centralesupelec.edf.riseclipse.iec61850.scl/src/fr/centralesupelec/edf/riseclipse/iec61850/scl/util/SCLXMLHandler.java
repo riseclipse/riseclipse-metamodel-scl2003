@@ -23,6 +23,7 @@ import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.xmi.XMLHelper;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.SAXXMLHandler;
@@ -87,6 +88,21 @@ public class SCLXMLHandler extends SAXXMLHandler {
 	                + (( SclObject ) object ).getLineNumber() + ")" );
 	        return;
 	    }
+	    
+	    // 0 or 1 are allowed as boolean values
+	    if( feature.getEType() == EcorePackage.Literals.EBOOLEAN_OBJECT ) {
+	        if(( value != null ) && ( value.getClass() == String.class )) {
+	            switch(( String ) value ) {
+	            case "0" :
+	                super.setFeatureValue( object, feature, "false", position );
+	                return;
+	            case "1" :
+	                super.setFeatureValue( object, feature, "true", position );
+	                return;
+	            }
+	        }
+	    }
+	    
 	    super.setFeatureValue( object, feature, value, position );
 	}
 
@@ -124,8 +140,7 @@ public class SCLXMLHandler extends SAXXMLHandler {
     }
 
     @Override
-    public void handleUnknownFeature( java.lang.String prefix, java.lang.String name, boolean isElement,
-            EObject peekObject, java.lang.String value ) {
+    public void handleUnknownFeature( java.lang.String prefix, java.lang.String name, boolean isElement, EObject peekObject, java.lang.String value ) {
         String mess = "unknown feature " + name;
         mess += " in object " + peekObject.eClass().getName();
         if( ! lineNumbers.empty() ) {
