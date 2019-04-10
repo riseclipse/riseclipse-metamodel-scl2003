@@ -1153,11 +1153,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
         upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LNode/LDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
-        eType="#//LN" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//LN/LDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
-        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//LN0/LDevice"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnyLN" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        transient="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" eType="#//LN0" volatile="true"
+        unsettable="true" containment="true" eOpposite="#//LN0/LDevice">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="#AnyLN"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" upperBound="-1" eType="#//LN"
+        volatile="true" unsettable="true" containment="true" eOpposite="#//LN/LDevice">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="#AnyLN"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LN" eSuperTypes="#//AnyLN">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

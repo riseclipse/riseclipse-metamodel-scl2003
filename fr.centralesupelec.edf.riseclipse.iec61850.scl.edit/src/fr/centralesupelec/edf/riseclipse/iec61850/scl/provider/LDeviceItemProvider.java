@@ -170,8 +170,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
         if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
             childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_AccessControl());
-            childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN());
             childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN0());
+            childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN());
         }
         return childrenFeatures;
     }
@@ -232,8 +232,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.LDEVICE__ACCESS_CONTROL:
-            case SclPackage.LDEVICE__LN:
             case SclPackage.LDEVICE__LN0:
+            case SclPackage.LDEVICE__LN:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -258,13 +258,13 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add
             (createChildParameter
-                (SclPackage.eINSTANCE.getLDevice_LN(),
-                 SclFactory.eINSTANCE.createLN()));
+                (SclPackage.eINSTANCE.getLDevice_LN0(),
+                 SclFactory.eINSTANCE.createLN0()));
 
         newChildDescriptors.add
             (createChildParameter
-                (SclPackage.eINSTANCE.getLDevice_LN0(),
-                 SclFactory.eINSTANCE.createLN0()));
+                (SclPackage.eINSTANCE.getLDevice_LN(),
+                 SclFactory.eINSTANCE.createLN()));
     }
 
 }

@@ -6336,8 +6336,18 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getLDevice_AnyLN() {
+        return (EAttribute)getLDevice().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EReference getLDevice_LN() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(6);
+        return (EReference)getLDevice().getEStructuralFeatures().get(8);
     }
 
     /**

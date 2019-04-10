@@ -640,8 +640,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/AccessControl"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/Server"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LNode"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LDevice/AnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN/prefix"/>

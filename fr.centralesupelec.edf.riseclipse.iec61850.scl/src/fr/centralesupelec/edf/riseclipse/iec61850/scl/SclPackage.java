@@ -10669,13 +10669,13 @@ public interface SclPackage extends EPackage {
     int LDEVICE__LNODE = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>LN</b></em>' containment reference list.
+     * The feature id for the '<em><b>Any LN</b></em>' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 6;
+    int LDEVICE__ANY_LN = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>LN0</b></em>' containment reference.
@@ -10687,13 +10687,22 @@ public interface SclPackage extends EPackage {
     int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>LN</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>LDevice</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
+    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>LDevice</em>' class.
@@ -23260,6 +23269,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLDevice_LNode();
+
+    /**
+     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute list '<em>Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN()
+     * @see #getLDevice()
+     * @generated
+     */
+    EAttribute getLDevice_AnyLN();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}'.
