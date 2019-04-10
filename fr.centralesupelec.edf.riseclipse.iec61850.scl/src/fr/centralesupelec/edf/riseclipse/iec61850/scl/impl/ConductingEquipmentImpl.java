@@ -120,6 +120,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -129,6 +130,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -143,6 +145,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -157,6 +160,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -166,6 +170,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Bay getBay() {
         if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__BAY) return null;
         return (Bay)eInternalContainer();
@@ -186,6 +191,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBay( Bay newBay ) {
         if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__BAY && newBay != null)) {
             if (EcoreUtil.isAncestor(this, newBay))
@@ -207,6 +213,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Function getFunction() {
         if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__FUNCTION) return null;
         return (Function)eInternalContainer();
@@ -227,6 +234,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFunction( Function newFunction ) {
         if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__FUNCTION && newFunction != null)) {
             if (EcoreUtil.isAncestor(this, newFunction))
@@ -248,6 +256,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubFunction getSubFunction() {
         if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION) return null;
         return (SubFunction)eInternalContainer();
@@ -268,6 +277,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubFunction( SubFunction newSubFunction ) {
         if (newSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION && newSubFunction != null)) {
             if (EcoreUtil.isAncestor(this, newSubFunction))
@@ -289,6 +299,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__CONDUCTING_EQUIPMENT);
@@ -301,6 +312,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -310,6 +322,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -319,6 +332,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Line getLine() {
         if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__LINE) return null;
         return (Line)eInternalContainer();
@@ -339,6 +353,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLine( Line newLine ) {
         if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__LINE && newLine != null)) {
             if (EcoreUtil.isAncestor(this, newLine))
@@ -360,6 +375,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
         if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
@@ -381,6 +397,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
         if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PROCESS && newProcess != null)) {
             if (EcoreUtil.isAncestor(this, newProcess))

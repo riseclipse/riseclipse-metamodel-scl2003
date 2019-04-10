@@ -124,6 +124,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getId() {
         return id;
     }
@@ -133,6 +134,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setId( String newId ) {
         String oldId = id;
         id = newId;
@@ -147,6 +149,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetId() {
         String oldId = id;
         boolean oldIdESet = idESet;
@@ -161,6 +164,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetId() {
         return idESet;
     }
@@ -170,6 +174,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -179,6 +184,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDesc(String newDesc) {
         String oldDesc = desc;
         desc = newDesc;
@@ -193,6 +199,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDesc() {
         String oldDesc = desc;
         boolean oldDescESet = descESet;
@@ -207,6 +214,7 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDesc() {
         return descESet;
     }

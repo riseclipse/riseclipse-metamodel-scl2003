@@ -127,6 +127,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -136,6 +137,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -150,6 +152,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -164,6 +167,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -173,6 +177,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqSubFunction> getEqSubFunction() {
         if (eqSubFunction == null) {
             eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC);
@@ -185,6 +190,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqSubFunction() {
         if (eqSubFunction != null) ((InternalEList.Unsettable<?>)eqSubFunction).unset();
     }
@@ -194,6 +200,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqSubFunction() {
         return eqSubFunction != null && ((InternalEList.Unsettable<?>)eqSubFunction).isSet();
     }
@@ -203,6 +210,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GeneralEquipment> getSubGeneralEquipment() {
         if (subGeneralEquipment == null) {
             subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC);
@@ -215,6 +223,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubGeneralEquipment() {
         if (subGeneralEquipment != null) ((InternalEList.Unsettable<?>)subGeneralEquipment).unset();
     }
@@ -224,6 +233,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubGeneralEquipment() {
         return subGeneralEquipment != null && ((InternalEList.Unsettable<?>)subGeneralEquipment).isSet();
     }

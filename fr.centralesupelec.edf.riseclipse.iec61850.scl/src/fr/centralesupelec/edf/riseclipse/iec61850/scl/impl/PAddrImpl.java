@@ -122,6 +122,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -131,6 +132,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -145,6 +147,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -159,6 +162,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -168,6 +172,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -177,6 +182,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
@@ -191,6 +197,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValue() {
         String oldValue = value;
         boolean oldValueESet = valueESet;
@@ -205,6 +212,7 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValue() {
         return valueESet;
     }

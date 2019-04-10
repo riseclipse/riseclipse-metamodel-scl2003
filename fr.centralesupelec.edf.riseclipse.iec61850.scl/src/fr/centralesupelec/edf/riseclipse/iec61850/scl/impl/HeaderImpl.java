@@ -259,6 +259,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getId() {
         return id;
     }
@@ -268,6 +269,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setId( String newId ) {
         String oldId = id;
         id = newId;
@@ -282,6 +284,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetId() {
         String oldId = id;
         boolean oldIdESet = idESet;
@@ -296,6 +299,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetId() {
         return idESet;
     }
@@ -305,6 +309,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getNameStructure() {
         return nameStructure;
     }
@@ -314,6 +319,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNameStructure( String newNameStructure ) {
         String oldNameStructure = nameStructure;
         nameStructure = newNameStructure;
@@ -328,6 +334,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNameStructure() {
         String oldNameStructure = nameStructure;
         boolean oldNameStructureESet = nameStructureESet;
@@ -342,6 +349,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNameStructure() {
         return nameStructureESet;
     }
@@ -351,6 +359,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getRevision() {
         return revision;
     }
@@ -360,6 +369,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRevision( String newRevision ) {
         String oldRevision = revision;
         revision = newRevision;
@@ -374,6 +384,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRevision() {
         String oldRevision = revision;
         boolean oldRevisionESet = revisionESet;
@@ -388,6 +399,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRevision() {
         return revisionESet;
     }
@@ -397,6 +409,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getToolID() {
         return toolID;
     }
@@ -406,6 +419,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setToolID( String newToolID ) {
         String oldToolID = toolID;
         toolID = newToolID;
@@ -420,6 +434,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetToolID() {
         String oldToolID = toolID;
         boolean oldToolIDESet = toolIDESet;
@@ -434,6 +449,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetToolID() {
         return toolIDESet;
     }
@@ -443,6 +459,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getVersion() {
         return version;
     }
@@ -452,6 +469,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVersion( String newVersion ) {
         String oldVersion = version;
         version = newVersion;
@@ -466,6 +484,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVersion() {
         String oldVersion = version;
         boolean oldVersionESet = versionESet;
@@ -480,6 +499,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVersion() {
         return versionESet;
     }
@@ -489,6 +509,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.HEADER__SCL) return null;
         return (SCL)eInternalContainer();
@@ -509,6 +530,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.HEADER__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))
@@ -530,6 +552,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Text getText() {
         return text;
     }
@@ -556,6 +579,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setText( Text newText ) {
         if (newText != text) {
             NotificationChain msgs = null;
@@ -596,6 +620,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetText() {
         if (text != null) {
             NotificationChain msgs = null;
@@ -616,6 +641,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetText() {
         return textESet;
     }
@@ -625,6 +651,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public History getHistory() {
         return history;
     }
@@ -651,6 +678,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHistory( History newHistory ) {
         if (newHistory != history) {
             NotificationChain msgs = null;
@@ -691,6 +719,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetHistory() {
         if (history != null) {
             NotificationChain msgs = null;
@@ -711,6 +740,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetHistory() {
         return historyESet;
     }

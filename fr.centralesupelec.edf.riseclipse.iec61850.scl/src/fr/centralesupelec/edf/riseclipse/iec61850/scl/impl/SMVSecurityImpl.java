@@ -67,6 +67,7 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getAccessPoint() {
         if (eContainerFeatureID() != SclPackage.SMV_SECURITY__ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
@@ -87,6 +88,7 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessPoint( AccessPoint newAccessPoint ) {
         if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_SECURITY__ACCESS_POINT && newAccessPoint != null)) {
             if (EcoreUtil.isAncestor(this, newAccessPoint))

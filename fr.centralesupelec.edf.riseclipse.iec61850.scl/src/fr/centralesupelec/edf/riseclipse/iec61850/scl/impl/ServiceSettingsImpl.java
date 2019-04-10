@@ -124,6 +124,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsNoDynEnum getCbName() {
         return cbName;
     }
@@ -133,6 +134,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCbName( ServiceSettingsNoDynEnum newCbName ) {
         ServiceSettingsNoDynEnum oldCbName = cbName;
         cbName = newCbName == null ? CB_NAME_EDEFAULT : newCbName;
@@ -147,6 +149,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCbName() {
         ServiceSettingsNoDynEnum oldCbName = cbName;
         boolean oldCbNameESet = cbNameESet;
@@ -161,6 +164,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCbName() {
         return cbNameESet;
     }
@@ -170,6 +174,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getDatSet() {
         return datSet;
     }
@@ -179,6 +184,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDatSet( ServiceSettingsEnum newDatSet ) {
         ServiceSettingsEnum oldDatSet = datSet;
         datSet = newDatSet == null ? DAT_SET_EDEFAULT : newDatSet;
@@ -193,6 +199,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDatSet() {
         ServiceSettingsEnum oldDatSet = datSet;
         boolean oldDatSetESet = datSetESet;
@@ -207,6 +214,7 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDatSet() {
         return datSetESet;
     }

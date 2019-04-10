@@ -306,6 +306,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getAssociationID() {
         return associationID;
     }
@@ -315,6 +316,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAssociationID( String newAssociationID ) {
         String oldAssociationID = associationID;
         associationID = newAssociationID;
@@ -329,6 +331,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAssociationID() {
         String oldAssociationID = associationID;
         boolean oldAssociationIDESet = associationIDESet;
@@ -343,6 +346,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAssociationID() {
         return associationIDESet;
     }
@@ -352,6 +356,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -361,6 +366,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -375,6 +381,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -389,6 +396,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -398,6 +406,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AssociationKindEnum getKind() {
         return kind;
     }
@@ -407,6 +416,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setKind( AssociationKindEnum newKind ) {
         AssociationKindEnum oldKind = kind;
         kind = newKind == null ? KIND_EDEFAULT : newKind;
@@ -421,6 +431,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetKind() {
         AssociationKindEnum oldKind = kind;
         boolean oldKindESet = kindESet;
@@ -435,6 +446,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetKind() {
         return kindESet;
     }
@@ -444,6 +456,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -453,6 +466,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -467,6 +481,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -481,6 +496,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -490,6 +506,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -499,6 +516,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -513,6 +531,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -527,6 +546,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -536,6 +556,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -545,6 +566,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -559,6 +581,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -573,6 +596,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -582,6 +606,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -591,6 +616,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -605,6 +631,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -619,6 +646,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -628,6 +656,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Server getServer() {
         if (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER) return null;
         return (Server)eInternalContainer();
@@ -648,6 +677,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServer( Server newServer ) {
         if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER && newServer != null)) {
             if (EcoreUtil.isAncestor(this, newServer))
@@ -669,6 +699,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -695,6 +726,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -735,6 +767,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -755,6 +788,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }

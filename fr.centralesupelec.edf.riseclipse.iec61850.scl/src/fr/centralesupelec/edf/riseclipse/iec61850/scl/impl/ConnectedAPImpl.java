@@ -243,6 +243,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getApName() {
         return apName;
     }
@@ -252,6 +253,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setApName( String newApName ) {
         String oldApName = apName;
         apName = newApName;
@@ -266,6 +268,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetApName() {
         String oldApName = apName;
         boolean oldApNameESet = apNameESet;
@@ -280,6 +283,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetApName() {
         return apNameESet;
     }
@@ -289,6 +293,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -298,6 +303,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -312,6 +318,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -326,6 +333,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -335,6 +343,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getRedProt() {
         return redProt;
     }
@@ -344,6 +353,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRedProt( String newRedProt ) {
         String oldRedProt = redProt;
         redProt = newRedProt;
@@ -358,6 +368,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRedProt() {
         String oldRedProt = redProt;
         boolean oldRedProtESet = redProtESet;
@@ -372,6 +383,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRedProt() {
         return redProtESet;
     }
@@ -381,6 +393,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Address getAddress() {
         return address;
     }
@@ -407,6 +420,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAddress( Address newAddress ) {
         if (newAddress != address) {
             NotificationChain msgs = null;
@@ -447,6 +461,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAddress() {
         if (address != null) {
             NotificationChain msgs = null;
@@ -467,6 +482,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAddress() {
         return addressESet;
     }
@@ -476,6 +492,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubNetwork getSubNetwork() {
         if (eContainerFeatureID() != SclPackage.CONNECTED_AP__SUB_NETWORK) return null;
         return (SubNetwork)eInternalContainer();
@@ -496,6 +513,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubNetwork( SubNetwork newSubNetwork ) {
         if (newSubNetwork != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTED_AP__SUB_NETWORK && newSubNetwork != null)) {
             if (EcoreUtil.isAncestor(this, newSubNetwork))
@@ -517,6 +535,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getRefersToAccessPoint() {
         return refersToAccessPoint;
     }
@@ -543,6 +562,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAccessPoint( AccessPoint newRefersToAccessPoint ) {
         if (newRefersToAccessPoint != refersToAccessPoint) {
             NotificationChain msgs = null;
@@ -583,6 +603,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAccessPoint() {
         if (refersToAccessPoint != null) {
             NotificationChain msgs = null;
@@ -603,6 +624,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAccessPoint() {
         return refersToAccessPointESet;
     }
@@ -612,6 +634,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<PhysConn> getPhysConn() {
         if (physConn == null) {
             physConn = new EObjectContainmentWithInverseEList.Unsettable<PhysConn>(PhysConn.class, this, SclPackage.CONNECTED_AP__PHYS_CONN, SclPackage.PHYS_CONN__CONNECTED_AP);
@@ -624,6 +647,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPhysConn() {
         if (physConn != null) ((InternalEList.Unsettable<?>)physConn).unset();
     }
@@ -633,6 +657,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPhysConn() {
         return physConn != null && ((InternalEList.Unsettable<?>)physConn).isSet();
     }
@@ -642,6 +667,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GSE> getGSE() {
         if (gse == null) {
             gse = new EObjectContainmentWithInverseEList.Unsettable<GSE>(GSE.class, this, SclPackage.CONNECTED_AP__GSE, SclPackage.GSE__CONNECTED_AP);
@@ -654,6 +680,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGSE() {
         if (gse != null) ((InternalEList.Unsettable<?>)gse).unset();
     }
@@ -663,6 +690,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGSE() {
         return gse != null && ((InternalEList.Unsettable<?>)gse).isSet();
     }
@@ -672,6 +700,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SMV> getSMV() {
         if (smv == null) {
             smv = new EObjectContainmentWithInverseEList.Unsettable<SMV>(SMV.class, this, SclPackage.CONNECTED_AP__SMV, SclPackage.SMV__CONNECTED_AP);
@@ -684,6 +713,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSMV() {
         if (smv != null) ((InternalEList.Unsettable<?>)smv).unset();
     }
@@ -693,6 +723,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSMV() {
         return smv != null && ((InternalEList.Unsettable<?>)smv).isSet();
     }

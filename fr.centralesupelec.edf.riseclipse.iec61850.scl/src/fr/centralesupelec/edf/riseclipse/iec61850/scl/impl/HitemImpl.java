@@ -247,6 +247,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getRevision() {
         return revision;
     }
@@ -256,6 +257,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRevision( String newRevision ) {
         String oldRevision = revision;
         revision = newRevision;
@@ -270,6 +272,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRevision() {
         String oldRevision = revision;
         boolean oldRevisionESet = revisionESet;
@@ -284,6 +287,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRevision() {
         return revisionESet;
     }
@@ -293,6 +297,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getVersion() {
         return version;
     }
@@ -302,6 +307,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVersion( String newVersion ) {
         String oldVersion = version;
         version = newVersion;
@@ -316,6 +322,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVersion() {
         String oldVersion = version;
         boolean oldVersionESet = versionESet;
@@ -330,6 +337,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVersion() {
         return versionESet;
     }
@@ -339,6 +347,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getWhat() {
         return what;
     }
@@ -348,6 +357,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setWhat( String newWhat ) {
         String oldWhat = what;
         what = newWhat;
@@ -362,6 +372,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetWhat() {
         String oldWhat = what;
         boolean oldWhatESet = whatESet;
@@ -376,6 +387,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetWhat() {
         return whatESet;
     }
@@ -385,6 +397,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getWhen() {
         return when;
     }
@@ -394,6 +407,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setWhen( String newWhen ) {
         String oldWhen = when;
         when = newWhen;
@@ -408,6 +422,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetWhen() {
         String oldWhen = when;
         boolean oldWhenESet = whenESet;
@@ -422,6 +437,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetWhen() {
         return whenESet;
     }
@@ -431,6 +447,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getWho() {
         return who;
     }
@@ -440,6 +457,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setWho( String newWho ) {
         String oldWho = who;
         who = newWho;
@@ -454,6 +472,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetWho() {
         String oldWho = who;
         boolean oldWhoESet = whoESet;
@@ -468,6 +487,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetWho() {
         return whoESet;
     }
@@ -477,6 +497,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getWhy() {
         return why;
     }
@@ -486,6 +507,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setWhy( String newWhy ) {
         String oldWhy = why;
         why = newWhy;
@@ -500,6 +522,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetWhy() {
         String oldWhy = why;
         boolean oldWhyESet = whyESet;
@@ -514,6 +537,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetWhy() {
         return whyESet;
     }
@@ -523,6 +547,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public History getHistory() {
         if (eContainerFeatureID() != SclPackage.HITEM__HISTORY) return null;
         return (History)eInternalContainer();
@@ -543,6 +568,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHistory( History newHistory ) {
         if (newHistory != eInternalContainer() || (eContainerFeatureID() != SclPackage.HITEM__HISTORY && newHistory != null)) {
             if (EcoreUtil.isAncestor(this, newHistory))

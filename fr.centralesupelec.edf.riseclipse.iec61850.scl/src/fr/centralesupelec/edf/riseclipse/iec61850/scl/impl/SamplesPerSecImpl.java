@@ -85,6 +85,7 @@ public class SamplesPerSecImpl extends SclObjectImpl implements SamplesPerSec {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getValue() {
         return value;
     }
@@ -94,6 +95,7 @@ public class SamplesPerSecImpl extends SclObjectImpl implements SamplesPerSec {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue(Integer newValue) {
         Integer oldValue = value;
         value = newValue;

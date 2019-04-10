@@ -116,6 +116,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GSEControl> getGSEControl() {
         if (gseControl == null) {
             gseControl = new EObjectContainmentWithInverseEList.Unsettable<GSEControl>(GSEControl.class, this, SclPackage.LN0__GSE_CONTROL, SclPackage.GSE_CONTROL__LN0);
@@ -128,6 +129,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGSEControl() {
         if (gseControl != null) ((InternalEList.Unsettable<?>)gseControl).unset();
     }
@@ -137,6 +139,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGSEControl() {
         return gseControl != null && ((InternalEList.Unsettable<?>)gseControl).isSet();
     }
@@ -146,6 +149,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice getLDevice() {
         if (eContainerFeatureID() != SclPackage.LN0__LDEVICE) return null;
         return (LDevice)eInternalContainer();
@@ -166,6 +170,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLDevice( LDevice newLDevice ) {
         if (newLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN0__LDEVICE && newLDevice != null)) {
             if (EcoreUtil.isAncestor(this, newLDevice))
@@ -187,6 +192,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SampledValueControl> getSampledValueControl() {
         if (sampledValueControl == null) {
             sampledValueControl = new EObjectContainmentWithInverseEList.Unsettable<SampledValueControl>(SampledValueControl.class, this, SclPackage.LN0__SAMPLED_VALUE_CONTROL, SclPackage.SAMPLED_VALUE_CONTROL__LN0);
@@ -199,6 +205,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSampledValueControl() {
         if (sampledValueControl != null) ((InternalEList.Unsettable<?>)sampledValueControl).unset();
     }
@@ -208,6 +215,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSampledValueControl() {
         return sampledValueControl != null && ((InternalEList.Unsettable<?>)sampledValueControl).isSet();
     }
@@ -217,6 +225,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SettingControl getSettingControl() {
         return settingControl;
     }
@@ -243,6 +252,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSettingControl( SettingControl newSettingControl ) {
         if (newSettingControl != settingControl) {
             NotificationChain msgs = null;
@@ -283,6 +293,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSettingControl() {
         if (settingControl != null) {
             NotificationChain msgs = null;
@@ -303,6 +314,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSettingControl() {
         return settingControlESet;
     }

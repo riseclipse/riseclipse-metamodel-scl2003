@@ -127,6 +127,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFixLnInst() {
         return fixLnInst;
     }
@@ -136,6 +137,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFixLnInst( Boolean newFixLnInst ) {
         Boolean oldFixLnInst = fixLnInst;
         fixLnInst = newFixLnInst;
@@ -150,6 +152,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFixLnInst() {
         Boolean oldFixLnInst = fixLnInst;
         boolean oldFixLnInstESet = fixLnInstESet;
@@ -164,6 +167,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFixLnInst() {
         return fixLnInstESet;
     }
@@ -173,6 +177,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFixPrefix() {
         return fixPrefix;
     }
@@ -182,6 +187,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFixPrefix( Boolean newFixPrefix ) {
         Boolean oldFixPrefix = fixPrefix;
         fixPrefix = newFixPrefix;
@@ -196,6 +202,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFixPrefix() {
         Boolean oldFixPrefix = fixPrefix;
         boolean oldFixPrefixESet = fixPrefixESet;
@@ -210,6 +217,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFixPrefix() {
         return fixPrefixESet;
     }
@@ -219,6 +227,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.CONF_LNS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -239,6 +248,7 @@ public class ConfLNsImpl extends SclObjectImpl implements ConfLNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONF_LNS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

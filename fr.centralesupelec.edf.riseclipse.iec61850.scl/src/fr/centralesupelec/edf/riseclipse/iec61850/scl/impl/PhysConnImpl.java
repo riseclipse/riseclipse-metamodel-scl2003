@@ -113,6 +113,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -122,6 +123,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -136,6 +138,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -150,6 +153,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -159,6 +163,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectedAP getConnectedAP() {
         if (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP) return null;
         return (ConnectedAP)eInternalContainer();
@@ -179,6 +184,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
         if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP && newConnectedAP != null)) {
             if (EcoreUtil.isAncestor(this, newConnectedAP))
@@ -200,6 +206,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<P_PhysConn> getP() {
         if (p == null) {
             p = new EObjectContainmentWithInverseEList.Unsettable<P_PhysConn>(P_PhysConn.class, this, SclPackage.PHYS_CONN__P, SclPackage.PPHYS_CONN__PHYS_CONN);
@@ -212,6 +219,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetP() {
         if (p != null) ((InternalEList.Unsettable<?>)p).unset();
     }
@@ -221,6 +229,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetP() {
         return p != null && ((InternalEList.Unsettable<?>)p).isSet();
     }

@@ -148,6 +148,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PhaseEnum getPhase() {
         return phase;
     }
@@ -157,6 +158,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPhase( PhaseEnum newPhase ) {
         PhaseEnum oldPhase = phase;
         phase = newPhase == null ? PHASE_EDEFAULT : newPhase;
@@ -171,6 +173,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPhase() {
         PhaseEnum oldPhase = phase;
         boolean oldPhaseESet = phaseESet;
@@ -185,6 +188,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPhase() {
         return phaseESet;
     }
@@ -194,6 +198,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getVirtual() {
         return virtual;
     }
@@ -203,6 +208,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVirtual( Boolean newVirtual ) {
         Boolean oldVirtual = virtual;
         virtual = newVirtual;
@@ -217,6 +223,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVirtual() {
         Boolean oldVirtual = virtual;
         boolean oldVirtualESet = virtualESet;
@@ -231,6 +238,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVirtual() {
         return virtualESet;
     }
@@ -240,6 +248,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractConductingEquipment getAbstractConductingEquipment() {
         if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
         return (AbstractConductingEquipment)eInternalContainer();
@@ -261,6 +270,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAbstractConductingEquipment( AbstractConductingEquipment newAbstractConductingEquipment ) {
         if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
             if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
@@ -282,6 +292,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.SUB_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__SUB_EQUIPMENT);
@@ -294,6 +305,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -303,6 +315,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -312,6 +325,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PowerTransformer getPowerTransformer() {
         if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER) return null;
         return (PowerTransformer)eInternalContainer();
@@ -332,6 +346,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPowerTransformer( PowerTransformer newPowerTransformer ) {
         if (newPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER && newPowerTransformer != null)) {
             if (EcoreUtil.isAncestor(this, newPowerTransformer))
@@ -353,6 +368,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TapChanger getTapChanger() {
         if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__TAP_CHANGER) return null;
         return (TapChanger)eInternalContainer();
@@ -373,6 +389,7 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTapChanger( TapChanger newTapChanger ) {
         if (newTapChanger != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__TAP_CHANGER && newTapChanger != null)) {
             if (EcoreUtil.isAncestor(this, newTapChanger))

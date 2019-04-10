@@ -67,6 +67,7 @@ public class ConfLogControlImpl extends ServiceWithMaxNonZeroImpl implements Con
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.CONF_LOG_CONTROL__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class ConfLogControlImpl extends ServiceWithMaxNonZeroImpl implements Con
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONF_LOG_CONTROL__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

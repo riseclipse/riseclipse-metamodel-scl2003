@@ -217,6 +217,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getCertificate() {
         return certificate;
     }
@@ -226,6 +227,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCertificate( Boolean newCertificate ) {
         Boolean oldCertificate = certificate;
         certificate = newCertificate;
@@ -240,6 +242,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCertificate() {
         Boolean oldCertificate = certificate;
         boolean oldCertificateESet = certificateESet;
@@ -254,6 +257,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCertificate() {
         return certificateESet;
     }
@@ -263,6 +267,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getNone() {
         return none;
     }
@@ -272,6 +277,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNone( Boolean newNone ) {
         Boolean oldNone = none;
         none = newNone;
@@ -286,6 +292,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNone() {
         Boolean oldNone = none;
         boolean oldNoneESet = noneESet;
@@ -300,6 +307,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNone() {
         return noneESet;
     }
@@ -309,6 +317,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getPassword() {
         return password;
     }
@@ -318,6 +327,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPassword( Boolean newPassword ) {
         Boolean oldPassword = password;
         password = newPassword;
@@ -332,6 +342,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPassword() {
         Boolean oldPassword = password;
         boolean oldPasswordESet = passwordESet;
@@ -346,6 +357,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPassword() {
         return passwordESet;
     }
@@ -355,6 +367,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getStrong() {
         return strong;
     }
@@ -364,6 +377,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setStrong( Boolean newStrong ) {
         Boolean oldStrong = strong;
         strong = newStrong;
@@ -378,6 +392,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetStrong() {
         Boolean oldStrong = strong;
         boolean oldStrongESet = strongESet;
@@ -392,6 +407,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetStrong() {
         return strongESet;
     }
@@ -401,6 +417,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getWeak() {
         return weak;
     }
@@ -410,6 +427,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setWeak( Boolean newWeak ) {
         Boolean oldWeak = weak;
         weak = newWeak;
@@ -424,6 +442,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetWeak() {
         Boolean oldWeak = weak;
         boolean oldWeakESet = weakESet;
@@ -438,6 +457,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetWeak() {
         return weakESet;
     }
@@ -447,6 +467,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Server getServer() {
         if (eContainerFeatureID() != SclPackage.AUTHENTICATION__SERVER) return null;
         return (Server)eInternalContainer();
@@ -467,6 +488,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServer( Server newServer ) {
         if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.AUTHENTICATION__SERVER && newServer != null)) {
             if (EcoreUtil.isAncestor(this, newServer))

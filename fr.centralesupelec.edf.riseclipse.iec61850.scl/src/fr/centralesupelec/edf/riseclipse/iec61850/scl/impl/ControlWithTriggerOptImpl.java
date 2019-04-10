@@ -117,6 +117,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getIntgPd() {
         return intgPd;
     }
@@ -126,6 +127,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIntgPd( Integer newIntgPd ) {
         Integer oldIntgPd = intgPd;
         intgPd = newIntgPd;
@@ -140,6 +142,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIntgPd() {
         Integer oldIntgPd = intgPd;
         boolean oldIntgPdESet = intgPdESet;
@@ -154,6 +157,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIntgPd() {
         return intgPdESet;
     }
@@ -163,6 +167,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TrgOps getTrgOps() {
         return trgOps;
     }
@@ -189,6 +194,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTrgOps( TrgOps newTrgOps ) {
         if (newTrgOps != trgOps) {
             NotificationChain msgs = null;
@@ -229,6 +235,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTrgOps() {
         if (trgOps != null) {
             NotificationChain msgs = null;
@@ -249,6 +256,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTrgOps() {
         return trgOpsESet;
     }

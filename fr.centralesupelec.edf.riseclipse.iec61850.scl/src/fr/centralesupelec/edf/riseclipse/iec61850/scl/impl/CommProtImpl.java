@@ -97,6 +97,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getIpv6() {
         return ipv6;
     }
@@ -106,6 +107,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIpv6( Boolean newIpv6 ) {
         Boolean oldIpv6 = ipv6;
         ipv6 = newIpv6;
@@ -120,6 +122,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIpv6() {
         Boolean oldIpv6 = ipv6;
         boolean oldIpv6ESet = ipv6ESet;
@@ -134,6 +137,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIpv6() {
         return ipv6ESet;
     }
@@ -143,6 +147,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.COMM_PROT__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -163,6 +168,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMM_PROT__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

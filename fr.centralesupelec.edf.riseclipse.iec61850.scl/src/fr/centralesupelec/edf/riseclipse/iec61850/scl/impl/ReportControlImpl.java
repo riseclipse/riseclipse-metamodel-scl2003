@@ -259,6 +259,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getBuffered() {
         return buffered;
     }
@@ -268,6 +269,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBuffered( Boolean newBuffered ) {
         Boolean oldBuffered = buffered;
         buffered = newBuffered;
@@ -282,6 +284,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBuffered() {
         Boolean oldBuffered = buffered;
         boolean oldBufferedESet = bufferedESet;
@@ -296,6 +299,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBuffered() {
         return bufferedESet;
     }
@@ -305,6 +309,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getBufTime() {
         return bufTime;
     }
@@ -314,6 +319,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufTime( Integer newBufTime ) {
         Integer oldBufTime = bufTime;
         bufTime = newBufTime;
@@ -328,6 +334,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufTime() {
         Integer oldBufTime = bufTime;
         boolean oldBufTimeESet = bufTimeESet;
@@ -342,6 +349,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufTime() {
         return bufTimeESet;
     }
@@ -351,6 +359,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getConfRev() {
         return confRev;
     }
@@ -360,6 +369,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfRev( Integer newConfRev ) {
         Integer oldConfRev = confRev;
         confRev = newConfRev;
@@ -374,6 +384,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfRev() {
         Integer oldConfRev = confRev;
         boolean oldConfRevESet = confRevESet;
@@ -388,6 +399,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfRev() {
         return confRevESet;
     }
@@ -397,6 +409,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getIndexed() {
         return indexed;
     }
@@ -406,6 +419,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIndexed( Boolean newIndexed ) {
         Boolean oldIndexed = indexed;
         indexed = newIndexed;
@@ -420,6 +434,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIndexed() {
         Boolean oldIndexed = indexed;
         boolean oldIndexedESet = indexedESet;
@@ -434,6 +449,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIndexed() {
         return indexedESet;
     }
@@ -443,6 +459,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getRptID() {
         return rptID;
     }
@@ -452,6 +469,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRptID( String newRptID ) {
         String oldRptID = rptID;
         rptID = newRptID;
@@ -466,6 +484,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRptID() {
         String oldRptID = rptID;
         boolean oldRptIDESet = rptIDESet;
@@ -480,6 +499,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRptID() {
         return rptIDESet;
     }
@@ -489,6 +509,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -509,6 +530,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_CONTROL__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -530,6 +552,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public OptFields getOptFields() {
         return optFields;
     }
@@ -556,6 +579,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOptFields( OptFields newOptFields ) {
         if (newOptFields != optFields) {
             NotificationChain msgs = null;
@@ -596,6 +620,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOptFields() {
         if (optFields != null) {
             NotificationChain msgs = null;
@@ -616,6 +641,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOptFields() {
         return optFieldsESet;
     }
@@ -625,6 +651,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public RptEnabled getRptEnabled() {
         return rptEnabled;
     }
@@ -651,6 +678,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRptEnabled( RptEnabled newRptEnabled ) {
         if (newRptEnabled != rptEnabled) {
             NotificationChain msgs = null;
@@ -691,6 +719,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRptEnabled() {
         if (rptEnabled != null) {
             NotificationChain msgs = null;
@@ -711,6 +740,7 @@ public class ReportControlImpl extends ControlWithTriggerOptImpl implements Repo
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRptEnabled() {
         return rptEnabledESet;
     }

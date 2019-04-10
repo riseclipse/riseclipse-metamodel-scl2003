@@ -97,6 +97,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getResvTms() {
         return resvTms;
     }
@@ -106,6 +107,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setResvTms( Boolean newResvTms ) {
         Boolean oldResvTms = resvTms;
         resvTms = newResvTms;
@@ -120,6 +122,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetResvTms() {
         Boolean oldResvTms = resvTms;
         boolean oldResvTmsESet = resvTmsESet;
@@ -134,6 +137,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetResvTms() {
         return resvTmsESet;
     }
@@ -143,6 +147,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SettingGroups getSettingGroups() {
         if (eContainerFeatureID() != SclPackage.CONF_SG__SETTING_GROUPS) return null;
         return (SettingGroups)eInternalContainer();
@@ -163,6 +168,7 @@ public class ConfSGImpl extends SclObjectImpl implements ConfSG {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSettingGroups( SettingGroups newSettingGroups ) {
         if (newSettingGroups != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONF_SG__SETTING_GROUPS && newSettingGroups != null)) {
             if (EcoreUtil.isAncestor(this, newSettingGroups))

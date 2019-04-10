@@ -158,6 +158,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getIntgPd() {
         return intgPd;
     }
@@ -167,6 +168,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIntgPd( ServiceSettingsEnum newIntgPd ) {
         ServiceSettingsEnum oldIntgPd = intgPd;
         intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
@@ -181,6 +183,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIntgPd() {
         ServiceSettingsEnum oldIntgPd = intgPd;
         boolean oldIntgPdESet = intgPdESet;
@@ -195,6 +198,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIntgPd() {
         return intgPdESet;
     }
@@ -204,6 +208,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getLogEna() {
         return logEna;
     }
@@ -213,6 +218,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLogEna( ServiceSettingsEnum newLogEna ) {
         ServiceSettingsEnum oldLogEna = logEna;
         logEna = newLogEna == null ? LOG_ENA_EDEFAULT : newLogEna;
@@ -227,6 +233,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLogEna() {
         ServiceSettingsEnum oldLogEna = logEna;
         boolean oldLogEnaESet = logEnaESet;
@@ -241,6 +248,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLogEna() {
         return logEnaESet;
     }
@@ -250,6 +258,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getTrgOps() {
         return trgOps;
     }
@@ -259,6 +268,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTrgOps( ServiceSettingsEnum newTrgOps ) {
         ServiceSettingsEnum oldTrgOps = trgOps;
         trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
@@ -273,6 +283,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTrgOps() {
         ServiceSettingsEnum oldTrgOps = trgOps;
         boolean oldTrgOpsESet = trgOpsESet;
@@ -287,6 +298,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTrgOps() {
         return trgOpsESet;
     }
@@ -296,6 +308,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.LOG_SETTINGS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -316,6 +329,7 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_SETTINGS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

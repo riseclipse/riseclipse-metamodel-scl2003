@@ -356,6 +356,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getBufTime() {
         return bufTime;
     }
@@ -365,6 +366,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufTime( Integer newBufTime ) {
         Integer oldBufTime = bufTime;
         bufTime = newBufTime;
@@ -379,6 +381,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufTime() {
         Integer oldBufTime = bufTime;
         boolean oldBufTimeESet = bufTimeESet;
@@ -393,6 +396,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufTime() {
         return bufTimeESet;
     }
@@ -402,6 +406,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -411,6 +416,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -425,6 +431,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -439,6 +446,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -448,6 +456,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -457,6 +466,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -471,6 +481,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -485,6 +496,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -494,6 +506,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -503,6 +516,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -517,6 +531,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -531,6 +546,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -540,6 +556,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getLogEna() {
         return logEna;
     }
@@ -549,6 +566,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLogEna( Boolean newLogEna ) {
         Boolean oldLogEna = logEna;
         logEna = newLogEna;
@@ -563,6 +581,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLogEna() {
         Boolean oldLogEna = logEna;
         boolean oldLogEnaESet = logEnaESet;
@@ -577,6 +596,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLogEna() {
         return logEnaESet;
     }
@@ -586,6 +606,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLogName() {
         return logName;
     }
@@ -595,6 +616,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLogName( String newLogName ) {
         String oldLogName = logName;
         logName = newLogName;
@@ -609,6 +631,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLogName() {
         String oldLogName = logName;
         boolean oldLogNameESet = logNameESet;
@@ -623,6 +646,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLogName() {
         return logNameESet;
     }
@@ -632,6 +656,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -641,6 +666,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -655,6 +681,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -669,6 +696,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -678,6 +706,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getReasonCode() {
         return reasonCode;
     }
@@ -687,6 +716,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReasonCode( Boolean newReasonCode ) {
         Boolean oldReasonCode = reasonCode;
         reasonCode = newReasonCode;
@@ -701,6 +731,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReasonCode() {
         Boolean oldReasonCode = reasonCode;
         boolean oldReasonCodeESet = reasonCodeESet;
@@ -715,6 +746,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReasonCode() {
         return reasonCodeESet;
     }
@@ -724,6 +756,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -744,6 +777,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -765,6 +799,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -791,6 +826,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -831,6 +867,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -851,6 +888,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }
@@ -860,6 +898,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Log getRefersToLog() {
         return refersToLog;
     }
@@ -886,6 +925,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToLog(Log newRefersToLog) {
         if (newRefersToLog != refersToLog) {
             NotificationChain msgs = null;
@@ -926,6 +966,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToLog() {
         if (refersToLog != null) {
             NotificationChain msgs = null;
@@ -946,6 +987,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToLog() {
         return refersToLogESet;
     }

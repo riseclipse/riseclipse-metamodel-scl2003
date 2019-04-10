@@ -47,7 +47,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.jdt.annotation.NonNull;
 
 /**
  * <!-- begin-user-doc -->
@@ -337,6 +336,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getInst() {
         return inst;
     }
@@ -346,6 +346,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setInst( String newInst ) {
         String oldInst = inst;
         inst = newInst;
@@ -360,6 +361,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetInst() {
         String oldInst = inst;
         boolean oldInstESet = instESet;
@@ -374,6 +376,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetInst() {
         return instESet;
     }
@@ -383,6 +386,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -392,6 +396,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -406,6 +411,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -420,6 +426,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -429,6 +436,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnType() {
         return lnType;
     }
@@ -438,6 +446,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnType( String newLnType ) {
         String oldLnType = lnType;
         lnType = newLnType;
@@ -452,6 +461,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnType() {
         String oldLnType = lnType;
         boolean oldLnTypeESet = lnTypeESet;
@@ -466,6 +476,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnType() {
         return lnTypeESet;
     }
@@ -475,6 +486,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNodeType getRefersToLNodeType() {
         return refersToLNodeType;
     }
@@ -501,6 +513,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToLNodeType(LNodeType newRefersToLNodeType) {
         if (newRefersToLNodeType != refersToLNodeType) {
             NotificationChain msgs = null;
@@ -541,6 +554,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToLNodeType() {
         if (refersToLNodeType != null) {
             NotificationChain msgs = null;
@@ -561,6 +575,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToLNodeType() {
         return refersToLNodeTypeESet;
     }
@@ -570,6 +585,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Inputs getInputs() {
         return inputs;
     }
@@ -596,6 +612,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setInputs( Inputs newInputs ) {
         if (newInputs != inputs) {
             NotificationChain msgs = null;
@@ -636,6 +653,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetInputs() {
         if (inputs != null) {
             NotificationChain msgs = null;
@@ -656,6 +674,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetInputs() {
         return inputsESet;
     }
@@ -665,6 +684,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Log> getLog() {
         if (log == null) {
             log = new EObjectContainmentWithInverseEList.Unsettable<Log>(Log.class, this, SclPackage.ANY_LN__LOG, SclPackage.LOG__ANY_LN);
@@ -677,6 +697,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLog() {
         if (log != null) ((InternalEList.Unsettable<?>)log).unset();
     }
@@ -686,6 +707,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLog() {
         return log != null && ((InternalEList.Unsettable<?>)log).isSet();
     }
@@ -695,6 +717,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DOI> getDOI() {
         if (doi == null) {
             doi = new EObjectContainmentWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.ANY_LN__DOI, SclPackage.DOI__ANY_LN);
@@ -707,6 +730,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDOI() {
         if (doi != null) ((InternalEList.Unsettable<?>)doi).unset();
     }
@@ -716,6 +740,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDOI() {
         return doi != null && ((InternalEList.Unsettable<?>)doi).isSet();
     }
@@ -725,6 +750,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ReportControl> getReportControl() {
         if (reportControl == null) {
             reportControl = new EObjectContainmentWithInverseEList.Unsettable<ReportControl>(ReportControl.class, this, SclPackage.ANY_LN__REPORT_CONTROL, SclPackage.REPORT_CONTROL__ANY_LN);
@@ -737,6 +763,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReportControl() {
         if (reportControl != null) ((InternalEList.Unsettable<?>)reportControl).unset();
     }
@@ -746,6 +773,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReportControl() {
         return reportControl != null && ((InternalEList.Unsettable<?>)reportControl).isSet();
     }
@@ -755,6 +783,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LogControl> getLogControl() {
         if (logControl == null) {
             logControl = new EObjectContainmentWithInverseEList.Unsettable<LogControl>(LogControl.class, this, SclPackage.ANY_LN__LOG_CONTROL, SclPackage.LOG_CONTROL__ANY_LN);
@@ -767,6 +796,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLogControl() {
         if (logControl != null) ((InternalEList.Unsettable<?>)logControl).unset();
     }
@@ -776,6 +806,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLogControl() {
         return logControl != null && ((InternalEList.Unsettable<?>)logControl).isSet();
     }
@@ -785,6 +816,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DataSet> getDataSet() {
         if (dataSet == null) {
             dataSet = new EObjectContainmentWithInverseEList.Unsettable<DataSet>(DataSet.class, this, SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__ANY_LN);
@@ -797,6 +829,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataSet() {
         if (dataSet != null) ((InternalEList.Unsettable<?>)dataSet).unset();
     }
@@ -806,6 +839,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataSet() {
         return dataSet != null && ((InternalEList.Unsettable<?>)dataSet).isSet();
     }
@@ -815,6 +849,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<FCDA> getReferredByFCDA() {
         if (referredByFCDA == null) {
             referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.ANY_LN__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_ANY_LN);
@@ -827,6 +862,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByFCDA() {
         if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
     }
@@ -836,6 +872,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByFCDA() {
         return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
     }
@@ -845,6 +882,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ExtRef> getReferredByExtRef() {
         if (referredByExtRef == null) {
             referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_ANY_LN);
@@ -857,6 +895,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByExtRef() {
         if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
     }
@@ -866,6 +905,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByExtRef() {
         return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
     }
@@ -875,6 +915,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ClientLN> getReferredByClientLN() {
         if (referredByClientLN == null) {
             referredByClientLN = new EObjectWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN);
@@ -887,6 +928,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByClientLN() {
         if (referredByClientLN != null) ((InternalEList.Unsettable<?>)referredByClientLN).unset();
     }
@@ -896,6 +938,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByClientLN() {
         return referredByClientLN != null && ((InternalEList.Unsettable<?>)referredByClientLN).isSet();
     }
@@ -905,6 +948,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LogControl> getReferredByLogControl() {
         if (referredByLogControl == null) {
             referredByLogControl = new EObjectWithInverseEList.Unsettable<LogControl>(LogControl.class, this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN);
@@ -917,6 +961,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByLogControl() {
         if (referredByLogControl != null) ((InternalEList.Unsettable<?>)referredByLogControl).unset();
     }
@@ -926,6 +971,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByLogControl() {
         return referredByLogControl != null && ((InternalEList.Unsettable<?>)referredByLogControl).isSet();
     }
@@ -935,6 +981,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Association> getReferredByAssociation() {
         if (referredByAssociation == null) {
             referredByAssociation = new EObjectWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN);
@@ -947,6 +994,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByAssociation() {
         if (referredByAssociation != null) ((InternalEList.Unsettable<?>)referredByAssociation).unset();
     }
@@ -956,6 +1004,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByAssociation() {
         return referredByAssociation != null && ((InternalEList.Unsettable<?>)referredByAssociation).isSet();
     }
@@ -965,6 +1014,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<IEDName> getReferredIEDName() {
         if (referredIEDName == null) {
             referredIEDName = new EObjectWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.ANY_LN__REFERRED_IED_NAME, SclPackage.IED_NAME__REFERS_TO_ANY_LN);
@@ -977,6 +1027,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredIEDName() {
         if (referredIEDName != null) ((InternalEList.Unsettable<?>)referredIEDName).unset();
     }
@@ -986,6 +1037,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredIEDName() {
         return referredIEDName != null && ((InternalEList.Unsettable<?>)referredIEDName).isSet();
     }

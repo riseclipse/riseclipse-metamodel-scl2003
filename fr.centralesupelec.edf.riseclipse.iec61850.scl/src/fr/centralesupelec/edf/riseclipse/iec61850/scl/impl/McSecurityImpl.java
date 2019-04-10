@@ -135,6 +135,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ClientServices getClientServices() {
         if (eContainerFeatureID() != SclPackage.MC_SECURITY__CLIENT_SERVICES) return null;
         return (ClientServices)eInternalContainer();
@@ -155,6 +156,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setClientServices(ClientServices newClientServices) {
         if (newClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__CLIENT_SERVICES && newClientServices != null)) {
             if (EcoreUtil.isAncestor(this, newClientServices))
@@ -176,6 +178,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSESettings getGSESettings() {
         if (eContainerFeatureID() != SclPackage.MC_SECURITY__GSE_SETTINGS) return null;
         return (GSESettings)eInternalContainer();
@@ -196,6 +199,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGSESettings(GSESettings newGSESettings) {
         if (newGSESettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__GSE_SETTINGS && newGSESettings != null)) {
             if (EcoreUtil.isAncestor(this, newGSESettings))
@@ -217,6 +221,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVSettings getSMVSettings() {
         if (eContainerFeatureID() != SclPackage.MC_SECURITY__SMV_SETTINGS) return null;
         return (SMVSettings)eInternalContainer();
@@ -237,6 +242,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSMVSettings(SMVSettings newSMVSettings) {
         if (newSMVSettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__SMV_SETTINGS && newSMVSettings != null)) {
             if (EcoreUtil.isAncestor(this, newSMVSettings))
@@ -258,6 +264,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSignature() {
         return signature;
     }
@@ -267,6 +274,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSignature(Boolean newSignature) {
         Boolean oldSignature = signature;
         signature = newSignature;
@@ -281,6 +289,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSignature() {
         Boolean oldSignature = signature;
         boolean oldSignatureESet = signatureESet;
@@ -295,6 +304,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSignature() {
         return signatureESet;
     }
@@ -304,6 +314,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getEncryption() {
         return encryption;
     }
@@ -313,6 +324,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEncryption(Boolean newEncryption) {
         Boolean oldEncryption = encryption;
         encryption = newEncryption;
@@ -327,6 +339,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEncryption() {
         Boolean oldEncryption = encryption;
         boolean oldEncryptionESet = encryptionESet;
@@ -341,6 +354,7 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEncryption() {
         return encryptionESet;
     }

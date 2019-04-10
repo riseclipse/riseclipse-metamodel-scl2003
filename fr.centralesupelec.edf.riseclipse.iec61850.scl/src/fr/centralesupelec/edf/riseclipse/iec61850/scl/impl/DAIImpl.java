@@ -206,6 +206,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getIx() {
         return ix;
     }
@@ -215,6 +216,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIx( Integer newIx ) {
         Integer oldIx = ix;
         ix = newIx;
@@ -229,6 +231,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIx() {
         Integer oldIx = ix;
         boolean oldIxESet = ixESet;
@@ -243,6 +246,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIx() {
         return ixESet;
     }
@@ -252,6 +256,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSAddr() {
         return sAddr;
     }
@@ -261,6 +266,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSAddr( String newSAddr ) {
         String oldSAddr = sAddr;
         sAddr = newSAddr;
@@ -275,6 +281,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSAddr() {
         String oldSAddr = sAddr;
         boolean oldSAddrESet = sAddrESet;
@@ -289,6 +296,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSAddr() {
         return sAddrESet;
     }
@@ -298,6 +306,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getValImport() {
         return valImport;
     }
@@ -307,6 +316,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValImport( Boolean newValImport ) {
         Boolean oldValImport = valImport;
         valImport = newValImport;
@@ -321,6 +331,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValImport() {
         Boolean oldValImport = valImport;
         boolean oldValImportESet = valImportESet;
@@ -335,6 +346,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValImport() {
         return valImportESet;
     }
@@ -344,6 +356,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ValKindEnum getValKind() {
         return valKind;
     }
@@ -353,6 +366,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValKind( ValKindEnum newValKind ) {
         ValKindEnum oldValKind = valKind;
         valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
@@ -367,6 +381,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValKind() {
         ValKindEnum oldValKind = valKind;
         boolean oldValKindESet = valKindESet;
@@ -381,6 +396,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValKind() {
         return valKindESet;
     }
@@ -390,6 +406,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Val> getVal() {
         if (val == null) {
             val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.DAI__VAL, SclPackage.VAL__DAI);
@@ -402,6 +419,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVal() {
         if (val != null) ((InternalEList.Unsettable<?>)val).unset();
     }
@@ -411,6 +429,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVal() {
         return val != null && ((InternalEList.Unsettable<?>)val).isSet();
     }
@@ -420,6 +439,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOI getDOI() {
         if (eContainerFeatureID() != SclPackage.DAI__DOI) return null;
         return (DOI)eInternalContainer();
@@ -440,6 +460,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDOI( DOI newDOI ) {
         if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__DOI && newDOI != null)) {
             if (EcoreUtil.isAncestor(this, newDOI))
@@ -461,6 +482,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SDI getSDI() {
         if (eContainerFeatureID() != SclPackage.DAI__SDI) return null;
         return (SDI)eInternalContainer();
@@ -481,6 +503,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSDI( SDI newSDI ) {
         if (newSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__SDI && newSDI != null)) {
             if (EcoreUtil.isAncestor(this, newSDI))

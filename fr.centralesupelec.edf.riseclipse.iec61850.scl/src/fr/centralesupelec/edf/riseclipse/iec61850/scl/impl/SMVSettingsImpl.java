@@ -344,6 +344,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getSvID() {
         return svID;
     }
@@ -353,6 +354,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSvID(ServiceSettingsEnum newSvID) {
         ServiceSettingsEnum oldSvID = svID;
         svID = newSvID == null ? SV_ID_EDEFAULT : newSvID;
@@ -367,6 +369,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSvID() {
         ServiceSettingsEnum oldSvID = svID;
         boolean oldSvIDESet = svIDESet;
@@ -381,6 +384,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSvID() {
         return svIDESet;
     }
@@ -390,6 +394,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getOptFields() {
         return optFields;
     }
@@ -399,6 +404,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOptFields(ServiceSettingsEnum newOptFields) {
         ServiceSettingsEnum oldOptFields = optFields;
         optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
@@ -413,6 +419,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOptFields() {
         ServiceSettingsEnum oldOptFields = optFields;
         boolean oldOptFieldsESet = optFieldsESet;
@@ -427,6 +434,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOptFields() {
         return optFieldsESet;
     }
@@ -436,6 +444,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getSmpRateAttribute() {
         return smpRateAttribute;
     }
@@ -445,6 +454,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSmpRateAttribute(ServiceSettingsEnum newSmpRateAttribute) {
         ServiceSettingsEnum oldSmpRateAttribute = smpRateAttribute;
         smpRateAttribute = newSmpRateAttribute == null ? SMP_RATE_ATTRIBUTE_EDEFAULT : newSmpRateAttribute;
@@ -459,6 +469,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmpRateAttribute() {
         ServiceSettingsEnum oldSmpRateAttribute = smpRateAttribute;
         boolean oldSmpRateAttributeESet = smpRateAttributeESet;
@@ -473,6 +484,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmpRateAttribute() {
         return smpRateAttributeESet;
     }
@@ -482,6 +494,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSamplesPerSecAttribute() {
         return samplesPerSecAttribute;
     }
@@ -491,6 +504,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSamplesPerSecAttribute(boolean newSamplesPerSecAttribute) {
         boolean oldSamplesPerSecAttribute = samplesPerSecAttribute;
         samplesPerSecAttribute = newSamplesPerSecAttribute;
@@ -505,6 +519,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSamplesPerSecAttribute() {
         boolean oldSamplesPerSecAttribute = samplesPerSecAttribute;
         boolean oldSamplesPerSecAttributeESet = samplesPerSecAttributeESet;
@@ -519,6 +534,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSamplesPerSecAttribute() {
         return samplesPerSecAttributeESet;
     }
@@ -528,6 +544,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isPdcTimeStamp() {
         return pdcTimeStamp;
     }
@@ -537,6 +554,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPdcTimeStamp(boolean newPdcTimeStamp) {
         boolean oldPdcTimeStamp = pdcTimeStamp;
         pdcTimeStamp = newPdcTimeStamp;
@@ -551,6 +569,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPdcTimeStamp() {
         boolean oldPdcTimeStamp = pdcTimeStamp;
         boolean oldPdcTimeStampESet = pdcTimeStampESet;
@@ -565,6 +584,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPdcTimeStamp() {
         return pdcTimeStampESet;
     }
@@ -574,6 +594,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SmpRate> getSmpRate() {
         if (smpRate == null) {
             smpRate = new EObjectContainmentEList.Unsettable<SmpRate>(SmpRate.class, this, SclPackage.SMV_SETTINGS__SMP_RATE);
@@ -586,6 +607,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmpRate() {
         if (smpRate != null) ((InternalEList.Unsettable<?>)smpRate).unset();
     }
@@ -595,6 +617,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmpRate() {
         return smpRate != null && ((InternalEList.Unsettable<?>)smpRate).isSet();
     }
@@ -604,6 +627,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SamplesPerSec> getSamplesPerSec() {
         if (samplesPerSec == null) {
             samplesPerSec = new EObjectContainmentEList.Unsettable<SamplesPerSec>(SamplesPerSec.class, this, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC);
@@ -616,6 +640,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSamplesPerSec() {
         if (samplesPerSec != null) ((InternalEList.Unsettable<?>)samplesPerSec).unset();
     }
@@ -625,6 +650,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSamplesPerSec() {
         return samplesPerSec != null && ((InternalEList.Unsettable<?>)samplesPerSec).isSet();
     }
@@ -634,6 +660,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SecPerSamples> getSecPerSamples() {
         if (secPerSamples == null) {
             secPerSamples = new EObjectContainmentEList.Unsettable<SecPerSamples>(SecPerSamples.class, this, SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES);
@@ -646,6 +673,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSecPerSamples() {
         if (secPerSamples != null) ((InternalEList.Unsettable<?>)secPerSamples).unset();
     }
@@ -655,6 +683,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSecPerSamples() {
         return secPerSamples != null && ((InternalEList.Unsettable<?>)secPerSamples).isSet();
     }
@@ -664,6 +693,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.SMV_SETTINGS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -684,6 +714,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices(Services newServices) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_SETTINGS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -705,6 +736,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSynchSrcId() {
         return synchSrcId;
     }
@@ -714,6 +746,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSynchSrcId(Boolean newSynchSrcId) {
         Boolean oldSynchSrcId = synchSrcId;
         synchSrcId = newSynchSrcId;
@@ -728,6 +761,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSynchSrcId() {
         Boolean oldSynchSrcId = synchSrcId;
         boolean oldSynchSrcIdESet = synchSrcIdESet;
@@ -742,6 +776,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSynchSrcId() {
         return synchSrcIdESet;
     }
@@ -751,6 +786,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsNoDynEnum getNofASDU() {
         return nofASDU;
     }
@@ -760,6 +796,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNofASDU(ServiceSettingsNoDynEnum newNofASDU) {
         ServiceSettingsNoDynEnum oldNofASDU = nofASDU;
         nofASDU = newNofASDU == null ? NOF_ASDU_EDEFAULT : newNofASDU;
@@ -774,6 +811,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNofASDU() {
         ServiceSettingsNoDynEnum oldNofASDU = nofASDU;
         boolean oldNofASDUESet = nofASDUESet;
@@ -788,6 +826,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNofASDU() {
         return nofASDUESet;
     }
@@ -797,6 +836,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getKdaParticipant() {
         return kdaParticipant;
     }
@@ -806,6 +846,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setKdaParticipant(Boolean newKdaParticipant) {
         Boolean oldKdaParticipant = kdaParticipant;
         kdaParticipant = newKdaParticipant;
@@ -820,6 +861,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetKdaParticipant() {
         Boolean oldKdaParticipant = kdaParticipant;
         boolean oldKdaParticipantESet = kdaParticipantESet;
@@ -834,6 +876,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetKdaParticipant() {
         return kdaParticipantESet;
     }
@@ -843,6 +886,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public McSecurity getMcSecurity() {
         return mcSecurity;
     }
@@ -869,6 +913,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMcSecurity(McSecurity newMcSecurity) {
         if (newMcSecurity != mcSecurity) {
             NotificationChain msgs = null;
@@ -909,6 +954,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMcSecurity() {
         if (mcSecurity != null) {
             NotificationChain msgs = null;
@@ -929,6 +975,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMcSecurity() {
         return mcSecurityESet;
     }

@@ -124,6 +124,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -133,6 +134,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName( String newName ) {
         String oldName = name;
         name = newName;
@@ -147,6 +149,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -161,6 +164,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -170,6 +174,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -179,6 +184,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDesc(String newDesc) {
         String oldDesc = desc;
         desc = newDesc;
@@ -193,6 +199,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDesc() {
         String oldDesc = desc;
         boolean oldDescESet = descESet;
@@ -207,6 +214,7 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDesc() {
         return descESet;
     }

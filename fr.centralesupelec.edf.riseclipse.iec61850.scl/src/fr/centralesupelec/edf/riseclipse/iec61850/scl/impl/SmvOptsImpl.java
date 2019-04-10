@@ -277,6 +277,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDataSet() {
         return dataSet;
     }
@@ -286,6 +287,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataSet( Boolean newDataSet ) {
         Boolean oldDataSet = dataSet;
         dataSet = newDataSet;
@@ -300,6 +302,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataSet() {
         Boolean oldDataSet = dataSet;
         boolean oldDataSetESet = dataSetESet;
@@ -314,6 +317,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataSet() {
         return dataSetESet;
     }
@@ -323,6 +327,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRefreshTime() {
         return refreshTime;
     }
@@ -332,6 +337,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefreshTime( Boolean newRefreshTime ) {
         Boolean oldRefreshTime = refreshTime;
         refreshTime = newRefreshTime;
@@ -346,6 +352,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefreshTime() {
         Boolean oldRefreshTime = refreshTime;
         boolean oldRefreshTimeESet = refreshTimeESet;
@@ -360,6 +367,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefreshTime() {
         return refreshTimeESet;
     }
@@ -369,6 +377,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSampleRate() {
         return sampleRate;
     }
@@ -378,6 +387,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSampleRate( Boolean newSampleRate ) {
         Boolean oldSampleRate = sampleRate;
         sampleRate = newSampleRate;
@@ -392,6 +402,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSampleRate() {
         Boolean oldSampleRate = sampleRate;
         boolean oldSampleRateESet = sampleRateESet;
@@ -406,6 +417,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSampleRate() {
         return sampleRateESet;
     }
@@ -415,6 +427,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSampleSynchronized() {
         return sampleSynchronized;
     }
@@ -424,6 +437,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSampleSynchronized( Boolean newSampleSynchronized ) {
         Boolean oldSampleSynchronized = sampleSynchronized;
         sampleSynchronized = newSampleSynchronized;
@@ -438,6 +452,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSampleSynchronized() {
         Boolean oldSampleSynchronized = sampleSynchronized;
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
@@ -452,6 +467,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSampleSynchronized() {
         return sampleSynchronizedESet;
     }
@@ -461,6 +477,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSecurity() {
         return security;
     }
@@ -470,6 +487,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSecurity( Boolean newSecurity ) {
         Boolean oldSecurity = security;
         security = newSecurity;
@@ -484,6 +502,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSecurity() {
         Boolean oldSecurity = security;
         boolean oldSecurityESet = securityESet;
@@ -498,6 +517,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSecurity() {
         return securityESet;
     }
@@ -507,6 +527,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getTimestamp() {
         return timestamp;
     }
@@ -516,6 +537,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimestamp( Boolean newTimestamp ) {
         Boolean oldTimestamp = timestamp;
         timestamp = newTimestamp;
@@ -530,6 +552,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimestamp() {
         Boolean oldTimestamp = timestamp;
         boolean oldTimestampESet = timestampESet;
@@ -544,6 +567,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimestamp() {
         return timestampESet;
     }
@@ -553,6 +577,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SampledValueControl getSampledValueControl() {
         if (eContainerFeatureID() != SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL) return null;
         return (SampledValueControl)eInternalContainer();
@@ -574,6 +599,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSampledValueControl( SampledValueControl newSampledValueControl ) {
         if (newSampledValueControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL && newSampledValueControl != null)) {
             if (EcoreUtil.isAncestor(this, newSampledValueControl))
@@ -595,6 +621,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSynchSourceId() {
         return synchSourceId;
     }
@@ -604,6 +631,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSynchSourceId(Boolean newSynchSourceId) {
         Boolean oldSynchSourceId = synchSourceId;
         synchSourceId = newSynchSourceId;
@@ -618,6 +646,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSynchSourceId() {
         Boolean oldSynchSourceId = synchSourceId;
         boolean oldSynchSourceIdESet = synchSourceIdESet;
@@ -632,6 +661,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSynchSourceId() {
         return synchSourceIdESet;
     }

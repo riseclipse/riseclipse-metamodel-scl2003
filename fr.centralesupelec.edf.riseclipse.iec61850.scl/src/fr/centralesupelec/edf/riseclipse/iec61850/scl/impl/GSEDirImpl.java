@@ -67,6 +67,7 @@ public class GSEDirImpl extends ServiceYesNoImpl implements GSEDir {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.GSE_DIR__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class GSEDirImpl extends ServiceYesNoImpl implements GSEDir {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_DIR__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

@@ -529,6 +529,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getBufReport() {
         return bufReport;
     }
@@ -538,6 +539,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufReport( Boolean newBufReport ) {
         Boolean oldBufReport = bufReport;
         bufReport = newBufReport;
@@ -552,6 +554,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufReport() {
         Boolean oldBufReport = bufReport;
         boolean oldBufReportESet = bufReportESet;
@@ -566,6 +569,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufReport() {
         return bufReportESet;
     }
@@ -575,6 +579,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getGoose() {
         return goose;
     }
@@ -584,6 +589,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGoose( Boolean newGoose ) {
         Boolean oldGoose = goose;
         goose = newGoose;
@@ -598,6 +604,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGoose() {
         Boolean oldGoose = goose;
         boolean oldGooseESet = gooseESet;
@@ -612,6 +619,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGoose() {
         return gooseESet;
     }
@@ -621,6 +629,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getGsse() {
         return gsse;
     }
@@ -630,6 +639,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGsse( Boolean newGsse ) {
         Boolean oldGsse = gsse;
         gsse = newGsse;
@@ -644,6 +654,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGsse() {
         Boolean oldGsse = gsse;
         boolean oldGsseESet = gsseESet;
@@ -658,6 +669,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGsse() {
         return gsseESet;
     }
@@ -667,6 +679,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxAttributes() {
         return maxAttributes;
     }
@@ -676,6 +689,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxAttributes( Integer newMaxAttributes ) {
         Integer oldMaxAttributes = maxAttributes;
         maxAttributes = newMaxAttributes;
@@ -690,6 +704,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxAttributes() {
         Integer oldMaxAttributes = maxAttributes;
         boolean oldMaxAttributesESet = maxAttributesESet;
@@ -704,6 +719,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxAttributes() {
         return maxAttributesESet;
     }
@@ -713,6 +729,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxGOOSE() {
         return maxGOOSE;
     }
@@ -722,6 +739,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxGOOSE( Integer newMaxGOOSE ) {
         Integer oldMaxGOOSE = maxGOOSE;
         maxGOOSE = newMaxGOOSE;
@@ -736,6 +754,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxGOOSE() {
         Integer oldMaxGOOSE = maxGOOSE;
         boolean oldMaxGOOSEESet = maxGOOSEESet;
@@ -750,6 +769,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxGOOSE() {
         return maxGOOSEESet;
     }
@@ -759,6 +779,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxReports() {
         return maxReports;
     }
@@ -768,6 +789,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxReports( Integer newMaxReports ) {
         Integer oldMaxReports = maxReports;
         maxReports = newMaxReports;
@@ -782,6 +804,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxReports() {
         Integer oldMaxReports = maxReports;
         boolean oldMaxReportsESet = maxReportsESet;
@@ -796,6 +819,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxReports() {
         return maxReportsESet;
     }
@@ -805,6 +829,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxSMV() {
         return maxSMV;
     }
@@ -814,6 +839,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxSMV( Integer newMaxSMV ) {
         Integer oldMaxSMV = maxSMV;
         maxSMV = newMaxSMV;
@@ -828,6 +854,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxSMV() {
         Integer oldMaxSMV = maxSMV;
         boolean oldMaxSMVESet = maxSMVESet;
@@ -842,6 +869,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxSMV() {
         return maxSMVESet;
     }
@@ -851,6 +879,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getReadLog() {
         return readLog;
     }
@@ -860,6 +889,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReadLog( Boolean newReadLog ) {
         Boolean oldReadLog = readLog;
         readLog = newReadLog;
@@ -874,6 +904,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReadLog() {
         Boolean oldReadLog = readLog;
         boolean oldReadLogESet = readLogESet;
@@ -888,6 +919,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReadLog() {
         return readLogESet;
     }
@@ -897,6 +929,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSupportsLdName() {
         return supportsLdName;
     }
@@ -906,6 +939,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSupportsLdName( Boolean newSupportsLdName ) {
         Boolean oldSupportsLdName = supportsLdName;
         supportsLdName = newSupportsLdName;
@@ -920,6 +954,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSupportsLdName() {
         Boolean oldSupportsLdName = supportsLdName;
         boolean oldSupportsLdNameESet = supportsLdNameESet;
@@ -934,6 +969,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSupportsLdName() {
         return supportsLdNameESet;
     }
@@ -943,6 +979,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSv() {
         return sv;
     }
@@ -952,6 +989,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSv( Boolean newSv ) {
         Boolean oldSv = sv;
         sv = newSv;
@@ -966,6 +1004,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSv() {
         Boolean oldSv = sv;
         boolean oldSvESet = svESet;
@@ -980,6 +1019,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSv() {
         return svESet;
     }
@@ -989,6 +1029,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getUnbufReport() {
         return unbufReport;
     }
@@ -998,6 +1039,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setUnbufReport( Boolean newUnbufReport ) {
         Boolean oldUnbufReport = unbufReport;
         unbufReport = newUnbufReport;
@@ -1012,6 +1054,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetUnbufReport() {
         Boolean oldUnbufReport = unbufReport;
         boolean oldUnbufReportESet = unbufReportESet;
@@ -1026,6 +1069,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetUnbufReport() {
         return unbufReportESet;
     }
@@ -1035,6 +1079,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.CLIENT_SERVICES__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -1055,6 +1100,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_SERVICES__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -1076,6 +1122,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TimeSyncProt getTimeSyncProt() {
         return timeSyncProt;
     }
@@ -1102,6 +1149,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimeSyncProt( TimeSyncProt newTimeSyncProt ) {
         if (newTimeSyncProt != timeSyncProt) {
             NotificationChain msgs = null;
@@ -1142,6 +1190,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimeSyncProt() {
         if (timeSyncProt != null) {
             NotificationChain msgs = null;
@@ -1162,6 +1211,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimeSyncProt() {
         return timeSyncProtESet;
     }
@@ -1171,6 +1221,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRGOOSE() {
         return rGOOSE;
     }
@@ -1180,6 +1231,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRGOOSE(Boolean newRGOOSE) {
         Boolean oldRGOOSE = rGOOSE;
         rGOOSE = newRGOOSE;
@@ -1194,6 +1246,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRGOOSE() {
         Boolean oldRGOOSE = rGOOSE;
         boolean oldRGOOSEESet = rGOOSEESet;
@@ -1208,6 +1261,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRGOOSE() {
         return rGOOSEESet;
     }
@@ -1217,6 +1271,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRSV() {
         return rSV;
     }
@@ -1226,6 +1281,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRSV(Boolean newRSV) {
         Boolean oldRSV = rSV;
         rSV = newRSV;
@@ -1240,6 +1296,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRSV() {
         Boolean oldRSV = rSV;
         boolean oldRSVESet = rSVESet;
@@ -1254,6 +1311,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRSV() {
         return rSVESet;
     }
@@ -1263,6 +1321,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getNoIctBinding() {
         return noIctBinding;
     }
@@ -1272,6 +1331,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNoIctBinding(Boolean newNoIctBinding) {
         Boolean oldNoIctBinding = noIctBinding;
         noIctBinding = newNoIctBinding;
@@ -1286,6 +1346,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNoIctBinding() {
         Boolean oldNoIctBinding = noIctBinding;
         boolean oldNoIctBindingESet = noIctBindingESet;
@@ -1300,6 +1361,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNoIctBinding() {
         return noIctBindingESet;
     }
@@ -1309,6 +1371,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public McSecurity getMcSecurity() {
         return mcSecurity;
     }
@@ -1335,6 +1398,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMcSecurity(McSecurity newMcSecurity) {
         if (newMcSecurity != mcSecurity) {
             NotificationChain msgs = null;
@@ -1375,6 +1439,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMcSecurity() {
         if (mcSecurity != null) {
             NotificationChain msgs = null;
@@ -1395,6 +1460,7 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMcSecurity() {
         return mcSecurityESet;
     }

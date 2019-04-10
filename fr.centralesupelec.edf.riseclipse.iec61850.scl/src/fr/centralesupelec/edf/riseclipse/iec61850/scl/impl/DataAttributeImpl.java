@@ -120,6 +120,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<FCDA> getReferredByFCDA() {
         if (referredByFCDA == null) {
             referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE);
@@ -132,6 +133,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByFCDA() {
         if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
     }
@@ -141,6 +143,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByFCDA() {
         return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
     }
@@ -150,6 +153,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -159,6 +163,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -173,6 +178,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -187,6 +193,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -196,6 +203,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ExtRef> getReferredByExtRef() {
         if (referredByExtRef == null) {
             referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE);
@@ -208,6 +216,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByExtRef() {
         if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
     }
@@ -217,6 +226,7 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByExtRef() {
         return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
     }

@@ -177,6 +177,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BigDecimal getNomFreq() {
         return nomFreq;
     }
@@ -186,6 +187,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNomFreq( BigDecimal newNomFreq ) {
         BigDecimal oldNomFreq = nomFreq;
         nomFreq = newNomFreq;
@@ -200,6 +202,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNomFreq() {
         BigDecimal oldNomFreq = nomFreq;
         boolean oldNomFreqESet = nomFreqESet;
@@ -214,6 +217,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNomFreq() {
         return nomFreqESet;
     }
@@ -223,6 +227,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getNumPhases() {
         return numPhases;
     }
@@ -232,6 +237,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNumPhases(Integer newNumPhases) {
         Integer oldNumPhases = numPhases;
         numPhases = newNumPhases;
@@ -246,6 +252,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNumPhases() {
         Integer oldNumPhases = numPhases;
         boolean oldNumPhasesESet = numPhasesESet;
@@ -260,6 +267,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNumPhases() {
         return numPhasesESet;
     }
@@ -269,6 +277,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Bay> getBay() {
         if (bay == null) {
             bay = new EObjectContainmentWithInverseEList.Unsettable<Bay>(Bay.class, this, SclPackage.VOLTAGE_LEVEL__BAY, SclPackage.BAY__VOLTAGE_LEVEL);
@@ -281,6 +290,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBay() {
         if (bay != null) ((InternalEList.Unsettable<?>)bay).unset();
     }
@@ -290,6 +300,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBay() {
         return bay != null && ((InternalEList.Unsettable<?>)bay).isSet();
     }
@@ -299,6 +310,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Function> getFunction() {
         if (function == null) {
             function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.VOLTAGE_LEVEL__FUNCTION, SclPackage.FUNCTION__VOLTAGE_LEVEL);
@@ -311,6 +323,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFunction() {
         if (function != null) ((InternalEList.Unsettable<?>)function).unset();
     }
@@ -320,6 +333,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFunction() {
         return function != null && ((InternalEList.Unsettable<?>)function).isSet();
     }
@@ -329,6 +343,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Substation getSubstation() {
         if (eContainerFeatureID() != SclPackage.VOLTAGE_LEVEL__SUBSTATION) return null;
         return (Substation)eInternalContainer();
@@ -349,6 +364,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubstation( Substation newSubstation ) {
         if (newSubstation != eInternalContainer() || (eContainerFeatureID() != SclPackage.VOLTAGE_LEVEL__SUBSTATION && newSubstation != null)) {
             if (EcoreUtil.isAncestor(this, newSubstation))
@@ -370,6 +386,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Voltage getVoltage() {
         return voltage;
     }
@@ -396,6 +413,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVoltage( Voltage newVoltage ) {
         if (newVoltage != voltage) {
             NotificationChain msgs = null;
@@ -436,6 +454,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVoltage() {
         if (voltage != null) {
             NotificationChain msgs = null;
@@ -456,6 +475,7 @@ public class VoltageLevelImpl extends EquipmentContainerImpl implements VoltageL
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVoltage() {
         return voltageESet;
     }

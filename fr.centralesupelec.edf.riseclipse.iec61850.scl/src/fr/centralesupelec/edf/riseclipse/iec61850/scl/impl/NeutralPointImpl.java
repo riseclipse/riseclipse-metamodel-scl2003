@@ -67,6 +67,7 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TransformerWinding getTransformerWinding() {
         if (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING) return null;
         return (TransformerWinding)eInternalContainer();
@@ -88,6 +89,7 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
         if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING && newTransformerWinding != null)) {
             if (EcoreUtil.isAncestor(this, newTransformerWinding))

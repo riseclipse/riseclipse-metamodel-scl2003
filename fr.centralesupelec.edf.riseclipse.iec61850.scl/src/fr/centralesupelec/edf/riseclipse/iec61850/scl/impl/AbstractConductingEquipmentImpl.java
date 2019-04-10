@@ -94,6 +94,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
             subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT);
@@ -106,6 +107,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubEquipment() {
         if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
     }
@@ -115,6 +117,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubEquipment() {
         return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
     }
@@ -124,6 +127,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Terminal> getTerminal() {
         if (terminal == null) {
             terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT);
@@ -136,6 +140,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTerminal() {
         if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
     }
@@ -145,6 +150,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTerminal() {
         return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
     }

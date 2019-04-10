@@ -67,6 +67,7 @@ public class ReadWriteImpl extends ServiceYesNoImpl implements ReadWrite {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.READ_WRITE__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class ReadWriteImpl extends ServiceYesNoImpl implements ReadWrite {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.READ_WRITE__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

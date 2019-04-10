@@ -121,6 +121,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -130,6 +131,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -144,6 +146,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -158,6 +161,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -167,6 +171,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractEqFuncSubFunc getAbstractEqFuncSubFunc() {
         if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
         return (AbstractEqFuncSubFunc)eInternalContainer();
@@ -188,6 +193,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc ) {
         if (newAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC && newAbstractEqFuncSubFunc != null)) {
             if (EcoreUtil.isAncestor(this, newAbstractEqFuncSubFunc))
@@ -209,6 +215,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__GENERAL_EQUIPMENT);
@@ -221,6 +228,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -230,6 +238,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -239,6 +248,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EquipmentContainer getEquipmentContainer() {
         if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER) return null;
         return (EquipmentContainer)eInternalContainer();
@@ -260,6 +270,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEquipmentContainer( EquipmentContainer newEquipmentContainer ) {
         if (newEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER && newEquipmentContainer != null)) {
             if (EcoreUtil.isAncestor(this, newEquipmentContainer))
@@ -281,6 +292,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Function getFunction() {
         if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__FUNCTION) return null;
         return (Function)eInternalContainer();
@@ -301,6 +313,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFunction( Function newFunction ) {
         if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__FUNCTION && newFunction != null)) {
             if (EcoreUtil.isAncestor(this, newFunction))
@@ -322,6 +335,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GeneralEquipmentContainer getGeneralEquipmentContainer() {
         if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER) return null;
         return (GeneralEquipmentContainer)eInternalContainer();
@@ -343,6 +357,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGeneralEquipmentContainer( GeneralEquipmentContainer newGeneralEquipmentContainer ) {
         if (newGeneralEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER && newGeneralEquipmentContainer != null)) {
             if (EcoreUtil.isAncestor(this, newGeneralEquipmentContainer))
@@ -364,6 +379,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubFunction getSubFunction() {
         if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION) return null;
         return (SubFunction)eInternalContainer();
@@ -384,6 +400,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubFunction( SubFunction newSubFunction ) {
         if (newSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION && newSubFunction != null)) {
             if (EcoreUtil.isAncestor(this, newSubFunction))

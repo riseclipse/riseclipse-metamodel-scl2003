@@ -208,6 +208,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -217,6 +218,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -231,6 +233,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -245,6 +248,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -254,6 +258,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
         if (eContainerFeatureID() != SclPackage.LINE__PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
@@ -275,6 +280,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
         if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__PROCESS && newProcess != null)) {
             if (EcoreUtil.isAncestor(this, newProcess))
@@ -296,6 +302,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.LINE__SCL) return null;
         return (SCL)eInternalContainer();
@@ -316,6 +323,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))
@@ -337,6 +345,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConnectivityNode> getConnectivityNode() {
         if (connectivityNode == null) {
             connectivityNode = new EObjectContainmentWithInverseEList.Unsettable<ConnectivityNode>(ConnectivityNode.class, this, SclPackage.LINE__CONNECTIVITY_NODE, SclPackage.CONNECTIVITY_NODE__LINE);
@@ -349,6 +358,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConnectivityNode() {
         if (connectivityNode != null) ((InternalEList.Unsettable<?>)connectivityNode).unset();
     }
@@ -358,6 +368,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConnectivityNode() {
         return connectivityNode != null && ((InternalEList.Unsettable<?>)connectivityNode).isSet();
     }
@@ -367,6 +378,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
             conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.LINE__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__LINE);
@@ -379,6 +391,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConductingEquipment() {
         if (conductingEquipment != null) ((InternalEList.Unsettable<?>)conductingEquipment).unset();
     }
@@ -388,6 +401,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConductingEquipment() {
         return conductingEquipment != null && ((InternalEList.Unsettable<?>)conductingEquipment).isSet();
     }
@@ -397,6 +411,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Voltage getVoltage() {
         return voltage;
     }
@@ -423,6 +438,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVoltage(Voltage newVoltage) {
         if (newVoltage != voltage) {
             NotificationChain msgs = null;
@@ -463,6 +479,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVoltage() {
         if (voltage != null) {
             NotificationChain msgs = null;
@@ -483,6 +500,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVoltage() {
         return voltageESet;
     }
@@ -492,6 +510,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BigDecimal getNomFreq() {
         return nomFreq;
     }
@@ -501,6 +520,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNomFreq(BigDecimal newNomFreq) {
         BigDecimal oldNomFreq = nomFreq;
         nomFreq = newNomFreq;
@@ -515,6 +535,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNomFreq() {
         BigDecimal oldNomFreq = nomFreq;
         boolean oldNomFreqESet = nomFreqESet;
@@ -529,6 +550,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNomFreq() {
         return nomFreqESet;
     }
@@ -538,6 +560,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getNumPhases() {
         return numPhases;
     }
@@ -547,6 +570,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNumPhases(Integer newNumPhases) {
         Integer oldNumPhases = numPhases;
         numPhases = newNumPhases;
@@ -561,6 +585,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNumPhases() {
         Integer oldNumPhases = numPhases;
         boolean oldNumPhasesESet = numPhasesESet;
@@ -575,6 +600,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNumPhases() {
         return numPhasesESet;
     }

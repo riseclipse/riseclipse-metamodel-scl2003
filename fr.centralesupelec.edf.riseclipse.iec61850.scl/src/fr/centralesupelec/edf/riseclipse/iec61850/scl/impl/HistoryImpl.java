@@ -83,6 +83,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Header getHeader() {
         if (eContainerFeatureID() != SclPackage.HISTORY__HEADER) return null;
         return (Header)eInternalContainer();
@@ -103,6 +104,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHeader( Header newHeader ) {
         if (newHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.HISTORY__HEADER && newHeader != null)) {
             if (EcoreUtil.isAncestor(this, newHeader))
@@ -124,6 +126,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Hitem> getHitem() {
         if (hitem == null) {
             hitem = new EObjectContainmentWithInverseEList.Unsettable<Hitem>(Hitem.class, this, SclPackage.HISTORY__HITEM, SclPackage.HITEM__HISTORY);
@@ -136,6 +139,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetHitem() {
         if (hitem != null) ((InternalEList.Unsettable<?>)hitem).unset();
     }
@@ -145,6 +149,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetHitem() {
         return hitem != null && ((InternalEList.Unsettable<?>)hitem).isSet();
     }

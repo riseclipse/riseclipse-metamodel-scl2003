@@ -157,6 +157,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getActSG() {
         return actSG;
     }
@@ -166,6 +167,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setActSG( Integer newActSG ) {
         Integer oldActSG = actSG;
         actSG = newActSG;
@@ -180,6 +182,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetActSG() {
         Integer oldActSG = actSG;
         boolean oldActSGESet = actSGESet;
@@ -194,6 +197,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetActSG() {
         return actSGESet;
     }
@@ -203,6 +207,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getNumOfSGs() {
         return numOfSGs;
     }
@@ -212,6 +217,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNumOfSGs( Integer newNumOfSGs ) {
         Integer oldNumOfSGs = numOfSGs;
         numOfSGs = newNumOfSGs;
@@ -226,6 +232,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNumOfSGs() {
         Integer oldNumOfSGs = numOfSGs;
         boolean oldNumOfSGsESet = numOfSGsESet;
@@ -240,6 +247,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNumOfSGs() {
         return numOfSGsESet;
     }
@@ -249,6 +257,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Short getResvTms() {
         return resvTms;
     }
@@ -258,6 +267,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setResvTms( Short newResvTms ) {
         Short oldResvTms = resvTms;
         resvTms = newResvTms;
@@ -272,6 +282,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetResvTms() {
         Short oldResvTms = resvTms;
         boolean oldResvTmsESet = resvTmsESet;
@@ -286,6 +297,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetResvTms() {
         return resvTmsESet;
     }
@@ -295,6 +307,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN0 getLN0() {
         if (eContainerFeatureID() != SclPackage.SETTING_CONTROL__LN0) return null;
         return (LN0)eInternalContainer();
@@ -315,6 +328,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLN0( LN0 newLN0 ) {
         if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_CONTROL__LN0 && newLN0 != null)) {
             if (EcoreUtil.isAncestor(this, newLN0))

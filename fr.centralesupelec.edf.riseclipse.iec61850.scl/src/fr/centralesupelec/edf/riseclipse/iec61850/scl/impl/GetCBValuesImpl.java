@@ -67,6 +67,7 @@ public class GetCBValuesImpl extends ServiceYesNoImpl implements GetCBValues {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.GET_CB_VALUES__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class GetCBValuesImpl extends ServiceYesNoImpl implements GetCBValues {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GET_CB_VALUES__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

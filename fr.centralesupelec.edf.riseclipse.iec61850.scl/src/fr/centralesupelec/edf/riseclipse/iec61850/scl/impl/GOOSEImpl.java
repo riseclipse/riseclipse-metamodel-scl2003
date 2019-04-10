@@ -157,6 +157,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFixedOffs() {
         return fixedOffs;
     }
@@ -166,6 +167,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFixedOffs( Boolean newFixedOffs ) {
         Boolean oldFixedOffs = fixedOffs;
         fixedOffs = newFixedOffs;
@@ -180,6 +182,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFixedOffs() {
         Boolean oldFixedOffs = fixedOffs;
         boolean oldFixedOffsESet = fixedOffsESet;
@@ -194,6 +197,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFixedOffs() {
         return fixedOffsESet;
     }
@@ -203,6 +207,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.GOOSE__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -223,6 +228,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GOOSE__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -244,6 +250,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getGoose() {
         return goose;
     }
@@ -253,6 +260,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGoose(Boolean newGoose) {
         Boolean oldGoose = goose;
         goose = newGoose;
@@ -267,6 +275,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGoose() {
         Boolean oldGoose = goose;
         boolean oldGooseESet = gooseESet;
@@ -281,6 +290,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGoose() {
         return gooseESet;
     }
@@ -290,6 +300,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRGOOSE() {
         return rGOOSE;
     }
@@ -299,6 +310,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRGOOSE(Boolean newRGOOSE) {
         Boolean oldRGOOSE = rGOOSE;
         rGOOSE = newRGOOSE;
@@ -313,6 +325,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRGOOSE() {
         Boolean oldRGOOSE = rGOOSE;
         boolean oldRGOOSEESet = rGOOSEESet;
@@ -327,6 +340,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRGOOSE() {
         return rGOOSEESet;
     }

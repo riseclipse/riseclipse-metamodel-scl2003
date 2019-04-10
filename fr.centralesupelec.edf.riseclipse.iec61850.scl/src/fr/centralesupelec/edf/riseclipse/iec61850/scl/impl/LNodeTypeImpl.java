@@ -156,6 +156,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedType() {
         return iedType;
     }
@@ -165,6 +166,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedType( String newIedType ) {
         String oldIedType = iedType;
         iedType = newIedType;
@@ -179,6 +181,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedType() {
         String oldIedType = iedType;
         boolean oldIedTypeESet = iedTypeESet;
@@ -193,6 +196,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedType() {
         return iedTypeESet;
     }
@@ -202,6 +206,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -211,6 +216,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -225,6 +231,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -239,6 +246,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -248,6 +256,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DO> getDO() {
         if (do_ == null) {
             do_ = new EObjectContainmentWithInverseEList.Unsettable<DO>(DO.class, this, SclPackage.LNODE_TYPE__DO, SclPackage.DO__LNODE_TYPE);
@@ -260,6 +269,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDO() {
         if (do_ != null) ((InternalEList.Unsettable<?>)do_).unset();
     }
@@ -269,6 +279,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDO() {
         return do_ != null && ((InternalEList.Unsettable<?>)do_).isSet();
     }
@@ -278,6 +289,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates getDataTypeTemplates() {
         if (eContainerFeatureID() != SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
@@ -298,6 +310,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
             if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
@@ -319,6 +332,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<AnyLN> getReferredByAnyLN() {
         if (referredByAnyLN == null) {
             referredByAnyLN = new EObjectWithInverseEList.Unsettable<AnyLN>(AnyLN.class, this, SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE);
@@ -331,6 +345,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByAnyLN() {
         if (referredByAnyLN != null) ((InternalEList.Unsettable<?>)referredByAnyLN).unset();
     }
@@ -340,6 +355,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByAnyLN() {
         return referredByAnyLN != null && ((InternalEList.Unsettable<?>)referredByAnyLN).isSet();
     }

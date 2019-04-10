@@ -77,6 +77,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConductingEquipment getConductingEquipment() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__CONDUCTING_EQUIPMENT) return null;
         return (ConductingEquipment)eInternalContainer();
@@ -98,6 +99,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConductingEquipment( ConductingEquipment newConductingEquipment ) {
         if (newConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__CONDUCTING_EQUIPMENT && newConductingEquipment != null)) {
             if (EcoreUtil.isAncestor(this, newConductingEquipment))
@@ -119,6 +121,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GeneralEquipment getGeneralEquipment() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__GENERAL_EQUIPMENT) return null;
         return (GeneralEquipment)eInternalContainer();
@@ -139,6 +142,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGeneralEquipment( GeneralEquipment newGeneralEquipment ) {
         if (newGeneralEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__GENERAL_EQUIPMENT && newGeneralEquipment != null)) {
             if (EcoreUtil.isAncestor(this, newGeneralEquipment))
@@ -160,6 +164,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PowerTransformer getPowerTransformer() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__POWER_TRANSFORMER) return null;
         return (PowerTransformer)eInternalContainer();
@@ -180,6 +185,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPowerTransformer( PowerTransformer newPowerTransformer ) {
         if (newPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__POWER_TRANSFORMER && newPowerTransformer != null)) {
             if (EcoreUtil.isAncestor(this, newPowerTransformer))
@@ -201,6 +207,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubEquipment getSubEquipment() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__SUB_EQUIPMENT) return null;
         return (SubEquipment)eInternalContainer();
@@ -221,6 +228,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubEquipment( SubEquipment newSubEquipment ) {
         if (newSubEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__SUB_EQUIPMENT && newSubEquipment != null)) {
             if (EcoreUtil.isAncestor(this, newSubEquipment))
@@ -242,6 +250,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TransformerWinding getTransformerWinding() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__TRANSFORMER_WINDING) return null;
         return (TransformerWinding)eInternalContainer();
@@ -263,6 +272,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
         if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__TRANSFORMER_WINDING && newTransformerWinding != null)) {
             if (EcoreUtil.isAncestor(this, newTransformerWinding))
@@ -284,6 +294,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TapChanger getTapChanger() {
         if (eContainerFeatureID() != SclPackage.EQ_FUNCTION__TAP_CHANGER) return null;
         return (TapChanger)eInternalContainer();
@@ -304,6 +315,7 @@ public class EqFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTapChanger( TapChanger newTapChanger ) {
         if (newTapChanger != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_FUNCTION__TAP_CHANGER && newTapChanger != null)) {
             if (EcoreUtil.isAncestor(this, newTapChanger))

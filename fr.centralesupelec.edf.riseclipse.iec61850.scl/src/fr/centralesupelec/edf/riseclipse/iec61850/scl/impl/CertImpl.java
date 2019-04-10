@@ -124,6 +124,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCommonName() {
         return commonName;
     }
@@ -133,6 +134,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCommonName(String newCommonName) {
         String oldCommonName = commonName;
         commonName = newCommonName;
@@ -147,6 +149,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCommonName() {
         String oldCommonName = commonName;
         boolean oldCommonNameESet = commonNameESet;
@@ -161,6 +164,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCommonName() {
         return commonNameESet;
     }
@@ -170,6 +174,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIdHierarchy() {
         return idHierarchy;
     }
@@ -179,6 +184,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIdHierarchy(String newIdHierarchy) {
         String oldIdHierarchy = idHierarchy;
         idHierarchy = newIdHierarchy;
@@ -193,6 +199,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIdHierarchy() {
         String oldIdHierarchy = idHierarchy;
         boolean oldIdHierarchyESet = idHierarchyESet;
@@ -207,6 +214,7 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIdHierarchy() {
         return idHierarchyESet;
     }

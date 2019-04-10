@@ -276,6 +276,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getApRef() {
         return apRef;
     }
@@ -285,6 +286,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setApRef( String newApRef ) {
         String oldApRef = apRef;
         apRef = newApRef;
@@ -299,6 +301,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetApRef() {
         String oldApRef = apRef;
         boolean oldApRefESet = apRefESet;
@@ -313,6 +316,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetApRef() {
         return apRefESet;
     }
@@ -322,6 +326,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -331,6 +336,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -345,6 +351,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -359,6 +366,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -368,6 +376,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -377,6 +386,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -391,6 +401,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -405,6 +416,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -414,6 +426,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -423,6 +436,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -437,6 +451,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -451,6 +466,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -460,6 +476,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -469,6 +486,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -483,6 +501,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -497,6 +516,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -506,6 +526,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlWithIEDName getControlWithIEDName() {
         if (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME) return null;
         return (ControlWithIEDName)eInternalContainer();
@@ -527,6 +548,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setControlWithIEDName( ControlWithIEDName newControlWithIEDName ) {
         if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
             if (EcoreUtil.isAncestor(this, newControlWithIEDName))
@@ -548,6 +570,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -574,6 +597,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -614,6 +638,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -634,6 +659,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }
@@ -643,6 +669,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -652,6 +679,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue(String newValue) {
         String oldValue = value;
         value = newValue;
@@ -666,6 +694,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValue() {
         String oldValue = value;
         boolean oldValueESet = valueESet;
@@ -680,6 +709,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValue() {
         return valueESet;
     }

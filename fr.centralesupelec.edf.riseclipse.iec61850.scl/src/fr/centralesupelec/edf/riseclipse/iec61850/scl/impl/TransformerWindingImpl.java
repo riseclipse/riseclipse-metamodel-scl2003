@@ -155,6 +155,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -164,6 +165,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -178,6 +180,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -192,6 +195,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -201,6 +205,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION, SclPackage.EQ_FUNCTION__TRANSFORMER_WINDING);
@@ -213,6 +218,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -222,6 +228,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -231,6 +238,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public NeutralPoint getNeutralPoint() {
         return neutralPoint;
     }
@@ -257,6 +265,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNeutralPoint( NeutralPoint newNeutralPoint ) {
         if (newNeutralPoint != neutralPoint) {
             NotificationChain msgs = null;
@@ -297,6 +306,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNeutralPoint() {
         if (neutralPoint != null) {
             NotificationChain msgs = null;
@@ -317,6 +327,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNeutralPoint() {
         return neutralPointESet;
     }
@@ -326,6 +337,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PowerTransformer getPowerTransformer() {
         if (eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__POWER_TRANSFORMER) return null;
         return (PowerTransformer)eInternalContainer();
@@ -346,6 +358,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPowerTransformer( PowerTransformer newPowerTransformer ) {
         if (newPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__POWER_TRANSFORMER && newPowerTransformer != null)) {
             if (EcoreUtil.isAncestor(this, newPowerTransformer))
@@ -367,6 +380,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TapChanger getTapChanger() {
         return tapChanger;
     }
@@ -393,6 +407,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTapChanger( TapChanger newTapChanger ) {
         if (newTapChanger != tapChanger) {
             NotificationChain msgs = null;
@@ -433,6 +448,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTapChanger() {
         if (tapChanger != null) {
             NotificationChain msgs = null;
@@ -453,6 +469,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTapChanger() {
         return tapChangerESet;
     }

@@ -97,6 +97,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getMustUnderstand() {
         return mustUnderstand;
     }
@@ -106,6 +107,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMustUnderstand( Boolean newMustUnderstand ) {
         Boolean oldMustUnderstand = mustUnderstand;
         mustUnderstand = newMustUnderstand;
@@ -120,6 +122,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMustUnderstand() {
         Boolean oldMustUnderstand = mustUnderstand;
         boolean oldMustUnderstandESet = mustUnderstandESet;
@@ -134,6 +137,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMustUnderstand() {
         return mustUnderstandESet;
     }
@@ -143,6 +147,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlWithIEDName getControlWithIEDName() {
         if (eContainerFeatureID() != SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME) return null;
         return (ControlWithIEDName)eInternalContainer();
@@ -164,6 +169,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setControlWithIEDName( ControlWithIEDName newControlWithIEDName ) {
         if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
             if (EcoreUtil.isAncestor(this, newControlWithIEDName))

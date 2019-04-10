@@ -67,6 +67,7 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectedAP getConnectedAP() {
         if (eContainerFeatureID() != SclPackage.SMV__CONNECTED_AP) return null;
         return (ConnectedAP)eInternalContainer();
@@ -87,6 +88,7 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
         if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV__CONNECTED_AP && newConnectedAP != null)) {
             if (EcoreUtil.isAncestor(this, newConnectedAP))

@@ -89,6 +89,7 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getMixed() {
         if (mixed == null) {
             mixed = new BasicFeatureMap(this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED);
@@ -101,6 +102,7 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getGroup() {
         return (FeatureMap)getMixed().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Group());
     }
@@ -110,6 +112,7 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getAny() {
         return (FeatureMap)getGroup().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Any());
     }
@@ -119,6 +122,7 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getAnyAttribute() {
         if (anyAttribute == null) {
             anyAttribute = new BasicFeatureMap(this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE);

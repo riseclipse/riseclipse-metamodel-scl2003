@@ -147,6 +147,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getConfRev() {
         return confRev;
     }
@@ -156,6 +157,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfRev( Integer newConfRev ) {
         Integer oldConfRev = confRev;
         confRev = newConfRev;
@@ -170,6 +172,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfRev() {
         Integer oldConfRev = confRev;
         boolean oldConfRevESet = confRevESet;
@@ -184,6 +187,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfRev() {
         return confRevESet;
     }
@@ -193,6 +197,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<IEDName> getIEDName() {
         if (iedName == null) {
             iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME);
@@ -205,6 +210,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIEDName() {
         if (iedName != null) ((InternalEList.Unsettable<?>)iedName).unset();
     }
@@ -214,6 +220,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIEDName() {
         return iedName != null && ((InternalEList.Unsettable<?>)iedName).isSet();
     }
@@ -223,6 +230,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ControlBlock> getReferredByControlBlock() {
         if (referredByControlBlock == null) {
             referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME);
@@ -235,6 +243,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByControlBlock() {
         if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
     }
@@ -244,6 +253,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByControlBlock() {
         return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
     }
@@ -253,6 +263,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Protocol getProtocol() {
         return protocol;
     }
@@ -279,6 +290,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setProtocol( Protocol newProtocol ) {
         if (newProtocol != protocol) {
             NotificationChain msgs = null;
@@ -319,6 +331,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetProtocol() {
         if (protocol != null) {
             NotificationChain msgs = null;
@@ -339,6 +352,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetProtocol() {
         return protocolESet;
     }

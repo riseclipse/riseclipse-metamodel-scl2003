@@ -309,6 +309,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Header createHeader() {
         HeaderImpl header = new HeaderImpl();
         return header;
@@ -319,6 +320,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public History createHistory() {
         HistoryImpl history = new HistoryImpl();
         return history;
@@ -329,6 +331,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Hitem createHitem() {
         HitemImpl hitem = new HitemImpl();
         return hitem;
@@ -339,6 +342,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IDNaming createIDNaming() {
         IDNamingImpl idNaming = new IDNamingImpl();
         return idNaming;
@@ -349,6 +353,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Line createLine() {
         LineImpl line = new LineImpl();
         return line;
@@ -359,6 +364,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Private createPrivate() {
         PrivateImpl private_ = new PrivateImpl();
         return private_;
@@ -369,6 +375,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process createProcess() {
         ProcessImpl process = new ProcessImpl();
         return process;
@@ -379,6 +386,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL createSCL() {
         SCLImpl scl = new SCLImpl();
         return scl;
@@ -389,6 +397,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Text createText() {
         TextImpl text = new TextImpl();
         return text;
@@ -399,6 +408,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Address createAddress() {
         AddressImpl address = new AddressImpl();
         return address;
@@ -409,6 +419,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Communication createCommunication() {
         CommunicationImpl communication = new CommunicationImpl();
         return communication;
@@ -419,6 +430,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectedAP createConnectedAP() {
         ConnectedAPImpl connectedAP = new ConnectedAPImpl();
         return connectedAP;
@@ -429,6 +441,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSE createGSE() {
         GSEImpl gse = new GSEImpl();
         return gse;
@@ -439,6 +452,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public P createP() {
         PImpl p = new PImpl();
         return p;
@@ -449,6 +463,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PAddr createPAddr() {
         PAddrImpl pAddr = new PAddrImpl();
         return pAddr;
@@ -459,6 +474,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public P_PhysConn createP_PhysConn() {
         P_PhysConnImpl p_PhysConn = new P_PhysConnImpl();
         return p_PhysConn;
@@ -469,6 +485,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PhysConn createPhysConn() {
         PhysConnImpl physConn = new PhysConnImpl();
         return physConn;
@@ -479,6 +496,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMV createSMV() {
         SMVImpl smv = new SMVImpl();
         return smv;
@@ -489,6 +507,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubNetwork createSubNetwork() {
         SubNetworkImpl subNetwork = new SubNetworkImpl();
         return subNetwork;
@@ -499,6 +518,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BDA createBDA() {
         BDAImpl bda = new BDAImpl();
         return bda;
@@ -509,6 +529,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DA createDA() {
         DAImpl da = new DAImpl();
         return da;
@@ -519,6 +540,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAType createDAType() {
         DATypeImpl daType = new DATypeImpl();
         return daType;
@@ -529,6 +551,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DO createDO() {
         DOImpl do_ = new DOImpl();
         return do_;
@@ -539,6 +562,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOType createDOType() {
         DOTypeImpl doType = new DOTypeImpl();
         return doType;
@@ -549,6 +573,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates createDataTypeTemplates() {
         DataTypeTemplatesImpl dataTypeTemplates = new DataTypeTemplatesImpl();
         return dataTypeTemplates;
@@ -559,6 +584,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EnumType createEnumType() {
         EnumTypeImpl enumType = new EnumTypeImpl();
         return enumType;
@@ -569,6 +595,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EnumVal createEnumVal() {
         EnumValImpl enumVal = new EnumValImpl();
         return enumVal;
@@ -579,6 +606,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNodeType createLNodeType() {
         LNodeTypeImpl lNodeType = new LNodeTypeImpl();
         return lNodeType;
@@ -589,6 +617,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ProtNs createProtNs() {
         ProtNsImpl protNs = new ProtNsImpl();
         return protNs;
@@ -599,6 +628,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SDO createSDO() {
         SDOImpl sdo = new SDOImpl();
         return sdo;
@@ -609,6 +639,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Val createVal() {
         ValImpl val = new ValImpl();
         return val;
@@ -619,6 +650,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BitRateInMbPerSec createBitRateInMbPerSec() {
         BitRateInMbPerSecImpl bitRateInMbPerSec = new BitRateInMbPerSecImpl();
         return bitRateInMbPerSec;
@@ -629,6 +661,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public MinTime createMinTime() {
         MinTimeImpl minTime = new MinTimeImpl();
         return minTime;
@@ -639,6 +672,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public MaxTime createMaxTime() {
         MaxTimeImpl maxTime = new MaxTimeImpl();
         return maxTime;
@@ -649,6 +683,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BitRate createBitRate() {
         BitRateImpl bitRate = new BitRateImpl();
         return bitRate;
@@ -659,6 +694,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SmpRate createSmpRate() {
         SmpRateImpl smpRate = new SmpRateImpl();
         return smpRate;
@@ -669,6 +705,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SamplesPerSec createSamplesPerSec() {
         SamplesPerSecImpl samplesPerSec = new SamplesPerSecImpl();
         return samplesPerSec;
@@ -679,6 +716,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SecPerSamples createSecPerSamples() {
         SecPerSamplesImpl secPerSamples = new SecPerSamplesImpl();
         return secPerSamples;
@@ -689,6 +727,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public McSecurity createMcSecurity() {
         McSecurityImpl mcSecurity = new McSecurityImpl();
         return mcSecurity;
@@ -699,6 +738,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DurationInMilliSec createDurationInMilliSec() {
         DurationInMilliSecImpl durationInMilliSec = new DurationInMilliSecImpl();
         return durationInMilliSec;
@@ -709,6 +749,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessControl createAccessControl() {
         AccessControlImpl accessControl = new AccessControlImpl();
         return accessControl;
@@ -719,6 +760,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint createAccessPoint() {
         AccessPointImpl accessPoint = new AccessPointImpl();
         return accessPoint;
@@ -729,6 +771,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Association createAssociation() {
         AssociationImpl association = new AssociationImpl();
         return association;
@@ -739,6 +782,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Authentication createAuthentication() {
         AuthenticationImpl authentication = new AuthenticationImpl();
         return authentication;
@@ -749,6 +793,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Certificate createCertificate() {
         CertificateImpl certificate = new CertificateImpl();
         return certificate;
@@ -759,6 +804,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ClientLN createClientLN() {
         ClientLNImpl clientLN = new ClientLNImpl();
         return clientLN;
@@ -769,6 +815,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ClientServices createClientServices() {
         ClientServicesImpl clientServices = new ClientServicesImpl();
         return clientServices;
@@ -779,6 +826,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public CommProt createCommProt() {
         CommProtImpl commProt = new CommProtImpl();
         return commProt;
@@ -789,6 +837,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfDataSet createConfDataSet() {
         ConfDataSetImpl confDataSet = new ConfDataSetImpl();
         return confDataSet;
@@ -799,6 +848,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLNs createConfLNs() {
         ConfLNsImpl confLNs = new ConfLNsImpl();
         return confLNs;
@@ -809,6 +859,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLdName createConfLdName() {
         ConfLdNameImpl confLdName = new ConfLdNameImpl();
         return confLdName;
@@ -819,6 +870,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLogControl createConfLogControl() {
         ConfLogControlImpl confLogControl = new ConfLogControlImpl();
         return confLogControl;
@@ -829,6 +881,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfReportControl createConfReportControl() {
         ConfReportControlImpl confReportControl = new ConfReportControlImpl();
         return confReportControl;
@@ -839,6 +892,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfSG createConfSG() {
         ConfSGImpl confSG = new ConfSGImpl();
         return confSG;
@@ -849,6 +903,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfSigRef createConfSigRef() {
         ConfSigRefImpl confSigRef = new ConfSigRefImpl();
         return confSigRef;
@@ -859,6 +914,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlWithIEDName createControlWithIEDName() {
         ControlWithIEDNameImpl controlWithIEDName = new ControlWithIEDNameImpl();
         return controlWithIEDName;
@@ -869,6 +925,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAI createDAI() {
         DAIImpl dai = new DAIImpl();
         return dai;
@@ -879,6 +936,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOI createDOI() {
         DOIImpl doi = new DOIImpl();
         return doi;
@@ -889,6 +947,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataObjectDirectory createDataObjectDirectory() {
         DataObjectDirectoryImpl dataObjectDirectory = new DataObjectDirectoryImpl();
         return dataObjectDirectory;
@@ -899,6 +958,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataSet createDataSet() {
         DataSetImpl dataSet = new DataSetImpl();
         return dataSet;
@@ -909,6 +969,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataSetDirectory createDataSetDirectory() {
         DataSetDirectoryImpl dataSetDirectory = new DataSetDirectoryImpl();
         return dataSetDirectory;
@@ -919,6 +980,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DynAssociation createDynAssociation() {
         DynAssociationImpl dynAssociation = new DynAssociationImpl();
         return dynAssociation;
@@ -929,6 +991,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DynDataSet createDynDataSet() {
         DynDataSetImpl dynDataSet = new DynDataSetImpl();
         return dynDataSet;
@@ -939,6 +1002,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ExtRef createExtRef() {
         ExtRefImpl extRef = new ExtRefImpl();
         return extRef;
@@ -949,6 +1013,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FCDA createFCDA() {
         FCDAImpl fcda = new FCDAImpl();
         return fcda;
@@ -959,6 +1024,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FileHandling createFileHandling() {
         FileHandlingImpl fileHandling = new FileHandlingImpl();
         return fileHandling;
@@ -969,6 +1035,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GOOSE createGOOSE() {
         GOOSEImpl goose = new GOOSEImpl();
         return goose;
@@ -979,6 +1046,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GOOSESecurity createGOOSESecurity() {
         GOOSESecurityImpl gooseSecurity = new GOOSESecurityImpl();
         return gooseSecurity;
@@ -989,6 +1057,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSEControl createGSEControl() {
         GSEControlImpl gseControl = new GSEControlImpl();
         return gseControl;
@@ -999,6 +1068,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSEDir createGSEDir() {
         GSEDirImpl gseDir = new GSEDirImpl();
         return gseDir;
@@ -1009,6 +1079,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSESettings createGSESettings() {
         GSESettingsImpl gseSettings = new GSESettingsImpl();
         return gseSettings;
@@ -1019,6 +1090,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSSE createGSSE() {
         GSSEImpl gsse = new GSSEImpl();
         return gsse;
@@ -1029,6 +1101,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetCBValues createGetCBValues() {
         GetCBValuesImpl getCBValues = new GetCBValuesImpl();
         return getCBValues;
@@ -1039,6 +1112,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDataObjectDefinition createGetDataObjectDefinition() {
         GetDataObjectDefinitionImpl getDataObjectDefinition = new GetDataObjectDefinitionImpl();
         return getDataObjectDefinition;
@@ -1049,6 +1123,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDataSetValue createGetDataSetValue() {
         GetDataSetValueImpl getDataSetValue = new GetDataSetValueImpl();
         return getDataSetValue;
@@ -1059,6 +1134,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDirectory createGetDirectory() {
         GetDirectoryImpl getDirectory = new GetDirectoryImpl();
         return getDirectory;
@@ -1069,6 +1145,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IED createIED() {
         IEDImpl ied = new IEDImpl();
         return ied;
@@ -1079,6 +1156,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IEDName createIEDName() {
         IEDNameImpl iedName = new IEDNameImpl();
         return iedName;
@@ -1089,6 +1167,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Inputs createInputs() {
         InputsImpl inputs = new InputsImpl();
         return inputs;
@@ -1099,6 +1178,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IssuerName createIssuerName() {
         IssuerNameImpl issuerName = new IssuerNameImpl();
         return issuerName;
@@ -1109,6 +1189,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public KDC createKDC() {
         KDCImpl kdc = new KDCImpl();
         return kdc;
@@ -1119,6 +1200,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice createLDevice() {
         LDeviceImpl lDevice = new LDeviceImpl();
         return lDevice;
@@ -1129,6 +1211,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN createLN() {
         LNImpl ln = new LNImpl();
         return ln;
@@ -1139,6 +1222,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN0 createLN0() {
         LN0Impl ln0 = new LN0Impl();
         return ln0;
@@ -1149,6 +1233,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Log createLog() {
         LogImpl log = new LogImpl();
         return log;
@@ -1159,6 +1244,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LogControl createLogControl() {
         LogControlImpl logControl = new LogControlImpl();
         return logControl;
@@ -1169,6 +1255,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LogSettings createLogSettings() {
         LogSettingsImpl logSettings = new LogSettingsImpl();
         return logSettings;
@@ -1179,6 +1266,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public OptFields createOptFields() {
         OptFieldsImpl optFields = new OptFieldsImpl();
         return optFields;
@@ -1189,6 +1277,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Protocol createProtocol() {
         ProtocolImpl protocol = new ProtocolImpl();
         return protocol;
@@ -1199,6 +1288,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReadWrite createReadWrite() {
         ReadWriteImpl readWrite = new ReadWriteImpl();
         return readWrite;
@@ -1209,6 +1299,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public RedProt createRedProt() {
         RedProtImpl redProt = new RedProtImpl();
         return redProt;
@@ -1219,6 +1310,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReportControl createReportControl() {
         ReportControlImpl reportControl = new ReportControlImpl();
         return reportControl;
@@ -1229,6 +1321,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReportSettings createReportSettings() {
         ReportSettingsImpl reportSettings = new ReportSettingsImpl();
         return reportSettings;
@@ -1239,6 +1332,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public RptEnabled createRptEnabled() {
         RptEnabledImpl rptEnabled = new RptEnabledImpl();
         return rptEnabled;
@@ -1249,6 +1343,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SDI createSDI() {
         SDIImpl sdi = new SDIImpl();
         return sdi;
@@ -1259,6 +1354,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SGEdit createSGEdit() {
         SGEditImpl sgEdit = new SGEditImpl();
         return sgEdit;
@@ -1269,6 +1365,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVSecurity createSMVSecurity() {
         SMVSecurityImpl smvSecurity = new SMVSecurityImpl();
         return smvSecurity;
@@ -1279,6 +1376,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVSettings createSMVSettings() {
         SMVSettingsImpl smvSettings = new SMVSettingsImpl();
         return smvSettings;
@@ -1289,6 +1387,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVsc createSMVsc() {
         SMVscImpl smVsc = new SMVscImpl();
         return smVsc;
@@ -1299,6 +1398,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SampledValueControl createSampledValueControl() {
         SampledValueControlImpl sampledValueControl = new SampledValueControlImpl();
         return sampledValueControl;
@@ -1309,6 +1409,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Server createServer() {
         ServerImpl server = new ServerImpl();
         return server;
@@ -1319,6 +1420,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServerAt createServerAt() {
         ServerAtImpl serverAt = new ServerAtImpl();
         return serverAt;
@@ -1329,6 +1431,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettings createServiceSettings() {
         ServiceSettingsImpl serviceSettings = new ServiceSettingsImpl();
         return serviceSettings;
@@ -1339,6 +1442,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceWithMax createServiceWithMax() {
         ServiceWithMaxImpl serviceWithMax = new ServiceWithMaxImpl();
         return serviceWithMax;
@@ -1349,6 +1453,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services createServices() {
         ServicesImpl services = new ServicesImpl();
         return services;
@@ -1359,6 +1464,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SetDataSetValue createSetDataSetValue() {
         SetDataSetValueImpl setDataSetValue = new SetDataSetValueImpl();
         return setDataSetValue;
@@ -1369,6 +1475,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SettingControl createSettingControl() {
         SettingControlImpl settingControl = new SettingControlImpl();
         return settingControl;
@@ -1379,6 +1486,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SettingGroups createSettingGroups() {
         SettingGroupsImpl settingGroups = new SettingGroupsImpl();
         return settingGroups;
@@ -1389,6 +1497,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SmvOpts createSmvOpts() {
         SmvOptsImpl smvOpts = new SmvOptsImpl();
         return smvOpts;
@@ -1399,6 +1508,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Subject createSubject() {
         SubjectImpl subject = new SubjectImpl();
         return subject;
@@ -1409,6 +1519,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SupSubscription createSupSubscription() {
         SupSubscriptionImpl supSubscription = new SupSubscriptionImpl();
         return supSubscription;
@@ -1419,6 +1530,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TimeSyncProt createTimeSyncProt() {
         TimeSyncProtImpl timeSyncProt = new TimeSyncProtImpl();
         return timeSyncProt;
@@ -1429,6 +1541,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TimerActivatedControl createTimerActivatedControl() {
         TimerActivatedControlImpl timerActivatedControl = new TimerActivatedControlImpl();
         return timerActivatedControl;
@@ -1439,6 +1552,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TrgOps createTrgOps() {
         TrgOpsImpl trgOps = new TrgOpsImpl();
         return trgOps;
@@ -1449,6 +1563,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ValueHandling createValueHandling() {
         ValueHandlingImpl valueHandling = new ValueHandlingImpl();
         return valueHandling;
@@ -1459,6 +1574,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractConductingEquipment createAbstractConductingEquipment() {
         AbstractConductingEquipmentImpl abstractConductingEquipment = new AbstractConductingEquipmentImpl();
         return abstractConductingEquipment;
@@ -1469,6 +1585,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractEqFuncSubFunc createAbstractEqFuncSubFunc() {
         AbstractEqFuncSubFuncImpl abstractEqFuncSubFunc = new AbstractEqFuncSubFuncImpl();
         return abstractEqFuncSubFunc;
@@ -1479,6 +1596,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Bay createBay() {
         BayImpl bay = new BayImpl();
         return bay;
@@ -1489,6 +1607,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConductingEquipment createConductingEquipment() {
         ConductingEquipmentImpl conductingEquipment = new ConductingEquipmentImpl();
         return conductingEquipment;
@@ -1499,6 +1618,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectivityNode createConnectivityNode() {
         ConnectivityNodeImpl connectivityNode = new ConnectivityNodeImpl();
         return connectivityNode;
@@ -1509,6 +1629,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EqFunction createEqFunction() {
         EqFunctionImpl eqFunction = new EqFunctionImpl();
         return eqFunction;
@@ -1519,6 +1640,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EqSubFunction createEqSubFunction() {
         EqSubFunctionImpl eqSubFunction = new EqSubFunctionImpl();
         return eqSubFunction;
@@ -1529,6 +1651,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Equipment createEquipment() {
         EquipmentImpl equipment = new EquipmentImpl();
         return equipment;
@@ -1539,6 +1662,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EquipmentContainer createEquipmentContainer() {
         EquipmentContainerImpl equipmentContainer = new EquipmentContainerImpl();
         return equipmentContainer;
@@ -1549,6 +1673,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Function createFunction() {
         FunctionImpl function = new FunctionImpl();
         return function;
@@ -1559,6 +1684,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GeneralEquipment createGeneralEquipment() {
         GeneralEquipmentImpl generalEquipment = new GeneralEquipmentImpl();
         return generalEquipment;
@@ -1569,6 +1695,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GeneralEquipmentContainer createGeneralEquipmentContainer() {
         GeneralEquipmentContainerImpl generalEquipmentContainer = new GeneralEquipmentContainerImpl();
         return generalEquipmentContainer;
@@ -1579,6 +1706,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNode createLNode() {
         LNodeImpl lNode = new LNodeImpl();
         return lNode;
@@ -1589,6 +1717,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNodeContainer createLNodeContainer() {
         LNodeContainerImpl lNodeContainer = new LNodeContainerImpl();
         return lNodeContainer;
@@ -1599,6 +1728,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public NeutralPoint createNeutralPoint() {
         NeutralPointImpl neutralPoint = new NeutralPointImpl();
         return neutralPoint;
@@ -1609,6 +1739,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PowerSystemResource createPowerSystemResource() {
         PowerSystemResourceImpl powerSystemResource = new PowerSystemResourceImpl();
         return powerSystemResource;
@@ -1619,6 +1750,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PowerTransformer createPowerTransformer() {
         PowerTransformerImpl powerTransformer = new PowerTransformerImpl();
         return powerTransformer;
@@ -1629,6 +1761,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubEquipment createSubEquipment() {
         SubEquipmentImpl subEquipment = new SubEquipmentImpl();
         return subEquipment;
@@ -1639,6 +1772,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SubFunction createSubFunction() {
         SubFunctionImpl subFunction = new SubFunctionImpl();
         return subFunction;
@@ -1649,6 +1783,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Substation createSubstation() {
         SubstationImpl substation = new SubstationImpl();
         return substation;
@@ -1659,6 +1794,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TapChanger createTapChanger() {
         TapChangerImpl tapChanger = new TapChangerImpl();
         return tapChanger;
@@ -1669,6 +1805,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Terminal createTerminal() {
         TerminalImpl terminal = new TerminalImpl();
         return terminal;
@@ -1679,6 +1816,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TransformerWinding createTransformerWinding() {
         TransformerWindingImpl transformerWinding = new TransformerWindingImpl();
         return transformerWinding;
@@ -1689,6 +1827,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Voltage createVoltage() {
         VoltageImpl voltage = new VoltageImpl();
         return voltage;
@@ -1699,6 +1838,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public VoltageLevel createVoltageLevel() {
         VoltageLevelImpl voltageLevel = new VoltageLevelImpl();
         return voltageLevel;
@@ -1709,6 +1849,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceYesNo createServiceYesNo() {
         ServiceYesNoImpl serviceYesNo = new ServiceYesNoImpl();
         return serviceYesNo;
@@ -1719,6 +1860,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceWithOptionalMax createServiceWithOptionalMax() {
         ServiceWithOptionalMaxImpl serviceWithOptionalMax = new ServiceWithOptionalMaxImpl();
         return serviceWithOptionalMax;
@@ -1729,6 +1871,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceWithMaxNonZero createServiceWithMaxNonZero() {
         ServiceWithMaxNonZeroImpl serviceWithMaxNonZero = new ServiceWithMaxNonZeroImpl();
         return serviceWithMaxNonZero;
@@ -1739,6 +1882,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceConfReportControl createServiceConfReportControl() {
         ServiceConfReportControlImpl serviceConfReportControl = new ServiceConfReportControlImpl();
         return serviceConfReportControl;
@@ -1749,6 +1893,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceWithMaxAndMaxAttributes createServiceWithMaxAndMaxAttributes() {
         ServiceWithMaxAndMaxAttributesImpl serviceWithMaxAndMaxAttributes = new ServiceWithMaxAndMaxAttributesImpl();
         return serviceWithMaxAndMaxAttributes;
@@ -1759,6 +1904,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceWithMaxAndModify createServiceWithMaxAndModify() {
         ServiceWithMaxAndModifyImpl serviceWithMaxAndModify = new ServiceWithMaxAndModifyImpl();
         return serviceWithMaxAndModify;
@@ -1769,6 +1915,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceForConfDataSet createServiceForConfDataSet() {
         ServiceForConfDataSetImpl serviceForConfDataSet = new ServiceForConfDataSetImpl();
         return serviceForConfDataSet;
@@ -1779,6 +1926,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Cert createCert() {
         CertImpl cert = new CertImpl();
         return cert;
@@ -1789,6 +1937,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ValueWithUnit createValueWithUnit() {
         ValueWithUnitImpl valueWithUnit = new ValueWithUnitImpl();
         return valueWithUnit;
@@ -1799,6 +1948,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DurationInSec createDurationInSec() {
         DurationInSecImpl durationInSec = new DurationInSecImpl();
         return durationInSec;
@@ -2070,6 +2220,7 @@ public class SclFactoryImpl extends EFactoryImpl implements SclFactory {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SclPackage getSclPackage() {
         return (SclPackage)getEPackage();
     }

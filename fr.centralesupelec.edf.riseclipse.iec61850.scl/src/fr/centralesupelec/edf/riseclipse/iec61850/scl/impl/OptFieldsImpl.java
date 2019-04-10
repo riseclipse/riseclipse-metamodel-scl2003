@@ -307,6 +307,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getBufOvfl() {
         return bufOvfl;
     }
@@ -316,6 +317,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufOvfl( Boolean newBufOvfl ) {
         Boolean oldBufOvfl = bufOvfl;
         bufOvfl = newBufOvfl;
@@ -330,6 +332,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufOvfl() {
         Boolean oldBufOvfl = bufOvfl;
         boolean oldBufOvflESet = bufOvflESet;
@@ -344,6 +347,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufOvfl() {
         return bufOvflESet;
     }
@@ -353,6 +357,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getConfigRef() {
         return configRef;
     }
@@ -362,6 +367,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfigRef( Boolean newConfigRef ) {
         Boolean oldConfigRef = configRef;
         configRef = newConfigRef;
@@ -376,6 +382,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfigRef() {
         Boolean oldConfigRef = configRef;
         boolean oldConfigRefESet = configRefESet;
@@ -390,6 +397,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfigRef() {
         return configRefESet;
     }
@@ -399,6 +407,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDataRef() {
         return dataRef;
     }
@@ -408,6 +417,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataRef( Boolean newDataRef ) {
         Boolean oldDataRef = dataRef;
         dataRef = newDataRef;
@@ -422,6 +432,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataRef() {
         Boolean oldDataRef = dataRef;
         boolean oldDataRefESet = dataRefESet;
@@ -436,6 +447,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataRef() {
         return dataRefESet;
     }
@@ -445,6 +457,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDataSet() {
         return dataSet;
     }
@@ -454,6 +467,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataSet( Boolean newDataSet ) {
         Boolean oldDataSet = dataSet;
         dataSet = newDataSet;
@@ -468,6 +482,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataSet() {
         Boolean oldDataSet = dataSet;
         boolean oldDataSetESet = dataSetESet;
@@ -482,6 +497,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataSet() {
         return dataSetESet;
     }
@@ -491,6 +507,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getEntryID() {
         return entryID;
     }
@@ -500,6 +517,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEntryID( Boolean newEntryID ) {
         Boolean oldEntryID = entryID;
         entryID = newEntryID;
@@ -514,6 +532,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEntryID() {
         Boolean oldEntryID = entryID;
         boolean oldEntryIDESet = entryIDESet;
@@ -528,6 +547,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEntryID() {
         return entryIDESet;
     }
@@ -537,6 +557,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getReasonCode() {
         return reasonCode;
     }
@@ -546,6 +567,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReasonCode( Boolean newReasonCode ) {
         Boolean oldReasonCode = reasonCode;
         reasonCode = newReasonCode;
@@ -560,6 +582,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReasonCode() {
         Boolean oldReasonCode = reasonCode;
         boolean oldReasonCodeESet = reasonCodeESet;
@@ -574,6 +597,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReasonCode() {
         return reasonCodeESet;
     }
@@ -583,6 +607,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSeqNum() {
         return seqNum;
     }
@@ -592,6 +617,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSeqNum( Boolean newSeqNum ) {
         Boolean oldSeqNum = seqNum;
         seqNum = newSeqNum;
@@ -606,6 +632,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSeqNum() {
         Boolean oldSeqNum = seqNum;
         boolean oldSeqNumESet = seqNumESet;
@@ -620,6 +647,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSeqNum() {
         return seqNumESet;
     }
@@ -629,6 +657,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getTimeStamp() {
         return timeStamp;
     }
@@ -638,6 +667,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimeStamp( Boolean newTimeStamp ) {
         Boolean oldTimeStamp = timeStamp;
         timeStamp = newTimeStamp;
@@ -652,6 +682,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimeStamp() {
         Boolean oldTimeStamp = timeStamp;
         boolean oldTimeStampESet = timeStampESet;
@@ -666,6 +697,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimeStamp() {
         return timeStampESet;
     }
@@ -675,6 +707,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReportControl getReportControl() {
         if (eContainerFeatureID() != SclPackage.OPT_FIELDS__REPORT_CONTROL) return null;
         return (ReportControl)eInternalContainer();
@@ -695,6 +728,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReportControl( ReportControl newReportControl ) {
         if (newReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.OPT_FIELDS__REPORT_CONTROL && newReportControl != null)) {
             if (EcoreUtil.isAncestor(this, newReportControl))

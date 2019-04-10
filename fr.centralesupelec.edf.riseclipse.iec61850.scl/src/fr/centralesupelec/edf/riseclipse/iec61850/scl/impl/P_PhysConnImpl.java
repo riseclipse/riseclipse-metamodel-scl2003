@@ -67,6 +67,7 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PhysConn getPhysConn() {
         if (eContainerFeatureID() != SclPackage.PPHYS_CONN__PHYS_CONN) return null;
         return (PhysConn)eInternalContainer();
@@ -87,6 +88,7 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPhysConn( PhysConn newPhysConn ) {
         if (newPhysConn != eInternalContainer() || (eContainerFeatureID() != SclPackage.PPHYS_CONN__PHYS_CONN && newPhysConn != null)) {
             if (EcoreUtil.isAncestor(this, newPhysConn))

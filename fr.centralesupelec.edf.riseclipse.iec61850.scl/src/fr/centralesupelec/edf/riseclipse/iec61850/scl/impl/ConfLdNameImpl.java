@@ -67,6 +67,7 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.CONF_LD_NAME__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONF_LD_NAME__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

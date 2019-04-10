@@ -121,6 +121,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getApName() {
         return apName;
     }
@@ -130,6 +131,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setApName( String newApName ) {
         String oldApName = apName;
         apName = newApName;
@@ -144,6 +146,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetApName() {
         String oldApName = apName;
         boolean oldApNameESet = apNameESet;
@@ -158,6 +161,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetApName() {
         return apNameESet;
     }
@@ -167,6 +171,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getAccessPoint() {
         if (eContainerFeatureID() != SclPackage.SERVER_AT__ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
@@ -187,6 +192,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessPoint( AccessPoint newAccessPoint ) {
         if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER_AT__ACCESS_POINT && newAccessPoint != null)) {
             if (EcoreUtil.isAncestor(this, newAccessPoint))
@@ -208,6 +214,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getRefersToAccessPoint() {
         return refersToAccessPoint;
     }
@@ -234,6 +241,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAccessPoint(AccessPoint newRefersToAccessPoint) {
         if (newRefersToAccessPoint != refersToAccessPoint) {
             NotificationChain msgs = null;
@@ -274,6 +282,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAccessPoint() {
         if (refersToAccessPoint != null) {
             NotificationChain msgs = null;
@@ -294,6 +303,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAccessPoint() {
         return refersToAccessPointESet;
     }

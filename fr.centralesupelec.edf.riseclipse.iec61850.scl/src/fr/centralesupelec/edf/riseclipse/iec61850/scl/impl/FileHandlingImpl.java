@@ -157,6 +157,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFtp() {
         return ftp;
     }
@@ -166,6 +167,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFtp( Boolean newFtp ) {
         Boolean oldFtp = ftp;
         ftp = newFtp;
@@ -180,6 +182,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFtp() {
         Boolean oldFtp = ftp;
         boolean oldFtpESet = ftpESet;
@@ -194,6 +197,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFtp() {
         return ftpESet;
     }
@@ -203,6 +207,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFtps() {
         return ftps;
     }
@@ -212,6 +217,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFtps( Boolean newFtps ) {
         Boolean oldFtps = ftps;
         ftps = newFtps;
@@ -226,6 +232,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFtps() {
         Boolean oldFtps = ftps;
         boolean oldFtpsESet = ftpsESet;
@@ -240,6 +247,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFtps() {
         return ftpsESet;
     }
@@ -249,6 +257,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getMms() {
         return mms;
     }
@@ -258,6 +267,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMms( Boolean newMms ) {
         Boolean oldMms = mms;
         mms = newMms;
@@ -272,6 +282,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMms() {
         Boolean oldMms = mms;
         boolean oldMmsESet = mmsESet;
@@ -286,6 +297,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMms() {
         return mmsESet;
     }
@@ -295,6 +307,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.FILE_HANDLING__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -315,6 +328,7 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.FILE_HANDLING__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

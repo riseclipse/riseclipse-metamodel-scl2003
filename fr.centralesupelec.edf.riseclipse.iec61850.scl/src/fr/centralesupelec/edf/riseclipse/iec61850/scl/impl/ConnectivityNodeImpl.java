@@ -115,6 +115,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPathName() {
         return pathName;
     }
@@ -124,6 +125,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPathName( String newPathName ) {
         String oldPathName = pathName;
         pathName = newPathName;
@@ -138,6 +140,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPathName() {
         String oldPathName = pathName;
         boolean oldPathNameESet = pathNameESet;
@@ -152,6 +155,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPathName() {
         return pathNameESet;
     }
@@ -161,6 +165,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Bay getBay() {
         if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY) return null;
         return (Bay)eInternalContainer();
@@ -181,6 +186,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBay( Bay newBay ) {
         if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY && newBay != null)) {
             if (EcoreUtil.isAncestor(this, newBay))
@@ -202,6 +208,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Terminal> getReferredByTerminal() {
         if (referredByTerminal == null) {
             referredByTerminal = new EObjectWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE);
@@ -214,6 +221,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByTerminal() {
         if (referredByTerminal != null) ((InternalEList.Unsettable<?>)referredByTerminal).unset();
     }
@@ -223,6 +231,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByTerminal() {
         return referredByTerminal != null && ((InternalEList.Unsettable<?>)referredByTerminal).isSet();
     }
@@ -232,6 +241,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Line getLine() {
         if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE) return null;
         return (Line)eInternalContainer();
@@ -252,6 +262,7 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLine( Line newLine ) {
         if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE && newLine != null)) {
             if (EcoreUtil.isAncestor(this, newLine))

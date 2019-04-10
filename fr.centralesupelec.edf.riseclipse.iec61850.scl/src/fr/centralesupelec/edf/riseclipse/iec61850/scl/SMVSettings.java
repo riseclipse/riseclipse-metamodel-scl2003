@@ -181,7 +181,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #setSmpRateAttribute(ServiceSettingsEnum)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRateAttribute()
      * @model default="Fix" unsettable="true" ordered="false"
-     *        extendedMetaData="name='smpRate'"
+     *        extendedMetaData="name='smpRate' kind='attribute'"
      * @generated
      */
     ServiceSettingsEnum getSmpRateAttribute();
@@ -237,7 +237,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #setSamplesPerSecAttribute(boolean)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSecAttribute()
      * @model default="false" unsettable="true" ordered="false"
-     *        extendedMetaData="name='SamplesPerSec'"
+     *        extendedMetaData="name='samplesPerSec' kind='attribute'"
      * @generated
      */
     boolean isSamplesPerSecAttribute();

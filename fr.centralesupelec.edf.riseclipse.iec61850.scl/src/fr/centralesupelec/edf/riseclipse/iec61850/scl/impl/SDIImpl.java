@@ -155,6 +155,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getIx() {
         return ix;
     }
@@ -164,6 +165,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIx( Integer newIx ) {
         Integer oldIx = ix;
         ix = newIx;
@@ -178,6 +180,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIx() {
         Integer oldIx = ix;
         boolean oldIxESet = ixESet;
@@ -192,6 +195,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIx() {
         return ixESet;
     }
@@ -201,6 +205,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSAddr() {
         return sAddr;
     }
@@ -210,6 +215,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSAddr( String newSAddr ) {
         String oldSAddr = sAddr;
         sAddr = newSAddr;
@@ -224,6 +230,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSAddr() {
         String oldSAddr = sAddr;
         boolean oldSAddrESet = sAddrESet;
@@ -238,6 +245,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSAddr() {
         return sAddrESet;
     }
@@ -247,6 +255,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DAI> getDAI() {
         if (dai == null) {
             dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.SDI__DAI, SclPackage.DAI__SDI);
@@ -259,6 +268,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDAI() {
         if (dai != null) ((InternalEList.Unsettable<?>)dai).unset();
     }
@@ -268,6 +278,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDAI() {
         return dai != null && ((InternalEList.Unsettable<?>)dai).isSet();
     }
@@ -277,6 +288,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOI getDOI() {
         if (eContainerFeatureID() != SclPackage.SDI__DOI) return null;
         return (DOI)eInternalContainer();
@@ -297,6 +309,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDOI( DOI newDOI ) {
         if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__DOI && newDOI != null)) {
             if (EcoreUtil.isAncestor(this, newDOI))
@@ -318,6 +331,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SDI> getSubSDI() {
         if (subSDI == null) {
             subSDI = new EObjectContainmentWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.SDI__SUB_SDI, SclPackage.SDI__PARENT_SDI);
@@ -330,6 +344,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubSDI() {
         if (subSDI != null) ((InternalEList.Unsettable<?>)subSDI).unset();
     }
@@ -339,6 +354,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubSDI() {
         return subSDI != null && ((InternalEList.Unsettable<?>)subSDI).isSet();
     }
@@ -348,6 +364,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SDI getParentSDI() {
         if (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI) return null;
         return (SDI)eInternalContainer();
@@ -368,6 +385,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setParentSDI( SDI newParentSDI ) {
         if (newParentSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__PARENT_SDI && newParentSDI != null)) {
             if (EcoreUtil.isAncestor(this, newParentSDI))

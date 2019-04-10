@@ -278,6 +278,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getBufTime() {
         return bufTime;
     }
@@ -287,6 +288,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufTime( ServiceSettingsEnum newBufTime ) {
         ServiceSettingsEnum oldBufTime = bufTime;
         bufTime = newBufTime == null ? BUF_TIME_EDEFAULT : newBufTime;
@@ -301,6 +303,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufTime() {
         ServiceSettingsEnum oldBufTime = bufTime;
         boolean oldBufTimeESet = bufTimeESet;
@@ -315,6 +318,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufTime() {
         return bufTimeESet;
     }
@@ -324,6 +328,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getIntgPd() {
         return intgPd;
     }
@@ -333,6 +338,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIntgPd( ServiceSettingsEnum newIntgPd ) {
         ServiceSettingsEnum oldIntgPd = intgPd;
         intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
@@ -347,6 +353,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIntgPd() {
         ServiceSettingsEnum oldIntgPd = intgPd;
         boolean oldIntgPdESet = intgPdESet;
@@ -361,6 +368,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIntgPd() {
         return intgPdESet;
     }
@@ -370,6 +378,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getOptFields() {
         return optFields;
     }
@@ -379,6 +388,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOptFields( ServiceSettingsEnum newOptFields ) {
         ServiceSettingsEnum oldOptFields = optFields;
         optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
@@ -393,6 +403,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOptFields() {
         ServiceSettingsEnum oldOptFields = optFields;
         boolean oldOptFieldsESet = optFieldsESet;
@@ -407,6 +418,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOptFields() {
         return optFieldsESet;
     }
@@ -416,6 +428,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getOwner() {
         return owner;
     }
@@ -425,6 +438,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOwner( Boolean newOwner ) {
         Boolean oldOwner = owner;
         owner = newOwner;
@@ -439,6 +453,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOwner() {
         Boolean oldOwner = owner;
         boolean oldOwnerESet = ownerESet;
@@ -453,6 +468,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOwner() {
         return ownerESet;
     }
@@ -462,6 +478,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getResvTms() {
         return resvTms;
     }
@@ -471,6 +488,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setResvTms( Boolean newResvTms ) {
         Boolean oldResvTms = resvTms;
         resvTms = newResvTms;
@@ -485,6 +503,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetResvTms() {
         Boolean oldResvTms = resvTms;
         boolean oldResvTmsESet = resvTmsESet;
@@ -499,6 +518,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetResvTms() {
         return resvTmsESet;
     }
@@ -508,6 +528,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getRptID() {
         return rptID;
     }
@@ -517,6 +538,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRptID( ServiceSettingsEnum newRptID ) {
         ServiceSettingsEnum oldRptID = rptID;
         rptID = newRptID == null ? RPT_ID_EDEFAULT : newRptID;
@@ -531,6 +553,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRptID() {
         ServiceSettingsEnum oldRptID = rptID;
         boolean oldRptIDESet = rptIDESet;
@@ -545,6 +568,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRptID() {
         return rptIDESet;
     }
@@ -554,6 +578,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getTrgOps() {
         return trgOps;
     }
@@ -563,6 +588,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTrgOps( ServiceSettingsEnum newTrgOps ) {
         ServiceSettingsEnum oldTrgOps = trgOps;
         trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
@@ -577,6 +603,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTrgOps() {
         ServiceSettingsEnum oldTrgOps = trgOps;
         boolean oldTrgOpsESet = trgOpsESet;
@@ -591,6 +618,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTrgOps() {
         return trgOpsESet;
     }
@@ -600,6 +628,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -620,6 +649,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

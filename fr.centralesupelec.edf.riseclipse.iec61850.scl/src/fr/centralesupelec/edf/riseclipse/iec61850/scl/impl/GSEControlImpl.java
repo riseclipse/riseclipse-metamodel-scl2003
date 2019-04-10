@@ -189,6 +189,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getAppID() {
         return appID;
     }
@@ -198,6 +199,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAppID( String newAppID ) {
         String oldAppID = appID;
         appID = newAppID;
@@ -212,6 +214,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAppID() {
         String oldAppID = appID;
         boolean oldAppIDESet = appIDESet;
@@ -226,6 +229,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAppID() {
         return appIDESet;
     }
@@ -235,6 +239,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getFixedOffs() {
         return fixedOffs;
     }
@@ -244,6 +249,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFixedOffs( Boolean newFixedOffs ) {
         Boolean oldFixedOffs = fixedOffs;
         fixedOffs = newFixedOffs;
@@ -258,6 +264,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFixedOffs() {
         Boolean oldFixedOffs = fixedOffs;
         boolean oldFixedOffsESet = fixedOffsESet;
@@ -272,6 +279,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFixedOffs() {
         return fixedOffsESet;
     }
@@ -281,6 +289,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PredefinedTypeOfSecurityEnum getSecurityEnable() {
         return securityEnable;
     }
@@ -290,6 +299,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSecurityEnable( PredefinedTypeOfSecurityEnum newSecurityEnable ) {
         PredefinedTypeOfSecurityEnum oldSecurityEnable = securityEnable;
         securityEnable = newSecurityEnable == null ? SECURITY_ENABLE_EDEFAULT : newSecurityEnable;
@@ -304,6 +314,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSecurityEnable() {
         PredefinedTypeOfSecurityEnum oldSecurityEnable = securityEnable;
         boolean oldSecurityEnableESet = securityEnableESet;
@@ -318,6 +329,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSecurityEnable() {
         return securityEnableESet;
     }
@@ -327,6 +339,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSEControlTypeEnum getType() {
         return type;
     }
@@ -336,6 +349,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( GSEControlTypeEnum newType ) {
         GSEControlTypeEnum oldType = type;
         type = newType == null ? TYPE_EDEFAULT : newType;
@@ -350,6 +364,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         GSEControlTypeEnum oldType = type;
         boolean oldTypeESet = typeESet;
@@ -364,6 +379,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -373,6 +389,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN0 getLN0() {
         if (eContainerFeatureID() != SclPackage.GSE_CONTROL__LN0) return null;
         return (LN0)eInternalContainer();
@@ -393,6 +410,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLN0( LN0 newLN0 ) {
         if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_CONTROL__LN0 && newLN0 != null)) {
             if (EcoreUtil.isAncestor(this, newLN0))

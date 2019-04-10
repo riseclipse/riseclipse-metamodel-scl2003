@@ -148,6 +148,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BigDecimal getValue() {
         return value;
     }
@@ -157,6 +158,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue(BigDecimal newValue) {
         BigDecimal oldValue = value;
         value = newValue;
@@ -169,6 +171,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public UnitMultiplierEnum getMultiplier() {
         return multiplier;
     }
@@ -178,6 +181,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMultiplier(UnitMultiplierEnum newMultiplier) {
         UnitMultiplierEnum oldMultiplier = multiplier;
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
@@ -192,6 +196,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMultiplier() {
         UnitMultiplierEnum oldMultiplier = multiplier;
         boolean oldMultiplierESet = multiplierESet;
@@ -206,6 +211,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMultiplier() {
         return multiplierESet;
     }
@@ -215,6 +221,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getUnit() {
         return unit;
     }
@@ -224,6 +231,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setUnit(String newUnit) {
         String oldUnit = unit;
         unit = newUnit;
@@ -238,6 +246,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetUnit() {
         String oldUnit = unit;
         boolean oldUnitESet = unitESet;
@@ -252,6 +261,7 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetUnit() {
         return unitESet;
     }

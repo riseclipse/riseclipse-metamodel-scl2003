@@ -67,6 +67,7 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.DYN_DATA_SET__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.DYN_DATA_SET__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

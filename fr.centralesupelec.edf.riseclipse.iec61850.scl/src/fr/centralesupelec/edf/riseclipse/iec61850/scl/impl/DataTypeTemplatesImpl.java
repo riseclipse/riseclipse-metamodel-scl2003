@@ -119,6 +119,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DAType> getDAType() {
         if (daType == null) {
             daType = new EObjectContainmentWithInverseEList.Unsettable<DAType>(DAType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES);
@@ -131,6 +132,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDAType() {
         if (daType != null) ((InternalEList.Unsettable<?>)daType).unset();
     }
@@ -140,6 +142,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDAType() {
         return daType != null && ((InternalEList.Unsettable<?>)daType).isSet();
     }
@@ -149,6 +152,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DOType> getDOType() {
         if (doType == null) {
             doType = new EObjectContainmentWithInverseEList.Unsettable<DOType>(DOType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES);
@@ -161,6 +165,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDOType() {
         if (doType != null) ((InternalEList.Unsettable<?>)doType).unset();
     }
@@ -170,6 +175,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDOType() {
         return doType != null && ((InternalEList.Unsettable<?>)doType).isSet();
     }
@@ -179,6 +185,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EnumType> getEnumType() {
         if (enumType == null) {
             enumType = new EObjectContainmentWithInverseEList.Unsettable<EnumType>(EnumType.class, this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES);
@@ -191,6 +198,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEnumType() {
         if (enumType != null) ((InternalEList.Unsettable<?>)enumType).unset();
     }
@@ -200,6 +208,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEnumType() {
         return enumType != null && ((InternalEList.Unsettable<?>)enumType).isSet();
     }
@@ -209,6 +218,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LNodeType> getLNodeType() {
         if (lNodeType == null) {
             lNodeType = new EObjectContainmentWithInverseEList.Unsettable<LNodeType>(LNodeType.class, this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES);
@@ -221,6 +231,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLNodeType() {
         if (lNodeType != null) ((InternalEList.Unsettable<?>)lNodeType).unset();
     }
@@ -230,6 +241,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLNodeType() {
         return lNodeType != null && ((InternalEList.Unsettable<?>)lNodeType).isSet();
     }
@@ -239,6 +251,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__SCL) return null;
         return (SCL)eInternalContainer();
@@ -259,6 +272,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))

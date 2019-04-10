@@ -83,6 +83,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.INPUTS__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -103,6 +104,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.INPUTS__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -124,6 +126,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ExtRef> getExtRef() {
         if (extRef == null) {
             extRef = new EObjectContainmentWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.INPUTS__EXT_REF, SclPackage.EXT_REF__INPUTS);
@@ -136,6 +139,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetExtRef() {
         if (extRef != null) ((InternalEList.Unsettable<?>)extRef).unset();
     }
@@ -145,6 +149,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetExtRef() {
         return extRef != null && ((InternalEList.Unsettable<?>)extRef).isSet();
     }

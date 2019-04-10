@@ -217,6 +217,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDchg() {
         return dchg;
     }
@@ -226,6 +227,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDchg( Boolean newDchg ) {
         Boolean oldDchg = dchg;
         dchg = newDchg;
@@ -240,6 +242,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDchg() {
         Boolean oldDchg = dchg;
         boolean oldDchgESet = dchgESet;
@@ -254,6 +257,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDchg() {
         return dchgESet;
     }
@@ -263,6 +267,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDupd() {
         return dupd;
     }
@@ -272,6 +277,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDupd( Boolean newDupd ) {
         Boolean oldDupd = dupd;
         dupd = newDupd;
@@ -286,6 +292,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDupd() {
         Boolean oldDupd = dupd;
         boolean oldDupdESet = dupdESet;
@@ -300,6 +307,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDupd() {
         return dupdESet;
     }
@@ -309,6 +317,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getGi() {
         return gi;
     }
@@ -318,6 +327,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGi( Boolean newGi ) {
         Boolean oldGi = gi;
         gi = newGi;
@@ -332,6 +342,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGi() {
         Boolean oldGi = gi;
         boolean oldGiESet = giESet;
@@ -346,6 +357,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGi() {
         return giESet;
     }
@@ -355,6 +367,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getPeriod() {
         return period;
     }
@@ -364,6 +377,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPeriod( Boolean newPeriod ) {
         Boolean oldPeriod = period;
         period = newPeriod;
@@ -378,6 +392,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPeriod() {
         Boolean oldPeriod = period;
         boolean oldPeriodESet = periodESet;
@@ -392,6 +407,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPeriod() {
         return periodESet;
     }
@@ -401,6 +417,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getQchg() {
         return qchg;
     }
@@ -410,6 +427,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setQchg( Boolean newQchg ) {
         Boolean oldQchg = qchg;
         qchg = newQchg;
@@ -424,6 +442,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetQchg() {
         Boolean oldQchg = qchg;
         boolean oldQchgESet = qchgESet;
@@ -438,6 +457,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetQchg() {
         return qchgESet;
     }
@@ -447,6 +467,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlWithTriggerOpt getControlWithTriggerOpt() {
         if (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT) return null;
         return (ControlWithTriggerOpt)eInternalContainer();
@@ -468,6 +489,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setControlWithTriggerOpt( ControlWithTriggerOpt newControlWithTriggerOpt ) {
         if (newControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT && newControlWithTriggerOpt != null)) {
             if (EcoreUtil.isAncestor(this, newControlWithTriggerOpt))

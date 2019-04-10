@@ -230,6 +230,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDchg() {
         return dchg;
     }
@@ -239,6 +240,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDchg( Boolean newDchg ) {
         Boolean oldDchg = dchg;
         dchg = newDchg;
@@ -253,6 +255,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDchg() {
         Boolean oldDchg = dchg;
         boolean oldDchgESet = dchgESet;
@@ -267,6 +270,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDchg() {
         return dchgESet;
     }
@@ -276,6 +280,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDupd() {
         return dupd;
     }
@@ -285,6 +290,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDupd( Boolean newDupd ) {
         Boolean oldDupd = dupd;
         dupd = newDupd;
@@ -299,6 +305,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDupd() {
         Boolean oldDupd = dupd;
         boolean oldDupdESet = dupdESet;
@@ -313,6 +320,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDupd() {
         return dupdESet;
     }
@@ -322,6 +330,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FCEnum getFc() {
         return fc;
     }
@@ -331,6 +340,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFc( FCEnum newFc ) {
         FCEnum oldFc = fc;
         fc = newFc == null ? FC_EDEFAULT : newFc;
@@ -345,6 +355,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFc() {
         FCEnum oldFc = fc;
         boolean oldFcESet = fcESet;
@@ -359,6 +370,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFc() {
         return fcESet;
     }
@@ -368,6 +380,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getQchg() {
         return qchg;
     }
@@ -377,6 +390,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setQchg( Boolean newQchg ) {
         Boolean oldQchg = qchg;
         qchg = newQchg;
@@ -391,6 +405,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetQchg() {
         Boolean oldQchg = qchg;
         boolean oldQchgESet = qchgESet;
@@ -405,6 +420,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetQchg() {
         return qchgESet;
     }
@@ -414,6 +430,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAType getRefersToDAType() {
         return refersToDAType;
     }
@@ -440,6 +457,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDAType(DAType newRefersToDAType) {
         if (newRefersToDAType != refersToDAType) {
             NotificationChain msgs = null;
@@ -480,6 +498,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDAType() {
         if (refersToDAType != null) {
             NotificationChain msgs = null;
@@ -500,6 +519,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDAType() {
         return refersToDATypeESet;
     }
@@ -513,6 +533,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOType getDOType() {
         if (eContainerFeatureID() != SclPackage.DA__DO_TYPE) return null;
         return (DOType)eInternalContainer();
@@ -533,6 +554,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDOType( DOType newDOType ) {
         if (newDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA__DO_TYPE && newDOType != null)) {
             if (EcoreUtil.isAncestor(this, newDOType))
@@ -554,6 +576,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ProtNs> getProtNs() {
         if (protNs == null) {
             protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA__PROT_NS, SclPackage.PROT_NS__DA);
@@ -566,6 +589,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetProtNs() {
         if (protNs != null) ((InternalEList.Unsettable<?>)protNs).unset();
     }
@@ -575,6 +599,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetProtNs() {
         return protNs != null && ((InternalEList.Unsettable<?>)protNs).isSet();
     }

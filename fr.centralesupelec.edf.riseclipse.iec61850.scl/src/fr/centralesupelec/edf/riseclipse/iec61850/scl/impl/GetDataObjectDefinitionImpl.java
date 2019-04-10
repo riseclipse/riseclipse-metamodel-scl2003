@@ -67,6 +67,7 @@ public class GetDataObjectDefinitionImpl extends ServiceYesNoImpl implements Get
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.GET_DATA_OBJECT_DEFINITION__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class GetDataObjectDefinitionImpl extends ServiceYesNoImpl implements Get
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GET_DATA_OBJECT_DEFINITION__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

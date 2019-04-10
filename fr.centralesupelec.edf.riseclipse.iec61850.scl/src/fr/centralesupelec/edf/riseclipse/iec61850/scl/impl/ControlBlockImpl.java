@@ -196,6 +196,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCbName() {
         return cbName;
     }
@@ -205,6 +206,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCbName( String newCbName ) {
         String oldCbName = cbName;
         cbName = newCbName;
@@ -219,6 +221,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCbName() {
         String oldCbName = cbName;
         boolean oldCbNameESet = cbNameESet;
@@ -233,6 +236,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCbName() {
         return cbNameESet;
     }
@@ -242,6 +246,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -251,6 +256,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -265,6 +271,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -279,6 +286,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -288,6 +296,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Address getAddress() {
         return address;
     }
@@ -314,6 +323,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAddress( Address newAddress ) {
         if (newAddress != address) {
             NotificationChain msgs = null;
@@ -354,6 +364,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAddress() {
         if (address != null) {
             NotificationChain msgs = null;
@@ -374,6 +385,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAddress() {
         return addressESet;
     }
@@ -383,6 +395,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice getRefersToLDevice() {
         return refersToLDevice;
     }
@@ -409,6 +422,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToLDevice( LDevice newRefersToLDevice ) {
         if (newRefersToLDevice != refersToLDevice) {
             NotificationChain msgs = null;
@@ -449,6 +463,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToLDevice() {
         if (refersToLDevice != null) {
             NotificationChain msgs = null;
@@ -469,6 +484,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToLDevice() {
         return refersToLDeviceESet;
     }
@@ -478,6 +494,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlWithIEDName getRefersToControlWithIEDName() {
         return refersToControlWithIEDName;
     }
@@ -505,6 +522,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToControlWithIEDName( ControlWithIEDName newRefersToControlWithIEDName ) {
         if (newRefersToControlWithIEDName != refersToControlWithIEDName) {
             NotificationChain msgs = null;
@@ -545,6 +563,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToControlWithIEDName() {
         if (refersToControlWithIEDName != null) {
             NotificationChain msgs = null;
@@ -565,6 +584,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToControlWithIEDName() {
         return refersToControlWithIEDNameESet;
     }

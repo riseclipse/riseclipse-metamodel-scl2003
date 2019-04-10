@@ -146,6 +146,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getTimeout() {
         return timeout;
     }
@@ -155,6 +156,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimeout( Integer newTimeout ) {
         Integer oldTimeout = timeout;
         timeout = newTimeout;
@@ -169,6 +171,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimeout() {
         Integer oldTimeout = timeout;
         boolean oldTimeoutESet = timeoutESet;
@@ -183,6 +186,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimeout() {
         return timeoutESet;
     }
@@ -192,6 +196,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getAccessPoint() {
         if (eContainerFeatureID() != SclPackage.SERVER__ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
@@ -212,6 +217,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessPoint( AccessPoint newAccessPoint ) {
         if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER__ACCESS_POINT && newAccessPoint != null)) {
             if (EcoreUtil.isAncestor(this, newAccessPoint))
@@ -233,6 +239,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Association> getAssociation() {
         if (association == null) {
             association = new EObjectContainmentWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.SERVER__ASSOCIATION, SclPackage.ASSOCIATION__SERVER);
@@ -245,6 +252,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAssociation() {
         if (association != null) ((InternalEList.Unsettable<?>)association).unset();
     }
@@ -254,6 +262,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAssociation() {
         return association != null && ((InternalEList.Unsettable<?>)association).isSet();
     }
@@ -263,6 +272,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Authentication getAuthentication() {
         return authentication;
     }
@@ -289,6 +299,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAuthentication( Authentication newAuthentication ) {
         if (newAuthentication != authentication) {
             NotificationChain msgs = null;
@@ -329,6 +340,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAuthentication() {
         if (authentication != null) {
             NotificationChain msgs = null;
@@ -349,6 +361,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAuthentication() {
         return authenticationESet;
     }
@@ -358,6 +371,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LDevice> getLDevice() {
         if (lDevice == null) {
             lDevice = new EObjectContainmentWithInverseEList.Unsettable<LDevice>(LDevice.class, this, SclPackage.SERVER__LDEVICE, SclPackage.LDEVICE__SERVER);
@@ -370,6 +384,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLDevice() {
         if (lDevice != null) ((InternalEList.Unsettable<?>)lDevice).unset();
     }
@@ -379,6 +394,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLDevice() {
         return lDevice != null && ((InternalEList.Unsettable<?>)lDevice).isSet();
     }

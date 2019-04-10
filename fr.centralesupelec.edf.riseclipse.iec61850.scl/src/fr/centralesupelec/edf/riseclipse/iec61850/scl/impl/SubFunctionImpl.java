@@ -137,6 +137,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -146,6 +147,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -160,6 +162,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -174,6 +177,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -183,6 +187,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
             conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION);
@@ -195,6 +200,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConductingEquipment() {
         if (conductingEquipment != null) ((InternalEList.Unsettable<?>)conductingEquipment).unset();
     }
@@ -204,6 +210,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConductingEquipment() {
         return conductingEquipment != null && ((InternalEList.Unsettable<?>)conductingEquipment).isSet();
     }
@@ -213,6 +220,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Function getFunction() {
         if (eContainerFeatureID() != SclPackage.SUB_FUNCTION__FUNCTION) return null;
         return (Function)eInternalContainer();
@@ -233,6 +241,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFunction( Function newFunction ) {
         if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_FUNCTION__FUNCTION && newFunction != null)) {
             if (EcoreUtil.isAncestor(this, newFunction))
@@ -254,6 +263,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
             generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION);
@@ -266,6 +276,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGeneralEquipment() {
         if (generalEquipment != null) ((InternalEList.Unsettable<?>)generalEquipment).unset();
     }
@@ -275,6 +286,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGeneralEquipment() {
         return generalEquipment != null && ((InternalEList.Unsettable<?>)generalEquipment).isSet();
     }
@@ -284,6 +296,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SubFunction> getSubSubFunctions() {
         if (subSubFunctions == null) {
             subSubFunctions = new EObjectContainmentEList.Unsettable<SubFunction>(SubFunction.class, this, SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS);
@@ -296,6 +309,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubSubFunctions() {
         if (subSubFunctions != null) ((InternalEList.Unsettable<?>)subSubFunctions).unset();
     }
@@ -305,6 +319,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubSubFunctions() {
         return subSubFunctions != null && ((InternalEList.Unsettable<?>)subSubFunctions).isSet();
     }

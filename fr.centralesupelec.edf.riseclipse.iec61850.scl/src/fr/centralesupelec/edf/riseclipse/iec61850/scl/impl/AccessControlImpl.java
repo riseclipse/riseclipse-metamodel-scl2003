@@ -67,6 +67,7 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice getLDevice() {
         if (eContainerFeatureID() != SclPackage.ACCESS_CONTROL__LDEVICE) return null;
         return (LDevice)eInternalContainer();
@@ -87,6 +88,7 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLDevice( LDevice newLDevice ) {
         if (newLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.ACCESS_CONTROL__LDEVICE && newLDevice != null)) {
             if (EcoreUtil.isAncestor(this, newLDevice))

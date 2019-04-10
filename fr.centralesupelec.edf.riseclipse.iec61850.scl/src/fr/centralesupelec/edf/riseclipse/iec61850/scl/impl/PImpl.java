@@ -67,6 +67,7 @@ public class PImpl extends PAddrImpl implements P {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Address getAddress() {
         if (eContainerFeatureID() != SclPackage.P__ADDRESS) return null;
         return (Address)eInternalContainer();
@@ -87,6 +88,7 @@ public class PImpl extends PAddrImpl implements P {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAddress( Address newAddress ) {
         if (newAddress != eInternalContainer() || (eContainerFeatureID() != SclPackage.P__ADDRESS && newAddress != null)) {
             if (EcoreUtil.isAncestor(this, newAddress))

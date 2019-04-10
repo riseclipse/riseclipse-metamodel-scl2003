@@ -125,6 +125,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Private> getPrivate() {
         if (private_ == null) {
             private_ = new EObjectContainmentWithInverseEList.Unsettable<Private>(Private.class, this, SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__BASE_ELEMENT);
@@ -137,6 +138,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrivate() {
         if (private_ != null) ((InternalEList.Unsettable<?>)private_).unset();
     }
@@ -146,6 +148,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrivate() {
         return private_ != null && ((InternalEList.Unsettable<?>)private_).isSet();
     }
@@ -155,6 +158,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Text getText() {
         return text;
     }
@@ -181,6 +185,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setText( Text newText ) {
         if (newText != text) {
             NotificationChain msgs = null;
@@ -221,6 +226,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetText() {
         if (text != null) {
             NotificationChain msgs = null;
@@ -241,6 +247,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetText() {
         return textESet;
     }
@@ -250,6 +257,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getAny() {
         if (any == null) {
             any = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY);
@@ -262,6 +270,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FeatureMap getAnyAttribute() {
         if (anyAttribute == null) {
             anyAttribute = new BasicFeatureMap(this, SclPackage.BASE_ELEMENT__ANY_ATTRIBUTE);

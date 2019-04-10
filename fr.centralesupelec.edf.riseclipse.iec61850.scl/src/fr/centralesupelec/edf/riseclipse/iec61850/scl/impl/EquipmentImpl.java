@@ -94,6 +94,7 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getVirtual() {
         return virtual;
     }
@@ -103,6 +104,7 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVirtual( Boolean newVirtual ) {
         Boolean oldVirtual = virtual;
         virtual = newVirtual;
@@ -117,6 +119,7 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVirtual() {
         Boolean oldVirtual = virtual;
         boolean oldVirtualESet = virtualESet;
@@ -131,6 +134,7 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVirtual() {
         return virtualESet;
     }

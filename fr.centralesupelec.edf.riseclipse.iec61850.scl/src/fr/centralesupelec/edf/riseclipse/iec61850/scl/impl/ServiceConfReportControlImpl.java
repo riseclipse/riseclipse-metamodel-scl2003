@@ -155,6 +155,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public bufModeEnum getBufMode() {
         return bufMode;
     }
@@ -164,6 +165,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufMode(bufModeEnum newBufMode) {
         bufModeEnum oldBufMode = bufMode;
         bufMode = newBufMode == null ? BUF_MODE_EDEFAULT : newBufMode;
@@ -178,6 +180,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufMode() {
         bufModeEnum oldBufMode = bufMode;
         boolean oldBufModeESet = bufModeESet;
@@ -192,6 +195,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufMode() {
         return bufModeESet;
     }
@@ -201,6 +205,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getBufConf() {
         return bufConf;
     }
@@ -210,6 +215,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBufConf(Boolean newBufConf) {
         Boolean oldBufConf = bufConf;
         bufConf = newBufConf;
@@ -224,6 +230,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBufConf() {
         Boolean oldBufConf = bufConf;
         boolean oldBufConfESet = bufConfESet;
@@ -238,6 +245,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBufConf() {
         return bufConfESet;
     }
@@ -247,6 +255,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxBuf() {
         return maxBuf;
     }
@@ -256,6 +265,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxBuf(Integer newMaxBuf) {
         Integer oldMaxBuf = maxBuf;
         maxBuf = newMaxBuf;
@@ -270,6 +280,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxBuf() {
         Integer oldMaxBuf = maxBuf;
         boolean oldMaxBufESet = maxBufESet;
@@ -284,6 +295,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxBuf() {
         return maxBufESet;
     }

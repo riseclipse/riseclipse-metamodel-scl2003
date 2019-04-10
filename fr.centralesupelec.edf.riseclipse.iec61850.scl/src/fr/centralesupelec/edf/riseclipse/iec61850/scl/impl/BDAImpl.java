@@ -73,6 +73,7 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAType getDAType() {
         if (eContainerFeatureID() != SclPackage.BDA__DA_TYPE) return null;
         return (DAType)eInternalContainer();
@@ -93,6 +94,7 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDAType( DAType newDAType ) {
         if (newDAType != eInternalContainer() || (eContainerFeatureID() != SclPackage.BDA__DA_TYPE && newDAType != null)) {
             if (EcoreUtil.isAncestor(this, newDAType))

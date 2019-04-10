@@ -148,6 +148,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getOrd() {
         return ord;
     }
@@ -157,6 +158,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOrd( Integer newOrd ) {
         Integer oldOrd = ord;
         ord = newOrd;
@@ -171,6 +173,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOrd() {
         Integer oldOrd = ord;
         boolean oldOrdESet = ordESet;
@@ -185,6 +188,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOrd() {
         return ordESet;
     }
@@ -194,6 +198,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EnumType getEnumType() {
         if (eContainerFeatureID() != SclPackage.ENUM_VAL__ENUM_TYPE) return null;
         return (EnumType)eInternalContainer();
@@ -214,6 +219,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEnumType( EnumType newEnumType ) {
         if (newEnumType != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_VAL__ENUM_TYPE && newEnumType != null)) {
             if (EcoreUtil.isAncestor(this, newEnumType))
@@ -235,6 +241,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -244,6 +251,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
@@ -256,6 +264,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -265,6 +274,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDesc(String newDesc) {
         String oldDesc = desc;
         desc = newDesc;
@@ -279,6 +289,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDesc() {
         String oldDesc = desc;
         boolean oldDescESet = descESet;
@@ -293,6 +304,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDesc() {
         return descESet;
     }

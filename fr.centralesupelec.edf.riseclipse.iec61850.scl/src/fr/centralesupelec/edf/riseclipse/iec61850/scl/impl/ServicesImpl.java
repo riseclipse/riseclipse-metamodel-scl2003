@@ -792,6 +792,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getNameLength() {
         return nameLength;
     }
@@ -801,6 +802,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNameLength(Integer newNameLength) {
         Integer oldNameLength = nameLength;
         nameLength = newNameLength;
@@ -815,6 +817,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNameLength() {
         Integer oldNameLength = nameLength;
         boolean oldNameLengthESet = nameLengthESet;
@@ -829,6 +832,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNameLength() {
         return nameLengthESet;
     }
@@ -838,6 +842,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getAccessPoint() {
         if (eContainerFeatureID() != SclPackage.SERVICES__ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
@@ -858,6 +863,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessPoint( AccessPoint newAccessPoint ) {
         if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__ACCESS_POINT && newAccessPoint != null)) {
             if (EcoreUtil.isAncestor(this, newAccessPoint))
@@ -879,6 +885,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ClientServices getClientServices() {
         return clientServices;
     }
@@ -905,6 +912,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setClientServices( ClientServices newClientServices ) {
         if (newClientServices != clientServices) {
             NotificationChain msgs = null;
@@ -945,6 +953,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetClientServices() {
         if (clientServices != null) {
             NotificationChain msgs = null;
@@ -965,6 +974,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetClientServices() {
         return clientServicesESet;
     }
@@ -974,6 +984,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public CommProt getCommProt() {
         return commProt;
     }
@@ -1000,6 +1011,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCommProt( CommProt newCommProt ) {
         if (newCommProt != commProt) {
             NotificationChain msgs = null;
@@ -1040,6 +1052,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCommProt() {
         if (commProt != null) {
             NotificationChain msgs = null;
@@ -1060,6 +1073,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCommProt() {
         return commProtESet;
     }
@@ -1069,6 +1083,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfDataSet getConfDataSet() {
         return confDataSet;
     }
@@ -1095,6 +1110,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfDataSet( ConfDataSet newConfDataSet ) {
         if (newConfDataSet != confDataSet) {
             NotificationChain msgs = null;
@@ -1135,6 +1151,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfDataSet() {
         if (confDataSet != null) {
             NotificationChain msgs = null;
@@ -1155,6 +1172,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfDataSet() {
         return confDataSetESet;
     }
@@ -1164,6 +1182,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLNs getConfLNs() {
         return confLNs;
     }
@@ -1190,6 +1209,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfLNs( ConfLNs newConfLNs ) {
         if (newConfLNs != confLNs) {
             NotificationChain msgs = null;
@@ -1230,6 +1250,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfLNs() {
         if (confLNs != null) {
             NotificationChain msgs = null;
@@ -1250,6 +1271,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfLNs() {
         return confLNsESet;
     }
@@ -1259,6 +1281,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLdName getConfLdName() {
         return confLdName;
     }
@@ -1285,6 +1308,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfLdName( ConfLdName newConfLdName ) {
         if (newConfLdName != confLdName) {
             NotificationChain msgs = null;
@@ -1325,6 +1349,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfLdName() {
         if (confLdName != null) {
             NotificationChain msgs = null;
@@ -1345,6 +1370,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfLdName() {
         return confLdNameESet;
     }
@@ -1354,6 +1380,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfLogControl getConfLogControl() {
         return confLogControl;
     }
@@ -1380,6 +1407,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfLogControl( ConfLogControl newConfLogControl ) {
         if (newConfLogControl != confLogControl) {
             NotificationChain msgs = null;
@@ -1420,6 +1448,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfLogControl() {
         if (confLogControl != null) {
             NotificationChain msgs = null;
@@ -1440,6 +1469,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfLogControl() {
         return confLogControlESet;
     }
@@ -1449,6 +1479,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfReportControl getConfReportControl() {
         return confReportControl;
     }
@@ -1475,6 +1506,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfReportControl( ConfReportControl newConfReportControl ) {
         if (newConfReportControl != confReportControl) {
             NotificationChain msgs = null;
@@ -1515,6 +1547,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfReportControl() {
         if (confReportControl != null) {
             NotificationChain msgs = null;
@@ -1535,6 +1568,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfReportControl() {
         return confReportControlESet;
     }
@@ -1544,6 +1578,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfSigRef getConfSigRef() {
         return confSigRef;
     }
@@ -1570,6 +1605,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfSigRef( ConfSigRef newConfSigRef ) {
         if (newConfSigRef != confSigRef) {
             NotificationChain msgs = null;
@@ -1610,6 +1646,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfSigRef() {
         if (confSigRef != null) {
             NotificationChain msgs = null;
@@ -1630,6 +1667,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfSigRef() {
         return confSigRefESet;
     }
@@ -1639,6 +1677,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataObjectDirectory getDataObjectDirectory() {
         return dataObjectDirectory;
     }
@@ -1666,6 +1705,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataObjectDirectory( DataObjectDirectory newDataObjectDirectory ) {
         if (newDataObjectDirectory != dataObjectDirectory) {
             NotificationChain msgs = null;
@@ -1706,6 +1746,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataObjectDirectory() {
         if (dataObjectDirectory != null) {
             NotificationChain msgs = null;
@@ -1726,6 +1767,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataObjectDirectory() {
         return dataObjectDirectoryESet;
     }
@@ -1735,6 +1777,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataSetDirectory getDataSetDirectory() {
         return dataSetDirectory;
     }
@@ -1761,6 +1804,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataSetDirectory( DataSetDirectory newDataSetDirectory ) {
         if (newDataSetDirectory != dataSetDirectory) {
             NotificationChain msgs = null;
@@ -1801,6 +1845,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataSetDirectory() {
         if (dataSetDirectory != null) {
             NotificationChain msgs = null;
@@ -1821,6 +1866,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataSetDirectory() {
         return dataSetDirectoryESet;
     }
@@ -1830,6 +1876,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DynAssociation getDynAssociation() {
         return dynAssociation;
     }
@@ -1856,6 +1903,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDynAssociation( DynAssociation newDynAssociation ) {
         if (newDynAssociation != dynAssociation) {
             NotificationChain msgs = null;
@@ -1896,6 +1944,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDynAssociation() {
         if (dynAssociation != null) {
             NotificationChain msgs = null;
@@ -1916,6 +1965,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDynAssociation() {
         return dynAssociationESet;
     }
@@ -1925,6 +1975,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DynDataSet getDynDataSet() {
         return dynDataSet;
     }
@@ -1951,6 +2002,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDynDataSet( DynDataSet newDynDataSet ) {
         if (newDynDataSet != dynDataSet) {
             NotificationChain msgs = null;
@@ -1991,6 +2043,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDynDataSet() {
         if (dynDataSet != null) {
             NotificationChain msgs = null;
@@ -2011,6 +2064,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDynDataSet() {
         return dynDataSetESet;
     }
@@ -2020,6 +2074,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FileHandling getFileHandling() {
         return fileHandling;
     }
@@ -2046,6 +2101,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFileHandling( FileHandling newFileHandling ) {
         if (newFileHandling != fileHandling) {
             NotificationChain msgs = null;
@@ -2086,6 +2142,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFileHandling() {
         if (fileHandling != null) {
             NotificationChain msgs = null;
@@ -2106,6 +2163,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFileHandling() {
         return fileHandlingESet;
     }
@@ -2115,6 +2173,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GOOSE getGOOSE() {
         return goose;
     }
@@ -2141,6 +2200,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGOOSE( GOOSE newGOOSE ) {
         if (newGOOSE != goose) {
             NotificationChain msgs = null;
@@ -2181,6 +2241,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGOOSE() {
         if (goose != null) {
             NotificationChain msgs = null;
@@ -2201,6 +2262,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGOOSE() {
         return gooseESet;
     }
@@ -2210,6 +2272,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSEDir getGSEDir() {
         return gseDir;
     }
@@ -2236,6 +2299,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGSEDir( GSEDir newGSEDir ) {
         if (newGSEDir != gseDir) {
             NotificationChain msgs = null;
@@ -2276,6 +2340,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGSEDir() {
         if (gseDir != null) {
             NotificationChain msgs = null;
@@ -2296,6 +2361,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGSEDir() {
         return gseDirESet;
     }
@@ -2305,6 +2371,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSESettings getGSESettings() {
         return gseSettings;
     }
@@ -2331,6 +2398,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGSESettings( GSESettings newGSESettings ) {
         if (newGSESettings != gseSettings) {
             NotificationChain msgs = null;
@@ -2371,6 +2439,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGSESettings() {
         if (gseSettings != null) {
             NotificationChain msgs = null;
@@ -2391,6 +2460,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGSESettings() {
         return gseSettingsESet;
     }
@@ -2400,6 +2470,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GSSE getGSSE() {
         return gsse;
     }
@@ -2426,6 +2497,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGSSE( GSSE newGSSE ) {
         if (newGSSE != gsse) {
             NotificationChain msgs = null;
@@ -2466,6 +2538,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGSSE() {
         if (gsse != null) {
             NotificationChain msgs = null;
@@ -2486,6 +2559,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGSSE() {
         return gsseESet;
     }
@@ -2495,6 +2569,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetCBValues getGetCBValues() {
         return getCBValues;
     }
@@ -2521,6 +2596,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGetCBValues( GetCBValues newGetCBValues ) {
         if (newGetCBValues != getCBValues) {
             NotificationChain msgs = null;
@@ -2561,6 +2637,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGetCBValues() {
         if (getCBValues != null) {
             NotificationChain msgs = null;
@@ -2581,6 +2658,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGetCBValues() {
         return getCBValuesESet;
     }
@@ -2590,6 +2668,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDataObjectDefinition getGetDataObjectDefinition() {
         return getDataObjectDefinition;
     }
@@ -2617,6 +2696,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGetDataObjectDefinition( GetDataObjectDefinition newGetDataObjectDefinition ) {
         if (newGetDataObjectDefinition != getDataObjectDefinition) {
             NotificationChain msgs = null;
@@ -2657,6 +2737,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGetDataObjectDefinition() {
         if (getDataObjectDefinition != null) {
             NotificationChain msgs = null;
@@ -2677,6 +2758,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGetDataObjectDefinition() {
         return getDataObjectDefinitionESet;
     }
@@ -2686,6 +2768,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDataSetValue getGetDataSetValue() {
         return getDataSetValue;
     }
@@ -2712,6 +2795,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGetDataSetValue( GetDataSetValue newGetDataSetValue ) {
         if (newGetDataSetValue != getDataSetValue) {
             NotificationChain msgs = null;
@@ -2752,6 +2836,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGetDataSetValue() {
         if (getDataSetValue != null) {
             NotificationChain msgs = null;
@@ -2772,6 +2857,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGetDataSetValue() {
         return getDataSetValueESet;
     }
@@ -2781,6 +2867,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public GetDirectory getGetDirectory() {
         return getDirectory;
     }
@@ -2807,6 +2894,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setGetDirectory( GetDirectory newGetDirectory ) {
         if (newGetDirectory != getDirectory) {
             NotificationChain msgs = null;
@@ -2847,6 +2935,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGetDirectory() {
         if (getDirectory != null) {
             NotificationChain msgs = null;
@@ -2867,6 +2956,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGetDirectory() {
         return getDirectoryESet;
     }
@@ -2876,6 +2966,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IED getIED() {
         if (eContainerFeatureID() != SclPackage.SERVICES__IED) return null;
         return (IED)eInternalContainer();
@@ -2896,6 +2987,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIED( IED newIED ) {
         if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__IED && newIED != null)) {
             if (EcoreUtil.isAncestor(this, newIED))
@@ -2917,6 +3009,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LogSettings getLogSettings() {
         return logSettings;
     }
@@ -2943,6 +3036,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLogSettings( LogSettings newLogSettings ) {
         if (newLogSettings != logSettings) {
             NotificationChain msgs = null;
@@ -2983,6 +3077,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLogSettings() {
         if (logSettings != null) {
             NotificationChain msgs = null;
@@ -3003,6 +3098,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLogSettings() {
         return logSettingsESet;
     }
@@ -3012,6 +3108,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReadWrite getReadWrite() {
         return readWrite;
     }
@@ -3038,6 +3135,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReadWrite( ReadWrite newReadWrite ) {
         if (newReadWrite != readWrite) {
             NotificationChain msgs = null;
@@ -3078,6 +3176,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReadWrite() {
         if (readWrite != null) {
             NotificationChain msgs = null;
@@ -3098,6 +3197,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReadWrite() {
         return readWriteESet;
     }
@@ -3107,6 +3207,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public RedProt getRedProt() {
         return redProt;
     }
@@ -3133,6 +3234,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRedProt( RedProt newRedProt ) {
         if (newRedProt != redProt) {
             NotificationChain msgs = null;
@@ -3173,6 +3275,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRedProt() {
         if (redProt != null) {
             NotificationChain msgs = null;
@@ -3193,6 +3296,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRedProt() {
         return redProtESet;
     }
@@ -3202,6 +3306,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReportSettings getReportSettings() {
         return reportSettings;
     }
@@ -3228,6 +3333,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReportSettings( ReportSettings newReportSettings ) {
         if (newReportSettings != reportSettings) {
             NotificationChain msgs = null;
@@ -3268,6 +3374,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReportSettings() {
         if (reportSettings != null) {
             NotificationChain msgs = null;
@@ -3288,6 +3395,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReportSettings() {
         return reportSettingsESet;
     }
@@ -3297,6 +3405,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVsc getSMVsc() {
         return smVsc;
     }
@@ -3323,6 +3432,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSMVsc( SMVsc newSMVsc ) {
         if (newSMVsc != smVsc) {
             NotificationChain msgs = null;
@@ -3363,6 +3473,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSMVsc() {
         if (smVsc != null) {
             NotificationChain msgs = null;
@@ -3383,6 +3494,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSMVsc() {
         return smVscESet;
     }
@@ -3392,6 +3504,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SupSubscription getSupSubscription() {
         return supSubscription;
     }
@@ -3418,6 +3531,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSupSubscription( SupSubscription newSupSubscription ) {
         if (newSupSubscription != supSubscription) {
             NotificationChain msgs = null;
@@ -3458,6 +3572,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSupSubscription() {
         if (supSubscription != null) {
             NotificationChain msgs = null;
@@ -3478,6 +3593,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSupSubscription() {
         return supSubscriptionESet;
     }
@@ -3487,6 +3603,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ValueHandling getValueHandling() {
         return valueHandling;
     }
@@ -3513,6 +3630,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValueHandling( ValueHandling newValueHandling ) {
         if (newValueHandling != valueHandling) {
             NotificationChain msgs = null;
@@ -3553,6 +3671,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValueHandling() {
         if (valueHandling != null) {
             NotificationChain msgs = null;
@@ -3573,6 +3692,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValueHandling() {
         return valueHandlingESet;
     }
@@ -3582,6 +3702,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SetDataSetValue getSetDataSetValue() {
         return setDataSetValue;
     }
@@ -3608,6 +3729,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSetDataSetValue( SetDataSetValue newSetDataSetValue ) {
         if (newSetDataSetValue != setDataSetValue) {
             NotificationChain msgs = null;
@@ -3648,6 +3770,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSetDataSetValue() {
         if (setDataSetValue != null) {
             NotificationChain msgs = null;
@@ -3668,6 +3791,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSetDataSetValue() {
         return setDataSetValueESet;
     }
@@ -3677,6 +3801,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SettingGroups getSettingGroups() {
         return settingGroups;
     }
@@ -3703,6 +3828,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSettingGroups( SettingGroups newSettingGroups ) {
         if (newSettingGroups != settingGroups) {
             NotificationChain msgs = null;
@@ -3743,6 +3869,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSettingGroups() {
         if (settingGroups != null) {
             NotificationChain msgs = null;
@@ -3763,6 +3890,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSettingGroups() {
         return settingGroupsESet;
     }
@@ -3772,6 +3900,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TimeSyncProt getTimeSyncProt() {
         return timeSyncProt;
     }
@@ -3798,6 +3927,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimeSyncProt( TimeSyncProt newTimeSyncProt ) {
         if (newTimeSyncProt != timeSyncProt) {
             NotificationChain msgs = null;
@@ -3838,6 +3968,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimeSyncProt() {
         if (timeSyncProt != null) {
             NotificationChain msgs = null;
@@ -3858,6 +3989,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimeSyncProt() {
         return timeSyncProtESet;
     }
@@ -3867,6 +3999,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TimerActivatedControl getTimerActivatedControl() {
         return timerActivatedControl;
     }
@@ -3894,6 +4027,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTimerActivatedControl( TimerActivatedControl newTimerActivatedControl ) {
         if (newTimerActivatedControl != timerActivatedControl) {
             NotificationChain msgs = null;
@@ -3934,6 +4068,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTimerActivatedControl() {
         if (timerActivatedControl != null) {
             NotificationChain msgs = null;
@@ -3954,6 +4089,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTimerActivatedControl() {
         return timerActivatedControlESet;
     }
@@ -3963,6 +4099,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVSettings getSMVSettings() {
         return smvSettings;
     }
@@ -3989,6 +4126,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSMVSettings(SMVSettings newSMVSettings) {
         if (newSMVSettings != smvSettings) {
             NotificationChain msgs = null;
@@ -4029,6 +4167,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSMVSettings() {
         if (smvSettings != null) {
             NotificationChain msgs = null;
@@ -4049,6 +4188,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSMVSettings() {
         return smvSettingsESet;
     }
