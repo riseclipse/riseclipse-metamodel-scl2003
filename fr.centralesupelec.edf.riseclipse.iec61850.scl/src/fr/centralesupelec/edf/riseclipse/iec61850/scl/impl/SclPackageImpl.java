@@ -3990,6 +3990,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getAnyLN_ReferredByLNode() {
+        return (EReference)getAnyLN().getEStructuralFeatures().get(16);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getAssociation() {
         if (associationEClass == null) {
             associationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(39);
@@ -6001,7 +6011,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIED_LNode() {
+    public EReference getIED_KDC() {
         return (EReference)getIED().getEStructuralFeatures().get(8);
     }
 
@@ -6011,7 +6021,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIED_KDC() {
+    public EReference getIED_Services() {
         return (EReference)getIED().getEStructuralFeatures().get(9);
     }
 
@@ -6021,7 +6031,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIED_Services() {
+    public EReference getIED_SCL() {
         return (EReference)getIED().getEStructuralFeatures().get(10);
     }
 
@@ -6031,18 +6041,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getIED_SCL() {
-        return (EReference)getIED().getEStructuralFeatures().get(11);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getIED_Name() {
-        return (EAttribute)getIED().getEStructuralFeatures().get(12);
+        return (EAttribute)getIED().getEStructuralFeatures().get(11);
     }
 
     /**
@@ -6052,7 +6052,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EAttribute getIED_OriginalSclRelease() {
-        return (EAttribute)getIED().getEStructuralFeatures().get(13);
+        return (EAttribute)getIED().getEStructuralFeatures().get(12);
     }
 
     /**
@@ -6326,18 +6326,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLDevice_LNode() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(5);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getLDevice_AnyLN() {
-        return (EAttribute)getLDevice().getEStructuralFeatures().get(6);
+        return (EAttribute)getLDevice().getEStructuralFeatures().get(5);
     }
 
     /**
@@ -6347,7 +6337,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_LN() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(8);
+        return (EReference)getLDevice().getEStructuralFeatures().get(7);
     }
 
     /**
@@ -6357,7 +6347,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_LN0() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(7);
+        return (EReference)getLDevice().getEStructuralFeatures().get(6);
     }
 
     /**
@@ -6401,16 +6391,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLN_LDevice() {
         return (EReference)getLN().getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getLN_LNode() {
-        return (EReference)getLN().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -9274,7 +9254,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLNode_IED() {
+    public EReference getLNode_RefersToAnyLN() {
         return (EReference)getLNode().getEStructuralFeatures().get(6);
     }
 
@@ -9284,28 +9264,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLNode_LDevice() {
-        return (EReference)getLNode().getEStructuralFeatures().get(7);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getLNode_LN() {
-        return (EReference)getLNode().getEStructuralFeatures().get(8);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getLNode_LNodeContainer() {
-        return (EReference)getLNode().getEStructuralFeatures().get(9);
+        return (EReference)getLNode().getEStructuralFeatures().get(7);
     }
 
     /**

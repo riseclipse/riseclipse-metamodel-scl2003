@@ -26,14 +26,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
@@ -54,7 +52,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getAccessPoint <em>Access Point</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getLNode <em>LNode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getKDC <em>KDC</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getServices <em>Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getSCL <em>SCL</em>}</li>
@@ -277,16 +274,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @ordered
      */
     protected EList<AccessPoint> accessPoint;
-
-    /**
-     * The cached value of the '{@link #getLNode() <em>LNode</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLNode()
-     * @generated
-     * @ordered
-     */
-    protected EList<LNode> lNode;
 
     /**
      * The cached value of the '{@link #getKDC() <em>KDC</em>}' containment reference list.
@@ -783,39 +770,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public EList<LNode> getLNode() {
-        if (lNode == null) {
-            lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.IED__LNODE, SclPackage.LNODE__IED);
-        }
-        return lNode;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLNode() {
-        if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLNode() {
-        return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EList<KDC> getKDC() {
         if (kdc == null) {
             kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__IED);
@@ -1096,8 +1050,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
         switch (featureID) {
             case SclPackage.IED__ACCESS_POINT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessPoint()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__LNODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNode()).basicAdd(otherEnd, msgs);
             case SclPackage.IED__KDC:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getKDC()).basicAdd(otherEnd, msgs);
             case SclPackage.IED__SERVICES:
@@ -1122,8 +1074,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
         switch (featureID) {
             case SclPackage.IED__ACCESS_POINT:
                 return ((InternalEList<?>)getAccessPoint()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__LNODE:
-                return ((InternalEList<?>)getLNode()).basicRemove(otherEnd, msgs);
             case SclPackage.IED__KDC:
                 return ((InternalEList<?>)getKDC()).basicRemove(otherEnd, msgs);
             case SclPackage.IED__SERVICES:
@@ -1172,8 +1122,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 return getType();
             case SclPackage.IED__ACCESS_POINT:
                 return getAccessPoint();
-            case SclPackage.IED__LNODE:
-                return getLNode();
             case SclPackage.IED__KDC:
                 return getKDC();
             case SclPackage.IED__SERVICES:
@@ -1221,10 +1169,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
             case SclPackage.IED__ACCESS_POINT:
                 getAccessPoint().clear();
                 getAccessPoint().addAll((Collection<? extends AccessPoint>)newValue);
-                return;
-            case SclPackage.IED__LNODE:
-                getLNode().clear();
-                getLNode().addAll((Collection<? extends LNode>)newValue);
                 return;
             case SclPackage.IED__KDC:
                 getKDC().clear();
@@ -1278,9 +1222,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
             case SclPackage.IED__ACCESS_POINT:
                 unsetAccessPoint();
                 return;
-            case SclPackage.IED__LNODE:
-                unsetLNode();
-                return;
             case SclPackage.IED__KDC:
                 unsetKDC();
                 return;
@@ -1324,8 +1265,6 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 return isSetType();
             case SclPackage.IED__ACCESS_POINT:
                 return isSetAccessPoint();
-            case SclPackage.IED__LNODE:
-                return isSetLNode();
             case SclPackage.IED__KDC:
                 return isSetKDC();
             case SclPackage.IED__SERVICES:

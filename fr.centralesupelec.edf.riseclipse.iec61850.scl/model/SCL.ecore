@@ -635,6 +635,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredIEDName" ordered="false"
         upperBound="-1" eType="#//IEDName" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//IEDName/RefersToAnyLN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLNode" ordered="false"
+        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNode/RefersToAnyLN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//BaseElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1069,9 +1072,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="AccessPoint" ordered="false"
         upperBound="-1" eType="#//AccessPoint" unsettable="true" containment="true"
         resolveProxies="false" eOpposite="#//AccessPoint/IED"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
-        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LNode/IED"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="KDC" ordered="false" upperBound="-1"
         eType="#//KDC" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//KDC/IED"/>
@@ -1150,9 +1150,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Server" ordered="false"
         eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Server/LDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
-        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LNode/LDevice"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnyLN" ordered="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
         transient="true">
@@ -1182,9 +1179,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
         eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LDevice/LN"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"
-        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LNode/LN"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LN0" eSuperTypes="#//AnyLN">
     <eStructuralFeatures xsi:type="ecore:EReference" name="GSEControl" ordered="false"
@@ -1863,13 +1857,9 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="" unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="IED" ordered="false" eType="#//IED"
-        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//IED/LNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LDevice" ordered="false"
-        eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//LDevice/LNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" eType="#//LN"
-        transient="true" unsettable="true" resolveProxies="false" eOpposite="#//LN/LNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
+        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//AnyLN/ReferredByLNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LNodeContainer" ordered="false"
         eType="#//LNodeContainer" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LNodeContainer/LNode"/>

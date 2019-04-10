@@ -18,21 +18,15 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -46,7 +40,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getAccessPoint <em>Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getLDevice <em>LDevice</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getLNode <em>LNode</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,16 +73,6 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @ordered
      */
     protected boolean prefixESet;
-
-    /**
-     * The cached value of the '{@link #getLNode() <em>LNode</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getLNode()
-     * @generated
-     * @ordered
-     */
-    protected EList<LNode> lNode;
 
     /**
      * <!-- begin-user-doc -->
@@ -248,39 +231,6 @@ public class LNImpl extends AnyLNImpl implements LN {
 
     /**
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EList<LNode> getLNode() {
-        if (lNode == null) {
-            lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LN__LNODE, SclPackage.LNODE__LN);
-        }
-        return lNode;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetLNode() {
-        if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetLNode() {
-        return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
@@ -296,8 +246,6 @@ public class LNImpl extends AnyLNImpl implements LN {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetLDevice((LDevice)otherEnd, msgs);
-            case SclPackage.LN__LNODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNode()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -314,8 +262,6 @@ public class LNImpl extends AnyLNImpl implements LN {
                 return basicSetAccessPoint(null, msgs);
             case SclPackage.LN__LDEVICE:
                 return basicSetLDevice(null, msgs);
-            case SclPackage.LN__LNODE:
-                return ((InternalEList<?>)getLNode()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -350,8 +296,6 @@ public class LNImpl extends AnyLNImpl implements LN {
                 return getAccessPoint();
             case SclPackage.LN__LDEVICE:
                 return getLDevice();
-            case SclPackage.LN__LNODE:
-                return getLNode();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -374,10 +318,6 @@ public class LNImpl extends AnyLNImpl implements LN {
             case SclPackage.LN__LDEVICE:
                 setLDevice((LDevice)newValue);
                 return;
-            case SclPackage.LN__LNODE:
-                getLNode().clear();
-                getLNode().addAll((Collection<? extends LNode>)newValue);
-                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -399,9 +339,6 @@ public class LNImpl extends AnyLNImpl implements LN {
             case SclPackage.LN__LDEVICE:
                 setLDevice((LDevice)null);
                 return;
-            case SclPackage.LN__LNODE:
-                unsetLNode();
-                return;
         }
         super.eUnset(featureID);
     }
@@ -420,8 +357,6 @@ public class LNImpl extends AnyLNImpl implements LN {
                 return getAccessPoint() != null;
             case SclPackage.LN__LDEVICE:
                 return getLDevice() != null;
-            case SclPackage.LN__LNODE:
-                return isSetLNode();
         }
         return super.eIsSet(featureID);
     }

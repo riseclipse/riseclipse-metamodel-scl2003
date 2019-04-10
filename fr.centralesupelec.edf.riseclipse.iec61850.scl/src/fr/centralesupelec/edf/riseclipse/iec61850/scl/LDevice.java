@@ -37,7 +37,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
@@ -277,47 +276,6 @@ public interface LDevice extends UnNaming {
      * @generated
      */
     void setServer( Server value );
-
-    /**
-     * Returns the value of the '<em><b>LNode</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LNode</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode</em>' reference list.
-     * @see #isSetLNode()
-     * @see #unsetLNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice
-     * @model opposite="LDevice" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<LNode> getLNode();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetLNode()
-     * @see #getLNode()
-     * @generated
-     */
-    void unsetLNode();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LNode</em>' reference list is set.
-     * @see #unsetLNode()
-     * @see #getLNode()
-     * @generated
-     */
-    boolean isSetLNode();
 
     /**
      * Returns the value of the '<em><b>Any LN</b></em>' attribute list.

@@ -68,7 +68,6 @@ public class IEDItemProvider extends UnNamingItemProvider {
             addOriginalSclVersionPropertyDescriptor(object);
             addOwnerPropertyDescriptor(object);
             addTypePropertyDescriptor(object);
-            addLNodePropertyDescriptor(object);
             addNamePropertyDescriptor(object);
             addOriginalSclReleasePropertyDescriptor(object);
         }
@@ -225,28 +224,6 @@ public class IEDItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the LNode feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addLNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_LNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_LNode_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_LNode(),
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }

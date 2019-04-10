@@ -71,6 +71,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addReferredByLogControlPropertyDescriptor(object);
             addReferredByAssociationPropertyDescriptor(object);
             addReferredIEDNamePropertyDescriptor(object);
+            addReferredByLNodePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -287,6 +288,28 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
                  getString("_UI_AnyLN_ReferredIEDName_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredIEDName_feature", "_UI_AnyLN_type"),
                  SclPackage.eINSTANCE.getAnyLN_ReferredIEDName(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By LNode feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLNodePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AnyLN_ReferredByLNode_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLNode_feature", "_UI_AnyLN_type"),
+                 SclPackage.eINSTANCE.getAnyLN_ReferredByLNode(),
                  true,
                  false,
                  true,
