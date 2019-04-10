@@ -1370,13 +1370,15 @@
         eType="#//ServiceSettingsEnum" defaultValueLiteral="Fix" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="smpRate"/>
+        <details key="kind" value="attribute"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="samplesPerSecAttribute"
         ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="SamplesPerSec"/>
+        <details key="name" value="samplesPerSec"/>
+        <details key="kind" value="attribute"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pdcTimeStamp" ordered="false"
