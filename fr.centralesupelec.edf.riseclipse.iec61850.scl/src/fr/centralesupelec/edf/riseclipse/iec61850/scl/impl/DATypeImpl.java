@@ -138,6 +138,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedType() {
         return iedType;
     }
@@ -147,6 +148,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedType( String newIedType ) {
         String oldIedType = iedType;
         iedType = newIedType;
@@ -161,6 +163,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedType() {
         String oldIedType = iedType;
         boolean oldIedTypeESet = iedTypeESet;
@@ -175,6 +178,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedType() {
         return iedTypeESet;
     }
@@ -184,6 +188,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<BDA> getBDA() {
         if (bda == null) {
             bda = new EObjectContainmentWithInverseEList.Unsettable<BDA>(BDA.class, this, SclPackage.DA_TYPE__BDA, SclPackage.BDA__DA_TYPE);
@@ -196,6 +201,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBDA() {
         if (bda != null) ((InternalEList.Unsettable<?>)bda).unset();
     }
@@ -205,6 +211,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBDA() {
         return bda != null && ((InternalEList.Unsettable<?>)bda).isSet();
     }
@@ -214,6 +221,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DA> getReferredByDA() {
         if (referredByDA == null) {
             referredByDA = new EObjectWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DA_TYPE__REFERRED_BY_DA, SclPackage.DA__REFERS_TO_DA_TYPE);
@@ -226,6 +234,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByDA() {
         if (referredByDA != null) ((InternalEList.Unsettable<?>)referredByDA).unset();
     }
@@ -235,6 +244,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByDA() {
         return referredByDA != null && ((InternalEList.Unsettable<?>)referredByDA).isSet();
     }
@@ -244,6 +254,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates getDataTypeTemplates() {
         if (eContainerFeatureID() != SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
@@ -264,6 +275,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
             if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
@@ -285,6 +297,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ProtNs> getProtNs() {
         if (protNs == null) {
             protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA_TYPE__PROT_NS, SclPackage.PROT_NS__DA_TYPE);
@@ -297,6 +310,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetProtNs() {
         if (protNs != null) ((InternalEList.Unsettable<?>)protNs).unset();
     }
@@ -306,6 +320,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetProtNs() {
         return protNs != null && ((InternalEList.Unsettable<?>)protNs).isSet();
     }

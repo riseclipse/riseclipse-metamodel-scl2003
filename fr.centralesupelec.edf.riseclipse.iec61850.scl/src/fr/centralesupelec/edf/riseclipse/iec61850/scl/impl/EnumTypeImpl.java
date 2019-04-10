@@ -96,6 +96,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<AbstractDataAttribute> getReferredByAbstractDataAttribute() {
         if (referredByAbstractDataAttribute == null) {
             referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE);
@@ -108,6 +109,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByAbstractDataAttribute() {
         if (referredByAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).unset();
     }
@@ -117,6 +119,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByAbstractDataAttribute() {
         return referredByAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).isSet();
     }
@@ -126,6 +129,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates getDataTypeTemplates() {
         if (eContainerFeatureID() != SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
@@ -146,6 +150,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
             if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
@@ -167,6 +172,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EnumVal> getEnumVal() {
         if (enumVal == null) {
             enumVal = new EObjectContainmentWithInverseEList.Unsettable<EnumVal>(EnumVal.class, this, SclPackage.ENUM_TYPE__ENUM_VAL, SclPackage.ENUM_VAL__ENUM_TYPE);
@@ -179,6 +185,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEnumVal() {
         if (enumVal != null) ((InternalEList.Unsettable<?>)enumVal).unset();
     }
@@ -188,6 +195,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEnumVal() {
         return enumVal != null && ((InternalEList.Unsettable<?>)enumVal).isSet();
     }

@@ -155,6 +155,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -164,6 +165,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -178,6 +180,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -192,6 +195,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -201,6 +205,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getVirtual() {
         return virtual;
     }
@@ -210,6 +215,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVirtual( Boolean newVirtual ) {
         Boolean oldVirtual = virtual;
         virtual = newVirtual;
@@ -224,6 +230,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVirtual() {
         Boolean oldVirtual = virtual;
         boolean oldVirtualESet = virtualESet;
@@ -238,6 +245,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVirtual() {
         return virtualESet;
     }
@@ -247,6 +255,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__TAP_CHANGER);
@@ -259,6 +268,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -268,6 +278,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -277,6 +288,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
             subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__TAP_CHANGER);
@@ -289,6 +301,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubEquipment() {
         if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
     }
@@ -298,6 +311,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubEquipment() {
         return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
     }
@@ -307,6 +321,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public TransformerWinding getTransformerWinding() {
         if (eContainerFeatureID() != SclPackage.TAP_CHANGER__TRANSFORMER_WINDING) return null;
         return (TransformerWinding)eInternalContainer();
@@ -328,6 +343,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
         if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.TAP_CHANGER__TRANSFORMER_WINDING && newTransformerWinding != null)) {
             if (EcoreUtil.isAncestor(this, newTransformerWinding))

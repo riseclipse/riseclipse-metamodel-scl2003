@@ -189,6 +189,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getC37_238() {
         return c37_238;
     }
@@ -198,6 +199,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setC37_238( Boolean newC37_238 ) {
         Boolean oldC37_238 = c37_238;
         c37_238 = newC37_238;
@@ -212,6 +214,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetC37_238() {
         Boolean oldC37_238 = c37_238;
         boolean oldC37_238ESet = c37_238ESet;
@@ -226,6 +229,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetC37_238() {
         return c37_238ESet;
     }
@@ -235,6 +239,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getOther() {
         return other;
     }
@@ -244,6 +249,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOther( Boolean newOther ) {
         Boolean oldOther = other;
         other = newOther;
@@ -258,6 +264,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOther() {
         Boolean oldOther = other;
         boolean oldOtherESet = otherESet;
@@ -272,6 +279,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOther() {
         return otherESet;
     }
@@ -281,6 +289,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSntp() {
         return sntp;
     }
@@ -290,6 +299,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSntp( Boolean newSntp ) {
         Boolean oldSntp = sntp;
         sntp = newSntp;
@@ -304,6 +314,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSntp() {
         Boolean oldSntp = sntp;
         boolean oldSntpESet = sntpESet;
@@ -318,6 +329,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSntp() {
         return sntpESet;
     }
@@ -327,6 +339,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ClientServices getClientServices() {
         if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES) return null;
         return (ClientServices)eInternalContainer();
@@ -347,6 +360,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setClientServices( ClientServices newClientServices ) {
         if (newClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES && newClientServices != null)) {
             if (EcoreUtil.isAncestor(this, newClientServices))
@@ -368,6 +382,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -388,6 +403,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -409,6 +425,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getIec61850_9_3() {
         return iec61850_9_3;
     }
@@ -418,6 +435,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIec61850_9_3(Boolean newIec61850_9_3) {
         Boolean oldIec61850_9_3 = iec61850_9_3;
         iec61850_9_3 = newIec61850_9_3;
@@ -432,6 +450,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIec61850_9_3() {
         Boolean oldIec61850_9_3 = iec61850_9_3;
         boolean oldIec61850_9_3ESet = iec61850_9_3ESet;
@@ -446,6 +465,7 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIec61850_9_3() {
         return iec61850_9_3ESet;
     }

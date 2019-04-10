@@ -94,6 +94,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Function> getFunction() {
         if (function == null) {
             function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER);
@@ -106,6 +107,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFunction() {
         if (function != null) ((InternalEList.Unsettable<?>)function).unset();
     }
@@ -115,6 +117,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFunction() {
         return function != null && ((InternalEList.Unsettable<?>)function).isSet();
     }
@@ -124,6 +127,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
             generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER);
@@ -136,6 +140,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGeneralEquipment() {
         if (generalEquipment != null) ((InternalEList.Unsettable<?>)generalEquipment).unset();
     }
@@ -145,6 +150,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGeneralEquipment() {
         return generalEquipment != null && ((InternalEList.Unsettable<?>)generalEquipment).isSet();
     }

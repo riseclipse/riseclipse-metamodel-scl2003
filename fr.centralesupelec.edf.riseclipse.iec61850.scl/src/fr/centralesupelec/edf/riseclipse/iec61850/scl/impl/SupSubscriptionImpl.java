@@ -127,6 +127,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxGo() {
         return maxGo;
     }
@@ -136,6 +137,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxGo( Integer newMaxGo ) {
         Integer oldMaxGo = maxGo;
         maxGo = newMaxGo;
@@ -150,6 +152,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxGo() {
         Integer oldMaxGo = maxGo;
         boolean oldMaxGoESet = maxGoESet;
@@ -164,6 +167,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxGo() {
         return maxGoESet;
     }
@@ -173,6 +177,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxSv() {
         return maxSv;
     }
@@ -182,6 +187,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxSv( Integer newMaxSv ) {
         Integer oldMaxSv = maxSv;
         maxSv = newMaxSv;
@@ -196,6 +202,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxSv() {
         Integer oldMaxSv = maxSv;
         boolean oldMaxSvESet = maxSvESet;
@@ -210,6 +217,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxSv() {
         return maxSvESet;
     }
@@ -219,6 +227,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.SUP_SUBSCRIPTION__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -239,6 +248,7 @@ public class SupSubscriptionImpl extends SclObjectImpl implements SupSubscriptio
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUP_SUBSCRIPTION__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

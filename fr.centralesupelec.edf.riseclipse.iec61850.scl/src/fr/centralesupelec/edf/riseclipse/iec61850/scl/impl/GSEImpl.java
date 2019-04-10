@@ -109,6 +109,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public MaxTime getMaxTime() {
         return maxTime;
     }
@@ -135,6 +136,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxTime(MaxTime newMaxTime) {
         if (newMaxTime != maxTime) {
             NotificationChain msgs = null;
@@ -175,6 +177,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxTime() {
         if (maxTime != null) {
             NotificationChain msgs = null;
@@ -195,6 +198,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxTime() {
         return maxTimeESet;
     }
@@ -204,6 +208,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public MinTime getMinTime() {
         return minTime;
     }
@@ -230,6 +235,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMinTime(MinTime newMinTime) {
         if (newMinTime != minTime) {
             NotificationChain msgs = null;
@@ -270,6 +276,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMinTime() {
         if (minTime != null) {
             NotificationChain msgs = null;
@@ -290,6 +297,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMinTime() {
         return minTimeESet;
     }
@@ -299,6 +307,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectedAP getConnectedAP() {
         if (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP) return null;
         return (ConnectedAP)eInternalContainer();
@@ -319,6 +328,7 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
         if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE__CONNECTED_AP && newConnectedAP != null)) {
             if (EcoreUtil.isAncestor(this, newConnectedAP))

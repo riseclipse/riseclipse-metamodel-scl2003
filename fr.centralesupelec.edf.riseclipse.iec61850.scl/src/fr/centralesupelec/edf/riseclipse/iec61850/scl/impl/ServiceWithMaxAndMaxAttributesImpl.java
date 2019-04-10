@@ -94,6 +94,7 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMaxAttributes() {
         return maxAttributes;
     }
@@ -103,6 +104,7 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMaxAttributes(Integer newMaxAttributes) {
         Integer oldMaxAttributes = maxAttributes;
         maxAttributes = newMaxAttributes;
@@ -117,6 +119,7 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMaxAttributes() {
         Integer oldMaxAttributes = maxAttributes;
         boolean oldMaxAttributesESet = maxAttributesESet;
@@ -131,6 +134,7 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMaxAttributes() {
         return maxAttributesESet;
     }

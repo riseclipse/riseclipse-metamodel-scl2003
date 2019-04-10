@@ -18,32 +18,16 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collections;
-import java.util.List;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -716,6 +700,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDaName() {
         return daName;
     }
@@ -725,6 +710,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDaName( String newDaName ) {
         String oldDaName = daName;
         daName = newDaName;
@@ -739,6 +725,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDaName() {
         String oldDaName = daName;
         boolean oldDaNameESet = daNameESet;
@@ -753,6 +740,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDaName() {
         return daNameESet;
     }
@@ -762,6 +750,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDoName() {
         return doName;
     }
@@ -771,6 +760,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDoName( String newDoName ) {
         String oldDoName = doName;
         doName = newDoName;
@@ -785,6 +775,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDoName() {
         String oldDoName = doName;
         boolean oldDoNameESet = doNameESet;
@@ -799,6 +790,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDoName() {
         return doNameESet;
     }
@@ -808,6 +800,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -817,6 +810,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -831,6 +825,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -845,6 +840,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -854,6 +850,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIntAddr() {
         return intAddr;
     }
@@ -863,6 +860,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIntAddr( String newIntAddr ) {
         String oldIntAddr = intAddr;
         intAddr = newIntAddr;
@@ -877,6 +875,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIntAddr() {
         String oldIntAddr = intAddr;
         boolean oldIntAddrESet = intAddrESet;
@@ -891,6 +890,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIntAddr() {
         return intAddrESet;
     }
@@ -900,6 +900,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -909,6 +910,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -923,6 +925,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -937,6 +940,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -946,6 +950,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -955,6 +960,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -969,6 +975,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -983,6 +990,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -992,6 +1000,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -1001,6 +1010,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -1015,6 +1025,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -1029,6 +1040,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -1038,6 +1050,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -1047,6 +1060,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -1061,6 +1075,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -1075,6 +1090,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -1084,6 +1100,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceType getServiceType() {
         return serviceType;
     }
@@ -1093,6 +1110,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServiceType( ServiceType newServiceType ) {
         ServiceType oldServiceType = serviceType;
         serviceType = newServiceType == null ? SERVICE_TYPE_EDEFAULT : newServiceType;
@@ -1107,6 +1125,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetServiceType() {
         ServiceType oldServiceType = serviceType;
         boolean oldServiceTypeESet = serviceTypeESet;
@@ -1121,6 +1140,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetServiceType() {
         return serviceTypeESet;
     }
@@ -1130,6 +1150,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSrcCBName() {
         return srcCBName;
     }
@@ -1139,6 +1160,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSrcCBName( String newSrcCBName ) {
         String oldSrcCBName = srcCBName;
         srcCBName = newSrcCBName;
@@ -1153,6 +1175,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSrcCBName() {
         String oldSrcCBName = srcCBName;
         boolean oldSrcCBNameESet = srcCBNameESet;
@@ -1167,6 +1190,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSrcCBName() {
         return srcCBNameESet;
     }
@@ -1176,6 +1200,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSrcLDInst() {
         return srcLDInst;
     }
@@ -1185,6 +1210,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSrcLDInst( String newSrcLDInst ) {
         String oldSrcLDInst = srcLDInst;
         srcLDInst = newSrcLDInst;
@@ -1199,6 +1225,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSrcLDInst() {
         String oldSrcLDInst = srcLDInst;
         boolean oldSrcLDInstESet = srcLDInstESet;
@@ -1213,6 +1240,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSrcLDInst() {
         return srcLDInstESet;
     }
@@ -1222,6 +1250,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSrcLNClass() {
         return srcLNClass;
     }
@@ -1231,6 +1260,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSrcLNClass( String newSrcLNClass ) {
         String oldSrcLNClass = srcLNClass;
         srcLNClass = newSrcLNClass;
@@ -1245,6 +1275,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSrcLNClass() {
         String oldSrcLNClass = srcLNClass;
         boolean oldSrcLNClassESet = srcLNClassESet;
@@ -1259,6 +1290,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSrcLNClass() {
         return srcLNClassESet;
     }
@@ -1268,6 +1300,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSrcLNInst() {
         return srcLNInst;
     }
@@ -1277,6 +1310,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSrcLNInst( String newSrcLNInst ) {
         String oldSrcLNInst = srcLNInst;
         srcLNInst = newSrcLNInst;
@@ -1291,6 +1325,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSrcLNInst() {
         String oldSrcLNInst = srcLNInst;
         boolean oldSrcLNInstESet = srcLNInstESet;
@@ -1305,6 +1340,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSrcLNInst() {
         return srcLNInstESet;
     }
@@ -1314,6 +1350,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSrcPrefix() {
         return srcPrefix;
     }
@@ -1323,6 +1360,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSrcPrefix( String newSrcPrefix ) {
         String oldSrcPrefix = srcPrefix;
         srcPrefix = newSrcPrefix;
@@ -1337,6 +1375,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSrcPrefix() {
         String oldSrcPrefix = srcPrefix;
         boolean oldSrcPrefixESet = srcPrefixESet;
@@ -1351,6 +1390,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSrcPrefix() {
         return srcPrefixESet;
     }
@@ -1360,6 +1400,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Inputs getInputs() {
         if (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS) return null;
         return (Inputs)eInternalContainer();
@@ -1380,6 +1421,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setInputs( Inputs newInputs ) {
         if (newInputs != eInternalContainer() || (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS && newInputs != null)) {
             if (EcoreUtil.isAncestor(this, newInputs))
@@ -1401,6 +1443,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -1427,6 +1470,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -1467,6 +1511,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -1487,6 +1532,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }
@@ -1496,6 +1542,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataAttribute getRefersToDataAttribute() {
         return refersToDataAttribute;
     }
@@ -1522,6 +1569,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
         if (newRefersToDataAttribute != refersToDataAttribute) {
             NotificationChain msgs = null;
@@ -1562,6 +1610,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDataAttribute() {
         if (refersToDataAttribute != null) {
             NotificationChain msgs = null;
@@ -1582,6 +1631,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDataAttribute() {
         return refersToDataAttributeESet;
     }
@@ -1591,6 +1641,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataObject getRefersToDataObject() {
         return refersToDataObject;
     }
@@ -1617,6 +1668,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDataObject(DataObject newRefersToDataObject) {
         if (newRefersToDataObject != refersToDataObject) {
             NotificationChain msgs = null;
@@ -1657,6 +1709,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDataObject() {
         if (refersToDataObject != null) {
             NotificationChain msgs = null;
@@ -1677,6 +1730,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDataObject() {
         return refersToDataObjectESet;
     }
@@ -1686,6 +1740,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -1695,6 +1750,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDesc(String newDesc) {
         String oldDesc = desc;
         desc = newDesc;
@@ -1709,6 +1765,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDesc() {
         String oldDesc = desc;
         boolean oldDescESet = descESet;
@@ -1723,6 +1780,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDesc() {
         return descESet;
     }
@@ -1732,6 +1790,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceType getPServT() {
         return pServT;
     }
@@ -1741,6 +1800,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPServT(ServiceType newPServT) {
         ServiceType oldPServT = pServT;
         pServT = newPServT == null ? PSERV_T_EDEFAULT : newPServT;
@@ -1755,6 +1815,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPServT() {
         ServiceType oldPServT = pServT;
         boolean oldPServTESet = pServTESet;
@@ -1769,6 +1830,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPServT() {
         return pServTESet;
     }
@@ -1778,6 +1840,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPLN() {
         return pLN;
     }
@@ -1787,6 +1850,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPLN(String newPLN) {
         String oldPLN = pLN;
         pLN = newPLN;
@@ -1801,6 +1865,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPLN() {
         String oldPLN = pLN;
         boolean oldPLNESet = pLNESet;
@@ -1815,6 +1880,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPLN() {
         return pLNESet;
     }
@@ -1824,6 +1890,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPDO() {
         return pDO;
     }
@@ -1833,6 +1900,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPDO(String newPDO) {
         String oldPDO = pDO;
         pDO = newPDO;
@@ -1847,6 +1915,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPDO() {
         String oldPDO = pDO;
         boolean oldPDOESet = pDOESet;
@@ -1861,6 +1930,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPDO() {
         return pDOESet;
     }
@@ -1870,6 +1940,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPDA() {
         return pDA;
     }
@@ -1879,6 +1950,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPDA(String newPDA) {
         String oldPDA = pDA;
         pDA = newPDA;
@@ -1893,6 +1965,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPDA() {
         String oldPDA = pDA;
         boolean oldPDAESet = pDAESet;
@@ -1907,6 +1980,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPDA() {
         return pDAESet;
     }

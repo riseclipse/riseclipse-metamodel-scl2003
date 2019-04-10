@@ -137,6 +137,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -146,6 +147,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -160,6 +162,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -174,6 +177,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -183,6 +187,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
             eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.POWER_TRANSFORMER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__POWER_TRANSFORMER);
@@ -195,6 +200,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEqFunction() {
         if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
     }
@@ -204,6 +210,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEqFunction() {
         return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
     }
@@ -213,6 +220,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EquipmentContainer getEquipmentContainer() {
         if (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER) return null;
         return (EquipmentContainer)eInternalContainer();
@@ -234,6 +242,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEquipmentContainer( EquipmentContainer newEquipmentContainer ) {
         if (newEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER && newEquipmentContainer != null)) {
             if (EcoreUtil.isAncestor(this, newEquipmentContainer))
@@ -255,6 +264,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
             subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER);
@@ -267,6 +277,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubEquipment() {
         if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
     }
@@ -276,6 +287,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubEquipment() {
         return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
     }
@@ -285,6 +297,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<TransformerWinding> getTransformerWinding() {
         if (transformerWinding == null) {
             transformerWinding = new EObjectContainmentWithInverseEList.Unsettable<TransformerWinding>(TransformerWinding.class, this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, SclPackage.TRANSFORMER_WINDING__POWER_TRANSFORMER);
@@ -297,6 +310,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTransformerWinding() {
         if (transformerWinding != null) ((InternalEList.Unsettable<?>)transformerWinding).unset();
     }
@@ -306,6 +320,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTransformerWinding() {
         return transformerWinding != null && ((InternalEList.Unsettable<?>)transformerWinding).isSet();
     }

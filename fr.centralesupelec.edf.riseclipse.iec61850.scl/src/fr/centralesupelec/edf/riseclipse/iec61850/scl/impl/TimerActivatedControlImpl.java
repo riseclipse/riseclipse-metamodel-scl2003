@@ -67,6 +67,7 @@ public class TimerActivatedControlImpl extends ServiceYesNoImpl implements Timer
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.TIMER_ACTIVATED_CONTROL__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class TimerActivatedControlImpl extends ServiceYesNoImpl implements Timer
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIMER_ACTIVATED_CONTROL__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

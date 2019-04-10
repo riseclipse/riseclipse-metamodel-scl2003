@@ -326,6 +326,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getClock() {
         return clock;
     }
@@ -335,6 +336,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setClock( Boolean newClock ) {
         Boolean oldClock = clock;
         clock = newClock;
@@ -349,6 +351,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetClock() {
         Boolean oldClock = clock;
         boolean oldClockESet = clockESet;
@@ -363,6 +366,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetClock() {
         return clockESet;
     }
@@ -372,6 +376,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getKdc() {
         return kdc;
     }
@@ -381,6 +386,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setKdc( Boolean newKdc ) {
         Boolean oldKdc = kdc;
         kdc = newKdc;
@@ -395,6 +401,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetKdc() {
         Boolean oldKdc = kdc;
         boolean oldKdcESet = kdcESet;
@@ -409,6 +416,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetKdc() {
         return kdcESet;
     }
@@ -418,6 +426,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRouter() {
         return router;
     }
@@ -427,6 +436,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRouter( Boolean newRouter ) {
         Boolean oldRouter = router;
         router = newRouter;
@@ -441,6 +451,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRouter() {
         Boolean oldRouter = router;
         boolean oldRouterESet = routerESet;
@@ -455,6 +466,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRouter() {
         return routerESet;
     }
@@ -464,6 +476,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IED getIED() {
         if (eContainerFeatureID() != SclPackage.ACCESS_POINT__IED) return null;
         return (IED)eInternalContainer();
@@ -484,6 +497,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIED( IED newIED ) {
         if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.ACCESS_POINT__IED && newIED != null)) {
             if (EcoreUtil.isAncestor(this, newIED))
@@ -505,6 +519,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LN> getLN() {
         if (ln == null) {
             ln = new EObjectContainmentWithInverseEList.Unsettable<LN>(LN.class, this, SclPackage.ACCESS_POINT__LN, SclPackage.LN__ACCESS_POINT);
@@ -517,6 +532,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLN() {
         if (ln != null) ((InternalEList.Unsettable<?>)ln).unset();
     }
@@ -526,6 +542,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLN() {
         return ln != null && ((InternalEList.Unsettable<?>)ln).isSet();
     }
@@ -535,6 +552,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SMVSecurity> getSMVSecurity() {
         if (smvSecurity == null) {
             smvSecurity = new EObjectContainmentWithInverseEList.Unsettable<SMVSecurity>(SMVSecurity.class, this, SclPackage.ACCESS_POINT__SMV_SECURITY, SclPackage.SMV_SECURITY__ACCESS_POINT);
@@ -547,6 +565,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSMVSecurity() {
         if (smvSecurity != null) ((InternalEList.Unsettable<?>)smvSecurity).unset();
     }
@@ -556,6 +575,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSMVSecurity() {
         return smvSecurity != null && ((InternalEList.Unsettable<?>)smvSecurity).isSet();
     }
@@ -565,6 +585,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServerAt getServerAt() {
         return serverAt;
     }
@@ -591,6 +612,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServerAt( ServerAt newServerAt ) {
         if (newServerAt != serverAt) {
             NotificationChain msgs = null;
@@ -631,6 +653,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetServerAt() {
         if (serverAt != null) {
             NotificationChain msgs = null;
@@ -651,6 +674,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetServerAt() {
         return serverAtESet;
     }
@@ -660,6 +684,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Server getServer() {
         return server;
     }
@@ -686,6 +711,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServer( Server newServer ) {
         if (newServer != server) {
             NotificationChain msgs = null;
@@ -726,6 +752,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetServer() {
         if (server != null) {
             NotificationChain msgs = null;
@@ -746,6 +773,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetServer() {
         return serverESet;
     }
@@ -755,6 +783,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         return services;
     }
@@ -781,6 +810,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != services) {
             NotificationChain msgs = null;
@@ -821,6 +851,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetServices() {
         if (services != null) {
             NotificationChain msgs = null;
@@ -841,6 +872,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetServices() {
         return servicesESet;
     }
@@ -850,6 +882,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GOOSESecurity> getGOOSESecurity() {
         if (gooseSecurity == null) {
             gooseSecurity = new EObjectContainmentWithInverseEList.Unsettable<GOOSESecurity>(GOOSESecurity.class, this, SclPackage.ACCESS_POINT__GOOSE_SECURITY, SclPackage.GOOSE_SECURITY__ACCESS_POINT);
@@ -862,6 +895,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGOOSESecurity() {
         if (gooseSecurity != null) ((InternalEList.Unsettable<?>)gooseSecurity).unset();
     }
@@ -871,6 +905,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGOOSESecurity() {
         return gooseSecurity != null && ((InternalEList.Unsettable<?>)gooseSecurity).isSet();
     }
@@ -880,6 +915,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ServerAt> getReferredByServerAt() {
         if (referredByServerAt == null) {
             referredByServerAt = new EObjectWithInverseEList.Unsettable<ServerAt>(ServerAt.class, this, SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT);
@@ -892,6 +928,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByServerAt() {
         if (referredByServerAt != null) ((InternalEList.Unsettable<?>)referredByServerAt).unset();
     }
@@ -901,6 +938,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByServerAt() {
         return referredByServerAt != null && ((InternalEList.Unsettable<?>)referredByServerAt).isSet();
     }
@@ -910,6 +948,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -919,6 +958,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -933,6 +973,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -947,6 +988,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -956,6 +998,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConnectedAP> getReferredByConnectedAP() {
         if (referredByConnectedAP == null) {
             referredByConnectedAP = new EObjectWithInverseEList.Unsettable<ConnectedAP>(ConnectedAP.class, this, SclPackage.ACCESS_POINT__REFERRED_BY_CONNECTED_AP, SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT);
@@ -968,6 +1011,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByConnectedAP() {
         if (referredByConnectedAP != null) ((InternalEList.Unsettable<?>)referredByConnectedAP).unset();
     }
@@ -977,6 +1021,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByConnectedAP() {
         return referredByConnectedAP != null && ((InternalEList.Unsettable<?>)referredByConnectedAP).isSet();
     }
@@ -986,6 +1031,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<KDC> getReferredByKDC() {
         if (referredByKDC == null) {
             referredByKDC = new EObjectWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, SclPackage.KDC__REFERS_TO_ACCESS_POINT);
@@ -998,6 +1044,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByKDC() {
         if (referredByKDC != null) ((InternalEList.Unsettable<?>)referredByKDC).unset();
     }
@@ -1007,6 +1054,7 @@ public class AccessPointImpl extends UnNamingImpl implements AccessPoint {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByKDC() {
         return referredByKDC != null && ((InternalEList.Unsettable<?>)referredByKDC).isSet();
     }

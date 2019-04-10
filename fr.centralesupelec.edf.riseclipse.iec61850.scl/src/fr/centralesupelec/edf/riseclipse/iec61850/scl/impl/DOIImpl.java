@@ -125,6 +125,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getIx() {
         return ix;
     }
@@ -134,6 +135,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIx( Integer newIx ) {
         Integer oldIx = ix;
         ix = newIx;
@@ -148,6 +150,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIx() {
         Integer oldIx = ix;
         boolean oldIxESet = ixESet;
@@ -162,6 +165,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIx() {
         return ixESet;
     }
@@ -171,6 +175,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.DOI__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -191,6 +196,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.DOI__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -212,6 +218,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DAI> getDAI() {
         if (dai == null) {
             dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.DOI__DAI, SclPackage.DAI__DOI);
@@ -224,6 +231,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDAI() {
         if (dai != null) ((InternalEList.Unsettable<?>)dai).unset();
     }
@@ -233,6 +241,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDAI() {
         return dai != null && ((InternalEList.Unsettable<?>)dai).isSet();
     }
@@ -242,6 +251,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SDI> getSDI() {
         if (sdi == null) {
             sdi = new EObjectContainmentWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.DOI__SDI, SclPackage.SDI__DOI);
@@ -254,6 +264,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSDI() {
         if (sdi != null) ((InternalEList.Unsettable<?>)sdi).unset();
     }
@@ -263,6 +274,7 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSDI() {
         return sdi != null && ((InternalEList.Unsettable<?>)sdi).isSet();
     }

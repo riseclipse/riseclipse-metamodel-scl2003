@@ -287,6 +287,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getBType() {
         return bType;
     }
@@ -296,6 +297,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBType( String newBType ) {
         String oldBType = bType;
         bType = newBType;
@@ -310,6 +312,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBType() {
         String oldBType = bType;
         boolean oldBTypeESet = bTypeESet;
@@ -324,6 +327,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBType() {
         return bTypeESet;
     }
@@ -333,6 +337,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCount() {
         return count;
     }
@@ -342,6 +347,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCount(String newCount) {
         String oldCount = count;
         count = newCount;
@@ -356,6 +362,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCount() {
         String oldCount = count;
         boolean oldCountESet = countESet;
@@ -370,6 +377,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCount() {
         return countESet;
     }
@@ -379,6 +387,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSAddr() {
         return sAddr;
     }
@@ -388,6 +397,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSAddr( String newSAddr ) {
         String oldSAddr = sAddr;
         sAddr = newSAddr;
@@ -402,6 +412,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSAddr() {
         String oldSAddr = sAddr;
         boolean oldSAddrESet = sAddrESet;
@@ -416,6 +427,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSAddr() {
         return sAddrESet;
     }
@@ -425,6 +437,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -434,6 +447,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -448,6 +462,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -462,6 +477,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -471,6 +487,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getValImport() {
         return valImport;
     }
@@ -480,6 +497,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValImport( Boolean newValImport ) {
         Boolean oldValImport = valImport;
         valImport = newValImport;
@@ -494,6 +512,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValImport() {
         Boolean oldValImport = valImport;
         boolean oldValImportESet = valImportESet;
@@ -508,6 +527,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValImport() {
         return valImportESet;
     }
@@ -517,6 +537,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ValKindEnum getValKind() {
         return valKind;
     }
@@ -526,6 +547,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValKind( ValKindEnum newValKind ) {
         ValKindEnum oldValKind = valKind;
         valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
@@ -540,6 +562,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetValKind() {
         ValKindEnum oldValKind = valKind;
         boolean oldValKindESet = valKindESet;
@@ -554,6 +577,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetValKind() {
         return valKindESet;
     }
@@ -563,6 +587,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EnumType getRefersToEnumType() {
         return refersToEnumType;
     }
@@ -589,6 +614,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToEnumType(EnumType newRefersToEnumType) {
         if (newRefersToEnumType != refersToEnumType) {
             NotificationChain msgs = null;
@@ -629,6 +655,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToEnumType() {
         if (refersToEnumType != null) {
             NotificationChain msgs = null;
@@ -649,6 +676,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToEnumType() {
         return refersToEnumTypeESet;
     }
@@ -658,6 +686,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Val> getVal() {
         if (val == null) {
             val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE);
@@ -670,6 +699,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVal() {
         if (val != null) ((InternalEList.Unsettable<?>)val).unset();
     }
@@ -679,6 +709,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVal() {
         return val != null && ((InternalEList.Unsettable<?>)val).isSet();
     }

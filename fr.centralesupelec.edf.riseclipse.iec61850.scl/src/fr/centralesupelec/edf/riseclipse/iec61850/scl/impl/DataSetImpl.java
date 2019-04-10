@@ -126,6 +126,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.DATA_SET__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -146,6 +147,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_SET__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -167,6 +169,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Control> getReferredByControl() {
         if (referredByControl == null) {
             referredByControl = new EObjectWithInverseEList.Unsettable<Control>(Control.class, this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, SclPackage.CONTROL__REFERS_TO_DATA_SET);
@@ -179,6 +182,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByControl() {
         if (referredByControl != null) ((InternalEList.Unsettable<?>)referredByControl).unset();
     }
@@ -188,6 +192,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByControl() {
         return referredByControl != null && ((InternalEList.Unsettable<?>)referredByControl).isSet();
     }
@@ -197,6 +202,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<FCDA> getFCDA() {
         if (fcda == null) {
             fcda = new EObjectContainmentWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_SET__FCDA, SclPackage.FCDA__DATA_SET);
@@ -209,6 +215,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFCDA() {
         if (fcda != null) ((InternalEList.Unsettable<?>)fcda).unset();
     }
@@ -218,6 +225,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFCDA() {
         return fcda != null && ((InternalEList.Unsettable<?>)fcda).isSet();
     }
@@ -227,6 +235,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -236,6 +245,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -250,6 +260,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -264,6 +275,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }

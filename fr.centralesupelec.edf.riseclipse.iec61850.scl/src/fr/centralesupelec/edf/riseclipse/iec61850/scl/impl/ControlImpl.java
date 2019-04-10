@@ -150,6 +150,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDatSet() {
         return datSet;
     }
@@ -159,6 +160,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDatSet( String newDatSet ) {
         String oldDatSet = datSet;
         datSet = newDatSet;
@@ -173,6 +175,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDatSet() {
         String oldDatSet = datSet;
         boolean oldDatSetESet = datSetESet;
@@ -187,6 +190,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDatSet() {
         return datSetESet;
     }
@@ -196,6 +200,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataSet getRefersToDataSet() {
         return refersToDataSet;
     }
@@ -222,6 +227,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDataSet(DataSet newRefersToDataSet) {
         if (newRefersToDataSet != refersToDataSet) {
             NotificationChain msgs = null;
@@ -262,6 +268,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDataSet() {
         if (refersToDataSet != null) {
             NotificationChain msgs = null;
@@ -282,6 +289,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDataSet() {
         return refersToDataSetESet;
     }
@@ -291,6 +299,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -300,6 +309,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -314,6 +324,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -328,6 +339,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }

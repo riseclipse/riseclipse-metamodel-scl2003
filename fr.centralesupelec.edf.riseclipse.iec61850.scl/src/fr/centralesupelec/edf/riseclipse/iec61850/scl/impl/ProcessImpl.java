@@ -149,6 +149,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -158,6 +159,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -172,6 +174,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -186,6 +189,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -195,6 +199,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Line> getLine() {
         if (line == null) {
             line = new EObjectContainmentWithInverseEList.Unsettable<Line>(Line.class, this, SclPackage.PROCESS__LINE, SclPackage.LINE__PROCESS);
@@ -207,6 +212,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLine() {
         if (line != null) ((InternalEList.Unsettable<?>)line).unset();
     }
@@ -216,6 +222,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLine() {
         return line != null && ((InternalEList.Unsettable<?>)line).isSet();
     }
@@ -225,6 +232,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.PROCESS__SCL) return null;
         return (SCL)eInternalContainer();
@@ -245,6 +253,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROCESS__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))
@@ -266,6 +275,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
             conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.PROCESS__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__PROCESS);
@@ -278,6 +288,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConductingEquipment() {
         if (conductingEquipment != null) ((InternalEList.Unsettable<?>)conductingEquipment).unset();
     }
@@ -287,6 +298,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConductingEquipment() {
         return conductingEquipment != null && ((InternalEList.Unsettable<?>)conductingEquipment).isSet();
     }
@@ -296,6 +308,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Substation> getSubstation() {
         if (substation == null) {
             substation = new EObjectContainmentWithInverseEList.Unsettable<Substation>(Substation.class, this, SclPackage.PROCESS__SUBSTATION, SclPackage.SUBSTATION__PROCESS);
@@ -308,6 +321,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubstation() {
         if (substation != null) ((InternalEList.Unsettable<?>)substation).unset();
     }
@@ -317,6 +331,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubstation() {
         return substation != null && ((InternalEList.Unsettable<?>)substation).isSet();
     }
@@ -326,6 +341,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getSubProcesses() {
         if (subProcesses == null) {
             subProcesses = new EObjectContainmentWithInverseEList.Unsettable<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.PROCESS__SUB_PROCESSES, SclPackage.PROCESS__PARENT_PROCESS);
@@ -338,6 +354,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubProcesses() {
         if (subProcesses != null) ((InternalEList.Unsettable<?>)subProcesses).unset();
     }
@@ -347,6 +364,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubProcesses() {
         return subProcesses != null && ((InternalEList.Unsettable<?>)subProcesses).isSet();
     }
@@ -356,6 +374,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess() {
         if (eContainerFeatureID() != SclPackage.PROCESS__PARENT_PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
@@ -377,6 +396,7 @@ public class ProcessImpl extends GeneralEquipmentContainerImpl implements
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess ) {
         if (newParentProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROCESS__PARENT_PROCESS && newParentProcess != null)) {
             if (EcoreUtil.isAncestor(this, newParentProcess))

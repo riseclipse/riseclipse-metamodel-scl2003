@@ -386,6 +386,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDaName() {
         return daName;
     }
@@ -395,6 +396,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDaName( String newDaName ) {
         String oldDaName = daName;
         daName = newDaName;
@@ -409,6 +411,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDaName() {
         String oldDaName = daName;
         boolean oldDaNameESet = daNameESet;
@@ -423,6 +426,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDaName() {
         return daNameESet;
     }
@@ -432,6 +436,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDoName() {
         return doName;
     }
@@ -441,6 +446,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDoName( String newDoName ) {
         String oldDoName = doName;
         doName = newDoName;
@@ -455,6 +461,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDoName() {
         String oldDoName = doName;
         boolean oldDoNameESet = doNameESet;
@@ -469,6 +476,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDoName() {
         return doNameESet;
     }
@@ -478,6 +486,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public FCEnum getFc() {
         return fc;
     }
@@ -487,6 +496,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setFc( FCEnum newFc ) {
         FCEnum oldFc = fc;
         fc = newFc == null ? FC_EDEFAULT : newFc;
@@ -501,6 +511,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFc() {
         FCEnum oldFc = fc;
         boolean oldFcESet = fcESet;
@@ -515,6 +526,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFc() {
         return fcESet;
     }
@@ -524,6 +536,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getIx() {
         return ix;
     }
@@ -533,6 +546,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIx( Integer newIx ) {
         Integer oldIx = ix;
         ix = newIx;
@@ -547,6 +561,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIx() {
         Integer oldIx = ix;
         boolean oldIxESet = ixESet;
@@ -561,6 +576,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIx() {
         return ixESet;
     }
@@ -570,6 +586,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -579,6 +596,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -593,6 +611,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -607,6 +626,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -616,6 +636,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -625,6 +646,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -639,6 +661,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -653,6 +676,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -662,6 +686,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -671,6 +696,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -685,6 +711,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -699,6 +726,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -708,6 +736,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -717,6 +746,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -731,6 +761,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -745,6 +776,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -754,6 +786,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataAttribute getRefersToDataAttribute() {
         return refersToDataAttribute;
     }
@@ -780,6 +813,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
         if (newRefersToDataAttribute != refersToDataAttribute) {
             NotificationChain msgs = null;
@@ -820,6 +854,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDataAttribute() {
         if (refersToDataAttribute != null) {
             NotificationChain msgs = null;
@@ -840,6 +875,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDataAttribute() {
         return refersToDataAttributeESet;
     }
@@ -849,6 +885,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataObject getRefersToDataObject() {
         return refersToDataObject;
     }
@@ -875,6 +912,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDataObject(DataObject newRefersToDataObject) {
         if (newRefersToDataObject != refersToDataObject) {
             NotificationChain msgs = null;
@@ -915,6 +953,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDataObject() {
         if (refersToDataObject != null) {
             NotificationChain msgs = null;
@@ -935,6 +974,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDataObject() {
         return refersToDataObjectESet;
     }
@@ -944,6 +984,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataSet getDataSet() {
         if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
         return (DataSet)eInternalContainer();
@@ -964,6 +1005,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataSet( DataSet newDataSet ) {
         if (newDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__DATA_SET && newDataSet != null)) {
             if (EcoreUtil.isAncestor(this, newDataSet))
@@ -985,6 +1027,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -1011,6 +1054,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -1051,6 +1095,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -1071,6 +1116,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }

@@ -179,6 +179,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getAppID() {
         return appID;
     }
@@ -188,6 +189,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAppID( ServiceSettingsEnum newAppID ) {
         ServiceSettingsEnum oldAppID = appID;
         appID = newAppID == null ? APP_ID_EDEFAULT : newAppID;
@@ -202,6 +204,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAppID() {
         ServiceSettingsEnum oldAppID = appID;
         boolean oldAppIDESet = appIDESet;
@@ -216,6 +219,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAppID() {
         return appIDESet;
     }
@@ -225,6 +229,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ServiceSettingsEnum getDataLabel() {
         return dataLabel;
     }
@@ -234,6 +239,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataLabel( ServiceSettingsEnum newDataLabel ) {
         ServiceSettingsEnum oldDataLabel = dataLabel;
         dataLabel = newDataLabel == null ? DATA_LABEL_EDEFAULT : newDataLabel;
@@ -248,6 +254,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataLabel() {
         ServiceSettingsEnum oldDataLabel = dataLabel;
         boolean oldDataLabelESet = dataLabelESet;
@@ -262,6 +269,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataLabel() {
         return dataLabelESet;
     }
@@ -271,6 +279,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -291,6 +300,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -312,6 +322,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public McSecurity getMcSecurity() {
         return mcSecurity;
     }
@@ -338,6 +349,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMcSecurity(McSecurity newMcSecurity) {
         if (newMcSecurity != mcSecurity) {
             NotificationChain msgs = null;
@@ -378,6 +390,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMcSecurity() {
         if (mcSecurity != null) {
             NotificationChain msgs = null;
@@ -398,6 +411,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMcSecurity() {
         return mcSecurityESet;
     }
@@ -407,6 +421,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getKdaParticipant() {
         return kdaParticipant;
     }
@@ -416,6 +431,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setKdaParticipant(Boolean newKdaParticipant) {
         Boolean oldKdaParticipant = kdaParticipant;
         kdaParticipant = newKdaParticipant;
@@ -430,6 +446,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetKdaParticipant() {
         Boolean oldKdaParticipant = kdaParticipant;
         boolean oldKdaParticipantESet = kdaParticipantESet;
@@ -444,6 +461,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetKdaParticipant() {
         return kdaParticipantESet;
     }

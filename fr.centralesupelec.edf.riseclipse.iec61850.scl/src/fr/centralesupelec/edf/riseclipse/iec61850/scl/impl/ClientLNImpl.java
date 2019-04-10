@@ -306,6 +306,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getApRef() {
         return apRef;
     }
@@ -315,6 +316,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setApRef( String newApRef ) {
         String oldApRef = apRef;
         apRef = newApRef;
@@ -329,6 +331,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetApRef() {
         String oldApRef = apRef;
         boolean oldApRefESet = apRefESet;
@@ -343,6 +346,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetApRef() {
         return apRefESet;
     }
@@ -352,6 +356,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -361,6 +366,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -375,6 +381,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -389,6 +396,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -398,6 +406,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -407,6 +416,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -421,6 +431,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -435,6 +446,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -444,6 +456,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -453,6 +466,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -467,6 +481,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -481,6 +496,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -490,6 +506,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -499,6 +516,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -513,6 +531,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -527,6 +546,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -536,6 +556,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -545,6 +566,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -559,6 +581,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -573,6 +596,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -582,6 +606,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public RptEnabled getRptEnabled() {
         if (eContainerFeatureID() != SclPackage.CLIENT_LN__RPT_ENABLED) return null;
         return (RptEnabled)eInternalContainer();
@@ -602,6 +627,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRptEnabled( RptEnabled newRptEnabled ) {
         if (newRptEnabled != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_LN__RPT_ENABLED && newRptEnabled != null)) {
             if (EcoreUtil.isAncestor(this, newRptEnabled))
@@ -623,6 +649,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getDesc() {
         return desc;
     }
@@ -632,6 +659,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDesc(String newDesc) {
         String oldDesc = desc;
         desc = newDesc;
@@ -646,6 +674,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDesc() {
         String oldDesc = desc;
         boolean oldDescESet = descESet;
@@ -660,6 +689,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDesc() {
         return descESet;
     }
@@ -669,6 +699,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -695,6 +726,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
@@ -735,6 +767,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
@@ -755,6 +788,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAnyLN() {
         return refersToAnyLNESet;
     }

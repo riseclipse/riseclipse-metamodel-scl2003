@@ -270,6 +270,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getMulticast() {
         return multicast;
     }
@@ -279,6 +280,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMulticast( Boolean newMulticast ) {
         Boolean oldMulticast = multicast;
         multicast = newMulticast;
@@ -293,6 +295,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMulticast() {
         Boolean oldMulticast = multicast;
         boolean oldMulticastESet = multicastESet;
@@ -307,6 +310,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMulticast() {
         return multicastESet;
     }
@@ -316,6 +320,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getNofASDU() {
         return nofASDU;
     }
@@ -325,6 +330,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setNofASDU( Integer newNofASDU ) {
         Integer oldNofASDU = nofASDU;
         nofASDU = newNofASDU;
@@ -339,6 +345,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetNofASDU() {
         Integer oldNofASDU = nofASDU;
         boolean oldNofASDUESet = nofASDUESet;
@@ -353,6 +360,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetNofASDU() {
         return nofASDUESet;
     }
@@ -362,6 +370,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public PredefinedTypeOfSecurityEnum getSecurityEnable() {
         return securityEnable;
     }
@@ -371,6 +380,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSecurityEnable( PredefinedTypeOfSecurityEnum newSecurityEnable ) {
         PredefinedTypeOfSecurityEnum oldSecurityEnable = securityEnable;
         securityEnable = newSecurityEnable == null ? SECURITY_ENABLE_EDEFAULT : newSecurityEnable;
@@ -385,6 +395,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSecurityEnable() {
         PredefinedTypeOfSecurityEnum oldSecurityEnable = securityEnable;
         boolean oldSecurityEnableESet = securityEnableESet;
@@ -399,6 +410,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSecurityEnable() {
         return securityEnableESet;
     }
@@ -408,6 +420,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SmpMod getSmpMod() {
         return smpMod;
     }
@@ -417,6 +430,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSmpMod( SmpMod newSmpMod ) {
         SmpMod oldSmpMod = smpMod;
         smpMod = newSmpMod == null ? SMP_MOD_EDEFAULT : newSmpMod;
@@ -431,6 +445,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmpMod() {
         SmpMod oldSmpMod = smpMod;
         boolean oldSmpModESet = smpModESet;
@@ -445,6 +460,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmpMod() {
         return smpModESet;
     }
@@ -454,6 +470,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getSmpRate() {
         return smpRate;
     }
@@ -463,6 +480,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSmpRate( Integer newSmpRate ) {
         Integer oldSmpRate = smpRate;
         smpRate = newSmpRate;
@@ -477,6 +495,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmpRate() {
         Integer oldSmpRate = smpRate;
         boolean oldSmpRateESet = smpRateESet;
@@ -491,6 +510,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmpRate() {
         return smpRateESet;
     }
@@ -500,6 +520,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSmvID() {
         return smvID;
     }
@@ -509,6 +530,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSmvID( String newSmvID ) {
         String oldSmvID = smvID;
         smvID = newSmvID;
@@ -523,6 +545,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmvID() {
         String oldSmvID = smvID;
         boolean oldSmvIDESet = smvIDESet;
@@ -537,6 +560,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmvID() {
         return smvIDESet;
     }
@@ -546,6 +570,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN0 getLN0() {
         if (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__LN0) return null;
         return (LN0)eInternalContainer();
@@ -566,6 +591,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLN0( LN0 newLN0 ) {
         if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__LN0 && newLN0 != null)) {
             if (EcoreUtil.isAncestor(this, newLN0))
@@ -587,6 +613,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SmvOpts getSmvOpts() {
         return smvOpts;
     }
@@ -613,6 +640,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSmvOpts( SmvOpts newSmvOpts ) {
         if (newSmvOpts != smvOpts) {
             NotificationChain msgs = null;
@@ -653,6 +681,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSmvOpts() {
         if (smvOpts != null) {
             NotificationChain msgs = null;
@@ -673,6 +702,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSmvOpts() {
         return smvOptsESet;
     }

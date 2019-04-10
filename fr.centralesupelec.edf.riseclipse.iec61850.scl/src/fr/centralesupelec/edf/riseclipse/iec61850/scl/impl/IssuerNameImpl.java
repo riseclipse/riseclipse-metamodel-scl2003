@@ -67,6 +67,7 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Certificate getCertificate() {
         if (eContainerFeatureID() != SclPackage.ISSUER_NAME__CERTIFICATE) return null;
         return (Certificate)eInternalContainer();
@@ -87,6 +88,7 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCertificate( Certificate newCertificate ) {
         if (newCertificate != eInternalContainer() || (eContainerFeatureID() != SclPackage.ISSUER_NAME__CERTIFICATE && newCertificate != null)) {
             if (EcoreUtil.isAncestor(this, newCertificate))

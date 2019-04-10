@@ -337,6 +337,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getBayName() {
         return bayName;
     }
@@ -346,6 +347,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBayName( String newBayName ) {
         String oldBayName = bayName;
         bayName = newBayName;
@@ -360,6 +362,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBayName() {
         String oldBayName = bayName;
         boolean oldBayNameESet = bayNameESet;
@@ -374,6 +377,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBayName() {
         return bayNameESet;
     }
@@ -383,6 +387,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCNodeName() {
         return cNodeName;
     }
@@ -392,6 +397,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCNodeName( String newCNodeName ) {
         String oldCNodeName = cNodeName;
         cNodeName = newCNodeName;
@@ -406,6 +412,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCNodeName() {
         String oldCNodeName = cNodeName;
         boolean oldCNodeNameESet = cNodeNameESet;
@@ -420,6 +427,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCNodeName() {
         return cNodeNameESet;
     }
@@ -429,6 +437,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getConnectivityNode() {
         return connectivityNode;
     }
@@ -438,6 +447,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConnectivityNode( String newConnectivityNode ) {
         String oldConnectivityNode = connectivityNode;
         connectivityNode = newConnectivityNode;
@@ -452,6 +462,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConnectivityNode() {
         String oldConnectivityNode = connectivityNode;
         boolean oldConnectivityNodeESet = connectivityNodeESet;
@@ -466,6 +477,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConnectivityNode() {
         return connectivityNodeESet;
     }
@@ -475,6 +487,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getProcessName() {
         return processName;
     }
@@ -484,6 +497,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setProcessName( String newProcessName ) {
         String oldProcessName = processName;
         processName = newProcessName;
@@ -498,6 +512,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetProcessName() {
         String oldProcessName = processName;
         boolean oldProcessNameESet = processNameESet;
@@ -512,6 +527,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetProcessName() {
         return processNameESet;
     }
@@ -521,6 +537,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSubstationName() {
         return substationName;
     }
@@ -530,6 +547,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubstationName( String newSubstationName ) {
         String oldSubstationName = substationName;
         substationName = newSubstationName;
@@ -544,6 +562,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubstationName() {
         String oldSubstationName = substationName;
         boolean oldSubstationNameESet = substationNameESet;
@@ -558,6 +577,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubstationName() {
         return substationNameESet;
     }
@@ -567,6 +587,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getVoltageLevelName() {
         return voltageLevelName;
     }
@@ -576,6 +597,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVoltageLevelName( String newVoltageLevelName ) {
         String oldVoltageLevelName = voltageLevelName;
         voltageLevelName = newVoltageLevelName;
@@ -590,6 +612,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVoltageLevelName() {
         String oldVoltageLevelName = voltageLevelName;
         boolean oldVoltageLevelNameESet = voltageLevelNameESet;
@@ -604,6 +627,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVoltageLevelName() {
         return voltageLevelNameESet;
     }
@@ -613,6 +637,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractConductingEquipment getAbstractConductingEquipment() {
         if (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
         return (AbstractConductingEquipment)eInternalContainer();
@@ -634,6 +659,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAbstractConductingEquipment( AbstractConductingEquipment newAbstractConductingEquipment ) {
         if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
             if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
@@ -655,6 +681,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectivityNode getRefersToConnectivityNode() {
         return refersToConnectivityNode;
     }
@@ -681,6 +708,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToConnectivityNode(ConnectivityNode newRefersToConnectivityNode) {
         if (newRefersToConnectivityNode != refersToConnectivityNode) {
             NotificationChain msgs = null;
@@ -721,6 +749,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToConnectivityNode() {
         if (refersToConnectivityNode != null) {
             NotificationChain msgs = null;
@@ -741,6 +770,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToConnectivityNode() {
         return refersToConnectivityNodeESet;
     }
@@ -750,6 +780,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -759,6 +790,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -773,6 +805,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -787,6 +820,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -796,6 +830,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLineName() {
         return lineName;
     }
@@ -805,6 +840,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLineName(String newLineName) {
         String oldLineName = lineName;
         lineName = newLineName;
@@ -819,6 +855,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLineName() {
         String oldLineName = lineName;
         boolean oldLineNameESet = lineNameESet;
@@ -833,6 +870,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLineName() {
         return lineNameESet;
     }

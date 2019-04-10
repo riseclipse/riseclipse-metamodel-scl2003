@@ -92,6 +92,7 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMax() {
         return max;
     }
@@ -101,6 +102,7 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMax( Integer newMax ) {
         Integer oldMax = max;
         max = newMax;
@@ -115,6 +117,7 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMax() {
         Integer oldMax = max;
         boolean oldMaxESet = maxESet;
@@ -129,6 +132,7 @@ public class ServiceWithMaxImpl extends SclObjectImpl implements ServiceWithMax 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMax() {
         return maxESet;
     }

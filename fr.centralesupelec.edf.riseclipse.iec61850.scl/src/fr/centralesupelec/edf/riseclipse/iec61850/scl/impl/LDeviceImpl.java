@@ -211,6 +211,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getInst() {
         return inst;
     }
@@ -220,6 +221,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setInst( String newInst ) {
         String oldInst = inst;
         inst = newInst;
@@ -234,6 +236,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetInst() {
         String oldInst = inst;
         boolean oldInstESet = instESet;
@@ -248,6 +251,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetInst() {
         return instESet;
     }
@@ -270,6 +274,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdName( String newLdName ) {
         String oldLdName = ldName;
         ldName = newLdName;
@@ -284,6 +289,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdName() {
         String oldLdName = ldName;
         boolean oldLdNameESet = ldNameESet;
@@ -298,6 +304,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdName() {
         return ldNameESet;
     }
@@ -307,6 +314,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ControlBlock> getReferredByControlBlock() {
         if (referredByControlBlock == null) {
             referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE);
@@ -319,6 +327,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByControlBlock() {
         if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
     }
@@ -328,6 +337,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByControlBlock() {
         return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
     }
@@ -337,6 +347,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessControl getAccessControl() {
         return accessControl;
     }
@@ -363,6 +374,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessControl( AccessControl newAccessControl ) {
         if (newAccessControl != accessControl) {
             NotificationChain msgs = null;
@@ -403,6 +415,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAccessControl() {
         if (accessControl != null) {
             NotificationChain msgs = null;
@@ -423,6 +436,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAccessControl() {
         return accessControlESet;
     }
@@ -432,6 +446,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Server getServer() {
         if (eContainerFeatureID() != SclPackage.LDEVICE__SERVER) return null;
         return (Server)eInternalContainer();
@@ -452,6 +467,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServer( Server newServer ) {
         if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.LDEVICE__SERVER && newServer != null)) {
             if (EcoreUtil.isAncestor(this, newServer))
@@ -473,6 +489,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LNode> getLNode() {
         if (lNode == null) {
             lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LDEVICE__LNODE, SclPackage.LNODE__LDEVICE);
@@ -485,6 +502,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLNode() {
         if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
     }
@@ -494,6 +512,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLNode() {
         return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
     }
@@ -503,6 +522,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LN> getLN() {
         if (ln == null) {
             ln = new EObjectContainmentWithInverseEList.Unsettable<LN>(LN.class, this, SclPackage.LDEVICE__LN, SclPackage.LN__LDEVICE);
@@ -515,6 +535,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLN() {
         if (ln != null) ((InternalEList.Unsettable<?>)ln).unset();
     }
@@ -524,6 +545,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLN() {
         return ln != null && ((InternalEList.Unsettable<?>)ln).isSet();
     }
@@ -533,6 +555,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN0 getLN0() {
         return ln0;
     }
@@ -559,6 +582,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLN0( LN0 newLN0 ) {
         if (newLN0 != ln0) {
             NotificationChain msgs = null;
@@ -599,6 +623,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLN0() {
         if (ln0 != null) {
             NotificationChain msgs = null;
@@ -619,6 +644,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLN0() {
         return ln0ESet;
     }

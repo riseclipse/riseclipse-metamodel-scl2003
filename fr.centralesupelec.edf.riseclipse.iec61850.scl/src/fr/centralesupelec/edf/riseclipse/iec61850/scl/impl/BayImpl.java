@@ -107,6 +107,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public VoltageLevel getVoltageLevel() {
         if (eContainerFeatureID() != SclPackage.BAY__VOLTAGE_LEVEL) return null;
         return (VoltageLevel)eInternalContainer();
@@ -127,6 +128,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVoltageLevel( VoltageLevel newVoltageLevel ) {
         if (newVoltageLevel != eInternalContainer() || (eContainerFeatureID() != SclPackage.BAY__VOLTAGE_LEVEL && newVoltageLevel != null)) {
             if (EcoreUtil.isAncestor(this, newVoltageLevel))
@@ -148,6 +150,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Function> getFunction() {
         if (function == null) {
             function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.BAY__FUNCTION, SclPackage.FUNCTION__BAY);
@@ -160,6 +163,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFunction() {
         if (function != null) ((InternalEList.Unsettable<?>)function).unset();
     }
@@ -169,6 +173,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFunction() {
         return function != null && ((InternalEList.Unsettable<?>)function).isSet();
     }
@@ -178,6 +183,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConnectivityNode> getConnectivityNode() {
         if (connectivityNode == null) {
             connectivityNode = new EObjectContainmentWithInverseEList.Unsettable<ConnectivityNode>(ConnectivityNode.class, this, SclPackage.BAY__CONNECTIVITY_NODE, SclPackage.CONNECTIVITY_NODE__BAY);
@@ -190,6 +196,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConnectivityNode() {
         if (connectivityNode != null) ((InternalEList.Unsettable<?>)connectivityNode).unset();
     }
@@ -199,6 +206,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConnectivityNode() {
         return connectivityNode != null && ((InternalEList.Unsettable<?>)connectivityNode).isSet();
     }
@@ -208,6 +216,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
             conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.BAY__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__BAY);
@@ -220,6 +229,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConductingEquipment() {
         if (conductingEquipment != null) ((InternalEList.Unsettable<?>)conductingEquipment).unset();
     }
@@ -229,6 +239,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConductingEquipment() {
         return conductingEquipment != null && ((InternalEList.Unsettable<?>)conductingEquipment).isSet();
     }

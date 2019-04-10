@@ -67,6 +67,7 @@ public class DynAssociationImpl extends ServiceWithOptionalMaxImpl implements Dy
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.DYN_ASSOCIATION__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class DynAssociationImpl extends ServiceWithOptionalMaxImpl implements Dy
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.DYN_ASSOCIATION__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

@@ -314,6 +314,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -323,6 +324,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -337,6 +339,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -351,6 +354,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -360,6 +364,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -369,6 +374,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
@@ -383,6 +389,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLdInst() {
         String oldLdInst = ldInst;
         boolean oldLdInstESet = ldInstESet;
@@ -397,6 +404,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLdInst() {
         return ldInstESet;
     }
@@ -406,6 +414,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnClass() {
         return lnClass;
     }
@@ -415,6 +424,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
@@ -429,6 +439,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnClass() {
         String oldLnClass = lnClass;
         boolean oldLnClassESet = lnClassESet;
@@ -443,6 +454,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnClass() {
         return lnClassESet;
     }
@@ -452,6 +464,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnInst() {
         return lnInst;
     }
@@ -461,6 +474,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
@@ -475,6 +489,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnInst() {
         String oldLnInst = lnInst;
         boolean oldLnInstESet = lnInstESet;
@@ -489,6 +504,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnInst() {
         return lnInstESet;
     }
@@ -498,6 +514,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getLnType() {
         return lnType;
     }
@@ -507,6 +524,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLnType( String newLnType ) {
         String oldLnType = lnType;
         lnType = newLnType;
@@ -521,6 +539,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLnType() {
         String oldLnType = lnType;
         boolean oldLnTypeESet = lnTypeESet;
@@ -535,6 +554,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLnType() {
         return lnTypeESet;
     }
@@ -544,6 +564,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -553,6 +574,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -567,6 +589,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -581,6 +604,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -590,6 +614,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IED getIED() {
         return ied;
     }
@@ -616,6 +641,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIED( IED newIED ) {
         if (newIED != ied) {
             NotificationChain msgs = null;
@@ -656,6 +682,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIED() {
         if (ied != null) {
             NotificationChain msgs = null;
@@ -676,6 +703,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIED() {
         return iedESet;
     }
@@ -685,6 +713,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice getLDevice() {
         return lDevice;
     }
@@ -711,6 +740,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLDevice( LDevice newLDevice ) {
         if (newLDevice != lDevice) {
             NotificationChain msgs = null;
@@ -751,6 +781,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLDevice() {
         if (lDevice != null) {
             NotificationChain msgs = null;
@@ -771,6 +802,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLDevice() {
         return lDeviceESet;
     }
@@ -780,6 +812,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LN getLN() {
         return ln;
     }
@@ -806,6 +839,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLN( LN newLN ) {
         if (newLN != ln) {
             NotificationChain msgs = null;
@@ -846,6 +880,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLN() {
         if (ln != null) {
             NotificationChain msgs = null;
@@ -866,6 +901,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLN() {
         return lnESet;
     }
@@ -875,6 +911,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNodeContainer getLNodeContainer() {
         if (eContainerFeatureID() != SclPackage.LNODE__LNODE_CONTAINER) return null;
         return (LNodeContainer)eInternalContainer();
@@ -895,6 +932,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLNodeContainer( LNodeContainer newLNodeContainer ) {
         if (newLNodeContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.LNODE__LNODE_CONTAINER && newLNodeContainer != null)) {
             if (EcoreUtil.isAncestor(this, newLNodeContainer))

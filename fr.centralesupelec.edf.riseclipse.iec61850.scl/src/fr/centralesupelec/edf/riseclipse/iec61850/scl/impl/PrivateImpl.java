@@ -127,6 +127,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSource() {
         return source;
     }
@@ -136,6 +137,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSource( String newSource ) {
         String oldSource = source;
         source = newSource;
@@ -150,6 +152,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSource() {
         String oldSource = source;
         boolean oldSourceESet = sourceESet;
@@ -164,6 +167,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSource() {
         return sourceESet;
     }
@@ -173,6 +177,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -182,6 +187,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -196,6 +202,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -210,6 +217,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -219,6 +227,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BaseElement getBaseElement() {
         if (eContainerFeatureID() != SclPackage.PRIVATE__BASE_ELEMENT) return null;
         return (BaseElement)eInternalContainer();
@@ -239,6 +248,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBaseElement( BaseElement newBaseElement ) {
         if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.PRIVATE__BASE_ELEMENT && newBaseElement != null)) {
             if (EcoreUtil.isAncestor(this, newBaseElement))

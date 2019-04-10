@@ -94,6 +94,7 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMax() {
         return max;
     }
@@ -103,6 +104,7 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMax(Integer newMax) {
         Integer oldMax = max;
         max = newMax;
@@ -117,6 +119,7 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMax() {
         Integer oldMax = max;
         boolean oldMaxESet = maxESet;
@@ -131,6 +134,7 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMax() {
         return maxESet;
     }

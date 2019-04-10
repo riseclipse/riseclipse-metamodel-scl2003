@@ -67,6 +67,7 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Line getLine() {
         if (eContainerFeatureID() != SclPackage.VOLTAGE__LINE) return null;
         return (Line)eInternalContainer();
@@ -87,6 +88,7 @@ public class VoltageImpl extends ValueWithUnitImpl implements Voltage {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLine(Line newLine) {
         if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.VOLTAGE__LINE && newLine != null)) {
             if (EcoreUtil.isAncestor(this, newLine))

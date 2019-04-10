@@ -96,6 +96,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Function> getFunction() {
         if (function == null) {
             function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.SUBSTATION__FUNCTION, SclPackage.FUNCTION__SUBSTATION);
@@ -108,6 +109,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetFunction() {
         if (function != null) ((InternalEList.Unsettable<?>)function).unset();
     }
@@ -117,6 +119,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetFunction() {
         return function != null && ((InternalEList.Unsettable<?>)function).isSet();
     }
@@ -126,6 +129,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<VoltageLevel> getVoltageLevel() {
         if (voltageLevel == null) {
             voltageLevel = new EObjectContainmentWithInverseEList.Unsettable<VoltageLevel>(VoltageLevel.class, this, SclPackage.SUBSTATION__VOLTAGE_LEVEL, SclPackage.VOLTAGE_LEVEL__SUBSTATION);
@@ -138,6 +142,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVoltageLevel() {
         if (voltageLevel != null) ((InternalEList.Unsettable<?>)voltageLevel).unset();
     }
@@ -147,6 +152,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVoltageLevel() {
         return voltageLevel != null && ((InternalEList.Unsettable<?>)voltageLevel).isSet();
     }
@@ -156,6 +162,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
         if (eContainerFeatureID() != SclPackage.SUBSTATION__PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
@@ -177,6 +184,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
         if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__PROCESS && newProcess != null)) {
             if (EcoreUtil.isAncestor(this, newProcess))
@@ -198,6 +206,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.SUBSTATION__SCL) return null;
         return (SCL)eInternalContainer();
@@ -218,6 +227,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))

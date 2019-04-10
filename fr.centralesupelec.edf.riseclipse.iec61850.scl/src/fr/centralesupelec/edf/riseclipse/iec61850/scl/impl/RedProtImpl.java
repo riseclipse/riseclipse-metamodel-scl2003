@@ -157,6 +157,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getHsr() {
         return hsr;
     }
@@ -166,6 +167,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHsr( Boolean newHsr ) {
         Boolean oldHsr = hsr;
         hsr = newHsr;
@@ -180,6 +182,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetHsr() {
         Boolean oldHsr = hsr;
         boolean oldHsrESet = hsrESet;
@@ -194,6 +197,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetHsr() {
         return hsrESet;
     }
@@ -203,6 +207,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getPrp() {
         return prp;
     }
@@ -212,6 +217,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrp( Boolean newPrp ) {
         Boolean oldPrp = prp;
         prp = newPrp;
@@ -226,6 +232,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrp() {
         Boolean oldPrp = prp;
         boolean oldPrpESet = prpESet;
@@ -240,6 +247,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrp() {
         return prpESet;
     }
@@ -249,6 +257,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRstp() {
         return rstp;
     }
@@ -258,6 +267,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRstp( Boolean newRstp ) {
         Boolean oldRstp = rstp;
         rstp = newRstp;
@@ -272,6 +282,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRstp() {
         Boolean oldRstp = rstp;
         boolean oldRstpESet = rstpESet;
@@ -286,6 +297,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRstp() {
         return rstpESet;
     }
@@ -295,6 +307,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -315,6 +328,7 @@ public class RedProtImpl extends SclObjectImpl implements RedProt {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.RED_PROT__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

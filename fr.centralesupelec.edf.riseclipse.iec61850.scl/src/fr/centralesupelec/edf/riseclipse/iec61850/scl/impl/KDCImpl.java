@@ -153,6 +153,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getApName() {
         return apName;
     }
@@ -162,6 +163,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setApName( String newApName ) {
         String oldApName = apName;
         apName = newApName;
@@ -176,6 +178,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetApName() {
         String oldApName = apName;
         boolean oldApNameESet = apNameESet;
@@ -190,6 +193,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetApName() {
         return apNameESet;
     }
@@ -199,6 +203,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -208,6 +213,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
@@ -222,6 +228,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedName() {
         String oldIedName = iedName;
         boolean oldIedNameESet = iedNameESet;
@@ -236,6 +243,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedName() {
         return iedNameESet;
     }
@@ -245,6 +253,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IED getIED() {
         if (eContainerFeatureID() != SclPackage.KDC__IED) return null;
         return (IED)eInternalContainer();
@@ -265,6 +274,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIED( IED newIED ) {
         if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.KDC__IED && newIED != null)) {
             if (EcoreUtil.isAncestor(this, newIED))
@@ -286,6 +296,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getRefersToAccessPoint() {
         return refersToAccessPoint;
     }
@@ -312,6 +323,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToAccessPoint(AccessPoint newRefersToAccessPoint) {
         if (newRefersToAccessPoint != refersToAccessPoint) {
             NotificationChain msgs = null;
@@ -352,6 +364,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToAccessPoint() {
         if (refersToAccessPoint != null) {
             NotificationChain msgs = null;
@@ -372,6 +385,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToAccessPoint() {
         return refersToAccessPointESet;
     }

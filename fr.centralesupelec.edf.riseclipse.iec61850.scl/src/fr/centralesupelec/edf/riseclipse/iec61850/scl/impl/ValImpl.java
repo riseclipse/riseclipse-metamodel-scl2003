@@ -120,6 +120,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getSGroup() {
         return sGroup;
     }
@@ -129,6 +130,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSGroup( Integer newSGroup ) {
         Integer oldSGroup = sGroup;
         sGroup = newSGroup;
@@ -143,6 +145,7 @@ public class ValImpl extends SclObjectImpl implements Val {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSGroup() {
         Integer oldSGroup = sGroup;
         boolean oldSGroupESet = sGroupESet;
@@ -157,6 +160,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSGroup() {
         return sGroupESet;
     }
@@ -166,6 +170,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractDataAttribute getAbstractDataAttribute() {
         if (eContainerFeatureID() != SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE) return null;
         return (AbstractDataAttribute)eInternalContainer();
@@ -187,6 +192,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAbstractDataAttribute( AbstractDataAttribute newAbstractDataAttribute ) {
         if (newAbstractDataAttribute != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE && newAbstractDataAttribute != null)) {
             if (EcoreUtil.isAncestor(this, newAbstractDataAttribute))
@@ -208,6 +214,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAI getDAI() {
         if (eContainerFeatureID() != SclPackage.VAL__DAI) return null;
         return (DAI)eInternalContainer();
@@ -228,6 +235,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDAI( DAI newDAI ) {
         if (newDAI != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__DAI && newDAI != null)) {
             if (EcoreUtil.isAncestor(this, newDAI))
@@ -249,6 +257,7 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -258,6 +267,7 @@ public class ValImpl extends SclObjectImpl implements Val {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;

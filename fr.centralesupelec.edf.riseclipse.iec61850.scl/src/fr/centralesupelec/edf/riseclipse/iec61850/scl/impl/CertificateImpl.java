@@ -168,6 +168,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -177,6 +178,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSerialNumber( String newSerialNumber ) {
         String oldSerialNumber = serialNumber;
         serialNumber = newSerialNumber;
@@ -191,6 +193,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSerialNumber() {
         String oldSerialNumber = serialNumber;
         boolean oldSerialNumberESet = serialNumberESet;
@@ -205,6 +208,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSerialNumber() {
         return serialNumberESet;
     }
@@ -214,6 +218,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getXferNumber() {
         return xferNumber;
     }
@@ -223,6 +228,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setXferNumber( Integer newXferNumber ) {
         Integer oldXferNumber = xferNumber;
         xferNumber = newXferNumber;
@@ -237,6 +243,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetXferNumber() {
         Integer oldXferNumber = xferNumber;
         boolean oldXferNumberESet = xferNumberESet;
@@ -251,6 +258,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetXferNumber() {
         return xferNumberESet;
     }
@@ -260,6 +268,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Subject getSubject() {
         return subject;
     }
@@ -286,6 +295,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSubject( Subject newSubject ) {
         if (newSubject != subject) {
             NotificationChain msgs = null;
@@ -326,6 +336,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubject() {
         if (subject != null) {
             NotificationChain msgs = null;
@@ -346,6 +357,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubject() {
         return subjectESet;
     }
@@ -355,6 +367,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public IssuerName getIssuerName() {
         return issuerName;
     }
@@ -381,6 +394,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIssuerName( IssuerName newIssuerName ) {
         if (newIssuerName != issuerName) {
             NotificationChain msgs = null;
@@ -421,6 +435,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIssuerName() {
         if (issuerName != null) {
             NotificationChain msgs = null;
@@ -441,6 +456,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIssuerName() {
         return issuerNameESet;
     }

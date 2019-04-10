@@ -183,6 +183,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCount() {
         return count;
     }
@@ -192,6 +193,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCount(String newCount) {
         String oldCount = count;
         count = newCount;
@@ -206,6 +208,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCount() {
         String oldCount = count;
         boolean oldCountESet = countESet;
@@ -220,6 +223,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCount() {
         return countESet;
     }
@@ -229,6 +233,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -238,6 +243,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -252,6 +258,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -266,6 +273,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -275,6 +283,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOType getDOType() {
         if (eContainerFeatureID() != SclPackage.SDO__DO_TYPE) return null;
         return (DOType)eInternalContainer();
@@ -295,6 +304,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDOType( DOType newDOType ) {
         if (newDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDO__DO_TYPE && newDOType != null)) {
             if (EcoreUtil.isAncestor(this, newDOType))
@@ -316,6 +326,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -325,6 +336,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -339,6 +351,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -353,6 +366,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -362,6 +376,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOType getRefersToDOType() {
         return refersToDOType;
     }
@@ -388,6 +403,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDOType(DOType newRefersToDOType) {
         if (newRefersToDOType != refersToDOType) {
             NotificationChain msgs = null;
@@ -428,6 +444,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDOType() {
         if (refersToDOType != null) {
             NotificationChain msgs = null;
@@ -448,6 +465,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDOType() {
         return refersToDOTypeESet;
     }

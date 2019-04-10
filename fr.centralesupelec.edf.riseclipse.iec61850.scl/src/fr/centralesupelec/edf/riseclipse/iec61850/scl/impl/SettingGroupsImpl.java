@@ -109,6 +109,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConfSG getConfSG() {
         return confSG;
     }
@@ -135,6 +136,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfSG( ConfSG newConfSG ) {
         if (newConfSG != confSG) {
             NotificationChain msgs = null;
@@ -175,6 +177,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfSG() {
         if (confSG != null) {
             NotificationChain msgs = null;
@@ -195,6 +198,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfSG() {
         return confSGESet;
     }
@@ -204,6 +208,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SGEdit getSGEdit() {
         return sgEdit;
     }
@@ -230,6 +235,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSGEdit( SGEdit newSGEdit ) {
         if (newSGEdit != sgEdit) {
             NotificationChain msgs = null;
@@ -270,6 +276,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSGEdit() {
         if (sgEdit != null) {
             NotificationChain msgs = null;
@@ -290,6 +297,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSGEdit() {
         return sgEditESet;
     }
@@ -299,6 +307,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -319,6 +328,7 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_GROUPS__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

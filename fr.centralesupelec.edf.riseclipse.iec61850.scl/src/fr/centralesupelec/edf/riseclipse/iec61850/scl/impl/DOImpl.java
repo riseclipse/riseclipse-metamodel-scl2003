@@ -153,6 +153,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getTransient() {
         return transient_;
     }
@@ -162,6 +163,7 @@ public class DOImpl extends DataObjectImpl implements DO {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setTransient( Boolean newTransient ) {
         Boolean oldTransient = transient_;
         transient_ = newTransient;
@@ -176,6 +178,7 @@ public class DOImpl extends DataObjectImpl implements DO {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetTransient() {
         Boolean oldTransient = transient_;
         boolean oldTransientESet = transientESet;
@@ -190,6 +193,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetTransient() {
         return transientESet;
     }
@@ -199,6 +203,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -208,6 +213,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -222,6 +228,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -236,6 +243,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -245,6 +253,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LNodeType getLNodeType() {
         if (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE) return null;
         return (LNodeType)eInternalContainer();
@@ -265,6 +274,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLNodeType( LNodeType newLNodeType ) {
         if (newLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE && newLNodeType != null)) {
             if (EcoreUtil.isAncestor(this, newLNodeType))
@@ -286,6 +296,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DOType getRefersToDOType() {
         return refersToDOType;
     }
@@ -312,6 +323,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRefersToDOType(DOType newRefersToDOType) {
         if (newRefersToDOType != refersToDOType) {
             NotificationChain msgs = null;
@@ -352,6 +364,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRefersToDOType() {
         if (refersToDOType != null) {
             NotificationChain msgs = null;
@@ -372,6 +385,7 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRefersToDOType() {
         return refersToDOTypeESet;
     }

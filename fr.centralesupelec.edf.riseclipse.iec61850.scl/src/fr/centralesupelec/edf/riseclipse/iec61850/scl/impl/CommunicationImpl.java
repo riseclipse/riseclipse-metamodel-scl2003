@@ -83,6 +83,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SubNetwork> getSubNetwork() {
         if (subNetwork == null) {
             subNetwork = new EObjectContainmentWithInverseEList.Unsettable<SubNetwork>(SubNetwork.class, this, SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__COMMUNICATION);
@@ -95,6 +96,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubNetwork() {
         if (subNetwork != null) ((InternalEList.Unsettable<?>)subNetwork).unset();
     }
@@ -104,6 +106,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubNetwork() {
         return subNetwork != null && ((InternalEList.Unsettable<?>)subNetwork).isSet();
     }
@@ -113,6 +116,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL) return null;
         return (SCL)eInternalContainer();
@@ -133,6 +137,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMMUNICATION__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))

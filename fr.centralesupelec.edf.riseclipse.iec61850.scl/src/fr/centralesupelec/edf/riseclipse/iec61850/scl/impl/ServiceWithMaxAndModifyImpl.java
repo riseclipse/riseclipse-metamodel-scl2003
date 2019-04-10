@@ -94,6 +94,7 @@ public class ServiceWithMaxAndModifyImpl extends ServiceWithMaxImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getModify() {
         return modify;
     }
@@ -103,6 +104,7 @@ public class ServiceWithMaxAndModifyImpl extends ServiceWithMaxImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setModify(Boolean newModify) {
         Boolean oldModify = modify;
         modify = newModify;
@@ -117,6 +119,7 @@ public class ServiceWithMaxAndModifyImpl extends ServiceWithMaxImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetModify() {
         Boolean oldModify = modify;
         boolean oldModifyESet = modifyESet;
@@ -131,6 +134,7 @@ public class ServiceWithMaxAndModifyImpl extends ServiceWithMaxImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetModify() {
         return modifyESet;
     }

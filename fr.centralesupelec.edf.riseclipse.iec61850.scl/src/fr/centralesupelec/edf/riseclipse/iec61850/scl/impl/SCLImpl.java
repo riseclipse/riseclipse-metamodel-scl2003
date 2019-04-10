@@ -268,6 +268,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getRevision() {
         return revision;
     }
@@ -277,6 +278,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRevision( String newRevision ) {
         String oldRevision = revision;
         revision = newRevision;
@@ -291,6 +293,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRevision() {
         String oldRevision = revision;
         boolean oldRevisionESet = revisionESet;
@@ -305,6 +308,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRevision() {
         return revisionESet;
     }
@@ -314,6 +318,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getVersion() {
         return version;
     }
@@ -323,6 +328,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setVersion( String newVersion ) {
         String oldVersion = version;
         version = newVersion;
@@ -337,6 +343,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetVersion() {
         String oldVersion = version;
         boolean oldVersionESet = versionESet;
@@ -351,6 +358,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetVersion() {
         return versionESet;
     }
@@ -360,6 +368,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Header getHeader() {
         return header;
     }
@@ -386,6 +395,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHeader( Header newHeader ) {
         if (newHeader != header) {
             NotificationChain msgs = null;
@@ -426,6 +436,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetHeader() {
         if (header != null) {
             NotificationChain msgs = null;
@@ -446,6 +457,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetHeader() {
         return headerESet;
     }
@@ -455,6 +467,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Line> getLine() {
         if (line == null) {
             line = new EObjectContainmentWithInverseEList.Unsettable<Line>(Line.class, this, SclPackage.SCL__LINE, SclPackage.LINE__SCL);
@@ -467,6 +480,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLine() {
         if (line != null) ((InternalEList.Unsettable<?>)line).unset();
     }
@@ -476,6 +490,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLine() {
         return line != null && ((InternalEList.Unsettable<?>)line).isSet();
     }
@@ -485,6 +500,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getProcess() {
         if (process == null) {
             process = new EObjectContainmentWithInverseEList.Unsettable<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS, SclPackage.PROCESS__SCL);
@@ -497,6 +513,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetProcess() {
         if (process != null) ((InternalEList.Unsettable<?>)process).unset();
     }
@@ -506,6 +523,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetProcess() {
         return process != null && ((InternalEList.Unsettable<?>)process).isSet();
     }
@@ -515,6 +533,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<IED> getIED() {
         if (ied == null) {
             ied = new EObjectContainmentWithInverseEList.Unsettable<IED>(IED.class, this, SclPackage.SCL__IED, SclPackage.IED__SCL);
@@ -527,6 +546,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIED() {
         if (ied != null) ((InternalEList.Unsettable<?>)ied).unset();
     }
@@ -536,6 +556,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIED() {
         return ied != null && ((InternalEList.Unsettable<?>)ied).isSet();
     }
@@ -545,6 +566,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates getDataTypeTemplates() {
         return dataTypeTemplates;
     }
@@ -571,6 +593,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if (newDataTypeTemplates != dataTypeTemplates) {
             NotificationChain msgs = null;
@@ -611,6 +634,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDataTypeTemplates() {
         if (dataTypeTemplates != null) {
             NotificationChain msgs = null;
@@ -631,6 +655,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDataTypeTemplates() {
         return dataTypeTemplatesESet;
     }
@@ -640,6 +665,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Communication getCommunication() {
         return communication;
     }
@@ -666,6 +692,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCommunication( Communication newCommunication ) {
         if (newCommunication != communication) {
             NotificationChain msgs = null;
@@ -706,6 +733,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCommunication() {
         if (communication != null) {
             NotificationChain msgs = null;
@@ -726,6 +754,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCommunication() {
         return communicationESet;
     }
@@ -735,6 +764,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<Substation> getSubstation() {
         if (substation == null) {
             substation = new EObjectContainmentWithInverseEList.Unsettable<Substation>(Substation.class, this, SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__SCL);
@@ -747,6 +777,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSubstation() {
         if (substation != null) ((InternalEList.Unsettable<?>)substation).unset();
     }
@@ -756,6 +787,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSubstation() {
         return substation != null && ((InternalEList.Unsettable<?>)substation).isSet();
     }
@@ -765,6 +797,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getRelease() {
         return release;
     }
@@ -774,6 +807,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRelease(Integer newRelease) {
         Integer oldRelease = release;
         release = newRelease;
@@ -788,6 +822,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRelease() {
         Integer oldRelease = release;
         boolean oldReleaseESet = releaseESet;
@@ -802,6 +837,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRelease() {
         return releaseESet;
     }

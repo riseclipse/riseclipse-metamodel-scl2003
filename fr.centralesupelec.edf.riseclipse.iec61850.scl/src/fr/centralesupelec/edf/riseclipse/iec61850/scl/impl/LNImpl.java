@@ -115,6 +115,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getPrefix() {
         return prefix;
     }
@@ -124,6 +125,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
@@ -138,6 +140,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPrefix() {
         String oldPrefix = prefix;
         boolean oldPrefixESet = prefixESet;
@@ -152,6 +155,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPrefix() {
         return prefixESet;
     }
@@ -161,6 +165,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AccessPoint getAccessPoint() {
         if (eContainerFeatureID() != SclPackage.LN__ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
@@ -181,6 +186,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAccessPoint( AccessPoint newAccessPoint ) {
         if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__ACCESS_POINT && newAccessPoint != null)) {
             if (EcoreUtil.isAncestor(this, newAccessPoint))
@@ -202,6 +208,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public LDevice getLDevice() {
         if (eContainerFeatureID() != SclPackage.LN__LDEVICE) return null;
         return (LDevice)eInternalContainer();
@@ -222,6 +229,7 @@ public class LNImpl extends AnyLNImpl implements LN {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLDevice( LDevice newLDevice ) {
         if (newLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__LDEVICE && newLDevice != null)) {
             if (EcoreUtil.isAncestor(this, newLDevice))
@@ -243,6 +251,7 @@ public class LNImpl extends AnyLNImpl implements LN {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LNode> getLNode() {
         if (lNode == null) {
             lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LN__LNODE, SclPackage.LNODE__LN);
@@ -255,6 +264,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLNode() {
         if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
     }
@@ -264,6 +274,7 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLNode() {
         return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
     }

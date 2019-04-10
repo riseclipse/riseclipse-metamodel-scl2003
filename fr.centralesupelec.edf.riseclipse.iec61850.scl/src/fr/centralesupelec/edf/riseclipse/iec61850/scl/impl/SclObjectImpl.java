@@ -86,6 +86,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public int getLineNumber() {
         return lineNumber;
     }
@@ -95,6 +96,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setLineNumber( int newLineNumber ) {
         int oldLineNumber = lineNumber;
         lineNumber = newLineNumber;

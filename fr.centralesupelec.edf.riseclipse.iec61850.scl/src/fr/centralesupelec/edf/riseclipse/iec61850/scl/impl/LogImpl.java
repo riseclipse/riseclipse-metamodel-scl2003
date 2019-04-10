@@ -111,6 +111,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AnyLN getAnyLN() {
         if (eContainerFeatureID() != SclPackage.LOG__ANY_LN) return null;
         return (AnyLN)eInternalContainer();
@@ -131,6 +132,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAnyLN( AnyLN newAnyLN ) {
         if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG__ANY_LN && newAnyLN != null)) {
             if (EcoreUtil.isAncestor(this, newAnyLN))
@@ -152,6 +154,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -161,6 +164,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -175,6 +179,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -189,6 +194,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -198,6 +204,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LogControl> getReferredByLogControl() {
         if (referredByLogControl == null) {
             referredByLogControl = new EObjectWithInverseEList.Unsettable<LogControl>(LogControl.class, this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_LOG);
@@ -210,6 +217,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByLogControl() {
         if (referredByLogControl != null) ((InternalEList.Unsettable<?>)referredByLogControl).unset();
     }
@@ -219,6 +227,7 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByLogControl() {
         return referredByLogControl != null && ((InternalEList.Unsettable<?>)referredByLogControl).isSet();
     }

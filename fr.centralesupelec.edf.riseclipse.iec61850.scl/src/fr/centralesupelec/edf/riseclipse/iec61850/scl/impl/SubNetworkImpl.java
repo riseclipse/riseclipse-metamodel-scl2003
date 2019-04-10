@@ -134,6 +134,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -143,6 +144,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -157,6 +159,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -171,6 +174,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -180,6 +184,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BitRate getBitRate() {
         return bitRate;
     }
@@ -206,6 +211,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBitRate(BitRate newBitRate) {
         if (newBitRate != bitRate) {
             NotificationChain msgs = null;
@@ -246,6 +252,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetBitRate() {
         if (bitRate != null) {
             NotificationChain msgs = null;
@@ -266,6 +273,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetBitRate() {
         return bitRateESet;
     }
@@ -275,6 +283,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Communication getCommunication() {
         if (eContainerFeatureID() != SclPackage.SUB_NETWORK__COMMUNICATION) return null;
         return (Communication)eInternalContainer();
@@ -295,6 +304,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCommunication( Communication newCommunication ) {
         if (newCommunication != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_NETWORK__COMMUNICATION && newCommunication != null)) {
             if (EcoreUtil.isAncestor(this, newCommunication))
@@ -316,6 +326,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ConnectedAP> getConnectedAP() {
         if (connectedAP == null) {
             connectedAP = new EObjectContainmentWithInverseEList.Unsettable<ConnectedAP>(ConnectedAP.class, this, SclPackage.SUB_NETWORK__CONNECTED_AP, SclPackage.CONNECTED_AP__SUB_NETWORK);
@@ -328,6 +339,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConnectedAP() {
         if (connectedAP != null) ((InternalEList.Unsettable<?>)connectedAP).unset();
     }
@@ -337,6 +349,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConnectedAP() {
         return connectedAP != null && ((InternalEList.Unsettable<?>)connectedAP).isSet();
     }

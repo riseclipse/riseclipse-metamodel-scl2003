@@ -188,6 +188,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SMVDeliveryEnum getDelivery() {
         return delivery;
     }
@@ -197,6 +198,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDelivery( SMVDeliveryEnum newDelivery ) {
         SMVDeliveryEnum oldDelivery = delivery;
         delivery = newDelivery == null ? DELIVERY_EDEFAULT : newDelivery;
@@ -211,6 +213,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDelivery() {
         SMVDeliveryEnum oldDelivery = delivery;
         boolean oldDeliveryESet = deliveryESet;
@@ -225,6 +228,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDelivery() {
         return deliveryESet;
     }
@@ -234,6 +238,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getDeliveryConf() {
         return deliveryConf;
     }
@@ -243,6 +248,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDeliveryConf( Boolean newDeliveryConf ) {
         Boolean oldDeliveryConf = deliveryConf;
         deliveryConf = newDeliveryConf;
@@ -257,6 +263,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDeliveryConf() {
         Boolean oldDeliveryConf = deliveryConf;
         boolean oldDeliveryConfESet = deliveryConfESet;
@@ -271,6 +278,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDeliveryConf() {
         return deliveryConfESet;
     }
@@ -280,6 +288,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.SM_VSC__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -300,6 +309,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SM_VSC__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))
@@ -321,6 +331,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSv() {
         return sv;
     }
@@ -330,6 +341,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSv(Boolean newSv) {
         Boolean oldSv = sv;
         sv = newSv;
@@ -344,6 +356,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSv() {
         Boolean oldSv = sv;
         boolean oldSvESet = svESet;
@@ -358,6 +371,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSv() {
         return svESet;
     }
@@ -367,6 +381,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getRSV() {
         return rSV;
     }
@@ -376,6 +391,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setRSV(Boolean newRSV) {
         Boolean oldRSV = rSV;
         rSV = newRSV;
@@ -390,6 +406,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetRSV() {
         Boolean oldRSV = rSV;
         boolean oldRSVESet = rSVESet;
@@ -404,6 +421,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetRSV() {
         return rSVESet;
     }

@@ -120,6 +120,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getSource() {
         return source;
     }
@@ -129,6 +130,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSource( String newSource ) {
         String oldSource = source;
         source = newSource;
@@ -143,6 +145,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSource() {
         String oldSource = source;
         boolean oldSourceESet = sourceESet;
@@ -157,6 +160,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSource() {
         return sourceESet;
     }
@@ -166,6 +170,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public BaseElement getBaseElement() {
         if (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT) return null;
         return (BaseElement)eInternalContainer();
@@ -186,6 +191,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setBaseElement( BaseElement newBaseElement ) {
         if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT && newBaseElement != null)) {
             if (EcoreUtil.isAncestor(this, newBaseElement))
@@ -207,6 +213,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Header getHeader() {
         if (eContainerFeatureID() != SclPackage.TEXT__HEADER) return null;
         return (Header)eInternalContainer();
@@ -227,6 +234,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setHeader( Header newHeader ) {
         if (newHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__HEADER && newHeader != null)) {
             if (EcoreUtil.isAncestor(this, newHeader))
@@ -248,6 +256,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -257,6 +266,7 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;

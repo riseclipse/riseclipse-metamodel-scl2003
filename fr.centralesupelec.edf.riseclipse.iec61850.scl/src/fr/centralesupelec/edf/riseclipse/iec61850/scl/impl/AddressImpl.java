@@ -85,6 +85,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ConnectedAP getConnectedAP() {
         if (eContainerFeatureID() != SclPackage.ADDRESS__CONNECTED_AP) return null;
         return (ConnectedAP)eInternalContainer();
@@ -105,6 +106,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConnectedAP( ConnectedAP newConnectedAP ) {
         if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.ADDRESS__CONNECTED_AP && newConnectedAP != null)) {
             if (EcoreUtil.isAncestor(this, newConnectedAP))
@@ -126,6 +128,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ControlBlock getControlBlock() {
         if (eContainerFeatureID() != SclPackage.ADDRESS__CONTROL_BLOCK) return null;
         return (ControlBlock)eInternalContainer();
@@ -146,6 +149,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setControlBlock( ControlBlock newControlBlock ) {
         if (newControlBlock != eInternalContainer() || (eContainerFeatureID() != SclPackage.ADDRESS__CONTROL_BLOCK && newControlBlock != null)) {
             if (EcoreUtil.isAncestor(this, newControlBlock))
@@ -167,6 +171,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<P> getP() {
         if (p == null) {
             p = new EObjectContainmentWithInverseEList.Unsettable<P>(P.class, this, SclPackage.ADDRESS__P, SclPackage.P__ADDRESS);
@@ -179,6 +184,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetP() {
         if (p != null) ((InternalEList.Unsettable<?>)p).unset();
     }
@@ -188,6 +194,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetP() {
         return p != null && ((InternalEList.Unsettable<?>)p).isSet();
     }

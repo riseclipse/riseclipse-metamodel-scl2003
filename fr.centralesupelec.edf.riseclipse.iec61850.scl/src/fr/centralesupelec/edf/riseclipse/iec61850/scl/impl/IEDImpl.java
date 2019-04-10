@@ -399,6 +399,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getConfigVersion() {
         return configVersion;
     }
@@ -408,6 +409,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setConfigVersion( String newConfigVersion ) {
         String oldConfigVersion = configVersion;
         configVersion = newConfigVersion;
@@ -422,6 +424,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetConfigVersion() {
         String oldConfigVersion = configVersion;
         boolean oldConfigVersionESet = configVersionESet;
@@ -436,6 +439,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetConfigVersion() {
         return configVersionESet;
     }
@@ -445,6 +449,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getEngRight() {
         return engRight;
     }
@@ -454,6 +459,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setEngRight(String newEngRight) {
         String oldEngRight = engRight;
         engRight = newEngRight;
@@ -468,6 +474,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetEngRight() {
         String oldEngRight = engRight;
         boolean oldEngRightESet = engRightESet;
@@ -482,6 +489,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetEngRight() {
         return engRightESet;
     }
@@ -491,6 +499,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getManufacturer() {
         return manufacturer;
     }
@@ -500,6 +509,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setManufacturer( String newManufacturer ) {
         String oldManufacturer = manufacturer;
         manufacturer = newManufacturer;
@@ -514,6 +524,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetManufacturer() {
         String oldManufacturer = manufacturer;
         boolean oldManufacturerESet = manufacturerESet;
@@ -528,6 +539,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetManufacturer() {
         return manufacturerESet;
     }
@@ -537,6 +549,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getOriginalSclRevision() {
         return originalSclRevision;
     }
@@ -546,6 +559,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOriginalSclRevision(String newOriginalSclRevision) {
         String oldOriginalSclRevision = originalSclRevision;
         originalSclRevision = newOriginalSclRevision;
@@ -560,6 +574,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOriginalSclRevision() {
         String oldOriginalSclRevision = originalSclRevision;
         boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
@@ -574,6 +589,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOriginalSclRevision() {
         return originalSclRevisionESet;
     }
@@ -583,6 +599,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getOriginalSclVersion() {
         return originalSclVersion;
     }
@@ -592,6 +609,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOriginalSclVersion(String newOriginalSclVersion) {
         String oldOriginalSclVersion = originalSclVersion;
         originalSclVersion = newOriginalSclVersion;
@@ -606,6 +624,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOriginalSclVersion() {
         String oldOriginalSclVersion = originalSclVersion;
         boolean oldOriginalSclVersionESet = originalSclVersionESet;
@@ -620,6 +639,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOriginalSclVersion() {
         return originalSclVersionESet;
     }
@@ -629,6 +649,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getOwner() {
         return owner;
     }
@@ -638,6 +659,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOwner( String newOwner ) {
         String oldOwner = owner;
         owner = newOwner;
@@ -652,6 +674,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOwner() {
         String oldOwner = owner;
         boolean oldOwnerESet = ownerESet;
@@ -666,6 +689,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOwner() {
         return ownerESet;
     }
@@ -675,6 +699,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -684,6 +709,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -698,6 +724,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -712,6 +739,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -721,6 +749,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<AccessPoint> getAccessPoint() {
         if (accessPoint == null) {
             accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__IED);
@@ -733,6 +762,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetAccessPoint() {
         if (accessPoint != null) ((InternalEList.Unsettable<?>)accessPoint).unset();
     }
@@ -742,6 +772,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetAccessPoint() {
         return accessPoint != null && ((InternalEList.Unsettable<?>)accessPoint).isSet();
     }
@@ -751,6 +782,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LNode> getLNode() {
         if (lNode == null) {
             lNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.IED__LNODE, SclPackage.LNODE__IED);
@@ -763,6 +795,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLNode() {
         if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
     }
@@ -772,6 +805,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLNode() {
         return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
     }
@@ -781,6 +815,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<KDC> getKDC() {
         if (kdc == null) {
             kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__IED);
@@ -793,6 +828,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetKDC() {
         if (kdc != null) ((InternalEList.Unsettable<?>)kdc).unset();
     }
@@ -802,6 +838,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetKDC() {
         return kdc != null && ((InternalEList.Unsettable<?>)kdc).isSet();
     }
@@ -811,6 +848,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         return services;
     }
@@ -837,6 +875,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != services) {
             NotificationChain msgs = null;
@@ -877,6 +916,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetServices() {
         if (services != null) {
             NotificationChain msgs = null;
@@ -897,6 +937,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetServices() {
         return servicesESet;
     }
@@ -906,6 +947,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public SCL getSCL() {
         if (eContainerFeatureID() != SclPackage.IED__SCL) return null;
         return (SCL)eInternalContainer();
@@ -926,6 +968,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSCL( SCL newSCL ) {
         if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__SCL && newSCL != null)) {
             if (EcoreUtil.isAncestor(this, newSCL))
@@ -947,6 +990,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getName() {
         return name;
     }
@@ -956,6 +1000,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setName(String newName) {
         String oldName = name;
         name = newName;
@@ -970,6 +1015,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetName() {
         String oldName = name;
         boolean oldNameESet = nameESet;
@@ -984,6 +1030,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetName() {
         return nameESet;
     }
@@ -993,6 +1040,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getOriginalSclRelease() {
         return originalSclRelease;
     }
@@ -1002,6 +1050,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setOriginalSclRelease(Integer newOriginalSclRelease) {
         Integer oldOriginalSclRelease = originalSclRelease;
         originalSclRelease = newOriginalSclRelease;
@@ -1016,6 +1065,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetOriginalSclRelease() {
         Integer oldOriginalSclRelease = originalSclRelease;
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
@@ -1030,6 +1080,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetOriginalSclRelease() {
         return originalSclReleaseESet;
     }

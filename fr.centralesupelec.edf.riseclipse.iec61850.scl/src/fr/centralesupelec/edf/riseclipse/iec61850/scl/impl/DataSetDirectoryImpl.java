@@ -67,6 +67,7 @@ public class DataSetDirectoryImpl extends ServiceYesNoImpl implements DataSetDir
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.DATA_SET_DIRECTORY__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -87,6 +88,7 @@ public class DataSetDirectoryImpl extends ServiceYesNoImpl implements DataSetDir
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_SET_DIRECTORY__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

@@ -67,6 +67,7 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public AbstractEqFuncSubFunc getAbstractEqFuncSubFunc() {
         if (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
         return (AbstractEqFuncSubFunc)eInternalContainer();
@@ -88,6 +89,7 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc ) {
         if (newAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC && newAbstractEqFuncSubFunc != null)) {
             if (EcoreUtil.isAncestor(this, newAbstractEqFuncSubFunc))

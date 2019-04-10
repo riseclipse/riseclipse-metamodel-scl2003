@@ -94,6 +94,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<PowerTransformer> getPowerTransformer() {
         if (powerTransformer == null) {
             powerTransformer = new EObjectContainmentWithInverseEList.Unsettable<PowerTransformer>(PowerTransformer.class, this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER);
@@ -106,6 +107,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetPowerTransformer() {
         if (powerTransformer != null) ((InternalEList.Unsettable<?>)powerTransformer).unset();
     }
@@ -115,6 +117,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetPowerTransformer() {
         return powerTransformer != null && ((InternalEList.Unsettable<?>)powerTransformer).isSet();
     }
@@ -124,6 +127,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
             generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER);
@@ -136,6 +140,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetGeneralEquipment() {
         if (generalEquipment != null) ((InternalEList.Unsettable<?>)generalEquipment).unset();
     }
@@ -145,6 +150,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetGeneralEquipment() {
         return generalEquipment != null && ((InternalEList.Unsettable<?>)generalEquipment).isSet();
     }

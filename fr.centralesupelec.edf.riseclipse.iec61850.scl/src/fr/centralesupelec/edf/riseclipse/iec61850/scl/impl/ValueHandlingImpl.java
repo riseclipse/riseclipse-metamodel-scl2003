@@ -97,6 +97,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Boolean getSetToRO() {
         return setToRO;
     }
@@ -106,6 +107,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setSetToRO( Boolean newSetToRO ) {
         Boolean oldSetToRO = setToRO;
         setToRO = newSetToRO;
@@ -120,6 +122,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSetToRO() {
         Boolean oldSetToRO = setToRO;
         boolean oldSetToROESet = setToROESet;
@@ -134,6 +137,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSetToRO() {
         return setToROESet;
     }
@@ -143,6 +147,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Services getServices() {
         if (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES) return null;
         return (Services)eInternalContainer();
@@ -163,6 +168,7 @@ public class ValueHandlingImpl extends SclObjectImpl implements ValueHandling {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setServices( Services newServices ) {
         if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.VALUE_HANDLING__SERVICES && newServices != null)) {
             if (EcoreUtil.isAncestor(this, newServices))

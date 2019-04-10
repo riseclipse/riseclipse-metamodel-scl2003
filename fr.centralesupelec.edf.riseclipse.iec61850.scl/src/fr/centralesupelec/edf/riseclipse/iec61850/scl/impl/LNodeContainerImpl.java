@@ -82,6 +82,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<LNode> getLNode() {
         if (lNode == null) {
             lNode = new EObjectContainmentWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__LNODE_CONTAINER);
@@ -94,6 +95,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetLNode() {
         if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
     }
@@ -103,6 +105,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetLNode() {
         return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
     }

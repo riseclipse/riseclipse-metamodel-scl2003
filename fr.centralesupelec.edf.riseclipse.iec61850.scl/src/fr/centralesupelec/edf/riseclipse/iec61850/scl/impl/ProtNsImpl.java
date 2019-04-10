@@ -120,6 +120,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getType() {
         return type;
     }
@@ -129,6 +130,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setType( String newType ) {
         String oldType = type;
         type = newType;
@@ -143,6 +145,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetType() {
         String oldType = type;
         boolean oldTypeESet = typeESet;
@@ -157,6 +160,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetType() {
         return typeESet;
     }
@@ -166,6 +170,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DA getDA() {
         if (eContainerFeatureID() != SclPackage.PROT_NS__DA) return null;
         return (DA)eInternalContainer();
@@ -186,6 +191,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDA( DA newDA ) {
         if (newDA != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROT_NS__DA && newDA != null)) {
             if (EcoreUtil.isAncestor(this, newDA))
@@ -207,6 +213,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DAType getDAType() {
         if (eContainerFeatureID() != SclPackage.PROT_NS__DA_TYPE) return null;
         return (DAType)eInternalContainer();
@@ -227,6 +234,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDAType( DAType newDAType ) {
         if (newDAType != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROT_NS__DA_TYPE && newDAType != null)) {
             if (EcoreUtil.isAncestor(this, newDAType))
@@ -248,6 +256,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -257,6 +266,7 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setValue(String newValue) {
         String oldValue = value;
         value = newValue;

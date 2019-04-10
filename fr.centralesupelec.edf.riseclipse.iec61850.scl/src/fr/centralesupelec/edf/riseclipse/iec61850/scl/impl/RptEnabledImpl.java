@@ -113,6 +113,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Integer getMax() {
         return max;
     }
@@ -122,6 +123,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setMax( Integer newMax ) {
         Integer oldMax = max;
         max = newMax;
@@ -136,6 +138,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
     * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetMax() {
         Integer oldMax = max;
         boolean oldMaxESet = maxESet;
@@ -150,6 +153,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetMax() {
         return maxESet;
     }
@@ -159,6 +163,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<ClientLN> getClientLN() {
         if (clientLN == null) {
             clientLN = new EObjectContainmentWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.RPT_ENABLED__CLIENT_LN, SclPackage.CLIENT_LN__RPT_ENABLED);
@@ -171,6 +176,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetClientLN() {
         if (clientLN != null) ((InternalEList.Unsettable<?>)clientLN).unset();
     }
@@ -180,6 +186,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetClientLN() {
         return clientLN != null && ((InternalEList.Unsettable<?>)clientLN).isSet();
     }
@@ -189,6 +196,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ReportControl getReportControl() {
         if (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL) return null;
         return (ReportControl)eInternalContainer();
@@ -209,6 +217,7 @@ public class RptEnabledImpl extends UnNamingImpl implements RptEnabled {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setReportControl( ReportControl newReportControl ) {
         if (newReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.RPT_ENABLED__REPORT_CONTROL && newReportControl != null)) {
             if (EcoreUtil.isAncestor(this, newReportControl))

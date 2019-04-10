@@ -179,6 +179,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getCdc() {
         return cdc;
     }
@@ -188,6 +189,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setCdc( String newCdc ) {
         String oldCdc = cdc;
         cdc = newCdc;
@@ -202,6 +204,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetCdc() {
         String oldCdc = cdc;
         boolean oldCdcESet = cdcESet;
@@ -216,6 +219,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetCdc() {
         return cdcESet;
     }
@@ -225,6 +229,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public String getIedType() {
         return iedType;
     }
@@ -234,6 +239,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setIedType( String newIedType ) {
         String oldIedType = iedType;
         iedType = newIedType;
@@ -248,6 +254,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetIedType() {
         String oldIedType = iedType;
         boolean oldIedTypeESet = iedTypeESet;
@@ -262,6 +269,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetIedType() {
         return iedTypeESet;
     }
@@ -271,6 +279,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DA> getDA() {
         if (da == null) {
             da = new EObjectContainmentWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DO_TYPE__DA, SclPackage.DA__DO_TYPE);
@@ -283,6 +292,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetDA() {
         if (da != null) ((InternalEList.Unsettable<?>)da).unset();
     }
@@ -292,6 +302,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetDA() {
         return da != null && ((InternalEList.Unsettable<?>)da).isSet();
     }
@@ -301,6 +312,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<DO> getReferredByDO() {
         if (referredByDO == null) {
             referredByDO = new EObjectWithInverseEList.Unsettable<DO>(DO.class, this, SclPackage.DO_TYPE__REFERRED_BY_DO, SclPackage.DO__REFERS_TO_DO_TYPE);
@@ -313,6 +325,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredByDO() {
         if (referredByDO != null) ((InternalEList.Unsettable<?>)referredByDO).unset();
     }
@@ -322,6 +335,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredByDO() {
         return referredByDO != null && ((InternalEList.Unsettable<?>)referredByDO).isSet();
     }
@@ -331,6 +345,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public DataTypeTemplates getDataTypeTemplates() {
         if (eContainerFeatureID() != SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
@@ -351,6 +366,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
         if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
             if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
@@ -372,6 +388,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SDO> getSDO() {
         if (sdo == null) {
             sdo = new EObjectContainmentWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__SDO, SclPackage.SDO__DO_TYPE);
@@ -384,6 +401,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetSDO() {
         if (sdo != null) ((InternalEList.Unsettable<?>)sdo).unset();
     }
@@ -393,6 +411,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetSDO() {
         return sdo != null && ((InternalEList.Unsettable<?>)sdo).isSet();
     }
@@ -402,6 +421,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public EList<SDO> getReferredBySDO() {
         if (referredBySDO == null) {
             referredBySDO = new EObjectWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__REFERRED_BY_SDO, SclPackage.SDO__REFERS_TO_DO_TYPE);
@@ -414,6 +434,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public void unsetReferredBySDO() {
         if (referredBySDO != null) ((InternalEList.Unsettable<?>)referredBySDO).unset();
     }
@@ -423,6 +444,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public boolean isSetReferredBySDO() {
         return referredBySDO != null && ((InternalEList.Unsettable<?>)referredBySDO).isSet();
     }
