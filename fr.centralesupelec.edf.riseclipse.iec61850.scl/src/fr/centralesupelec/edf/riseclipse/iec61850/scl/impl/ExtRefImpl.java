@@ -309,7 +309,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.

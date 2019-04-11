@@ -20,6 +20,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -183,7 +184,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
@@ -960,6 +961,42 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
             //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
             ied = res1.get( 0 );
         }
+        
+        if( ied.getAccessPoint().size() == 0 )  return;
+        
+        AccessPoint ap = ied.getAccessPoint().get( 0 );
+        if( ied.getAccessPoint().size() > 1 ) {
+            if( getApRef() == null ) return;
+            
+            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+                
+                @Override
+                public Boolean caseAccessPoint( AccessPoint object ) {
+                    return getApRef().equals( object.getName() );
+                }
+    
+                @Override
+                public Boolean defaultCase( EObject object ) {
+                    return false;
+                }
+    
+            };
+            
+            List< AccessPoint > res2 = shallowSearchObjects( ied.getAccessPoint(), s2 );
+            String mess2 = "AccessPoint( apRef = " + getApRef() + " ) for IEDName on line " + getLineNumber()
+                         + " ( in ied = " + ied.getName() + " )";
+            if( res2.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                return;
+            }
+            if( res2.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                return;
+            }
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
+            ap = res2.get( 0 );
+        }
+        if( ap == null ) return;
 
         // The following is copy/paste from ClientLN (with modification)
         // TODO: factor out ?
@@ -968,7 +1005,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         if( getLdInst() != null ) {
             // find inside an LDevice with
             //   LDevice.name == IEDName.ldInst
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
     
                 @Override
                 public Boolean caseLDevice( LDevice object ) {
@@ -982,19 +1019,19 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     
             };
     
-            List< LDevice > res2 = deepSearchObjects( ied.getAccessPoint(), s2 );
-            String mess2 = "LDevice( inst = " + getLdInst() + " ) for IEDName on line " + getLineNumber()
+            List< LDevice > res3 = shallowSearchObjects( ap.getServer().getLDevice(), s3 );
+            String mess3 = "LDevice( inst = " + getLdInst() + " ) for IEDName on line " + getLineNumber()
                     + " ( in ied = " + ied.getName() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            if( res3.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
                 return;
             }
-            if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            if( res3.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            lDevice = res2.get( 0 );
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
+            lDevice = res3.get( 0 );
         }
         if( lDevice == null ) return;
         
@@ -1015,7 +1052,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
             //   LN.lnClass == IEDName.lnClass
             //   LN.prefix == IEDName.prefix
             //   LN.inst == IEDName.lnInst
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+            SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
 
                 @Override
                 public Boolean caseLN( LN object ) {
@@ -1033,19 +1070,19 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
 
             };
 
-            List< LN > res3 = shallowSearchObjects( lDevice.getLN(), s3 );
-            String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for IEDName on line "
+            List< LN > res4 = shallowSearchObjects( lDevice.getLN(), s4 );
+            String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for IEDName on line "
                     + getLineNumber() + " ( in ied = " + ied.getName() + " )";
-            if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+            if( res4.isEmpty() ) {
+                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
                 return;
             }
-            if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+            if( res4.size() > 1 ) {
+                AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-            setRefersToAnyLN( res3.get( 0 ));
+            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
+            setRefersToAnyLN( res4.get( 0 ));
         }
     }
 

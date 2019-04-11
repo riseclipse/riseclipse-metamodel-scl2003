@@ -256,6 +256,7 @@ public interface IEDName extends ExplicitLinkResolver {
 
     /**
      * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prefix</em>' attribute isn't clear,
@@ -267,7 +268,7 @@ public interface IEDName extends ExplicitLinkResolver {
      * @see #unsetPrefix()
      * @see #setPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_Prefix()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getPrefix();

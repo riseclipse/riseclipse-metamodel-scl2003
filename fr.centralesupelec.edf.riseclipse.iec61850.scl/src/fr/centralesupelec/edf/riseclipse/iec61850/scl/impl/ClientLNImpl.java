@@ -216,7 +216,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.

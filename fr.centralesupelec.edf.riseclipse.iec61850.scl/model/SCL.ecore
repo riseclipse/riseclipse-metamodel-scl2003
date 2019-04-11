@@ -862,7 +862,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceType" eType="#//ServiceType"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcCBName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1052,7 +1052,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ControlWithIEDName" ordered="false"
         eType="#//ControlWithIEDName" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ControlWithIEDName/IEDName"/>
@@ -2266,7 +2266,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnInst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+        defaultValueLiteral="" unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgDATrgOp" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dchg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"

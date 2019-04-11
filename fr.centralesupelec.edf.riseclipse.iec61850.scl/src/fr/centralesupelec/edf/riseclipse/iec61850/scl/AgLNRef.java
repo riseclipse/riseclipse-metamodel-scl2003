@@ -139,6 +139,7 @@ public interface AgLNRef extends AgLDRef {
 
     /**
      * Returns the value of the '<em><b>Prefix</b></em>' attribute.
+     * The default value is <code>""</code>.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the value of the '<em>Prefix</em>' attribute.
@@ -146,7 +147,7 @@ public interface AgLNRef extends AgLDRef {
      * @see #unsetPrefix()
      * @see #setPrefix(String)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgLNRef_Prefix()
-     * @model unsettable="true"
+     * @model default="" unsettable="true"
      * @generated
      */
     String getPrefix();
