@@ -1089,6 +1089,9 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
 
         if( getIedName() == null ) return;
         if( getLdInst() == null ) return;
+        // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
+        if( getLdInst().equals( "LD0" )) return;
+        
         if( getLnClass() == null ) return;
         List< IED > ieds = get_IEDs();
         if( ieds == null ) return;
