@@ -184,7 +184,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.

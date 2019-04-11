@@ -218,7 +218,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = null;
+    protected static final String PREFIX_EDEFAULT = "";
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
      * <!-- begin-user-doc -->
