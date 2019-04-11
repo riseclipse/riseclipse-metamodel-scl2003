@@ -985,6 +985,52 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgAuthenticationItemProvider agAuthenticationItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgAuthenticationAdapter() {
+        if (agAuthenticationItemProvider == null) {
+            agAuthenticationItemProvider = new AgAuthenticationItemProvider(this);
+        }
+
+        return agAuthenticationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected AgLNRefItemProvider agLNRefItemProvider;
+
+    /**
+     * This creates an adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createAgLNRefAdapter() {
+        if (agLNRefItemProvider == null) {
+            agLNRefItemProvider = new AgLNRefItemProvider(this);
+        }
+
+        return agLNRefItemProvider;
+    }
+
+    /**
      * This keeps track of the one adapter used for all {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec} instances.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3792,6 +3838,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
         if (samplesPerSecItemProvider != null) samplesPerSecItemProvider.dispose();
         if (secPerSamplesItemProvider != null) secPerSamplesItemProvider.dispose();
         if (mcSecurityItemProvider != null) mcSecurityItemProvider.dispose();
+        if (agAuthenticationItemProvider != null) agAuthenticationItemProvider.dispose();
+        if (agLNRefItemProvider != null) agLNRefItemProvider.dispose();
     }
 
 }

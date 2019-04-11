@@ -59,13 +59,13 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addApRefPropertyDescriptor(object);
+            addDescPropertyDescriptor(object);
             addIedNamePropertyDescriptor(object);
             addLdInstPropertyDescriptor(object);
             addLnClassPropertyDescriptor(object);
             addLnInstPropertyDescriptor(object);
             addPrefixPropertyDescriptor(object);
-            addDescPropertyDescriptor(object);
+            addApRefPropertyDescriptor(object);
             addRefersToAnyLNPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
@@ -104,9 +104,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_iedName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_iedName_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_IedName(),
+                 getString("_UI_AgLDRef_iedName_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_iedName_feature", "_UI_AgLDRef_type"),
+                 SclPackage.eINSTANCE.getAgLDRef_IedName(),
                  true,
                  false,
                  false,
@@ -126,9 +126,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_ldInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_ldInst_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_LdInst(),
+                 getString("_UI_AgLDRef_ldInst_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_ldInst_feature", "_UI_AgLDRef_type"),
+                 SclPackage.eINSTANCE.getAgLDRef_LdInst(),
                  true,
                  false,
                  false,
@@ -148,9 +148,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_lnClass_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_lnClass_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_LnClass(),
+                 getString("_UI_AgLNRef_lnClass_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnClass_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_LnClass(),
                  true,
                  false,
                  false,
@@ -170,9 +170,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_lnInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_lnInst_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_LnInst(),
+                 getString("_UI_AgLNRef_lnInst_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnInst_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_LnInst(),
                  true,
                  false,
                  false,
@@ -192,9 +192,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_prefix_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_prefix_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_Prefix(),
+                 getString("_UI_AgLNRef_prefix_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_prefix_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_Prefix(),
                  true,
                  false,
                  false,
@@ -214,9 +214,9 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ClientLN_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientLN_desc_feature", "_UI_ClientLN_type"),
-                 SclPackage.eINSTANCE.getClientLN_Desc(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
                  true,
                  false,
                  false,
@@ -285,13 +285,13 @@ public class ClientLNItemProvider extends ExplicitLinkResolverItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(ClientLN.class)) {
-            case SclPackage.CLIENT_LN__AP_REF:
+            case SclPackage.CLIENT_LN__DESC:
             case SclPackage.CLIENT_LN__IED_NAME:
             case SclPackage.CLIENT_LN__LD_INST:
             case SclPackage.CLIENT_LN__LN_CLASS:
             case SclPackage.CLIENT_LN__LN_INST:
             case SclPackage.CLIENT_LN__PREFIX:
-            case SclPackage.CLIENT_LN__DESC:
+            case SclPackage.CLIENT_LN__AP_REF:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

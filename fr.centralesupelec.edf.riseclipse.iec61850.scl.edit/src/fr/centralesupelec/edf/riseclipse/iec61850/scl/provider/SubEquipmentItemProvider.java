@@ -61,8 +61,8 @@ public class SubEquipmentItemProvider extends PowerSystemResourceItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addPhasePropertyDescriptor(object);
             addVirtualPropertyDescriptor(object);
+            addPhasePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -100,9 +100,9 @@ public class SubEquipmentItemProvider extends PowerSystemResourceItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_SubEquipment_virtual_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SubEquipment_virtual_feature", "_UI_SubEquipment_type"),
-                 SclPackage.eINSTANCE.getSubEquipment_Virtual(),
+                 getString("_UI_AgVirtual_virtual_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature", "_UI_AgVirtual_type"),
+                 SclPackage.eINSTANCE.getAgVirtual_Virtual(),
                  true,
                  false,
                  false,
@@ -179,8 +179,8 @@ public class SubEquipmentItemProvider extends PowerSystemResourceItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(SubEquipment.class)) {
-            case SclPackage.SUB_EQUIPMENT__PHASE:
             case SclPackage.SUB_EQUIPMENT__VIRTUAL:
+            case SclPackage.SUB_EQUIPMENT__PHASE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:

@@ -389,6 +389,24 @@ public interface SclFactory extends EFactory {
     McSecurity createMcSecurity();
 
     /**
+     * Returns a new object of class '<em>Ag Authentication</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag Authentication</em>'.
+     * @generated
+     */
+    AgAuthentication createAgAuthentication();
+
+    /**
+     * Returns a new object of class '<em>Ag LN Ref</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Ag LN Ref</em>'.
+     * @generated
+     */
+    AgLNRef createAgLNRef();
+
+    /**
      * Returns a new object of class '<em>Duration In Milli Sec</em>'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

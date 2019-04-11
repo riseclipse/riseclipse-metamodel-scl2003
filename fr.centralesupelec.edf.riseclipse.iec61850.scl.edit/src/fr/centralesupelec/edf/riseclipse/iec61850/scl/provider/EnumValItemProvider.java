@@ -59,9 +59,9 @@ public class EnumValItemProvider extends SclObjectItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
+            addDescPropertyDescriptor(object);
             addOrdPropertyDescriptor(object);
             addValuePropertyDescriptor(object);
-            addDescPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -121,9 +121,9 @@ public class EnumValItemProvider extends SclObjectItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_EnumVal_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_EnumVal_desc_feature", "_UI_EnumVal_type"),
-                 SclPackage.eINSTANCE.getEnumVal_Desc(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
                  true,
                  false,
                  false,
@@ -168,9 +168,9 @@ public class EnumValItemProvider extends SclObjectItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(EnumVal.class)) {
+            case SclPackage.ENUM_VAL__DESC:
             case SclPackage.ENUM_VAL__ORD:
             case SclPackage.ENUM_VAL__VALUE:
-            case SclPackage.ENUM_VAL__DESC:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

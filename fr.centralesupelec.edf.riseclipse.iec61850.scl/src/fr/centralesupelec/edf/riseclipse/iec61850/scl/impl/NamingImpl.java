@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,42 +36,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.NamingImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.NamingImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.NamingImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class NamingImpl extends BaseElementImpl implements Naming {
-    /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected static final String NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected String name = NAME_EDEFAULT;
-
-    /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean nameESet;
-
     /**
      * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -99,6 +71,35 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * @ordered
      */
     protected boolean descESet;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -227,10 +228,10 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.NAMING__NAME:
-                return getName();
             case SclPackage.NAMING__DESC:
                 return getDesc();
+            case SclPackage.NAMING__NAME:
+                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -243,11 +244,11 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.NAMING__NAME:
-                setName((String)newValue);
-                return;
             case SclPackage.NAMING__DESC:
                 setDesc((String)newValue);
+                return;
+            case SclPackage.NAMING__NAME:
+                setName((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -261,11 +262,11 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.NAMING__NAME:
-                unsetName();
-                return;
             case SclPackage.NAMING__DESC:
                 unsetDesc();
+                return;
+            case SclPackage.NAMING__NAME:
+                unsetName();
                 return;
         }
         super.eUnset(featureID);
@@ -279,12 +280,44 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.NAMING__NAME:
-                return isSetName();
             case SclPackage.NAMING__DESC:
                 return isSetDesc();
+            case SclPackage.NAMING__NAME:
+                return isSetName();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.NAMING__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.NAMING__DESC;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**
@@ -297,10 +330,10 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(", desc: ");
+        result.append(" (desc: ");
         if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", name: ");
+        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

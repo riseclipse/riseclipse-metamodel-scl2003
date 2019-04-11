@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -43,8 +44,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getVirtual <em>Virtual</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getSubEquipment <em>Sub Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getTransformerWinding <em>Transformer Winding</em>}</li>
@@ -53,6 +54,35 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  * @generated
  */
 public class TapChangerImpl extends PowerSystemResourceImpl implements TapChanger {
+    /**
+     * The default value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVirtual()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean VIRTUAL_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getVirtual()
+     * @generated
+     * @ordered
+     */
+    protected Boolean virtual = VIRTUAL_EDEFAULT;
+
+    /**
+     * This is true if the Virtual attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean virtualESet;
+
     /**
      * The default value of the '{@link #getType() <em>Type</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -81,35 +111,6 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @ordered
      */
     protected boolean typeESet;
-
-    /**
-     * The default value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getVirtual()
-     * @generated
-     * @ordered
-     */
-    protected static final Boolean VIRTUAL_EDEFAULT = Boolean.FALSE;
-
-    /**
-     * The cached value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getVirtual()
-     * @generated
-     * @ordered
-     */
-    protected Boolean virtual = VIRTUAL_EDEFAULT;
-
-    /**
-     * This is true if the Virtual attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean virtualESet;
 
     /**
      * The cached value of the '{@link #getEqFunction() <em>Eq Function</em>}' containment reference list.
@@ -421,10 +422,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.TAP_CHANGER__TYPE:
-                return getType();
             case SclPackage.TAP_CHANGER__VIRTUAL:
                 return getVirtual();
+            case SclPackage.TAP_CHANGER__TYPE:
+                return getType();
             case SclPackage.TAP_CHANGER__EQ_FUNCTION:
                 return getEqFunction();
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
@@ -444,11 +445,11 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.TAP_CHANGER__TYPE:
-                setType((String)newValue);
-                return;
             case SclPackage.TAP_CHANGER__VIRTUAL:
                 setVirtual((Boolean)newValue);
+                return;
+            case SclPackage.TAP_CHANGER__TYPE:
+                setType((String)newValue);
                 return;
             case SclPackage.TAP_CHANGER__EQ_FUNCTION:
                 getEqFunction().clear();
@@ -473,11 +474,11 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.TAP_CHANGER__TYPE:
-                unsetType();
-                return;
             case SclPackage.TAP_CHANGER__VIRTUAL:
                 unsetVirtual();
+                return;
+            case SclPackage.TAP_CHANGER__TYPE:
+                unsetType();
                 return;
             case SclPackage.TAP_CHANGER__EQ_FUNCTION:
                 unsetEqFunction();
@@ -500,10 +501,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.TAP_CHANGER__TYPE:
-                return isSetType();
             case SclPackage.TAP_CHANGER__VIRTUAL:
                 return isSetVirtual();
+            case SclPackage.TAP_CHANGER__TYPE:
+                return isSetType();
             case SclPackage.TAP_CHANGER__EQ_FUNCTION:
                 return isSetEqFunction();
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
@@ -520,14 +521,46 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgVirtual.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.TAP_CHANGER__VIRTUAL: return SclPackage.AG_VIRTUAL__VIRTUAL;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgVirtual.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_VIRTUAL__VIRTUAL: return SclPackage.TAP_CHANGER__VIRTUAL;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", virtual: ");
+        result.append(" (virtual: ");
         if (virtualESet) result.append(virtual); else result.append("<unset>");
+        result.append(", type: ");
+        if (typeESet) result.append(type); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

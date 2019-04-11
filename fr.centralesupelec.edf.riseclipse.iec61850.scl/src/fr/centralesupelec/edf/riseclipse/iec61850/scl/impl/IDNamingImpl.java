@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -35,42 +36,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IDNamingImpl#getId <em>Id</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IDNamingImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IDNamingImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IDNamingImpl extends BaseElementImpl implements IDNaming {
-    /**
-     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getId()
-     * @generated
-     * @ordered
-     */
-    protected static final String ID_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getId()
-     * @generated
-     * @ordered
-     */
-    protected String id = ID_EDEFAULT;
-
-    /**
-     * This is true if the Id attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean idESet;
-
     /**
      * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -99,6 +71,35 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * @ordered
      */
     protected boolean descESet;
+
+    /**
+     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getId()
+     * @generated
+     * @ordered
+     */
+    protected static final String ID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getId()
+     * @generated
+     * @ordered
+     */
+    protected String id = ID_EDEFAULT;
+
+    /**
+     * This is true if the Id attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean idESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -227,10 +228,10 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.ID_NAMING__ID:
-                return getId();
             case SclPackage.ID_NAMING__DESC:
                 return getDesc();
+            case SclPackage.ID_NAMING__ID:
+                return getId();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -243,11 +244,11 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.ID_NAMING__ID:
-                setId((String)newValue);
-                return;
             case SclPackage.ID_NAMING__DESC:
                 setDesc((String)newValue);
+                return;
+            case SclPackage.ID_NAMING__ID:
+                setId((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -261,11 +262,11 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.ID_NAMING__ID:
-                unsetId();
-                return;
             case SclPackage.ID_NAMING__DESC:
                 unsetDesc();
+                return;
+            case SclPackage.ID_NAMING__ID:
+                unsetId();
                 return;
         }
         super.eUnset(featureID);
@@ -279,12 +280,44 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.ID_NAMING__ID:
-                return isSetId();
             case SclPackage.ID_NAMING__DESC:
                 return isSetDesc();
+            case SclPackage.ID_NAMING__ID:
+                return isSetId();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.ID_NAMING__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.ID_NAMING__DESC;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**
@@ -297,10 +330,10 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (id: ");
-        if (idESet) result.append(id); else result.append("<unset>");
-        result.append(", desc: ");
+        result.append(" (desc: ");
         if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", id: ");
+        if (idESet) result.append(id); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

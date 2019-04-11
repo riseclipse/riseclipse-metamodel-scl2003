@@ -45,7 +45,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}</li>
@@ -56,7 +55,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model
  * @generated
  */
-public interface ExtRef extends BaseElement {
+public interface ExtRef extends BaseElement, AgDesc {
     /**
      * Returns the value of the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -994,60 +993,6 @@ public interface ExtRef extends BaseElement {
      * @generated
      */
     boolean isSetRefersToDataObject();
-
-    /**
-     * Returns the value of the '<em><b>Desc</b></em>' attribute.
-     * The default value is <code>""</code>.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Desc</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #setDesc(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_Desc()
-     * @model default="" unsettable="true"
-     * @generated
-     */
-    String getDesc();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @generated
-     */
-    void setDesc(String value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
-    void unsetDesc();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Desc</em>' attribute is set.
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
-    boolean isSetDesc();
 
     /**
      * Returns the value of the '<em><b>PServ T</b></em>' attribute.

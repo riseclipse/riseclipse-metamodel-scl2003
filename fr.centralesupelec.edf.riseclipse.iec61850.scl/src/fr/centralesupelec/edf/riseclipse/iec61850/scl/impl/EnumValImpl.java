@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -37,15 +38,44 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getOrd <em>Ord</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getEnumType <em>Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getValue <em>Value</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getDesc <em>Desc</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class EnumValImpl extends SclObjectImpl implements EnumVal {
+    /**
+     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDesc()
+     * @generated
+     * @ordered
+     */
+    protected static final String DESC_EDEFAULT = "";
+
+    /**
+     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDesc()
+     * @generated
+     * @ordered
+     */
+    protected String desc = DESC_EDEFAULT;
+
+    /**
+     * This is true if the Desc attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean descESet;
+
     /**
      * The default value of the '{@link #getOrd() <em>Ord</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -94,35 +124,6 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @ordered
      */
     protected String value = VALUE_EDEFAULT;
-
-    /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected static final String DESC_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected String desc = DESC_EDEFAULT;
-
-    /**
-     * This is true if the Desc attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean descESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -361,14 +362,14 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
+            case SclPackage.ENUM_VAL__DESC:
+                return getDesc();
             case SclPackage.ENUM_VAL__ORD:
                 return getOrd();
             case SclPackage.ENUM_VAL__ENUM_TYPE:
                 return getEnumType();
             case SclPackage.ENUM_VAL__VALUE:
                 return getValue();
-            case SclPackage.ENUM_VAL__DESC:
-                return getDesc();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -381,6 +382,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
+            case SclPackage.ENUM_VAL__DESC:
+                setDesc((String)newValue);
+                return;
             case SclPackage.ENUM_VAL__ORD:
                 setOrd((Integer)newValue);
                 return;
@@ -389,9 +393,6 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
                 return;
             case SclPackage.ENUM_VAL__VALUE:
                 setValue((String)newValue);
-                return;
-            case SclPackage.ENUM_VAL__DESC:
-                setDesc((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -405,6 +406,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
+            case SclPackage.ENUM_VAL__DESC:
+                unsetDesc();
+                return;
             case SclPackage.ENUM_VAL__ORD:
                 unsetOrd();
                 return;
@@ -413,9 +417,6 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
                 return;
             case SclPackage.ENUM_VAL__VALUE:
                 setValue(VALUE_EDEFAULT);
-                return;
-            case SclPackage.ENUM_VAL__DESC:
-                unsetDesc();
                 return;
         }
         super.eUnset(featureID);
@@ -429,16 +430,48 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
+            case SclPackage.ENUM_VAL__DESC:
+                return isSetDesc();
             case SclPackage.ENUM_VAL__ORD:
                 return isSetOrd();
             case SclPackage.ENUM_VAL__ENUM_TYPE:
                 return getEnumType() != null;
             case SclPackage.ENUM_VAL__VALUE:
                 return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-            case SclPackage.ENUM_VAL__DESC:
-                return isSetDesc();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.ENUM_VAL__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.ENUM_VAL__DESC;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**
@@ -451,12 +484,12 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (ord: ");
+        result.append(" (desc: ");
+        if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", ord: ");
         if (ordESet) result.append(ord); else result.append("<unset>");
         result.append(", value: ");
         result.append(value);
-        result.append(", desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

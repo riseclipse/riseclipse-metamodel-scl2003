@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer;
@@ -45,8 +46,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getPhase <em>Phase</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getVirtual <em>Virtual</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getPhase <em>Phase</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getPowerTransformer <em>Power Transformer</em>}</li>
@@ -56,35 +57,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger;
  * @generated
  */
 public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEquipment {
-    /**
-     * The default value of the '{@link #getPhase() <em>Phase</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPhase()
-     * @generated
-     * @ordered
-     */
-    protected static final PhaseEnum PHASE_EDEFAULT = PhaseEnum.NONE;
-
-    /**
-     * The cached value of the '{@link #getPhase() <em>Phase</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getPhase()
-     * @generated
-     * @ordered
-     */
-    protected PhaseEnum phase = PHASE_EDEFAULT;
-
-    /**
-     * This is true if the Phase attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean phaseESet;
-
     /**
      * The default value of the '{@link #getVirtual() <em>Virtual</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -113,6 +85,35 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @ordered
      */
     protected boolean virtualESet;
+
+    /**
+     * The default value of the '{@link #getPhase() <em>Phase</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPhase()
+     * @generated
+     * @ordered
+     */
+    protected static final PhaseEnum PHASE_EDEFAULT = PhaseEnum.NONE;
+
+    /**
+     * The cached value of the '{@link #getPhase() <em>Phase</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getPhase()
+     * @generated
+     * @ordered
+     */
+    protected PhaseEnum phase = PHASE_EDEFAULT;
+
+    /**
+     * This is true if the Phase attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean phaseESet;
 
     /**
      * The cached value of the '{@link #getEqFunction() <em>Eq Function</em>}' containment reference list.
@@ -479,10 +480,10 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__PHASE:
-                return getPhase();
             case SclPackage.SUB_EQUIPMENT__VIRTUAL:
                 return getVirtual();
+            case SclPackage.SUB_EQUIPMENT__PHASE:
+                return getPhase();
             case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
                 return getAbstractConductingEquipment();
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
@@ -504,11 +505,11 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__PHASE:
-                setPhase((PhaseEnum)newValue);
-                return;
             case SclPackage.SUB_EQUIPMENT__VIRTUAL:
                 setVirtual((Boolean)newValue);
+                return;
+            case SclPackage.SUB_EQUIPMENT__PHASE:
+                setPhase((PhaseEnum)newValue);
                 return;
             case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
                 setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
@@ -535,11 +536,11 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__PHASE:
-                unsetPhase();
-                return;
             case SclPackage.SUB_EQUIPMENT__VIRTUAL:
                 unsetVirtual();
+                return;
+            case SclPackage.SUB_EQUIPMENT__PHASE:
+                unsetPhase();
                 return;
             case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
                 setAbstractConductingEquipment((AbstractConductingEquipment)null);
@@ -565,10 +566,10 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__PHASE:
-                return isSetPhase();
             case SclPackage.SUB_EQUIPMENT__VIRTUAL:
                 return isSetVirtual();
+            case SclPackage.SUB_EQUIPMENT__PHASE:
+                return isSetPhase();
             case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
                 return getAbstractConductingEquipment() != null;
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
@@ -587,14 +588,46 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgVirtual.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.SUB_EQUIPMENT__VIRTUAL: return SclPackage.AG_VIRTUAL__VIRTUAL;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgVirtual.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_VIRTUAL__VIRTUAL: return SclPackage.SUB_EQUIPMENT__VIRTUAL;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (phase: ");
-        if (phaseESet) result.append(phase); else result.append("<unset>");
-        result.append(", virtual: ");
+        result.append(" (virtual: ");
         if (virtualESet) result.append(virtual); else result.append("<unset>");
+        result.append(", phase: ");
+        if (phaseESet) result.append(phase); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

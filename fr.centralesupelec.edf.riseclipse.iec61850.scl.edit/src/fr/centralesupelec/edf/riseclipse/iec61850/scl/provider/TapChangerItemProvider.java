@@ -61,8 +61,8 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addTypePropertyDescriptor(object);
             addVirtualPropertyDescriptor(object);
+            addTypePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -100,9 +100,9 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_TapChanger_virtual_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TapChanger_virtual_feature", "_UI_TapChanger_type"),
-                 SclPackage.eINSTANCE.getTapChanger_Virtual(),
+                 getString("_UI_AgVirtual_virtual_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature", "_UI_AgVirtual_type"),
+                 SclPackage.eINSTANCE.getAgVirtual_Virtual(),
                  true,
                  false,
                  false,
@@ -180,8 +180,8 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(TapChanger.class)) {
-            case SclPackage.TAP_CHANGER__TYPE:
             case SclPackage.TAP_CHANGER__VIRTUAL:
+            case SclPackage.TAP_CHANGER__TYPE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.TAP_CHANGER__EQ_FUNCTION:

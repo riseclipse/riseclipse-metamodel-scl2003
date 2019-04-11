@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -655,6 +656,46 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
                 return getServer() != null;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgAuthentication.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.AUTHENTICATION__CERTIFICATE: return SclPackage.AG_AUTHENTICATION__CERTIFICATE;
+                case SclPackage.AUTHENTICATION__NONE: return SclPackage.AG_AUTHENTICATION__NONE;
+                case SclPackage.AUTHENTICATION__PASSWORD: return SclPackage.AG_AUTHENTICATION__PASSWORD;
+                case SclPackage.AUTHENTICATION__STRONG: return SclPackage.AG_AUTHENTICATION__STRONG;
+                case SclPackage.AUTHENTICATION__WEAK: return SclPackage.AG_AUTHENTICATION__WEAK;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgAuthentication.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_AUTHENTICATION__CERTIFICATE: return SclPackage.AUTHENTICATION__CERTIFICATE;
+                case SclPackage.AG_AUTHENTICATION__NONE: return SclPackage.AUTHENTICATION__NONE;
+                case SclPackage.AG_AUTHENTICATION__PASSWORD: return SclPackage.AUTHENTICATION__PASSWORD;
+                case SclPackage.AG_AUTHENTICATION__STRONG: return SclPackage.AUTHENTICATION__STRONG;
+                case SclPackage.AG_AUTHENTICATION__WEAK: return SclPackage.AUTHENTICATION__WEAK;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**

@@ -59,16 +59,39 @@ public class AssociationItemProvider extends BaseElementItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addAssociationIDPropertyDescriptor(object);
+            addDescPropertyDescriptor(object);
             addIedNamePropertyDescriptor(object);
-            addKindPropertyDescriptor(object);
             addLdInstPropertyDescriptor(object);
             addLnClassPropertyDescriptor(object);
             addLnInstPropertyDescriptor(object);
             addPrefixPropertyDescriptor(object);
+            addAssociationIDPropertyDescriptor(object);
+            addKindPropertyDescriptor(object);
             addRefersToAnyLNPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Desc feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addDescPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
     }
 
     /**
@@ -104,9 +127,9 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Association_iedName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Association_iedName_feature", "_UI_Association_type"),
-                 SclPackage.eINSTANCE.getAssociation_IedName(),
+                 getString("_UI_AgLDRef_iedName_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_iedName_feature", "_UI_AgLDRef_type"),
+                 SclPackage.eINSTANCE.getAgLDRef_IedName(),
                  true,
                  false,
                  false,
@@ -148,9 +171,9 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Association_ldInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Association_ldInst_feature", "_UI_Association_type"),
-                 SclPackage.eINSTANCE.getAssociation_LdInst(),
+                 getString("_UI_AgLDRef_ldInst_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_ldInst_feature", "_UI_AgLDRef_type"),
+                 SclPackage.eINSTANCE.getAgLDRef_LdInst(),
                  true,
                  false,
                  false,
@@ -170,9 +193,9 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Association_lnClass_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Association_lnClass_feature", "_UI_Association_type"),
-                 SclPackage.eINSTANCE.getAssociation_LnClass(),
+                 getString("_UI_AgLNRef_lnClass_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnClass_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_LnClass(),
                  true,
                  false,
                  false,
@@ -192,9 +215,9 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Association_lnInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Association_lnInst_feature", "_UI_Association_type"),
-                 SclPackage.eINSTANCE.getAssociation_LnInst(),
+                 getString("_UI_AgLNRef_lnInst_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_lnInst_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_LnInst(),
                  true,
                  false,
                  false,
@@ -214,9 +237,9 @@ public class AssociationItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Association_prefix_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Association_prefix_feature", "_UI_Association_type"),
-                 SclPackage.eINSTANCE.getAssociation_Prefix(),
+                 getString("_UI_AgLNRef_prefix_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgLNRef_prefix_feature", "_UI_AgLNRef_type"),
+                 SclPackage.eINSTANCE.getAgLNRef_Prefix(),
                  true,
                  false,
                  false,
@@ -285,13 +308,14 @@ public class AssociationItemProvider extends BaseElementItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(Association.class)) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            case SclPackage.ASSOCIATION__DESC:
             case SclPackage.ASSOCIATION__IED_NAME:
-            case SclPackage.ASSOCIATION__KIND:
             case SclPackage.ASSOCIATION__LD_INST:
             case SclPackage.ASSOCIATION__LN_CLASS:
             case SclPackage.ASSOCIATION__LN_INST:
             case SclPackage.ASSOCIATION__PREFIX:
+            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            case SclPackage.ASSOCIATION__KIND:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
@@ -51,8 +52,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDchg <em>Dchg</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDupd <em>Dupd</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getFc <em>Fc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getQchg <em>Qchg</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getFc <em>Fc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getRefersToDAType <em>Refers To DA Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDOType <em>DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getProtNs <em>Prot Ns</em>}</li>
@@ -120,35 +121,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     protected boolean dupdESet;
 
     /**
-     * The default value of the '{@link #getFc() <em>Fc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getFc()
-     * @generated NOT because there is no default value in SCL
-     * @ordered
-     */
-    protected static final FCEnum FC_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getFc() <em>Fc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getFc()
-     * @generated
-     * @ordered
-     */
-    protected FCEnum fc = FC_EDEFAULT;
-
-    /**
-     * This is true if the Fc attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean fcESet;
-
-    /**
      * The default value of the '{@link #getQchg() <em>Qchg</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -176,6 +148,35 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @ordered
      */
     protected boolean qchgESet;
+
+    /**
+     * The default value of the '{@link #getFc() <em>Fc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFc()
+     * @generated NOT because there is no default value in SCL
+     * @ordered
+     */
+    protected static final FCEnum FC_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getFc() <em>Fc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getFc()
+     * @generated
+     * @ordered
+     */
+    protected FCEnum fc = FC_EDEFAULT;
+
+    /**
+     * This is true if the Fc attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean fcESet;
 
     /**
      * The cached value of the '{@link #getRefersToDAType() <em>Refers To DA Type</em>}' reference.
@@ -671,10 +672,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return getDchg();
             case SclPackage.DA__DUPD:
                 return getDupd();
-            case SclPackage.DA__FC:
-                return getFc();
             case SclPackage.DA__QCHG:
                 return getQchg();
+            case SclPackage.DA__FC:
+                return getFc();
             case SclPackage.DA__REFERS_TO_DA_TYPE:
                 return getRefersToDAType();
             case SclPackage.DA__DO_TYPE:
@@ -700,11 +701,11 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
             case SclPackage.DA__DUPD:
                 setDupd((Boolean)newValue);
                 return;
-            case SclPackage.DA__FC:
-                setFc((FCEnum)newValue);
-                return;
             case SclPackage.DA__QCHG:
                 setQchg((Boolean)newValue);
+                return;
+            case SclPackage.DA__FC:
+                setFc((FCEnum)newValue);
                 return;
             case SclPackage.DA__REFERS_TO_DA_TYPE:
                 setRefersToDAType((DAType)newValue);
@@ -734,11 +735,11 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
             case SclPackage.DA__DUPD:
                 unsetDupd();
                 return;
-            case SclPackage.DA__FC:
-                unsetFc();
-                return;
             case SclPackage.DA__QCHG:
                 unsetQchg();
+                return;
+            case SclPackage.DA__FC:
+                unsetFc();
                 return;
             case SclPackage.DA__REFERS_TO_DA_TYPE:
                 unsetRefersToDAType();
@@ -765,10 +766,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return isSetDchg();
             case SclPackage.DA__DUPD:
                 return isSetDupd();
-            case SclPackage.DA__FC:
-                return isSetFc();
             case SclPackage.DA__QCHG:
                 return isSetQchg();
+            case SclPackage.DA__FC:
+                return isSetFc();
             case SclPackage.DA__REFERS_TO_DA_TYPE:
                 return isSetRefersToDAType();
             case SclPackage.DA__DO_TYPE:
@@ -777,6 +778,42 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return isSetProtNs();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDATrgOp.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.DA__DCHG: return SclPackage.AG_DA_TRG_OP__DCHG;
+                case SclPackage.DA__DUPD: return SclPackage.AG_DA_TRG_OP__DUPD;
+                case SclPackage.DA__QCHG: return SclPackage.AG_DA_TRG_OP__QCHG;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDATrgOp.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DA_TRG_OP__DCHG: return SclPackage.DA__DCHG;
+                case SclPackage.AG_DA_TRG_OP__DUPD: return SclPackage.DA__DUPD;
+                case SclPackage.AG_DA_TRG_OP__QCHG: return SclPackage.DA__QCHG;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     @Override
@@ -803,10 +840,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         if (dchgESet) result.append(dchg); else result.append("<unset>");
         result.append(", dupd: ");
         if (dupdESet) result.append(dupd); else result.append("<unset>");
-        result.append(", fc: ");
-        if (fcESet) result.append(fc); else result.append("<unset>");
         result.append(", qchg: ");
         if (qchgESet) result.append(qchg); else result.append("<unset>");
+        result.append(", fc: ");
+        if (fcESet) result.append(fc); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

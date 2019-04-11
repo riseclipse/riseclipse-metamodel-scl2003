@@ -59,8 +59,8 @@ public class NamingItemProvider extends BaseElementItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addNamePropertyDescriptor(object);
             addDescPropertyDescriptor(object);
+            addNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -98,9 +98,9 @@ public class NamingItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Naming_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Naming_desc_feature", "_UI_Naming_type"),
-                 SclPackage.eINSTANCE.getNaming_Desc(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
                  true,
                  false,
                  false,
@@ -147,8 +147,8 @@ public class NamingItemProvider extends BaseElementItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(Naming.class)) {
-            case SclPackage.NAMING__NAME:
             case SclPackage.NAMING__DESC:
+            case SclPackage.NAMING__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }
