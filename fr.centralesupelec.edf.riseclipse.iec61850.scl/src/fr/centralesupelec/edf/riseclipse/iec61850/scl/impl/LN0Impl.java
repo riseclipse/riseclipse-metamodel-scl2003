@@ -157,10 +157,10 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
 
     /**
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLDevice( LDevice newLDevice, NotificationChain msgs ) {
+    public NotificationChain basicSetLDevice(LDevice newLDevice, NotificationChain msgs) {
         msgs = eBasicSetContainer((InternalEObject)newLDevice, SclPackage.LN0__LDEVICE, msgs);
         return msgs;
     }
@@ -370,7 +370,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
         switch (eContainerFeatureID()) {
             case SclPackage.LN0__LDEVICE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LDEVICE__LN0, LDevice.class, msgs);

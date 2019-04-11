@@ -20,6 +20,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.util.FeatureMap;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 
 /**
@@ -36,9 +37,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice()
@@ -277,45 +278,17 @@ public interface LDevice extends UnNaming {
     void setServer( Server value );
 
     /**
-     * Returns the value of the '<em><b>LNode</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LNode</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode</em>' reference list.
-     * @see #isSetLNode()
-     * @see #unsetLNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice
-     * @model opposite="LDevice" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<LNode> getLNode();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}' reference list.
+     * Returns the value of the '<em><b>Any LN</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLNode()
-     * @see #getLNode()
+     * @return the value of the '<em>Any LN</em>' attribute list.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_AnyLN()
+     * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
+     *        extendedMetaData="kind='group'"
      * @generated
      */
-    void unsetLNode();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LNode</em>' reference list is set.
-     * @see #unsetLNode()
-     * @see #getLNode()
-     * @generated
-     */
-    boolean isSetLNode();
+    FeatureMap getAnyLN();
 
     /**
      * Returns the value of the '<em><b>LN</b></em>' containment reference list.
@@ -332,7 +305,8 @@ public interface LDevice extends UnNaming {
      * @see #unsetLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" ordered="false"
+     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true"
+     *        extendedMetaData="group='#AnyLN'"
      * @generated
      */
     EList<LN> getLN();
@@ -373,7 +347,8 @@ public interface LDevice extends UnNaming {
      * @see #setLN0(LN0)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN0()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" ordered="false"
+     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true"
+     *        extendedMetaData="group='#AnyLN'"
      * @generated
      */
     LN0 getLN0();

@@ -6450,13 +6450,22 @@ public interface SclPackage extends EPackage {
     int ANY_LN__REFERRED_IED_NAME = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
+     * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 16;
+
+    /**
      * The number of structural features of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 17;
 
     /**
      * The number of operations of the '<em>Any LN</em>' class.
@@ -10128,22 +10137,13 @@ public interface SclPackage extends EPackage {
     int IED__ACCESS_POINT = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>LNode</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int IED__LNODE = UN_NAMING_FEATURE_COUNT + 8;
-
-    /**
      * The feature id for the '<em><b>KDC</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IED__KDC = UN_NAMING_FEATURE_COUNT + 9;
+    int IED__KDC = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Services</b></em>' containment reference.
@@ -10152,7 +10152,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED__SERVICES = UN_NAMING_FEATURE_COUNT + 10;
+    int IED__SERVICES = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The feature id for the '<em><b>SCL</b></em>' container reference.
@@ -10161,7 +10161,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED__SCL = UN_NAMING_FEATURE_COUNT + 11;
+    int IED__SCL = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10170,7 +10170,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED__NAME = UN_NAMING_FEATURE_COUNT + 12;
+    int IED__NAME = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Original Scl Release</b></em>' attribute.
@@ -10179,7 +10179,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED__ORIGINAL_SCL_RELEASE = UN_NAMING_FEATURE_COUNT + 13;
+    int IED__ORIGINAL_SCL_RELEASE = UN_NAMING_FEATURE_COUNT + 12;
 
     /**
      * The number of structural features of the '<em>IED</em>' class.
@@ -10188,7 +10188,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 14;
+    int IED_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The number of operations of the '<em>IED</em>' class.
@@ -10660,22 +10660,13 @@ public interface SclPackage extends EPackage {
     int LDEVICE__SERVER = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>LNode</b></em>' reference list.
+     * The feature id for the '<em><b>Any LN</b></em>' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE__LNODE = UN_NAMING_FEATURE_COUNT + 5;
-
-    /**
-     * The feature id for the '<em><b>LN</b></em>' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 6;
+    int LDEVICE__ANY_LN = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>LN0</b></em>' containment reference.
@@ -10684,7 +10675,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 7;
+    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>LN</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>LDevice</em>' class.
@@ -10903,6 +10903,15 @@ public interface SclPackage extends EPackage {
     int LN__REFERRED_IED_NAME = ANY_LN__REFERRED_IED_NAME;
 
     /**
+     * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
+
+    /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10930,22 +10939,13 @@ public interface SclPackage extends EPackage {
     int LN__LDEVICE = ANY_LN_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>LNode</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__LNODE = ANY_LN_FEATURE_COUNT + 3;
-
-    /**
      * The number of structural features of the '<em>LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 4;
+    int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>LN</em>' class.
@@ -11153,6 +11153,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__REFERRED_IED_NAME = ANY_LN__REFERRED_IED_NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
 
     /**
      * The feature id for the '<em><b>GSE Control</b></em>' containment reference list.
@@ -15871,31 +15880,13 @@ public interface SclPackage extends EPackage {
     int LNODE__PREFIX = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>IED</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE__IED = UN_NAMING_FEATURE_COUNT + 6;
-
-    /**
-     * The feature id for the '<em><b>LDevice</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LNODE__LDEVICE = UN_NAMING_FEATURE_COUNT + 7;
-
-    /**
-     * The feature id for the '<em><b>LN</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LNODE__LN = UN_NAMING_FEATURE_COUNT + 8;
+    int LNODE__REFERS_TO_ANY_LN = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>LNode Container</b></em>' container reference.
@@ -15904,7 +15895,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE__LNODE_CONTAINER = UN_NAMING_FEATURE_COUNT + 9;
+    int LNODE__LNODE_CONTAINER = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>LNode</em>' class.
@@ -15913,7 +15904,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
+    int LNODE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The number of operations of the '<em>LNode</em>' class.
@@ -20862,6 +20853,17 @@ public interface SclPackage extends EPackage {
     EReference getAnyLN_ReferredIEDName();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By LNode</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode()
+     * @see #getAnyLN()
+     * @generated
+     */
+    EReference getAnyLN_ReferredByLNode();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association <em>Association</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22915,17 +22917,6 @@ public interface SclPackage extends EPackage {
     EReference getIED_AccessPoint();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLNode <em>LNode</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>LNode</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLNode()
-     * @see #getIED()
-     * @generated
-     */
-    EReference getIED_LNode();
-
-    /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getKDC <em>KDC</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23251,15 +23242,15 @@ public interface SclPackage extends EPackage {
     EReference getLDevice_Server();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}'.
+     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>LNode</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode()
+     * @return the meta object for the attribute list '<em>Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN()
      * @see #getLDevice()
      * @generated
      */
-    EReference getLDevice_LNode();
+    EAttribute getLDevice_AnyLN();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}'.
@@ -23325,17 +23316,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLN_LDevice();
-
-    /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLNode <em>LNode</em>}'.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>LNode</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLNode()
-     * @see #getLN()
-     * @generated
-     */
-    EReference getLN_LNode();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0 <em>LN0</em>}'.
@@ -26285,37 +26265,15 @@ public interface SclPackage extends EPackage {
     EAttribute getLNode_Prefix();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED <em>IED</em>}'.
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>IED</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED()
+     * @return the meta object for the reference '<em>Refers To Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN()
      * @see #getLNode()
      * @generated
      */
-    EReference getLNode_IED();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>LDevice</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice()
-     * @see #getLNode()
-     * @generated
-     */
-    EReference getLNode_LDevice();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN <em>LN</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN()
-     * @see #getLNode()
-     * @generated
-     */
-    EReference getLNode_LN();
+    EReference getLNode_RefersToAnyLN();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}'.

@@ -33,9 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLnType <em>Ln Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED <em>IED</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN <em>LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}</li>
  * </ul>
  *
@@ -367,169 +365,55 @@ public interface LNode extends UnNaming {
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>IED</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLNode <em>LNode</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>IED</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>IED</em>' reference.
-     * @see #isSetIED()
-     * @see #unsetIED()
-     * @see #setIED(IED)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_IED()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getLNode
-     * @model opposite="LNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    IED getIED();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED <em>IED</em>}' reference.
+     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>IED</em>' reference.
-     * @see #isSetIED()
-     * @see #unsetIED()
-     * @see #getIED()
+     * @return the value of the '<em>Refers To Any LN</em>' reference.
+     * @see #isSetRefersToAnyLN()
+     * @see #unsetRefersToAnyLN()
+     * @see #setRefersToAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_RefersToAnyLN()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode
+     * @model opposite="ReferredByLNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    void setIED( IED value );
+    AnyLN getRefersToAnyLN();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED <em>IED</em>}' reference.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #isSetIED()
-     * @see #getIED()
-     * @see #setIED(IED)
-     * @generated
-     */
-    void unsetIED();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getIED <em>IED</em>}' reference is set.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @return whether the value of the '<em>IED</em>' reference is set.
-     * @see #unsetIED()
-     * @see #getIED()
-     * @see #setIED(IED)
-     * @generated
-     */
-    boolean isSetIED();
-
-    /**
-     * Returns the value of the '<em><b>LDevice</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode <em>LNode</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LDevice</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>LDevice</em>' reference.
-     * @see #isSetLDevice()
-     * @see #unsetLDevice()
-     * @see #setLDevice(LDevice)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LDevice()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLNode
-     * @model opposite="LNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    LDevice getLDevice();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LDevice</em>' reference.
-     * @see #isSetLDevice()
-     * @see #unsetLDevice()
-     * @see #getLDevice()
+     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
+     * @see #isSetRefersToAnyLN()
+     * @see #unsetRefersToAnyLN()
+     * @see #getRefersToAnyLN()
      * @generated
      */
-    void setLDevice( LDevice value );
+    void setRefersToAnyLN(AnyLN value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetLDevice()
-     * @see #getLDevice()
-     * @see #setLDevice(LDevice)
+     * @see #isSetRefersToAnyLN()
+     * @see #getRefersToAnyLN()
+     * @see #setRefersToAnyLN(AnyLN)
      * @generated
      */
-    void unsetLDevice();
+    void unsetRefersToAnyLN();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLDevice <em>LDevice</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LDevice</em>' reference is set.
-     * @see #unsetLDevice()
-     * @see #getLDevice()
-     * @see #setLDevice(LDevice)
+     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
+     * @see #unsetRefersToAnyLN()
+     * @see #getRefersToAnyLN()
+     * @see #setRefersToAnyLN(AnyLN)
      * @generated
      */
-    boolean isSetLDevice();
-
-    /**
-     * Returns the value of the '<em><b>LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLNode <em>LNode</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LN</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>LN</em>' reference.
-     * @see #isSetLN()
-     * @see #unsetLN()
-     * @see #setLN(LN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLNode
-     * @model opposite="LNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    LN getLN();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN <em>LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LN</em>' reference.
-     * @see #isSetLN()
-     * @see #unsetLN()
-     * @see #getLN()
-     * @generated
-     */
-    void setLN( LN value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN <em>LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetLN()
-     * @see #getLN()
-     * @see #setLN(LN)
-     * @generated
-     */
-    void unsetLN();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLN <em>LN</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>LN</em>' reference is set.
-     * @see #unsetLN()
-     * @see #getLN()
-     * @see #setLN(LN)
-     * @generated
-     */
-    boolean isSetLN();
+    boolean isSetRefersToAnyLN();
 
     /**
      * Returns the value of the '<em><b>LNode Container</b></em>' container reference.

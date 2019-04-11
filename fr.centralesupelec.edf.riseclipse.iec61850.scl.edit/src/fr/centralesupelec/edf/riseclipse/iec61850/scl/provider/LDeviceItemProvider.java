@@ -64,7 +64,6 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
             addInstPropertyDescriptor(object);
             addLdNamePropertyDescriptor(object);
             addReferredByControlBlockPropertyDescriptor(object);
-            addLNodePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -136,28 +135,6 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the LNode feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addLNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LDevice_LNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LDevice_LNode_feature", "_UI_LDevice_type"),
-                 SclPackage.eINSTANCE.getLDevice_LNode(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -170,8 +147,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
         if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
             childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_AccessControl());
-            childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN());
             childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN0());
+            childrenFeatures.add(SclPackage.eINSTANCE.getLDevice_LN());
         }
         return childrenFeatures;
     }
@@ -232,8 +209,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.LDEVICE__ACCESS_CONTROL:
-            case SclPackage.LDEVICE__LN:
             case SclPackage.LDEVICE__LN0:
+            case SclPackage.LDEVICE__LN:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
@@ -258,13 +235,13 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
 
         newChildDescriptors.add
             (createChildParameter
-                (SclPackage.eINSTANCE.getLDevice_LN(),
-                 SclFactory.eINSTANCE.createLN()));
+                (SclPackage.eINSTANCE.getLDevice_LN0(),
+                 SclFactory.eINSTANCE.createLN0()));
 
         newChildDescriptors.add
             (createChildParameter
-                (SclPackage.eINSTANCE.getLDevice_LN0(),
-                 SclFactory.eINSTANCE.createLN0()));
+                (SclPackage.eINSTANCE.getLDevice_LN(),
+                 SclFactory.eINSTANCE.createLN()));
     }
 
 }

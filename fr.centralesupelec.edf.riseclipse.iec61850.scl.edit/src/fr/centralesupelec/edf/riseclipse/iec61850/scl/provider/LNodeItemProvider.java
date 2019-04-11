@@ -65,9 +65,7 @@ public class LNodeItemProvider extends UnNamingItemProvider {
             addLnInstPropertyDescriptor(object);
             addLnTypePropertyDescriptor(object);
             addPrefixPropertyDescriptor(object);
-            addIEDPropertyDescriptor(object);
-            addLDevicePropertyDescriptor(object);
-            addLNPropertyDescriptor(object);
+            addRefersToAnyLNPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -205,63 +203,19 @@ public class LNodeItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the IED feature.
+     * This adds a property descriptor for the Refers To Any LN feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIEDPropertyDescriptor(Object object) {
+    protected void addRefersToAnyLNPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_LNode_IED_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LNode_IED_feature", "_UI_LNode_type"),
-                 SclPackage.eINSTANCE.getLNode_IED(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the LDevice feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addLDevicePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LNode_LDevice_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LNode_LDevice_feature", "_UI_LNode_type"),
-                 SclPackage.eINSTANCE.getLNode_LDevice(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the LN feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addLNPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LNode_LN_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LNode_LN_feature", "_UI_LNode_type"),
-                 SclPackage.eINSTANCE.getLNode_LN(),
+                 getString("_UI_LNode_RefersToAnyLN_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_LNode_RefersToAnyLN_feature", "_UI_LNode_type"),
+                 SclPackage.eINSTANCE.getLNode_RefersToAnyLN(),
                  true,
                  false,
                  true,

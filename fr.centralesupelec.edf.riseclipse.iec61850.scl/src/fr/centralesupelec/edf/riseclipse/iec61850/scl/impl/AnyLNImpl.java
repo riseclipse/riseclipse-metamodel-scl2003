@@ -28,6 +28,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
@@ -72,6 +73,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByAssociation <em>Referred By Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredIEDName <em>Referred IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
  * </ul>
  *
  * @generated
@@ -311,6 +313,16 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @ordered
      */
     protected EList<IEDName> referredIEDName;
+
+    /**
+     * The cached value of the '{@link #getReferredByLNode() <em>Referred By LNode</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLNode()
+     * @generated
+     * @ordered
+     */
+    protected EList<LNode> referredByLNode;
 
     /**
      * <!-- begin-user-doc -->
@@ -1047,6 +1059,39 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList<LNode> getReferredByLNode() {
+        if (referredByLNode == null) {
+            referredByLNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.ANY_LN__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_ANY_LN);
+        }
+        return referredByLNode;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByLNode() {
+        if (referredByLNode != null) ((InternalEList.Unsettable<?>)referredByLNode).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByLNode() {
+        return referredByLNode != null && ((InternalEList.Unsettable<?>)referredByLNode).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1081,6 +1126,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAssociation()).basicAdd(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_IED_NAME:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredIEDName()).basicAdd(otherEnd, msgs);
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLNode()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -1119,6 +1166,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return ((InternalEList<?>)getReferredByAssociation()).basicRemove(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_IED_NAME:
                 return ((InternalEList<?>)getReferredIEDName()).basicRemove(otherEnd, msgs);
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                return ((InternalEList<?>)getReferredByLNode()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -1163,6 +1212,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return getReferredByAssociation();
             case SclPackage.ANY_LN__REFERRED_IED_NAME:
                 return getReferredIEDName();
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                return getReferredByLNode();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1235,6 +1286,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 getReferredIEDName().clear();
                 getReferredIEDName().addAll((Collection<? extends IEDName>)newValue);
                 return;
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                getReferredByLNode().clear();
+                getReferredByLNode().addAll((Collection<? extends LNode>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -1295,6 +1350,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             case SclPackage.ANY_LN__REFERRED_IED_NAME:
                 unsetReferredIEDName();
                 return;
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                unsetReferredByLNode();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1339,6 +1397,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return isSetReferredByAssociation();
             case SclPackage.ANY_LN__REFERRED_IED_NAME:
                 return isSetReferredIEDName();
+            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+                return isSetReferredByLNode();
         }
         return super.eIsSet(featureID);
     }
