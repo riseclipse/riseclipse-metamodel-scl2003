@@ -59,6 +59,7 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
+            addDescPropertyDescriptor(object);
             addDaNamePropertyDescriptor(object);
             addDoNamePropertyDescriptor(object);
             addIedNamePropertyDescriptor(object);
@@ -76,7 +77,6 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             addRefersToAnyLNPropertyDescriptor(object);
             addRefersToDataAttributePropertyDescriptor(object);
             addRefersToDataObjectPropertyDescriptor(object);
-            addDescPropertyDescriptor(object);
             addPServTPropertyDescriptor(object);
             addPLNPropertyDescriptor(object);
             addPDOPropertyDescriptor(object);
@@ -470,9 +470,9 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ExtRef_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_desc_feature", "_UI_ExtRef_type"),
-                 SclPackage.eINSTANCE.getExtRef_Desc(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
                  true,
                  false,
                  false,
@@ -607,6 +607,7 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
         updateChildren(notification);
 
         switch (notification.getFeatureID(ExtRef.class)) {
+            case SclPackage.EXT_REF__DESC:
             case SclPackage.EXT_REF__DA_NAME:
             case SclPackage.EXT_REF__DO_NAME:
             case SclPackage.EXT_REF__IED_NAME:
@@ -621,7 +622,6 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             case SclPackage.EXT_REF__SRC_LN_CLASS:
             case SclPackage.EXT_REF__SRC_LN_INST:
             case SclPackage.EXT_REF__SRC_PREFIX:
-            case SclPackage.EXT_REF__DESC:
             case SclPackage.EXT_REF__PSERV_T:
             case SclPackage.EXT_REF__PLN:
             case SclPackage.EXT_REF__PDO:

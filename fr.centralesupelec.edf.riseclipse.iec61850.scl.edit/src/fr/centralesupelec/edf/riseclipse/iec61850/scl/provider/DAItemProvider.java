@@ -63,8 +63,8 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
 
             addDchgPropertyDescriptor(object);
             addDupdPropertyDescriptor(object);
-            addFcPropertyDescriptor(object);
             addQchgPropertyDescriptor(object);
+            addFcPropertyDescriptor(object);
             addRefersToDATypePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
@@ -81,9 +81,9 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DA_dchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DA_dchg_feature", "_UI_DA_type"),
-                 SclPackage.eINSTANCE.getDA_Dchg(),
+                 getString("_UI_AgDATrgOp_dchg_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dchg_feature", "_UI_AgDATrgOp_type"),
+                 SclPackage.eINSTANCE.getAgDATrgOp_Dchg(),
                  true,
                  false,
                  false,
@@ -103,9 +103,9 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DA_dupd_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DA_dupd_feature", "_UI_DA_type"),
-                 SclPackage.eINSTANCE.getDA_Dupd(),
+                 getString("_UI_AgDATrgOp_dupd_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dupd_feature", "_UI_AgDATrgOp_type"),
+                 SclPackage.eINSTANCE.getAgDATrgOp_Dupd(),
                  true,
                  false,
                  false,
@@ -147,9 +147,9 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DA_qchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DA_qchg_feature", "_UI_DA_type"),
-                 SclPackage.eINSTANCE.getDA_Qchg(),
+                 getString("_UI_AgDATrgOp_qchg_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_qchg_feature", "_UI_AgDATrgOp_type"),
+                 SclPackage.eINSTANCE.getAgDATrgOp_Qchg(),
                  true,
                  false,
                  false,
@@ -250,8 +250,8 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
         switch (notification.getFeatureID(DA.class)) {
             case SclPackage.DA__DCHG:
             case SclPackage.DA__DUPD:
-            case SclPackage.DA__FC:
             case SclPackage.DA__QCHG:
+            case SclPackage.DA__FC:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.DA__PROT_NS:

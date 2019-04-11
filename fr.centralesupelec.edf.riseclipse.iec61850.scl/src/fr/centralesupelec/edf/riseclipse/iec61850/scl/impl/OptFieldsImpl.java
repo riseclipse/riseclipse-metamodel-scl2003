@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -925,6 +926,52 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return getReportControl() != null;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgOptFields.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.OPT_FIELDS__BUF_OVFL: return SclPackage.AG_OPT_FIELDS__BUF_OVFL;
+                case SclPackage.OPT_FIELDS__CONFIG_REF: return SclPackage.AG_OPT_FIELDS__CONFIG_REF;
+                case SclPackage.OPT_FIELDS__DATA_REF: return SclPackage.AG_OPT_FIELDS__DATA_REF;
+                case SclPackage.OPT_FIELDS__DATA_SET: return SclPackage.AG_OPT_FIELDS__DATA_SET;
+                case SclPackage.OPT_FIELDS__ENTRY_ID: return SclPackage.AG_OPT_FIELDS__ENTRY_ID;
+                case SclPackage.OPT_FIELDS__REASON_CODE: return SclPackage.AG_OPT_FIELDS__REASON_CODE;
+                case SclPackage.OPT_FIELDS__SEQ_NUM: return SclPackage.AG_OPT_FIELDS__SEQ_NUM;
+                case SclPackage.OPT_FIELDS__TIME_STAMP: return SclPackage.AG_OPT_FIELDS__TIME_STAMP;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgOptFields.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_OPT_FIELDS__BUF_OVFL: return SclPackage.OPT_FIELDS__BUF_OVFL;
+                case SclPackage.AG_OPT_FIELDS__CONFIG_REF: return SclPackage.OPT_FIELDS__CONFIG_REF;
+                case SclPackage.AG_OPT_FIELDS__DATA_REF: return SclPackage.OPT_FIELDS__DATA_REF;
+                case SclPackage.AG_OPT_FIELDS__DATA_SET: return SclPackage.OPT_FIELDS__DATA_SET;
+                case SclPackage.AG_OPT_FIELDS__ENTRY_ID: return SclPackage.OPT_FIELDS__ENTRY_ID;
+                case SclPackage.AG_OPT_FIELDS__REASON_CODE: return SclPackage.OPT_FIELDS__REASON_CODE;
+                case SclPackage.AG_OPT_FIELDS__SEQ_NUM: return SclPackage.OPT_FIELDS__SEQ_NUM;
+                case SclPackage.AG_OPT_FIELDS__TIME_STAMP: return SclPackage.OPT_FIELDS__TIME_STAMP;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**

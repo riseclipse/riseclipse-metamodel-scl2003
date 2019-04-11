@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -43,8 +44,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampleSynchronized <em>Sample Synchronized</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getTimestamp <em>Timestamp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampledValueControl <em>Sampled Value Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSynchSourceId <em>Synch Source Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampledValueControl <em>Sampled Value Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -730,10 +731,10 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return getSecurity();
             case SclPackage.SMV_OPTS__TIMESTAMP:
                 return getTimestamp();
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                return getSampledValueControl();
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 return getSynchSourceId();
+            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+                return getSampledValueControl();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -764,11 +765,11 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__TIMESTAMP:
                 setTimestamp((Boolean)newValue);
                 return;
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                setSampledValueControl((SampledValueControl)newValue);
-                return;
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 setSynchSourceId((Boolean)newValue);
+                return;
+            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+                setSampledValueControl((SampledValueControl)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -800,11 +801,11 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__TIMESTAMP:
                 unsetTimestamp();
                 return;
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                setSampledValueControl((SampledValueControl)null);
-                return;
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 unsetSynchSourceId();
+                return;
+            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+                setSampledValueControl((SampledValueControl)null);
                 return;
         }
         super.eUnset(featureID);
@@ -830,12 +831,56 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return isSetSecurity();
             case SclPackage.SMV_OPTS__TIMESTAMP:
                 return isSetTimestamp();
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                return getSampledValueControl() != null;
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 return isSetSynchSourceId();
+            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+                return getSampledValueControl() != null;
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgSmvOpts.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.SMV_OPTS__DATA_SET: return SclPackage.AG_SMV_OPTS__DATA_SET;
+                case SclPackage.SMV_OPTS__REFRESH_TIME: return SclPackage.AG_SMV_OPTS__REFRESH_TIME;
+                case SclPackage.SMV_OPTS__SAMPLE_RATE: return SclPackage.AG_SMV_OPTS__SAMPLE_RATE;
+                case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED: return SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED;
+                case SclPackage.SMV_OPTS__SECURITY: return SclPackage.AG_SMV_OPTS__SECURITY;
+                case SclPackage.SMV_OPTS__TIMESTAMP: return SclPackage.AG_SMV_OPTS__TIMESTAMP;
+                case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgSmvOpts.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_SMV_OPTS__DATA_SET: return SclPackage.SMV_OPTS__DATA_SET;
+                case SclPackage.AG_SMV_OPTS__REFRESH_TIME: return SclPackage.SMV_OPTS__REFRESH_TIME;
+                case SclPackage.AG_SMV_OPTS__SAMPLE_RATE: return SclPackage.SMV_OPTS__SAMPLE_RATE;
+                case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED: return SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED;
+                case SclPackage.AG_SMV_OPTS__SECURITY: return SclPackage.SMV_OPTS__SECURITY;
+                case SclPackage.AG_SMV_OPTS__TIMESTAMP: return SclPackage.SMV_OPTS__TIMESTAMP;
+                case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.SMV_OPTS__SYNCH_SOURCE_ID;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
     }
 
     /**

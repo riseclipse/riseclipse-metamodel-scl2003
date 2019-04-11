@@ -77,9 +77,9 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_UnNaming_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_UnNaming_desc_feature", "_UI_UnNaming_type"),
-                 SclPackage.eINSTANCE.getUnNaming_Desc(),
+                 getString("_UI_AgDesc_desc_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
+                 SclPackage.eINSTANCE.getAgDesc_Desc(),
                  true,
                  false,
                  false,

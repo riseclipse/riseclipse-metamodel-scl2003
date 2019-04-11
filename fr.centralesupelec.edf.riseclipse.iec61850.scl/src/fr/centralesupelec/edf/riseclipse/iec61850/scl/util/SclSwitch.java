@@ -24,6 +24,14 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
@@ -283,6 +291,7 @@ public class SclSwitch< T > extends Switch<T> {
                 IDNaming idNaming = (IDNaming)theEObject;
                 T result = caseIDNaming(idNaming);
                 if (result == null) result = caseBaseElement(idNaming);
+                if (result == null) result = caseAgDesc(idNaming);
                 if (result == null) result = caseExplicitLinkResolver(idNaming);
                 if (result == null) result = caseSclObject(idNaming);
                 if (result == null) result = defaultCase(theEObject);
@@ -296,6 +305,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(line);
                 if (result == null) result = caseNaming(line);
                 if (result == null) result = caseBaseElement(line);
+                if (result == null) result = caseAgDesc(line);
                 if (result == null) result = caseExplicitLinkResolver(line);
                 if (result == null) result = caseSclObject(line);
                 if (result == null) result = defaultCase(theEObject);
@@ -305,6 +315,7 @@ public class SclSwitch< T > extends Switch<T> {
                 Naming naming = (Naming)theEObject;
                 T result = caseNaming(naming);
                 if (result == null) result = caseBaseElement(naming);
+                if (result == null) result = caseAgDesc(naming);
                 if (result == null) result = caseExplicitLinkResolver(naming);
                 if (result == null) result = caseSclObject(naming);
                 if (result == null) result = defaultCase(theEObject);
@@ -326,6 +337,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(process);
                 if (result == null) result = caseNaming(process);
                 if (result == null) result = caseBaseElement(process);
+                if (result == null) result = caseAgDesc(process);
                 if (result == null) result = caseExplicitLinkResolver(process);
                 if (result == null) result = caseSclObject(process);
                 if (result == null) result = defaultCase(theEObject);
@@ -359,6 +371,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseCommunication(communication);
                 if (result == null) result = caseUnNaming(communication);
                 if (result == null) result = caseBaseElement(communication);
+                if (result == null) result = caseAgDesc(communication);
                 if (result == null) result = caseExplicitLinkResolver(communication);
                 if (result == null) result = caseSclObject(communication);
                 if (result == null) result = defaultCase(theEObject);
@@ -369,6 +382,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseConnectedAP(connectedAP);
                 if (result == null) result = caseUnNaming(connectedAP);
                 if (result == null) result = caseBaseElement(connectedAP);
+                if (result == null) result = caseAgDesc(connectedAP);
                 if (result == null) result = caseExplicitLinkResolver(connectedAP);
                 if (result == null) result = caseSclObject(connectedAP);
                 if (result == null) result = defaultCase(theEObject);
@@ -379,6 +393,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseControlBlock(controlBlock);
                 if (result == null) result = caseUnNaming(controlBlock);
                 if (result == null) result = caseBaseElement(controlBlock);
+                if (result == null) result = caseAgDesc(controlBlock);
                 if (result == null) result = caseExplicitLinkResolver(controlBlock);
                 if (result == null) result = caseSclObject(controlBlock);
                 if (result == null) result = defaultCase(theEObject);
@@ -390,6 +405,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControlBlock(gse);
                 if (result == null) result = caseUnNaming(gse);
                 if (result == null) result = caseBaseElement(gse);
+                if (result == null) result = caseAgDesc(gse);
                 if (result == null) result = caseExplicitLinkResolver(gse);
                 if (result == null) result = caseSclObject(gse);
                 if (result == null) result = defaultCase(theEObject);
@@ -423,6 +439,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = casePhysConn(physConn);
                 if (result == null) result = caseUnNaming(physConn);
                 if (result == null) result = caseBaseElement(physConn);
+                if (result == null) result = caseAgDesc(physConn);
                 if (result == null) result = caseExplicitLinkResolver(physConn);
                 if (result == null) result = caseSclObject(physConn);
                 if (result == null) result = defaultCase(theEObject);
@@ -434,6 +451,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControlBlock(smv);
                 if (result == null) result = caseUnNaming(smv);
                 if (result == null) result = caseBaseElement(smv);
+                if (result == null) result = caseAgDesc(smv);
                 if (result == null) result = caseExplicitLinkResolver(smv);
                 if (result == null) result = caseSclObject(smv);
                 if (result == null) result = defaultCase(theEObject);
@@ -444,6 +462,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseSubNetwork(subNetwork);
                 if (result == null) result = caseNaming(subNetwork);
                 if (result == null) result = caseBaseElement(subNetwork);
+                if (result == null) result = caseAgDesc(subNetwork);
                 if (result == null) result = caseExplicitLinkResolver(subNetwork);
                 if (result == null) result = caseSclObject(subNetwork);
                 if (result == null) result = defaultCase(theEObject);
@@ -455,6 +474,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataAttribute(abstractDataAttribute);
                 if (result == null) result = caseUnNaming(abstractDataAttribute);
                 if (result == null) result = caseBaseElement(abstractDataAttribute);
+                if (result == null) result = caseAgDesc(abstractDataAttribute);
                 if (result == null) result = caseExplicitLinkResolver(abstractDataAttribute);
                 if (result == null) result = caseSclObject(abstractDataAttribute);
                 if (result == null) result = defaultCase(theEObject);
@@ -467,6 +487,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataAttribute(bda);
                 if (result == null) result = caseUnNaming(bda);
                 if (result == null) result = caseBaseElement(bda);
+                if (result == null) result = caseAgDesc(bda);
                 if (result == null) result = caseExplicitLinkResolver(bda);
                 if (result == null) result = caseSclObject(bda);
                 if (result == null) result = defaultCase(theEObject);
@@ -476,9 +497,11 @@ public class SclSwitch< T > extends Switch<T> {
                 DA da = (DA)theEObject;
                 T result = caseDA(da);
                 if (result == null) result = caseAbstractDataAttribute(da);
+                if (result == null) result = caseAgDATrgOp(da);
                 if (result == null) result = caseDataAttribute(da);
                 if (result == null) result = caseUnNaming(da);
                 if (result == null) result = caseBaseElement(da);
+                if (result == null) result = caseAgDesc(da);
                 if (result == null) result = caseExplicitLinkResolver(da);
                 if (result == null) result = caseSclObject(da);
                 if (result == null) result = defaultCase(theEObject);
@@ -489,6 +512,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseDAType(daType);
                 if (result == null) result = caseIDNaming(daType);
                 if (result == null) result = caseBaseElement(daType);
+                if (result == null) result = caseAgDesc(daType);
                 if (result == null) result = caseExplicitLinkResolver(daType);
                 if (result == null) result = caseSclObject(daType);
                 if (result == null) result = defaultCase(theEObject);
@@ -500,6 +524,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataObject(do_);
                 if (result == null) result = caseUnNaming(do_);
                 if (result == null) result = caseBaseElement(do_);
+                if (result == null) result = caseAgDesc(do_);
                 if (result == null) result = caseExplicitLinkResolver(do_);
                 if (result == null) result = caseSclObject(do_);
                 if (result == null) result = defaultCase(theEObject);
@@ -510,6 +535,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseDOType(doType);
                 if (result == null) result = caseIDNaming(doType);
                 if (result == null) result = caseBaseElement(doType);
+                if (result == null) result = caseAgDesc(doType);
                 if (result == null) result = caseExplicitLinkResolver(doType);
                 if (result == null) result = caseSclObject(doType);
                 if (result == null) result = defaultCase(theEObject);
@@ -528,6 +554,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseEnumType(enumType);
                 if (result == null) result = caseIDNaming(enumType);
                 if (result == null) result = caseBaseElement(enumType);
+                if (result == null) result = caseAgDesc(enumType);
                 if (result == null) result = caseExplicitLinkResolver(enumType);
                 if (result == null) result = caseSclObject(enumType);
                 if (result == null) result = defaultCase(theEObject);
@@ -537,6 +564,7 @@ public class SclSwitch< T > extends Switch<T> {
                 EnumVal enumVal = (EnumVal)theEObject;
                 T result = caseEnumVal(enumVal);
                 if (result == null) result = caseSclObject(enumVal);
+                if (result == null) result = caseAgDesc(enumVal);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -545,6 +573,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseLNodeType(lNodeType);
                 if (result == null) result = caseIDNaming(lNodeType);
                 if (result == null) result = caseBaseElement(lNodeType);
+                if (result == null) result = caseAgDesc(lNodeType);
                 if (result == null) result = caseExplicitLinkResolver(lNodeType);
                 if (result == null) result = caseSclObject(lNodeType);
                 if (result == null) result = defaultCase(theEObject);
@@ -562,6 +591,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseSDO(sdo);
                 if (result == null) result = caseUnNaming(sdo);
                 if (result == null) result = caseBaseElement(sdo);
+                if (result == null) result = caseAgDesc(sdo);
                 if (result == null) result = caseExplicitLinkResolver(sdo);
                 if (result == null) result = caseSclObject(sdo);
                 if (result == null) result = defaultCase(theEObject);
@@ -586,6 +616,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseAccessPoint(accessPoint);
                 if (result == null) result = caseUnNaming(accessPoint);
                 if (result == null) result = caseBaseElement(accessPoint);
+                if (result == null) result = caseAgDesc(accessPoint);
                 if (result == null) result = caseExplicitLinkResolver(accessPoint);
                 if (result == null) result = caseSclObject(accessPoint);
                 if (result == null) result = defaultCase(theEObject);
@@ -596,6 +627,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseAnyLN(anyLN);
                 if (result == null) result = caseUnNaming(anyLN);
                 if (result == null) result = caseBaseElement(anyLN);
+                if (result == null) result = caseAgDesc(anyLN);
                 if (result == null) result = caseExplicitLinkResolver(anyLN);
                 if (result == null) result = caseSclObject(anyLN);
                 if (result == null) result = defaultCase(theEObject);
@@ -605,8 +637,11 @@ public class SclSwitch< T > extends Switch<T> {
                 Association association = (Association)theEObject;
                 T result = caseAssociation(association);
                 if (result == null) result = caseBaseElement(association);
+                if (result == null) result = caseAgLNRef(association);
                 if (result == null) result = caseExplicitLinkResolver(association);
+                if (result == null) result = caseAgLDRef(association);
                 if (result == null) result = caseSclObject(association);
+                if (result == null) result = caseAgDesc(association);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -614,6 +649,7 @@ public class SclSwitch< T > extends Switch<T> {
                 Authentication authentication = (Authentication)theEObject;
                 T result = caseAuthentication(authentication);
                 if (result == null) result = caseSclObject(authentication);
+                if (result == null) result = caseAgAuthentication(authentication);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -622,6 +658,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseCertificate(certificate);
                 if (result == null) result = caseNaming(certificate);
                 if (result == null) result = caseBaseElement(certificate);
+                if (result == null) result = caseAgDesc(certificate);
                 if (result == null) result = caseExplicitLinkResolver(certificate);
                 if (result == null) result = caseSclObject(certificate);
                 if (result == null) result = defaultCase(theEObject);
@@ -631,7 +668,10 @@ public class SclSwitch< T > extends Switch<T> {
                 ClientLN clientLN = (ClientLN)theEObject;
                 T result = caseClientLN(clientLN);
                 if (result == null) result = caseExplicitLinkResolver(clientLN);
+                if (result == null) result = caseAgLNRef(clientLN);
                 if (result == null) result = caseSclObject(clientLN);
+                if (result == null) result = caseAgLDRef(clientLN);
+                if (result == null) result = caseAgDesc(clientLN);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -711,6 +751,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseControl(control);
                 if (result == null) result = caseUnNaming(control);
                 if (result == null) result = caseBaseElement(control);
+                if (result == null) result = caseAgDesc(control);
                 if (result == null) result = caseExplicitLinkResolver(control);
                 if (result == null) result = caseSclObject(control);
                 if (result == null) result = defaultCase(theEObject);
@@ -722,6 +763,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(controlWithIEDName);
                 if (result == null) result = caseUnNaming(controlWithIEDName);
                 if (result == null) result = caseBaseElement(controlWithIEDName);
+                if (result == null) result = caseAgDesc(controlWithIEDName);
                 if (result == null) result = caseExplicitLinkResolver(controlWithIEDName);
                 if (result == null) result = caseSclObject(controlWithIEDName);
                 if (result == null) result = defaultCase(theEObject);
@@ -733,6 +775,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(controlWithTriggerOpt);
                 if (result == null) result = caseUnNaming(controlWithTriggerOpt);
                 if (result == null) result = caseBaseElement(controlWithTriggerOpt);
+                if (result == null) result = caseAgDesc(controlWithTriggerOpt);
                 if (result == null) result = caseExplicitLinkResolver(controlWithTriggerOpt);
                 if (result == null) result = caseSclObject(controlWithTriggerOpt);
                 if (result == null) result = defaultCase(theEObject);
@@ -744,6 +787,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataAttribute(dai);
                 if (result == null) result = caseUnNaming(dai);
                 if (result == null) result = caseBaseElement(dai);
+                if (result == null) result = caseAgDesc(dai);
                 if (result == null) result = caseExplicitLinkResolver(dai);
                 if (result == null) result = caseSclObject(dai);
                 if (result == null) result = defaultCase(theEObject);
@@ -755,6 +799,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataObject(doi);
                 if (result == null) result = caseUnNaming(doi);
                 if (result == null) result = caseBaseElement(doi);
+                if (result == null) result = caseAgDesc(doi);
                 if (result == null) result = caseExplicitLinkResolver(doi);
                 if (result == null) result = caseSclObject(doi);
                 if (result == null) result = defaultCase(theEObject);
@@ -773,6 +818,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseDataSet(dataSet);
                 if (result == null) result = caseUnNaming(dataSet);
                 if (result == null) result = caseBaseElement(dataSet);
+                if (result == null) result = caseAgDesc(dataSet);
                 if (result == null) result = caseExplicitLinkResolver(dataSet);
                 if (result == null) result = caseSclObject(dataSet);
                 if (result == null) result = defaultCase(theEObject);
@@ -807,6 +853,7 @@ public class SclSwitch< T > extends Switch<T> {
                 ExtRef extRef = (ExtRef)theEObject;
                 T result = caseExtRef(extRef);
                 if (result == null) result = caseBaseElement(extRef);
+                if (result == null) result = caseAgDesc(extRef);
                 if (result == null) result = caseExplicitLinkResolver(extRef);
                 if (result == null) result = caseSclObject(extRef);
                 if (result == null) result = defaultCase(theEObject);
@@ -841,6 +888,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseCertificate(gooseSecurity);
                 if (result == null) result = caseNaming(gooseSecurity);
                 if (result == null) result = caseBaseElement(gooseSecurity);
+                if (result == null) result = caseAgDesc(gooseSecurity);
                 if (result == null) result = caseExplicitLinkResolver(gooseSecurity);
                 if (result == null) result = caseSclObject(gooseSecurity);
                 if (result == null) result = defaultCase(theEObject);
@@ -853,6 +901,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(gseControl);
                 if (result == null) result = caseUnNaming(gseControl);
                 if (result == null) result = caseBaseElement(gseControl);
+                if (result == null) result = caseAgDesc(gseControl);
                 if (result == null) result = caseExplicitLinkResolver(gseControl);
                 if (result == null) result = caseSclObject(gseControl);
                 if (result == null) result = defaultCase(theEObject);
@@ -919,6 +968,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseIED(ied);
                 if (result == null) result = caseUnNaming(ied);
                 if (result == null) result = caseBaseElement(ied);
+                if (result == null) result = caseAgDesc(ied);
                 if (result == null) result = caseExplicitLinkResolver(ied);
                 if (result == null) result = caseSclObject(ied);
                 if (result == null) result = defaultCase(theEObject);
@@ -937,6 +987,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseInputs(inputs);
                 if (result == null) result = caseUnNaming(inputs);
                 if (result == null) result = caseBaseElement(inputs);
+                if (result == null) result = caseAgDesc(inputs);
                 if (result == null) result = caseExplicitLinkResolver(inputs);
                 if (result == null) result = caseSclObject(inputs);
                 if (result == null) result = defaultCase(theEObject);
@@ -963,6 +1014,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseLDevice(lDevice);
                 if (result == null) result = caseUnNaming(lDevice);
                 if (result == null) result = caseBaseElement(lDevice);
+                if (result == null) result = caseAgDesc(lDevice);
                 if (result == null) result = caseExplicitLinkResolver(lDevice);
                 if (result == null) result = caseSclObject(lDevice);
                 if (result == null) result = defaultCase(theEObject);
@@ -974,6 +1026,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseAnyLN(ln);
                 if (result == null) result = caseUnNaming(ln);
                 if (result == null) result = caseBaseElement(ln);
+                if (result == null) result = caseAgDesc(ln);
                 if (result == null) result = caseExplicitLinkResolver(ln);
                 if (result == null) result = caseSclObject(ln);
                 if (result == null) result = defaultCase(theEObject);
@@ -985,6 +1038,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseAnyLN(ln0);
                 if (result == null) result = caseUnNaming(ln0);
                 if (result == null) result = caseBaseElement(ln0);
+                if (result == null) result = caseAgDesc(ln0);
                 if (result == null) result = caseExplicitLinkResolver(ln0);
                 if (result == null) result = caseSclObject(ln0);
                 if (result == null) result = defaultCase(theEObject);
@@ -995,6 +1049,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseLog(log);
                 if (result == null) result = caseUnNaming(log);
                 if (result == null) result = caseBaseElement(log);
+                if (result == null) result = caseAgDesc(log);
                 if (result == null) result = caseExplicitLinkResolver(log);
                 if (result == null) result = caseSclObject(log);
                 if (result == null) result = defaultCase(theEObject);
@@ -1007,6 +1062,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(logControl);
                 if (result == null) result = caseUnNaming(logControl);
                 if (result == null) result = caseBaseElement(logControl);
+                if (result == null) result = caseAgDesc(logControl);
                 if (result == null) result = caseExplicitLinkResolver(logControl);
                 if (result == null) result = caseSclObject(logControl);
                 if (result == null) result = defaultCase(theEObject);
@@ -1024,6 +1080,7 @@ public class SclSwitch< T > extends Switch<T> {
                 OptFields optFields = (OptFields)theEObject;
                 T result = caseOptFields(optFields);
                 if (result == null) result = caseSclObject(optFields);
+                if (result == null) result = caseAgOptFields(optFields);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1056,6 +1113,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(reportControl);
                 if (result == null) result = caseUnNaming(reportControl);
                 if (result == null) result = caseBaseElement(reportControl);
+                if (result == null) result = caseAgDesc(reportControl);
                 if (result == null) result = caseExplicitLinkResolver(reportControl);
                 if (result == null) result = caseSclObject(reportControl);
                 if (result == null) result = defaultCase(theEObject);
@@ -1074,6 +1132,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseRptEnabled(rptEnabled);
                 if (result == null) result = caseUnNaming(rptEnabled);
                 if (result == null) result = caseBaseElement(rptEnabled);
+                if (result == null) result = caseAgDesc(rptEnabled);
                 if (result == null) result = caseExplicitLinkResolver(rptEnabled);
                 if (result == null) result = caseSclObject(rptEnabled);
                 if (result == null) result = defaultCase(theEObject);
@@ -1085,6 +1144,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseDataAttribute(sdi);
                 if (result == null) result = caseUnNaming(sdi);
                 if (result == null) result = caseBaseElement(sdi);
+                if (result == null) result = caseAgDesc(sdi);
                 if (result == null) result = caseExplicitLinkResolver(sdi);
                 if (result == null) result = caseSclObject(sdi);
                 if (result == null) result = defaultCase(theEObject);
@@ -1103,6 +1163,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseCertificate(smvSecurity);
                 if (result == null) result = caseNaming(smvSecurity);
                 if (result == null) result = caseBaseElement(smvSecurity);
+                if (result == null) result = caseAgDesc(smvSecurity);
                 if (result == null) result = caseExplicitLinkResolver(smvSecurity);
                 if (result == null) result = caseSclObject(smvSecurity);
                 if (result == null) result = defaultCase(theEObject);
@@ -1131,6 +1192,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseControl(sampledValueControl);
                 if (result == null) result = caseUnNaming(sampledValueControl);
                 if (result == null) result = caseBaseElement(sampledValueControl);
+                if (result == null) result = caseAgDesc(sampledValueControl);
                 if (result == null) result = caseExplicitLinkResolver(sampledValueControl);
                 if (result == null) result = caseSclObject(sampledValueControl);
                 if (result == null) result = defaultCase(theEObject);
@@ -1141,6 +1203,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseServer(server);
                 if (result == null) result = caseUnNaming(server);
                 if (result == null) result = caseBaseElement(server);
+                if (result == null) result = caseAgDesc(server);
                 if (result == null) result = caseExplicitLinkResolver(server);
                 if (result == null) result = caseSclObject(server);
                 if (result == null) result = defaultCase(theEObject);
@@ -1151,6 +1214,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseServerAt(serverAt);
                 if (result == null) result = caseUnNaming(serverAt);
                 if (result == null) result = caseBaseElement(serverAt);
+                if (result == null) result = caseAgDesc(serverAt);
                 if (result == null) result = caseExplicitLinkResolver(serverAt);
                 if (result == null) result = caseSclObject(serverAt);
                 if (result == null) result = defaultCase(theEObject);
@@ -1190,6 +1254,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseSettingControl(settingControl);
                 if (result == null) result = caseUnNaming(settingControl);
                 if (result == null) result = caseBaseElement(settingControl);
+                if (result == null) result = caseAgDesc(settingControl);
                 if (result == null) result = caseExplicitLinkResolver(settingControl);
                 if (result == null) result = caseSclObject(settingControl);
                 if (result == null) result = defaultCase(theEObject);
@@ -1206,6 +1271,7 @@ public class SclSwitch< T > extends Switch<T> {
                 SmvOpts smvOpts = (SmvOpts)theEObject;
                 T result = caseSmvOpts(smvOpts);
                 if (result == null) result = caseSclObject(smvOpts);
+                if (result == null) result = caseAgSmvOpts(smvOpts);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -1258,9 +1324,11 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseAbstractConductingEquipment(abstractConductingEquipment);
                 if (result == null) result = caseEquipment(abstractConductingEquipment);
                 if (result == null) result = casePowerSystemResource(abstractConductingEquipment);
+                if (result == null) result = caseAgVirtual(abstractConductingEquipment);
                 if (result == null) result = caseLNodeContainer(abstractConductingEquipment);
                 if (result == null) result = caseNaming(abstractConductingEquipment);
                 if (result == null) result = caseBaseElement(abstractConductingEquipment);
+                if (result == null) result = caseAgDesc(abstractConductingEquipment);
                 if (result == null) result = caseExplicitLinkResolver(abstractConductingEquipment);
                 if (result == null) result = caseSclObject(abstractConductingEquipment);
                 if (result == null) result = defaultCase(theEObject);
@@ -1273,6 +1341,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(abstractEqFuncSubFunc);
                 if (result == null) result = caseNaming(abstractEqFuncSubFunc);
                 if (result == null) result = caseBaseElement(abstractEqFuncSubFunc);
+                if (result == null) result = caseAgDesc(abstractEqFuncSubFunc);
                 if (result == null) result = caseExplicitLinkResolver(abstractEqFuncSubFunc);
                 if (result == null) result = caseSclObject(abstractEqFuncSubFunc);
                 if (result == null) result = defaultCase(theEObject);
@@ -1286,6 +1355,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(bay);
                 if (result == null) result = caseNaming(bay);
                 if (result == null) result = caseBaseElement(bay);
+                if (result == null) result = caseAgDesc(bay);
                 if (result == null) result = caseExplicitLinkResolver(bay);
                 if (result == null) result = caseSclObject(bay);
                 if (result == null) result = defaultCase(theEObject);
@@ -1297,9 +1367,11 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseAbstractConductingEquipment(conductingEquipment);
                 if (result == null) result = caseEquipment(conductingEquipment);
                 if (result == null) result = casePowerSystemResource(conductingEquipment);
+                if (result == null) result = caseAgVirtual(conductingEquipment);
                 if (result == null) result = caseLNodeContainer(conductingEquipment);
                 if (result == null) result = caseNaming(conductingEquipment);
                 if (result == null) result = caseBaseElement(conductingEquipment);
+                if (result == null) result = caseAgDesc(conductingEquipment);
                 if (result == null) result = caseExplicitLinkResolver(conductingEquipment);
                 if (result == null) result = caseSclObject(conductingEquipment);
                 if (result == null) result = defaultCase(theEObject);
@@ -1311,6 +1383,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(connectivityNode);
                 if (result == null) result = caseNaming(connectivityNode);
                 if (result == null) result = caseBaseElement(connectivityNode);
+                if (result == null) result = caseAgDesc(connectivityNode);
                 if (result == null) result = caseExplicitLinkResolver(connectivityNode);
                 if (result == null) result = caseSclObject(connectivityNode);
                 if (result == null) result = defaultCase(theEObject);
@@ -1324,6 +1397,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(eqFunction);
                 if (result == null) result = caseNaming(eqFunction);
                 if (result == null) result = caseBaseElement(eqFunction);
+                if (result == null) result = caseAgDesc(eqFunction);
                 if (result == null) result = caseExplicitLinkResolver(eqFunction);
                 if (result == null) result = caseSclObject(eqFunction);
                 if (result == null) result = defaultCase(theEObject);
@@ -1337,6 +1411,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(eqSubFunction);
                 if (result == null) result = caseNaming(eqSubFunction);
                 if (result == null) result = caseBaseElement(eqSubFunction);
+                if (result == null) result = caseAgDesc(eqSubFunction);
                 if (result == null) result = caseExplicitLinkResolver(eqSubFunction);
                 if (result == null) result = caseSclObject(eqSubFunction);
                 if (result == null) result = defaultCase(theEObject);
@@ -1346,9 +1421,11 @@ public class SclSwitch< T > extends Switch<T> {
                 Equipment equipment = (Equipment)theEObject;
                 T result = caseEquipment(equipment);
                 if (result == null) result = casePowerSystemResource(equipment);
+                if (result == null) result = caseAgVirtual(equipment);
                 if (result == null) result = caseLNodeContainer(equipment);
                 if (result == null) result = caseNaming(equipment);
                 if (result == null) result = caseBaseElement(equipment);
+                if (result == null) result = caseAgDesc(equipment);
                 if (result == null) result = caseExplicitLinkResolver(equipment);
                 if (result == null) result = caseSclObject(equipment);
                 if (result == null) result = defaultCase(theEObject);
@@ -1361,6 +1438,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(equipmentContainer);
                 if (result == null) result = caseNaming(equipmentContainer);
                 if (result == null) result = caseBaseElement(equipmentContainer);
+                if (result == null) result = caseAgDesc(equipmentContainer);
                 if (result == null) result = caseExplicitLinkResolver(equipmentContainer);
                 if (result == null) result = caseSclObject(equipmentContainer);
                 if (result == null) result = defaultCase(theEObject);
@@ -1373,6 +1451,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(function);
                 if (result == null) result = caseNaming(function);
                 if (result == null) result = caseBaseElement(function);
+                if (result == null) result = caseAgDesc(function);
                 if (result == null) result = caseExplicitLinkResolver(function);
                 if (result == null) result = caseSclObject(function);
                 if (result == null) result = defaultCase(theEObject);
@@ -1383,9 +1462,11 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseGeneralEquipment(generalEquipment);
                 if (result == null) result = caseEquipment(generalEquipment);
                 if (result == null) result = casePowerSystemResource(generalEquipment);
+                if (result == null) result = caseAgVirtual(generalEquipment);
                 if (result == null) result = caseLNodeContainer(generalEquipment);
                 if (result == null) result = caseNaming(generalEquipment);
                 if (result == null) result = caseBaseElement(generalEquipment);
+                if (result == null) result = caseAgDesc(generalEquipment);
                 if (result == null) result = caseExplicitLinkResolver(generalEquipment);
                 if (result == null) result = caseSclObject(generalEquipment);
                 if (result == null) result = defaultCase(theEObject);
@@ -1398,6 +1479,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(generalEquipmentContainer);
                 if (result == null) result = caseNaming(generalEquipmentContainer);
                 if (result == null) result = caseBaseElement(generalEquipmentContainer);
+                if (result == null) result = caseAgDesc(generalEquipmentContainer);
                 if (result == null) result = caseExplicitLinkResolver(generalEquipmentContainer);
                 if (result == null) result = caseSclObject(generalEquipmentContainer);
                 if (result == null) result = defaultCase(theEObject);
@@ -1408,6 +1490,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseLNode(lNode);
                 if (result == null) result = caseUnNaming(lNode);
                 if (result == null) result = caseBaseElement(lNode);
+                if (result == null) result = caseAgDesc(lNode);
                 if (result == null) result = caseExplicitLinkResolver(lNode);
                 if (result == null) result = caseSclObject(lNode);
                 if (result == null) result = defaultCase(theEObject);
@@ -1418,6 +1501,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseLNodeContainer(lNodeContainer);
                 if (result == null) result = caseNaming(lNodeContainer);
                 if (result == null) result = caseBaseElement(lNodeContainer);
+                if (result == null) result = caseAgDesc(lNodeContainer);
                 if (result == null) result = caseExplicitLinkResolver(lNodeContainer);
                 if (result == null) result = caseSclObject(lNodeContainer);
                 if (result == null) result = defaultCase(theEObject);
@@ -1429,6 +1513,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseTerminal(neutralPoint);
                 if (result == null) result = caseUnNaming(neutralPoint);
                 if (result == null) result = caseBaseElement(neutralPoint);
+                if (result == null) result = caseAgDesc(neutralPoint);
                 if (result == null) result = caseExplicitLinkResolver(neutralPoint);
                 if (result == null) result = caseSclObject(neutralPoint);
                 if (result == null) result = defaultCase(theEObject);
@@ -1440,6 +1525,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(powerSystemResource);
                 if (result == null) result = caseNaming(powerSystemResource);
                 if (result == null) result = caseBaseElement(powerSystemResource);
+                if (result == null) result = caseAgDesc(powerSystemResource);
                 if (result == null) result = caseExplicitLinkResolver(powerSystemResource);
                 if (result == null) result = caseSclObject(powerSystemResource);
                 if (result == null) result = defaultCase(theEObject);
@@ -1450,9 +1536,11 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = casePowerTransformer(powerTransformer);
                 if (result == null) result = caseEquipment(powerTransformer);
                 if (result == null) result = casePowerSystemResource(powerTransformer);
+                if (result == null) result = caseAgVirtual(powerTransformer);
                 if (result == null) result = caseLNodeContainer(powerTransformer);
                 if (result == null) result = caseNaming(powerTransformer);
                 if (result == null) result = caseBaseElement(powerTransformer);
+                if (result == null) result = caseAgDesc(powerTransformer);
                 if (result == null) result = caseExplicitLinkResolver(powerTransformer);
                 if (result == null) result = caseSclObject(powerTransformer);
                 if (result == null) result = defaultCase(theEObject);
@@ -1462,9 +1550,11 @@ public class SclSwitch< T > extends Switch<T> {
                 SubEquipment subEquipment = (SubEquipment)theEObject;
                 T result = caseSubEquipment(subEquipment);
                 if (result == null) result = casePowerSystemResource(subEquipment);
+                if (result == null) result = caseAgVirtual(subEquipment);
                 if (result == null) result = caseLNodeContainer(subEquipment);
                 if (result == null) result = caseNaming(subEquipment);
                 if (result == null) result = caseBaseElement(subEquipment);
+                if (result == null) result = caseAgDesc(subEquipment);
                 if (result == null) result = caseExplicitLinkResolver(subEquipment);
                 if (result == null) result = caseSclObject(subEquipment);
                 if (result == null) result = defaultCase(theEObject);
@@ -1477,6 +1567,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(subFunction);
                 if (result == null) result = caseNaming(subFunction);
                 if (result == null) result = caseBaseElement(subFunction);
+                if (result == null) result = caseAgDesc(subFunction);
                 if (result == null) result = caseExplicitLinkResolver(subFunction);
                 if (result == null) result = caseSclObject(subFunction);
                 if (result == null) result = defaultCase(theEObject);
@@ -1490,6 +1581,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(substation);
                 if (result == null) result = caseNaming(substation);
                 if (result == null) result = caseBaseElement(substation);
+                if (result == null) result = caseAgDesc(substation);
                 if (result == null) result = caseExplicitLinkResolver(substation);
                 if (result == null) result = caseSclObject(substation);
                 if (result == null) result = defaultCase(theEObject);
@@ -1499,9 +1591,11 @@ public class SclSwitch< T > extends Switch<T> {
                 TapChanger tapChanger = (TapChanger)theEObject;
                 T result = caseTapChanger(tapChanger);
                 if (result == null) result = casePowerSystemResource(tapChanger);
+                if (result == null) result = caseAgVirtual(tapChanger);
                 if (result == null) result = caseLNodeContainer(tapChanger);
                 if (result == null) result = caseNaming(tapChanger);
                 if (result == null) result = caseBaseElement(tapChanger);
+                if (result == null) result = caseAgDesc(tapChanger);
                 if (result == null) result = caseExplicitLinkResolver(tapChanger);
                 if (result == null) result = caseSclObject(tapChanger);
                 if (result == null) result = defaultCase(theEObject);
@@ -1512,6 +1606,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseTerminal(terminal);
                 if (result == null) result = caseUnNaming(terminal);
                 if (result == null) result = caseBaseElement(terminal);
+                if (result == null) result = caseAgDesc(terminal);
                 if (result == null) result = caseExplicitLinkResolver(terminal);
                 if (result == null) result = caseSclObject(terminal);
                 if (result == null) result = defaultCase(theEObject);
@@ -1523,9 +1618,11 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseAbstractConductingEquipment(transformerWinding);
                 if (result == null) result = caseEquipment(transformerWinding);
                 if (result == null) result = casePowerSystemResource(transformerWinding);
+                if (result == null) result = caseAgVirtual(transformerWinding);
                 if (result == null) result = caseLNodeContainer(transformerWinding);
                 if (result == null) result = caseNaming(transformerWinding);
                 if (result == null) result = caseBaseElement(transformerWinding);
+                if (result == null) result = caseAgDesc(transformerWinding);
                 if (result == null) result = caseExplicitLinkResolver(transformerWinding);
                 if (result == null) result = caseSclObject(transformerWinding);
                 if (result == null) result = defaultCase(theEObject);
@@ -1547,6 +1644,7 @@ public class SclSwitch< T > extends Switch<T> {
                 if (result == null) result = caseLNodeContainer(voltageLevel);
                 if (result == null) result = caseNaming(voltageLevel);
                 if (result == null) result = caseBaseElement(voltageLevel);
+                if (result == null) result = caseAgDesc(voltageLevel);
                 if (result == null) result = caseExplicitLinkResolver(voltageLevel);
                 if (result == null) result = caseSclObject(voltageLevel);
                 if (result == null) result = defaultCase(theEObject);
@@ -1564,6 +1662,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseDataObject(dataObject);
                 if (result == null) result = caseUnNaming(dataObject);
                 if (result == null) result = caseBaseElement(dataObject);
+                if (result == null) result = caseAgDesc(dataObject);
                 if (result == null) result = caseExplicitLinkResolver(dataObject);
                 if (result == null) result = caseSclObject(dataObject);
                 if (result == null) result = defaultCase(theEObject);
@@ -1574,6 +1673,7 @@ public class SclSwitch< T > extends Switch<T> {
                 T result = caseDataAttribute(dataAttribute);
                 if (result == null) result = caseUnNaming(dataAttribute);
                 if (result == null) result = caseBaseElement(dataAttribute);
+                if (result == null) result = caseAgDesc(dataAttribute);
                 if (result == null) result = caseExplicitLinkResolver(dataAttribute);
                 if (result == null) result = caseSclObject(dataAttribute);
                 if (result == null) result = defaultCase(theEObject);
@@ -1589,6 +1689,7 @@ public class SclSwitch< T > extends Switch<T> {
                 UnNaming unNaming = (UnNaming)theEObject;
                 T result = caseUnNaming(unNaming);
                 if (result == null) result = caseBaseElement(unNaming);
+                if (result == null) result = caseAgDesc(unNaming);
                 if (result == null) result = caseExplicitLinkResolver(unNaming);
                 if (result == null) result = caseSclObject(unNaming);
                 if (result == null) result = defaultCase(theEObject);
@@ -1733,6 +1834,57 @@ public class SclSwitch< T > extends Switch<T> {
                 McSecurity mcSecurity = (McSecurity)theEObject;
                 T result = caseMcSecurity(mcSecurity);
                 if (result == null) result = caseSclObject(mcSecurity);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_AUTHENTICATION: {
+                AgAuthentication agAuthentication = (AgAuthentication)theEObject;
+                T result = caseAgAuthentication(agAuthentication);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_SMV_OPTS: {
+                AgSmvOpts agSmvOpts = (AgSmvOpts)theEObject;
+                T result = caseAgSmvOpts(agSmvOpts);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_OPT_FIELDS: {
+                AgOptFields agOptFields = (AgOptFields)theEObject;
+                T result = caseAgOptFields(agOptFields);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_DESC: {
+                AgDesc agDesc = (AgDesc)theEObject;
+                T result = caseAgDesc(agDesc);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_LD_REF: {
+                AgLDRef agLDRef = (AgLDRef)theEObject;
+                T result = caseAgLDRef(agLDRef);
+                if (result == null) result = caseAgDesc(agLDRef);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_LN_REF: {
+                AgLNRef agLNRef = (AgLNRef)theEObject;
+                T result = caseAgLNRef(agLNRef);
+                if (result == null) result = caseAgLDRef(agLNRef);
+                if (result == null) result = caseAgDesc(agLNRef);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_DA_TRG_OP: {
+                AgDATrgOp agDATrgOp = (AgDATrgOp)theEObject;
+                T result = caseAgDATrgOp(agDATrgOp);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
+            case SclPackage.AG_VIRTUAL: {
+                AgVirtual agVirtual = (AgVirtual)theEObject;
+                T result = caseAgVirtual(agVirtual);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -2393,6 +2545,126 @@ public class SclSwitch< T > extends Switch<T> {
      * @generated
      */
     public T caseMcSecurity(McSecurity object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Authentication</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Authentication</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgAuthentication(AgAuthentication object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Smv Opts</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Smv Opts</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgSmvOpts(AgSmvOpts object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Opt Fields</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Opt Fields</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgOptFields(AgOptFields object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Desc</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Desc</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgDesc(AgDesc object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag LD Ref</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag LD Ref</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgLDRef(AgLDRef object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag LN Ref</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag LN Ref</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgLNRef(AgLNRef object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag DA Trg Op</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag DA Trg Op</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgDATrgOp(AgDATrgOp object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Ag Virtual</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Ag Virtual</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAgVirtual(AgVirtual object) {
         return null;
     }
 

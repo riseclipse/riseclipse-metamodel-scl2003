@@ -28,14 +28,13 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getId <em>Id</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc <em>Desc</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIDNaming()
  * @model
  * @generated
  */
-public interface IDNaming extends BaseElement {
+public interface IDNaming extends BaseElement, AgDesc {
     /**
      * Returns the value of the '<em><b>Id</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -88,59 +87,5 @@ public interface IDNaming extends BaseElement {
      * @generated
      */
     boolean isSetId();
-
-    /**
-     * Returns the value of the '<em><b>Desc</b></em>' attribute.
-     * The default value is <code>""</code>.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Desc</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #setDesc(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIDNaming_Desc()
-     * @model default="" unsettable="true"
-     * @generated
-     */
-    String getDesc();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Desc</em>' attribute.
-     * @see #isSetDesc()
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @generated
-     */
-    void setDesc(String value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
-    void unsetDesc();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc <em>Desc</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Desc</em>' attribute is set.
-     * @see #unsetDesc()
-     * @see #getDesc()
-     * @see #setDesc(String)
-     * @generated
-     */
-    boolean isSetDesc();
 
 } // IDNaming

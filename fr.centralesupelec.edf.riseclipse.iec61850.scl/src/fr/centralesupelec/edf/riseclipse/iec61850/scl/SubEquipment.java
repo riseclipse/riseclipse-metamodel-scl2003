@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPhase <em>Phase</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual <em>Virtual</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer <em>Power Transformer</em>}</li>
@@ -41,7 +40,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SubEquipment extends PowerSystemResource {
+public interface SubEquipment extends PowerSystemResource, AgVirtual {
     /**
      * Returns the value of the '<em><b>Phase</b></em>' attribute.
      * The default value is <code>"none"</code>.
@@ -98,59 +97,6 @@ public interface SubEquipment extends PowerSystemResource {
      * @generated
      */
     boolean isSetPhase();
-
-    /**
-     * Returns the value of the '<em><b>Virtual</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Virtual</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Virtual</em>' attribute.
-     * @see #isSetVirtual()
-     * @see #unsetVirtual()
-     * @see #setVirtual(Boolean)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_Virtual()
-     * @model unsettable="true"
-     * @generated
-     */
-    Boolean getVirtual();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Virtual</em>' attribute.
-     * @see #isSetVirtual()
-     * @see #unsetVirtual()
-     * @see #getVirtual()
-     * @generated
-     */
-    void setVirtual( Boolean value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual <em>Virtual</em>}' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see #isSetVirtual()
-     * @see #getVirtual()
-     * @see #setVirtual(Boolean)
-     * @generated
-     */
-    void unsetVirtual();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual <em>Virtual</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Virtual</em>' attribute is set.
-     * @see #unsetVirtual()
-     * @see #getVirtual()
-     * @see #setVirtual(Boolean)
-     * @generated
-     */
-    boolean isSetVirtual();
 
     /**
      * Returns the value of the '<em><b>Abstract Conducting Equipment</b></em>' container reference.

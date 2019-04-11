@@ -75,9 +75,9 @@ public class EquipmentItemProvider extends PowerSystemResourceItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_Equipment_virtual_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Equipment_virtual_feature", "_UI_Equipment_type"),
-                 SclPackage.eINSTANCE.getEquipment_Virtual(),
+                 getString("_UI_AgVirtual_virtual_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature", "_UI_AgVirtual_type"),
+                 SclPackage.eINSTANCE.getAgVirtual_Virtual(),
                  true,
                  false,
                  false,

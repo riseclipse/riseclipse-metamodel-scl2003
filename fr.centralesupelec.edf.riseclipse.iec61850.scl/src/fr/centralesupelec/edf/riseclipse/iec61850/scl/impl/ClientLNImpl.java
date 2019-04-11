@@ -18,6 +18,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import java.util.List;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
@@ -46,14 +49,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getApRef <em>Ap Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getApRef <em>Ap Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getRptEnabled <em>Rpt Enabled</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
  *
@@ -61,33 +64,33 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     /**
-     * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApRef()
+     * @see #getDesc()
      * @generated
      * @ordered
      */
-    protected static final String AP_REF_EDEFAULT = null;
+    protected static final String DESC_EDEFAULT = "";
 
     /**
-     * The cached value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
+     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getApRef()
+     * @see #getDesc()
      * @generated
      * @ordered
      */
-    protected String apRef = AP_REF_EDEFAULT;
+    protected String desc = DESC_EDEFAULT;
 
     /**
-     * This is true if the Ap Ref attribute has been set.
+     * This is true if the Desc attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean apRefESet;
+    protected boolean descESet;
 
     /**
      * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
@@ -126,7 +129,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      * @ordered
      */
-    protected static final String LD_INST_EDEFAULT = "";
+    protected static final String LD_INST_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
@@ -213,7 +216,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      * @ordered
      */
-    protected static final String PREFIX_EDEFAULT = "";
+    protected static final String PREFIX_EDEFAULT = null;
 
     /**
      * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
@@ -235,33 +238,33 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     protected boolean prefixESet;
 
     /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
+     * @see #getApRef()
      * @generated
      * @ordered
      */
-    protected static final String DESC_EDEFAULT = null;
+    protected static final String AP_REF_EDEFAULT = null;
 
     /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * The cached value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getDesc()
+     * @see #getApRef()
      * @generated
      * @ordered
      */
-    protected String desc = DESC_EDEFAULT;
+    protected String apRef = AP_REF_EDEFAULT;
 
     /**
-     * This is true if the Desc attribute has been set.
+     * This is true if the Ap Ref attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean descESet;
+    protected boolean apRefESet;
 
     /**
      * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
@@ -851,8 +854,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__AP_REF:
-                return getApRef();
+            case SclPackage.CLIENT_LN__DESC:
+                return getDesc();
             case SclPackage.CLIENT_LN__IED_NAME:
                 return getIedName();
             case SclPackage.CLIENT_LN__LD_INST:
@@ -863,10 +866,10 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                 return getLnInst();
             case SclPackage.CLIENT_LN__PREFIX:
                 return getPrefix();
+            case SclPackage.CLIENT_LN__AP_REF:
+                return getApRef();
             case SclPackage.CLIENT_LN__RPT_ENABLED:
                 return getRptEnabled();
-            case SclPackage.CLIENT_LN__DESC:
-                return getDesc();
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 return getRefersToAnyLN();
         }
@@ -881,8 +884,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__AP_REF:
-                setApRef((String)newValue);
+            case SclPackage.CLIENT_LN__DESC:
+                setDesc((String)newValue);
                 return;
             case SclPackage.CLIENT_LN__IED_NAME:
                 setIedName((String)newValue);
@@ -899,11 +902,11 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
             case SclPackage.CLIENT_LN__PREFIX:
                 setPrefix((String)newValue);
                 return;
+            case SclPackage.CLIENT_LN__AP_REF:
+                setApRef((String)newValue);
+                return;
             case SclPackage.CLIENT_LN__RPT_ENABLED:
                 setRptEnabled((RptEnabled)newValue);
-                return;
-            case SclPackage.CLIENT_LN__DESC:
-                setDesc((String)newValue);
                 return;
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 setRefersToAnyLN((AnyLN)newValue);
@@ -920,8 +923,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__AP_REF:
-                unsetApRef();
+            case SclPackage.CLIENT_LN__DESC:
+                unsetDesc();
                 return;
             case SclPackage.CLIENT_LN__IED_NAME:
                 unsetIedName();
@@ -938,11 +941,11 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
             case SclPackage.CLIENT_LN__PREFIX:
                 unsetPrefix();
                 return;
+            case SclPackage.CLIENT_LN__AP_REF:
+                unsetApRef();
+                return;
             case SclPackage.CLIENT_LN__RPT_ENABLED:
                 setRptEnabled((RptEnabled)null);
-                return;
-            case SclPackage.CLIENT_LN__DESC:
-                unsetDesc();
                 return;
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 unsetRefersToAnyLN();
@@ -959,8 +962,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__AP_REF:
-                return isSetApRef();
+            case SclPackage.CLIENT_LN__DESC:
+                return isSetDesc();
             case SclPackage.CLIENT_LN__IED_NAME:
                 return isSetIedName();
             case SclPackage.CLIENT_LN__LD_INST:
@@ -971,10 +974,10 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                 return isSetLnInst();
             case SclPackage.CLIENT_LN__PREFIX:
                 return isSetPrefix();
+            case SclPackage.CLIENT_LN__AP_REF:
+                return isSetApRef();
             case SclPackage.CLIENT_LN__RPT_ENABLED:
                 return getRptEnabled() != null;
-            case SclPackage.CLIENT_LN__DESC:
-                return isSetDesc();
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 return isSetRefersToAnyLN();
         }
@@ -987,12 +990,74 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.CLIENT_LN__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLDRef.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.CLIENT_LN__IED_NAME: return SclPackage.AG_LD_REF__IED_NAME;
+                case SclPackage.CLIENT_LN__LD_INST: return SclPackage.AG_LD_REF__LD_INST;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLNRef.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.CLIENT_LN__LN_CLASS: return SclPackage.AG_LN_REF__LN_CLASS;
+                case SclPackage.CLIENT_LN__LN_INST: return SclPackage.AG_LN_REF__LN_INST;
+                case SclPackage.CLIENT_LN__PREFIX: return SclPackage.AG_LN_REF__PREFIX;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.CLIENT_LN__DESC;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLDRef.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_LD_REF__IED_NAME: return SclPackage.CLIENT_LN__IED_NAME;
+                case SclPackage.AG_LD_REF__LD_INST: return SclPackage.CLIENT_LN__LD_INST;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLNRef.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_LN_REF__LN_CLASS: return SclPackage.CLIENT_LN__LN_CLASS;
+                case SclPackage.AG_LN_REF__LN_INST: return SclPackage.CLIENT_LN__LN_INST;
+                case SclPackage.AG_LN_REF__PREFIX: return SclPackage.CLIENT_LN__PREFIX;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (apRef: ");
-        if (apRefESet) result.append(apRef); else result.append("<unset>");
+        result.append(" (desc: ");
+        if (descESet) result.append(desc); else result.append("<unset>");
         result.append(", iedName: ");
         if (iedNameESet) result.append(iedName); else result.append("<unset>");
         result.append(", ldInst: ");
@@ -1003,8 +1068,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
         if (lnInstESet) result.append(lnInst); else result.append("<unset>");
         result.append(", prefix: ");
         if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", apRef: ");
+        if (apRefESet) result.append(apRef); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

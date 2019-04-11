@@ -613,22 +613,22 @@ public interface SclPackage extends EPackage {
     int ID_NAMING__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ID_NAMING__ID = BASE_ELEMENT_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ID_NAMING__DESC = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int ID_NAMING__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING__ID = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>ID Naming</em>' class.
@@ -704,22 +704,22 @@ public interface SclPackage extends EPackage {
     int NAMING__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int NAMING__NAME = BASE_ELEMENT_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int NAMING__DESC = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int NAMING__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__NAME = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Naming</em>' class.
@@ -795,15 +795,6 @@ public interface SclPackage extends EPackage {
     int LNODE_CONTAINER__ANY_ATTRIBUTE = NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LNODE_CONTAINER__NAME = NAMING__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -811,6 +802,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_CONTAINER__DESC = NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__NAME = NAMING__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -895,15 +895,6 @@ public interface SclPackage extends EPackage {
     int POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE = LNODE_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_SYSTEM_RESOURCE__NAME = LNODE_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -911,6 +902,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_SYSTEM_RESOURCE__DESC = LNODE_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__NAME = LNODE_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -995,15 +995,6 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT_CONTAINER__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int GENERAL_EQUIPMENT_CONTAINER__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1011,6 +1002,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -1113,15 +1113,6 @@ public interface SclPackage extends EPackage {
     int LINE__ANY_ATTRIBUTE = GENERAL_EQUIPMENT_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LINE__NAME = GENERAL_EQUIPMENT_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1129,6 +1120,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LINE__DESC = GENERAL_EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__NAME = GENERAL_EQUIPMENT_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -1403,15 +1403,6 @@ public interface SclPackage extends EPackage {
     int PROCESS__ANY_ATTRIBUTE = GENERAL_EQUIPMENT_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int PROCESS__NAME = GENERAL_EQUIPMENT_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -1419,6 +1410,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROCESS__DESC = GENERAL_EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__NAME = GENERAL_EQUIPMENT_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -4108,15 +4108,6 @@ public interface SclPackage extends EPackage {
     int SUB_NETWORK__ANY_ATTRIBUTE = NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_NETWORK__NAME = NAMING__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -4124,6 +4115,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_NETWORK__DESC = NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__NAME = NAMING__NAME;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -4801,22 +4801,22 @@ public interface SclPackage extends EPackage {
     int DA__DUPD = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Fc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DA__FC = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 2;
-
-    /**
      * The feature id for the '<em><b>Qchg</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DA__QCHG = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 3;
+    int DA__QCHG = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Fc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__FC = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Refers To DA Type</b></em>' reference.
@@ -4909,15 +4909,6 @@ public interface SclPackage extends EPackage {
     int DA_TYPE__ANY_ATTRIBUTE = ID_NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DA_TYPE__ID = ID_NAMING__ID;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4925,6 +4916,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA_TYPE__DESC = ID_NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE__ID = ID_NAMING__ID;
 
     /**
      * The feature id for the '<em><b>Ied Type</b></em>' attribute.
@@ -5287,15 +5287,6 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__ANY_ATTRIBUTE = ID_NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO_TYPE__ID = ID_NAMING__ID;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5303,6 +5294,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO_TYPE__DESC = ID_NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__ID = ID_NAMING__ID;
 
     /**
      * The feature id for the '<em><b>Cdc</b></em>' attribute.
@@ -5503,15 +5503,6 @@ public interface SclPackage extends EPackage {
     int ENUM_TYPE__ANY_ATTRIBUTE = ID_NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ENUM_TYPE__ID = ID_NAMING__ID;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5519,6 +5510,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_TYPE__DESC = ID_NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE__ID = ID_NAMING__ID;
 
     /**
      * The feature id for the '<em><b>Referred By Abstract Data Attribute</b></em>' reference list.
@@ -5575,13 +5575,22 @@ public interface SclPackage extends EPackage {
     int ENUM_VAL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL__DESC = SCL_OBJECT_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Ord</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ENUM_VAL__ORD = SCL_OBJECT_FEATURE_COUNT + 0;
+    int ENUM_VAL__ORD = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Enum Type</b></em>' container reference.
@@ -5590,7 +5599,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ENUM_VAL__ENUM_TYPE = SCL_OBJECT_FEATURE_COUNT + 1;
+    int ENUM_VAL__ENUM_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5599,16 +5608,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ENUM_VAL__VALUE = SCL_OBJECT_FEATURE_COUNT + 2;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ENUM_VAL__DESC = SCL_OBJECT_FEATURE_COUNT + 3;
+    int ENUM_VAL__VALUE = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Enum Val</em>' class.
@@ -5674,15 +5674,6 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE__ANY_ATTRIBUTE = ID_NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Id</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LNODE_TYPE__ID = ID_NAMING__ID;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5690,6 +5681,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_TYPE__DESC = ID_NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__ID = ID_NAMING__ID;
 
     /**
      * The feature id for the '<em><b>Ied Type</b></em>' attribute.
@@ -6522,13 +6522,13 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Association ID</b></em>' attribute.
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ASSOCIATION__ASSOCIATION_ID = BASE_ELEMENT_FEATURE_COUNT + 0;
+    int ASSOCIATION__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ied Name</b></em>' attribute.
@@ -6540,22 +6540,13 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION__IED_NAME = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Kind</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ASSOCIATION__KIND = BASE_ELEMENT_FEATURE_COUNT + 2;
-
-    /**
      * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ASSOCIATION__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 3;
+    int ASSOCIATION__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -6564,7 +6555,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 4;
+    int ASSOCIATION__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
@@ -6573,7 +6564,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 5;
+    int ASSOCIATION__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -6582,7 +6573,25 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 6;
+    int ASSOCIATION__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 5;
+
+    /**
+     * The feature id for the '<em><b>Association ID</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION__ASSOCIATION_ID = BASE_ELEMENT_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Kind</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION__KIND = BASE_ELEMENT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Server</b></em>' container reference.
@@ -6591,7 +6600,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION__SERVER = BASE_ELEMENT_FEATURE_COUNT + 7;
+    int ASSOCIATION__SERVER = BASE_ELEMENT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -6600,7 +6609,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION__REFERS_TO_ANY_LN = BASE_ELEMENT_FEATURE_COUNT + 8;
+    int ASSOCIATION__REFERS_TO_ANY_LN = BASE_ELEMENT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Association</em>' class.
@@ -6609,7 +6618,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ASSOCIATION_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 9;
+    int ASSOCIATION_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 10;
 
     /**
      * The number of operations of the '<em>Association</em>' class.
@@ -6747,15 +6756,6 @@ public interface SclPackage extends EPackage {
     int CERTIFICATE__ANY_ATTRIBUTE = NAMING__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CERTIFICATE__NAME = NAMING__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6763,6 +6763,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CERTIFICATE__DESC = NAMING__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__NAME = NAMING__NAME;
 
     /**
      * The feature id for the '<em><b>Serial Number</b></em>' attribute.
@@ -6828,13 +6837,13 @@ public interface SclPackage extends EPackage {
     int CLIENT_LN__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_LN__AP_REF = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int CLIENT_LN__DESC = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ied Name</b></em>' attribute.
@@ -6882,22 +6891,22 @@ public interface SclPackage extends EPackage {
     int CLIENT_LN__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
 
     /**
+     * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN__AP_REF = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
+
+    /**
      * The feature id for the '<em><b>Rpt Enabled</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_LN__RPT_ENABLED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CLIENT_LN__DESC = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
+    int CLIENT_LN__RPT_ENABLED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -8850,13 +8859,22 @@ public interface SclPackage extends EPackage {
     int EXT_REF__ANY_ATTRIBUTE = BASE_ELEMENT__ANY_ATTRIBUTE;
 
     /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__DESC = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXT_REF__DA_NAME = BASE_ELEMENT_FEATURE_COUNT + 0;
+    int EXT_REF__DA_NAME = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Do Name</b></em>' attribute.
@@ -8865,7 +8883,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__DO_NAME = BASE_ELEMENT_FEATURE_COUNT + 1;
+    int EXT_REF__DO_NAME = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ied Name</b></em>' attribute.
@@ -8874,7 +8892,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__IED_NAME = BASE_ELEMENT_FEATURE_COUNT + 2;
+    int EXT_REF__IED_NAME = BASE_ELEMENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Int Addr</b></em>' attribute.
@@ -8883,7 +8901,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__INT_ADDR = BASE_ELEMENT_FEATURE_COUNT + 3;
+    int EXT_REF__INT_ADDR = BASE_ELEMENT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
@@ -8892,7 +8910,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 4;
+    int EXT_REF__LD_INST = BASE_ELEMENT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -8901,7 +8919,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 5;
+    int EXT_REF__LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
@@ -8910,7 +8928,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 6;
+    int EXT_REF__LN_INST = BASE_ELEMENT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -8919,7 +8937,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 7;
+    int EXT_REF__PREFIX = BASE_ELEMENT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Service Type</b></em>' attribute.
@@ -8928,7 +8946,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SERVICE_TYPE = BASE_ELEMENT_FEATURE_COUNT + 8;
+    int EXT_REF__SERVICE_TYPE = BASE_ELEMENT_FEATURE_COUNT + 9;
 
     /**
      * The feature id for the '<em><b>Src CB Name</b></em>' attribute.
@@ -8937,7 +8955,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SRC_CB_NAME = BASE_ELEMENT_FEATURE_COUNT + 9;
+    int EXT_REF__SRC_CB_NAME = BASE_ELEMENT_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Src LD Inst</b></em>' attribute.
@@ -8946,7 +8964,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SRC_LD_INST = BASE_ELEMENT_FEATURE_COUNT + 10;
+    int EXT_REF__SRC_LD_INST = BASE_ELEMENT_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Src LN Class</b></em>' attribute.
@@ -8955,7 +8973,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SRC_LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 11;
+    int EXT_REF__SRC_LN_CLASS = BASE_ELEMENT_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Src LN Inst</b></em>' attribute.
@@ -8964,7 +8982,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SRC_LN_INST = BASE_ELEMENT_FEATURE_COUNT + 12;
+    int EXT_REF__SRC_LN_INST = BASE_ELEMENT_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Src Prefix</b></em>' attribute.
@@ -8973,7 +8991,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__SRC_PREFIX = BASE_ELEMENT_FEATURE_COUNT + 13;
+    int EXT_REF__SRC_PREFIX = BASE_ELEMENT_FEATURE_COUNT + 14;
 
     /**
      * The feature id for the '<em><b>Inputs</b></em>' container reference.
@@ -8982,7 +9000,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__INPUTS = BASE_ELEMENT_FEATURE_COUNT + 14;
+    int EXT_REF__INPUTS = BASE_ELEMENT_FEATURE_COUNT + 15;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -8991,7 +9009,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__REFERS_TO_ANY_LN = BASE_ELEMENT_FEATURE_COUNT + 15;
+    int EXT_REF__REFERS_TO_ANY_LN = BASE_ELEMENT_FEATURE_COUNT + 16;
 
     /**
      * The feature id for the '<em><b>Refers To Data Attribute</b></em>' reference.
@@ -9000,7 +9018,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__REFERS_TO_DATA_ATTRIBUTE = BASE_ELEMENT_FEATURE_COUNT + 16;
+    int EXT_REF__REFERS_TO_DATA_ATTRIBUTE = BASE_ELEMENT_FEATURE_COUNT + 17;
 
     /**
      * The feature id for the '<em><b>Refers To Data Object</b></em>' reference.
@@ -9009,16 +9027,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__REFERS_TO_DATA_OBJECT = BASE_ELEMENT_FEATURE_COUNT + 17;
-
-    /**
-     * The feature id for the '<em><b>Desc</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__DESC = BASE_ELEMENT_FEATURE_COUNT + 18;
+    int EXT_REF__REFERS_TO_DATA_OBJECT = BASE_ELEMENT_FEATURE_COUNT + 18;
 
     /**
      * The feature id for the '<em><b>PServ T</b></em>' attribute.
@@ -9390,15 +9399,6 @@ public interface SclPackage extends EPackage {
     int GOOSE_SECURITY__ANY_ATTRIBUTE = CERTIFICATE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int GOOSE_SECURITY__NAME = CERTIFICATE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -9406,6 +9406,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE_SECURITY__DESC = CERTIFICATE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__NAME = CERTIFICATE__NAME;
 
     /**
      * The feature id for the '<em><b>Serial Number</b></em>' attribute.
@@ -12514,15 +12523,6 @@ public interface SclPackage extends EPackage {
     int SMV_SECURITY__ANY_ATTRIBUTE = CERTIFICATE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SMV_SECURITY__NAME = CERTIFICATE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -12530,6 +12530,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SECURITY__DESC = CERTIFICATE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__NAME = CERTIFICATE__NAME;
 
     /**
      * The feature id for the '<em><b>Serial Number</b></em>' attribute.
@@ -13873,22 +13882,22 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS__TIMESTAMP = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Sampled Value Control</b></em>' container reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 6;
-
-    /**
      * The feature id for the '<em><b>Synch Source Id</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_OPTS__SYNCH_SOURCE_ID = SCL_OBJECT_FEATURE_COUNT + 7;
+    int SMV_OPTS__SYNCH_SOURCE_ID = SCL_OBJECT_FEATURE_COUNT + 6;
+
+    /**
+     * The feature id for the '<em><b>Sampled Value Control</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>Smv Opts</em>' class.
@@ -14305,15 +14314,6 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EQUIPMENT__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14321,6 +14321,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -14404,15 +14413,6 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_CONDUCTING_EQUIPMENT__ANY_ATTRIBUTE = EQUIPMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_CONDUCTING_EQUIPMENT__NAME = EQUIPMENT__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14420,6 +14420,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_CONDUCTING_EQUIPMENT__DESC = EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__NAME = EQUIPMENT__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -14521,15 +14530,6 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_EQ_FUNC_SUB_FUNC__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14537,6 +14537,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_EQ_FUNC_SUB_FUNC__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -14638,15 +14647,6 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_CONTAINER__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EQUIPMENT_CONTAINER__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14654,6 +14654,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT_CONTAINER__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -14746,15 +14755,6 @@ public interface SclPackage extends EPackage {
     int BAY__ANY_ATTRIBUTE = EQUIPMENT_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BAY__NAME = EQUIPMENT_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14762,6 +14762,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__NAME = EQUIPMENT_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -14890,15 +14899,6 @@ public interface SclPackage extends EPackage {
     int CONDUCTING_EQUIPMENT__ANY_ATTRIBUTE = ABSTRACT_CONDUCTING_EQUIPMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONDUCTING_EQUIPMENT__NAME = ABSTRACT_CONDUCTING_EQUIPMENT__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -14906,6 +14906,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONDUCTING_EQUIPMENT__DESC = ABSTRACT_CONDUCTING_EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__NAME = ABSTRACT_CONDUCTING_EQUIPMENT__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -15070,15 +15079,6 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__ANY_ATTRIBUTE = LNODE_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONNECTIVITY_NODE__NAME = LNODE_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15086,6 +15086,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTIVITY_NODE__DESC = LNODE_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__NAME = LNODE_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -15196,15 +15205,6 @@ public interface SclPackage extends EPackage {
     int EQ_FUNCTION__ANY_ATTRIBUTE = ABSTRACT_EQ_FUNC_SUB_FUNC__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EQ_FUNCTION__NAME = ABSTRACT_EQ_FUNC_SUB_FUNC__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15212,6 +15212,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_FUNCTION__DESC = ABSTRACT_EQ_FUNC_SUB_FUNC__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__NAME = ABSTRACT_EQ_FUNC_SUB_FUNC__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -15367,15 +15376,6 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION__ANY_ATTRIBUTE = ABSTRACT_EQ_FUNC_SUB_FUNC__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EQ_SUB_FUNCTION__NAME = ABSTRACT_EQ_FUNC_SUB_FUNC__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15383,6 +15383,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_SUB_FUNCTION__DESC = ABSTRACT_EQ_FUNC_SUB_FUNC__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__NAME = ABSTRACT_EQ_FUNC_SUB_FUNC__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -15493,15 +15502,6 @@ public interface SclPackage extends EPackage {
     int FUNCTION__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FUNCTION__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15509,6 +15509,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FUNCTION__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -15655,15 +15664,6 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT__ANY_ATTRIBUTE = EQUIPMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int GENERAL_EQUIPMENT__NAME = EQUIPMENT__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -15671,6 +15671,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT__DESC = EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__NAME = EQUIPMENT__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16294,15 +16303,6 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER__ANY_ATTRIBUTE = EQUIPMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int POWER_TRANSFORMER__NAME = EQUIPMENT__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16310,6 +16310,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_TRANSFORMER__DESC = EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__NAME = EQUIPMENT__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16438,15 +16447,6 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_EQUIPMENT__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16454,6 +16454,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_EQUIPMENT__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16465,22 +16474,22 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT__LNODE = POWER_SYSTEM_RESOURCE__LNODE;
 
     /**
-     * The feature id for the '<em><b>Phase</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_EQUIPMENT__PHASE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Virtual</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_EQUIPMENT__VIRTUAL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
+    int SUB_EQUIPMENT__VIRTUAL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Phase</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__PHASE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
@@ -16582,15 +16591,6 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUB_FUNCTION__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16598,6 +16598,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_FUNCTION__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16717,15 +16726,6 @@ public interface SclPackage extends EPackage {
     int SUBSTATION__ANY_ATTRIBUTE = EQUIPMENT_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SUBSTATION__NAME = EQUIPMENT_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16733,6 +16733,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBSTATION__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__NAME = EQUIPMENT_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16861,15 +16870,6 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__ANY_ATTRIBUTE = POWER_SYSTEM_RESOURCE__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TAP_CHANGER__NAME = POWER_SYSTEM_RESOURCE__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -16877,6 +16877,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TAP_CHANGER__DESC = POWER_SYSTEM_RESOURCE__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__NAME = POWER_SYSTEM_RESOURCE__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -16888,22 +16897,22 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__LNODE = POWER_SYSTEM_RESOURCE__LNODE;
 
     /**
-     * The feature id for the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TAP_CHANGER__TYPE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Virtual</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TAP_CHANGER__VIRTUAL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
+    int TAP_CHANGER__VIRTUAL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Type</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__TYPE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Eq Function</b></em>' containment reference list.
@@ -16996,15 +17005,6 @@ public interface SclPackage extends EPackage {
     int TRANSFORMER_WINDING__ANY_ATTRIBUTE = ABSTRACT_CONDUCTING_EQUIPMENT__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int TRANSFORMER_WINDING__NAME = ABSTRACT_CONDUCTING_EQUIPMENT__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -17012,6 +17012,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRANSFORMER_WINDING__DESC = ABSTRACT_CONDUCTING_EQUIPMENT__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__NAME = ABSTRACT_CONDUCTING_EQUIPMENT__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -17285,15 +17294,6 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_LEVEL__ANY_ATTRIBUTE = EQUIPMENT_CONTAINER__ANY_ATTRIBUTE;
 
     /**
-     * The feature id for the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int VOLTAGE_LEVEL__NAME = EQUIPMENT_CONTAINER__NAME;
-
-    /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -17301,6 +17301,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE_LEVEL__DESC = EQUIPMENT_CONTAINER__DESC;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__NAME = EQUIPMENT_CONTAINER__NAME;
 
     /**
      * The feature id for the '<em><b>LNode</b></em>' containment reference list.
@@ -18021,6 +18030,536 @@ public interface SclPackage extends EPackage {
     int MC_SECURITY_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgAuthenticationImpl <em>Ag Authentication</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgAuthenticationImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgAuthentication()
+     * @generated
+     */
+    int AG_AUTHENTICATION = 163;
+
+    /**
+     * The feature id for the '<em><b>Certificate</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION__CERTIFICATE = 0;
+
+    /**
+     * The feature id for the '<em><b>None</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION__NONE = 1;
+
+    /**
+     * The feature id for the '<em><b>Password</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION__PASSWORD = 2;
+
+    /**
+     * The feature id for the '<em><b>Strong</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION__STRONG = 3;
+
+    /**
+     * The feature id for the '<em><b>Weak</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION__WEAK = 4;
+
+    /**
+     * The number of structural features of the '<em>Ag Authentication</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION_FEATURE_COUNT = 5;
+
+    /**
+     * The number of operations of the '<em>Ag Authentication</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_AUTHENTICATION_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl <em>Ag Smv Opts</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgSmvOpts()
+     * @generated
+     */
+    int AG_SMV_OPTS = 164;
+
+    /**
+     * The feature id for the '<em><b>Data Set</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__DATA_SET = 0;
+
+    /**
+     * The feature id for the '<em><b>Refresh Time</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__REFRESH_TIME = 1;
+
+    /**
+     * The feature id for the '<em><b>Sample Rate</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__SAMPLE_RATE = 2;
+
+    /**
+     * The feature id for the '<em><b>Sample Synchronized</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__SAMPLE_SYNCHRONIZED = 3;
+
+    /**
+     * The feature id for the '<em><b>Security</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__SECURITY = 4;
+
+    /**
+     * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__TIMESTAMP = 5;
+
+    /**
+     * The feature id for the '<em><b>Synch Source Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__SYNCH_SOURCE_ID = 6;
+
+    /**
+     * The number of structural features of the '<em>Ag Smv Opts</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS_FEATURE_COUNT = 7;
+
+    /**
+     * The number of operations of the '<em>Ag Smv Opts</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl <em>Ag Opt Fields</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgOptFields()
+     * @generated
+     */
+    int AG_OPT_FIELDS = 165;
+
+    /**
+     * The feature id for the '<em><b>Buf Ovfl</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__BUF_OVFL = 0;
+
+    /**
+     * The feature id for the '<em><b>Config Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__CONFIG_REF = 1;
+
+    /**
+     * The feature id for the '<em><b>Data Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__DATA_REF = 2;
+
+    /**
+     * The feature id for the '<em><b>Data Set</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__DATA_SET = 3;
+
+    /**
+     * The feature id for the '<em><b>Entry ID</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__ENTRY_ID = 4;
+
+    /**
+     * The feature id for the '<em><b>Reason Code</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__REASON_CODE = 5;
+
+    /**
+     * The feature id for the '<em><b>Seq Num</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__SEQ_NUM = 6;
+
+    /**
+     * The feature id for the '<em><b>Time Stamp</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__TIME_STAMP = 7;
+
+    /**
+     * The number of structural features of the '<em>Ag Opt Fields</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS_FEATURE_COUNT = 8;
+
+    /**
+     * The number of operations of the '<em>Ag Opt Fields</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgDescImpl <em>Ag Desc</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgDescImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgDesc()
+     * @generated
+     */
+    int AG_DESC = 166;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DESC__DESC = 0;
+
+    /**
+     * The number of structural features of the '<em>Ag Desc</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DESC_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Ag Desc</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DESC_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLDRefImpl <em>Ag LD Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLDRefImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgLDRef()
+     * @generated
+     */
+    int AG_LD_REF = 167;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LD_REF__DESC = AG_DESC__DESC;
+
+    /**
+     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LD_REF__IED_NAME = AG_DESC_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LD_REF__LD_INST = AG_DESC_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Ag LD Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LD_REF_FEATURE_COUNT = AG_DESC_FEATURE_COUNT + 2;
+
+    /**
+     * The number of operations of the '<em>Ag LD Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LD_REF_OPERATION_COUNT = AG_DESC_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl <em>Ag LN Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgLNRefImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgLNRef()
+     * @generated
+     */
+    int AG_LN_REF = 168;
+
+    /**
+     * The feature id for the '<em><b>Desc</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__DESC = AG_LD_REF__DESC;
+
+    /**
+     * The feature id for the '<em><b>Ied Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__IED_NAME = AG_LD_REF__IED_NAME;
+
+    /**
+     * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__LD_INST = AG_LD_REF__LD_INST;
+
+    /**
+     * The feature id for the '<em><b>Ln Class</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__LN_CLASS = AG_LD_REF_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__LN_INST = AG_LD_REF_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Prefix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF__PREFIX = AG_LD_REF_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Ag LN Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF_FEATURE_COUNT = AG_LD_REF_FEATURE_COUNT + 3;
+
+    /**
+     * The number of operations of the '<em>Ag LN Ref</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_LN_REF_OPERATION_COUNT = AG_LD_REF_OPERATION_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgDATrgOpImpl <em>Ag DA Trg Op</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgDATrgOpImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgDATrgOp()
+     * @generated
+     */
+    int AG_DA_TRG_OP = 169;
+
+    /**
+     * The feature id for the '<em><b>Dchg</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DA_TRG_OP__DCHG = 0;
+
+    /**
+     * The feature id for the '<em><b>Dupd</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DA_TRG_OP__DUPD = 1;
+
+    /**
+     * The feature id for the '<em><b>Qchg</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DA_TRG_OP__QCHG = 2;
+
+    /**
+     * The number of structural features of the '<em>Ag DA Trg Op</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DA_TRG_OP_FEATURE_COUNT = 3;
+
+    /**
+     * The number of operations of the '<em>Ag DA Trg Op</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_DA_TRG_OP_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgVirtualImpl <em>Ag Virtual</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgVirtualImpl
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgVirtual()
+     * @generated
+     */
+    int AG_VIRTUAL = 170;
+
+    /**
+     * The feature id for the '<em><b>Virtual</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_VIRTUAL__VIRTUAL = 0;
+
+    /**
+     * The number of structural features of the '<em>Ag Virtual</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_VIRTUAL_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Ag Virtual</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_VIRTUAL_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum <em>Association Kind Enum</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18028,7 +18567,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAssociationKindEnum()
      * @generated
      */
-    int ASSOCIATION_KIND_ENUM = 163;
+    int ASSOCIATION_KIND_ENUM = 171;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum <em>FC Enum</em>}' enum.
@@ -18038,7 +18577,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getFCEnum()
      * @generated
      */
-    int FC_ENUM = 164;
+    int FC_ENUM = 172;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum <em>GSE Control Type Enum</em>}' enum.
@@ -18048,7 +18587,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getGSEControlTypeEnum()
      * @generated
      */
-    int GSE_CONTROL_TYPE_ENUM = 165;
+    int GSE_CONTROL_TYPE_ENUM = 173;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhaseEnum <em>Phase Enum</em>}' enum.
@@ -18058,7 +18597,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPhaseEnum()
      * @generated
      */
-    int PHASE_ENUM = 166;
+    int PHASE_ENUM = 174;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum <em>Predefined Type Of Security Enum</em>}' enum.
@@ -18068,7 +18607,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getPredefinedTypeOfSecurityEnum()
      * @generated
      */
-    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 167;
+    int PREDEFINED_TYPE_OF_SECURITY_ENUM = 175;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVDeliveryEnum <em>SMV Delivery Enum</em>}' enum.
@@ -18078,7 +18617,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSMVDeliveryEnum()
      * @generated
      */
-    int SMV_DELIVERY_ENUM = 168;
+    int SMV_DELIVERY_ENUM = 176;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsEnum <em>Service Settings Enum</em>}' enum.
@@ -18088,7 +18627,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_ENUM = 169;
+    int SERVICE_SETTINGS_ENUM = 177;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettingsNoDynEnum <em>Service Settings No Dyn Enum</em>}' enum.
@@ -18098,7 +18637,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceSettingsNoDynEnum()
      * @generated
      */
-    int SERVICE_SETTINGS_NO_DYN_ENUM = 170;
+    int SERVICE_SETTINGS_NO_DYN_ENUM = 178;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType <em>Service Type</em>}' enum.
@@ -18108,7 +18647,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceType()
      * @generated
      */
-    int SERVICE_TYPE = 171;
+    int SERVICE_TYPE = 179;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpMod <em>Smp Mod</em>}' enum.
@@ -18118,7 +18657,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSmpMod()
      * @generated
      */
-    int SMP_MOD = 172;
+    int SMP_MOD = 180;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnitMultiplierEnum <em>Unit Multiplier Enum</em>}' enum.
@@ -18128,7 +18667,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getUnitMultiplierEnum()
      * @generated
      */
-    int UNIT_MULTIPLIER_ENUM = 173;
+    int UNIT_MULTIPLIER_ENUM = 181;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum <em>Val Kind Enum</em>}' enum.
@@ -18138,7 +18677,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getValKindEnum()
      * @generated
      */
-    int VAL_KIND_ENUM = 174;
+    int VAL_KIND_ENUM = 182;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.bufModeEnum <em>buf Mode Enum</em>}' enum.
@@ -18148,7 +18687,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getbufModeEnum()
      * @generated
      */
-    int BUF_MODE_ENUM = 175;
+    int BUF_MODE_ENUM = 183;
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace <em>Any Content From Other Namespace</em>}'.
@@ -18497,17 +19036,6 @@ public interface SclPackage extends EPackage {
     EAttribute getIDNaming_Id();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming#getDesc()
-     * @see #getIDNaming()
-     * @generated
-     */
-    EAttribute getIDNaming_Desc();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line <em>Line</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18625,17 +19153,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getNaming_Name();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming#getDesc()
-     * @see #getNaming()
-     * @generated
-     */
-    EAttribute getNaming_Desc();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private <em>Private</em>}'.
@@ -19555,28 +20072,6 @@ public interface SclPackage extends EPackage {
     EClass getDA();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDchg <em>Dchg</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Dchg</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDchg()
-     * @see #getDA()
-     * @generated
-     */
-    EAttribute getDA_Dchg();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDupd <em>Dupd</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Dupd</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDupd()
-     * @see #getDA()
-     * @generated
-     */
-    EAttribute getDA_Dupd();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getFc <em>Fc</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19586,17 +20081,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getDA_Fc();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getQchg <em>Qchg</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Qchg</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getQchg()
-     * @see #getDA()
-     * @generated
-     */
-    EAttribute getDA_Qchg();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}'.
@@ -19987,17 +20471,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getEnumVal_Value();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getDesc()
-     * @see #getEnumVal()
-     * @generated
-     */
-    EAttribute getEnumVal_Desc();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType <em>LNode Type</em>}'.
@@ -20437,6 +20910,416 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getMcSecurity_Encryption();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication <em>Ag Authentication</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Authentication</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication
+     * @generated
+     */
+    EClass getAgAuthentication();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getCertificate <em>Certificate</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Certificate</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getCertificate()
+     * @see #getAgAuthentication()
+     * @generated
+     */
+    EAttribute getAgAuthentication_Certificate();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getNone <em>None</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>None</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getNone()
+     * @see #getAgAuthentication()
+     * @generated
+     */
+    EAttribute getAgAuthentication_None();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getPassword <em>Password</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Password</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getPassword()
+     * @see #getAgAuthentication()
+     * @generated
+     */
+    EAttribute getAgAuthentication_Password();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getStrong <em>Strong</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Strong</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getStrong()
+     * @see #getAgAuthentication()
+     * @generated
+     */
+    EAttribute getAgAuthentication_Strong();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getWeak <em>Weak</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Weak</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getWeak()
+     * @see #getAgAuthentication()
+     * @generated
+     */
+    EAttribute getAgAuthentication_Weak();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts <em>Ag Smv Opts</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Smv Opts</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts
+     * @generated
+     */
+    EClass getAgSmvOpts();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataSet <em>Data Set</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Data Set</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataSet()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_DataSet();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getRefreshTime <em>Refresh Time</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Refresh Time</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getRefreshTime()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_RefreshTime();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleRate <em>Sample Rate</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Sample Rate</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleRate()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_SampleRate();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleSynchronized <em>Sample Synchronized</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Sample Synchronized</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleSynchronized()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_SampleSynchronized();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSecurity <em>Security</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Security</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSecurity()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_Security();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getTimestamp <em>Timestamp</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Timestamp</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getTimestamp()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_Timestamp();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSynchSourceId <em>Synch Source Id</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Synch Source Id</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSynchSourceId()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_SynchSourceId();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields <em>Ag Opt Fields</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Opt Fields</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields
+     * @generated
+     */
+    EClass getAgOptFields();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getBufOvfl <em>Buf Ovfl</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Buf Ovfl</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getBufOvfl()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_BufOvfl();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getConfigRef <em>Config Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Config Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getConfigRef()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_ConfigRef();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataRef <em>Data Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Data Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataRef()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_DataRef();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataSet <em>Data Set</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Data Set</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataSet()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_DataSet();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getEntryID <em>Entry ID</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Entry ID</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getEntryID()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_EntryID();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getReasonCode <em>Reason Code</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Reason Code</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getReasonCode()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_ReasonCode();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSeqNum <em>Seq Num</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Seq Num</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSeqNum()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_SeqNum();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getTimeStamp <em>Time Stamp</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Time Stamp</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getTimeStamp()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_TimeStamp();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc <em>Ag Desc</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Desc</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc
+     * @generated
+     */
+    EClass getAgDesc();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc#getDesc <em>Desc</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Desc</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc#getDesc()
+     * @see #getAgDesc()
+     * @generated
+     */
+    EAttribute getAgDesc_Desc();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef <em>Ag LD Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag LD Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef
+     * @generated
+     */
+    EClass getAgLDRef();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getIedName <em>Ied Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ied Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getIedName()
+     * @see #getAgLDRef()
+     * @generated
+     */
+    EAttribute getAgLDRef_IedName();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getLdInst <em>Ld Inst</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ld Inst</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getLdInst()
+     * @see #getAgLDRef()
+     * @generated
+     */
+    EAttribute getAgLDRef_LdInst();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef <em>Ag LN Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag LN Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef
+     * @generated
+     */
+    EClass getAgLNRef();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnClass <em>Ln Class</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ln Class</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnClass()
+     * @see #getAgLNRef()
+     * @generated
+     */
+    EAttribute getAgLNRef_LnClass();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnInst <em>Ln Inst</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Ln Inst</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnInst()
+     * @see #getAgLNRef()
+     * @generated
+     */
+    EAttribute getAgLNRef_LnInst();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getPrefix <em>Prefix</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Prefix</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getPrefix()
+     * @see #getAgLNRef()
+     * @generated
+     */
+    EAttribute getAgLNRef_Prefix();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp <em>Ag DA Trg Op</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag DA Trg Op</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp
+     * @generated
+     */
+    EClass getAgDATrgOp();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDchg <em>Dchg</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Dchg</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDchg()
+     * @see #getAgDATrgOp()
+     * @generated
+     */
+    EAttribute getAgDATrgOp_Dchg();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDupd <em>Dupd</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Dupd</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDupd()
+     * @see #getAgDATrgOp()
+     * @generated
+     */
+    EAttribute getAgDATrgOp_Dupd();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getQchg <em>Qchg</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Qchg</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getQchg()
+     * @see #getAgDATrgOp()
+     * @generated
+     */
+    EAttribute getAgDATrgOp_Qchg();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual <em>Ag Virtual</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Ag Virtual</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual
+     * @generated
+     */
+    EClass getAgVirtual();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual#getVirtual <em>Virtual</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Virtual</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual#getVirtual()
+     * @see #getAgVirtual()
+     * @generated
+     */
+    EAttribute getAgVirtual_Virtual();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec <em>Duration In Milli Sec</em>}'.
@@ -20885,17 +21768,6 @@ public interface SclPackage extends EPackage {
     EAttribute getAssociation_AssociationID();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getIedName <em>Ied Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ied Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getIedName()
-     * @see #getAssociation()
-     * @generated
-     */
-    EAttribute getAssociation_IedName();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getKind <em>Kind</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20905,50 +21777,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getAssociation_Kind();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLdInst <em>Ld Inst</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ld Inst</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLdInst()
-     * @see #getAssociation()
-     * @generated
-     */
-    EAttribute getAssociation_LdInst();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLnClass <em>Ln Class</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ln Class</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLnClass()
-     * @see #getAssociation()
-     * @generated
-     */
-    EAttribute getAssociation_LnClass();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLnInst <em>Ln Inst</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ln Inst</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getLnInst()
-     * @see #getAssociation()
-     * @generated
-     */
-    EAttribute getAssociation_LnInst();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getPrefix <em>Prefix</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Prefix</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getPrefix()
-     * @see #getAssociation()
-     * @generated
-     */
-    EAttribute getAssociation_Prefix();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer <em>Server</em>}'.
@@ -20981,61 +21809,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getAuthentication();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate <em>Certificate</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Certificate</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getCertificate()
-     * @see #getAuthentication()
-     * @generated
-     */
-    EAttribute getAuthentication_Certificate();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone <em>None</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>None</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getNone()
-     * @see #getAuthentication()
-     * @generated
-     */
-    EAttribute getAuthentication_None();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword <em>Password</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Password</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getPassword()
-     * @see #getAuthentication()
-     * @generated
-     */
-    EAttribute getAuthentication_Password();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong <em>Strong</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Strong</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getStrong()
-     * @see #getAuthentication()
-     * @generated
-     */
-    EAttribute getAuthentication_Strong();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak <em>Weak</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Weak</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getWeak()
-     * @see #getAuthentication()
-     * @generated
-     */
-    EAttribute getAuthentication_Weak();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}'.
@@ -21124,61 +21897,6 @@ public interface SclPackage extends EPackage {
     EAttribute getClientLN_ApRef();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getIedName <em>Ied Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ied Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getIedName()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_IedName();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLdInst <em>Ld Inst</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ld Inst</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLdInst()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_LdInst();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLnClass <em>Ln Class</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ln Class</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLnClass()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_LnClass();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLnInst <em>Ln Inst</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Ln Inst</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getLnInst()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_LnInst();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getPrefix <em>Prefix</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Prefix</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getPrefix()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_Prefix();
-
-    /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled <em>Rpt Enabled</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21188,17 +21906,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getClientLN_RptEnabled();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getDesc()
-     * @see #getClientLN()
-     * @generated
-     */
-    EAttribute getClientLN_Desc();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRefersToAnyLN <em>Refers To Any LN</em>}'.
@@ -22235,17 +22942,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getExtRef_RefersToDataObject();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getDesc()
-     * @see #getExtRef()
-     * @generated
-     */
-    EAttribute getExtRef_Desc();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}'.
@@ -23608,94 +24304,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getOptFields();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getBufOvfl <em>Buf Ovfl</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Buf Ovfl</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getBufOvfl()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_BufOvfl();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getConfigRef <em>Config Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Config Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getConfigRef()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_ConfigRef();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getDataRef <em>Data Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Data Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getDataRef()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_DataRef();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getDataSet <em>Data Set</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Data Set</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getDataSet()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_DataSet();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getEntryID <em>Entry ID</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Entry ID</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getEntryID()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_EntryID();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReasonCode <em>Reason Code</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Reason Code</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReasonCode()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_ReasonCode();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getSeqNum <em>Seq Num</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Seq Num</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getSeqNum()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_SeqNum();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getTimeStamp <em>Time Stamp</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Time Stamp</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getTimeStamp()
-     * @see #getOptFields()
-     * @generated
-     */
-    EAttribute getOptFields_TimeStamp();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl <em>Report Control</em>}'.
@@ -25195,72 +25803,6 @@ public interface SclPackage extends EPackage {
     EClass getSmvOpts();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getDataSet <em>Data Set</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Data Set</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getDataSet()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_DataSet();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getRefreshTime <em>Refresh Time</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Refresh Time</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getRefreshTime()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_RefreshTime();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampleRate <em>Sample Rate</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Sample Rate</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampleRate()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_SampleRate();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampleSynchronized <em>Sample Synchronized</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Sample Synchronized</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampleSynchronized()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_SampleSynchronized();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSecurity <em>Security</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Security</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSecurity()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_Security();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getTimestamp <em>Timestamp</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Timestamp</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getTimestamp()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_Timestamp();
-
-    /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -25270,17 +25812,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getSmvOpts_SampledValueControl();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId <em>Synch Source Id</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Synch Source Id</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSynchSourceId()
-     * @see #getSmvOpts()
-     * @generated
-     */
-    EAttribute getSmvOpts_SynchSourceId();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject <em>Subject</em>}'.
@@ -25929,17 +26460,6 @@ public interface SclPackage extends EPackage {
     EClass getEquipment();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual <em>Virtual</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Virtual</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment#getVirtual()
-     * @see #getEquipment()
-     * @generated
-     */
-    EAttribute getEquipment_Virtual();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer <em>Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -26425,17 +26945,6 @@ public interface SclPackage extends EPackage {
     EAttribute getSubEquipment_Phase();
 
     /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual <em>Virtual</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Virtual</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getVirtual()
-     * @see #getSubEquipment()
-     * @generated
-     */
-    EAttribute getSubEquipment_Virtual();
-
-    /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -26618,17 +27127,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getTapChanger_Type();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getVirtual <em>Virtual</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Virtual</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getVirtual()
-     * @see #getTapChanger()
-     * @generated
-     */
-    EAttribute getTapChanger_Virtual();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}'.
@@ -27082,17 +27580,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getUnNaming();
-
-    /**
-     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc <em>Desc</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute '<em>Desc</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming#getDesc()
-     * @see #getUnNaming()
-     * @generated
-     */
-    EAttribute getUnNaming_Desc();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceYesNo <em>Service Yes No</em>}'.

@@ -18,6 +18,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import java.util.List;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
@@ -47,13 +50,14 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getAssociationID <em>Association ID</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getIedName <em>Ied Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getPrefix <em>Prefix</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getAssociationID <em>Association ID</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getKind <em>Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getServer <em>Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
@@ -62,33 +66,33 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public class AssociationImpl extends BaseElementImpl implements Association {
     /**
-     * The default value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAssociationID()
+     * @see #getDesc()
      * @generated
      * @ordered
      */
-    protected static final String ASSOCIATION_ID_EDEFAULT = null;
+    protected static final String DESC_EDEFAULT = "";
 
     /**
-     * The cached value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getAssociationID()
+     * @see #getDesc()
      * @generated
      * @ordered
      */
-    protected String associationID = ASSOCIATION_ID_EDEFAULT;
+    protected String desc = DESC_EDEFAULT;
 
     /**
-     * This is true if the Association ID attribute has been set.
+     * This is true if the Desc attribute has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean associationIDESet;
+    protected boolean descESet;
 
     /**
      * The default value of the '{@link #getIedName() <em>Ied Name</em>}' attribute.
@@ -118,35 +122,6 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @ordered
      */
     protected boolean iedNameESet;
-
-    /**
-     * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getKind()
-     * @generated NOT because there is no default value in SCL
-     * @ordered
-     */
-    protected static final AssociationKindEnum KIND_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getKind()
-     * @generated
-     * @ordered
-     */
-    protected AssociationKindEnum kind = KIND_EDEFAULT;
-
-    /**
-     * This is true if the Kind attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean kindESet;
 
     /**
      * The default value of the '{@link #getLdInst() <em>Ld Inst</em>}' attribute.
@@ -264,6 +239,64 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     protected boolean prefixESet;
 
     /**
+     * The default value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAssociationID()
+     * @generated
+     * @ordered
+     */
+    protected static final String ASSOCIATION_ID_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getAssociationID() <em>Association ID</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAssociationID()
+     * @generated
+     * @ordered
+     */
+    protected String associationID = ASSOCIATION_ID_EDEFAULT;
+
+    /**
+     * This is true if the Association ID attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean associationIDESet;
+
+    /**
+     * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKind()
+     * @generated NOT because there is no default value in SCL
+     * @ordered
+     */
+    protected static final AssociationKindEnum KIND_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getKind()
+     * @generated
+     * @ordered
+     */
+    protected AssociationKindEnum kind = KIND_EDEFAULT;
+
+    /**
+     * This is true if the Kind attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean kindESet;
+
+    /**
      * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -299,6 +332,56 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getAssociation();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getDesc() {
+        return desc;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setDesc(String newDesc) {
+        String oldDesc = desc;
+        desc = newDesc;
+        boolean oldDescESet = descESet;
+        descESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__DESC, oldDesc, desc, !oldDescESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetDesc() {
+        String oldDesc = desc;
+        boolean oldDescESet = descESet;
+        desc = DESC_EDEFAULT;
+        descESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetDesc() {
+        return descESet;
     }
 
     /**
@@ -851,12 +934,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return getAssociationID();
+            case SclPackage.ASSOCIATION__DESC:
+                return getDesc();
             case SclPackage.ASSOCIATION__IED_NAME:
                 return getIedName();
-            case SclPackage.ASSOCIATION__KIND:
-                return getKind();
             case SclPackage.ASSOCIATION__LD_INST:
                 return getLdInst();
             case SclPackage.ASSOCIATION__LN_CLASS:
@@ -865,6 +946,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return getLnInst();
             case SclPackage.ASSOCIATION__PREFIX:
                 return getPrefix();
+            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+                return getAssociationID();
+            case SclPackage.ASSOCIATION__KIND:
+                return getKind();
             case SclPackage.ASSOCIATION__SERVER:
                 return getServer();
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
@@ -881,14 +966,11 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                setAssociationID((String)newValue);
+            case SclPackage.ASSOCIATION__DESC:
+                setDesc((String)newValue);
                 return;
             case SclPackage.ASSOCIATION__IED_NAME:
                 setIedName((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                setKind((AssociationKindEnum)newValue);
                 return;
             case SclPackage.ASSOCIATION__LD_INST:
                 setLdInst((String)newValue);
@@ -901,6 +983,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return;
             case SclPackage.ASSOCIATION__PREFIX:
                 setPrefix((String)newValue);
+                return;
+            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+                setAssociationID((String)newValue);
+                return;
+            case SclPackage.ASSOCIATION__KIND:
+                setKind((AssociationKindEnum)newValue);
                 return;
             case SclPackage.ASSOCIATION__SERVER:
                 setServer((Server)newValue);
@@ -920,14 +1008,11 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                unsetAssociationID();
+            case SclPackage.ASSOCIATION__DESC:
+                unsetDesc();
                 return;
             case SclPackage.ASSOCIATION__IED_NAME:
                 unsetIedName();
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                unsetKind();
                 return;
             case SclPackage.ASSOCIATION__LD_INST:
                 unsetLdInst();
@@ -940,6 +1025,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return;
             case SclPackage.ASSOCIATION__PREFIX:
                 unsetPrefix();
+                return;
+            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+                unsetAssociationID();
+                return;
+            case SclPackage.ASSOCIATION__KIND:
+                unsetKind();
                 return;
             case SclPackage.ASSOCIATION__SERVER:
                 setServer((Server)null);
@@ -959,12 +1050,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return isSetAssociationID();
+            case SclPackage.ASSOCIATION__DESC:
+                return isSetDesc();
             case SclPackage.ASSOCIATION__IED_NAME:
                 return isSetIedName();
-            case SclPackage.ASSOCIATION__KIND:
-                return isSetKind();
             case SclPackage.ASSOCIATION__LD_INST:
                 return isSetLdInst();
             case SclPackage.ASSOCIATION__LN_CLASS:
@@ -973,6 +1062,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return isSetLnInst();
             case SclPackage.ASSOCIATION__PREFIX:
                 return isSetPrefix();
+            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+                return isSetAssociationID();
+            case SclPackage.ASSOCIATION__KIND:
+                return isSetKind();
             case SclPackage.ASSOCIATION__SERVER:
                 return getServer() != null;
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
@@ -987,16 +1080,76 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.ASSOCIATION__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLDRef.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.ASSOCIATION__IED_NAME: return SclPackage.AG_LD_REF__IED_NAME;
+                case SclPackage.ASSOCIATION__LD_INST: return SclPackage.AG_LD_REF__LD_INST;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLNRef.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.ASSOCIATION__LN_CLASS: return SclPackage.AG_LN_REF__LN_CLASS;
+                case SclPackage.ASSOCIATION__LN_INST: return SclPackage.AG_LN_REF__LN_INST;
+                case SclPackage.ASSOCIATION__PREFIX: return SclPackage.AG_LN_REF__PREFIX;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.ASSOCIATION__DESC;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLDRef.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_LD_REF__IED_NAME: return SclPackage.ASSOCIATION__IED_NAME;
+                case SclPackage.AG_LD_REF__LD_INST: return SclPackage.ASSOCIATION__LD_INST;
+                default: return -1;
+            }
+        }
+        if (baseClass == AgLNRef.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_LN_REF__LN_CLASS: return SclPackage.ASSOCIATION__LN_CLASS;
+                case SclPackage.AG_LN_REF__LN_INST: return SclPackage.ASSOCIATION__LN_INST;
+                case SclPackage.AG_LN_REF__PREFIX: return SclPackage.ASSOCIATION__PREFIX;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (associationID: ");
-        if (associationIDESet) result.append(associationID); else result.append("<unset>");
+        result.append(" (desc: ");
+        if (descESet) result.append(desc); else result.append("<unset>");
         result.append(", iedName: ");
         if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", kind: ");
-        if (kindESet) result.append(kind); else result.append("<unset>");
         result.append(", ldInst: ");
         if (ldInstESet) result.append(ldInst); else result.append("<unset>");
         result.append(", lnClass: ");
@@ -1005,6 +1158,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         if (lnInstESet) result.append(lnInst); else result.append("<unset>");
         result.append(", prefix: ");
         if (prefixESet) result.append(prefix); else result.append("<unset>");
+        result.append(", associationID: ");
+        if (associationIDESet) result.append(associationID); else result.append("<unset>");
+        result.append(", kind: ");
+        if (kindESet) result.append(kind); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

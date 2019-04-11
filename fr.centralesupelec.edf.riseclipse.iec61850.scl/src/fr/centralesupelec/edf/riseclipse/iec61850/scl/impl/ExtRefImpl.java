@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDaName <em>Da Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDoName <em>Do Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getIedName <em>Ied Name</em>}</li>
@@ -58,7 +60,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDataObject <em>Refers To Data Object</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPServT <em>PServ T</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPDO <em>PDO</em>}</li>
@@ -68,6 +69,35 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public class ExtRefImpl extends BaseElementImpl implements ExtRef {
+    /**
+     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDesc()
+     * @generated
+     * @ordered
+     */
+    protected static final String DESC_EDEFAULT = "";
+
+    /**
+     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDesc()
+     * @generated
+     * @ordered
+     */
+    protected String desc = DESC_EDEFAULT;
+
+    /**
+     * This is true if the Desc attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean descESet;
+
     /**
      * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -530,35 +560,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @ordered
      */
     protected boolean refersToDataObjectESet;
-
-    /**
-     * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected static final String DESC_EDEFAULT = "";
-
-    /**
-     * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getDesc()
-     * @generated
-     * @ordered
-     */
-    protected String desc = DESC_EDEFAULT;
-
-    /**
-     * This is true if the Desc attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean descESet;
 
     /**
      * The default value of the '{@link #getPServT() <em>PServ T</em>}' attribute.
@@ -2055,6 +2056,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
+            case SclPackage.EXT_REF__DESC:
+                return getDesc();
             case SclPackage.EXT_REF__DA_NAME:
                 return getDaName();
             case SclPackage.EXT_REF__DO_NAME:
@@ -2091,8 +2094,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return getRefersToDataAttribute();
             case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
                 return getRefersToDataObject();
-            case SclPackage.EXT_REF__DESC:
-                return getDesc();
             case SclPackage.EXT_REF__PSERV_T:
                 return getPServT();
             case SclPackage.EXT_REF__PLN:
@@ -2113,6 +2114,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
+            case SclPackage.EXT_REF__DESC:
+                setDesc((String)newValue);
+                return;
             case SclPackage.EXT_REF__DA_NAME:
                 setDaName((String)newValue);
                 return;
@@ -2167,9 +2171,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
                 setRefersToDataObject((DataObject)newValue);
                 return;
-            case SclPackage.EXT_REF__DESC:
-                setDesc((String)newValue);
-                return;
             case SclPackage.EXT_REF__PSERV_T:
                 setPServT((ServiceType)newValue);
                 return;
@@ -2194,6 +2195,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
+            case SclPackage.EXT_REF__DESC:
+                unsetDesc();
+                return;
             case SclPackage.EXT_REF__DA_NAME:
                 unsetDaName();
                 return;
@@ -2248,9 +2252,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
                 unsetRefersToDataObject();
                 return;
-            case SclPackage.EXT_REF__DESC:
-                unsetDesc();
-                return;
             case SclPackage.EXT_REF__PSERV_T:
                 unsetPServT();
                 return;
@@ -2275,6 +2276,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
+            case SclPackage.EXT_REF__DESC:
+                return isSetDesc();
             case SclPackage.EXT_REF__DA_NAME:
                 return isSetDaName();
             case SclPackage.EXT_REF__DO_NAME:
@@ -2311,8 +2314,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return isSetRefersToDataAttribute();
             case SclPackage.EXT_REF__REFERS_TO_DATA_OBJECT:
                 return isSetRefersToDataObject();
-            case SclPackage.EXT_REF__DESC:
-                return isSetDesc();
             case SclPackage.EXT_REF__PSERV_T:
                 return isSetPServT();
             case SclPackage.EXT_REF__PLN:
@@ -2331,11 +2332,45 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
+    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (derivedFeatureID) {
+                case SclPackage.EXT_REF__DESC: return SclPackage.AG_DESC__DESC;
+                default: return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+        if (baseClass == AgDesc.class) {
+            switch (baseFeatureID) {
+                case SclPackage.AG_DESC__DESC: return SclPackage.EXT_REF__DESC;
+                default: return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
         StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (daName: ");
+        result.append(" (desc: ");
+        if (descESet) result.append(desc); else result.append("<unset>");
+        result.append(", daName: ");
         if (daNameESet) result.append(daName); else result.append("<unset>");
         result.append(", doName: ");
         if (doNameESet) result.append(doName); else result.append("<unset>");
@@ -2363,8 +2398,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if (srcLNInstESet) result.append(srcLNInst); else result.append("<unset>");
         result.append(", srcPrefix: ");
         if (srcPrefixESet) result.append(srcPrefix); else result.append("<unset>");
-        result.append(", desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
         result.append(", pServT: ");
         if (pServTESet) result.append(pServT); else result.append("<unset>");
         result.append(", pLN: ");
