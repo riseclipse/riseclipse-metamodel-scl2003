@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgOptFieldsImpl#getSegmentation <em>Segmentation</em>}</li>
  * </ul>
  *
  * @generated
@@ -281,6 +282,35 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @ordered
      */
     protected boolean timeStampESet;
+
+    /**
+     * The default value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSegmentation()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean SEGMENTATION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSegmentation()
+     * @generated
+     * @ordered
+     */
+    protected Boolean segmentation = SEGMENTATION_EDEFAULT;
+
+    /**
+     * This is true if the Segmentation attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean segmentationESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -707,6 +737,56 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
      * @generated
      */
     @Override
+    public Boolean getSegmentation() {
+        return segmentation;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSegmentation(Boolean newSegmentation) {
+        Boolean oldSegmentation = segmentation;
+        segmentation = newSegmentation;
+        boolean oldSegmentationESet = segmentationESet;
+        segmentationESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_OPT_FIELDS__SEGMENTATION, oldSegmentation, segmentation, !oldSegmentationESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSegmentation() {
+        Boolean oldSegmentation = segmentation;
+        boolean oldSegmentationESet = segmentationESet;
+        segmentation = SEGMENTATION_EDEFAULT;
+        segmentationESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_OPT_FIELDS__SEGMENTATION, oldSegmentation, SEGMENTATION_EDEFAULT, oldSegmentationESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSegmentation() {
+        return segmentationESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
             case SclPackage.AG_OPT_FIELDS__BUF_OVFL:
@@ -725,6 +805,8 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
                 return getSeqNum();
             case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
                 return getTimeStamp();
+            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
+                return getSegmentation();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -760,6 +842,9 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
                 return;
             case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
                 setTimeStamp((Boolean)newValue);
+                return;
+            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
+                setSegmentation((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -797,6 +882,9 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
             case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
                 unsetTimeStamp();
                 return;
+            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
+                unsetSegmentation();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -825,6 +913,8 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
                 return isSetSeqNum();
             case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
                 return isSetTimeStamp();
+            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
+                return isSetSegmentation();
         }
         return super.eIsSet(featureID);
     }
@@ -855,6 +945,8 @@ public abstract class AgOptFieldsImpl extends MinimalEObjectImpl.Container imple
         if (seqNumESet) result.append(seqNum); else result.append("<unset>");
         result.append(", timeStamp: ");
         if (timeStampESet) result.append(timeStamp); else result.append("<unset>");
+        result.append(", segmentation: ");
+        if (segmentationESet) result.append(segmentation); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

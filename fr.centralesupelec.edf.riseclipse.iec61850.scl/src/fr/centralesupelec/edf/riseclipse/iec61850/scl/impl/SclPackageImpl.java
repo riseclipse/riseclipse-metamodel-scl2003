@@ -3740,6 +3740,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getAgSmvOpts_DataRef() {
+        return (EAttribute)getAgSmvOpts().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getAgOptFields() {
         if (agOptFieldsEClass == null) {
             agOptFieldsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(178);
@@ -3825,6 +3835,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getAgOptFields_TimeStamp() {
         return (EAttribute)getAgOptFields().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAgOptFields_Segmentation() {
+        return (EAttribute)getAgOptFields().getEStructuralFeatures().get(8);
     }
 
     /**

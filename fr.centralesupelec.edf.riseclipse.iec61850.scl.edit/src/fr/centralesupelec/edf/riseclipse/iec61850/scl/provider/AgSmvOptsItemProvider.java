@@ -84,6 +84,7 @@ public class AgSmvOptsItemProvider
             addSecurityPropertyDescriptor(object);
             addTimestampPropertyDescriptor(object);
             addSynchSourceIdPropertyDescriptor(object);
+            addDataRefPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -243,6 +244,28 @@ public class AgSmvOptsItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Data Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addDataRefPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AgSmvOpts_dataRef_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_dataRef_feature", "_UI_AgSmvOpts_type"),
+                 SclPackage.eINSTANCE.getAgSmvOpts_DataRef(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -277,6 +300,7 @@ public class AgSmvOptsItemProvider
             case SclPackage.AG_SMV_OPTS__SECURITY:
             case SclPackage.AG_SMV_OPTS__TIMESTAMP:
             case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

@@ -44,6 +44,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl#getSynchSourceId <em>Synch Source Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AgSmvOptsImpl#getDataRef <em>Data Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -251,6 +252,35 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @ordered
      */
     protected boolean synchSourceIdESet;
+
+    /**
+     * The default value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDataRef()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean DATA_REF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDataRef()
+     * @generated
+     * @ordered
+     */
+    protected Boolean dataRef = DATA_REF_EDEFAULT;
+
+    /**
+     * This is true if the Data Ref attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean dataRefESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -627,6 +657,56 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
+    public Boolean getDataRef() {
+        return dataRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setDataRef(Boolean newDataRef) {
+        Boolean oldDataRef = dataRef;
+        dataRef = newDataRef;
+        boolean oldDataRefESet = dataRefESet;
+        dataRefESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef, dataRef, !oldDataRefESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetDataRef() {
+        Boolean oldDataRef = dataRef;
+        boolean oldDataRefESet = dataRefESet;
+        dataRef = DATA_REF_EDEFAULT;
+        dataRefESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef, DATA_REF_EDEFAULT, oldDataRefESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetDataRef() {
+        return dataRefESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
             case SclPackage.AG_SMV_OPTS__DATA_SET:
@@ -643,6 +723,8 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
                 return getTimestamp();
             case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
                 return getSynchSourceId();
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
+                return getDataRef();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -675,6 +757,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
                 return;
             case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
                 setSynchSourceId((Boolean)newValue);
+                return;
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
+                setDataRef((Boolean)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -709,6 +794,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
             case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
                 unsetSynchSourceId();
                 return;
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
+                unsetDataRef();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -735,6 +823,8 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
                 return isSetTimestamp();
             case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
                 return isSetSynchSourceId();
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
+                return isSetDataRef();
         }
         return super.eIsSet(featureID);
     }
@@ -763,6 +853,8 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         if (timestampESet) result.append(timestamp); else result.append("<unset>");
         result.append(", synchSourceId: ");
         if (synchSourceIdESet) result.append(synchSourceId); else result.append("<unset>");
+        result.append(", dataRef: ");
+        if (dataRefESet) result.append(dataRef); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }
