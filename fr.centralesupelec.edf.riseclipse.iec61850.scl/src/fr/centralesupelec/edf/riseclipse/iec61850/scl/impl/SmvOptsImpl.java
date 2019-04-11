@@ -45,6 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSynchSourceId <em>Synch Source Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getDataRef <em>Data Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampledValueControl <em>Sampled Value Control</em>}</li>
  * </ul>
  *
@@ -253,6 +254,35 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @ordered
      */
     protected boolean synchSourceIdESet;
+
+    /**
+     * The default value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDataRef()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean DATA_REF_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getDataRef() <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDataRef()
+     * @generated
+     * @ordered
+     */
+    protected Boolean dataRef = DATA_REF_EDEFAULT;
+
+    /**
+     * This is true if the Data Ref attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean dataRefESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -673,6 +703,56 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
+    public Boolean getDataRef() {
+        return dataRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setDataRef(Boolean newDataRef) {
+        Boolean oldDataRef = dataRef;
+        dataRef = newDataRef;
+        boolean oldDataRefESet = dataRefESet;
+        dataRefESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef, dataRef, !oldDataRefESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetDataRef() {
+        Boolean oldDataRef = dataRef;
+        boolean oldDataRefESet = dataRefESet;
+        dataRef = DATA_REF_EDEFAULT;
+        dataRefESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef, DATA_REF_EDEFAULT, oldDataRefESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetDataRef() {
+        return dataRefESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
@@ -733,6 +813,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return getTimestamp();
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 return getSynchSourceId();
+            case SclPackage.SMV_OPTS__DATA_REF:
+                return getDataRef();
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 return getSampledValueControl();
         }
@@ -767,6 +849,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return;
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 setSynchSourceId((Boolean)newValue);
+                return;
+            case SclPackage.SMV_OPTS__DATA_REF:
+                setDataRef((Boolean)newValue);
                 return;
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 setSampledValueControl((SampledValueControl)newValue);
@@ -804,6 +889,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 unsetSynchSourceId();
                 return;
+            case SclPackage.SMV_OPTS__DATA_REF:
+                unsetDataRef();
+                return;
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 setSampledValueControl((SampledValueControl)null);
                 return;
@@ -833,6 +921,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return isSetTimestamp();
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
                 return isSetSynchSourceId();
+            case SclPackage.SMV_OPTS__DATA_REF:
+                return isSetDataRef();
             case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
                 return getSampledValueControl() != null;
         }
@@ -855,6 +945,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 case SclPackage.SMV_OPTS__SECURITY: return SclPackage.AG_SMV_OPTS__SECURITY;
                 case SclPackage.SMV_OPTS__TIMESTAMP: return SclPackage.AG_SMV_OPTS__TIMESTAMP;
                 case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID;
+                case SclPackage.SMV_OPTS__DATA_REF: return SclPackage.AG_SMV_OPTS__DATA_REF;
                 default: return -1;
             }
         }
@@ -877,6 +968,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 case SclPackage.AG_SMV_OPTS__SECURITY: return SclPackage.SMV_OPTS__SECURITY;
                 case SclPackage.AG_SMV_OPTS__TIMESTAMP: return SclPackage.SMV_OPTS__TIMESTAMP;
                 case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.SMV_OPTS__SYNCH_SOURCE_ID;
+                case SclPackage.AG_SMV_OPTS__DATA_REF: return SclPackage.SMV_OPTS__DATA_REF;
                 default: return -1;
             }
         }
@@ -907,6 +999,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         if (timestampESet) result.append(timestamp); else result.append("<unset>");
         result.append(", synchSourceId: ");
         if (synchSourceIdESet) result.append(synchSourceId); else result.append("<unset>");
+        result.append(", dataRef: ");
+        if (dataRefESet) result.append(dataRef); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

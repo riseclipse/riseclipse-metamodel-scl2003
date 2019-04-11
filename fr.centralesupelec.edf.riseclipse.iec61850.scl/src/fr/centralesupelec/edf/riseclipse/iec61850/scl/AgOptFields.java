@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgOptFields()
@@ -436,5 +437,54 @@ public interface AgOptFields extends EObject {
      * @generated
      */
     boolean isSetTimeStamp();
+
+    /**
+     * Returns the value of the '<em><b>Segmentation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Segmentation</em>' attribute.
+     * @see #isSetSegmentation()
+     * @see #unsetSegmentation()
+     * @see #setSegmentation(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgOptFields_Segmentation()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getSegmentation();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Segmentation</em>' attribute.
+     * @see #isSetSegmentation()
+     * @see #unsetSegmentation()
+     * @see #getSegmentation()
+     * @generated
+     */
+    void setSegmentation(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetSegmentation()
+     * @see #getSegmentation()
+     * @see #setSegmentation(Boolean)
+     * @generated
+     */
+    void unsetSegmentation();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Segmentation</em>' attribute is set.
+     * @see #unsetSegmentation()
+     * @see #getSegmentation()
+     * @see #setSegmentation(Boolean)
+     * @generated
+     */
+    boolean isSetSegmentation();
 
 } // AgOptFields

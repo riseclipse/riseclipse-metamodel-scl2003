@@ -2231,6 +2231,8 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="synchSourceId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgOptFields" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufOvfl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -2248,6 +2250,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="seqNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeStamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="segmentation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AgDesc" abstract="true">

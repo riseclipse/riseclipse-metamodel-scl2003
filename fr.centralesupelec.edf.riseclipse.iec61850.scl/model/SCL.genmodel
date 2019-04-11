@@ -1088,6 +1088,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgSmvOpts/security"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgSmvOpts/timestamp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgSmvOpts/synchSourceId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgSmvOpts/dataRef"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//AgOptFields">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/bufOvfl"/>
@@ -1098,6 +1099,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/reasonCode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/seqNum"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/timeStamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgOptFields/segmentation"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//AgDesc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgDesc/desc"/>

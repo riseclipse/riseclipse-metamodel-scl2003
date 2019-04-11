@@ -46,6 +46,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getReasonCode <em>Reason Code</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getTimeStamp <em>Time Stamp</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSegmentation <em>Segmentation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getReportControl <em>Report Control</em>}</li>
  * </ul>
  *
@@ -283,6 +284,35 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @ordered
      */
     protected boolean timeStampESet;
+
+    /**
+     * The default value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSegmentation()
+     * @generated
+     * @ordered
+     */
+    protected static final Boolean SEGMENTATION_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getSegmentation() <em>Segmentation</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSegmentation()
+     * @generated
+     * @ordered
+     */
+    protected Boolean segmentation = SEGMENTATION_EDEFAULT;
+
+    /**
+     * This is true if the Segmentation attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean segmentationESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -709,6 +739,56 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      */
     @Override
+    public Boolean getSegmentation() {
+        return segmentation;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSegmentation(Boolean newSegmentation) {
+        Boolean oldSegmentation = segmentation;
+        segmentation = newSegmentation;
+        boolean oldSegmentationESet = segmentationESet;
+        segmentationESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.OPT_FIELDS__SEGMENTATION, oldSegmentation, segmentation, !oldSegmentationESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetSegmentation() {
+        Boolean oldSegmentation = segmentation;
+        boolean oldSegmentationESet = segmentationESet;
+        segmentation = SEGMENTATION_EDEFAULT;
+        segmentationESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.OPT_FIELDS__SEGMENTATION, oldSegmentation, SEGMENTATION_EDEFAULT, oldSegmentationESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetSegmentation() {
+        return segmentationESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public ReportControl getReportControl() {
         if (eContainerFeatureID() != SclPackage.OPT_FIELDS__REPORT_CONTROL) return null;
         return (ReportControl)eInternalContainer();
@@ -814,6 +894,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return getSeqNum();
             case SclPackage.OPT_FIELDS__TIME_STAMP:
                 return getTimeStamp();
+            case SclPackage.OPT_FIELDS__SEGMENTATION:
+                return getSegmentation();
             case SclPackage.OPT_FIELDS__REPORT_CONTROL:
                 return getReportControl();
         }
@@ -851,6 +933,9 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return;
             case SclPackage.OPT_FIELDS__TIME_STAMP:
                 setTimeStamp((Boolean)newValue);
+                return;
+            case SclPackage.OPT_FIELDS__SEGMENTATION:
+                setSegmentation((Boolean)newValue);
                 return;
             case SclPackage.OPT_FIELDS__REPORT_CONTROL:
                 setReportControl((ReportControl)newValue);
@@ -891,6 +976,9 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             case SclPackage.OPT_FIELDS__TIME_STAMP:
                 unsetTimeStamp();
                 return;
+            case SclPackage.OPT_FIELDS__SEGMENTATION:
+                unsetSegmentation();
+                return;
             case SclPackage.OPT_FIELDS__REPORT_CONTROL:
                 setReportControl((ReportControl)null);
                 return;
@@ -922,6 +1010,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return isSetSeqNum();
             case SclPackage.OPT_FIELDS__TIME_STAMP:
                 return isSetTimeStamp();
+            case SclPackage.OPT_FIELDS__SEGMENTATION:
+                return isSetSegmentation();
             case SclPackage.OPT_FIELDS__REPORT_CONTROL:
                 return getReportControl() != null;
         }
@@ -945,6 +1035,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 case SclPackage.OPT_FIELDS__REASON_CODE: return SclPackage.AG_OPT_FIELDS__REASON_CODE;
                 case SclPackage.OPT_FIELDS__SEQ_NUM: return SclPackage.AG_OPT_FIELDS__SEQ_NUM;
                 case SclPackage.OPT_FIELDS__TIME_STAMP: return SclPackage.AG_OPT_FIELDS__TIME_STAMP;
+                case SclPackage.OPT_FIELDS__SEGMENTATION: return SclPackage.AG_OPT_FIELDS__SEGMENTATION;
                 default: return -1;
             }
         }
@@ -968,6 +1059,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 case SclPackage.AG_OPT_FIELDS__REASON_CODE: return SclPackage.OPT_FIELDS__REASON_CODE;
                 case SclPackage.AG_OPT_FIELDS__SEQ_NUM: return SclPackage.OPT_FIELDS__SEQ_NUM;
                 case SclPackage.AG_OPT_FIELDS__TIME_STAMP: return SclPackage.OPT_FIELDS__TIME_STAMP;
+                case SclPackage.AG_OPT_FIELDS__SEGMENTATION: return SclPackage.OPT_FIELDS__SEGMENTATION;
                 default: return -1;
             }
         }
@@ -1000,6 +1092,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
         if (seqNumESet) result.append(seqNum); else result.append("<unset>");
         result.append(", timeStamp: ");
         if (timeStampESet) result.append(timeStamp); else result.append("<unset>");
+        result.append(", segmentation: ");
+        if (segmentationESet) result.append(segmentation); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

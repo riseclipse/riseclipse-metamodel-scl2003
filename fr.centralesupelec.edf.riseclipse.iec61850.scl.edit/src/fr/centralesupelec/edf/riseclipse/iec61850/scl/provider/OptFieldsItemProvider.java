@@ -68,6 +68,7 @@ public class OptFieldsItemProvider
             addReasonCodePropertyDescriptor(object);
             addSeqNumPropertyDescriptor(object);
             addTimeStampPropertyDescriptor(object);
+            addSegmentationPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -249,6 +250,28 @@ public class OptFieldsItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Segmentation feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addSegmentationPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AgOptFields_segmentation_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_segmentation_feature", "_UI_AgOptFields_type"),
+                 SclPackage.eINSTANCE.getAgOptFields_Segmentation(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns OptFields.gif.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -292,6 +315,7 @@ public class OptFieldsItemProvider
             case SclPackage.OPT_FIELDS__REASON_CODE:
             case SclPackage.OPT_FIELDS__SEQ_NUM:
             case SclPackage.OPT_FIELDS__TIME_STAMP:
+            case SclPackage.OPT_FIELDS__SEGMENTATION:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

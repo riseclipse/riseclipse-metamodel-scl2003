@@ -11704,13 +11704,22 @@ public interface SclPackage extends EPackage {
     int OPT_FIELDS__TIME_STAMP = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Segmentation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS__SEGMENTATION = SCL_OBJECT_FEATURE_COUNT + 8;
+
+    /**
      * The feature id for the '<em><b>Report Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int OPT_FIELDS__REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 8;
+    int OPT_FIELDS__REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Opt Fields</em>' class.
@@ -11719,7 +11728,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int OPT_FIELDS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
+    int OPT_FIELDS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
 
     /**
      * The number of operations of the '<em>Opt Fields</em>' class.
@@ -13891,13 +13900,22 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS__SYNCH_SOURCE_ID = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
+     * The feature id for the '<em><b>Data Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__DATA_REF = SCL_OBJECT_FEATURE_COUNT + 7;
+
+    /**
      * The feature id for the '<em><b>Sampled Value Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 7;
+    int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The number of structural features of the '<em>Smv Opts</em>' class.
@@ -13906,7 +13924,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SMV_OPTS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 8;
+    int SMV_OPTS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>Smv Opts</em>' class.
@@ -18176,13 +18194,22 @@ public interface SclPackage extends EPackage {
     int AG_SMV_OPTS__SYNCH_SOURCE_ID = 6;
 
     /**
+     * The feature id for the '<em><b>Data Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_SMV_OPTS__DATA_REF = 7;
+
+    /**
      * The number of structural features of the '<em>Ag Smv Opts</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AG_SMV_OPTS_FEATURE_COUNT = 7;
+    int AG_SMV_OPTS_FEATURE_COUNT = 8;
 
     /**
      * The number of operations of the '<em>Ag Smv Opts</em>' class.
@@ -18276,13 +18303,22 @@ public interface SclPackage extends EPackage {
     int AG_OPT_FIELDS__TIME_STAMP = 7;
 
     /**
+     * The feature id for the '<em><b>Segmentation</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AG_OPT_FIELDS__SEGMENTATION = 8;
+
+    /**
      * The number of structural features of the '<em>Ag Opt Fields</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AG_OPT_FIELDS_FEATURE_COUNT = 8;
+    int AG_OPT_FIELDS_FEATURE_COUNT = 9;
 
     /**
      * The number of operations of the '<em>Ag Opt Fields</em>' class.
@@ -21064,6 +21100,17 @@ public interface SclPackage extends EPackage {
     EAttribute getAgSmvOpts_SynchSourceId();
 
     /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Data Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef()
+     * @see #getAgSmvOpts()
+     * @generated
+     */
+    EAttribute getAgSmvOpts_DataRef();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields <em>Ag Opt Fields</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21160,6 +21207,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getAgOptFields_TimeStamp();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Segmentation</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation()
+     * @see #getAgOptFields()
+     * @generated
+     */
+    EAttribute getAgOptFields_Segmentation();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc <em>Ag Desc</em>}'.

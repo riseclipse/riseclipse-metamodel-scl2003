@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSecurity <em>Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSynchSourceId <em>Synch Source Id</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts()
@@ -386,5 +387,54 @@ public interface AgSmvOpts extends EObject {
      * @generated
      */
     boolean isSetSynchSourceId();
+
+    /**
+     * Returns the value of the '<em><b>Data Ref</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Data Ref</em>' attribute.
+     * @see #isSetDataRef()
+     * @see #unsetDataRef()
+     * @see #setDataRef(Boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAgSmvOpts_DataRef()
+     * @model unsettable="true"
+     * @generated
+     */
+    Boolean getDataRef();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Data Ref</em>' attribute.
+     * @see #isSetDataRef()
+     * @see #unsetDataRef()
+     * @see #getDataRef()
+     * @generated
+     */
+    void setDataRef(Boolean value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetDataRef()
+     * @see #getDataRef()
+     * @see #setDataRef(Boolean)
+     * @generated
+     */
+    void unsetDataRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Data Ref</em>' attribute is set.
+     * @see #unsetDataRef()
+     * @see #getDataRef()
+     * @see #setDataRef(Boolean)
+     * @generated
+     */
+    boolean isSetDataRef();
 
 } // AgSmvOpts
