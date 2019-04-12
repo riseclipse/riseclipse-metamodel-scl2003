@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
@@ -47,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getBDA <em>BDA</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getReferredByDA <em>Referred By DA</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getDataTypeTemplates <em>Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DATypeImpl#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
@@ -95,14 +95,14 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     protected EList<BDA> bda;
 
     /**
-     * The cached value of the '{@link #getReferredByDA() <em>Referred By DA</em>}' reference list.
+     * The cached value of the '{@link #getReferredByAbstractDataAttribute() <em>Referred By Abstract Data Attribute</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReferredByDA()
+     * @see #getReferredByAbstractDataAttribute()
      * @generated
      * @ordered
      */
-    protected EList<DA> referredByDA;
+    protected EList<AbstractDataAttribute> referredByAbstractDataAttribute;
 
     /**
      * The cached value of the '{@link #getProtNs() <em>Prot Ns</em>}' containment reference list.
@@ -222,11 +222,11 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public EList<DA> getReferredByDA() {
-        if (referredByDA == null) {
-            referredByDA = new EObjectWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DA_TYPE__REFERRED_BY_DA, SclPackage.DA__REFERS_TO_DA_TYPE);
+    public EList<AbstractDataAttribute> getReferredByAbstractDataAttribute() {
+        if (referredByAbstractDataAttribute == null) {
+            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE);
         }
-        return referredByDA;
+        return referredByAbstractDataAttribute;
     }
 
     /**
@@ -235,8 +235,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public void unsetReferredByDA() {
-        if (referredByDA != null) ((InternalEList.Unsettable<?>)referredByDA).unset();
+    public void unsetReferredByAbstractDataAttribute() {
+        if (referredByAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).unset();
     }
 
     /**
@@ -245,8 +245,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public boolean isSetReferredByDA() {
-        return referredByDA != null && ((InternalEList.Unsettable<?>)referredByDA).isSet();
+    public boolean isSetReferredByAbstractDataAttribute() {
+        return referredByAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).isSet();
     }
 
     /**
@@ -336,8 +336,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         switch (featureID) {
             case SclPackage.DA_TYPE__BDA:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getBDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDA()).basicAdd(otherEnd, msgs);
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAbstractDataAttribute()).basicAdd(otherEnd, msgs);
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
@@ -358,8 +358,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         switch (featureID) {
             case SclPackage.DA_TYPE__BDA:
                 return ((InternalEList<?>)getBDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                return ((InternalEList<?>)getReferredByDA()).basicRemove(otherEnd, msgs);
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<?>)getReferredByAbstractDataAttribute()).basicRemove(otherEnd, msgs);
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 return basicSetDataTypeTemplates(null, msgs);
             case SclPackage.DA_TYPE__PROT_NS:
@@ -394,8 +394,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
                 return getIedType();
             case SclPackage.DA_TYPE__BDA:
                 return getBDA();
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                return getReferredByDA();
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                return getReferredByAbstractDataAttribute();
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 return getDataTypeTemplates();
             case SclPackage.DA_TYPE__PROT_NS:
@@ -420,9 +420,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
                 getBDA().clear();
                 getBDA().addAll((Collection<? extends BDA>)newValue);
                 return;
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                getReferredByDA().clear();
-                getReferredByDA().addAll((Collection<? extends DA>)newValue);
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                getReferredByAbstractDataAttribute().clear();
+                getReferredByAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
                 return;
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 setDataTypeTemplates((DataTypeTemplates)newValue);
@@ -449,8 +449,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
             case SclPackage.DA_TYPE__BDA:
                 unsetBDA();
                 return;
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                unsetReferredByDA();
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                unsetReferredByAbstractDataAttribute();
                 return;
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 setDataTypeTemplates((DataTypeTemplates)null);
@@ -474,8 +474,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
                 return isSetIedType();
             case SclPackage.DA_TYPE__BDA:
                 return isSetBDA();
-            case SclPackage.DA_TYPE__REFERRED_BY_DA:
-                return isSetReferredByDA();
+            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+                return isSetReferredByAbstractDataAttribute();
             case SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES:
                 return getDataTypeTemplates() != null;
             case SclPackage.DA_TYPE__PROT_NS:

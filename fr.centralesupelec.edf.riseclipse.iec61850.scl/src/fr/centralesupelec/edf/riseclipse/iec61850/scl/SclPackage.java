@@ -4432,13 +4432,22 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_ATTRIBUTE__VAL = DATA_ATTRIBUTE_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Refers To DA Type</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE = DATA_ATTRIBUTE_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>Abstract Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 8;
+    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
@@ -4601,6 +4610,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__VAL = ABSTRACT_DATA_ATTRIBUTE__VAL;
+
+    /**
+     * The feature id for the '<em><b>Refers To DA Type</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__REFERS_TO_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE;
 
     /**
      * The feature id for the '<em><b>DA Type</b></em>' container reference.
@@ -4783,6 +4801,15 @@ public interface SclPackage extends EPackage {
     int DA__VAL = ABSTRACT_DATA_ATTRIBUTE__VAL;
 
     /**
+     * The feature id for the '<em><b>Refers To DA Type</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__REFERS_TO_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE;
+
+    /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4819,22 +4846,13 @@ public interface SclPackage extends EPackage {
     int DA__FC = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Refers To DA Type</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DA__REFERS_TO_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 4;
-
-    /**
      * The feature id for the '<em><b>DO Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DA__DO_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 5;
+    int DA__DO_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Prot Ns</b></em>' containment reference list.
@@ -4843,7 +4861,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DA__PROT_NS = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 6;
+    int DA__PROT_NS = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>DA</em>' class.
@@ -4852,7 +4870,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DA_FEATURE_COUNT = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 7;
+    int DA_FEATURE_COUNT = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>DA</em>' class.
@@ -4945,13 +4963,13 @@ public interface SclPackage extends EPackage {
     int DA_TYPE__BDA = ID_NAMING_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Referred By DA</b></em>' reference list.
+     * The feature id for the '<em><b>Referred By Abstract Data Attribute</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DA_TYPE__REFERRED_BY_DA = ID_NAMING_FEATURE_COUNT + 2;
+    int DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Data Type Templates</b></em>' container reference.
@@ -20077,6 +20095,17 @@ public interface SclPackage extends EPackage {
     EReference getAbstractDataAttribute_Val();
 
     /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To DA Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType()
+     * @see #getAbstractDataAttribute()
+     * @generated
+     */
+    EReference getAbstractDataAttribute_RefersToDAType();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA <em>BDA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20117,17 +20146,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getDA_Fc();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To DA Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType()
-     * @see #getDA()
-     * @generated
-     */
-    EReference getDA_RefersToDAType();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}'.
@@ -20184,15 +20202,15 @@ public interface SclPackage extends EPackage {
     EReference getDAType_BDA();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA <em>Referred By DA</em>}'.
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By DA</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA()
+     * @return the meta object for the reference list '<em>Referred By Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute()
      * @see #getDAType()
      * @generated
      */
-    EReference getDAType_ReferredByDA();
+    EReference getDAType_ReferredByAbstractDataAttribute();
 
     /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}'.

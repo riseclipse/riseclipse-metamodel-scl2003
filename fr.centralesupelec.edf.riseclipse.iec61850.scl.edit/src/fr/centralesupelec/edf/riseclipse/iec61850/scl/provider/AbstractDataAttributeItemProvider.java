@@ -68,6 +68,7 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
             addValImportPropertyDescriptor(object);
             addValKindPropertyDescriptor(object);
             addRefersToEnumTypePropertyDescriptor(object);
+            addRefersToDATypePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -218,6 +219,28 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
                  getString("_UI_AbstractDataAttribute_RefersToEnumType_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToEnumType_feature", "_UI_AbstractDataAttribute_type"),
                  SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToEnumType(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To DA Type feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToDATypePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_RefersToDAType_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToDAType_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToDAType(),
                  true,
                  false,
                  true,

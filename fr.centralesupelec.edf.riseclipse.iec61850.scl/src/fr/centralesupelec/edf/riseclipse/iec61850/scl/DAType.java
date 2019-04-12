@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA <em>Referred By DA</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
@@ -136,45 +136,41 @@ public interface DAType extends IDNaming {
     boolean isSetBDA();
 
     /**
-     * Returns the value of the '<em><b>Referred By DA</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}'.
+     * Returns the value of the '<em><b>Referred By Abstract Data Attribute</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Referred By DA</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Referred By DA</em>' reference list.
-     * @see #isSetReferredByDA()
-     * @see #unsetReferredByDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_ReferredByDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType
+     * @return the value of the '<em>Referred By Abstract Data Attribute</em>' reference list.
+     * @see #isSetReferredByAbstractDataAttribute()
+     * @see #unsetReferredByAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_ReferredByAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType
      * @model opposite="RefersToDAType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<DA> getReferredByDA();
+    EList<AbstractDataAttribute> getReferredByAbstractDataAttribute();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA <em>Referred By DA</em>}' reference list.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetReferredByDA()
-     * @see #getReferredByDA()
+     * @see #isSetReferredByAbstractDataAttribute()
+     * @see #getReferredByAbstractDataAttribute()
      * @generated
      */
-    void unsetReferredByDA();
+    void unsetReferredByAbstractDataAttribute();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA <em>Referred By DA</em>}' reference list is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}' reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Referred By DA</em>' reference list is set.
-     * @see #unsetReferredByDA()
-     * @see #getReferredByDA()
+     * @return whether the value of the '<em>Referred By Abstract Data Attribute</em>' reference list is set.
+     * @see #unsetReferredByAbstractDataAttribute()
+     * @see #getReferredByAbstractDataAttribute()
      * @generated
      */
-    boolean isSetReferredByDA();
+    boolean isSetReferredByAbstractDataAttribute();
 
     /**
      * Returns the value of the '<em><b>Data Type Templates</b></em>' container reference.

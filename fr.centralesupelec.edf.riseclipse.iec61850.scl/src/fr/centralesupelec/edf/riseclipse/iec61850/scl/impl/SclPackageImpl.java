@@ -2724,6 +2724,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getAbstractDataAttribute_RefersToDAType() {
+        return (EReference)getAbstractDataAttribute().getEStructuralFeatures().get(8);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getBDA() {
         if (bdaEClass == null) {
             bdaEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(24);
@@ -2770,7 +2780,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getDA_RefersToDAType() {
+    public EReference getDA_DOType() {
         return (EReference)getDA().getEStructuralFeatures().get(1);
     }
 
@@ -2780,18 +2790,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getDA_DOType() {
-        return (EReference)getDA().getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getDA_ProtNs() {
-        return (EReference)getDA().getEStructuralFeatures().get(3);
+        return (EReference)getDA().getEStructuralFeatures().get(2);
     }
 
     /**
@@ -2833,7 +2833,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getDAType_ReferredByDA() {
+    public EReference getDAType_ReferredByAbstractDataAttribute() {
         return (EReference)getDAType().getEStructuralFeatures().get(2);
     }
 

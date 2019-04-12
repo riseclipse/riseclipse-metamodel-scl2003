@@ -65,7 +65,6 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
             addDupdPropertyDescriptor(object);
             addQchgPropertyDescriptor(object);
             addFcPropertyDescriptor(object);
-            addRefersToDATypePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -154,28 +153,6 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Refers To DA Type feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addRefersToDATypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DA_RefersToDAType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DA_RefersToDAType_feature", "_UI_DA_type"),
-                 SclPackage.eINSTANCE.getDA_RefersToDAType(),
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }

@@ -20,22 +20,15 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import java.util.Collection;
-import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -54,7 +47,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDupd <em>Dupd</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getQchg <em>Qchg</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getFc <em>Fc</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getRefersToDAType <em>Refers To DA Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDOType <em>DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
@@ -177,25 +169,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @ordered
      */
     protected boolean fcESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToDAType() <em>Refers To DA Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToDAType()
-     * @generated
-     * @ordered
-     */
-    protected DAType refersToDAType;
-
-    /**
-     * This is true if the Refers To DA Type reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDATypeESet;
 
     /**
      * The cached value of the '{@link #getProtNs() <em>Prot Ns</em>}' containment reference list.
@@ -426,105 +399,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         return qchgESet;
     }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public DAType getRefersToDAType() {
-        return refersToDAType;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDAType(DAType newRefersToDAType, NotificationChain msgs) {
-        DAType oldRefersToDAType = refersToDAType;
-        refersToDAType = newRefersToDAType;
-        boolean oldRefersToDATypeESet = refersToDATypeESet;
-        refersToDATypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.DA__REFERS_TO_DA_TYPE, oldRefersToDAType, newRefersToDAType, !oldRefersToDATypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToDAType(DAType newRefersToDAType) {
-        if (newRefersToDAType != refersToDAType) {
-            NotificationChain msgs = null;
-            if (refersToDAType != null)
-                msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_DA, DAType.class, msgs);
-            if (newRefersToDAType != null)
-                msgs = ((InternalEObject)newRefersToDAType).eInverseAdd(this, SclPackage.DA_TYPE__REFERRED_BY_DA, DAType.class, msgs);
-            msgs = basicSetRefersToDAType(newRefersToDAType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDATypeESet = refersToDATypeESet;
-            refersToDATypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__REFERS_TO_DA_TYPE, newRefersToDAType, newRefersToDAType, !oldRefersToDATypeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDAType(NotificationChain msgs) {
-        DAType oldRefersToDAType = refersToDAType;
-        refersToDAType = null;
-        boolean oldRefersToDATypeESet = refersToDATypeESet;
-        refersToDATypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__REFERS_TO_DA_TYPE, oldRefersToDAType, null, oldRefersToDATypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToDAType() {
-        if (refersToDAType != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_DA, DAType.class, msgs);
-            msgs = basicUnsetRefersToDAType(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDATypeESet = refersToDATypeESet;
-            refersToDATypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__REFERS_TO_DA_TYPE, null, null, oldRefersToDATypeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToDAType() {
-        return refersToDATypeESet;
-    }
-
     public boolean isSetType() {
         return isSetRefersToDAType();
     }
@@ -614,10 +488,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                if (refersToDAType != null)
-                    msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_DA, DAType.class, msgs);
-                return basicSetRefersToDAType((DAType)otherEnd, msgs);
             case SclPackage.DA__DO_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
@@ -636,8 +506,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                return basicUnsetRefersToDAType(msgs);
             case SclPackage.DA__DO_TYPE:
                 return basicSetDOType(null, msgs);
             case SclPackage.DA__PROT_NS:
@@ -676,8 +544,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return getQchg();
             case SclPackage.DA__FC:
                 return getFc();
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                return getRefersToDAType();
             case SclPackage.DA__DO_TYPE:
                 return getDOType();
             case SclPackage.DA__PROT_NS:
@@ -706,9 +572,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return;
             case SclPackage.DA__FC:
                 setFc((FCEnum)newValue);
-                return;
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                setRefersToDAType((DAType)newValue);
                 return;
             case SclPackage.DA__DO_TYPE:
                 setDOType((DOType)newValue);
@@ -741,9 +604,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
             case SclPackage.DA__FC:
                 unsetFc();
                 return;
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                unsetRefersToDAType();
-                return;
             case SclPackage.DA__DO_TYPE:
                 setDOType((DOType)null);
                 return;
@@ -770,8 +630,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return isSetQchg();
             case SclPackage.DA__FC:
                 return isSetFc();
-            case SclPackage.DA__REFERS_TO_DA_TYPE:
-                return isSetRefersToDAType();
             case SclPackage.DA__DO_TYPE:
                 return getDOType() != null;
             case SclPackage.DA__PROT_NS:
@@ -846,92 +704,6 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         if (fcESet) result.append(fc); else result.append("<unset>");
         result.append(')');
         return result.toString();
-    }
-
-    @Override
-    protected void doResolveLinks() {
-        // see Issue #13
-        super.doResolveLinks();
-        
-        // desc                 Some descriptive text for the attribute
-        // name                 The attribute name; the type tAttributeEnum restricts to the attribute names from IEC 61850-7-3, plus new ones starting with lower case letters
-        // fc                   The functional constraint for this attribute; fc=SE always also implies fc=SG; fc=SG means that the values are visible, but not editable
-        // dchg, qchg, dupd     Defines which trigger options are supported by the attribute (value true means supported)
-        // sAddr                an optional short address of this DO attribute
-        // bType                The basic type of the attribute, taken from tBasicTypeEnum
-        // type                 Only used if bType= Enum or bType = Struct to refer to the appropriate enumeration type or DAType (attribute structure) definition
-        // count                Optional. Shall state the number of array elements or reference the attribute stating this number in case that this attribute is an array.
-        //                      A referenced attribute shall exist in the same type definition. The default value 0 states that the attribute is no array.
-        // valKind              Determines how the value shall be interpreted if any is given
-
-        if( getType() == null ) return;
-        DataTypeTemplates dtt = get_DataTypeTemplates();
-        if( dtt == null ) return;
-
-        // TODO: put in AbstractDataType
-
-        if( "Enum".equals( getBType() ) ) {
-
-            // find an EnumType with
-            //   EnumType.id == DA.type
-            SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseEnumType( EnumType object ) {
-                    return getType().equals( object.getId() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< EnumType > res = shallowSearchObjects( dtt.getEnumType(), s );
-            String mess = "EnumType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
-            if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToEnumType( res.get( 0 ) );
-        }
-        else if( "Struct".equals( getBType() ) ) {
-
-            // find an DAType with
-            //   DAType.id == DA.type
-            SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseDAType( DAType object ) {
-                    return getType().equals( object.getId() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< DAType > res = shallowSearchObjects( dtt.getDAType(), s );
-            String mess = "DAType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
-            if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDAType( res.get( 0 ) );
-        }
     }
 
 } //DAImpl

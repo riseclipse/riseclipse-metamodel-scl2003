@@ -62,7 +62,7 @@ public class DATypeItemProvider extends IDNamingItemProvider {
             super.getPropertyDescriptors(object);
 
             addIedTypePropertyDescriptor(object);
-            addReferredByDAPropertyDescriptor(object);
+            addReferredByAbstractDataAttributePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -90,19 +90,19 @@ public class DATypeItemProvider extends IDNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Referred By DA feature.
+     * This adds a property descriptor for the Referred By Abstract Data Attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByDAPropertyDescriptor(Object object) {
+    protected void addReferredByAbstractDataAttributePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DAType_ReferredByDA_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DAType_ReferredByDA_feature", "_UI_DAType_type"),
-                 SclPackage.eINSTANCE.getDAType_ReferredByDA(),
+                 getString("_UI_DAType_ReferredByAbstractDataAttribute_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DAType_ReferredByAbstractDataAttribute_feature", "_UI_DAType_type"),
+                 SclPackage.eINSTANCE.getDAType_ReferredByAbstractDataAttribute(),
                  true,
                  false,
                  true,

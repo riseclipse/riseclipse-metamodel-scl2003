@@ -360,6 +360,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Val" ordered="false" upperBound="-1"
         eType="#//Val" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//Val/AbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDAType" ordered="false"
+        eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DAType/ReferredByAbstractDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BDA" eSuperTypes="#//AbstractDataAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
@@ -368,9 +371,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DA" eSuperTypes="#//AbstractDataAttribute #//AgDATrgOp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fc" eType="#//FCEnum" unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDAType" ordered="false"
-        eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DAType/ReferredByDA"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DOType" ordered="false"
         eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DOType/DA"/>
@@ -384,9 +384,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="BDA" ordered="false" upperBound="-1"
         eType="#//BDA" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//BDA/DAType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDA" ordered="false"
-        upperBound="-1" eType="#//DA" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DA/RefersToDAType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAbstractDataAttribute"
+        ordered="false" upperBound="-1" eType="#//AbstractDataAttribute" transient="true"
+        unsettable="true" resolveProxies="false" eOpposite="#//AbstractDataAttribute/RefersToDAType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DataTypeTemplates" ordered="false"
         eType="#//DataTypeTemplates" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DataTypeTemplates/DAType"/>
