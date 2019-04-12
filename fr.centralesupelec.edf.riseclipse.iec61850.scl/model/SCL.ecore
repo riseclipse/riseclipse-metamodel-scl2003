@@ -363,6 +363,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDAType" ordered="false"
         eType="#//DAType" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DAType/ReferredByAbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
+        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//FCDA/RefersToAbstractDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BDA" eSuperTypes="#//AbstractDataAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
@@ -605,9 +608,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
         upperBound="-1" eType="#//DataSet" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DataSet/AnyLN"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
-        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//FCDA/RefersToAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
         upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ExtRef/RefersToAnyLN"/>
@@ -912,18 +912,12 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="" unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataAttribute"
-        ordered="false" eType="#//DataAttribute" transient="true" unsettable="true"
-        resolveProxies="false" eOpposite="#//DataAttribute/ReferredByFCDA"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataObject" ordered="false"
-        eType="#//DataObject" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DataObject/ReferredByFCDA"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
         eType="#//DataSet" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DataSet/FCDA"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
-        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//AnyLN/ReferredByFCDA"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
+        ordered="false" upperBound="-1" eType="#//AbstractDataAttribute" transient="true"
+        unsettable="true" resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByFCDA"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FileHandling" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ftp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -2037,9 +2031,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataObject" abstract="true" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
-        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//FCDA/RefersToDataObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
@@ -2047,9 +2038,6 @@
         eOpposite="#//ExtRef/RefersToDataObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataAttribute" abstract="true" eSuperTypes="#//UnNaming">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
-        upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//FCDA/RefersToDataAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"

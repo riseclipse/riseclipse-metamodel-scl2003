@@ -18,6 +18,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>FCDA</b></em>'.
@@ -35,10 +37,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA()
@@ -475,116 +475,6 @@ public interface FCDA extends ExplicitLinkResolver {
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Refers To Data Attribute</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Data Attribute</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Data Attribute</em>' reference.
-     * @see #isSetRefersToDataAttribute()
-     * @see #unsetRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_RefersToDataAttribute()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByFCDA
-     * @model opposite="ReferredByFCDA" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    DataAttribute getRefersToDataAttribute();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Data Attribute</em>' reference.
-     * @see #isSetRefersToDataAttribute()
-     * @see #unsetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
-     * @generated
-     */
-    void setRefersToDataAttribute(DataAttribute value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
-     * @generated
-     */
-    void unsetRefersToDataAttribute();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Data Attribute</em>' reference is set.
-     * @see #unsetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
-     * @generated
-     */
-    boolean isSetRefersToDataAttribute();
-
-    /**
-     * Returns the value of the '<em><b>Refers To Data Object</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA <em>Referred By FCDA</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Data Object</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Data Object</em>' reference.
-     * @see #isSetRefersToDataObject()
-     * @see #unsetRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_RefersToDataObject()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA
-     * @model opposite="ReferredByFCDA" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    DataObject getRefersToDataObject();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Data Object</em>' reference.
-     * @see #isSetRefersToDataObject()
-     * @see #unsetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @generated
-     */
-    void setRefersToDataObject(DataObject value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @generated
-     */
-    void unsetRefersToDataObject();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Data Object</em>' reference is set.
-     * @see #unsetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @generated
-     */
-    boolean isSetRefersToDataObject();
-
-    /**
      * Returns the value of the '<em><b>Data Set</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getFCDA <em>FCDA</em>}'.
      * <!-- begin-user-doc -->
@@ -613,58 +503,40 @@ public interface FCDA extends ExplicitLinkResolver {
     void setDataSet( DataSet value );
 
     /**
-     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByFCDA <em>Referred By FCDA</em>}'.
+     * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByFCDA
+     * @return the value of the '<em>Refers To Abstract Data Attribute</em>' reference list.
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_RefersToAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA
      * @model opposite="ReferredByFCDA" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    AnyLN getRefersToAnyLN();
+    EList<AbstractDataAttribute> getRefersToAbstractDataAttribute();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void unsetRefersToAbstractDataAttribute();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
+     * @return whether the value of the '<em>Refers To Abstract Data Attribute</em>' reference list is set.
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void unsetRefersToAnyLN();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @generated
-     */
-    boolean isSetRefersToAnyLN();
+    boolean isSetRefersToAbstractDataAttribute();
 
 } // FCDA

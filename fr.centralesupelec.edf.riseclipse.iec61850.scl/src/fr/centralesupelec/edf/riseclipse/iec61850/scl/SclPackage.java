@@ -4234,22 +4234,13 @@ public interface SclPackage extends EPackage {
     int DATA_ATTRIBUTE__DESC = UN_NAMING__DESC;
 
     /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DATA_ATTRIBUTE__REFERRED_BY_FCDA = UN_NAMING_FEATURE_COUNT + 0;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_ATTRIBUTE__NAME = UN_NAMING_FEATURE_COUNT + 1;
+    int DATA_ATTRIBUTE__NAME = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
@@ -4258,7 +4249,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_ATTRIBUTE__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 2;
+    int DATA_ATTRIBUTE__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Data Attribute</em>' class.
@@ -4267,7 +4258,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
+    int DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Data Attribute</em>' class.
@@ -4331,15 +4322,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE__DESC = DATA_ATTRIBUTE__DESC;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA = DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4441,13 +4423,22 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE = DATA_ATTRIBUTE_FEATURE_COUNT + 8;
 
     /**
+     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA = DATA_ATTRIBUTE_FEATURE_COUNT + 9;
+
+    /**
      * The number of structural features of the '<em>Abstract Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 9;
+    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 10;
 
     /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
@@ -4511,15 +4502,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__DESC = ABSTRACT_DATA_ATTRIBUTE__DESC;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BDA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4621,6 +4603,15 @@ public interface SclPackage extends EPackage {
     int BDA__REFERS_TO_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE;
 
     /**
+     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
+
+    /**
      * The feature id for the '<em><b>DA Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4700,15 +4691,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__DESC = ABSTRACT_DATA_ATTRIBUTE__DESC;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -4808,6 +4790,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__REFERS_TO_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE;
+
+    /**
+     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -5071,22 +5062,13 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DATA_OBJECT__REFERRED_BY_FCDA = UN_NAMING_FEATURE_COUNT + 1;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_OBJECT__NAME = UN_NAMING_FEATURE_COUNT + 2;
+    int DATA_OBJECT__NAME = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
@@ -5095,7 +5077,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_OBJECT__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 3;
+    int DATA_OBJECT__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Data Object</em>' class.
@@ -5104,7 +5086,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_OBJECT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
+    int DATA_OBJECT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>Data Object</em>' class.
@@ -5177,15 +5159,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO__ACCESS_CONTROL = DATA_OBJECT__ACCESS_CONTROL;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO__REFERRED_BY_FCDA = DATA_OBJECT__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -6414,22 +6387,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__DATA_SET = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__REFERRED_BY_FCDA = UN_NAMING_FEATURE_COUNT + 10;
-
-    /**
      * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 11;
+    int ANY_LN__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Referred By Client LN</b></em>' reference list.
@@ -6438,7 +6402,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 12;
+    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
@@ -6447,7 +6411,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 13;
+    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
@@ -6456,7 +6420,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 14;
+    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Referred IED Name</b></em>' reference list.
@@ -6465,7 +6429,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_IED_NAME = UN_NAMING_FEATURE_COUNT + 15;
+    int ANY_LN__REFERRED_IED_NAME = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -6474,7 +6438,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The number of structural features of the '<em>Any LN</em>' class.
@@ -6483,7 +6447,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 17;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
 
     /**
      * The number of operations of the '<em>Any LN</em>' class.
@@ -8255,15 +8219,6 @@ public interface SclPackage extends EPackage {
     int DAI__DESC = DATA_ATTRIBUTE__DESC;
 
     /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DAI__REFERRED_BY_FCDA = DATA_ATTRIBUTE__REFERRED_BY_FCDA;
-
-    /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -8424,15 +8379,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DOI__ACCESS_CONTROL = DATA_OBJECT__ACCESS_CONTROL;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOI__REFERRED_BY_FCDA = DATA_OBJECT__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9183,40 +9129,22 @@ public interface SclPackage extends EPackage {
     int FCDA__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Refers To Data Attribute</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FCDA__REFERS_TO_DATA_ATTRIBUTE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
-
-    /**
-     * The feature id for the '<em><b>Refers To Data Object</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int FCDA__REFERS_TO_DATA_OBJECT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 9;
-
-    /**
      * The feature id for the '<em><b>Data Set</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FCDA__DATA_SET = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 10;
+    int FCDA__DATA_SET = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
 
     /**
-     * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FCDA__REFERS_TO_ANY_LN = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 11;
+    int FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>FCDA</em>' class.
@@ -9225,7 +9153,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 12;
+    int FCDA_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 10;
 
     /**
      * The number of operations of the '<em>FCDA</em>' class.
@@ -10876,15 +10804,6 @@ public interface SclPackage extends EPackage {
     int LN__DATA_SET = ANY_LN__DATA_SET;
 
     /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__REFERRED_BY_FCDA = ANY_LN__REFERRED_BY_FCDA;
-
-    /**
      * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11126,15 +11045,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__DATA_SET = ANY_LN__DATA_SET;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__REFERRED_BY_FCDA = ANY_LN__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
@@ -12359,15 +12269,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDI__DESC = DATA_ATTRIBUTE__DESC;
-
-    /**
-     * The feature id for the '<em><b>Referred By FCDA</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SDI__REFERRED_BY_FCDA = DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -20106,6 +20007,17 @@ public interface SclPackage extends EPackage {
     EReference getAbstractDataAttribute_RefersToDAType();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By FCDA</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA()
+     * @see #getAbstractDataAttribute()
+     * @generated
+     */
+    EReference getAbstractDataAttribute_ReferredByFCDA();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA <em>BDA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21746,17 +21658,6 @@ public interface SclPackage extends EPackage {
     EReference getAnyLN_DataSet();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByFCDA <em>Referred By FCDA</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By FCDA</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByFCDA()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EReference getAnyLN_ReferredByFCDA();
-
-    /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23162,28 +23063,6 @@ public interface SclPackage extends EPackage {
     EAttribute getFCDA_Prefix();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute <em>Refers To Data Attribute</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Data Attribute</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataAttribute()
-     * @see #getFCDA()
-     * @generated
-     */
-    EReference getFCDA_RefersToDataAttribute();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Data Object</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject()
-     * @see #getFCDA()
-     * @generated
-     */
-    EReference getFCDA_RefersToDataObject();
-
-    /**
      * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -23195,15 +23074,15 @@ public interface SclPackage extends EPackage {
     EReference getFCDA_DataSet();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN <em>Refers To Any LN</em>}'.
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAnyLN()
+     * @return the meta object for the reference list '<em>Refers To Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute()
      * @see #getFCDA()
      * @generated
      */
-    EReference getFCDA_RefersToAnyLN();
+    EReference getFCDA_RefersToAbstractDataAttribute();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling <em>File Handling</em>}'.
@@ -27551,17 +27430,6 @@ public interface SclPackage extends EPackage {
     EAttribute getDataObject_AccessControl();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA <em>Referred By FCDA</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By FCDA</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA()
-     * @see #getDataObject()
-     * @generated
-     */
-    EReference getDataObject_ReferredByFCDA();
-
-    /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getName <em>Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -27592,17 +27460,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EClass getDataAttribute();
-
-    /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By FCDA</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByFCDA()
-     * @see #getDataAttribute()
-     * @generated
-     */
-    EReference getDataAttribute_ReferredByFCDA();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getName <em>Name</em>}'.

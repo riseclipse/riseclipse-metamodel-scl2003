@@ -33,12 +33,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
@@ -61,6 +63,7 @@ import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getRefersToEnumType <em>Refers To Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getVal <em>Val</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getRefersToDAType <em>Refers To DA Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  * </ul>
  *
  * @generated
@@ -287,6 +290,16 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * @ordered
      */
     protected boolean refersToDATypeESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByFCDA() <em>Referred By FCDA</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByFCDA()
+     * @generated
+     * @ordered
+     */
+    protected EList<FCDA> referredByFCDA;
 
     /**
      * <!-- begin-user-doc -->
@@ -843,6 +856,39 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList<FCDA> getReferredByFCDA() {
+        if (referredByFCDA == null) {
+            referredByFCDA = new EObjectWithInverseEList.Unsettable.ManyInverse<FCDA>(FCDA.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+        }
+        return referredByFCDA;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByFCDA() {
+        if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByFCDA() {
+        return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -857,6 +903,8 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                 if (refersToDAType != null)
                     msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs);
                 return basicSetRefersToDAType((DAType)otherEnd, msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -875,6 +923,8 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                 return ((InternalEList<?>)getVal()).basicRemove(otherEnd, msgs);
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
                 return basicUnsetRefersToDAType(msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -905,6 +955,8 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                 return getVal();
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
                 return getRefersToDAType();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                return getReferredByFCDA();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -946,6 +998,10 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
                 setRefersToDAType((DAType)newValue);
                 return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                getReferredByFCDA().clear();
+                getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -985,6 +1041,9 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
                 unsetRefersToDAType();
                 return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                unsetReferredByFCDA();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1015,6 +1074,8 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                 return isSetVal();
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
                 return isSetRefersToDAType();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+                return isSetReferredByFCDA();
         }
         return super.eIsSet(featureID);
     }

@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -41,7 +40,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataAttributeImpl#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataAttributeImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataAttributeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
@@ -49,16 +47,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * @generated
  */
 public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttribute {
-    /**
-     * The cached value of the '{@link #getReferredByFCDA() <em>Referred By FCDA</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByFCDA()
-     * @generated
-     * @ordered
-     */
-    protected EList<FCDA> referredByFCDA;
-
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -113,39 +101,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     protected EClass eStaticClass() {
         return SclPackage.eINSTANCE.getDataAttribute();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EList<FCDA> getReferredByFCDA() {
-        if (referredByFCDA == null) {
-            referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE);
-        }
-        return referredByFCDA;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByFCDA() {
-        if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByFCDA() {
-        return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
     }
 
     /**
@@ -240,8 +195,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
             case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
         }
@@ -256,8 +209,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
             case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
                 return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
         }
@@ -272,8 +223,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return getReferredByFCDA();
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 return getName();
             case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
@@ -291,10 +240,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                getReferredByFCDA().clear();
-                getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
-                return;
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 setName((String)newValue);
                 return;
@@ -314,9 +259,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                unsetReferredByFCDA();
-                return;
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 unsetName();
                 return;
@@ -335,8 +277,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return isSetReferredByFCDA();
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 return isSetName();
             case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:

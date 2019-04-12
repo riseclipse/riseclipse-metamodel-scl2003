@@ -65,7 +65,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addLnClassPropertyDescriptor(object);
             addLnTypePropertyDescriptor(object);
             addRefersToLNodeTypePropertyDescriptor(object);
-            addReferredByFCDAPropertyDescriptor(object);
             addReferredByExtRefPropertyDescriptor(object);
             addReferredByClientLNPropertyDescriptor(object);
             addReferredByLogControlPropertyDescriptor(object);
@@ -156,28 +155,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
                  getString("_UI_AnyLN_RefersToLNodeType_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_RefersToLNodeType_feature", "_UI_AnyLN_type"),
                  SclPackage.eINSTANCE.getAnyLN_RefersToLNodeType(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By FCDA feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByFCDAPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByFCDA_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByFCDA_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByFCDA(),
                  true,
                  false,
                  true,

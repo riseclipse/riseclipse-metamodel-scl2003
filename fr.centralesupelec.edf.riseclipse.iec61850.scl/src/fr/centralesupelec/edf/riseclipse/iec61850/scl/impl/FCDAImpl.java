@@ -18,10 +18,9 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import java.util.Collections;
 import java.util.List;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
@@ -40,13 +39,17 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,10 +67,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToDataObject <em>Refers To Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getDataSet <em>Data Set</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -306,61 +307,14 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
+     * The cached value of the '{@link #getRefersToAbstractDataAttribute() <em>Refers To Abstract Data Attribute</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
      * @generated
      * @ordered
      */
-    protected DataAttribute refersToDataAttribute;
-
-    /**
-     * This is true if the Refers To Data Attribute reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDataAttributeESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToDataObject()
-     * @generated
-     * @ordered
-     */
-    protected DataObject refersToDataObject;
-
-    /**
-     * This is true if the Refers To Data Object reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDataObjectESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
-    protected AnyLN refersToAnyLN;
-
-    /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToAnyLNESet;
+    protected EList<AbstractDataAttribute> refersToAbstractDataAttribute;
 
     /**
      * <!-- begin-user-doc -->
@@ -787,204 +741,6 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public DataAttribute getRefersToDataAttribute() {
-        return refersToDataAttribute;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDataAttribute(DataAttribute newRefersToDataAttribute, NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = newRefersToDataAttribute;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
-        if (newRefersToDataAttribute != refersToDataAttribute) {
-            NotificationChain msgs = null;
-            if (refersToDataAttribute != null)
-                msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            if (newRefersToDataAttribute != null)
-                msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDataAttribute(NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = null;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToDataAttribute() {
-        if (refersToDataAttribute != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicUnsetRefersToDataAttribute(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToDataAttribute() {
-        return refersToDataAttributeESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public DataObject getRefersToDataObject() {
-        return refersToDataObject;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDataObject(DataObject newRefersToDataObject, NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = newRefersToDataObject;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToDataObject(DataObject newRefersToDataObject) {
-        if (newRefersToDataObject != refersToDataObject) {
-            NotificationChain msgs = null;
-            if (refersToDataObject != null)
-                msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            if (newRefersToDataObject != null)
-                msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDataObject(NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = null;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToDataObject() {
-        if (refersToDataObject != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicUnsetRefersToDataObject(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToDataObject() {
-        return refersToDataObjectESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public DataSet getDataSet() {
         if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
         return (DataSet)eInternalContainer();
@@ -1028,25 +784,11 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+    public EList<AbstractDataAttribute> getRefersToAbstractDataAttribute() {
+        if (refersToAbstractDataAttribute == null) {
+            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA);
         }
-        return msgs;
+        return refersToAbstractDataAttribute;
     }
 
     /**
@@ -1055,39 +797,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+    public void unsetRefersToAbstractDataAttribute() {
+        if (refersToAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).unset();
     }
 
     /**
@@ -1096,19 +807,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
+    public boolean isSetRefersToAbstractDataAttribute() {
+        return refersToAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).isSet();
     }
 
     /**
@@ -1116,35 +816,16 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
+    @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                if (refersToDataAttribute != null)
-                    msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-                return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                if (refersToDataObject != null)
-                    msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-                return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
             case SclPackage.FCDA__DATA_SET:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetDataSet((DataSet)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getRefersToAbstractDataAttribute()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -1157,14 +838,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return basicUnsetRefersToDataAttribute(msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return basicUnsetRefersToDataObject(msgs);
             case SclPackage.FCDA__DATA_SET:
                 return basicSetDataSet(null, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<?>)getRefersToAbstractDataAttribute()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -1207,14 +884,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return getLnInst();
             case SclPackage.FCDA__PREFIX:
                 return getPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return getRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return getRefersToDataObject();
             case SclPackage.FCDA__DATA_SET:
                 return getDataSet();
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return getRefersToAbstractDataAttribute();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1224,6 +897,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
@@ -1251,17 +925,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 setPrefix((String)newValue);
                 return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                setRefersToDataAttribute((DataAttribute)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                setRefersToDataObject((DataObject)newValue);
-                return;
             case SclPackage.FCDA__DATA_SET:
                 setDataSet((DataSet)newValue);
                 return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                getRefersToAbstractDataAttribute().clear();
+                getRefersToAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -1299,17 +968,11 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 unsetPrefix();
                 return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                unsetRefersToDataAttribute();
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                unsetRefersToDataObject();
-                return;
             case SclPackage.FCDA__DATA_SET:
                 setDataSet((DataSet)null);
                 return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                unsetRefersToAbstractDataAttribute();
                 return;
         }
         super.eUnset(featureID);
@@ -1339,14 +1002,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return isSetLnInst();
             case SclPackage.FCDA__PREFIX:
                 return isSetPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return isSetRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return isSetRefersToDataObject();
             case SclPackage.FCDA__DATA_SET:
                 return getDataSet() != null;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return isSetRefersToAbstractDataAttribute();
         }
         return super.eIsSet(featureID);
     }
@@ -1382,7 +1041,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doResolveLinks() {/*
         // see Issue #13
         super.doResolveLinks();
         
@@ -1717,6 +1376,6 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                         "cannot find " + mess5 + " because there is no DOType" );
             }
         }
-    }
+    */}
 
 } //FCDAImpl

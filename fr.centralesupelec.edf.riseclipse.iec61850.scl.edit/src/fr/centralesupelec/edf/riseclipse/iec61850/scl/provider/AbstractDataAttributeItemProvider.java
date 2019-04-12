@@ -69,6 +69,7 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
             addValKindPropertyDescriptor(object);
             addRefersToEnumTypePropertyDescriptor(object);
             addRefersToDATypePropertyDescriptor(object);
+            addReferredByFCDAPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -241,6 +242,28 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
                  getString("_UI_AbstractDataAttribute_RefersToDAType_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToDAType_feature", "_UI_AbstractDataAttribute_type"),
                  SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToDAType(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By FCDA feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByFCDAPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_ReferredByFCDA_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByFCDA_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByFCDA(),
                  true,
                  false,
                  true,

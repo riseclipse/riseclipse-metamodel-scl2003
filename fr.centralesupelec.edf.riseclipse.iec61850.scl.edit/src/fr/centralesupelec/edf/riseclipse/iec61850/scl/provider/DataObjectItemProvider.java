@@ -62,7 +62,6 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
             super.getPropertyDescriptors(object);
 
             addAccessControlPropertyDescriptor(object);
-            addReferredByFCDAPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
             addReferredByExtRefPropertyDescriptor(object);
         }
@@ -87,28 +86,6 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By FCDA feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByFCDAPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DataObject_ReferredByFCDA_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DataObject_ReferredByFCDA_feature", "_UI_DataObject_type"),
-                 SclPackage.eINSTANCE.getDataObject_ReferredByFCDA(),
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }
