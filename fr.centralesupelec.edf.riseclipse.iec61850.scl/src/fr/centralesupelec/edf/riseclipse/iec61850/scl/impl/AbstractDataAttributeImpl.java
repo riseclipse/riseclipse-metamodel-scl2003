@@ -1126,6 +1126,8 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
         DataTypeTemplates dtt = get_DataTypeTemplates();
         if( dtt == null ) return;
 
+        String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
+
         if( "Enum".equals( getBType() ) ) {
             
             // find an EnumType with
@@ -1137,17 +1139,17 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                     .filter( et -> getType().equals( et.getId() ))
                     .collect( Collectors.toList() );
 
-            String mess = "EnumType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
+            String mess = "EnumType( id = " + getType() + " )";
             if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "cannot find " + mess );
                 return;
             }
             if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "found several " + mess );
                 return;
             }
-            AbstractRiseClipseConsole.getConsole().verbose( "found " + mess );
             setRefersToEnumType( res.get( 0 ) );
+            AbstractRiseClipseConsole.getConsole().verbose( messagePrefix + "found " + mess + " on line " + getRefersToEnumType().getLineNumber() );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -1160,17 +1162,17 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                     .filter( et -> getType().equals( et.getId() ))
                     .collect( Collectors.toList() );
                     
-            String mess = "DAType( id = " + getType() + " ) for DA on line " + getLineNumber() + " )";
+            String mess = "DAType( id = " + getType() + " )";
             if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "cannot find " + mess );
                 return;
             }
             if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "found several " + mess );
                 return;
             }
-            AbstractRiseClipseConsole.getConsole().verbose( "found " + mess );
             setRefersToDAType( res.get( 0 ) );
+            AbstractRiseClipseConsole.getConsole().verbose( messagePrefix + "found " + mess + " on line " + getRefersToDAType().getLineNumber() );
         }
     }
 
