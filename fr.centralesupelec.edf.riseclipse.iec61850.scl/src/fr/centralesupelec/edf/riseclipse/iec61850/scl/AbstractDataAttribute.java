@@ -37,6 +37,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getValKind <em>Val Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToEnumType <em>Refers To Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getVal <em>Val</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute()
@@ -463,5 +465,93 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @generated
      */
     boolean isSetVal();
+
+    /**
+     * Returns the value of the '<em><b>Refers To DA Type</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To DA Type</em>' reference.
+     * @see #isSetRefersToDAType()
+     * @see #unsetRefersToDAType()
+     * @see #setRefersToDAType(DAType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_RefersToDAType()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute
+     * @model opposite="ReferredByAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    DAType getRefersToDAType();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To DA Type</em>' reference.
+     * @see #isSetRefersToDAType()
+     * @see #unsetRefersToDAType()
+     * @see #getRefersToDAType()
+     * @generated
+     */
+    void setRefersToDAType(DAType value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToDAType()
+     * @see #getRefersToDAType()
+     * @see #setRefersToDAType(DAType)
+     * @generated
+     */
+    void unsetRefersToDAType();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To DA Type</em>' reference is set.
+     * @see #unsetRefersToDAType()
+     * @see #getRefersToDAType()
+     * @see #setRefersToDAType(DAType)
+     * @generated
+     */
+    boolean isSetRefersToDAType();
+
+    /**
+     * Returns the value of the '<em><b>Referred By FCDA</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By FCDA</em>' reference list.
+     * @see #isSetReferredByFCDA()
+     * @see #unsetReferredByFCDA()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_ReferredByFCDA()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute
+     * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<FCDA> getReferredByFCDA();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByFCDA()
+     * @see #getReferredByFCDA()
+     * @generated
+     */
+    void unsetReferredByFCDA();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By FCDA</em>' reference list is set.
+     * @see #unsetReferredByFCDA()
+     * @see #getReferredByFCDA()
+     * @generated
+     */
+    boolean isSetReferredByFCDA();
 
 } // AbstractDataAttribute

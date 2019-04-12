@@ -18,35 +18,38 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collections;
-import java.util.List;
-
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,10 +67,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToDataObject <em>Refers To Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getDataSet <em>Data Set</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -306,61 +307,14 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     protected boolean prefixESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDataAttribute() <em>Refers To Data Attribute</em>}' reference.
+     * The cached value of the '{@link #getRefersToAbstractDataAttribute() <em>Refers To Abstract Data Attribute</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
      * @generated
      * @ordered
      */
-    protected DataAttribute refersToDataAttribute;
-
-    /**
-     * This is true if the Refers To Data Attribute reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDataAttributeESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToDataObject() <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToDataObject()
-     * @generated
-     * @ordered
-     */
-    protected DataObject refersToDataObject;
-
-    /**
-     * This is true if the Refers To Data Object reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDataObjectESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToAnyLN() <em>Refers To Any LN</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToAnyLN()
-     * @generated
-     * @ordered
-     */
-    protected AnyLN refersToAnyLN;
-
-    /**
-     * This is true if the Refers To Any LN reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToAnyLNESet;
+    protected EList<AbstractDataAttribute> refersToAbstractDataAttribute;
 
     /**
      * <!-- begin-user-doc -->
@@ -787,204 +741,6 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public DataAttribute getRefersToDataAttribute() {
-        return refersToDataAttribute;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDataAttribute(DataAttribute newRefersToDataAttribute, NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = newRefersToDataAttribute;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToDataAttribute(DataAttribute newRefersToDataAttribute) {
-        if (newRefersToDataAttribute != refersToDataAttribute) {
-            NotificationChain msgs = null;
-            if (refersToDataAttribute != null)
-                msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            if (newRefersToDataAttribute != null)
-                msgs = ((InternalEObject)newRefersToDataAttribute).eInverseAdd(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicSetRefersToDataAttribute(newRefersToDataAttribute, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, newRefersToDataAttribute, newRefersToDataAttribute, !oldRefersToDataAttributeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDataAttribute(NotificationChain msgs) {
-        DataAttribute oldRefersToDataAttribute = refersToDataAttribute;
-        refersToDataAttribute = null;
-        boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-        refersToDataAttributeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, oldRefersToDataAttribute, null, oldRefersToDataAttributeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToDataAttribute() {
-        if (refersToDataAttribute != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-            msgs = basicUnsetRefersToDataAttribute(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataAttributeESet = refersToDataAttributeESet;
-            refersToDataAttributeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE, null, null, oldRefersToDataAttributeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToDataAttribute() {
-        return refersToDataAttributeESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public DataObject getRefersToDataObject() {
-        return refersToDataObject;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDataObject(DataObject newRefersToDataObject, NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = newRefersToDataObject;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToDataObject(DataObject newRefersToDataObject) {
-        if (newRefersToDataObject != refersToDataObject) {
-            NotificationChain msgs = null;
-            if (refersToDataObject != null)
-                msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            if (newRefersToDataObject != null)
-                msgs = ((InternalEObject)newRefersToDataObject).eInverseAdd(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicSetRefersToDataObject(newRefersToDataObject, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, newRefersToDataObject, newRefersToDataObject, !oldRefersToDataObjectESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDataObject(NotificationChain msgs) {
-        DataObject oldRefersToDataObject = refersToDataObject;
-        refersToDataObject = null;
-        boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-        refersToDataObjectESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, oldRefersToDataObject, null, oldRefersToDataObjectESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToDataObject() {
-        if (refersToDataObject != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-            msgs = basicUnsetRefersToDataObject(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDataObjectESet = refersToDataObjectESet;
-            refersToDataObjectESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_DATA_OBJECT, null, null, oldRefersToDataObjectESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToDataObject() {
-        return refersToDataObjectESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public DataSet getDataSet() {
         if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
         return (DataSet)eInternalContainer();
@@ -1028,25 +784,11 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public AnyLN getRefersToAnyLN() {
-        return refersToAnyLN;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = newRefersToAnyLN;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+    public EList<AbstractDataAttribute> getRefersToAbstractDataAttribute() {
+        if (refersToAbstractDataAttribute == null) {
+            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA);
         }
-        return msgs;
+        return refersToAbstractDataAttribute;
     }
 
     /**
@@ -1055,39 +797,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
-            NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
-        AnyLN oldRefersToAnyLN = refersToAnyLN;
-        refersToAnyLN = null;
-        boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-        refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+    public void unsetRefersToAbstractDataAttribute() {
+        if (refersToAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).unset();
     }
 
     /**
@@ -1096,19 +807,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToAnyLNESet = refersToAnyLNESet;
-            refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
-        }
+    public boolean isSetRefersToAbstractDataAttribute() {
+        return refersToAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).isSet();
     }
 
     /**
@@ -1116,35 +816,16 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public boolean isSetRefersToAnyLN() {
-        return refersToAnyLNESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
+    @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                if (refersToDataAttribute != null)
-                    msgs = ((InternalEObject)refersToDataAttribute).eInverseRemove(this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_FCDA, DataAttribute.class, msgs);
-                return basicSetRefersToDataAttribute((DataAttribute)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                if (refersToDataObject != null)
-                    msgs = ((InternalEObject)refersToDataObject).eInverseRemove(this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, DataObject.class, msgs);
-                return basicSetRefersToDataObject((DataObject)otherEnd, msgs);
             case SclPackage.FCDA__DATA_SET:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetDataSet((DataSet)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_FCDA, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getRefersToAbstractDataAttribute()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -1157,14 +838,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return basicUnsetRefersToDataAttribute(msgs);
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return basicUnsetRefersToDataObject(msgs);
             case SclPackage.FCDA__DATA_SET:
                 return basicSetDataSet(null, msgs);
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return ((InternalEList<?>)getRefersToAbstractDataAttribute()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -1207,14 +884,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return getLnInst();
             case SclPackage.FCDA__PREFIX:
                 return getPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return getRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return getRefersToDataObject();
             case SclPackage.FCDA__DATA_SET:
                 return getDataSet();
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return getRefersToAbstractDataAttribute();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1224,6 +897,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
@@ -1251,17 +925,12 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 setPrefix((String)newValue);
                 return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                setRefersToDataAttribute((DataAttribute)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                setRefersToDataObject((DataObject)newValue);
-                return;
             case SclPackage.FCDA__DATA_SET:
                 setDataSet((DataSet)newValue);
                 return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                getRefersToAbstractDataAttribute().clear();
+                getRefersToAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -1299,17 +968,11 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 unsetPrefix();
                 return;
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                unsetRefersToDataAttribute();
-                return;
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                unsetRefersToDataObject();
-                return;
             case SclPackage.FCDA__DATA_SET:
                 setDataSet((DataSet)null);
                 return;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                unsetRefersToAbstractDataAttribute();
                 return;
         }
         super.eUnset(featureID);
@@ -1339,14 +1002,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return isSetLnInst();
             case SclPackage.FCDA__PREFIX:
                 return isSetPrefix();
-            case SclPackage.FCDA__REFERS_TO_DATA_ATTRIBUTE:
-                return isSetRefersToDataAttribute();
-            case SclPackage.FCDA__REFERS_TO_DATA_OBJECT:
-                return isSetRefersToDataObject();
             case SclPackage.FCDA__DATA_SET:
                 return getDataSet() != null;
-            case SclPackage.FCDA__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
+            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return isSetRefersToAbstractDataAttribute();
         }
         return super.eIsSet(featureID);
     }
@@ -1386,6 +1045,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         // see Issue #13
         super.doResolveLinks();
         
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
         // lnClass  LN class of the LN where the DO resides; shall always be specified except for GSSE DataLabel empty string
@@ -1404,319 +1065,209 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
 
         if( getLdInst() == null ) return;
         if( getLnClass() == null ) return;
-
-        // We need the IED to find the LN
+        if( getDoName() == null ) return;
+        
+        // The LN we are looking for is in the same IED/Server
         if( getDataSet()                         == null ) return;
         if( getDataSet().getAnyLN()              == null ) return;
         if( getDataSet().getAnyLN().getLDevice() == null ) return;
-        IED ied = getDataSet().getAnyLN().getLDevice().getIED();
-        if( ied == null ) return;
+        Server server = getDataSet().getAnyLN().getLDevice().getServer();
+        if( server == null ) return;
+        IED ied = server.getAccessPoint().getIED();
+        
+        String messagePrefix = "while resolving link from FCDA on line " + getLineNumber()
+                             + " (in ied = " + ied.getName() + " ): ";
 
-        // find inside an LDevice with
-        //   LDevice.name == FCDA.ldInst
-        SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
+        List< LDevice > res1 = 
+               server
+              .getLDevice()
+              .stream()
+              .filter( ld -> getLdInst().equals( ld.getInst() ))
+              .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseLDevice( LDevice object ) {
-                return getLdInst().equals( object.getInst() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< LDevice > res1 = deepSearchObjects( ied.getAccessPoint(), s1 );
-        String mess1 = "LDevice( inst = " + getLdInst() + " ) for FCDA on line " + getLineNumber()
-                + " ( in ied = " + ied.getName() + " )";
-        LDevice lDevice = null;
+        String mess1 = "LDevice( inst = " + getLdInst() + " ))";
         if( res1.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+            console.error( messagePrefix + "cannot find " + mess1 );
             return;
         }
         if( res1.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+            console.error( messagePrefix + "found several " + mess1 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-        lDevice = res1.get( 0 );
+        LDevice lDevice = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
         
-        if( "LLN0".equals( getLnClass() ) ) {
+        AnyLN anyLN = null;
+        if( "LLN0".equals( getLnClass() )) {
             if( lDevice.getLN0() == null ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find LN0 for FCDA on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )" );
+                console.error( messagePrefix + "cannot find LN0" );
                 return;
             }
-            setRefersToAnyLN( lDevice.getLN0() );
+            anyLN = lDevice.getLN0();
         }
         else {
             if( getLnInst() == null ) return;
-            // prefix is optional
-            //if( getPrefix() == null ) return;
-
             // find inside an LN with
             //   LN.lnClass == FCDA.lnClass
             //   LN.prefix == FCDA.prefix
             //   LN.inst == FCDA.lnInst
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseLN( LN object ) {
-                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
-                        if( object.getPrefix() == null ) return getPrefix() == null;
-                        return getPrefix().equals( object.getPrefix() );
-                    }
-                    return false;
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LN > res2 = shallowSearchObjects( lDevice.getLN(), s2 );
-            String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for FCDA on line "
-                    + getLineNumber() + " ( in ied = " + ied.getName() + " )";
+            List< LN > res2 = lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
+            
+            String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
             if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                console.error( messagePrefix + "cannot find " + mess2 );
                 return;
             }
             if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                console.error( messagePrefix + "found several " + mess2 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-            setRefersToAnyLN( res2.get( 0 ) );
+            anyLN = res2.get( 0 );
+            console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
         }
-        getRefersToAnyLN().resolveLinks();
+        if( anyLN == null ) return;
+        anyLN.resolveLinks();
         
-        if( getDoName() == null ) return;
+        if( anyLN.getRefersToLNodeType() == null ) return;
+        console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
         
-        // names of the SDI between DOI and DAI may be in doName, daName or both ! 
-
+        // doName and daName are structured using . as separator
+        // The first doName let us find the DO inside the LNodeType
+        // referred by the LN
+        // The type attribute of the DO give us the DOType with its id attribute
+        // If doName is simple, use daName to find the DA in the DOType
+        // If doName is structured, find the SDO and its DOType using remaining doName
+        
         final String[] doNames = getDoName().split( "\\.", -1 );
-        final String[] daNames = getDaName() == null ? null : getDaName().split( "\\.", -1 );
-        final String[] sdiNames = new String[doNames.length + ( daNames == null ? 0 : daNames.length - 2 )];
-        {
-            int sdix = 0;
-            for( int i = 1; i < doNames.length;     ++i ) sdiNames[sdix++] = doNames[i];
-            if( daNames != null ) for( int i = 0; i < daNames.length - 1; ++i ) sdiNames[sdix++] = daNames[i];
-        }
+        List< DO > res3a =
+                 anyLN
+                .getRefersToLNodeType()
+                .getDO()
+                .stream()
+                .filter( do2 -> doNames[0].equals( do2.getName() ))
+                .collect( Collectors.toList() );
         
-        SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseDO( DO object ) {
-                return doNames[0].equals( object.getName() );
-            }
-
-            @Override
-            public Boolean caseDOI( DOI object ) {
-                return doNames[0].equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< DataObject > res3 = shallowSearchObjects( Collections.< DataObject > unmodifiableList( getRefersToAnyLN().getDOI() ), s3 );
-        String mess3 = "DO or DOI( name = " + getDoName() + " ) for FCDA on line " + getLineNumber()
-                + " ( in ied = " + ied.getName() + " )";
-        if( res3.isEmpty() ) {
-            // if we don't find the DOI, we have to look for a DO in the LNodeType if any
-            if( getRefersToAnyLN().getRefersToLNodeType() != null ) {
-                res3 = shallowSearchObjects(
-                        Collections.< DataObject > unmodifiableList( getRefersToAnyLN().getRefersToLNodeType().getDO() ), s3 );
-            }
-        }
-        if( res3.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+        String mess3a = "DO ( name = " + doNames[0] + " )";
+        if( res3a.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess3a );
             return;
         }
-        if( res3.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+        if( res3a.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess3a );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-        setRefersToDataObject( res3.get( 0 ) );
+        console.verbose( messagePrefix + "found " + mess3a + " on line " + res3a.get( 0 ).getLineNumber() );
         
-        if( daNames == null ) return;
-
-        if( getRefersToDataObject() instanceof DOI ) {
-            DOI doi = ( DOI ) getRefersToDataObject();
-            // Look inside SDI if needed
-            SDI sdi = null;
-            for( int i = 0; i < sdiNames.length; ++i ) {
-
-                final String sdiName = sdiNames[i];
-                SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseSDI( SDI object ) {
-                        return sdiName.equals( object.getName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< SDI > res4 = null;
-                if( sdi == null ) {
-                    res4 = shallowSearchObjects( doi.getSDI(), s4 );
-                }
-                else {
-                    res4 = shallowSearchObjects( sdi.getSubSDI(), s4 );
-                }
-                String mess4 = "SDI( name = " + sdiNames[i] + " ) for FCDA on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )";
-                if( res4.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
-                    return;
-                }
-                if( res4.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
-                    return;
-                }
-                //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                sdi = res4.get( 0 );
-            }
-
-            SclSwitch< Boolean > s5 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseDAI( DAI object ) {
-                    return daNames[daNames.length - 1].equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< DataAttribute > res5 = null;
-            if( sdi == null ) {
-                res5 = shallowSearchObjects( Collections.< DataAttribute > unmodifiableList( doi.getDAI() ), s5 );
-            }
-            else {
-                res5 = shallowSearchObjects( Collections.< DataAttribute > unmodifiableList( sdi.getDAI() ), s5 );
-            }
-            String mess5 = "DAI( name = " + getDaName() + " ) for FCDA on line " + getLineNumber() + " ( in ied = "
-                    + ied.getName() + " )";
-            if( res5.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
+        res3a.get( 0 ).resolveLinks();
+        DOType doType = res3a.get( 0 ).getRefersToDOType();
+        if( doType == null ) return;
+        console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
+        
+        for( int i = 1; i < doNames.length; ++i ) {
+            String name = doNames[i];
+            List< SDO > res3b =
+                    doType
+                    .getSDO()
+                    .stream()
+                    .filter( sdo ->  name.equals( sdo.getName() ))
+                    .collect( Collectors.toList() );
+            
+            String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
+            if( res3b.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess3b );
                 return;
             }
-            if( res5.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
+            if( res3b.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess3b );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToDataAttribute( res5.get( 0 ) );
+            console.verbose( messagePrefix + "found " + mess3b + " on line " + res3b.get( 0 ).getLineNumber() );
+
+            res3b.get( 0 ).resolveLinks();
+            doType = res3b.get( 0 ).getRefersToDOType();
+            if( doType == null ) return;
+            console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
         }
-
+        
+        if( getDaName() != null ) {
+            // The first daName gives us the DA inside the DOType
+            // If daName is structured, find the DAType and its BDA using remaining doName
+            
+            final String[] daNames = getDaName().split( "\\.", -1 );
+            List< DA > res4a =
+                     doType
+                    .getDA()
+                    .stream()
+                    .filter(  da -> da.getName().equals( daNames[0] ))
+                    .collect( Collectors.toList() );
+            
+            String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
+            if( res4a.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess4a );
+                return;
+            }
+            if( res4a.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess4a );
+                return;
+            }
+            AbstractDataAttribute da = res4a.get( 0 );
+            console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
+            
+            for( int i = 1; i < daNames.length; ++i ) {
+                da.resolveLinks();
+                
+                String name = daNames[i];
+                List< BDA > res4b =
+                        da
+                        .getRefersToDAType()
+                        .getBDA()
+                        .stream()
+                        .filter(  bda -> name.equals(  bda.getName() ))
+                        .collect( Collectors.toList() );
+                        
+                String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
+                if( res4b.isEmpty() ) {
+                    console.error( messagePrefix + "cannot find " + mess4b );
+                    return;
+                }
+                if( res4b.size() > 1 ) {
+                    console.error( messagePrefix + "found several " + mess4b );
+                    return;
+                }
+                da = res4b.get( 0 );
+                console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
+            }
+            // TODO: do we have to check if fc is right ?
+            // TODO: ix is ignored !
+            
+            console.info( "FCDA (line " + getLineNumber() + ") refers to AbstractDataAttribute " + da.getName() + " (line " + da.getLineNumber() + ")" );
+            getRefersToAbstractDataAttribute().add( da );
+        }
+        
         else {
-            // We have a DO, look for DA in DOType
-            DO do_ = ( DO ) getRefersToDataObject();
-            // Explicit link from DO to DOType may not be set
-            do_.resolveLinks();
-            if( do_.getRefersToDOType() != null ) {
-                // daName may reference a BDA inside DAType
-                // find an DA with
-                //   DA.name      == FCDA.daName[0]
-                SclSwitch< Boolean > s5 = new SclSwitch< Boolean >() {
-
-                    @Override
-                    public Boolean caseDA( DA object ) {
-                        return daNames[0].equals( object.getName() );
-                    }
-
-                    @Override
-                    public Boolean defaultCase( EObject object ) {
-                        return false;
-                    }
-
-                };
-
-                List< DA > res5 = shallowSearchObjects( do_.getRefersToDOType().getDA(), s5 );
-                String mess5 = "DA( name = " + daNames[0] + " ) for FCDA on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )";
-                if( res5.isEmpty() ) {
-                    AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
-                    return;
+            // daName – if missing, all attributes with functional characteristic given by fc are selected.
+            if( getFc() == null ) return;
+            
+            doType
+            .getDA()
+            .stream()
+            .filter(  da -> da.getFc().equals( getFc() ))
+            .collect( Collectors.toCollection(() -> getRefersToAbstractDataAttribute() ));
+            
+            if( getRefersToAbstractDataAttribute().size() > 0 ) {
+                for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
+                    console.info( "FCDA (line " + getLineNumber() + ") refers to AbstractDataAttribute " + a.getName() + " (line " + a.getLineNumber() + ")" );
                 }
-                if( res5.size() > 1 ) {
-                    AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
-                    return;
-                }
-                else {
-                    //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-                    // Look for a BDA
-                    if( daNames.length > 1 ) {
-                        // Explicit link from DA to DAType may not be set
-                        res5.get( 0 ).resolveLinks();
-
-                        if( res5.get( 0 ).getRefersToDAType() != null ) {
-                            SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
-
-                                @Override
-                                public Boolean caseBDA( BDA object ) {
-                                    return daNames[1].equals( object.getName() );
-                                }
-
-                                @Override
-                                public Boolean defaultCase( EObject object ) {
-                                    return false;
-                                }
-
-                            };
-
-                            List< BDA > res6 = shallowSearchObjects( res5.get( 0 ).getRefersToDAType().getBDA(), s6 );
-                            String mess6 = "BDA( name = " + daNames[1] + " ) for FCDA on line " + getLineNumber()
-                                    + " ( in ied = " + ied.getName() + " )";
-                            if( res6.isEmpty() ) {
-                                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
-                                return;
-                            }
-                            if( res6.size() > 1 ) {
-                                AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
-                                return;
-                            }
-                            setRefersToDataAttribute( res6.get( 0 ) );
-                        }
-                        else {
-                            String mess6 = "DA( name = " + getDaName() + " ) for FCDA on line " + getLineNumber()
-                                    + " ( in ied = " + ied.getName() + " )";
-                            AbstractRiseClipseConsole.getConsole().warning(
-                                    "cannot find BDA for " + mess6
-                                            + " because there is no DAType, FCDA will reference DA" );
-                            setRefersToDataAttribute( res5.get( 0 ) );
-                        }
-                    }
-                    else {
-                        setRefersToDataAttribute( res5.get( 0 ) );
-                    }
-                }
-
             }
             else {
-                String mess5 = "DA( name = " + getDaName() + " ) for FCDA on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )";
-                AbstractRiseClipseConsole.getConsole().error(
-                        "cannot find " + mess5 + " because there is no DOType" );
+                console.error( "FCDA (line " + getLineNumber() + ") does not refer to any AbstractDataAttribute" );
             }
         }
+
     }
 
 } //FCDAImpl

@@ -259,20 +259,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataAttribute/valKind"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/RefersToEnumType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/Val"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/RefersToDAType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredByFCDA"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BDA">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BDA/DAType"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DA/fc"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DA/RefersToDAType"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DA/DOType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DA/ProtNs"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DAType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAType/iedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/BDA"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ReferredByDA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ReferredByAbstractDataAttribute"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAType/DataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ProtNs"/>
     </genClasses>
@@ -364,7 +365,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReportControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/LogControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/DataSet"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByFCDA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByExtRef"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByClientLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLogControl"/>
@@ -520,10 +520,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/lnClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/lnInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/prefix"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToDataAttribute"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToDataObject"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/DataSet"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToAnyLN"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToAbstractDataAttribute"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FileHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftp"/>
@@ -1000,12 +998,10 @@
     <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
     <genClasses image="false" ecoreClass="SCL.ecore#//DataObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataObject/accessControl"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataObject/ReferredByFCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataObject/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataObject/ReferredByExtRef"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//DataAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataAttribute/ReferredByFCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataAttribute/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataAttribute/ReferredByExtRef"/>
     </genClasses>

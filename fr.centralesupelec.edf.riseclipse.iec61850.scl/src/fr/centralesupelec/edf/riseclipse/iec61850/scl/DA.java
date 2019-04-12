@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getFc <em>Fc</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
@@ -95,61 +94,6 @@ public interface DA extends AbstractDataAttribute, AgDATrgOp {
      * @generated
      */
     boolean isSetFc();
-
-    /**
-     * Returns the value of the '<em><b>Refers To DA Type</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA <em>Referred By DA</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To DA Type</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To DA Type</em>' reference.
-     * @see #isSetRefersToDAType()
-     * @see #unsetRefersToDAType()
-     * @see #setRefersToDAType(DAType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_RefersToDAType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByDA
-     * @model opposite="ReferredByDA" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    DAType getRefersToDAType();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To DA Type</em>' reference.
-     * @see #isSetRefersToDAType()
-     * @see #unsetRefersToDAType()
-     * @see #getRefersToDAType()
-     * @generated
-     */
-    void setRefersToDAType(DAType value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToDAType()
-     * @see #getRefersToDAType()
-     * @see #setRefersToDAType(DAType)
-     * @generated
-     */
-    void unsetRefersToDAType();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getRefersToDAType <em>Refers To DA Type</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To DA Type</em>' reference is set.
-     * @see #unsetRefersToDAType()
-     * @see #getRefersToDAType()
-     * @see #setRefersToDAType(DAType)
-     * @generated
-     */
-    boolean isSetRefersToDAType();
 
     /**
      * Returns the value of the '<em><b>DO Type</b></em>' container reference.

@@ -68,9 +68,7 @@ public class FCDAItemProvider
             addLnClassPropertyDescriptor(object);
             addLnInstPropertyDescriptor(object);
             addPrefixPropertyDescriptor(object);
-            addRefersToDataAttributePropertyDescriptor(object);
-            addRefersToDataObjectPropertyDescriptor(object);
-            addRefersToAnyLNPropertyDescriptor(object);
+            addRefersToAbstractDataAttributePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -252,63 +250,19 @@ public class FCDAItemProvider
     }
 
     /**
-     * This adds a property descriptor for the Refers To Data Attribute feature.
+     * This adds a property descriptor for the Refers To Abstract Data Attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToDataAttributePropertyDescriptor(Object object) {
+    protected void addRefersToAbstractDataAttributePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_FCDA_RefersToDataAttribute_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_FCDA_RefersToDataAttribute_feature", "_UI_FCDA_type"),
-                 SclPackage.eINSTANCE.getFCDA_RefersToDataAttribute(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Refers To Data Object feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addRefersToDataObjectPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_FCDA_RefersToDataObject_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_FCDA_RefersToDataObject_feature", "_UI_FCDA_type"),
-                 SclPackage.eINSTANCE.getFCDA_RefersToDataObject(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Refers To Any LN feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addRefersToAnyLNPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_FCDA_RefersToAnyLN_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_FCDA_RefersToAnyLN_feature", "_UI_FCDA_type"),
-                 SclPackage.eINSTANCE.getFCDA_RefersToAnyLN(),
+                 getString("_UI_FCDA_RefersToAbstractDataAttribute_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_FCDA_RefersToAbstractDataAttribute_feature", "_UI_FCDA_type"),
+                 SclPackage.eINSTANCE.getFCDA_RefersToAbstractDataAttribute(),
                  true,
                  false,
                  true,

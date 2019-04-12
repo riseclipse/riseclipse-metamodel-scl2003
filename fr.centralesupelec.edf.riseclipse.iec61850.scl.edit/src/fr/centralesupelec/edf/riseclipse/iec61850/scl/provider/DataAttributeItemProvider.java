@@ -61,33 +61,10 @@ public class DataAttributeItemProvider extends UnNamingItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addReferredByFCDAPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
             addReferredByExtRefPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By FCDA feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByFCDAPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DataAttribute_ReferredByFCDA_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DataAttribute_ReferredByFCDA_feature", "_UI_DataAttribute_type"),
-                 SclPackage.eINSTANCE.getDataAttribute_ReferredByFCDA(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
     }
 
     /**

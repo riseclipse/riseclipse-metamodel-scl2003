@@ -30,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getAccessControl <em>Access Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
@@ -92,47 +91,6 @@ public interface DataObject extends UnNaming {
      * @generated
      */
     boolean isSetAccessControl();
-
-    /**
-     * Returns the value of the '<em><b>Referred By FCDA</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject <em>Refers To Data Object</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Referred By FCDA</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Referred By FCDA</em>' reference list.
-     * @see #isSetReferredByFCDA()
-     * @see #unsetReferredByFCDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataObject_ReferredByFCDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToDataObject
-     * @model opposite="RefersToDataObject" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<FCDA> getReferredByFCDA();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA <em>Referred By FCDA</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetReferredByFCDA()
-     * @see #getReferredByFCDA()
-     * @generated
-     */
-    void unsetReferredByFCDA();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByFCDA <em>Referred By FCDA</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Referred By FCDA</em>' reference list is set.
-     * @see #unsetReferredByFCDA()
-     * @see #getReferredByFCDA()
-     * @generated
-     */
-    boolean isSetReferredByFCDA();
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -44,7 +43,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataObjectImpl#getAccessControl <em>Access Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataObjectImpl#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataObjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataObjectImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
@@ -80,16 +78,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
      * @ordered
      */
     protected boolean accessControlESet;
-
-    /**
-     * The cached value of the '{@link #getReferredByFCDA() <em>Referred By FCDA</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByFCDA()
-     * @generated
-     * @ordered
-     */
-    protected EList<FCDA> referredByFCDA;
 
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -205,39 +193,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
      * @generated
      */
     @Override
-    public EList<FCDA> getReferredByFCDA() {
-        if (referredByFCDA == null) {
-            referredByFCDA = new EObjectWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_OBJECT__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_DATA_OBJECT);
-        }
-        return referredByFCDA;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByFCDA() {
-        if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByFCDA() {
-        return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public String getName() {
         return name;
     }
@@ -324,8 +279,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
             case SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
         }
@@ -340,8 +293,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
             case SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF:
                 return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
         }
@@ -358,8 +309,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
         switch (featureID) {
             case SclPackage.DATA_OBJECT__ACCESS_CONTROL:
                 return getAccessControl();
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                return getReferredByFCDA();
             case SclPackage.DATA_OBJECT__NAME:
                 return getName();
             case SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF:
@@ -379,10 +328,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
         switch (featureID) {
             case SclPackage.DATA_OBJECT__ACCESS_CONTROL:
                 setAccessControl((String)newValue);
-                return;
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                getReferredByFCDA().clear();
-                getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
                 return;
             case SclPackage.DATA_OBJECT__NAME:
                 setName((String)newValue);
@@ -406,9 +351,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
             case SclPackage.DATA_OBJECT__ACCESS_CONTROL:
                 unsetAccessControl();
                 return;
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                unsetReferredByFCDA();
-                return;
             case SclPackage.DATA_OBJECT__NAME:
                 unsetName();
                 return;
@@ -429,8 +371,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
         switch (featureID) {
             case SclPackage.DATA_OBJECT__ACCESS_CONTROL:
                 return isSetAccessControl();
-            case SclPackage.DATA_OBJECT__REFERRED_BY_FCDA:
-                return isSetReferredByFCDA();
             case SclPackage.DATA_OBJECT__NAME:
                 return isSetName();
             case SclPackage.DATA_OBJECT__REFERRED_BY_EXT_REF:
