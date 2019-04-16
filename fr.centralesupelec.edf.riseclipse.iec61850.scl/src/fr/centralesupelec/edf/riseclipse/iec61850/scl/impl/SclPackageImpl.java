@@ -2744,6 +2744,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getAbstractDataAttribute_ReferredByExtRef() {
+        return (EReference)getAbstractDataAttribute().getEStructuralFeatures().get(10);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getBDA() {
         if (bdaEClass == null) {
             bdaEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(24);
@@ -3001,6 +3011,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getDOType_ReferredBySDO() {
         return (EReference)getDOType().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDOType_ReferredByExtRef() {
+        return (EReference)getDOType().getEStructuralFeatures().get(7);
     }
 
     /**
@@ -4360,7 +4380,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByExtRef() {
+    public EReference getAnyLN_ReferredByClientLN() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(10);
     }
 
@@ -4370,7 +4390,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByClientLN() {
+    public EReference getAnyLN_ReferredByLogControl() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(11);
     }
 
@@ -4380,7 +4400,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByLogControl() {
+    public EReference getAnyLN_ReferredByAssociation() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(12);
     }
 
@@ -4390,7 +4410,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredByAssociation() {
+    public EReference getAnyLN_ReferredIEDName() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(13);
     }
 
@@ -4400,18 +4420,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredIEDName() {
-        return (EReference)getAnyLN().getEStructuralFeatures().get(14);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getAnyLN_ReferredByLNode() {
-        return (EReference)getAnyLN().getEStructuralFeatures().get(15);
+        return (EReference)getAnyLN().getEStructuralFeatures().get(14);
     }
 
     /**
@@ -5042,6 +5052,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getControl_ReferredByExtRef() {
+        return (EReference)getControl().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getControlWithIEDName() {
         if (controlWithIEDNameEClass == null) {
             controlWithIEDNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(53);
@@ -5572,7 +5592,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getExtRef_RefersToAnyLN() {
+    public EReference getExtRef_RefersToAbstractDataAttribute() {
         return (EReference)getExtRef().getEStructuralFeatures().get(15);
     }
 
@@ -5582,7 +5602,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getExtRef_RefersToDataAttribute() {
+    public EReference getExtRef_RefersToDOType() {
         return (EReference)getExtRef().getEStructuralFeatures().get(16);
     }
 
@@ -5592,18 +5612,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getExtRef_RefersToDataObject() {
-        return (EReference)getExtRef().getEStructuralFeatures().get(17);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getExtRef_PServT() {
-        return (EAttribute)getExtRef().getEStructuralFeatures().get(18);
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(17);
     }
 
     /**
@@ -5613,7 +5623,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EAttribute getExtRef_PLN() {
-        return (EAttribute)getExtRef().getEStructuralFeatures().get(19);
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(18);
     }
 
     /**
@@ -5623,7 +5633,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EAttribute getExtRef_PDO() {
-        return (EAttribute)getExtRef().getEStructuralFeatures().get(20);
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(19);
     }
 
     /**
@@ -5633,7 +5643,17 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EAttribute getExtRef_PDA() {
-        return (EAttribute)getExtRef().getEStructuralFeatures().get(21);
+        return (EAttribute)getExtRef().getEStructuralFeatures().get(20);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getExtRef_RefersToControl() {
+        return (EReference)getExtRef().getEStructuralFeatures().get(21);
     }
 
     /**
@@ -10012,16 +10032,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
 
     /**
      * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getDataObject_ReferredByExtRef() {
-        return (EReference)getDataObject().getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -10041,16 +10051,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getDataAttribute_Name() {
         return (EAttribute)getDataAttribute().getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getDataAttribute_ReferredByExtRef() {
-        return (EReference)getDataAttribute().getEStructuralFeatures().get(1);
     }
 
     /**

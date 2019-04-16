@@ -18,6 +18,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Control</b></em>'.
@@ -30,6 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getDatSet <em>Dat Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getRefersToDataSet <em>Refers To Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControl()
@@ -197,6 +200,43 @@ public interface Control extends UnNaming {
      * @generated
      */
     boolean isSetName();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Ext Ref</em>' reference list.
+     * @see #isSetReferredByExtRef()
+     * @see #unsetReferredByExtRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControl_ReferredByExtRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl
+     * @model opposite="RefersToControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<ExtRef> getReferredByExtRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByExtRef()
+     * @see #getReferredByExtRef()
+     * @generated
+     */
+    void unsetReferredByExtRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Ext Ref</em>' reference list is set.
+     * @see #unsetReferredByExtRef()
+     * @see #getReferredByExtRef()
+     * @generated
+     */
+    boolean isSetReferredByExtRef();
 
     AnyLN getAnyLN();
 

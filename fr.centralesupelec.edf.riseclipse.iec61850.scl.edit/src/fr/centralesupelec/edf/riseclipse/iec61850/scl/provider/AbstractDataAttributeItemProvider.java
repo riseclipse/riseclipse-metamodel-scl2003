@@ -70,6 +70,7 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
             addRefersToEnumTypePropertyDescriptor(object);
             addRefersToDATypePropertyDescriptor(object);
             addReferredByFCDAPropertyDescriptor(object);
+            addReferredByExtRefPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -264,6 +265,28 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
                  getString("_UI_AbstractDataAttribute_ReferredByFCDA_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByFCDA_feature", "_UI_AbstractDataAttribute_type"),
                  SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByFCDA(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Ext Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByExtRefPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_ReferredByExtRef_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByExtRef_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByExtRef(),
                  true,
                  false,
                  true,
