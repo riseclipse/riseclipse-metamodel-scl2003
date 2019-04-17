@@ -20,6 +20,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
@@ -932,132 +933,101 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //          detailed function specification than possible by LN class alone, if the LN is not allocated to an IED
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
+        if( getLnClass() == null ) return;
 
+        String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         // Resolve only if attribute is not None
         // Default value is None
-        if(( getIedName() == null ) || ( "None".equals( getIedName() ))) {
-            console.verbose( "Link to AnyLN not resolved for LNode on line " + getLineNumber() + " ( in container "
-                            + getLNodeContainer().getName() + " ) because iedName is absent or None" );
+        if(( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() )) {
+            console.verbose( messagePrefix + "link to AnyLN not resolved because iedName is absent or None" );
             return;
         }
 
         // find an IED with
         //   IED.name == LNode.iedName
-        SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
+        List< IED > res1 =
+                get_IEDs()
+                .stream()
+                .filter( ied -> getIedName().equals( ied.getName() ))
+                .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseIED( IED object ) {
-                return getIedName().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
-        String mess1 = "IED( name = " + getIedName() + " ) for LNode on line " + getLineNumber() + " ( in container "
-                + getLNodeContainer().getName() + " )";
+        IED ied = null;
+        String mess1 = "IED( name = " + getIedName() + " )";
         if( res1.isEmpty() ) {
-           console.error( "cannot find " + mess1 );
+            console.error( messagePrefix + "cannot find " + mess1 );
             return;
         }
         if( res1.size() > 1 ) {
-           console.error( "found several " + mess1 );
+            console.error( messagePrefix + "found several " + mess1 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-        IED ied = res1.get( 0 );
-
+        ied = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
+        
         // find inside an LDevice with
         //   LDevice.name == LNode.ldInst
-        SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+        List< LDevice > res2 = 
+                ied
+                .getAccessPoint()
+                .stream()
+                .map( ap -> ap.getServer() )
+                .filter( s -> s != null )
+                .map( s -> s.getLDevice() )
+                .filter( ld -> ld != null )
+                .flatMap( ld -> ld.stream() )
+                .filter( ld -> getLdInst().equals( ld.getInst() ))
+                .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseLDevice( LDevice object ) {
-                return object.getInst().equals( getLdInst() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< LDevice > res2 = deepSearchObjects( ied.getAccessPoint(), s2 );
-        String mess2 = "LDevice( inst = " + getLdInst() + " ) for LNode on line " + getLineNumber()
-                        + " ( in container " + getLNodeContainer().getName() + " )";
+        String mess2 = "LDevice( inst = " + getLdInst() + " ))";
         if( res2.isEmpty() ) {
-           console.error( "cannot find " + mess2 );
+            console.error( messagePrefix + "cannot find " + mess2 );
             return;
         }
         if( res2.size() > 1 ) {
-           console.error( "found several " + mess2 );
+            console.error( messagePrefix + "found several " + mess2 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
         LDevice lDevice = res2.get( 0 );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLineNumber() );
 
+ 
         // find inside an LN with
         //   LN.lnClass == LNode.lnClass
         //   LN.prefix == LNode.prefix
         //   LN.inst == LNode.lnInst
-        if( getLnClass() == null ) {
-            console.error( "lnClass is missing for LNode on line " + getLineNumber() 
-                           + " ( in container " + getLNodeContainer().getName() + " )" );
-            return;
-        }
-        
-        if( getLnClass().equals( "LLN0" )) {
+        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( "LLN0".equals( getLnClass() )) {
+            if( lDevice.getLN0() == null ) {
+                console.error( messagePrefix + "cannot find LN0" );
+                return;
+            }
             setRefersToAnyLN( lDevice.getLN0() );
-            // TODO: Check if getRefersToAnyLN().getInst().equals( getLnInst() ) ?
-            return;
         }
-        
-        if( getLnInst() == null ) {
-            console.error( "lnInst is missing for LNode on line " + getLineNumber() 
-                           + " ( in container " + getLNodeContainer().getName() + " )" );
-            return;
-        }
-        // prefix is optional
-        //if( ! prefixESet ) return;
+        else {
+            if( getLnInst() == null ) return;
+            // find inside an LN with
+            //   LN.lnClass == FCDA.lnClass
+            //   LN.prefix == FCDA.prefix
+            //   LN.inst == FCDA.lnInst
+            List< LN > res3 = lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
 
-        SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseLN( LN object ) {
-                if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
-                    if( object.getPrefix() == null ) return getPrefix() == null;
-                    return object.getPrefix().equals( getPrefix() );
-                }
-                return false;
+            if( res3.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess3 );
+                return;
             }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
+            if( res3.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess3 );
+                return;
             }
-
-        };
-
-        List< LN > res3 = shallowSearchObjects( lDevice.getLN(), s3 );
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for LNode on line "
-                + getLineNumber() + " ( in container " + getLNodeContainer().getName() + " )";
-        if( res3.isEmpty() ) {
-           console.error( "cannot find " + mess3 );
-            return;
+            setRefersToAnyLN( res3.get( 0 ) );
         }
-        if( res3.size() > 1 ) {
-           console.error( "found several " + mess3 );
-            return;
-        }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-        setRefersToAnyLN( res3.get( 0 ));
+        console.info( "LNode on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //LNodeImpl

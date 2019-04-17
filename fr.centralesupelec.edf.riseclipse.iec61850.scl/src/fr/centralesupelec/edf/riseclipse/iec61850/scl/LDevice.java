@@ -34,12 +34,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLdName <em>Ld Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice()
@@ -154,47 +154,6 @@ public interface LDevice extends UnNaming {
     boolean isSetLdName();
 
     /**
-     * Returns the value of the '<em><b>Referred By Control Block</b></em>' reference list.
-     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice <em>Refers To LDevice</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Referred By Control Block</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Referred By Control Block</em>' reference list.
-     * @see #isSetReferredByControlBlock()
-     * @see #unsetReferredByControlBlock()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_ReferredByControlBlock()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice
-     * @model opposite="RefersToLDevice" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    EList<ControlBlock> getReferredByControlBlock();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetReferredByControlBlock()
-     * @see #getReferredByControlBlock()
-     * @generated
-     */
-    void unsetReferredByControlBlock();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}' reference list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Referred By Control Block</em>' reference list is set.
-     * @see #unsetReferredByControlBlock()
-     * @see #getReferredByControlBlock()
-     * @generated
-     */
-    boolean isSetReferredByControlBlock();
-
-    /**
      * Returns the value of the '<em><b>Access Control</b></em>' containment reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice <em>LDevice</em>}'.
      * <!-- begin-user-doc -->
@@ -305,7 +264,7 @@ public interface LDevice extends UnNaming {
      * @see #unsetLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true"
+     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#AnyLN'"
      * @generated
      */
@@ -333,6 +292,57 @@ public interface LDevice extends UnNaming {
     boolean isSetLN();
 
     /**
+     * Returns the value of the '<em><b>Referred By IED Name</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By IED Name</em>' reference.
+     * @see #isSetReferredByIEDName()
+     * @see #unsetReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_ReferredByIEDName()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice
+     * @model opposite="RefersToLDevice" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    IEDName getReferredByIEDName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Referred By IED Name</em>' reference.
+     * @see #isSetReferredByIEDName()
+     * @see #unsetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @generated
+     */
+    void setReferredByIEDName(IEDName value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @generated
+     */
+    void unsetReferredByIEDName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By IED Name</em>' reference is set.
+     * @see #unsetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @generated
+     */
+    boolean isSetReferredByIEDName();
+
+    /**
      * Returns the value of the '<em><b>LN0</b></em>' containment reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice <em>LDevice</em>}'.
      * <!-- begin-user-doc -->
@@ -347,7 +357,7 @@ public interface LDevice extends UnNaming {
      * @see #setLN0(LN0)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN0()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true"
+     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#AnyLN'"
      * @generated
      */

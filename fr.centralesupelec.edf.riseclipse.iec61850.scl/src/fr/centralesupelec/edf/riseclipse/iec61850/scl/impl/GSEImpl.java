@@ -39,9 +39,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEImpl#getConnectedAP <em>Connected AP</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEImpl#getMinTime <em>Min Time</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEImpl#getMaxTime <em>Max Time</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEImpl#getConnectedAP <em>Connected AP</em>}</li>
  * </ul>
  *
  * @generated
@@ -369,12 +369,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return basicSetConnectedAP(null, msgs);
             case SclPackage.GSE__MIN_TIME:
                 return basicUnsetMinTime(msgs);
             case SclPackage.GSE__MAX_TIME:
                 return basicUnsetMaxTime(msgs);
+            case SclPackage.GSE__CONNECTED_AP:
+                return basicSetConnectedAP(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -401,12 +401,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return getConnectedAP();
             case SclPackage.GSE__MIN_TIME:
                 return getMinTime();
             case SclPackage.GSE__MAX_TIME:
                 return getMaxTime();
+            case SclPackage.GSE__CONNECTED_AP:
+                return getConnectedAP();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -419,14 +419,14 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)newValue);
-                return;
             case SclPackage.GSE__MIN_TIME:
                 setMinTime((MinTime)newValue);
                 return;
             case SclPackage.GSE__MAX_TIME:
                 setMaxTime((MaxTime)newValue);
+                return;
+            case SclPackage.GSE__CONNECTED_AP:
+                setConnectedAP((ConnectedAP)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -440,14 +440,14 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)null);
-                return;
             case SclPackage.GSE__MIN_TIME:
                 unsetMinTime();
                 return;
             case SclPackage.GSE__MAX_TIME:
                 unsetMaxTime();
+                return;
+            case SclPackage.GSE__CONNECTED_AP:
+                setConnectedAP((ConnectedAP)null);
                 return;
         }
         super.eUnset(featureID);
@@ -461,12 +461,12 @@ public class GSEImpl extends ControlBlockImpl implements GSE {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.GSE__CONNECTED_AP:
-                return getConnectedAP() != null;
             case SclPackage.GSE__MIN_TIME:
                 return isSetMinTime();
             case SclPackage.GSE__MAX_TIME:
                 return isSetMaxTime();
+            case SclPackage.GSE__CONNECTED_AP:
+                return getConnectedAP() != null;
         }
         return super.eIsSet(featureID);
     }

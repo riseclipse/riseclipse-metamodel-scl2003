@@ -22,6 +22,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
@@ -31,13 +32,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -1182,122 +1182,91 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         if( getIedName() == null ) return;
         if( getLdInst() == null ) return;
         if( getLnClass() == null ) return;
-        List< IED > ieds = get_IEDs();
-        if( ieds == null ) return;
+
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from Association on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == Association.iedName
-        SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseIED( IED object ) {
-                return getIedName().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
+        List< IED > res1 =
+                get_IEDs()
+                .stream()
+                .filter( ied -> getIedName().equals( ied.getName() ))
+                .collect( Collectors.toList() );
 
         IED ied = null;
-        List< IED > res = shallowSearchObjects( ieds, s );
-        String mess = "IED( name = " + getIedName() + " ) for Association on line " + getLineNumber() + " )";
-        if( res.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+        String mess1 = "IED( name = " + getIedName() + " )";
+        if( res1.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess1 );
             return;
         }
-        if( res.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+        if( res1.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess1 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-        ied = res.get( 0 );
+        ied = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
 
         // The following is copy/paste from ExtRef/FCDA
         // TODO: factor out ?
 
         // find inside an LDevice with
         //   LDevice.name == Association.ldInst
-        SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
+        List< LDevice > res2 = 
+                ied
+                .getAccessPoint()
+                .stream()
+                .map( ap -> ap.getServer() )
+                .filter( s -> s != null )
+                .map( s -> s.getLDevice() )
+                .filter( ld -> ld != null )
+                .flatMap( ld -> ld.stream() )
+                .filter( ld -> getLdInst().equals( ld.getInst() ))
+                .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseLDevice( LDevice object ) {
-                return getLdInst().equals( object.getInst() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< LDevice > res1 = deepSearchObjects( ied.getAccessPoint(), s1 );
-        String mess1 = "LDevice( inst = " + getLdInst() + " ) for Association on line " + getLineNumber() + " ( in ied = "
-                + ied.getName() + " )";
-        LDevice lDevice = null;
-        if( res1.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+        String mess2 = "LDevice( inst = " + getLdInst() + " )";
+        if( res2.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess2 );
             return;
         }
-        if( res1.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+        if( res2.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess2 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-        lDevice = res1.get( 0 );
+        LDevice lDevice = res2.get( 0 );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLineNumber() );
 
-        if( "LLN0".equals( getLnClass() ) ) {
+        if( "LLN0".equals( getLnClass() )) {
             if( lDevice.getLN0() == null ) {
-                AbstractRiseClipseConsole.getConsole().error(
-                        "cannot find LN0 for Association on line " + getLineNumber() + " ( in ied = " + ied.getName()
-                                + " )" );
+                console.error( messagePrefix + "cannot find LN0" );
                 return;
             }
             setRefersToAnyLN( lDevice.getLN0() );
+            console.info( "Association on line " + getLineNumber() + " refers to LN0 on line " + getRefersToAnyLN().getLineNumber() );
         }
         else {
             if( getLnInst() == null ) return;
-            // prefix is optional
-            //if( getPrefix() == null ) return;
-
             // find inside an LN with
-            //   LN.lnClass == Association.lnClass
-            //   LN.prefix == Association.prefix
-            //   LN.inst == Association.lnInst
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
+            //   LN.lnClass == FCDA.lnClass
+            //   LN.prefix == FCDA.prefix
+            //   LN.inst == FCDA.lnInst
+            List< LN > res3 = lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
 
-                @Override
-                public Boolean caseLN( LN object ) {
-                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
-                        if( getPrefix() == null ) return object.getPrefix() == null;
-                        return getPrefix().equals( object.getPrefix() );
-                    }
-                    return false;
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LN > res2 = shallowSearchObjects( lDevice.getLN(), s2 );
-            String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for Association on line "
-                    + getLineNumber() + " ( in ied = " + ied.getName() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+            if( res3.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess3 );
                 return;
             }
-            if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            if( res3.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess3 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-            setRefersToAnyLN( res2.get( 0 ) );
+            setRefersToAnyLN( res3.get( 0 ));
+            console.info( "Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
         }
     }
 

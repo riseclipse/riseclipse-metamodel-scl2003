@@ -30,7 +30,6 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getCbName <em>Cb Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getAddress <em>Address</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice <em>Refers To LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
  * </ul>
  *
@@ -201,61 +200,6 @@ public interface ControlBlock extends UnNaming {
     boolean isSetAddress();
 
     /**
-     * Returns the value of the '<em><b>Refers To LDevice</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock <em>Referred By Control Block</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To LDevice</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To LDevice</em>' reference.
-     * @see #isSetRefersToLDevice()
-     * @see #unsetRefersToLDevice()
-     * @see #setRefersToLDevice(LDevice)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock_RefersToLDevice()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByControlBlock
-     * @model opposite="ReferredByControlBlock" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    LDevice getRefersToLDevice();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice <em>Refers To LDevice</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To LDevice</em>' reference.
-     * @see #isSetRefersToLDevice()
-     * @see #unsetRefersToLDevice()
-     * @see #getRefersToLDevice()
-     * @generated
-     */
-    void setRefersToLDevice(LDevice value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice <em>Refers To LDevice</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToLDevice()
-     * @see #getRefersToLDevice()
-     * @see #setRefersToLDevice(LDevice)
-     * @generated
-     */
-    void unsetRefersToLDevice();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToLDevice <em>Refers To LDevice</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To LDevice</em>' reference is set.
-     * @see #unsetRefersToLDevice()
-     * @see #getRefersToLDevice()
-     * @see #setRefersToLDevice(LDevice)
-     * @generated
-     */
-    boolean isSetRefersToLDevice();
-
-    /**
      * Returns the value of the '<em><b>Refers To Control With IED Name</b></em>' reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByControlBlock <em>Referred By Control Block</em>}'.
      * <!-- begin-user-doc -->
@@ -309,5 +253,13 @@ public interface ControlBlock extends UnNaming {
      * @generated
      */
     boolean isSetRefersToControlWithIEDName();
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    ConnectedAP getConnectedAP();
 
 } // ControlBlock

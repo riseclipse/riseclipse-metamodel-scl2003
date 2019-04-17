@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -2327,6 +2328,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getConnectedAP_ControlBlock() {
+        return (EAttribute)getConnectedAP().getEStructuralFeatures().get(9);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getControlBlock() {
         if (controlBlockEClass == null) {
             controlBlockEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(15);
@@ -2370,7 +2381,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getControlBlock_RefersToLDevice() {
+    public EReference getControlBlock_RefersToControlWithIEDName() {
         return (EReference)getControlBlock().getEStructuralFeatures().get(3);
     }
 
@@ -2380,8 +2391,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getControlBlock_RefersToControlWithIEDName() {
-        return (EReference)getControlBlock().getEStructuralFeatures().get(4);
+    public EOperation getControlBlock__GetConnectedAP() {
+        return getControlBlock().getEOperations().get(0);
     }
 
     /**
@@ -2404,16 +2415,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getGSE_MaxTime() {
-        return (EReference)getGSE().getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getGSE_MinTime() {
         return (EReference)getGSE().getEStructuralFeatures().get(1);
     }
 
@@ -2423,8 +2424,18 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getGSE_ConnectedAP() {
+    public EReference getGSE_MinTime() {
         return (EReference)getGSE().getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getGSE_ConnectedAP() {
+        return (EReference)getGSE().getEStructuralFeatures().get(2);
     }
 
     /**
@@ -4410,7 +4421,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getAnyLN_ReferredIEDName() {
+    public EReference getAnyLN_ReferredByIEDName() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(13);
     }
 
@@ -4422,6 +4433,36 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getAnyLN_ReferredByLNode() {
         return (EReference)getAnyLN().getEStructuralFeatures().get(14);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAnyLN_ControlWithTriggerOpt() {
+        return (EAttribute)getAnyLN().getEStructuralFeatures().get(15);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getAnyLN_Control() {
+        return (EAttribute)getAnyLN().getEStructuralFeatures().get(16);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EOperation getAnyLN__GetLDevice() {
+        return getAnyLN().getEOperations().get(0);
     }
 
     /**
@@ -5054,6 +5095,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getControl_ReferredByExtRef() {
         return (EReference)getControl().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EOperation getControl__GetAnyLN() {
+        return getControl().getEOperations().get(0);
     }
 
     /**
@@ -6311,6 +6362,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getIED_ReferredByIEDName() {
+        return (EReference)getIED().getEStructuralFeatures().get(13);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getIEDName() {
         if (iedNameEClass == null) {
             iedNameEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(76);
@@ -6396,6 +6457,26 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getIEDName_Value() {
         return (EAttribute)getIEDName().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getIEDName_RefersToIED() {
+        return (EReference)getIEDName().getEStructuralFeatures().get(8);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getIEDName_RefersToLDevice() {
+        return (EReference)getIEDName().getEStructuralFeatures().get(9);
     }
 
     /**
@@ -6546,7 +6627,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLDevice_ReferredByControlBlock() {
+    public EReference getLDevice_AccessControl() {
         return (EReference)getLDevice().getEStructuralFeatures().get(2);
     }
 
@@ -6556,7 +6637,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLDevice_AccessControl() {
+    public EReference getLDevice_Server() {
         return (EReference)getLDevice().getEStructuralFeatures().get(3);
     }
 
@@ -6566,18 +6647,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getLDevice_Server() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(4);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EAttribute getLDevice_AnyLN() {
-        return (EAttribute)getLDevice().getEStructuralFeatures().get(5);
+        return (EAttribute)getLDevice().getEStructuralFeatures().get(4);
     }
 
     /**
@@ -6587,6 +6658,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_LN() {
+        return (EReference)getLDevice().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getLDevice_ReferredByIEDName() {
         return (EReference)getLDevice().getEStructuralFeatures().get(7);
     }
 
@@ -6597,7 +6678,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_LN0() {
-        return (EReference)getLDevice().getEStructuralFeatures().get(6);
+        return (EReference)getLDevice().getEStructuralFeatures().get(5);
     }
 
     /**
@@ -6694,6 +6775,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLN0_SettingControl() {
         return (EReference)getLN0().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getLN0_ControlWithIEDName() {
+        return (EAttribute)getLN0().getEStructuralFeatures().get(4);
     }
 
     /**

@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -26,6 +27,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -643,38 +645,37 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         // see Issue #13
         super.doResolveLinks();
         
+        // name     The SDO name
+        // desc     Descriptive text for the SDO
+        // type     References the DOType defining the contents of the SDO
+        // count    The number or reference to an attribute defining the number of array elements,
+        //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
+        
         if( getType() == null ) return;
         DataTypeTemplates dtt = get_DataTypeTemplates();
         if( dtt == null ) return;
 
-        // find an DOType with
-        //   DOType.id      == SDO.type
-        SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
+        String messagePrefix = "while resolving link from SDO on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
-            @Override
-            public Boolean caseDOType( DOType object ) {
-                return getType().equals( object.getId() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< DOType > res = shallowSearchObjects( dtt.getDOType(), s );
-        String mess = "DOType( id = " + getType() + " ) for SDO on line " + getLineNumber() + " )";
+        List< DOType > res =
+                dtt
+                .getDOType()
+                .stream()
+                .filter( sdo -> getType().equals(  sdo.getId() ))
+                .collect( Collectors.toList() );
+        
+        String mess = "DOType( id = " + getType() + " )";
         if( res.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            console.error( messagePrefix + "cannot find " + mess );
             return;
         }
         if( res.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            console.error( messagePrefix + "found several " + mess );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
         setRefersToDOType( res.get( 0 ) );
+        console.info( "SDO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

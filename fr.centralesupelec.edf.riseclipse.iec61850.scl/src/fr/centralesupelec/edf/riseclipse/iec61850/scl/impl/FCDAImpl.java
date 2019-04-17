@@ -1075,8 +1075,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         if( server == null ) return;
         IED ied = server.getAccessPoint().getIED();
         
-        String messagePrefix = "while resolving link from FCDA on line " + getLineNumber()
-                             + " (in ied = " + ied.getName() + " ): ";
+        String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
 
         List< LDevice > res1 = 
                server
@@ -1244,7 +1243,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
             
-            console.info( "FCDA (line " + getLineNumber() + ") refers to AbstractDataAttribute " + da.getName() + " (line " + da.getLineNumber() + ")" );
+            console.info( "FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
             getRefersToAbstractDataAttribute().add( da );
         }
         
@@ -1260,7 +1259,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             
             if( getRefersToAbstractDataAttribute().size() > 0 ) {
                 for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                    console.info( "FCDA (line " + getLineNumber() + ") refers to AbstractDataAttribute " + a.getName() + " (line " + a.getLineNumber() + ")" );
+                    console.info( "FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + a.getName() + " ) on line " + a.getLineNumber() );
                 }
             }
             else {

@@ -18,19 +18,12 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.List;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -213,87 +206,4 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
         return super.eIsSet(featureID);
     }
 
-    @Override
-    protected void doResolveLinks() {
-        // see Issue #13
-        super.doResolveLinks();
-        
-        // desc    Some descriptive text for the attribute
-        // name    The attribute name; the type tAttributeEnum restricts to the attribute names from IEC 61850-7-3, plus new ones starting with lower case letters
-        // sAddr   an optional short address of this BDA attribute
-        // bType   The basic type of the attribute, taken from tBasicTypeEnum
-        // type    Only used if bType= Enum or bType = Struct to refer to the appropriate enumeration type or DAType definition
-        // count   Optional. Shall state the number of array elements in the case where the attribute is an array
-        // valKind Determines how the value shall be interpreted if any is given
-
-        // TODO: put in AbstractDataType
-
-        if( getType() == null ) return;
-        DataTypeTemplates dtt = get_DataTypeTemplates();
-        if( dtt == null ) return;
-
-        if( "Enum".equals( getBType() ) ) {
-
-            // find an EnumType with
-            //   EnumType.id == DA.type
-            SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseEnumType( EnumType object ) {
-                    return getType().equals( object.getId() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< EnumType > res = shallowSearchObjects( dtt.getEnumType(), s );
-            String mess = "EnumType( id = " + getType() + " ) for BDA on line " + getLineNumber() + " )";
-            if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            setRefersToEnumType( res.get( 0 ) );
-        }
-        else if( "Struct".equals( getBType() ) ) {
-
-            // find an DAType with
-            //   DAType.id == DA.type
-            SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseDAType( DAType object ) {
-                    return getType().equals( object.getId() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< DAType > res = shallowSearchObjects( dtt.getDAType(), s );
-            String mess = "DAType( id = " + getType() + " ) for BDA on line " + getLineNumber() + " )";
-            if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-            // TODO
-            //daType = res.get( 0 );
-        }
-    }
 } //BDAImpl

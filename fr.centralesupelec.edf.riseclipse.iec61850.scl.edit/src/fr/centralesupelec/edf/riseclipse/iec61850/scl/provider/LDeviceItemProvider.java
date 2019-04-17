@@ -63,7 +63,7 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
 
             addInstPropertyDescriptor(object);
             addLdNamePropertyDescriptor(object);
-            addReferredByControlBlockPropertyDescriptor(object);
+            addReferredByIEDNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -113,19 +113,19 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Referred By Control Block feature.
+     * This adds a property descriptor for the Referred By IED Name feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByControlBlockPropertyDescriptor(Object object) {
+    protected void addReferredByIEDNamePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_LDevice_ReferredByControlBlock_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LDevice_ReferredByControlBlock_feature", "_UI_LDevice_type"),
-                 SclPackage.eINSTANCE.getLDevice_ReferredByControlBlock(),
+                 getString("_UI_LDevice_ReferredByIEDName_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_LDevice_ReferredByIEDName_feature", "_UI_LDevice_type"),
+                 SclPackage.eINSTANCE.getLDevice_ReferredByIEDName(),
                  true,
                  false,
                  true,

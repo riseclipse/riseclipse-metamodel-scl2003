@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
@@ -28,13 +29,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -55,6 +55,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getControlWithIEDName <em>Control With IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToIED <em>Refers To IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToLDevice <em>Refers To LDevice</em>}</li>
  * </ul>
  *
  * @generated
@@ -252,6 +254,44 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @ordered
      */
     protected boolean valueESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToIED() <em>Refers To IED</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToIED()
+     * @generated
+     * @ordered
+     */
+    protected IED refersToIED;
+
+    /**
+     * This is true if the Refers To IED reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToIEDESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToLDevice() <em>Refers To LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToLDevice()
+     * @generated
+     * @ordered
+     */
+    protected LDevice refersToLDevice;
+
+    /**
+     * This is true if the Refers To LDevice reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToLDeviceESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -603,9 +643,9 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         if (newRefersToAnyLN != refersToAnyLN) {
             NotificationChain msgs = null;
             if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, AnyLN.class, msgs);
             if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, AnyLN.class, msgs);
             msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -643,7 +683,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     public void unsetRefersToAnyLN() {
         if (refersToAnyLN != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, AnyLN.class, msgs);
             msgs = basicUnsetRefersToAnyLN(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -721,6 +761,204 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @generated
      */
     @Override
+    public IED getRefersToIED() {
+        return refersToIED;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToIED(IED newRefersToIED, NotificationChain msgs) {
+        IED oldRefersToIED = refersToIED;
+        refersToIED = newRefersToIED;
+        boolean oldRefersToIEDESet = refersToIEDESet;
+        refersToIEDESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_IED, oldRefersToIED, newRefersToIED, !oldRefersToIEDESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToIED(IED newRefersToIED) {
+        if (newRefersToIED != refersToIED) {
+            NotificationChain msgs = null;
+            if (refersToIED != null)
+                msgs = ((InternalEObject)refersToIED).eInverseRemove(this, SclPackage.IED__REFERRED_BY_IED_NAME, IED.class, msgs);
+            if (newRefersToIED != null)
+                msgs = ((InternalEObject)newRefersToIED).eInverseAdd(this, SclPackage.IED__REFERRED_BY_IED_NAME, IED.class, msgs);
+            msgs = basicSetRefersToIED(newRefersToIED, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToIEDESet = refersToIEDESet;
+            refersToIEDESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_IED, newRefersToIED, newRefersToIED, !oldRefersToIEDESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToIED(NotificationChain msgs) {
+        IED oldRefersToIED = refersToIED;
+        refersToIED = null;
+        boolean oldRefersToIEDESet = refersToIEDESet;
+        refersToIEDESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_IED, oldRefersToIED, null, oldRefersToIEDESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToIED() {
+        if (refersToIED != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToIED).eInverseRemove(this, SclPackage.IED__REFERRED_BY_IED_NAME, IED.class, msgs);
+            msgs = basicUnsetRefersToIED(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToIEDESet = refersToIEDESet;
+            refersToIEDESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_IED, null, null, oldRefersToIEDESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToIED() {
+        return refersToIEDESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public LDevice getRefersToLDevice() {
+        return refersToLDevice;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToLDevice(LDevice newRefersToLDevice, NotificationChain msgs) {
+        LDevice oldRefersToLDevice = refersToLDevice;
+        refersToLDevice = newRefersToLDevice;
+        boolean oldRefersToLDeviceESet = refersToLDeviceESet;
+        refersToLDeviceESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_LDEVICE, oldRefersToLDevice, newRefersToLDevice, !oldRefersToLDeviceESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToLDevice(LDevice newRefersToLDevice) {
+        if (newRefersToLDevice != refersToLDevice) {
+            NotificationChain msgs = null;
+            if (refersToLDevice != null)
+                msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, LDevice.class, msgs);
+            if (newRefersToLDevice != null)
+                msgs = ((InternalEObject)newRefersToLDevice).eInverseAdd(this, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, LDevice.class, msgs);
+            msgs = basicSetRefersToLDevice(newRefersToLDevice, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToLDeviceESet = refersToLDeviceESet;
+            refersToLDeviceESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__REFERS_TO_LDEVICE, newRefersToLDevice, newRefersToLDevice, !oldRefersToLDeviceESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToLDevice(NotificationChain msgs) {
+        LDevice oldRefersToLDevice = refersToLDevice;
+        refersToLDevice = null;
+        boolean oldRefersToLDeviceESet = refersToLDeviceESet;
+        refersToLDeviceESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_LDEVICE, oldRefersToLDevice, null, oldRefersToLDeviceESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToLDevice() {
+        if (refersToLDevice != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, LDevice.class, msgs);
+            msgs = basicUnsetRefersToLDevice(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToLDeviceESet = refersToLDeviceESet;
+            refersToLDeviceESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED_NAME__REFERS_TO_LDEVICE, null, null, oldRefersToLDeviceESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToLDevice() {
+        return refersToLDeviceESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
@@ -729,8 +967,16 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return basicSetControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_IED_NAME, AnyLN.class, msgs);
+                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, AnyLN.class, msgs);
                 return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                if (refersToIED != null)
+                    msgs = ((InternalEObject)refersToIED).eInverseRemove(this, SclPackage.IED__REFERRED_BY_IED_NAME, IED.class, msgs);
+                return basicSetRefersToIED((IED)otherEnd, msgs);
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                if (refersToLDevice != null)
+                    msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, LDevice.class, msgs);
+                return basicSetRefersToLDevice((LDevice)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -747,6 +993,10 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return basicSetControlWithIEDName(null, msgs);
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 return basicUnsetRefersToAnyLN(msgs);
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                return basicUnsetRefersToIED(msgs);
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                return basicUnsetRefersToLDevice(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -789,6 +1039,10 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return getRefersToAnyLN();
             case SclPackage.IED_NAME__VALUE:
                 return getValue();
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                return getRefersToIED();
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                return getRefersToLDevice();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -824,6 +1078,12 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return;
             case SclPackage.IED_NAME__VALUE:
                 setValue((String)newValue);
+                return;
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                setRefersToIED((IED)newValue);
+                return;
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                setRefersToLDevice((LDevice)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -861,6 +1121,12 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
             case SclPackage.IED_NAME__VALUE:
                 unsetValue();
                 return;
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                unsetRefersToIED();
+                return;
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                unsetRefersToLDevice();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -889,6 +1155,10 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return isSetRefersToAnyLN();
             case SclPackage.IED_NAME__VALUE:
                 return isSetValue();
+            case SclPackage.IED_NAME__REFERS_TO_IED:
+                return isSetRefersToIED();
+            case SclPackage.IED_NAME__REFERS_TO_LDEVICE:
+                return isSetRefersToLDevice();
         }
         return super.eIsSet(featureID);
     }
@@ -924,165 +1194,138 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         // see Issue #13
         super.doResolveLinks();
         
-        if( getLnClass() == null ) return;
+        // apRef        The reference to the access point on the IED, via which the data shall flow. Optional, only needed if the IED has more than one access point.
+        // ldInst       Identifies the destination LD in the IED. Optional.
+        // prefix       Destination LN prefix. Optional
+        // lnClass      Destination LN class, optional. If missing, no destination LN at all
+        // lnInst       Destination LN instance number, optional. If missing, either no destination LN, or lnClass = LLN0.
+        
+        // We only set the most precise RefersTo (IED / LDevice / AnyLN)
+        
+        if( getValue() == null ) return;
+        if( getValue().isEmpty() ) return;
+        
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from IEDName on line " + getLineNumber() + ": ";
 
-        if( getControlWithIEDName()            == null ) return;
-        if( getControlWithIEDName().getAnyLN() == null ) return;
-        LDevice lDevice = getControlWithIEDName().getAnyLN().getLDevice();
+        // find an IED with
+        //   IED.name == value
+        List< IED > res1 =
+                get_IEDs()
+                .stream()
+                .filter( ied -> getValue().equals( ied.getName() ))
+                .collect( Collectors.toList() );
+
+        IED ied = null;
+        String mess1 = "IED( name = " + getValue() + " )";
+        if( res1.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess1 );
+            return;
+        }
+        if( res1.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess1 );
+            return;
+        }
+        ied = res1.get( 0 );
         
-        IED ied = lDevice.getIED();
-        
-        if( getValue() != null && ! getValue().isEmpty() ) {
-            SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
-                
-                @Override
-                public Boolean caseIED( IED object ) {
-                    return getValue().equals( object.getName() );
-                }
-    
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-    
-            };
-    
-            List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
-            String mess1 = "IED( name = " + getValue() + " ) for IEDName on line " + getLineNumber()
-                    + " ( in ied = " + ied.getName() + " )";
-            if( res1.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
-                return;
-            }
-            if( res1.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            ied = res1.get( 0 );
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            setRefersToIED( ied );
+            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess1 + " on line " + ied.getLineNumber() );
+            return;
         }
         
-        if( ied.getAccessPoint().size() == 0 )  return;
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
         
-        AccessPoint ap = ied.getAccessPoint().get( 0 );
-        if( ied.getAccessPoint().size() > 1 ) {
-            if( getApRef() == null ) return;
-            
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-                
-                @Override
-                public Boolean caseAccessPoint( AccessPoint object ) {
-                    return getApRef().equals( object.getName() );
-                }
-    
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-    
-            };
-            
-            List< AccessPoint > res2 = shallowSearchObjects( ied.getAccessPoint(), s2 );
-            String mess2 = "AccessPoint( apRef = " + getApRef() + " ) for IEDName on line " + getLineNumber()
-                         + " ( in ied = " + ied.getName() + " )";
+        AccessPoint ap = null;
+        if(( getApRef() == null ) || getApRef().isEmpty() ) {
+            if( ied.getAccessPoint().size() == 0 ) {
+                console.verbose( messagePrefix + "no AccessPoint found in ied " + ied.getName() );
+                return;
+            }
+            if( ied.getAccessPoint().size() > 1 ) {
+                console.verbose( messagePrefix + "found several AccessPoint in ied " + ied.getName() + " but apRef not specified" );
+                return;
+            }
+            ap = ied.getAccessPoint().get( 0 );
+        }
+        else {
+            List< AccessPoint > res2 =
+                    ied
+                    .getAccessPoint()
+                    .stream()
+                    .filter(  a -> getApRef().equals( a.getName() ))
+                    .collect( Collectors.toList() );
+            String mess2 = "AccessPoint( name = " + getApRef() + " )";
             if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                console.error( messagePrefix + "cannot find " + mess2 );
                 return;
             }
             if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                console.error( messagePrefix + "found several " + mess2 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
             ap = res2.get( 0 );
+            console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLineNumber() );
         }
-        if( ap == null ) return;
+        List< LDevice > res3 = 
+                ap
+                .getServer()
+                .getLDevice()
+                .stream()
+                .filter( ld -> getLdInst().equals( ld.getInst() ))
+                .collect( Collectors.toList() );
 
-        // The following is copy/paste from ClientLN (with modification)
-        // TODO: factor out ?
-        
-        // ldInst: The identification of the LD where the log resides; if missing, the same LD where this control block is placed
-        if( getLdInst() != null ) {
-            // find inside an LDevice with
-            //   LDevice.name == IEDName.ldInst
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
-    
-                @Override
-                public Boolean caseLDevice( LDevice object ) {
-                    return getLdInst().equals( object.getInst() );
-                }
-    
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-    
-            };
-    
-            List< LDevice > res3 = shallowSearchObjects( ap.getServer().getLDevice(), s3 );
-            String mess3 = "LDevice( inst = " + getLdInst() + " ) for IEDName on line " + getLineNumber()
-                    + " ( in ied = " + ied.getName() + " )";
-            if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
-                return;
-            }
-            if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-            lDevice = res3.get( 0 );
+        String mess3 = "LDevice( inst = " + getLdInst() + " )";
+        if( res3.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess3 );
+            return;
         }
-        if( lDevice == null ) return;
+        if( res3.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess3 );
+            return;
+        }
+        LDevice lDevice = res3.get( 0 );
         
-        if( "LLN0".equals( getLnClass() ) ) {
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            setRefersToLDevice( lDevice );
+            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess3 + " on line " + lDevice.getLineNumber() );
+            return;
+        }
+        
+        console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLineNumber() );
+
+        if( "LLN0".equals( getLnClass() )) {
             if( lDevice.getLN0() == null ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find LN0 for IEDName on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )" );
+                console.error( messagePrefix + "cannot find LN0" );
                 return;
             }
             setRefersToAnyLN( lDevice.getLN0() );
+            console.info( "IEDName on line " + getLineNumber() + " refers to LN0 on line " + getRefersToAnyLN().getLineNumber() );
         }
         else {
             if( getLnInst() == null ) return;
-            // prefix is optional
-            //if( getPrefix() == null ) return;
-
             // find inside an LN with
-            //   LN.lnClass == IEDName.lnClass
-            //   LN.prefix == IEDName.prefix
-            //   LN.inst == IEDName.lnInst
-            SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
+            //   LN.lnClass == ClientLN.lnClass
+            //   LN.prefix == ClientLN.prefix
+            //   LN.inst == ClientLN.lnInst
+            List< LN > res4 = 
+                    lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
 
-                @Override
-                public Boolean caseLN( LN object ) {
-                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
-                        if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
-                    }
-                    return false;
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LN > res4 = shallowSearchObjects( lDevice.getLN(), s4 );
-            String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for IEDName on line "
-                    + getLineNumber() + " ( in ied = " + ied.getName() + " )";
+            String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
             if( res4.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
+                console.error( messagePrefix + "cannot find " + mess4 );
                 return;
             }
             if( res4.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
+                console.error( messagePrefix + "found several " + mess4 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
             setRefersToAnyLN( res4.get( 0 ));
+            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
         }
     }
 

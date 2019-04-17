@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -29,6 +30,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -1241,129 +1243,87 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // see Issue #13
         super.doResolveLinks();
         
-        if( getAnyLN() == null ) return;
+        // name         the name of the log control block
+        // desc         a description text
+        // datSet       the name of the data set whose values shall be logged; datSet should only be missing within an ICD-File,
+        //              or for an unused control block. The referenced data set must reside in the same LN as the control block.
+        // intgPd       integrity scan period in milliseconds – see IEC 61850-7-2.
+        // ldInst       The identification of the LD where the log resides; if missing, the same LD where this control block is placed.
+        // prefix       Prefix of LN where the log resides; if missing, empty string
+        // lnClass      Class of the LN where the log resides; if missing, LLN0
+        // lnInst       Instance number of LN, where the log resides; missing for LLN0
+        // logName      Relative name of the log within its hosting LN; name of the log element
+        // logEna       TRUE enables immediate logging; FALSE prohibits logging until enabled online
+        // reasonCode   If true, the reason code for the event trigger is also stored into the log – see IEC 61850-7-2
         
-        if( getLogName() != null ) {
+        if( getLogName() == null ) return;
+        
+        String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
+        LDevice lDevice = getAnyLN().getLDevice();
 
-            SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
-                
-                @Override
-                public Boolean caseLog( Log object ) {
-                    return getLogName().equals( object.getName() );
-                }
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-            };
-            
-            List< Log > res1 = shallowSearchObjects( getAnyLN().getLog(), s1 );
-            String mess1 = "Log( name = " + getLogName() +  " ) for LogControl on line "
-                    + getLineNumber() + " )";
+        if( getLdInst() != null ) {
+            List< LDevice > res1 = 
+                    lDevice
+                    .getServer()
+                    .getAccessPoint()
+                    .getIED()
+                    .getAccessPoint()
+                    .stream()
+                    .map( ap -> ap.getServer() )
+                    .filter( s -> s != null )
+                    .map( s -> s.getLDevice() )
+                    .filter( ld -> ld != null )
+                    .flatMap( ld -> ld.stream() )
+                    .filter( ld -> getLdInst().equals( ld.getInst() ))
+                    .collect( Collectors.toList() );
+
+            String mess1 = "LDevice( inst = " + getLdInst() + " ))";
             if( res1.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+                console.error( messagePrefix + "cannot find " + mess1 );
                 return;
             }
             if( res1.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+                console.error( messagePrefix + "found several " + mess1 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess1 );
-            setRefersToLog( res1.get( 0 ));
+            lDevice = res1.get( 0 );
+            console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
         }
 
-        if( getLnClass() == null ) return;
-
-        LDevice lDevice = getAnyLN().getLDevice();
-        if( lDevice == null ) return;
-        IED ied = lDevice.getIED();
-        if( ied == null ) return;
-        
-        // The following is copy/paste from ClientLN (with modification)
-        // TODO: factor out ?
-        
-        // ldInst: The identification of the LD where the log resides; if missing, the same LD where this control block is placed
-        if( getLdInst() != null && ! getLdInst().isEmpty() ) {
-            // find inside an LDevice with
-            //   LDevice.name == LogControl.ldInst
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-    
-                @Override
-                public Boolean caseLDevice( LDevice object ) {
-                    return getLdInst().equals( object.getInst() );
-                }
-    
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-    
-            };
-    
-            List< LDevice > res2 = deepSearchObjects( ied.getAccessPoint(), s2 );
-            String mess2 = "LDevice( inst = " + getLdInst() + " ) for LogControl on line " + getLineNumber()
-                    + " ( in ied = " + ied.getName() + " )";
-            if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
-                return;
-            }
-            if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
-                return;
-            }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-            lDevice = res2.get( 0 );
-        }
-        
-        if( "LLN0".equals( getLnClass() ) ) {
+        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if(( getLnClass() == null ) || getLnClass().isEmpty() || ( "LLN0".equals( getLnClass() ))) {
             if( lDevice.getLN0() == null ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find LN0 for LogControl on line " + getLineNumber()
-                        + " ( in ied = " + ied.getName() + " )" );
+                console.error( messagePrefix + "cannot find LN0" );
                 return;
             }
             setRefersToAnyLN( lDevice.getLN0() );
         }
         else {
             if( getLnInst() == null ) return;
-            // prefix is optional
-            //if( getPrefix() == null ) return;
-
             // find inside an LN with
-            //   LN.lnClass == LogControl.lnClass
-            //   LN.prefix == LogControl.prefix
-            //   LN.inst == LogControl.lnInst
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
+            //   LN.lnClass == FCDA.lnClass
+            //   LN.prefix == FCDA.prefix
+            //   LN.inst == FCDA.lnInst
+            List< LN > res3 = lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
 
-                @Override
-                public Boolean caseLN( LN object ) {
-                    if( getLnClass().equals( object.getLnClass() ) && getLnInst().equals( object.getInst() ) ) {
-                        if( object.getPrefix() == null ) return getPrefix() == null;
-                        return object.getPrefix().equals( getPrefix() );
-                    }
-                    return false;
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
-            List< LN > res3 = shallowSearchObjects( lDevice.getLN(), s3 );
-            String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " ) for LogControl on line "
-                    + getLineNumber() + " ( in ied = " + ied.getName() + " )";
             if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+                console.error( messagePrefix + "cannot find " + mess3 );
                 return;
             }
             if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+                console.error( messagePrefix + "found several " + mess3 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
-            setRefersToAnyLN( res3.get( 0 ));
+            setRefersToAnyLN( res3.get( 0 ) );
         }
+        console.info( "LogControl on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        
     }
 
 } //LogControlImpl

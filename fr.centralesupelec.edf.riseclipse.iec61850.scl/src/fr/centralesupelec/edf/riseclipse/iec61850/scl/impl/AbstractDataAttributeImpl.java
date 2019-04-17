@@ -46,6 +46,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -1186,6 +1187,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
         DataTypeTemplates dtt = get_DataTypeTemplates();
         if( dtt == null ) return;
 
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
 
         if( "Enum".equals( getBType() ) ) {
@@ -1201,15 +1203,15 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
 
             String mess = "EnumType( id = " + getType() + " )";
             if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "cannot find " + mess );
+                console.error( messagePrefix + "cannot find " + mess );
                 return;
             }
             if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "found several " + mess );
+                console.error( messagePrefix + "found several " + mess );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            AbstractRiseClipseConsole.getConsole().verbose( messagePrefix + "found " + mess + " on line " + getRefersToEnumType().getLineNumber() );
+            console.info( "AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToEnumType().getLineNumber() );
         }
         else if( "Struct".equals( getBType() ) ) {
 
@@ -1224,15 +1226,15 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
                     
             String mess = "DAType( id = " + getType() + " )";
             if( res.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "cannot find " + mess );
+                console.error( messagePrefix + "cannot find " + mess );
                 return;
             }
             if( res.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( messagePrefix + "found several " + mess );
+                console.error( messagePrefix + "found several " + mess );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            AbstractRiseClipseConsole.getConsole().verbose( messagePrefix + "found " + mess + " on line " + getRefersToDAType().getLineNumber() );
+            console.info( "AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDAType().getLineNumber() );
         }
     }
 

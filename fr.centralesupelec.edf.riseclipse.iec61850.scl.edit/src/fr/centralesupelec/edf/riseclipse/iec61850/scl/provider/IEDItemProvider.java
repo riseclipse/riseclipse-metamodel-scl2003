@@ -70,6 +70,7 @@ public class IEDItemProvider extends UnNamingItemProvider {
             addTypePropertyDescriptor(object);
             addNamePropertyDescriptor(object);
             addOriginalSclReleasePropertyDescriptor(object);
+            addReferredByIEDNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -268,6 +269,28 @@ public class IEDItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By IED Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByIEDNamePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_IED_ReferredByIEDName_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_IED_ReferredByIEDName_feature", "_UI_IED_type"),
+                 SclPackage.eINSTANCE.getIED_ReferredByIEDName(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

@@ -19,18 +19,19 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -561,34 +562,27 @@ public class DOImpl extends DataObjectImpl implements DO {
         DataTypeTemplates dtt = get_DataTypeTemplates();
         if( dtt == null ) return;
 
-        // find an DOType with
-        //   DOType.id      == DO.type
-        SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from DO on line " + getLineNumber() + ": ";
 
-            @Override
-            public Boolean caseDOType( DOType object ) {
-                return getType().equals( object.getId() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< DOType > res = shallowSearchObjects( dtt.getDOType(), s );
-        String mess = "DOType( id = " + getType() + " ) for DO on line " + getLineNumber() + " )";
+        List< DOType > res = 
+                dtt
+                .getDOType()
+                .stream()
+                .filter(  d -> getType().equals( d.getId() ))
+                .collect( Collectors.toList() );
+                
+        String mess = "DOType( id = " + getType() + " )";
         if( res.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            console.error( messagePrefix + "cannot find " + mess );
             return;
         }
         if( res.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            console.error( messagePrefix + "found several " + mess );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-        setRefersToDOType( res.get( 0 ) );
+        setRefersToDOType( res.get( 0 ));
+        console.info( "DO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
     }
 
 } //DOImpl

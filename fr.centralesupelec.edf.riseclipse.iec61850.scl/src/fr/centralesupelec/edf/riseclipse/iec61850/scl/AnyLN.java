@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,8 +43,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByClientLN <em>Referred By Client LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByAssociation <em>Referred By Association</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN()
@@ -417,7 +420,8 @@ public interface AnyLN extends UnNaming {
      * @see #unsetReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @model opposite="AnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
+     *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
     EList<ReportControl> getReportControl();
@@ -458,7 +462,8 @@ public interface AnyLN extends UnNaming {
      * @see #unsetLogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_LogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @model opposite="AnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
+     *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
     EList<LogControl> getLogControl();
@@ -649,45 +654,41 @@ public interface AnyLN extends UnNaming {
     boolean isSetReferredByAssociation();
 
     /**
-     * Returns the value of the '<em><b>Referred IED Name</b></em>' reference list.
+     * Returns the value of the '<em><b>Referred By IED Name</b></em>' reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName}.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Referred IED Name</em>' reference list isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Referred IED Name</em>' reference list.
-     * @see #isSetReferredIEDName()
-     * @see #unsetReferredIEDName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReferredIEDName()
+     * @return the value of the '<em>Referred By IED Name</em>' reference list.
+     * @see #isSetReferredByIEDName()
+     * @see #unsetReferredByIEDName()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReferredByIEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<IEDName> getReferredIEDName();
+    EList<IEDName> getReferredByIEDName();
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}' reference list.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetReferredIEDName()
-     * @see #getReferredIEDName()
+     * @see #isSetReferredByIEDName()
+     * @see #getReferredByIEDName()
      * @generated
      */
-    void unsetReferredIEDName();
+    void unsetReferredByIEDName();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}' reference list is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}' reference list is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Referred IED Name</em>' reference list is set.
-     * @see #unsetReferredIEDName()
-     * @see #getReferredIEDName()
+     * @return whether the value of the '<em>Referred By IED Name</em>' reference list is set.
+     * @see #unsetReferredByIEDName()
+     * @see #getReferredByIEDName()
      * @generated
      */
-    boolean isSetReferredIEDName();
+    boolean isSetReferredByIEDName();
 
     /**
      * Returns the value of the '<em><b>Referred By LNode</b></em>' reference list.
@@ -725,6 +726,78 @@ public interface AnyLN extends UnNaming {
      * @generated
      */
     boolean isSetReferredByLNode();
+
+    /**
+     * Returns the value of the '<em><b>Control With Trigger Opt</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Control With Trigger Opt</em>' attribute list.
+     * @see #isSetControlWithTriggerOpt()
+     * @see #unsetControlWithTriggerOpt()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ControlWithTriggerOpt()
+     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" volatile="true" ordered="false"
+     *        extendedMetaData="kind='group' group='#Control'"
+     * @generated
+     */
+    FeatureMap getControlWithTriggerOpt();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetControlWithTriggerOpt()
+     * @see #getControlWithTriggerOpt()
+     * @generated
+     */
+    void unsetControlWithTriggerOpt();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}' attribute list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Control With Trigger Opt</em>' attribute list is set.
+     * @see #unsetControlWithTriggerOpt()
+     * @see #getControlWithTriggerOpt()
+     * @generated
+     */
+    boolean isSetControlWithTriggerOpt();
+
+    /**
+     * Returns the value of the '<em><b>Control</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Control</em>' attribute list.
+     * @see #isSetControl()
+     * @see #unsetControl()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Control()
+     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
+     *        extendedMetaData="kind='group'"
+     * @generated
+     */
+    FeatureMap getControl();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetControl()
+     * @see #getControl()
+     * @generated
+     */
+    void unsetControl();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}' attribute list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Control</em>' attribute list is set.
+     * @see #unsetControl()
+     * @see #getControl()
+     * @generated
+     */
+    boolean isSetControl();
 
     LDevice getLDevice();
 

@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +39,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getGSE <em>GSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV <em>SMV</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getControlBlock <em>Control Block</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP()
@@ -398,7 +400,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #unsetGSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_GSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" ordered="false"
+     * @model opposite="ConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
+     *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */
     EList<GSE> getGSE();
@@ -439,7 +442,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #unsetSMV()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_SMV()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" ordered="false"
+     * @model opposite="ConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
+     *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */
     EList<SMV> getSMV();
@@ -464,5 +468,18 @@ public interface ConnectedAP extends UnNaming {
      * @generated
      */
     boolean isSetSMV();
+
+    /**
+     * Returns the value of the '<em><b>Control Block</b></em>' attribute list.
+     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Control Block</em>' attribute list.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_ControlBlock()
+     * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
+     *        extendedMetaData="kind='group'"
+     * @generated
+     */
+    FeatureMap getControlBlock();
 
 } // ConnectedAP

@@ -28,8 +28,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -1121,6 +1123,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
         if( getCNodeName() == null ) return;
 
+        String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
         if( getSubstationName() != null && ! getSubstationName().isEmpty() ) {
 
             if( isSetLineName() || isSetProcessName() ) {
@@ -1132,65 +1137,46 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             // find a Substation with
             //   Substation.name == Terminal.substationName
-            SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseSubstation( Substation object ) {
-                    return getSubstationName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             Substation substation = null;
-            List< Substation > res1 = shallowSearchObjects( get_Substations(), s1 );
-            String mess = "Substation( name = " + getSubstationName() + " ) for Terminal on line " + getLineNumber()
-                        + " ( name = " + getName() + " )";
+            List< Substation > res1 =
+                    get_Substations()
+                    .stream()
+                    .filter(  s -> getSubstationName().equals( s.getName() ))
+                    .collect( Collectors.toList() );
+            
+            String mess1 = "Substation( name = " + getSubstationName() + " )";
             if( res1.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+                console.error( messagePrefix + "cannot find " + mess1 );
                 return;
             }
             if( res1.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+                console.error( messagePrefix + "found several " + mess1 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
             substation = res1.get( 0 );
+            console.verbose( messagePrefix + "found " + mess1 + " on line " + substation.getLineNumber() );
 
             // find a VoltageLevel with
             //   VoltageLevel.name == Terminal.voltageLevelName
-            SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseVoltageLevel( VoltageLevel object ) {
-                    return getVoltageLevelName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             VoltageLevel voltageLevel = null;
-            List< VoltageLevel > res2 = shallowSearchObjects( substation.getVoltageLevel(), s2 );
-            String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " ) for Terminal on line "
-                        + getLineNumber() + " ( name = " + getName() + " )";
+            List< VoltageLevel > res2 =
+                        substation
+                        .getVoltageLevel()
+                        .stream()
+                        .filter(  vl -> getVoltageLevelName().equals( vl.getName() ))
+                        .collect( Collectors.toList() );
+            
+            String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
             if( res2.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+                console.error( messagePrefix + "cannot find " + mess2 );
                 return;
             }
             if( res2.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+                console.error( messagePrefix + "found several " + mess2 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
             voltageLevel = res2.get( 0 );
+            console.verbose( messagePrefix + "found " + mess2 + " on line " + voltageLevel.getLineNumber() );
 
             // find a Bay with
             //   Bay.name == Terminal.bayName
@@ -1209,19 +1195,24 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             };
 
             Bay bay = null;
-            List< Bay > res3 = shallowSearchObjects( voltageLevel.getBay(), s3 );
-            String mess3 = "Bay( name = " + getBayName() + " ) for Terminal on line " + getLineNumber() + " ( name = "
-                        + getName() + " )";
+            List< Bay > res3 =
+                    voltageLevel
+                    .getBay()
+                    .stream()
+                    .filter(  b -> getBayName().equals( b.getName() ))
+                    .collect( Collectors.toList() );
+                    
+            String mess3 = "Bay( name = " + getBayName() + " )";
             if( res3.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess3 );
+                console.error( messagePrefix + "cannot find " + mess3 );
                 return;
             }
             if( res3.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess3 );
+                console.error( messagePrefix + "found several " + mess3 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess3 );
             bay = res3.get( 0 );
+            console.verbose( messagePrefix + "found " + mess3 + " on line " + voltageLevel.getLineNumber() );
 
             // find a ConnectivityNode with
             //   ConnectivityNode.name == Terminal.bayName
@@ -1239,56 +1230,51 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             };
 
-            List< ConnectivityNode > res4 = shallowSearchObjects( bay.getConnectivityNode(), s4 );
-            String mess4 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
-                        + " ( name = " + getName() + " )";
+            List< ConnectivityNode > res4 =
+                    bay
+                    .getConnectivityNode()
+                    .stream()
+                    .filter( cn -> getCNodeName().equals( cn.getName() ))
+                    .collect( Collectors.toList() );
+                    
+            String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
             if( res4.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess4 );
+                console.error( messagePrefix + "cannot find " + mess4 );
                 return;
             }
             if( res4.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess4 );
+                console.error( messagePrefix + "found several " + mess4 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
             setRefersToConnectivityNode( res4.get( 0 ) );
+            console.info( "Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
         }
         else if( getLineName() != null && ! getLineName().isEmpty() ) {
 
-            if( isSetProcessName() ) {
-                // TODO: this error should be detected in OCL
-            }
+            if( getProcessName() == null ) return;
+            if( getProcessName().isEmpty() ) return;
 
             // find a Line with
             //   Line.name == Terminal.lineName
-            SclSwitch< Boolean > s5 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseLine( Line object ) {
-                    return getLineName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             Line line = null;
-            List< Line > res5 = shallowSearchObjects( get_SCL().getLine(), s5 );
-            String mess5 = "Line( name = " + getLineName() + " ) for Terminal on line " + getLineNumber()
-                        + " ( name = " + getName() + " )";
+            List< Line > res5 =
+                    get_SCL()
+                    .getLine()
+                    .stream()
+                    .filter( l -> getLineName().equals( l.getName() ))
+                    .collect( Collectors.toList() );
+                    
+            String mess5 = "Line( name = " + getLineName() + " )";
             if( res5.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess5 );
+                console.error( messagePrefix + "cannot find " + mess5 );
                 return;
             }
             if( res5.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess5 );
+                console.error( messagePrefix + "found several " + mess5 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
             line = res5.get( 0 );
+            console.verbose( messagePrefix + "found " + mess5 + " on line " + line.getLineNumber() );
 
             // find a ConnectivityNode with
             //   ConnectivityNode.name == Terminal.bayName
@@ -1306,19 +1292,24 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             };
 
-            List< ConnectivityNode > res6 = shallowSearchObjects( line.getConnectivityNode(), s6 );
-            String mess6 = "ConnectivityNode( name = " + getCNodeName() + " ) for Terminal on line " + getLineNumber()
-                        + " ( name = " + getName() + " )";
+            List< ConnectivityNode > res6 =
+                    line.
+                    getConnectivityNode()
+                    .stream()
+                    .filter( cn -> getCNodeName().equals( cn.getName() ))
+                    .collect( Collectors.toList() );
+
+            String mess6 = "ConnectivityNode( name = " + getCNodeName() + " )";
             if( res6.isEmpty() ) {
-                AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess6 );
+                console.error( messagePrefix + "cannot find " + mess6 );
                 return;
             }
             if( res6.size() > 1 ) {
-                AbstractRiseClipseConsole.getConsole().error( "found several " + mess6 );
+                console.error( messagePrefix + "found several " + mess6 );
                 return;
             }
-            //AbstractRiseClipseConsole.getConsole().info( "found " + mess4 );
-            setRefersToConnectivityNode( res6.get( 0 ) );
+            setRefersToConnectivityNode( res6.get( 0 ));
+            console.info( "Terminal on line " + getLineNumber() + " refers to " + mess6 + " on line " + getRefersToConnectivityNode().getLineNumber() );
         }
     }
 

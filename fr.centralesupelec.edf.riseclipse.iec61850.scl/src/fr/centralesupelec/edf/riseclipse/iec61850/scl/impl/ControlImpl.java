@@ -19,20 +19,22 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
@@ -398,6 +400,18 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public AnyLN getAnyLN() {
+        // TODO: implement this method
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -524,6 +538,20 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * @generated
      */
     @Override
+    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+        switch (operationID) {
+            case SclPackage.CONTROL___GET_ANY_LN:
+                return getAnyLN();
+        }
+        return super.eInvoke(operationID, arguments);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String toString() {
         if (eIsProxy()) return super.toString();
 
@@ -549,40 +577,29 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         if( getDatSet() == null ) return;
         if( getAnyLN() == null ) return;
 
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from Control on line " + getLineNumber() + ": ";
+
         // find an DataSet with
         //   DataSet.name == Control.datSet
-        SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseDataSet( DataSet object ) {
-                return getDatSet().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< DataSet > res = shallowSearchObjects( getAnyLN().getDataSet(), s );
-        String mess = "DataSet( name = " + getDatSet() + " ) for Control on line " + getLineNumber() + " ( name = "
-                + getName() + " )";
+        List< DataSet > res =
+                getAnyLN()
+                .getDataSet()
+                .stream()
+                .filter( d -> getDatSet().equals( d.getName() ))
+                .collect( Collectors.toList() );
+        
+        String mess = "DataSet( name = " + getDatSet() + " )";
         if( res.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            console.error( messagePrefix + "cannot find " + mess );
             return;
         }
         if( res.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            console.error( messagePrefix + "found several " + mess );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
         setRefersToDataSet( res.get( 0 ) );
-    }
-
-    // TODO: redesign this
-    public AnyLN getAnyLN() {
-        return null;
+        console.info( "Control on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDataSet().getLineNumber() );
     }
 
 } //ControlImpl
