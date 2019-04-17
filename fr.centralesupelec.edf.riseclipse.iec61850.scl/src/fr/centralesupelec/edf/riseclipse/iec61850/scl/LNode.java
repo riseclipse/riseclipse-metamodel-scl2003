@@ -34,7 +34,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLnType <em>Ln Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode()
@@ -416,31 +416,27 @@ public interface LNode extends UnNaming {
     boolean isSetRefersToAnyLN();
 
     /**
-     * Returns the value of the '<em><b>LNode Container</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LNode Container</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LNode Container</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode Container</em>' container reference.
-     * @see #setLNodeContainer(LNodeContainer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_LNodeContainer()
+     * @return the value of the '<em>Parent LNode Container</em>' container reference.
+     * @see #setParentLNodeContainer(LNodeContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_ParentLNodeContainer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode
      * @model opposite="LNode" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LNodeContainer getLNodeContainer();
+    LNodeContainer getParentLNodeContainer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LNode Container</em>' container reference.
-     * @see #getLNodeContainer()
+     * @param value the new value of the '<em>Parent LNode Container</em>' container reference.
+     * @see #getParentLNodeContainer()
      * @generated
      */
-    void setLNodeContainer( LNodeContainer value );
+    void setParentLNodeContainer(LNodeContainer value);
 
 } // LNode

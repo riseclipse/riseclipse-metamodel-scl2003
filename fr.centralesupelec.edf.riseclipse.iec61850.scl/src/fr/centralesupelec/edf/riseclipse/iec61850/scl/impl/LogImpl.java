@@ -42,7 +42,7 @@ import java.util.Collection;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogImpl#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  * </ul>
@@ -112,8 +112,8 @@ public class LogImpl extends UnNamingImpl implements Log {
      * @generated
      */
     @Override
-    public AnyLN getAnyLN() {
-        if (eContainerFeatureID() != SclPackage.LOG__ANY_LN) return null;
+    public AnyLN getParentAnyLN() {
+        if (eContainerFeatureID() != SclPackage.LOG__PARENT_ANY_LN) return null;
         return (AnyLN)eInternalContainer();
     }
 
@@ -122,8 +122,8 @@ public class LogImpl extends UnNamingImpl implements Log {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAnyLN( AnyLN newAnyLN, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.LOG__ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.LOG__PARENT_ANY_LN, msgs);
         return msgs;
     }
 
@@ -133,20 +133,20 @@ public class LogImpl extends UnNamingImpl implements Log {
      * @generated
      */
     @Override
-    public void setAnyLN( AnyLN newAnyLN ) {
-        if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG__ANY_LN && newAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newAnyLN))
+    public void setParentAnyLN(AnyLN newParentAnyLN) {
+        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG__PARENT_ANY_LN && newParentAnyLN != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAnyLN))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAnyLN != null)
-                msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG, AnyLN.class, msgs);
-            msgs = basicSetAnyLN(newAnyLN, msgs);
+            if (newParentAnyLN != null)
+                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG, AnyLN.class, msgs);
+            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG__ANY_LN, newAnyLN, newAnyLN));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
     }
 
     /**
@@ -241,10 +241,10 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
+            case SclPackage.LOG__PARENT_ANY_LN:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAnyLN((AnyLN)otherEnd, msgs);
+                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
             case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLogControl()).basicAdd(otherEnd, msgs);
         }
@@ -259,8 +259,8 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
-                return basicSetAnyLN(null, msgs);
+            case SclPackage.LOG__PARENT_ANY_LN:
+                return basicSetParentAnyLN(null, msgs);
             case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
                 return ((InternalEList<?>)getReferredByLogControl()).basicRemove(otherEnd, msgs);
         }
@@ -275,7 +275,7 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LOG__ANY_LN:
+            case SclPackage.LOG__PARENT_ANY_LN:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__LOG, AnyLN.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -289,8 +289,8 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
-                return getAnyLN();
+            case SclPackage.LOG__PARENT_ANY_LN:
+                return getParentAnyLN();
             case SclPackage.LOG__NAME:
                 return getName();
             case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:
@@ -308,8 +308,8 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
-                setAnyLN((AnyLN)newValue);
+            case SclPackage.LOG__PARENT_ANY_LN:
+                setParentAnyLN((AnyLN)newValue);
                 return;
             case SclPackage.LOG__NAME:
                 setName((String)newValue);
@@ -330,8 +330,8 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
-                setAnyLN((AnyLN)null);
+            case SclPackage.LOG__PARENT_ANY_LN:
+                setParentAnyLN((AnyLN)null);
                 return;
             case SclPackage.LOG__NAME:
                 unsetName();
@@ -351,8 +351,8 @@ public class LogImpl extends UnNamingImpl implements Log {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.LOG__ANY_LN:
-                return getAnyLN() != null;
+            case SclPackage.LOG__PARENT_ANY_LN:
+                return getParentAnyLN() != null;
             case SclPackage.LOG__NAME:
                 return isSetName();
             case SclPackage.LOG__REFERRED_BY_LOG_CONTROL:

@@ -359,13 +359,13 @@ public interface SclPackage extends EPackage {
     int HEADER__VERSION = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int HEADER__SCL = SCL_OBJECT_FEATURE_COUNT + 5;
+    int HEADER__PARENT_SCL = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -423,13 +423,13 @@ public interface SclPackage extends EPackage {
     int HISTORY__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Header</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int HISTORY__HEADER = SCL_OBJECT_FEATURE_COUNT + 0;
+    int HISTORY__PARENT_HEADER = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Hitem</b></em>' containment reference list.
@@ -532,13 +532,13 @@ public interface SclPackage extends EPackage {
     int HITEM__WHY = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>History</b></em>' container reference.
+     * The feature id for the '<em><b>Parent History</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int HITEM__HISTORY = SCL_OBJECT_FEATURE_COUNT + 6;
+    int HITEM__PARENT_HISTORY = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>Hitem</em>' class.
@@ -1168,22 +1168,22 @@ public interface SclPackage extends EPackage {
     int LINE__TYPE = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Process</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Process</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINE__PROCESS = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 1;
+    int LINE__PARENT_PROCESS = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LINE__SCL = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
+    int LINE__PARENT_SCL = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Connectivity Node</b></em>' containment reference list.
@@ -1322,13 +1322,13 @@ public interface SclPackage extends EPackage {
     int PRIVATE__TYPE = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Base Element</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Base Element</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PRIVATE__BASE_ELEMENT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 2;
+    int PRIVATE__PARENT_BASE_ELEMENT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Private</em>' class.
@@ -1467,13 +1467,13 @@ public interface SclPackage extends EPackage {
     int PROCESS__LINE = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROCESS__SCL = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
+    int PROCESS__PARENT_SCL = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Conducting Equipment</b></em>' containment reference list.
@@ -1721,22 +1721,22 @@ public interface SclPackage extends EPackage {
     int TEXT__SOURCE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Base Element</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Base Element</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TEXT__BASE_ELEMENT = SCL_OBJECT_FEATURE_COUNT + 1;
+    int TEXT__PARENT_BASE_ELEMENT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Header</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Header</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TEXT__HEADER = SCL_OBJECT_FEATURE_COUNT + 2;
+    int TEXT__PARENT_HEADER = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1785,22 +1785,22 @@ public interface SclPackage extends EPackage {
     int ADDRESS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Connected AP</b></em>' container reference.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ADDRESS__CONNECTED_AP = SCL_OBJECT_FEATURE_COUNT + 0;
-
-    /**
-     * The feature id for the '<em><b>Control Block</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ADDRESS__CONTROL_BLOCK = SCL_OBJECT_FEATURE_COUNT + 1;
+    int ADDRESS__PARENT_CONNECTED_AP = SCL_OBJECT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Parent Control Block</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS__PARENT_CONTROL_BLOCK = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>P</b></em>' containment reference list.
@@ -3245,13 +3245,13 @@ public interface SclPackage extends EPackage {
     int COMMUNICATION__SUB_NETWORK = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int COMMUNICATION__SCL = UN_NAMING_FEATURE_COUNT + 1;
+    int COMMUNICATION__PARENT_SCL = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Communication</em>' class.
@@ -3362,13 +3362,13 @@ public interface SclPackage extends EPackage {
     int CONNECTED_AP__ADDRESS = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Sub Network</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Sub Network</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTED_AP__SUB_NETWORK = UN_NAMING_FEATURE_COUNT + 4;
+    int CONNECTED_AP__PARENT_SUB_NETWORK = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Refers To Access Point</b></em>' reference.
@@ -3533,13 +3533,13 @@ public interface SclPackage extends EPackage {
     int CONTROL_BLOCK_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
-     * The operation id for the '<em>Get Connected AP</em>' operation.
+     * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_BLOCK___GET_CONNECTED_AP = UN_NAMING_OPERATION_COUNT + 0;
+    int CONTROL_BLOCK___GET_PARENT_CONNECTED_AP = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Control Block</em>' class.
@@ -3659,13 +3659,13 @@ public interface SclPackage extends EPackage {
     int GSE__MAX_TIME = CONTROL_BLOCK_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Connected AP</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE__CONNECTED_AP = CONTROL_BLOCK_FEATURE_COUNT + 2;
+    int GSE__PARENT_CONNECTED_AP = CONTROL_BLOCK_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>GSE</em>' class.
@@ -3677,13 +3677,13 @@ public interface SclPackage extends EPackage {
     int GSE_FEATURE_COUNT = CONTROL_BLOCK_FEATURE_COUNT + 3;
 
     /**
-     * The operation id for the '<em>Get Connected AP</em>' operation.
+     * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE___GET_CONNECTED_AP = CONTROL_BLOCK___GET_CONNECTED_AP;
+    int GSE___GET_PARENT_CONNECTED_AP = CONTROL_BLOCK___GET_PARENT_CONNECTED_AP;
 
     /**
      * The number of operations of the '<em>GSE</em>' class.
@@ -3767,13 +3767,13 @@ public interface SclPackage extends EPackage {
     int P__VALUE = PADDR__VALUE;
 
     /**
-     * The feature id for the '<em><b>Address</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Address</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int P__ADDRESS = PADDR_FEATURE_COUNT + 0;
+    int P__PARENT_ADDRESS = PADDR_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>P</em>' class.
@@ -3821,13 +3821,13 @@ public interface SclPackage extends EPackage {
     int PPHYS_CONN__VALUE = PADDR__VALUE;
 
     /**
-     * The feature id for the '<em><b>Phys Conn</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Phys Conn</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PPHYS_CONN__PHYS_CONN = PADDR_FEATURE_COUNT + 0;
+    int PPHYS_CONN__PARENT_PHYS_CONN = PADDR_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>PPhys Conn</em>' class.
@@ -3911,13 +3911,13 @@ public interface SclPackage extends EPackage {
     int PHYS_CONN__TYPE = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Connected AP</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PHYS_CONN__CONNECTED_AP = UN_NAMING_FEATURE_COUNT + 1;
+    int PHYS_CONN__PARENT_CONNECTED_AP = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>P</b></em>' containment reference list.
@@ -4037,13 +4037,13 @@ public interface SclPackage extends EPackage {
     int SMV__REFERS_TO_CONTROL_WITH_IED_NAME = CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME;
 
     /**
-     * The feature id for the '<em><b>Connected AP</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV__CONNECTED_AP = CONTROL_BLOCK_FEATURE_COUNT + 0;
+    int SMV__PARENT_CONNECTED_AP = CONTROL_BLOCK_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>SMV</em>' class.
@@ -4055,13 +4055,13 @@ public interface SclPackage extends EPackage {
     int SMV_FEATURE_COUNT = CONTROL_BLOCK_FEATURE_COUNT + 1;
 
     /**
-     * The operation id for the '<em>Get Connected AP</em>' operation.
+     * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV___GET_CONNECTED_AP = CONTROL_BLOCK___GET_CONNECTED_AP;
+    int SMV___GET_PARENT_CONNECTED_AP = CONTROL_BLOCK___GET_PARENT_CONNECTED_AP;
 
     /**
      * The number of operations of the '<em>SMV</em>' class.
@@ -4154,13 +4154,13 @@ public interface SclPackage extends EPackage {
     int SUB_NETWORK__BIT_RATE = NAMING_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Communication</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Communication</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_NETWORK__COMMUNICATION = NAMING_FEATURE_COUNT + 2;
+    int SUB_NETWORK__PARENT_COMMUNICATION = NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Connected AP</b></em>' containment reference list.
@@ -4613,13 +4613,13 @@ public interface SclPackage extends EPackage {
     int BDA__REFERRED_BY_EXT_REF = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
-     * The feature id for the '<em><b>DA Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DA Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BDA__DA_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 0;
+    int BDA__PARENT_DA_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>BDA</em>' class.
@@ -4838,13 +4838,13 @@ public interface SclPackage extends EPackage {
     int DA__FC = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>DO Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DO Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DA__DO_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 4;
+    int DA__PARENT_DO_TYPE = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Prot Ns</b></em>' containment reference list.
@@ -4964,13 +4964,13 @@ public interface SclPackage extends EPackage {
     int DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Data Type Templates</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DA_TYPE__DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
+    int DA_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Prot Ns</b></em>' containment reference list.
@@ -5180,13 +5180,13 @@ public interface SclPackage extends EPackage {
     int DO__TYPE = DATA_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>LNode Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LNode Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO__LNODE_TYPE = DATA_OBJECT_FEATURE_COUNT + 2;
+    int DO__PARENT_LNODE_TYPE = DATA_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Refers To DO Type</b></em>' reference.
@@ -5315,13 +5315,13 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__REFERRED_BY_DO = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Data Type Templates</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO_TYPE__DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 4;
+    int DO_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>SDO</b></em>' containment reference list.
@@ -5414,13 +5414,13 @@ public interface SclPackage extends EPackage {
     int DATA_TYPE_TEMPLATES__LNODE_TYPE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__SCL = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int DATA_TYPE_TEMPLATES__PARENT_SCL = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Data Type Templates</em>' class.
@@ -5513,13 +5513,13 @@ public interface SclPackage extends EPackage {
     int ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE = ID_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Data Type Templates</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ENUM_TYPE__DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 1;
+    int ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Enum Val</b></em>' containment reference list.
@@ -5576,13 +5576,13 @@ public interface SclPackage extends EPackage {
     int ENUM_VAL__ORD = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Enum Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Enum Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ENUM_VAL__ENUM_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
+    int ENUM_VAL__PARENT_ENUM_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5702,13 +5702,13 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE__DO = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Data Type Templates</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
+    int LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Referred By Any LN</b></em>' reference list.
@@ -5756,22 +5756,22 @@ public interface SclPackage extends EPackage {
     int PROT_NS__TYPE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>DA</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DA</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROT_NS__DA = SCL_OBJECT_FEATURE_COUNT + 1;
+    int PROT_NS__PARENT_DA = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>DA Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DA Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROT_NS__DA_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
+    int PROT_NS__PARENT_DA_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -5873,13 +5873,13 @@ public interface SclPackage extends EPackage {
     int SDO__TYPE = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>DO Type</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DO Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDO__DO_TYPE = UN_NAMING_FEATURE_COUNT + 2;
+    int SDO__PARENT_DO_TYPE = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5936,22 +5936,22 @@ public interface SclPackage extends EPackage {
     int VAL__SGROUP = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Abstract Data Attribute</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Data Attribute</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VAL__ABSTRACT_DATA_ATTRIBUTE = SCL_OBJECT_FEATURE_COUNT + 1;
+    int VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>DAI</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DAI</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VAL__DAI = SCL_OBJECT_FEATURE_COUNT + 2;
+    int VAL__PARENT_DAI = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -6010,13 +6010,13 @@ public interface SclPackage extends EPackage {
     int ACCESS_CONTROL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>LDevice</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ACCESS_CONTROL__LDEVICE = SCL_OBJECT_FEATURE_COUNT + 0;
+    int ACCESS_CONTROL__PARENT_LDEVICE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Access Control</em>' class.
@@ -6118,13 +6118,13 @@ public interface SclPackage extends EPackage {
     int ACCESS_POINT__ROUTER = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>IED</b></em>' container reference.
+     * The feature id for the '<em><b>Parent IED</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ACCESS_POINT__IED = UN_NAMING_FEATURE_COUNT + 3;
+    int ACCESS_POINT__PARENT_IED = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>LN</b></em>' containment reference list.
@@ -6451,13 +6451,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 17;
 
     /**
-     * The operation id for the '<em>Get LDevice</em>' operation.
+     * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN___GET_LDEVICE = UN_NAMING_OPERATION_COUNT + 0;
+    int ANY_LN___GET_PARENT_LDEVICE = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Any LN</em>' class.
@@ -6586,13 +6586,13 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION__KIND = BASE_ELEMENT_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Server</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Server</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ASSOCIATION__SERVER = BASE_ELEMENT_FEATURE_COUNT + 8;
+    int ASSOCIATION__PARENT_SERVER = BASE_ELEMENT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -6676,13 +6676,13 @@ public interface SclPackage extends EPackage {
     int AUTHENTICATION__WEAK = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Server</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Server</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int AUTHENTICATION__SERVER = SCL_OBJECT_FEATURE_COUNT + 5;
+    int AUTHENTICATION__PARENT_SERVER = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Authentication</em>' class.
@@ -6892,13 +6892,13 @@ public interface SclPackage extends EPackage {
     int CLIENT_LN__AP_REF = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
 
     /**
-     * The feature id for the '<em><b>Rpt Enabled</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Rpt Enabled</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_LN__RPT_ENABLED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
+    int CLIENT_LN__PARENT_RPT_ENABLED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -7036,13 +7036,13 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES__UNBUF_REPORT = SCL_OBJECT_FEATURE_COUNT + 10;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CLIENT_SERVICES__SERVICES = SCL_OBJECT_FEATURE_COUNT + 11;
+    int CLIENT_SERVICES__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Time Sync Prot</b></em>' containment reference.
@@ -7126,13 +7126,13 @@ public interface SclPackage extends EPackage {
     int COMM_PROT__IPV6 = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int COMM_PROT__SERVICES = SCL_OBJECT_FEATURE_COUNT + 1;
+    int COMM_PROT__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Comm Prot</em>' class.
@@ -7344,13 +7344,13 @@ public interface SclPackage extends EPackage {
     int CONF_DATA_SET__MODIFY = SERVICE_FOR_CONF_DATA_SET__MODIFY;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_DATA_SET__SERVICES = SERVICE_FOR_CONF_DATA_SET_FEATURE_COUNT + 0;
+    int CONF_DATA_SET__PARENT_SERVICES = SERVICE_FOR_CONF_DATA_SET_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Conf Data Set</em>' class.
@@ -7398,13 +7398,13 @@ public interface SclPackage extends EPackage {
     int CONF_LNS__FIX_PREFIX = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_LNS__SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
+    int CONF_LNS__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Conf LNs</em>' class.
@@ -7471,13 +7471,13 @@ public interface SclPackage extends EPackage {
     int CONF_LD_NAME__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_LD_NAME__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int CONF_LD_NAME__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Conf Ld Name</em>' class.
@@ -7562,13 +7562,13 @@ public interface SclPackage extends EPackage {
     int CONF_LOG_CONTROL__MAX = SERVICE_WITH_MAX_NON_ZERO__MAX;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_LOG_CONTROL__SERVICES = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 0;
+    int CONF_LOG_CONTROL__PARENT_SERVICES = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Conf Log Control</em>' class.
@@ -7707,13 +7707,13 @@ public interface SclPackage extends EPackage {
     int CONF_REPORT_CONTROL__MAX_BUF = SERVICE_CONF_REPORT_CONTROL__MAX_BUF;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_REPORT_CONTROL__SERVICES = SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT + 0;
+    int CONF_REPORT_CONTROL__PARENT_SERVICES = SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Conf Report Control</em>' class.
@@ -7752,13 +7752,13 @@ public interface SclPackage extends EPackage {
     int CONF_SG__RESV_TMS = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Setting Groups</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Setting Groups</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_SG__SETTING_GROUPS = SCL_OBJECT_FEATURE_COUNT + 1;
+    int CONF_SG__PARENT_SETTING_GROUPS = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Conf SG</em>' class.
@@ -7797,13 +7797,13 @@ public interface SclPackage extends EPackage {
     int CONF_SIG_REF__MAX = SERVICE_WITH_MAX_NON_ZERO__MAX;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONF_SIG_REF__SERVICES = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 0;
+    int CONF_SIG_REF__PARENT_SERVICES = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Conf Sig Ref</em>' class.
@@ -7923,13 +7923,13 @@ public interface SclPackage extends EPackage {
     int CONTROL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL___GET_ANY_LN = UN_NAMING_OPERATION_COUNT + 0;
+    int CONTROL___GET_PARENT_ANY_LN = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The number of operations of the '<em>Control</em>' class.
@@ -8076,13 +8076,13 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 4;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_WITH_IED_NAME___GET_ANY_LN = CONTROL___GET_ANY_LN;
+    int CONTROL_WITH_IED_NAME___GET_PARENT_ANY_LN = CONTROL___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>Control With IED Name</em>' class.
@@ -8211,13 +8211,13 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 2;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_WITH_TRIGGER_OPT___GET_ANY_LN = CONTROL___GET_ANY_LN;
+    int CONTROL_WITH_TRIGGER_OPT___GET_PARENT_ANY_LN = CONTROL___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>Control With Trigger Opt</em>' class.
@@ -8337,22 +8337,22 @@ public interface SclPackage extends EPackage {
     int DAI__VAL = DATA_ATTRIBUTE_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>DOI</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DOI</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DAI__DOI = DATA_ATTRIBUTE_FEATURE_COUNT + 5;
+    int DAI__PARENT_DOI = DATA_ATTRIBUTE_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>SDI</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SDI</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DAI__SDI = DATA_ATTRIBUTE_FEATURE_COUNT + 6;
+    int DAI__PARENT_SDI = DATA_ATTRIBUTE_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>DAI</em>' class.
@@ -8454,13 +8454,13 @@ public interface SclPackage extends EPackage {
     int DOI__IX = DATA_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOI__ANY_LN = DATA_OBJECT_FEATURE_COUNT + 1;
+    int DOI__PARENT_ANY_LN = DATA_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>DAI</b></em>' containment reference list.
@@ -8508,13 +8508,13 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_OBJECT_DIRECTORY__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int DATA_OBJECT_DIRECTORY__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Data Object Directory</em>' class.
@@ -8589,13 +8589,13 @@ public interface SclPackage extends EPackage {
     int DATA_SET__DESC = UN_NAMING__DESC;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_SET__ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
+    int DATA_SET__PARENT_ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Referred By Control</b></em>' reference list.
@@ -8652,13 +8652,13 @@ public interface SclPackage extends EPackage {
     int DATA_SET_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_SET_DIRECTORY__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int DATA_SET_DIRECTORY__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Data Set Directory</em>' class.
@@ -8743,13 +8743,13 @@ public interface SclPackage extends EPackage {
     int DYN_ASSOCIATION__MAX = SERVICE_WITH_OPTIONAL_MAX__MAX;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DYN_ASSOCIATION__SERVICES = SERVICE_WITH_OPTIONAL_MAX_FEATURE_COUNT + 0;
+    int DYN_ASSOCIATION__PARENT_SERVICES = SERVICE_WITH_OPTIONAL_MAX_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Dyn Association</em>' class.
@@ -8797,13 +8797,13 @@ public interface SclPackage extends EPackage {
     int DYN_DATA_SET__MAX_ATTRIBUTES = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DYN_DATA_SET__SERVICES = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES_FEATURE_COUNT + 0;
+    int DYN_DATA_SET__PARENT_SERVICES = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Dyn Data Set</em>' class.
@@ -9004,13 +9004,13 @@ public interface SclPackage extends EPackage {
     int EXT_REF__SRC_PREFIX = BASE_ELEMENT_FEATURE_COUNT + 14;
 
     /**
-     * The feature id for the '<em><b>Inputs</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Inputs</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXT_REF__INPUTS = BASE_ELEMENT_FEATURE_COUNT + 15;
+    int EXT_REF__PARENT_INPUTS = BASE_ELEMENT_FEATURE_COUNT + 15;
 
     /**
      * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
@@ -9175,13 +9175,13 @@ public interface SclPackage extends EPackage {
     int FCDA__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Data Set</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Data Set</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FCDA__DATA_SET = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
+    int FCDA__PARENT_DATA_SET = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.
@@ -9247,13 +9247,13 @@ public interface SclPackage extends EPackage {
     int FILE_HANDLING__MMS = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FILE_HANDLING__SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
+    int FILE_HANDLING__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>File Handling</em>' class.
@@ -9301,13 +9301,13 @@ public interface SclPackage extends EPackage {
     int GOOSE__FIXED_OFFS = SERVICE_WITH_MAX_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GOOSE__SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
+    int GOOSE__PARENT_SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Goose</b></em>' attribute.
@@ -9445,13 +9445,13 @@ public interface SclPackage extends EPackage {
     int GOOSE_SECURITY__ISSUER_NAME = CERTIFICATE__ISSUER_NAME;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GOOSE_SECURITY__ACCESS_POINT = CERTIFICATE_FEATURE_COUNT + 0;
+    int GOOSE_SECURITY__PARENT_ACCESS_POINT = CERTIFICATE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>GOOSE Security</em>' class.
@@ -9634,13 +9634,13 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL__TYPE = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>LN0</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LN0</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_CONTROL__LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 4;
+    int GSE_CONTROL__PARENT_LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>GSE Control</em>' class.
@@ -9652,13 +9652,13 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_CONTROL___GET_ANY_LN = CONTROL_WITH_IED_NAME___GET_ANY_LN;
+    int GSE_CONTROL___GET_PARENT_ANY_LN = CONTROL_WITH_IED_NAME___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>GSE Control</em>' class.
@@ -9679,13 +9679,13 @@ public interface SclPackage extends EPackage {
     int GSE_DIR__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_DIR__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int GSE_DIR__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>GSE Dir</em>' class.
@@ -9796,13 +9796,13 @@ public interface SclPackage extends EPackage {
     int GSE_SETTINGS__DATA_LABEL = SERVICE_SETTINGS_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSE_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 2;
+    int GSE_SETTINGS__PARENT_SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Mc Security</b></em>' containment reference.
@@ -9859,13 +9859,13 @@ public interface SclPackage extends EPackage {
     int GSSE__MAX = SERVICE_WITH_MAX__MAX;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GSSE__SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 0;
+    int GSSE__PARENT_SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>GSSE</em>' class.
@@ -9895,13 +9895,13 @@ public interface SclPackage extends EPackage {
     int GET_CB_VALUES__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GET_CB_VALUES__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int GET_CB_VALUES__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Get CB Values</em>' class.
@@ -9931,13 +9931,13 @@ public interface SclPackage extends EPackage {
     int GET_DATA_OBJECT_DEFINITION__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GET_DATA_OBJECT_DEFINITION__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Get Data Object Definition</em>' class.
@@ -9967,13 +9967,13 @@ public interface SclPackage extends EPackage {
     int GET_DATA_SET_VALUE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GET_DATA_SET_VALUE__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int GET_DATA_SET_VALUE__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Get Data Set Value</em>' class.
@@ -10003,13 +10003,13 @@ public interface SclPackage extends EPackage {
     int GET_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GET_DIRECTORY__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int GET_DIRECTORY__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Get Directory</em>' class.
@@ -10174,13 +10174,13 @@ public interface SclPackage extends EPackage {
     int IED__SERVICES = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IED__SCL = UN_NAMING_FEATURE_COUNT + 10;
+    int IED__PARENT_SCL = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -10282,13 +10282,13 @@ public interface SclPackage extends EPackage {
     int IED_NAME__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Control With IED Name</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Control With IED Name</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int IED_NAME__CONTROL_WITH_IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
+    int IED_NAME__PARENT_CONTROL_WITH_IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -10399,13 +10399,13 @@ public interface SclPackage extends EPackage {
     int INPUTS__DESC = UN_NAMING__DESC;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int INPUTS__ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
+    int INPUTS__PARENT_ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ext Ref</b></em>' containment reference list.
@@ -10517,13 +10517,13 @@ public interface SclPackage extends EPackage {
     int ISSUER_NAME__ID_HIERARCHY = CERT__ID_HIERARCHY;
 
     /**
-     * The feature id for the '<em><b>Certificate</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Certificate</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ISSUER_NAME__CERTIFICATE = CERT_FEATURE_COUNT + 0;
+    int ISSUER_NAME__PARENT_CERTIFICATE = CERT_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Issuer Name</em>' class.
@@ -10571,13 +10571,13 @@ public interface SclPackage extends EPackage {
     int KDC__IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>IED</b></em>' container reference.
+     * The feature id for the '<em><b>Parent IED</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int KDC__IED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int KDC__PARENT_IED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Refers To Access Point</b></em>' reference.
@@ -10688,13 +10688,13 @@ public interface SclPackage extends EPackage {
     int LDEVICE__ACCESS_CONTROL = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Server</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Server</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE__SERVER = UN_NAMING_FEATURE_COUNT + 3;
+    int LDEVICE__PARENT_SERVER = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Any LN</b></em>' attribute list.
@@ -10967,22 +10967,22 @@ public interface SclPackage extends EPackage {
     int LN__PREFIX = ANY_LN_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN__ACCESS_POINT = ANY_LN_FEATURE_COUNT + 1;
+    int LN__PARENT_ACCESS_POINT = ANY_LN_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>LDevice</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN__LDEVICE = ANY_LN_FEATURE_COUNT + 2;
+    int LN__PARENT_LDEVICE = ANY_LN_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>LN</em>' class.
@@ -10994,13 +10994,13 @@ public interface SclPackage extends EPackage {
     int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 3;
 
     /**
-     * The operation id for the '<em>Get LDevice</em>' operation.
+     * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN___GET_LDEVICE = ANY_LN___GET_LDEVICE;
+    int LN___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
 
     /**
      * The number of operations of the '<em>LN</em>' class.
@@ -11228,13 +11228,13 @@ public interface SclPackage extends EPackage {
     int LN0__GSE_CONTROL = ANY_LN_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>LDevice</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN0__LDEVICE = ANY_LN_FEATURE_COUNT + 1;
+    int LN0__PARENT_LDEVICE = ANY_LN_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Sampled Value Control</b></em>' containment reference list.
@@ -11273,13 +11273,13 @@ public interface SclPackage extends EPackage {
     int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 5;
 
     /**
-     * The operation id for the '<em>Get LDevice</em>' operation.
+     * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN0___GET_LDEVICE = ANY_LN___GET_LDEVICE;
+    int LN0___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
 
     /**
      * The number of operations of the '<em>LN0</em>' class.
@@ -11345,13 +11345,13 @@ public interface SclPackage extends EPackage {
     int LOG__DESC = UN_NAMING__DESC;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG__ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
+    int LOG__PARENT_ANY_LN = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -11570,13 +11570,13 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL__REASON_CODE = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_CONTROL__ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 8;
+    int LOG_CONTROL__PARENT_ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -11606,13 +11606,13 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 11;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_CONTROL___GET_ANY_LN = CONTROL_WITH_TRIGGER_OPT___GET_ANY_LN;
+    int LOG_CONTROL___GET_PARENT_ANY_LN = CONTROL_WITH_TRIGGER_OPT___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>Log Control</em>' class.
@@ -11678,13 +11678,13 @@ public interface SclPackage extends EPackage {
     int LOG_SETTINGS__TRG_OPS = SERVICE_SETTINGS_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LOG_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 3;
+    int LOG_SETTINGS__PARENT_SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Log Settings</em>' class.
@@ -11795,13 +11795,13 @@ public interface SclPackage extends EPackage {
     int OPT_FIELDS__SEGMENTATION = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
-     * The feature id for the '<em><b>Report Control</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Report Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int OPT_FIELDS__REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 9;
+    int OPT_FIELDS__PARENT_REPORT_CONTROL = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>Opt Fields</em>' class.
@@ -11840,13 +11840,13 @@ public interface SclPackage extends EPackage {
     int PROTOCOL__MUST_UNDERSTAND = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Control With IED Name</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Control With IED Name</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PROTOCOL__CONTROL_WITH_IED_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
+    int PROTOCOL__PARENT_CONTROL_WITH_IED_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Protocol</em>' class.
@@ -11876,13 +11876,13 @@ public interface SclPackage extends EPackage {
     int READ_WRITE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int READ_WRITE__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int READ_WRITE__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Read Write</em>' class.
@@ -11939,13 +11939,13 @@ public interface SclPackage extends EPackage {
     int RED_PROT__RSTP = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int RED_PROT__SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
+    int RED_PROT__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Red Prot</em>' class.
@@ -12119,13 +12119,13 @@ public interface SclPackage extends EPackage {
     int REPORT_CONTROL__RPT_ID = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Any LN</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int REPORT_CONTROL__ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 5;
+    int REPORT_CONTROL__PARENT_ANY_LN = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Opt Fields</b></em>' containment reference.
@@ -12155,13 +12155,13 @@ public interface SclPackage extends EPackage {
     int REPORT_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 8;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int REPORT_CONTROL___GET_ANY_LN = CONTROL_WITH_TRIGGER_OPT___GET_ANY_LN;
+    int REPORT_CONTROL___GET_PARENT_ANY_LN = CONTROL_WITH_TRIGGER_OPT___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>Report Control</em>' class.
@@ -12263,13 +12263,13 @@ public interface SclPackage extends EPackage {
     int REPORT_SETTINGS__TRG_OPS = SERVICE_SETTINGS_FEATURE_COUNT + 6;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int REPORT_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 7;
+    int REPORT_SETTINGS__PARENT_SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>Report Settings</em>' class.
@@ -12362,13 +12362,13 @@ public interface SclPackage extends EPackage {
     int RPT_ENABLED__CLIENT_LN = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Report Control</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Report Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int RPT_ENABLED__REPORT_CONTROL = UN_NAMING_FEATURE_COUNT + 2;
+    int RPT_ENABLED__PARENT_REPORT_CONTROL = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Rpt Enabled</em>' class.
@@ -12479,13 +12479,13 @@ public interface SclPackage extends EPackage {
     int SDI__DAI = DATA_ATTRIBUTE_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>DOI</b></em>' container reference.
+     * The feature id for the '<em><b>Parent DOI</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDI__DOI = DATA_ATTRIBUTE_FEATURE_COUNT + 3;
+    int SDI__PARENT_DOI = DATA_ATTRIBUTE_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Sub SDI</b></em>' containment reference list.
@@ -12542,13 +12542,13 @@ public interface SclPackage extends EPackage {
     int SG_EDIT__RESV_TMS = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Setting Groups</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Setting Groups</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SG_EDIT__SETTING_GROUPS = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SG_EDIT__PARENT_SETTING_GROUPS = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>SG Edit</em>' class.
@@ -12668,13 +12668,13 @@ public interface SclPackage extends EPackage {
     int SMV_SECURITY__ISSUER_NAME = CERTIFICATE__ISSUER_NAME;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_SECURITY__ACCESS_POINT = CERTIFICATE_FEATURE_COUNT + 0;
+    int SMV_SECURITY__PARENT_ACCESS_POINT = CERTIFICATE_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>SMV Security</em>' class.
@@ -12794,13 +12794,13 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS__SEC_PER_SAMPLES = SERVICE_SETTINGS_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_SETTINGS__SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 8;
+    int SMV_SETTINGS__PARENT_SERVICES = SERVICE_SETTINGS_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Synch Src Id</b></em>' attribute.
@@ -12893,13 +12893,13 @@ public interface SclPackage extends EPackage {
     int SM_VSC__DELIVERY_CONF = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SM_VSC__SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
+    int SM_VSC__PARENT_SERVICES = SERVICE_WITH_MAX_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Sv</b></em>' attribute.
@@ -13118,13 +13118,13 @@ public interface SclPackage extends EPackage {
     int SAMPLED_VALUE_CONTROL__SMV_ID = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>LN0</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LN0</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SAMPLED_VALUE_CONTROL__LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 6;
+    int SAMPLED_VALUE_CONTROL__PARENT_LN0 = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Smv Opts</b></em>' containment reference.
@@ -13145,13 +13145,13 @@ public interface SclPackage extends EPackage {
     int SAMPLED_VALUE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 8;
 
     /**
-     * The operation id for the '<em>Get Any LN</em>' operation.
+     * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SAMPLED_VALUE_CONTROL___GET_ANY_LN = CONTROL_WITH_IED_NAME___GET_ANY_LN;
+    int SAMPLED_VALUE_CONTROL___GET_PARENT_ANY_LN = CONTROL_WITH_IED_NAME___GET_PARENT_ANY_LN;
 
     /**
      * The number of operations of the '<em>Sampled Value Control</em>' class.
@@ -13226,13 +13226,13 @@ public interface SclPackage extends EPackage {
     int SERVER__TIMEOUT = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVER__ACCESS_POINT = UN_NAMING_FEATURE_COUNT + 1;
+    int SERVER__PARENT_ACCESS_POINT = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Association</b></em>' containment reference list.
@@ -13343,13 +13343,13 @@ public interface SclPackage extends EPackage {
     int SERVER_AT__AP_NAME = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVER_AT__ACCESS_POINT = UN_NAMING_FEATURE_COUNT + 1;
+    int SERVER_AT__PARENT_ACCESS_POINT = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Refers To Access Point</b></em>' reference.
@@ -13397,13 +13397,13 @@ public interface SclPackage extends EPackage {
     int SERVICES__NAME_LENGTH = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Access Point</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Access Point</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVICES__ACCESS_POINT = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SERVICES__PARENT_ACCESS_POINT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Client Services</b></em>' containment reference.
@@ -13595,13 +13595,13 @@ public interface SclPackage extends EPackage {
     int SERVICES__GET_DIRECTORY = SCL_OBJECT_FEATURE_COUNT + 22;
 
     /**
-     * The feature id for the '<em><b>IED</b></em>' container reference.
+     * The feature id for the '<em><b>Parent IED</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SERVICES__IED = SCL_OBJECT_FEATURE_COUNT + 23;
+    int SERVICES__PARENT_IED = SCL_OBJECT_FEATURE_COUNT + 23;
 
     /**
      * The feature id for the '<em><b>Log Settings</b></em>' containment reference.
@@ -13739,13 +13739,13 @@ public interface SclPackage extends EPackage {
     int SET_DATA_SET_VALUE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SET_DATA_SET_VALUE__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int SET_DATA_SET_VALUE__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Set Data Set Value</em>' class.
@@ -13847,13 +13847,13 @@ public interface SclPackage extends EPackage {
     int SETTING_CONTROL__RESV_TMS = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>LN0</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LN0</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SETTING_CONTROL__LN0 = UN_NAMING_FEATURE_COUNT + 3;
+    int SETTING_CONTROL__PARENT_LN0 = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Setting Control</em>' class.
@@ -13901,13 +13901,13 @@ public interface SclPackage extends EPackage {
     int SETTING_GROUPS__SG_EDIT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SETTING_GROUPS__SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
+    int SETTING_GROUPS__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Setting Groups</em>' class.
@@ -14009,13 +14009,13 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS__DATA_REF = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
-     * The feature id for the '<em><b>Sampled Value Control</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Sampled Value Control</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMV_OPTS__SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 8;
+    int SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The number of structural features of the '<em>Smv Opts</em>' class.
@@ -14063,13 +14063,13 @@ public interface SclPackage extends EPackage {
     int SUBJECT__ID_HIERARCHY = CERT__ID_HIERARCHY;
 
     /**
-     * The feature id for the '<em><b>Certificate</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Certificate</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUBJECT__CERTIFICATE = CERT_FEATURE_COUNT + 0;
+    int SUBJECT__PARENT_CERTIFICATE = CERT_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Subject</em>' class.
@@ -14117,13 +14117,13 @@ public interface SclPackage extends EPackage {
     int SUP_SUBSCRIPTION__MAX_SV = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUP_SUBSCRIPTION__SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
+    int SUP_SUBSCRIPTION__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of structural features of the '<em>Sup Subscription</em>' class.
@@ -14180,22 +14180,22 @@ public interface SclPackage extends EPackage {
     int TIME_SYNC_PROT__SNTP = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Client Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TIME_SYNC_PROT__CLIENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
+    int TIME_SYNC_PROT__PARENT_CLIENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TIME_SYNC_PROT__SERVICES = SCL_OBJECT_FEATURE_COUNT + 4;
+    int TIME_SYNC_PROT__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Iec61850 93</b></em>' attribute.
@@ -14234,13 +14234,13 @@ public interface SclPackage extends EPackage {
     int TIMER_ACTIVATED_CONTROL__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TIMER_ACTIVATED_CONTROL__SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
+    int TIMER_ACTIVATED_CONTROL__PARENT_SERVICES = SERVICE_YES_NO_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Timer Activated Control</em>' class.
@@ -14315,13 +14315,13 @@ public interface SclPackage extends EPackage {
     int TRG_OPS__QCHG = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Control With Trigger Opt</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TRG_OPS__CONTROL_WITH_TRIGGER_OPT = SCL_OBJECT_FEATURE_COUNT + 5;
+    int TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Trg Ops</em>' class.
@@ -14360,13 +14360,13 @@ public interface SclPackage extends EPackage {
     int VALUE_HANDLING__SET_TO_RO = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VALUE_HANDLING__SERVICES = SCL_OBJECT_FEATURE_COUNT + 1;
+    int VALUE_HANDLING__PARENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Value Handling</em>' class.
@@ -14918,13 +14918,13 @@ public interface SclPackage extends EPackage {
     int BAY__GENERAL_EQUIPMENT = EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT;
 
     /**
-     * The feature id for the '<em><b>Voltage Level</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Voltage Level</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BAY__VOLTAGE_LEVEL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 0;
+    int BAY__PARENT_VOLTAGE_LEVEL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Function</b></em>' containment reference list.
@@ -15080,31 +15080,31 @@ public interface SclPackage extends EPackage {
     int CONDUCTING_EQUIPMENT__TYPE = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Bay</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Bay</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONDUCTING_EQUIPMENT__BAY = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 1;
+    int CONDUCTING_EQUIPMENT__PARENT_BAY = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Function</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Function</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONDUCTING_EQUIPMENT__FUNCTION = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 2;
+    int CONDUCTING_EQUIPMENT__PARENT_FUNCTION = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Sub Function</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Sub Function</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONDUCTING_EQUIPMENT__SUB_FUNCTION = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 3;
+    int CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Eq Function</b></em>' containment reference list.
@@ -15116,22 +15116,22 @@ public interface SclPackage extends EPackage {
     int CONDUCTING_EQUIPMENT__EQ_FUNCTION = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Line</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Line</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONDUCTING_EQUIPMENT__LINE = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 5;
+    int CONDUCTING_EQUIPMENT__PARENT_LINE = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Process</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Process</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONDUCTING_EQUIPMENT__PROCESS = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 6;
+    int CONDUCTING_EQUIPMENT__PARENT_PROCESS = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>Conducting Equipment</em>' class.
@@ -15233,13 +15233,13 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__PATH_NAME = LNODE_CONTAINER_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Bay</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Bay</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTIVITY_NODE__BAY = LNODE_CONTAINER_FEATURE_COUNT + 1;
+    int CONNECTIVITY_NODE__PARENT_BAY = LNODE_CONTAINER_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Referred By Terminal</b></em>' reference list.
@@ -15251,13 +15251,13 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE__REFERRED_BY_TERMINAL = LNODE_CONTAINER_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Line</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Line</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTIVITY_NODE__LINE = LNODE_CONTAINER_FEATURE_COUNT + 3;
+    int CONNECTIVITY_NODE__PARENT_LINE = LNODE_CONTAINER_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Connectivity Node</em>' class.
@@ -15377,58 +15377,58 @@ public interface SclPackage extends EPackage {
     int EQ_FUNCTION__SUB_GENERAL_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT;
 
     /**
-     * The feature id for the '<em><b>Conducting Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Conducting Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__CONDUCTING_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 0;
+    int EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>General Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent General Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__GENERAL_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 1;
+    int EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Power Transformer</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Power Transformer</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__POWER_TRANSFORMER = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 2;
+    int EQ_FUNCTION__PARENT_POWER_TRANSFORMER = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Sub Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Sub Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__SUB_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 3;
+    int EQ_FUNCTION__PARENT_SUB_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Transformer Winding</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Transformer Winding</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__TRANSFORMER_WINDING = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 4;
+    int EQ_FUNCTION__PARENT_TRANSFORMER_WINDING = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Tap Changer</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Tap Changer</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_FUNCTION__TAP_CHANGER = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 5;
+    int EQ_FUNCTION__PARENT_TAP_CHANGER = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Eq Function</em>' class.
@@ -15548,13 +15548,13 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION__SUB_GENERAL_EQUIPMENT = ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT;
 
     /**
-     * The feature id for the '<em><b>Abstract Eq Func Sub Func</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Eq Func Sub Func</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 0;
+    int EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Eq Sub Function</em>' class.
@@ -15656,13 +15656,13 @@ public interface SclPackage extends EPackage {
     int FUNCTION__TYPE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Bay</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Bay</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION__BAY = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
+    int FUNCTION__PARENT_BAY = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Conducting Equipment</b></em>' containment reference list.
@@ -15674,31 +15674,31 @@ public interface SclPackage extends EPackage {
     int FUNCTION__CONDUCTING_EQUIPMENT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>General Equipment Container</b></em>' container reference.
+     * The feature id for the '<em><b>Parent General Equipment Container</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION__GENERAL_EQUIPMENT_CONTAINER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 3;
+    int FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Substation</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Substation</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION__SUBSTATION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
+    int FUNCTION__PARENT_SUBSTATION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Voltage Level</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Voltage Level</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int FUNCTION__VOLTAGE_LEVEL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
+    int FUNCTION__PARENT_VOLTAGE_LEVEL = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Sub Function</b></em>' containment reference list.
@@ -15827,13 +15827,13 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT__TYPE = EQUIPMENT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Abstract Eq Func Sub Func</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Eq Func Sub Func</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC = EQUIPMENT_FEATURE_COUNT + 1;
+    int GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC = EQUIPMENT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Eq Function</b></em>' containment reference list.
@@ -15845,40 +15845,40 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT__EQ_FUNCTION = EQUIPMENT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Equipment Container</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Equipment Container</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 3;
+    int GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Function</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Function</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GENERAL_EQUIPMENT__FUNCTION = EQUIPMENT_FEATURE_COUNT + 4;
+    int GENERAL_EQUIPMENT__PARENT_FUNCTION = EQUIPMENT_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>General Equipment Container</b></em>' container reference.
+     * The feature id for the '<em><b>Parent General Equipment Container</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 5;
+    int GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Sub Function</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Sub Function</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int GENERAL_EQUIPMENT__SUB_FUNCTION = EQUIPMENT_FEATURE_COUNT + 6;
+    int GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION = EQUIPMENT_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>General Equipment</em>' class.
@@ -16016,13 +16016,13 @@ public interface SclPackage extends EPackage {
     int LNODE__REFERS_TO_ANY_LN = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
-     * The feature id for the '<em><b>LNode Container</b></em>' container reference.
+     * The feature id for the '<em><b>Parent LNode Container</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE__LNODE_CONTAINER = UN_NAMING_FEATURE_COUNT + 7;
+    int LNODE__PARENT_LNODE_CONTAINER = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The number of structural features of the '<em>LNode</em>' class.
@@ -16151,13 +16151,13 @@ public interface SclPackage extends EPackage {
     int TERMINAL__VOLTAGE_LEVEL_NAME = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
-     * The feature id for the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Conducting Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT = UN_NAMING_FEATURE_COUNT + 6;
+    int TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Refers To Connectivity Node</b></em>' reference.
@@ -16313,13 +16313,13 @@ public interface SclPackage extends EPackage {
     int NEUTRAL_POINT__VOLTAGE_LEVEL_NAME = TERMINAL__VOLTAGE_LEVEL_NAME;
 
     /**
-     * The feature id for the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Conducting Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int NEUTRAL_POINT__ABSTRACT_CONDUCTING_EQUIPMENT = TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT;
+    int NEUTRAL_POINT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT = TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT;
 
     /**
      * The feature id for the '<em><b>Refers To Connectivity Node</b></em>' reference.
@@ -16349,13 +16349,13 @@ public interface SclPackage extends EPackage {
     int NEUTRAL_POINT__LINE_NAME = TERMINAL__LINE_NAME;
 
     /**
-     * The feature id for the '<em><b>Transformer Winding</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Transformer Winding</b></em>' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int NEUTRAL_POINT__TRANSFORMER_WINDING = TERMINAL_FEATURE_COUNT + 0;
+    int NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING = TERMINAL_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Neutral Point</em>' class.
@@ -16475,13 +16475,13 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER__EQ_FUNCTION = EQUIPMENT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Equipment Container</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Equipment Container</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int POWER_TRANSFORMER__EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 2;
+    int POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER = EQUIPMENT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Sub Equipment</b></em>' containment reference list.
@@ -16610,13 +16610,13 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT__PHASE = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Abstract Conducting Equipment</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
+    int SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Eq Function</b></em>' containment reference list.
@@ -16628,22 +16628,22 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT__EQ_FUNCTION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Power Transformer</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Power Transformer</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_EQUIPMENT__POWER_TRANSFORMER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
+    int SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
 
     /**
-     * The feature id for the '<em><b>Tap Changer</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Tap Changer</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_EQUIPMENT__TAP_CHANGER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
+    int SUB_EQUIPMENT__PARENT_TAP_CHANGER = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
 
     /**
      * The number of structural features of the '<em>Sub Equipment</em>' class.
@@ -16754,13 +16754,13 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__CONDUCTING_EQUIPMENT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Function</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Function</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_FUNCTION__FUNCTION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
+    int SUB_FUNCTION__PARENT_FUNCTION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>General Equipment</b></em>' containment reference list.
@@ -16781,13 +16781,22 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION__SUB_SUB_FUNCTIONS = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
 
     /**
+     * The feature id for the '<em><b>Parent Sub Function</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__PARENT_SUB_FUNCTION = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>Sub Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUB_FUNCTION_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
+    int SUB_FUNCTION_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 6;
 
     /**
      * The number of operations of the '<em>Sub Function</em>' class.
@@ -16907,22 +16916,22 @@ public interface SclPackage extends EPackage {
     int SUBSTATION__VOLTAGE_LEVEL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Process</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Process</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUBSTATION__PROCESS = EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
+    int SUBSTATION__PARENT_PROCESS = EQUIPMENT_CONTAINER_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>SCL</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SUBSTATION__SCL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
+    int SUBSTATION__PARENT_SCL = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Substation</em>' class.
@@ -17051,13 +17060,13 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER__SUB_EQUIPMENT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Transformer Winding</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Transformer Winding</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TAP_CHANGER__TRANSFORMER_WINDING = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
+    int TAP_CHANGER__PARENT_TRANSFORMER_WINDING = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Tap Changer</em>' class.
@@ -17204,13 +17213,13 @@ public interface SclPackage extends EPackage {
     int TRANSFORMER_WINDING__NEUTRAL_POINT = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 2;
 
     /**
-     * The feature id for the '<em><b>Power Transformer</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Power Transformer</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int TRANSFORMER_WINDING__POWER_TRANSFORMER = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 3;
+    int TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Tap Changer</b></em>' containment reference.
@@ -17340,13 +17349,22 @@ public interface SclPackage extends EPackage {
     int VOLTAGE__UNIT = VALUE_WITH_UNIT__UNIT;
 
     /**
-     * The feature id for the '<em><b>Line</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Line</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VOLTAGE__LINE = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
+    int VOLTAGE__PARENT_LINE = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Parent Voltage Level</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE__PARENT_VOLTAGE_LEVEL = VALUE_WITH_UNIT_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Voltage</em>' class.
@@ -17355,7 +17373,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int VOLTAGE_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 1;
+    int VOLTAGE_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Voltage</em>' class.
@@ -17493,13 +17511,13 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_LEVEL__FUNCTION = EQUIPMENT_CONTAINER_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Substation</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Substation</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int VOLTAGE_LEVEL__SUBSTATION = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
+    int VOLTAGE_LEVEL__PARENT_SUBSTATION = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Voltage</b></em>' containment reference.
@@ -17910,13 +17928,22 @@ public interface SclPackage extends EPackage {
     int BIT_RATE__UNIT = BIT_RATE_IN_MB_PER_SEC__UNIT;
 
     /**
+     * The feature id for the '<em><b>Parent Sub Network</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE__PARENT_SUB_NETWORK = BIT_RATE_IN_MB_PER_SEC_FEATURE_COUNT + 0;
+
+    /**
      * The number of structural features of the '<em>Bit Rate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int BIT_RATE_FEATURE_COUNT = BIT_RATE_IN_MB_PER_SEC_FEATURE_COUNT + 0;
+    int BIT_RATE_FEATURE_COUNT = BIT_RATE_IN_MB_PER_SEC_FEATURE_COUNT + 1;
 
     /**
      * The number of operations of the '<em>Bit Rate</em>' class.
@@ -17956,13 +17983,22 @@ public interface SclPackage extends EPackage {
     int SMP_RATE__VALUE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Parent SMV Settings</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE__PARENT_SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
+
+    /**
      * The number of structural features of the '<em>Smp Rate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SMP_RATE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SMP_RATE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Smp Rate</em>' class.
@@ -18002,13 +18038,22 @@ public interface SclPackage extends EPackage {
     int SAMPLES_PER_SEC__VALUE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Parent SMV Settings</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC__PARENT_SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
+
+    /**
      * The number of structural features of the '<em>Samples Per Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SAMPLES_PER_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SAMPLES_PER_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Samples Per Sec</em>' class.
@@ -18048,13 +18093,22 @@ public interface SclPackage extends EPackage {
     int SEC_PER_SAMPLES__VALUE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
+     * The feature id for the '<em><b>Parent SMV Settings</b></em>' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES__PARENT_SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
+
+    /**
      * The number of structural features of the '<em>Sec Per Samples</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SEC_PER_SAMPLES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
+    int SEC_PER_SAMPLES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Sec Per Samples</em>' class.
@@ -18085,31 +18139,31 @@ public interface SclPackage extends EPackage {
     int MC_SECURITY__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
-     * The feature id for the '<em><b>Client Services</b></em>' container reference.
+     * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MC_SECURITY__CLIENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 0;
+    int MC_SECURITY__PARENT_CLIENT_SERVICES = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>GSE Settings</b></em>' container reference.
+     * The feature id for the '<em><b>Parent GSE Settings</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MC_SECURITY__GSE_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
+    int MC_SECURITY__PARENT_GSE_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>SMV Settings</b></em>' container reference.
+     * The feature id for the '<em><b>Parent SMV Settings</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MC_SECURITY__SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 2;
+    int MC_SECURITY__PARENT_SMV_SETTINGS = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Signature</b></em>' attribute.
@@ -18999,15 +19053,15 @@ public interface SclPackage extends EPackage {
     EAttribute getHeader_Version();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL()
      * @see #getHeader()
      * @generated
      */
-    EReference getHeader_SCL();
+    EReference getHeader_ParentSCL();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}'.
@@ -19042,15 +19096,15 @@ public interface SclPackage extends EPackage {
     EClass getHistory();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader <em>Header</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Header</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader()
+     * @return the meta object for the container reference '<em>Parent Header</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getParentHeader()
      * @see #getHistory()
      * @generated
      */
-    EReference getHistory_Header();
+    EReference getHistory_ParentHeader();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}'.
@@ -19140,15 +19194,15 @@ public interface SclPackage extends EPackage {
     EAttribute getHitem_Why();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory <em>History</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getParentHistory <em>Parent History</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>History</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory()
+     * @return the meta object for the container reference '<em>Parent History</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getParentHistory()
      * @see #getHitem()
      * @generated
      */
-    EReference getHitem_History();
+    EReference getHitem_ParentHistory();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming <em>ID Naming</em>}'.
@@ -19193,26 +19247,26 @@ public interface SclPackage extends EPackage {
     EAttribute getLine_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Process</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess()
+     * @return the meta object for the container reference '<em>Parent Process</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess()
      * @see #getLine()
      * @generated
      */
-    EReference getLine_Process();
+    EReference getLine_ParentProcess();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL()
      * @see #getLine()
      * @generated
      */
-    EReference getLine_SCL();
+    EReference getLine_ParentSCL();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}'.
@@ -19323,15 +19377,15 @@ public interface SclPackage extends EPackage {
     EAttribute getPrivate_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement <em>Base Element</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Base Element</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement()
+     * @return the meta object for the container reference '<em>Parent Base Element</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement()
      * @see #getPrivate()
      * @generated
      */
-    EReference getPrivate_BaseElement();
+    EReference getPrivate_ParentBaseElement();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process <em>Process</em>}'.
@@ -19366,15 +19420,15 @@ public interface SclPackage extends EPackage {
     EReference getProcess_Line();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL()
      * @see #getProcess()
      * @generated
      */
-    EReference getProcess_SCL();
+    EReference getProcess_ParentSCL();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getConductingEquipment <em>Conducting Equipment</em>}'.
@@ -19562,26 +19616,26 @@ public interface SclPackage extends EPackage {
     EAttribute getText_Source();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement <em>Parent Base Element</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Base Element</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement()
+     * @return the meta object for the container reference '<em>Parent Base Element</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement()
      * @see #getText()
      * @generated
      */
-    EReference getText_BaseElement();
+    EReference getText_ParentBaseElement();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Header</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader()
+     * @return the meta object for the container reference '<em>Parent Header</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader()
      * @see #getText()
      * @generated
      */
-    EReference getText_Header();
+    EReference getText_ParentHeader();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getValue <em>Value</em>}'.
@@ -19605,26 +19659,26 @@ public interface SclPackage extends EPackage {
     EClass getAddress();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getConnectedAP <em>Connected AP</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Connected AP</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getConnectedAP()
+     * @return the meta object for the container reference '<em>Parent Connected AP</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentConnectedAP()
      * @see #getAddress()
      * @generated
      */
-    EReference getAddress_ConnectedAP();
+    EReference getAddress_ParentConnectedAP();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getControlBlock <em>Control Block</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock <em>Parent Control Block</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Control Block</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getControlBlock()
+     * @return the meta object for the container reference '<em>Parent Control Block</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock()
      * @see #getAddress()
      * @generated
      */
-    EReference getAddress_ControlBlock();
+    EReference getAddress_ParentControlBlock();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getP <em>P</em>}'.
@@ -19659,15 +19713,15 @@ public interface SclPackage extends EPackage {
     EReference getCommunication_SubNetwork();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL()
      * @see #getCommunication()
      * @generated
      */
-    EReference getCommunication_SCL();
+    EReference getCommunication_ParentSCL();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP <em>Connected AP</em>}'.
@@ -19724,15 +19778,15 @@ public interface SclPackage extends EPackage {
     EReference getConnectedAP_Address();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork <em>Sub Network</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork <em>Parent Sub Network</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Sub Network</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork()
+     * @return the meta object for the container reference '<em>Parent Sub Network</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork()
      * @see #getConnectedAP()
      * @generated
      */
-    EReference getConnectedAP_SubNetwork();
+    EReference getConnectedAP_ParentSubNetwork();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getRefersToAccessPoint <em>Refers To Access Point</em>}'.
@@ -19844,14 +19898,14 @@ public interface SclPackage extends EPackage {
     EReference getControlBlock_RefersToControlWithIEDName();
 
     /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getConnectedAP() <em>Get Connected AP</em>}' operation.
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getParentConnectedAP() <em>Get Parent Connected AP</em>}' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Connected AP</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getConnectedAP()
+     * @return the meta object for the '<em>Get Parent Connected AP</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getParentConnectedAP()
      * @generated
      */
-    EOperation getControlBlock__GetConnectedAP();
+    EOperation getControlBlock__GetParentConnectedAP();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE <em>GSE</em>}'.
@@ -19875,6 +19929,17 @@ public interface SclPackage extends EPackage {
     EReference getGSE_MaxTime();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getParentConnectedAP <em>Parent Connected AP</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent Connected AP</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getParentConnectedAP()
+     * @see #getGSE()
+     * @generated
+     */
+    EReference getGSE_ParentConnectedAP();
+
+    /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getMinTime <em>Min Time</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19884,17 +19949,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getGSE_MinTime();
-
-    /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP <em>Connected AP</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Connected AP</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP()
-     * @see #getGSE()
-     * @generated
-     */
-    EReference getGSE_ConnectedAP();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P <em>P</em>}'.
@@ -19907,15 +19961,15 @@ public interface SclPackage extends EPackage {
     EClass getP();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getAddress <em>Address</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getParentAddress <em>Parent Address</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Address</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getAddress()
+     * @return the meta object for the container reference '<em>Parent Address</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getParentAddress()
      * @see #getP()
      * @generated
      */
-    EReference getP_Address();
+    EReference getP_ParentAddress();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PAddr <em>PAddr</em>}'.
@@ -19960,15 +20014,15 @@ public interface SclPackage extends EPackage {
     EClass getP_PhysConn();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn <em>Phys Conn</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getParentPhysConn <em>Parent Phys Conn</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Phys Conn</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn()
+     * @return the meta object for the container reference '<em>Parent Phys Conn</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getParentPhysConn()
      * @see #getP_PhysConn()
      * @generated
      */
-    EReference getP_PhysConn_PhysConn();
+    EReference getP_PhysConn_ParentPhysConn();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn <em>Phys Conn</em>}'.
@@ -19992,15 +20046,15 @@ public interface SclPackage extends EPackage {
     EAttribute getPhysConn_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Connected AP</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP()
+     * @return the meta object for the container reference '<em>Parent Connected AP</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP()
      * @see #getPhysConn()
      * @generated
      */
-    EReference getPhysConn_ConnectedAP();
+    EReference getPhysConn_ParentConnectedAP();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}'.
@@ -20024,15 +20078,15 @@ public interface SclPackage extends EPackage {
     EClass getSMV();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP <em>Connected AP</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Connected AP</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP()
+     * @return the meta object for the container reference '<em>Parent Connected AP</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getParentConnectedAP()
      * @see #getSMV()
      * @generated
      */
-    EReference getSMV_ConnectedAP();
+    EReference getSMV_ParentConnectedAP();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork <em>Sub Network</em>}'.
@@ -20067,15 +20121,15 @@ public interface SclPackage extends EPackage {
     EReference getSubNetwork_BitRate();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication <em>Communication</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication <em>Parent Communication</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Communication</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication()
+     * @return the meta object for the container reference '<em>Parent Communication</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication()
      * @see #getSubNetwork()
      * @generated
      */
-    EReference getSubNetwork_Communication();
+    EReference getSubNetwork_ParentCommunication();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getConnectedAP <em>Connected AP</em>}'.
@@ -20230,15 +20284,15 @@ public interface SclPackage extends EPackage {
     EClass getBDA();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType <em>Parent DA Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DA Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType()
+     * @return the meta object for the container reference '<em>Parent DA Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType()
      * @see #getBDA()
      * @generated
      */
-    EReference getBDA_DAType();
+    EReference getBDA_ParentDAType();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA <em>DA</em>}'.
@@ -20262,15 +20316,15 @@ public interface SclPackage extends EPackage {
     EAttribute getDA_Fc();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType <em>Parent DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DO Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType()
+     * @return the meta object for the container reference '<em>Parent DO Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType()
      * @see #getDA()
      * @generated
      */
-    EReference getDA_DOType();
+    EReference getDA_ParentDOType();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs <em>Prot Ns</em>}'.
@@ -20327,15 +20381,15 @@ public interface SclPackage extends EPackage {
     EReference getDAType_ReferredByAbstractDataAttribute();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Data Type Templates</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates()
+     * @return the meta object for the container reference '<em>Parent Data Type Templates</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates()
      * @see #getDAType()
      * @generated
      */
-    EReference getDAType_DataTypeTemplates();
+    EReference getDAType_ParentDataTypeTemplates();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs <em>Prot Ns</em>}'.
@@ -20381,15 +20435,15 @@ public interface SclPackage extends EPackage {
     EAttribute getDO_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType <em>Parent LNode Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LNode Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType()
+     * @return the meta object for the container reference '<em>Parent LNode Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType()
      * @see #getDO()
      * @generated
      */
-    EReference getDO_LNodeType();
+    EReference getDO_ParentLNodeType();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}'.
@@ -20457,15 +20511,15 @@ public interface SclPackage extends EPackage {
     EReference getDOType_ReferredByDO();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Data Type Templates</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates()
+     * @return the meta object for the container reference '<em>Parent Data Type Templates</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates()
      * @see #getDOType()
      * @generated
      */
-    EReference getDOType_DataTypeTemplates();
+    EReference getDOType_ParentDataTypeTemplates();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}'.
@@ -20555,15 +20609,15 @@ public interface SclPackage extends EPackage {
     EReference getDataTypeTemplates_LNodeType();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL()
      * @see #getDataTypeTemplates()
      * @generated
      */
-    EReference getDataTypeTemplates_SCL();
+    EReference getDataTypeTemplates_ParentSCL();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType <em>Enum Type</em>}'.
@@ -20587,15 +20641,15 @@ public interface SclPackage extends EPackage {
     EReference getEnumType_ReferredByAbstractDataAttribute();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Data Type Templates</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates()
+     * @return the meta object for the container reference '<em>Parent Data Type Templates</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates()
      * @see #getEnumType()
      * @generated
      */
-    EReference getEnumType_DataTypeTemplates();
+    EReference getEnumType_ParentDataTypeTemplates();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}'.
@@ -20630,15 +20684,15 @@ public interface SclPackage extends EPackage {
     EAttribute getEnumVal_Ord();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType <em>Parent Enum Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Enum Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType()
+     * @return the meta object for the container reference '<em>Parent Enum Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType()
      * @see #getEnumVal()
      * @generated
      */
-    EReference getEnumVal_EnumType();
+    EReference getEnumVal_ParentEnumType();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getValue <em>Value</em>}'.
@@ -20695,15 +20749,15 @@ public interface SclPackage extends EPackage {
     EReference getLNodeType_DO();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Data Type Templates</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates()
+     * @return the meta object for the container reference '<em>Parent Data Type Templates</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates()
      * @see #getLNodeType()
      * @generated
      */
-    EReference getLNodeType_DataTypeTemplates();
+    EReference getLNodeType_ParentDataTypeTemplates();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByAnyLN <em>Referred By Any LN</em>}'.
@@ -20738,26 +20792,26 @@ public interface SclPackage extends EPackage {
     EAttribute getProtNs_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA <em>DA</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA <em>Parent DA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DA</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA()
+     * @return the meta object for the container reference '<em>Parent DA</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA()
      * @see #getProtNs()
      * @generated
      */
-    EReference getProtNs_DA();
+    EReference getProtNs_ParentDA();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType <em>DA Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType <em>Parent DA Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DA Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType()
+     * @return the meta object for the container reference '<em>Parent DA Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType()
      * @see #getProtNs()
      * @generated
      */
-    EReference getProtNs_DAType();
+    EReference getProtNs_ParentDAType();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getValue <em>Value</em>}'.
@@ -20803,15 +20857,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSDO_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType <em>DO Type</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DO Type</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType()
+     * @return the meta object for the container reference '<em>Parent DO Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType()
      * @see #getSDO()
      * @generated
      */
-    EReference getSDO_DOType();
+    EReference getSDO_ParentDOType();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}'.
@@ -20857,26 +20911,26 @@ public interface SclPackage extends EPackage {
     EAttribute getVal_SGroup();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute <em>Abstract Data Attribute</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Abstract Data Attribute</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute()
+     * @return the meta object for the container reference '<em>Parent Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute()
      * @see #getVal()
      * @generated
      */
-    EReference getVal_AbstractDataAttribute();
+    EReference getVal_ParentAbstractDataAttribute();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI <em>DAI</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI <em>Parent DAI</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DAI</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI()
+     * @return the meta object for the container reference '<em>Parent DAI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI()
      * @see #getVal()
      * @generated
      */
-    EReference getVal_DAI();
+    EReference getVal_ParentDAI();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getValue <em>Value</em>}'.
@@ -20963,6 +21017,17 @@ public interface SclPackage extends EPackage {
     EClass getBitRate();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork <em>Parent Sub Network</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent Sub Network</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork()
+     * @see #getBitRate()
+     * @generated
+     */
+    EReference getBitRate_ParentSubNetwork();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate <em>Smp Rate</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20982,6 +21047,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSmpRate_Value();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings <em>Parent SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings()
+     * @see #getSmpRate()
+     * @generated
+     */
+    EReference getSmpRate_ParentSMVSettings();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec <em>Samples Per Sec</em>}'.
@@ -21005,6 +21081,17 @@ public interface SclPackage extends EPackage {
     EAttribute getSamplesPerSec_Value();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings <em>Parent SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings()
+     * @see #getSamplesPerSec()
+     * @generated
+     */
+    EReference getSamplesPerSec_ParentSMVSettings();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples <em>Sec Per Samples</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21026,6 +21113,17 @@ public interface SclPackage extends EPackage {
     EAttribute getSecPerSamples_Value();
 
     /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getParentSMVSettings <em>Parent SMV Settings</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getParentSMVSettings()
+     * @see #getSecPerSamples()
+     * @generated
+     */
+    EReference getSecPerSamples_ParentSMVSettings();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity <em>Mc Security</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -21036,37 +21134,37 @@ public interface SclPackage extends EPackage {
     EClass getMcSecurity();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices <em>Parent Client Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Client Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices()
+     * @return the meta object for the container reference '<em>Parent Client Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices()
      * @see #getMcSecurity()
      * @generated
      */
-    EReference getMcSecurity_ClientServices();
+    EReference getMcSecurity_ParentClientServices();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings <em>GSE Settings</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings <em>Parent GSE Settings</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>GSE Settings</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings()
+     * @return the meta object for the container reference '<em>Parent GSE Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings()
      * @see #getMcSecurity()
      * @generated
      */
-    EReference getMcSecurity_GSESettings();
+    EReference getMcSecurity_ParentGSESettings();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings <em>SMV Settings</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings <em>Parent SMV Settings</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SMV Settings</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings()
+     * @return the meta object for the container reference '<em>Parent SMV Settings</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings()
      * @see #getMcSecurity()
      * @generated
      */
-    EReference getMcSecurity_SMVSettings();
+    EReference getMcSecurity_ParentSMVSettings();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSignature <em>Signature</em>}'.
@@ -21576,15 +21674,15 @@ public interface SclPackage extends EPackage {
     EClass getAccessControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice <em>LDevice</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LDevice</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice()
+     * @return the meta object for the container reference '<em>Parent LDevice</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice()
      * @see #getAccessControl()
      * @generated
      */
-    EReference getAccessControl_LDevice();
+    EReference getAccessControl_ParentLDevice();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint <em>Access Point</em>}'.
@@ -21630,15 +21728,15 @@ public interface SclPackage extends EPackage {
     EAttribute getAccessPoint_Router();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED <em>IED</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>IED</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED()
+     * @return the meta object for the container reference '<em>Parent IED</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED()
      * @see #getAccessPoint()
      * @generated
      */
-    EReference getAccessPoint_IED();
+    EReference getAccessPoint_ParentIED();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getLN <em>LN</em>}'.
@@ -21948,14 +22046,14 @@ public interface SclPackage extends EPackage {
     EAttribute getAnyLN_Control();
 
     /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLDevice() <em>Get LDevice</em>}' operation.
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getParentLDevice() <em>Get Parent LDevice</em>}' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get LDevice</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLDevice()
+     * @return the meta object for the '<em>Get Parent LDevice</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getParentLDevice()
      * @generated
      */
-    EOperation getAnyLN__GetLDevice();
+    EOperation getAnyLN__GetParentLDevice();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association <em>Association</em>}'.
@@ -21990,15 +22088,15 @@ public interface SclPackage extends EPackage {
     EAttribute getAssociation_Kind();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer <em>Server</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Server</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer()
+     * @return the meta object for the container reference '<em>Parent Server</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer()
      * @see #getAssociation()
      * @generated
      */
-    EReference getAssociation_Server();
+    EReference getAssociation_ParentServer();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getRefersToAnyLN <em>Refers To Any LN</em>}'.
@@ -22022,15 +22120,15 @@ public interface SclPackage extends EPackage {
     EClass getAuthentication();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Server</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer()
+     * @return the meta object for the container reference '<em>Parent Server</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer()
      * @see #getAuthentication()
      * @generated
      */
-    EReference getAuthentication_Server();
+    EReference getAuthentication_ParentServer();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate <em>Certificate</em>}'.
@@ -22108,15 +22206,15 @@ public interface SclPackage extends EPackage {
     EAttribute getClientLN_ApRef();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled <em>Rpt Enabled</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled <em>Parent Rpt Enabled</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Rpt Enabled</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled()
+     * @return the meta object for the container reference '<em>Parent Rpt Enabled</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled()
      * @see #getClientLN()
      * @generated
      */
-    EReference getClientLN_RptEnabled();
+    EReference getClientLN_ParentRptEnabled();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRefersToAnyLN <em>Refers To Any LN</em>}'.
@@ -22261,15 +22359,15 @@ public interface SclPackage extends EPackage {
     EAttribute getClientServices_UnbufReport();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices()
      * @see #getClientServices()
      * @generated
      */
-    EReference getClientServices_Services();
+    EReference getClientServices_ParentServices();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getTimeSyncProt <em>Time Sync Prot</em>}'.
@@ -22348,15 +22446,15 @@ public interface SclPackage extends EPackage {
     EAttribute getCommProt_Ipv6();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getParentServices()
      * @see #getCommProt()
      * @generated
      */
-    EReference getCommProt_Services();
+    EReference getCommProt_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet <em>Conf Data Set</em>}'.
@@ -22369,15 +22467,15 @@ public interface SclPackage extends EPackage {
     EClass getConfDataSet();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getParentServices()
      * @see #getConfDataSet()
      * @generated
      */
-    EReference getConfDataSet_Services();
+    EReference getConfDataSet_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs <em>Conf LNs</em>}'.
@@ -22412,15 +22510,15 @@ public interface SclPackage extends EPackage {
     EAttribute getConfLNs_FixPrefix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getParentServices()
      * @see #getConfLNs()
      * @generated
      */
-    EReference getConfLNs_Services();
+    EReference getConfLNs_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName <em>Conf Ld Name</em>}'.
@@ -22433,15 +22531,15 @@ public interface SclPackage extends EPackage {
     EClass getConfLdName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getParentServices()
      * @see #getConfLdName()
      * @generated
      */
-    EReference getConfLdName_Services();
+    EReference getConfLdName_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl <em>Conf Log Control</em>}'.
@@ -22454,15 +22552,15 @@ public interface SclPackage extends EPackage {
     EClass getConfLogControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getParentServices()
      * @see #getConfLogControl()
      * @generated
      */
-    EReference getConfLogControl_Services();
+    EReference getConfLogControl_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl <em>Conf Report Control</em>}'.
@@ -22475,15 +22573,15 @@ public interface SclPackage extends EPackage {
     EClass getConfReportControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getParentServices()
      * @see #getConfReportControl()
      * @generated
      */
-    EReference getConfReportControl_Services();
+    EReference getConfReportControl_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG <em>Conf SG</em>}'.
@@ -22507,15 +22605,15 @@ public interface SclPackage extends EPackage {
     EAttribute getConfSG_ResvTms();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups <em>Setting Groups</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getParentSettingGroups <em>Parent Setting Groups</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Setting Groups</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups()
+     * @return the meta object for the container reference '<em>Parent Setting Groups</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getParentSettingGroups()
      * @see #getConfSG()
      * @generated
      */
-    EReference getConfSG_SettingGroups();
+    EReference getConfSG_ParentSettingGroups();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef <em>Conf Sig Ref</em>}'.
@@ -22528,15 +22626,15 @@ public interface SclPackage extends EPackage {
     EClass getConfSigRef();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getParentServices()
      * @see #getConfSigRef()
      * @generated
      */
-    EReference getConfSigRef_Services();
+    EReference getConfSigRef_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control <em>Control</em>}'.
@@ -22593,14 +22691,14 @@ public interface SclPackage extends EPackage {
     EReference getControl_ReferredByExtRef();
 
     /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getAnyLN() <em>Get Any LN</em>}' operation.
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getParentAnyLN() <em>Get Parent Any LN</em>}' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Any LN</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getAnyLN()
+     * @return the meta object for the '<em>Get Parent Any LN</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getParentAnyLN()
      * @generated
      */
-    EOperation getControl__GetAnyLN();
+    EOperation getControl__GetParentAnyLN();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName <em>Control With IED Name</em>}'.
@@ -22754,26 +22852,26 @@ public interface SclPackage extends EPackage {
     EReference getDAI_Val();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI <em>DOI</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI <em>Parent DOI</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DOI</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI()
+     * @return the meta object for the container reference '<em>Parent DOI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI()
      * @see #getDAI()
      * @generated
      */
-    EReference getDAI_DOI();
+    EReference getDAI_ParentDOI();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI <em>SDI</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI <em>Parent SDI</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SDI</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI()
+     * @return the meta object for the container reference '<em>Parent SDI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI()
      * @see #getDAI()
      * @generated
      */
-    EReference getDAI_SDI();
+    EReference getDAI_ParentSDI();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI <em>DOI</em>}'.
@@ -22797,15 +22895,15 @@ public interface SclPackage extends EPackage {
     EAttribute getDOI_Ix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN()
      * @see #getDOI()
      * @generated
      */
-    EReference getDOI_AnyLN();
+    EReference getDOI_ParentAnyLN();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI <em>DAI</em>}'.
@@ -22840,15 +22938,15 @@ public interface SclPackage extends EPackage {
     EClass getDataObjectDirectory();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getParentServices()
      * @see #getDataObjectDirectory()
      * @generated
      */
-    EReference getDataObjectDirectory_Services();
+    EReference getDataObjectDirectory_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet <em>Data Set</em>}'.
@@ -22861,15 +22959,15 @@ public interface SclPackage extends EPackage {
     EClass getDataSet();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN()
      * @see #getDataSet()
      * @generated
      */
-    EReference getDataSet_AnyLN();
+    EReference getDataSet_ParentAnyLN();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getReferredByControl <em>Referred By Control</em>}'.
@@ -22915,15 +23013,15 @@ public interface SclPackage extends EPackage {
     EClass getDataSetDirectory();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getParentServices()
      * @see #getDataSetDirectory()
      * @generated
      */
-    EReference getDataSetDirectory_Services();
+    EReference getDataSetDirectory_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation <em>Dyn Association</em>}'.
@@ -22936,15 +23034,15 @@ public interface SclPackage extends EPackage {
     EClass getDynAssociation();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getParentServices()
      * @see #getDynAssociation()
      * @generated
      */
-    EReference getDynAssociation_Services();
+    EReference getDynAssociation_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet <em>Dyn Data Set</em>}'.
@@ -22957,15 +23055,15 @@ public interface SclPackage extends EPackage {
     EClass getDynDataSet();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getParentServices()
      * @see #getDynDataSet()
      * @generated
      */
-    EReference getDynDataSet_Services();
+    EReference getDynDataSet_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef <em>Ext Ref</em>}'.
@@ -23132,15 +23230,15 @@ public interface SclPackage extends EPackage {
     EAttribute getExtRef_SrcPrefix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs <em>Inputs</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs <em>Parent Inputs</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Inputs</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs()
+     * @return the meta object for the container reference '<em>Parent Inputs</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs()
      * @see #getExtRef()
      * @generated
      */
-    EReference getExtRef_Inputs();
+    EReference getExtRef_ParentInputs();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
@@ -23318,15 +23416,15 @@ public interface SclPackage extends EPackage {
     EAttribute getFCDA_Prefix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet <em>Parent Data Set</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Data Set</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet()
+     * @return the meta object for the container reference '<em>Parent Data Set</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet()
      * @see #getFCDA()
      * @generated
      */
-    EReference getFCDA_DataSet();
+    EReference getFCDA_ParentDataSet();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
@@ -23383,15 +23481,15 @@ public interface SclPackage extends EPackage {
     EAttribute getFileHandling_Mms();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getParentServices()
      * @see #getFileHandling()
      * @generated
      */
-    EReference getFileHandling_Services();
+    EReference getFileHandling_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE <em>GOOSE</em>}'.
@@ -23415,15 +23513,15 @@ public interface SclPackage extends EPackage {
     EAttribute getGOOSE_FixedOffs();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getParentServices()
      * @see #getGOOSE()
      * @generated
      */
-    EReference getGOOSE_Services();
+    EReference getGOOSE_ParentServices();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}'.
@@ -23458,15 +23556,15 @@ public interface SclPackage extends EPackage {
     EClass getGOOSESecurity();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getParentAccessPoint()
      * @see #getGOOSESecurity()
      * @generated
      */
-    EReference getGOOSESecurity_AccessPoint();
+    EReference getGOOSESecurity_ParentAccessPoint();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl <em>GSE Control</em>}'.
@@ -23523,15 +23621,15 @@ public interface SclPackage extends EPackage {
     EAttribute getGSEControl_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getLN0 <em>LN0</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LN0</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getLN0()
+     * @return the meta object for the container reference '<em>Parent LN0</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0()
      * @see #getGSEControl()
      * @generated
      */
-    EReference getGSEControl_LN0();
+    EReference getGSEControl_ParentLN0();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir <em>GSE Dir</em>}'.
@@ -23544,15 +23642,15 @@ public interface SclPackage extends EPackage {
     EClass getGSEDir();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getParentServices()
      * @see #getGSEDir()
      * @generated
      */
-    EReference getGSEDir_Services();
+    EReference getGSEDir_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings <em>GSE Settings</em>}'.
@@ -23587,15 +23685,15 @@ public interface SclPackage extends EPackage {
     EAttribute getGSESettings_DataLabel();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices()
      * @see #getGSESettings()
      * @generated
      */
-    EReference getGSESettings_Services();
+    EReference getGSESettings_ParentServices();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}'.
@@ -23630,15 +23728,15 @@ public interface SclPackage extends EPackage {
     EClass getGSSE();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getParentServices()
      * @see #getGSSE()
      * @generated
      */
-    EReference getGSSE_Services();
+    EReference getGSSE_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues <em>Get CB Values</em>}'.
@@ -23651,15 +23749,15 @@ public interface SclPackage extends EPackage {
     EClass getGetCBValues();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getParentServices()
      * @see #getGetCBValues()
      * @generated
      */
-    EReference getGetCBValues_Services();
+    EReference getGetCBValues_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition <em>Get Data Object Definition</em>}'.
@@ -23672,15 +23770,15 @@ public interface SclPackage extends EPackage {
     EClass getGetDataObjectDefinition();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getParentServices()
      * @see #getGetDataObjectDefinition()
      * @generated
      */
-    EReference getGetDataObjectDefinition_Services();
+    EReference getGetDataObjectDefinition_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue <em>Get Data Set Value</em>}'.
@@ -23693,15 +23791,15 @@ public interface SclPackage extends EPackage {
     EClass getGetDataSetValue();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getParentServices()
      * @see #getGetDataSetValue()
      * @generated
      */
-    EReference getGetDataSetValue_Services();
+    EReference getGetDataSetValue_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory <em>Get Directory</em>}'.
@@ -23714,15 +23812,15 @@ public interface SclPackage extends EPackage {
     EClass getGetDirectory();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getParentServices()
      * @see #getGetDirectory()
      * @generated
      */
-    EReference getGetDirectory_Services();
+    EReference getGetDirectory_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED <em>IED</em>}'.
@@ -23845,15 +23943,15 @@ public interface SclPackage extends EPackage {
     EReference getIED_Services();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL()
      * @see #getIED()
      * @generated
      */
-    EReference getIED_SCL();
+    EReference getIED_ParentSCL();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getName <em>Name</em>}'.
@@ -23954,15 +24052,15 @@ public interface SclPackage extends EPackage {
     EAttribute getIEDName_Prefix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName <em>Parent Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Control With IED Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName()
+     * @return the meta object for the container reference '<em>Parent Control With IED Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName()
      * @see #getIEDName()
      * @generated
      */
-    EReference getIEDName_ControlWithIEDName();
+    EReference getIEDName_ParentControlWithIEDName();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}'.
@@ -24019,15 +24117,15 @@ public interface SclPackage extends EPackage {
     EClass getInputs();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN()
      * @see #getInputs()
      * @generated
      */
-    EReference getInputs_AnyLN();
+    EReference getInputs_ParentAnyLN();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getExtRef <em>Ext Ref</em>}'.
@@ -24051,15 +24149,15 @@ public interface SclPackage extends EPackage {
     EClass getIssuerName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getCertificate <em>Certificate</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getParentCertificate <em>Parent Certificate</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Certificate</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getCertificate()
+     * @return the meta object for the container reference '<em>Parent Certificate</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getParentCertificate()
      * @see #getIssuerName()
      * @generated
      */
-    EReference getIssuerName_Certificate();
+    EReference getIssuerName_ParentCertificate();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC <em>KDC</em>}'.
@@ -24094,15 +24192,15 @@ public interface SclPackage extends EPackage {
     EAttribute getKDC_IedName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED <em>IED</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>IED</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED()
+     * @return the meta object for the container reference '<em>Parent IED</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED()
      * @see #getKDC()
      * @generated
      */
-    EReference getKDC_IED();
+    EReference getKDC_ParentIED();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getRefersToAccessPoint <em>Refers To Access Point</em>}'.
@@ -24159,15 +24257,15 @@ public interface SclPackage extends EPackage {
     EReference getLDevice_AccessControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Server</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer()
+     * @return the meta object for the container reference '<em>Parent Server</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer()
      * @see #getLDevice()
      * @generated
      */
-    EReference getLDevice_Server();
+    EReference getLDevice_ParentServer();
 
     /**
      * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}'.
@@ -24235,26 +24333,26 @@ public interface SclPackage extends EPackage {
     EAttribute getLN_Prefix();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint()
      * @see #getLN()
      * @generated
      */
-    EReference getLN_AccessPoint();
+    EReference getLN_ParentAccessPoint();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice <em>LDevice</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LDevice</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice()
+     * @return the meta object for the container reference '<em>Parent LDevice</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice()
      * @see #getLN()
      * @generated
      */
-    EReference getLN_LDevice();
+    EReference getLN_ParentLDevice();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0 <em>LN0</em>}'.
@@ -24278,15 +24376,15 @@ public interface SclPackage extends EPackage {
     EReference getLN0_GSEControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice <em>LDevice</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LDevice</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice()
+     * @return the meta object for the container reference '<em>Parent LDevice</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice()
      * @see #getLN0()
      * @generated
      */
-    EReference getLN0_LDevice();
+    EReference getLN0_ParentLDevice();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl <em>Sampled Value Control</em>}'.
@@ -24332,15 +24430,15 @@ public interface SclPackage extends EPackage {
     EClass getLog();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN()
      * @see #getLog()
      * @generated
      */
-    EReference getLog_AnyLN();
+    EReference getLog_ParentAnyLN();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getName <em>Name</em>}'.
@@ -24463,15 +24561,15 @@ public interface SclPackage extends EPackage {
     EAttribute getLogControl_ReasonCode();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN()
      * @see #getLogControl()
      * @generated
      */
-    EReference getLogControl_AnyLN();
+    EReference getLogControl_ParentAnyLN();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}'.
@@ -24539,15 +24637,15 @@ public interface SclPackage extends EPackage {
     EAttribute getLogSettings_TrgOps();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getParentServices()
      * @see #getLogSettings()
      * @generated
      */
-    EReference getLogSettings_Services();
+    EReference getLogSettings_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields <em>Opt Fields</em>}'.
@@ -24560,15 +24658,15 @@ public interface SclPackage extends EPackage {
     EClass getOptFields();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl <em>Report Control</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl <em>Parent Report Control</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Report Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl()
+     * @return the meta object for the container reference '<em>Parent Report Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl()
      * @see #getOptFields()
      * @generated
      */
-    EReference getOptFields_ReportControl();
+    EReference getOptFields_ParentReportControl();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol <em>Protocol</em>}'.
@@ -24592,15 +24690,15 @@ public interface SclPackage extends EPackage {
     EAttribute getProtocol_MustUnderstand();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName <em>Control With IED Name</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName <em>Parent Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Control With IED Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName()
+     * @return the meta object for the container reference '<em>Parent Control With IED Name</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName()
      * @see #getProtocol()
      * @generated
      */
-    EReference getProtocol_ControlWithIEDName();
+    EReference getProtocol_ParentControlWithIEDName();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite <em>Read Write</em>}'.
@@ -24613,15 +24711,15 @@ public interface SclPackage extends EPackage {
     EClass getReadWrite();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getParentServices()
      * @see #getReadWrite()
      * @generated
      */
-    EReference getReadWrite_Services();
+    EReference getReadWrite_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt <em>Red Prot</em>}'.
@@ -24667,15 +24765,15 @@ public interface SclPackage extends EPackage {
     EAttribute getRedProt_Rstp();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices()
      * @see #getRedProt()
      * @generated
      */
-    EReference getRedProt_Services();
+    EReference getRedProt_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl <em>Report Control</em>}'.
@@ -24743,15 +24841,15 @@ public interface SclPackage extends EPackage {
     EAttribute getReportControl_RptID();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN <em>Any LN</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN()
+     * @return the meta object for the container reference '<em>Parent Any LN</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN()
      * @see #getReportControl()
      * @generated
      */
-    EReference getReportControl_AnyLN();
+    EReference getReportControl_ParentAnyLN();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getOptFields <em>Opt Fields</em>}'.
@@ -24863,15 +24961,15 @@ public interface SclPackage extends EPackage {
     EAttribute getReportSettings_TrgOps();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getParentServices()
      * @see #getReportSettings()
      * @generated
      */
-    EReference getReportSettings_Services();
+    EReference getReportSettings_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled <em>Rpt Enabled</em>}'.
@@ -24906,15 +25004,15 @@ public interface SclPackage extends EPackage {
     EReference getRptEnabled_ClientLN();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl <em>Report Control</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl <em>Parent Report Control</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Report Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl()
+     * @return the meta object for the container reference '<em>Parent Report Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl()
      * @see #getRptEnabled()
      * @generated
      */
-    EReference getRptEnabled_ReportControl();
+    EReference getRptEnabled_ParentReportControl();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI <em>SDI</em>}'.
@@ -24960,15 +25058,15 @@ public interface SclPackage extends EPackage {
     EReference getSDI_DAI();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI <em>DOI</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI <em>Parent DOI</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>DOI</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI()
+     * @return the meta object for the container reference '<em>Parent DOI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI()
      * @see #getSDI()
      * @generated
      */
-    EReference getSDI_DOI();
+    EReference getSDI_ParentDOI();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSubSDI <em>Sub SDI</em>}'.
@@ -25014,15 +25112,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSGEdit_ResvTms();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups <em>Setting Groups</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups <em>Parent Setting Groups</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Setting Groups</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups()
+     * @return the meta object for the container reference '<em>Parent Setting Groups</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups()
      * @see #getSGEdit()
      * @generated
      */
-    EReference getSGEdit_SettingGroups();
+    EReference getSGEdit_ParentSettingGroups();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity <em>SMV Security</em>}'.
@@ -25035,15 +25133,15 @@ public interface SclPackage extends EPackage {
     EClass getSMVSecurity();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getParentAccessPoint()
      * @see #getSMVSecurity()
      * @generated
      */
-    EReference getSMVSecurity_AccessPoint();
+    EReference getSMVSecurity_ParentAccessPoint();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings <em>SMV Settings</em>}'.
@@ -25144,15 +25242,15 @@ public interface SclPackage extends EPackage {
     EReference getSMVSettings_SecPerSamples();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices()
      * @see #getSMVSettings()
      * @generated
      */
-    EReference getSMVSettings_Services();
+    EReference getSMVSettings_ParentServices();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}'.
@@ -25231,15 +25329,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSMVsc_DeliveryConf();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getParentServices()
      * @see #getSMVsc()
      * @generated
      */
-    EReference getSMVsc_Services();
+    EReference getSMVsc_ParentServices();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}'.
@@ -25340,15 +25438,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSampledValueControl_SmvID();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0 <em>LN0</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LN0</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0()
+     * @return the meta object for the container reference '<em>Parent LN0</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0()
      * @see #getSampledValueControl()
      * @generated
      */
-    EReference getSampledValueControl_LN0();
+    EReference getSampledValueControl_ParentLN0();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmvOpts <em>Smv Opts</em>}'.
@@ -25383,15 +25481,15 @@ public interface SclPackage extends EPackage {
     EAttribute getServer_Timeout();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint()
      * @see #getServer()
      * @generated
      */
-    EReference getServer_AccessPoint();
+    EReference getServer_ParentAccessPoint();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAssociation <em>Association</em>}'.
@@ -25448,15 +25546,15 @@ public interface SclPackage extends EPackage {
     EAttribute getServerAt_ApName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint()
      * @see #getServerAt()
      * @generated
      */
-    EReference getServerAt_AccessPoint();
+    EReference getServerAt_ParentAccessPoint();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getRefersToAccessPoint <em>Refers To Access Point</em>}'.
@@ -25544,15 +25642,15 @@ public interface SclPackage extends EPackage {
     EAttribute getServices_NameLength();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint <em>Access Point</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Access Point</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint()
+     * @return the meta object for the container reference '<em>Parent Access Point</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint()
      * @see #getServices()
      * @generated
      */
-    EReference getServices_AccessPoint();
+    EReference getServices_ParentAccessPoint();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getClientServices <em>Client Services</em>}'.
@@ -25786,15 +25884,15 @@ public interface SclPackage extends EPackage {
     EReference getServices_GetDirectory();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED <em>IED</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>IED</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED()
+     * @return the meta object for the container reference '<em>Parent IED</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED()
      * @see #getServices()
      * @generated
      */
-    EReference getServices_IED();
+    EReference getServices_ParentIED();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getLogSettings <em>Log Settings</em>}'.
@@ -25939,15 +26037,15 @@ public interface SclPackage extends EPackage {
     EClass getSetDataSetValue();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getParentServices()
      * @see #getSetDataSetValue()
      * @generated
      */
-    EReference getSetDataSetValue_Services();
+    EReference getSetDataSetValue_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl <em>Setting Control</em>}'.
@@ -25993,15 +26091,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSettingControl_ResvTms();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getLN0 <em>LN0</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LN0</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getLN0()
+     * @return the meta object for the container reference '<em>Parent LN0</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getParentLN0()
      * @see #getSettingControl()
      * @generated
      */
-    EReference getSettingControl_LN0();
+    EReference getSettingControl_ParentLN0();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups <em>Setting Groups</em>}'.
@@ -26036,15 +26134,15 @@ public interface SclPackage extends EPackage {
     EReference getSettingGroups_SGEdit();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices()
      * @see #getSettingGroups()
      * @generated
      */
-    EReference getSettingGroups_Services();
+    EReference getSettingGroups_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts <em>Smv Opts</em>}'.
@@ -26057,15 +26155,15 @@ public interface SclPackage extends EPackage {
     EClass getSmvOpts();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl <em>Parent Sampled Value Control</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Sampled Value Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl()
+     * @return the meta object for the container reference '<em>Parent Sampled Value Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl()
      * @see #getSmvOpts()
      * @generated
      */
-    EReference getSmvOpts_SampledValueControl();
+    EReference getSmvOpts_ParentSampledValueControl();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject <em>Subject</em>}'.
@@ -26078,15 +26176,15 @@ public interface SclPackage extends EPackage {
     EClass getSubject();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate <em>Certificate</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getParentCertificate <em>Parent Certificate</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Certificate</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate()
+     * @return the meta object for the container reference '<em>Parent Certificate</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getParentCertificate()
      * @see #getSubject()
      * @generated
      */
-    EReference getSubject_Certificate();
+    EReference getSubject_ParentCertificate();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription <em>Sup Subscription</em>}'.
@@ -26121,15 +26219,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSupSubscription_MaxSv();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices()
      * @see #getSupSubscription()
      * @generated
      */
-    EReference getSupSubscription_Services();
+    EReference getSupSubscription_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt <em>Time Sync Prot</em>}'.
@@ -26175,26 +26273,26 @@ public interface SclPackage extends EPackage {
     EAttribute getTimeSyncProt_Sntp();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices <em>Client Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices <em>Parent Client Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Client Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices()
+     * @return the meta object for the container reference '<em>Parent Client Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices()
      * @see #getTimeSyncProt()
      * @generated
      */
-    EReference getTimeSyncProt_ClientServices();
+    EReference getTimeSyncProt_ParentClientServices();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices()
      * @see #getTimeSyncProt()
      * @generated
      */
-    EReference getTimeSyncProt_Services();
+    EReference getTimeSyncProt_ParentServices();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}'.
@@ -26218,15 +26316,15 @@ public interface SclPackage extends EPackage {
     EClass getTimerActivatedControl();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getParentServices()
      * @see #getTimerActivatedControl()
      * @generated
      */
-    EReference getTimerActivatedControl_Services();
+    EReference getTimerActivatedControl_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps <em>Trg Ops</em>}'.
@@ -26294,15 +26392,15 @@ public interface SclPackage extends EPackage {
     EAttribute getTrgOps_Qchg();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt <em>Parent Control With Trigger Opt</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Control With Trigger Opt</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt()
+     * @return the meta object for the container reference '<em>Parent Control With Trigger Opt</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt()
      * @see #getTrgOps()
      * @generated
      */
-    EReference getTrgOps_ControlWithTriggerOpt();
+    EReference getTrgOps_ParentControlWithTriggerOpt();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling <em>Value Handling</em>}'.
@@ -26326,15 +26424,15 @@ public interface SclPackage extends EPackage {
     EAttribute getValueHandling_SetToRO();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices <em>Services</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Services</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices()
+     * @return the meta object for the container reference '<em>Parent Services</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices()
      * @see #getValueHandling()
      * @generated
      */
-    EReference getValueHandling_Services();
+    EReference getValueHandling_ParentServices();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
@@ -26422,15 +26520,15 @@ public interface SclPackage extends EPackage {
     EClass getBay();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel <em>Voltage Level</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Voltage Level</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel()
+     * @return the meta object for the container reference '<em>Parent Voltage Level</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel()
      * @see #getBay()
      * @generated
      */
-    EReference getBay_VoltageLevel();
+    EReference getBay_ParentVoltageLevel();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction <em>Function</em>}'.
@@ -26487,37 +26585,37 @@ public interface SclPackage extends EPackage {
     EAttribute getConductingEquipment_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay <em>Bay</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Bay</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay()
+     * @return the meta object for the container reference '<em>Parent Bay</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay()
      * @see #getConductingEquipment()
      * @generated
      */
-    EReference getConductingEquipment_Bay();
+    EReference getConductingEquipment_ParentBay();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction <em>Function</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Function</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction()
+     * @return the meta object for the container reference '<em>Parent Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction()
      * @see #getConductingEquipment()
      * @generated
      */
-    EReference getConductingEquipment_Function();
+    EReference getConductingEquipment_ParentFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getSubFunction <em>Sub Function</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunction <em>Parent Sub Function</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Sub Function</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getSubFunction()
+     * @return the meta object for the container reference '<em>Parent Sub Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunction()
      * @see #getConductingEquipment()
      * @generated
      */
-    EReference getConductingEquipment_SubFunction();
+    EReference getConductingEquipment_ParentSubFunction();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}'.
@@ -26531,26 +26629,26 @@ public interface SclPackage extends EPackage {
     EReference getConductingEquipment_EqFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Line</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine()
+     * @return the meta object for the container reference '<em>Parent Line</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine()
      * @see #getConductingEquipment()
      * @generated
      */
-    EReference getConductingEquipment_Line();
+    EReference getConductingEquipment_ParentLine();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess <em>Process</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Process</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess()
+     * @return the meta object for the container reference '<em>Parent Process</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess()
      * @see #getConductingEquipment()
      * @generated
      */
-    EReference getConductingEquipment_Process();
+    EReference getConductingEquipment_ParentProcess();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode <em>Connectivity Node</em>}'.
@@ -26574,15 +26672,15 @@ public interface SclPackage extends EPackage {
     EAttribute getConnectivityNode_PathName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getBay <em>Bay</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Bay</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getBay()
+     * @return the meta object for the container reference '<em>Parent Bay</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentBay()
      * @see #getConnectivityNode()
      * @generated
      */
-    EReference getConnectivityNode_Bay();
+    EReference getConnectivityNode_ParentBay();
 
     /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}'.
@@ -26596,15 +26694,15 @@ public interface SclPackage extends EPackage {
     EReference getConnectivityNode_ReferredByTerminal();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Line</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine()
+     * @return the meta object for the container reference '<em>Parent Line</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentLine()
      * @see #getConnectivityNode()
      * @generated
      */
-    EReference getConnectivityNode_Line();
+    EReference getConnectivityNode_ParentLine();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction <em>Eq Function</em>}'.
@@ -26617,70 +26715,70 @@ public interface SclPackage extends EPackage {
     EClass getEqFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment <em>Parent Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Conducting Equipment</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment()
+     * @return the meta object for the container reference '<em>Parent Conducting Equipment</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_ConductingEquipment();
+    EReference getEqFunction_ParentConductingEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentGeneralEquipment <em>Parent General Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>General Equipment</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment()
+     * @return the meta object for the container reference '<em>Parent General Equipment</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentGeneralEquipment()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_GeneralEquipment();
+    EReference getEqFunction_ParentGeneralEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Power Transformer</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer()
+     * @return the meta object for the container reference '<em>Parent Power Transformer</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_PowerTransformer();
+    EReference getEqFunction_ParentPowerTransformer();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment <em>Parent Sub Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Sub Equipment</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment()
+     * @return the meta object for the container reference '<em>Parent Sub Equipment</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_SubEquipment();
+    EReference getEqFunction_ParentSubEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Transformer Winding</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding()
+     * @return the meta object for the container reference '<em>Parent Transformer Winding</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_TransformerWinding();
+    EReference getEqFunction_ParentTransformerWinding();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger <em>Parent Tap Changer</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Tap Changer</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger()
+     * @return the meta object for the container reference '<em>Parent Tap Changer</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger()
      * @see #getEqFunction()
      * @generated
      */
-    EReference getEqFunction_TapChanger();
+    EReference getEqFunction_ParentTapChanger();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction <em>Eq Sub Function</em>}'.
@@ -26693,15 +26791,15 @@ public interface SclPackage extends EPackage {
     EClass getEqSubFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Abstract Eq Func Sub Func</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc()
+     * @return the meta object for the container reference '<em>Parent Abstract Eq Func Sub Func</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc()
      * @see #getEqSubFunction()
      * @generated
      */
-    EReference getEqSubFunction_AbstractEqFuncSubFunc();
+    EReference getEqSubFunction_ParentAbstractEqFuncSubFunc();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment <em>Equipment</em>}'.
@@ -26767,15 +26865,15 @@ public interface SclPackage extends EPackage {
     EAttribute getFunction_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay <em>Bay</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Bay</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay()
+     * @return the meta object for the container reference '<em>Parent Bay</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay()
      * @see #getFunction()
      * @generated
      */
-    EReference getFunction_Bay();
+    EReference getFunction_ParentBay();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getConductingEquipment <em>Conducting Equipment</em>}'.
@@ -26789,37 +26887,37 @@ public interface SclPackage extends EPackage {
     EReference getFunction_ConductingEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipmentContainer <em>General Equipment Container</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>General Equipment Container</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipmentContainer()
+     * @return the meta object for the container reference '<em>Parent General Equipment Container</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentGeneralEquipmentContainer()
      * @see #getFunction()
      * @generated
      */
-    EReference getFunction_GeneralEquipmentContainer();
+    EReference getFunction_ParentGeneralEquipmentContainer();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation <em>Substation</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation <em>Parent Substation</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Substation</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation()
+     * @return the meta object for the container reference '<em>Parent Substation</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation()
      * @see #getFunction()
      * @generated
      */
-    EReference getFunction_Substation();
+    EReference getFunction_ParentSubstation();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel <em>Voltage Level</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Voltage Level</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel()
+     * @return the meta object for the container reference '<em>Parent Voltage Level</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel()
      * @see #getFunction()
      * @generated
      */
-    EReference getFunction_VoltageLevel();
+    EReference getFunction_ParentVoltageLevel();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubFunction <em>Sub Function</em>}'.
@@ -26865,15 +26963,15 @@ public interface SclPackage extends EPackage {
     EAttribute getGeneralEquipment_Type();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Abstract Eq Func Sub Func</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc()
+     * @return the meta object for the container reference '<em>Parent Abstract Eq Func Sub Func</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentAbstractEqFuncSubFunc()
      * @see #getGeneralEquipment()
      * @generated
      */
-    EReference getGeneralEquipment_AbstractEqFuncSubFunc();
+    EReference getGeneralEquipment_ParentAbstractEqFuncSubFunc();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}'.
@@ -26887,48 +26985,48 @@ public interface SclPackage extends EPackage {
     EReference getGeneralEquipment_EqFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer <em>Equipment Container</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentEquipmentContainer <em>Parent Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Equipment Container</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer()
+     * @return the meta object for the container reference '<em>Parent Equipment Container</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentEquipmentContainer()
      * @see #getGeneralEquipment()
      * @generated
      */
-    EReference getGeneralEquipment_EquipmentContainer();
+    EReference getGeneralEquipment_ParentEquipmentContainer();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction <em>Function</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Function</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction()
+     * @return the meta object for the container reference '<em>Parent Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentFunction()
      * @see #getGeneralEquipment()
      * @generated
      */
-    EReference getGeneralEquipment_Function();
+    EReference getGeneralEquipment_ParentFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getGeneralEquipmentContainer <em>General Equipment Container</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>General Equipment Container</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getGeneralEquipmentContainer()
+     * @return the meta object for the container reference '<em>Parent General Equipment Container</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentGeneralEquipmentContainer()
      * @see #getGeneralEquipment()
      * @generated
      */
-    EReference getGeneralEquipment_GeneralEquipmentContainer();
+    EReference getGeneralEquipment_ParentGeneralEquipmentContainer();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getSubFunction <em>Sub Function</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentSubFunction <em>Parent Sub Function</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Sub Function</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getSubFunction()
+     * @return the meta object for the container reference '<em>Parent Sub Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentSubFunction()
      * @see #getGeneralEquipment()
      * @generated
      */
-    EReference getGeneralEquipment_SubFunction();
+    EReference getGeneralEquipment_ParentSubFunction();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer <em>General Equipment Container</em>}'.
@@ -27050,15 +27148,15 @@ public interface SclPackage extends EPackage {
     EReference getLNode_RefersToAnyLN();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>LNode Container</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer()
+     * @return the meta object for the container reference '<em>Parent LNode Container</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer()
      * @see #getLNode()
      * @generated
      */
-    EReference getLNode_LNodeContainer();
+    EReference getLNode_ParentLNodeContainer();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer <em>LNode Container</em>}'.
@@ -27092,15 +27190,15 @@ public interface SclPackage extends EPackage {
     EClass getNeutralPoint();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding <em>Transformer Winding</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Transformer Winding</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding()
+     * @return the meta object for the container reference '<em>Parent Transformer Winding</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getParentTransformerWinding()
      * @see #getNeutralPoint()
      * @generated
      */
-    EReference getNeutralPoint_TransformerWinding();
+    EReference getNeutralPoint_ParentTransformerWinding();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerSystemResource <em>Power System Resource</em>}'.
@@ -27145,15 +27243,15 @@ public interface SclPackage extends EPackage {
     EReference getPowerTransformer_EqFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer <em>Equipment Container</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer <em>Parent Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Equipment Container</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer()
+     * @return the meta object for the container reference '<em>Parent Equipment Container</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer()
      * @see #getPowerTransformer()
      * @generated
      */
-    EReference getPowerTransformer_EquipmentContainer();
+    EReference getPowerTransformer_ParentEquipmentContainer();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getSubEquipment <em>Sub Equipment</em>}'.
@@ -27199,15 +27297,15 @@ public interface SclPackage extends EPackage {
     EAttribute getSubEquipment_Phase();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Abstract Conducting Equipment</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment()
+     * @return the meta object for the container reference '<em>Parent Abstract Conducting Equipment</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment()
      * @see #getSubEquipment()
      * @generated
      */
-    EReference getSubEquipment_AbstractConductingEquipment();
+    EReference getSubEquipment_ParentAbstractConductingEquipment();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}'.
@@ -27221,26 +27319,26 @@ public interface SclPackage extends EPackage {
     EReference getSubEquipment_EqFunction();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer <em>Power Transformer</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Power Transformer</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer()
+     * @return the meta object for the container reference '<em>Parent Power Transformer</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer()
      * @see #getSubEquipment()
      * @generated
      */
-    EReference getSubEquipment_PowerTransformer();
+    EReference getSubEquipment_ParentPowerTransformer();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger <em>Tap Changer</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger <em>Parent Tap Changer</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Tap Changer</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger()
+     * @return the meta object for the container reference '<em>Parent Tap Changer</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger()
      * @see #getSubEquipment()
      * @generated
      */
-    EReference getSubEquipment_TapChanger();
+    EReference getSubEquipment_ParentTapChanger();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction <em>Sub Function</em>}'.
@@ -27275,15 +27373,15 @@ public interface SclPackage extends EPackage {
     EReference getSubFunction_ConductingEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getFunction <em>Function</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Function</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getFunction()
+     * @return the meta object for the container reference '<em>Parent Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentFunction()
      * @see #getSubFunction()
      * @generated
      */
-    EReference getSubFunction_Function();
+    EReference getSubFunction_ParentFunction();
 
     /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getGeneralEquipment <em>General Equipment</em>}'.
@@ -27306,6 +27404,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getSubFunction_SubSubFunctions();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentSubFunction <em>Parent Sub Function</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent Sub Function</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentSubFunction()
+     * @see #getSubFunction()
+     * @generated
+     */
+    EReference getSubFunction_ParentSubFunction();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation <em>Substation</em>}'.
@@ -27340,26 +27449,26 @@ public interface SclPackage extends EPackage {
     EReference getSubstation_VoltageLevel();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Process</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess()
+     * @return the meta object for the container reference '<em>Parent Process</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess()
      * @see #getSubstation()
      * @generated
      */
-    EReference getSubstation_Process();
+    EReference getSubstation_ParentProcess();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL <em>SCL</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>SCL</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL()
+     * @return the meta object for the container reference '<em>Parent SCL</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL()
      * @see #getSubstation()
      * @generated
      */
-    EReference getSubstation_SCL();
+    EReference getSubstation_ParentSCL();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger <em>Tap Changer</em>}'.
@@ -27405,15 +27514,15 @@ public interface SclPackage extends EPackage {
     EReference getTapChanger_SubEquipment();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding <em>Transformer Winding</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Transformer Winding</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding()
+     * @return the meta object for the container reference '<em>Parent Transformer Winding</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding()
      * @see #getTapChanger()
      * @generated
      */
-    EReference getTapChanger_TransformerWinding();
+    EReference getTapChanger_ParentTransformerWinding();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal <em>Terminal</em>}'.
@@ -27492,15 +27601,15 @@ public interface SclPackage extends EPackage {
     EAttribute getTerminal_VoltageLevelName();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Abstract Conducting Equipment</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment()
+     * @return the meta object for the container reference '<em>Parent Abstract Conducting Equipment</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment()
      * @see #getTerminal()
      * @generated
      */
-    EReference getTerminal_AbstractConductingEquipment();
+    EReference getTerminal_ParentAbstractConductingEquipment();
 
     /**
      * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}'.
@@ -27579,15 +27688,15 @@ public interface SclPackage extends EPackage {
     EReference getTransformerWinding_NeutralPoint();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer <em>Power Transformer</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Power Transformer</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer()
+     * @return the meta object for the container reference '<em>Parent Power Transformer</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer()
      * @see #getTransformerWinding()
      * @generated
      */
-    EReference getTransformerWinding_PowerTransformer();
+    EReference getTransformerWinding_ParentPowerTransformer();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getTapChanger <em>Tap Changer</em>}'.
@@ -27611,15 +27720,26 @@ public interface SclPackage extends EPackage {
     EClass getVoltage();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Line</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine()
+     * @return the meta object for the container reference '<em>Parent Line</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine()
      * @see #getVoltage()
      * @generated
      */
-    EReference getVoltage_Line();
+    EReference getVoltage_ParentLine();
+
+    /**
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the container reference '<em>Parent Voltage Level</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel()
+     * @see #getVoltage()
+     * @generated
+     */
+    EReference getVoltage_ParentVoltageLevel();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel <em>Voltage Level</em>}'.
@@ -27676,15 +27796,15 @@ public interface SclPackage extends EPackage {
     EReference getVoltageLevel_Function();
 
     /**
-     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation <em>Substation</em>}'.
+     * Returns the meta object for the container reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation <em>Parent Substation</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the container reference '<em>Substation</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation()
+     * @return the meta object for the container reference '<em>Parent Substation</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation()
      * @see #getVoltageLevel()
      * @generated
      */
-    EReference getVoltageLevel_Substation();
+    EReference getVoltageLevel_ParentSubstation();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getVoltage <em>Voltage</em>}'.

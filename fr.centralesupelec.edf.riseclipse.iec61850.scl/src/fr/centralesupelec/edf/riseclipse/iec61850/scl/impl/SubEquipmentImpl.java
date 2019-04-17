@@ -48,10 +48,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getVirtual <em>Virtual</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getPhase <em>Phase</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getPowerTransformer <em>Power Transformer</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getTapChanger <em>Tap Changer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getParentPowerTransformer <em>Parent Power Transformer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubEquipmentImpl#getParentTapChanger <em>Parent Tap Changer</em>}</li>
  * </ul>
  *
  * @generated
@@ -200,6 +200,49 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
+    public AbstractConductingEquipment getParentAbstractConductingEquipment() {
+        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT) return null;
+        return (AbstractConductingEquipment)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentAbstractConductingEquipment(AbstractConductingEquipment newParentAbstractConductingEquipment, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAbstractConductingEquipment, SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentAbstractConductingEquipment(AbstractConductingEquipment newParentAbstractConductingEquipment) {
+        if (newParentAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT && newParentAbstractConductingEquipment != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAbstractConductingEquipment))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentAbstractConductingEquipment != null)
+                msgs = ((InternalEObject)newParentAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, AbstractConductingEquipment.class, msgs);
+            msgs = basicSetParentAbstractConductingEquipment(newParentAbstractConductingEquipment, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT, newParentAbstractConductingEquipment, newParentAbstractConductingEquipment));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Boolean getVirtual() {
         return virtual;
     }
@@ -250,53 +293,9 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
-    public AbstractConductingEquipment getAbstractConductingEquipment() {
-        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
-        return (AbstractConductingEquipment)eInternalContainer();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetAbstractConductingEquipment(
-            AbstractConductingEquipment newAbstractConductingEquipment, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractConductingEquipment, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setAbstractConductingEquipment( AbstractConductingEquipment newAbstractConductingEquipment ) {
-        if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractConductingEquipment != null)
-                msgs = ((InternalEObject)newAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, AbstractConductingEquipment.class, msgs);
-            msgs = basicSetAbstractConductingEquipment(newAbstractConductingEquipment, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT, newAbstractConductingEquipment, newAbstractConductingEquipment));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.SUB_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__SUB_EQUIPMENT);
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.SUB_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_SUB_EQUIPMENT);
         }
         return eqFunction;
     }
@@ -327,8 +326,8 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
-    public PowerTransformer getPowerTransformer() {
-        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER) return null;
+    public PowerTransformer getParentPowerTransformer() {
+        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER) return null;
         return (PowerTransformer)eInternalContainer();
     }
 
@@ -337,8 +336,8 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetPowerTransformer( PowerTransformer newPowerTransformer, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newPowerTransformer, SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER, msgs);
+    public NotificationChain basicSetParentPowerTransformer(PowerTransformer newParentPowerTransformer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentPowerTransformer, SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER, msgs);
         return msgs;
     }
 
@@ -348,20 +347,20 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
-    public void setPowerTransformer( PowerTransformer newPowerTransformer ) {
-        if (newPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER && newPowerTransformer != null)) {
-            if (EcoreUtil.isAncestor(this, newPowerTransformer))
+    public void setParentPowerTransformer(PowerTransformer newParentPowerTransformer) {
+        if (newParentPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER && newParentPowerTransformer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentPowerTransformer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newPowerTransformer != null)
-                msgs = ((InternalEObject)newPowerTransformer).eInverseAdd(this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, PowerTransformer.class, msgs);
-            msgs = basicSetPowerTransformer(newPowerTransformer, msgs);
+            if (newParentPowerTransformer != null)
+                msgs = ((InternalEObject)newParentPowerTransformer).eInverseAdd(this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, PowerTransformer.class, msgs);
+            msgs = basicSetParentPowerTransformer(newParentPowerTransformer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER, newPowerTransformer, newPowerTransformer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER, newParentPowerTransformer, newParentPowerTransformer));
     }
 
     /**
@@ -370,8 +369,8 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
-    public TapChanger getTapChanger() {
-        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__TAP_CHANGER) return null;
+    public TapChanger getParentTapChanger() {
+        if (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER) return null;
         return (TapChanger)eInternalContainer();
     }
 
@@ -380,8 +379,8 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetTapChanger( TapChanger newTapChanger, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newTapChanger, SclPackage.SUB_EQUIPMENT__TAP_CHANGER, msgs);
+    public NotificationChain basicSetParentTapChanger(TapChanger newParentTapChanger, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentTapChanger, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER, msgs);
         return msgs;
     }
 
@@ -391,20 +390,20 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
      * @generated
      */
     @Override
-    public void setTapChanger( TapChanger newTapChanger ) {
-        if (newTapChanger != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__TAP_CHANGER && newTapChanger != null)) {
-            if (EcoreUtil.isAncestor(this, newTapChanger))
+    public void setParentTapChanger(TapChanger newParentTapChanger) {
+        if (newParentTapChanger != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER && newParentTapChanger != null)) {
+            if (EcoreUtil.isAncestor(this, newParentTapChanger))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newTapChanger != null)
-                msgs = ((InternalEObject)newTapChanger).eInverseAdd(this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, TapChanger.class, msgs);
-            msgs = basicSetTapChanger(newTapChanger, msgs);
+            if (newParentTapChanger != null)
+                msgs = ((InternalEObject)newParentTapChanger).eInverseAdd(this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, TapChanger.class, msgs);
+            msgs = basicSetParentTapChanger(newParentTapChanger, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__TAP_CHANGER, newTapChanger, newTapChanger));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER, newParentTapChanger, newParentTapChanger));
     }
 
     /**
@@ -416,20 +415,20 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
+                return basicSetParentAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetPowerTransformer((PowerTransformer)otherEnd, msgs);
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
+                return basicSetParentPowerTransformer((PowerTransformer)otherEnd, msgs);
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetTapChanger((TapChanger)otherEnd, msgs);
+                return basicSetParentTapChanger((TapChanger)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -442,14 +441,14 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return basicSetAbstractConductingEquipment(null, msgs);
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return basicSetParentAbstractConductingEquipment(null, msgs);
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
-                return basicSetPowerTransformer(null, msgs);
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
-                return basicSetTapChanger(null, msgs);
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
+                return basicSetParentPowerTransformer(null, msgs);
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
+                return basicSetParentTapChanger(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -462,11 +461,11 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, AbstractConductingEquipment.class, msgs);
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, PowerTransformer.class, msgs);
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, TapChanger.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -484,14 +483,14 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
                 return getVirtual();
             case SclPackage.SUB_EQUIPMENT__PHASE:
                 return getPhase();
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment();
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return getParentAbstractConductingEquipment();
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 return getEqFunction();
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
-                return getPowerTransformer();
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
-                return getTapChanger();
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
+                return getParentPowerTransformer();
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
+                return getParentTapChanger();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -511,18 +510,18 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
             case SclPackage.SUB_EQUIPMENT__PHASE:
                 setPhase((PhaseEnum)newValue);
                 return;
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                setParentAbstractConductingEquipment((AbstractConductingEquipment)newValue);
                 return;
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 getEqFunction().clear();
                 getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
                 return;
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
-                setPowerTransformer((PowerTransformer)newValue);
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
+                setParentPowerTransformer((PowerTransformer)newValue);
                 return;
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
-                setTapChanger((TapChanger)newValue);
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
+                setParentTapChanger((TapChanger)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -542,17 +541,17 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
             case SclPackage.SUB_EQUIPMENT__PHASE:
                 unsetPhase();
                 return;
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)null);
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                setParentAbstractConductingEquipment((AbstractConductingEquipment)null);
                 return;
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 unsetEqFunction();
                 return;
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
-                setPowerTransformer((PowerTransformer)null);
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
+                setParentPowerTransformer((PowerTransformer)null);
                 return;
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
-                setTapChanger((TapChanger)null);
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
+                setParentTapChanger((TapChanger)null);
                 return;
         }
         super.eUnset(featureID);
@@ -570,14 +569,14 @@ public class SubEquipmentImpl extends PowerSystemResourceImpl implements SubEqui
                 return isSetVirtual();
             case SclPackage.SUB_EQUIPMENT__PHASE:
                 return isSetPhase();
-            case SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment() != null;
+            case SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return getParentAbstractConductingEquipment() != null;
             case SclPackage.SUB_EQUIPMENT__EQ_FUNCTION:
                 return isSetEqFunction();
-            case SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER:
-                return getPowerTransformer() != null;
-            case SclPackage.SUB_EQUIPMENT__TAP_CHANGER:
-                return getTapChanger() != null;
+            case SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER:
+                return getParentPowerTransformer() != null;
+            case SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER:
+                return getParentTapChanger() != null;
         }
         return super.eIsSet(featureID);
     }

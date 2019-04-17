@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
  * </ul>
  *
@@ -151,7 +151,7 @@ public interface LNodeType extends IDNaming {
     /**
      * Returns the value of the '<em><b>DO</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType <em>Parent LNode Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DO</em>' containment reference list isn't clear,
@@ -162,8 +162,8 @@ public interface LNodeType extends IDNaming {
      * @see #isSetDO()
      * @see #unsetDO()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType_DO()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType
-     * @model opposite="LNodeType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType
+     * @model opposite="ParentLNodeType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DO> getDO();
@@ -190,32 +190,28 @@ public interface LNodeType extends IDNaming {
     boolean isSetDO();
 
     /**
-     * Returns the value of the '<em><b>Data Type Templates</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Type Templates</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Type Templates</em>' container reference.
-     * @see #setDataTypeTemplates(DataTypeTemplates)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType_DataTypeTemplates()
+     * @return the value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #setParentDataTypeTemplates(DataTypeTemplates)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType_ParentDataTypeTemplates()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType
      * @model opposite="LNodeType" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DataTypeTemplates getDataTypeTemplates();
+    DataTypeTemplates getParentDataTypeTemplates();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Type Templates</em>' container reference.
-     * @see #getDataTypeTemplates()
+     * @param value the new value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setDataTypeTemplates( DataTypeTemplates value );
+    void setParentDataTypeTemplates(DataTypeTemplates value);
 
     /**
      * Returns the value of the '<em><b>Referred By Any LN</b></em>' reference list.

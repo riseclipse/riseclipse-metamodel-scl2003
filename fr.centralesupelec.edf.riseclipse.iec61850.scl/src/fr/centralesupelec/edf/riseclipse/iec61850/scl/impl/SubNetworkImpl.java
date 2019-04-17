@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubNetworkImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubNetworkImpl#getBitRate <em>Bit Rate</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubNetworkImpl#getCommunication <em>Communication</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubNetworkImpl#getParentCommunication <em>Parent Communication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubNetworkImpl#getConnectedAP <em>Connected AP</em>}</li>
  * </ul>
  *
@@ -216,9 +216,9 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
         if (newBitRate != bitRate) {
             NotificationChain msgs = null;
             if (bitRate != null)
-                msgs = ((InternalEObject)bitRate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SUB_NETWORK__BIT_RATE, null, msgs);
+                msgs = ((InternalEObject)bitRate).eInverseRemove(this, SclPackage.BIT_RATE__PARENT_SUB_NETWORK, BitRate.class, msgs);
             if (newBitRate != null)
-                msgs = ((InternalEObject)newBitRate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SclPackage.SUB_NETWORK__BIT_RATE, null, msgs);
+                msgs = ((InternalEObject)newBitRate).eInverseAdd(this, SclPackage.BIT_RATE__PARENT_SUB_NETWORK, BitRate.class, msgs);
             msgs = basicSetBitRate(newBitRate, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -256,7 +256,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
     public void unsetBitRate() {
         if (bitRate != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)bitRate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SUB_NETWORK__BIT_RATE, null, msgs);
+            msgs = ((InternalEObject)bitRate).eInverseRemove(this, SclPackage.BIT_RATE__PARENT_SUB_NETWORK, BitRate.class, msgs);
             msgs = basicUnsetBitRate(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -284,8 +284,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * @generated
      */
     @Override
-    public Communication getCommunication() {
-        if (eContainerFeatureID() != SclPackage.SUB_NETWORK__COMMUNICATION) return null;
+    public Communication getParentCommunication() {
+        if (eContainerFeatureID() != SclPackage.SUB_NETWORK__PARENT_COMMUNICATION) return null;
         return (Communication)eInternalContainer();
     }
 
@@ -294,8 +294,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetCommunication( Communication newCommunication, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newCommunication, SclPackage.SUB_NETWORK__COMMUNICATION, msgs);
+    public NotificationChain basicSetParentCommunication(Communication newParentCommunication, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentCommunication, SclPackage.SUB_NETWORK__PARENT_COMMUNICATION, msgs);
         return msgs;
     }
 
@@ -305,20 +305,20 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
      * @generated
      */
     @Override
-    public void setCommunication( Communication newCommunication ) {
-        if (newCommunication != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_NETWORK__COMMUNICATION && newCommunication != null)) {
-            if (EcoreUtil.isAncestor(this, newCommunication))
+    public void setParentCommunication(Communication newParentCommunication) {
+        if (newParentCommunication != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_NETWORK__PARENT_COMMUNICATION && newParentCommunication != null)) {
+            if (EcoreUtil.isAncestor(this, newParentCommunication))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newCommunication != null)
-                msgs = ((InternalEObject)newCommunication).eInverseAdd(this, SclPackage.COMMUNICATION__SUB_NETWORK, Communication.class, msgs);
-            msgs = basicSetCommunication(newCommunication, msgs);
+            if (newParentCommunication != null)
+                msgs = ((InternalEObject)newParentCommunication).eInverseAdd(this, SclPackage.COMMUNICATION__SUB_NETWORK, Communication.class, msgs);
+            msgs = basicSetParentCommunication(newParentCommunication, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_NETWORK__COMMUNICATION, newCommunication, newCommunication));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_NETWORK__PARENT_COMMUNICATION, newParentCommunication, newParentCommunication));
     }
 
     /**
@@ -329,7 +329,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
     @Override
     public EList<ConnectedAP> getConnectedAP() {
         if (connectedAP == null) {
-            connectedAP = new EObjectContainmentWithInverseEList.Unsettable<ConnectedAP>(ConnectedAP.class, this, SclPackage.SUB_NETWORK__CONNECTED_AP, SclPackage.CONNECTED_AP__SUB_NETWORK);
+            connectedAP = new EObjectContainmentWithInverseEList.Unsettable<ConnectedAP>(ConnectedAP.class, this, SclPackage.SUB_NETWORK__CONNECTED_AP, SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK);
         }
         return connectedAP;
     }
@@ -363,10 +363,14 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
+            case SclPackage.SUB_NETWORK__BIT_RATE:
+                if (bitRate != null)
+                    msgs = ((InternalEObject)bitRate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SUB_NETWORK__BIT_RATE, null, msgs);
+                return basicSetBitRate((BitRate)otherEnd, msgs);
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetCommunication((Communication)otherEnd, msgs);
+                return basicSetParentCommunication((Communication)otherEnd, msgs);
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedAP()).basicAdd(otherEnd, msgs);
         }
@@ -383,8 +387,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
         switch (featureID) {
             case SclPackage.SUB_NETWORK__BIT_RATE:
                 return basicUnsetBitRate(msgs);
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
-                return basicSetCommunication(null, msgs);
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
+                return basicSetParentCommunication(null, msgs);
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 return ((InternalEList<?>)getConnectedAP()).basicRemove(otherEnd, msgs);
         }
@@ -399,7 +403,7 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.COMMUNICATION__SUB_NETWORK, Communication.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -417,8 +421,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
                 return getType();
             case SclPackage.SUB_NETWORK__BIT_RATE:
                 return getBitRate();
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
-                return getCommunication();
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
+                return getParentCommunication();
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 return getConnectedAP();
         }
@@ -440,8 +444,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
             case SclPackage.SUB_NETWORK__BIT_RATE:
                 setBitRate((BitRate)newValue);
                 return;
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
-                setCommunication((Communication)newValue);
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
+                setParentCommunication((Communication)newValue);
                 return;
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 getConnectedAP().clear();
@@ -465,8 +469,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
             case SclPackage.SUB_NETWORK__BIT_RATE:
                 unsetBitRate();
                 return;
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
-                setCommunication((Communication)null);
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
+                setParentCommunication((Communication)null);
                 return;
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 unsetConnectedAP();
@@ -487,8 +491,8 @@ public class SubNetworkImpl extends NamingImpl implements SubNetwork {
                 return isSetType();
             case SclPackage.SUB_NETWORK__BIT_RATE:
                 return isSetBitRate();
-            case SclPackage.SUB_NETWORK__COMMUNICATION:
-                return getCommunication() != null;
+            case SclPackage.SUB_NETWORK__PARENT_COMMUNICATION:
+                return getParentCommunication() != null;
             case SclPackage.SUB_NETWORK__CONNECTED_AP:
                 return isSetConnectedAP();
         }

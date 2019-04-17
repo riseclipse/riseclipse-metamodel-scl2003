@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getTransient <em>Transient</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getLNodeType <em>LNode Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getParentLNodeType <em>Parent LNode Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getRefersToDOType <em>Refers To DO Type</em>}</li>
  * </ul>
  *
@@ -255,8 +255,8 @@ public class DOImpl extends DataObjectImpl implements DO {
      * @generated
      */
     @Override
-    public LNodeType getLNodeType() {
-        if (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE) return null;
+    public LNodeType getParentLNodeType() {
+        if (eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE) return null;
         return (LNodeType)eInternalContainer();
     }
 
@@ -265,8 +265,8 @@ public class DOImpl extends DataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLNodeType( LNodeType newLNodeType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLNodeType, SclPackage.DO__LNODE_TYPE, msgs);
+    public NotificationChain basicSetParentLNodeType(LNodeType newParentLNodeType, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLNodeType, SclPackage.DO__PARENT_LNODE_TYPE, msgs);
         return msgs;
     }
 
@@ -276,20 +276,20 @@ public class DOImpl extends DataObjectImpl implements DO {
      * @generated
      */
     @Override
-    public void setLNodeType( LNodeType newLNodeType ) {
-        if (newLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__LNODE_TYPE && newLNodeType != null)) {
-            if (EcoreUtil.isAncestor(this, newLNodeType))
+    public void setParentLNodeType(LNodeType newParentLNodeType) {
+        if (newParentLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE && newParentLNodeType != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLNodeType))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLNodeType != null)
-                msgs = ((InternalEObject)newLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
-            msgs = basicSetLNodeType(newLNodeType, msgs);
+            if (newParentLNodeType != null)
+                msgs = ((InternalEObject)newParentLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
+            msgs = basicSetParentLNodeType(newParentLNodeType, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__LNODE_TYPE, newLNodeType, newLNodeType));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__PARENT_LNODE_TYPE, newParentLNodeType, newParentLNodeType));
     }
 
     /**
@@ -399,10 +399,10 @@ public class DOImpl extends DataObjectImpl implements DO {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DO__LNODE_TYPE:
+            case SclPackage.DO__PARENT_LNODE_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLNodeType((LNodeType)otherEnd, msgs);
+                return basicSetParentLNodeType((LNodeType)otherEnd, msgs);
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 if (refersToDOType != null)
                     msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_DO, DOType.class, msgs);
@@ -419,8 +419,8 @@ public class DOImpl extends DataObjectImpl implements DO {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DO__LNODE_TYPE:
-                return basicSetLNodeType(null, msgs);
+            case SclPackage.DO__PARENT_LNODE_TYPE:
+                return basicSetParentLNodeType(null, msgs);
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 return basicUnsetRefersToDOType(msgs);
         }
@@ -435,7 +435,7 @@ public class DOImpl extends DataObjectImpl implements DO {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DO__LNODE_TYPE:
+            case SclPackage.DO__PARENT_LNODE_TYPE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -453,8 +453,8 @@ public class DOImpl extends DataObjectImpl implements DO {
                 return getTransient();
             case SclPackage.DO__TYPE:
                 return getType();
-            case SclPackage.DO__LNODE_TYPE:
-                return getLNodeType();
+            case SclPackage.DO__PARENT_LNODE_TYPE:
+                return getParentLNodeType();
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 return getRefersToDOType();
         }
@@ -475,8 +475,8 @@ public class DOImpl extends DataObjectImpl implements DO {
             case SclPackage.DO__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.DO__LNODE_TYPE:
-                setLNodeType((LNodeType)newValue);
+            case SclPackage.DO__PARENT_LNODE_TYPE:
+                setParentLNodeType((LNodeType)newValue);
                 return;
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 setRefersToDOType((DOType)newValue);
@@ -499,8 +499,8 @@ public class DOImpl extends DataObjectImpl implements DO {
             case SclPackage.DO__TYPE:
                 unsetType();
                 return;
-            case SclPackage.DO__LNODE_TYPE:
-                setLNodeType((LNodeType)null);
+            case SclPackage.DO__PARENT_LNODE_TYPE:
+                setParentLNodeType((LNodeType)null);
                 return;
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 unsetRefersToDOType();
@@ -521,8 +521,8 @@ public class DOImpl extends DataObjectImpl implements DO {
                 return isSetTransient();
             case SclPackage.DO__TYPE:
                 return isSetType();
-            case SclPackage.DO__LNODE_TYPE:
-                return getLNodeType() != null;
+            case SclPackage.DO__PARENT_LNODE_TYPE:
+                return getParentLNodeType() != null;
             case SclPackage.DO__REFERS_TO_DO_TYPE:
                 return isSetRefersToDOType();
         }

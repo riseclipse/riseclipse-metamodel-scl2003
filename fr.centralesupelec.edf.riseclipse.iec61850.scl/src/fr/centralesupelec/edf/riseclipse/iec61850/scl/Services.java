@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getNameLength <em>Name Length</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint <em>Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getClientServices <em>Client Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getCommProt <em>Comm Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getConfDataSet <em>Conf Data Set</em>}</li>
@@ -50,7 +50,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGetDataObjectDefinition <em>Get Data Object Definition</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGetDataSetValue <em>Get Data Set Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGetDirectory <em>Get Directory</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED <em>IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getLogSettings <em>Log Settings</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getReadWrite <em>Read Write</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getRedProt <em>Red Prot</em>}</li>
@@ -124,36 +124,32 @@ public interface Services extends SclObject {
     boolean isSetNameLength();
 
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Access Point</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServices <em>Services</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_AccessPoint()
+     * @return the value of the '<em>Parent Access Point</em>' container reference.
+     * @see #setParentAccessPoint(AccessPoint)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ParentAccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServices
      * @model opposite="Services" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AccessPoint getAccessPoint();
+    AccessPoint getParentAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint <em>Access Point</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint <em>Parent Access Point</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
+     * @param value the new value of the '<em>Parent Access Point</em>' container reference.
+     * @see #getParentAccessPoint()
      * @generated
      */
-    void setAccessPoint( AccessPoint value );
+    void setParentAccessPoint(AccessPoint value);
 
     /**
      * Returns the value of the '<em><b>Client Services</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Client Services</em>' containment reference isn't clear,
@@ -165,8 +161,8 @@ public interface Services extends SclObject {
      * @see #unsetClientServices()
      * @see #setClientServices(ClientServices)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ClientServices()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ClientServices getClientServices();
@@ -208,7 +204,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Comm Prot</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Comm Prot</em>' containment reference isn't clear,
@@ -220,8 +216,8 @@ public interface Services extends SclObject {
      * @see #unsetCommProt()
      * @see #setCommProt(CommProt)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_CommProt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     CommProt getCommProt();
@@ -263,7 +259,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf Data Set</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf Data Set</em>' containment reference isn't clear,
@@ -275,8 +271,8 @@ public interface Services extends SclObject {
      * @see #unsetConfDataSet()
      * @see #setConfDataSet(ConfDataSet)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfDataSet()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfDataSet getConfDataSet();
@@ -318,7 +314,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf LNs</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf LNs</em>' containment reference isn't clear,
@@ -330,8 +326,8 @@ public interface Services extends SclObject {
      * @see #unsetConfLNs()
      * @see #setConfLNs(ConfLNs)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLNs()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfLNs getConfLNs();
@@ -373,7 +369,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf Ld Name</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf Ld Name</em>' containment reference isn't clear,
@@ -385,8 +381,8 @@ public interface Services extends SclObject {
      * @see #unsetConfLdName()
      * @see #setConfLdName(ConfLdName)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLdName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfLdName getConfLdName();
@@ -428,7 +424,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf Log Control</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf Log Control</em>' containment reference isn't clear,
@@ -440,8 +436,8 @@ public interface Services extends SclObject {
      * @see #unsetConfLogControl()
      * @see #setConfLogControl(ConfLogControl)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfLogControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfLogControl getConfLogControl();
@@ -483,7 +479,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf Report Control</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf Report Control</em>' containment reference isn't clear,
@@ -495,8 +491,8 @@ public interface Services extends SclObject {
      * @see #unsetConfReportControl()
      * @see #setConfReportControl(ConfReportControl)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfReportControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfReportControl getConfReportControl();
@@ -538,7 +534,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Conf Sig Ref</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf Sig Ref</em>' containment reference isn't clear,
@@ -550,8 +546,8 @@ public interface Services extends SclObject {
      * @see #unsetConfSigRef()
      * @see #setConfSigRef(ConfSigRef)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ConfSigRef()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfSigRef getConfSigRef();
@@ -593,7 +589,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Data Object Directory</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Data Object Directory</em>' containment reference isn't clear,
@@ -605,8 +601,8 @@ public interface Services extends SclObject {
      * @see #unsetDataObjectDirectory()
      * @see #setDataObjectDirectory(DataObjectDirectory)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DataObjectDirectory()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     DataObjectDirectory getDataObjectDirectory();
@@ -648,7 +644,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Data Set Directory</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Data Set Directory</em>' containment reference isn't clear,
@@ -660,8 +656,8 @@ public interface Services extends SclObject {
      * @see #unsetDataSetDirectory()
      * @see #setDataSetDirectory(DataSetDirectory)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DataSetDirectory()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     DataSetDirectory getDataSetDirectory();
@@ -703,7 +699,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Dyn Association</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dyn Association</em>' containment reference isn't clear,
@@ -715,8 +711,8 @@ public interface Services extends SclObject {
      * @see #unsetDynAssociation()
      * @see #setDynAssociation(DynAssociation)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DynAssociation()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     DynAssociation getDynAssociation();
@@ -758,7 +754,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Dyn Data Set</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Dyn Data Set</em>' containment reference isn't clear,
@@ -770,8 +766,8 @@ public interface Services extends SclObject {
      * @see #unsetDynDataSet()
      * @see #setDynDataSet(DynDataSet)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_DynDataSet()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     DynDataSet getDynDataSet();
@@ -813,7 +809,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>File Handling</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>File Handling</em>' containment reference isn't clear,
@@ -825,8 +821,8 @@ public interface Services extends SclObject {
      * @see #unsetFileHandling()
      * @see #setFileHandling(FileHandling)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_FileHandling()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     FileHandling getFileHandling();
@@ -868,7 +864,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>GOOSE</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GOOSE</em>' containment reference isn't clear,
@@ -880,8 +876,8 @@ public interface Services extends SclObject {
      * @see #unsetGOOSE()
      * @see #setGOOSE(GOOSE)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GOOSE()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GOOSE getGOOSE();
@@ -923,7 +919,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>GSE Dir</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GSE Dir</em>' containment reference isn't clear,
@@ -935,8 +931,8 @@ public interface Services extends SclObject {
      * @see #unsetGSEDir()
      * @see #setGSEDir(GSEDir)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSEDir()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GSEDir getGSEDir();
@@ -978,7 +974,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>GSE Settings</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GSE Settings</em>' containment reference isn't clear,
@@ -990,8 +986,8 @@ public interface Services extends SclObject {
      * @see #unsetGSESettings()
      * @see #setGSESettings(GSESettings)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSESettings()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GSESettings getGSESettings();
@@ -1033,7 +1029,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>GSSE</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GSSE</em>' containment reference isn't clear,
@@ -1045,8 +1041,8 @@ public interface Services extends SclObject {
      * @see #unsetGSSE()
      * @see #setGSSE(GSSE)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GSSE()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GSSE getGSSE();
@@ -1088,7 +1084,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Get CB Values</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Get CB Values</em>' containment reference isn't clear,
@@ -1100,8 +1096,8 @@ public interface Services extends SclObject {
      * @see #unsetGetCBValues()
      * @see #setGetCBValues(GetCBValues)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetCBValues()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GetCBValues getGetCBValues();
@@ -1143,7 +1139,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Get Data Object Definition</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Get Data Object Definition</em>' containment reference isn't clear,
@@ -1155,8 +1151,8 @@ public interface Services extends SclObject {
      * @see #unsetGetDataObjectDefinition()
      * @see #setGetDataObjectDefinition(GetDataObjectDefinition)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDataObjectDefinition()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GetDataObjectDefinition getGetDataObjectDefinition();
@@ -1198,7 +1194,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Get Data Set Value</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Get Data Set Value</em>' containment reference isn't clear,
@@ -1210,8 +1206,8 @@ public interface Services extends SclObject {
      * @see #unsetGetDataSetValue()
      * @see #setGetDataSetValue(GetDataSetValue)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDataSetValue()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GetDataSetValue getGetDataSetValue();
@@ -1253,7 +1249,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Get Directory</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Get Directory</em>' containment reference isn't clear,
@@ -1265,8 +1261,8 @@ public interface Services extends SclObject {
      * @see #unsetGetDirectory()
      * @see #setGetDirectory(GetDirectory)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_GetDirectory()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     GetDirectory getGetDirectory();
@@ -1307,36 +1303,32 @@ public interface Services extends SclObject {
     boolean isSetGetDirectory();
 
     /**
-     * Returns the value of the '<em><b>IED</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent IED</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getServices <em>Services</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>IED</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>IED</em>' container reference.
-     * @see #setIED(IED)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_IED()
+     * @return the value of the '<em>Parent IED</em>' container reference.
+     * @see #setParentIED(IED)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ParentIED()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getServices
      * @model opposite="Services" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    IED getIED();
+    IED getParentIED();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED <em>IED</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED <em>Parent IED</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>IED</em>' container reference.
-     * @see #getIED()
+     * @param value the new value of the '<em>Parent IED</em>' container reference.
+     * @see #getParentIED()
      * @generated
      */
-    void setIED( IED value );
+    void setParentIED(IED value);
 
     /**
      * Returns the value of the '<em><b>Log Settings</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log Settings</em>' containment reference isn't clear,
@@ -1348,8 +1340,8 @@ public interface Services extends SclObject {
      * @see #unsetLogSettings()
      * @see #setLogSettings(LogSettings)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_LogSettings()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     LogSettings getLogSettings();
@@ -1391,7 +1383,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Read Write</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Read Write</em>' containment reference isn't clear,
@@ -1403,8 +1395,8 @@ public interface Services extends SclObject {
      * @see #unsetReadWrite()
      * @see #setReadWrite(ReadWrite)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ReadWrite()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ReadWrite getReadWrite();
@@ -1446,7 +1438,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Red Prot</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Red Prot</em>' containment reference isn't clear,
@@ -1458,8 +1450,8 @@ public interface Services extends SclObject {
      * @see #unsetRedProt()
      * @see #setRedProt(RedProt)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_RedProt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     RedProt getRedProt();
@@ -1501,7 +1493,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Report Settings</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Report Settings</em>' containment reference isn't clear,
@@ -1513,8 +1505,8 @@ public interface Services extends SclObject {
      * @see #unsetReportSettings()
      * @see #setReportSettings(ReportSettings)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ReportSettings()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ReportSettings getReportSettings();
@@ -1556,7 +1548,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>SM Vsc</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SM Vsc</em>' containment reference isn't clear,
@@ -1568,8 +1560,8 @@ public interface Services extends SclObject {
      * @see #unsetSMVsc()
      * @see #setSMVsc(SMVsc)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SMVsc()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SMVsc getSMVsc();
@@ -1611,7 +1603,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Sup Subscription</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sup Subscription</em>' containment reference isn't clear,
@@ -1623,8 +1615,8 @@ public interface Services extends SclObject {
      * @see #unsetSupSubscription()
      * @see #setSupSubscription(SupSubscription)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SupSubscription()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SupSubscription getSupSubscription();
@@ -1666,7 +1658,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Value Handling</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Value Handling</em>' containment reference isn't clear,
@@ -1678,8 +1670,8 @@ public interface Services extends SclObject {
      * @see #unsetValueHandling()
      * @see #setValueHandling(ValueHandling)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_ValueHandling()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ValueHandling getValueHandling();
@@ -1721,7 +1713,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Set Data Set Value</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Set Data Set Value</em>' containment reference isn't clear,
@@ -1733,8 +1725,8 @@ public interface Services extends SclObject {
      * @see #unsetSetDataSetValue()
      * @see #setSetDataSetValue(SetDataSetValue)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SetDataSetValue()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SetDataSetValue getSetDataSetValue();
@@ -1776,7 +1768,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Setting Groups</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Setting Groups</em>' containment reference isn't clear,
@@ -1788,8 +1780,8 @@ public interface Services extends SclObject {
      * @see #unsetSettingGroups()
      * @see #setSettingGroups(SettingGroups)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SettingGroups()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SettingGroups getSettingGroups();
@@ -1831,7 +1823,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Time Sync Prot</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Time Sync Prot</em>' containment reference isn't clear,
@@ -1843,8 +1835,8 @@ public interface Services extends SclObject {
      * @see #unsetTimeSyncProt()
      * @see #setTimeSyncProt(TimeSyncProt)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_TimeSyncProt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     TimeSyncProt getTimeSyncProt();
@@ -1886,7 +1878,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Timer Activated Control</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Timer Activated Control</em>' containment reference isn't clear,
@@ -1898,8 +1890,8 @@ public interface Services extends SclObject {
      * @see #unsetTimerActivatedControl()
      * @see #setTimerActivatedControl(TimerActivatedControl)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_TimerActivatedControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     TimerActivatedControl getTimerActivatedControl();
@@ -1941,7 +1933,7 @@ public interface Services extends SclObject {
 
     /**
      * Returns the value of the '<em><b>SMV Settings</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices <em>Parent Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SMV Settings</em>' containment reference isn't clear,
@@ -1953,8 +1945,8 @@ public interface Services extends SclObject {
      * @see #unsetSMVSettings()
      * @see #setSMVSettings(SMVSettings)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServices_SMVSettings()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices
-     * @model opposite="Services" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices
+     * @model opposite="ParentServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SMVSettings getSMVSettings();

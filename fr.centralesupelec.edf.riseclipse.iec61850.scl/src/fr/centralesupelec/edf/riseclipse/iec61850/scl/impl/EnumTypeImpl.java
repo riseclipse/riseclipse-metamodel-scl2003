@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumTypeImpl#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumTypeImpl#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumTypeImpl#getEnumVal <em>Enum Val</em>}</li>
  * </ul>
  *
@@ -130,8 +130,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * @generated
      */
     @Override
-    public DataTypeTemplates getDataTypeTemplates() {
-        if (eContainerFeatureID() != SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES) return null;
+    public DataTypeTemplates getParentDataTypeTemplates() {
+        if (eContainerFeatureID() != SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
     }
 
@@ -140,8 +140,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDataTypeTemplates( DataTypeTemplates newDataTypeTemplates, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDataTypeTemplates, SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES, msgs);
+    public NotificationChain basicSetParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDataTypeTemplates, SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs);
         return msgs;
     }
 
@@ -151,20 +151,20 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
      * @generated
      */
     @Override
-    public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
-        if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
-            if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
+    public void setParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates) {
+        if (newParentDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES && newParentDataTypeTemplates != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDataTypeTemplates))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataTypeTemplates != null)
-                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, DataTypeTemplates.class, msgs);
-            msgs = basicSetDataTypeTemplates(newDataTypeTemplates, msgs);
+            if (newParentDataTypeTemplates != null)
+                msgs = ((InternalEObject)newParentDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, DataTypeTemplates.class, msgs);
+            msgs = basicSetParentDataTypeTemplates(newParentDataTypeTemplates, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES, newDataTypeTemplates, newDataTypeTemplates));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES, newParentDataTypeTemplates, newParentDataTypeTemplates));
     }
 
     /**
@@ -175,7 +175,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
     @Override
     public EList<EnumVal> getEnumVal() {
         if (enumVal == null) {
-            enumVal = new EObjectContainmentWithInverseEList.Unsettable<EnumVal>(EnumVal.class, this, SclPackage.ENUM_TYPE__ENUM_VAL, SclPackage.ENUM_VAL__ENUM_TYPE);
+            enumVal = new EObjectContainmentWithInverseEList.Unsettable<EnumVal>(EnumVal.class, this, SclPackage.ENUM_TYPE__ENUM_VAL, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE);
         }
         return enumVal;
     }
@@ -211,10 +211,10 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         switch (featureID) {
             case SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAbstractDataAttribute()).basicAdd(otherEnd, msgs);
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
+                return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEnumVal()).basicAdd(otherEnd, msgs);
         }
@@ -231,8 +231,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         switch (featureID) {
             case SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
                 return ((InternalEList<?>)getReferredByAbstractDataAttribute()).basicRemove(otherEnd, msgs);
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
-                return basicSetDataTypeTemplates(null, msgs);
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return basicSetParentDataTypeTemplates(null, msgs);
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 return ((InternalEList<?>)getEnumVal()).basicRemove(otherEnd, msgs);
         }
@@ -247,7 +247,7 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, DataTypeTemplates.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -263,8 +263,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         switch (featureID) {
             case SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
                 return getReferredByAbstractDataAttribute();
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates();
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates();
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 return getEnumVal();
         }
@@ -284,8 +284,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
                 getReferredByAbstractDataAttribute().clear();
                 getReferredByAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
                 return;
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)newValue);
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)newValue);
                 return;
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 getEnumVal().clear();
@@ -306,8 +306,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
             case SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
                 unsetReferredByAbstractDataAttribute();
                 return;
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)null);
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)null);
                 return;
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 unsetEnumVal();
@@ -326,8 +326,8 @@ public class EnumTypeImpl extends IDNamingImpl implements EnumType {
         switch (featureID) {
             case SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
                 return isSetReferredByAbstractDataAttribute();
-            case SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates() != null;
+            case SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates() != null;
             case SclPackage.ENUM_TYPE__ENUM_VAL:
                 return isSetEnumVal();
         }

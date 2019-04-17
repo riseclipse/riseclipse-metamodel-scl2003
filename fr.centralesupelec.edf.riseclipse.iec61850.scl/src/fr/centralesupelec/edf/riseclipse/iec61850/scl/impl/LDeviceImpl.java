@@ -50,7 +50,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN <em>LN</em>}</li>
@@ -245,7 +245,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if( isSetLdName() ) {
             return ldName;
         }
-        return getServer().getAccessPoint().getIED().getName() + getInst();
+        return getParentServer().getParentAccessPoint().getParentIED().getName() + getInst();
     }
 
     /**
@@ -325,9 +325,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         if (newAccessControl != accessControl) {
             NotificationChain msgs = null;
             if (accessControl != null)
-                msgs = ((InternalEObject)accessControl).eInverseRemove(this, SclPackage.ACCESS_CONTROL__LDEVICE, AccessControl.class, msgs);
+                msgs = ((InternalEObject)accessControl).eInverseRemove(this, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs);
             if (newAccessControl != null)
-                msgs = ((InternalEObject)newAccessControl).eInverseAdd(this, SclPackage.ACCESS_CONTROL__LDEVICE, AccessControl.class, msgs);
+                msgs = ((InternalEObject)newAccessControl).eInverseAdd(this, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs);
             msgs = basicSetAccessControl(newAccessControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -365,7 +365,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     public void unsetAccessControl() {
         if (accessControl != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)accessControl).eInverseRemove(this, SclPackage.ACCESS_CONTROL__LDEVICE, AccessControl.class, msgs);
+            msgs = ((InternalEObject)accessControl).eInverseRemove(this, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, AccessControl.class, msgs);
             msgs = basicUnsetAccessControl(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -393,8 +393,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @generated
      */
     @Override
-    public Server getServer() {
-        if (eContainerFeatureID() != SclPackage.LDEVICE__SERVER) return null;
+    public Server getParentServer() {
+        if (eContainerFeatureID() != SclPackage.LDEVICE__PARENT_SERVER) return null;
         return (Server)eInternalContainer();
     }
 
@@ -403,8 +403,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServer( Server newServer, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServer, SclPackage.LDEVICE__SERVER, msgs);
+    public NotificationChain basicSetParentServer(Server newParentServer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServer, SclPackage.LDEVICE__PARENT_SERVER, msgs);
         return msgs;
     }
 
@@ -414,20 +414,20 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @generated
      */
     @Override
-    public void setServer( Server newServer ) {
-        if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.LDEVICE__SERVER && newServer != null)) {
-            if (EcoreUtil.isAncestor(this, newServer))
+    public void setParentServer(Server newParentServer) {
+        if (newParentServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.LDEVICE__PARENT_SERVER && newParentServer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServer != null)
-                msgs = ((InternalEObject)newServer).eInverseAdd(this, SclPackage.SERVER__LDEVICE, Server.class, msgs);
-            msgs = basicSetServer(newServer, msgs);
+            if (newParentServer != null)
+                msgs = ((InternalEObject)newParentServer).eInverseAdd(this, SclPackage.SERVER__LDEVICE, Server.class, msgs);
+            msgs = basicSetParentServer(newParentServer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LDEVICE__SERVER, newServer, newServer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LDEVICE__PARENT_SERVER, newParentServer, newParentServer));
     }
 
     /**
@@ -653,10 +653,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 if (accessControl != null)
                     msgs = ((InternalEObject)accessControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__ACCESS_CONTROL, null, msgs);
                 return basicSetAccessControl((AccessControl)otherEnd, msgs);
-            case SclPackage.LDEVICE__SERVER:
+            case SclPackage.LDEVICE__PARENT_SERVER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServer((Server)otherEnd, msgs);
+                return basicSetParentServer((Server)otherEnd, msgs);
             case SclPackage.LDEVICE__LN0:
                 LN0 ln0 = getLN0();
                 if (ln0 != null)
@@ -682,8 +682,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         switch (featureID) {
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return basicUnsetAccessControl(msgs);
-            case SclPackage.LDEVICE__SERVER:
-                return basicSetServer(null, msgs);
+            case SclPackage.LDEVICE__PARENT_SERVER:
+                return basicSetParentServer(null, msgs);
             case SclPackage.LDEVICE__ANY_LN:
                 return ((InternalEList<?>)getAnyLN()).basicRemove(otherEnd, msgs);
             case SclPackage.LDEVICE__LN0:
@@ -704,7 +704,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LDEVICE__SERVER:
+            case SclPackage.LDEVICE__PARENT_SERVER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__LDEVICE, Server.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -724,8 +724,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return getLdName();
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return getAccessControl();
-            case SclPackage.LDEVICE__SERVER:
-                return getServer();
+            case SclPackage.LDEVICE__PARENT_SERVER:
+                return getParentServer();
             case SclPackage.LDEVICE__ANY_LN:
                 if (coreType) return getAnyLN();
                 return ((FeatureMap.Internal)getAnyLN()).getWrapper();
@@ -757,8 +757,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 setAccessControl((AccessControl)newValue);
                 return;
-            case SclPackage.LDEVICE__SERVER:
-                setServer((Server)newValue);
+            case SclPackage.LDEVICE__PARENT_SERVER:
+                setParentServer((Server)newValue);
                 return;
             case SclPackage.LDEVICE__ANY_LN:
                 ((FeatureMap.Internal)getAnyLN()).set(newValue);
@@ -794,8 +794,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 unsetAccessControl();
                 return;
-            case SclPackage.LDEVICE__SERVER:
-                setServer((Server)null);
+            case SclPackage.LDEVICE__PARENT_SERVER:
+                setParentServer((Server)null);
                 return;
             case SclPackage.LDEVICE__ANY_LN:
                 getAnyLN().clear();
@@ -827,8 +827,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return isSetLdName();
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return isSetAccessControl();
-            case SclPackage.LDEVICE__SERVER:
-                return getServer() != null;
+            case SclPackage.LDEVICE__PARENT_SERVER:
+                return getParentServer() != null;
             case SclPackage.LDEVICE__ANY_LN:
                 return anyLN != null && !anyLN.isEmpty();
             case SclPackage.LDEVICE__LN0:
@@ -863,7 +863,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
 
     @Override
     public IED getIED() {
-        return getServer().getAccessPoint().getIED();
+        return getParentServer().getParentAccessPoint().getParentIED();
     }
 
 } //LDeviceImpl

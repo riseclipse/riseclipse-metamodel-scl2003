@@ -180,7 +180,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @Override
     public EList<EqSubFunction> getEqSubFunction() {
         if (eqSubFunction == null) {
-            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC);
+            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC);
         }
         return eqSubFunction;
     }
@@ -213,7 +213,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @Override
     public EList<GeneralEquipment> getSubGeneralEquipment() {
         if (subGeneralEquipment == null) {
-            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC);
+            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC);
         }
         return subGeneralEquipment;
     }

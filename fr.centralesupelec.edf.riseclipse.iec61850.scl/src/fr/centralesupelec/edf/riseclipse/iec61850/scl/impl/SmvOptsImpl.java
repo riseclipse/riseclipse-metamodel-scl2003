@@ -46,7 +46,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSynchSourceId <em>Synch Source Id</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getDataRef <em>Data Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getSampledValueControl <em>Sampled Value Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SmvOptsImpl#getParentSampledValueControl <em>Parent Sampled Value Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -609,50 +609,6 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
-    public SampledValueControl getSampledValueControl() {
-        if (eContainerFeatureID() != SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL) return null;
-        return (SampledValueControl)eInternalContainer();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetSampledValueControl( SampledValueControl newSampledValueControl,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSampledValueControl, SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL, msgs);
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setSampledValueControl( SampledValueControl newSampledValueControl ) {
-        if (newSampledValueControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL && newSampledValueControl != null)) {
-            if (EcoreUtil.isAncestor(this, newSampledValueControl))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newSampledValueControl != null)
-                msgs = ((InternalEObject)newSampledValueControl).eInverseAdd(this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs);
-            msgs = basicSetSampledValueControl(newSampledValueControl, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL, newSampledValueControl, newSampledValueControl));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public Boolean getSynchSourceId() {
         return synchSourceId;
     }
@@ -753,12 +709,55 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
+    public SampledValueControl getParentSampledValueControl() {
+        if (eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL) return null;
+        return (SampledValueControl)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentSampledValueControl(SampledValueControl newParentSampledValueControl, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSampledValueControl, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentSampledValueControl(SampledValueControl newParentSampledValueControl) {
+        if (newParentSampledValueControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL && newParentSampledValueControl != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSampledValueControl))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentSampledValueControl != null)
+                msgs = ((InternalEObject)newParentSampledValueControl).eInverseAdd(this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs);
+            msgs = basicSetParentSampledValueControl(newParentSampledValueControl, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, newParentSampledValueControl, newParentSampledValueControl));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSampledValueControl((SampledValueControl)otherEnd, msgs);
+                return basicSetParentSampledValueControl((SampledValueControl)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -771,8 +770,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                return basicSetSampledValueControl(null, msgs);
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+                return basicSetParentSampledValueControl(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -785,7 +784,7 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -815,8 +814,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return getSynchSourceId();
             case SclPackage.SMV_OPTS__DATA_REF:
                 return getDataRef();
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                return getSampledValueControl();
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+                return getParentSampledValueControl();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -853,8 +852,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__DATA_REF:
                 setDataRef((Boolean)newValue);
                 return;
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                setSampledValueControl((SampledValueControl)newValue);
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+                setParentSampledValueControl((SampledValueControl)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -892,8 +891,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
             case SclPackage.SMV_OPTS__DATA_REF:
                 unsetDataRef();
                 return;
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                setSampledValueControl((SampledValueControl)null);
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+                setParentSampledValueControl((SampledValueControl)null);
                 return;
         }
         super.eUnset(featureID);
@@ -923,8 +922,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
                 return isSetSynchSourceId();
             case SclPackage.SMV_OPTS__DATA_REF:
                 return isSetDataRef();
-            case SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL:
-                return getSampledValueControl() != null;
+            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+                return getParentSampledValueControl() != null;
         }
         return super.eIsSet(featureID);
     }

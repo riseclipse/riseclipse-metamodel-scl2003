@@ -42,7 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TrgOpsImpl#getGi <em>Gi</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TrgOpsImpl#getPeriod <em>Period</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TrgOpsImpl#getQchg <em>Qchg</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TrgOpsImpl#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TrgOpsImpl#getParentControlWithTriggerOpt <em>Parent Control With Trigger Opt</em>}</li>
  * </ul>
  *
  * @generated
@@ -468,8 +468,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      */
     @Override
-    public ControlWithTriggerOpt getControlWithTriggerOpt() {
-        if (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT) return null;
+    public ControlWithTriggerOpt getParentControlWithTriggerOpt() {
+        if (eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT) return null;
         return (ControlWithTriggerOpt)eInternalContainer();
     }
 
@@ -478,9 +478,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetControlWithTriggerOpt( ControlWithTriggerOpt newControlWithTriggerOpt,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newControlWithTriggerOpt, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, msgs);
+    public NotificationChain basicSetParentControlWithTriggerOpt(ControlWithTriggerOpt newParentControlWithTriggerOpt, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentControlWithTriggerOpt, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, msgs);
         return msgs;
     }
 
@@ -490,20 +489,20 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      */
     @Override
-    public void setControlWithTriggerOpt( ControlWithTriggerOpt newControlWithTriggerOpt ) {
-        if (newControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT && newControlWithTriggerOpt != null)) {
-            if (EcoreUtil.isAncestor(this, newControlWithTriggerOpt))
+    public void setParentControlWithTriggerOpt(ControlWithTriggerOpt newParentControlWithTriggerOpt) {
+        if (newParentControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT && newParentControlWithTriggerOpt != null)) {
+            if (EcoreUtil.isAncestor(this, newParentControlWithTriggerOpt))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newControlWithTriggerOpt != null)
-                msgs = ((InternalEObject)newControlWithTriggerOpt).eInverseAdd(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
-            msgs = basicSetControlWithTriggerOpt(newControlWithTriggerOpt, msgs);
+            if (newParentControlWithTriggerOpt != null)
+                msgs = ((InternalEObject)newParentControlWithTriggerOpt).eInverseAdd(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
+            msgs = basicSetParentControlWithTriggerOpt(newParentControlWithTriggerOpt, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, newControlWithTriggerOpt, newControlWithTriggerOpt));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, newParentControlWithTriggerOpt, newParentControlWithTriggerOpt));
     }
 
     /**
@@ -514,10 +513,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetControlWithTriggerOpt((ControlWithTriggerOpt)otherEnd, msgs);
+                return basicSetParentControlWithTriggerOpt((ControlWithTriggerOpt)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -530,8 +529,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return basicSetControlWithTriggerOpt(null, msgs);
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+                return basicSetParentControlWithTriggerOpt(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -544,7 +543,7 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -568,8 +567,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
                 return getPeriod();
             case SclPackage.TRG_OPS__QCHG:
                 return getQchg();
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return getControlWithTriggerOpt();
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+                return getParentControlWithTriggerOpt();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -597,8 +596,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
             case SclPackage.TRG_OPS__QCHG:
                 setQchg((Boolean)newValue);
                 return;
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                setControlWithTriggerOpt((ControlWithTriggerOpt)newValue);
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+                setParentControlWithTriggerOpt((ControlWithTriggerOpt)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -627,8 +626,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
             case SclPackage.TRG_OPS__QCHG:
                 unsetQchg();
                 return;
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                setControlWithTriggerOpt((ControlWithTriggerOpt)null);
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+                setParentControlWithTriggerOpt((ControlWithTriggerOpt)null);
                 return;
         }
         super.eUnset(featureID);
@@ -652,8 +651,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
                 return isSetPeriod();
             case SclPackage.TRG_OPS__QCHG:
                 return isSetQchg();
-            case SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT:
-                return getControlWithTriggerOpt() != null;
+            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+                return getParentControlWithTriggerOpt() != null;
         }
         return super.eIsSet(featureID);
     }

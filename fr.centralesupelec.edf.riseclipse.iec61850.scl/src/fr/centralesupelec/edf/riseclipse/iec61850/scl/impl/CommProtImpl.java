@@ -38,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.CommProtImpl#getIpv6 <em>Ipv6</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.CommProtImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.CommProtImpl#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -148,8 +148,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.COMM_PROT__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.COMM_PROT__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -158,8 +158,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.COMM_PROT__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.COMM_PROT__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -169,20 +169,20 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMM_PROT__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMM_PROT__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__COMM_PROT, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__COMM_PROT, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.COMM_PROT__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.COMM_PROT__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -193,10 +193,10 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.COMM_PROT__SERVICES:
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -209,8 +209,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.COMM_PROT__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -223,7 +223,7 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.COMM_PROT__SERVICES:
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__COMM_PROT, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -239,8 +239,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
         switch (featureID) {
             case SclPackage.COMM_PROT__IPV6:
                 return getIpv6();
-            case SclPackage.COMM_PROT__SERVICES:
-                return getServices();
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
+                return getParentServices();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -256,8 +256,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
             case SclPackage.COMM_PROT__IPV6:
                 setIpv6((Boolean)newValue);
                 return;
-            case SclPackage.COMM_PROT__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -274,8 +274,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
             case SclPackage.COMM_PROT__IPV6:
                 unsetIpv6();
                 return;
-            case SclPackage.COMM_PROT__SERVICES:
-                setServices((Services)null);
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
         }
         super.eUnset(featureID);
@@ -291,8 +291,8 @@ public class CommProtImpl extends SclObjectImpl implements CommProt {
         switch (featureID) {
             case SclPackage.COMM_PROT__IPV6:
                 return isSetIpv6();
-            case SclPackage.COMM_PROT__SERVICES:
-                return getServices() != null;
+            case SclPackage.COMM_PROT__PARENT_SERVICES:
+                return getParentServices() != null;
         }
         return super.eIsSet(featureID);
     }

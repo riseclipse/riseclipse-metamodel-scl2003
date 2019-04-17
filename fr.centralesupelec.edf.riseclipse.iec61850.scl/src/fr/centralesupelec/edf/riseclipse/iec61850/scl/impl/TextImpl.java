@@ -39,8 +39,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getSource <em>Source</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getBaseElement <em>Base Element</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getHeader <em>Header</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getParentBaseElement <em>Parent Base Element</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getParentHeader <em>Parent Header</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TextImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -171,8 +171,8 @@ public class TextImpl extends SclObjectImpl implements Text {
      * @generated
      */
     @Override
-    public BaseElement getBaseElement() {
-        if (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT) return null;
+    public BaseElement getParentBaseElement() {
+        if (eContainerFeatureID() != SclPackage.TEXT__PARENT_BASE_ELEMENT) return null;
         return (BaseElement)eInternalContainer();
     }
 
@@ -181,8 +181,8 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBaseElement( BaseElement newBaseElement, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBaseElement, SclPackage.TEXT__BASE_ELEMENT, msgs);
+    public NotificationChain basicSetParentBaseElement(BaseElement newParentBaseElement, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentBaseElement, SclPackage.TEXT__PARENT_BASE_ELEMENT, msgs);
         return msgs;
     }
 
@@ -192,20 +192,20 @@ public class TextImpl extends SclObjectImpl implements Text {
      * @generated
      */
     @Override
-    public void setBaseElement( BaseElement newBaseElement ) {
-        if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__BASE_ELEMENT && newBaseElement != null)) {
-            if (EcoreUtil.isAncestor(this, newBaseElement))
+    public void setParentBaseElement(BaseElement newParentBaseElement) {
+        if (newParentBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__PARENT_BASE_ELEMENT && newParentBaseElement != null)) {
+            if (EcoreUtil.isAncestor(this, newParentBaseElement))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newBaseElement != null)
-                msgs = ((InternalEObject)newBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
-            msgs = basicSetBaseElement(newBaseElement, msgs);
+            if (newParentBaseElement != null)
+                msgs = ((InternalEObject)newParentBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
+            msgs = basicSetParentBaseElement(newParentBaseElement, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__BASE_ELEMENT, newBaseElement, newBaseElement));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__PARENT_BASE_ELEMENT, newParentBaseElement, newParentBaseElement));
     }
 
     /**
@@ -214,8 +214,8 @@ public class TextImpl extends SclObjectImpl implements Text {
      * @generated
      */
     @Override
-    public Header getHeader() {
-        if (eContainerFeatureID() != SclPackage.TEXT__HEADER) return null;
+    public Header getParentHeader() {
+        if (eContainerFeatureID() != SclPackage.TEXT__PARENT_HEADER) return null;
         return (Header)eInternalContainer();
     }
 
@@ -224,8 +224,8 @@ public class TextImpl extends SclObjectImpl implements Text {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetHeader( Header newHeader, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newHeader, SclPackage.TEXT__HEADER, msgs);
+    public NotificationChain basicSetParentHeader(Header newParentHeader, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentHeader, SclPackage.TEXT__PARENT_HEADER, msgs);
         return msgs;
     }
 
@@ -235,20 +235,20 @@ public class TextImpl extends SclObjectImpl implements Text {
      * @generated
      */
     @Override
-    public void setHeader( Header newHeader ) {
-        if (newHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__HEADER && newHeader != null)) {
-            if (EcoreUtil.isAncestor(this, newHeader))
+    public void setParentHeader(Header newParentHeader) {
+        if (newParentHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.TEXT__PARENT_HEADER && newParentHeader != null)) {
+            if (EcoreUtil.isAncestor(this, newParentHeader))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newHeader != null)
-                msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__TEXT, Header.class, msgs);
-            msgs = basicSetHeader(newHeader, msgs);
+            if (newParentHeader != null)
+                msgs = ((InternalEObject)newParentHeader).eInverseAdd(this, SclPackage.HEADER__TEXT, Header.class, msgs);
+            msgs = basicSetParentHeader(newParentHeader, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__HEADER, newHeader, newHeader));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TEXT__PARENT_HEADER, newParentHeader, newParentHeader));
     }
 
     /**
@@ -282,14 +282,14 @@ public class TextImpl extends SclObjectImpl implements Text {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TEXT__BASE_ELEMENT:
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBaseElement((BaseElement)otherEnd, msgs);
-            case SclPackage.TEXT__HEADER:
+                return basicSetParentBaseElement((BaseElement)otherEnd, msgs);
+            case SclPackage.TEXT__PARENT_HEADER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetHeader((Header)otherEnd, msgs);
+                return basicSetParentHeader((Header)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -302,10 +302,10 @@ public class TextImpl extends SclObjectImpl implements Text {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return basicSetBaseElement(null, msgs);
-            case SclPackage.TEXT__HEADER:
-                return basicSetHeader(null, msgs);
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
+                return basicSetParentBaseElement(null, msgs);
+            case SclPackage.TEXT__PARENT_HEADER:
+                return basicSetParentHeader(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -318,9 +318,9 @@ public class TextImpl extends SclObjectImpl implements Text {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.TEXT__BASE_ELEMENT:
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.BASE_ELEMENT__TEXT, BaseElement.class, msgs);
-            case SclPackage.TEXT__HEADER:
+            case SclPackage.TEXT__PARENT_HEADER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.HEADER__TEXT, Header.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -336,10 +336,10 @@ public class TextImpl extends SclObjectImpl implements Text {
         switch (featureID) {
             case SclPackage.TEXT__SOURCE:
                 return getSource();
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return getBaseElement();
-            case SclPackage.TEXT__HEADER:
-                return getHeader();
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
+                return getParentBaseElement();
+            case SclPackage.TEXT__PARENT_HEADER:
+                return getParentHeader();
             case SclPackage.TEXT__VALUE:
                 return getValue();
         }
@@ -357,11 +357,11 @@ public class TextImpl extends SclObjectImpl implements Text {
             case SclPackage.TEXT__SOURCE:
                 setSource((String)newValue);
                 return;
-            case SclPackage.TEXT__BASE_ELEMENT:
-                setBaseElement((BaseElement)newValue);
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
+                setParentBaseElement((BaseElement)newValue);
                 return;
-            case SclPackage.TEXT__HEADER:
-                setHeader((Header)newValue);
+            case SclPackage.TEXT__PARENT_HEADER:
+                setParentHeader((Header)newValue);
                 return;
             case SclPackage.TEXT__VALUE:
                 setValue((String)newValue);
@@ -381,11 +381,11 @@ public class TextImpl extends SclObjectImpl implements Text {
             case SclPackage.TEXT__SOURCE:
                 unsetSource();
                 return;
-            case SclPackage.TEXT__BASE_ELEMENT:
-                setBaseElement((BaseElement)null);
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
+                setParentBaseElement((BaseElement)null);
                 return;
-            case SclPackage.TEXT__HEADER:
-                setHeader((Header)null);
+            case SclPackage.TEXT__PARENT_HEADER:
+                setParentHeader((Header)null);
                 return;
             case SclPackage.TEXT__VALUE:
                 setValue(VALUE_EDEFAULT);
@@ -404,10 +404,10 @@ public class TextImpl extends SclObjectImpl implements Text {
         switch (featureID) {
             case SclPackage.TEXT__SOURCE:
                 return isSetSource();
-            case SclPackage.TEXT__BASE_ELEMENT:
-                return getBaseElement() != null;
-            case SclPackage.TEXT__HEADER:
-                return getHeader() != null;
+            case SclPackage.TEXT__PARENT_BASE_ELEMENT:
+                return getParentBaseElement() != null;
+            case SclPackage.TEXT__PARENT_HEADER:
+                return getParentHeader() != null;
             case SclPackage.TEXT__VALUE:
                 return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
         }

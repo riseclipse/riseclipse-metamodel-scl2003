@@ -740,7 +740,7 @@ public abstract class AbstractDataAttributeImpl extends DataAttributeImpl implem
     @Override
     public EList<Val> getVal() {
         if (val == null) {
-            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE);
+            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE);
         }
         return val;
     }

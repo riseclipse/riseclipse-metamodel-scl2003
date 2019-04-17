@@ -95,7 +95,7 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>Eq Sub Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Sub Function</em>' containment reference list isn't clear,
@@ -106,8 +106,8 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
      * @see #isSetEqSubFunction()
      * @see #unsetEqSubFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractEqFuncSubFunc_EqSubFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc
-     * @model opposite="AbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc
+     * @model opposite="ParentAbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqSubFunction> getEqSubFunction();
@@ -136,7 +136,7 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>Sub General Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub General Equipment</em>' containment reference list isn't clear,
@@ -147,8 +147,8 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
      * @see #isSetSubGeneralEquipment()
      * @see #unsetSubGeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractEqFuncSubFunc_SubGeneralEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getAbstractEqFuncSubFunc
-     * @model opposite="AbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentAbstractEqFuncSubFunc
+     * @model opposite="ParentAbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<GeneralEquipment> getSubGeneralEquipment();

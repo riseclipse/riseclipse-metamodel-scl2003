@@ -31,8 +31,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getVoltageLevel <em>Voltage Level</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess <em>Parent Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL <em>Parent SCL</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation()
@@ -43,7 +43,7 @@ public interface Substation extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation <em>Substation</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation <em>Parent Substation</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Function</em>' containment reference list isn't clear,
@@ -54,8 +54,8 @@ public interface Substation extends EquipmentContainer {
      * @see #isSetFunction()
      * @see #unsetFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_Function()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation
-     * @model opposite="Substation" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation
+     * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Function> getFunction();
@@ -84,7 +84,7 @@ public interface Substation extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Voltage Level</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation <em>Substation</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation <em>Parent Substation</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Voltage Level</em>' containment reference list isn't clear,
@@ -95,8 +95,8 @@ public interface Substation extends EquipmentContainer {
      * @see #isSetVoltageLevel()
      * @see #unsetVoltageLevel()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_VoltageLevel()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation
-     * @model opposite="Substation" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation
+     * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<VoltageLevel> getVoltageLevel();
@@ -123,59 +123,51 @@ public interface Substation extends EquipmentContainer {
     boolean isSetVoltageLevel();
 
     /**
-     * Returns the value of the '<em><b>Process</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Process</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubstation <em>Substation</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Process</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Process</em>' container reference.
-     * @see #setProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_Process()
+     * @return the value of the '<em>Parent Process</em>' container reference.
+     * @see #setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_ParentProcess()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubstation
      * @model opposite="Substation" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess();
+    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess <em>Parent Process</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Process</em>' container reference.
-     * @see #getProcess()
+     * @param value the new value of the '<em>Parent Process</em>' container reference.
+     * @see #getParentProcess()
      * @generated
      */
-    void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
+    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getSubstation <em>Substation</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubstation_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getSubstation
      * @model opposite="Substation" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
 } // Substation

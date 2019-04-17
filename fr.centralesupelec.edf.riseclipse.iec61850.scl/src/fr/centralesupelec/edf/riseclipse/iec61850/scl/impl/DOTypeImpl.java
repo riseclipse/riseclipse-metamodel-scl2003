@@ -50,7 +50,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getDA <em>DA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByDO <em>Referred By DO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getSDO <em>SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredBySDO <em>Referred By SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
@@ -294,7 +294,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @Override
     public EList<DA> getDA() {
         if (da == null) {
-            da = new EObjectContainmentWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DO_TYPE__DA, SclPackage.DA__DO_TYPE);
+            da = new EObjectContainmentWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DO_TYPE__DA, SclPackage.DA__PARENT_DO_TYPE);
         }
         return da;
     }
@@ -358,8 +358,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public DataTypeTemplates getDataTypeTemplates() {
-        if (eContainerFeatureID() != SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES) return null;
+    public DataTypeTemplates getParentDataTypeTemplates() {
+        if (eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
     }
 
@@ -368,8 +368,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDataTypeTemplates( DataTypeTemplates newDataTypeTemplates, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDataTypeTemplates, SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES, msgs);
+    public NotificationChain basicSetParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDataTypeTemplates, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs);
         return msgs;
     }
 
@@ -379,20 +379,20 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
-        if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
-            if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
+    public void setParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates) {
+        if (newParentDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES && newParentDataTypeTemplates != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDataTypeTemplates))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataTypeTemplates != null)
-                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs);
-            msgs = basicSetDataTypeTemplates(newDataTypeTemplates, msgs);
+            if (newParentDataTypeTemplates != null)
+                msgs = ((InternalEObject)newParentDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs);
+            msgs = basicSetParentDataTypeTemplates(newParentDataTypeTemplates, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES, newDataTypeTemplates, newDataTypeTemplates));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES, newParentDataTypeTemplates, newParentDataTypeTemplates));
     }
 
     /**
@@ -403,7 +403,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @Override
     public EList<SDO> getSDO() {
         if (sdo == null) {
-            sdo = new EObjectContainmentWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__SDO, SclPackage.SDO__DO_TYPE);
+            sdo = new EObjectContainmentWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__SDO, SclPackage.SDO__PARENT_DO_TYPE);
         }
         return sdo;
     }
@@ -507,10 +507,10 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDA()).basicAdd(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_DO:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDO()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
+                return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
             case SclPackage.DO_TYPE__SDO:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDO()).basicAdd(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
@@ -533,8 +533,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return ((InternalEList<?>)getDA()).basicRemove(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_DO:
                 return ((InternalEList<?>)getReferredByDO()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
-                return basicSetDataTypeTemplates(null, msgs);
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return basicSetParentDataTypeTemplates(null, msgs);
             case SclPackage.DO_TYPE__SDO:
                 return ((InternalEList<?>)getSDO()).basicRemove(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
@@ -553,7 +553,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -575,8 +575,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return getDA();
             case SclPackage.DO_TYPE__REFERRED_BY_DO:
                 return getReferredByDO();
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates();
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates();
             case SclPackage.DO_TYPE__SDO:
                 return getSDO();
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
@@ -610,8 +610,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 getReferredByDO().clear();
                 getReferredByDO().addAll((Collection<? extends DO>)newValue);
                 return;
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)newValue);
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)newValue);
                 return;
             case SclPackage.DO_TYPE__SDO:
                 getSDO().clear();
@@ -649,8 +649,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             case SclPackage.DO_TYPE__REFERRED_BY_DO:
                 unsetReferredByDO();
                 return;
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)null);
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)null);
                 return;
             case SclPackage.DO_TYPE__SDO:
                 unsetSDO();
@@ -681,8 +681,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return isSetDA();
             case SclPackage.DO_TYPE__REFERRED_BY_DO:
                 return isSetReferredByDO();
-            case SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates() != null;
+            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates() != null;
             case SclPackage.DO_TYPE__SDO:
                 return isSetSDO();
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:

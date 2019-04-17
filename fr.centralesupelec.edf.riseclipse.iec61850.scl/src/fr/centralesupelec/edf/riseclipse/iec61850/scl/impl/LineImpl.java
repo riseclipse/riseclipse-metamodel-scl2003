@@ -46,8 +46,8 @@ import java.math.BigDecimal;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getParentProcess <em>Parent Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LineImpl#getVoltage <em>Voltage</em>}</li>
@@ -259,8 +259,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @generated
      */
     @Override
-    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
-        if (eContainerFeatureID() != SclPackage.LINE__PROCESS) return null;
+    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess() {
+        if (eContainerFeatureID() != SclPackage.LINE__PARENT_PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
     }
 
@@ -269,9 +269,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newProcess, SclPackage.LINE__PROCESS, msgs);
+    public NotificationChain basicSetParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentProcess, SclPackage.LINE__PARENT_PROCESS, msgs);
         return msgs;
     }
 
@@ -281,20 +280,20 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @generated
      */
     @Override
-    public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
-        if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__PROCESS && newProcess != null)) {
-            if (EcoreUtil.isAncestor(this, newProcess))
+    public void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess) {
+        if (newParentProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__PARENT_PROCESS && newParentProcess != null)) {
+            if (EcoreUtil.isAncestor(this, newParentProcess))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newProcess != null)
-                msgs = ((InternalEObject)newProcess).eInverseAdd(this, SclPackage.PROCESS__LINE, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
-            msgs = basicSetProcess(newProcess, msgs);
+            if (newParentProcess != null)
+                msgs = ((InternalEObject)newParentProcess).eInverseAdd(this, SclPackage.PROCESS__LINE, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
+            msgs = basicSetParentProcess(newParentProcess, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__PROCESS, newProcess, newProcess));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__PARENT_PROCESS, newParentProcess, newParentProcess));
     }
 
     /**
@@ -303,8 +302,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @generated
      */
     @Override
-    public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.LINE__SCL) return null;
+    public SCL getParentSCL() {
+        if (eContainerFeatureID() != SclPackage.LINE__PARENT_SCL) return null;
         return (SCL)eInternalContainer();
     }
 
@@ -313,8 +312,8 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.LINE__SCL, msgs);
+    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.LINE__PARENT_SCL, msgs);
         return msgs;
     }
 
@@ -324,20 +323,20 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
      * @generated
      */
     @Override
-    public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
+    public void setParentSCL(SCL newParentSCL) {
+        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.LINE__PARENT_SCL && newParentSCL != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSCL))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__LINE, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
+            if (newParentSCL != null)
+                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__LINE, SCL.class, msgs);
+            msgs = basicSetParentSCL(newParentSCL, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__SCL, newSCL, newSCL));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LINE__PARENT_SCL, newParentSCL, newParentSCL));
     }
 
     /**
@@ -348,7 +347,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     @Override
     public EList<ConnectivityNode> getConnectivityNode() {
         if (connectivityNode == null) {
-            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable<ConnectivityNode>(ConnectivityNode.class, this, SclPackage.LINE__CONNECTIVITY_NODE, SclPackage.CONNECTIVITY_NODE__LINE);
+            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable<ConnectivityNode>(ConnectivityNode.class, this, SclPackage.LINE__CONNECTIVITY_NODE, SclPackage.CONNECTIVITY_NODE__PARENT_LINE);
         }
         return connectivityNode;
     }
@@ -381,7 +380,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
-            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.LINE__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__LINE);
+            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.LINE__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE);
         }
         return conductingEquipment;
     }
@@ -443,9 +442,9 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
         if (newVoltage != voltage) {
             NotificationChain msgs = null;
             if (voltage != null)
-                msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+                msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__PARENT_LINE, Voltage.class, msgs);
             if (newVoltage != null)
-                msgs = ((InternalEObject)newVoltage).eInverseAdd(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+                msgs = ((InternalEObject)newVoltage).eInverseAdd(this, SclPackage.VOLTAGE__PARENT_LINE, Voltage.class, msgs);
             msgs = basicSetVoltage(newVoltage, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -483,7 +482,7 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     public void unsetVoltage() {
         if (voltage != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__LINE, Voltage.class, msgs);
+            msgs = ((InternalEObject)voltage).eInverseRemove(this, SclPackage.VOLTAGE__PARENT_LINE, Voltage.class, msgs);
             msgs = basicUnsetVoltage(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -614,14 +613,14 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LINE__PROCESS:
+            case SclPackage.LINE__PARENT_PROCESS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
-            case SclPackage.LINE__SCL:
+                return basicSetParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
+            case SclPackage.LINE__PARENT_SCL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
+                return basicSetParentSCL((SCL)otherEnd, msgs);
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectivityNode()).basicAdd(otherEnd, msgs);
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
@@ -642,10 +641,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LINE__PROCESS:
-                return basicSetProcess(null, msgs);
-            case SclPackage.LINE__SCL:
-                return basicSetSCL(null, msgs);
+            case SclPackage.LINE__PARENT_PROCESS:
+                return basicSetParentProcess(null, msgs);
+            case SclPackage.LINE__PARENT_SCL:
+                return basicSetParentSCL(null, msgs);
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 return ((InternalEList<?>)getConnectivityNode()).basicRemove(otherEnd, msgs);
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
@@ -664,9 +663,9 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LINE__PROCESS:
+            case SclPackage.LINE__PARENT_PROCESS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.PROCESS__LINE, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
-            case SclPackage.LINE__SCL:
+            case SclPackage.LINE__PARENT_SCL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SCL__LINE, SCL.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -682,10 +681,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
         switch (featureID) {
             case SclPackage.LINE__TYPE:
                 return getType();
-            case SclPackage.LINE__PROCESS:
-                return getProcess();
-            case SclPackage.LINE__SCL:
-                return getSCL();
+            case SclPackage.LINE__PARENT_PROCESS:
+                return getParentProcess();
+            case SclPackage.LINE__PARENT_SCL:
+                return getParentSCL();
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 return getConnectivityNode();
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:
@@ -712,11 +711,11 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
             case SclPackage.LINE__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.LINE__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
+            case SclPackage.LINE__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
                 return;
-            case SclPackage.LINE__SCL:
-                setSCL((SCL)newValue);
+            case SclPackage.LINE__PARENT_SCL:
+                setParentSCL((SCL)newValue);
                 return;
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 getConnectivityNode().clear();
@@ -750,11 +749,11 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
             case SclPackage.LINE__TYPE:
                 unsetType();
                 return;
-            case SclPackage.LINE__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
+            case SclPackage.LINE__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
                 return;
-            case SclPackage.LINE__SCL:
-                setSCL((SCL)null);
+            case SclPackage.LINE__PARENT_SCL:
+                setParentSCL((SCL)null);
                 return;
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 unsetConnectivityNode();
@@ -785,10 +784,10 @@ public class LineImpl extends GeneralEquipmentContainerImpl implements Line {
         switch (featureID) {
             case SclPackage.LINE__TYPE:
                 return isSetType();
-            case SclPackage.LINE__PROCESS:
-                return getProcess() != null;
-            case SclPackage.LINE__SCL:
-                return getSCL() != null;
+            case SclPackage.LINE__PARENT_PROCESS:
+                return getParentProcess() != null;
+            case SclPackage.LINE__PARENT_SCL:
+                return getParentSCL() != null;
             case SclPackage.LINE__CONNECTIVITY_NODE:
                 return isSetConnectivityNode();
             case SclPackage.LINE__CONDUCTING_EQUIPMENT:

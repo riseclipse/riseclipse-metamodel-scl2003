@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getCount <em>Count</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType <em>DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getRefersToDOType <em>Refers To DO Type</em>}</li>
  * </ul>
@@ -146,32 +146,28 @@ public interface SDO extends UnNaming {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>DO Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DO Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DO Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DO Type</em>' container reference.
-     * @see #setDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_DOType()
+     * @return the value of the '<em>Parent DO Type</em>' container reference.
+     * @see #setParentDOType(DOType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_ParentDOType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO
      * @model opposite="SDO" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DOType getDOType();
+    DOType getParentDOType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType <em>DO Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DO Type</em>' container reference.
-     * @see #getDOType()
+     * @param value the new value of the '<em>Parent DO Type</em>' container reference.
+     * @see #getParentDOType()
      * @generated
      */
-    void setDOType( DOType value );
+    void setParentDOType(DOType value);
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

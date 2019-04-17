@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getAssociationID <em>Association ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getKind <em>Kind</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
  *
@@ -148,32 +148,28 @@ public interface Association extends BaseElement, AgLNRef {
     boolean isSetKind();
 
     /**
-     * Returns the value of the '<em><b>Server</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Server</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAssociation <em>Association</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Server</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Server</em>' container reference.
-     * @see #setServer(Server)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation_Server()
+     * @return the value of the '<em>Parent Server</em>' container reference.
+     * @see #setParentServer(Server)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAssociation_ParentServer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAssociation
      * @model opposite="Association" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Server getServer();
+    Server getParentServer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer <em>Server</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer <em>Parent Server</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Server</em>' container reference.
-     * @see #getServer()
+     * @param value the new value of the '<em>Parent Server</em>' container reference.
+     * @see #getParentServer()
      * @generated
      */
-    void setServer( Server value );
+    void setParentServer(Server value);
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.

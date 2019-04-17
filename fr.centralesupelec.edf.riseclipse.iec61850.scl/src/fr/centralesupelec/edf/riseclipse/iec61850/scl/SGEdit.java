@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getResvTms <em>Resv Tms</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups <em>Setting Groups</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups <em>Parent Setting Groups</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSGEdit()
@@ -90,31 +90,27 @@ public interface SGEdit extends SclObject {
     boolean isSetResvTms();
 
     /**
-     * Returns the value of the '<em><b>Setting Groups</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Setting Groups</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getSGEdit <em>SG Edit</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Setting Groups</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Setting Groups</em>' container reference.
-     * @see #setSettingGroups(SettingGroups)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSGEdit_SettingGroups()
+     * @return the value of the '<em>Parent Setting Groups</em>' container reference.
+     * @see #setParentSettingGroups(SettingGroups)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSGEdit_ParentSettingGroups()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getSGEdit
      * @model opposite="SGEdit" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SettingGroups getSettingGroups();
+    SettingGroups getParentSettingGroups();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups <em>Setting Groups</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups <em>Parent Setting Groups</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Setting Groups</em>' container reference.
-     * @see #getSettingGroups()
+     * @param value the new value of the '<em>Parent Setting Groups</em>' container reference.
+     * @see #getParentSettingGroups()
      * @generated
      */
-    void setSettingGroups( SettingGroups value );
+    void setParentSettingGroups(SettingGroups value);
 
 } // SGEdit

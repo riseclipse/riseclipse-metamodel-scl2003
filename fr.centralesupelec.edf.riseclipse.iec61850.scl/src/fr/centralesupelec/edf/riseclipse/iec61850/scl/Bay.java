@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel <em>Voltage Level</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment <em>Conducting Equipment</em>}</li>
@@ -41,37 +41,33 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Bay extends EquipmentContainer {
     /**
-     * Returns the value of the '<em><b>Voltage Level</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Voltage Level</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getBay <em>Bay</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Voltage Level</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Voltage Level</em>' container reference.
-     * @see #setVoltageLevel(VoltageLevel)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_VoltageLevel()
+     * @return the value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #setParentVoltageLevel(VoltageLevel)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_ParentVoltageLevel()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getBay
      * @model opposite="Bay" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    VoltageLevel getVoltageLevel();
+    VoltageLevel getParentVoltageLevel();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel <em>Voltage Level</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel <em>Parent Voltage Level</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Voltage Level</em>' container reference.
-     * @see #getVoltageLevel()
+     * @param value the new value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #getParentVoltageLevel()
      * @generated
      */
-    void setVoltageLevel( VoltageLevel value );
+    void setParentVoltageLevel(VoltageLevel value);
 
     /**
      * Returns the value of the '<em><b>Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay <em>Bay</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Function</em>' containment reference list isn't clear,
@@ -82,8 +78,8 @@ public interface Bay extends EquipmentContainer {
      * @see #isSetFunction()
      * @see #unsetFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_Function()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay
-     * @model opposite="Bay" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay
+     * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Function> getFunction();
@@ -112,7 +108,7 @@ public interface Bay extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Connectivity Node</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getBay <em>Bay</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connectivity Node</em>' containment reference list isn't clear,
@@ -123,8 +119,8 @@ public interface Bay extends EquipmentContainer {
      * @see #isSetConnectivityNode()
      * @see #unsetConnectivityNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_ConnectivityNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getBay
-     * @model opposite="Bay" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentBay
+     * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConnectivityNode> getConnectivityNode();
@@ -153,7 +149,7 @@ public interface Bay extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay <em>Bay</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay <em>Parent Bay</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' containment reference list isn't clear,
@@ -164,8 +160,8 @@ public interface Bay extends EquipmentContainer {
      * @see #isSetConductingEquipment()
      * @see #unsetConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBay_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay
-     * @model opposite="Bay" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay
+     * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConductingEquipment> getConductingEquipment();

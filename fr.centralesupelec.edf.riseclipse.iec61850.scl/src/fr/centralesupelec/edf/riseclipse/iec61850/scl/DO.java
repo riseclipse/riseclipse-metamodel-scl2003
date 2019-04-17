@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType <em>Parent LNode Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}</li>
  * </ul>
  *
@@ -146,32 +146,28 @@ public interface DO extends DataObject {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>LNode Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LNode Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LNode Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LNode Type</em>' container reference.
-     * @see #setLNodeType(LNodeType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_LNodeType()
+     * @return the value of the '<em>Parent LNode Type</em>' container reference.
+     * @see #setParentLNodeType(LNodeType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_ParentLNodeType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO
      * @model opposite="DO" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LNodeType getLNodeType();
+    LNodeType getParentLNodeType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getLNodeType <em>LNode Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType <em>Parent LNode Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LNode Type</em>' container reference.
-     * @see #getLNodeType()
+     * @param value the new value of the '<em>Parent LNode Type</em>' container reference.
+     * @see #getParentLNodeType()
      * @generated
      */
-    void setLNodeType( LNodeType value );
+    void setParentLNodeType(LNodeType value);
 
     /**
      * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.

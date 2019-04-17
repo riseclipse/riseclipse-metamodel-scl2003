@@ -40,7 +40,7 @@ public interface LNodeContainer extends Naming {
     /**
      * Returns the value of the '<em><b>LNode</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer <em>LNode Container</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LNode</em>' containment reference list isn't clear,
@@ -51,8 +51,8 @@ public interface LNodeContainer extends Naming {
      * @see #isSetLNode()
      * @see #unsetLNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeContainer_LNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getLNodeContainer
-     * @model opposite="LNodeContainer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer
+     * @model opposite="ParentLNodeContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<LNode> getLNode();

@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BDAImpl#getDAType <em>DA Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BDAImpl#getParentDAType <em>Parent DA Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,8 +67,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      * @generated
      */
     @Override
-    public DAType getDAType() {
-        if (eContainerFeatureID() != SclPackage.BDA__DA_TYPE) return null;
+    public DAType getParentDAType() {
+        if (eContainerFeatureID() != SclPackage.BDA__PARENT_DA_TYPE) return null;
         return (DAType)eInternalContainer();
     }
 
@@ -77,8 +77,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDAType( DAType newDAType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDAType, SclPackage.BDA__DA_TYPE, msgs);
+    public NotificationChain basicSetParentDAType(DAType newParentDAType, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDAType, SclPackage.BDA__PARENT_DA_TYPE, msgs);
         return msgs;
     }
 
@@ -88,20 +88,20 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
      * @generated
      */
     @Override
-    public void setDAType( DAType newDAType ) {
-        if (newDAType != eInternalContainer() || (eContainerFeatureID() != SclPackage.BDA__DA_TYPE && newDAType != null)) {
-            if (EcoreUtil.isAncestor(this, newDAType))
+    public void setParentDAType(DAType newParentDAType) {
+        if (newParentDAType != eInternalContainer() || (eContainerFeatureID() != SclPackage.BDA__PARENT_DA_TYPE && newParentDAType != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDAType))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDAType != null)
-                msgs = ((InternalEObject)newDAType).eInverseAdd(this, SclPackage.DA_TYPE__BDA, DAType.class, msgs);
-            msgs = basicSetDAType(newDAType, msgs);
+            if (newParentDAType != null)
+                msgs = ((InternalEObject)newParentDAType).eInverseAdd(this, SclPackage.DA_TYPE__BDA, DAType.class, msgs);
+            msgs = basicSetParentDAType(newParentDAType, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BDA__DA_TYPE, newDAType, newDAType));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BDA__PARENT_DA_TYPE, newParentDAType, newParentDAType));
     }
 
     /**
@@ -112,10 +112,10 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
+            case SclPackage.BDA__PARENT_DA_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDAType((DAType)otherEnd, msgs);
+                return basicSetParentDAType((DAType)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -128,8 +128,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
-                return basicSetDAType(null, msgs);
+            case SclPackage.BDA__PARENT_DA_TYPE:
+                return basicSetParentDAType(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -142,7 +142,7 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.BDA__DA_TYPE:
+            case SclPackage.BDA__PARENT_DA_TYPE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DA_TYPE__BDA, DAType.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -156,8 +156,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
-                return getDAType();
+            case SclPackage.BDA__PARENT_DA_TYPE:
+                return getParentDAType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -170,8 +170,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
-                setDAType((DAType)newValue);
+            case SclPackage.BDA__PARENT_DA_TYPE:
+                setParentDAType((DAType)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -185,8 +185,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
-                setDAType((DAType)null);
+            case SclPackage.BDA__PARENT_DA_TYPE:
+                setParentDAType((DAType)null);
                 return;
         }
         super.eUnset(featureID);
@@ -200,8 +200,8 @@ public class BDAImpl extends AbstractDataAttributeImpl implements BDA {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.BDA__DA_TYPE:
-                return getDAType() != null;
+            case SclPackage.BDA__PARENT_DA_TYPE:
+                return getParentDAType() != null;
         }
         return super.eIsSet(featureID);
     }

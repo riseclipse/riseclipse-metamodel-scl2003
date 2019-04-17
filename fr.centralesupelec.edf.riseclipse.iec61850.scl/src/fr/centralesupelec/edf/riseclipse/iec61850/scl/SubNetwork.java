@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getBitRate <em>Bit Rate</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication <em>Communication</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication <em>Parent Communication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getConnectedAP <em>Connected AP</em>}</li>
  * </ul>
  *
@@ -95,6 +95,7 @@ public interface SubNetwork extends Naming {
 
     /**
      * Returns the value of the '<em><b>Bit Rate</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork <em>Parent Sub Network</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Bit Rate</em>' reference isn't clear,
@@ -106,7 +107,8 @@ public interface SubNetwork extends Naming {
      * @see #unsetBitRate()
      * @see #setBitRate(BitRate)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubNetwork_BitRate()
-     * @model containment="true" unsettable="true"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork
+     * @model opposite="ParentSubNetwork" containment="true" unsettable="true"
      * @generated
      */
     BitRate getBitRate();
@@ -147,37 +149,33 @@ public interface SubNetwork extends Naming {
     boolean isSetBitRate();
 
     /**
-     * Returns the value of the '<em><b>Communication</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Communication</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSubNetwork <em>Sub Network</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Communication</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Communication</em>' container reference.
-     * @see #setCommunication(Communication)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubNetwork_Communication()
+     * @return the value of the '<em>Parent Communication</em>' container reference.
+     * @see #setParentCommunication(Communication)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubNetwork_ParentCommunication()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSubNetwork
      * @model opposite="SubNetwork" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Communication getCommunication();
+    Communication getParentCommunication();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication <em>Communication</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication <em>Parent Communication</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Communication</em>' container reference.
-     * @see #getCommunication()
+     * @param value the new value of the '<em>Parent Communication</em>' container reference.
+     * @see #getParentCommunication()
      * @generated
      */
-    void setCommunication( Communication value );
+    void setParentCommunication(Communication value);
 
     /**
      * Returns the value of the '<em><b>Connected AP</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork <em>Sub Network</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork <em>Parent Sub Network</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connected AP</em>' containment reference list isn't clear,
@@ -188,8 +186,8 @@ public interface SubNetwork extends Naming {
      * @see #isSetConnectedAP()
      * @see #unsetConnectedAP()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubNetwork_ConnectedAP()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork
-     * @model opposite="SubNetwork" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork
+     * @model opposite="ParentSubNetwork" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConnectedAP> getConnectedAP();

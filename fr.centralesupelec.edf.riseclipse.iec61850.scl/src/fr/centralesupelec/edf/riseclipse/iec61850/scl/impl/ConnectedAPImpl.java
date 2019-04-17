@@ -58,7 +58,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getRedProt <em>Red Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getSubNetwork <em>Sub Network</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getParentSubNetwork <em>Parent Sub Network</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getGSE <em>GSE</em>}</li>
@@ -420,9 +420,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         if (newAddress != address) {
             NotificationChain msgs = null;
             if (address != null)
-                msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__CONNECTED_AP, Address.class, msgs);
+                msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__PARENT_CONNECTED_AP, Address.class, msgs);
             if (newAddress != null)
-                msgs = ((InternalEObject)newAddress).eInverseAdd(this, SclPackage.ADDRESS__CONNECTED_AP, Address.class, msgs);
+                msgs = ((InternalEObject)newAddress).eInverseAdd(this, SclPackage.ADDRESS__PARENT_CONNECTED_AP, Address.class, msgs);
             msgs = basicSetAddress(newAddress, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -460,7 +460,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     public void unsetAddress() {
         if (address != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__CONNECTED_AP, Address.class, msgs);
+            msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__PARENT_CONNECTED_AP, Address.class, msgs);
             msgs = basicUnsetAddress(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -488,8 +488,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * @generated
      */
     @Override
-    public SubNetwork getSubNetwork() {
-        if (eContainerFeatureID() != SclPackage.CONNECTED_AP__SUB_NETWORK) return null;
+    public SubNetwork getParentSubNetwork() {
+        if (eContainerFeatureID() != SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK) return null;
         return (SubNetwork)eInternalContainer();
     }
 
@@ -498,8 +498,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSubNetwork( SubNetwork newSubNetwork, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSubNetwork, SclPackage.CONNECTED_AP__SUB_NETWORK, msgs);
+    public NotificationChain basicSetParentSubNetwork(SubNetwork newParentSubNetwork, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSubNetwork, SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK, msgs);
         return msgs;
     }
 
@@ -509,20 +509,20 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      * @generated
      */
     @Override
-    public void setSubNetwork( SubNetwork newSubNetwork ) {
-        if (newSubNetwork != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTED_AP__SUB_NETWORK && newSubNetwork != null)) {
-            if (EcoreUtil.isAncestor(this, newSubNetwork))
+    public void setParentSubNetwork(SubNetwork newParentSubNetwork) {
+        if (newParentSubNetwork != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK && newParentSubNetwork != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSubNetwork))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSubNetwork != null)
-                msgs = ((InternalEObject)newSubNetwork).eInverseAdd(this, SclPackage.SUB_NETWORK__CONNECTED_AP, SubNetwork.class, msgs);
-            msgs = basicSetSubNetwork(newSubNetwork, msgs);
+            if (newParentSubNetwork != null)
+                msgs = ((InternalEObject)newParentSubNetwork).eInverseAdd(this, SclPackage.SUB_NETWORK__CONNECTED_AP, SubNetwork.class, msgs);
+            msgs = basicSetParentSubNetwork(newParentSubNetwork, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTED_AP__SUB_NETWORK, newSubNetwork, newSubNetwork));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK, newParentSubNetwork, newParentSubNetwork));
     }
 
     /**
@@ -632,7 +632,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     @Override
     public EList<PhysConn> getPhysConn() {
         if (physConn == null) {
-            physConn = new EObjectContainmentWithInverseEList.Unsettable<PhysConn>(PhysConn.class, this, SclPackage.CONNECTED_AP__PHYS_CONN, SclPackage.PHYS_CONN__CONNECTED_AP);
+            physConn = new EObjectContainmentWithInverseEList.Unsettable<PhysConn>(PhysConn.class, this, SclPackage.CONNECTED_AP__PHYS_CONN, SclPackage.PHYS_CONN__PARENT_CONNECTED_AP);
         }
         return physConn;
     }
@@ -743,10 +743,10 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                 if (address != null)
                     msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONNECTED_AP__ADDRESS, null, msgs);
                 return basicSetAddress((Address)otherEnd, msgs);
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSubNetwork((SubNetwork)otherEnd, msgs);
+                return basicSetParentSubNetwork((SubNetwork)otherEnd, msgs);
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 if (refersToAccessPoint != null)
                     msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_CONNECTED_AP, AccessPoint.class, msgs);
@@ -771,8 +771,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         switch (featureID) {
             case SclPackage.CONNECTED_AP__ADDRESS:
                 return basicUnsetAddress(msgs);
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
-                return basicSetSubNetwork(null, msgs);
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
+                return basicSetParentSubNetwork(null, msgs);
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 return basicUnsetRefersToAccessPoint(msgs);
             case SclPackage.CONNECTED_AP__PHYS_CONN:
@@ -795,7 +795,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SUB_NETWORK__CONNECTED_AP, SubNetwork.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -817,8 +817,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                 return getRedProt();
             case SclPackage.CONNECTED_AP__ADDRESS:
                 return getAddress();
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
-                return getSubNetwork();
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
+                return getParentSubNetwork();
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 return getRefersToAccessPoint();
             case SclPackage.CONNECTED_AP__PHYS_CONN:
@@ -855,8 +855,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             case SclPackage.CONNECTED_AP__ADDRESS:
                 setAddress((Address)newValue);
                 return;
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
-                setSubNetwork((SubNetwork)newValue);
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
+                setParentSubNetwork((SubNetwork)newValue);
                 return;
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 setRefersToAccessPoint((AccessPoint)newValue);
@@ -900,8 +900,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             case SclPackage.CONNECTED_AP__ADDRESS:
                 unsetAddress();
                 return;
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
-                setSubNetwork((SubNetwork)null);
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
+                setParentSubNetwork((SubNetwork)null);
                 return;
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 unsetRefersToAccessPoint();
@@ -938,8 +938,8 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
                 return isSetRedProt();
             case SclPackage.CONNECTED_AP__ADDRESS:
                 return isSetAddress();
-            case SclPackage.CONNECTED_AP__SUB_NETWORK:
-                return getSubNetwork() != null;
+            case SclPackage.CONNECTED_AP__PARENT_SUB_NETWORK:
+                return getParentSubNetwork() != null;
             case SclPackage.CONNECTED_AP__REFERS_TO_ACCESS_POINT:
                 return isSetRefersToAccessPoint();
             case SclPackage.CONNECTED_AP__PHYS_CONN:

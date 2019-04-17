@@ -27,12 +27,12 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment <em>Parent Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentGeneralEquipment <em>Parent General Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer <em>Parent Power Transformer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment <em>Parent Sub Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding <em>Parent Transformer Winding</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger <em>Parent Tap Changer</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction()
@@ -41,171 +41,147 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface EqFunction extends AbstractEqFuncSubFunc {
     /**
-     * Returns the value of the '<em><b>Conducting Equipment</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Conducting Equipment</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Conducting Equipment</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Conducting Equipment</em>' container reference.
-     * @see #setConductingEquipment(ConductingEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ConductingEquipment()
+     * @return the value of the '<em>Parent Conducting Equipment</em>' container reference.
+     * @see #setParentConductingEquipment(ConductingEquipment)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ConductingEquipment getConductingEquipment();
+    ConductingEquipment getParentConductingEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment <em>Parent Conducting Equipment</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Conducting Equipment</em>' container reference.
-     * @see #getConductingEquipment()
+     * @param value the new value of the '<em>Parent Conducting Equipment</em>' container reference.
+     * @see #getParentConductingEquipment()
      * @generated
      */
-    void setConductingEquipment( ConductingEquipment value );
+    void setParentConductingEquipment(ConductingEquipment value);
 
     /**
-     * Returns the value of the '<em><b>General Equipment</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent General Equipment</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>General Equipment</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>General Equipment</em>' container reference.
-     * @see #setGeneralEquipment(GeneralEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_GeneralEquipment()
+     * @return the value of the '<em>Parent General Equipment</em>' container reference.
+     * @see #setParentGeneralEquipment(GeneralEquipment)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentGeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    GeneralEquipment getGeneralEquipment();
+    GeneralEquipment getParentGeneralEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getGeneralEquipment <em>General Equipment</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentGeneralEquipment <em>Parent General Equipment</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>General Equipment</em>' container reference.
-     * @see #getGeneralEquipment()
+     * @param value the new value of the '<em>Parent General Equipment</em>' container reference.
+     * @see #getParentGeneralEquipment()
      * @generated
      */
-    void setGeneralEquipment( GeneralEquipment value );
+    void setParentGeneralEquipment(GeneralEquipment value);
 
     /**
-     * Returns the value of the '<em><b>Power Transformer</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Power Transformer</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Power Transformer</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Power Transformer</em>' container reference.
-     * @see #setPowerTransformer(PowerTransformer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_PowerTransformer()
+     * @return the value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #setParentPowerTransformer(PowerTransformer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentPowerTransformer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    PowerTransformer getPowerTransformer();
+    PowerTransformer getParentPowerTransformer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer <em>Parent Power Transformer</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Power Transformer</em>' container reference.
-     * @see #getPowerTransformer()
+     * @param value the new value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #getParentPowerTransformer()
      * @generated
      */
-    void setPowerTransformer( PowerTransformer value );
+    void setParentPowerTransformer(PowerTransformer value);
 
     /**
-     * Returns the value of the '<em><b>Sub Equipment</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Sub Equipment</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Sub Equipment</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sub Equipment</em>' container reference.
-     * @see #setSubEquipment(SubEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_SubEquipment()
+     * @return the value of the '<em>Parent Sub Equipment</em>' container reference.
+     * @see #setParentSubEquipment(SubEquipment)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentSubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SubEquipment getSubEquipment();
+    SubEquipment getParentSubEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment <em>Parent Sub Equipment</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sub Equipment</em>' container reference.
-     * @see #getSubEquipment()
+     * @param value the new value of the '<em>Parent Sub Equipment</em>' container reference.
+     * @see #getParentSubEquipment()
      * @generated
      */
-    void setSubEquipment( SubEquipment value );
+    void setParentSubEquipment(SubEquipment value);
 
     /**
-     * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Transformer Winding</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Transformer Winding</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Transformer Winding</em>' container reference.
-     * @see #setTransformerWinding(TransformerWinding)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TransformerWinding()
+     * @return the value of the '<em>Parent Transformer Winding</em>' container reference.
+     * @see #setParentTransformerWinding(TransformerWinding)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentTransformerWinding()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    TransformerWinding getTransformerWinding();
+    TransformerWinding getParentTransformerWinding();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding <em>Parent Transformer Winding</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Transformer Winding</em>' container reference.
-     * @see #getTransformerWinding()
+     * @param value the new value of the '<em>Parent Transformer Winding</em>' container reference.
+     * @see #getParentTransformerWinding()
      * @generated
      */
-    void setTransformerWinding( TransformerWinding value );
+    void setParentTransformerWinding(TransformerWinding value);
 
     /**
-     * Returns the value of the '<em><b>Tap Changer</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Tap Changer</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Tap Changer</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Tap Changer</em>' container reference.
-     * @see #setTapChanger(TapChanger)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_TapChanger()
+     * @return the value of the '<em>Parent Tap Changer</em>' container reference.
+     * @see #setParentTapChanger(TapChanger)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqFunction_ParentTapChanger()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction
      * @model opposite="EqFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    TapChanger getTapChanger();
+    TapChanger getParentTapChanger();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger <em>Parent Tap Changer</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Tap Changer</em>' container reference.
-     * @see #getTapChanger()
+     * @param value the new value of the '<em>Parent Tap Changer</em>' container reference.
+     * @see #getParentTapChanger()
      * @generated
      */
-    void setTapChanger( TapChanger value );
+    void setParentTapChanger(TapChanger value);
 
 } // EqFunction

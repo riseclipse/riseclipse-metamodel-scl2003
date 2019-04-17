@@ -32,7 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getGi <em>Gi</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getPeriod <em>Period</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getQchg <em>Qchg</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt <em>Parent Control With Trigger Opt</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps()
@@ -306,31 +306,27 @@ public interface TrgOps extends SclObject {
     boolean isSetQchg();
 
     /**
-     * Returns the value of the '<em><b>Control With Trigger Opt</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Control With Trigger Opt</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps <em>Trg Ops</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Control With Trigger Opt</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With Trigger Opt</em>' container reference.
-     * @see #setControlWithTriggerOpt(ControlWithTriggerOpt)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_ControlWithTriggerOpt()
+     * @return the value of the '<em>Parent Control With Trigger Opt</em>' container reference.
+     * @see #setParentControlWithTriggerOpt(ControlWithTriggerOpt)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTrgOps_ParentControlWithTriggerOpt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt#getTrgOps
      * @model opposite="TrgOps" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ControlWithTriggerOpt getControlWithTriggerOpt();
+    ControlWithTriggerOpt getParentControlWithTriggerOpt();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt <em>Parent Control With Trigger Opt</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Control With Trigger Opt</em>' container reference.
-     * @see #getControlWithTriggerOpt()
+     * @param value the new value of the '<em>Parent Control With Trigger Opt</em>' container reference.
+     * @see #getParentControlWithTriggerOpt()
      * @generated
      */
-    void setControlWithTriggerOpt( ControlWithTriggerOpt value );
+    void setParentControlWithTriggerOpt(ControlWithTriggerOpt value);
 
 } // TrgOps

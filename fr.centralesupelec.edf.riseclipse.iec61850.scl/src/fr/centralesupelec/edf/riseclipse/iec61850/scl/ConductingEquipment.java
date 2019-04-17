@@ -30,12 +30,12 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getSubFunction <em>Sub Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay <em>Parent Bay</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction <em>Parent Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunction <em>Parent Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess <em>Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine <em>Parent Line</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess <em>Parent Process</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment()
@@ -97,93 +97,81 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Bay</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Bay</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Bay</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Bay</em>' container reference.
-     * @see #setBay(Bay)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_Bay()
+     * @return the value of the '<em>Parent Bay</em>' container reference.
+     * @see #setParentBay(Bay)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentBay()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment
      * @model opposite="ConductingEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Bay getBay();
+    Bay getParentBay();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getBay <em>Bay</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentBay <em>Parent Bay</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Bay</em>' container reference.
-     * @see #getBay()
+     * @param value the new value of the '<em>Parent Bay</em>' container reference.
+     * @see #getParentBay()
      * @generated
      */
-    void setBay( Bay value );
+    void setParentBay(Bay value);
 
     /**
-     * Returns the value of the '<em><b>Function</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Function</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Function</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Function</em>' container reference.
-     * @see #setFunction(Function)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_Function()
+     * @return the value of the '<em>Parent Function</em>' container reference.
+     * @see #setParentFunction(Function)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getConductingEquipment
      * @model opposite="ConductingEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Function getFunction();
+    Function getParentFunction();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction <em>Function</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction <em>Parent Function</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Function</em>' container reference.
-     * @see #getFunction()
+     * @param value the new value of the '<em>Parent Function</em>' container reference.
+     * @see #getParentFunction()
      * @generated
      */
-    void setFunction( Function value );
+    void setParentFunction(Function value);
 
     /**
-     * Returns the value of the '<em><b>Sub Function</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Sub Function</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Sub Function</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sub Function</em>' container reference.
-     * @see #setSubFunction(SubFunction)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_SubFunction()
+     * @return the value of the '<em>Parent Sub Function</em>' container reference.
+     * @see #setParentSubFunction(SubFunction)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentSubFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getConductingEquipment
      * @model opposite="ConductingEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SubFunction getSubFunction();
+    SubFunction getParentSubFunction();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getSubFunction <em>Sub Function</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentSubFunction <em>Parent Sub Function</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sub Function</em>' container reference.
-     * @see #getSubFunction()
+     * @param value the new value of the '<em>Parent Sub Function</em>' container reference.
+     * @see #getParentSubFunction()
      * @generated
      */
-    void setSubFunction( SubFunction value );
+    void setParentSubFunction(SubFunction value);
 
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment <em>Conducting Equipment</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment <em>Parent Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
@@ -194,8 +182,8 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #isSetEqFunction()
      * @see #unsetEqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_EqFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getConductingEquipment
-     * @model opposite="ConductingEquipment" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentConductingEquipment
+     * @model opposite="ParentConductingEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqFunction> getEqFunction();
@@ -222,59 +210,51 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
     boolean isSetEqFunction();
 
     /**
-     * Returns the value of the '<em><b>Line</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Line</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Line</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Line</em>' container reference.
-     * @see #setLine(Line)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_Line()
+     * @return the value of the '<em>Parent Line</em>' container reference.
+     * @see #setParentLine(Line)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentLine()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment
      * @model opposite="ConductingEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Line getLine();
+    Line getParentLine();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine <em>Parent Line</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Line</em>' container reference.
-     * @see #getLine()
+     * @param value the new value of the '<em>Parent Line</em>' container reference.
+     * @see #getParentLine()
      * @generated
      */
-    void setLine( Line value );
+    void setParentLine(Line value);
 
     /**
-     * Returns the value of the '<em><b>Process</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Process</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getConductingEquipment <em>Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Process</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Process</em>' container reference.
-     * @see #setProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_Process()
+     * @return the value of the '<em>Parent Process</em>' container reference.
+     * @see #setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConductingEquipment_ParentProcess()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getConductingEquipment
      * @model opposite="ConductingEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess();
+    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess <em>Process</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess <em>Parent Process</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Process</em>' container reference.
-     * @see #getProcess()
+     * @param value the new value of the '<em>Parent Process</em>' container reference.
+     * @see #getParentProcess()
      * @generated
      */
-    void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
+    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
 
 } // ConductingEquipment

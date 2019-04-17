@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getApRef <em>Ap Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled <em>Rpt Enabled</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled <em>Parent Rpt Enabled</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
  *
@@ -91,32 +91,28 @@ public interface ClientLN extends ExplicitLinkResolver, AgLNRef {
     boolean isSetApRef();
 
     /**
-     * Returns the value of the '<em><b>Rpt Enabled</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Rpt Enabled</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getClientLN <em>Client LN</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Rpt Enabled</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Rpt Enabled</em>' container reference.
-     * @see #setRptEnabled(RptEnabled)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientLN_RptEnabled()
+     * @return the value of the '<em>Parent Rpt Enabled</em>' container reference.
+     * @see #setParentRptEnabled(RptEnabled)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientLN_ParentRptEnabled()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getClientLN
      * @model opposite="ClientLN" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    RptEnabled getRptEnabled();
+    RptEnabled getParentRptEnabled();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled <em>Rpt Enabled</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled <em>Parent Rpt Enabled</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Rpt Enabled</em>' container reference.
-     * @see #getRptEnabled()
+     * @param value the new value of the '<em>Parent Rpt Enabled</em>' container reference.
+     * @see #getParentRptEnabled()
      * @generated
      */
-    void setRptEnabled( RptEnabled value );
+    void setParentRptEnabled(RptEnabled value);
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.

@@ -28,7 +28,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -56,7 +55,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getLogName <em>Log Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getReasonCode <em>Reason Code</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LogControlImpl#getRefersToLog <em>Refers To Log</em>}</li>
  * </ul>
@@ -759,8 +758,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      */
     @Override
-    public AnyLN getAnyLN() {
-        if (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN) return null;
+    public AnyLN getParentAnyLN() {
+        if (eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN) return null;
         return (AnyLN)eInternalContainer();
     }
 
@@ -769,8 +768,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAnyLN( AnyLN newAnyLN, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAnyLN, SclPackage.LOG_CONTROL__ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.LOG_CONTROL__PARENT_ANY_LN, msgs);
         return msgs;
     }
 
@@ -780,20 +779,20 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      */
     @Override
-    public void setAnyLN( AnyLN newAnyLN ) {
-        if (newAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__ANY_LN && newAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newAnyLN))
+    public void setParentAnyLN(AnyLN newParentAnyLN) {
+        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN && newParentAnyLN != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAnyLN))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAnyLN != null)
-                msgs = ((InternalEObject)newAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetAnyLN(newAnyLN, msgs);
+            if (newParentAnyLN != null)
+                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
+            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__ANY_LN, newAnyLN, newAnyLN));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
     }
 
     /**
@@ -1002,10 +1001,10 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAnyLN((AnyLN)otherEnd, msgs);
+                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 if (refersToAnyLN != null)
                     msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
@@ -1026,8 +1025,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return basicSetAnyLN(null, msgs);
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+                return basicSetParentAnyLN(null, msgs);
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 return basicUnsetRefersToAnyLN(msgs);
             case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
@@ -1044,7 +1043,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LOG_CONTROL__ANY_LN:
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -1074,8 +1073,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 return getPrefix();
             case SclPackage.LOG_CONTROL__REASON_CODE:
                 return getReasonCode();
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return getAnyLN();
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+                return getParentAnyLN();
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 return getRefersToAnyLN();
             case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
@@ -1116,8 +1115,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             case SclPackage.LOG_CONTROL__REASON_CODE:
                 setReasonCode((Boolean)newValue);
                 return;
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)newValue);
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+                setParentAnyLN((AnyLN)newValue);
                 return;
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 setRefersToAnyLN((AnyLN)newValue);
@@ -1161,8 +1160,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             case SclPackage.LOG_CONTROL__REASON_CODE:
                 unsetReasonCode();
                 return;
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                setAnyLN((AnyLN)null);
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+                setParentAnyLN((AnyLN)null);
                 return;
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 unsetRefersToAnyLN();
@@ -1198,8 +1197,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 return isSetPrefix();
             case SclPackage.LOG_CONTROL__REASON_CODE:
                 return isSetReasonCode();
-            case SclPackage.LOG_CONTROL__ANY_LN:
-                return getAnyLN() != null;
+            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+                return getParentAnyLN() != null;
             case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
                 return isSetRefersToAnyLN();
             case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
@@ -1261,14 +1260,17 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
-        LDevice lDevice = getAnyLN().getLDevice();
+        EObject object = this;
+        while(( object != null ) && !( object instanceof IED ) ) {
+            object = object.eContainer();
+        }
+        if( object == null ) return;
+        IED ied = ( IED ) object;
 
+        LDevice lDevice = null;
         if( getLdInst() != null ) {
             List< LDevice > res1 = 
-                    lDevice
-                    .getServer()
-                    .getAccessPoint()
-                    .getIED()
+                    ied
                     .getAccessPoint()
                     .stream()
                     .map( ap -> ap.getServer() )
@@ -1288,9 +1290,11 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 console.error( messagePrefix + "found several " + mess1 );
                 return;
             }
-            lDevice = res1.get( 0 );
+            lDevice  = res1.get( 0 );
             console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
         }
+        // To please the compiler
+        if( lDevice == null ) return;
 
         String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
         if(( getLnClass() == null ) || getLnClass().isEmpty() || ( "LLN0".equals( getLnClass() ))) {

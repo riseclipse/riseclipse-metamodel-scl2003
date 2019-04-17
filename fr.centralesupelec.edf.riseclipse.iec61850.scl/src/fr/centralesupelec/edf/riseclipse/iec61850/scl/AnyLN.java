@@ -270,7 +270,7 @@ public interface AnyLN extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Inputs</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Inputs</em>' containment reference isn't clear,
@@ -282,8 +282,8 @@ public interface AnyLN extends UnNaming {
      * @see #unsetInputs()
      * @see #setInputs(Inputs)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Inputs()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Inputs getInputs();
@@ -326,7 +326,7 @@ public interface AnyLN extends UnNaming {
     /**
      * Returns the value of the '<em><b>Log</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log</em>' containment reference list isn't clear,
@@ -337,8 +337,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetLog()
      * @see #unsetLog()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Log()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Log> getLog();
@@ -367,7 +367,7 @@ public interface AnyLN extends UnNaming {
     /**
      * Returns the value of the '<em><b>DOI</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DOI</em>' containment reference list isn't clear,
@@ -378,8 +378,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetDOI()
      * @see #unsetDOI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_DOI()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DOI> getDOI();
@@ -408,7 +408,7 @@ public interface AnyLN extends UnNaming {
     /**
      * Returns the value of the '<em><b>Report Control</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Report Control</em>' containment reference list isn't clear,
@@ -419,8 +419,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetReportControl()
      * @see #unsetReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReportControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
@@ -450,7 +450,7 @@ public interface AnyLN extends UnNaming {
     /**
      * Returns the value of the '<em><b>Log Control</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Log Control</em>' containment reference list isn't clear,
@@ -461,8 +461,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetLogControl()
      * @see #unsetLogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_LogControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
@@ -492,7 +492,7 @@ public interface AnyLN extends UnNaming {
     /**
      * Returns the value of the '<em><b>Data Set</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN <em>Any LN</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN <em>Parent Any LN</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Data Set</em>' containment reference list isn't clear,
@@ -503,8 +503,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetDataSet()
      * @see #unsetDataSet()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_DataSet()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN
-     * @model opposite="AnyLN" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DataSet> getDataSet();
@@ -799,6 +799,12 @@ public interface AnyLN extends UnNaming {
      */
     boolean isSetControl();
 
-    LDevice getLDevice();
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    LDevice getParentLDevice();
 
 } // AnyLN

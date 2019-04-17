@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqSubFunction()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface EqSubFunction extends AbstractEqFuncSubFunc {
     /**
-     * Returns the value of the '<em><b>Abstract Eq Func Sub Func</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Abstract Eq Func Sub Func</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getEqSubFunction <em>Eq Sub Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Abstract Eq Func Sub Func</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Abstract Eq Func Sub Func</em>' container reference.
-     * @see #setAbstractEqFuncSubFunc(AbstractEqFuncSubFunc)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqSubFunction_AbstractEqFuncSubFunc()
+     * @return the value of the '<em>Parent Abstract Eq Func Sub Func</em>' container reference.
+     * @see #setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEqSubFunction_ParentAbstractEqFuncSubFunc()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getEqSubFunction
      * @model opposite="EqSubFunction" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AbstractEqFuncSubFunc getAbstractEqFuncSubFunc();
+    AbstractEqFuncSubFunc getParentAbstractEqFuncSubFunc();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Abstract Eq Func Sub Func</em>' container reference.
-     * @see #getAbstractEqFuncSubFunc()
+     * @param value the new value of the '<em>Parent Abstract Eq Func Sub Func</em>' container reference.
+     * @see #getParentAbstractEqFuncSubFunc()
      * @generated
      */
-    void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc value );
+    void setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc value);
 
 } // EqSubFunction

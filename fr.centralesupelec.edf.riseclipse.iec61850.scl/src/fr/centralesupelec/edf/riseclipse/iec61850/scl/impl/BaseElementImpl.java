@@ -128,7 +128,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
     @Override
     public EList<Private> getPrivate() {
         if (private_ == null) {
-            private_ = new EObjectContainmentWithInverseEList.Unsettable<Private>(Private.class, this, SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__BASE_ELEMENT);
+            private_ = new EObjectContainmentWithInverseEList.Unsettable<Private>(Private.class, this, SclPackage.BASE_ELEMENT__PRIVATE, SclPackage.PRIVATE__PARENT_BASE_ELEMENT);
         }
         return private_;
     }
@@ -190,9 +190,9 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
         if (newText != text) {
             NotificationChain msgs = null;
             if (text != null)
-                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__PARENT_BASE_ELEMENT, Text.class, msgs);
             if (newText != null)
-                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__PARENT_BASE_ELEMENT, Text.class, msgs);
             msgs = basicSetText(newText, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -230,7 +230,7 @@ public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implement
     public void unsetText() {
         if (text != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__BASE_ELEMENT, Text.class, msgs);
+            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__PARENT_BASE_ELEMENT, Text.class, msgs);
             msgs = basicUnsetText(msgs);
             if (msgs != null) msgs.dispatch();
         }

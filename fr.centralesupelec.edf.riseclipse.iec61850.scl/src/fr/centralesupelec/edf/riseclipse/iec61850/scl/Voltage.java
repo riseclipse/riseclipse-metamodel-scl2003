@@ -27,7 +27,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine <em>Parent Line</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltage()
@@ -37,31 +38,51 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface Voltage extends ValueWithUnit {
 
     /**
-     * Returns the value of the '<em><b>Line</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Line</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Line</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Line</em>' container reference.
-     * @see #setLine(Line)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltage_Line()
+     * @return the value of the '<em>Parent Line</em>' container reference.
+     * @see #setParentLine(Line)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltage_ParentLine()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage
      * @model opposite="Voltage" resolveProxies="false" unsettable="true"
      * @generated
      */
-    Line getLine();
+    Line getParentLine();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine <em>Parent Line</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Line</em>' container reference.
-     * @see #getLine()
+     * @param value the new value of the '<em>Parent Line</em>' container reference.
+     * @see #getParentLine()
      * @generated
      */
-    void setLine(Line value);
+    void setParentLine(Line value);
+
+    /**
+     * Returns the value of the '<em><b>Parent Voltage Level</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getVoltage <em>Voltage</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #setParentVoltageLevel(VoltageLevel)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltage_ParentVoltageLevel()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getVoltage
+     * @model opposite="Voltage" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    VoltageLevel getParentVoltageLevel();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel <em>Parent Voltage Level</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #getParentVoltageLevel()
+     * @generated
+     */
+    void setParentVoltageLevel(VoltageLevel value);
 
 } // Voltage

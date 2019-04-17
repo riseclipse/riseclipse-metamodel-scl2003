@@ -238,6 +238,12 @@ public interface Control extends UnNaming {
      */
     boolean isSetReferredByExtRef();
 
-    AnyLN getAnyLN();
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    AnyLN getParentAnyLN();
 
 } // Control

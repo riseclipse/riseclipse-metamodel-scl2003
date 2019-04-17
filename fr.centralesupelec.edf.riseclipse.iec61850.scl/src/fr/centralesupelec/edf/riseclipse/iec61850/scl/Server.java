@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getTimeout <em>Timeout</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint <em>Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAssociation <em>Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getLDevice <em>LDevice</em>}</li>
@@ -95,37 +95,33 @@ public interface Server extends UnNaming {
     boolean isSetTimeout();
 
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Access Point</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServer <em>Server</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_AccessPoint()
+     * @return the value of the '<em>Parent Access Point</em>' container reference.
+     * @see #setParentAccessPoint(AccessPoint)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_ParentAccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServer
      * @model opposite="Server" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AccessPoint getAccessPoint();
+    AccessPoint getParentAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint <em>Access Point</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint <em>Parent Access Point</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
+     * @param value the new value of the '<em>Parent Access Point</em>' container reference.
+     * @see #getParentAccessPoint()
      * @generated
      */
-    void setAccessPoint( AccessPoint value );
+    void setParentAccessPoint(AccessPoint value);
 
     /**
      * Returns the value of the '<em><b>Association</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer <em>Server</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Association</em>' containment reference list isn't clear,
@@ -136,8 +132,8 @@ public interface Server extends UnNaming {
      * @see #isSetAssociation()
      * @see #unsetAssociation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_Association()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getServer
-     * @model opposite="Server" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Association#getParentServer
+     * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Association> getAssociation();
@@ -165,7 +161,7 @@ public interface Server extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Authentication</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Authentication</em>' containment reference isn't clear,
@@ -177,8 +173,8 @@ public interface Server extends UnNaming {
      * @see #unsetAuthentication()
      * @see #setAuthentication(Authentication)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_Authentication()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer
-     * @model opposite="Server" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer
+     * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Authentication getAuthentication();
@@ -221,7 +217,7 @@ public interface Server extends UnNaming {
     /**
      * Returns the value of the '<em><b>LDevice</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer <em>Parent Server</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LDevice</em>' containment reference list isn't clear,
@@ -232,8 +228,8 @@ public interface Server extends UnNaming {
      * @see #isSetLDevice()
      * @see #unsetLDevice()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServer_LDevice()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer
-     * @model opposite="Server" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer
+     * @model opposite="ParentServer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<LDevice> getLDevice();

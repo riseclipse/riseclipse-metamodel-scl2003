@@ -57,7 +57,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getApRef <em>Ap Ref</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getRptEnabled <em>Rpt Enabled</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getParentRptEnabled <em>Parent Rpt Enabled</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ClientLNImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
  *
@@ -361,6 +361,49 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      */
     @Override
+    public RptEnabled getParentRptEnabled() {
+        if (eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED) return null;
+        return (RptEnabled)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentRptEnabled(RptEnabled newParentRptEnabled, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentRptEnabled, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentRptEnabled(RptEnabled newParentRptEnabled) {
+        if (newParentRptEnabled != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED && newParentRptEnabled != null)) {
+            if (EcoreUtil.isAncestor(this, newParentRptEnabled))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentRptEnabled != null)
+                msgs = ((InternalEObject)newParentRptEnabled).eInverseAdd(this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class, msgs);
+            msgs = basicSetParentRptEnabled(newParentRptEnabled, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED, newParentRptEnabled, newParentRptEnabled));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String getIedName() {
         return iedName;
     }
@@ -611,49 +654,6 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
      * @generated
      */
     @Override
-    public RptEnabled getRptEnabled() {
-        if (eContainerFeatureID() != SclPackage.CLIENT_LN__RPT_ENABLED) return null;
-        return (RptEnabled)eInternalContainer();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRptEnabled( RptEnabled newRptEnabled, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newRptEnabled, SclPackage.CLIENT_LN__RPT_ENABLED, msgs);
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRptEnabled( RptEnabled newRptEnabled ) {
-        if (newRptEnabled != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_LN__RPT_ENABLED && newRptEnabled != null)) {
-            if (EcoreUtil.isAncestor(this, newRptEnabled))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newRptEnabled != null)
-                msgs = ((InternalEObject)newRptEnabled).eInverseAdd(this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class, msgs);
-            msgs = basicSetRptEnabled(newRptEnabled, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__RPT_ENABLED, newRptEnabled, newRptEnabled));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public String getDesc() {
         return desc;
     }
@@ -805,10 +805,10 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetRptEnabled((RptEnabled)otherEnd, msgs);
+                return basicSetParentRptEnabled((RptEnabled)otherEnd, msgs);
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 if (refersToAnyLN != null)
                     msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs);
@@ -825,8 +825,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
-                return basicSetRptEnabled(null, msgs);
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+                return basicSetParentRptEnabled(null, msgs);
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 return basicUnsetRefersToAnyLN(msgs);
         }
@@ -841,7 +841,7 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
                 return eInternalContainer().eInverseRemove(this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -869,8 +869,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                 return getPrefix();
             case SclPackage.CLIENT_LN__AP_REF:
                 return getApRef();
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
-                return getRptEnabled();
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+                return getParentRptEnabled();
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 return getRefersToAnyLN();
         }
@@ -906,8 +906,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
             case SclPackage.CLIENT_LN__AP_REF:
                 setApRef((String)newValue);
                 return;
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
-                setRptEnabled((RptEnabled)newValue);
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+                setParentRptEnabled((RptEnabled)newValue);
                 return;
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 setRefersToAnyLN((AnyLN)newValue);
@@ -945,8 +945,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
             case SclPackage.CLIENT_LN__AP_REF:
                 unsetApRef();
                 return;
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
-                setRptEnabled((RptEnabled)null);
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+                setParentRptEnabled((RptEnabled)null);
                 return;
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 unsetRefersToAnyLN();
@@ -977,8 +977,8 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
                 return isSetPrefix();
             case SclPackage.CLIENT_LN__AP_REF:
                 return isSetApRef();
-            case SclPackage.CLIENT_LN__RPT_ENABLED:
-                return getRptEnabled() != null;
+            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+                return getParentRptEnabled() != null;
             case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
                 return isSetRefersToAnyLN();
         }

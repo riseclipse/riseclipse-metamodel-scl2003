@@ -96,7 +96,7 @@ public interface ControlWithIEDName extends Control {
     /**
      * Returns the value of the '<em><b>IED Name</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName <em>Parent Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>IED Name</em>' containment reference list isn't clear,
@@ -107,8 +107,8 @@ public interface ControlWithIEDName extends Control {
      * @see #isSetIEDName()
      * @see #unsetIEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName_IEDName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName
-     * @model opposite="ControlWithIEDName" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName
+     * @model opposite="ParentControlWithIEDName" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<IEDName> getIEDName();
@@ -177,7 +177,7 @@ public interface ControlWithIEDName extends Control {
 
     /**
      * Returns the value of the '<em><b>Protocol</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName <em>Control With IED Name</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName <em>Parent Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Protocol</em>' containment reference isn't clear,
@@ -189,8 +189,8 @@ public interface ControlWithIEDName extends Control {
      * @see #unsetProtocol()
      * @see #setProtocol(Protocol)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithIEDName_Protocol()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName
-     * @model opposite="ControlWithIEDName" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName
+     * @model opposite="ParentControlWithIEDName" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Protocol getProtocol();

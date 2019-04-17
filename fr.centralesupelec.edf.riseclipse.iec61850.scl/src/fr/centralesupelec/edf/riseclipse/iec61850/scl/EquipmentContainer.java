@@ -41,7 +41,7 @@ public interface EquipmentContainer extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>Power Transformer</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer <em>Equipment Container</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer <em>Parent Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power Transformer</em>' containment reference list isn't clear,
@@ -52,8 +52,8 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @see #isSetPowerTransformer()
      * @see #unsetPowerTransformer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipmentContainer_PowerTransformer()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer
-     * @model opposite="EquipmentContainer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer
+     * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<PowerTransformer> getPowerTransformer();
@@ -82,7 +82,7 @@ public interface EquipmentContainer extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>General Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer <em>Equipment Container</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentEquipmentContainer <em>Parent Equipment Container</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>General Equipment</em>' containment reference list isn't clear,
@@ -93,8 +93,8 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @see #isSetGeneralEquipment()
      * @see #unsetGeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEquipmentContainer_GeneralEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEquipmentContainer
-     * @model opposite="EquipmentContainer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentEquipmentContainer
+     * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<GeneralEquipment> getGeneralEquipment();

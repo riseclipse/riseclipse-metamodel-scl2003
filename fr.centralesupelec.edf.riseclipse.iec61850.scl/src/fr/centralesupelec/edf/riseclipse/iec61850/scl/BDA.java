@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType <em>Parent DA Type</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBDA()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface BDA extends AbstractDataAttribute {
     /**
-     * Returns the value of the '<em><b>DA Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DA Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DA Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DA Type</em>' container reference.
-     * @see #setDAType(DAType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBDA_DAType()
+     * @return the value of the '<em>Parent DA Type</em>' container reference.
+     * @see #setParentDAType(DAType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBDA_ParentDAType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA
      * @model opposite="BDA" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DAType getDAType();
+    DAType getParentDAType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType <em>Parent DA Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DA Type</em>' container reference.
-     * @see #getDAType()
+     * @param value the new value of the '<em>Parent DA Type</em>' container reference.
+     * @see #getParentDAType()
      * @generated
      */
-    void setDAType( DAType value );
+    void setParentDAType(DAType value);
 
 } // BDA

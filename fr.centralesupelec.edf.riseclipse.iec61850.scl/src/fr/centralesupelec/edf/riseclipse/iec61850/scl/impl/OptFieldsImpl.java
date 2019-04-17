@@ -47,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSeqNum <em>Seq Num</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getTimeStamp <em>Time Stamp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getSegmentation <em>Segmentation</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getReportControl <em>Report Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.OptFieldsImpl#getParentReportControl <em>Parent Report Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -789,8 +789,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      */
     @Override
-    public ReportControl getReportControl() {
-        if (eContainerFeatureID() != SclPackage.OPT_FIELDS__REPORT_CONTROL) return null;
+    public ReportControl getParentReportControl() {
+        if (eContainerFeatureID() != SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL) return null;
         return (ReportControl)eInternalContainer();
     }
 
@@ -799,8 +799,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetReportControl( ReportControl newReportControl, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newReportControl, SclPackage.OPT_FIELDS__REPORT_CONTROL, msgs);
+    public NotificationChain basicSetParentReportControl(ReportControl newParentReportControl, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentReportControl, SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL, msgs);
         return msgs;
     }
 
@@ -810,20 +810,20 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
      * @generated
      */
     @Override
-    public void setReportControl( ReportControl newReportControl ) {
-        if (newReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.OPT_FIELDS__REPORT_CONTROL && newReportControl != null)) {
-            if (EcoreUtil.isAncestor(this, newReportControl))
+    public void setParentReportControl(ReportControl newParentReportControl) {
+        if (newParentReportControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL && newParentReportControl != null)) {
+            if (EcoreUtil.isAncestor(this, newParentReportControl))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newReportControl != null)
-                msgs = ((InternalEObject)newReportControl).eInverseAdd(this, SclPackage.REPORT_CONTROL__OPT_FIELDS, ReportControl.class, msgs);
-            msgs = basicSetReportControl(newReportControl, msgs);
+            if (newParentReportControl != null)
+                msgs = ((InternalEObject)newParentReportControl).eInverseAdd(this, SclPackage.REPORT_CONTROL__OPT_FIELDS, ReportControl.class, msgs);
+            msgs = basicSetParentReportControl(newParentReportControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.OPT_FIELDS__REPORT_CONTROL, newReportControl, newReportControl));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL, newParentReportControl, newParentReportControl));
     }
 
     /**
@@ -834,10 +834,10 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetReportControl((ReportControl)otherEnd, msgs);
+                return basicSetParentReportControl((ReportControl)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -850,8 +850,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
-                return basicSetReportControl(null, msgs);
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
+                return basicSetParentReportControl(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -864,7 +864,7 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.REPORT_CONTROL__OPT_FIELDS, ReportControl.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -896,8 +896,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return getTimeStamp();
             case SclPackage.OPT_FIELDS__SEGMENTATION:
                 return getSegmentation();
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
-                return getReportControl();
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
+                return getParentReportControl();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -937,8 +937,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             case SclPackage.OPT_FIELDS__SEGMENTATION:
                 setSegmentation((Boolean)newValue);
                 return;
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
-                setReportControl((ReportControl)newValue);
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
+                setParentReportControl((ReportControl)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -979,8 +979,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
             case SclPackage.OPT_FIELDS__SEGMENTATION:
                 unsetSegmentation();
                 return;
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
-                setReportControl((ReportControl)null);
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
+                setParentReportControl((ReportControl)null);
                 return;
         }
         super.eUnset(featureID);
@@ -1012,8 +1012,8 @@ public class OptFieldsImpl extends SclObjectImpl implements OptFields {
                 return isSetTimeStamp();
             case SclPackage.OPT_FIELDS__SEGMENTATION:
                 return isSetSegmentation();
-            case SclPackage.OPT_FIELDS__REPORT_CONTROL:
-                return getReportControl() != null;
+            case SclPackage.OPT_FIELDS__PARENT_REPORT_CONTROL:
+                return getParentReportControl() != null;
         }
         return super.eIsSet(featureID);
     }

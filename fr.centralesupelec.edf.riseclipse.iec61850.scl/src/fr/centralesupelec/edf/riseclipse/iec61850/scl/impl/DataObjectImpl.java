@@ -237,7 +237,6 @@ public abstract class DataObjectImpl extends UnNamingImpl implements DataObject 
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {

@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer <em>Parent Server</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface Authentication extends SclObject, AgAuthentication {
     /**
-     * Returns the value of the '<em><b>Server</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Server</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication <em>Authentication</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Server</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Server</em>' container reference.
-     * @see #setServer(Server)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_Server()
+     * @return the value of the '<em>Parent Server</em>' container reference.
+     * @see #setParentServer(Server)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAuthentication_ParentServer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAuthentication
      * @model opposite="Authentication" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Server getServer();
+    Server getParentServer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getServer <em>Server</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication#getParentServer <em>Parent Server</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Server</em>' container reference.
-     * @see #getServer()
+     * @param value the new value of the '<em>Parent Server</em>' container reference.
+     * @see #getParentServer()
      * @generated
      */
-    void setServer( Server value );
+    void setParentServer(Server value);
 
 } // Authentication

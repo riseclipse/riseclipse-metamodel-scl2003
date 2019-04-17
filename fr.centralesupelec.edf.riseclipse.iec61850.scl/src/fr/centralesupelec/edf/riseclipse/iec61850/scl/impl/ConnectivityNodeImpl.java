@@ -44,9 +44,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getPathName <em>Path Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getBay <em>Bay</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getParentBay <em>Parent Bay</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getReferredByTerminal <em>Referred By Terminal</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getLine <em>Line</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectivityNodeImpl#getParentLine <em>Parent Line</em>}</li>
  * </ul>
  *
  * @generated
@@ -166,8 +166,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * @generated
      */
     @Override
-    public Bay getBay() {
-        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY) return null;
+    public Bay getParentBay() {
+        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__PARENT_BAY) return null;
         return (Bay)eInternalContainer();
     }
 
@@ -176,8 +176,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBay, SclPackage.CONNECTIVITY_NODE__BAY, msgs);
+    public NotificationChain basicSetParentBay(Bay newParentBay, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentBay, SclPackage.CONNECTIVITY_NODE__PARENT_BAY, msgs);
         return msgs;
     }
 
@@ -187,20 +187,20 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * @generated
      */
     @Override
-    public void setBay( Bay newBay ) {
-        if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__BAY && newBay != null)) {
-            if (EcoreUtil.isAncestor(this, newBay))
+    public void setParentBay(Bay newParentBay) {
+        if (newParentBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__PARENT_BAY && newParentBay != null)) {
+            if (EcoreUtil.isAncestor(this, newParentBay))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
+            if (newParentBay != null)
+                msgs = ((InternalEObject)newParentBay).eInverseAdd(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
+            msgs = basicSetParentBay(newParentBay, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__BAY, newBay, newBay));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__PARENT_BAY, newParentBay, newParentBay));
     }
 
     /**
@@ -242,8 +242,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * @generated
      */
     @Override
-    public Line getLine() {
-        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE) return null;
+    public Line getParentLine() {
+        if (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__PARENT_LINE) return null;
         return (Line)eInternalContainer();
     }
 
@@ -252,8 +252,8 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLine( Line newLine, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLine, SclPackage.CONNECTIVITY_NODE__LINE, msgs);
+    public NotificationChain basicSetParentLine(Line newParentLine, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLine, SclPackage.CONNECTIVITY_NODE__PARENT_LINE, msgs);
         return msgs;
     }
 
@@ -263,20 +263,20 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
      * @generated
      */
     @Override
-    public void setLine( Line newLine ) {
-        if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__LINE && newLine != null)) {
-            if (EcoreUtil.isAncestor(this, newLine))
+    public void setParentLine(Line newParentLine) {
+        if (newParentLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONNECTIVITY_NODE__PARENT_LINE && newParentLine != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLine))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLine != null)
-                msgs = ((InternalEObject)newLine).eInverseAdd(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
-            msgs = basicSetLine(newLine, msgs);
+            if (newParentLine != null)
+                msgs = ((InternalEObject)newParentLine).eInverseAdd(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
+            msgs = basicSetParentLine(newParentLine, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__LINE, newLine, newLine));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONNECTIVITY_NODE__PARENT_LINE, newParentLine, newParentLine));
     }
 
     /**
@@ -288,16 +288,16 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
+                return basicSetParentBay((Bay)otherEnd, msgs);
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByTerminal()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLine((Line)otherEnd, msgs);
+                return basicSetParentLine((Line)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -310,12 +310,12 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return basicSetBay(null, msgs);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
+                return basicSetParentBay(null, msgs);
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 return ((InternalEList<?>)getReferredByTerminal()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return basicSetLine(null, msgs);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
+                return basicSetParentLine(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -328,9 +328,9 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.CONNECTIVITY_NODE__BAY:
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
                 return eInternalContainer().eInverseRemove(this, SclPackage.BAY__CONNECTIVITY_NODE, Bay.class, msgs);
-            case SclPackage.CONNECTIVITY_NODE__LINE:
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LINE__CONNECTIVITY_NODE, Line.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -346,12 +346,12 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
         switch (featureID) {
             case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
                 return getPathName();
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return getBay();
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
+                return getParentBay();
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 return getReferredByTerminal();
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return getLine();
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
+                return getParentLine();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -368,15 +368,15 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
             case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
                 setPathName((String)newValue);
                 return;
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                setBay((Bay)newValue);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
+                setParentBay((Bay)newValue);
                 return;
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 getReferredByTerminal().clear();
                 getReferredByTerminal().addAll((Collection<? extends Terminal>)newValue);
                 return;
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                setLine((Line)newValue);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
+                setParentLine((Line)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -393,14 +393,14 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
             case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
                 unsetPathName();
                 return;
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                setBay((Bay)null);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
+                setParentBay((Bay)null);
                 return;
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 unsetReferredByTerminal();
                 return;
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                setLine((Line)null);
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
+                setParentLine((Line)null);
                 return;
         }
         super.eUnset(featureID);
@@ -416,12 +416,12 @@ public class ConnectivityNodeImpl extends LNodeContainerImpl implements Connecti
         switch (featureID) {
             case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
                 return isSetPathName();
-            case SclPackage.CONNECTIVITY_NODE__BAY:
-                return getBay() != null;
+            case SclPackage.CONNECTIVITY_NODE__PARENT_BAY:
+                return getParentBay() != null;
             case SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL:
                 return isSetReferredByTerminal();
-            case SclPackage.CONNECTIVITY_NODE__LINE:
-                return getLine() != null;
+            case SclPackage.CONNECTIVITY_NODE__PARENT_LINE:
+                return getParentLine() != null;
         }
         return super.eIsSet(featureID);
     }

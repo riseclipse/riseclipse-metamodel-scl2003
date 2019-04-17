@@ -30,10 +30,10 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPhase <em>Phase</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer <em>Power Transformer</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger <em>Tap Changer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer <em>Parent Power Transformer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger <em>Parent Tap Changer</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment()
@@ -99,37 +99,33 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
     boolean isSetPhase();
 
     /**
-     * Returns the value of the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Abstract Conducting Equipment</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getSubEquipment <em>Sub Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Abstract Conducting Equipment</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Abstract Conducting Equipment</em>' container reference.
-     * @see #setAbstractConductingEquipment(AbstractConductingEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_AbstractConductingEquipment()
+     * @return the value of the '<em>Parent Abstract Conducting Equipment</em>' container reference.
+     * @see #setParentAbstractConductingEquipment(AbstractConductingEquipment)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_ParentAbstractConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getSubEquipment
      * @model opposite="SubEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AbstractConductingEquipment getAbstractConductingEquipment();
+    AbstractConductingEquipment getParentAbstractConductingEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Abstract Conducting Equipment</em>' container reference.
-     * @see #getAbstractConductingEquipment()
+     * @param value the new value of the '<em>Parent Abstract Conducting Equipment</em>' container reference.
+     * @see #getParentAbstractConductingEquipment()
      * @generated
      */
-    void setAbstractConductingEquipment( AbstractConductingEquipment value );
+    void setParentAbstractConductingEquipment(AbstractConductingEquipment value);
 
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment <em>Sub Equipment</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment <em>Parent Sub Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
@@ -140,8 +136,8 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
      * @see #isSetEqFunction()
      * @see #unsetEqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_EqFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getSubEquipment
-     * @model opposite="SubEquipment" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentSubEquipment
+     * @model opposite="ParentSubEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqFunction> getEqFunction();
@@ -168,59 +164,51 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
     boolean isSetEqFunction();
 
     /**
-     * Returns the value of the '<em><b>Power Transformer</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Power Transformer</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getSubEquipment <em>Sub Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Power Transformer</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Power Transformer</em>' container reference.
-     * @see #setPowerTransformer(PowerTransformer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_PowerTransformer()
+     * @return the value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #setParentPowerTransformer(PowerTransformer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_ParentPowerTransformer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getSubEquipment
      * @model opposite="SubEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    PowerTransformer getPowerTransformer();
+    PowerTransformer getParentPowerTransformer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer <em>Power Transformer</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer <em>Parent Power Transformer</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Power Transformer</em>' container reference.
-     * @see #getPowerTransformer()
+     * @param value the new value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #getParentPowerTransformer()
      * @generated
      */
-    void setPowerTransformer( PowerTransformer value );
+    void setParentPowerTransformer(PowerTransformer value);
 
     /**
-     * Returns the value of the '<em><b>Tap Changer</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Tap Changer</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getSubEquipment <em>Sub Equipment</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Tap Changer</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Tap Changer</em>' container reference.
-     * @see #setTapChanger(TapChanger)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_TapChanger()
+     * @return the value of the '<em>Parent Tap Changer</em>' container reference.
+     * @see #setParentTapChanger(TapChanger)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSubEquipment_ParentTapChanger()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getSubEquipment
      * @model opposite="SubEquipment" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    TapChanger getTapChanger();
+    TapChanger getParentTapChanger();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger <em>Tap Changer</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger <em>Parent Tap Changer</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Tap Changer</em>' container reference.
-     * @see #getTapChanger()
+     * @param value the new value of the '<em>Parent Tap Changer</em>' container reference.
+     * @see #getParentTapChanger()
      * @generated
      */
-    void setTapChanger( TapChanger value );
+    void setParentTapChanger(TapChanger value);
 
 } // SubEquipment

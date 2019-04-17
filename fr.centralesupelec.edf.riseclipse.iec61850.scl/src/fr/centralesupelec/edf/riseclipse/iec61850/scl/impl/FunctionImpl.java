@@ -48,11 +48,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getBay <em>Bay</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getParentBay <em>Parent Bay</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getGeneralEquipmentContainer <em>General Equipment Container</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getSubstation <em>Substation</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getVoltageLevel <em>Voltage Level</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getParentSubstation <em>Parent Substation</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getSubFunction <em>Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FunctionImpl#getGeneralEquipment <em>General Equipment</em>}</li>
  * </ul>
@@ -194,8 +194,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public Bay getBay() {
-        if (eContainerFeatureID() != SclPackage.FUNCTION__BAY) return null;
+    public Bay getParentBay() {
+        if (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_BAY) return null;
         return (Bay)eInternalContainer();
     }
 
@@ -204,8 +204,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBay, SclPackage.FUNCTION__BAY, msgs);
+    public NotificationChain basicSetParentBay(Bay newParentBay, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentBay, SclPackage.FUNCTION__PARENT_BAY, msgs);
         return msgs;
     }
 
@@ -215,20 +215,20 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public void setBay( Bay newBay ) {
-        if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__BAY && newBay != null)) {
-            if (EcoreUtil.isAncestor(this, newBay))
+    public void setParentBay(Bay newParentBay) {
+        if (newParentBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_BAY && newParentBay != null)) {
+            if (EcoreUtil.isAncestor(this, newParentBay))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__FUNCTION, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
+            if (newParentBay != null)
+                msgs = ((InternalEObject)newParentBay).eInverseAdd(this, SclPackage.BAY__FUNCTION, Bay.class, msgs);
+            msgs = basicSetParentBay(newParentBay, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__BAY, newBay, newBay));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__PARENT_BAY, newParentBay, newParentBay));
     }
 
     /**
@@ -239,7 +239,7 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
-            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.FUNCTION__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__FUNCTION);
+            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.FUNCTION__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION);
         }
         return conductingEquipment;
     }
@@ -270,8 +270,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public GeneralEquipmentContainer getGeneralEquipmentContainer() {
-        if (eContainerFeatureID() != SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER) return null;
+    public GeneralEquipmentContainer getParentGeneralEquipmentContainer() {
+        if (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER) return null;
         return (GeneralEquipmentContainer)eInternalContainer();
     }
 
@@ -280,9 +280,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetGeneralEquipmentContainer( GeneralEquipmentContainer newGeneralEquipmentContainer,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newGeneralEquipmentContainer, SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER, msgs);
+    public NotificationChain basicSetParentGeneralEquipmentContainer(GeneralEquipmentContainer newParentGeneralEquipmentContainer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentGeneralEquipmentContainer, SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER, msgs);
         return msgs;
     }
 
@@ -292,20 +291,20 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public void setGeneralEquipmentContainer( GeneralEquipmentContainer newGeneralEquipmentContainer ) {
-        if (newGeneralEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER && newGeneralEquipmentContainer != null)) {
-            if (EcoreUtil.isAncestor(this, newGeneralEquipmentContainer))
+    public void setParentGeneralEquipmentContainer(GeneralEquipmentContainer newParentGeneralEquipmentContainer) {
+        if (newParentGeneralEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER && newParentGeneralEquipmentContainer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentGeneralEquipmentContainer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newGeneralEquipmentContainer != null)
-                msgs = ((InternalEObject)newGeneralEquipmentContainer).eInverseAdd(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, GeneralEquipmentContainer.class, msgs);
-            msgs = basicSetGeneralEquipmentContainer(newGeneralEquipmentContainer, msgs);
+            if (newParentGeneralEquipmentContainer != null)
+                msgs = ((InternalEObject)newParentGeneralEquipmentContainer).eInverseAdd(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, GeneralEquipmentContainer.class, msgs);
+            msgs = basicSetParentGeneralEquipmentContainer(newParentGeneralEquipmentContainer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER, newGeneralEquipmentContainer, newGeneralEquipmentContainer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER, newParentGeneralEquipmentContainer, newParentGeneralEquipmentContainer));
     }
 
     /**
@@ -314,8 +313,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public Substation getSubstation() {
-        if (eContainerFeatureID() != SclPackage.FUNCTION__SUBSTATION) return null;
+    public Substation getParentSubstation() {
+        if (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_SUBSTATION) return null;
         return (Substation)eInternalContainer();
     }
 
@@ -324,8 +323,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSubstation( Substation newSubstation, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSubstation, SclPackage.FUNCTION__SUBSTATION, msgs);
+    public NotificationChain basicSetParentSubstation(Substation newParentSubstation, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSubstation, SclPackage.FUNCTION__PARENT_SUBSTATION, msgs);
         return msgs;
     }
 
@@ -335,20 +334,20 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public void setSubstation( Substation newSubstation ) {
-        if (newSubstation != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__SUBSTATION && newSubstation != null)) {
-            if (EcoreUtil.isAncestor(this, newSubstation))
+    public void setParentSubstation(Substation newParentSubstation) {
+        if (newParentSubstation != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_SUBSTATION && newParentSubstation != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSubstation))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSubstation != null)
-                msgs = ((InternalEObject)newSubstation).eInverseAdd(this, SclPackage.SUBSTATION__FUNCTION, Substation.class, msgs);
-            msgs = basicSetSubstation(newSubstation, msgs);
+            if (newParentSubstation != null)
+                msgs = ((InternalEObject)newParentSubstation).eInverseAdd(this, SclPackage.SUBSTATION__FUNCTION, Substation.class, msgs);
+            msgs = basicSetParentSubstation(newParentSubstation, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__SUBSTATION, newSubstation, newSubstation));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__PARENT_SUBSTATION, newParentSubstation, newParentSubstation));
     }
 
     /**
@@ -357,8 +356,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public VoltageLevel getVoltageLevel() {
-        if (eContainerFeatureID() != SclPackage.FUNCTION__VOLTAGE_LEVEL) return null;
+    public VoltageLevel getParentVoltageLevel() {
+        if (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL) return null;
         return (VoltageLevel)eInternalContainer();
     }
 
@@ -367,8 +366,8 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetVoltageLevel( VoltageLevel newVoltageLevel, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newVoltageLevel, SclPackage.FUNCTION__VOLTAGE_LEVEL, msgs);
+    public NotificationChain basicSetParentVoltageLevel(VoltageLevel newParentVoltageLevel, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentVoltageLevel, SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL, msgs);
         return msgs;
     }
 
@@ -378,20 +377,20 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
      * @generated
      */
     @Override
-    public void setVoltageLevel( VoltageLevel newVoltageLevel ) {
-        if (newVoltageLevel != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__VOLTAGE_LEVEL && newVoltageLevel != null)) {
-            if (EcoreUtil.isAncestor(this, newVoltageLevel))
+    public void setParentVoltageLevel(VoltageLevel newParentVoltageLevel) {
+        if (newParentVoltageLevel != eInternalContainer() || (eContainerFeatureID() != SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL && newParentVoltageLevel != null)) {
+            if (EcoreUtil.isAncestor(this, newParentVoltageLevel))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newVoltageLevel != null)
-                msgs = ((InternalEObject)newVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__FUNCTION, VoltageLevel.class, msgs);
-            msgs = basicSetVoltageLevel(newVoltageLevel, msgs);
+            if (newParentVoltageLevel != null)
+                msgs = ((InternalEObject)newParentVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__FUNCTION, VoltageLevel.class, msgs);
+            msgs = basicSetParentVoltageLevel(newParentVoltageLevel, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__VOLTAGE_LEVEL, newVoltageLevel, newVoltageLevel));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL, newParentVoltageLevel, newParentVoltageLevel));
     }
 
     /**
@@ -402,7 +401,7 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public EList<SubFunction> getSubFunction() {
         if (subFunction == null) {
-            subFunction = new EObjectContainmentWithInverseEList.Unsettable<SubFunction>(SubFunction.class, this, SclPackage.FUNCTION__SUB_FUNCTION, SclPackage.SUB_FUNCTION__FUNCTION);
+            subFunction = new EObjectContainmentWithInverseEList.Unsettable<SubFunction>(SubFunction.class, this, SclPackage.FUNCTION__SUB_FUNCTION, SclPackage.SUB_FUNCTION__PARENT_FUNCTION);
         }
         return subFunction;
     }
@@ -435,7 +434,7 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.FUNCTION__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__FUNCTION);
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.FUNCTION__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION);
         }
         return generalEquipment;
     }
@@ -469,24 +468,24 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FUNCTION__BAY:
+            case SclPackage.FUNCTION__PARENT_BAY:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
+                return basicSetParentBay((Bay)otherEnd, msgs);
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConductingEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetGeneralEquipmentContainer((GeneralEquipmentContainer)otherEnd, msgs);
-            case SclPackage.FUNCTION__SUBSTATION:
+                return basicSetParentGeneralEquipmentContainer((GeneralEquipmentContainer)otherEnd, msgs);
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSubstation((Substation)otherEnd, msgs);
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
+                return basicSetParentSubstation((Substation)otherEnd, msgs);
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetVoltageLevel((VoltageLevel)otherEnd, msgs);
+                return basicSetParentVoltageLevel((VoltageLevel)otherEnd, msgs);
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubFunction()).basicAdd(otherEnd, msgs);
             case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
@@ -503,16 +502,16 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FUNCTION__BAY:
-                return basicSetBay(null, msgs);
+            case SclPackage.FUNCTION__PARENT_BAY:
+                return basicSetParentBay(null, msgs);
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<?>)getConductingEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
-                return basicSetGeneralEquipmentContainer(null, msgs);
-            case SclPackage.FUNCTION__SUBSTATION:
-                return basicSetSubstation(null, msgs);
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
-                return basicSetVoltageLevel(null, msgs);
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return basicSetParentGeneralEquipmentContainer(null, msgs);
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
+                return basicSetParentSubstation(null, msgs);
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
+                return basicSetParentVoltageLevel(null, msgs);
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 return ((InternalEList<?>)getSubFunction()).basicRemove(otherEnd, msgs);
             case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
@@ -529,13 +528,13 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.FUNCTION__BAY:
+            case SclPackage.FUNCTION__PARENT_BAY:
                 return eInternalContainer().eInverseRemove(this, SclPackage.BAY__FUNCTION, Bay.class, msgs);
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, GeneralEquipmentContainer.class, msgs);
-            case SclPackage.FUNCTION__SUBSTATION:
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SUBSTATION__FUNCTION, Substation.class, msgs);
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__FUNCTION, VoltageLevel.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -551,16 +550,16 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
         switch (featureID) {
             case SclPackage.FUNCTION__TYPE:
                 return getType();
-            case SclPackage.FUNCTION__BAY:
-                return getBay();
+            case SclPackage.FUNCTION__PARENT_BAY:
+                return getParentBay();
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 return getConductingEquipment();
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
-                return getGeneralEquipmentContainer();
-            case SclPackage.FUNCTION__SUBSTATION:
-                return getSubstation();
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
-                return getVoltageLevel();
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return getParentGeneralEquipmentContainer();
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
+                return getParentSubstation();
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
+                return getParentVoltageLevel();
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 return getSubFunction();
             case SclPackage.FUNCTION__GENERAL_EQUIPMENT:
@@ -581,21 +580,21 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             case SclPackage.FUNCTION__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.FUNCTION__BAY:
-                setBay((Bay)newValue);
+            case SclPackage.FUNCTION__PARENT_BAY:
+                setParentBay((Bay)newValue);
                 return;
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 getConductingEquipment().clear();
                 getConductingEquipment().addAll((Collection<? extends ConductingEquipment>)newValue);
                 return;
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
-                setGeneralEquipmentContainer((GeneralEquipmentContainer)newValue);
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                setParentGeneralEquipmentContainer((GeneralEquipmentContainer)newValue);
                 return;
-            case SclPackage.FUNCTION__SUBSTATION:
-                setSubstation((Substation)newValue);
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
+                setParentSubstation((Substation)newValue);
                 return;
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
-                setVoltageLevel((VoltageLevel)newValue);
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
+                setParentVoltageLevel((VoltageLevel)newValue);
                 return;
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 getSubFunction().clear();
@@ -620,20 +619,20 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
             case SclPackage.FUNCTION__TYPE:
                 unsetType();
                 return;
-            case SclPackage.FUNCTION__BAY:
-                setBay((Bay)null);
+            case SclPackage.FUNCTION__PARENT_BAY:
+                setParentBay((Bay)null);
                 return;
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 unsetConductingEquipment();
                 return;
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
-                setGeneralEquipmentContainer((GeneralEquipmentContainer)null);
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                setParentGeneralEquipmentContainer((GeneralEquipmentContainer)null);
                 return;
-            case SclPackage.FUNCTION__SUBSTATION:
-                setSubstation((Substation)null);
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
+                setParentSubstation((Substation)null);
                 return;
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
-                setVoltageLevel((VoltageLevel)null);
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
+                setParentVoltageLevel((VoltageLevel)null);
                 return;
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 unsetSubFunction();
@@ -655,16 +654,16 @@ public class FunctionImpl extends PowerSystemResourceImpl implements Function {
         switch (featureID) {
             case SclPackage.FUNCTION__TYPE:
                 return isSetType();
-            case SclPackage.FUNCTION__BAY:
-                return getBay() != null;
+            case SclPackage.FUNCTION__PARENT_BAY:
+                return getParentBay() != null;
             case SclPackage.FUNCTION__CONDUCTING_EQUIPMENT:
                 return isSetConductingEquipment();
-            case SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER:
-                return getGeneralEquipmentContainer() != null;
-            case SclPackage.FUNCTION__SUBSTATION:
-                return getSubstation() != null;
-            case SclPackage.FUNCTION__VOLTAGE_LEVEL:
-                return getVoltageLevel() != null;
+            case SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return getParentGeneralEquipmentContainer() != null;
+            case SclPackage.FUNCTION__PARENT_SUBSTATION:
+                return getParentSubstation() != null;
+            case SclPackage.FUNCTION__PARENT_VOLTAGE_LEVEL:
+                return getParentVoltageLevel() != null;
             case SclPackage.FUNCTION__SUB_FUNCTION:
                 return isSetSubFunction();
             case SclPackage.FUNCTION__GENERAL_EQUIPMENT:

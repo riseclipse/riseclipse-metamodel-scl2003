@@ -26,7 +26,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
@@ -36,7 +35,6 @@ import java.util.stream.Collectors;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -55,7 +53,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getProcessName <em>Process Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getSubstationName <em>Substation Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getVoltageLevelName <em>Voltage Level Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TerminalImpl#getLineName <em>Line Name</em>}</li>
@@ -640,8 +638,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * @generated
      */
     @Override
-    public AbstractConductingEquipment getAbstractConductingEquipment() {
-        if (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT) return null;
+    public AbstractConductingEquipment getParentAbstractConductingEquipment() {
+        if (eContainerFeatureID() != SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT) return null;
         return (AbstractConductingEquipment)eInternalContainer();
     }
 
@@ -650,9 +648,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAbstractConductingEquipment(
-            AbstractConductingEquipment newAbstractConductingEquipment, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractConductingEquipment, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
+    public NotificationChain basicSetParentAbstractConductingEquipment(AbstractConductingEquipment newParentAbstractConductingEquipment, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAbstractConductingEquipment, SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT, msgs);
         return msgs;
     }
 
@@ -662,20 +659,20 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
      * @generated
      */
     @Override
-    public void setAbstractConductingEquipment( AbstractConductingEquipment newAbstractConductingEquipment ) {
-        if (newAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT && newAbstractConductingEquipment != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractConductingEquipment))
+    public void setParentAbstractConductingEquipment(AbstractConductingEquipment newParentAbstractConductingEquipment) {
+        if (newParentAbstractConductingEquipment != eInternalContainer() || (eContainerFeatureID() != SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT && newParentAbstractConductingEquipment != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAbstractConductingEquipment))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractConductingEquipment != null)
-                msgs = ((InternalEObject)newAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
-            msgs = basicSetAbstractConductingEquipment(newAbstractConductingEquipment, msgs);
+            if (newParentAbstractConductingEquipment != null)
+                msgs = ((InternalEObject)newParentAbstractConductingEquipment).eInverseAdd(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
+            msgs = basicSetParentAbstractConductingEquipment(newParentAbstractConductingEquipment, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT, newAbstractConductingEquipment, newAbstractConductingEquipment));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT, newParentAbstractConductingEquipment, newParentAbstractConductingEquipment));
     }
 
     /**
@@ -885,10 +882,10 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
+                return basicSetParentAbstractConductingEquipment((AbstractConductingEquipment)otherEnd, msgs);
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 if (refersToConnectivityNode != null)
                     msgs = ((InternalEObject)refersToConnectivityNode).eInverseRemove(this, SclPackage.CONNECTIVITY_NODE__REFERRED_BY_TERMINAL, ConnectivityNode.class, msgs);
@@ -905,8 +902,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return basicSetAbstractConductingEquipment(null, msgs);
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return basicSetParentAbstractConductingEquipment(null, msgs);
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 return basicUnsetRefersToConnectivityNode(msgs);
         }
@@ -921,7 +918,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, AbstractConductingEquipment.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -947,8 +944,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return getSubstationName();
             case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
                 return getVoltageLevelName();
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment();
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return getParentAbstractConductingEquipment();
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 return getRefersToConnectivityNode();
             case SclPackage.TERMINAL__NAME:
@@ -985,8 +982,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
                 setVoltageLevelName((String)newValue);
                 return;
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)newValue);
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                setParentAbstractConductingEquipment((AbstractConductingEquipment)newValue);
                 return;
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 setRefersToConnectivityNode((ConnectivityNode)newValue);
@@ -1027,8 +1024,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
                 unsetVoltageLevelName();
                 return;
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                setAbstractConductingEquipment((AbstractConductingEquipment)null);
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                setParentAbstractConductingEquipment((AbstractConductingEquipment)null);
                 return;
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 unsetRefersToConnectivityNode();
@@ -1063,8 +1060,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 return isSetSubstationName();
             case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
                 return isSetVoltageLevelName();
-            case SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT:
-                return getAbstractConductingEquipment() != null;
+            case SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT:
+                return getParentAbstractConductingEquipment() != null;
             case SclPackage.TERMINAL__REFERS_TO_CONNECTIVITY_NODE:
                 return isSetRefersToConnectivityNode();
             case SclPackage.TERMINAL__NAME:
@@ -1180,20 +1177,6 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             // find a Bay with
             //   Bay.name == Terminal.bayName
-            SclSwitch< Boolean > s3 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseBay( Bay object ) {
-                    return getBayName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             Bay bay = null;
             List< Bay > res3 =
                     voltageLevel
@@ -1216,20 +1199,6 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             // find a ConnectivityNode with
             //   ConnectivityNode.name == Terminal.bayName
-            SclSwitch< Boolean > s4 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseConnectivityNode( ConnectivityNode object ) {
-                    return getCNodeName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             List< ConnectivityNode > res4 =
                     bay
                     .getConnectivityNode()
@@ -1278,20 +1247,6 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             // find a ConnectivityNode with
             //   ConnectivityNode.name == Terminal.bayName
-            SclSwitch< Boolean > s6 = new SclSwitch< Boolean >() {
-
-                @Override
-                public Boolean caseConnectivityNode( ConnectivityNode object ) {
-                    return getCNodeName().equals( object.getName() );
-                }
-
-                @Override
-                public Boolean defaultCase( EObject object ) {
-                    return false;
-                }
-
-            };
-
             List< ConnectivityNode > res6 =
                     line.
                     getConnectivityNode()

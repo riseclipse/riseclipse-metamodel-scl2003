@@ -38,7 +38,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSupportsLdName <em>Supports Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getSv <em>Sv</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getUnbufReport <em>Unbuf Report</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getTimeSyncProt <em>Time Sync Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}</li>
@@ -635,36 +635,32 @@ public interface ClientServices extends SclObject {
     boolean isSetUnbufReport();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getClientServices <em>Client Services</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getClientServices
      * @model opposite="ClientServices" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
     /**
      * Returns the value of the '<em><b>Time Sync Prot</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices <em>Client Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices <em>Parent Client Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Time Sync Prot</em>' containment reference isn't clear,
@@ -676,8 +672,8 @@ public interface ClientServices extends SclObject {
      * @see #unsetTimeSyncProt()
      * @see #setTimeSyncProt(TimeSyncProt)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_TimeSyncProt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices
-     * @model opposite="ClientServices" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices
+     * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     TimeSyncProt getTimeSyncProt();
@@ -878,7 +874,7 @@ public interface ClientServices extends SclObject {
 
     /**
      * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices <em>Parent Client Services</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Mc Security</em>' containment reference isn't clear,
@@ -890,8 +886,8 @@ public interface ClientServices extends SclObject {
      * @see #unsetMcSecurity()
      * @see #setMcSecurity(McSecurity)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getClientServices_McSecurity()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices
-     * @model opposite="ClientServices" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices
+     * @model opposite="ParentClientServices" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     McSecurity getMcSecurity();

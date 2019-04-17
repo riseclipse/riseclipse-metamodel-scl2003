@@ -43,7 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getWhen <em>When</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getWho <em>Who</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getWhy <em>Why</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getHistory <em>History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HitemImpl#getParentHistory <em>Parent History</em>}</li>
  * </ul>
  *
  * @generated
@@ -548,8 +548,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     @Override
-    public History getHistory() {
-        if (eContainerFeatureID() != SclPackage.HITEM__HISTORY) return null;
+    public History getParentHistory() {
+        if (eContainerFeatureID() != SclPackage.HITEM__PARENT_HISTORY) return null;
         return (History)eInternalContainer();
     }
 
@@ -558,8 +558,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetHistory( History newHistory, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newHistory, SclPackage.HITEM__HISTORY, msgs);
+    public NotificationChain basicSetParentHistory(History newParentHistory, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentHistory, SclPackage.HITEM__PARENT_HISTORY, msgs);
         return msgs;
     }
 
@@ -569,20 +569,20 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
      * @generated
      */
     @Override
-    public void setHistory( History newHistory ) {
-        if (newHistory != eInternalContainer() || (eContainerFeatureID() != SclPackage.HITEM__HISTORY && newHistory != null)) {
-            if (EcoreUtil.isAncestor(this, newHistory))
+    public void setParentHistory(History newParentHistory) {
+        if (newParentHistory != eInternalContainer() || (eContainerFeatureID() != SclPackage.HITEM__PARENT_HISTORY && newParentHistory != null)) {
+            if (EcoreUtil.isAncestor(this, newParentHistory))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newHistory != null)
-                msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HITEM, History.class, msgs);
-            msgs = basicSetHistory(newHistory, msgs);
+            if (newParentHistory != null)
+                msgs = ((InternalEObject)newParentHistory).eInverseAdd(this, SclPackage.HISTORY__HITEM, History.class, msgs);
+            msgs = basicSetParentHistory(newParentHistory, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__HISTORY, newHistory, newHistory));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HITEM__PARENT_HISTORY, newParentHistory, newParentHistory));
     }
 
     /**
@@ -593,10 +593,10 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.HITEM__HISTORY:
+            case SclPackage.HITEM__PARENT_HISTORY:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetHistory((History)otherEnd, msgs);
+                return basicSetParentHistory((History)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -609,8 +609,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.HITEM__HISTORY:
-                return basicSetHistory(null, msgs);
+            case SclPackage.HITEM__PARENT_HISTORY:
+                return basicSetParentHistory(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -623,7 +623,7 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.HITEM__HISTORY:
+            case SclPackage.HITEM__PARENT_HISTORY:
                 return eInternalContainer().eInverseRemove(this, SclPackage.HISTORY__HITEM, History.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -649,8 +649,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
                 return getWho();
             case SclPackage.HITEM__WHY:
                 return getWhy();
-            case SclPackage.HITEM__HISTORY:
-                return getHistory();
+            case SclPackage.HITEM__PARENT_HISTORY:
+                return getParentHistory();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -681,8 +681,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             case SclPackage.HITEM__WHY:
                 setWhy((String)newValue);
                 return;
-            case SclPackage.HITEM__HISTORY:
-                setHistory((History)newValue);
+            case SclPackage.HITEM__PARENT_HISTORY:
+                setParentHistory((History)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -714,8 +714,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
             case SclPackage.HITEM__WHY:
                 unsetWhy();
                 return;
-            case SclPackage.HITEM__HISTORY:
-                setHistory((History)null);
+            case SclPackage.HITEM__PARENT_HISTORY:
+                setParentHistory((History)null);
                 return;
         }
         super.eUnset(featureID);
@@ -741,8 +741,8 @@ public class HitemImpl extends SclObjectImpl implements Hitem {
                 return isSetWho();
             case SclPackage.HITEM__WHY:
                 return isSetWhy();
-            case SclPackage.HITEM__HISTORY:
-                return getHistory() != null;
+            case SclPackage.HITEM__PARENT_HISTORY:
+                return getParentHistory() != null;
         }
         return super.eIsSet(featureID);
     }

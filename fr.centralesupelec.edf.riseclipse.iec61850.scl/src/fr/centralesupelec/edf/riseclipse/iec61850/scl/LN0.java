@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getGSEControl <em>GSE Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice <em>LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl <em>Sampled Value Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSettingControl <em>Setting Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}</li>
@@ -45,7 +45,7 @@ public interface LN0 extends AnyLN {
     /**
      * Returns the value of the '<em><b>GSE Control</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getLN0 <em>LN0</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GSE Control</em>' containment reference list isn't clear,
@@ -56,8 +56,8 @@ public interface LN0 extends AnyLN {
      * @see #isSetGSEControl()
      * @see #unsetGSEControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_GSEControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getLN0
-     * @model opposite="LN0" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0
+     * @model opposite="ParentLN0" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlWithIEDName'"
      * @generated
      */
@@ -85,37 +85,33 @@ public interface LN0 extends AnyLN {
     boolean isSetGSEControl();
 
     /**
-     * Returns the value of the '<em><b>LDevice</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LDevice</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LDevice</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LDevice</em>' container reference.
-     * @see #setLDevice(LDevice)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_LDevice()
+     * @return the value of the '<em>Parent LDevice</em>' container reference.
+     * @see #setParentLDevice(LDevice)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_ParentLDevice()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0
      * @model opposite="LN0" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LDevice getLDevice();
+    LDevice getParentLDevice();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice <em>LDevice</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LDevice</em>' container reference.
-     * @see #getLDevice()
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent LDevice</em>' container reference.
+     * @see #getParentLDevice()
      * @generated
      */
-    void setLDevice( LDevice value );
+    void setParentLDevice(LDevice value);
 
     /**
      * Returns the value of the '<em><b>Sampled Value Control</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0 <em>LN0</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
     * <p>
     * If the meaning of the '<em>Sampled Value Control</em>' containment reference list isn't clear,
@@ -126,8 +122,8 @@ public interface LN0 extends AnyLN {
      * @see #isSetSampledValueControl()
      * @see #unsetSampledValueControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_SampledValueControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0
-     * @model opposite="LN0" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0
+     * @model opposite="ParentLN0" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlWithIEDName'"
      * @generated
      */
@@ -156,7 +152,7 @@ public interface LN0 extends AnyLN {
 
     /**
      * Returns the value of the '<em><b>Setting Control</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getLN0 <em>LN0</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getParentLN0 <em>Parent LN0</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Setting Control</em>' containment reference isn't clear,
@@ -168,8 +164,8 @@ public interface LN0 extends AnyLN {
      * @see #unsetSettingControl()
      * @see #setSettingControl(SettingControl)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_SettingControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getLN0
-     * @model opposite="LN0" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl#getParentLN0
+     * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SettingControl getSettingControl();

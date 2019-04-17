@@ -603,9 +603,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         if (newInputs != inputs) {
             NotificationChain msgs = null;
             if (inputs != null)
-                msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__ANY_LN, Inputs.class, msgs);
+                msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
             if (newInputs != null)
-                msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__ANY_LN, Inputs.class, msgs);
+                msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
             msgs = basicSetInputs(newInputs, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -643,7 +643,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     public void unsetInputs() {
         if (inputs != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__ANY_LN, Inputs.class, msgs);
+            msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
             msgs = basicUnsetInputs(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -673,7 +673,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList<Log> getLog() {
         if (log == null) {
-            log = new EObjectContainmentWithInverseEList.Unsettable<Log>(Log.class, this, SclPackage.ANY_LN__LOG, SclPackage.LOG__ANY_LN);
+            log = new EObjectContainmentWithInverseEList.Unsettable<Log>(Log.class, this, SclPackage.ANY_LN__LOG, SclPackage.LOG__PARENT_ANY_LN);
         }
         return log;
     }
@@ -706,7 +706,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList<DOI> getDOI() {
         if (doi == null) {
-            doi = new EObjectContainmentWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.ANY_LN__DOI, SclPackage.DOI__ANY_LN);
+            doi = new EObjectContainmentWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.ANY_LN__DOI, SclPackage.DOI__PARENT_ANY_LN);
         }
         return doi;
     }
@@ -799,7 +799,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public EList<DataSet> getDataSet() {
         if (dataSet == null) {
-            dataSet = new EObjectContainmentWithInverseEList.Unsettable<DataSet>(DataSet.class, this, SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__ANY_LN);
+            dataSet = new EObjectContainmentWithInverseEList.Unsettable<DataSet>(DataSet.class, this, SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__PARENT_ANY_LN);
         }
         return dataSet;
     }
@@ -1058,7 +1058,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public LDevice getLDevice() {
+    public LDevice getParentLDevice() {
         // TODO: implement this method
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
@@ -1384,8 +1384,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
-            case SclPackage.ANY_LN___GET_LDEVICE:
-                return getLDevice();
+            case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
+                return getParentLDevice();
         }
         return super.eInvoke(operationID, arguments);
     }

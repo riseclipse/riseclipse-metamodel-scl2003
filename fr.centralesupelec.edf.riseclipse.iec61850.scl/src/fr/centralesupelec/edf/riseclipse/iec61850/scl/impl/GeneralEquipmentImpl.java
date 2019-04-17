@@ -47,12 +47,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getEquipmentContainer <em>Equipment Container</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getGeneralEquipmentContainer <em>General Equipment Container</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getSubFunction <em>Sub Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getParentEquipmentContainer <em>Parent Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getParentFunction <em>Parent Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GeneralEquipmentImpl#getParentSubFunction <em>Parent Sub Function</em>}</li>
  * </ul>
  *
  * @generated
@@ -172,8 +172,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public AbstractEqFuncSubFunc getAbstractEqFuncSubFunc() {
-        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
+    public AbstractEqFuncSubFunc getParentAbstractEqFuncSubFunc() {
+        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
         return (AbstractEqFuncSubFunc)eInternalContainer();
     }
 
@@ -182,9 +182,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractEqFuncSubFunc, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC, msgs);
+    public NotificationChain basicSetParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc newParentAbstractEqFuncSubFunc, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAbstractEqFuncSubFunc, SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, msgs);
         return msgs;
     }
 
@@ -194,20 +193,20 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc ) {
-        if (newAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC && newAbstractEqFuncSubFunc != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractEqFuncSubFunc))
+    public void setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc newParentAbstractEqFuncSubFunc) {
+        if (newParentAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC && newParentAbstractEqFuncSubFunc != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAbstractEqFuncSubFunc))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractEqFuncSubFunc != null)
-                msgs = ((InternalEObject)newAbstractEqFuncSubFunc).eInverseAdd(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, AbstractEqFuncSubFunc.class, msgs);
-            msgs = basicSetAbstractEqFuncSubFunc(newAbstractEqFuncSubFunc, msgs);
+            if (newParentAbstractEqFuncSubFunc != null)
+                msgs = ((InternalEObject)newParentAbstractEqFuncSubFunc).eInverseAdd(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, AbstractEqFuncSubFunc.class, msgs);
+            msgs = basicSetParentAbstractEqFuncSubFunc(newParentAbstractEqFuncSubFunc, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC, newAbstractEqFuncSubFunc, newAbstractEqFuncSubFunc));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, newParentAbstractEqFuncSubFunc, newParentAbstractEqFuncSubFunc));
     }
 
     /**
@@ -218,7 +217,7 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__GENERAL_EQUIPMENT);
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_GENERAL_EQUIPMENT);
         }
         return eqFunction;
     }
@@ -249,8 +248,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public EquipmentContainer getEquipmentContainer() {
-        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER) return null;
+    public EquipmentContainer getParentEquipmentContainer() {
+        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER) return null;
         return (EquipmentContainer)eInternalContainer();
     }
 
@@ -259,9 +258,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetEquipmentContainer( EquipmentContainer newEquipmentContainer,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newEquipmentContainer, SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER, msgs);
+    public NotificationChain basicSetParentEquipmentContainer(EquipmentContainer newParentEquipmentContainer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentEquipmentContainer, SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER, msgs);
         return msgs;
     }
 
@@ -271,20 +269,20 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public void setEquipmentContainer( EquipmentContainer newEquipmentContainer ) {
-        if (newEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER && newEquipmentContainer != null)) {
-            if (EcoreUtil.isAncestor(this, newEquipmentContainer))
+    public void setParentEquipmentContainer(EquipmentContainer newParentEquipmentContainer) {
+        if (newParentEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER && newParentEquipmentContainer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentEquipmentContainer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newEquipmentContainer != null)
-                msgs = ((InternalEObject)newEquipmentContainer).eInverseAdd(this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, EquipmentContainer.class, msgs);
-            msgs = basicSetEquipmentContainer(newEquipmentContainer, msgs);
+            if (newParentEquipmentContainer != null)
+                msgs = ((InternalEObject)newParentEquipmentContainer).eInverseAdd(this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, EquipmentContainer.class, msgs);
+            msgs = basicSetParentEquipmentContainer(newParentEquipmentContainer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER, newEquipmentContainer, newEquipmentContainer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER, newParentEquipmentContainer, newParentEquipmentContainer));
     }
 
     /**
@@ -293,8 +291,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public Function getFunction() {
-        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__FUNCTION) return null;
+    public Function getParentFunction() {
+        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION) return null;
         return (Function)eInternalContainer();
     }
 
@@ -303,8 +301,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetFunction( Function newFunction, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newFunction, SclPackage.GENERAL_EQUIPMENT__FUNCTION, msgs);
+    public NotificationChain basicSetParentFunction(Function newParentFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentFunction, SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION, msgs);
         return msgs;
     }
 
@@ -314,20 +312,20 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public void setFunction( Function newFunction ) {
-        if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__FUNCTION && newFunction != null)) {
-            if (EcoreUtil.isAncestor(this, newFunction))
+    public void setParentFunction(Function newParentFunction) {
+        if (newParentFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION && newParentFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentFunction))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newFunction != null)
-                msgs = ((InternalEObject)newFunction).eInverseAdd(this, SclPackage.FUNCTION__GENERAL_EQUIPMENT, Function.class, msgs);
-            msgs = basicSetFunction(newFunction, msgs);
+            if (newParentFunction != null)
+                msgs = ((InternalEObject)newParentFunction).eInverseAdd(this, SclPackage.FUNCTION__GENERAL_EQUIPMENT, Function.class, msgs);
+            msgs = basicSetParentFunction(newParentFunction, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__FUNCTION, newFunction, newFunction));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION, newParentFunction, newParentFunction));
     }
 
     /**
@@ -336,8 +334,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public GeneralEquipmentContainer getGeneralEquipmentContainer() {
-        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER) return null;
+    public GeneralEquipmentContainer getParentGeneralEquipmentContainer() {
+        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER) return null;
         return (GeneralEquipmentContainer)eInternalContainer();
     }
 
@@ -346,9 +344,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetGeneralEquipmentContainer( GeneralEquipmentContainer newGeneralEquipmentContainer,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newGeneralEquipmentContainer, SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER, msgs);
+    public NotificationChain basicSetParentGeneralEquipmentContainer(GeneralEquipmentContainer newParentGeneralEquipmentContainer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentGeneralEquipmentContainer, SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER, msgs);
         return msgs;
     }
 
@@ -358,20 +355,20 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public void setGeneralEquipmentContainer( GeneralEquipmentContainer newGeneralEquipmentContainer ) {
-        if (newGeneralEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER && newGeneralEquipmentContainer != null)) {
-            if (EcoreUtil.isAncestor(this, newGeneralEquipmentContainer))
+    public void setParentGeneralEquipmentContainer(GeneralEquipmentContainer newParentGeneralEquipmentContainer) {
+        if (newParentGeneralEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER && newParentGeneralEquipmentContainer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentGeneralEquipmentContainer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newGeneralEquipmentContainer != null)
-                msgs = ((InternalEObject)newGeneralEquipmentContainer).eInverseAdd(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, GeneralEquipmentContainer.class, msgs);
-            msgs = basicSetGeneralEquipmentContainer(newGeneralEquipmentContainer, msgs);
+            if (newParentGeneralEquipmentContainer != null)
+                msgs = ((InternalEObject)newParentGeneralEquipmentContainer).eInverseAdd(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, GeneralEquipmentContainer.class, msgs);
+            msgs = basicSetParentGeneralEquipmentContainer(newParentGeneralEquipmentContainer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER, newGeneralEquipmentContainer, newGeneralEquipmentContainer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER, newParentGeneralEquipmentContainer, newParentGeneralEquipmentContainer));
     }
 
     /**
@@ -380,8 +377,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public SubFunction getSubFunction() {
-        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION) return null;
+    public SubFunction getParentSubFunction() {
+        if (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION) return null;
         return (SubFunction)eInternalContainer();
     }
 
@@ -390,8 +387,8 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSubFunction( SubFunction newSubFunction, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSubFunction, SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION, msgs);
+    public NotificationChain basicSetParentSubFunction(SubFunction newParentSubFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSubFunction, SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION, msgs);
         return msgs;
     }
 
@@ -401,20 +398,20 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
      * @generated
      */
     @Override
-    public void setSubFunction( SubFunction newSubFunction ) {
-        if (newSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION && newSubFunction != null)) {
-            if (EcoreUtil.isAncestor(this, newSubFunction))
+    public void setParentSubFunction(SubFunction newParentSubFunction) {
+        if (newParentSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION && newParentSubFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSubFunction))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSubFunction != null)
-                msgs = ((InternalEObject)newSubFunction).eInverseAdd(this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SubFunction.class, msgs);
-            msgs = basicSetSubFunction(newSubFunction, msgs);
+            if (newParentSubFunction != null)
+                msgs = ((InternalEObject)newParentSubFunction).eInverseAdd(this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SubFunction.class, msgs);
+            msgs = basicSetParentSubFunction(newParentSubFunction, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION, newSubFunction, newSubFunction));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION, newParentSubFunction, newParentSubFunction));
     }
 
     /**
@@ -426,28 +423,28 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)otherEnd, msgs);
+                return basicSetParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)otherEnd, msgs);
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetEquipmentContainer((EquipmentContainer)otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
+                return basicSetParentEquipmentContainer((EquipmentContainer)otherEnd, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetFunction((Function)otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
+                return basicSetParentFunction((Function)otherEnd, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetGeneralEquipmentContainer((GeneralEquipmentContainer)otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
+                return basicSetParentGeneralEquipmentContainer((GeneralEquipmentContainer)otherEnd, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSubFunction((SubFunction)otherEnd, msgs);
+                return basicSetParentSubFunction((SubFunction)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -460,18 +457,18 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return basicSetAbstractEqFuncSubFunc(null, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return basicSetParentAbstractEqFuncSubFunc(null, msgs);
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
-                return basicSetEquipmentContainer(null, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
-                return basicSetFunction(null, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
-                return basicSetGeneralEquipmentContainer(null, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
-                return basicSetSubFunction(null, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
+                return basicSetParentEquipmentContainer(null, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
+                return basicSetParentFunction(null, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return basicSetParentGeneralEquipmentContainer(null, msgs);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return basicSetParentSubFunction(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -484,15 +481,15 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, AbstractEqFuncSubFunc.class, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, EquipmentContainer.class, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.FUNCTION__GENERAL_EQUIPMENT, Function.class, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, GeneralEquipmentContainer.class, msgs);
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SubFunction.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -508,18 +505,18 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         switch (featureID) {
             case SclPackage.GENERAL_EQUIPMENT__TYPE:
                 return getType();
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return getAbstractEqFuncSubFunc();
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return getParentAbstractEqFuncSubFunc();
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 return getEqFunction();
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
-                return getEquipmentContainer();
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
-                return getFunction();
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
-                return getGeneralEquipmentContainer();
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
-                return getSubFunction();
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
+                return getParentEquipmentContainer();
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
+                return getParentFunction();
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return getParentGeneralEquipmentContainer();
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return getParentSubFunction();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -536,24 +533,24 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
             case SclPackage.GENERAL_EQUIPMENT__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                setAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)newValue);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                setParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)newValue);
                 return;
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 getEqFunction().clear();
                 getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
-                setEquipmentContainer((EquipmentContainer)newValue);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
+                setParentEquipmentContainer((EquipmentContainer)newValue);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
-                setFunction((Function)newValue);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
+                setParentFunction((Function)newValue);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
-                setGeneralEquipmentContainer((GeneralEquipmentContainer)newValue);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                setParentGeneralEquipmentContainer((GeneralEquipmentContainer)newValue);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
-                setSubFunction((SubFunction)newValue);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -570,23 +567,23 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
             case SclPackage.GENERAL_EQUIPMENT__TYPE:
                 unsetType();
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                setAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)null);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                setParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)null);
                 return;
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 unsetEqFunction();
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
-                setEquipmentContainer((EquipmentContainer)null);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
+                setParentEquipmentContainer((EquipmentContainer)null);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
-                setFunction((Function)null);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
+                setParentFunction((Function)null);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
-                setGeneralEquipmentContainer((GeneralEquipmentContainer)null);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                setParentGeneralEquipmentContainer((GeneralEquipmentContainer)null);
                 return;
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
-                setSubFunction((SubFunction)null);
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)null);
                 return;
         }
         super.eUnset(featureID);
@@ -602,18 +599,18 @@ public class GeneralEquipmentImpl extends EquipmentImpl implements GeneralEquipm
         switch (featureID) {
             case SclPackage.GENERAL_EQUIPMENT__TYPE:
                 return isSetType();
-            case SclPackage.GENERAL_EQUIPMENT__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return getAbstractEqFuncSubFunc() != null;
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return getParentAbstractEqFuncSubFunc() != null;
             case SclPackage.GENERAL_EQUIPMENT__EQ_FUNCTION:
                 return isSetEqFunction();
-            case SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER:
-                return getEquipmentContainer() != null;
-            case SclPackage.GENERAL_EQUIPMENT__FUNCTION:
-                return getFunction() != null;
-            case SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER:
-                return getGeneralEquipmentContainer() != null;
-            case SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION:
-                return getSubFunction() != null;
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER:
+                return getParentEquipmentContainer() != null;
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_FUNCTION:
+                return getParentFunction() != null;
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER:
+                return getParentGeneralEquipmentContainer() != null;
+            case SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return getParentSubFunction() != null;
         }
         return super.eIsSet(featureID);
     }

@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}</li>
@@ -334,6 +334,7 @@ public interface SMVSettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>Smp Rate</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings <em>Parent SMV Settings</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Smp Rate</em>' containment reference list isn't clear,
@@ -344,7 +345,8 @@ public interface SMVSettings extends ServiceSettings {
      * @see #isSetSmpRate()
      * @see #unsetSmpRate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SmpRate()
-     * @model containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings
+     * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SmpRate> getSmpRate();
@@ -373,6 +375,7 @@ public interface SMVSettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>Samples Per Sec</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings <em>Parent SMV Settings</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Samples Per Sec</em>' containment reference list isn't clear,
@@ -383,7 +386,8 @@ public interface SMVSettings extends ServiceSettings {
      * @see #isSetSamplesPerSec()
      * @see #unsetSamplesPerSec()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SamplesPerSec()
-     * @model containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings
+     * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SamplesPerSec> getSamplesPerSec();
@@ -412,6 +416,7 @@ public interface SMVSettings extends ServiceSettings {
     /**
      * Returns the value of the '<em><b>Sec Per Samples</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getParentSMVSettings <em>Parent SMV Settings</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sec Per Samples</em>' containment reference list isn't clear,
@@ -422,7 +427,8 @@ public interface SMVSettings extends ServiceSettings {
      * @see #isSetSecPerSamples()
      * @see #unsetSecPerSamples()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_SecPerSamples()
-     * @model containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples#getParentSMVSettings
+     * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SecPerSamples> getSecPerSamples();
@@ -449,32 +455,28 @@ public interface SMVSettings extends ServiceSettings {
     boolean isSetSecPerSamples();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings
      * @model opposite="SMVSettings" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices(Services value);
+    void setParentServices(Services value);
 
     /**
      * Returns the value of the '<em><b>Synch Src Id</b></em>' attribute.
@@ -643,7 +645,7 @@ public interface SMVSettings extends ServiceSettings {
 
     /**
      * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings <em>SMV Settings</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings <em>Parent SMV Settings</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Mc Security</em>' containment reference isn't clear,
@@ -655,8 +657,8 @@ public interface SMVSettings extends ServiceSettings {
      * @see #unsetMcSecurity()
      * @see #setMcSecurity(McSecurity)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSMVSettings_McSecurity()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings
-     * @model opposite="SMVSettings" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings
+     * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     McSecurity getMcSecurity();

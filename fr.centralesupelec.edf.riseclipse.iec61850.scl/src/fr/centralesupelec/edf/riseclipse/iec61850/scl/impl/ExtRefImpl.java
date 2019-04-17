@@ -43,6 +43,7 @@ import java.util.stream.Collectors;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -70,7 +71,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getSrcLNClass <em>Src LN Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getSrcLNInst <em>Src LN Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getSrcPrefix <em>Src Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getParentInputs <em>Parent Inputs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDOType <em>Refers To DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPServT <em>PServ T</em>}</li>
@@ -1416,8 +1417,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public Inputs getInputs() {
-        if (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS) return null;
+    public Inputs getParentInputs() {
+        if (eContainerFeatureID() != SclPackage.EXT_REF__PARENT_INPUTS) return null;
         return (Inputs)eInternalContainer();
     }
 
@@ -1426,8 +1427,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetInputs( Inputs newInputs, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newInputs, SclPackage.EXT_REF__INPUTS, msgs);
+    public NotificationChain basicSetParentInputs(Inputs newParentInputs, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentInputs, SclPackage.EXT_REF__PARENT_INPUTS, msgs);
         return msgs;
     }
 
@@ -1437,20 +1438,20 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public void setInputs( Inputs newInputs ) {
-        if (newInputs != eInternalContainer() || (eContainerFeatureID() != SclPackage.EXT_REF__INPUTS && newInputs != null)) {
-            if (EcoreUtil.isAncestor(this, newInputs))
+    public void setParentInputs(Inputs newParentInputs) {
+        if (newParentInputs != eInternalContainer() || (eContainerFeatureID() != SclPackage.EXT_REF__PARENT_INPUTS && newParentInputs != null)) {
+            if (EcoreUtil.isAncestor(this, newParentInputs))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newInputs != null)
-                msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
-            msgs = basicSetInputs(newInputs, msgs);
+            if (newParentInputs != null)
+                msgs = ((InternalEObject)newParentInputs).eInverseAdd(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
+            msgs = basicSetParentInputs(newParentInputs, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__INPUTS, newInputs, newInputs));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__PARENT_INPUTS, newParentInputs, newParentInputs));
     }
 
     /**
@@ -2008,10 +2009,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.EXT_REF__INPUTS:
+            case SclPackage.EXT_REF__PARENT_INPUTS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetInputs((Inputs)otherEnd, msgs);
+                return basicSetParentInputs((Inputs)otherEnd, msgs);
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 if (refersToAbstractDataAttribute != null)
                     msgs = ((InternalEObject)refersToAbstractDataAttribute).eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs);
@@ -2036,8 +2037,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.EXT_REF__INPUTS:
-                return basicSetInputs(null, msgs);
+            case SclPackage.EXT_REF__PARENT_INPUTS:
+                return basicSetParentInputs(null, msgs);
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return basicUnsetRefersToAbstractDataAttribute(msgs);
             case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
@@ -2056,7 +2057,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.EXT_REF__INPUTS:
+            case SclPackage.EXT_REF__PARENT_INPUTS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.INPUTS__EXT_REF, Inputs.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -2100,8 +2101,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return getSrcLNInst();
             case SclPackage.EXT_REF__SRC_PREFIX:
                 return getSrcPrefix();
-            case SclPackage.EXT_REF__INPUTS:
-                return getInputs();
+            case SclPackage.EXT_REF__PARENT_INPUTS:
+                return getParentInputs();
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return getRefersToAbstractDataAttribute();
             case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
@@ -2173,8 +2174,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__SRC_PREFIX:
                 setSrcPrefix((String)newValue);
                 return;
-            case SclPackage.EXT_REF__INPUTS:
-                setInputs((Inputs)newValue);
+            case SclPackage.EXT_REF__PARENT_INPUTS:
+                setParentInputs((Inputs)newValue);
                 return;
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 setRefersToAbstractDataAttribute((AbstractDataAttribute)newValue);
@@ -2254,8 +2255,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__SRC_PREFIX:
                 unsetSrcPrefix();
                 return;
-            case SclPackage.EXT_REF__INPUTS:
-                setInputs((Inputs)null);
+            case SclPackage.EXT_REF__PARENT_INPUTS:
+                setParentInputs((Inputs)null);
                 return;
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 unsetRefersToAbstractDataAttribute();
@@ -2320,8 +2321,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return isSetSrcLNInst();
             case SclPackage.EXT_REF__SRC_PREFIX:
                 return isSetSrcPrefix();
-            case SclPackage.EXT_REF__INPUTS:
-                return getInputs() != null;
+            case SclPackage.EXT_REF__PARENT_INPUTS:
+                return getParentInputs() != null;
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return isSetRefersToAbstractDataAttribute();
             case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
@@ -2429,8 +2430,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // see Issue #13
         super.doResolveLinks();
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
-
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
         // prefix       The LN prefix
@@ -2457,11 +2456,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( getDoName().isEmpty() ) return;
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         IED ied = null;
-        if( "@".equals(  getIedName() )) {
-            // TO: check for null intermediates
-            ied = getInputs().getAnyLN().getLDevice().getServer().getAccessPoint().getIED();
+        if( "@".equals( getIedName() )) {
+            EObject object = this;
+            while(( object != null ) && !( object instanceof IED ) ) {
+                object = object.eContainer();
+            }
+            if( object != null ) ied = ( IED ) object;
         }
         else {
             ied =
@@ -2476,7 +2479,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             console.verbose( messagePrefix + "IED named " + getIedName() + " not found" );
             return;
         }
-        console.verbose( messagePrefix + "found IED named " + ied.getName() + " on line " + ied.getLineNumber() );
+        console.verbose( messagePrefix + "found IED ( name = " + ied.getName() + " ) on line " + ied.getLineNumber() );
 
         // TODO : quite similar to FCDA
         List< LDevice > res1 = 

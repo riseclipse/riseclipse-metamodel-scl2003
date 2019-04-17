@@ -49,8 +49,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getValImport <em>Val Import</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getValKind <em>Val Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getVal <em>Val</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getDOI <em>DOI</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getSDI <em>SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getParentDOI <em>Parent DOI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getParentSDI <em>Parent SDI</em>}</li>
  * </ul>
  *
  * @generated
@@ -409,7 +409,7 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     @Override
     public EList<Val> getVal() {
         if (val == null) {
-            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.DAI__VAL, SclPackage.VAL__DAI);
+            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.DAI__VAL, SclPackage.VAL__PARENT_DAI);
         }
         return val;
     }
@@ -440,8 +440,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * @generated
      */
     @Override
-    public DOI getDOI() {
-        if (eContainerFeatureID() != SclPackage.DAI__DOI) return null;
+    public DOI getParentDOI() {
+        if (eContainerFeatureID() != SclPackage.DAI__PARENT_DOI) return null;
         return (DOI)eInternalContainer();
     }
 
@@ -450,8 +450,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDOI( DOI newDOI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.DAI__DOI, msgs);
+    public NotificationChain basicSetParentDOI(DOI newParentDOI, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDOI, SclPackage.DAI__PARENT_DOI, msgs);
         return msgs;
     }
 
@@ -461,20 +461,20 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * @generated
      */
     @Override
-    public void setDOI( DOI newDOI ) {
-        if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__DOI && newDOI != null)) {
-            if (EcoreUtil.isAncestor(this, newDOI))
+    public void setParentDOI(DOI newParentDOI) {
+        if (newParentDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__PARENT_DOI && newParentDOI != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDOI))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOI != null)
-                msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__DAI, DOI.class, msgs);
-            msgs = basicSetDOI(newDOI, msgs);
+            if (newParentDOI != null)
+                msgs = ((InternalEObject)newParentDOI).eInverseAdd(this, SclPackage.DOI__DAI, DOI.class, msgs);
+            msgs = basicSetParentDOI(newParentDOI, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__DOI, newDOI, newDOI));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__PARENT_DOI, newParentDOI, newParentDOI));
     }
 
     /**
@@ -483,8 +483,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * @generated
      */
     @Override
-    public SDI getSDI() {
-        if (eContainerFeatureID() != SclPackage.DAI__SDI) return null;
+    public SDI getParentSDI() {
+        if (eContainerFeatureID() != SclPackage.DAI__PARENT_SDI) return null;
         return (SDI)eInternalContainer();
     }
 
@@ -493,8 +493,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSDI( SDI newSDI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSDI, SclPackage.DAI__SDI, msgs);
+    public NotificationChain basicSetParentSDI(SDI newParentSDI, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSDI, SclPackage.DAI__PARENT_SDI, msgs);
         return msgs;
     }
 
@@ -504,20 +504,20 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * @generated
      */
     @Override
-    public void setSDI( SDI newSDI ) {
-        if (newSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__SDI && newSDI != null)) {
-            if (EcoreUtil.isAncestor(this, newSDI))
+    public void setParentSDI(SDI newParentSDI) {
+        if (newParentSDI != eInternalContainer() || (eContainerFeatureID() != SclPackage.DAI__PARENT_SDI && newParentSDI != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSDI))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSDI != null)
-                msgs = ((InternalEObject)newSDI).eInverseAdd(this, SclPackage.SDI__DAI, SDI.class, msgs);
-            msgs = basicSetSDI(newSDI, msgs);
+            if (newParentSDI != null)
+                msgs = ((InternalEObject)newParentSDI).eInverseAdd(this, SclPackage.SDI__DAI, SDI.class, msgs);
+            msgs = basicSetParentSDI(newParentSDI, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__SDI, newSDI, newSDI));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__PARENT_SDI, newParentSDI, newParentSDI));
     }
 
     /**
@@ -531,14 +531,14 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
         switch (featureID) {
             case SclPackage.DAI__VAL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getVal()).basicAdd(otherEnd, msgs);
-            case SclPackage.DAI__DOI:
+            case SclPackage.DAI__PARENT_DOI:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOI((DOI)otherEnd, msgs);
-            case SclPackage.DAI__SDI:
+                return basicSetParentDOI((DOI)otherEnd, msgs);
+            case SclPackage.DAI__PARENT_SDI:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSDI((SDI)otherEnd, msgs);
+                return basicSetParentSDI((SDI)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -553,10 +553,10 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
         switch (featureID) {
             case SclPackage.DAI__VAL:
                 return ((InternalEList<?>)getVal()).basicRemove(otherEnd, msgs);
-            case SclPackage.DAI__DOI:
-                return basicSetDOI(null, msgs);
-            case SclPackage.DAI__SDI:
-                return basicSetSDI(null, msgs);
+            case SclPackage.DAI__PARENT_DOI:
+                return basicSetParentDOI(null, msgs);
+            case SclPackage.DAI__PARENT_SDI:
+                return basicSetParentSDI(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -569,9 +569,9 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DAI__DOI:
+            case SclPackage.DAI__PARENT_DOI:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DOI__DAI, DOI.class, msgs);
-            case SclPackage.DAI__SDI:
+            case SclPackage.DAI__PARENT_SDI:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SDI__DAI, SDI.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -595,10 +595,10 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
                 return getValKind();
             case SclPackage.DAI__VAL:
                 return getVal();
-            case SclPackage.DAI__DOI:
-                return getDOI();
-            case SclPackage.DAI__SDI:
-                return getSDI();
+            case SclPackage.DAI__PARENT_DOI:
+                return getParentDOI();
+            case SclPackage.DAI__PARENT_SDI:
+                return getParentSDI();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -628,11 +628,11 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
                 getVal().clear();
                 getVal().addAll((Collection<? extends Val>)newValue);
                 return;
-            case SclPackage.DAI__DOI:
-                setDOI((DOI)newValue);
+            case SclPackage.DAI__PARENT_DOI:
+                setParentDOI((DOI)newValue);
                 return;
-            case SclPackage.DAI__SDI:
-                setSDI((SDI)newValue);
+            case SclPackage.DAI__PARENT_SDI:
+                setParentSDI((SDI)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -661,11 +661,11 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
             case SclPackage.DAI__VAL:
                 unsetVal();
                 return;
-            case SclPackage.DAI__DOI:
-                setDOI((DOI)null);
+            case SclPackage.DAI__PARENT_DOI:
+                setParentDOI((DOI)null);
                 return;
-            case SclPackage.DAI__SDI:
-                setSDI((SDI)null);
+            case SclPackage.DAI__PARENT_SDI:
+                setParentSDI((SDI)null);
                 return;
         }
         super.eUnset(featureID);
@@ -689,10 +689,10 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
                 return isSetValKind();
             case SclPackage.DAI__VAL:
                 return isSetVal();
-            case SclPackage.DAI__DOI:
-                return getDOI() != null;
-            case SclPackage.DAI__SDI:
-                return getSDI() != null;
+            case SclPackage.DAI__PARENT_DOI:
+                return getParentDOI() != null;
+            case SclPackage.DAI__PARENT_SDI:
+                return getParentSDI() != null;
         }
         return super.eIsSet(featureID);
     }

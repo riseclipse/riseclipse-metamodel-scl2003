@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getAppID <em>App ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getDataLabel <em>Data Label</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
@@ -154,36 +154,32 @@ public interface GSESettings extends ServiceSettings {
     boolean isSetDataLabel();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSESettings <em>GSE Settings</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getGSESettings
      * @model opposite="GSESettings" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
     /**
      * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings <em>GSE Settings</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings <em>Parent GSE Settings</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Mc Security</em>' containment reference isn't clear,
@@ -195,8 +191,8 @@ public interface GSESettings extends ServiceSettings {
      * @see #unsetMcSecurity()
      * @see #setMcSecurity(McSecurity)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSESettings_McSecurity()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings
-     * @model opposite="GSESettings" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings
+     * @model opposite="ParentGSESettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     McSecurity getMcSecurity();

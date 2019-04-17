@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getAddress <em>Address</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getParentAddress <em>Parent Address</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getP()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface P extends PAddr {
     /**
-     * Returns the value of the '<em><b>Address</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Address</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getP <em>P</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Address</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Address</em>' container reference.
-     * @see #setAddress(Address)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getP_Address()
+     * @return the value of the '<em>Parent Address</em>' container reference.
+     * @see #setParentAddress(Address)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getP_ParentAddress()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getP
      * @model opposite="P" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Address getAddress();
+    Address getParentAddress();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getAddress <em>Address</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P#getParentAddress <em>Parent Address</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Address</em>' container reference.
-     * @see #getAddress()
+     * @param value the new value of the '<em>Parent Address</em>' container reference.
+     * @see #getParentAddress()
      * @generated
      */
-    void setAddress( Address value );
+    void setParentAddress(Address value);
 
 } // P

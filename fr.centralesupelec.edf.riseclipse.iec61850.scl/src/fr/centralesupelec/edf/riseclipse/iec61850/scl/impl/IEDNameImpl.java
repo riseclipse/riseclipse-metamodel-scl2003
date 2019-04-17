@@ -52,7 +52,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getControlWithIEDName <em>Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDNameImpl#getRefersToIED <em>Refers To IED</em>}</li>
@@ -568,8 +568,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @generated
      */
     @Override
-    public ControlWithIEDName getControlWithIEDName() {
-        if (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME) return null;
+    public ControlWithIEDName getParentControlWithIEDName() {
+        if (eContainerFeatureID() != SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME) return null;
         return (ControlWithIEDName)eInternalContainer();
     }
 
@@ -578,9 +578,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetControlWithIEDName( ControlWithIEDName newControlWithIEDName,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newControlWithIEDName, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, msgs);
+    public NotificationChain basicSetParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentControlWithIEDName, SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME, msgs);
         return msgs;
     }
 
@@ -590,20 +589,20 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
      * @generated
      */
     @Override
-    public void setControlWithIEDName( ControlWithIEDName newControlWithIEDName ) {
-        if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED_NAME__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
-            if (EcoreUtil.isAncestor(this, newControlWithIEDName))
+    public void setParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName) {
+        if (newParentControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME && newParentControlWithIEDName != null)) {
+            if (EcoreUtil.isAncestor(this, newParentControlWithIEDName))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newControlWithIEDName != null)
-                msgs = ((InternalEObject)newControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
-            msgs = basicSetControlWithIEDName(newControlWithIEDName, msgs);
+            if (newParentControlWithIEDName != null)
+                msgs = ((InternalEObject)newParentControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
+            msgs = basicSetParentControlWithIEDName(newParentControlWithIEDName, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME, newControlWithIEDName, newControlWithIEDName));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME, newParentControlWithIEDName, newParentControlWithIEDName));
     }
 
     /**
@@ -961,10 +960,10 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
+                return basicSetParentControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 if (refersToAnyLN != null)
                     msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, AnyLN.class, msgs);
@@ -989,8 +988,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return basicSetControlWithIEDName(null, msgs);
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
+                return basicSetParentControlWithIEDName(null, msgs);
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 return basicUnsetRefersToAnyLN(msgs);
             case SclPackage.IED_NAME__REFERS_TO_IED:
@@ -1009,7 +1008,7 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, ControlWithIEDName.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -1033,8 +1032,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return getLnInst();
             case SclPackage.IED_NAME__PREFIX:
                 return getPrefix();
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName();
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
+                return getParentControlWithIEDName();
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 return getRefersToAnyLN();
             case SclPackage.IED_NAME__VALUE:
@@ -1070,8 +1069,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
             case SclPackage.IED_NAME__PREFIX:
                 setPrefix((String)newValue);
                 return;
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)newValue);
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
+                setParentControlWithIEDName((ControlWithIEDName)newValue);
                 return;
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 setRefersToAnyLN((AnyLN)newValue);
@@ -1112,8 +1111,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
             case SclPackage.IED_NAME__PREFIX:
                 unsetPrefix();
                 return;
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)null);
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
+                setParentControlWithIEDName((ControlWithIEDName)null);
                 return;
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 unsetRefersToAnyLN();
@@ -1149,8 +1148,8 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
                 return isSetLnInst();
             case SclPackage.IED_NAME__PREFIX:
                 return isSetPrefix();
-            case SclPackage.IED_NAME__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName() != null;
+            case SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME:
+                return getParentControlWithIEDName() != null;
             case SclPackage.IED_NAME__REFERS_TO_ANY_LN:
                 return isSetRefersToAnyLN();
             case SclPackage.IED_NAME__VALUE:

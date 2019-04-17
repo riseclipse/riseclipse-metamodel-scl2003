@@ -49,7 +49,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataTypeTemplatesImpl#getDOType <em>DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataTypeTemplatesImpl#getEnumType <em>Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataTypeTemplatesImpl#getLNodeType <em>LNode Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataTypeTemplatesImpl#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataTypeTemplatesImpl#getParentSCL <em>Parent SCL</em>}</li>
  * </ul>
  *
  * @generated
@@ -122,7 +122,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
     @Override
     public EList<DAType> getDAType() {
         if (daType == null) {
-            daType = new EObjectContainmentWithInverseEList.Unsettable<DAType>(DAType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, SclPackage.DA_TYPE__DATA_TYPE_TEMPLATES);
+            daType = new EObjectContainmentWithInverseEList.Unsettable<DAType>(DAType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES);
         }
         return daType;
     }
@@ -155,7 +155,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
     @Override
     public EList<DOType> getDOType() {
         if (doType == null) {
-            doType = new EObjectContainmentWithInverseEList.Unsettable<DOType>(DOType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, SclPackage.DO_TYPE__DATA_TYPE_TEMPLATES);
+            doType = new EObjectContainmentWithInverseEList.Unsettable<DOType>(DOType.class, this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES);
         }
         return doType;
     }
@@ -188,7 +188,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
     @Override
     public EList<EnumType> getEnumType() {
         if (enumType == null) {
-            enumType = new EObjectContainmentWithInverseEList.Unsettable<EnumType>(EnumType.class, this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, SclPackage.ENUM_TYPE__DATA_TYPE_TEMPLATES);
+            enumType = new EObjectContainmentWithInverseEList.Unsettable<EnumType>(EnumType.class, this, SclPackage.DATA_TYPE_TEMPLATES__ENUM_TYPE, SclPackage.ENUM_TYPE__PARENT_DATA_TYPE_TEMPLATES);
         }
         return enumType;
     }
@@ -221,7 +221,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
     @Override
     public EList<LNodeType> getLNodeType() {
         if (lNodeType == null) {
-            lNodeType = new EObjectContainmentWithInverseEList.Unsettable<LNodeType>(LNodeType.class, this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES);
+            lNodeType = new EObjectContainmentWithInverseEList.Unsettable<LNodeType>(LNodeType.class, this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES);
         }
         return lNodeType;
     }
@@ -252,8 +252,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * @generated
      */
     @Override
-    public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__SCL) return null;
+    public SCL getParentSCL() {
+        if (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL) return null;
         return (SCL)eInternalContainer();
     }
 
@@ -262,8 +262,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.DATA_TYPE_TEMPLATES__SCL, msgs);
+    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, msgs);
         return msgs;
     }
 
@@ -273,20 +273,20 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
      * @generated
      */
     @Override
-    public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
+    public void setParentSCL(SCL newParentSCL) {
+        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL && newParentSCL != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSCL))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__DATA_TYPE_TEMPLATES, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
+            if (newParentSCL != null)
+                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__DATA_TYPE_TEMPLATES, SCL.class, msgs);
+            msgs = basicSetParentSCL(newParentSCL, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_TYPE_TEMPLATES__SCL, newSCL, newSCL));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, newParentSCL, newParentSCL));
     }
 
     /**
@@ -306,10 +306,10 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEnumType()).basicAdd(otherEnd, msgs);
             case SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNodeType()).basicAdd(otherEnd, msgs);
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
+                return basicSetParentSCL((SCL)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -330,8 +330,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
                 return ((InternalEList<?>)getEnumType()).basicRemove(otherEnd, msgs);
             case SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE:
                 return ((InternalEList<?>)getLNodeType()).basicRemove(otherEnd, msgs);
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
-                return basicSetSCL(null, msgs);
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
+                return basicSetParentSCL(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -344,7 +344,7 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SCL__DATA_TYPE_TEMPLATES, SCL.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -366,8 +366,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
                 return getEnumType();
             case SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE:
                 return getLNodeType();
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
-                return getSCL();
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
+                return getParentSCL();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -397,8 +397,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
                 getLNodeType().clear();
                 getLNodeType().addAll((Collection<? extends LNodeType>)newValue);
                 return;
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
-                setSCL((SCL)newValue);
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
+                setParentSCL((SCL)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -424,8 +424,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
             case SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE:
                 unsetLNodeType();
                 return;
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
-                setSCL((SCL)null);
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
+                setParentSCL((SCL)null);
                 return;
         }
         super.eUnset(featureID);
@@ -447,8 +447,8 @@ public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements D
                 return isSetEnumType();
             case SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE:
                 return isSetLNodeType();
-            case SclPackage.DATA_TYPE_TEMPLATES__SCL:
-                return getSCL() != null;
+            case SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL:
+                return getParentSCL() != null;
         }
         return super.eIsSet(featureID);
     }

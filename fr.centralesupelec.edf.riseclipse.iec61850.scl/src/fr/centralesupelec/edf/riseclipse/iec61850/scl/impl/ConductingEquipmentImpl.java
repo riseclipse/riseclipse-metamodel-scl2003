@@ -46,12 +46,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getBay <em>Bay</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getSubFunction <em>Sub Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getParentBay <em>Parent Bay</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getParentFunction <em>Parent Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getParentSubFunction <em>Parent Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getLine <em>Line</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getProcess <em>Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getParentLine <em>Parent Line</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConductingEquipmentImpl#getParentProcess <em>Parent Process</em>}</li>
  * </ul>
  *
  * @generated
@@ -171,8 +171,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public Bay getBay() {
-        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__BAY) return null;
+    public Bay getParentBay() {
+        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY) return null;
         return (Bay)eInternalContainer();
     }
 
@@ -181,8 +181,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBay( Bay newBay, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBay, SclPackage.CONDUCTING_EQUIPMENT__BAY, msgs);
+    public NotificationChain basicSetParentBay(Bay newParentBay, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentBay, SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY, msgs);
         return msgs;
     }
 
@@ -192,20 +192,20 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public void setBay( Bay newBay ) {
-        if (newBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__BAY && newBay != null)) {
-            if (EcoreUtil.isAncestor(this, newBay))
+    public void setParentBay(Bay newParentBay) {
+        if (newParentBay != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY && newParentBay != null)) {
+            if (EcoreUtil.isAncestor(this, newParentBay))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newBay != null)
-                msgs = ((InternalEObject)newBay).eInverseAdd(this, SclPackage.BAY__CONDUCTING_EQUIPMENT, Bay.class, msgs);
-            msgs = basicSetBay(newBay, msgs);
+            if (newParentBay != null)
+                msgs = ((InternalEObject)newParentBay).eInverseAdd(this, SclPackage.BAY__CONDUCTING_EQUIPMENT, Bay.class, msgs);
+            msgs = basicSetParentBay(newParentBay, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__BAY, newBay, newBay));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY, newParentBay, newParentBay));
     }
 
     /**
@@ -214,8 +214,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public Function getFunction() {
-        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__FUNCTION) return null;
+    public Function getParentFunction() {
+        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION) return null;
         return (Function)eInternalContainer();
     }
 
@@ -224,8 +224,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetFunction( Function newFunction, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newFunction, SclPackage.CONDUCTING_EQUIPMENT__FUNCTION, msgs);
+    public NotificationChain basicSetParentFunction(Function newParentFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentFunction, SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION, msgs);
         return msgs;
     }
 
@@ -235,20 +235,20 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public void setFunction( Function newFunction ) {
-        if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__FUNCTION && newFunction != null)) {
-            if (EcoreUtil.isAncestor(this, newFunction))
+    public void setParentFunction(Function newParentFunction) {
+        if (newParentFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION && newParentFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentFunction))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newFunction != null)
-                msgs = ((InternalEObject)newFunction).eInverseAdd(this, SclPackage.FUNCTION__CONDUCTING_EQUIPMENT, Function.class, msgs);
-            msgs = basicSetFunction(newFunction, msgs);
+            if (newParentFunction != null)
+                msgs = ((InternalEObject)newParentFunction).eInverseAdd(this, SclPackage.FUNCTION__CONDUCTING_EQUIPMENT, Function.class, msgs);
+            msgs = basicSetParentFunction(newParentFunction, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__FUNCTION, newFunction, newFunction));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION, newParentFunction, newParentFunction));
     }
 
     /**
@@ -257,8 +257,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public SubFunction getSubFunction() {
-        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION) return null;
+    public SubFunction getParentSubFunction() {
+        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION) return null;
         return (SubFunction)eInternalContainer();
     }
 
@@ -267,8 +267,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSubFunction( SubFunction newSubFunction, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSubFunction, SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION, msgs);
+    public NotificationChain basicSetParentSubFunction(SubFunction newParentSubFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSubFunction, SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION, msgs);
         return msgs;
     }
 
@@ -278,20 +278,20 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public void setSubFunction( SubFunction newSubFunction ) {
-        if (newSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION && newSubFunction != null)) {
-            if (EcoreUtil.isAncestor(this, newSubFunction))
+    public void setParentSubFunction(SubFunction newParentSubFunction) {
+        if (newParentSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION && newParentSubFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSubFunction))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSubFunction != null)
-                msgs = ((InternalEObject)newSubFunction).eInverseAdd(this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SubFunction.class, msgs);
-            msgs = basicSetSubFunction(newSubFunction, msgs);
+            if (newParentSubFunction != null)
+                msgs = ((InternalEObject)newParentSubFunction).eInverseAdd(this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SubFunction.class, msgs);
+            msgs = basicSetParentSubFunction(newParentSubFunction, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION, newSubFunction, newSubFunction));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION, newParentSubFunction, newParentSubFunction));
     }
 
     /**
@@ -302,7 +302,7 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
     @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__CONDUCTING_EQUIPMENT);
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_CONDUCTING_EQUIPMENT);
         }
         return eqFunction;
     }
@@ -333,8 +333,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public Line getLine() {
-        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__LINE) return null;
+    public Line getParentLine() {
+        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE) return null;
         return (Line)eInternalContainer();
     }
 
@@ -343,8 +343,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLine( Line newLine, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLine, SclPackage.CONDUCTING_EQUIPMENT__LINE, msgs);
+    public NotificationChain basicSetParentLine(Line newParentLine, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLine, SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE, msgs);
         return msgs;
     }
 
@@ -354,20 +354,20 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public void setLine( Line newLine ) {
-        if (newLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__LINE && newLine != null)) {
-            if (EcoreUtil.isAncestor(this, newLine))
+    public void setParentLine(Line newParentLine) {
+        if (newParentLine != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE && newParentLine != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLine))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLine != null)
-                msgs = ((InternalEObject)newLine).eInverseAdd(this, SclPackage.LINE__CONDUCTING_EQUIPMENT, Line.class, msgs);
-            msgs = basicSetLine(newLine, msgs);
+            if (newParentLine != null)
+                msgs = ((InternalEObject)newParentLine).eInverseAdd(this, SclPackage.LINE__CONDUCTING_EQUIPMENT, Line.class, msgs);
+            msgs = basicSetParentLine(newParentLine, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__LINE, newLine, newLine));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE, newParentLine, newParentLine));
     }
 
     /**
@@ -376,8 +376,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
-        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PROCESS) return null;
+    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess() {
+        if (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
     }
 
@@ -386,9 +386,8 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newProcess, SclPackage.CONDUCTING_EQUIPMENT__PROCESS, msgs);
+    public NotificationChain basicSetParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentProcess, SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS, msgs);
         return msgs;
     }
 
@@ -398,20 +397,20 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
      * @generated
      */
     @Override
-    public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
-        if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PROCESS && newProcess != null)) {
-            if (EcoreUtil.isAncestor(this, newProcess))
+    public void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess) {
+        if (newParentProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS && newParentProcess != null)) {
+            if (EcoreUtil.isAncestor(this, newParentProcess))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newProcess != null)
-                msgs = ((InternalEObject)newProcess).eInverseAdd(this, SclPackage.PROCESS__CONDUCTING_EQUIPMENT, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
-            msgs = basicSetProcess(newProcess, msgs);
+            if (newParentProcess != null)
+                msgs = ((InternalEObject)newParentProcess).eInverseAdd(this, SclPackage.PROCESS__CONDUCTING_EQUIPMENT, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
+            msgs = basicSetParentProcess(newParentProcess, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PROCESS, newProcess, newProcess));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS, newParentProcess, newParentProcess));
     }
 
     /**
@@ -423,28 +422,28 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBay((Bay)otherEnd, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
+                return basicSetParentBay((Bay)otherEnd, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetFunction((Function)otherEnd, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
+                return basicSetParentFunction((Function)otherEnd, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSubFunction((SubFunction)otherEnd, msgs);
+                return basicSetParentSubFunction((SubFunction)otherEnd, msgs);
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLine((Line)otherEnd, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
+                return basicSetParentLine((Line)otherEnd, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
+                return basicSetParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -457,18 +456,18 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
-                return basicSetBay(null, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
-                return basicSetFunction(null, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
-                return basicSetSubFunction(null, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
+                return basicSetParentBay(null, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
+                return basicSetParentFunction(null, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return basicSetParentSubFunction(null, msgs);
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
-                return basicSetLine(null, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
-                return basicSetProcess(null, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
+                return basicSetParentLine(null, msgs);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
+                return basicSetParentProcess(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -481,15 +480,15 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
                 return eInternalContainer().eInverseRemove(this, SclPackage.BAY__CONDUCTING_EQUIPMENT, Bay.class, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.FUNCTION__CONDUCTING_EQUIPMENT, Function.class, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SubFunction.class, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LINE__CONDUCTING_EQUIPMENT, Line.class, msgs);
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.PROCESS__CONDUCTING_EQUIPMENT, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -505,18 +504,18 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
         switch (featureID) {
             case SclPackage.CONDUCTING_EQUIPMENT__TYPE:
                 return getType();
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
-                return getBay();
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
-                return getFunction();
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
-                return getSubFunction();
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
+                return getParentBay();
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
+                return getParentFunction();
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return getParentSubFunction();
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 return getEqFunction();
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
-                return getLine();
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
-                return getProcess();
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
+                return getParentLine();
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
+                return getParentProcess();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -533,24 +532,24 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
             case SclPackage.CONDUCTING_EQUIPMENT__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
-                setBay((Bay)newValue);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
+                setParentBay((Bay)newValue);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
-                setFunction((Function)newValue);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
+                setParentFunction((Function)newValue);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
-                setSubFunction((SubFunction)newValue);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)newValue);
                 return;
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 getEqFunction().clear();
                 getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
-                setLine((Line)newValue);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
+                setParentLine((Line)newValue);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -567,23 +566,23 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
             case SclPackage.CONDUCTING_EQUIPMENT__TYPE:
                 unsetType();
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
-                setBay((Bay)null);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
+                setParentBay((Bay)null);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
-                setFunction((Function)null);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
+                setParentFunction((Function)null);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
-                setSubFunction((SubFunction)null);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)null);
                 return;
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 unsetEqFunction();
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
-                setLine((Line)null);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
+                setParentLine((Line)null);
                 return;
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
                 return;
         }
         super.eUnset(featureID);
@@ -599,18 +598,18 @@ public class ConductingEquipmentImpl extends AbstractConductingEquipmentImpl imp
         switch (featureID) {
             case SclPackage.CONDUCTING_EQUIPMENT__TYPE:
                 return isSetType();
-            case SclPackage.CONDUCTING_EQUIPMENT__BAY:
-                return getBay() != null;
-            case SclPackage.CONDUCTING_EQUIPMENT__FUNCTION:
-                return getFunction() != null;
-            case SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION:
-                return getSubFunction() != null;
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY:
+                return getParentBay() != null;
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_FUNCTION:
+                return getParentFunction() != null;
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION:
+                return getParentSubFunction() != null;
             case SclPackage.CONDUCTING_EQUIPMENT__EQ_FUNCTION:
                 return isSetEqFunction();
-            case SclPackage.CONDUCTING_EQUIPMENT__LINE:
-                return getLine() != null;
-            case SclPackage.CONDUCTING_EQUIPMENT__PROCESS:
-                return getProcess() != null;
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_LINE:
+                return getParentLine() != null;
+            case SclPackage.CONDUCTING_EQUIPMENT__PARENT_PROCESS:
+                return getParentProcess() != null;
         }
         return super.eIsSet(featureID);
     }

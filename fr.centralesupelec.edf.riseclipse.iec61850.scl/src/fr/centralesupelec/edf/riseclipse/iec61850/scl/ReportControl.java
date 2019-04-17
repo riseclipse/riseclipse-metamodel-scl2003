@@ -32,7 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getConfRev <em>Conf Rev</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getIndexed <em>Indexed</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getRptID <em>Rpt ID</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getOptFields <em>Opt Fields</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getRptEnabled <em>Rpt Enabled</em>}</li>
  * </ul>
@@ -311,36 +311,32 @@ public interface ReportControl extends ControlWithTriggerOpt {
     boolean isSetRptID();
 
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Any LN</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReportControl <em>Report Control</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_AnyLN()
+     * @return the value of the '<em>Parent Any LN</em>' container reference.
+     * @see #setParentAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_ParentAnyLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReportControl
      * @model opposite="ReportControl" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AnyLN getAnyLN();
+    AnyLN getParentAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getAnyLN <em>Any LN</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN <em>Parent Any LN</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
+     * @param value the new value of the '<em>Parent Any LN</em>' container reference.
+     * @see #getParentAnyLN()
      * @generated
      */
-    void setAnyLN( AnyLN value );
+    void setParentAnyLN(AnyLN value);
 
     /**
      * Returns the value of the '<em><b>Opt Fields</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl <em>Report Control</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl <em>Parent Report Control</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Opt Fields</em>' containment reference isn't clear,
@@ -352,8 +348,8 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #unsetOptFields()
      * @see #setOptFields(OptFields)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_OptFields()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl
-     * @model opposite="ReportControl" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl
+     * @model opposite="ParentReportControl" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     OptFields getOptFields();
@@ -395,7 +391,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
 
     /**
      * Returns the value of the '<em><b>Rpt Enabled</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl <em>Report Control</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl <em>Parent Report Control</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Rpt Enabled</em>' containment reference isn't clear,
@@ -407,8 +403,8 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #unsetRptEnabled()
      * @see #setRptEnabled(RptEnabled)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getReportControl_RptEnabled()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl
-     * @model opposite="ReportControl" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl
+     * @model opposite="ParentReportControl" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     RptEnabled getRptEnabled();

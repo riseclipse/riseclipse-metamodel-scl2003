@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getIx <em>Ix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getSAddr <em>SAddr</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getDAI <em>DAI</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getDOI <em>DOI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getParentSDI <em>Parent SDI</em>}</li>
  * </ul>
@@ -258,7 +258,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
     @Override
     public EList<DAI> getDAI() {
         if (dai == null) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.SDI__DAI, SclPackage.DAI__SDI);
+            dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.SDI__DAI, SclPackage.DAI__PARENT_SDI);
         }
         return dai;
     }
@@ -289,8 +289,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * @generated
      */
     @Override
-    public DOI getDOI() {
-        if (eContainerFeatureID() != SclPackage.SDI__DOI) return null;
+    public DOI getParentDOI() {
+        if (eContainerFeatureID() != SclPackage.SDI__PARENT_DOI) return null;
         return (DOI)eInternalContainer();
     }
 
@@ -299,8 +299,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDOI( DOI newDOI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOI, SclPackage.SDI__DOI, msgs);
+    public NotificationChain basicSetParentDOI(DOI newParentDOI, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDOI, SclPackage.SDI__PARENT_DOI, msgs);
         return msgs;
     }
 
@@ -310,20 +310,20 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * @generated
      */
     @Override
-    public void setDOI( DOI newDOI ) {
-        if (newDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__DOI && newDOI != null)) {
-            if (EcoreUtil.isAncestor(this, newDOI))
+    public void setParentDOI(DOI newParentDOI) {
+        if (newParentDOI != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDI__PARENT_DOI && newParentDOI != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDOI))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOI != null)
-                msgs = ((InternalEObject)newDOI).eInverseAdd(this, SclPackage.DOI__SDI, DOI.class, msgs);
-            msgs = basicSetDOI(newDOI, msgs);
+            if (newParentDOI != null)
+                msgs = ((InternalEObject)newParentDOI).eInverseAdd(this, SclPackage.DOI__SDI, DOI.class, msgs);
+            msgs = basicSetParentDOI(newParentDOI, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__DOI, newDOI, newDOI));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__PARENT_DOI, newParentDOI, newParentDOI));
     }
 
     /**
@@ -413,10 +413,10 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
         switch (featureID) {
             case SclPackage.SDI__DAI:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDAI()).basicAdd(otherEnd, msgs);
-            case SclPackage.SDI__DOI:
+            case SclPackage.SDI__PARENT_DOI:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOI((DOI)otherEnd, msgs);
+                return basicSetParentDOI((DOI)otherEnd, msgs);
             case SclPackage.SDI__SUB_SDI:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubSDI()).basicAdd(otherEnd, msgs);
             case SclPackage.SDI__PARENT_SDI:
@@ -437,8 +437,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
         switch (featureID) {
             case SclPackage.SDI__DAI:
                 return ((InternalEList<?>)getDAI()).basicRemove(otherEnd, msgs);
-            case SclPackage.SDI__DOI:
-                return basicSetDOI(null, msgs);
+            case SclPackage.SDI__PARENT_DOI:
+                return basicSetParentDOI(null, msgs);
             case SclPackage.SDI__SUB_SDI:
                 return ((InternalEList<?>)getSubSDI()).basicRemove(otherEnd, msgs);
             case SclPackage.SDI__PARENT_SDI:
@@ -455,7 +455,7 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SDI__DOI:
+            case SclPackage.SDI__PARENT_DOI:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DOI__SDI, DOI.class, msgs);
             case SclPackage.SDI__PARENT_SDI:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SDI__SUB_SDI, SDI.class, msgs);
@@ -477,8 +477,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
                 return getSAddr();
             case SclPackage.SDI__DAI:
                 return getDAI();
-            case SclPackage.SDI__DOI:
-                return getDOI();
+            case SclPackage.SDI__PARENT_DOI:
+                return getParentDOI();
             case SclPackage.SDI__SUB_SDI:
                 return getSubSDI();
             case SclPackage.SDI__PARENT_SDI:
@@ -506,8 +506,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
                 getDAI().clear();
                 getDAI().addAll((Collection<? extends DAI>)newValue);
                 return;
-            case SclPackage.SDI__DOI:
-                setDOI((DOI)newValue);
+            case SclPackage.SDI__PARENT_DOI:
+                setParentDOI((DOI)newValue);
                 return;
             case SclPackage.SDI__SUB_SDI:
                 getSubSDI().clear();
@@ -537,8 +537,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
             case SclPackage.SDI__DAI:
                 unsetDAI();
                 return;
-            case SclPackage.SDI__DOI:
-                setDOI((DOI)null);
+            case SclPackage.SDI__PARENT_DOI:
+                setParentDOI((DOI)null);
                 return;
             case SclPackage.SDI__SUB_SDI:
                 unsetSubSDI();
@@ -564,8 +564,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
                 return isSetSAddr();
             case SclPackage.SDI__DAI:
                 return isSetDAI();
-            case SclPackage.SDI__DOI:
-                return getDOI() != null;
+            case SclPackage.SDI__PARENT_DOI:
+                return getParentDOI() != null;
             case SclPackage.SDI__SUB_SDI:
                 return isSetSubSDI();
             case SclPackage.SDI__PARENT_SDI:

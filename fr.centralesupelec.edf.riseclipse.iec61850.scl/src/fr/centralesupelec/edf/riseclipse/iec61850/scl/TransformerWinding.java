@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getNeutralPoint <em>Neutral Point</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer <em>Power Transformer</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer <em>Parent Power Transformer</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getTapChanger <em>Tap Changer</em>}</li>
  * </ul>
  *
@@ -97,7 +97,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding <em>Transformer Winding</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
@@ -108,8 +108,8 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see #isSetEqFunction()
      * @see #unsetEqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_EqFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTransformerWinding
-     * @model opposite="TransformerWinding" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTransformerWinding
+     * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqFunction> getEqFunction();
@@ -137,7 +137,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
 
     /**
      * Returns the value of the '<em><b>Neutral Point</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding <em>Transformer Winding</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Neutral Point</em>' containment reference isn't clear,
@@ -149,8 +149,8 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see #unsetNeutralPoint()
      * @see #setNeutralPoint(NeutralPoint)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_NeutralPoint()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getTransformerWinding
-     * @model opposite="TransformerWinding" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint#getParentTransformerWinding
+     * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     NeutralPoint getNeutralPoint();
@@ -191,36 +191,32 @@ public interface TransformerWinding extends AbstractConductingEquipment {
     boolean isSetNeutralPoint();
 
     /**
-     * Returns the value of the '<em><b>Power Transformer</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Power Transformer</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getTransformerWinding <em>Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Power Transformer</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Power Transformer</em>' container reference.
-     * @see #setPowerTransformer(PowerTransformer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_PowerTransformer()
+     * @return the value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #setParentPowerTransformer(PowerTransformer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_ParentPowerTransformer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getTransformerWinding
      * @model opposite="TransformerWinding" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    PowerTransformer getPowerTransformer();
+    PowerTransformer getParentPowerTransformer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer <em>Power Transformer</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer <em>Parent Power Transformer</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Power Transformer</em>' container reference.
-     * @see #getPowerTransformer()
+     * @param value the new value of the '<em>Parent Power Transformer</em>' container reference.
+     * @see #getParentPowerTransformer()
      * @generated
      */
-    void setPowerTransformer( PowerTransformer value );
+    void setParentPowerTransformer(PowerTransformer value);
 
     /**
      * Returns the value of the '<em><b>Tap Changer</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding <em>Transformer Winding</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding <em>Parent Transformer Winding</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Tap Changer</em>' containment reference isn't clear,
@@ -232,8 +228,8 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see #unsetTapChanger()
      * @see #setTapChanger(TapChanger)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTransformerWinding_TapChanger()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding
-     * @model opposite="TransformerWinding" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding
+     * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     TapChanger getTapChanger();

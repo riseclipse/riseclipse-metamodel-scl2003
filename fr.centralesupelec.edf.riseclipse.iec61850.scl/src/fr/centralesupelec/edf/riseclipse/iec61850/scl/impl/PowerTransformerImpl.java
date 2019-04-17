@@ -46,7 +46,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getEquipmentContainer <em>Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getParentEquipmentContainer <em>Parent Equipment Container</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getSubEquipment <em>Sub Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PowerTransformerImpl#getTransformerWinding <em>Transformer Winding</em>}</li>
  * </ul>
@@ -190,7 +190,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
     @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.POWER_TRANSFORMER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__POWER_TRANSFORMER);
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.POWER_TRANSFORMER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_POWER_TRANSFORMER);
         }
         return eqFunction;
     }
@@ -221,8 +221,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * @generated
      */
     @Override
-    public EquipmentContainer getEquipmentContainer() {
-        if (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER) return null;
+    public EquipmentContainer getParentEquipmentContainer() {
+        if (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER) return null;
         return (EquipmentContainer)eInternalContainer();
     }
 
@@ -231,9 +231,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetEquipmentContainer( EquipmentContainer newEquipmentContainer,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newEquipmentContainer, SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER, msgs);
+    public NotificationChain basicSetParentEquipmentContainer(EquipmentContainer newParentEquipmentContainer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentEquipmentContainer, SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER, msgs);
         return msgs;
     }
 
@@ -243,20 +242,20 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
      * @generated
      */
     @Override
-    public void setEquipmentContainer( EquipmentContainer newEquipmentContainer ) {
-        if (newEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER && newEquipmentContainer != null)) {
-            if (EcoreUtil.isAncestor(this, newEquipmentContainer))
+    public void setParentEquipmentContainer(EquipmentContainer newParentEquipmentContainer) {
+        if (newParentEquipmentContainer != eInternalContainer() || (eContainerFeatureID() != SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER && newParentEquipmentContainer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentEquipmentContainer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newEquipmentContainer != null)
-                msgs = ((InternalEObject)newEquipmentContainer).eInverseAdd(this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, EquipmentContainer.class, msgs);
-            msgs = basicSetEquipmentContainer(newEquipmentContainer, msgs);
+            if (newParentEquipmentContainer != null)
+                msgs = ((InternalEObject)newParentEquipmentContainer).eInverseAdd(this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, EquipmentContainer.class, msgs);
+            msgs = basicSetParentEquipmentContainer(newParentEquipmentContainer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER, newEquipmentContainer, newEquipmentContainer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER, newParentEquipmentContainer, newParentEquipmentContainer));
     }
 
     /**
@@ -267,7 +266,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
     @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__POWER_TRANSFORMER);
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_POWER_TRANSFORMER);
         }
         return subEquipment;
     }
@@ -300,7 +299,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
     @Override
     public EList<TransformerWinding> getTransformerWinding() {
         if (transformerWinding == null) {
-            transformerWinding = new EObjectContainmentWithInverseEList.Unsettable<TransformerWinding>(TransformerWinding.class, this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, SclPackage.TRANSFORMER_WINDING__POWER_TRANSFORMER);
+            transformerWinding = new EObjectContainmentWithInverseEList.Unsettable<TransformerWinding>(TransformerWinding.class, this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER);
         }
         return transformerWinding;
     }
@@ -336,10 +335,10 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
         switch (featureID) {
             case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetEquipmentContainer((EquipmentContainer)otherEnd, msgs);
+                return basicSetParentEquipmentContainer((EquipmentContainer)otherEnd, msgs);
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
             case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:
@@ -358,8 +357,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
         switch (featureID) {
             case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
                 return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
-                return basicSetEquipmentContainer(null, msgs);
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
+                return basicSetParentEquipmentContainer(null, msgs);
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
             case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:
@@ -376,7 +375,7 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, EquipmentContainer.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -394,8 +393,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
                 return getType();
             case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
                 return getEqFunction();
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
-                return getEquipmentContainer();
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
+                return getParentEquipmentContainer();
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 return getSubEquipment();
             case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:
@@ -420,8 +419,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
                 getEqFunction().clear();
                 getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
                 return;
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
-                setEquipmentContainer((EquipmentContainer)newValue);
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
+                setParentEquipmentContainer((EquipmentContainer)newValue);
                 return;
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 getSubEquipment().clear();
@@ -449,8 +448,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
             case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
                 unsetEqFunction();
                 return;
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
-                setEquipmentContainer((EquipmentContainer)null);
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
+                setParentEquipmentContainer((EquipmentContainer)null);
                 return;
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 unsetSubEquipment();
@@ -474,8 +473,8 @@ public class PowerTransformerImpl extends EquipmentImpl implements PowerTransfor
                 return isSetType();
             case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
                 return isSetEqFunction();
-            case SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER:
-                return getEquipmentContainer() != null;
+            case SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER:
+                return getParentEquipmentContainer() != null;
             case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
                 return isSetSubEquipment();
             case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:

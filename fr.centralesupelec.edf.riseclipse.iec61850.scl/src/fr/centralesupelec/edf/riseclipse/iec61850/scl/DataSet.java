@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getReferredByControl <em>Referred By Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getFCDA <em>FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getName <em>Name</em>}</li>
@@ -41,32 +41,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DataSet extends UnNaming {
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Any LN</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDataSet <em>Data Set</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataSet_AnyLN()
+     * @return the value of the '<em>Parent Any LN</em>' container reference.
+     * @see #setParentAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataSet_ParentAnyLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDataSet
      * @model opposite="DataSet" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AnyLN getAnyLN();
+    AnyLN getParentAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getAnyLN <em>Any LN</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getParentAnyLN <em>Parent Any LN</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
+     * @param value the new value of the '<em>Parent Any LN</em>' container reference.
+     * @see #getParentAnyLN()
      * @generated
      */
-    void setAnyLN( AnyLN value );
+    void setParentAnyLN(AnyLN value);
 
     /**
      * Returns the value of the '<em><b>Referred By Control</b></em>' reference list.
@@ -112,7 +108,7 @@ public interface DataSet extends UnNaming {
     /**
      * Returns the value of the '<em><b>FCDA</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet <em>Parent Data Set</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>FCDA</em>' containment reference list isn't clear,
@@ -123,8 +119,8 @@ public interface DataSet extends UnNaming {
      * @see #isSetFCDA()
      * @see #unsetFCDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataSet_FCDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet
-     * @model opposite="DataSet" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet
+     * @model opposite="ParentDataSet" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<FCDA> getFCDA();

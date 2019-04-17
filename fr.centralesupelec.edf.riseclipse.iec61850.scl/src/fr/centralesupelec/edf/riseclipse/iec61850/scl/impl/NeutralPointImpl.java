@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.NeutralPointImpl#getTransformerWinding <em>Transformer Winding</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.NeutralPointImpl#getParentTransformerWinding <em>Parent Transformer Winding</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,8 +68,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      * @generated
      */
     @Override
-    public TransformerWinding getTransformerWinding() {
-        if (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING) return null;
+    public TransformerWinding getParentTransformerWinding() {
+        if (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING) return null;
         return (TransformerWinding)eInternalContainer();
     }
 
@@ -78,9 +78,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetTransformerWinding( TransformerWinding newTransformerWinding,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newTransformerWinding, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, msgs);
+    public NotificationChain basicSetParentTransformerWinding(TransformerWinding newParentTransformerWinding, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentTransformerWinding, SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, msgs);
         return msgs;
     }
 
@@ -90,20 +89,20 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
      * @generated
      */
     @Override
-    public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
-        if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING && newTransformerWinding != null)) {
-            if (EcoreUtil.isAncestor(this, newTransformerWinding))
+    public void setParentTransformerWinding(TransformerWinding newParentTransformerWinding) {
+        if (newParentTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING && newParentTransformerWinding != null)) {
+            if (EcoreUtil.isAncestor(this, newParentTransformerWinding))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newTransformerWinding != null)
-                msgs = ((InternalEObject)newTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
-            msgs = basicSetTransformerWinding(newTransformerWinding, msgs);
+            if (newParentTransformerWinding != null)
+                msgs = ((InternalEObject)newParentTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
+            msgs = basicSetParentTransformerWinding(newParentTransformerWinding, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING, newTransformerWinding, newTransformerWinding));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, newParentTransformerWinding, newParentTransformerWinding));
     }
 
     /**
@@ -114,10 +113,10 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetTransformerWinding((TransformerWinding)otherEnd, msgs);
+                return basicSetParentTransformerWinding((TransformerWinding)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -130,8 +129,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return basicSetTransformerWinding(null, msgs);
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
+                return basicSetParentTransformerWinding(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -144,7 +143,7 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
                 return eInternalContainer().eInverseRemove(this, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, TransformerWinding.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -158,8 +157,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return getTransformerWinding();
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
+                return getParentTransformerWinding();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -172,8 +171,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)newValue);
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
+                setParentTransformerWinding((TransformerWinding)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -187,8 +186,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)null);
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
+                setParentTransformerWinding((TransformerWinding)null);
                 return;
         }
         super.eUnset(featureID);
@@ -202,8 +201,8 @@ public class NeutralPointImpl extends TerminalImpl implements NeutralPoint {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.NEUTRAL_POINT__TRANSFORMER_WINDING:
-                return getTransformerWinding() != null;
+            case SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING:
+                return getParentTransformerWinding() != null;
         }
         return super.eIsSet(featureID);
     }

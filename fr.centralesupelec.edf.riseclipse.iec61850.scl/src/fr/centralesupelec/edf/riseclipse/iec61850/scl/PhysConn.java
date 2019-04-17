@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP <em>Parent Connected AP</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}</li>
  * </ul>
  *
@@ -93,37 +93,33 @@ public interface PhysConn extends UnNaming {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Connected AP</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Connected AP</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Connected AP</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Connected AP</em>' container reference.
-     * @see #setConnectedAP(ConnectedAP)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_ConnectedAP()
+     * @return the value of the '<em>Parent Connected AP</em>' container reference.
+     * @see #setParentConnectedAP(ConnectedAP)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_ParentConnectedAP()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn
      * @model opposite="PhysConn" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ConnectedAP getConnectedAP();
+    ConnectedAP getParentConnectedAP();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP <em>Parent Connected AP</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Connected AP</em>' container reference.
-     * @see #getConnectedAP()
+     * @param value the new value of the '<em>Parent Connected AP</em>' container reference.
+     * @see #getParentConnectedAP()
      * @generated
      */
-    void setConnectedAP( ConnectedAP value );
+    void setParentConnectedAP(ConnectedAP value);
 
     /**
      * Returns the value of the '<em><b>P</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn <em>Phys Conn</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getParentPhysConn <em>Parent Phys Conn</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>P</em>' containment reference list isn't clear,
@@ -134,8 +130,8 @@ public interface PhysConn extends UnNaming {
      * @see #isSetP()
      * @see #unsetP()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPhysConn_P()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getPhysConn
-     * @model opposite="PhysConn" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn#getParentPhysConn
+     * @model opposite="ParentPhysConn" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<P_PhysConn> getP();

@@ -33,7 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getWhen <em>When</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getWho <em>Who</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getWhy <em>Why</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory <em>History</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getParentHistory <em>Parent History</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem()
@@ -360,31 +360,27 @@ public interface Hitem extends SclObject {
     boolean isSetWhy();
 
     /**
-     * Returns the value of the '<em><b>History</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent History</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>History</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>History</em>' container reference.
-     * @see #setHistory(History)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem_History()
+     * @return the value of the '<em>Parent History</em>' container reference.
+     * @see #setParentHistory(History)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHitem_ParentHistory()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem
      * @model opposite="Hitem" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    History getHistory();
+    History getParentHistory();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getHistory <em>History</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem#getParentHistory <em>Parent History</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>History</em>' container reference.
-     * @see #getHistory()
+     * @param value the new value of the '<em>Parent History</em>' container reference.
+     * @see #getParentHistory()
      * @generated
      */
-    void setHistory( History value );
+    void setParentHistory(History value);
 
 } // Hitem

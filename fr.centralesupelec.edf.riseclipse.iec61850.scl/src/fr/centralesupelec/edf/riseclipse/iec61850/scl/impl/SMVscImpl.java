@@ -40,7 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getDelivery <em>Delivery</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getDeliveryConf <em>Delivery Conf</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getSv <em>Sv</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SMVscImpl#getRSV <em>RSV</em>}</li>
  * </ul>
@@ -289,8 +289,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.SM_VSC__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -299,8 +299,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.SM_VSC__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.SM_VSC__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -310,20 +310,20 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SM_VSC__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__SM_VSC, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__SM_VSC, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -434,10 +434,10 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SM_VSC__SERVICES:
+            case SclPackage.SM_VSC__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -450,8 +450,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SM_VSC__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.SM_VSC__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -464,7 +464,7 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SM_VSC__SERVICES:
+            case SclPackage.SM_VSC__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SM_VSC, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -482,8 +482,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
                 return getDelivery();
             case SclPackage.SM_VSC__DELIVERY_CONF:
                 return getDeliveryConf();
-            case SclPackage.SM_VSC__SERVICES:
-                return getServices();
+            case SclPackage.SM_VSC__PARENT_SERVICES:
+                return getParentServices();
             case SclPackage.SM_VSC__SV:
                 return getSv();
             case SclPackage.SM_VSC__RSV:
@@ -506,8 +506,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
             case SclPackage.SM_VSC__DELIVERY_CONF:
                 setDeliveryConf((Boolean)newValue);
                 return;
-            case SclPackage.SM_VSC__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.SM_VSC__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
             case SclPackage.SM_VSC__SV:
                 setSv((Boolean)newValue);
@@ -533,8 +533,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
             case SclPackage.SM_VSC__DELIVERY_CONF:
                 unsetDeliveryConf();
                 return;
-            case SclPackage.SM_VSC__SERVICES:
-                setServices((Services)null);
+            case SclPackage.SM_VSC__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
             case SclPackage.SM_VSC__SV:
                 unsetSv();
@@ -558,8 +558,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
                 return isSetDelivery();
             case SclPackage.SM_VSC__DELIVERY_CONF:
                 return isSetDeliveryConf();
-            case SclPackage.SM_VSC__SERVICES:
-                return getServices() != null;
+            case SclPackage.SM_VSC__PARENT_SERVICES:
+                return getParentServices() != null;
             case SclPackage.SM_VSC__SV:
                 return isSetSv();
             case SclPackage.SM_VSC__RSV:

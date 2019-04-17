@@ -38,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getFixedOffs <em>Fixed Offs</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getGoose <em>Goose</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GOOSEImpl#getRGOOSE <em>RGOOSE</em>}</li>
  * </ul>
@@ -208,8 +208,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.GOOSE__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.GOOSE__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -218,8 +218,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.GOOSE__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.GOOSE__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -229,20 +229,20 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GOOSE__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GOOSE__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__GOOSE, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__GOOSE, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GOOSE__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -353,10 +353,10 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GOOSE__SERVICES:
+            case SclPackage.GOOSE__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -369,8 +369,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GOOSE__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.GOOSE__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -383,7 +383,7 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.GOOSE__SERVICES:
+            case SclPackage.GOOSE__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__GOOSE, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -399,8 +399,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         switch (featureID) {
             case SclPackage.GOOSE__FIXED_OFFS:
                 return getFixedOffs();
-            case SclPackage.GOOSE__SERVICES:
-                return getServices();
+            case SclPackage.GOOSE__PARENT_SERVICES:
+                return getParentServices();
             case SclPackage.GOOSE__GOOSE:
                 return getGoose();
             case SclPackage.GOOSE__RGOOSE:
@@ -420,8 +420,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
             case SclPackage.GOOSE__FIXED_OFFS:
                 setFixedOffs((Boolean)newValue);
                 return;
-            case SclPackage.GOOSE__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.GOOSE__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
             case SclPackage.GOOSE__GOOSE:
                 setGoose((Boolean)newValue);
@@ -444,8 +444,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
             case SclPackage.GOOSE__FIXED_OFFS:
                 unsetFixedOffs();
                 return;
-            case SclPackage.GOOSE__SERVICES:
-                setServices((Services)null);
+            case SclPackage.GOOSE__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
             case SclPackage.GOOSE__GOOSE:
                 unsetGoose();
@@ -467,8 +467,8 @@ public class GOOSEImpl extends ServiceWithMaxImpl implements GOOSE {
         switch (featureID) {
             case SclPackage.GOOSE__FIXED_OFFS:
                 return isSetFixedOffs();
-            case SclPackage.GOOSE__SERVICES:
-                return getServices() != null;
+            case SclPackage.GOOSE__PARENT_SERVICES:
+                return getParentServices() != null;
             case SclPackage.GOOSE__GOOSE:
                 return isSetGoose();
             case SclPackage.GOOSE__RGOOSE:

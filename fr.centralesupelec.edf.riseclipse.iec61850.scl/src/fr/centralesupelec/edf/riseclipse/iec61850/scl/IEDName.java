@@ -32,7 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}</li>
@@ -311,32 +311,28 @@ public interface IEDName extends ExplicitLinkResolver {
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Control With IED Name</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Control With IED Name</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName <em>IED Name</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Control With IED Name</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With IED Name</em>' container reference.
-     * @see #setControlWithIEDName(ControlWithIEDName)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ControlWithIEDName()
+     * @return the value of the '<em>Parent Control With IED Name</em>' container reference.
+     * @see #setParentControlWithIEDName(ControlWithIEDName)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_ParentControlWithIEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName
      * @model opposite="IEDName" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ControlWithIEDName getControlWithIEDName();
+    ControlWithIEDName getParentControlWithIEDName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getParentControlWithIEDName <em>Parent Control With IED Name</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Control With IED Name</em>' container reference.
-     * @see #getControlWithIEDName()
+     * @param value the new value of the '<em>Parent Control With IED Name</em>' container reference.
+     * @see #getParentControlWithIEDName()
      * @generated
      */
-    void setControlWithIEDName( ControlWithIEDName value );
+    void setParentControlWithIEDName(ControlWithIEDName value);
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.

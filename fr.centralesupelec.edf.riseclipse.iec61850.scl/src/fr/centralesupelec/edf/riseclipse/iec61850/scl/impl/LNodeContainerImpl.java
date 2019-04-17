@@ -85,7 +85,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
     @Override
     public EList<LNode> getLNode() {
         if (lNode == null) {
-            lNode = new EObjectContainmentWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__LNODE_CONTAINER);
+            lNode = new EObjectContainmentWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__PARENT_LNODE_CONTAINER);
         }
         return lNode;
     }

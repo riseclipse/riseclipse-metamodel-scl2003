@@ -97,7 +97,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
     @Override
     public EList<Function> getFunction() {
         if (function == null) {
-            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, SclPackage.FUNCTION__GENERAL_EQUIPMENT_CONTAINER);
+            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER);
         }
         return function;
     }
@@ -130,7 +130,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
     @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__GENERAL_EQUIPMENT_CONTAINER);
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER);
         }
         return generalEquipment;
     }

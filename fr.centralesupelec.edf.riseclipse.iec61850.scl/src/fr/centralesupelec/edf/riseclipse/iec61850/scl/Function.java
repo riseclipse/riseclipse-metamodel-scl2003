@@ -30,11 +30,11 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay <em>Bay</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay <em>Parent Bay</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getConductingEquipment <em>Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipmentContainer <em>General Equipment Container</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation <em>Substation</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel <em>Voltage Level</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation <em>Parent Substation</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel <em>Parent Voltage Level</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubFunction <em>Sub Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipment <em>General Equipment</em>}</li>
  * </ul>
@@ -98,37 +98,33 @@ public interface Function extends PowerSystemResource {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Bay</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Bay</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction <em>Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Bay</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Bay</em>' container reference.
-     * @see #setBay(Bay)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_Bay()
+     * @return the value of the '<em>Parent Bay</em>' container reference.
+     * @see #setParentBay(Bay)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ParentBay()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction
      * @model opposite="Function" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Bay getBay();
+    Bay getParentBay();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getBay <em>Bay</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentBay <em>Parent Bay</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Bay</em>' container reference.
-     * @see #getBay()
+     * @param value the new value of the '<em>Parent Bay</em>' container reference.
+     * @see #getParentBay()
      * @generated
      */
-    void setBay( Bay value );
+    void setParentBay(Bay value);
 
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction <em>Function</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' containment reference list isn't clear,
@@ -139,8 +135,8 @@ public interface Function extends PowerSystemResource {
      * @see #isSetConductingEquipment()
      * @see #unsetConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getFunction
-     * @model opposite="Function" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentFunction
+     * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConductingEquipment> getConductingEquipment();
@@ -167,93 +163,81 @@ public interface Function extends PowerSystemResource {
     boolean isSetConductingEquipment();
 
     /**
-     * Returns the value of the '<em><b>General Equipment Container</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent General Equipment Container</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getFunction <em>Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>General Equipment Container</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>General Equipment Container</em>' container reference.
-     * @see #setGeneralEquipmentContainer(GeneralEquipmentContainer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_GeneralEquipmentContainer()
+     * @return the value of the '<em>Parent General Equipment Container</em>' container reference.
+     * @see #setParentGeneralEquipmentContainer(GeneralEquipmentContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ParentGeneralEquipmentContainer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getFunction
      * @model opposite="Function" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    GeneralEquipmentContainer getGeneralEquipmentContainer();
+    GeneralEquipmentContainer getParentGeneralEquipmentContainer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipmentContainer <em>General Equipment Container</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentGeneralEquipmentContainer <em>Parent General Equipment Container</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>General Equipment Container</em>' container reference.
-     * @see #getGeneralEquipmentContainer()
+     * @param value the new value of the '<em>Parent General Equipment Container</em>' container reference.
+     * @see #getParentGeneralEquipmentContainer()
      * @generated
      */
-    void setGeneralEquipmentContainer( GeneralEquipmentContainer value );
+    void setParentGeneralEquipmentContainer(GeneralEquipmentContainer value);
 
     /**
-     * Returns the value of the '<em><b>Substation</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Substation</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getFunction <em>Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Substation</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Substation</em>' container reference.
-     * @see #setSubstation(Substation)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_Substation()
+     * @return the value of the '<em>Parent Substation</em>' container reference.
+     * @see #setParentSubstation(Substation)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ParentSubstation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getFunction
      * @model opposite="Function" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Substation getSubstation();
+    Substation getParentSubstation();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubstation <em>Substation</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentSubstation <em>Parent Substation</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Substation</em>' container reference.
-     * @see #getSubstation()
+     * @param value the new value of the '<em>Parent Substation</em>' container reference.
+     * @see #getParentSubstation()
      * @generated
      */
-    void setSubstation( Substation value );
+    void setParentSubstation(Substation value);
 
     /**
-     * Returns the value of the '<em><b>Voltage Level</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Voltage Level</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getFunction <em>Function</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Voltage Level</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Voltage Level</em>' container reference.
-     * @see #setVoltageLevel(VoltageLevel)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_VoltageLevel()
+     * @return the value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #setParentVoltageLevel(VoltageLevel)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_ParentVoltageLevel()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getFunction
      * @model opposite="Function" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    VoltageLevel getVoltageLevel();
+    VoltageLevel getParentVoltageLevel();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel <em>Voltage Level</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel <em>Parent Voltage Level</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Voltage Level</em>' container reference.
-     * @see #getVoltageLevel()
+     * @param value the new value of the '<em>Parent Voltage Level</em>' container reference.
+     * @see #getParentVoltageLevel()
      * @generated
      */
-    void setVoltageLevel( VoltageLevel value );
+    void setParentVoltageLevel(VoltageLevel value);
 
     /**
      * Returns the value of the '<em><b>Sub Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getFunction <em>Function</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Function</em>' containment reference list isn't clear,
@@ -264,8 +248,8 @@ public interface Function extends PowerSystemResource {
      * @see #isSetSubFunction()
      * @see #unsetSubFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_SubFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getFunction
-     * @model opposite="Function" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getParentFunction
+     * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SubFunction> getSubFunction();
@@ -294,7 +278,7 @@ public interface Function extends PowerSystemResource {
     /**
      * Returns the value of the '<em><b>General Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction <em>Function</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentFunction <em>Parent Function</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>General Equipment</em>' containment reference list isn't clear,
@@ -305,8 +289,8 @@ public interface Function extends PowerSystemResource {
      * @see #isSetGeneralEquipment()
      * @see #unsetGeneralEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFunction_GeneralEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getFunction
-     * @model opposite="Function" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getParentFunction
+     * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<GeneralEquipment> getGeneralEquipment();

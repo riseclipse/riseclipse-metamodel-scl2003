@@ -38,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getMustUnderstand <em>Must Understand</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getControlWithIEDName <em>Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ProtocolImpl#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -148,8 +148,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * @generated
      */
     @Override
-    public ControlWithIEDName getControlWithIEDName() {
-        if (eContainerFeatureID() != SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME) return null;
+    public ControlWithIEDName getParentControlWithIEDName() {
+        if (eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME) return null;
         return (ControlWithIEDName)eInternalContainer();
     }
 
@@ -158,9 +158,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetControlWithIEDName( ControlWithIEDName newControlWithIEDName,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newControlWithIEDName, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, msgs);
+    public NotificationChain basicSetParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentControlWithIEDName, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, msgs);
         return msgs;
     }
 
@@ -170,20 +169,20 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * @generated
      */
     @Override
-    public void setControlWithIEDName( ControlWithIEDName newControlWithIEDName ) {
-        if (newControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME && newControlWithIEDName != null)) {
-            if (EcoreUtil.isAncestor(this, newControlWithIEDName))
+    public void setParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName) {
+        if (newParentControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME && newParentControlWithIEDName != null)) {
+            if (EcoreUtil.isAncestor(this, newParentControlWithIEDName))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newControlWithIEDName != null)
-                msgs = ((InternalEObject)newControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs);
-            msgs = basicSetControlWithIEDName(newControlWithIEDName, msgs);
+            if (newParentControlWithIEDName != null)
+                msgs = ((InternalEObject)newParentControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs);
+            msgs = basicSetParentControlWithIEDName(newParentControlWithIEDName, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, newControlWithIEDName, newControlWithIEDName));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, newParentControlWithIEDName, newParentControlWithIEDName));
     }
 
     /**
@@ -194,10 +193,10 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
+                return basicSetParentControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -210,8 +209,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
-                return basicSetControlWithIEDName(null, msgs);
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+                return basicSetParentControlWithIEDName(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -224,7 +223,7 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -240,8 +239,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         switch (featureID) {
             case SclPackage.PROTOCOL__MUST_UNDERSTAND:
                 return getMustUnderstand();
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName();
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+                return getParentControlWithIEDName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -257,8 +256,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
             case SclPackage.PROTOCOL__MUST_UNDERSTAND:
                 setMustUnderstand((Boolean)newValue);
                 return;
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)newValue);
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+                setParentControlWithIEDName((ControlWithIEDName)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -275,8 +274,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
             case SclPackage.PROTOCOL__MUST_UNDERSTAND:
                 unsetMustUnderstand();
                 return;
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
-                setControlWithIEDName((ControlWithIEDName)null);
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+                setParentControlWithIEDName((ControlWithIEDName)null);
                 return;
         }
         super.eUnset(featureID);
@@ -292,8 +291,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         switch (featureID) {
             case SclPackage.PROTOCOL__MUST_UNDERSTAND:
                 return isSetMustUnderstand();
-            case SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME:
-                return getControlWithIEDName() != null;
+            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+                return getParentControlWithIEDName() != null;
         }
         return super.eIsSet(featureID);
     }

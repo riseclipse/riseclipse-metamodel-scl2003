@@ -30,8 +30,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getC37_238 <em>C37 238</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getOther <em>Other</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getSntp <em>Sntp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices <em>Client Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices <em>Parent Client Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}</li>
  * </ul>
  *
@@ -200,60 +200,52 @@ public interface TimeSyncProt extends SclObject {
     boolean isSetSntp();
 
     /**
-     * Returns the value of the '<em><b>Client Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Client Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getTimeSyncProt <em>Time Sync Prot</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Client Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Client Services</em>' container reference.
-     * @see #setClientServices(ClientServices)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_ClientServices()
+     * @return the value of the '<em>Parent Client Services</em>' container reference.
+     * @see #setParentClientServices(ClientServices)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_ParentClientServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getTimeSyncProt
      * @model opposite="TimeSyncProt" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ClientServices getClientServices();
+    ClientServices getParentClientServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getClientServices <em>Client Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentClientServices <em>Parent Client Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Client Services</em>' container reference.
-     * @see #getClientServices()
+     * @param value the new value of the '<em>Parent Client Services</em>' container reference.
+     * @see #getParentClientServices()
      * @generated
      */
-    void setClientServices( ClientServices value );
+    void setParentClientServices(ClientServices value);
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimeSyncProt <em>Time Sync Prot</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTimeSyncProt_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getTimeSyncProt
      * @model opposite="TimeSyncProt" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
     /**
      * Returns the value of the '<em><b>Iec61850 93</b></em>' attribute.

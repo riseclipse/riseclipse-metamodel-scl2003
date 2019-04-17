@@ -43,7 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PhysConnImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PhysConnImpl#getConnectedAP <em>Connected AP</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PhysConnImpl#getParentConnectedAP <em>Parent Connected AP</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PhysConnImpl#getP <em>P</em>}</li>
  * </ul>
  *
@@ -164,8 +164,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * @generated
      */
     @Override
-    public ConnectedAP getConnectedAP() {
-        if (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP) return null;
+    public ConnectedAP getParentConnectedAP() {
+        if (eContainerFeatureID() != SclPackage.PHYS_CONN__PARENT_CONNECTED_AP) return null;
         return (ConnectedAP)eInternalContainer();
     }
 
@@ -174,8 +174,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetConnectedAP( ConnectedAP newConnectedAP, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newConnectedAP, SclPackage.PHYS_CONN__CONNECTED_AP, msgs);
+    public NotificationChain basicSetParentConnectedAP(ConnectedAP newParentConnectedAP, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentConnectedAP, SclPackage.PHYS_CONN__PARENT_CONNECTED_AP, msgs);
         return msgs;
     }
 
@@ -185,20 +185,20 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
      * @generated
      */
     @Override
-    public void setConnectedAP( ConnectedAP newConnectedAP ) {
-        if (newConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.PHYS_CONN__CONNECTED_AP && newConnectedAP != null)) {
-            if (EcoreUtil.isAncestor(this, newConnectedAP))
+    public void setParentConnectedAP(ConnectedAP newParentConnectedAP) {
+        if (newParentConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.PHYS_CONN__PARENT_CONNECTED_AP && newParentConnectedAP != null)) {
+            if (EcoreUtil.isAncestor(this, newParentConnectedAP))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newConnectedAP != null)
-                msgs = ((InternalEObject)newConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
-            msgs = basicSetConnectedAP(newConnectedAP, msgs);
+            if (newParentConnectedAP != null)
+                msgs = ((InternalEObject)newParentConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
+            msgs = basicSetParentConnectedAP(newParentConnectedAP, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__CONNECTED_AP, newConnectedAP, newConnectedAP));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PHYS_CONN__PARENT_CONNECTED_AP, newParentConnectedAP, newParentConnectedAP));
     }
 
     /**
@@ -209,7 +209,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     @Override
     public EList<P_PhysConn> getP() {
         if (p == null) {
-            p = new EObjectContainmentWithInverseEList.Unsettable<P_PhysConn>(P_PhysConn.class, this, SclPackage.PHYS_CONN__P, SclPackage.PPHYS_CONN__PHYS_CONN);
+            p = new EObjectContainmentWithInverseEList.Unsettable<P_PhysConn>(P_PhysConn.class, this, SclPackage.PHYS_CONN__P, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN);
         }
         return p;
     }
@@ -243,10 +243,10 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetConnectedAP((ConnectedAP)otherEnd, msgs);
+                return basicSetParentConnectedAP((ConnectedAP)otherEnd, msgs);
             case SclPackage.PHYS_CONN__P:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getP()).basicAdd(otherEnd, msgs);
         }
@@ -261,8 +261,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return basicSetConnectedAP(null, msgs);
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
+                return basicSetParentConnectedAP(null, msgs);
             case SclPackage.PHYS_CONN__P:
                 return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
         }
@@ -277,7 +277,7 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__PHYS_CONN, ConnectedAP.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -293,8 +293,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
         switch (featureID) {
             case SclPackage.PHYS_CONN__TYPE:
                 return getType();
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return getConnectedAP();
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
+                return getParentConnectedAP();
             case SclPackage.PHYS_CONN__P:
                 return getP();
         }
@@ -313,8 +313,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
             case SclPackage.PHYS_CONN__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)newValue);
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
+                setParentConnectedAP((ConnectedAP)newValue);
                 return;
             case SclPackage.PHYS_CONN__P:
                 getP().clear();
@@ -335,8 +335,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
             case SclPackage.PHYS_CONN__TYPE:
                 unsetType();
                 return;
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                setConnectedAP((ConnectedAP)null);
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
+                setParentConnectedAP((ConnectedAP)null);
                 return;
             case SclPackage.PHYS_CONN__P:
                 unsetP();
@@ -355,8 +355,8 @@ public class PhysConnImpl extends UnNamingImpl implements PhysConn {
         switch (featureID) {
             case SclPackage.PHYS_CONN__TYPE:
                 return isSetType();
-            case SclPackage.PHYS_CONN__CONNECTED_AP:
-                return getConnectedAP() != null;
+            case SclPackage.PHYS_CONN__PARENT_CONNECTED_AP:
+                return getParentConnectedAP() != null;
             case SclPackage.PHYS_CONN__P:
                 return isSetP();
         }

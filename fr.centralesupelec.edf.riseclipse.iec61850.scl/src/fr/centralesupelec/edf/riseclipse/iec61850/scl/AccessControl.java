@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice <em>LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice <em>Parent LDevice</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessControl()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface AccessControl extends SclObject {
     /**
-     * Returns the value of the '<em><b>LDevice</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LDevice</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LDevice</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LDevice</em>' container reference.
-     * @see #setLDevice(LDevice)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessControl_LDevice()
+     * @return the value of the '<em>Parent LDevice</em>' container reference.
+     * @see #setParentLDevice(LDevice)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessControl_ParentLDevice()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl
      * @model opposite="AccessControl" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LDevice getLDevice();
+    LDevice getParentLDevice();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice <em>LDevice</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice <em>Parent LDevice</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LDevice</em>' container reference.
-     * @see #getLDevice()
+     * @param value the new value of the '<em>Parent LDevice</em>' container reference.
+     * @see #getParentLDevice()
      * @generated
      */
-    void setLDevice( LDevice value );
+    void setParentLDevice(LDevice value);
 
 } // AccessControl

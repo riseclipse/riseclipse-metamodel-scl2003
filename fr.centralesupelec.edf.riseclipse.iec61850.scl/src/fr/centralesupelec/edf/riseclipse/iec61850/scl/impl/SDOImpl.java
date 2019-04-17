@@ -25,14 +25,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -47,7 +45,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getCount <em>Count</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getDOType <em>DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getParentDOType <em>Parent DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getRefersToDOType <em>Refers To DO Type</em>}</li>
  * </ul>
@@ -286,8 +284,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public DOType getDOType() {
-        if (eContainerFeatureID() != SclPackage.SDO__DO_TYPE) return null;
+    public DOType getParentDOType() {
+        if (eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE) return null;
         return (DOType)eInternalContainer();
     }
 
@@ -296,8 +294,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDOType( DOType newDOType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOType, SclPackage.SDO__DO_TYPE, msgs);
+    public NotificationChain basicSetParentDOType(DOType newParentDOType, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDOType, SclPackage.SDO__PARENT_DO_TYPE, msgs);
         return msgs;
     }
 
@@ -307,20 +305,20 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public void setDOType( DOType newDOType ) {
-        if (newDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDO__DO_TYPE && newDOType != null)) {
-            if (EcoreUtil.isAncestor(this, newDOType))
+    public void setParentDOType(DOType newParentDOType) {
+        if (newParentDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE && newParentDOType != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDOType))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOType != null)
-                msgs = ((InternalEObject)newDOType).eInverseAdd(this, SclPackage.DO_TYPE__SDO, DOType.class, msgs);
-            msgs = basicSetDOType(newDOType, msgs);
+            if (newParentDOType != null)
+                msgs = ((InternalEObject)newParentDOType).eInverseAdd(this, SclPackage.DO_TYPE__SDO, DOType.class, msgs);
+            msgs = basicSetParentDOType(newParentDOType, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__DO_TYPE, newDOType, newDOType));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__PARENT_DO_TYPE, newParentDOType, newParentDOType));
     }
 
     /**
@@ -480,10 +478,10 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SDO__DO_TYPE:
+            case SclPackage.SDO__PARENT_DO_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOType((DOType)otherEnd, msgs);
+                return basicSetParentDOType((DOType)otherEnd, msgs);
             case SclPackage.SDO__REFERS_TO_DO_TYPE:
                 if (refersToDOType != null)
                     msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_SDO, DOType.class, msgs);
@@ -500,8 +498,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SDO__DO_TYPE:
-                return basicSetDOType(null, msgs);
+            case SclPackage.SDO__PARENT_DO_TYPE:
+                return basicSetParentDOType(null, msgs);
             case SclPackage.SDO__REFERS_TO_DO_TYPE:
                 return basicUnsetRefersToDOType(msgs);
         }
@@ -516,7 +514,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SDO__DO_TYPE:
+            case SclPackage.SDO__PARENT_DO_TYPE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DO_TYPE__SDO, DOType.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -534,8 +532,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
                 return getCount();
             case SclPackage.SDO__TYPE:
                 return getType();
-            case SclPackage.SDO__DO_TYPE:
-                return getDOType();
+            case SclPackage.SDO__PARENT_DO_TYPE:
+                return getParentDOType();
             case SclPackage.SDO__NAME:
                 return getName();
             case SclPackage.SDO__REFERS_TO_DO_TYPE:
@@ -558,8 +556,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
             case SclPackage.SDO__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.SDO__DO_TYPE:
-                setDOType((DOType)newValue);
+            case SclPackage.SDO__PARENT_DO_TYPE:
+                setParentDOType((DOType)newValue);
                 return;
             case SclPackage.SDO__NAME:
                 setName((String)newValue);
@@ -585,8 +583,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
             case SclPackage.SDO__TYPE:
                 unsetType();
                 return;
-            case SclPackage.SDO__DO_TYPE:
-                setDOType((DOType)null);
+            case SclPackage.SDO__PARENT_DO_TYPE:
+                setParentDOType((DOType)null);
                 return;
             case SclPackage.SDO__NAME:
                 unsetName();
@@ -610,8 +608,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
                 return isSetCount();
             case SclPackage.SDO__TYPE:
                 return isSetType();
-            case SclPackage.SDO__DO_TYPE:
-                return getDOType() != null;
+            case SclPackage.SDO__PARENT_DO_TYPE:
+                return getParentDOType() != null;
             case SclPackage.SDO__NAME:
                 return isSetName();
             case SclPackage.SDO__REFERS_TO_DO_TYPE:

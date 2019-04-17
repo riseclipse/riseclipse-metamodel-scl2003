@@ -32,7 +32,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getRevision <em>Revision</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getToolID <em>Tool ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getVersion <em>Version</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getHistory <em>History</em>}</li>
  * </ul>
@@ -310,36 +310,32 @@ public interface Header extends SclObject {
     boolean isSetVersion();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getHeader <em>Header</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getHeader
      * @model opposite="Header" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
     /**
      * Returns the value of the '<em><b>Text</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Text</em>' containment reference isn't clear,
@@ -351,8 +347,8 @@ public interface Header extends SclObject {
      * @see #unsetText()
      * @see #setText(Text)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_Text()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader
-     * @model opposite="Header" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader
+     * @model opposite="ParentHeader" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Text getText();
@@ -394,7 +390,7 @@ public interface Header extends SclObject {
 
     /**
      * Returns the value of the '<em><b>History</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader <em>Header</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getParentHeader <em>Parent Header</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>History</em>' containment reference isn't clear,
@@ -406,8 +402,8 @@ public interface Header extends SclObject {
      * @see #unsetHistory()
      * @see #setHistory(History)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getHeader_History()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHeader
-     * @model opposite="Header" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getParentHeader
+     * @model opposite="ParentHeader" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     History getHistory();

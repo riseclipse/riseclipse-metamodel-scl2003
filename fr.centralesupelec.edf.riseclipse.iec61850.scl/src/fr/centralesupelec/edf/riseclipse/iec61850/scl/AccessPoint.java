@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getClock <em>Clock</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getKdc <em>Kdc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getRouter <em>Router</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED <em>IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getLN <em>LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getSMVSecurity <em>SMV Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServerAt <em>Server At</em>}</li>
@@ -213,37 +213,33 @@ public interface AccessPoint extends UnNaming {
     boolean isSetRouter();
 
     /**
-     * Returns the value of the '<em><b>IED</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent IED</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getAccessPoint <em>Access Point</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>IED</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>IED</em>' container reference.
-     * @see #setIED(IED)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_IED()
+     * @return the value of the '<em>Parent IED</em>' container reference.
+     * @see #setParentIED(IED)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_ParentIED()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getAccessPoint
      * @model opposite="AccessPoint" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    IED getIED();
+    IED getParentIED();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED <em>IED</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED <em>Parent IED</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>IED</em>' container reference.
-     * @see #getIED()
+     * @param value the new value of the '<em>Parent IED</em>' container reference.
+     * @see #getParentIED()
      * @generated
      */
-    void setIED( IED value );
+    void setParentIED(IED value);
 
     /**
      * Returns the value of the '<em><b>LN</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LN</em>' containment reference list isn't clear,
@@ -254,8 +250,8 @@ public interface AccessPoint extends UnNaming {
      * @see #isSetLN()
      * @see #unsetLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_LN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<LN> getLN();
@@ -284,7 +280,7 @@ public interface AccessPoint extends UnNaming {
     /**
      * Returns the value of the '<em><b>SMV Security</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SMV Security</em>' containment reference list isn't clear,
@@ -295,8 +291,8 @@ public interface AccessPoint extends UnNaming {
      * @see #isSetSMVSecurity()
      * @see #unsetSMVSecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_SMVSecurity()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" upper="7" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SMVSecurity> getSMVSecurity();
@@ -324,7 +320,7 @@ public interface AccessPoint extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Server At</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Server At</em>' containment reference isn't clear,
@@ -336,8 +332,8 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetServerAt()
      * @see #setServerAt(ServerAt)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_ServerAt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ServerAt getServerAt();
@@ -379,7 +375,7 @@ public interface AccessPoint extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Server</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Server</em>' containment reference isn't clear,
@@ -391,8 +387,8 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetServer()
      * @see #setServer(Server)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Server()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Server getServer();
@@ -434,7 +430,7 @@ public interface AccessPoint extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Services</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' containment reference isn't clear,
@@ -446,8 +442,8 @@ public interface AccessPoint extends UnNaming {
      * @see #unsetServices()
      * @see #setServices(Services)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Services getServices();
@@ -490,7 +486,7 @@ public interface AccessPoint extends UnNaming {
     /**
      * Returns the value of the '<em><b>GOOSE Security</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint <em>Access Point</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getParentAccessPoint <em>Parent Access Point</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GOOSE Security</em>' containment reference list isn't clear,
@@ -501,8 +497,8 @@ public interface AccessPoint extends UnNaming {
      * @see #isSetGOOSESecurity()
      * @see #unsetGOOSESecurity()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAccessPoint_GOOSESecurity()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getAccessPoint
-     * @model opposite="AccessPoint" containment="true" unsettable="true" upper="7" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity#getParentAccessPoint
+     * @model opposite="ParentAccessPoint" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<GOOSESecurity> getGOOSESecurity();

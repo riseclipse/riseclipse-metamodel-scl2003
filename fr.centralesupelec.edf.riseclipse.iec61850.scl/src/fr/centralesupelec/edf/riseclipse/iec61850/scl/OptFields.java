@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl <em>Report Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl <em>Parent Report Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getOptFields()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface OptFields extends SclObject, AgOptFields {
     /**
-     * Returns the value of the '<em><b>Report Control</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Report Control</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getOptFields <em>Opt Fields</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Report Control</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Report Control</em>' container reference.
-     * @see #setReportControl(ReportControl)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getOptFields_ReportControl()
+     * @return the value of the '<em>Parent Report Control</em>' container reference.
+     * @see #setParentReportControl(ReportControl)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getOptFields_ParentReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getOptFields
      * @model opposite="OptFields" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ReportControl getReportControl();
+    ReportControl getParentReportControl();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getReportControl <em>Report Control</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields#getParentReportControl <em>Parent Report Control</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Report Control</em>' container reference.
-     * @see #getReportControl()
+     * @param value the new value of the '<em>Parent Report Control</em>' container reference.
+     * @see #getParentReportControl()
      * @generated
      */
-    void setReportControl( ReportControl value );
+    void setParentReportControl(ReportControl value);
 
 } // OptFields
