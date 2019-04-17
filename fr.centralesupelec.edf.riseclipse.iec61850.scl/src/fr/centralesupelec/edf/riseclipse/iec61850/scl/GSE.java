@@ -27,9 +27,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP <em>Connected AP</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getMinTime <em>Min Time</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getMaxTime <em>Max Time</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP <em>Connected AP</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getGSE()

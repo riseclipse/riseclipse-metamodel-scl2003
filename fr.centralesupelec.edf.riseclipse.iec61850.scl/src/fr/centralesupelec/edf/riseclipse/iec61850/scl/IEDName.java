@@ -35,6 +35,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getControlWithIEDName <em>Control With IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName()
@@ -338,7 +340,7 @@ public interface IEDName extends ExplicitLinkResolver {
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName <em>Referred IED Name</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
@@ -350,8 +352,8 @@ public interface IEDName extends ExplicitLinkResolver {
      * @see #unsetRefersToAnyLN()
      * @see #setRefersToAnyLN(AnyLN)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredIEDName
-     * @model opposite="ReferredIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName
+     * @model opposite="ReferredByIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
     AnyLN getRefersToAnyLN();
@@ -444,5 +446,107 @@ public interface IEDName extends ExplicitLinkResolver {
      * @generated
      */
     boolean isSetValue();
+
+    /**
+     * Returns the value of the '<em><b>Refers To IED</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To IED</em>' reference.
+     * @see #isSetRefersToIED()
+     * @see #unsetRefersToIED()
+     * @see #setRefersToIED(IED)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_RefersToIED()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName
+     * @model opposite="ReferredByIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    IED getRefersToIED();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To IED</em>' reference.
+     * @see #isSetRefersToIED()
+     * @see #unsetRefersToIED()
+     * @see #getRefersToIED()
+     * @generated
+     */
+    void setRefersToIED(IED value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToIED()
+     * @see #getRefersToIED()
+     * @see #setRefersToIED(IED)
+     * @generated
+     */
+    void unsetRefersToIED();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To IED</em>' reference is set.
+     * @see #unsetRefersToIED()
+     * @see #getRefersToIED()
+     * @see #setRefersToIED(IED)
+     * @generated
+     */
+    boolean isSetRefersToIED();
+
+    /**
+     * Returns the value of the '<em><b>Refers To LDevice</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To LDevice</em>' reference.
+     * @see #isSetRefersToLDevice()
+     * @see #unsetRefersToLDevice()
+     * @see #setRefersToLDevice(LDevice)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIEDName_RefersToLDevice()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName
+     * @model opposite="ReferredByIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    LDevice getRefersToLDevice();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To LDevice</em>' reference.
+     * @see #isSetRefersToLDevice()
+     * @see #unsetRefersToLDevice()
+     * @see #getRefersToLDevice()
+     * @generated
+     */
+    void setRefersToLDevice(LDevice value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToLDevice()
+     * @see #getRefersToLDevice()
+     * @see #setRefersToLDevice(LDevice)
+     * @generated
+     */
+    void unsetRefersToLDevice();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To LDevice</em>' reference is set.
+     * @see #unsetRefersToLDevice()
+     * @see #getRefersToLDevice()
+     * @see #setRefersToLDevice(LDevice)
+     * @generated
+     */
+    boolean isSetRefersToLDevice();
 
 } // IEDName

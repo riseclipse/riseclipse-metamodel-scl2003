@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
@@ -26,6 +27,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -551,69 +553,51 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
         // see Issue #13
         super.doResolveLinks();
         
-    	// IED is the reference to the container IED (not the implicitly referenced one)
-        
         if( getIedName() == null ) return;
         if( getApName() == null ) return;
 
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from KDC on line " + getLineNumber() + ": ";
+
         // find an IED with
         //   IED.name == ConnectedAP.iedName
-        SclSwitch< Boolean > s1 = new SclSwitch< Boolean >() {
+        List< IED > res1 =
+                get_IEDs()
+                .stream()
+                .filter( ied -> getIedName().equals( ied.getName() ))
+                .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseIED( IED object ) {
-                return getIedName().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< IED > res1 = shallowSearchObjects( get_IEDs(), s1 );
         IED ied = null;
-        String mess1 = "IED( name = " + getIedName() + " ) for ConnectedAP on line " + getLineNumber() + " ( apName = "
-                + getApName() + " )";
+        String mess1 = "IED( name = " + getIedName() + " )";
         if( res1.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+            console.error( messagePrefix + "cannot find " + mess1 );
             return;
         }
         if( res1.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+            console.error( messagePrefix + "found several " + mess1 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
         ied = res1.get( 0 );
-
-        SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseAccessPoint( AccessPoint object ) {
-                return getApName().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< AccessPoint > res2 = shallowSearchObjects( ied.getAccessPoint(), s2 );
-        String mess2 = "AccessPoint( name = " + getApName() + " ) for ConnectedAP on line " + getLineNumber()
-                + " ( iedName = " + getIedName() + " )";
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
+        
+        List< AccessPoint > res2 =
+                ied
+                .getAccessPoint()
+                .stream()
+                .filter(  a -> getApName().equals( a.getName() ))
+                .collect( Collectors.toList() );
+        
+        String mess2 = "AccessPoint( name = " + getApName() + " )";
         if( res2.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            console.error( messagePrefix + "cannot find " + mess2 );
             return;
         }
         if( res2.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            console.error( messagePrefix + "found several " + mess2 );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
         setRefersToAccessPoint( res2.get( 0 ));
+        console.info( "KDC on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 
 } //KDCImpl

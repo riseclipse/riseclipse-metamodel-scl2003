@@ -31,7 +31,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType;
@@ -41,8 +40,6 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -2652,7 +2649,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
             }
 
-            console.info( "FCDA (line " + getLineNumber() + ") refers to AbstractDataAttribute " + da.getName() + " (line " + da.getLineNumber() + ")" );
+            console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
             setRefersToAbstractDataAttribute( da );
 
             if( getSrcCBName() == null ) return;
@@ -2743,7 +2740,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return;
             }
             setRefersToControl( res7.get( 0 ));
-            console.verbose( messagePrefix + "found " + mess7 + " on line " + anyLN.getLineNumber() );
+            console.info( "ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
         }
 
     }

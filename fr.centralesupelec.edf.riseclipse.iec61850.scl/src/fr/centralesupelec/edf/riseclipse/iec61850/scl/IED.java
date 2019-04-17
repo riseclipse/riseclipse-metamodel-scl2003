@@ -42,6 +42,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL <em>SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED()
@@ -690,5 +691,56 @@ public interface IED extends UnNaming {
      * @generated
      */
     boolean isSetOriginalSclRelease();
+
+    /**
+     * Returns the value of the '<em><b>Referred By IED Name</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By IED Name</em>' reference.
+     * @see #isSetReferredByIEDName()
+     * @see #unsetReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_ReferredByIEDName()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED
+     * @model opposite="RefersToIED" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    IEDName getReferredByIEDName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Referred By IED Name</em>' reference.
+     * @see #isSetReferredByIEDName()
+     * @see #unsetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @generated
+     */
+    void setReferredByIEDName(IEDName value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @generated
+     */
+    void unsetReferredByIEDName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By IED Name</em>' reference is set.
+     * @see #unsetReferredByIEDName()
+     * @see #getReferredByIEDName()
+     * @see #setReferredByIEDName(IEDName)
+     * @generated
+     */
+    boolean isSetReferredByIEDName();
 
 } // IED

@@ -19,12 +19,15 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -457,6 +460,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         // see Issue #13
         super.doResolveLinks();
         
+        String messagePrefix = "while resolving link from ServerAt on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
         if( getApName() == null ) return;
         if( getAccessPoint() == null ) return;
         if( getAccessPoint().getIED() == null ) return;
@@ -475,18 +481,25 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
 
         };
 
-        List< AccessPoint > res = shallowSearchObjects( getAccessPoint().getIED().getAccessPoint(), s );
-        String mess = "AccessPoint( name = " + getApName() + " ) for ServerAt on line " + getLineNumber() + " )";
+        List< AccessPoint > res = 
+                getAccessPoint()
+                .getIED()
+                .getAccessPoint()
+                .stream()
+                .filter(  ap ->  getApName().equals( ap.getName() ))
+                .collect( Collectors.toList() );
+        
+        String mess = "AccessPoint( name = " + getApName() + " )";
         if( res.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess );
+            console.error( messagePrefix + "cannot find " + mess );
             return;
         }
         if( res.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess );
+            console.error( messagePrefix + "found several " + mess );
             return;
         }
-        //AbstractRiseClipseConsole.getConsole().info( "found " + mess );
         setRefersToAccessPoint( res.get( 0 ) );
+        console.info( "ServerAt on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ServerAtImpl

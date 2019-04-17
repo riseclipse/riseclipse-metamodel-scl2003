@@ -26,14 +26,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
@@ -50,12 +49,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getReferredByControlBlock <em>Referred By Control Block</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getServer <em>Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN <em>LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,16 +119,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     protected boolean ldNameESet;
 
     /**
-     * The cached value of the '{@link #getReferredByControlBlock() <em>Referred By Control Block</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByControlBlock()
-     * @generated
-     * @ordered
-     */
-    protected EList<ControlBlock> referredByControlBlock;
-
-    /**
      * The cached value of the '{@link #getAccessControl() <em>Access Control</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -157,6 +146,25 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @ordered
      */
     protected FeatureMap anyLN;
+
+    /**
+     * The cached value of the '{@link #getReferredByIEDName() <em>Referred By IED Name</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByIEDName()
+     * @generated
+     * @ordered
+     */
+    protected IEDName referredByIEDName;
+
+    /**
+     * This is true if the Referred By IED Name reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean referredByIEDNameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -278,39 +286,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public boolean isSetLdName() {
         return ldNameESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EList<ControlBlock> getReferredByControlBlock() {
-        if (referredByControlBlock == null) {
-            referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE);
-        }
-        return referredByControlBlock;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByControlBlock() {
-        if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByControlBlock() {
-        return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
     }
 
     /**
@@ -504,6 +479,105 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @generated
      */
     @Override
+    public IEDName getReferredByIEDName() {
+        return referredByIEDName;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetReferredByIEDName(IEDName newReferredByIEDName, NotificationChain msgs) {
+        IEDName oldReferredByIEDName = referredByIEDName;
+        referredByIEDName = newReferredByIEDName;
+        boolean oldReferredByIEDNameESet = referredByIEDNameESet;
+        referredByIEDNameESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, oldReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setReferredByIEDName(IEDName newReferredByIEDName) {
+        if (newReferredByIEDName != referredByIEDName) {
+            NotificationChain msgs = null;
+            if (referredByIEDName != null)
+                msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs);
+            if (newReferredByIEDName != null)
+                msgs = ((InternalEObject)newReferredByIEDName).eInverseAdd(this, SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs);
+            msgs = basicSetReferredByIEDName(newReferredByIEDName, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldReferredByIEDNameESet = referredByIEDNameESet;
+            referredByIEDNameESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, newReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetReferredByIEDName(NotificationChain msgs) {
+        IEDName oldReferredByIEDName = referredByIEDName;
+        referredByIEDName = null;
+        boolean oldReferredByIEDNameESet = referredByIEDNameESet;
+        referredByIEDNameESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, oldReferredByIEDName, null, oldReferredByIEDNameESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByIEDName() {
+        if (referredByIEDName != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs);
+            msgs = basicUnsetReferredByIEDName(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldReferredByIEDNameESet = referredByIEDNameESet;
+            referredByIEDNameESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LDEVICE__REFERRED_BY_IED_NAME, null, null, oldReferredByIEDNameESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByIEDName() {
+        return referredByIEDNameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public LN0 getLN0() {
         return (LN0)getAnyLN().get(SclPackage.eINSTANCE.getLDevice_LN0(), true);
     }
@@ -575,8 +649,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByControlBlock()).basicAdd(otherEnd, msgs);
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 if (accessControl != null)
                     msgs = ((InternalEObject)accessControl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.LDEVICE__ACCESS_CONTROL, null, msgs);
@@ -592,6 +664,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return basicSetLN0((LN0)otherEnd, msgs);
             case SclPackage.LDEVICE__LN:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getLN()).basicAdd(otherEnd, msgs);
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                if (referredByIEDName != null)
+                    msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs);
+                return basicSetReferredByIEDName((IEDName)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -604,8 +680,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<?>)getReferredByControlBlock()).basicRemove(otherEnd, msgs);
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return basicUnsetAccessControl(msgs);
             case SclPackage.LDEVICE__SERVER:
@@ -616,6 +690,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return basicUnsetLN0(msgs);
             case SclPackage.LDEVICE__LN:
                 return ((InternalEList<?>)getLN()).basicRemove(otherEnd, msgs);
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                return basicUnsetReferredByIEDName(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -646,8 +722,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return getInst();
             case SclPackage.LDEVICE__LD_NAME:
                 return getLdName();
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                return getReferredByControlBlock();
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return getAccessControl();
             case SclPackage.LDEVICE__SERVER:
@@ -659,6 +733,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return getLN0();
             case SclPackage.LDEVICE__LN:
                 return getLN();
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                return getReferredByIEDName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -678,10 +754,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             case SclPackage.LDEVICE__LD_NAME:
                 setLdName((String)newValue);
                 return;
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                getReferredByControlBlock().clear();
-                getReferredByControlBlock().addAll((Collection<? extends ControlBlock>)newValue);
-                return;
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 setAccessControl((AccessControl)newValue);
                 return;
@@ -697,6 +769,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             case SclPackage.LDEVICE__LN:
                 getLN().clear();
                 getLN().addAll((Collection<? extends LN>)newValue);
+                return;
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                setReferredByIEDName((IEDName)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -716,9 +791,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             case SclPackage.LDEVICE__LD_NAME:
                 unsetLdName();
                 return;
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                unsetReferredByControlBlock();
-                return;
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 unsetAccessControl();
                 return;
@@ -733,6 +805,9 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return;
             case SclPackage.LDEVICE__LN:
                 unsetLN();
+                return;
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                unsetReferredByIEDName();
                 return;
         }
         super.eUnset(featureID);
@@ -750,8 +825,6 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return isSetInst();
             case SclPackage.LDEVICE__LD_NAME:
                 return isSetLdName();
-            case SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK:
-                return isSetReferredByControlBlock();
             case SclPackage.LDEVICE__ACCESS_CONTROL:
                 return isSetAccessControl();
             case SclPackage.LDEVICE__SERVER:
@@ -762,6 +835,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return isSetLN0();
             case SclPackage.LDEVICE__LN:
                 return isSetLN();
+            case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
+                return isSetReferredByIEDName();
         }
         return super.eIsSet(featureID);
     }

@@ -18,24 +18,25 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -50,7 +51,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getCbName <em>Cb Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getLdInst <em>Ld Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getRefersToLDevice <em>Refers To LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlBlockImpl#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}</li>
  * </ul>
  *
@@ -133,25 +133,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * @ordered
      */
     protected boolean addressESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToLDevice() <em>Refers To LDevice</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToLDevice()
-     * @generated
-     * @ordered
-     */
-    protected LDevice refersToLDevice;
-
-    /**
-     * This is true if the Refers To LDevice reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToLDeviceESet;
 
     /**
      * The cached value of the '{@link #getRefersToControlWithIEDName() <em>Refers To Control With IED Name</em>}' reference.
@@ -396,105 +377,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * @generated
      */
     @Override
-    public LDevice getRefersToLDevice() {
-        return refersToLDevice;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToLDevice( LDevice newRefersToLDevice, NotificationChain msgs ) {
-        LDevice oldRefersToLDevice = refersToLDevice;
-        refersToLDevice = newRefersToLDevice;
-        boolean oldRefersToLDeviceESet = refersToLDeviceESet;
-        refersToLDeviceESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE, oldRefersToLDevice, newRefersToLDevice, !oldRefersToLDeviceESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setRefersToLDevice( LDevice newRefersToLDevice ) {
-        if (newRefersToLDevice != refersToLDevice) {
-            NotificationChain msgs = null;
-            if (refersToLDevice != null)
-                msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, LDevice.class, msgs);
-            if (newRefersToLDevice != null)
-                msgs = ((InternalEObject)newRefersToLDevice).eInverseAdd(this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, LDevice.class, msgs);
-            msgs = basicSetRefersToLDevice(newRefersToLDevice, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToLDeviceESet = refersToLDeviceESet;
-            refersToLDeviceESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE, newRefersToLDevice, newRefersToLDevice, !oldRefersToLDeviceESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToLDevice( NotificationChain msgs ) {
-        LDevice oldRefersToLDevice = refersToLDevice;
-        refersToLDevice = null;
-        boolean oldRefersToLDeviceESet = refersToLDeviceESet;
-        refersToLDeviceESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE, oldRefersToLDevice, null, oldRefersToLDeviceESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetRefersToLDevice() {
-        if (refersToLDevice != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, LDevice.class, msgs);
-            msgs = basicUnsetRefersToLDevice(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToLDeviceESet = refersToLDeviceESet;
-            refersToLDeviceESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE, null, null, oldRefersToLDeviceESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetRefersToLDevice() {
-        return refersToLDeviceESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public ControlWithIEDName getRefersToControlWithIEDName() {
         return refersToControlWithIEDName;
     }
@@ -595,16 +477,24 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * @generated
      */
     @Override
+    public ConnectedAP getConnectedAP() {
+        // TODO: implement this method
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 if (address != null)
                     msgs = ((InternalEObject)address).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_BLOCK__ADDRESS, null, msgs);
                 return basicSetAddress((Address)otherEnd, msgs);
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                if (refersToLDevice != null)
-                    msgs = ((InternalEObject)refersToLDevice).eInverseRemove(this, SclPackage.LDEVICE__REFERRED_BY_CONTROL_BLOCK, LDevice.class, msgs);
-                return basicSetRefersToLDevice((LDevice)otherEnd, msgs);
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 if (refersToControlWithIEDName != null)
                     msgs = ((InternalEObject)refersToControlWithIEDName).eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, ControlWithIEDName.class, msgs);
@@ -623,8 +513,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         switch (featureID) {
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 return basicUnsetAddress(msgs);
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                return basicUnsetRefersToLDevice(msgs);
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 return basicUnsetRefersToControlWithIEDName(msgs);
         }
@@ -645,8 +533,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 return getLdInst();
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 return getAddress();
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                return getRefersToLDevice();
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 return getRefersToControlWithIEDName();
         }
@@ -669,9 +555,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 return;
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 setAddress((Address)newValue);
-                return;
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                setRefersToLDevice((LDevice)newValue);
                 return;
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 setRefersToControlWithIEDName((ControlWithIEDName)newValue);
@@ -697,9 +580,6 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 unsetAddress();
                 return;
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                unsetRefersToLDevice();
-                return;
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 unsetRefersToControlWithIEDName();
                 return;
@@ -721,12 +601,24 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 return isSetLdInst();
             case SclPackage.CONTROL_BLOCK__ADDRESS:
                 return isSetAddress();
-            case SclPackage.CONTROL_BLOCK__REFERS_TO_LDEVICE:
-                return isSetRefersToLDevice();
             case SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME:
                 return isSetRefersToControlWithIEDName();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+        switch (operationID) {
+            case SclPackage.CONTROL_BLOCK___GET_CONNECTED_AP:
+                return getConnectedAP();
+        }
+        return super.eInvoke(operationID, arguments);
     }
 
     /**
@@ -762,97 +654,68 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         //              We will use the iedName provided by the enclosing connectedAP.
 
         if( getLdInst() == null ) return;
+        if( getCbName() == null ) return;
 
-        IED ied = null;
-        // TODO: put connectedAP in ControlBlock
-        if( this instanceof GSE ) {
-            GSE gse = ( ( GSE ) this );
-            if( gse.getConnectedAP() == null ) return;
-            gse.getConnectedAP().resolveLinks();
-            if( gse.getConnectedAP().getRefersToAccessPoint() == null ) return;
-            ied = gse.getConnectedAP().getRefersToAccessPoint().getIED();
-        }
-        else if( this instanceof SMV ) {
-            SMV smv = ( ( SMV ) this );
-            if( smv.getConnectedAP() == null ) return;
-            smv.getConnectedAP().resolveLinks();
-            if( smv.getConnectedAP().getRefersToAccessPoint() == null ) return;
-            ied = ( ( SMV ) this ).getConnectedAP().getRefersToAccessPoint().getIED();
-        }
-        else {
-            return;
-        }
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        String messagePrefix = "while resolving link from ControlBlock on line " + getLineNumber() + ": ";
+
+        if( getConnectedAP() == null ) return;
+        getConnectedAP().resolveLinks();
+        if( getConnectedAP().getRefersToAccessPoint() == null ) return;
+        IED ied = getConnectedAP().getRefersToAccessPoint().getIED();
         if( ied == null ) return;
 
         // find an LDevice with
         //   LDevice.inst == ControlBlock.ldInst
-        SclSwitch< Boolean > s = new SclSwitch< Boolean >() {
+        List< LDevice > res1 = 
+                ied
+                .getAccessPoint()
+                .stream()
+                .map( ap -> ap.getServer() )
+                .filter( s -> s != null )
+                .map( s -> s.getLDevice() )
+                .filter( ld -> ld != null )
+                .flatMap( ld -> ld.stream() )
+                .filter( ld -> getLdInst().equals( ld.getInst() ))
+                .collect( Collectors.toList() );
 
-            @Override
-            public Boolean caseLDevice( LDevice object ) {
-                return getLdInst().equals( object.getInst() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        List< LDevice > res1 = deepSearchObjects( ied.getAccessPoint(), s );
-        String mess1 = "LDevice( inst = " + getLdInst() + " ) for ControlBlock on line " + getLineNumber()
-                + " ( cbName = " + getCbName() + " )";
+        String mess1 = "LDevice( inst = " + getLdInst() + " ))";
         if( res1.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess1 );
+            console.error( messagePrefix + "cannot find " + mess1 );
             return;
         }
         if( res1.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess1 );
+            console.error( messagePrefix + "found several " + mess1 );
             return;
         }
-        // AbstractRiseClipseConsole.getConsole().info( "found " + mess );
-        setRefersToLDevice( res1.get( 0 ) );
+        LDevice lDevice = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
 
-        if( getCbName() == null ) return;
+        // Find a ControlWithIEDName inside LN0 of LDevice with
+        //   ControlWithIEDName.name == ControlBlock.bName
+        if( lDevice.getLN0() == null ) return;
 
-        // Find a GSEControl inside LN0 of LDevice with
-        //   GSEControl.name == ControlBlock.bName
-        SclSwitch< Boolean > s2 = new SclSwitch< Boolean >() {
-
-            @Override
-            public Boolean caseControlWithIEDName( ControlWithIEDName object ) {
-                return getCbName().equals( object.getName() );
-            }
-
-            @Override
-            public Boolean defaultCase( EObject object ) {
-                return false;
-            }
-
-        };
-
-        if( getRefersToLDevice().getLN0() == null ) return;
-        List< ControlWithIEDName > l2 = Collections.< ControlWithIEDName > unmodifiableList(
-                getRefersToLDevice().getLN0().getGSEControl() );
-        List< ControlWithIEDName > res2 = shallowSearchObjects( l2, s2 );
+        List< ControlWithIEDName > l2 = new ArrayList< ControlWithIEDName >();
+        l2.addAll( lDevice.getLN0().getGSEControl() );
+        l2.addAll( lDevice.getLN0().getSampledValueControl() );
+        
+        List< ControlWithIEDName > res2 =
+                l2
+                .stream()
+                .filter(  c -> getCbName().equals(  c.getName() ))
+                .collect( Collectors.toList() );
+        
+        String mess2 = "ControlWithIEDName( name = " + getCbName() + " )";
         if( res2.isEmpty() ) {
-            l2 = Collections.< ControlWithIEDName > unmodifiableList( 
-                    getRefersToLDevice().getLN0().getSampledValueControl() );
-            res2 = shallowSearchObjects( l2, s2 );
-        }
-        String mess2 = "ControlWithIEDName( name = " + getCbName() + " ) for ControlBlock on line "
-                + getLineNumber() + " ( ldInst = " + getLdInst() + " )";
-        if( res2.isEmpty() ) {
-            AbstractRiseClipseConsole.getConsole().error( "cannot find " + mess2 );
+            console.error( messagePrefix + "cannot find " + mess2 );
             return;
         }
         if( res2.size() > 1 ) {
-            AbstractRiseClipseConsole.getConsole().error( "found several " + mess2 );
+            console.error( messagePrefix + "found several " + mess2 );
             return;
         }
-        // AbstractRiseClipseConsole.getConsole().info( "found " + mess2 );
-        setRefersToControlWithIEDName( res2.get( 0 ) );
+        setRefersToControlWithIEDName( res2.get( 0 ));
+        console.info( "ControlBlock on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToControlWithIEDName().getLineNumber() );
     }
 
 } //ControlBlockImpl

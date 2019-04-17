@@ -173,6 +173,7 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
             childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_PhysConn());
             childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_GSE());
             childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_SMV());
+            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_ControlBlock());
         }
         return childrenFeatures;
     }
@@ -237,6 +238,7 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
             case SclPackage.CONNECTED_AP__PHYS_CONN:
             case SclPackage.CONNECTED_AP__GSE:
             case SclPackage.CONNECTED_AP__SMV:
+            case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }

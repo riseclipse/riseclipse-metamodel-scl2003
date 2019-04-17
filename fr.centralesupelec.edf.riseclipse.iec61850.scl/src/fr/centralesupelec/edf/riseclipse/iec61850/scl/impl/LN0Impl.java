@@ -25,8 +25,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
@@ -48,31 +48,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getLDevice <em>LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getSampledValueControl <em>Sampled Value Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getSettingControl <em>Setting Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getControlWithIEDName <em>Control With IED Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LN0Impl extends AnyLNImpl implements LN0 {
-    /**
-     * The cached value of the '{@link #getGSEControl() <em>GSE Control</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getGSEControl()
-     * @generated
-     * @ordered
-     */
-    protected EList<GSEControl> gseControl;
-
-    /**
-     * The cached value of the '{@link #getSampledValueControl() <em>Sampled Value Control</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getSampledValueControl()
-     * @generated
-     * @ordered
-     */
-    protected EList<SampledValueControl> sampledValueControl;
-
     /**
      * The cached value of the '{@link #getSettingControl() <em>Setting Control</em>}' containment reference.
      * <!-- begin-user-doc -->
@@ -118,10 +99,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public EList<GSEControl> getGSEControl() {
-        if (gseControl == null) {
-            gseControl = new EObjectContainmentWithInverseEList.Unsettable<GSEControl>(GSEControl.class, this, SclPackage.LN0__GSE_CONTROL, SclPackage.GSE_CONTROL__LN0);
-        }
-        return gseControl;
+        return getControlWithIEDName().list(SclPackage.eINSTANCE.getLN0_GSEControl());
     }
 
     /**
@@ -131,7 +109,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public void unsetGSEControl() {
-        if (gseControl != null) ((InternalEList.Unsettable<?>)gseControl).unset();
+        ((FeatureMap.Internal)getControlWithIEDName()).clear(SclPackage.eINSTANCE.getLN0_GSEControl());
     }
 
     /**
@@ -141,7 +119,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public boolean isSetGSEControl() {
-        return gseControl != null && ((InternalEList.Unsettable<?>)gseControl).isSet();
+        return !((FeatureMap.Internal)getControlWithIEDName()).isEmpty(SclPackage.eINSTANCE.getLN0_GSEControl());
     }
 
     /**
@@ -194,10 +172,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public EList<SampledValueControl> getSampledValueControl() {
-        if (sampledValueControl == null) {
-            sampledValueControl = new EObjectContainmentWithInverseEList.Unsettable<SampledValueControl>(SampledValueControl.class, this, SclPackage.LN0__SAMPLED_VALUE_CONTROL, SclPackage.SAMPLED_VALUE_CONTROL__LN0);
-        }
-        return sampledValueControl;
+        return getControlWithIEDName().list(SclPackage.eINSTANCE.getLN0_SampledValueControl());
     }
 
     /**
@@ -207,7 +182,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public void unsetSampledValueControl() {
-        if (sampledValueControl != null) ((InternalEList.Unsettable<?>)sampledValueControl).unset();
+        ((FeatureMap.Internal)getControlWithIEDName()).clear(SclPackage.eINSTANCE.getLN0_SampledValueControl());
     }
 
     /**
@@ -217,7 +192,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public boolean isSetSampledValueControl() {
-        return sampledValueControl != null && ((InternalEList.Unsettable<?>)sampledValueControl).isSet();
+        return !((FeatureMap.Internal)getControlWithIEDName()).isEmpty(SclPackage.eINSTANCE.getLN0_SampledValueControl());
     }
 
     /**
@@ -324,6 +299,36 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public FeatureMap getControlWithIEDName() {
+        return (FeatureMap)getControl().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getLN0_ControlWithIEDName());
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetControlWithIEDName() {
+        ((FeatureMap.Internal)getControl()).clear(SclPackage.eINSTANCE.getLN0_ControlWithIEDName());
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetControlWithIEDName() {
+        return !((FeatureMap.Internal)getControl()).isEmpty(SclPackage.eINSTANCE.getLN0_ControlWithIEDName());
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -360,6 +365,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
                 return ((InternalEList<?>)getSampledValueControl()).basicRemove(otherEnd, msgs);
             case SclPackage.LN0__SETTING_CONTROL:
                 return basicUnsetSettingControl(msgs);
+            case SclPackage.LN0__CONTROL_WITH_IED_NAME:
+                return ((InternalEList<?>)getControlWithIEDName()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -394,6 +401,9 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
                 return getSampledValueControl();
             case SclPackage.LN0__SETTING_CONTROL:
                 return getSettingControl();
+            case SclPackage.LN0__CONTROL_WITH_IED_NAME:
+                if (coreType) return getControlWithIEDName();
+                return ((FeatureMap.Internal)getControlWithIEDName()).getWrapper();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -421,6 +431,9 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
             case SclPackage.LN0__SETTING_CONTROL:
                 setSettingControl((SettingControl)newValue);
                 return;
+            case SclPackage.LN0__CONTROL_WITH_IED_NAME:
+                ((FeatureMap.Internal)getControlWithIEDName()).set(newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -445,6 +458,9 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
             case SclPackage.LN0__SETTING_CONTROL:
                 unsetSettingControl();
                 return;
+            case SclPackage.LN0__CONTROL_WITH_IED_NAME:
+                unsetControlWithIEDName();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -465,6 +481,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
                 return isSetSampledValueControl();
             case SclPackage.LN0__SETTING_CONTROL:
                 return isSetSettingControl();
+            case SclPackage.LN0__CONTROL_WITH_IED_NAME:
+                return isSetControlWithIEDName();
         }
         return super.eIsSet(featureID);
     }

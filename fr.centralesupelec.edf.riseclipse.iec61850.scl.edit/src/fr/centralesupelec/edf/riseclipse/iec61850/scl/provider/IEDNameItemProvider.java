@@ -67,6 +67,8 @@ public class IEDNameItemProvider
             addPrefixPropertyDescriptor(object);
             addRefersToAnyLNPropertyDescriptor(object);
             addValuePropertyDescriptor(object);
+            addRefersToIEDPropertyDescriptor(object);
+            addRefersToLDevicePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -221,6 +223,50 @@ public class IEDNameItemProvider
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To IED feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToIEDPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_IEDName_RefersToIED_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_IEDName_RefersToIED_feature", "_UI_IEDName_type"),
+                 SclPackage.eINSTANCE.getIEDName_RefersToIED(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To LDevice feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToLDevicePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_IEDName_RefersToLDevice_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_IEDName_RefersToLDevice_feature", "_UI_IEDName_type"),
+                 SclPackage.eINSTANCE.getIEDName_RefersToLDevice(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

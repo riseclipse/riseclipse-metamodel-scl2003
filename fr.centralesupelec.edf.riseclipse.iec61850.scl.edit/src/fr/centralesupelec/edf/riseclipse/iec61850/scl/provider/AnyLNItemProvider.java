@@ -68,7 +68,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addReferredByClientLNPropertyDescriptor(object);
             addReferredByLogControlPropertyDescriptor(object);
             addReferredByAssociationPropertyDescriptor(object);
-            addReferredIEDNamePropertyDescriptor(object);
+            addReferredByIEDNamePropertyDescriptor(object);
             addReferredByLNodePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
@@ -229,19 +229,19 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Referred IED Name feature.
+     * This adds a property descriptor for the Referred By IED Name feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredIEDNamePropertyDescriptor(Object object) {
+    protected void addReferredByIEDNamePropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredIEDName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredIEDName_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredIEDName(),
+                 getString("_UI_AnyLN_ReferredByIEDName_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByIEDName_feature", "_UI_AnyLN_type"),
+                 SclPackage.eINSTANCE.getAnyLN_ReferredByIEDName(),
                  true,
                  false,
                  true,
@@ -290,6 +290,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_ReportControl());
             childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_LogControl());
             childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_DataSet());
+            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_Control());
         }
         return childrenFeatures;
     }
@@ -354,6 +355,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             case SclPackage.ANY_LN__REPORT_CONTROL:
             case SclPackage.ANY_LN__LOG_CONTROL:
             case SclPackage.ANY_LN__DATA_SET:
+            case SclPackage.ANY_LN__CONTROL:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
                 return;
         }
