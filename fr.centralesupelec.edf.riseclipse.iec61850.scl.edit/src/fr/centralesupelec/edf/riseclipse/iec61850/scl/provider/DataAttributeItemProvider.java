@@ -62,7 +62,6 @@ public class DataAttributeItemProvider extends UnNamingItemProvider {
             super.getPropertyDescriptors(object);
 
             addNamePropertyDescriptor(object);
-            addReferredByExtRefPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -85,28 +84,6 @@ public class DataAttributeItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By Ext Ref feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByExtRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DataAttribute_ReferredByExtRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DataAttribute_ReferredByExtRef_feature", "_UI_DataAttribute_type"),
-                 SclPackage.eINSTANCE.getDataAttribute_ReferredByExtRef(),
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }

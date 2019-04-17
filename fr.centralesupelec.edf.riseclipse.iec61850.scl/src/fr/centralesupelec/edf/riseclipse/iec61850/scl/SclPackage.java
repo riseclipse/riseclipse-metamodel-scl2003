@@ -4243,22 +4243,13 @@ public interface SclPackage extends EPackage {
     int DATA_ATTRIBUTE__NAME = UN_NAMING_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DATA_ATTRIBUTE__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 1;
-
-    /**
      * The number of structural features of the '<em>Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
+    int DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The number of operations of the '<em>Data Attribute</em>' class.
@@ -4331,15 +4322,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE__NAME = DATA_ATTRIBUTE__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF = DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>BType</b></em>' attribute.
@@ -4432,13 +4414,22 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA = DATA_ATTRIBUTE_FEATURE_COUNT + 9;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF = DATA_ATTRIBUTE_FEATURE_COUNT + 10;
+
+    /**
      * The number of structural features of the '<em>Abstract Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 10;
+    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = DATA_ATTRIBUTE_FEATURE_COUNT + 11;
 
     /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
@@ -4511,15 +4502,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__NAME = ABSTRACT_DATA_ATTRIBUTE__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int BDA__REFERRED_BY_EXT_REF = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>BType</b></em>' attribute.
@@ -4612,6 +4594,15 @@ public interface SclPackage extends EPackage {
     int BDA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__REFERRED_BY_EXT_REF = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
+
+    /**
      * The feature id for the '<em><b>DA Type</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4702,15 +4693,6 @@ public interface SclPackage extends EPackage {
     int DA__NAME = ABSTRACT_DATA_ATTRIBUTE__NAME;
 
     /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DA__REFERRED_BY_EXT_REF = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
-
-    /**
      * The feature id for the '<em><b>BType</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4799,6 +4781,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__REFERRED_BY_FCDA = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA;
+
+    /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__REFERRED_BY_EXT_REF = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -5071,22 +5062,13 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT__NAME = UN_NAMING_FEATURE_COUNT + 1;
 
     /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DATA_OBJECT__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 2;
-
-    /**
      * The number of structural features of the '<em>Data Object</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DATA_OBJECT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
+    int DATA_OBJECT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The number of operations of the '<em>Data Object</em>' class.
@@ -5168,15 +5150,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO__NAME = DATA_OBJECT__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DO__REFERRED_BY_EXT_REF = DATA_OBJECT__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Transient</b></em>' attribute.
@@ -5359,13 +5332,22 @@ public interface SclPackage extends EPackage {
     int DO_TYPE__REFERRED_BY_SDO = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__REFERRED_BY_EXT_REF = ID_NAMING_FEATURE_COUNT + 7;
+
+    /**
      * The number of structural features of the '<em>DO Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 7;
+    int DO_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The number of operations of the '<em>DO Type</em>' class.
@@ -6387,22 +6369,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__DATA_SET = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 10;
-
-    /**
      * The feature id for the '<em><b>Referred By Client LN</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 11;
+    int ANY_LN__REFERRED_BY_CLIENT_LN = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The feature id for the '<em><b>Referred By Log Control</b></em>' reference list.
@@ -6411,7 +6384,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 12;
+    int ANY_LN__REFERRED_BY_LOG_CONTROL = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
      * The feature id for the '<em><b>Referred By Association</b></em>' reference list.
@@ -6420,7 +6393,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 13;
+    int ANY_LN__REFERRED_BY_ASSOCIATION = UN_NAMING_FEATURE_COUNT + 12;
 
     /**
      * The feature id for the '<em><b>Referred IED Name</b></em>' reference list.
@@ -6429,7 +6402,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_IED_NAME = UN_NAMING_FEATURE_COUNT + 14;
+    int ANY_LN__REFERRED_IED_NAME = UN_NAMING_FEATURE_COUNT + 13;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -6438,7 +6411,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 15;
+    int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
      * The number of structural features of the '<em>Any LN</em>' class.
@@ -6447,7 +6420,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The number of operations of the '<em>Any LN</em>' class.
@@ -7895,13 +7868,22 @@ public interface SclPackage extends EPackage {
     int CONTROL__NAME = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL__REFERRED_BY_EXT_REF = UN_NAMING_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONTROL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
+    int CONTROL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>Control</em>' class.
@@ -7992,6 +7974,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_IED_NAME__NAME = CONTROL__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__REFERRED_BY_EXT_REF = CONTROL__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Conf Rev</b></em>' attribute.
@@ -8129,6 +8120,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_TRIGGER_OPT__NAME = CONTROL__NAME;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT__REFERRED_BY_EXT_REF = CONTROL__REFERRED_BY_EXT_REF;
+
+    /**
      * The feature id for the '<em><b>Intg Pd</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8226,15 +8226,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DAI__NAME = DATA_ATTRIBUTE__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DAI__REFERRED_BY_EXT_REF = DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
@@ -8388,15 +8379,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DOI__NAME = DATA_OBJECT__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int DOI__REFERRED_BY_EXT_REF = DATA_OBJECT__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
@@ -8967,31 +8949,22 @@ public interface SclPackage extends EPackage {
     int EXT_REF__INPUTS = BASE_ELEMENT_FEATURE_COUNT + 15;
 
     /**
-     * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
+     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXT_REF__REFERS_TO_ANY_LN = BASE_ELEMENT_FEATURE_COUNT + 16;
+    int EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = BASE_ELEMENT_FEATURE_COUNT + 16;
 
     /**
-     * The feature id for the '<em><b>Refers To Data Attribute</b></em>' reference.
+     * The feature id for the '<em><b>Refers To DO Type</b></em>' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int EXT_REF__REFERS_TO_DATA_ATTRIBUTE = BASE_ELEMENT_FEATURE_COUNT + 17;
-
-    /**
-     * The feature id for the '<em><b>Refers To Data Object</b></em>' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXT_REF__REFERS_TO_DATA_OBJECT = BASE_ELEMENT_FEATURE_COUNT + 18;
+    int EXT_REF__REFERS_TO_DO_TYPE = BASE_ELEMENT_FEATURE_COUNT + 17;
 
     /**
      * The feature id for the '<em><b>PServ T</b></em>' attribute.
@@ -9000,7 +8973,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__PSERV_T = BASE_ELEMENT_FEATURE_COUNT + 19;
+    int EXT_REF__PSERV_T = BASE_ELEMENT_FEATURE_COUNT + 18;
 
     /**
      * The feature id for the '<em><b>PLN</b></em>' attribute.
@@ -9009,7 +8982,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__PLN = BASE_ELEMENT_FEATURE_COUNT + 20;
+    int EXT_REF__PLN = BASE_ELEMENT_FEATURE_COUNT + 19;
 
     /**
      * The feature id for the '<em><b>PDO</b></em>' attribute.
@@ -9018,7 +8991,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__PDO = BASE_ELEMENT_FEATURE_COUNT + 21;
+    int EXT_REF__PDO = BASE_ELEMENT_FEATURE_COUNT + 20;
 
     /**
      * The feature id for the '<em><b>PDA</b></em>' attribute.
@@ -9027,7 +9000,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int EXT_REF__PDA = BASE_ELEMENT_FEATURE_COUNT + 22;
+    int EXT_REF__PDA = BASE_ELEMENT_FEATURE_COUNT + 21;
+
+    /**
+     * The feature id for the '<em><b>Refers To Control</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__REFERS_TO_CONTROL = BASE_ELEMENT_FEATURE_COUNT + 22;
 
     /**
      * The number of structural features of the '<em>Ext Ref</em>' class.
@@ -9505,6 +9487,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_CONTROL__NAME = CONTROL_WITH_IED_NAME__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__REFERRED_BY_EXT_REF = CONTROL_WITH_IED_NAME__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Conf Rev</b></em>' attribute.
@@ -10804,15 +10795,6 @@ public interface SclPackage extends EPackage {
     int LN__DATA_SET = ANY_LN__DATA_SET;
 
     /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__REFERRED_BY_EXT_REF = ANY_LN__REFERRED_BY_EXT_REF;
-
-    /**
      * The feature id for the '<em><b>Referred By Client LN</b></em>' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11045,15 +11027,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__DATA_SET = ANY_LN__DATA_SET;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__REFERRED_BY_EXT_REF = ANY_LN__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Referred By Client LN</b></em>' reference list.
@@ -11333,6 +11306,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_CONTROL__NAME = CONTROL_WITH_TRIGGER_OPT__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL__REFERRED_BY_EXT_REF = CONTROL_WITH_TRIGGER_OPT__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Intg Pd</b></em>' attribute.
@@ -11893,6 +11875,15 @@ public interface SclPackage extends EPackage {
     int REPORT_CONTROL__NAME = CONTROL_WITH_TRIGGER_OPT__NAME;
 
     /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL__REFERRED_BY_EXT_REF = CONTROL_WITH_TRIGGER_OPT__REFERRED_BY_EXT_REF;
+
+    /**
      * The feature id for the '<em><b>Intg Pd</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12278,15 +12269,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDI__NAME = DATA_ATTRIBUTE__NAME;
-
-    /**
-     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int SDI__REFERRED_BY_EXT_REF = DATA_ATTRIBUTE__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
@@ -12854,6 +12836,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__NAME = CONTROL_WITH_IED_NAME__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__REFERRED_BY_EXT_REF = CONTROL_WITH_IED_NAME__REFERRED_BY_EXT_REF;
 
     /**
      * The feature id for the '<em><b>Conf Rev</b></em>' attribute.
@@ -20018,6 +20009,17 @@ public interface SclPackage extends EPackage {
     EReference getAbstractDataAttribute_ReferredByFCDA();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef()
+     * @see #getAbstractDataAttribute()
+     * @generated
+     */
+    EReference getAbstractDataAttribute_ReferredByExtRef();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA <em>BDA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20286,6 +20288,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getDOType_ReferredBySDO();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef()
+     * @see #getDOType()
+     * @generated
+     */
+    EReference getDOType_ReferredByExtRef();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates <em>Data Type Templates</em>}'.
@@ -21658,17 +21671,6 @@ public interface SclPackage extends EPackage {
     EReference getAnyLN_DataSet();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByExtRef()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EReference getAnyLN_ReferredByExtRef();
-
-    /**
      * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByClientLN <em>Referred By Client LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22348,6 +22350,17 @@ public interface SclPackage extends EPackage {
     EAttribute getControl_Name();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef()
+     * @see #getControl()
+     * @generated
+     */
+    EReference getControl_ReferredByExtRef();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName <em>Control With IED Name</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22888,37 +22901,26 @@ public interface SclPackage extends EPackage {
     EReference getExtRef_Inputs();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}'.
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN()
+     * @return the meta object for the reference '<em>Refers To Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute()
      * @see #getExtRef()
      * @generated
      */
-    EReference getExtRef_RefersToAnyLN();
+    EReference getExtRef_RefersToAbstractDataAttribute();
 
     /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}'.
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Data Attribute</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute()
+     * @return the meta object for the reference '<em>Refers To DO Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType()
      * @see #getExtRef()
      * @generated
      */
-    EReference getExtRef_RefersToDataAttribute();
-
-    /**
-     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Refers To Data Object</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject()
-     * @see #getExtRef()
-     * @generated
-     */
-    EReference getExtRef_RefersToDataObject();
+    EReference getExtRef_RefersToDOType();
 
     /**
      * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}'.
@@ -22963,6 +22965,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getExtRef_PDA();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Control</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl()
+     * @see #getExtRef()
+     * @generated
+     */
+    EReference getExtRef_RefersToControl();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA <em>FCDA</em>}'.
@@ -27441,17 +27454,6 @@ public interface SclPackage extends EPackage {
     EAttribute getDataObject_Name();
 
     /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByExtRef()
-     * @see #getDataObject()
-     * @generated
-     */
-    EReference getDataObject_ReferredByExtRef();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute <em>Data Attribute</em>}'.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -27471,17 +27473,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getDataAttribute_Name();
-
-    /**
-     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the reference list '<em>Referred By Ext Ref</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByExtRef()
-     * @see #getDataAttribute()
-     * @generated
-     */
-    EReference getDataAttribute_ReferredByExtRef();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject <em>Object</em>}'.

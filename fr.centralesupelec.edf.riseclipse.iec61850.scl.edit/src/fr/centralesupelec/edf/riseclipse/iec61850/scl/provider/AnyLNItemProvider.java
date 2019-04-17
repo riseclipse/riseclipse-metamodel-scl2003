@@ -65,7 +65,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addLnClassPropertyDescriptor(object);
             addLnTypePropertyDescriptor(object);
             addRefersToLNodeTypePropertyDescriptor(object);
-            addReferredByExtRefPropertyDescriptor(object);
             addReferredByClientLNPropertyDescriptor(object);
             addReferredByLogControlPropertyDescriptor(object);
             addReferredByAssociationPropertyDescriptor(object);
@@ -155,28 +154,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
                  getString("_UI_AnyLN_RefersToLNodeType_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_RefersToLNodeType_feature", "_UI_AnyLN_type"),
                  SclPackage.eINSTANCE.getAnyLN_RefersToLNodeType(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By Ext Ref feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByExtRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByExtRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByExtRef_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByExtRef(),
                  true,
                  false,
                  true,

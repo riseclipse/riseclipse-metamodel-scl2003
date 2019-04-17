@@ -34,6 +34,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -52,6 +53,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getDataTypeTemplates <em>Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getSDO <em>SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredBySDO <em>Referred By SDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,6 +156,16 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @ordered
      */
     protected EList<SDO> referredBySDO;
+
+    /**
+     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByExtRef()
+     * @generated
+     * @ordered
+     */
+    protected EList<ExtRef> referredByExtRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -454,6 +466,39 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList<ExtRef> getReferredByExtRef() {
+        if (referredByExtRef == null) {
+            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DO_TYPE);
+        }
+        return referredByExtRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByExtRef() {
+        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByExtRef() {
+        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -470,6 +515,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDO()).basicAdd(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDO()).basicAdd(otherEnd, msgs);
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -492,6 +539,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return ((InternalEList<?>)getSDO()).basicRemove(otherEnd, msgs);
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
                 return ((InternalEList<?>)getReferredBySDO()).basicRemove(otherEnd, msgs);
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -532,6 +581,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return getSDO();
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
                 return getReferredBySDO();
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                return getReferredByExtRef();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -570,6 +621,10 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 getReferredBySDO().clear();
                 getReferredBySDO().addAll((Collection<? extends SDO>)newValue);
                 return;
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                getReferredByExtRef().clear();
+                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -603,6 +658,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
                 unsetReferredBySDO();
                 return;
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                unsetReferredByExtRef();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -629,6 +687,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return isSetSDO();
             case SclPackage.DO_TYPE__REFERRED_BY_SDO:
                 return isSetReferredBySDO();
+            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
+                return isSetReferredByExtRef();
         }
         return super.eIsSet(featureID);
     }

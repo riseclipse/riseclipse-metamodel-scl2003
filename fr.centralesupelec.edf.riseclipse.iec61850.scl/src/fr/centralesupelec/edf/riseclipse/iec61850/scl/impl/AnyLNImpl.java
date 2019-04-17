@@ -24,7 +24,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
@@ -66,7 +65,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReportControl <em>Report Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLogControl <em>Log Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getDataSet <em>Data Set</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByClientLN <em>Referred By Client LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByAssociation <em>Referred By Association</em>}</li>
@@ -251,16 +249,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @ordered
      */
     protected EList<DataSet> dataSet;
-
-    /**
-     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByExtRef()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExtRef> referredByExtRef;
 
     /**
      * The cached value of the '{@link #getReferredByClientLN() <em>Referred By Client LN</em>}' reference list.
@@ -850,39 +838,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.ANY_LN__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_ANY_LN);
-        }
-        return referredByExtRef;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EList<ClientLN> getReferredByClientLN() {
         if (referredByClientLN == null) {
             referredByClientLN = new EObjectWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN);
@@ -1069,8 +1024,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getLogControl()).basicAdd(otherEnd, msgs);
             case SclPackage.ANY_LN__DATA_SET:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataSet()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByClientLN()).basicAdd(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
@@ -1107,8 +1060,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return ((InternalEList<?>)getLogControl()).basicRemove(otherEnd, msgs);
             case SclPackage.ANY_LN__DATA_SET:
                 return ((InternalEList<?>)getDataSet()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 return ((InternalEList<?>)getReferredByClientLN()).basicRemove(otherEnd, msgs);
             case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
@@ -1151,8 +1102,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return getLogControl();
             case SclPackage.ANY_LN__DATA_SET:
                 return getDataSet();
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 return getReferredByClientLN();
             case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
@@ -1210,10 +1159,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             case SclPackage.ANY_LN__DATA_SET:
                 getDataSet().clear();
                 getDataSet().addAll((Collection<? extends DataSet>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
                 return;
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 getReferredByClientLN().clear();
@@ -1277,9 +1222,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             case SclPackage.ANY_LN__DATA_SET:
                 unsetDataSet();
                 return;
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
-                return;
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 unsetReferredByClientLN();
                 return;
@@ -1327,8 +1269,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                 return isSetLogControl();
             case SclPackage.ANY_LN__DATA_SET:
                 return isSetDataSet();
-            case SclPackage.ANY_LN__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
             case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
                 return isSetReferredByClientLN();
             case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:

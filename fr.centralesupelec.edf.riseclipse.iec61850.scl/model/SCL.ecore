@@ -366,6 +366,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByFCDA" ordered="false"
         upperBound="-1" eType="#//FCDA" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//FCDA/RefersToAbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToAbstractDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BDA" eSuperTypes="#//AbstractDataAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
@@ -429,6 +432,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDO" ordered="false"
         upperBound="-1" eType="#//SDO" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//SDO/RefersToDOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToDOType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeTemplates" eSuperTypes="#//ExplicitLinkResolver">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
@@ -608,9 +614,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
         upperBound="-1" eType="#//DataSet" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DataSet/AnyLN"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
-        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//ExtRef/RefersToAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByClientLN" ordered="false"
         upperBound="-1" eType="#//ClientLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ClientLN/RefersToAnyLN"/>
@@ -761,6 +764,9 @@
         eOpposite="#//DataSet/ReferredByControl"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToControl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlWithIEDName" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="confRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
@@ -878,15 +884,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Inputs" ordered="false"
         eType="#//Inputs" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Inputs/ExtRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAnyLN" ordered="false"
-        eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//AnyLN/ReferredByExtRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataAttribute"
-        ordered="false" eType="#//DataAttribute" transient="true" unsettable="true"
-        resolveProxies="false" eOpposite="#//DataAttribute/ReferredByExtRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDataObject" ordered="false"
-        eType="#//DataObject" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DataObject/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
+        ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/ReferredByExtRef"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pServT" eType="#//ServiceType"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pLN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -895,6 +898,9 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pDA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToControl" ordered="false"
+        eType="#//Control" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//Control/ReferredByExtRef"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FCDA" eSuperTypes="#//ExplicitLinkResolver">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2033,16 +2039,10 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
-        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//ExtRef/RefersToDataObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataAttribute" abstract="true" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
-        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//ExtRef/RefersToDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SclObject" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" lowerBound="1"

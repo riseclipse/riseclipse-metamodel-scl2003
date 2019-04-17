@@ -36,6 +36,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredBySDO <em>Referred By SDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType()
@@ -341,5 +342,42 @@ public interface DOType extends IDNaming {
      * @generated
      */
     boolean isSetReferredBySDO();
+
+    /**
+     * Returns the value of the '<em><b>Referred By Ext Ref</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By Ext Ref</em>' reference list.
+     * @see #isSetReferredByExtRef()
+     * @see #unsetReferredByExtRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_ReferredByExtRef()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType
+     * @model opposite="RefersToDOType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<ExtRef> getReferredByExtRef();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByExtRef()
+     * @see #getReferredByExtRef()
+     * @generated
+     */
+    void unsetReferredByExtRef();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By Ext Ref</em>' reference list is set.
+     * @see #unsetReferredByExtRef()
+     * @see #getReferredByExtRef()
+     * @generated
+     */
+    boolean isSetReferredByExtRef();
 
 } // DOType

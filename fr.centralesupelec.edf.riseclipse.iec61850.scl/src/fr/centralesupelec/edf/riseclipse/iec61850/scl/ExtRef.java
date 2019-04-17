@@ -42,13 +42,13 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcLNInst <em>Src LN Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcPrefix <em>Src Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs <em>Inputs</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef()
@@ -831,169 +831,106 @@ public interface ExtRef extends BaseElement, AgDesc {
     void setInputs( Inputs value );
 
     /**
-     * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Any LN</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToAnyLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByExtRef
+     * @return the value of the '<em>Refers To Abstract Data Attribute</em>' reference.
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef
      * @model opposite="ReferredByExtRef" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    AnyLN getRefersToAnyLN();
+    AbstractDataAttribute getRefersToAbstractDataAttribute();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Any LN</em>' reference.
-     * @see #isSetRefersToAnyLN()
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
+     * @param value the new value of the '<em>Refers To Abstract Data Attribute</em>' reference.
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void setRefersToAbstractDataAttribute(AbstractDataAttribute value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
      * @generated
      */
-    void unsetRefersToAnyLN();
+    void unsetRefersToAbstractDataAttribute();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAnyLN <em>Refers To Any LN</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Any LN</em>' reference is set.
-     * @see #unsetRefersToAnyLN()
-     * @see #getRefersToAnyLN()
-     * @see #setRefersToAnyLN(AnyLN)
+     * @return whether the value of the '<em>Refers To Abstract Data Attribute</em>' reference is set.
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
      * @generated
      */
-    boolean isSetRefersToAnyLN();
+    boolean isSetRefersToAbstractDataAttribute();
 
     /**
-     * Returns the value of the '<em><b>Refers To Data Attribute</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Data Attribute</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Data Attribute</em>' reference.
-     * @see #isSetRefersToDataAttribute()
-     * @see #unsetRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToDataAttribute()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute#getReferredByExtRef
+     * @return the value of the '<em>Refers To DO Type</em>' reference.
+     * @see #isSetRefersToDOType()
+     * @see #unsetRefersToDOType()
+     * @see #setRefersToDOType(DOType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToDOType()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef
      * @model opposite="ReferredByExtRef" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    DataAttribute getRefersToDataAttribute();
+    DOType getRefersToDOType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Data Attribute</em>' reference.
-     * @see #isSetRefersToDataAttribute()
-     * @see #unsetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
+     * @param value the new value of the '<em>Refers To DO Type</em>' reference.
+     * @see #isSetRefersToDOType()
+     * @see #unsetRefersToDOType()
+     * @see #getRefersToDOType()
      * @generated
      */
-    void setRefersToDataAttribute(DataAttribute value);
+    void setRefersToDOType(DOType value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
+     * @see #isSetRefersToDOType()
+     * @see #getRefersToDOType()
+     * @see #setRefersToDOType(DOType)
      * @generated
      */
-    void unsetRefersToDataAttribute();
+    void unsetRefersToDOType();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataAttribute <em>Refers To Data Attribute</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Data Attribute</em>' reference is set.
-     * @see #unsetRefersToDataAttribute()
-     * @see #getRefersToDataAttribute()
-     * @see #setRefersToDataAttribute(DataAttribute)
+     * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
+     * @see #unsetRefersToDOType()
+     * @see #getRefersToDOType()
+     * @see #setRefersToDOType(DOType)
      * @generated
      */
-    boolean isSetRefersToDataAttribute();
-
-    /**
-     * Returns the value of the '<em><b>Refers To Data Object</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To Data Object</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To Data Object</em>' reference.
-     * @see #isSetRefersToDataObject()
-     * @see #unsetRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToDataObject()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject#getReferredByExtRef
-     * @model opposite="ReferredByExtRef" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    DataObject getRefersToDataObject();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To Data Object</em>' reference.
-     * @see #isSetRefersToDataObject()
-     * @see #unsetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @generated
-     */
-    void setRefersToDataObject(DataObject value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @generated
-     */
-    void unsetRefersToDataObject();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDataObject <em>Refers To Data Object</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To Data Object</em>' reference is set.
-     * @see #unsetRefersToDataObject()
-     * @see #getRefersToDataObject()
-     * @see #setRefersToDataObject(DataObject)
-     * @generated
-     */
-    boolean isSetRefersToDataObject();
+    boolean isSetRefersToDOType();
 
     /**
      * Returns the value of the '<em><b>PServ T</b></em>' attribute.
@@ -1209,5 +1146,56 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @generated
      */
     boolean isSetPDA();
+
+    /**
+     * Returns the value of the '<em><b>Refers To Control</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To Control</em>' reference.
+     * @see #isSetRefersToControl()
+     * @see #unsetRefersToControl()
+     * @see #setRefersToControl(Control)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToControl()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef
+     * @model opposite="ReferredByExtRef" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    Control getRefersToControl();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To Control</em>' reference.
+     * @see #isSetRefersToControl()
+     * @see #unsetRefersToControl()
+     * @see #getRefersToControl()
+     * @generated
+     */
+    void setRefersToControl(Control value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToControl()
+     * @see #getRefersToControl()
+     * @see #setRefersToControl(Control)
+     * @generated
+     */
+    void unsetRefersToControl();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To Control</em>' reference is set.
+     * @see #unsetRefersToControl()
+     * @see #getRefersToControl()
+     * @see #setRefersToControl(Control)
+     * @generated
+     */
+    boolean isSetRefersToControl();
 
 } // ExtRef

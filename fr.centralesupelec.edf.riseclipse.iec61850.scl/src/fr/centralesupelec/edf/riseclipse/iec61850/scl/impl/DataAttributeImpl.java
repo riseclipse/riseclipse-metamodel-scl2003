@@ -18,18 +18,10 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 /**
@@ -41,7 +33,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataAttributeImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DataAttributeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,16 +64,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * @ordered
      */
     protected boolean nameESet;
-
-    /**
-     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByExtRef()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExtRef> referredByExtRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -159,74 +140,10 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
      * @generated
      */
     @Override
-    public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DATA_ATTRIBUTE);
-        }
-        return referredByExtRef;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @SuppressWarnings( "unchecked" )
-    @Override
-    public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 return getName();
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -243,10 +160,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 setName((String)newValue);
                 return;
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
-                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -262,9 +175,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 unsetName();
                 return;
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
-                return;
         }
         super.eUnset(featureID);
     }
@@ -279,8 +189,6 @@ public abstract class DataAttributeImpl extends UnNamingImpl implements DataAttr
         switch (featureID) {
             case SclPackage.DATA_ATTRIBUTE__NAME:
                 return isSetName();
-            case SclPackage.DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
         }
         return super.eIsSet(featureID);
     }

@@ -23,15 +23,20 @@ import java.util.List;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,6 +49,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlImpl#getDatSet <em>Dat Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlImpl#getRefersToDataSet <em>Refers To Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ControlImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -125,6 +131,16 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * @ordered
      */
     protected boolean nameESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByExtRef()
+     * @generated
+     * @ordered
+     */
+    protected EList<ExtRef> referredByExtRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -350,12 +366,48 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * @generated
      */
     @Override
+    public EList<ExtRef> getReferredByExtRef() {
+        if (referredByExtRef == null) {
+            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.CONTROL__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_CONTROL);
+        }
+        return referredByExtRef;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByExtRef() {
+        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByExtRef() {
+        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.CONTROL__REFERS_TO_DATA_SET:
                 if (refersToDataSet != null)
                     msgs = ((InternalEObject)refersToDataSet).eInverseRemove(this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, DataSet.class, msgs);
                 return basicSetRefersToDataSet((DataSet)otherEnd, msgs);
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -370,6 +422,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         switch (featureID) {
             case SclPackage.CONTROL__REFERS_TO_DATA_SET:
                 return basicUnsetRefersToDataSet(msgs);
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -388,6 +442,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 return getRefersToDataSet();
             case SclPackage.CONTROL__NAME:
                 return getName();
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                return getReferredByExtRef();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -397,6 +453,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
@@ -408,6 +465,10 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 return;
             case SclPackage.CONTROL__NAME:
                 setName((String)newValue);
+                return;
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                getReferredByExtRef().clear();
+                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -430,6 +491,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             case SclPackage.CONTROL__NAME:
                 unsetName();
                 return;
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                unsetReferredByExtRef();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -448,6 +512,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 return isSetRefersToDataSet();
             case SclPackage.CONTROL__NAME:
                 return isSetName();
+            case SclPackage.CONTROL__REFERRED_BY_EXT_REF:
+                return isSetReferredByExtRef();
         }
         return super.eIsSet(featureID);
     }
