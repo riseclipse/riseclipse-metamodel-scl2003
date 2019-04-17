@@ -72,7 +72,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getNameLength <em>Name Length</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getAccessPoint <em>Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getClientServices <em>Client Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getCommProt <em>Comm Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getConfDataSet <em>Conf Data Set</em>}</li>
@@ -94,7 +94,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getGetDataObjectDefinition <em>Get Data Object Definition</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getGetDataSetValue <em>Get Data Set Value</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getGetDirectory <em>Get Directory</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getIED <em>IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getLogSettings <em>Log Settings</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getReadWrite <em>Read Write</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServicesImpl#getRedProt <em>Red Prot</em>}</li>
@@ -843,8 +843,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @generated
      */
     @Override
-    public AccessPoint getAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.SERVICES__ACCESS_POINT) return null;
+    public AccessPoint getParentAccessPoint() {
+        if (eContainerFeatureID() != SclPackage.SERVICES__PARENT_ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
     }
 
@@ -853,8 +853,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAccessPoint( AccessPoint newAccessPoint, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAccessPoint, SclPackage.SERVICES__ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.SERVICES__PARENT_ACCESS_POINT, msgs);
         return msgs;
     }
 
@@ -864,20 +864,20 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @generated
      */
     @Override
-    public void setAccessPoint( AccessPoint newAccessPoint ) {
-        if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__ACCESS_POINT && newAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newAccessPoint))
+    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
+        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAccessPoint != null)
-                msgs = ((InternalEObject)newAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVICES, AccessPoint.class, msgs);
-            msgs = basicSetAccessPoint(newAccessPoint, msgs);
+            if (newParentAccessPoint != null)
+                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVICES, AccessPoint.class, msgs);
+            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__ACCESS_POINT, newAccessPoint, newAccessPoint));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
     }
 
     /**
@@ -917,9 +917,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newClientServices != clientServices) {
             NotificationChain msgs = null;
             if (clientServices != null)
-                msgs = ((InternalEObject)clientServices).eInverseRemove(this, SclPackage.CLIENT_SERVICES__SERVICES, ClientServices.class, msgs);
+                msgs = ((InternalEObject)clientServices).eInverseRemove(this, SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs);
             if (newClientServices != null)
-                msgs = ((InternalEObject)newClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__SERVICES, ClientServices.class, msgs);
+                msgs = ((InternalEObject)newClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs);
             msgs = basicSetClientServices(newClientServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -957,7 +957,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetClientServices() {
         if (clientServices != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)clientServices).eInverseRemove(this, SclPackage.CLIENT_SERVICES__SERVICES, ClientServices.class, msgs);
+            msgs = ((InternalEObject)clientServices).eInverseRemove(this, SclPackage.CLIENT_SERVICES__PARENT_SERVICES, ClientServices.class, msgs);
             msgs = basicUnsetClientServices(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1016,9 +1016,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newCommProt != commProt) {
             NotificationChain msgs = null;
             if (commProt != null)
-                msgs = ((InternalEObject)commProt).eInverseRemove(this, SclPackage.COMM_PROT__SERVICES, CommProt.class, msgs);
+                msgs = ((InternalEObject)commProt).eInverseRemove(this, SclPackage.COMM_PROT__PARENT_SERVICES, CommProt.class, msgs);
             if (newCommProt != null)
-                msgs = ((InternalEObject)newCommProt).eInverseAdd(this, SclPackage.COMM_PROT__SERVICES, CommProt.class, msgs);
+                msgs = ((InternalEObject)newCommProt).eInverseAdd(this, SclPackage.COMM_PROT__PARENT_SERVICES, CommProt.class, msgs);
             msgs = basicSetCommProt(newCommProt, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1056,7 +1056,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetCommProt() {
         if (commProt != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)commProt).eInverseRemove(this, SclPackage.COMM_PROT__SERVICES, CommProt.class, msgs);
+            msgs = ((InternalEObject)commProt).eInverseRemove(this, SclPackage.COMM_PROT__PARENT_SERVICES, CommProt.class, msgs);
             msgs = basicUnsetCommProt(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1115,9 +1115,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfDataSet != confDataSet) {
             NotificationChain msgs = null;
             if (confDataSet != null)
-                msgs = ((InternalEObject)confDataSet).eInverseRemove(this, SclPackage.CONF_DATA_SET__SERVICES, ConfDataSet.class, msgs);
+                msgs = ((InternalEObject)confDataSet).eInverseRemove(this, SclPackage.CONF_DATA_SET__PARENT_SERVICES, ConfDataSet.class, msgs);
             if (newConfDataSet != null)
-                msgs = ((InternalEObject)newConfDataSet).eInverseAdd(this, SclPackage.CONF_DATA_SET__SERVICES, ConfDataSet.class, msgs);
+                msgs = ((InternalEObject)newConfDataSet).eInverseAdd(this, SclPackage.CONF_DATA_SET__PARENT_SERVICES, ConfDataSet.class, msgs);
             msgs = basicSetConfDataSet(newConfDataSet, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1155,7 +1155,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfDataSet() {
         if (confDataSet != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confDataSet).eInverseRemove(this, SclPackage.CONF_DATA_SET__SERVICES, ConfDataSet.class, msgs);
+            msgs = ((InternalEObject)confDataSet).eInverseRemove(this, SclPackage.CONF_DATA_SET__PARENT_SERVICES, ConfDataSet.class, msgs);
             msgs = basicUnsetConfDataSet(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1214,9 +1214,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfLNs != confLNs) {
             NotificationChain msgs = null;
             if (confLNs != null)
-                msgs = ((InternalEObject)confLNs).eInverseRemove(this, SclPackage.CONF_LNS__SERVICES, ConfLNs.class, msgs);
+                msgs = ((InternalEObject)confLNs).eInverseRemove(this, SclPackage.CONF_LNS__PARENT_SERVICES, ConfLNs.class, msgs);
             if (newConfLNs != null)
-                msgs = ((InternalEObject)newConfLNs).eInverseAdd(this, SclPackage.CONF_LNS__SERVICES, ConfLNs.class, msgs);
+                msgs = ((InternalEObject)newConfLNs).eInverseAdd(this, SclPackage.CONF_LNS__PARENT_SERVICES, ConfLNs.class, msgs);
             msgs = basicSetConfLNs(newConfLNs, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1254,7 +1254,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfLNs() {
         if (confLNs != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confLNs).eInverseRemove(this, SclPackage.CONF_LNS__SERVICES, ConfLNs.class, msgs);
+            msgs = ((InternalEObject)confLNs).eInverseRemove(this, SclPackage.CONF_LNS__PARENT_SERVICES, ConfLNs.class, msgs);
             msgs = basicUnsetConfLNs(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1313,9 +1313,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfLdName != confLdName) {
             NotificationChain msgs = null;
             if (confLdName != null)
-                msgs = ((InternalEObject)confLdName).eInverseRemove(this, SclPackage.CONF_LD_NAME__SERVICES, ConfLdName.class, msgs);
+                msgs = ((InternalEObject)confLdName).eInverseRemove(this, SclPackage.CONF_LD_NAME__PARENT_SERVICES, ConfLdName.class, msgs);
             if (newConfLdName != null)
-                msgs = ((InternalEObject)newConfLdName).eInverseAdd(this, SclPackage.CONF_LD_NAME__SERVICES, ConfLdName.class, msgs);
+                msgs = ((InternalEObject)newConfLdName).eInverseAdd(this, SclPackage.CONF_LD_NAME__PARENT_SERVICES, ConfLdName.class, msgs);
             msgs = basicSetConfLdName(newConfLdName, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1353,7 +1353,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfLdName() {
         if (confLdName != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confLdName).eInverseRemove(this, SclPackage.CONF_LD_NAME__SERVICES, ConfLdName.class, msgs);
+            msgs = ((InternalEObject)confLdName).eInverseRemove(this, SclPackage.CONF_LD_NAME__PARENT_SERVICES, ConfLdName.class, msgs);
             msgs = basicUnsetConfLdName(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1412,9 +1412,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfLogControl != confLogControl) {
             NotificationChain msgs = null;
             if (confLogControl != null)
-                msgs = ((InternalEObject)confLogControl).eInverseRemove(this, SclPackage.CONF_LOG_CONTROL__SERVICES, ConfLogControl.class, msgs);
+                msgs = ((InternalEObject)confLogControl).eInverseRemove(this, SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs);
             if (newConfLogControl != null)
-                msgs = ((InternalEObject)newConfLogControl).eInverseAdd(this, SclPackage.CONF_LOG_CONTROL__SERVICES, ConfLogControl.class, msgs);
+                msgs = ((InternalEObject)newConfLogControl).eInverseAdd(this, SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs);
             msgs = basicSetConfLogControl(newConfLogControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1452,7 +1452,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfLogControl() {
         if (confLogControl != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confLogControl).eInverseRemove(this, SclPackage.CONF_LOG_CONTROL__SERVICES, ConfLogControl.class, msgs);
+            msgs = ((InternalEObject)confLogControl).eInverseRemove(this, SclPackage.CONF_LOG_CONTROL__PARENT_SERVICES, ConfLogControl.class, msgs);
             msgs = basicUnsetConfLogControl(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1511,9 +1511,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfReportControl != confReportControl) {
             NotificationChain msgs = null;
             if (confReportControl != null)
-                msgs = ((InternalEObject)confReportControl).eInverseRemove(this, SclPackage.CONF_REPORT_CONTROL__SERVICES, ConfReportControl.class, msgs);
+                msgs = ((InternalEObject)confReportControl).eInverseRemove(this, SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs);
             if (newConfReportControl != null)
-                msgs = ((InternalEObject)newConfReportControl).eInverseAdd(this, SclPackage.CONF_REPORT_CONTROL__SERVICES, ConfReportControl.class, msgs);
+                msgs = ((InternalEObject)newConfReportControl).eInverseAdd(this, SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs);
             msgs = basicSetConfReportControl(newConfReportControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1551,7 +1551,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfReportControl() {
         if (confReportControl != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confReportControl).eInverseRemove(this, SclPackage.CONF_REPORT_CONTROL__SERVICES, ConfReportControl.class, msgs);
+            msgs = ((InternalEObject)confReportControl).eInverseRemove(this, SclPackage.CONF_REPORT_CONTROL__PARENT_SERVICES, ConfReportControl.class, msgs);
             msgs = basicUnsetConfReportControl(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1610,9 +1610,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newConfSigRef != confSigRef) {
             NotificationChain msgs = null;
             if (confSigRef != null)
-                msgs = ((InternalEObject)confSigRef).eInverseRemove(this, SclPackage.CONF_SIG_REF__SERVICES, ConfSigRef.class, msgs);
+                msgs = ((InternalEObject)confSigRef).eInverseRemove(this, SclPackage.CONF_SIG_REF__PARENT_SERVICES, ConfSigRef.class, msgs);
             if (newConfSigRef != null)
-                msgs = ((InternalEObject)newConfSigRef).eInverseAdd(this, SclPackage.CONF_SIG_REF__SERVICES, ConfSigRef.class, msgs);
+                msgs = ((InternalEObject)newConfSigRef).eInverseAdd(this, SclPackage.CONF_SIG_REF__PARENT_SERVICES, ConfSigRef.class, msgs);
             msgs = basicSetConfSigRef(newConfSigRef, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1650,7 +1650,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetConfSigRef() {
         if (confSigRef != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confSigRef).eInverseRemove(this, SclPackage.CONF_SIG_REF__SERVICES, ConfSigRef.class, msgs);
+            msgs = ((InternalEObject)confSigRef).eInverseRemove(this, SclPackage.CONF_SIG_REF__PARENT_SERVICES, ConfSigRef.class, msgs);
             msgs = basicUnsetConfSigRef(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1710,9 +1710,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newDataObjectDirectory != dataObjectDirectory) {
             NotificationChain msgs = null;
             if (dataObjectDirectory != null)
-                msgs = ((InternalEObject)dataObjectDirectory).eInverseRemove(this, SclPackage.DATA_OBJECT_DIRECTORY__SERVICES, DataObjectDirectory.class, msgs);
+                msgs = ((InternalEObject)dataObjectDirectory).eInverseRemove(this, SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs);
             if (newDataObjectDirectory != null)
-                msgs = ((InternalEObject)newDataObjectDirectory).eInverseAdd(this, SclPackage.DATA_OBJECT_DIRECTORY__SERVICES, DataObjectDirectory.class, msgs);
+                msgs = ((InternalEObject)newDataObjectDirectory).eInverseAdd(this, SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs);
             msgs = basicSetDataObjectDirectory(newDataObjectDirectory, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1750,7 +1750,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetDataObjectDirectory() {
         if (dataObjectDirectory != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dataObjectDirectory).eInverseRemove(this, SclPackage.DATA_OBJECT_DIRECTORY__SERVICES, DataObjectDirectory.class, msgs);
+            msgs = ((InternalEObject)dataObjectDirectory).eInverseRemove(this, SclPackage.DATA_OBJECT_DIRECTORY__PARENT_SERVICES, DataObjectDirectory.class, msgs);
             msgs = basicUnsetDataObjectDirectory(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1809,9 +1809,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newDataSetDirectory != dataSetDirectory) {
             NotificationChain msgs = null;
             if (dataSetDirectory != null)
-                msgs = ((InternalEObject)dataSetDirectory).eInverseRemove(this, SclPackage.DATA_SET_DIRECTORY__SERVICES, DataSetDirectory.class, msgs);
+                msgs = ((InternalEObject)dataSetDirectory).eInverseRemove(this, SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs);
             if (newDataSetDirectory != null)
-                msgs = ((InternalEObject)newDataSetDirectory).eInverseAdd(this, SclPackage.DATA_SET_DIRECTORY__SERVICES, DataSetDirectory.class, msgs);
+                msgs = ((InternalEObject)newDataSetDirectory).eInverseAdd(this, SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs);
             msgs = basicSetDataSetDirectory(newDataSetDirectory, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1849,7 +1849,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetDataSetDirectory() {
         if (dataSetDirectory != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dataSetDirectory).eInverseRemove(this, SclPackage.DATA_SET_DIRECTORY__SERVICES, DataSetDirectory.class, msgs);
+            msgs = ((InternalEObject)dataSetDirectory).eInverseRemove(this, SclPackage.DATA_SET_DIRECTORY__PARENT_SERVICES, DataSetDirectory.class, msgs);
             msgs = basicUnsetDataSetDirectory(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1908,9 +1908,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newDynAssociation != dynAssociation) {
             NotificationChain msgs = null;
             if (dynAssociation != null)
-                msgs = ((InternalEObject)dynAssociation).eInverseRemove(this, SclPackage.DYN_ASSOCIATION__SERVICES, DynAssociation.class, msgs);
+                msgs = ((InternalEObject)dynAssociation).eInverseRemove(this, SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs);
             if (newDynAssociation != null)
-                msgs = ((InternalEObject)newDynAssociation).eInverseAdd(this, SclPackage.DYN_ASSOCIATION__SERVICES, DynAssociation.class, msgs);
+                msgs = ((InternalEObject)newDynAssociation).eInverseAdd(this, SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs);
             msgs = basicSetDynAssociation(newDynAssociation, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -1948,7 +1948,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetDynAssociation() {
         if (dynAssociation != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dynAssociation).eInverseRemove(this, SclPackage.DYN_ASSOCIATION__SERVICES, DynAssociation.class, msgs);
+            msgs = ((InternalEObject)dynAssociation).eInverseRemove(this, SclPackage.DYN_ASSOCIATION__PARENT_SERVICES, DynAssociation.class, msgs);
             msgs = basicUnsetDynAssociation(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2007,9 +2007,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newDynDataSet != dynDataSet) {
             NotificationChain msgs = null;
             if (dynDataSet != null)
-                msgs = ((InternalEObject)dynDataSet).eInverseRemove(this, SclPackage.DYN_DATA_SET__SERVICES, DynDataSet.class, msgs);
+                msgs = ((InternalEObject)dynDataSet).eInverseRemove(this, SclPackage.DYN_DATA_SET__PARENT_SERVICES, DynDataSet.class, msgs);
             if (newDynDataSet != null)
-                msgs = ((InternalEObject)newDynDataSet).eInverseAdd(this, SclPackage.DYN_DATA_SET__SERVICES, DynDataSet.class, msgs);
+                msgs = ((InternalEObject)newDynDataSet).eInverseAdd(this, SclPackage.DYN_DATA_SET__PARENT_SERVICES, DynDataSet.class, msgs);
             msgs = basicSetDynDataSet(newDynDataSet, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2047,7 +2047,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetDynDataSet() {
         if (dynDataSet != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dynDataSet).eInverseRemove(this, SclPackage.DYN_DATA_SET__SERVICES, DynDataSet.class, msgs);
+            msgs = ((InternalEObject)dynDataSet).eInverseRemove(this, SclPackage.DYN_DATA_SET__PARENT_SERVICES, DynDataSet.class, msgs);
             msgs = basicUnsetDynDataSet(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2106,9 +2106,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newFileHandling != fileHandling) {
             NotificationChain msgs = null;
             if (fileHandling != null)
-                msgs = ((InternalEObject)fileHandling).eInverseRemove(this, SclPackage.FILE_HANDLING__SERVICES, FileHandling.class, msgs);
+                msgs = ((InternalEObject)fileHandling).eInverseRemove(this, SclPackage.FILE_HANDLING__PARENT_SERVICES, FileHandling.class, msgs);
             if (newFileHandling != null)
-                msgs = ((InternalEObject)newFileHandling).eInverseAdd(this, SclPackage.FILE_HANDLING__SERVICES, FileHandling.class, msgs);
+                msgs = ((InternalEObject)newFileHandling).eInverseAdd(this, SclPackage.FILE_HANDLING__PARENT_SERVICES, FileHandling.class, msgs);
             msgs = basicSetFileHandling(newFileHandling, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2146,7 +2146,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetFileHandling() {
         if (fileHandling != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)fileHandling).eInverseRemove(this, SclPackage.FILE_HANDLING__SERVICES, FileHandling.class, msgs);
+            msgs = ((InternalEObject)fileHandling).eInverseRemove(this, SclPackage.FILE_HANDLING__PARENT_SERVICES, FileHandling.class, msgs);
             msgs = basicUnsetFileHandling(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2205,9 +2205,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGOOSE != goose) {
             NotificationChain msgs = null;
             if (goose != null)
-                msgs = ((InternalEObject)goose).eInverseRemove(this, SclPackage.GOOSE__SERVICES, GOOSE.class, msgs);
+                msgs = ((InternalEObject)goose).eInverseRemove(this, SclPackage.GOOSE__PARENT_SERVICES, GOOSE.class, msgs);
             if (newGOOSE != null)
-                msgs = ((InternalEObject)newGOOSE).eInverseAdd(this, SclPackage.GOOSE__SERVICES, GOOSE.class, msgs);
+                msgs = ((InternalEObject)newGOOSE).eInverseAdd(this, SclPackage.GOOSE__PARENT_SERVICES, GOOSE.class, msgs);
             msgs = basicSetGOOSE(newGOOSE, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2245,7 +2245,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGOOSE() {
         if (goose != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)goose).eInverseRemove(this, SclPackage.GOOSE__SERVICES, GOOSE.class, msgs);
+            msgs = ((InternalEObject)goose).eInverseRemove(this, SclPackage.GOOSE__PARENT_SERVICES, GOOSE.class, msgs);
             msgs = basicUnsetGOOSE(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2304,9 +2304,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGSEDir != gseDir) {
             NotificationChain msgs = null;
             if (gseDir != null)
-                msgs = ((InternalEObject)gseDir).eInverseRemove(this, SclPackage.GSE_DIR__SERVICES, GSEDir.class, msgs);
+                msgs = ((InternalEObject)gseDir).eInverseRemove(this, SclPackage.GSE_DIR__PARENT_SERVICES, GSEDir.class, msgs);
             if (newGSEDir != null)
-                msgs = ((InternalEObject)newGSEDir).eInverseAdd(this, SclPackage.GSE_DIR__SERVICES, GSEDir.class, msgs);
+                msgs = ((InternalEObject)newGSEDir).eInverseAdd(this, SclPackage.GSE_DIR__PARENT_SERVICES, GSEDir.class, msgs);
             msgs = basicSetGSEDir(newGSEDir, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2344,7 +2344,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGSEDir() {
         if (gseDir != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)gseDir).eInverseRemove(this, SclPackage.GSE_DIR__SERVICES, GSEDir.class, msgs);
+            msgs = ((InternalEObject)gseDir).eInverseRemove(this, SclPackage.GSE_DIR__PARENT_SERVICES, GSEDir.class, msgs);
             msgs = basicUnsetGSEDir(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2403,9 +2403,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGSESettings != gseSettings) {
             NotificationChain msgs = null;
             if (gseSettings != null)
-                msgs = ((InternalEObject)gseSettings).eInverseRemove(this, SclPackage.GSE_SETTINGS__SERVICES, GSESettings.class, msgs);
+                msgs = ((InternalEObject)gseSettings).eInverseRemove(this, SclPackage.GSE_SETTINGS__PARENT_SERVICES, GSESettings.class, msgs);
             if (newGSESettings != null)
-                msgs = ((InternalEObject)newGSESettings).eInverseAdd(this, SclPackage.GSE_SETTINGS__SERVICES, GSESettings.class, msgs);
+                msgs = ((InternalEObject)newGSESettings).eInverseAdd(this, SclPackage.GSE_SETTINGS__PARENT_SERVICES, GSESettings.class, msgs);
             msgs = basicSetGSESettings(newGSESettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2443,7 +2443,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGSESettings() {
         if (gseSettings != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)gseSettings).eInverseRemove(this, SclPackage.GSE_SETTINGS__SERVICES, GSESettings.class, msgs);
+            msgs = ((InternalEObject)gseSettings).eInverseRemove(this, SclPackage.GSE_SETTINGS__PARENT_SERVICES, GSESettings.class, msgs);
             msgs = basicUnsetGSESettings(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2502,9 +2502,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGSSE != gsse) {
             NotificationChain msgs = null;
             if (gsse != null)
-                msgs = ((InternalEObject)gsse).eInverseRemove(this, SclPackage.GSSE__SERVICES, GSSE.class, msgs);
+                msgs = ((InternalEObject)gsse).eInverseRemove(this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class, msgs);
             if (newGSSE != null)
-                msgs = ((InternalEObject)newGSSE).eInverseAdd(this, SclPackage.GSSE__SERVICES, GSSE.class, msgs);
+                msgs = ((InternalEObject)newGSSE).eInverseAdd(this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class, msgs);
             msgs = basicSetGSSE(newGSSE, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2542,7 +2542,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGSSE() {
         if (gsse != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)gsse).eInverseRemove(this, SclPackage.GSSE__SERVICES, GSSE.class, msgs);
+            msgs = ((InternalEObject)gsse).eInverseRemove(this, SclPackage.GSSE__PARENT_SERVICES, GSSE.class, msgs);
             msgs = basicUnsetGSSE(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2601,9 +2601,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGetCBValues != getCBValues) {
             NotificationChain msgs = null;
             if (getCBValues != null)
-                msgs = ((InternalEObject)getCBValues).eInverseRemove(this, SclPackage.GET_CB_VALUES__SERVICES, GetCBValues.class, msgs);
+                msgs = ((InternalEObject)getCBValues).eInverseRemove(this, SclPackage.GET_CB_VALUES__PARENT_SERVICES, GetCBValues.class, msgs);
             if (newGetCBValues != null)
-                msgs = ((InternalEObject)newGetCBValues).eInverseAdd(this, SclPackage.GET_CB_VALUES__SERVICES, GetCBValues.class, msgs);
+                msgs = ((InternalEObject)newGetCBValues).eInverseAdd(this, SclPackage.GET_CB_VALUES__PARENT_SERVICES, GetCBValues.class, msgs);
             msgs = basicSetGetCBValues(newGetCBValues, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2641,7 +2641,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGetCBValues() {
         if (getCBValues != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)getCBValues).eInverseRemove(this, SclPackage.GET_CB_VALUES__SERVICES, GetCBValues.class, msgs);
+            msgs = ((InternalEObject)getCBValues).eInverseRemove(this, SclPackage.GET_CB_VALUES__PARENT_SERVICES, GetCBValues.class, msgs);
             msgs = basicUnsetGetCBValues(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2701,9 +2701,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGetDataObjectDefinition != getDataObjectDefinition) {
             NotificationChain msgs = null;
             if (getDataObjectDefinition != null)
-                msgs = ((InternalEObject)getDataObjectDefinition).eInverseRemove(this, SclPackage.GET_DATA_OBJECT_DEFINITION__SERVICES, GetDataObjectDefinition.class, msgs);
+                msgs = ((InternalEObject)getDataObjectDefinition).eInverseRemove(this, SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs);
             if (newGetDataObjectDefinition != null)
-                msgs = ((InternalEObject)newGetDataObjectDefinition).eInverseAdd(this, SclPackage.GET_DATA_OBJECT_DEFINITION__SERVICES, GetDataObjectDefinition.class, msgs);
+                msgs = ((InternalEObject)newGetDataObjectDefinition).eInverseAdd(this, SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs);
             msgs = basicSetGetDataObjectDefinition(newGetDataObjectDefinition, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2741,7 +2741,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGetDataObjectDefinition() {
         if (getDataObjectDefinition != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)getDataObjectDefinition).eInverseRemove(this, SclPackage.GET_DATA_OBJECT_DEFINITION__SERVICES, GetDataObjectDefinition.class, msgs);
+            msgs = ((InternalEObject)getDataObjectDefinition).eInverseRemove(this, SclPackage.GET_DATA_OBJECT_DEFINITION__PARENT_SERVICES, GetDataObjectDefinition.class, msgs);
             msgs = basicUnsetGetDataObjectDefinition(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2800,9 +2800,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGetDataSetValue != getDataSetValue) {
             NotificationChain msgs = null;
             if (getDataSetValue != null)
-                msgs = ((InternalEObject)getDataSetValue).eInverseRemove(this, SclPackage.GET_DATA_SET_VALUE__SERVICES, GetDataSetValue.class, msgs);
+                msgs = ((InternalEObject)getDataSetValue).eInverseRemove(this, SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs);
             if (newGetDataSetValue != null)
-                msgs = ((InternalEObject)newGetDataSetValue).eInverseAdd(this, SclPackage.GET_DATA_SET_VALUE__SERVICES, GetDataSetValue.class, msgs);
+                msgs = ((InternalEObject)newGetDataSetValue).eInverseAdd(this, SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs);
             msgs = basicSetGetDataSetValue(newGetDataSetValue, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2840,7 +2840,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGetDataSetValue() {
         if (getDataSetValue != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)getDataSetValue).eInverseRemove(this, SclPackage.GET_DATA_SET_VALUE__SERVICES, GetDataSetValue.class, msgs);
+            msgs = ((InternalEObject)getDataSetValue).eInverseRemove(this, SclPackage.GET_DATA_SET_VALUE__PARENT_SERVICES, GetDataSetValue.class, msgs);
             msgs = basicUnsetGetDataSetValue(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2899,9 +2899,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newGetDirectory != getDirectory) {
             NotificationChain msgs = null;
             if (getDirectory != null)
-                msgs = ((InternalEObject)getDirectory).eInverseRemove(this, SclPackage.GET_DIRECTORY__SERVICES, GetDirectory.class, msgs);
+                msgs = ((InternalEObject)getDirectory).eInverseRemove(this, SclPackage.GET_DIRECTORY__PARENT_SERVICES, GetDirectory.class, msgs);
             if (newGetDirectory != null)
-                msgs = ((InternalEObject)newGetDirectory).eInverseAdd(this, SclPackage.GET_DIRECTORY__SERVICES, GetDirectory.class, msgs);
+                msgs = ((InternalEObject)newGetDirectory).eInverseAdd(this, SclPackage.GET_DIRECTORY__PARENT_SERVICES, GetDirectory.class, msgs);
             msgs = basicSetGetDirectory(newGetDirectory, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2939,7 +2939,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetGetDirectory() {
         if (getDirectory != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)getDirectory).eInverseRemove(this, SclPackage.GET_DIRECTORY__SERVICES, GetDirectory.class, msgs);
+            msgs = ((InternalEObject)getDirectory).eInverseRemove(this, SclPackage.GET_DIRECTORY__PARENT_SERVICES, GetDirectory.class, msgs);
             msgs = basicUnsetGetDirectory(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -2967,8 +2967,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @generated
      */
     @Override
-    public IED getIED() {
-        if (eContainerFeatureID() != SclPackage.SERVICES__IED) return null;
+    public IED getParentIED() {
+        if (eContainerFeatureID() != SclPackage.SERVICES__PARENT_IED) return null;
         return (IED)eInternalContainer();
     }
 
@@ -2977,8 +2977,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetIED( IED newIED, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newIED, SclPackage.SERVICES__IED, msgs);
+    public NotificationChain basicSetParentIED(IED newParentIED, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentIED, SclPackage.SERVICES__PARENT_IED, msgs);
         return msgs;
     }
 
@@ -2988,20 +2988,20 @@ public class ServicesImpl extends SclObjectImpl implements Services {
      * @generated
      */
     @Override
-    public void setIED( IED newIED ) {
-        if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__IED && newIED != null)) {
-            if (EcoreUtil.isAncestor(this, newIED))
+    public void setParentIED(IED newParentIED) {
+        if (newParentIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVICES__PARENT_IED && newParentIED != null)) {
+            if (EcoreUtil.isAncestor(this, newParentIED))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newIED != null)
-                msgs = ((InternalEObject)newIED).eInverseAdd(this, SclPackage.IED__SERVICES, IED.class, msgs);
-            msgs = basicSetIED(newIED, msgs);
+            if (newParentIED != null)
+                msgs = ((InternalEObject)newParentIED).eInverseAdd(this, SclPackage.IED__SERVICES, IED.class, msgs);
+            msgs = basicSetParentIED(newParentIED, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__IED, newIED, newIED));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICES__PARENT_IED, newParentIED, newParentIED));
     }
 
     /**
@@ -3041,9 +3041,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newLogSettings != logSettings) {
             NotificationChain msgs = null;
             if (logSettings != null)
-                msgs = ((InternalEObject)logSettings).eInverseRemove(this, SclPackage.LOG_SETTINGS__SERVICES, LogSettings.class, msgs);
+                msgs = ((InternalEObject)logSettings).eInverseRemove(this, SclPackage.LOG_SETTINGS__PARENT_SERVICES, LogSettings.class, msgs);
             if (newLogSettings != null)
-                msgs = ((InternalEObject)newLogSettings).eInverseAdd(this, SclPackage.LOG_SETTINGS__SERVICES, LogSettings.class, msgs);
+                msgs = ((InternalEObject)newLogSettings).eInverseAdd(this, SclPackage.LOG_SETTINGS__PARENT_SERVICES, LogSettings.class, msgs);
             msgs = basicSetLogSettings(newLogSettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3081,7 +3081,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetLogSettings() {
         if (logSettings != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)logSettings).eInverseRemove(this, SclPackage.LOG_SETTINGS__SERVICES, LogSettings.class, msgs);
+            msgs = ((InternalEObject)logSettings).eInverseRemove(this, SclPackage.LOG_SETTINGS__PARENT_SERVICES, LogSettings.class, msgs);
             msgs = basicUnsetLogSettings(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3140,9 +3140,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newReadWrite != readWrite) {
             NotificationChain msgs = null;
             if (readWrite != null)
-                msgs = ((InternalEObject)readWrite).eInverseRemove(this, SclPackage.READ_WRITE__SERVICES, ReadWrite.class, msgs);
+                msgs = ((InternalEObject)readWrite).eInverseRemove(this, SclPackage.READ_WRITE__PARENT_SERVICES, ReadWrite.class, msgs);
             if (newReadWrite != null)
-                msgs = ((InternalEObject)newReadWrite).eInverseAdd(this, SclPackage.READ_WRITE__SERVICES, ReadWrite.class, msgs);
+                msgs = ((InternalEObject)newReadWrite).eInverseAdd(this, SclPackage.READ_WRITE__PARENT_SERVICES, ReadWrite.class, msgs);
             msgs = basicSetReadWrite(newReadWrite, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3180,7 +3180,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetReadWrite() {
         if (readWrite != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)readWrite).eInverseRemove(this, SclPackage.READ_WRITE__SERVICES, ReadWrite.class, msgs);
+            msgs = ((InternalEObject)readWrite).eInverseRemove(this, SclPackage.READ_WRITE__PARENT_SERVICES, ReadWrite.class, msgs);
             msgs = basicUnsetReadWrite(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3239,9 +3239,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newRedProt != redProt) {
             NotificationChain msgs = null;
             if (redProt != null)
-                msgs = ((InternalEObject)redProt).eInverseRemove(this, SclPackage.RED_PROT__SERVICES, RedProt.class, msgs);
+                msgs = ((InternalEObject)redProt).eInverseRemove(this, SclPackage.RED_PROT__PARENT_SERVICES, RedProt.class, msgs);
             if (newRedProt != null)
-                msgs = ((InternalEObject)newRedProt).eInverseAdd(this, SclPackage.RED_PROT__SERVICES, RedProt.class, msgs);
+                msgs = ((InternalEObject)newRedProt).eInverseAdd(this, SclPackage.RED_PROT__PARENT_SERVICES, RedProt.class, msgs);
             msgs = basicSetRedProt(newRedProt, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3279,7 +3279,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetRedProt() {
         if (redProt != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)redProt).eInverseRemove(this, SclPackage.RED_PROT__SERVICES, RedProt.class, msgs);
+            msgs = ((InternalEObject)redProt).eInverseRemove(this, SclPackage.RED_PROT__PARENT_SERVICES, RedProt.class, msgs);
             msgs = basicUnsetRedProt(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3338,9 +3338,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newReportSettings != reportSettings) {
             NotificationChain msgs = null;
             if (reportSettings != null)
-                msgs = ((InternalEObject)reportSettings).eInverseRemove(this, SclPackage.REPORT_SETTINGS__SERVICES, ReportSettings.class, msgs);
+                msgs = ((InternalEObject)reportSettings).eInverseRemove(this, SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs);
             if (newReportSettings != null)
-                msgs = ((InternalEObject)newReportSettings).eInverseAdd(this, SclPackage.REPORT_SETTINGS__SERVICES, ReportSettings.class, msgs);
+                msgs = ((InternalEObject)newReportSettings).eInverseAdd(this, SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs);
             msgs = basicSetReportSettings(newReportSettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3378,7 +3378,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetReportSettings() {
         if (reportSettings != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)reportSettings).eInverseRemove(this, SclPackage.REPORT_SETTINGS__SERVICES, ReportSettings.class, msgs);
+            msgs = ((InternalEObject)reportSettings).eInverseRemove(this, SclPackage.REPORT_SETTINGS__PARENT_SERVICES, ReportSettings.class, msgs);
             msgs = basicUnsetReportSettings(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3437,9 +3437,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newSMVsc != smVsc) {
             NotificationChain msgs = null;
             if (smVsc != null)
-                msgs = ((InternalEObject)smVsc).eInverseRemove(this, SclPackage.SM_VSC__SERVICES, SMVsc.class, msgs);
+                msgs = ((InternalEObject)smVsc).eInverseRemove(this, SclPackage.SM_VSC__PARENT_SERVICES, SMVsc.class, msgs);
             if (newSMVsc != null)
-                msgs = ((InternalEObject)newSMVsc).eInverseAdd(this, SclPackage.SM_VSC__SERVICES, SMVsc.class, msgs);
+                msgs = ((InternalEObject)newSMVsc).eInverseAdd(this, SclPackage.SM_VSC__PARENT_SERVICES, SMVsc.class, msgs);
             msgs = basicSetSMVsc(newSMVsc, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3477,7 +3477,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetSMVsc() {
         if (smVsc != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)smVsc).eInverseRemove(this, SclPackage.SM_VSC__SERVICES, SMVsc.class, msgs);
+            msgs = ((InternalEObject)smVsc).eInverseRemove(this, SclPackage.SM_VSC__PARENT_SERVICES, SMVsc.class, msgs);
             msgs = basicUnsetSMVsc(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3536,9 +3536,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newSupSubscription != supSubscription) {
             NotificationChain msgs = null;
             if (supSubscription != null)
-                msgs = ((InternalEObject)supSubscription).eInverseRemove(this, SclPackage.SUP_SUBSCRIPTION__SERVICES, SupSubscription.class, msgs);
+                msgs = ((InternalEObject)supSubscription).eInverseRemove(this, SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs);
             if (newSupSubscription != null)
-                msgs = ((InternalEObject)newSupSubscription).eInverseAdd(this, SclPackage.SUP_SUBSCRIPTION__SERVICES, SupSubscription.class, msgs);
+                msgs = ((InternalEObject)newSupSubscription).eInverseAdd(this, SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs);
             msgs = basicSetSupSubscription(newSupSubscription, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3576,7 +3576,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetSupSubscription() {
         if (supSubscription != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)supSubscription).eInverseRemove(this, SclPackage.SUP_SUBSCRIPTION__SERVICES, SupSubscription.class, msgs);
+            msgs = ((InternalEObject)supSubscription).eInverseRemove(this, SclPackage.SUP_SUBSCRIPTION__PARENT_SERVICES, SupSubscription.class, msgs);
             msgs = basicUnsetSupSubscription(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3635,9 +3635,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newValueHandling != valueHandling) {
             NotificationChain msgs = null;
             if (valueHandling != null)
-                msgs = ((InternalEObject)valueHandling).eInverseRemove(this, SclPackage.VALUE_HANDLING__SERVICES, ValueHandling.class, msgs);
+                msgs = ((InternalEObject)valueHandling).eInverseRemove(this, SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs);
             if (newValueHandling != null)
-                msgs = ((InternalEObject)newValueHandling).eInverseAdd(this, SclPackage.VALUE_HANDLING__SERVICES, ValueHandling.class, msgs);
+                msgs = ((InternalEObject)newValueHandling).eInverseAdd(this, SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs);
             msgs = basicSetValueHandling(newValueHandling, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3675,7 +3675,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetValueHandling() {
         if (valueHandling != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)valueHandling).eInverseRemove(this, SclPackage.VALUE_HANDLING__SERVICES, ValueHandling.class, msgs);
+            msgs = ((InternalEObject)valueHandling).eInverseRemove(this, SclPackage.VALUE_HANDLING__PARENT_SERVICES, ValueHandling.class, msgs);
             msgs = basicUnsetValueHandling(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3734,9 +3734,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newSetDataSetValue != setDataSetValue) {
             NotificationChain msgs = null;
             if (setDataSetValue != null)
-                msgs = ((InternalEObject)setDataSetValue).eInverseRemove(this, SclPackage.SET_DATA_SET_VALUE__SERVICES, SetDataSetValue.class, msgs);
+                msgs = ((InternalEObject)setDataSetValue).eInverseRemove(this, SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs);
             if (newSetDataSetValue != null)
-                msgs = ((InternalEObject)newSetDataSetValue).eInverseAdd(this, SclPackage.SET_DATA_SET_VALUE__SERVICES, SetDataSetValue.class, msgs);
+                msgs = ((InternalEObject)newSetDataSetValue).eInverseAdd(this, SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs);
             msgs = basicSetSetDataSetValue(newSetDataSetValue, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3774,7 +3774,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetSetDataSetValue() {
         if (setDataSetValue != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)setDataSetValue).eInverseRemove(this, SclPackage.SET_DATA_SET_VALUE__SERVICES, SetDataSetValue.class, msgs);
+            msgs = ((InternalEObject)setDataSetValue).eInverseRemove(this, SclPackage.SET_DATA_SET_VALUE__PARENT_SERVICES, SetDataSetValue.class, msgs);
             msgs = basicUnsetSetDataSetValue(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3833,9 +3833,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newSettingGroups != settingGroups) {
             NotificationChain msgs = null;
             if (settingGroups != null)
-                msgs = ((InternalEObject)settingGroups).eInverseRemove(this, SclPackage.SETTING_GROUPS__SERVICES, SettingGroups.class, msgs);
+                msgs = ((InternalEObject)settingGroups).eInverseRemove(this, SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs);
             if (newSettingGroups != null)
-                msgs = ((InternalEObject)newSettingGroups).eInverseAdd(this, SclPackage.SETTING_GROUPS__SERVICES, SettingGroups.class, msgs);
+                msgs = ((InternalEObject)newSettingGroups).eInverseAdd(this, SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs);
             msgs = basicSetSettingGroups(newSettingGroups, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3873,7 +3873,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetSettingGroups() {
         if (settingGroups != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)settingGroups).eInverseRemove(this, SclPackage.SETTING_GROUPS__SERVICES, SettingGroups.class, msgs);
+            msgs = ((InternalEObject)settingGroups).eInverseRemove(this, SclPackage.SETTING_GROUPS__PARENT_SERVICES, SettingGroups.class, msgs);
             msgs = basicUnsetSettingGroups(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3932,9 +3932,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newTimeSyncProt != timeSyncProt) {
             NotificationChain msgs = null;
             if (timeSyncProt != null)
-                msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__SERVICES, TimeSyncProt.class, msgs);
+                msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs);
             if (newTimeSyncProt != null)
-                msgs = ((InternalEObject)newTimeSyncProt).eInverseAdd(this, SclPackage.TIME_SYNC_PROT__SERVICES, TimeSyncProt.class, msgs);
+                msgs = ((InternalEObject)newTimeSyncProt).eInverseAdd(this, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs);
             msgs = basicSetTimeSyncProt(newTimeSyncProt, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -3972,7 +3972,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetTimeSyncProt() {
         if (timeSyncProt != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__SERVICES, TimeSyncProt.class, msgs);
+            msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, TimeSyncProt.class, msgs);
             msgs = basicUnsetTimeSyncProt(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -4032,9 +4032,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newTimerActivatedControl != timerActivatedControl) {
             NotificationChain msgs = null;
             if (timerActivatedControl != null)
-                msgs = ((InternalEObject)timerActivatedControl).eInverseRemove(this, SclPackage.TIMER_ACTIVATED_CONTROL__SERVICES, TimerActivatedControl.class, msgs);
+                msgs = ((InternalEObject)timerActivatedControl).eInverseRemove(this, SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs);
             if (newTimerActivatedControl != null)
-                msgs = ((InternalEObject)newTimerActivatedControl).eInverseAdd(this, SclPackage.TIMER_ACTIVATED_CONTROL__SERVICES, TimerActivatedControl.class, msgs);
+                msgs = ((InternalEObject)newTimerActivatedControl).eInverseAdd(this, SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs);
             msgs = basicSetTimerActivatedControl(newTimerActivatedControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -4072,7 +4072,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetTimerActivatedControl() {
         if (timerActivatedControl != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)timerActivatedControl).eInverseRemove(this, SclPackage.TIMER_ACTIVATED_CONTROL__SERVICES, TimerActivatedControl.class, msgs);
+            msgs = ((InternalEObject)timerActivatedControl).eInverseRemove(this, SclPackage.TIMER_ACTIVATED_CONTROL__PARENT_SERVICES, TimerActivatedControl.class, msgs);
             msgs = basicUnsetTimerActivatedControl(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -4131,9 +4131,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         if (newSMVSettings != smvSettings) {
             NotificationChain msgs = null;
             if (smvSettings != null)
-                msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+                msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__PARENT_SERVICES, SMVSettings.class, msgs);
             if (newSMVSettings != null)
-                msgs = ((InternalEObject)newSMVSettings).eInverseAdd(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+                msgs = ((InternalEObject)newSMVSettings).eInverseAdd(this, SclPackage.SMV_SETTINGS__PARENT_SERVICES, SMVSettings.class, msgs);
             msgs = basicSetSMVSettings(newSMVSettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -4171,7 +4171,7 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     public void unsetSMVSettings() {
         if (smvSettings != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__SERVICES, SMVSettings.class, msgs);
+            msgs = ((InternalEObject)smvSettings).eInverseRemove(this, SclPackage.SMV_SETTINGS__PARENT_SERVICES, SMVSettings.class, msgs);
             msgs = basicUnsetSMVSettings(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -4201,10 +4201,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SERVICES__ACCESS_POINT:
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAccessPoint((AccessPoint)otherEnd, msgs);
+                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 if (clientServices != null)
                     msgs = ((InternalEObject)clientServices).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__CLIENT_SERVICES, null, msgs);
@@ -4289,10 +4289,10 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 if (getDirectory != null)
                     msgs = ((InternalEObject)getDirectory).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__GET_DIRECTORY, null, msgs);
                 return basicSetGetDirectory((GetDirectory)otherEnd, msgs);
-            case SclPackage.SERVICES__IED:
+            case SclPackage.SERVICES__PARENT_IED:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetIED((IED)otherEnd, msgs);
+                return basicSetParentIED((IED)otherEnd, msgs);
             case SclPackage.SERVICES__LOG_SETTINGS:
                 if (logSettings != null)
                     msgs = ((InternalEObject)logSettings).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVICES__LOG_SETTINGS, null, msgs);
@@ -4353,8 +4353,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SERVICES__ACCESS_POINT:
-                return basicSetAccessPoint(null, msgs);
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
+                return basicSetParentAccessPoint(null, msgs);
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 return basicUnsetClientServices(msgs);
             case SclPackage.SERVICES__COMM_PROT:
@@ -4397,8 +4397,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return basicUnsetGetDataSetValue(msgs);
             case SclPackage.SERVICES__GET_DIRECTORY:
                 return basicUnsetGetDirectory(msgs);
-            case SclPackage.SERVICES__IED:
-                return basicSetIED(null, msgs);
+            case SclPackage.SERVICES__PARENT_IED:
+                return basicSetParentIED(null, msgs);
             case SclPackage.SERVICES__LOG_SETTINGS:
                 return basicUnsetLogSettings(msgs);
             case SclPackage.SERVICES__READ_WRITE:
@@ -4435,9 +4435,9 @@ public class ServicesImpl extends SclObjectImpl implements Services {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SERVICES__ACCESS_POINT:
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__SERVICES, AccessPoint.class, msgs);
-            case SclPackage.SERVICES__IED:
+            case SclPackage.SERVICES__PARENT_IED:
                 return eInternalContainer().eInverseRemove(this, SclPackage.IED__SERVICES, IED.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -4453,8 +4453,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         switch (featureID) {
             case SclPackage.SERVICES__NAME_LENGTH:
                 return getNameLength();
-            case SclPackage.SERVICES__ACCESS_POINT:
-                return getAccessPoint();
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
+                return getParentAccessPoint();
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 return getClientServices();
             case SclPackage.SERVICES__COMM_PROT:
@@ -4497,8 +4497,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return getGetDataSetValue();
             case SclPackage.SERVICES__GET_DIRECTORY:
                 return getGetDirectory();
-            case SclPackage.SERVICES__IED:
-                return getIED();
+            case SclPackage.SERVICES__PARENT_IED:
+                return getParentIED();
             case SclPackage.SERVICES__LOG_SETTINGS:
                 return getLogSettings();
             case SclPackage.SERVICES__READ_WRITE:
@@ -4538,8 +4538,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             case SclPackage.SERVICES__NAME_LENGTH:
                 setNameLength((Integer)newValue);
                 return;
-            case SclPackage.SERVICES__ACCESS_POINT:
-                setAccessPoint((AccessPoint)newValue);
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)newValue);
                 return;
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 setClientServices((ClientServices)newValue);
@@ -4604,8 +4604,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             case SclPackage.SERVICES__GET_DIRECTORY:
                 setGetDirectory((GetDirectory)newValue);
                 return;
-            case SclPackage.SERVICES__IED:
-                setIED((IED)newValue);
+            case SclPackage.SERVICES__PARENT_IED:
+                setParentIED((IED)newValue);
                 return;
             case SclPackage.SERVICES__LOG_SETTINGS:
                 setLogSettings((LogSettings)newValue);
@@ -4658,8 +4658,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             case SclPackage.SERVICES__NAME_LENGTH:
                 unsetNameLength();
                 return;
-            case SclPackage.SERVICES__ACCESS_POINT:
-                setAccessPoint((AccessPoint)null);
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)null);
                 return;
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 unsetClientServices();
@@ -4724,8 +4724,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
             case SclPackage.SERVICES__GET_DIRECTORY:
                 unsetGetDirectory();
                 return;
-            case SclPackage.SERVICES__IED:
-                setIED((IED)null);
+            case SclPackage.SERVICES__PARENT_IED:
+                setParentIED((IED)null);
                 return;
             case SclPackage.SERVICES__LOG_SETTINGS:
                 unsetLogSettings();
@@ -4777,8 +4777,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
         switch (featureID) {
             case SclPackage.SERVICES__NAME_LENGTH:
                 return isSetNameLength();
-            case SclPackage.SERVICES__ACCESS_POINT:
-                return getAccessPoint() != null;
+            case SclPackage.SERVICES__PARENT_ACCESS_POINT:
+                return getParentAccessPoint() != null;
             case SclPackage.SERVICES__CLIENT_SERVICES:
                 return isSetClientServices();
             case SclPackage.SERVICES__COMM_PROT:
@@ -4821,8 +4821,8 @@ public class ServicesImpl extends SclObjectImpl implements Services {
                 return isSetGetDataSetValue();
             case SclPackage.SERVICES__GET_DIRECTORY:
                 return isSetGetDirectory();
-            case SclPackage.SERVICES__IED:
-                return getIED() != null;
+            case SclPackage.SERVICES__PARENT_IED:
+                return getParentIED() != null;
             case SclPackage.SERVICES__LOG_SETTINGS:
                 return isSetLogSettings();
             case SclPackage.SERVICES__READ_WRITE:

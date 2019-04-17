@@ -47,7 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDupd <em>Dupd</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getQchg <em>Qchg</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getFc <em>Fc</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getDOType <em>DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getParentDOType <em>Parent DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAImpl#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
  *
@@ -355,6 +355,49 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      */
     @Override
+    public DOType getParentDOType() {
+        if (eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE) return null;
+        return (DOType)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentDOType(DOType newParentDOType, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDOType, SclPackage.DA__PARENT_DO_TYPE, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentDOType(DOType newParentDOType) {
+        if (newParentDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE && newParentDOType != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDOType))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentDOType != null)
+                msgs = ((InternalEObject)newParentDOType).eInverseAdd(this, SclPackage.DO_TYPE__DA, DOType.class, msgs);
+            msgs = basicSetParentDOType(newParentDOType, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__PARENT_DO_TYPE, newParentDOType, newParentDOType));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Boolean getQchg() {
         return qchg;
     }
@@ -409,52 +452,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      */
     @Override
-    public DOType getDOType() {
-        if (eContainerFeatureID() != SclPackage.DA__DO_TYPE) return null;
-        return (DOType)eInternalContainer();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetDOType( DOType newDOType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDOType, SclPackage.DA__DO_TYPE, msgs);
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setDOType( DOType newDOType ) {
-        if (newDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA__DO_TYPE && newDOType != null)) {
-            if (EcoreUtil.isAncestor(this, newDOType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newDOType != null)
-                msgs = ((InternalEObject)newDOType).eInverseAdd(this, SclPackage.DO_TYPE__DA, DOType.class, msgs);
-            msgs = basicSetDOType(newDOType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__DO_TYPE, newDOType, newDOType));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EList<ProtNs> getProtNs() {
         if (protNs == null) {
-            protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA__PROT_NS, SclPackage.PROT_NS__DA);
+            protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA__PROT_NS, SclPackage.PROT_NS__PARENT_DA);
         }
         return protNs;
     }
@@ -488,10 +488,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DA__DO_TYPE:
+            case SclPackage.DA__PARENT_DO_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDOType((DOType)otherEnd, msgs);
+                return basicSetParentDOType((DOType)otherEnd, msgs);
             case SclPackage.DA__PROT_NS:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getProtNs()).basicAdd(otherEnd, msgs);
         }
@@ -506,8 +506,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DA__DO_TYPE:
-                return basicSetDOType(null, msgs);
+            case SclPackage.DA__PARENT_DO_TYPE:
+                return basicSetParentDOType(null, msgs);
             case SclPackage.DA__PROT_NS:
                 return ((InternalEList<?>)getProtNs()).basicRemove(otherEnd, msgs);
         }
@@ -522,7 +522,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DA__DO_TYPE:
+            case SclPackage.DA__PARENT_DO_TYPE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DO_TYPE__DA, DOType.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -544,8 +544,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return getQchg();
             case SclPackage.DA__FC:
                 return getFc();
-            case SclPackage.DA__DO_TYPE:
-                return getDOType();
+            case SclPackage.DA__PARENT_DO_TYPE:
+                return getParentDOType();
             case SclPackage.DA__PROT_NS:
                 return getProtNs();
         }
@@ -573,8 +573,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
             case SclPackage.DA__FC:
                 setFc((FCEnum)newValue);
                 return;
-            case SclPackage.DA__DO_TYPE:
-                setDOType((DOType)newValue);
+            case SclPackage.DA__PARENT_DO_TYPE:
+                setParentDOType((DOType)newValue);
                 return;
             case SclPackage.DA__PROT_NS:
                 getProtNs().clear();
@@ -604,8 +604,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
             case SclPackage.DA__FC:
                 unsetFc();
                 return;
-            case SclPackage.DA__DO_TYPE:
-                setDOType((DOType)null);
+            case SclPackage.DA__PARENT_DO_TYPE:
+                setParentDOType((DOType)null);
                 return;
             case SclPackage.DA__PROT_NS:
                 unsetProtNs();
@@ -630,8 +630,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
                 return isSetQchg();
             case SclPackage.DA__FC:
                 return isSetFc();
-            case SclPackage.DA__DO_TYPE:
-                return getDOType() != null;
+            case SclPackage.DA__PARENT_DO_TYPE:
+                return getParentDOType() != null;
             case SclPackage.DA__PROT_NS:
                 return isSetProtNs();
         }

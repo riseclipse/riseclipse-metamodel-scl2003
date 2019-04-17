@@ -29,9 +29,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings <em>GSE Settings</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings <em>SMV Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices <em>Parent Client Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings <em>Parent GSE Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings <em>Parent SMV Settings</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSignature <em>Signature</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getEncryption <em>Encryption</em>}</li>
  * </ul>
@@ -42,88 +42,76 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface McSecurity extends SclObject {
     /**
-     * Returns the value of the '<em><b>Client Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Client Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Client Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Client Services</em>' container reference.
-     * @see #setClientServices(ClientServices)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_ClientServices()
+     * @return the value of the '<em>Parent Client Services</em>' container reference.
+     * @see #setParentClientServices(ClientServices)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_ParentClientServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity
      * @model opposite="McSecurity" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ClientServices getClientServices();
+    ClientServices getParentClientServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getClientServices <em>Client Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentClientServices <em>Parent Client Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Client Services</em>' container reference.
-     * @see #getClientServices()
+     * @param value the new value of the '<em>Parent Client Services</em>' container reference.
+     * @see #getParentClientServices()
      * @generated
      */
-    void setClientServices(ClientServices value);
+    void setParentClientServices(ClientServices value);
 
     /**
-     * Returns the value of the '<em><b>GSE Settings</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent GSE Settings</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>GSE Settings</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>GSE Settings</em>' container reference.
-     * @see #setGSESettings(GSESettings)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_GSESettings()
+     * @return the value of the '<em>Parent GSE Settings</em>' container reference.
+     * @see #setParentGSESettings(GSESettings)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_ParentGSESettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity
      * @model opposite="McSecurity" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    GSESettings getGSESettings();
+    GSESettings getParentGSESettings();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getGSESettings <em>GSE Settings</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentGSESettings <em>Parent GSE Settings</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>GSE Settings</em>' container reference.
-     * @see #getGSESettings()
+     * @param value the new value of the '<em>Parent GSE Settings</em>' container reference.
+     * @see #getParentGSESettings()
      * @generated
      */
-    void setGSESettings(GSESettings value);
+    void setParentGSESettings(GSESettings value);
 
     /**
-     * Returns the value of the '<em><b>SMV Settings</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SMV Settings</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getMcSecurity <em>Mc Security</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SMV Settings</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SMV Settings</em>' container reference.
-     * @see #setSMVSettings(SMVSettings)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_SMVSettings()
+     * @return the value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #setParentSMVSettings(SMVSettings)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getMcSecurity_ParentSMVSettings()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getMcSecurity
      * @model opposite="McSecurity" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SMVSettings getSMVSettings();
+    SMVSettings getParentSMVSettings();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getSMVSettings <em>SMV Settings</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity#getParentSMVSettings <em>Parent SMV Settings</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SMV Settings</em>' container reference.
-     * @see #getSMVSettings()
+     * @param value the new value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #getParentSMVSettings()
      * @generated
      */
-    void setSMVSettings(SMVSettings value);
+    void setParentSMVSettings(SMVSettings value);
 
     /**
      * Returns the value of the '<em><b>Signature</b></em>' attribute.

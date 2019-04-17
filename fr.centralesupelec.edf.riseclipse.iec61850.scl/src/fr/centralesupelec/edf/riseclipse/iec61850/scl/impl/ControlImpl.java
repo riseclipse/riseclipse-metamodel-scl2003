@@ -401,7 +401,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
      * @generated
      */
     @Override
-    public AnyLN getAnyLN() {
+    public AnyLN getParentAnyLN() {
         // TODO: implement this method
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
@@ -540,8 +540,8 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     @Override
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
-            case SclPackage.CONTROL___GET_ANY_LN:
-                return getAnyLN();
+            case SclPackage.CONTROL___GET_PARENT_ANY_LN:
+                return getParentAnyLN();
         }
         return super.eInvoke(operationID, arguments);
     }
@@ -575,7 +575,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         //         or to indicate an unused control block. The referenced data set must be in the same LN as the control block.
 
         if( getDatSet() == null ) return;
-        if( getAnyLN() == null ) return;
+        if( getParentAnyLN() == null ) return;
 
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from Control on line " + getLineNumber() + ": ";
@@ -583,7 +583,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         // find an DataSet with
         //   DataSet.name == Control.datSet
         List< DataSet > res =
-                getAnyLN()
+                getParentAnyLN()
                 .getDataSet()
                 .stream()
                 .filter( d -> getDatSet().equals( d.getName() ))

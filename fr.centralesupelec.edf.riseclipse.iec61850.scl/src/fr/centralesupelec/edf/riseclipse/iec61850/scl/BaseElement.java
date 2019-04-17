@@ -44,7 +44,7 @@ public interface BaseElement extends ExplicitLinkResolver {
     /**
      * Returns the value of the '<em><b>Private</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement <em>Base Element</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Private</em>' containment reference list isn't clear,
@@ -55,8 +55,8 @@ public interface BaseElement extends ExplicitLinkResolver {
      * @see #isSetPrivate()
      * @see #unsetPrivate()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBaseElement_Private()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement
-     * @model opposite="BaseElement" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement
+     * @model opposite="ParentBaseElement" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Private> getPrivate();
@@ -84,7 +84,7 @@ public interface BaseElement extends ExplicitLinkResolver {
 
     /**
      * Returns the value of the '<em><b>Text</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement <em>Parent Base Element</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Text</em>' containment reference isn't clear,
@@ -96,8 +96,8 @@ public interface BaseElement extends ExplicitLinkResolver {
      * @see #unsetText()
      * @see #setText(Text)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBaseElement_Text()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement
-     * @model opposite="BaseElement" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement
+     * @model opposite="ParentBaseElement" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Text getText();

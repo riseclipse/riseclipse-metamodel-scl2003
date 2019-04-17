@@ -146,7 +146,7 @@ public interface ControlBlock extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Address</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getControlBlock <em>Control Block</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock <em>Parent Control Block</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Address</em>' containment reference isn't clear,
@@ -158,8 +158,8 @@ public interface ControlBlock extends UnNaming {
      * @see #unsetAddress()
      * @see #setAddress(Address)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlBlock_Address()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getControlBlock
-     * @model opposite="ControlBlock" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentControlBlock
+     * @model opposite="ParentControlBlock" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Address getAddress();
@@ -260,6 +260,6 @@ public interface ControlBlock extends UnNaming {
      * @model kind="operation"
      * @generated
      */
-    ConnectedAP getConnectedAP();
+    ConnectedAP getParentConnectedAP();
 
 } // ControlBlock

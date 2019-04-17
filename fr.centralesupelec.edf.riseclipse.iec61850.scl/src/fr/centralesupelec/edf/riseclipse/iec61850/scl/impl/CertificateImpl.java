@@ -300,9 +300,9 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if (newSubject != subject) {
             NotificationChain msgs = null;
             if (subject != null)
-                msgs = ((InternalEObject)subject).eInverseRemove(this, SclPackage.SUBJECT__CERTIFICATE, Subject.class, msgs);
+                msgs = ((InternalEObject)subject).eInverseRemove(this, SclPackage.SUBJECT__PARENT_CERTIFICATE, Subject.class, msgs);
             if (newSubject != null)
-                msgs = ((InternalEObject)newSubject).eInverseAdd(this, SclPackage.SUBJECT__CERTIFICATE, Subject.class, msgs);
+                msgs = ((InternalEObject)newSubject).eInverseAdd(this, SclPackage.SUBJECT__PARENT_CERTIFICATE, Subject.class, msgs);
             msgs = basicSetSubject(newSubject, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -340,7 +340,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public void unsetSubject() {
         if (subject != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)subject).eInverseRemove(this, SclPackage.SUBJECT__CERTIFICATE, Subject.class, msgs);
+            msgs = ((InternalEObject)subject).eInverseRemove(this, SclPackage.SUBJECT__PARENT_CERTIFICATE, Subject.class, msgs);
             msgs = basicUnsetSubject(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -399,9 +399,9 @@ public class CertificateImpl extends NamingImpl implements Certificate {
         if (newIssuerName != issuerName) {
             NotificationChain msgs = null;
             if (issuerName != null)
-                msgs = ((InternalEObject)issuerName).eInverseRemove(this, SclPackage.ISSUER_NAME__CERTIFICATE, IssuerName.class, msgs);
+                msgs = ((InternalEObject)issuerName).eInverseRemove(this, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, IssuerName.class, msgs);
             if (newIssuerName != null)
-                msgs = ((InternalEObject)newIssuerName).eInverseAdd(this, SclPackage.ISSUER_NAME__CERTIFICATE, IssuerName.class, msgs);
+                msgs = ((InternalEObject)newIssuerName).eInverseAdd(this, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, IssuerName.class, msgs);
             msgs = basicSetIssuerName(newIssuerName, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -439,7 +439,7 @@ public class CertificateImpl extends NamingImpl implements Certificate {
     public void unsetIssuerName() {
         if (issuerName != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)issuerName).eInverseRemove(this, SclPackage.ISSUER_NAME__CERTIFICATE, IssuerName.class, msgs);
+            msgs = ((InternalEObject)issuerName).eInverseRemove(this, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, IssuerName.class, msgs);
             msgs = basicUnsetIssuerName(msgs);
             if (msgs != null) msgs.dispatch();
         }

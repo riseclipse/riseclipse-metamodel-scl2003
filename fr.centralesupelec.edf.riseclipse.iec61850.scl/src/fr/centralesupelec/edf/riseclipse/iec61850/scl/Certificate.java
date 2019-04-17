@@ -146,7 +146,7 @@ public interface Certificate extends Naming {
 
     /**
      * Returns the value of the '<em><b>Subject</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate <em>Certificate</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getParentCertificate <em>Parent Certificate</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Subject</em>' containment reference isn't clear,
@@ -158,8 +158,8 @@ public interface Certificate extends Naming {
      * @see #unsetSubject()
      * @see #setSubject(Subject)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCertificate_Subject()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getCertificate
-     * @model opposite="Certificate" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject#getParentCertificate
+     * @model opposite="ParentCertificate" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Subject getSubject();
@@ -201,7 +201,7 @@ public interface Certificate extends Naming {
 
     /**
      * Returns the value of the '<em><b>Issuer Name</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getCertificate <em>Certificate</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getParentCertificate <em>Parent Certificate</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Issuer Name</em>' containment reference isn't clear,
@@ -213,8 +213,8 @@ public interface Certificate extends Naming {
      * @see #unsetIssuerName()
      * @see #setIssuerName(IssuerName)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCertificate_IssuerName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getCertificate
-     * @model opposite="Certificate" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName#getParentCertificate
+     * @model opposite="ParentCertificate" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     IssuerName getIssuerName();

@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine <em>Line</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getConductingEquipment <em>Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubstation <em>Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubProcesses <em>Sub Processes</em>}</li>
@@ -99,7 +99,7 @@ public interface Process extends GeneralEquipmentContainer {
     /**
      * Returns the value of the '<em><b>Line</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Line</em>' containment reference list isn't clear,
@@ -110,8 +110,8 @@ public interface Process extends GeneralEquipmentContainer {
      * @see #isSetLine()
      * @see #unsetLine()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_Line()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess
-     * @model opposite="Process" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess
+     * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Line> getLine();
@@ -138,37 +138,33 @@ public interface Process extends GeneralEquipmentContainer {
     boolean isSetLine();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getProcess <em>Process</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getProcess
      * @model opposite="Process" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess <em>Process</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' containment reference list isn't clear,
@@ -179,8 +175,8 @@ public interface Process extends GeneralEquipmentContainer {
      * @see #isSetConductingEquipment()
      * @see #unsetConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getProcess
-     * @model opposite="Process" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentProcess
+     * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConductingEquipment> getConductingEquipment();
@@ -209,7 +205,7 @@ public interface Process extends GeneralEquipmentContainer {
     /**
      * Returns the value of the '<em><b>Substation</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess <em>Process</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess <em>Parent Process</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Substation</em>' containment reference list isn't clear,
@@ -220,8 +216,8 @@ public interface Process extends GeneralEquipmentContainer {
      * @see #isSetSubstation()
      * @see #unsetSubstation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProcess_Substation()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getProcess
-     * @model opposite="Process" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentProcess
+     * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Substation> getSubstation();

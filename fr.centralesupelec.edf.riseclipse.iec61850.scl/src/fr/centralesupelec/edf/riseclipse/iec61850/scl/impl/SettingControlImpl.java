@@ -40,7 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SettingControlImpl#getActSG <em>Act SG</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SettingControlImpl#getNumOfSGs <em>Num Of SGs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SettingControlImpl#getResvTms <em>Resv Tms</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SettingControlImpl#getLN0 <em>LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SettingControlImpl#getParentLN0 <em>Parent LN0</em>}</li>
  * </ul>
  *
  * @generated
@@ -308,8 +308,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * @generated
      */
     @Override
-    public LN0 getLN0() {
-        if (eContainerFeatureID() != SclPackage.SETTING_CONTROL__LN0) return null;
+    public LN0 getParentLN0() {
+        if (eContainerFeatureID() != SclPackage.SETTING_CONTROL__PARENT_LN0) return null;
         return (LN0)eInternalContainer();
     }
 
@@ -318,8 +318,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLN0( LN0 newLN0, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLN0, SclPackage.SETTING_CONTROL__LN0, msgs);
+    public NotificationChain basicSetParentLN0(LN0 newParentLN0, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLN0, SclPackage.SETTING_CONTROL__PARENT_LN0, msgs);
         return msgs;
     }
 
@@ -329,20 +329,20 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
      * @generated
      */
     @Override
-    public void setLN0( LN0 newLN0 ) {
-        if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_CONTROL__LN0 && newLN0 != null)) {
-            if (EcoreUtil.isAncestor(this, newLN0))
+    public void setParentLN0(LN0 newParentLN0) {
+        if (newParentLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_CONTROL__PARENT_LN0 && newParentLN0 != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLN0))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLN0 != null)
-                msgs = ((InternalEObject)newLN0).eInverseAdd(this, SclPackage.LN0__SETTING_CONTROL, LN0.class, msgs);
-            msgs = basicSetLN0(newLN0, msgs);
+            if (newParentLN0 != null)
+                msgs = ((InternalEObject)newParentLN0).eInverseAdd(this, SclPackage.LN0__SETTING_CONTROL, LN0.class, msgs);
+            msgs = basicSetParentLN0(newParentLN0, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_CONTROL__LN0, newLN0, newLN0));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_CONTROL__PARENT_LN0, newParentLN0, newParentLN0));
     }
 
     /**
@@ -353,10 +353,10 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SETTING_CONTROL__LN0:
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLN0((LN0)otherEnd, msgs);
+                return basicSetParentLN0((LN0)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -369,8 +369,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SETTING_CONTROL__LN0:
-                return basicSetLN0(null, msgs);
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
+                return basicSetParentLN0(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -383,7 +383,7 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SETTING_CONTROL__LN0:
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LN0__SETTING_CONTROL, LN0.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -403,8 +403,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
                 return getNumOfSGs();
             case SclPackage.SETTING_CONTROL__RESV_TMS:
                 return getResvTms();
-            case SclPackage.SETTING_CONTROL__LN0:
-                return getLN0();
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
+                return getParentLN0();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -426,8 +426,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
             case SclPackage.SETTING_CONTROL__RESV_TMS:
                 setResvTms((Short)newValue);
                 return;
-            case SclPackage.SETTING_CONTROL__LN0:
-                setLN0((LN0)newValue);
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -450,8 +450,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
             case SclPackage.SETTING_CONTROL__RESV_TMS:
                 unsetResvTms();
                 return;
-            case SclPackage.SETTING_CONTROL__LN0:
-                setLN0((LN0)null);
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)null);
                 return;
         }
         super.eUnset(featureID);
@@ -471,8 +471,8 @@ public class SettingControlImpl extends UnNamingImpl implements SettingControl {
                 return isSetNumOfSGs();
             case SclPackage.SETTING_CONTROL__RESV_TMS:
                 return isSetResvTms();
-            case SclPackage.SETTING_CONTROL__LN0:
-                return getLN0() != null;
+            case SclPackage.SETTING_CONTROL__PARENT_LN0:
+                return getParentLN0() != null;
         }
         return super.eIsSet(featureID);
     }

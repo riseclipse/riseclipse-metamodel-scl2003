@@ -35,7 +35,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
@@ -155,7 +155,7 @@ public interface LDevice extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Access Control</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice <em>LDevice</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Access Control</em>' containment reference isn't clear,
@@ -167,8 +167,8 @@ public interface LDevice extends UnNaming {
      * @see #unsetAccessControl()
      * @see #setAccessControl(AccessControl)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_AccessControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl#getParentLDevice
+     * @model opposite="ParentLDevice" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     AccessControl getAccessControl();
@@ -209,32 +209,28 @@ public interface LDevice extends UnNaming {
     boolean isSetAccessControl();
 
     /**
-     * Returns the value of the '<em><b>Server</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Server</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getLDevice <em>LDevice</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Server</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Server</em>' container reference.
-     * @see #setServer(Server)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_Server()
+     * @return the value of the '<em>Parent Server</em>' container reference.
+     * @see #setParentServer(Server)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_ParentServer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Server#getLDevice
      * @model opposite="LDevice" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Server getServer();
+    Server getParentServer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getServer <em>Server</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer <em>Parent Server</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Server</em>' container reference.
-     * @see #getServer()
+     * @param value the new value of the '<em>Parent Server</em>' container reference.
+     * @see #getParentServer()
      * @generated
      */
-    void setServer( Server value );
+    void setParentServer(Server value);
 
     /**
      * Returns the value of the '<em><b>Any LN</b></em>' attribute list.
@@ -252,7 +248,7 @@ public interface LDevice extends UnNaming {
     /**
      * Returns the value of the '<em><b>LN</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice <em>LDevice</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LN</em>' containment reference list isn't clear,
@@ -263,8 +259,8 @@ public interface LDevice extends UnNaming {
      * @see #isSetLN()
      * @see #unsetLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice
+     * @model opposite="ParentLDevice" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#AnyLN'"
      * @generated
      */
@@ -344,7 +340,7 @@ public interface LDevice extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>LN0</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice <em>LDevice</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LN0</em>' containment reference isn't clear,
@@ -356,8 +352,8 @@ public interface LDevice extends UnNaming {
      * @see #unsetLN0()
      * @see #setLN0(LN0)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN0()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getLDevice
-     * @model opposite="LDevice" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice
+     * @model opposite="ParentLDevice" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#AnyLN'"
      * @generated
      */

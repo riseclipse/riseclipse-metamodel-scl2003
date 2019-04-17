@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getSetToRO <em>Set To RO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getValueHandling()
@@ -90,31 +90,27 @@ public interface ValueHandling extends SclObject {
     boolean isSetSetToRO();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getValueHandling <em>Value Handling</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getValueHandling_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getValueHandling_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getValueHandling
      * @model opposite="ValueHandling" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
 } // ValueHandling

@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getGSEControl <em>GSE Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getLDevice <em>LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getParentLDevice <em>Parent LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getSampledValueControl <em>Sampled Value Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getSettingControl <em>Setting Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LN0Impl#getControlWithIEDName <em>Control With IED Name</em>}</li>
@@ -128,8 +128,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * @generated
      */
     @Override
-    public LDevice getLDevice() {
-        if (eContainerFeatureID() != SclPackage.LN0__LDEVICE) return null;
+    public LDevice getParentLDevice() {
+        if (eContainerFeatureID() != SclPackage.LN0__PARENT_LDEVICE) return null;
         return (LDevice)eInternalContainer();
     }
 
@@ -138,31 +138,31 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLDevice(LDevice newLDevice, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newLDevice, SclPackage.LN0__LDEVICE, msgs);
+    public NotificationChain basicSetParentLDevice(LDevice newParentLDevice, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLDevice, SclPackage.LN0__PARENT_LDEVICE, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public void setLDevice( LDevice newLDevice ) {
-        if (newLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN0__LDEVICE && newLDevice != null)) {
-            if (EcoreUtil.isAncestor(this, newLDevice))
+    public void setParentLDevice(LDevice newParentLDevice) {
+        if (newParentLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN0__PARENT_LDEVICE && newParentLDevice != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLDevice))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLDevice != null)
-                msgs = ((InternalEObject)newLDevice).eInverseAdd(this, SclPackage.LDEVICE__LN0, LDevice.class, msgs);
-            msgs = basicSetLDevice(newLDevice, msgs);
+            if (newParentLDevice != null)
+                msgs = ((InternalEObject)newParentLDevice).eInverseAdd(this, SclPackage.LDEVICE__LN0, LDevice.class, msgs);
+            msgs = basicSetParentLDevice(newParentLDevice, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN0__LDEVICE, newLDevice, newLDevice));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN0__PARENT_LDEVICE, newParentLDevice, newParentLDevice));
     }
 
     /**
@@ -232,9 +232,9 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         if (newSettingControl != settingControl) {
             NotificationChain msgs = null;
             if (settingControl != null)
-                msgs = ((InternalEObject)settingControl).eInverseRemove(this, SclPackage.SETTING_CONTROL__LN0, SettingControl.class, msgs);
+                msgs = ((InternalEObject)settingControl).eInverseRemove(this, SclPackage.SETTING_CONTROL__PARENT_LN0, SettingControl.class, msgs);
             if (newSettingControl != null)
-                msgs = ((InternalEObject)newSettingControl).eInverseAdd(this, SclPackage.SETTING_CONTROL__LN0, SettingControl.class, msgs);
+                msgs = ((InternalEObject)newSettingControl).eInverseAdd(this, SclPackage.SETTING_CONTROL__PARENT_LN0, SettingControl.class, msgs);
             msgs = basicSetSettingControl(newSettingControl, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -272,7 +272,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
     public void unsetSettingControl() {
         if (settingControl != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)settingControl).eInverseRemove(this, SclPackage.SETTING_CONTROL__LN0, SettingControl.class, msgs);
+            msgs = ((InternalEObject)settingControl).eInverseRemove(this, SclPackage.SETTING_CONTROL__PARENT_LN0, SettingControl.class, msgs);
             msgs = basicUnsetSettingControl(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -335,10 +335,10 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         switch (featureID) {
             case SclPackage.LN0__GSE_CONTROL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getGSEControl()).basicAdd(otherEnd, msgs);
-            case SclPackage.LN0__LDEVICE:
+            case SclPackage.LN0__PARENT_LDEVICE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLDevice((LDevice)otherEnd, msgs);
+                return basicSetParentLDevice((LDevice)otherEnd, msgs);
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSampledValueControl()).basicAdd(otherEnd, msgs);
             case SclPackage.LN0__SETTING_CONTROL:
@@ -359,8 +359,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         switch (featureID) {
             case SclPackage.LN0__GSE_CONTROL:
                 return ((InternalEList<?>)getGSEControl()).basicRemove(otherEnd, msgs);
-            case SclPackage.LN0__LDEVICE:
-                return basicSetLDevice(null, msgs);
+            case SclPackage.LN0__PARENT_LDEVICE:
+                return basicSetParentLDevice(null, msgs);
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 return ((InternalEList<?>)getSampledValueControl()).basicRemove(otherEnd, msgs);
             case SclPackage.LN0__SETTING_CONTROL:
@@ -379,7 +379,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LN0__LDEVICE:
+            case SclPackage.LN0__PARENT_LDEVICE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LDEVICE__LN0, LDevice.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -395,8 +395,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         switch (featureID) {
             case SclPackage.LN0__GSE_CONTROL:
                 return getGSEControl();
-            case SclPackage.LN0__LDEVICE:
-                return getLDevice();
+            case SclPackage.LN0__PARENT_LDEVICE:
+                return getParentLDevice();
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 return getSampledValueControl();
             case SclPackage.LN0__SETTING_CONTROL:
@@ -421,8 +421,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
                 getGSEControl().clear();
                 getGSEControl().addAll((Collection<? extends GSEControl>)newValue);
                 return;
-            case SclPackage.LN0__LDEVICE:
-                setLDevice((LDevice)newValue);
+            case SclPackage.LN0__PARENT_LDEVICE:
+                setParentLDevice((LDevice)newValue);
                 return;
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 getSampledValueControl().clear();
@@ -449,8 +449,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
             case SclPackage.LN0__GSE_CONTROL:
                 unsetGSEControl();
                 return;
-            case SclPackage.LN0__LDEVICE:
-                setLDevice((LDevice)null);
+            case SclPackage.LN0__PARENT_LDEVICE:
+                setParentLDevice((LDevice)null);
                 return;
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 unsetSampledValueControl();
@@ -475,8 +475,8 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
         switch (featureID) {
             case SclPackage.LN0__GSE_CONTROL:
                 return isSetGSEControl();
-            case SclPackage.LN0__LDEVICE:
-                return getLDevice() != null;
+            case SclPackage.LN0__PARENT_LDEVICE:
+                return getParentLDevice() != null;
             case SclPackage.LN0__SAMPLED_VALUE_CONTROL:
                 return isSetSampledValueControl();
             case SclPackage.LN0__SETTING_CONTROL:

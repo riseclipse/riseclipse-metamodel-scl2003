@@ -39,7 +39,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getAccessPoint <em>Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getKDC <em>KDC</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getServices <em>Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}</li>
@@ -424,7 +424,7 @@ public interface IED extends UnNaming {
     /**
      * Returns the value of the '<em><b>Access Point</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED <em>IED</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Access Point</em>' containment reference list isn't clear,
@@ -435,8 +435,8 @@ public interface IED extends UnNaming {
      * @see #isSetAccessPoint()
      * @see #unsetAccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_AccessPoint()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getIED
-     * @model opposite="IED" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<AccessPoint> getAccessPoint();
@@ -465,7 +465,7 @@ public interface IED extends UnNaming {
     /**
      * Returns the value of the '<em><b>KDC</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED <em>IED</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>KDC</em>' containment reference list isn't clear,
@@ -476,8 +476,8 @@ public interface IED extends UnNaming {
      * @see #isSetKDC()
      * @see #unsetKDC()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_KDC()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED
-     * @model opposite="IED" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<KDC> getKDC();
@@ -505,7 +505,7 @@ public interface IED extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Services</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED <em>IED</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED <em>Parent IED</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Services</em>' containment reference isn't clear,
@@ -517,8 +517,8 @@ public interface IED extends UnNaming {
      * @see #unsetServices()
      * @see #setServices(Services)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_Services()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getIED
-     * @model opposite="IED" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getParentIED
+     * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Services getServices();
@@ -559,32 +559,28 @@ public interface IED extends UnNaming {
     boolean isSetServices();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getIED <em>IED</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getIED_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getIED
      * @model opposite="IED" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

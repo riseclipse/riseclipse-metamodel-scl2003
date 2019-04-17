@@ -47,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getDO <em>DO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
  * </ul>
  *
@@ -259,7 +259,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public EList<DO> getDO() {
         if (do_ == null) {
-            do_ = new EObjectContainmentWithInverseEList.Unsettable<DO>(DO.class, this, SclPackage.LNODE_TYPE__DO, SclPackage.DO__LNODE_TYPE);
+            do_ = new EObjectContainmentWithInverseEList.Unsettable<DO>(DO.class, this, SclPackage.LNODE_TYPE__DO, SclPackage.DO__PARENT_LNODE_TYPE);
         }
         return do_;
     }
@@ -290,8 +290,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * @generated
      */
     @Override
-    public DataTypeTemplates getDataTypeTemplates() {
-        if (eContainerFeatureID() != SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES) return null;
+    public DataTypeTemplates getParentDataTypeTemplates() {
+        if (eContainerFeatureID() != SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES) return null;
         return (DataTypeTemplates)eInternalContainer();
     }
 
@@ -300,8 +300,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDataTypeTemplates( DataTypeTemplates newDataTypeTemplates, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDataTypeTemplates, SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES, msgs);
+    public NotificationChain basicSetParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDataTypeTemplates, SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs);
         return msgs;
     }
 
@@ -311,20 +311,20 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * @generated
      */
     @Override
-    public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
-        if (newDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES && newDataTypeTemplates != null)) {
-            if (EcoreUtil.isAncestor(this, newDataTypeTemplates))
+    public void setParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates) {
+        if (newParentDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES && newParentDataTypeTemplates != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDataTypeTemplates))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataTypeTemplates != null)
-                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, DataTypeTemplates.class, msgs);
-            msgs = basicSetDataTypeTemplates(newDataTypeTemplates, msgs);
+            if (newParentDataTypeTemplates != null)
+                msgs = ((InternalEObject)newParentDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, DataTypeTemplates.class, msgs);
+            msgs = basicSetParentDataTypeTemplates(newParentDataTypeTemplates, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES, newDataTypeTemplates, newDataTypeTemplates));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES, newParentDataTypeTemplates, newParentDataTypeTemplates));
     }
 
     /**
@@ -371,10 +371,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         switch (featureID) {
             case SclPackage.LNODE_TYPE__DO:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDO()).basicAdd(otherEnd, msgs);
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
+                return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAnyLN()).basicAdd(otherEnd, msgs);
         }
@@ -391,8 +391,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
         switch (featureID) {
             case SclPackage.LNODE_TYPE__DO:
                 return ((InternalEList<?>)getDO()).basicRemove(otherEnd, msgs);
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
-                return basicSetDataTypeTemplates(null, msgs);
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return basicSetParentDataTypeTemplates(null, msgs);
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return ((InternalEList<?>)getReferredByAnyLN()).basicRemove(otherEnd, msgs);
         }
@@ -407,7 +407,7 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__LNODE_TYPE, DataTypeTemplates.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -427,8 +427,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return getLnClass();
             case SclPackage.LNODE_TYPE__DO:
                 return getDO();
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates();
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates();
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return getReferredByAnyLN();
         }
@@ -454,8 +454,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 getDO().clear();
                 getDO().addAll((Collection<? extends DO>)newValue);
                 return;
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)newValue);
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)newValue);
                 return;
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 getReferredByAnyLN().clear();
@@ -482,8 +482,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             case SclPackage.LNODE_TYPE__DO:
                 unsetDO();
                 return;
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)null);
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                setParentDataTypeTemplates((DataTypeTemplates)null);
                 return;
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 unsetReferredByAnyLN();
@@ -506,8 +506,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return isSetLnClass();
             case SclPackage.LNODE_TYPE__DO:
                 return isSetDO();
-            case SclPackage.LNODE_TYPE__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates() != null;
+            case SclPackage.LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+                return getParentDataTypeTemplates() != null;
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return isSetReferredByAnyLN();
         }

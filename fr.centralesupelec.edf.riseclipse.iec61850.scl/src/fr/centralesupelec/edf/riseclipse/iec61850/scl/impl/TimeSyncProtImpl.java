@@ -41,8 +41,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getC37_238 <em>C37 238</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getOther <em>Other</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getSntp <em>Sntp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getClientServices <em>Client Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getParentClientServices <em>Parent Client Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TimeSyncProtImpl#getIec61850_9_3 <em>Iec61850 93</em>}</li>
  * </ul>
  *
@@ -340,8 +340,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      */
     @Override
-    public ClientServices getClientServices() {
-        if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES) return null;
+    public ClientServices getParentClientServices() {
+        if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES) return null;
         return (ClientServices)eInternalContainer();
     }
 
@@ -350,8 +350,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetClientServices( ClientServices newClientServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newClientServices, SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES, msgs);
+    public NotificationChain basicSetParentClientServices(ClientServices newParentClientServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentClientServices, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -361,20 +361,20 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      */
     @Override
-    public void setClientServices( ClientServices newClientServices ) {
-        if (newClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES && newClientServices != null)) {
-            if (EcoreUtil.isAncestor(this, newClientServices))
+    public void setParentClientServices(ClientServices newParentClientServices) {
+        if (newParentClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES && newParentClientServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentClientServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newClientServices != null)
-                msgs = ((InternalEObject)newClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, ClientServices.class, msgs);
-            msgs = basicSetClientServices(newClientServices, msgs);
+            if (newParentClientServices != null)
+                msgs = ((InternalEObject)newParentClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, ClientServices.class, msgs);
+            msgs = basicSetParentClientServices(newParentClientServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES, newClientServices, newClientServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, newParentClientServices, newParentClientServices));
     }
 
     /**
@@ -383,8 +383,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -393,8 +393,8 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.TIME_SYNC_PROT__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -404,20 +404,20 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.TIME_SYNC_PROT__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__TIME_SYNC_PROT, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__TIME_SYNC_PROT, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TIME_SYNC_PROT__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TIME_SYNC_PROT__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -478,14 +478,14 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetClientServices((ClientServices)otherEnd, msgs);
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
+                return basicSetParentClientServices((ClientServices)otherEnd, msgs);
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -498,10 +498,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
-                return basicSetClientServices(null, msgs);
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
+                return basicSetParentClientServices(null, msgs);
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -514,9 +514,9 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, ClientServices.class, msgs);
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__TIME_SYNC_PROT, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -536,10 +536,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
                 return getOther();
             case SclPackage.TIME_SYNC_PROT__SNTP:
                 return getSntp();
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
-                return getClientServices();
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
-                return getServices();
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
+                return getParentClientServices();
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
+                return getParentServices();
             case SclPackage.TIME_SYNC_PROT__IEC61850_93:
                 return getIec61850_9_3();
         }
@@ -563,11 +563,11 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
             case SclPackage.TIME_SYNC_PROT__SNTP:
                 setSntp((Boolean)newValue);
                 return;
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
-                setClientServices((ClientServices)newValue);
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
+                setParentClientServices((ClientServices)newValue);
                 return;
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
             case SclPackage.TIME_SYNC_PROT__IEC61850_93:
                 setIec61850_9_3((Boolean)newValue);
@@ -593,11 +593,11 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
             case SclPackage.TIME_SYNC_PROT__SNTP:
                 unsetSntp();
                 return;
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
-                setClientServices((ClientServices)null);
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
+                setParentClientServices((ClientServices)null);
                 return;
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
-                setServices((Services)null);
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
             case SclPackage.TIME_SYNC_PROT__IEC61850_93:
                 unsetIec61850_9_3();
@@ -620,10 +620,10 @@ public class TimeSyncProtImpl extends SclObjectImpl implements TimeSyncProt {
                 return isSetOther();
             case SclPackage.TIME_SYNC_PROT__SNTP:
                 return isSetSntp();
-            case SclPackage.TIME_SYNC_PROT__CLIENT_SERVICES:
-                return getClientServices() != null;
-            case SclPackage.TIME_SYNC_PROT__SERVICES:
-                return getServices() != null;
+            case SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES:
+                return getParentClientServices() != null;
+            case SclPackage.TIME_SYNC_PROT__PARENT_SERVICES:
+                return getParentServices() != null;
             case SclPackage.TIME_SYNC_PROT__IEC61850_93:
                 return isSetIec61850_9_3();
         }

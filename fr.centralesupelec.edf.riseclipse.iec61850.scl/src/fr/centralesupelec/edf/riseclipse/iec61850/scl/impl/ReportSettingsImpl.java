@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ReportSettingsImpl#getResvTms <em>Resv Tms</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ReportSettingsImpl#getRptID <em>Rpt ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ReportSettingsImpl#getTrgOps <em>Trg Ops</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ReportSettingsImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ReportSettingsImpl#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -629,8 +629,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -639,8 +639,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.REPORT_SETTINGS__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.REPORT_SETTINGS__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -650,20 +650,20 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.REPORT_SETTINGS__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.REPORT_SETTINGS__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -674,10 +674,10 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -690,8 +690,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -704,7 +704,7 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.REPORT_SETTINGS__SERVICES:
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__REPORT_SETTINGS, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -732,8 +732,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
                 return getRptID();
             case SclPackage.REPORT_SETTINGS__TRG_OPS:
                 return getTrgOps();
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return getServices();
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
+                return getParentServices();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -767,8 +767,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
             case SclPackage.REPORT_SETTINGS__TRG_OPS:
                 setTrgOps((ServiceSettingsEnum)newValue);
                 return;
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -803,8 +803,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
             case SclPackage.REPORT_SETTINGS__TRG_OPS:
                 unsetTrgOps();
                 return;
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                setServices((Services)null);
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
         }
         super.eUnset(featureID);
@@ -832,8 +832,8 @@ public class ReportSettingsImpl extends ServiceSettingsImpl implements ReportSet
                 return isSetRptID();
             case SclPackage.REPORT_SETTINGS__TRG_OPS:
                 return isSetTrgOps();
-            case SclPackage.REPORT_SETTINGS__SERVICES:
-                return getServices() != null;
+            case SclPackage.REPORT_SETTINGS__PARENT_SERVICES:
+                return getParentServices() != null;
         }
         return super.eIsSet(featureID);
     }

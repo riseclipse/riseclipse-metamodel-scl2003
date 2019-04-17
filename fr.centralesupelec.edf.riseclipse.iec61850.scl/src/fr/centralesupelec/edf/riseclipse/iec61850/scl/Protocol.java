@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getMustUnderstand <em>Must Understand</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName <em>Control With IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName <em>Parent Control With IED Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol()
@@ -90,31 +90,27 @@ public interface Protocol extends SclObject {
     boolean isSetMustUnderstand();
 
     /**
-     * Returns the value of the '<em><b>Control With IED Name</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Control With IED Name</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getProtocol <em>Protocol</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Control With IED Name</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With IED Name</em>' container reference.
-     * @see #setControlWithIEDName(ControlWithIEDName)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol_ControlWithIEDName()
+     * @return the value of the '<em>Parent Control With IED Name</em>' container reference.
+     * @see #setParentControlWithIEDName(ControlWithIEDName)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtocol_ParentControlWithIEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getProtocol
      * @model opposite="Protocol" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ControlWithIEDName getControlWithIEDName();
+    ControlWithIEDName getParentControlWithIEDName();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getControlWithIEDName <em>Control With IED Name</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol#getParentControlWithIEDName <em>Parent Control With IED Name</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Control With IED Name</em>' container reference.
-     * @see #getControlWithIEDName()
+     * @param value the new value of the '<em>Parent Control With IED Name</em>' container reference.
+     * @see #getParentControlWithIEDName()
      * @generated
      */
-    void setControlWithIEDName( ControlWithIEDName value );
+    void setParentControlWithIEDName(ControlWithIEDName value);
 
 } // Protocol

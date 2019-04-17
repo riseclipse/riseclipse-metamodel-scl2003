@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.PredefinedTypeOfSecurityEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl;
@@ -46,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getSmpMod <em>Smp Mod</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getSmpRate <em>Smp Rate</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getSmvID <em>Smv ID</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getLN0 <em>LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getParentLN0 <em>Parent LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SampledValueControlImpl#getSmvOpts <em>Smv Opts</em>}</li>
  * </ul>
  *
@@ -571,8 +572,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * @generated
      */
     @Override
-    public LN0 getLN0() {
-        if (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__LN0) return null;
+    public LN0 getParentLN0() {
+        if (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0) return null;
         return (LN0)eInternalContainer();
     }
 
@@ -581,8 +582,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLN0( LN0 newLN0, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLN0, SclPackage.SAMPLED_VALUE_CONTROL__LN0, msgs);
+    public NotificationChain basicSetParentLN0(LN0 newParentLN0, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLN0, SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0, msgs);
         return msgs;
     }
 
@@ -592,20 +593,20 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
      * @generated
      */
     @Override
-    public void setLN0( LN0 newLN0 ) {
-        if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__LN0 && newLN0 != null)) {
-            if (EcoreUtil.isAncestor(this, newLN0))
+    public void setParentLN0(LN0 newParentLN0) {
+        if (newParentLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0 && newParentLN0 != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLN0))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLN0 != null)
-                msgs = ((InternalEObject)newLN0).eInverseAdd(this, SclPackage.LN0__SAMPLED_VALUE_CONTROL, LN0.class, msgs);
-            msgs = basicSetLN0(newLN0, msgs);
+            if (newParentLN0 != null)
+                msgs = ((InternalEObject)newParentLN0).eInverseAdd(this, SclPackage.LN0__SAMPLED_VALUE_CONTROL, LN0.class, msgs);
+            msgs = basicSetParentLN0(newParentLN0, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__LN0, newLN0, newLN0));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0, newParentLN0, newParentLN0));
     }
 
     /**
@@ -645,9 +646,9 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         if (newSmvOpts != smvOpts) {
             NotificationChain msgs = null;
             if (smvOpts != null)
-                msgs = ((InternalEObject)smvOpts).eInverseRemove(this, SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
+                msgs = ((InternalEObject)smvOpts).eInverseRemove(this, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
             if (newSmvOpts != null)
-                msgs = ((InternalEObject)newSmvOpts).eInverseAdd(this, SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
+                msgs = ((InternalEObject)newSmvOpts).eInverseAdd(this, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
             msgs = basicSetSmvOpts(newSmvOpts, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -685,7 +686,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     public void unsetSmvOpts() {
         if (smvOpts != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)smvOpts).eInverseRemove(this, SclPackage.SMV_OPTS__SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
+            msgs = ((InternalEObject)smvOpts).eInverseRemove(this, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, SmvOpts.class, msgs);
             msgs = basicUnsetSmvOpts(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -715,10 +716,10 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLN0((LN0)otherEnd, msgs);
+                return basicSetParentLN0((LN0)otherEnd, msgs);
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 if (smvOpts != null)
                     msgs = ((InternalEObject)smvOpts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, null, msgs);
@@ -735,8 +736,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
-                return basicSetLN0(null, msgs);
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
+                return basicSetParentLN0(null, msgs);
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 return basicUnsetSmvOpts(msgs);
         }
@@ -751,7 +752,7 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LN0__SAMPLED_VALUE_CONTROL, LN0.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -777,8 +778,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
                 return getSmpRate();
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
                 return getSmvID();
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
-                return getLN0();
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
+                return getParentLN0();
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 return getSmvOpts();
         }
@@ -811,8 +812,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
                 setSmvID((String)newValue);
                 return;
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
-                setLN0((LN0)newValue);
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)newValue);
                 return;
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 setSmvOpts((SmvOpts)newValue);
@@ -847,8 +848,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
                 unsetSmvID();
                 return;
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
-                setLN0((LN0)null);
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)null);
                 return;
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 unsetSmvOpts();
@@ -877,8 +878,8 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
                 return isSetSmpRate();
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
                 return isSetSmvID();
-            case SclPackage.SAMPLED_VALUE_CONTROL__LN0:
-                return getLN0() != null;
+            case SclPackage.SAMPLED_VALUE_CONTROL__PARENT_LN0:
+                return getParentLN0() != null;
             case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
                 return isSetSmvOpts();
         }
@@ -909,6 +910,11 @@ public class SampledValueControlImpl extends ControlWithIEDNameImpl implements S
         if (smvIDESet) result.append(smvID); else result.append("<unset>");
         result.append(')');
         return result.toString();
+    }
+
+    @Override
+    public AnyLN getParentAnyLN() {
+        return getParentLN0();
     }
 
 } //SampledValueControlImpl

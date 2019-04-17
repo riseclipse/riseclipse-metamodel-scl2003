@@ -309,9 +309,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         if (newAddress != address) {
             NotificationChain msgs = null;
             if (address != null)
-                msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__CONTROL_BLOCK, Address.class, msgs);
+                msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK, Address.class, msgs);
             if (newAddress != null)
-                msgs = ((InternalEObject)newAddress).eInverseAdd(this, SclPackage.ADDRESS__CONTROL_BLOCK, Address.class, msgs);
+                msgs = ((InternalEObject)newAddress).eInverseAdd(this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK, Address.class, msgs);
             msgs = basicSetAddress(newAddress, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -349,7 +349,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     public void unsetAddress() {
         if (address != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__CONTROL_BLOCK, Address.class, msgs);
+            msgs = ((InternalEObject)address).eInverseRemove(this, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK, Address.class, msgs);
             msgs = basicUnsetAddress(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -477,7 +477,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
      * @generated
      */
     @Override
-    public ConnectedAP getConnectedAP() {
+    public ConnectedAP getParentConnectedAP() {
         // TODO: implement this method
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
@@ -615,8 +615,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     @Override
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
-            case SclPackage.CONTROL_BLOCK___GET_CONNECTED_AP:
-                return getConnectedAP();
+            case SclPackage.CONTROL_BLOCK___GET_PARENT_CONNECTED_AP:
+                return getParentConnectedAP();
         }
         return super.eInvoke(operationID, arguments);
     }
@@ -659,10 +659,10 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from ControlBlock on line " + getLineNumber() + ": ";
 
-        if( getConnectedAP() == null ) return;
-        getConnectedAP().resolveLinks();
-        if( getConnectedAP().getRefersToAccessPoint() == null ) return;
-        IED ied = getConnectedAP().getRefersToAccessPoint().getIED();
+        if( getParentConnectedAP() == null ) return;
+        getParentConnectedAP().resolveLinks();
+        if( getParentConnectedAP().getRefersToAccessPoint() == null ) return;
+        IED ied = getParentConnectedAP().getRefersToAccessPoint().getParentIED();
         if( ied == null ) return;
 
         // find an LDevice with

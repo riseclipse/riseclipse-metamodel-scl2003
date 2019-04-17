@@ -91,7 +91,7 @@ public interface ControlWithTriggerOpt extends Control {
 
     /**
      * Returns the value of the '<em><b>Trg Ops</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt <em>Parent Control With Trigger Opt</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Trg Ops</em>' containment reference isn't clear,
@@ -103,8 +103,8 @@ public interface ControlWithTriggerOpt extends Control {
      * @see #unsetTrgOps()
      * @see #setTrgOps(TrgOps)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getControlWithTriggerOpt_TrgOps()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getControlWithTriggerOpt
-     * @model opposite="ControlWithTriggerOpt" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps#getParentControlWithTriggerOpt
+     * @model opposite="ParentControlWithTriggerOpt" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     TrgOps getTrgOps();

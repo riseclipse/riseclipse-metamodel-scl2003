@@ -58,7 +58,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getAssociationID <em>Association ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getParentServer <em>Parent Server</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AssociationImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  * </ul>
  *
@@ -540,6 +540,49 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
+    public Server getParentServer() {
+        if (eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER) return null;
+        return (Server)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentServer(Server newParentServer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServer, SclPackage.ASSOCIATION__PARENT_SERVER, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentServer(Server newParentServer) {
+        if (newParentServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER && newParentServer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServer))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentServer != null)
+                msgs = ((InternalEObject)newParentServer).eInverseAdd(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
+            msgs = basicSetParentServer(newParentServer, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__PARENT_SERVER, newParentServer, newParentServer));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public String getLdInst() {
         return ldInst;
     }
@@ -740,49 +783,6 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
-    public Server getServer() {
-        if (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER) return null;
-        return (Server)eInternalContainer();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetServer( Server newServer, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServer, SclPackage.ASSOCIATION__SERVER, msgs);
-        return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setServer( Server newServer ) {
-        if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__SERVER && newServer != null)) {
-            if (EcoreUtil.isAncestor(this, newServer))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newServer != null)
-                msgs = ((InternalEObject)newServer).eInverseAdd(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
-            msgs = basicSetServer(newServer, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__SERVER, newServer, newServer));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public AnyLN getRefersToAnyLN() {
         return refersToAnyLN;
     }
@@ -884,10 +884,10 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__SERVER:
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServer((Server)otherEnd, msgs);
+                return basicSetParentServer((Server)otherEnd, msgs);
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 if (refersToAnyLN != null)
                     msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
@@ -904,8 +904,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.ASSOCIATION__SERVER:
-                return basicSetServer(null, msgs);
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
+                return basicSetParentServer(null, msgs);
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 return basicUnsetRefersToAnyLN(msgs);
         }
@@ -920,7 +920,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.ASSOCIATION__SERVER:
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -950,8 +950,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return getAssociationID();
             case SclPackage.ASSOCIATION__KIND:
                 return getKind();
-            case SclPackage.ASSOCIATION__SERVER:
-                return getServer();
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
+                return getParentServer();
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 return getRefersToAnyLN();
         }
@@ -990,8 +990,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             case SclPackage.ASSOCIATION__KIND:
                 setKind((AssociationKindEnum)newValue);
                 return;
-            case SclPackage.ASSOCIATION__SERVER:
-                setServer((Server)newValue);
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
+                setParentServer((Server)newValue);
                 return;
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 setRefersToAnyLN((AnyLN)newValue);
@@ -1032,8 +1032,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             case SclPackage.ASSOCIATION__KIND:
                 unsetKind();
                 return;
-            case SclPackage.ASSOCIATION__SERVER:
-                setServer((Server)null);
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
+                setParentServer((Server)null);
                 return;
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 unsetRefersToAnyLN();
@@ -1066,8 +1066,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
                 return isSetAssociationID();
             case SclPackage.ASSOCIATION__KIND:
                 return isSetKind();
-            case SclPackage.ASSOCIATION__SERVER:
-                return getServer() != null;
+            case SclPackage.ASSOCIATION__PARENT_SERVER:
+                return getParentServer() != null;
             case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
                 return isSetRefersToAnyLN();
         }

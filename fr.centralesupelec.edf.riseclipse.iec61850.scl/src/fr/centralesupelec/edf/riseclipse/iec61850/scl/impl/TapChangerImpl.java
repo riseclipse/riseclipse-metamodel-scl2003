@@ -48,7 +48,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getSubEquipment <em>Sub Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getTransformerWinding <em>Transformer Winding</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.TapChangerImpl#getParentTransformerWinding <em>Parent Transformer Winding</em>}</li>
  * </ul>
  *
  * @generated
@@ -259,7 +259,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public EList<EqFunction> getEqFunction() {
         if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__TAP_CHANGER);
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER);
         }
         return eqFunction;
     }
@@ -292,7 +292,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__TAP_CHANGER);
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER);
         }
         return subEquipment;
     }
@@ -323,8 +323,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public TransformerWinding getTransformerWinding() {
-        if (eContainerFeatureID() != SclPackage.TAP_CHANGER__TRANSFORMER_WINDING) return null;
+    public TransformerWinding getParentTransformerWinding() {
+        if (eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING) return null;
         return (TransformerWinding)eInternalContainer();
     }
 
@@ -333,9 +333,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetTransformerWinding( TransformerWinding newTransformerWinding,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newTransformerWinding, SclPackage.TAP_CHANGER__TRANSFORMER_WINDING, msgs);
+    public NotificationChain basicSetParentTransformerWinding(TransformerWinding newParentTransformerWinding, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentTransformerWinding, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, msgs);
         return msgs;
     }
 
@@ -345,20 +344,20 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public void setTransformerWinding( TransformerWinding newTransformerWinding ) {
-        if (newTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.TAP_CHANGER__TRANSFORMER_WINDING && newTransformerWinding != null)) {
-            if (EcoreUtil.isAncestor(this, newTransformerWinding))
+    public void setParentTransformerWinding(TransformerWinding newParentTransformerWinding) {
+        if (newParentTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING && newParentTransformerWinding != null)) {
+            if (EcoreUtil.isAncestor(this, newParentTransformerWinding))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newTransformerWinding != null)
-                msgs = ((InternalEObject)newTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs);
-            msgs = basicSetTransformerWinding(newTransformerWinding, msgs);
+            if (newParentTransformerWinding != null)
+                msgs = ((InternalEObject)newParentTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs);
+            msgs = basicSetParentTransformerWinding(newParentTransformerWinding, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TAP_CHANGER__TRANSFORMER_WINDING, newTransformerWinding, newTransformerWinding));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, newParentTransformerWinding, newParentTransformerWinding));
     }
 
     /**
@@ -374,10 +373,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetTransformerWinding((TransformerWinding)otherEnd, msgs);
+                return basicSetParentTransformerWinding((TransformerWinding)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -394,8 +393,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
                 return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
                 return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
-                return basicSetTransformerWinding(null, msgs);
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+                return basicSetParentTransformerWinding(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -408,7 +407,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
                 return eInternalContainer().eInverseRemove(this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -430,8 +429,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
                 return getEqFunction();
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
                 return getSubEquipment();
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
-                return getTransformerWinding();
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+                return getParentTransformerWinding();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -459,8 +458,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
                 getSubEquipment().clear();
                 getSubEquipment().addAll((Collection<? extends SubEquipment>)newValue);
                 return;
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)newValue);
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+                setParentTransformerWinding((TransformerWinding)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -486,8 +485,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
                 unsetSubEquipment();
                 return;
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
-                setTransformerWinding((TransformerWinding)null);
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+                setParentTransformerWinding((TransformerWinding)null);
                 return;
         }
         super.eUnset(featureID);
@@ -509,8 +508,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
                 return isSetEqFunction();
             case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
                 return isSetSubEquipment();
-            case SclPackage.TAP_CHANGER__TRANSFORMER_WINDING:
-                return getTransformerWinding() != null;
+            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+                return getParentTransformerWinding() != null;
         }
         return super.eIsSet(featureID);
     }

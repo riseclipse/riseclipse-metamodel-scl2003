@@ -38,8 +38,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getAccessPoint <em>Access Point</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getLDevice <em>LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getParentAccessPoint <em>Parent Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNImpl#getParentLDevice <em>Parent LDevice</em>}</li>
  * </ul>
  *
  * @generated
@@ -149,8 +149,8 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public AccessPoint getAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.LN__ACCESS_POINT) return null;
+    public AccessPoint getParentAccessPoint() {
+        if (eContainerFeatureID() != SclPackage.LN__PARENT_ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
     }
 
@@ -159,8 +159,8 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAccessPoint( AccessPoint newAccessPoint, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAccessPoint, SclPackage.LN__ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.LN__PARENT_ACCESS_POINT, msgs);
         return msgs;
     }
 
@@ -170,20 +170,20 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public void setAccessPoint( AccessPoint newAccessPoint ) {
-        if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__ACCESS_POINT && newAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newAccessPoint))
+    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
+        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAccessPoint != null)
-                msgs = ((InternalEObject)newAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__LN, AccessPoint.class, msgs);
-            msgs = basicSetAccessPoint(newAccessPoint, msgs);
+            if (newParentAccessPoint != null)
+                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__LN, AccessPoint.class, msgs);
+            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN__ACCESS_POINT, newAccessPoint, newAccessPoint));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
     }
 
     /**
@@ -192,41 +192,19 @@ public class LNImpl extends AnyLNImpl implements LN {
      * @generated
      */
     @Override
-    public LDevice getLDevice() {
-        if (eContainerFeatureID() != SclPackage.LN__LDEVICE) return null;
+    public LDevice getParentLDevice() {
+        if (eContainerFeatureID() != SclPackage.LN__PARENT_LDEVICE) return null;
         return (LDevice)eInternalContainer();
     }
 
     /**
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLDevice( LDevice newLDevice, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLDevice, SclPackage.LN__LDEVICE, msgs);
+    public NotificationChain basicSetParentLDevice(LDevice newParentLDevice, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLDevice, SclPackage.LN__PARENT_LDEVICE, msgs);
         return msgs;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setLDevice( LDevice newLDevice ) {
-        if (newLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__LDEVICE && newLDevice != null)) {
-            if (EcoreUtil.isAncestor(this, newLDevice))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-            NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newLDevice != null)
-                msgs = ((InternalEObject)newLDevice).eInverseAdd(this, SclPackage.LDEVICE__LN, LDevice.class, msgs);
-            msgs = basicSetLDevice(newLDevice, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN__LDEVICE, newLDevice, newLDevice));
     }
 
     /**
@@ -234,18 +212,39 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings( "unchecked" )
+    @Override
+    public void setParentLDevice(LDevice newParentLDevice) {
+        if (newParentLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.LN__PARENT_LDEVICE && newParentLDevice != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLDevice))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentLDevice != null)
+                msgs = ((InternalEObject)newParentLDevice).eInverseAdd(this, SclPackage.LDEVICE__LN, LDevice.class, msgs);
+            msgs = basicSetParentLDevice(newParentLDevice, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LN__PARENT_LDEVICE, newParentLDevice, newParentLDevice));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LN__ACCESS_POINT:
+            case SclPackage.LN__PARENT_ACCESS_POINT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAccessPoint((AccessPoint)otherEnd, msgs);
-            case SclPackage.LN__LDEVICE:
+                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
+            case SclPackage.LN__PARENT_LDEVICE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLDevice((LDevice)otherEnd, msgs);
+                return basicSetParentLDevice((LDevice)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -258,10 +257,10 @@ public class LNImpl extends AnyLNImpl implements LN {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.LN__ACCESS_POINT:
-                return basicSetAccessPoint(null, msgs);
-            case SclPackage.LN__LDEVICE:
-                return basicSetLDevice(null, msgs);
+            case SclPackage.LN__PARENT_ACCESS_POINT:
+                return basicSetParentAccessPoint(null, msgs);
+            case SclPackage.LN__PARENT_LDEVICE:
+                return basicSetParentLDevice(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -274,9 +273,9 @@ public class LNImpl extends AnyLNImpl implements LN {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.LN__ACCESS_POINT:
+            case SclPackage.LN__PARENT_ACCESS_POINT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__LN, AccessPoint.class, msgs);
-            case SclPackage.LN__LDEVICE:
+            case SclPackage.LN__PARENT_LDEVICE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LDEVICE__LN, LDevice.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -292,10 +291,10 @@ public class LNImpl extends AnyLNImpl implements LN {
         switch (featureID) {
             case SclPackage.LN__PREFIX:
                 return getPrefix();
-            case SclPackage.LN__ACCESS_POINT:
-                return getAccessPoint();
-            case SclPackage.LN__LDEVICE:
-                return getLDevice();
+            case SclPackage.LN__PARENT_ACCESS_POINT:
+                return getParentAccessPoint();
+            case SclPackage.LN__PARENT_LDEVICE:
+                return getParentLDevice();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -305,18 +304,17 @@ public class LNImpl extends AnyLNImpl implements LN {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
             case SclPackage.LN__PREFIX:
                 setPrefix((String)newValue);
                 return;
-            case SclPackage.LN__ACCESS_POINT:
-                setAccessPoint((AccessPoint)newValue);
+            case SclPackage.LN__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)newValue);
                 return;
-            case SclPackage.LN__LDEVICE:
-                setLDevice((LDevice)newValue);
+            case SclPackage.LN__PARENT_LDEVICE:
+                setParentLDevice((LDevice)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -333,11 +331,11 @@ public class LNImpl extends AnyLNImpl implements LN {
             case SclPackage.LN__PREFIX:
                 unsetPrefix();
                 return;
-            case SclPackage.LN__ACCESS_POINT:
-                setAccessPoint((AccessPoint)null);
+            case SclPackage.LN__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)null);
                 return;
-            case SclPackage.LN__LDEVICE:
-                setLDevice((LDevice)null);
+            case SclPackage.LN__PARENT_LDEVICE:
+                setParentLDevice((LDevice)null);
                 return;
         }
         super.eUnset(featureID);
@@ -353,10 +351,10 @@ public class LNImpl extends AnyLNImpl implements LN {
         switch (featureID) {
             case SclPackage.LN__PREFIX:
                 return isSetPrefix();
-            case SclPackage.LN__ACCESS_POINT:
-                return getAccessPoint() != null;
-            case SclPackage.LN__LDEVICE:
-                return getLDevice() != null;
+            case SclPackage.LN__PARENT_ACCESS_POINT:
+                return getParentAccessPoint() != null;
+            case SclPackage.LN__PARENT_LDEVICE:
+                return getParentLDevice() != null;
         }
         return super.eIsSet(featureID);
     }

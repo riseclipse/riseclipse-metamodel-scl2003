@@ -29,12 +29,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -200,7 +197,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     @Override
     public EList<IEDName> getIEDName() {
         if (iedName == null) {
-            iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__CONTROL_WITH_IED_NAME);
+            iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME);
         }
         return iedName;
     }
@@ -295,9 +292,9 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         if (newProtocol != protocol) {
             NotificationChain msgs = null;
             if (protocol != null)
-                msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+                msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
             if (newProtocol != null)
-                msgs = ((InternalEObject)newProtocol).eInverseAdd(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+                msgs = ((InternalEObject)newProtocol).eInverseAdd(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
             msgs = basicSetProtocol(newProtocol, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -335,7 +332,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     public void unsetProtocol() {
         if (protocol != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__CONTROL_WITH_IED_NAME, Protocol.class, msgs);
+            msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
             msgs = basicUnsetProtocol(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -501,14 +498,6 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         if (confRevESet) result.append(confRev); else result.append("<unset>");
         result.append(')');
         return result.toString();
-    }
-
-    public LN0 getLN0() {
-        return null;
-    }
-
-    public AnyLN getAnyLN() {
-        return getLN0();
     }
 
 } //ControlWithIEDNameImpl

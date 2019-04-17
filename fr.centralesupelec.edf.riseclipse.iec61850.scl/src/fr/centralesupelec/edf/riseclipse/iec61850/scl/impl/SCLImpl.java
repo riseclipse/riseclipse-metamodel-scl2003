@@ -400,9 +400,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if (newHeader != header) {
             NotificationChain msgs = null;
             if (header != null)
-                msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__SCL, Header.class, msgs);
+                msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
             if (newHeader != null)
-                msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__SCL, Header.class, msgs);
+                msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
             msgs = basicSetHeader(newHeader, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -440,7 +440,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void unsetHeader() {
         if (header != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__SCL, Header.class, msgs);
+            msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
             msgs = basicUnsetHeader(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -470,7 +470,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList<Line> getLine() {
         if (line == null) {
-            line = new EObjectContainmentWithInverseEList.Unsettable<Line>(Line.class, this, SclPackage.SCL__LINE, SclPackage.LINE__SCL);
+            line = new EObjectContainmentWithInverseEList.Unsettable<Line>(Line.class, this, SclPackage.SCL__LINE, SclPackage.LINE__PARENT_SCL);
         }
         return line;
     }
@@ -503,7 +503,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getProcess() {
         if (process == null) {
-            process = new EObjectContainmentWithInverseEList.Unsettable<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS, SclPackage.PROCESS__SCL);
+            process = new EObjectContainmentWithInverseEList.Unsettable<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS, SclPackage.PROCESS__PARENT_SCL);
         }
         return process;
     }
@@ -536,7 +536,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList<IED> getIED() {
         if (ied == null) {
-            ied = new EObjectContainmentWithInverseEList.Unsettable<IED>(IED.class, this, SclPackage.SCL__IED, SclPackage.IED__SCL);
+            ied = new EObjectContainmentWithInverseEList.Unsettable<IED>(IED.class, this, SclPackage.SCL__IED, SclPackage.IED__PARENT_SCL);
         }
         return ied;
     }
@@ -598,9 +598,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if (newDataTypeTemplates != dataTypeTemplates) {
             NotificationChain msgs = null;
             if (dataTypeTemplates != null)
-                msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__SCL, DataTypeTemplates.class, msgs);
+                msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
             if (newDataTypeTemplates != null)
-                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__SCL, DataTypeTemplates.class, msgs);
+                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
             msgs = basicSetDataTypeTemplates(newDataTypeTemplates, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -638,7 +638,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void unsetDataTypeTemplates() {
         if (dataTypeTemplates != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__SCL, DataTypeTemplates.class, msgs);
+            msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
             msgs = basicUnsetDataTypeTemplates(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -697,9 +697,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         if (newCommunication != communication) {
             NotificationChain msgs = null;
             if (communication != null)
-                msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__SCL, Communication.class, msgs);
+                msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
             if (newCommunication != null)
-                msgs = ((InternalEObject)newCommunication).eInverseAdd(this, SclPackage.COMMUNICATION__SCL, Communication.class, msgs);
+                msgs = ((InternalEObject)newCommunication).eInverseAdd(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
             msgs = basicSetCommunication(newCommunication, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -737,7 +737,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     public void unsetCommunication() {
         if (communication != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__SCL, Communication.class, msgs);
+            msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
             msgs = basicUnsetCommunication(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -767,7 +767,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @Override
     public EList<Substation> getSubstation() {
         if (substation == null) {
-            substation = new EObjectContainmentWithInverseEList.Unsettable<Substation>(Substation.class, this, SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__SCL);
+            substation = new EObjectContainmentWithInverseEList.Unsettable<Substation>(Substation.class, this, SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__PARENT_SCL);
         }
         return substation;
     }

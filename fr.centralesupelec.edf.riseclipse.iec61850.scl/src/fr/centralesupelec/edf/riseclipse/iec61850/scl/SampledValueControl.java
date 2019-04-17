@@ -33,7 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmpMod <em>Smp Mod</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmpRate <em>Smp Rate</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmvID <em>Smv ID</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0 <em>LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0 <em>Parent LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmvOpts <em>Smv Opts</em>}</li>
  * </ul>
  *
@@ -370,36 +370,32 @@ public interface SampledValueControl extends ControlWithIEDName {
     boolean isSetSmvID();
 
     /**
-     * Returns the value of the '<em><b>LN0</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LN0</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl <em>Sampled Value Control</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LN0</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LN0</em>' container reference.
-     * @see #setLN0(LN0)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_LN0()
+     * @return the value of the '<em>Parent LN0</em>' container reference.
+     * @see #setParentLN0(LN0)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_ParentLN0()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl
      * @model opposite="SampledValueControl" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LN0 getLN0();
+    LN0 getParentLN0();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getLN0 <em>LN0</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0 <em>Parent LN0</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LN0</em>' container reference.
-     * @see #getLN0()
+     * @param value the new value of the '<em>Parent LN0</em>' container reference.
+     * @see #getParentLN0()
      * @generated
      */
-    void setLN0( LN0 value );
+    void setParentLN0(LN0 value);
 
     /**
      * Returns the value of the '<em><b>Smv Opts</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl <em>Parent Sampled Value Control</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Smv Opts</em>' containment reference isn't clear,
@@ -411,8 +407,8 @@ public interface SampledValueControl extends ControlWithIEDName {
      * @see #unsetSmvOpts()
      * @see #setSmvOpts(SmvOpts)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSampledValueControl_SmvOpts()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl
-     * @model opposite="SampledValueControl" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl
+     * @model opposite="ParentSampledValueControl" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SmvOpts getSmvOpts();

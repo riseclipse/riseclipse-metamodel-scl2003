@@ -25,7 +25,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -46,9 +45,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getConductingEquipment <em>Conducting Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getParentFunction <em>Parent Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getGeneralEquipment <em>General Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getSubSubFunctions <em>Sub Sub Functions</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubFunctionImpl#getParentSubFunction <em>Parent Sub Function</em>}</li>
  * </ul>
  *
  * @generated
@@ -190,7 +190,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
     @Override
     public EList<ConductingEquipment> getConductingEquipment() {
         if (conductingEquipment == null) {
-            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__SUB_FUNCTION);
+            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__PARENT_SUB_FUNCTION);
         }
         return conductingEquipment;
     }
@@ -221,8 +221,8 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * @generated
      */
     @Override
-    public Function getFunction() {
-        if (eContainerFeatureID() != SclPackage.SUB_FUNCTION__FUNCTION) return null;
+    public Function getParentFunction() {
+        if (eContainerFeatureID() != SclPackage.SUB_FUNCTION__PARENT_FUNCTION) return null;
         return (Function)eInternalContainer();
     }
 
@@ -231,8 +231,8 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetFunction( Function newFunction, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newFunction, SclPackage.SUB_FUNCTION__FUNCTION, msgs);
+    public NotificationChain basicSetParentFunction(Function newParentFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentFunction, SclPackage.SUB_FUNCTION__PARENT_FUNCTION, msgs);
         return msgs;
     }
 
@@ -242,20 +242,20 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * @generated
      */
     @Override
-    public void setFunction( Function newFunction ) {
-        if (newFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_FUNCTION__FUNCTION && newFunction != null)) {
-            if (EcoreUtil.isAncestor(this, newFunction))
+    public void setParentFunction(Function newParentFunction) {
+        if (newParentFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_FUNCTION__PARENT_FUNCTION && newParentFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentFunction))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newFunction != null)
-                msgs = ((InternalEObject)newFunction).eInverseAdd(this, SclPackage.FUNCTION__SUB_FUNCTION, Function.class, msgs);
-            msgs = basicSetFunction(newFunction, msgs);
+            if (newParentFunction != null)
+                msgs = ((InternalEObject)newParentFunction).eInverseAdd(this, SclPackage.FUNCTION__SUB_FUNCTION, Function.class, msgs);
+            msgs = basicSetParentFunction(newParentFunction, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_FUNCTION__FUNCTION, newFunction, newFunction));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_FUNCTION__PARENT_FUNCTION, newParentFunction, newParentFunction));
     }
 
     /**
@@ -266,7 +266,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
     @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__SUB_FUNCTION);
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_SUB_FUNCTION);
         }
         return generalEquipment;
     }
@@ -299,7 +299,7 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
     @Override
     public EList<SubFunction> getSubSubFunctions() {
         if (subSubFunctions == null) {
-            subSubFunctions = new EObjectContainmentEList.Unsettable<SubFunction>(SubFunction.class, this, SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS);
+            subSubFunctions = new EObjectContainmentWithInverseEList.Unsettable<SubFunction>(SubFunction.class, this, SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS, SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION);
         }
         return subSubFunctions;
     }
@@ -329,18 +329,67 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public SubFunction getParentSubFunction() {
+        if (eContainerFeatureID() != SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION) return null;
+        return (SubFunction)eInternalContainer();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetParentSubFunction(SubFunction newParentSubFunction, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSubFunction, SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION, msgs);
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setParentSubFunction(SubFunction newParentSubFunction) {
+        if (newParentSubFunction != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION && newParentSubFunction != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSubFunction))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newParentSubFunction != null)
+                msgs = ((InternalEObject)newParentSubFunction).eInverseAdd(this, SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS, SubFunction.class, msgs);
+            msgs = basicSetParentSubFunction(newParentSubFunction, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION, newParentSubFunction, newParentSubFunction));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getConductingEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.SUB_FUNCTION__FUNCTION:
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetFunction((Function)otherEnd, msgs);
+                return basicSetParentFunction((Function)otherEnd, msgs);
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getGeneralEquipment()).basicAdd(otherEnd, msgs);
+            case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubSubFunctions()).basicAdd(otherEnd, msgs);
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                if (eInternalContainer() != null)
+                    msgs = eBasicRemoveFromContainer(msgs);
+                return basicSetParentSubFunction((SubFunction)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -355,12 +404,14 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
         switch (featureID) {
             case SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT:
                 return ((InternalEList<?>)getConductingEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.SUB_FUNCTION__FUNCTION:
-                return basicSetFunction(null, msgs);
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
+                return basicSetParentFunction(null, msgs);
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 return ((InternalEList<?>)getGeneralEquipment()).basicRemove(otherEnd, msgs);
             case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
                 return ((InternalEList<?>)getSubSubFunctions()).basicRemove(otherEnd, msgs);
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                return basicSetParentSubFunction(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -373,8 +424,10 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SUB_FUNCTION__FUNCTION:
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
                 return eInternalContainer().eInverseRemove(this, SclPackage.FUNCTION__SUB_FUNCTION, Function.class, msgs);
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                return eInternalContainer().eInverseRemove(this, SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS, SubFunction.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -391,12 +444,14 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
                 return getType();
             case SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT:
                 return getConductingEquipment();
-            case SclPackage.SUB_FUNCTION__FUNCTION:
-                return getFunction();
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
+                return getParentFunction();
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 return getGeneralEquipment();
             case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
                 return getSubSubFunctions();
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                return getParentSubFunction();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -417,8 +472,8 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
                 getConductingEquipment().clear();
                 getConductingEquipment().addAll((Collection<? extends ConductingEquipment>)newValue);
                 return;
-            case SclPackage.SUB_FUNCTION__FUNCTION:
-                setFunction((Function)newValue);
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
+                setParentFunction((Function)newValue);
                 return;
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 getGeneralEquipment().clear();
@@ -427,6 +482,9 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
             case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
                 getSubSubFunctions().clear();
                 getSubSubFunctions().addAll((Collection<? extends SubFunction>)newValue);
+                return;
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -446,14 +504,17 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
             case SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT:
                 unsetConductingEquipment();
                 return;
-            case SclPackage.SUB_FUNCTION__FUNCTION:
-                setFunction((Function)null);
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
+                setParentFunction((Function)null);
                 return;
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 unsetGeneralEquipment();
                 return;
             case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
                 unsetSubSubFunctions();
+                return;
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                setParentSubFunction((SubFunction)null);
                 return;
         }
         super.eUnset(featureID);
@@ -471,12 +532,14 @@ public class SubFunctionImpl extends PowerSystemResourceImpl implements SubFunct
                 return isSetType();
             case SclPackage.SUB_FUNCTION__CONDUCTING_EQUIPMENT:
                 return isSetConductingEquipment();
-            case SclPackage.SUB_FUNCTION__FUNCTION:
-                return getFunction() != null;
+            case SclPackage.SUB_FUNCTION__PARENT_FUNCTION:
+                return getParentFunction() != null;
             case SclPackage.SUB_FUNCTION__GENERAL_EQUIPMENT:
                 return isSetGeneralEquipment();
             case SclPackage.SUB_FUNCTION__SUB_SUB_FUNCTIONS:
                 return isSetSubSubFunctions();
+            case SclPackage.SUB_FUNCTION__PARENT_SUB_FUNCTION:
+                return getParentSubFunction() != null;
         }
         return super.eIsSet(featureID);
     }

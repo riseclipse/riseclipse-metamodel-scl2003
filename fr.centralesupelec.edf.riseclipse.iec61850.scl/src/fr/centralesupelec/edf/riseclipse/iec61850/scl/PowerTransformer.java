@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction <em>Eq Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer <em>Equipment Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer <em>Parent Equipment Container</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getSubEquipment <em>Sub Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getTransformerWinding <em>Transformer Winding</em>}</li>
  * </ul>
@@ -97,7 +97,7 @@ public interface PowerTransformer extends Equipment {
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer <em>Power Transformer</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
@@ -108,8 +108,8 @@ public interface PowerTransformer extends Equipment {
      * @see #isSetEqFunction()
      * @see #unsetEqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_EqFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getPowerTransformer
-     * @model opposite="PowerTransformer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentPowerTransformer
+     * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqFunction> getEqFunction();
@@ -136,37 +136,33 @@ public interface PowerTransformer extends Equipment {
     boolean isSetEqFunction();
 
     /**
-     * Returns the value of the '<em><b>Equipment Container</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Equipment Container</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getPowerTransformer <em>Power Transformer</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Equipment Container</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Equipment Container</em>' container reference.
-     * @see #setEquipmentContainer(EquipmentContainer)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_EquipmentContainer()
+     * @return the value of the '<em>Parent Equipment Container</em>' container reference.
+     * @see #setParentEquipmentContainer(EquipmentContainer)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_ParentEquipmentContainer()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getPowerTransformer
      * @model opposite="PowerTransformer" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    EquipmentContainer getEquipmentContainer();
+    EquipmentContainer getParentEquipmentContainer();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEquipmentContainer <em>Equipment Container</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getParentEquipmentContainer <em>Parent Equipment Container</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Equipment Container</em>' container reference.
-     * @see #getEquipmentContainer()
+     * @param value the new value of the '<em>Parent Equipment Container</em>' container reference.
+     * @see #getParentEquipmentContainer()
      * @generated
      */
-    void setEquipmentContainer( EquipmentContainer value );
+    void setParentEquipmentContainer(EquipmentContainer value);
 
     /**
      * Returns the value of the '<em><b>Sub Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer <em>Power Transformer</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Equipment</em>' containment reference list isn't clear,
@@ -177,8 +173,8 @@ public interface PowerTransformer extends Equipment {
      * @see #isSetSubEquipment()
      * @see #unsetSubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_SubEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getPowerTransformer
-     * @model opposite="PowerTransformer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentPowerTransformer
+     * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SubEquipment> getSubEquipment();
@@ -207,7 +203,7 @@ public interface PowerTransformer extends Equipment {
     /**
      * Returns the value of the '<em><b>Transformer Winding</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer <em>Power Transformer</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer <em>Parent Power Transformer</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Transformer Winding</em>' containment reference list isn't clear,
@@ -218,8 +214,8 @@ public interface PowerTransformer extends Equipment {
      * @see #isSetTransformerWinding()
      * @see #unsetTransformerWinding()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPowerTransformer_TransformerWinding()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getPowerTransformer
-     * @model opposite="PowerTransformer" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getParentPowerTransformer
+     * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<TransformerWinding> getTransformerWinding();

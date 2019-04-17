@@ -43,9 +43,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getClientServices <em>Client Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getGSESettings <em>GSE Settings</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getSMVSettings <em>SMV Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getParentClientServices <em>Parent Client Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getParentGSESettings <em>Parent GSE Settings</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getParentSMVSettings <em>Parent SMV Settings</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.McSecurityImpl#getEncryption <em>Encryption</em>}</li>
  * </ul>
@@ -136,8 +136,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public ClientServices getClientServices() {
-        if (eContainerFeatureID() != SclPackage.MC_SECURITY__CLIENT_SERVICES) return null;
+    public ClientServices getParentClientServices() {
+        if (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES) return null;
         return (ClientServices)eInternalContainer();
     }
 
@@ -146,8 +146,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetClientServices(ClientServices newClientServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newClientServices, SclPackage.MC_SECURITY__CLIENT_SERVICES, msgs);
+    public NotificationChain basicSetParentClientServices(ClientServices newParentClientServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentClientServices, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -157,20 +157,20 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public void setClientServices(ClientServices newClientServices) {
-        if (newClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__CLIENT_SERVICES && newClientServices != null)) {
-            if (EcoreUtil.isAncestor(this, newClientServices))
+    public void setParentClientServices(ClientServices newParentClientServices) {
+        if (newParentClientServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES && newParentClientServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentClientServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newClientServices != null)
-                msgs = ((InternalEObject)newClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__MC_SECURITY, ClientServices.class, msgs);
-            msgs = basicSetClientServices(newClientServices, msgs);
+            if (newParentClientServices != null)
+                msgs = ((InternalEObject)newParentClientServices).eInverseAdd(this, SclPackage.CLIENT_SERVICES__MC_SECURITY, ClientServices.class, msgs);
+            msgs = basicSetParentClientServices(newParentClientServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__CLIENT_SERVICES, newClientServices, newClientServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, newParentClientServices, newParentClientServices));
     }
 
     /**
@@ -179,8 +179,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public GSESettings getGSESettings() {
-        if (eContainerFeatureID() != SclPackage.MC_SECURITY__GSE_SETTINGS) return null;
+    public GSESettings getParentGSESettings() {
+        if (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS) return null;
         return (GSESettings)eInternalContainer();
     }
 
@@ -189,8 +189,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetGSESettings(GSESettings newGSESettings, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newGSESettings, SclPackage.MC_SECURITY__GSE_SETTINGS, msgs);
+    public NotificationChain basicSetParentGSESettings(GSESettings newParentGSESettings, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentGSESettings, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, msgs);
         return msgs;
     }
 
@@ -200,20 +200,20 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public void setGSESettings(GSESettings newGSESettings) {
-        if (newGSESettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__GSE_SETTINGS && newGSESettings != null)) {
-            if (EcoreUtil.isAncestor(this, newGSESettings))
+    public void setParentGSESettings(GSESettings newParentGSESettings) {
+        if (newParentGSESettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS && newParentGSESettings != null)) {
+            if (EcoreUtil.isAncestor(this, newParentGSESettings))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newGSESettings != null)
-                msgs = ((InternalEObject)newGSESettings).eInverseAdd(this, SclPackage.GSE_SETTINGS__MC_SECURITY, GSESettings.class, msgs);
-            msgs = basicSetGSESettings(newGSESettings, msgs);
+            if (newParentGSESettings != null)
+                msgs = ((InternalEObject)newParentGSESettings).eInverseAdd(this, SclPackage.GSE_SETTINGS__MC_SECURITY, GSESettings.class, msgs);
+            msgs = basicSetParentGSESettings(newParentGSESettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__GSE_SETTINGS, newGSESettings, newGSESettings));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, newParentGSESettings, newParentGSESettings));
     }
 
     /**
@@ -222,8 +222,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public SMVSettings getSMVSettings() {
-        if (eContainerFeatureID() != SclPackage.MC_SECURITY__SMV_SETTINGS) return null;
+    public SMVSettings getParentSMVSettings() {
+        if (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS) return null;
         return (SMVSettings)eInternalContainer();
     }
 
@@ -232,8 +232,8 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSMVSettings(SMVSettings newSMVSettings, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newSMVSettings, SclPackage.MC_SECURITY__SMV_SETTINGS, msgs);
+    public NotificationChain basicSetParentSMVSettings(SMVSettings newParentSMVSettings, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSMVSettings, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, msgs);
         return msgs;
     }
 
@@ -243,20 +243,20 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
      * @generated
      */
     @Override
-    public void setSMVSettings(SMVSettings newSMVSettings) {
-        if (newSMVSettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__SMV_SETTINGS && newSMVSettings != null)) {
-            if (EcoreUtil.isAncestor(this, newSMVSettings))
+    public void setParentSMVSettings(SMVSettings newParentSMVSettings) {
+        if (newParentSMVSettings != eInternalContainer() || (eContainerFeatureID() != SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS && newParentSMVSettings != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSMVSettings))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSMVSettings != null)
-                msgs = ((InternalEObject)newSMVSettings).eInverseAdd(this, SclPackage.SMV_SETTINGS__MC_SECURITY, SMVSettings.class, msgs);
-            msgs = basicSetSMVSettings(newSMVSettings, msgs);
+            if (newParentSMVSettings != null)
+                msgs = ((InternalEObject)newParentSMVSettings).eInverseAdd(this, SclPackage.SMV_SETTINGS__MC_SECURITY, SMVSettings.class, msgs);
+            msgs = basicSetParentSMVSettings(newParentSMVSettings, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__SMV_SETTINGS, newSMVSettings, newSMVSettings));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, newParentSMVSettings, newParentSMVSettings));
     }
 
     /**
@@ -367,18 +367,18 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetClientServices((ClientServices)otherEnd, msgs);
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
+                return basicSetParentClientServices((ClientServices)otherEnd, msgs);
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetGSESettings((GSESettings)otherEnd, msgs);
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
+                return basicSetParentGSESettings((GSESettings)otherEnd, msgs);
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSMVSettings((SMVSettings)otherEnd, msgs);
+                return basicSetParentSMVSettings((SMVSettings)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -391,12 +391,12 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
-                return basicSetClientServices(null, msgs);
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
-                return basicSetGSESettings(null, msgs);
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
-                return basicSetSMVSettings(null, msgs);
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
+                return basicSetParentClientServices(null, msgs);
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
+                return basicSetParentGSESettings(null, msgs);
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
+                return basicSetParentSMVSettings(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -409,11 +409,11 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
         switch (eContainerFeatureID()) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CLIENT_SERVICES__MC_SECURITY, ClientServices.class, msgs);
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.GSE_SETTINGS__MC_SECURITY, GSESettings.class, msgs);
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SMV_SETTINGS__MC_SECURITY, SMVSettings.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -427,12 +427,12 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
-                return getClientServices();
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
-                return getGSESettings();
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
-                return getSMVSettings();
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
+                return getParentClientServices();
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
+                return getParentGSESettings();
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
+                return getParentSMVSettings();
             case SclPackage.MC_SECURITY__SIGNATURE:
                 return getSignature();
             case SclPackage.MC_SECURITY__ENCRYPTION:
@@ -449,14 +449,14 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
-                setClientServices((ClientServices)newValue);
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
+                setParentClientServices((ClientServices)newValue);
                 return;
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
-                setGSESettings((GSESettings)newValue);
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
+                setParentGSESettings((GSESettings)newValue);
                 return;
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
-                setSMVSettings((SMVSettings)newValue);
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
+                setParentSMVSettings((SMVSettings)newValue);
                 return;
             case SclPackage.MC_SECURITY__SIGNATURE:
                 setSignature((Boolean)newValue);
@@ -476,14 +476,14 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public void eUnset(int featureID) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
-                setClientServices((ClientServices)null);
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
+                setParentClientServices((ClientServices)null);
                 return;
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
-                setGSESettings((GSESettings)null);
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
+                setParentGSESettings((GSESettings)null);
                 return;
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
-                setSMVSettings((SMVSettings)null);
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
+                setParentSMVSettings((SMVSettings)null);
                 return;
             case SclPackage.MC_SECURITY__SIGNATURE:
                 unsetSignature();
@@ -503,12 +503,12 @@ public class McSecurityImpl extends SclObjectImpl implements McSecurity {
     @Override
     public boolean eIsSet(int featureID) {
         switch (featureID) {
-            case SclPackage.MC_SECURITY__CLIENT_SERVICES:
-                return getClientServices() != null;
-            case SclPackage.MC_SECURITY__GSE_SETTINGS:
-                return getGSESettings() != null;
-            case SclPackage.MC_SECURITY__SMV_SETTINGS:
-                return getSMVSettings() != null;
+            case SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES:
+                return getParentClientServices() != null;
+            case SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS:
+                return getParentGSESettings() != null;
+            case SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS:
+                return getParentSMVSettings() != null;
             case SclPackage.MC_SECURITY__SIGNATURE:
                 return isSetSignature();
             case SclPackage.MC_SECURITY__ENCRYPTION:

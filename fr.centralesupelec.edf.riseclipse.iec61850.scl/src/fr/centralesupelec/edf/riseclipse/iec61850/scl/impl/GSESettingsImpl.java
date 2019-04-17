@@ -41,7 +41,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getAppID <em>App ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getDataLabel <em>Data Label</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getParentServices <em>Parent Services</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getMcSecurity <em>Mc Security</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSESettingsImpl#getKdaParticipant <em>Kda Participant</em>}</li>
  * </ul>
@@ -280,8 +280,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.GSE_SETTINGS__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -290,8 +290,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.GSE_SETTINGS__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.GSE_SETTINGS__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -301,20 +301,20 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_SETTINGS__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_SETTINGS__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_SETTINGS__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -354,9 +354,9 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
         if (newMcSecurity != mcSecurity) {
             NotificationChain msgs = null;
             if (mcSecurity != null)
-                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, McSecurity.class, msgs);
             if (newMcSecurity != null)
-                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, McSecurity.class, msgs);
             msgs = basicSetMcSecurity(newMcSecurity, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -394,7 +394,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     public void unsetMcSecurity() {
         if (mcSecurity != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__GSE_SETTINGS, McSecurity.class, msgs);
+            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_GSE_SETTINGS, McSecurity.class, msgs);
             msgs = basicUnsetMcSecurity(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -474,10 +474,10 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 if (mcSecurity != null)
                     msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.GSE_SETTINGS__MC_SECURITY, null, msgs);
@@ -494,8 +494,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 return basicUnsetMcSecurity(msgs);
         }
@@ -510,7 +510,7 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.GSE_SETTINGS__SERVICES:
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__GSE_SETTINGS, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -528,8 +528,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return getAppID();
             case SclPackage.GSE_SETTINGS__DATA_LABEL:
                 return getDataLabel();
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return getServices();
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
+                return getParentServices();
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 return getMcSecurity();
             case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
@@ -552,8 +552,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
             case SclPackage.GSE_SETTINGS__DATA_LABEL:
                 setDataLabel((ServiceSettingsEnum)newValue);
                 return;
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 setMcSecurity((McSecurity)newValue);
@@ -579,8 +579,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
             case SclPackage.GSE_SETTINGS__DATA_LABEL:
                 unsetDataLabel();
                 return;
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                setServices((Services)null);
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 unsetMcSecurity();
@@ -604,8 +604,8 @@ public class GSESettingsImpl extends ServiceSettingsImpl implements GSESettings 
                 return isSetAppID();
             case SclPackage.GSE_SETTINGS__DATA_LABEL:
                 return isSetDataLabel();
-            case SclPackage.GSE_SETTINGS__SERVICES:
-                return getServices() != null;
+            case SclPackage.GSE_SETTINGS__PARENT_SERVICES:
+                return getParentServices() != null;
             case SclPackage.GSE_SETTINGS__MC_SECURITY:
                 return isSetMcSecurity();
             case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:

@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl <em>Referred By Log Control</em>}</li>
  * </ul>
@@ -40,32 +40,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Log extends UnNaming {
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Any LN</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLog <em>Log</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLog_AnyLN()
+     * @return the value of the '<em>Parent Any LN</em>' container reference.
+     * @see #setParentAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLog_ParentAnyLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLog
      * @model opposite="Log" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AnyLN getAnyLN();
+    AnyLN getParentAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getAnyLN <em>Any LN</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getParentAnyLN <em>Parent Any LN</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
+     * @param value the new value of the '<em>Parent Any LN</em>' container reference.
+     * @see #getParentAnyLN()
      * @generated
      */
-    void setAnyLN( AnyLN value );
+    void setParentAnyLN(AnyLN value);
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.

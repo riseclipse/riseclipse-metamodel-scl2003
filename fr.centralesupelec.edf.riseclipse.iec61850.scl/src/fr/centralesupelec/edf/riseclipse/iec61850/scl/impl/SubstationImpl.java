@@ -45,8 +45,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getFunction <em>Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getVoltageLevel <em>Voltage Level</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getProcess <em>Process</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getParentProcess <em>Parent Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubstationImpl#getParentSCL <em>Parent SCL</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,7 +99,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     @Override
     public EList<Function> getFunction() {
         if (function == null) {
-            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.SUBSTATION__FUNCTION, SclPackage.FUNCTION__SUBSTATION);
+            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.SUBSTATION__FUNCTION, SclPackage.FUNCTION__PARENT_SUBSTATION);
         }
         return function;
     }
@@ -132,7 +132,7 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     @Override
     public EList<VoltageLevel> getVoltageLevel() {
         if (voltageLevel == null) {
-            voltageLevel = new EObjectContainmentWithInverseEList.Unsettable<VoltageLevel>(VoltageLevel.class, this, SclPackage.SUBSTATION__VOLTAGE_LEVEL, SclPackage.VOLTAGE_LEVEL__SUBSTATION);
+            voltageLevel = new EObjectContainmentWithInverseEList.Unsettable<VoltageLevel>(VoltageLevel.class, this, SclPackage.SUBSTATION__VOLTAGE_LEVEL, SclPackage.VOLTAGE_LEVEL__PARENT_SUBSTATION);
         }
         return voltageLevel;
     }
@@ -163,8 +163,8 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * @generated
      */
     @Override
-    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess() {
-        if (eContainerFeatureID() != SclPackage.SUBSTATION__PROCESS) return null;
+    public fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess() {
+        if (eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_PROCESS) return null;
         return (fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)eInternalContainer();
     }
 
@@ -173,9 +173,8 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newProcess, SclPackage.SUBSTATION__PROCESS, msgs);
+    public NotificationChain basicSetParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentProcess, SclPackage.SUBSTATION__PARENT_PROCESS, msgs);
         return msgs;
     }
 
@@ -185,20 +184,20 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * @generated
      */
     @Override
-    public void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newProcess ) {
-        if (newProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__PROCESS && newProcess != null)) {
-            if (EcoreUtil.isAncestor(this, newProcess))
+    public void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process newParentProcess) {
+        if (newParentProcess != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_PROCESS && newParentProcess != null)) {
+            if (EcoreUtil.isAncestor(this, newParentProcess))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newProcess != null)
-                msgs = ((InternalEObject)newProcess).eInverseAdd(this, SclPackage.PROCESS__SUBSTATION, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
-            msgs = basicSetProcess(newProcess, msgs);
+            if (newParentProcess != null)
+                msgs = ((InternalEObject)newParentProcess).eInverseAdd(this, SclPackage.PROCESS__SUBSTATION, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
+            msgs = basicSetParentProcess(newParentProcess, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBSTATION__PROCESS, newProcess, newProcess));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBSTATION__PARENT_PROCESS, newParentProcess, newParentProcess));
     }
 
     /**
@@ -207,8 +206,8 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * @generated
      */
     @Override
-    public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.SUBSTATION__SCL) return null;
+    public SCL getParentSCL() {
+        if (eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_SCL) return null;
         return (SCL)eInternalContainer();
     }
 
@@ -217,8 +216,8 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.SUBSTATION__SCL, msgs);
+    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.SUBSTATION__PARENT_SCL, msgs);
         return msgs;
     }
 
@@ -228,20 +227,20 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
      * @generated
      */
     @Override
-    public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
+    public void setParentSCL(SCL newParentSCL) {
+        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBSTATION__PARENT_SCL && newParentSCL != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSCL))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__SUBSTATION, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
+            if (newParentSCL != null)
+                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__SUBSTATION, SCL.class, msgs);
+            msgs = basicSetParentSCL(newParentSCL, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBSTATION__SCL, newSCL, newSCL));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBSTATION__PARENT_SCL, newParentSCL, newParentSCL));
     }
 
     /**
@@ -257,14 +256,14 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getFunction()).basicAdd(otherEnd, msgs);
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getVoltageLevel()).basicAdd(otherEnd, msgs);
-            case SclPackage.SUBSTATION__PROCESS:
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
-            case SclPackage.SUBSTATION__SCL:
+                return basicSetParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)otherEnd, msgs);
+            case SclPackage.SUBSTATION__PARENT_SCL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
+                return basicSetParentSCL((SCL)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -281,10 +280,10 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return ((InternalEList<?>)getVoltageLevel()).basicRemove(otherEnd, msgs);
-            case SclPackage.SUBSTATION__PROCESS:
-                return basicSetProcess(null, msgs);
-            case SclPackage.SUBSTATION__SCL:
-                return basicSetSCL(null, msgs);
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
+                return basicSetParentProcess(null, msgs);
+            case SclPackage.SUBSTATION__PARENT_SCL:
+                return basicSetParentSCL(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -297,9 +296,9 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SUBSTATION__PROCESS:
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
                 return eInternalContainer().eInverseRemove(this, SclPackage.PROCESS__SUBSTATION, fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, msgs);
-            case SclPackage.SUBSTATION__SCL:
+            case SclPackage.SUBSTATION__PARENT_SCL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SCL__SUBSTATION, SCL.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -317,10 +316,10 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return getFunction();
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return getVoltageLevel();
-            case SclPackage.SUBSTATION__PROCESS:
-                return getProcess();
-            case SclPackage.SUBSTATION__SCL:
-                return getSCL();
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
+                return getParentProcess();
+            case SclPackage.SUBSTATION__PARENT_SCL:
+                return getParentSCL();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -342,11 +341,11 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 getVoltageLevel().clear();
                 getVoltageLevel().addAll((Collection<? extends VoltageLevel>)newValue);
                 return;
-            case SclPackage.SUBSTATION__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)newValue);
                 return;
-            case SclPackage.SUBSTATION__SCL:
-                setSCL((SCL)newValue);
+            case SclPackage.SUBSTATION__PARENT_SCL:
+                setParentSCL((SCL)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -366,11 +365,11 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 unsetVoltageLevel();
                 return;
-            case SclPackage.SUBSTATION__PROCESS:
-                setProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
+                setParentProcess((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)null);
                 return;
-            case SclPackage.SUBSTATION__SCL:
-                setSCL((SCL)null);
+            case SclPackage.SUBSTATION__PARENT_SCL:
+                setParentSCL((SCL)null);
                 return;
         }
         super.eUnset(featureID);
@@ -388,10 +387,10 @@ public class SubstationImpl extends EquipmentContainerImpl implements Substation
                 return isSetFunction();
             case SclPackage.SUBSTATION__VOLTAGE_LEVEL:
                 return isSetVoltageLevel();
-            case SclPackage.SUBSTATION__PROCESS:
-                return getProcess() != null;
-            case SclPackage.SUBSTATION__SCL:
-                return getSCL() != null;
+            case SclPackage.SUBSTATION__PARENT_PROCESS:
+                return getParentProcess() != null;
+            case SclPackage.SUBSTATION__PARENT_SCL:
+                return getParentSCL() != null;
         }
         return super.eIsSet(featureID);
     }

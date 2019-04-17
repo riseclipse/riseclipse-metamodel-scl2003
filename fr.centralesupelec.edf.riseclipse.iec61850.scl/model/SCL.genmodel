@@ -129,12 +129,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Header/revision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Header/toolID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Header/version"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Header/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Header/ParentSCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Header/Text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Header/History"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//History">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//History/Header"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//History/ParentHeader"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//History/Hitem"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Hitem">
@@ -144,15 +144,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/when"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/who"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Hitem/why"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Hitem/History"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Hitem/ParentHistory"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IDNaming">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IDNaming/id"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Line">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Line/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/Process"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/ParentProcess"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Line/ParentSCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConnectivityNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/ConductingEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Line/Voltage"/>
@@ -165,12 +165,12 @@
     <genClasses ecoreClass="SCL.ecore#//Private">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Private/BaseElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Private/ParentBaseElement"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Process/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/Line"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Process/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Process/ParentSCL"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/ConductingEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/Substation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Process/SubProcesses"/>
@@ -190,25 +190,25 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Text">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Text/source"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Text/BaseElement"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Text/Header"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Text/ParentBaseElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Text/ParentHeader"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Text/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Address">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ConnectedAP"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ControlBlock"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ParentConnectedAP"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Address/ParentControlBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Address/P"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Communication">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SubNetwork"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Communication/ParentSCL"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectedAP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/apName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/iedName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/redProt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/Address"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/SubNetwork"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/ParentSubNetwork"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/RefersToAccessPoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/PhysConn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/GSE"/>
@@ -220,35 +220,35 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/ldInst"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
-      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getConnectedAP"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getParentConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSE">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MinTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MaxTime"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSE/ConnectedAP"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSE/ParentConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//P">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P/Address"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P/ParentAddress"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PAddr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PAddr/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PAddr/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//P_PhysConn">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P_PhysConn/PhysConn"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//P_PhysConn/ParentPhysConn"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PhysConn">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PhysConn/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PhysConn/ConnectedAP"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PhysConn/ParentConnectedAP"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PhysConn/P"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMV">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMV/ConnectedAP"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMV/ParentConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubNetwork">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubNetwork/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/BitRate"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/Communication"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/ParentCommunication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubNetwork/ConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AbstractDataAttribute">
@@ -265,24 +265,24 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredByExtRef"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BDA">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BDA/DAType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BDA/ParentDAType"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DA/fc"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DA/DOType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DA/ParentDOType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DA/ProtNs"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DAType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAType/iedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/BDA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ReferredByAbstractDataAttribute"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAType/DataTypeTemplates"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ParentDataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAType/ProtNs"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/transient"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DO/LNodeType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DO/ParentLNodeType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DO/RefersToDOType"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOType">
@@ -290,7 +290,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOType/iedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/DA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredByDO"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOType/DataTypeTemplates"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ParentDataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/SDO"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredBySDO"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredByExtRef"/>
@@ -300,52 +300,52 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/DOType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/EnumType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/LNodeType"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/ParentSCL"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EnumType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/ReferredByAbstractDataAttribute"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/DataTypeTemplates"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/ParentDataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//EnumType/EnumVal"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EnumVal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//EnumVal/ord"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumVal/EnumType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EnumVal/ParentEnumType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//EnumVal/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNodeType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNodeType/iedType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNodeType/lnClass"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/DO"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/DataTypeTemplates"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ParentDataTypeTemplates"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ReferredByAnyLN"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ProtNs">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ProtNs/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/DA"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/DAType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/ParentDA"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ProtNs/ParentDAType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ProtNs/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SDO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/count"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDO/DOType"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDO/ParentDOType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDO/RefersToDOType"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Val">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Val/sGroup"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/AbstractDataAttribute"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/DAI"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/ParentAbstractDataAttribute"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Val/ParentDAI"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Val/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AccessControl">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//AccessControl/LDevice"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//AccessControl/ParentLDevice"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AccessPoint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AccessPoint/clock"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AccessPoint/kdc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AccessPoint/router"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/IED"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/ParentIED"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/LN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/SMVSecurity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AccessPoint/ServerAt"/>
@@ -375,16 +375,16 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLNode"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AnyLN/ControlWithTriggerOpt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SCL.ecore#//AnyLN/Control"/>
-      <genOperations ecoreOperation="SCL.ecore#//AnyLN/getLDevice"/>
+      <genOperations ecoreOperation="SCL.ecore#//AnyLN/getParentLDevice"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Association">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Association/associationID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Association/kind"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Association/Server"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Association/ParentServer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Association/RefersToAnyLN"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Authentication">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Authentication/Server"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Authentication/ParentServer"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Certificate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Certificate/serialNumber"/>
@@ -394,7 +394,7 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ClientLN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientLN/apRef"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientLN/RptEnabled"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientLN/ParentRptEnabled"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientLN/RefersToAnyLN"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ClientServices">
@@ -409,7 +409,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/supportsLdName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/sv"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/unbufReport"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/ParentServices"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ClientServices/TimeSyncProt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rGOOSE"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ClientServices/rSV"/>
@@ -418,38 +418,38 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//CommProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//CommProt/ipv6"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//CommProt/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//CommProt/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfDataSet">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfDataSet/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfDataSet/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfLNs">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConfLNs/fixLnInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConfLNs/fixPrefix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLNs/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLNs/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfLdName">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLdName/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLdName/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfLogControl">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLogControl/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfLogControl/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfReportControl">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfReportControl/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfReportControl/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfSG">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConfSG/resvTms"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfSG/SettingGroups"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfSG/ParentSettingGroups"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConfSigRef">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfSigRef/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConfSigRef/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Control">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Control/datSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Control/RefersToDataSet"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Control/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Control/ReferredByExtRef"/>
-      <genOperations ecoreOperation="SCL.ecore#//Control/getAnyLN"/>
+      <genOperations ecoreOperation="SCL.ecore#//Control/getParentAnyLN"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ControlWithIEDName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlWithIEDName/confRev"/>
@@ -467,32 +467,32 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAI/valImport"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAI/valKind"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAI/Val"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/DOI"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/SDI"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/ParentDOI"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/ParentSDI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/ix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOI/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOI/ParentAnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/DAI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/SDI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataObjectDirectory">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataObjectDirectory/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataObjectDirectory/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataSet">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/ParentAnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/ReferredByControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataSet/FCDA"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataSet/name"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataSetDirectory">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataSetDirectory/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataSetDirectory/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DynAssociation">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DynAssociation/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DynAssociation/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DynDataSet">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DynDataSet/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DynDataSet/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ExtRef">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/daName"/>
@@ -509,7 +509,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/srcLNClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/srcLNInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/srcPrefix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/Inputs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/ParentInputs"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToAbstractDataAttribute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDOType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pServT"/>
@@ -527,55 +527,55 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/lnClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/lnInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FCDA/prefix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/DataSet"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/ParentDataSet"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//FCDA/RefersToAbstractDataAttribute"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//FileHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/ftps"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//FileHandling/mms"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FileHandling/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//FileHandling/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GOOSE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/fixedOffs"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSE/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSE/ParentServices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/goose"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GOOSE/rGOOSE"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GOOSESecurity">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSESecurity/AccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GOOSESecurity/ParentAccessPoint"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSEControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/appID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/fixedOffs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/securityEnable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSEControl/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEControl/LN0"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEControl/ParentLN0"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSEDir">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEDir/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSEDir/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSESettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/appID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/dataLabel"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/ParentServices"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSESettings/McSecurity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GSESettings/kdaParticipant"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSSE">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSSE/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GSSE/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GetCBValues">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetCBValues/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetCBValues/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GetDataObjectDefinition">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDataObjectDefinition/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDataObjectDefinition/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GetDataSetValue">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDataSetValue/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDataSetValue/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GetDirectory">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDirectory/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GetDirectory/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IED">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IED/configVersion"/>
@@ -588,7 +588,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//IED/AccessPoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//IED/KDC"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//IED/Services"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IED/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IED/ParentSCL"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IED/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IED/originalSclRelease"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//IED/ReferredByIEDName"/>
@@ -599,30 +599,30 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/lnClass"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/lnInst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/prefix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/ControlWithIEDName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/ParentControlWithIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/RefersToAnyLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//IEDName/value"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/RefersToIED"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//IEDName/RefersToLDevice"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Inputs">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Inputs/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Inputs/ParentAnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Inputs/ExtRef"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//IssuerName">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IssuerName/Certificate"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//IssuerName/ParentCertificate"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//KDC">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//KDC/apName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//KDC/iedName"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//KDC/IED"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//KDC/ParentIED"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//KDC/RefersToAccessPoint"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LDevice">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LDevice/inst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LDevice/ldName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/AccessControl"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/Server"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/ParentServer"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LDevice/AnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN0"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN"/>
@@ -630,18 +630,18 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN/prefix"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/AccessPoint"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/LDevice"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/ParentAccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN/ParentLDevice"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN0">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/GSEControl"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN0/LDevice"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN0/ParentLDevice"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SampledValueControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SettingControl"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN0/ControlWithIEDName"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Log">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Log/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Log/ParentAnyLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Log/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Log/ReferredByLogControl"/>
     </genClasses>
@@ -654,7 +654,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/logName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/prefix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogControl/reasonCode"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/ParentAnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToAnyLN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LogControl/RefersToLog"/>
     </genClasses>
@@ -662,23 +662,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/intgPd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/logEna"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LogSettings/trgOps"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogSettings/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LogSettings/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//OptFields">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//OptFields/ReportControl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//OptFields/ParentReportControl"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Protocol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Protocol/mustUnderstand"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Protocol/ControlWithIEDName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Protocol/ParentControlWithIEDName"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReadWrite">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReadWrite/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReadWrite/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//RedProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RedProt/hsr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RedProt/prp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RedProt/rstp"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RedProt/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RedProt/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ReportControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportControl/buffered"/>
@@ -686,7 +686,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportControl/confRev"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportControl/indexed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportControl/rptID"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/AnyLN"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/ParentAnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/OptFields"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ReportControl/RptEnabled"/>
     </genClasses>
@@ -698,27 +698,27 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/resvTms"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/rptID"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ReportSettings/trgOps"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportSettings/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ReportSettings/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//RptEnabled">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//RptEnabled/max"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//RptEnabled/ClientLN"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RptEnabled/ReportControl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//RptEnabled/ParentReportControl"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SDI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDI/ix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDI/sAddr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/DAI"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/DOI"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/ParentDOI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/SubSDI"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/ParentSDI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SGEdit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SGEdit/resvTms"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SGEdit/SettingGroups"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SGEdit/ParentSettingGroups"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVSecurity">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSecurity/AccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSecurity/ParentAccessPoint"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SMVSettings">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/svID"/>
@@ -729,7 +729,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SmpRate"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SamplesPerSec"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/SecPerSamples"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVSettings/ParentServices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/synchSrcId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/nofASDU"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVSettings/kdaParticipant"/>
@@ -738,7 +738,7 @@
     <genClasses ecoreClass="SCL.ecore#//SMVsc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/delivery"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/deliveryConf"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVsc/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SMVsc/ParentServices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/sv"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SMVsc/rSV"/>
     </genClasses>
@@ -749,19 +749,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/smpMod"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/smpRate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SampledValueControl/smvID"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SampledValueControl/LN0"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SampledValueControl/ParentLN0"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SampledValueControl/SmvOpts"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Server">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Server/timeout"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Server/AccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Server/ParentAccessPoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/Association"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/Authentication"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Server/LDevice"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServerAt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ServerAt/apName"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ServerAt/AccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ServerAt/ParentAccessPoint"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ServerAt/RefersToAccessPoint"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ServiceSettings">
@@ -773,7 +773,7 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Services">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Services/nameLength"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Services/AccessPoint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Services/ParentAccessPoint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/ClientServices"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/CommProt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/ConfDataSet"/>
@@ -795,7 +795,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/GetDataObjectDefinition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/GetDataSetValue"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/GetDirectory"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Services/IED"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Services/ParentIED"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/LogSettings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/ReadWrite"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/RedProt"/>
@@ -810,40 +810,40 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Services/SMVSettings"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SetDataSetValue">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SetDataSetValue/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SetDataSetValue/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SettingControl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SettingControl/actSG"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SettingControl/numOfSGs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SettingControl/resvTms"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingControl/LN0"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingControl/ParentLN0"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SettingGroups">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/ConfSG"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/SGEdit"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SettingGroups/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SmvOpts">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SmvOpts/SampledValueControl"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SmvOpts/ParentSampledValueControl"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Subject">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Subject/Certificate"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Subject/ParentCertificate"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SupSubscription">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SupSubscription/maxGo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SupSubscription/maxSv"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SupSubscription/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SupSubscription/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TimeSyncProt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/c37_238"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/other"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/sntp"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/ClientServices"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/ParentClientServices"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimeSyncProt/ParentServices"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TimeSyncProt/iec61850_9_3"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TimerActivatedControl">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimerActivatedControl/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TimerActivatedControl/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TrgOps">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/dchg"/>
@@ -851,11 +851,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/gi"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/period"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TrgOps/qchg"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TrgOps/ControlWithTriggerOpt"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TrgOps/ParentControlWithTriggerOpt"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ValueHandling">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ValueHandling/setToRO"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ValueHandling/Services"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ValueHandling/ParentServices"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//AbstractConductingEquipment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractConductingEquipment/SubEquipment"/>
@@ -867,36 +867,36 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractEqFuncSubFunc/SubGeneralEquipment"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Bay">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Bay/VoltageLevel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ParentVoltageLevel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConnectivityNode"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Bay/ConductingEquipment"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConductingEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConductingEquipment/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Bay"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Function"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/SubFunction"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/ParentBay"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/ParentFunction"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/ParentSubFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/EqFunction"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Line"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/Process"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/ParentLine"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConductingEquipment/ParentProcess"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectivityNode">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectivityNode/pathName"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Bay"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/ParentBay"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/ReferredByTerminal"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/Line"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ConnectivityNode/ParentLine"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EqFunction">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ConductingEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/GeneralEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/PowerTransformer"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/SubEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/TransformerWinding"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/TapChanger"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentConductingEquipment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentGeneralEquipment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentPowerTransformer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentSubEquipment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentTransformerWinding"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqFunction/ParentTapChanger"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//EqSubFunction">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqSubFunction/AbstractEqFuncSubFunc"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//EqSubFunction/ParentAbstractEqFuncSubFunc"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Equipment"/>
     <genClasses ecoreClass="SCL.ecore#//EquipmentContainer">
@@ -905,22 +905,22 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Function">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Function/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/Bay"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/ParentBay"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Function/ConductingEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/GeneralEquipmentContainer"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/Substation"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/VoltageLevel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/ParentGeneralEquipmentContainer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/ParentSubstation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Function/ParentVoltageLevel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Function/SubFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Function/GeneralEquipment"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GeneralEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//GeneralEquipment/type"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/AbstractEqFuncSubFunc"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/ParentAbstractEqFuncSubFunc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/EqFunction"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/EquipmentContainer"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/Function"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/GeneralEquipmentContainer"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/SubFunction"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/ParentEquipmentContainer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/ParentFunction"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/ParentGeneralEquipmentContainer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipment/ParentSubFunction"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GeneralEquipmentContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GeneralEquipmentContainer/Function"/>
@@ -934,47 +934,48 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNode/lnType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNode/prefix"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNode/RefersToAnyLN"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNode/LNodeContainer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNode/ParentLNodeContainer"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNodeContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeContainer/LNode"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//NeutralPoint">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//NeutralPoint/TransformerWinding"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//NeutralPoint/ParentTransformerWinding"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//PowerSystemResource"/>
     <genClasses ecoreClass="SCL.ecore#//PowerTransformer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//PowerTransformer/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/EqFunction"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/EquipmentContainer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/ParentEquipmentContainer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/SubEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//PowerTransformer/TransformerWinding"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubEquipment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubEquipment/phase"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/AbstractConductingEquipment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/ParentAbstractConductingEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/EqFunction"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/PowerTransformer"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/TapChanger"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/ParentPowerTransformer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubEquipment/ParentTapChanger"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SubFunction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SubFunction/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/ConductingEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/Function"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/ParentFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/GeneralEquipment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/SubSubFunctions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SubFunction/ParentSubFunction"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Substation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Function"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Substation/VoltageLevel"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/Process"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/SCL"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/ParentProcess"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Substation/ParentSCL"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//TapChanger">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TapChanger/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/EqFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/SubEquipment"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/TransformerWinding"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TapChanger/ParentTransformerWinding"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Terminal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/bayName"/>
@@ -983,7 +984,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/processName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/substationName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/voltageLevelName"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/AbstractConductingEquipment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/ParentAbstractConductingEquipment"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//Terminal/RefersToConnectivityNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Terminal/lineName"/>
@@ -992,18 +993,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//TransformerWinding/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/EqFunction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/NeutralPoint"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/PowerTransformer"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/ParentPowerTransformer"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//TransformerWinding/TapChanger"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Voltage">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Voltage/Line"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Voltage/ParentLine"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Voltage/ParentVoltageLevel"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//VoltageLevel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/nomFreq"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//VoltageLevel/numPhases"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Bay"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Function"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Substation"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/ParentSubstation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Voltage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
@@ -1061,20 +1063,25 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//MinTime"/>
     <genClasses ecoreClass="SCL.ecore#//MaxTime"/>
-    <genClasses ecoreClass="SCL.ecore#//BitRate"/>
+    <genClasses ecoreClass="SCL.ecore#//BitRate">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BitRate/ParentSubNetwork"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SmpRate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SmpRate/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SmpRate/ParentSMVSettings"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SamplesPerSec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SamplesPerSec/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SamplesPerSec/ParentSMVSettings"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SecPerSamples">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SecPerSamples/value"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SecPerSamples/ParentSMVSettings"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//McSecurity">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/ClientServices"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/GSESettings"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/SMVSettings"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/ParentClientServices"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/ParentGSESettings"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//McSecurity/ParentSMVSettings"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//McSecurity/signature"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//McSecurity/encryption"/>
     </genClasses>

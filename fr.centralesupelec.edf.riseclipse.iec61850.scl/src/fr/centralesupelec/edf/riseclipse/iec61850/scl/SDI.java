@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getIx <em>Ix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSAddr <em>SAddr</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDAI <em>DAI</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI <em>DOI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentSDI <em>Parent SDI</em>}</li>
  * </ul>
@@ -151,7 +151,7 @@ public interface SDI extends DataAttribute {
     /**
      * Returns the value of the '<em><b>DAI</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI <em>SDI</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI <em>Parent SDI</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DAI</em>' containment reference list isn't clear,
@@ -162,8 +162,8 @@ public interface SDI extends DataAttribute {
      * @see #isSetDAI()
      * @see #unsetDAI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_DAI()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI
-     * @model opposite="SDI" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI
+     * @model opposite="ParentSDI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DAI> getDAI();
@@ -190,32 +190,28 @@ public interface SDI extends DataAttribute {
     boolean isSetDAI();
 
     /**
-     * Returns the value of the '<em><b>DOI</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DOI</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getSDI <em>SDI</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DOI</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DOI</em>' container reference.
-     * @see #setDOI(DOI)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_DOI()
+     * @return the value of the '<em>Parent DOI</em>' container reference.
+     * @see #setParentDOI(DOI)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_ParentDOI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getSDI
      * @model opposite="SDI" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DOI getDOI();
+    DOI getParentDOI();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI <em>DOI</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI <em>Parent DOI</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DOI</em>' container reference.
-     * @see #getDOI()
+     * @param value the new value of the '<em>Parent DOI</em>' container reference.
+     * @see #getParentDOI()
      * @generated
      */
-    void setDOI( DOI value );
+    void setParentDOI(DOI value);
 
     /**
      * Returns the value of the '<em><b>Sub SDI</b></em>' containment reference list.

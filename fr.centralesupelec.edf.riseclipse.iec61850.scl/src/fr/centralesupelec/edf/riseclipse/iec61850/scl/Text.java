@@ -28,8 +28,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getSource <em>Source</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement <em>Parent Base Element</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader <em>Parent Header</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -92,60 +92,52 @@ public interface Text extends SclObject {
     boolean isSetSource();
 
     /**
-     * Returns the value of the '<em><b>Base Element</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Base Element</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText <em>Text</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Base Element</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Base Element</em>' container reference.
-     * @see #setBaseElement(BaseElement)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_BaseElement()
+     * @return the value of the '<em>Parent Base Element</em>' container reference.
+     * @see #setParentBaseElement(BaseElement)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_ParentBaseElement()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getText
      * @model opposite="Text" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    BaseElement getBaseElement();
+    BaseElement getParentBaseElement();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getBaseElement <em>Base Element</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentBaseElement <em>Parent Base Element</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Base Element</em>' container reference.
-     * @see #getBaseElement()
+     * @param value the new value of the '<em>Parent Base Element</em>' container reference.
+     * @see #getParentBaseElement()
      * @generated
      */
-    void setBaseElement( BaseElement value );
+    void setParentBaseElement(BaseElement value);
 
     /**
-     * Returns the value of the '<em><b>Header</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Header</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText <em>Text</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Header</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Header</em>' container reference.
-     * @see #setHeader(Header)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_Header()
+     * @return the value of the '<em>Parent Header</em>' container reference.
+     * @see #setParentHeader(Header)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getText_ParentHeader()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getText
      * @model opposite="Text" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Header getHeader();
+    Header getParentHeader();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getHeader <em>Header</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Text#getParentHeader <em>Parent Header</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Header</em>' container reference.
-     * @see #getHeader()
+     * @param value the new value of the '<em>Parent Header</em>' container reference.
+     * @see #getParentHeader()
      * @generated
      */
-    void setHeader( Header value );
+    void setParentHeader(Header value);
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

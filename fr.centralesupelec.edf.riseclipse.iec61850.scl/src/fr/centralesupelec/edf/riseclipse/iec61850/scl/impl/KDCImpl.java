@@ -25,14 +25,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclSwitch;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -47,7 +45,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getApName <em>Ap Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getIedName <em>Ied Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getIED <em>IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.KDCImpl#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
  * </ul>
  *
@@ -256,8 +254,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * @generated
      */
     @Override
-    public IED getIED() {
-        if (eContainerFeatureID() != SclPackage.KDC__IED) return null;
+    public IED getParentIED() {
+        if (eContainerFeatureID() != SclPackage.KDC__PARENT_IED) return null;
         return (IED)eInternalContainer();
     }
 
@@ -266,8 +264,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetIED( IED newIED, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newIED, SclPackage.KDC__IED, msgs);
+    public NotificationChain basicSetParentIED(IED newParentIED, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentIED, SclPackage.KDC__PARENT_IED, msgs);
         return msgs;
     }
 
@@ -277,20 +275,20 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
      * @generated
      */
     @Override
-    public void setIED( IED newIED ) {
-        if (newIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.KDC__IED && newIED != null)) {
-            if (EcoreUtil.isAncestor(this, newIED))
+    public void setParentIED(IED newParentIED) {
+        if (newParentIED != eInternalContainer() || (eContainerFeatureID() != SclPackage.KDC__PARENT_IED && newParentIED != null)) {
+            if (EcoreUtil.isAncestor(this, newParentIED))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newIED != null)
-                msgs = ((InternalEObject)newIED).eInverseAdd(this, SclPackage.IED__KDC, IED.class, msgs);
-            msgs = basicSetIED(newIED, msgs);
+            if (newParentIED != null)
+                msgs = ((InternalEObject)newParentIED).eInverseAdd(this, SclPackage.IED__KDC, IED.class, msgs);
+            msgs = basicSetParentIED(newParentIED, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__IED, newIED, newIED));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.KDC__PARENT_IED, newParentIED, newParentIED));
     }
 
     /**
@@ -400,10 +398,10 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.KDC__IED:
+            case SclPackage.KDC__PARENT_IED:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetIED((IED)otherEnd, msgs);
+                return basicSetParentIED((IED)otherEnd, msgs);
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 if (refersToAccessPoint != null)
                     msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_KDC, AccessPoint.class, msgs);
@@ -420,8 +418,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.KDC__IED:
-                return basicSetIED(null, msgs);
+            case SclPackage.KDC__PARENT_IED:
+                return basicSetParentIED(null, msgs);
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 return basicUnsetRefersToAccessPoint(msgs);
         }
@@ -436,7 +434,7 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.KDC__IED:
+            case SclPackage.KDC__PARENT_IED:
                 return eInternalContainer().eInverseRemove(this, SclPackage.IED__KDC, IED.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -454,8 +452,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
                 return getApName();
             case SclPackage.KDC__IED_NAME:
                 return getIedName();
-            case SclPackage.KDC__IED:
-                return getIED();
+            case SclPackage.KDC__PARENT_IED:
+                return getParentIED();
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 return getRefersToAccessPoint();
         }
@@ -476,8 +474,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
             case SclPackage.KDC__IED_NAME:
                 setIedName((String)newValue);
                 return;
-            case SclPackage.KDC__IED:
-                setIED((IED)newValue);
+            case SclPackage.KDC__PARENT_IED:
+                setParentIED((IED)newValue);
                 return;
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 setRefersToAccessPoint((AccessPoint)newValue);
@@ -500,8 +498,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
             case SclPackage.KDC__IED_NAME:
                 unsetIedName();
                 return;
-            case SclPackage.KDC__IED:
-                setIED((IED)null);
+            case SclPackage.KDC__PARENT_IED:
+                setParentIED((IED)null);
                 return;
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 unsetRefersToAccessPoint();
@@ -522,8 +520,8 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
                 return isSetApName();
             case SclPackage.KDC__IED_NAME:
                 return isSetIedName();
-            case SclPackage.KDC__IED:
-                return getIED() != null;
+            case SclPackage.KDC__PARENT_IED:
+                return getParentIED() != null;
             case SclPackage.KDC__REFERS_TO_ACCESS_POINT:
                 return isSetRefersToAccessPoint();
         }

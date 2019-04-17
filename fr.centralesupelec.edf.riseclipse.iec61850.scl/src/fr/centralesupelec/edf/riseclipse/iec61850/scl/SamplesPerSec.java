@@ -29,6 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings <em>Parent SMV Settings</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSamplesPerSec()
@@ -62,5 +63,29 @@ public interface SamplesPerSec extends SclObject {
      * @generated
      */
     void setValue(Integer value);
+
+    /**
+     * Returns the value of the '<em><b>Parent SMV Settings</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #setParentSMVSettings(SMVSettings)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSamplesPerSec_ParentSMVSettings()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec
+     * @model opposite="SamplesPerSec" resolveProxies="false" ordered="false"
+     * @generated
+     */
+    SMVSettings getParentSMVSettings();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec#getParentSMVSettings <em>Parent SMV Settings</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #getParentSMVSettings()
+     * @generated
+     */
+    void setParentSMVSettings(SMVSettings value);
 
 } // SamplesPerSec

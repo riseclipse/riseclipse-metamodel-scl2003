@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DynDataSetImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DynDataSetImpl#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,8 +68,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
      * @generated
      */
     @Override
-    public Services getServices() {
-        if (eContainerFeatureID() != SclPackage.DYN_DATA_SET__SERVICES) return null;
+    public Services getParentServices() {
+        if (eContainerFeatureID() != SclPackage.DYN_DATA_SET__PARENT_SERVICES) return null;
         return (Services)eInternalContainer();
     }
 
@@ -78,8 +78,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServices( Services newServices, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServices, SclPackage.DYN_DATA_SET__SERVICES, msgs);
+    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.DYN_DATA_SET__PARENT_SERVICES, msgs);
         return msgs;
     }
 
@@ -89,20 +89,20 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
      * @generated
      */
     @Override
-    public void setServices( Services newServices ) {
-        if (newServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.DYN_DATA_SET__SERVICES && newServices != null)) {
-            if (EcoreUtil.isAncestor(this, newServices))
+    public void setParentServices(Services newParentServices) {
+        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.DYN_DATA_SET__PARENT_SERVICES && newParentServices != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServices))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__DYN_DATA_SET, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
+            if (newParentServices != null)
+                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__DYN_DATA_SET, Services.class, msgs);
+            msgs = basicSetParentServices(newParentServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DYN_DATA_SET__SERVICES, newServices, newServices));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DYN_DATA_SET__PARENT_SERVICES, newParentServices, newParentServices));
     }
 
     /**
@@ -113,10 +113,10 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServices((Services)otherEnd, msgs);
+                return basicSetParentServices((Services)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -129,8 +129,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
-                return basicSetServices(null, msgs);
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
+                return basicSetParentServices(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -143,7 +143,7 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__DYN_DATA_SET, Services.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -157,8 +157,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
-                return getServices();
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
+                return getParentServices();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -171,8 +171,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
-                setServices((Services)newValue);
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
+                setParentServices((Services)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -186,8 +186,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
-                setServices((Services)null);
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
+                setParentServices((Services)null);
                 return;
         }
         super.eUnset(featureID);
@@ -201,8 +201,8 @@ public class DynDataSetImpl extends ServiceWithMaxAndMaxAttributesImpl implement
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.DYN_DATA_SET__SERVICES:
-                return getServices() != null;
+            case SclPackage.DYN_DATA_SET__PARENT_SERVICES:
+                return getParentServices() != null;
         }
         return super.eIsSet(featureID);
     }

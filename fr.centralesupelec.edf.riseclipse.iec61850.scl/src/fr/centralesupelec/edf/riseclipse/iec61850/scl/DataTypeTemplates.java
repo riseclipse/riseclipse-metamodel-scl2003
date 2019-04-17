@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL <em>Parent SCL</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates()
@@ -44,7 +44,7 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
     /**
      * Returns the value of the '<em><b>DA Type</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DA Type</em>' containment reference list isn't clear,
@@ -55,8 +55,8 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
      * @see #isSetDAType()
      * @see #unsetDAType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DAType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates
+     * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DAType> getDAType();
@@ -85,7 +85,7 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
     /**
      * Returns the value of the '<em><b>DO Type</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DO Type</em>' containment reference list isn't clear,
@@ -96,8 +96,8 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
      * @see #isSetDOType()
      * @see #unsetDOType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_DOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates
+     * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DOType> getDOType();
@@ -126,7 +126,7 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
     /**
      * Returns the value of the '<em><b>Enum Type</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Enum Type</em>' containment reference list isn't clear,
@@ -137,8 +137,8 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
      * @see #isSetEnumType()
      * @see #unsetEnumType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_EnumType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates
+     * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EnumType> getEnumType();
@@ -167,7 +167,7 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
     /**
      * Returns the value of the '<em><b>LNode Type</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates <em>Data Type Templates</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>LNode Type</em>' containment reference list isn't clear,
@@ -178,8 +178,8 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
      * @see #isSetLNodeType()
      * @see #unsetLNodeType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_LNodeType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDataTypeTemplates
-     * @model opposite="DataTypeTemplates" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates
+     * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<LNodeType> getLNodeType();
@@ -206,31 +206,27 @@ public interface DataTypeTemplates extends ExplicitLinkResolver {
     boolean isSetLNodeType();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates <em>Data Type Templates</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDataTypeTemplates_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getDataTypeTemplates
      * @model opposite="DataTypeTemplates" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
 } // DataTypeTemplates

@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getFc <em>Fc</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType <em>Parent DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
  *
@@ -96,37 +96,33 @@ public interface DA extends AbstractDataAttribute, AgDATrgOp {
     boolean isSetFc();
 
     /**
-     * Returns the value of the '<em><b>DO Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DO Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDA <em>DA</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DO Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DO Type</em>' container reference.
-     * @see #setDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_DOType()
+     * @return the value of the '<em>Parent DO Type</em>' container reference.
+     * @see #setParentDOType(DOType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_ParentDOType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDA
      * @model opposite="DA" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DOType getDOType();
+    DOType getParentDOType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType <em>Parent DO Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DO Type</em>' container reference.
-     * @see #getDOType()
+     * @param value the new value of the '<em>Parent DO Type</em>' container reference.
+     * @see #getParentDOType()
      * @generated
      */
-    void setDOType( DOType value );
+    void setParentDOType(DOType value);
 
     /**
      * Returns the value of the '<em><b>Prot Ns</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA <em>DA</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA <em>Parent DA</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prot Ns</em>' containment reference list isn't clear,
@@ -137,8 +133,8 @@ public interface DA extends AbstractDataAttribute, AgDATrgOp {
      * @see #isSetProtNs()
      * @see #unsetProtNs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDA_ProtNs()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA
-     * @model opposite="DA" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA
+     * @model opposite="ParentDA" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ProtNs> getProtNs();

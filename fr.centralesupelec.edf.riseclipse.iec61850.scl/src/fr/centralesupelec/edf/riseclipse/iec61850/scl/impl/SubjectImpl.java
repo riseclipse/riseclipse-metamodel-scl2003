@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubjectImpl#getCertificate <em>Certificate</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SubjectImpl#getParentCertificate <em>Parent Certificate</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,8 +68,8 @@ public class SubjectImpl extends CertImpl implements Subject {
      * @generated
      */
     @Override
-    public Certificate getCertificate() {
-        if (eContainerFeatureID() != SclPackage.SUBJECT__CERTIFICATE) return null;
+    public Certificate getParentCertificate() {
+        if (eContainerFeatureID() != SclPackage.SUBJECT__PARENT_CERTIFICATE) return null;
         return (Certificate)eInternalContainer();
     }
 
@@ -78,8 +78,8 @@ public class SubjectImpl extends CertImpl implements Subject {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetCertificate( Certificate newCertificate, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newCertificate, SclPackage.SUBJECT__CERTIFICATE, msgs);
+    public NotificationChain basicSetParentCertificate(Certificate newParentCertificate, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentCertificate, SclPackage.SUBJECT__PARENT_CERTIFICATE, msgs);
         return msgs;
     }
 
@@ -89,20 +89,20 @@ public class SubjectImpl extends CertImpl implements Subject {
      * @generated
      */
     @Override
-    public void setCertificate( Certificate newCertificate ) {
-        if (newCertificate != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBJECT__CERTIFICATE && newCertificate != null)) {
-            if (EcoreUtil.isAncestor(this, newCertificate))
+    public void setParentCertificate(Certificate newParentCertificate) {
+        if (newParentCertificate != eInternalContainer() || (eContainerFeatureID() != SclPackage.SUBJECT__PARENT_CERTIFICATE && newParentCertificate != null)) {
+            if (EcoreUtil.isAncestor(this, newParentCertificate))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newCertificate != null)
-                msgs = ((InternalEObject)newCertificate).eInverseAdd(this, SclPackage.CERTIFICATE__SUBJECT, Certificate.class, msgs);
-            msgs = basicSetCertificate(newCertificate, msgs);
+            if (newParentCertificate != null)
+                msgs = ((InternalEObject)newParentCertificate).eInverseAdd(this, SclPackage.CERTIFICATE__SUBJECT, Certificate.class, msgs);
+            msgs = basicSetParentCertificate(newParentCertificate, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBJECT__CERTIFICATE, newCertificate, newCertificate));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SUBJECT__PARENT_CERTIFICATE, newParentCertificate, newParentCertificate));
     }
 
     /**
@@ -113,10 +113,10 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetCertificate((Certificate)otherEnd, msgs);
+                return basicSetParentCertificate((Certificate)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -129,8 +129,8 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
-                return basicSetCertificate(null, msgs);
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
+                return basicSetParentCertificate(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -143,7 +143,7 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SUBJECT__CERTIFICATE:
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.CERTIFICATE__SUBJECT, Certificate.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -157,8 +157,8 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
-                return getCertificate();
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
+                return getParentCertificate();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -171,8 +171,8 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
-                setCertificate((Certificate)newValue);
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
+                setParentCertificate((Certificate)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -186,8 +186,8 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
-                setCertificate((Certificate)null);
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
+                setParentCertificate((Certificate)null);
                 return;
         }
         super.eUnset(featureID);
@@ -201,8 +201,8 @@ public class SubjectImpl extends CertImpl implements Subject {
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.SUBJECT__CERTIFICATE:
-                return getCertificate() != null;
+            case SclPackage.SUBJECT__PARENT_CERTIFICATE:
+                return getParentCertificate() != null;
         }
         return super.eIsSet(featureID);
     }

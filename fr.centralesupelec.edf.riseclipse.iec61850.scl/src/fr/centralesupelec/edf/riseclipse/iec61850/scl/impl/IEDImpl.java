@@ -55,7 +55,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getAccessPoint <em>Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getKDC <em>KDC</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getServices <em>Services</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getOriginalSclRelease <em>Original Scl Release</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.IEDImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
@@ -760,7 +760,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public EList<AccessPoint> getAccessPoint() {
         if (accessPoint == null) {
-            accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__IED);
+            accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__PARENT_IED);
         }
         return accessPoint;
     }
@@ -793,7 +793,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public EList<KDC> getKDC() {
         if (kdc == null) {
-            kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__IED);
+            kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__PARENT_IED);
         }
         return kdc;
     }
@@ -855,9 +855,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         if (newServices != services) {
             NotificationChain msgs = null;
             if (services != null)
-                msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
+                msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
             if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__IED, Services.class, msgs);
+                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
             msgs = basicSetServices(newServices, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -895,7 +895,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     public void unsetServices() {
         if (services != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__IED, Services.class, msgs);
+            msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
             msgs = basicUnsetServices(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -923,8 +923,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.IED__SCL) return null;
+    public SCL getParentSCL() {
+        if (eContainerFeatureID() != SclPackage.IED__PARENT_SCL) return null;
         return (SCL)eInternalContainer();
     }
 
@@ -933,8 +933,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.IED__SCL, msgs);
+    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.IED__PARENT_SCL, msgs);
         return msgs;
     }
 
@@ -944,20 +944,20 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
+    public void setParentSCL(SCL newParentSCL) {
+        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__PARENT_SCL && newParentSCL != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSCL))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__IED, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
+            if (newParentSCL != null)
+                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__IED, SCL.class, msgs);
+            msgs = basicSetParentSCL(newParentSCL, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SCL, newSCL, newSCL));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__PARENT_SCL, newParentSCL, newParentSCL));
     }
 
     /**
@@ -1176,10 +1176,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 if (services != null)
                     msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs);
                 return basicSetServices((Services)otherEnd, msgs);
-            case SclPackage.IED__SCL:
+            case SclPackage.IED__PARENT_SCL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
+                return basicSetParentSCL((SCL)otherEnd, msgs);
             case SclPackage.IED__REFERRED_BY_IED_NAME:
                 if (referredByIEDName != null)
                     msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs);
@@ -1202,8 +1202,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 return ((InternalEList<?>)getKDC()).basicRemove(otherEnd, msgs);
             case SclPackage.IED__SERVICES:
                 return basicUnsetServices(msgs);
-            case SclPackage.IED__SCL:
-                return basicSetSCL(null, msgs);
+            case SclPackage.IED__PARENT_SCL:
+                return basicSetParentSCL(null, msgs);
             case SclPackage.IED__REFERRED_BY_IED_NAME:
                 return basicUnsetReferredByIEDName(msgs);
         }
@@ -1218,7 +1218,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.IED__SCL:
+            case SclPackage.IED__PARENT_SCL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SCL__IED, SCL.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -1252,8 +1252,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 return getKDC();
             case SclPackage.IED__SERVICES:
                 return getServices();
-            case SclPackage.IED__SCL:
-                return getSCL();
+            case SclPackage.IED__PARENT_SCL:
+                return getParentSCL();
             case SclPackage.IED__NAME:
                 return getName();
             case SclPackage.IED__ORIGINAL_SCL_RELEASE:
@@ -1305,8 +1305,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
             case SclPackage.IED__SERVICES:
                 setServices((Services)newValue);
                 return;
-            case SclPackage.IED__SCL:
-                setSCL((SCL)newValue);
+            case SclPackage.IED__PARENT_SCL:
+                setParentSCL((SCL)newValue);
                 return;
             case SclPackage.IED__NAME:
                 setName((String)newValue);
@@ -1359,8 +1359,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
             case SclPackage.IED__SERVICES:
                 unsetServices();
                 return;
-            case SclPackage.IED__SCL:
-                setSCL((SCL)null);
+            case SclPackage.IED__PARENT_SCL:
+                setParentSCL((SCL)null);
                 return;
             case SclPackage.IED__NAME:
                 unsetName();
@@ -1403,8 +1403,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
                 return isSetKDC();
             case SclPackage.IED__SERVICES:
                 return isSetServices();
-            case SclPackage.IED__SCL:
-                return getSCL() != null;
+            case SclPackage.IED__PARENT_SCL:
+                return getParentSCL() != null;
             case SclPackage.IED__NAME:
                 return isSetName();
             case SclPackage.IED__ORIGINAL_SCL_RELEASE:

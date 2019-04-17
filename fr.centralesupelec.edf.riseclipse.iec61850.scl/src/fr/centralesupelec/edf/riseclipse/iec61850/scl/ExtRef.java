@@ -41,7 +41,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcLNClass <em>Src LN Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcLNInst <em>Src LN Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcPrefix <em>Src Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs <em>Parent Inputs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
@@ -803,32 +803,28 @@ public interface ExtRef extends BaseElement, AgDesc {
     boolean isSetSrcPrefix();
 
     /**
-     * Returns the value of the '<em><b>Inputs</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Inputs</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getExtRef <em>Ext Ref</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Inputs</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Inputs</em>' container reference.
-     * @see #setInputs(Inputs)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_Inputs()
+     * @return the value of the '<em>Parent Inputs</em>' container reference.
+     * @see #setParentInputs(Inputs)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_ParentInputs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getExtRef
      * @model opposite="ExtRef" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Inputs getInputs();
+    Inputs getParentInputs();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs <em>Inputs</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs <em>Parent Inputs</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Inputs</em>' container reference.
-     * @see #getInputs()
+     * @param value the new value of the '<em>Parent Inputs</em>' container reference.
+     * @see #getParentInputs()
      * @generated
      */
-    void setInputs( Inputs value );
+    void setParentInputs(Inputs value);
 
     /**
      * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.

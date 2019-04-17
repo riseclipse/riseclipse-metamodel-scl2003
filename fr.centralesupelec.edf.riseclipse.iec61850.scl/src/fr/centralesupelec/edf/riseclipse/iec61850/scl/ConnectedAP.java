@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getIedName <em>Ied Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getRedProt <em>Red Prot</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getAddress <em>Address</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork <em>Sub Network</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork <em>Parent Sub Network</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getGSE <em>GSE</em>}</li>
@@ -208,7 +208,7 @@ public interface ConnectedAP extends UnNaming {
 
     /**
      * Returns the value of the '<em><b>Address</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getConnectedAP <em>Connected AP</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Address</em>' containment reference isn't clear,
@@ -220,8 +220,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #unsetAddress()
      * @see #setAddress(Address)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_Address()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getParentConnectedAP
+     * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Address getAddress();
@@ -262,32 +262,28 @@ public interface ConnectedAP extends UnNaming {
     boolean isSetAddress();
 
     /**
-     * Returns the value of the '<em><b>Sub Network</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Sub Network</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getConnectedAP <em>Connected AP</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Sub Network</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sub Network</em>' container reference.
-     * @see #setSubNetwork(SubNetwork)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_SubNetwork()
+     * @return the value of the '<em>Parent Sub Network</em>' container reference.
+     * @see #setParentSubNetwork(SubNetwork)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_ParentSubNetwork()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getConnectedAP
      * @model opposite="ConnectedAP" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SubNetwork getSubNetwork();
+    SubNetwork getParentSubNetwork();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSubNetwork <em>Sub Network</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getParentSubNetwork <em>Parent Sub Network</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sub Network</em>' container reference.
-     * @see #getSubNetwork()
+     * @param value the new value of the '<em>Parent Sub Network</em>' container reference.
+     * @see #getParentSubNetwork()
      * @generated
      */
-    void setSubNetwork( SubNetwork value );
+    void setParentSubNetwork(SubNetwork value);
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.
@@ -347,7 +343,7 @@ public interface ConnectedAP extends UnNaming {
     /**
      * Returns the value of the '<em><b>Phys Conn</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP <em>Connected AP</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Phys Conn</em>' containment reference list isn't clear,
@@ -358,8 +354,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #isSetPhysConn()
      * @see #unsetPhysConn()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_PhysConn()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getParentConnectedAP
+     * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<PhysConn> getPhysConn();
@@ -388,7 +384,7 @@ public interface ConnectedAP extends UnNaming {
     /**
      * Returns the value of the '<em><b>GSE</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP <em>Connected AP</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>GSE</em>' containment reference list isn't clear,
@@ -399,8 +395,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #isSetGSE()
      * @see #unsetGSE()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_GSE()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getParentConnectedAP
+     * @model opposite="ParentConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */
@@ -430,7 +426,7 @@ public interface ConnectedAP extends UnNaming {
     /**
      * Returns the value of the '<em><b>SMV</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP <em>Connected AP</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getParentConnectedAP <em>Parent Connected AP</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SMV</em>' containment reference list isn't clear,
@@ -441,8 +437,8 @@ public interface ConnectedAP extends UnNaming {
      * @see #isSetSMV()
      * @see #unsetSMV()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getConnectedAP_SMV()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getConnectedAP
-     * @model opposite="ConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV#getParentConnectedAP
+     * @model opposite="ParentConnectedAP" containment="true" unsettable="true" volatile="true" ordered="false"
      *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */

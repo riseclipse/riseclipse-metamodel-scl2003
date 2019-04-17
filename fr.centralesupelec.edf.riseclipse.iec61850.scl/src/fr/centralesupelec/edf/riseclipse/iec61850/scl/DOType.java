@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDA <em>DA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO <em>Referred By DO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredBySDO <em>Referred By SDO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
@@ -154,7 +154,7 @@ public interface DOType extends IDNaming {
     /**
      * Returns the value of the '<em><b>DA</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType <em>DO Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType <em>Parent DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DA</em>' containment reference list isn't clear,
@@ -165,8 +165,8 @@ public interface DOType extends IDNaming {
      * @see #isSetDA()
      * @see #unsetDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_DA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getDOType
-     * @model opposite="DOType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getParentDOType
+     * @model opposite="ParentDOType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DA> getDA();
@@ -234,37 +234,33 @@ public interface DOType extends IDNaming {
     boolean isSetReferredByDO();
 
     /**
-     * Returns the value of the '<em><b>Data Type Templates</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Type Templates</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Type Templates</em>' container reference.
-     * @see #setDataTypeTemplates(DataTypeTemplates)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_DataTypeTemplates()
+     * @return the value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #setParentDataTypeTemplates(DataTypeTemplates)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_ParentDataTypeTemplates()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType
      * @model opposite="DOType" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DataTypeTemplates getDataTypeTemplates();
+    DataTypeTemplates getParentDataTypeTemplates();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDataTypeTemplates <em>Data Type Templates</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Type Templates</em>' container reference.
-     * @see #getDataTypeTemplates()
+     * @param value the new value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setDataTypeTemplates( DataTypeTemplates value );
+    void setParentDataTypeTemplates(DataTypeTemplates value);
 
     /**
      * Returns the value of the '<em><b>SDO</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType <em>DO Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SDO</em>' containment reference list isn't clear,
@@ -275,8 +271,8 @@ public interface DOType extends IDNaming {
      * @see #isSetSDO()
      * @see #unsetSDO()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOType_SDO()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getDOType
-     * @model opposite="DOType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType
+     * @model opposite="ParentDOType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SDO> getSDO();

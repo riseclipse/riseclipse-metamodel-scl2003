@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EqSubFunctionImpl#getAbstractEqFuncSubFunc <em>Abstract Eq Func Sub Func</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EqSubFunctionImpl#getParentAbstractEqFuncSubFunc <em>Parent Abstract Eq Func Sub Func</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,8 +68,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      * @generated
      */
     @Override
-    public AbstractEqFuncSubFunc getAbstractEqFuncSubFunc() {
-        if (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
+    public AbstractEqFuncSubFunc getParentAbstractEqFuncSubFunc() {
+        if (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC) return null;
         return (AbstractEqFuncSubFunc)eInternalContainer();
     }
 
@@ -78,9 +78,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractEqFuncSubFunc, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC, msgs);
+    public NotificationChain basicSetParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc newParentAbstractEqFuncSubFunc, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAbstractEqFuncSubFunc, SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, msgs);
         return msgs;
     }
 
@@ -90,20 +89,20 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
      * @generated
      */
     @Override
-    public void setAbstractEqFuncSubFunc( AbstractEqFuncSubFunc newAbstractEqFuncSubFunc ) {
-        if (newAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC && newAbstractEqFuncSubFunc != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractEqFuncSubFunc))
+    public void setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc newParentAbstractEqFuncSubFunc) {
+        if (newParentAbstractEqFuncSubFunc != eInternalContainer() || (eContainerFeatureID() != SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC && newParentAbstractEqFuncSubFunc != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAbstractEqFuncSubFunc))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractEqFuncSubFunc != null)
-                msgs = ((InternalEObject)newAbstractEqFuncSubFunc).eInverseAdd(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, AbstractEqFuncSubFunc.class, msgs);
-            msgs = basicSetAbstractEqFuncSubFunc(newAbstractEqFuncSubFunc, msgs);
+            if (newParentAbstractEqFuncSubFunc != null)
+                msgs = ((InternalEObject)newParentAbstractEqFuncSubFunc).eInverseAdd(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, AbstractEqFuncSubFunc.class, msgs);
+            msgs = basicSetParentAbstractEqFuncSubFunc(newParentAbstractEqFuncSubFunc, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC, newAbstractEqFuncSubFunc, newAbstractEqFuncSubFunc));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC, newParentAbstractEqFuncSubFunc, newParentAbstractEqFuncSubFunc));
     }
 
     /**
@@ -114,10 +113,10 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)otherEnd, msgs);
+                return basicSetParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -130,8 +129,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return basicSetAbstractEqFuncSubFunc(null, msgs);
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return basicSetParentAbstractEqFuncSubFunc(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -144,7 +143,7 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, AbstractEqFuncSubFunc.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -158,8 +157,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return getAbstractEqFuncSubFunc();
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return getParentAbstractEqFuncSubFunc();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -172,8 +171,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                setAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)newValue);
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                setParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -187,8 +186,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public void eUnset( int featureID ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                setAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)null);
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                setParentAbstractEqFuncSubFunc((AbstractEqFuncSubFunc)null);
                 return;
         }
         super.eUnset(featureID);
@@ -202,8 +201,8 @@ public class EqSubFunctionImpl extends AbstractEqFuncSubFuncImpl implements EqSu
     @Override
     public boolean eIsSet( int featureID ) {
         switch (featureID) {
-            case SclPackage.EQ_SUB_FUNCTION__ABSTRACT_EQ_FUNC_SUB_FUNC:
-                return getAbstractEqFuncSubFunc() != null;
+            case SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC:
+                return getParentAbstractEqFuncSubFunc() != null;
         }
         return super.eIsSet(featureID);
     }

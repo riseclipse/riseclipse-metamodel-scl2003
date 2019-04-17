@@ -43,7 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AuthenticationImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AuthenticationImpl#getStrong <em>Strong</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AuthenticationImpl#getWeak <em>Weak</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AuthenticationImpl#getServer <em>Server</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AuthenticationImpl#getParentServer <em>Parent Server</em>}</li>
  * </ul>
  *
  * @generated
@@ -469,8 +469,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      */
     @Override
-    public Server getServer() {
-        if (eContainerFeatureID() != SclPackage.AUTHENTICATION__SERVER) return null;
+    public Server getParentServer() {
+        if (eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER) return null;
         return (Server)eInternalContainer();
     }
 
@@ -479,8 +479,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetServer( Server newServer, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newServer, SclPackage.AUTHENTICATION__SERVER, msgs);
+    public NotificationChain basicSetParentServer(Server newParentServer, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentServer, SclPackage.AUTHENTICATION__PARENT_SERVER, msgs);
         return msgs;
     }
 
@@ -490,20 +490,20 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      */
     @Override
-    public void setServer( Server newServer ) {
-        if (newServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.AUTHENTICATION__SERVER && newServer != null)) {
-            if (EcoreUtil.isAncestor(this, newServer))
+    public void setParentServer(Server newParentServer) {
+        if (newParentServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER && newParentServer != null)) {
+            if (EcoreUtil.isAncestor(this, newParentServer))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newServer != null)
-                msgs = ((InternalEObject)newServer).eInverseAdd(this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs);
-            msgs = basicSetServer(newServer, msgs);
+            if (newParentServer != null)
+                msgs = ((InternalEObject)newParentServer).eInverseAdd(this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs);
+            msgs = basicSetParentServer(newParentServer, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__SERVER, newServer, newServer));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__PARENT_SERVER, newParentServer, newParentServer));
     }
 
     /**
@@ -514,10 +514,10 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.AUTHENTICATION__SERVER:
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetServer((Server)otherEnd, msgs);
+                return basicSetParentServer((Server)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -530,8 +530,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.AUTHENTICATION__SERVER:
-                return basicSetServer(null, msgs);
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
+                return basicSetParentServer(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -544,7 +544,7 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.AUTHENTICATION__SERVER:
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -568,8 +568,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
                 return getStrong();
             case SclPackage.AUTHENTICATION__WEAK:
                 return getWeak();
-            case SclPackage.AUTHENTICATION__SERVER:
-                return getServer();
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
+                return getParentServer();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -597,8 +597,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
             case SclPackage.AUTHENTICATION__WEAK:
                 setWeak((Boolean)newValue);
                 return;
-            case SclPackage.AUTHENTICATION__SERVER:
-                setServer((Server)newValue);
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
+                setParentServer((Server)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -627,8 +627,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
             case SclPackage.AUTHENTICATION__WEAK:
                 unsetWeak();
                 return;
-            case SclPackage.AUTHENTICATION__SERVER:
-                setServer((Server)null);
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
+                setParentServer((Server)null);
                 return;
         }
         super.eUnset(featureID);
@@ -652,8 +652,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
                 return isSetStrong();
             case SclPackage.AUTHENTICATION__WEAK:
                 return isSetWeak();
-            case SclPackage.AUTHENTICATION__SERVER:
-                return getServer() != null;
+            case SclPackage.AUTHENTICATION__PARENT_SERVER:
+                return getParentServer() != null;
         }
         return super.eIsSet(featureID);
     }

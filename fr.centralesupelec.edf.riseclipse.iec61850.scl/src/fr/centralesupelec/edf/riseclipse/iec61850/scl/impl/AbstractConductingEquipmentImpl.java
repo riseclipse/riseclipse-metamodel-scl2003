@@ -97,7 +97,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @Override
     public EList<SubEquipment> getSubEquipment() {
         if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__ABSTRACT_CONDUCTING_EQUIPMENT);
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT);
         }
         return subEquipment;
     }
@@ -130,7 +130,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @Override
     public EList<Terminal> getTerminal() {
         if (terminal == null) {
-            terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__ABSTRACT_CONDUCTING_EQUIPMENT);
+            terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT);
         }
         return terminal;
     }

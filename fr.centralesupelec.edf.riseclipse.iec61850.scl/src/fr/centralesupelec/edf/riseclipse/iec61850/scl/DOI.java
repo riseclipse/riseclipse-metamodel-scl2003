@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getIx <em>Ix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI <em>DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getSDI <em>SDI</em>}</li>
  * </ul>
@@ -94,37 +94,33 @@ public interface DOI extends DataObject {
     boolean isSetIx();
 
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Any LN</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDOI <em>DOI</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_AnyLN()
+     * @return the value of the '<em>Parent Any LN</em>' container reference.
+     * @see #setParentAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_ParentAnyLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDOI
      * @model opposite="DOI" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AnyLN getAnyLN();
+    AnyLN getParentAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAnyLN <em>Any LN</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN <em>Parent Any LN</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
+     * @param value the new value of the '<em>Parent Any LN</em>' container reference.
+     * @see #getParentAnyLN()
      * @generated
      */
-    void setAnyLN( AnyLN value );
+    void setParentAnyLN(AnyLN value);
 
     /**
      * Returns the value of the '<em><b>DAI</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI <em>DOI</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI <em>Parent DOI</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>DAI</em>' containment reference list isn't clear,
@@ -135,8 +131,8 @@ public interface DOI extends DataObject {
      * @see #isSetDAI()
      * @see #unsetDAI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_DAI()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI
-     * @model opposite="DOI" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI
+     * @model opposite="ParentDOI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<DAI> getDAI();
@@ -165,7 +161,7 @@ public interface DOI extends DataObject {
     /**
      * Returns the value of the '<em><b>SDI</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI <em>DOI</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI <em>Parent DOI</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SDI</em>' containment reference list isn't clear,
@@ -176,8 +172,8 @@ public interface DOI extends DataObject {
      * @see #isSetSDI()
      * @see #unsetSDI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_SDI()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDOI
-     * @model opposite="DOI" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI
+     * @model opposite="ParentDOI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SDI> getSDI();

@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getSubEquipment <em>Sub Equipment</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding <em>Transformer Winding</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding <em>Parent Transformer Winding</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger()
@@ -96,7 +96,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger <em>Tap Changer</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger <em>Parent Tap Changer</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Eq Function</em>' containment reference list isn't clear,
@@ -107,8 +107,8 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see #isSetEqFunction()
      * @see #unsetEqFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_EqFunction()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getTapChanger
-     * @model opposite="TapChanger" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction#getParentTapChanger
+     * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EqFunction> getEqFunction();
@@ -137,7 +137,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
     /**
      * Returns the value of the '<em><b>Sub Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger <em>Tap Changer</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger <em>Parent Tap Changer</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Equipment</em>' containment reference list isn't clear,
@@ -148,8 +148,8 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see #isSetSubEquipment()
      * @see #unsetSubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_SubEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getTapChanger
-     * @model opposite="TapChanger" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentTapChanger
+     * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SubEquipment> getSubEquipment();
@@ -176,31 +176,27 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
     boolean isSetSubEquipment();
 
     /**
-     * Returns the value of the '<em><b>Transformer Winding</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Transformer Winding</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getTapChanger <em>Tap Changer</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Transformer Winding</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Transformer Winding</em>' container reference.
-     * @see #setTransformerWinding(TransformerWinding)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_TransformerWinding()
+     * @return the value of the '<em>Parent Transformer Winding</em>' container reference.
+     * @see #setParentTransformerWinding(TransformerWinding)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTapChanger_ParentTransformerWinding()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getTapChanger
      * @model opposite="TapChanger" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    TransformerWinding getTransformerWinding();
+    TransformerWinding getParentTransformerWinding();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getTransformerWinding <em>Transformer Winding</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getParentTransformerWinding <em>Parent Transformer Winding</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Transformer Winding</em>' container reference.
-     * @see #getTransformerWinding()
+     * @param value the new value of the '<em>Parent Transformer Winding</em>' container reference.
+     * @see #getParentTransformerWinding()
      * @generated
      */
-    void setTransformerWinding( TransformerWinding value );
+    void setParentTransformerWinding(TransformerWinding value);
 
 } // TapChanger

@@ -41,7 +41,7 @@ public interface AbstractConductingEquipment extends Equipment {
     /**
      * Returns the value of the '<em><b>Sub Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Equipment</em>' containment reference list isn't clear,
@@ -52,8 +52,8 @@ public interface AbstractConductingEquipment extends Equipment {
      * @see #isSetSubEquipment()
      * @see #unsetSubEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractConductingEquipment_SubEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getAbstractConductingEquipment
-     * @model opposite="AbstractConductingEquipment" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getParentAbstractConductingEquipment
+     * @model opposite="ParentAbstractConductingEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SubEquipment> getSubEquipment();
@@ -82,7 +82,7 @@ public interface AbstractConductingEquipment extends Equipment {
     /**
      * Returns the value of the '<em><b>Terminal</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Terminal</em>' containment reference list isn't clear,
@@ -93,8 +93,8 @@ public interface AbstractConductingEquipment extends Equipment {
      * @see #isSetTerminal()
      * @see #unsetTerminal()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractConductingEquipment_Terminal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment
-     * @model opposite="AbstractConductingEquipment" containment="true" unsettable="true" upper="2" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment
+     * @model opposite="ParentAbstractConductingEquipment" containment="true" unsettable="true" upper="2" ordered="false"
      * @generated
      */
     EList<Terminal> getTerminal();

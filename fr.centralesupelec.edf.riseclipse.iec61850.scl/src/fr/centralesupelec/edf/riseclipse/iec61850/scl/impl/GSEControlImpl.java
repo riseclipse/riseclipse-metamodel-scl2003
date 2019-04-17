@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControlTypeEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
@@ -43,7 +44,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getFixedOffs <em>Fixed Offs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getSecurityEnable <em>Security Enable</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getLN0 <em>LN0</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.GSEControlImpl#getParentLN0 <em>Parent LN0</em>}</li>
  * </ul>
  *
  * @generated
@@ -390,8 +391,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * @generated
      */
     @Override
-    public LN0 getLN0() {
-        if (eContainerFeatureID() != SclPackage.GSE_CONTROL__LN0) return null;
+    public LN0 getParentLN0() {
+        if (eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0) return null;
         return (LN0)eInternalContainer();
     }
 
@@ -400,8 +401,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetLN0( LN0 newLN0, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newLN0, SclPackage.GSE_CONTROL__LN0, msgs);
+    public NotificationChain basicSetParentLN0(LN0 newParentLN0, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentLN0, SclPackage.GSE_CONTROL__PARENT_LN0, msgs);
         return msgs;
     }
 
@@ -411,20 +412,20 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
      * @generated
      */
     @Override
-    public void setLN0( LN0 newLN0 ) {
-        if (newLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_CONTROL__LN0 && newLN0 != null)) {
-            if (EcoreUtil.isAncestor(this, newLN0))
+    public void setParentLN0(LN0 newParentLN0) {
+        if (newParentLN0 != eInternalContainer() || (eContainerFeatureID() != SclPackage.GSE_CONTROL__PARENT_LN0 && newParentLN0 != null)) {
+            if (EcoreUtil.isAncestor(this, newParentLN0))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newLN0 != null)
-                msgs = ((InternalEObject)newLN0).eInverseAdd(this, SclPackage.LN0__GSE_CONTROL, LN0.class, msgs);
-            msgs = basicSetLN0(newLN0, msgs);
+            if (newParentLN0 != null)
+                msgs = ((InternalEObject)newParentLN0).eInverseAdd(this, SclPackage.LN0__GSE_CONTROL, LN0.class, msgs);
+            msgs = basicSetParentLN0(newParentLN0, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_CONTROL__LN0, newLN0, newLN0));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.GSE_CONTROL__PARENT_LN0, newParentLN0, newParentLN0));
     }
 
     /**
@@ -435,10 +436,10 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GSE_CONTROL__LN0:
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetLN0((LN0)otherEnd, msgs);
+                return basicSetParentLN0((LN0)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -451,8 +452,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.GSE_CONTROL__LN0:
-                return basicSetLN0(null, msgs);
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
+                return basicSetParentLN0(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -465,7 +466,7 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.GSE_CONTROL__LN0:
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
                 return eInternalContainer().eInverseRemove(this, SclPackage.LN0__GSE_CONTROL, LN0.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -487,8 +488,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
                 return getSecurityEnable();
             case SclPackage.GSE_CONTROL__TYPE:
                 return getType();
-            case SclPackage.GSE_CONTROL__LN0:
-                return getLN0();
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
+                return getParentLN0();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -513,8 +514,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             case SclPackage.GSE_CONTROL__TYPE:
                 setType((GSEControlTypeEnum)newValue);
                 return;
-            case SclPackage.GSE_CONTROL__LN0:
-                setLN0((LN0)newValue);
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -540,8 +541,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
             case SclPackage.GSE_CONTROL__TYPE:
                 unsetType();
                 return;
-            case SclPackage.GSE_CONTROL__LN0:
-                setLN0((LN0)null);
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
+                setParentLN0((LN0)null);
                 return;
         }
         super.eUnset(featureID);
@@ -563,8 +564,8 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
                 return isSetSecurityEnable();
             case SclPackage.GSE_CONTROL__TYPE:
                 return isSetType();
-            case SclPackage.GSE_CONTROL__LN0:
-                return getLN0() != null;
+            case SclPackage.GSE_CONTROL__PARENT_LN0:
+                return getParentLN0() != null;
         }
         return super.eIsSet(featureID);
     }
@@ -589,6 +590,11 @@ public class GSEControlImpl extends ControlWithIEDNameImpl implements GSEControl
         if (typeESet) result.append(type); else result.append("<unset>");
         result.append(')');
         return result.toString();
+    }
+
+    @Override
+    public AnyLN getParentAnyLN() {
+        return getParentLN0();
     }
 
 } //GSEControlImpl

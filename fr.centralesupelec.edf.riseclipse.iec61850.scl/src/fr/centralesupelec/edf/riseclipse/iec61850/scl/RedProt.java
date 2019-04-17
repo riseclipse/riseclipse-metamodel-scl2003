@@ -30,7 +30,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getHsr <em>Hsr</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getPrp <em>Prp</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getRstp <em>Rstp</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRedProt()
@@ -198,31 +198,27 @@ public interface RedProt extends SclObject {
     boolean isSetRstp();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getRedProt <em>Red Prot</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRedProt_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRedProt_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getRedProt
      * @model opposite="RedProt" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
 } // RedProt

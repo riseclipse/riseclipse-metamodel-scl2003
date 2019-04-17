@@ -28,8 +28,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getSGroup <em>SGroup</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute <em>Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI <em>DAI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI <em>Parent DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -92,60 +92,52 @@ public interface Val extends SclObject {
     boolean isSetSGroup();
 
     /**
-     * Returns the value of the '<em><b>Abstract Data Attribute</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Abstract Data Attribute</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getVal <em>Val</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Abstract Data Attribute</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Abstract Data Attribute</em>' container reference.
-     * @see #setAbstractDataAttribute(AbstractDataAttribute)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVal_AbstractDataAttribute()
+     * @return the value of the '<em>Parent Abstract Data Attribute</em>' container reference.
+     * @see #setParentAbstractDataAttribute(AbstractDataAttribute)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVal_ParentAbstractDataAttribute()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getVal
      * @model opposite="Val" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AbstractDataAttribute getAbstractDataAttribute();
+    AbstractDataAttribute getParentAbstractDataAttribute();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute <em>Abstract Data Attribute</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Abstract Data Attribute</em>' container reference.
-     * @see #getAbstractDataAttribute()
+     * @param value the new value of the '<em>Parent Abstract Data Attribute</em>' container reference.
+     * @see #getParentAbstractDataAttribute()
      * @generated
      */
-    void setAbstractDataAttribute( AbstractDataAttribute value );
+    void setParentAbstractDataAttribute(AbstractDataAttribute value);
 
     /**
-     * Returns the value of the '<em><b>DAI</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DAI</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getVal <em>Val</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DAI</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DAI</em>' container reference.
-     * @see #setDAI(DAI)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVal_DAI()
+     * @return the value of the '<em>Parent DAI</em>' container reference.
+     * @see #setParentDAI(DAI)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVal_ParentDAI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getVal
      * @model opposite="Val" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DAI getDAI();
+    DAI getParentDAI();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI <em>DAI</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI <em>Parent DAI</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DAI</em>' container reference.
-     * @see #getDAI()
+     * @param value the new value of the '<em>Parent DAI</em>' container reference.
+     * @see #getParentDAI()
      * @generated
      */
-    void setDAI( DAI value );
+    void setParentDAI(DAI value);
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

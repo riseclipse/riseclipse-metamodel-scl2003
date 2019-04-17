@@ -45,7 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getTimeout <em>Timeout</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getAccessPoint <em>Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getAssociation <em>Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getAuthentication <em>Authentication</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ServerImpl#getLDevice <em>LDevice</em>}</li>
@@ -197,8 +197,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      */
     @Override
-    public AccessPoint getAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.SERVER__ACCESS_POINT) return null;
+    public AccessPoint getParentAccessPoint() {
+        if (eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT) return null;
         return (AccessPoint)eInternalContainer();
     }
 
@@ -207,8 +207,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAccessPoint( AccessPoint newAccessPoint, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAccessPoint, SclPackage.SERVER__ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.SERVER__PARENT_ACCESS_POINT, msgs);
         return msgs;
     }
 
@@ -218,20 +218,20 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      */
     @Override
-    public void setAccessPoint( AccessPoint newAccessPoint ) {
-        if (newAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER__ACCESS_POINT && newAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newAccessPoint))
+    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
+        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAccessPoint != null)
-                msgs = ((InternalEObject)newAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class, msgs);
-            msgs = basicSetAccessPoint(newAccessPoint, msgs);
+            if (newParentAccessPoint != null)
+                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class, msgs);
+            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__ACCESS_POINT, newAccessPoint, newAccessPoint));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
     }
 
     /**
@@ -242,7 +242,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @Override
     public EList<Association> getAssociation() {
         if (association == null) {
-            association = new EObjectContainmentWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.SERVER__ASSOCIATION, SclPackage.ASSOCIATION__SERVER);
+            association = new EObjectContainmentWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.SERVER__ASSOCIATION, SclPackage.ASSOCIATION__PARENT_SERVER);
         }
         return association;
     }
@@ -304,9 +304,9 @@ public class ServerImpl extends UnNamingImpl implements Server {
         if (newAuthentication != authentication) {
             NotificationChain msgs = null;
             if (authentication != null)
-                msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__SERVER, Authentication.class, msgs);
+                msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
             if (newAuthentication != null)
-                msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, SclPackage.AUTHENTICATION__SERVER, Authentication.class, msgs);
+                msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
             msgs = basicSetAuthentication(newAuthentication, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -344,7 +344,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     public void unsetAuthentication() {
         if (authentication != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__SERVER, Authentication.class, msgs);
+            msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
             msgs = basicUnsetAuthentication(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -374,7 +374,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @Override
     public EList<LDevice> getLDevice() {
         if (lDevice == null) {
-            lDevice = new EObjectContainmentWithInverseEList.Unsettable<LDevice>(LDevice.class, this, SclPackage.SERVER__LDEVICE, SclPackage.LDEVICE__SERVER);
+            lDevice = new EObjectContainmentWithInverseEList.Unsettable<LDevice>(LDevice.class, this, SclPackage.SERVER__LDEVICE, SclPackage.LDEVICE__PARENT_SERVER);
         }
         return lDevice;
     }
@@ -408,10 +408,10 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SERVER__ACCESS_POINT:
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAccessPoint((AccessPoint)otherEnd, msgs);
+                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
             case SclPackage.SERVER__ASSOCIATION:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getAssociation()).basicAdd(otherEnd, msgs);
             case SclPackage.SERVER__AUTHENTICATION:
@@ -432,8 +432,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.SERVER__ACCESS_POINT:
-                return basicSetAccessPoint(null, msgs);
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
+                return basicSetParentAccessPoint(null, msgs);
             case SclPackage.SERVER__ASSOCIATION:
                 return ((InternalEList<?>)getAssociation()).basicRemove(otherEnd, msgs);
             case SclPackage.SERVER__AUTHENTICATION:
@@ -452,7 +452,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.SERVER__ACCESS_POINT:
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -468,8 +468,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
         switch (featureID) {
             case SclPackage.SERVER__TIMEOUT:
                 return getTimeout();
-            case SclPackage.SERVER__ACCESS_POINT:
-                return getAccessPoint();
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
+                return getParentAccessPoint();
             case SclPackage.SERVER__ASSOCIATION:
                 return getAssociation();
             case SclPackage.SERVER__AUTHENTICATION:
@@ -492,8 +492,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
             case SclPackage.SERVER__TIMEOUT:
                 setTimeout((Integer)newValue);
                 return;
-            case SclPackage.SERVER__ACCESS_POINT:
-                setAccessPoint((AccessPoint)newValue);
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)newValue);
                 return;
             case SclPackage.SERVER__ASSOCIATION:
                 getAssociation().clear();
@@ -521,8 +521,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
             case SclPackage.SERVER__TIMEOUT:
                 unsetTimeout();
                 return;
-            case SclPackage.SERVER__ACCESS_POINT:
-                setAccessPoint((AccessPoint)null);
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
+                setParentAccessPoint((AccessPoint)null);
                 return;
             case SclPackage.SERVER__ASSOCIATION:
                 unsetAssociation();
@@ -547,8 +547,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
         switch (featureID) {
             case SclPackage.SERVER__TIMEOUT:
                 return isSetTimeout();
-            case SclPackage.SERVER__ACCESS_POINT:
-                return getAccessPoint() != null;
+            case SclPackage.SERVER__PARENT_ACCESS_POINT:
+                return getParentAccessPoint() != null;
             case SclPackage.SERVER__ASSOCIATION:
                 return isSetAssociation();
             case SclPackage.SERVER__AUTHENTICATION:

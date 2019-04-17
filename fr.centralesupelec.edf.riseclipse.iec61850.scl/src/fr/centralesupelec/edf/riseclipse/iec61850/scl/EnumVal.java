@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getOrd <em>Ord</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType <em>Parent Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -91,32 +91,28 @@ public interface EnumVal extends SclObject, AgDesc {
     boolean isSetOrd();
 
     /**
-     * Returns the value of the '<em><b>Enum Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Enum Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Enum Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Enum Type</em>' container reference.
-     * @see #setEnumType(EnumType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_EnumType()
+     * @return the value of the '<em>Parent Enum Type</em>' container reference.
+     * @see #setParentEnumType(EnumType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumVal_ParentEnumType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal
      * @model opposite="EnumVal" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    EnumType getEnumType();
+    EnumType getParentEnumType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType <em>Parent Enum Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Enum Type</em>' container reference.
-     * @see #getEnumType()
+     * @param value the new value of the '<em>Parent Enum Type</em>' container reference.
+     * @see #getParentEnumType()
      * @generated
      */
-    void setEnumType( EnumType value );
+    void setParentEnumType(EnumType value);
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

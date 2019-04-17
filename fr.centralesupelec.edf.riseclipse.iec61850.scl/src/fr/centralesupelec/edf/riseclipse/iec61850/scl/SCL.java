@@ -154,7 +154,7 @@ public interface SCL extends BaseElement {
 
     /**
      * Returns the value of the '<em><b>Header</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Header</em>' containment reference isn't clear,
@@ -166,8 +166,8 @@ public interface SCL extends BaseElement {
      * @see #unsetHeader()
      * @see #setHeader(Header)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Header()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Header#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Header getHeader();
@@ -210,7 +210,7 @@ public interface SCL extends BaseElement {
     /**
      * Returns the value of the '<em><b>Line</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Line</em>' containment reference list isn't clear,
@@ -221,8 +221,8 @@ public interface SCL extends BaseElement {
      * @see #isSetLine()
      * @see #unsetLine()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Line()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Line> getLine();
@@ -251,7 +251,7 @@ public interface SCL extends BaseElement {
     /**
      * Returns the value of the '<em><b>Process</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Process</em>' containment reference list isn't clear,
@@ -262,8 +262,8 @@ public interface SCL extends BaseElement {
      * @see #isSetProcess()
      * @see #unsetProcess()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Process()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getProcess();
@@ -292,7 +292,7 @@ public interface SCL extends BaseElement {
     /**
      * Returns the value of the '<em><b>IED</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>IED</em>' containment reference list isn't clear,
@@ -303,8 +303,8 @@ public interface SCL extends BaseElement {
      * @see #isSetIED()
      * @see #unsetIED()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_IED()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<IED> getIED();
@@ -332,7 +332,7 @@ public interface SCL extends BaseElement {
 
     /**
      * Returns the value of the '<em><b>Data Type Templates</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Data Type Templates</em>' containment reference isn't clear,
@@ -344,8 +344,8 @@ public interface SCL extends BaseElement {
      * @see #unsetDataTypeTemplates()
      * @see #setDataTypeTemplates(DataTypeTemplates)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_DataTypeTemplates()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     DataTypeTemplates getDataTypeTemplates();
@@ -387,7 +387,7 @@ public interface SCL extends BaseElement {
 
     /**
      * Returns the value of the '<em><b>Communication</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Communication</em>' containment reference isn't clear,
@@ -399,8 +399,8 @@ public interface SCL extends BaseElement {
      * @see #unsetCommunication()
      * @see #setCommunication(Communication)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Communication()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Communication getCommunication();
@@ -443,7 +443,7 @@ public interface SCL extends BaseElement {
     /**
      * Returns the value of the '<em><b>Substation</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL <em>SCL</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL <em>Parent SCL</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Substation</em>' containment reference list isn't clear,
@@ -454,8 +454,8 @@ public interface SCL extends BaseElement {
      * @see #isSetSubstation()
      * @see #unsetSubstation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSCL_Substation()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getSCL
-     * @model opposite="SCL" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getParentSCL
+     * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Substation> getSubstation();

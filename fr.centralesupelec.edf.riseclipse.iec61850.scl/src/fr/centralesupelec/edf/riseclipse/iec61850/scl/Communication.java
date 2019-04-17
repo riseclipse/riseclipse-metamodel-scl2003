@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSubNetwork <em>Sub Network</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL <em>Parent SCL</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCommunication()
@@ -41,7 +41,7 @@ public interface Communication extends UnNaming {
     /**
      * Returns the value of the '<em><b>Sub Network</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication <em>Communication</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication <em>Parent Communication</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Sub Network</em>' containment reference list isn't clear,
@@ -52,8 +52,8 @@ public interface Communication extends UnNaming {
      * @see #isSetSubNetwork()
      * @see #unsetSubNetwork()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCommunication_SubNetwork()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getCommunication
-     * @model opposite="Communication" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getParentCommunication
+     * @model opposite="ParentCommunication" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<SubNetwork> getSubNetwork();
@@ -80,31 +80,27 @@ public interface Communication extends UnNaming {
     boolean isSetSubNetwork();
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getCommunication <em>Communication</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCommunication_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getCommunication_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getCommunication
      * @model opposite="Communication" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
 } // Communication

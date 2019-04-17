@@ -32,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs <em>Prot Ns</em>}</li>
  * </ul>
  *
@@ -97,7 +97,7 @@ public interface DAType extends IDNaming {
     /**
      * Returns the value of the '<em><b>BDA</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType <em>DA Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType <em>Parent DA Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>BDA</em>' containment reference list isn't clear,
@@ -108,8 +108,8 @@ public interface DAType extends IDNaming {
      * @see #isSetBDA()
      * @see #unsetBDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_BDA()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getDAType
-     * @model opposite="DAType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA#getParentDAType
+     * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<BDA> getBDA();
@@ -173,37 +173,33 @@ public interface DAType extends IDNaming {
     boolean isSetReferredByAbstractDataAttribute();
 
     /**
-     * Returns the value of the '<em><b>Data Type Templates</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Type Templates</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Type Templates</em>' container reference.
-     * @see #setDataTypeTemplates(DataTypeTemplates)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_DataTypeTemplates()
+     * @return the value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #setParentDataTypeTemplates(DataTypeTemplates)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_ParentDataTypeTemplates()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType
      * @model opposite="DAType" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DataTypeTemplates getDataTypeTemplates();
+    DataTypeTemplates getParentDataTypeTemplates();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getDataTypeTemplates <em>Data Type Templates</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Type Templates</em>' container reference.
-     * @see #getDataTypeTemplates()
+     * @param value the new value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setDataTypeTemplates( DataTypeTemplates value );
+    void setParentDataTypeTemplates(DataTypeTemplates value);
 
     /**
      * Returns the value of the '<em><b>Prot Ns</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType <em>DA Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType <em>Parent DA Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Prot Ns</em>' containment reference list isn't clear,
@@ -214,8 +210,8 @@ public interface DAType extends IDNaming {
      * @see #isSetProtNs()
      * @see #unsetProtNs()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAType_ProtNs()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType
-     * @model opposite="DAType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType
+     * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ProtNs> getProtNs();

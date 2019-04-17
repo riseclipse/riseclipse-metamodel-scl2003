@@ -28,8 +28,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA <em>DA</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType <em>DA Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA <em>Parent DA</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType <em>Parent DA Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -92,60 +92,52 @@ public interface ProtNs extends SclObject {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>DA</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DA</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs <em>Prot Ns</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DA</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DA</em>' container reference.
-     * @see #setDA(DA)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtNs_DA()
+     * @return the value of the '<em>Parent DA</em>' container reference.
+     * @see #setParentDA(DA)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtNs_ParentDA()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs
      * @model opposite="ProtNs" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DA getDA();
+    DA getParentDA();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDA <em>DA</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDA <em>Parent DA</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DA</em>' container reference.
-     * @see #getDA()
+     * @param value the new value of the '<em>Parent DA</em>' container reference.
+     * @see #getParentDA()
      * @generated
      */
-    void setDA( DA value );
+    void setParentDA(DA value);
 
     /**
-     * Returns the value of the '<em><b>DA Type</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DA Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs <em>Prot Ns</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DA Type</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DA Type</em>' container reference.
-     * @see #setDAType(DAType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtNs_DAType()
+     * @return the value of the '<em>Parent DA Type</em>' container reference.
+     * @see #setParentDAType(DAType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getProtNs_ParentDAType()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs
      * @model opposite="ProtNs" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DAType getDAType();
+    DAType getParentDAType();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getDAType <em>DA Type</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs#getParentDAType <em>Parent DA Type</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DA Type</em>' container reference.
-     * @see #getDAType()
+     * @param value the new value of the '<em>Parent DA Type</em>' container reference.
+     * @see #getParentDAType()
      * @generated
      */
-    void setDAType( DAType value );
+    void setParentDAType(DAType value);
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

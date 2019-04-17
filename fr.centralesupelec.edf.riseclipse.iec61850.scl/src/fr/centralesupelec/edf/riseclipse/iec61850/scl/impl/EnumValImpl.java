@@ -40,7 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getOrd <em>Ord</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getEnumType <em>Enum Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getParentEnumType <em>Parent Enum Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.EnumValImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -200,8 +200,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @generated
      */
     @Override
-    public EnumType getEnumType() {
-        if (eContainerFeatureID() != SclPackage.ENUM_VAL__ENUM_TYPE) return null;
+    public EnumType getParentEnumType() {
+        if (eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE) return null;
         return (EnumType)eInternalContainer();
     }
 
@@ -210,8 +210,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetEnumType( EnumType newEnumType, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newEnumType, SclPackage.ENUM_VAL__ENUM_TYPE, msgs);
+    public NotificationChain basicSetParentEnumType(EnumType newParentEnumType, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentEnumType, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE, msgs);
         return msgs;
     }
 
@@ -221,20 +221,20 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @generated
      */
     @Override
-    public void setEnumType( EnumType newEnumType ) {
-        if (newEnumType != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_VAL__ENUM_TYPE && newEnumType != null)) {
-            if (EcoreUtil.isAncestor(this, newEnumType))
+    public void setParentEnumType(EnumType newParentEnumType) {
+        if (newParentEnumType != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE && newParentEnumType != null)) {
+            if (EcoreUtil.isAncestor(this, newParentEnumType))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newEnumType != null)
-                msgs = ((InternalEObject)newEnumType).eInverseAdd(this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs);
-            msgs = basicSetEnumType(newEnumType, msgs);
+            if (newParentEnumType != null)
+                msgs = ((InternalEObject)newParentEnumType).eInverseAdd(this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs);
+            msgs = basicSetParentEnumType(newParentEnumType, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__ENUM_TYPE, newEnumType, newEnumType));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE, newParentEnumType, newParentEnumType));
     }
 
     /**
@@ -318,10 +318,10 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetEnumType((EnumType)otherEnd, msgs);
+                return basicSetParentEnumType((EnumType)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -334,8 +334,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
-                return basicSetEnumType(null, msgs);
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+                return basicSetParentEnumType(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -348,7 +348,7 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -366,8 +366,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
                 return getDesc();
             case SclPackage.ENUM_VAL__ORD:
                 return getOrd();
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
-                return getEnumType();
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+                return getParentEnumType();
             case SclPackage.ENUM_VAL__VALUE:
                 return getValue();
         }
@@ -388,8 +388,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
             case SclPackage.ENUM_VAL__ORD:
                 setOrd((Integer)newValue);
                 return;
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
-                setEnumType((EnumType)newValue);
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+                setParentEnumType((EnumType)newValue);
                 return;
             case SclPackage.ENUM_VAL__VALUE:
                 setValue((String)newValue);
@@ -412,8 +412,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
             case SclPackage.ENUM_VAL__ORD:
                 unsetOrd();
                 return;
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
-                setEnumType((EnumType)null);
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+                setParentEnumType((EnumType)null);
                 return;
             case SclPackage.ENUM_VAL__VALUE:
                 setValue(VALUE_EDEFAULT);
@@ -434,8 +434,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
                 return isSetDesc();
             case SclPackage.ENUM_VAL__ORD:
                 return isSetOrd();
-            case SclPackage.ENUM_VAL__ENUM_TYPE:
-                return getEnumType() != null;
+            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+                return getParentEnumType() != null;
             case SclPackage.ENUM_VAL__VALUE:
                 return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
         }

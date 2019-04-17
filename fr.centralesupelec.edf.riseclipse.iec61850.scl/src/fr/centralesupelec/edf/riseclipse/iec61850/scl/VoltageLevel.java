@@ -35,7 +35,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getNumPhases <em>Num Phases</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getBay <em>Bay</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getFunction <em>Function</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation <em>Substation</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation <em>Parent Substation</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getVoltage <em>Voltage</em>}</li>
  * </ul>
  *
@@ -153,7 +153,7 @@ public interface VoltageLevel extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Bay</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel <em>Voltage Level</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Bay</em>' containment reference list isn't clear,
@@ -164,8 +164,8 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see #isSetBay()
      * @see #unsetBay()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Bay()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getVoltageLevel
-     * @model opposite="VoltageLevel" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getParentVoltageLevel
+     * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Bay> getBay();
@@ -194,7 +194,7 @@ public interface VoltageLevel extends EquipmentContainer {
     /**
      * Returns the value of the '<em><b>Function</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel <em>Voltage Level</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Function</em>' containment reference list isn't clear,
@@ -205,8 +205,8 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see #isSetFunction()
      * @see #unsetFunction()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Function()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getVoltageLevel
-     * @model opposite="VoltageLevel" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getParentVoltageLevel
+     * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Function> getFunction();
@@ -233,35 +233,32 @@ public interface VoltageLevel extends EquipmentContainer {
     boolean isSetFunction();
 
     /**
-     * Returns the value of the '<em><b>Substation</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Substation</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getVoltageLevel <em>Voltage Level</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Substation</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Substation</em>' container reference.
-     * @see #setSubstation(Substation)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Substation()
+     * @return the value of the '<em>Parent Substation</em>' container reference.
+     * @see #setParentSubstation(Substation)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_ParentSubstation()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getVoltageLevel
      * @model opposite="VoltageLevel" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Substation getSubstation();
+    Substation getParentSubstation();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getSubstation <em>Substation</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getParentSubstation <em>Parent Substation</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Substation</em>' container reference.
-     * @see #getSubstation()
+     * @param value the new value of the '<em>Parent Substation</em>' container reference.
+     * @see #getParentSubstation()
      * @generated
      */
-    void setSubstation( Substation value );
+    void setParentSubstation(Substation value);
 
     /**
      * Returns the value of the '<em><b>Voltage</b></em>' containment reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel <em>Parent Voltage Level</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Voltage</em>' containment reference isn't clear,
@@ -273,7 +270,8 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see #unsetVoltage()
      * @see #setVoltage(Voltage)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getVoltageLevel_Voltage()
-     * @model containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentVoltageLevel
+     * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     Voltage getVoltage();

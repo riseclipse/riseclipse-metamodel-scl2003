@@ -28,8 +28,8 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint <em>Access Point</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice <em>LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint <em>Parent Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN()
@@ -92,59 +92,51 @@ public interface LN extends AnyLN {
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Access Point</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getLN <em>LN</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_AccessPoint()
+     * @return the value of the '<em>Parent Access Point</em>' container reference.
+     * @see #setParentAccessPoint(AccessPoint)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_ParentAccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getLN
      * @model opposite="LN" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AccessPoint getAccessPoint();
+    AccessPoint getParentAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getAccessPoint <em>Access Point</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentAccessPoint <em>Parent Access Point</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
+     * @param value the new value of the '<em>Parent Access Point</em>' container reference.
+     * @see #getParentAccessPoint()
      * @generated
      */
-    void setAccessPoint( AccessPoint value );
+    void setParentAccessPoint(AccessPoint value);
 
     /**
-     * Returns the value of the '<em><b>LDevice</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent LDevice</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>LDevice</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>LDevice</em>' container reference.
-     * @see #setLDevice(LDevice)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_LDevice()
+     * @return the value of the '<em>Parent LDevice</em>' container reference.
+     * @see #setParentLDevice(LDevice)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN_ParentLDevice()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN
      * @model opposite="LN" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    LDevice getLDevice();
+    LDevice getParentLDevice();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getLDevice <em>LDevice</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}' container reference.
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @param value the new value of the '<em>LDevice</em>' container reference.
-     * @see #getLDevice()
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent LDevice</em>' container reference.
+     * @see #getParentLDevice()
      * @generated
      */
-    void setLDevice( LDevice value );
+    void setParentLDevice(LDevice value);
 
 } // LN

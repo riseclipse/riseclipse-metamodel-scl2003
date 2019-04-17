@@ -24,10 +24,40 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * A representation of the model object '<em><b>Bit Rate</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork <em>Parent Sub Network</em>}</li>
+ * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBitRate()
  * @model extendedMetaData="kind='simple'"
  * @generated
  */
 public interface BitRate extends BitRateInMbPerSec {
+
+    /**
+     * Returns the value of the '<em><b>Parent Sub Network</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getBitRate <em>Bit Rate</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent Sub Network</em>' container reference.
+     * @see #setParentSubNetwork(SubNetwork)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getBitRate_ParentSubNetwork()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getBitRate
+     * @model opposite="BitRate" resolveProxies="false" unsettable="true" ordered="false"
+     * @generated
+     */
+    SubNetwork getParentSubNetwork();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate#getParentSubNetwork <em>Parent Sub Network</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent Sub Network</em>' container reference.
+     * @see #getParentSubNetwork()
+     * @generated
+     */
+    void setParentSubNetwork(SubNetwork value);
 } // BitRate

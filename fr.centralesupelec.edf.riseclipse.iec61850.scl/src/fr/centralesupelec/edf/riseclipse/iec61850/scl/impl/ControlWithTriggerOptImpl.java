@@ -199,9 +199,9 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
         if (newTrgOps != trgOps) {
             NotificationChain msgs = null;
             if (trgOps != null)
-                msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+                msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
             if (newTrgOps != null)
-                msgs = ((InternalEObject)newTrgOps).eInverseAdd(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+                msgs = ((InternalEObject)newTrgOps).eInverseAdd(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
             msgs = basicSetTrgOps(newTrgOps, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -239,7 +239,7 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
     public void unsetTrgOps() {
         if (trgOps != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
+            msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
             msgs = basicUnsetTrgOps(msgs);
             if (msgs != null) msgs.dispatch();
         }

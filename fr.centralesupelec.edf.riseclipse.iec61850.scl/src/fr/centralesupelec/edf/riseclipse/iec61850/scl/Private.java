@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getSource <em>Source</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement <em>Base Element</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate()
@@ -144,31 +144,27 @@ public interface Private extends AnyContentFromOtherNamespace {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Base Element</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Base Element</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getPrivate <em>Private</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Base Element</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Base Element</em>' container reference.
-     * @see #setBaseElement(BaseElement)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate_BaseElement()
+     * @return the value of the '<em>Parent Base Element</em>' container reference.
+     * @see #setParentBaseElement(BaseElement)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getPrivate_ParentBaseElement()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getPrivate
      * @model opposite="Private" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    BaseElement getBaseElement();
+    BaseElement getParentBaseElement();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getBaseElement <em>Base Element</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getParentBaseElement <em>Parent Base Element</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Base Element</em>' container reference.
-     * @see #getBaseElement()
+     * @param value the new value of the '<em>Parent Base Element</em>' container reference.
+     * @see #getParentBaseElement()
      * @generated
      */
-    void setBaseElement( BaseElement value );
+    void setParentBaseElement(BaseElement value);
 
 } // Private

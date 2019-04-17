@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN <em>Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getExtRef <em>Ext Ref</em>}</li>
  * </ul>
  *
@@ -39,37 +39,33 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Inputs extends UnNaming {
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Any LN</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getInputs <em>Inputs</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Any LN</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' container reference.
-     * @see #setAnyLN(AnyLN)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getInputs_AnyLN()
+     * @return the value of the '<em>Parent Any LN</em>' container reference.
+     * @see #setParentAnyLN(AnyLN)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getInputs_ParentAnyLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getInputs
      * @model opposite="Inputs" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AnyLN getAnyLN();
+    AnyLN getParentAnyLN();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getAnyLN <em>Any LN</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getParentAnyLN <em>Parent Any LN</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Any LN</em>' container reference.
-     * @see #getAnyLN()
+     * @param value the new value of the '<em>Parent Any LN</em>' container reference.
+     * @see #getParentAnyLN()
      * @generated
      */
-    void setAnyLN( AnyLN value );
+    void setParentAnyLN(AnyLN value);
 
     /**
      * Returns the value of the '<em><b>Ext Ref</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs <em>Inputs</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs <em>Parent Inputs</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Ext Ref</em>' containment reference list isn't clear,
@@ -80,8 +76,8 @@ public interface Inputs extends UnNaming {
      * @see #isSetExtRef()
      * @see #unsetExtRef()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getInputs_ExtRef()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getInputs
-     * @model opposite="Inputs" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs
+     * @model opposite="ParentInputs" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ExtRef> getExtRef();

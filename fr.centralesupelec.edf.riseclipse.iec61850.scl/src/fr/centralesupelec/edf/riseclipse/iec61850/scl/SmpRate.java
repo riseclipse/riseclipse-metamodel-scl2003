@@ -29,6 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getValue <em>Value</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings <em>Parent SMV Settings</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmpRate()
@@ -62,5 +63,29 @@ public interface SmpRate extends SclObject {
      * @generated
      */
     void setValue(Integer value);
+
+    /**
+     * Returns the value of the '<em><b>Parent SMV Settings</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #setParentSMVSettings(SMVSettings)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmpRate_ParentSMVSettings()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate
+     * @model opposite="SmpRate" resolveProxies="false" ordered="false"
+     * @generated
+     */
+    SMVSettings getParentSMVSettings();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate#getParentSMVSettings <em>Parent SMV Settings</em>}' container reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Parent SMV Settings</em>' container reference.
+     * @see #getParentSMVSettings()
+     * @generated
+     */
+    void setParentSMVSettings(SMVSettings value);
 
 } // SmpRate

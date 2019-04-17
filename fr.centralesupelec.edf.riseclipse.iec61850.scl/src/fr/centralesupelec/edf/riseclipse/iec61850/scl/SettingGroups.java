@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getConfSG <em>Conf SG</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getSGEdit <em>SG Edit</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingGroups()
@@ -39,7 +39,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 public interface SettingGroups extends SclObject {
     /**
      * Returns the value of the '<em><b>Conf SG</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups <em>Setting Groups</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getParentSettingGroups <em>Parent Setting Groups</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conf SG</em>' containment reference isn't clear,
@@ -51,8 +51,8 @@ public interface SettingGroups extends SclObject {
      * @see #unsetConfSG()
      * @see #setConfSG(ConfSG)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingGroups_ConfSG()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getSettingGroups
-     * @model opposite="SettingGroups" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG#getParentSettingGroups
+     * @model opposite="ParentSettingGroups" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     ConfSG getConfSG();
@@ -94,7 +94,7 @@ public interface SettingGroups extends SclObject {
 
     /**
      * Returns the value of the '<em><b>SG Edit</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups <em>Setting Groups</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups <em>Parent Setting Groups</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>SG Edit</em>' containment reference isn't clear,
@@ -106,8 +106,8 @@ public interface SettingGroups extends SclObject {
      * @see #unsetSGEdit()
      * @see #setSGEdit(SGEdit)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingGroups_SGEdit()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getSettingGroups
-     * @model opposite="SettingGroups" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit#getParentSettingGroups
+     * @model opposite="ParentSettingGroups" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     SGEdit getSGEdit();
@@ -148,31 +148,27 @@ public interface SettingGroups extends SclObject {
     boolean isSetSGEdit();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSettingGroups <em>Setting Groups</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingGroups_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSettingGroups_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSettingGroups
      * @model opposite="SettingGroups" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
 } // SettingGroups

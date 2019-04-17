@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}</li>
  * </ul>
  *
@@ -81,37 +81,33 @@ public interface EnumType extends IDNaming {
     boolean isSetReferredByAbstractDataAttribute();
 
     /**
-     * Returns the value of the '<em><b>Data Type Templates</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Data Type Templates</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Type Templates</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Type Templates</em>' container reference.
-     * @see #setDataTypeTemplates(DataTypeTemplates)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumType_DataTypeTemplates()
+     * @return the value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #setParentDataTypeTemplates(DataTypeTemplates)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumType_ParentDataTypeTemplates()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType
      * @model opposite="EnumType" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DataTypeTemplates getDataTypeTemplates();
+    DataTypeTemplates getParentDataTypeTemplates();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getDataTypeTemplates <em>Data Type Templates</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Type Templates</em>' container reference.
-     * @see #getDataTypeTemplates()
+     * @param value the new value of the '<em>Parent Data Type Templates</em>' container reference.
+     * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setDataTypeTemplates( DataTypeTemplates value );
+    void setParentDataTypeTemplates(DataTypeTemplates value);
 
     /**
      * Returns the value of the '<em><b>Enum Val</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType <em>Enum Type</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType <em>Parent Enum Type</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Enum Val</em>' containment reference list isn't clear,
@@ -122,8 +118,8 @@ public interface EnumType extends IDNaming {
      * @see #isSetEnumVal()
      * @see #unsetEnumVal()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getEnumType_EnumVal()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getEnumType
-     * @model opposite="EnumType" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal#getParentEnumType
+     * @model opposite="ParentEnumType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<EnumVal> getEnumVal();

@@ -429,7 +429,7 @@ public interface AbstractDataAttribute extends DataAttribute {
     /**
      * Returns the value of the '<em><b>Val</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute <em>Abstract Data Attribute</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Val</em>' containment reference list isn't clear,
@@ -440,8 +440,8 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @see #isSetVal()
      * @see #unsetVal()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_Val()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getAbstractDataAttribute
-     * @model opposite="AbstractDataAttribute" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentAbstractDataAttribute
+     * @model opposite="ParentAbstractDataAttribute" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Val> getVal();

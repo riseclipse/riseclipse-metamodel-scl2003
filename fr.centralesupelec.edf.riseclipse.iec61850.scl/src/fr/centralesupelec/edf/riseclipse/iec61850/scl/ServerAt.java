@@ -28,7 +28,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getApName <em>Ap Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint <em>Access Point</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint <em>Parent Access Point</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
  * </ul>
  *
@@ -91,32 +91,28 @@ public interface ServerAt extends UnNaming {
     boolean isSetApName();
 
     /**
-     * Returns the value of the '<em><b>Access Point</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Access Point</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServerAt <em>Server At</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Access Point</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Access Point</em>' container reference.
-     * @see #setAccessPoint(AccessPoint)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServerAt_AccessPoint()
+     * @return the value of the '<em>Parent Access Point</em>' container reference.
+     * @see #setParentAccessPoint(AccessPoint)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getServerAt_ParentAccessPoint()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint#getServerAt
      * @model opposite="ServerAt" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AccessPoint getAccessPoint();
+    AccessPoint getParentAccessPoint();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getAccessPoint <em>Access Point</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getParentAccessPoint <em>Parent Access Point</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Access Point</em>' container reference.
-     * @see #getAccessPoint()
+     * @param value the new value of the '<em>Parent Access Point</em>' container reference.
+     * @see #getParentAccessPoint()
      * @generated
      */
-    void setAccessPoint( AccessPoint value );
+    void setParentAccessPoint(AccessPoint value);
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.

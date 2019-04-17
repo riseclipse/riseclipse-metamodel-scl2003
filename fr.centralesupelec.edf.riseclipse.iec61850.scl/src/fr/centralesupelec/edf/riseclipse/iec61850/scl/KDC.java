@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getApName <em>Ap Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIedName <em>Ied Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED <em>IED</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED <em>Parent IED</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getRefersToAccessPoint <em>Refers To Access Point</em>}</li>
  * </ul>
  *
@@ -145,32 +145,28 @@ public interface KDC extends ExplicitLinkResolver {
     boolean isSetIedName();
 
     /**
-     * Returns the value of the '<em><b>IED</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent IED</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getKDC <em>KDC</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>IED</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>IED</em>' container reference.
-     * @see #setIED(IED)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getKDC_IED()
+     * @return the value of the '<em>Parent IED</em>' container reference.
+     * @see #setParentIED(IED)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getKDC_ParentIED()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getKDC
      * @model opposite="KDC" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    IED getIED();
+    IED getParentIED();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getIED <em>IED</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getParentIED <em>Parent IED</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>IED</em>' container reference.
-     * @see #getIED()
+     * @param value the new value of the '<em>Parent IED</em>' container reference.
+     * @see #getParentIED()
      * @generated
      */
-    void setIED( IED value );
+    void setParentIED(IED value);
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.

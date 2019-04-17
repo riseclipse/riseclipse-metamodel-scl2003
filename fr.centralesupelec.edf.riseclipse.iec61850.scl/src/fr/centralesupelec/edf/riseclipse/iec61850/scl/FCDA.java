@@ -37,7 +37,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet <em>Parent Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
@@ -475,32 +475,28 @@ public interface FCDA extends ExplicitLinkResolver {
     boolean isSetPrefix();
 
     /**
-     * Returns the value of the '<em><b>Data Set</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Data Set</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getFCDA <em>FCDA</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Data Set</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Data Set</em>' container reference.
-     * @see #setDataSet(DataSet)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_DataSet()
+     * @return the value of the '<em>Parent Data Set</em>' container reference.
+     * @see #setParentDataSet(DataSet)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getFCDA_ParentDataSet()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet#getFCDA
      * @model opposite="FCDA" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DataSet getDataSet();
+    DataSet getParentDataSet();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getDataSet <em>Data Set</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getParentDataSet <em>Parent Data Set</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Data Set</em>' container reference.
-     * @see #getDataSet()
+     * @param value the new value of the '<em>Parent Data Set</em>' container reference.
+     * @see #getParentDataSet()
      * @generated
      */
-    void setDataSet( DataSet value );
+    void setParentDataSet(DataSet value);
 
     /**
      * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.

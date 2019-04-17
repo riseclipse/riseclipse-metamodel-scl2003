@@ -31,8 +31,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess <em>Parent Process</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}</li>
@@ -99,65 +99,57 @@ public interface Line extends GeneralEquipmentContainer {
     boolean isSetType();
 
     /**
-     * Returns the value of the '<em><b>Process</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Process</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine <em>Line</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Process</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Process</em>' container reference.
-     * @see #setProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Process()
+     * @return the value of the '<em>Parent Process</em>' container reference.
+     * @see #setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ParentProcess()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine
      * @model opposite="Line" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getProcess();
+    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process getParentProcess();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getProcess <em>Process</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentProcess <em>Parent Process</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Process</em>' container reference.
-     * @see #getProcess()
+     * @param value the new value of the '<em>Parent Process</em>' container reference.
+     * @see #getParentProcess()
      * @generated
      */
-    void setProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
+    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
 
     /**
-     * Returns the value of the '<em><b>SCL</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine <em>Line</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SCL</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SCL</em>' container reference.
-     * @see #setSCL(SCL)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_SCL()
+     * @return the value of the '<em>Parent SCL</em>' container reference.
+     * @see #setParentSCL(SCL)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ParentSCL()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine
      * @model opposite="Line" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SCL getSCL();
+    SCL getParentSCL();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getSCL <em>SCL</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getParentSCL <em>Parent SCL</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SCL</em>' container reference.
-     * @see #getSCL()
+     * @param value the new value of the '<em>Parent SCL</em>' container reference.
+     * @see #getParentSCL()
      * @generated
      */
-    void setSCL( SCL value );
+    void setParentSCL(SCL value);
 
     /**
      * Returns the value of the '<em><b>Connectivity Node</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine <em>Line</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Connectivity Node</em>' containment reference list isn't clear,
@@ -168,8 +160,8 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #isSetConnectivityNode()
      * @see #unsetConnectivityNode()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConnectivityNode()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getLine
-     * @model opposite="Line" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getParentLine
+     * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConnectivityNode> getConnectivityNode();
@@ -198,7 +190,7 @@ public interface Line extends GeneralEquipmentContainer {
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine <em>Line</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Conducting Equipment</em>' containment reference list isn't clear,
@@ -209,8 +201,8 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #isSetConductingEquipment()
      * @see #unsetConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_ConductingEquipment()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getLine
-     * @model opposite="Line" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getParentLine
+     * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ConductingEquipment> getConductingEquipment();
@@ -238,7 +230,7 @@ public interface Line extends GeneralEquipmentContainer {
 
     /**
      * Returns the value of the '<em><b>Voltage</b></em>' containment reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine <em>Line</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine <em>Parent Line</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Voltage</em>' containment reference isn't clear,
@@ -250,8 +242,8 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #unsetVoltage()
      * @see #setVoltage(Voltage)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLine_Voltage()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getLine
-     * @model opposite="Line" containment="true" unsettable="true"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage#getParentLine
+     * @model opposite="ParentLine" containment="true" unsettable="true"
      * @generated
      */
     Voltage getVoltage();

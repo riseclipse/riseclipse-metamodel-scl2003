@@ -27,7 +27,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl <em>Parent Sampled Value Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmvOpts()
@@ -36,31 +36,27 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  */
 public interface SmvOpts extends SclObject, AgSmvOpts {
     /**
-     * Returns the value of the '<em><b>Sampled Value Control</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Sampled Value Control</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmvOpts <em>Smv Opts</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Sampled Value Control</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Sampled Value Control</em>' container reference.
-     * @see #setSampledValueControl(SampledValueControl)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmvOpts_SampledValueControl()
+     * @return the value of the '<em>Parent Sampled Value Control</em>' container reference.
+     * @see #setParentSampledValueControl(SampledValueControl)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSmvOpts_ParentSampledValueControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getSmvOpts
      * @model opposite="SmvOpts" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SampledValueControl getSampledValueControl();
+    SampledValueControl getParentSampledValueControl();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getSampledValueControl <em>Sampled Value Control</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts#getParentSampledValueControl <em>Parent Sampled Value Control</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Sampled Value Control</em>' container reference.
-     * @see #getSampledValueControl()
+     * @param value the new value of the '<em>Parent Sampled Value Control</em>' container reference.
+     * @see #getParentSampledValueControl()
      * @generated
      */
-    void setSampledValueControl( SampledValueControl value );
+    void setParentSampledValueControl(SampledValueControl value);
 
 } // SmvOpts

@@ -97,7 +97,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
     @Override
     public EList<PowerTransformer> getPowerTransformer() {
         if (powerTransformer == null) {
-            powerTransformer = new EObjectContainmentWithInverseEList.Unsettable<PowerTransformer>(PowerTransformer.class, this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, SclPackage.POWER_TRANSFORMER__EQUIPMENT_CONTAINER);
+            powerTransformer = new EObjectContainmentWithInverseEList.Unsettable<PowerTransformer>(PowerTransformer.class, this, SclPackage.EQUIPMENT_CONTAINER__POWER_TRANSFORMER, SclPackage.POWER_TRANSFORMER__PARENT_EQUIPMENT_CONTAINER);
         }
         return powerTransformer;
     }
@@ -130,7 +130,7 @@ public class EquipmentContainerImpl extends PowerSystemResourceImpl implements E
     @Override
     public EList<GeneralEquipment> getGeneralEquipment() {
         if (generalEquipment == null) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__EQUIPMENT_CONTAINER);
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_EQUIPMENT_CONTAINER);
         }
         return generalEquipment;
     }

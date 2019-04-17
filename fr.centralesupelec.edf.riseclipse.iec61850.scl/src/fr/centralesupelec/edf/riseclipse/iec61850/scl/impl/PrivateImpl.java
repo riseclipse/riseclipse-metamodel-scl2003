@@ -39,7 +39,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getSource <em>Source</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getType <em>Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getBaseElement <em>Base Element</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getParentBaseElement <em>Parent Base Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -228,8 +228,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * @generated
      */
     @Override
-    public BaseElement getBaseElement() {
-        if (eContainerFeatureID() != SclPackage.PRIVATE__BASE_ELEMENT) return null;
+    public BaseElement getParentBaseElement() {
+        if (eContainerFeatureID() != SclPackage.PRIVATE__PARENT_BASE_ELEMENT) return null;
         return (BaseElement)eInternalContainer();
     }
 
@@ -238,8 +238,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetBaseElement( BaseElement newBaseElement, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newBaseElement, SclPackage.PRIVATE__BASE_ELEMENT, msgs);
+    public NotificationChain basicSetParentBaseElement(BaseElement newParentBaseElement, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentBaseElement, SclPackage.PRIVATE__PARENT_BASE_ELEMENT, msgs);
         return msgs;
     }
 
@@ -249,20 +249,20 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * @generated
      */
     @Override
-    public void setBaseElement( BaseElement newBaseElement ) {
-        if (newBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.PRIVATE__BASE_ELEMENT && newBaseElement != null)) {
-            if (EcoreUtil.isAncestor(this, newBaseElement))
+    public void setParentBaseElement(BaseElement newParentBaseElement) {
+        if (newParentBaseElement != eInternalContainer() || (eContainerFeatureID() != SclPackage.PRIVATE__PARENT_BASE_ELEMENT && newParentBaseElement != null)) {
+            if (EcoreUtil.isAncestor(this, newParentBaseElement))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newBaseElement != null)
-                msgs = ((InternalEObject)newBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__PRIVATE, BaseElement.class, msgs);
-            msgs = basicSetBaseElement(newBaseElement, msgs);
+            if (newParentBaseElement != null)
+                msgs = ((InternalEObject)newParentBaseElement).eInverseAdd(this, SclPackage.BASE_ELEMENT__PRIVATE, BaseElement.class, msgs);
+            msgs = basicSetParentBaseElement(newParentBaseElement, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PRIVATE__BASE_ELEMENT, newBaseElement, newBaseElement));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PRIVATE__PARENT_BASE_ELEMENT, newParentBaseElement, newParentBaseElement));
     }
 
     /**
@@ -273,10 +273,10 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PRIVATE__BASE_ELEMENT:
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetBaseElement((BaseElement)otherEnd, msgs);
+                return basicSetParentBaseElement((BaseElement)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -289,8 +289,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.PRIVATE__BASE_ELEMENT:
-                return basicSetBaseElement(null, msgs);
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
+                return basicSetParentBaseElement(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -303,7 +303,7 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.PRIVATE__BASE_ELEMENT:
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
                 return eInternalContainer().eInverseRemove(this, SclPackage.BASE_ELEMENT__PRIVATE, BaseElement.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -321,8 +321,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
                 return getSource();
             case SclPackage.PRIVATE__TYPE:
                 return getType();
-            case SclPackage.PRIVATE__BASE_ELEMENT:
-                return getBaseElement();
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
+                return getParentBaseElement();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -341,8 +341,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             case SclPackage.PRIVATE__TYPE:
                 setType((String)newValue);
                 return;
-            case SclPackage.PRIVATE__BASE_ELEMENT:
-                setBaseElement((BaseElement)newValue);
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
+                setParentBaseElement((BaseElement)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -362,8 +362,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             case SclPackage.PRIVATE__TYPE:
                 unsetType();
                 return;
-            case SclPackage.PRIVATE__BASE_ELEMENT:
-                setBaseElement((BaseElement)null);
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
+                setParentBaseElement((BaseElement)null);
                 return;
         }
         super.eUnset(featureID);
@@ -381,8 +381,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
                 return isSetSource();
             case SclPackage.PRIVATE__TYPE:
                 return isSetType();
-            case SclPackage.PRIVATE__BASE_ELEMENT:
-                return getBaseElement() != null;
+            case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
+                return getParentBaseElement() != null;
         }
         return super.eIsSet(featureID);
     }

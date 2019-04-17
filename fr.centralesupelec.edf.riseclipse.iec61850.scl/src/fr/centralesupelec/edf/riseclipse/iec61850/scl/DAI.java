@@ -34,8 +34,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getValImport <em>Val Import</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getValKind <em>Val Kind</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getVal <em>Val</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI <em>DOI</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI <em>SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI <em>Parent DOI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI <em>Parent SDI</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI()
@@ -261,7 +261,7 @@ public interface DAI extends DataAttribute {
     /**
      * Returns the value of the '<em><b>Val</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI <em>DAI</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI <em>Parent DAI</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Val</em>' containment reference list isn't clear,
@@ -272,8 +272,8 @@ public interface DAI extends DataAttribute {
      * @see #isSetVal()
      * @see #unsetVal()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_Val()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getDAI
-     * @model opposite="DAI" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Val#getParentDAI
+     * @model opposite="ParentDAI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<Val> getVal();
@@ -300,59 +300,51 @@ public interface DAI extends DataAttribute {
     boolean isSetVal();
 
     /**
-     * Returns the value of the '<em><b>DOI</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent DOI</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI <em>DAI</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>DOI</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>DOI</em>' container reference.
-     * @see #setDOI(DOI)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_DOI()
+     * @return the value of the '<em>Parent DOI</em>' container reference.
+     * @see #setParentDOI(DOI)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_ParentDOI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI
      * @model opposite="DAI" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    DOI getDOI();
+    DOI getParentDOI();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getDOI <em>DOI</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI <em>Parent DOI</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>DOI</em>' container reference.
-     * @see #getDOI()
+     * @param value the new value of the '<em>Parent DOI</em>' container reference.
+     * @see #getParentDOI()
      * @generated
      */
-    void setDOI( DOI value );
+    void setParentDOI(DOI value);
 
     /**
-     * Returns the value of the '<em><b>SDI</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent SDI</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDAI <em>DAI</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>SDI</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>SDI</em>' container reference.
-     * @see #setSDI(SDI)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_SDI()
+     * @return the value of the '<em>Parent SDI</em>' container reference.
+     * @see #setParentSDI(SDI)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_ParentSDI()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDAI
      * @model opposite="DAI" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    SDI getSDI();
+    SDI getParentSDI();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getSDI <em>SDI</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI <em>Parent SDI</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>SDI</em>' container reference.
-     * @see #getSDI()
+     * @param value the new value of the '<em>Parent SDI</em>' container reference.
+     * @see #getParentSDI()
      * @generated
      */
-    void setSDI( SDI value );
+    void setParentSDI(SDI value);
 
 } // DAI

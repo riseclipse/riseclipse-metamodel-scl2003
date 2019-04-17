@@ -33,7 +33,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getProcessName <em>Process Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getSubstationName <em>Substation Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getVoltageLevelName <em>Voltage Level Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getRefersToConnectivityNode <em>Refers To Connectivity Node</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getName <em>Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getLineName <em>Line Name</em>}</li>
@@ -363,32 +363,28 @@ public interface Terminal extends UnNaming {
     boolean isSetVoltageLevelName();
 
     /**
-     * Returns the value of the '<em><b>Abstract Conducting Equipment</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Abstract Conducting Equipment</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getTerminal <em>Terminal</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Abstract Conducting Equipment</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Abstract Conducting Equipment</em>' container reference.
-     * @see #setAbstractConductingEquipment(AbstractConductingEquipment)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_AbstractConductingEquipment()
+     * @return the value of the '<em>Parent Abstract Conducting Equipment</em>' container reference.
+     * @see #setParentAbstractConductingEquipment(AbstractConductingEquipment)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getTerminal_ParentAbstractConductingEquipment()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getTerminal
      * @model opposite="Terminal" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    AbstractConductingEquipment getAbstractConductingEquipment();
+    AbstractConductingEquipment getParentAbstractConductingEquipment();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getAbstractConductingEquipment <em>Abstract Conducting Equipment</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal#getParentAbstractConductingEquipment <em>Parent Abstract Conducting Equipment</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Abstract Conducting Equipment</em>' container reference.
-     * @see #getAbstractConductingEquipment()
+     * @param value the new value of the '<em>Parent Abstract Conducting Equipment</em>' container reference.
+     * @see #getParentAbstractConductingEquipment()
      * @generated
      */
-    void setAbstractConductingEquipment( AbstractConductingEquipment value );
+    void setParentAbstractConductingEquipment(AbstractConductingEquipment value);
 
     /**
      * Returns the value of the '<em><b>Refers To Connectivity Node</b></em>' reference.

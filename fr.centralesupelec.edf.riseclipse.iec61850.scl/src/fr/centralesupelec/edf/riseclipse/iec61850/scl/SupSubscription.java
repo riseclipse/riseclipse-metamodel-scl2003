@@ -29,7 +29,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxGo <em>Max Go</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getMaxSv <em>Max Sv</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices <em>Parent Services</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription()
@@ -144,31 +144,27 @@ public interface SupSubscription extends SclObject {
     boolean isSetMaxSv();
 
     /**
-     * Returns the value of the '<em><b>Services</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription <em>Sup Subscription</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Services</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Services</em>' container reference.
-     * @see #setServices(Services)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_Services()
+     * @return the value of the '<em>Parent Services</em>' container reference.
+     * @see #setParentServices(Services)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSupSubscription_ParentServices()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSupSubscription
      * @model opposite="SupSubscription" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    Services getServices();
+    Services getParentServices();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getServices <em>Services</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription#getParentServices <em>Parent Services</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Services</em>' container reference.
-     * @see #getServices()
+     * @param value the new value of the '<em>Parent Services</em>' container reference.
+     * @see #getParentServices()
      * @generated
      */
-    void setServices( Services value );
+    void setParentServices(Services value);
 
 } // SupSubscription

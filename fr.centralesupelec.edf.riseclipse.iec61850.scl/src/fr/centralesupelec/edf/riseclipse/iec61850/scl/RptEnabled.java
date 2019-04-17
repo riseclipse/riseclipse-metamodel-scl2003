@@ -31,7 +31,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getMax <em>Max</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getClientLN <em>Client LN</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl <em>Report Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl <em>Parent Report Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRptEnabled()
@@ -95,7 +95,7 @@ public interface RptEnabled extends UnNaming {
     /**
      * Returns the value of the '<em><b>Client LN</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN}.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled <em>Rpt Enabled</em>}'.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled <em>Parent Rpt Enabled</em>}'.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Client LN</em>' containment reference list isn't clear,
@@ -106,8 +106,8 @@ public interface RptEnabled extends UnNaming {
      * @see #isSetClientLN()
      * @see #unsetClientLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRptEnabled_ClientLN()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRptEnabled
-     * @model opposite="RptEnabled" containment="true" unsettable="true" ordered="false"
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getParentRptEnabled
+     * @model opposite="ParentRptEnabled" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList<ClientLN> getClientLN();
@@ -134,31 +134,27 @@ public interface RptEnabled extends UnNaming {
     boolean isSetClientLN();
 
     /**
-     * Returns the value of the '<em><b>Report Control</b></em>' container reference.
+     * Returns the value of the '<em><b>Parent Report Control</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getRptEnabled <em>Rpt Enabled</em>}'.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Report Control</em>' container reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Report Control</em>' container reference.
-     * @see #setReportControl(ReportControl)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRptEnabled_ReportControl()
+     * @return the value of the '<em>Parent Report Control</em>' container reference.
+     * @see #setParentReportControl(ReportControl)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getRptEnabled_ParentReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getRptEnabled
      * @model opposite="RptEnabled" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
-    ReportControl getReportControl();
+    ReportControl getParentReportControl();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getReportControl <em>Report Control</em>}' container reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getParentReportControl <em>Parent Report Control</em>}' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Report Control</em>' container reference.
-     * @see #getReportControl()
+     * @param value the new value of the '<em>Parent Report Control</em>' container reference.
+     * @see #getParentReportControl()
      * @generated
      */
-    void setReportControl( ReportControl value );
+    void setParentReportControl(ReportControl value);
 
 } // RptEnabled

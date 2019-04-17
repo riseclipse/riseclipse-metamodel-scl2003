@@ -44,7 +44,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getRevision <em>Revision</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getToolID <em>Tool ID</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getSCL <em>SCL</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getParentSCL <em>Parent SCL</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getText <em>Text</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl#getHistory <em>History</em>}</li>
  * </ul>
@@ -510,8 +510,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @generated
      */
     @Override
-    public SCL getSCL() {
-        if (eContainerFeatureID() != SclPackage.HEADER__SCL) return null;
+    public SCL getParentSCL() {
+        if (eContainerFeatureID() != SclPackage.HEADER__PARENT_SCL) return null;
         return (SCL)eInternalContainer();
     }
 
@@ -520,8 +520,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetSCL( SCL newSCL, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newSCL, SclPackage.HEADER__SCL, msgs);
+    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.HEADER__PARENT_SCL, msgs);
         return msgs;
     }
 
@@ -531,20 +531,20 @@ public class HeaderImpl extends SclObjectImpl implements Header {
      * @generated
      */
     @Override
-    public void setSCL( SCL newSCL ) {
-        if (newSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.HEADER__SCL && newSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newSCL))
+    public void setParentSCL(SCL newParentSCL) {
+        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.HEADER__PARENT_SCL && newParentSCL != null)) {
+            if (EcoreUtil.isAncestor(this, newParentSCL))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newSCL != null)
-                msgs = ((InternalEObject)newSCL).eInverseAdd(this, SclPackage.SCL__HEADER, SCL.class, msgs);
-            msgs = basicSetSCL(newSCL, msgs);
+            if (newParentSCL != null)
+                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__HEADER, SCL.class, msgs);
+            msgs = basicSetParentSCL(newParentSCL, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__SCL, newSCL, newSCL));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HEADER__PARENT_SCL, newParentSCL, newParentSCL));
     }
 
     /**
@@ -584,9 +584,9 @@ public class HeaderImpl extends SclObjectImpl implements Header {
         if (newText != text) {
             NotificationChain msgs = null;
             if (text != null)
-                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+                msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__PARENT_HEADER, Text.class, msgs);
             if (newText != null)
-                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+                msgs = ((InternalEObject)newText).eInverseAdd(this, SclPackage.TEXT__PARENT_HEADER, Text.class, msgs);
             msgs = basicSetText(newText, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -624,7 +624,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     public void unsetText() {
         if (text != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__HEADER, Text.class, msgs);
+            msgs = ((InternalEObject)text).eInverseRemove(this, SclPackage.TEXT__PARENT_HEADER, Text.class, msgs);
             msgs = basicUnsetText(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -683,9 +683,9 @@ public class HeaderImpl extends SclObjectImpl implements Header {
         if (newHistory != history) {
             NotificationChain msgs = null;
             if (history != null)
-                msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+                msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__PARENT_HEADER, History.class, msgs);
             if (newHistory != null)
-                msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+                msgs = ((InternalEObject)newHistory).eInverseAdd(this, SclPackage.HISTORY__PARENT_HEADER, History.class, msgs);
             msgs = basicSetHistory(newHistory, msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -723,7 +723,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     public void unsetHistory() {
         if (history != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__HEADER, History.class, msgs);
+            msgs = ((InternalEObject)history).eInverseRemove(this, SclPackage.HISTORY__PARENT_HEADER, History.class, msgs);
             msgs = basicUnsetHistory(msgs);
             if (msgs != null) msgs.dispatch();
         }
@@ -753,10 +753,10 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.HEADER__SCL:
+            case SclPackage.HEADER__PARENT_SCL:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetSCL((SCL)otherEnd, msgs);
+                return basicSetParentSCL((SCL)otherEnd, msgs);
             case SclPackage.HEADER__TEXT:
                 if (text != null)
                     msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.HEADER__TEXT, null, msgs);
@@ -777,8 +777,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.HEADER__SCL:
-                return basicSetSCL(null, msgs);
+            case SclPackage.HEADER__PARENT_SCL:
+                return basicSetParentSCL(null, msgs);
             case SclPackage.HEADER__TEXT:
                 return basicUnsetText(msgs);
             case SclPackage.HEADER__HISTORY:
@@ -795,7 +795,7 @@ public class HeaderImpl extends SclObjectImpl implements Header {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.HEADER__SCL:
+            case SclPackage.HEADER__PARENT_SCL:
                 return eInternalContainer().eInverseRemove(this, SclPackage.SCL__HEADER, SCL.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -819,8 +819,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
                 return getToolID();
             case SclPackage.HEADER__VERSION:
                 return getVersion();
-            case SclPackage.HEADER__SCL:
-                return getSCL();
+            case SclPackage.HEADER__PARENT_SCL:
+                return getParentSCL();
             case SclPackage.HEADER__TEXT:
                 return getText();
             case SclPackage.HEADER__HISTORY:
@@ -852,8 +852,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             case SclPackage.HEADER__VERSION:
                 setVersion((String)newValue);
                 return;
-            case SclPackage.HEADER__SCL:
-                setSCL((SCL)newValue);
+            case SclPackage.HEADER__PARENT_SCL:
+                setParentSCL((SCL)newValue);
                 return;
             case SclPackage.HEADER__TEXT:
                 setText((Text)newValue);
@@ -888,8 +888,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
             case SclPackage.HEADER__VERSION:
                 unsetVersion();
                 return;
-            case SclPackage.HEADER__SCL:
-                setSCL((SCL)null);
+            case SclPackage.HEADER__PARENT_SCL:
+                setParentSCL((SCL)null);
                 return;
             case SclPackage.HEADER__TEXT:
                 unsetText();
@@ -919,8 +919,8 @@ public class HeaderImpl extends SclObjectImpl implements Header {
                 return isSetToolID();
             case SclPackage.HEADER__VERSION:
                 return isSetVersion();
-            case SclPackage.HEADER__SCL:
-                return getSCL() != null;
+            case SclPackage.HEADER__PARENT_SCL:
+                return getParentSCL() != null;
             case SclPackage.HEADER__TEXT:
                 return isSetText();
             case SclPackage.HEADER__HISTORY:

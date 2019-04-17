@@ -39,8 +39,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getSGroup <em>SGroup</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getAbstractDataAttribute <em>Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getDAI <em>DAI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getParentAbstractDataAttribute <em>Parent Abstract Data Attribute</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getParentDAI <em>Parent DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ValImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -171,8 +171,8 @@ public class ValImpl extends SclObjectImpl implements Val {
      * @generated
      */
     @Override
-    public AbstractDataAttribute getAbstractDataAttribute() {
-        if (eContainerFeatureID() != SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE) return null;
+    public AbstractDataAttribute getParentAbstractDataAttribute() {
+        if (eContainerFeatureID() != SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE) return null;
         return (AbstractDataAttribute)eInternalContainer();
     }
 
@@ -181,9 +181,8 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetAbstractDataAttribute( AbstractDataAttribute newAbstractDataAttribute,
-            NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newAbstractDataAttribute, SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE, msgs);
+    public NotificationChain basicSetParentAbstractDataAttribute(AbstractDataAttribute newParentAbstractDataAttribute, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentAbstractDataAttribute, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE, msgs);
         return msgs;
     }
 
@@ -193,20 +192,20 @@ public class ValImpl extends SclObjectImpl implements Val {
      * @generated
      */
     @Override
-    public void setAbstractDataAttribute( AbstractDataAttribute newAbstractDataAttribute ) {
-        if (newAbstractDataAttribute != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE && newAbstractDataAttribute != null)) {
-            if (EcoreUtil.isAncestor(this, newAbstractDataAttribute))
+    public void setParentAbstractDataAttribute(AbstractDataAttribute newParentAbstractDataAttribute) {
+        if (newParentAbstractDataAttribute != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE && newParentAbstractDataAttribute != null)) {
+            if (EcoreUtil.isAncestor(this, newParentAbstractDataAttribute))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newAbstractDataAttribute != null)
-                msgs = ((InternalEObject)newAbstractDataAttribute).eInverseAdd(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, AbstractDataAttribute.class, msgs);
-            msgs = basicSetAbstractDataAttribute(newAbstractDataAttribute, msgs);
+            if (newParentAbstractDataAttribute != null)
+                msgs = ((InternalEObject)newParentAbstractDataAttribute).eInverseAdd(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, AbstractDataAttribute.class, msgs);
+            msgs = basicSetParentAbstractDataAttribute(newParentAbstractDataAttribute, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE, newAbstractDataAttribute, newAbstractDataAttribute));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE, newParentAbstractDataAttribute, newParentAbstractDataAttribute));
     }
 
     /**
@@ -215,8 +214,8 @@ public class ValImpl extends SclObjectImpl implements Val {
      * @generated
      */
     @Override
-    public DAI getDAI() {
-        if (eContainerFeatureID() != SclPackage.VAL__DAI) return null;
+    public DAI getParentDAI() {
+        if (eContainerFeatureID() != SclPackage.VAL__PARENT_DAI) return null;
         return (DAI)eInternalContainer();
     }
 
@@ -225,8 +224,8 @@ public class ValImpl extends SclObjectImpl implements Val {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDAI( DAI newDAI, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDAI, SclPackage.VAL__DAI, msgs);
+    public NotificationChain basicSetParentDAI(DAI newParentDAI, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDAI, SclPackage.VAL__PARENT_DAI, msgs);
         return msgs;
     }
 
@@ -236,20 +235,20 @@ public class ValImpl extends SclObjectImpl implements Val {
      * @generated
      */
     @Override
-    public void setDAI( DAI newDAI ) {
-        if (newDAI != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__DAI && newDAI != null)) {
-            if (EcoreUtil.isAncestor(this, newDAI))
+    public void setParentDAI(DAI newParentDAI) {
+        if (newParentDAI != eInternalContainer() || (eContainerFeatureID() != SclPackage.VAL__PARENT_DAI && newParentDAI != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDAI))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDAI != null)
-                msgs = ((InternalEObject)newDAI).eInverseAdd(this, SclPackage.DAI__VAL, DAI.class, msgs);
-            msgs = basicSetDAI(newDAI, msgs);
+            if (newParentDAI != null)
+                msgs = ((InternalEObject)newParentDAI).eInverseAdd(this, SclPackage.DAI__VAL, DAI.class, msgs);
+            msgs = basicSetParentDAI(newParentDAI, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VAL__DAI, newDAI, newDAI));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VAL__PARENT_DAI, newParentDAI, newParentDAI));
     }
 
     /**
@@ -283,14 +282,14 @@ public class ValImpl extends SclObjectImpl implements Val {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetAbstractDataAttribute((AbstractDataAttribute)otherEnd, msgs);
-            case SclPackage.VAL__DAI:
+                return basicSetParentAbstractDataAttribute((AbstractDataAttribute)otherEnd, msgs);
+            case SclPackage.VAL__PARENT_DAI:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDAI((DAI)otherEnd, msgs);
+                return basicSetParentDAI((DAI)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -303,10 +302,10 @@ public class ValImpl extends SclObjectImpl implements Val {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
-                return basicSetAbstractDataAttribute(null, msgs);
-            case SclPackage.VAL__DAI:
-                return basicSetDAI(null, msgs);
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
+                return basicSetParentAbstractDataAttribute(null, msgs);
+            case SclPackage.VAL__PARENT_DAI:
+                return basicSetParentDAI(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -319,9 +318,9 @@ public class ValImpl extends SclObjectImpl implements Val {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
                 return eInternalContainer().eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, AbstractDataAttribute.class, msgs);
-            case SclPackage.VAL__DAI:
+            case SclPackage.VAL__PARENT_DAI:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DAI__VAL, DAI.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -337,10 +336,10 @@ public class ValImpl extends SclObjectImpl implements Val {
         switch (featureID) {
             case SclPackage.VAL__SGROUP:
                 return getSGroup();
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
-                return getAbstractDataAttribute();
-            case SclPackage.VAL__DAI:
-                return getDAI();
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
+                return getParentAbstractDataAttribute();
+            case SclPackage.VAL__PARENT_DAI:
+                return getParentDAI();
             case SclPackage.VAL__VALUE:
                 return getValue();
         }
@@ -358,11 +357,11 @@ public class ValImpl extends SclObjectImpl implements Val {
             case SclPackage.VAL__SGROUP:
                 setSGroup((Integer)newValue);
                 return;
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
-                setAbstractDataAttribute((AbstractDataAttribute)newValue);
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
+                setParentAbstractDataAttribute((AbstractDataAttribute)newValue);
                 return;
-            case SclPackage.VAL__DAI:
-                setDAI((DAI)newValue);
+            case SclPackage.VAL__PARENT_DAI:
+                setParentDAI((DAI)newValue);
                 return;
             case SclPackage.VAL__VALUE:
                 setValue((String)newValue);
@@ -382,11 +381,11 @@ public class ValImpl extends SclObjectImpl implements Val {
             case SclPackage.VAL__SGROUP:
                 unsetSGroup();
                 return;
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
-                setAbstractDataAttribute((AbstractDataAttribute)null);
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
+                setParentAbstractDataAttribute((AbstractDataAttribute)null);
                 return;
-            case SclPackage.VAL__DAI:
-                setDAI((DAI)null);
+            case SclPackage.VAL__PARENT_DAI:
+                setParentDAI((DAI)null);
                 return;
             case SclPackage.VAL__VALUE:
                 setValue(VALUE_EDEFAULT);
@@ -405,10 +404,10 @@ public class ValImpl extends SclObjectImpl implements Val {
         switch (featureID) {
             case SclPackage.VAL__SGROUP:
                 return isSetSGroup();
-            case SclPackage.VAL__ABSTRACT_DATA_ATTRIBUTE:
-                return getAbstractDataAttribute() != null;
-            case SclPackage.VAL__DAI:
-                return getDAI() != null;
+            case SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE:
+                return getParentAbstractDataAttribute() != null;
+            case SclPackage.VAL__PARENT_DAI:
+                return getParentDAI() != null;
             case SclPackage.VAL__VALUE:
                 return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
         }

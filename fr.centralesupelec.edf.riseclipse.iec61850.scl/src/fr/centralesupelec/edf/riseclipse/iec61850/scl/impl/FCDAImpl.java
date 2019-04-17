@@ -31,7 +31,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
@@ -45,6 +44,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
@@ -67,7 +67,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getLnInst <em>Ln Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getPrefix <em>Prefix</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getDataSet <em>Data Set</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getParentDataSet <em>Parent Data Set</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.FCDAImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
@@ -741,8 +741,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public DataSet getDataSet() {
-        if (eContainerFeatureID() != SclPackage.FCDA__DATA_SET) return null;
+    public DataSet getParentDataSet() {
+        if (eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET) return null;
         return (DataSet)eInternalContainer();
     }
 
@@ -751,8 +751,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDataSet( DataSet newDataSet, NotificationChain msgs ) {
-        msgs = eBasicSetContainer((InternalEObject)newDataSet, SclPackage.FCDA__DATA_SET, msgs);
+    public NotificationChain basicSetParentDataSet(DataSet newParentDataSet, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject)newParentDataSet, SclPackage.FCDA__PARENT_DATA_SET, msgs);
         return msgs;
     }
 
@@ -762,20 +762,20 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
      * @generated
      */
     @Override
-    public void setDataSet( DataSet newDataSet ) {
-        if (newDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__DATA_SET && newDataSet != null)) {
-            if (EcoreUtil.isAncestor(this, newDataSet))
+    public void setParentDataSet(DataSet newParentDataSet) {
+        if (newParentDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET && newParentDataSet != null)) {
+            if (EcoreUtil.isAncestor(this, newParentDataSet))
                 throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
             NotificationChain msgs = null;
             if (eInternalContainer() != null)
                 msgs = eBasicRemoveFromContainer(msgs);
-            if (newDataSet != null)
-                msgs = ((InternalEObject)newDataSet).eInverseAdd(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
-            msgs = basicSetDataSet(newDataSet, msgs);
+            if (newParentDataSet != null)
+                msgs = ((InternalEObject)newParentDataSet).eInverseAdd(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
+            msgs = basicSetParentDataSet(newParentDataSet, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DATA_SET, newDataSet, newDataSet));
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__PARENT_DATA_SET, newParentDataSet, newParentDataSet));
     }
 
     /**
@@ -820,10 +820,10 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__DATA_SET:
+            case SclPackage.FCDA__PARENT_DATA_SET:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetDataSet((DataSet)otherEnd, msgs);
+                return basicSetParentDataSet((DataSet)otherEnd, msgs);
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getRefersToAbstractDataAttribute()).basicAdd(otherEnd, msgs);
         }
@@ -838,8 +838,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
-            case SclPackage.FCDA__DATA_SET:
-                return basicSetDataSet(null, msgs);
+            case SclPackage.FCDA__PARENT_DATA_SET:
+                return basicSetParentDataSet(null, msgs);
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return ((InternalEList<?>)getRefersToAbstractDataAttribute()).basicRemove(otherEnd, msgs);
         }
@@ -854,7 +854,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
         switch (eContainerFeatureID()) {
-            case SclPackage.FCDA__DATA_SET:
+            case SclPackage.FCDA__PARENT_DATA_SET:
                 return eInternalContainer().eInverseRemove(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -884,8 +884,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return getLnInst();
             case SclPackage.FCDA__PREFIX:
                 return getPrefix();
-            case SclPackage.FCDA__DATA_SET:
-                return getDataSet();
+            case SclPackage.FCDA__PARENT_DATA_SET:
+                return getParentDataSet();
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return getRefersToAbstractDataAttribute();
         }
@@ -925,8 +925,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 setPrefix((String)newValue);
                 return;
-            case SclPackage.FCDA__DATA_SET:
-                setDataSet((DataSet)newValue);
+            case SclPackage.FCDA__PARENT_DATA_SET:
+                setParentDataSet((DataSet)newValue);
                 return;
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 getRefersToAbstractDataAttribute().clear();
@@ -968,8 +968,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             case SclPackage.FCDA__PREFIX:
                 unsetPrefix();
                 return;
-            case SclPackage.FCDA__DATA_SET:
-                setDataSet((DataSet)null);
+            case SclPackage.FCDA__PARENT_DATA_SET:
+                setParentDataSet((DataSet)null);
                 return;
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 unsetRefersToAbstractDataAttribute();
@@ -1002,8 +1002,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 return isSetLnInst();
             case SclPackage.FCDA__PREFIX:
                 return isSetPrefix();
-            case SclPackage.FCDA__DATA_SET:
-                return getDataSet() != null;
+            case SclPackage.FCDA__PARENT_DATA_SET:
+                return getParentDataSet() != null;
             case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return isSetRefersToAbstractDataAttribute();
         }
@@ -1045,8 +1045,6 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         // see Issue #13
         super.doResolveLinks();
         
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
-        
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
         // lnClass  LN class of the LN where the DO resides; shall always be specified except for GSSE DataLabel empty string
@@ -1067,15 +1065,20 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         if( getLnClass() == null ) return;
         if( getDoName() == null ) return;
         
-        // The LN we are looking for is in the same IED/Server
-        if( getDataSet()                         == null ) return;
-        if( getDataSet().getAnyLN()              == null ) return;
-        if( getDataSet().getAnyLN().getLDevice() == null ) return;
-        Server server = getDataSet().getAnyLN().getLDevice().getServer();
-        if( server == null ) return;
-        IED ied = server.getAccessPoint().getIED();
-        
         String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+
+        // The LN we are looking for is in the same IED/Server
+        EObject object = this;
+        while(( object != null ) && !( object instanceof Server ) ) {
+            object = object.eContainer();
+        }
+        if( object == null ) {
+            console.verbose( messagePrefix + "Server not found" );
+            return;
+        }
+        Server server = ( Server ) object;
+        console.verbose( messagePrefix + "found Server on line " + server.getLineNumber() );
 
         List< LDevice > res1 = 
                server
