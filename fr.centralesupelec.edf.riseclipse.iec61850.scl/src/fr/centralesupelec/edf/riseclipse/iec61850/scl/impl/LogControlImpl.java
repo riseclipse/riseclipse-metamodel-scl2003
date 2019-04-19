@@ -1281,7 +1281,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                     .filter( ld -> getLdInst().equals( ld.getInst() ))
                     .collect( Collectors.toList() );
 
-            String mess1 = "LDevice( inst = " + getLdInst() + " ))";
+            String mess1 = "LDevice( inst = " + getLdInst() + " )";
             if( res1.isEmpty() ) {
                 console.error( messagePrefix + "cannot find " + mess1 );
                 return;

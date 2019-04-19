@@ -2505,7 +2505,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .filter( ld -> getLdInst().equals( ld.getInst() ))
                 .collect( Collectors.toList() );
 
-        String mess1 = "LDevice( inst = " + getLdInst() + " ))";
+        String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( res1.isEmpty() ) {
             console.error( messagePrefix + "cannot find " + mess1 );
             return Pair.of( ied, lDevice );
@@ -2708,7 +2708,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .filter( ld -> getSrcLDInst().equals( ld.getInst() ))
                     .collect( Collectors.toList() );
 
-            String mess5 = "LDevice( inst = " + getSrcLDInst() + " ))";
+            String mess5 = "LDevice( inst = " + getSrcLDInst() + " )";
             if( res5.isEmpty() ) {
                 console.error( messagePrefix + "cannot find " + mess5 );
                 return;
