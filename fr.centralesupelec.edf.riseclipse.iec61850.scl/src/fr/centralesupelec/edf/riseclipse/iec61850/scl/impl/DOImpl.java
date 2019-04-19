@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
@@ -29,12 +30,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,6 +52,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getTransient <em>Transient</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getParentLNodeType <em>Parent LNode Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getAccessControl <em>Access Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOImpl#getReferredByDOI <em>Referred By DOI</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,6 +115,16 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @ordered
      */
     protected boolean accessControlESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByDOI() <em>Referred By DOI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByDOI()
+     * @generated
+     * @ordered
+     */
+    protected EList<DOI> referredByDOI;
 
     /**
      * <!-- begin-user-doc -->
@@ -278,12 +294,48 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @generated
      */
     @Override
+    public EList<DOI> getReferredByDOI() {
+        if (referredByDOI == null) {
+            referredByDOI = new EObjectWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.DO__REFERRED_BY_DOI, SclPackage.DOI__REFERS_TO_DO);
+        }
+        return referredByDOI;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByDOI() {
+        if (referredByDOI != null) ((InternalEList.Unsettable<?>)referredByDOI).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByDOI() {
+        return referredByDOI != null && ((InternalEList.Unsettable<?>)referredByDOI).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.DO__PARENT_LNODE_TYPE:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetParentLNodeType((LNodeType)otherEnd, msgs);
+            case SclPackage.DO__REFERRED_BY_DOI:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDOI()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -298,6 +350,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         switch (featureID) {
             case SclPackage.DO__PARENT_LNODE_TYPE:
                 return basicSetParentLNodeType(null, msgs);
+            case SclPackage.DO__REFERRED_BY_DOI:
+                return ((InternalEList<?>)getReferredByDOI()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -330,6 +384,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 return getParentLNodeType();
             case SclPackage.DO__ACCESS_CONTROL:
                 return getAccessControl();
+            case SclPackage.DO__REFERRED_BY_DOI:
+                return getReferredByDOI();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -339,6 +395,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
@@ -350,6 +407,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 return;
             case SclPackage.DO__ACCESS_CONTROL:
                 setAccessControl((String)newValue);
+                return;
+            case SclPackage.DO__REFERRED_BY_DOI:
+                getReferredByDOI().clear();
+                getReferredByDOI().addAll((Collection<? extends DOI>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -372,6 +433,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             case SclPackage.DO__ACCESS_CONTROL:
                 unsetAccessControl();
                 return;
+            case SclPackage.DO__REFERRED_BY_DOI:
+                unsetReferredByDOI();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -390,6 +454,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 return getParentLNodeType() != null;
             case SclPackage.DO__ACCESS_CONTROL:
                 return isSetAccessControl();
+            case SclPackage.DO__REFERRED_BY_DOI:
+                return isSetReferredByDOI();
         }
         return super.eIsSet(featureID);
     }

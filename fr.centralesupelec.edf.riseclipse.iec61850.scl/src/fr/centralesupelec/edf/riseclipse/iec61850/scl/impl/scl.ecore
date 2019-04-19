@@ -423,6 +423,9 @@
         eOpposite="#//LNodeType/DO"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDOI" ordered="false"
+        upperBound="-1" eType="#//DOI" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOI/RefersToDO"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DOType" eSuperTypes="#//IDNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -848,6 +851,8 @@
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDO" ordered="false"
+        eType="#//DO" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DO/ReferredByDOI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataObjectDirectory" eSuperTypes="#//ServiceYesNo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServices" ordered="false"

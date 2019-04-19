@@ -61,6 +61,7 @@ public class DOItemProvider extends AbstractDataObjectItemProvider {
 
             addTransientPropertyDescriptor(object);
             addAccessControlPropertyDescriptor(object);
+            addReferredByDOIPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -105,6 +106,28 @@ public class DOItemProvider extends AbstractDataObjectItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By DOI feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByDOIPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DO_ReferredByDOI_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DO_ReferredByDOI_feature", "_UI_DO_type"),
+                 SclPackage.eINSTANCE.getDO_ReferredByDOI(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

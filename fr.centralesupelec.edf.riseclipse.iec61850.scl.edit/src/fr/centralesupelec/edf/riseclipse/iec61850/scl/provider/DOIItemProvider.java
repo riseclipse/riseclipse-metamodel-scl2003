@@ -64,6 +64,7 @@ public class DOIItemProvider extends UnNamingItemProvider {
             addIxPropertyDescriptor(object);
             addAccessControlPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
+            addRefersToDOPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -130,6 +131,28 @@ public class DOIItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To DO feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToDOPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DOI_RefersToDO_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DOI_RefersToDO_feature", "_UI_DOI_type"),
+                 SclPackage.eINSTANCE.getDOI_RefersToDO(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

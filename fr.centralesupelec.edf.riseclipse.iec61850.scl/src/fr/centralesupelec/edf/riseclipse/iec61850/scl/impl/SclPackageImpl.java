@@ -2940,6 +2940,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getDO_ReferredByDOI() {
+        return (EReference)getDO().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getDOType() {
         if (doTypeEClass == null) {
             doTypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(28);
@@ -5340,6 +5350,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getDOI_Name() {
         return (EAttribute)getDOI().getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDOI_RefersToDO() {
+        return (EReference)getDOI().getEStructuralFeatures().get(6);
     }
 
     /**

@@ -5134,13 +5134,22 @@ public interface SclPackage extends EPackage {
     int DO__ACCESS_CONTROL = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Referred By DOI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO__REFERRED_BY_DOI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>DO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
+    int DO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The number of operations of the '<em>DO</em>' class.
@@ -8408,13 +8417,22 @@ public interface SclPackage extends EPackage {
     int DOI__NAME = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
+     * The feature id for the '<em><b>Refers To DO</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI__REFERS_TO_DO = UN_NAMING_FEATURE_COUNT + 6;
+
+    /**
      * The number of structural features of the '<em>DOI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 6;
+    int DOI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The number of operations of the '<em>DOI</em>' class.
@@ -20384,6 +20402,17 @@ public interface SclPackage extends EPackage {
     EAttribute getDO_AccessControl();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By DOI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI()
+     * @see #getDO()
+     * @generated
+     */
+    EReference getDO_ReferredByDOI();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType <em>DO Type</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -22831,6 +22860,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getDOI_Name();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To DO</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO()
+     * @see #getDOI()
+     * @generated
+     */
+    EReference getDOI_RefersToDO();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory <em>Data Object Directory</em>}'.
