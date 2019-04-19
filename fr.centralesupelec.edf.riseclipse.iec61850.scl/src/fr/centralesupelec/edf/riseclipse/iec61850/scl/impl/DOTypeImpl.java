@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,10 +32,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -49,11 +48,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getCdc <em>Cdc</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getIedType <em>Ied Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getDA <em>DA</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByDO <em>Referred By DO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByAbstractDataObject <em>Referred By Abstract Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getSDO <em>SDO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredBySDO <em>Referred By SDO</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOTypeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,14 +125,14 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     protected EList<DA> da;
 
     /**
-     * The cached value of the '{@link #getReferredByDO() <em>Referred By DO</em>}' reference list.
+     * The cached value of the '{@link #getReferredByAbstractDataObject() <em>Referred By Abstract Data Object</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getReferredByDO()
+     * @see #getReferredByAbstractDataObject()
      * @generated
      * @ordered
      */
-    protected EList<DO> referredByDO;
+    protected EList<AbstractDataObject> referredByAbstractDataObject;
 
     /**
      * The cached value of the '{@link #getSDO() <em>SDO</em>}' containment reference list.
@@ -146,26 +143,6 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @ordered
      */
     protected EList<SDO> sdo;
-
-    /**
-     * The cached value of the '{@link #getReferredBySDO() <em>Referred By SDO</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredBySDO()
-     * @generated
-     * @ordered
-     */
-    protected EList<SDO> referredBySDO;
-
-    /**
-     * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getReferredByExtRef()
-     * @generated
-     * @ordered
-     */
-    protected EList<ExtRef> referredByExtRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -325,11 +302,11 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public EList<DO> getReferredByDO() {
-        if (referredByDO == null) {
-            referredByDO = new EObjectWithInverseEList.Unsettable<DO>(DO.class, this, SclPackage.DO_TYPE__REFERRED_BY_DO, SclPackage.DO__REFERS_TO_DO_TYPE);
+    public EList<AbstractDataObject> getReferredByAbstractDataObject() {
+        if (referredByAbstractDataObject == null) {
+            referredByAbstractDataObject = new EObjectWithInverseEList.Unsettable<AbstractDataObject>(AbstractDataObject.class, this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE);
         }
-        return referredByDO;
+        return referredByAbstractDataObject;
     }
 
     /**
@@ -338,8 +315,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public void unsetReferredByDO() {
-        if (referredByDO != null) ((InternalEList.Unsettable<?>)referredByDO).unset();
+    public void unsetReferredByAbstractDataObject() {
+        if (referredByAbstractDataObject != null) ((InternalEList.Unsettable<?>)referredByAbstractDataObject).unset();
     }
 
     /**
@@ -348,8 +325,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public boolean isSetReferredByDO() {
-        return referredByDO != null && ((InternalEList.Unsettable<?>)referredByDO).isSet();
+    public boolean isSetReferredByAbstractDataObject() {
+        return referredByAbstractDataObject != null && ((InternalEList.Unsettable<?>)referredByAbstractDataObject).isSet();
     }
 
     /**
@@ -433,90 +410,20 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public EList<SDO> getReferredBySDO() {
-        if (referredBySDO == null) {
-            referredBySDO = new EObjectWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__REFERRED_BY_SDO, SclPackage.SDO__REFERS_TO_DO_TYPE);
-        }
-        return referredBySDO;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredBySDO() {
-        if (referredBySDO != null) ((InternalEList.Unsettable<?>)referredBySDO).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredBySDO() {
-        return referredBySDO != null && ((InternalEList.Unsettable<?>)referredBySDO).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_DO_TYPE);
-        }
-        return referredByExtRef;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.DO_TYPE__DA:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDO()).basicAdd(otherEnd, msgs);
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAbstractDataObject()).basicAdd(otherEnd, msgs);
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
             case SclPackage.DO_TYPE__SDO:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDO()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDO()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -531,16 +438,12 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         switch (featureID) {
             case SclPackage.DO_TYPE__DA:
                 return ((InternalEList<?>)getDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                return ((InternalEList<?>)getReferredByDO()).basicRemove(otherEnd, msgs);
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                return ((InternalEList<?>)getReferredByAbstractDataObject()).basicRemove(otherEnd, msgs);
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return basicSetParentDataTypeTemplates(null, msgs);
             case SclPackage.DO_TYPE__SDO:
                 return ((InternalEList<?>)getSDO()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                return ((InternalEList<?>)getReferredBySDO()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -573,16 +476,12 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return getIedType();
             case SclPackage.DO_TYPE__DA:
                 return getDA();
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                return getReferredByDO();
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                return getReferredByAbstractDataObject();
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return getParentDataTypeTemplates();
             case SclPackage.DO_TYPE__SDO:
                 return getSDO();
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                return getReferredBySDO();
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -606,9 +505,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 getDA().clear();
                 getDA().addAll((Collection<? extends DA>)newValue);
                 return;
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                getReferredByDO().clear();
-                getReferredByDO().addAll((Collection<? extends DO>)newValue);
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                getReferredByAbstractDataObject().clear();
+                getReferredByAbstractDataObject().addAll((Collection<? extends AbstractDataObject>)newValue);
                 return;
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 setParentDataTypeTemplates((DataTypeTemplates)newValue);
@@ -616,14 +515,6 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             case SclPackage.DO_TYPE__SDO:
                 getSDO().clear();
                 getSDO().addAll((Collection<? extends SDO>)newValue);
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                getReferredBySDO().clear();
-                getReferredBySDO().addAll((Collection<? extends SDO>)newValue);
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -646,20 +537,14 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             case SclPackage.DO_TYPE__DA:
                 unsetDA();
                 return;
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                unsetReferredByDO();
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                unsetReferredByAbstractDataObject();
                 return;
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 setParentDataTypeTemplates((DataTypeTemplates)null);
                 return;
             case SclPackage.DO_TYPE__SDO:
                 unsetSDO();
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                unsetReferredBySDO();
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
                 return;
         }
         super.eUnset(featureID);
@@ -679,16 +564,12 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
                 return isSetIedType();
             case SclPackage.DO_TYPE__DA:
                 return isSetDA();
-            case SclPackage.DO_TYPE__REFERRED_BY_DO:
-                return isSetReferredByDO();
+            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+                return isSetReferredByAbstractDataObject();
             case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
                 return getParentDataTypeTemplates() != null;
             case SclPackage.DO_TYPE__SDO:
                 return isSetSDO();
-            case SclPackage.DO_TYPE__REFERRED_BY_SDO:
-                return isSetReferredBySDO();
-            case SclPackage.DO_TYPE__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
         }
         return super.eIsSet(featureID);
     }

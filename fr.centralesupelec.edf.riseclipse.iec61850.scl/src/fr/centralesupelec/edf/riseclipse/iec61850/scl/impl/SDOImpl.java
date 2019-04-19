@@ -23,17 +23,22 @@ import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -44,15 +49,13 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getCount <em>Count</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getParentDOType <em>Parent DO Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getRefersToDOType <em>Refers To DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDOImpl#getReferredBySDI <em>Referred By SDI</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SDOImpl extends UnNamingImpl implements SDO {
+public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     /**
      * The default value of the '{@link #getCount() <em>Count</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -83,81 +86,14 @@ public class SDOImpl extends UnNamingImpl implements SDO {
     protected boolean countESet;
 
     /**
-     * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+     * The cached value of the '{@link #getReferredBySDI() <em>Referred By SDI</em>}' reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getType()
+     * @see #getReferredBySDI()
      * @generated
      * @ordered
      */
-    protected static final String TYPE_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getType()
-     * @generated
-     * @ordered
-     */
-    protected String type = TYPE_EDEFAULT;
-
-    /**
-     * This is true if the Type attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean typeESet;
-
-    /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected static final String NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected String name = NAME_EDEFAULT;
-
-    /**
-     * This is true if the Name attribute has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean nameESet;
-
-    /**
-     * The cached value of the '{@link #getRefersToDOType() <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getRefersToDOType()
-     * @generated
-     * @ordered
-     */
-    protected DOType refersToDOType;
-
-    /**
-     * This is true if the Refers To DO Type reference has been set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    protected boolean refersToDOTypeESet;
+    protected EList<SDI> referredBySDI;
 
     /**
      * <!-- begin-user-doc -->
@@ -234,56 +170,6 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setType( String newType ) {
-        String oldType = type;
-        type = newType;
-        boolean oldTypeESet = typeESet;
-        typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__TYPE, oldType, type, !oldTypeESet));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetType() {
-        String oldType = type;
-        boolean oldTypeESet = typeESet;
-        type = TYPE_EDEFAULT;
-        typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDO__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetType() {
-        return typeESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public DOType getParentDOType() {
         if (eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE) return null;
         return (DOType)eInternalContainer();
@@ -327,75 +213,11 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void setName(String newName) {
-        String oldName = name;
-        name = newName;
-        boolean oldNameESet = nameESet;
-        nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__NAME, oldName, name, !oldNameESet));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetName() {
-        String oldName = name;
-        boolean oldNameESet = nameESet;
-        name = NAME_EDEFAULT;
-        nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDO__NAME, oldName, NAME_EDEFAULT, oldNameESet));
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetName() {
-        return nameESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public DOType getRefersToDOType() {
-        return refersToDOType;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicSetRefersToDOType(DOType newRefersToDOType, NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = newRefersToDOType;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SDO__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+    public EList<SDI> getReferredBySDI() {
+        if (referredBySDI == null) {
+            referredBySDI = new EObjectWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.SDO__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_SDO);
         }
-        return msgs;
+        return referredBySDI;
     }
 
     /**
@@ -404,39 +226,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public void setRefersToDOType(DOType newRefersToDOType) {
-        if (newRefersToDOType != refersToDOType) {
-            NotificationChain msgs = null;
-            if (refersToDOType != null)
-                msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_SDO, DOType.class, msgs);
-            if (newRefersToDOType != null)
-                msgs = ((InternalEObject)newRefersToDOType).eInverseAdd(this, SclPackage.DO_TYPE__REFERRED_BY_SDO, DOType.class, msgs);
-            msgs = basicSetRefersToDOType(newRefersToDOType, msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet));
-        }
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public NotificationChain basicUnsetRefersToDOType(NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = null;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SDO__REFERS_TO_DO_TYPE, oldRefersToDOType, null, oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
-        }
-        return msgs;
+    public void unsetReferredBySDI() {
+        if (referredBySDI != null) ((InternalEList.Unsettable<?>)referredBySDI).unset();
     }
 
     /**
@@ -445,19 +236,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * @generated
      */
     @Override
-    public void unsetRefersToDOType() {
-        if (refersToDOType != null) {
-            NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_SDO, DOType.class, msgs);
-            msgs = basicUnsetRefersToDOType(msgs);
-            if (msgs != null) msgs.dispatch();
-        }
-        else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDO__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet));
-        }
+    public boolean isSetReferredBySDI() {
+        return referredBySDI != null && ((InternalEList.Unsettable<?>)referredBySDI).isSet();
     }
 
     /**
@@ -465,16 +245,7 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public boolean isSetRefersToDOType() {
-        return refersToDOTypeESet;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
+    @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
@@ -482,10 +253,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetParentDOType((DOType)otherEnd, msgs);
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                if (refersToDOType != null)
-                    msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_SDO, DOType.class, msgs);
-                return basicSetRefersToDOType((DOType)otherEnd, msgs);
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDI()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -500,8 +269,8 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         switch (featureID) {
             case SclPackage.SDO__PARENT_DO_TYPE:
                 return basicSetParentDOType(null, msgs);
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                return basicUnsetRefersToDOType(msgs);
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                return ((InternalEList<?>)getReferredBySDI()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -530,14 +299,10 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         switch (featureID) {
             case SclPackage.SDO__COUNT:
                 return getCount();
-            case SclPackage.SDO__TYPE:
-                return getType();
             case SclPackage.SDO__PARENT_DO_TYPE:
                 return getParentDOType();
-            case SclPackage.SDO__NAME:
-                return getName();
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                return getRefersToDOType();
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                return getReferredBySDI();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -547,23 +312,19 @@ public class SDOImpl extends UnNamingImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public void eSet( int featureID, Object newValue ) {
         switch (featureID) {
             case SclPackage.SDO__COUNT:
                 setCount((String)newValue);
                 return;
-            case SclPackage.SDO__TYPE:
-                setType((String)newValue);
-                return;
             case SclPackage.SDO__PARENT_DO_TYPE:
                 setParentDOType((DOType)newValue);
                 return;
-            case SclPackage.SDO__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                setRefersToDOType((DOType)newValue);
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                getReferredBySDI().clear();
+                getReferredBySDI().addAll((Collection<? extends SDI>)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -580,17 +341,11 @@ public class SDOImpl extends UnNamingImpl implements SDO {
             case SclPackage.SDO__COUNT:
                 unsetCount();
                 return;
-            case SclPackage.SDO__TYPE:
-                unsetType();
-                return;
             case SclPackage.SDO__PARENT_DO_TYPE:
                 setParentDOType((DOType)null);
                 return;
-            case SclPackage.SDO__NAME:
-                unsetName();
-                return;
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                unsetRefersToDOType();
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                unsetReferredBySDI();
                 return;
         }
         super.eUnset(featureID);
@@ -606,14 +361,10 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         switch (featureID) {
             case SclPackage.SDO__COUNT:
                 return isSetCount();
-            case SclPackage.SDO__TYPE:
-                return isSetType();
             case SclPackage.SDO__PARENT_DO_TYPE:
                 return getParentDOType() != null;
-            case SclPackage.SDO__NAME:
-                return isSetName();
-            case SclPackage.SDO__REFERS_TO_DO_TYPE:
-                return isSetRefersToDOType();
+            case SclPackage.SDO__REFERRED_BY_SDI:
+                return isSetReferredBySDI();
         }
         return super.eIsSet(featureID);
     }
@@ -630,10 +381,6 @@ public class SDOImpl extends UnNamingImpl implements SDO {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (count: ");
         if (countESet) result.append(count); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

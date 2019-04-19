@@ -978,7 +978,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 .filter( ld -> getLdInst().equals( ld.getInst() ))
                 .collect( Collectors.toList() );
 
-        String mess2 = "LDevice( inst = " + getLdInst() + " ))";
+        String mess2 = "LDevice( inst = " + getLdInst() + " )";
         if( res2.isEmpty() ) {
             console.error( messagePrefix + "cannot find " + mess2 );
             return;

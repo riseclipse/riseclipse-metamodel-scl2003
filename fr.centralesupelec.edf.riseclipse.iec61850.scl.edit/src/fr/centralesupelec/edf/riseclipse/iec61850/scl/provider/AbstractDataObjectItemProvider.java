@@ -15,9 +15,13 @@
  *      aurelie.dehouck-neveu@edf.fr
  *  Web site:
  *      http://wdi.supelec.fr/software/RiseClipse/
+ * 
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
+
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,23 +34,20 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-
 /**
- * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject} object.
+ * This is the item provider adapter for a {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataObjectItemProvider extends UnNamingItemProvider {
+public class AbstractDataObjectItemProvider extends UnNamingItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public DataObjectItemProvider(AdapterFactory adapterFactory) {
+    public AbstractDataObjectItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -61,32 +62,12 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
         if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            addAccessControlPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
+            addTypePropertyDescriptor(object);
+            addRefersToDOTypePropertyDescriptor(object);
+            addReferredByExtRefPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Access Control feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addAccessControlPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DataObject_accessControl_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DataObject_accessControl_feature", "_UI_DataObject_type"),
-                 SclPackage.eINSTANCE.getDataObject_AccessControl(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
     }
 
     /**
@@ -100,13 +81,79 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DataObject_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DataObject_name_feature", "_UI_DataObject_type"),
-                 SclPackage.eINSTANCE.getDataObject_Name(),
+                 getString("_UI_AbstractDataObject_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataObject_name_feature", "_UI_AbstractDataObject_type"),
+                 SclPackage.eINSTANCE.getAbstractDataObject_Name(),
                  true,
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Type feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addTypePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataObject_type_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataObject_type_feature", "_UI_AbstractDataObject_type"),
+                 SclPackage.eINSTANCE.getAbstractDataObject_Type(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To DO Type feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToDOTypePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataObject_RefersToDOType_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataObject_RefersToDOType_feature", "_UI_AbstractDataObject_type"),
+                 SclPackage.eINSTANCE.getAbstractDataObject_RefersToDOType(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By Ext Ref feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByExtRefPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataObject_ReferredByExtRef_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataObject_ReferredByExtRef_feature", "_UI_AbstractDataObject_type"),
+                 SclPackage.eINSTANCE.getAbstractDataObject_ReferredByExtRef(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }
@@ -119,12 +166,12 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText(Object object) {
-        String label = ((DataObject)object).getName();
+        String label = ((AbstractDataObject)object).getName();
         return label == null || label.length() == 0 ?
-            getString("_UI_DataObject_type") :
-            getString("_UI_DataObject_type") + " " + label;
+            getString("_UI_AbstractDataObject_type") :
+            getString("_UI_AbstractDataObject_type") + " " + label;
     }
-    
+
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -137,9 +184,9 @@ public class DataObjectItemProvider extends UnNamingItemProvider {
     public void notifyChanged(Notification notification) {
         updateChildren(notification);
 
-        switch (notification.getFeatureID(DataObject.class)) {
-            case SclPackage.DATA_OBJECT__ACCESS_CONTROL:
-            case SclPackage.DATA_OBJECT__NAME:
+        switch (notification.getFeatureID(AbstractDataObject.class)) {
+            case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
+            case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

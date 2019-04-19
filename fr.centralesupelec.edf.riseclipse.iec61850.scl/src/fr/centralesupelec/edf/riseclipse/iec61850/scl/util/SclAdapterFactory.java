@@ -641,12 +641,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
                 return createExplicitLinkResolverAdapter();
             }
             @Override
-            public Adapter caseDataObject(DataObject object) {
-                return createDataObjectAdapter();
-            }
-            @Override
-            public Adapter caseDataAttribute(DataAttribute object) {
-                return createDataAttributeAdapter();
+            public Adapter caseAbstractDataObject(AbstractDataObject object) {
+                return createAbstractDataObjectAdapter();
             }
             @Override
             public Adapter caseSclObject(SclObject object) {
@@ -3024,30 +3020,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject <em>Data Object</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject <em>Abstract Data Object</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject
      * @generated
      */
-    public Adapter createDataObjectAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute <em>Data Attribute</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute
-     * @generated
-     */
-    public Adapter createDataAttributeAdapter() {
+    public Adapter createAbstractDataObjectAdapter() {
         return null;
     }
 

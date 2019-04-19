@@ -355,7 +355,7 @@
         resolveProxies="false" eOpposite="#//ConnectedAP/ParentSubNetwork"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDataAttribute" abstract="true"
-      eSuperTypes="#//DataAttribute">
+      eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -382,6 +382,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
         upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ExtRef/RefersToAbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDAI" ordered="false"
+        upperBound="-1" eType="#//DAI" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DAI/RefersToAbstractDataAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDI" ordered="false"
+        upperBound="-1" eType="#//SDI" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SDI/RefersToAbstractDataAttribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BDA" eSuperTypes="#//AbstractDataAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDAType" ordered="false"
@@ -413,17 +421,17 @@
         upperBound="-1" eType="#//ProtNs" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//ProtNs/ParentDAType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//DataObject">
+  <eClassifiers xsi:type="ecore:EClass" name="DO" eSuperTypes="#//AbstractDataObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         defaultValueLiteral="false" unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLNodeType" ordered="false"
         eType="#//LNodeType" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LNodeType/DO"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
-        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DOType/ReferredByDO"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDOI" ordered="false"
+        upperBound="-1" eType="#//DOI" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOI/RefersToDO"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DOType" eSuperTypes="#//IDNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cdc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -433,21 +441,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="DA" ordered="false" upperBound="-1"
         eType="#//DA" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DA/ParentDOType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByDO" ordered="false"
-        upperBound="-1" eType="#//DO" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DO/RefersToDOType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAbstractDataObject"
+        ordered="false" upperBound="-1" eType="#//AbstractDataObject" transient="true"
+        unsettable="true" resolveProxies="false" eOpposite="#//AbstractDataObject/RefersToDOType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDataTypeTemplates"
         ordered="false" eType="#//DataTypeTemplates" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//DataTypeTemplates/DOType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SDO" ordered="false" upperBound="-1"
         eType="#//SDO" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//SDO/ParentDOType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDO" ordered="false"
-        upperBound="-1" eType="#//SDO" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//SDO/RefersToDOType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
-        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//ExtRef/RefersToDOType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeTemplates" eSuperTypes="#//ExplicitLinkResolver">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
@@ -524,19 +526,15 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDO" eSuperTypes="#//UnNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="SDO" eSuperTypes="#//AbstractDataObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentDOType" ordered="false"
         eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//DOType/SDO"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
-        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DOType/ReferredBySDO"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredBySDI" ordered="false"
+        upperBound="-1" eType="#//SDI" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//SDI/RefersToSDO"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Val" eSuperTypes="#//SclObject">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -827,7 +825,7 @@
         eType="#//TrgOps" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//TrgOps/ParentControlWithTriggerOpt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DAI" eSuperTypes="#//DataAttribute">
+  <eClassifiers xsi:type="ecore:EClass" name="DAI" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -843,8 +841,13 @@
         eType="#//DOI" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DOI/DAI"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDI" ordered="false"
         eType="#//SDI" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SDI/DAI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
+        ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByDAI"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//DataObject">
+  <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
@@ -856,6 +859,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SDI" ordered="false" upperBound="-1"
         eType="#//SDI" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//SDI/ParentDOI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDO" ordered="false"
+        eType="#//DO" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//DO/ReferredByDOI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataObjectDirectory" eSuperTypes="#//ServiceYesNo">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServices" ordered="false"
@@ -925,9 +934,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
         ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
         resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByExtRef"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
-        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
-        eOpposite="#//DOType/ReferredByExtRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataObject"
+        ordered="false" eType="#//AbstractDataObject" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractDataObject/ReferredByExtRef"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pServT" eType="#//ServiceType"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pLN" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1335,7 +1344,7 @@
         eType="#//ReportControl" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//ReportControl/RptEnabled"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SDI" eSuperTypes="#//DataAttribute">
+  <eClassifiers xsi:type="ecore:EClass" name="SDI" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sAddr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1356,6 +1365,13 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentSDI" ordered="false"
         eType="#//SDI" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SDI/SubSDI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToSDO" ordered="false"
+        eType="#//SDO" transient="true" unsettable="true" resolveProxies="false" eOpposite="#//SDO/ReferredBySDI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToAbstractDataAttribute"
+        ordered="false" eType="#//AbstractDataAttribute" transient="true" unsettable="true"
+        resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredBySDI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SGEdit" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resvTms" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
@@ -2107,15 +2123,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExplicitLinkResolver" abstract="true"
       eSuperTypes="#//SclObject"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataObject" abstract="true" eSuperTypes="#//UnNaming">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accessControl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        unsettable="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDataObject" abstract="true"
+      eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataAttribute" abstract="true" eSuperTypes="#//UnNaming">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToDOType" ordered="false"
+        eType="#//DOType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//DOType/ReferredByAbstractDataObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByExtRef" ordered="false"
+        upperBound="-1" eType="#//ExtRef" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//ExtRef/RefersToAbstractDataObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SclObject" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" lowerBound="1"

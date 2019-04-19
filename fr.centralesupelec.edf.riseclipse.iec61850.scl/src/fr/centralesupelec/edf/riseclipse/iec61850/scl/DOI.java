@@ -33,13 +33,16 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI <em>DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getSDI <em>SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAccessControl <em>Access Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI()
  * @model
  * @generated
  */
-public interface DOI extends DataObject {
+public interface DOI extends UnNaming {
     /**
      * Returns the value of the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -198,5 +201,154 @@ public interface DOI extends DataObject {
      * @generated
      */
     boolean isSetSDI();
+
+    /**
+     * Returns the value of the '<em><b>Access Control</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Access Control</em>' attribute.
+     * @see #isSetAccessControl()
+     * @see #unsetAccessControl()
+     * @see #setAccessControl(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_AccessControl()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getAccessControl();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAccessControl <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Access Control</em>' attribute.
+     * @see #isSetAccessControl()
+     * @see #unsetAccessControl()
+     * @see #getAccessControl()
+     * @generated
+     */
+    void setAccessControl(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAccessControl <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetAccessControl()
+     * @see #getAccessControl()
+     * @see #setAccessControl(String)
+     * @generated
+     */
+    void unsetAccessControl();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAccessControl <em>Access Control</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Access Control</em>' attribute is set.
+     * @see #unsetAccessControl()
+     * @see #getAccessControl()
+     * @see #setAccessControl(String)
+     * @generated
+     */
+    boolean isSetAccessControl();
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #setName(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_Name()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    void unsetName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getName <em>Name</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Name</em>' attribute is set.
+     * @see #unsetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    boolean isSetName();
+
+    /**
+     * Returns the value of the '<em><b>Refers To DO</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To DO</em>' reference.
+     * @see #isSetRefersToDO()
+     * @see #unsetRefersToDO()
+     * @see #setRefersToDO(DO)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDOI_RefersToDO()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI
+     * @model opposite="ReferredByDOI" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    DO getRefersToDO();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To DO</em>' reference.
+     * @see #isSetRefersToDO()
+     * @see #unsetRefersToDO()
+     * @see #getRefersToDO()
+     * @generated
+     */
+    void setRefersToDO(DO value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToDO()
+     * @see #getRefersToDO()
+     * @see #setRefersToDO(DO)
+     * @generated
+     */
+    void unsetRefersToDO();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To DO</em>' reference is set.
+     * @see #unsetRefersToDO()
+     * @see #getRefersToDO()
+     * @see #setRefersToDO(DO)
+     * @generated
+     */
+    boolean isSetRefersToDO();
 
 } // DOI

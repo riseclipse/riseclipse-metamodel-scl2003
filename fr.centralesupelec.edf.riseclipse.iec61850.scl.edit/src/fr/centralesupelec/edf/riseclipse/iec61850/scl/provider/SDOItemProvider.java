@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SDOItemProvider extends UnNamingItemProvider {
+public class SDOItemProvider extends AbstractDataObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -60,9 +60,7 @@ public class SDOItemProvider extends UnNamingItemProvider {
             super.getPropertyDescriptors(object);
 
             addCountPropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addRefersToDOTypePropertyDescriptor(object);
+            addReferredBySDIPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -90,63 +88,19 @@ public class SDOItemProvider extends UnNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Type feature.
+     * This adds a property descriptor for the Referred By SDI feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
+    protected void addReferredBySDIPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_SDO_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_type_feature", "_UI_SDO_type"),
-                 SclPackage.eINSTANCE.getSDO_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Name feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDO_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_name_feature", "_UI_SDO_type"),
-                 SclPackage.eINSTANCE.getSDO_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Refers To DO Type feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addRefersToDOTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDO_RefersToDOType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_RefersToDOType_feature", "_UI_SDO_type"),
-                 SclPackage.eINSTANCE.getSDO_RefersToDOType(),
+                 getString("_UI_SDO_ReferredBySDI_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_ReferredBySDI_feature", "_UI_SDO_type"),
+                 SclPackage.eINSTANCE.getSDO_ReferredBySDI(),
                  true,
                  false,
                  true,
@@ -194,8 +148,6 @@ public class SDOItemProvider extends UnNamingItemProvider {
 
         switch (notification.getFeatureID(SDO.class)) {
             case SclPackage.SDO__COUNT:
-            case SclPackage.SDO__TYPE:
-            case SclPackage.SDO__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

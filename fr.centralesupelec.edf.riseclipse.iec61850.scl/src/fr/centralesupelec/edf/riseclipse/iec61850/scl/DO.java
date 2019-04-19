@@ -18,6 +18,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>DO</b></em>'.
@@ -28,16 +30,16 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getTransient <em>Transient</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getParentLNodeType <em>Parent LNode Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getAccessControl <em>Access Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO()
  * @model
  * @generated
  */
-public interface DO extends DataObject {
+public interface DO extends AbstractDataObject {
     /**
      * Returns the value of the '<em><b>Transient</b></em>' attribute.
      * The default value is <code>"false"</code>.
@@ -93,59 +95,6 @@ public interface DO extends DataObject {
     boolean isSetTransient();
 
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Type</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #setType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_Type()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getType();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #getType()
-     * @generated
-     */
-    void setType( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
-    void unsetType();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getType <em>Type</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Type</em>' attribute is set.
-     * @see #unsetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
-    boolean isSetType();
-
-    /**
      * Returns the value of the '<em><b>Parent LNode Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}'.
      * <!-- begin-user-doc -->
@@ -170,58 +119,89 @@ public interface DO extends DataObject {
     void setParentLNodeType(LNodeType value);
 
     /**
-     * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO <em>Referred By DO</em>}'.
+     * Returns the value of the '<em><b>Access Control</b></em>' attribute.
      * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To DO Type</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_RefersToDOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByDO
-     * @model opposite="ReferredByDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @return the value of the '<em>Access Control</em>' attribute.
+     * @see #isSetAccessControl()
+     * @see #unsetAccessControl()
+     * @see #setAccessControl(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_AccessControl()
+     * @model unsettable="true"
      * @generated
      */
-    DOType getRefersToDOType();
+    String getAccessControl();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getAccessControl <em>Access Control</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
+     * @param value the new value of the '<em>Access Control</em>' attribute.
+     * @see #isSetAccessControl()
+     * @see #unsetAccessControl()
+     * @see #getAccessControl()
      * @generated
      */
-    void setRefersToDOType(DOType value);
+    void setAccessControl(String value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getAccessControl <em>Access Control</em>}' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
+     * @see #isSetAccessControl()
+     * @see #getAccessControl()
+     * @see #setAccessControl(String)
      * @generated
      */
-    void unsetRefersToDOType();
+    void unsetAccessControl();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getAccessControl <em>Access Control</em>}' attribute is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
+     * @return whether the value of the '<em>Access Control</em>' attribute is set.
+     * @see #unsetAccessControl()
+     * @see #getAccessControl()
+     * @see #setAccessControl(String)
      * @generated
      */
-    boolean isSetRefersToDOType();
+    boolean isSetAccessControl();
+
+    /**
+     * Returns the value of the '<em><b>Referred By DOI</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By DOI</em>' reference list.
+     * @see #isSetReferredByDOI()
+     * @see #unsetReferredByDOI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDO_ReferredByDOI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO
+     * @model opposite="RefersToDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<DOI> getReferredByDOI();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByDOI()
+     * @see #getReferredByDOI()
+     * @generated
+     */
+    void unsetReferredByDOI();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By DOI</em>' reference list is set.
+     * @see #unsetReferredByDOI()
+     * @see #getReferredByDOI()
+     * @generated
+     */
+    boolean isSetReferredByDOI();
 
 } // DO

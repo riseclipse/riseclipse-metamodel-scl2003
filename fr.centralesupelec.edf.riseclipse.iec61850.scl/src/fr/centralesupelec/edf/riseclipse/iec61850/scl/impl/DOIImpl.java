@@ -19,6 +19,9 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -31,9 +34,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,11 +53,14 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getDAI <em>DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getSDI <em>SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getAccessControl <em>Access Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getRefersToDO <em>Refers To DO</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DOIImpl extends DataObjectImpl implements DOI {
+public class DOIImpl extends UnNamingImpl implements DOI {
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -100,6 +109,83 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * @ordered
      */
     protected EList<SDI> sdi;
+
+    /**
+     * The default value of the '{@link #getAccessControl() <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAccessControl()
+     * @generated
+     * @ordered
+     */
+    protected static final String ACCESS_CONTROL_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getAccessControl() <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAccessControl()
+     * @generated
+     * @ordered
+     */
+    protected String accessControl = ACCESS_CONTROL_EDEFAULT;
+
+    /**
+     * This is true if the Access Control attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean accessControlESet;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToDO() <em>Refers To DO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToDO()
+     * @generated
+     * @ordered
+     */
+    protected DO refersToDO;
+
+    /**
+     * This is true if the Refers To DO reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToDOESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -284,6 +370,205 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getAccessControl() {
+        return accessControl;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setAccessControl(String newAccessControl) {
+        String oldAccessControl = accessControl;
+        accessControl = newAccessControl;
+        boolean oldAccessControlESet = accessControlESet;
+        accessControlESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, accessControl, !oldAccessControlESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetAccessControl() {
+        String oldAccessControl = accessControl;
+        boolean oldAccessControlESet = accessControlESet;
+        accessControl = ACCESS_CONTROL_EDEFAULT;
+        accessControlESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, ACCESS_CONTROL_EDEFAULT, oldAccessControlESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetAccessControl() {
+        return accessControlESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
+        boolean oldNameESet = nameESet;
+        nameESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__NAME, oldName, name, !oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetName() {
+        String oldName = name;
+        boolean oldNameESet = nameESet;
+        name = NAME_EDEFAULT;
+        nameESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetName() {
+        return nameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public DO getRefersToDO() {
+        return refersToDO;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToDO(DO newRefersToDO, NotificationChain msgs) {
+        DO oldRefersToDO = refersToDO;
+        refersToDO = newRefersToDO;
+        boolean oldRefersToDOESet = refersToDOESet;
+        refersToDOESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, newRefersToDO, !oldRefersToDOESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToDO(DO newRefersToDO) {
+        if (newRefersToDO != refersToDO) {
+            NotificationChain msgs = null;
+            if (refersToDO != null)
+                msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
+            if (newRefersToDO != null)
+                msgs = ((InternalEObject)newRefersToDO).eInverseAdd(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
+            msgs = basicSetRefersToDO(newRefersToDO, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToDOESet = refersToDOESet;
+            refersToDOESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, newRefersToDO, newRefersToDO, !oldRefersToDOESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToDO(NotificationChain msgs) {
+        DO oldRefersToDO = refersToDO;
+        refersToDO = null;
+        boolean oldRefersToDOESet = refersToDOESet;
+        refersToDOESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, null, oldRefersToDOESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToDO() {
+        if (refersToDO != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
+            msgs = basicUnsetRefersToDO(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToDOESet = refersToDOESet;
+            refersToDOESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, null, null, oldRefersToDOESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToDO() {
+        return refersToDOESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -296,6 +581,10 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getDAI()).basicAdd(otherEnd, msgs);
             case SclPackage.DOI__SDI:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDI()).basicAdd(otherEnd, msgs);
+            case SclPackage.DOI__REFERS_TO_DO:
+                if (refersToDO != null)
+                    msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
+                return basicSetRefersToDO((DO)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -314,6 +603,8 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return ((InternalEList<?>)getDAI()).basicRemove(otherEnd, msgs);
             case SclPackage.DOI__SDI:
                 return ((InternalEList<?>)getSDI()).basicRemove(otherEnd, msgs);
+            case SclPackage.DOI__REFERS_TO_DO:
+                return basicUnsetRefersToDO(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -348,6 +639,12 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return getDAI();
             case SclPackage.DOI__SDI:
                 return getSDI();
+            case SclPackage.DOI__ACCESS_CONTROL:
+                return getAccessControl();
+            case SclPackage.DOI__NAME:
+                return getName();
+            case SclPackage.DOI__REFERS_TO_DO:
+                return getRefersToDO();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -375,6 +672,15 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 getSDI().clear();
                 getSDI().addAll((Collection<? extends SDI>)newValue);
                 return;
+            case SclPackage.DOI__ACCESS_CONTROL:
+                setAccessControl((String)newValue);
+                return;
+            case SclPackage.DOI__NAME:
+                setName((String)newValue);
+                return;
+            case SclPackage.DOI__REFERS_TO_DO:
+                setRefersToDO((DO)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -399,6 +705,15 @@ public class DOIImpl extends DataObjectImpl implements DOI {
             case SclPackage.DOI__SDI:
                 unsetSDI();
                 return;
+            case SclPackage.DOI__ACCESS_CONTROL:
+                unsetAccessControl();
+                return;
+            case SclPackage.DOI__NAME:
+                unsetName();
+                return;
+            case SclPackage.DOI__REFERS_TO_DO:
+                unsetRefersToDO();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -419,6 +734,12 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return isSetDAI();
             case SclPackage.DOI__SDI:
                 return isSetSDI();
+            case SclPackage.DOI__ACCESS_CONTROL:
+                return isSetAccessControl();
+            case SclPackage.DOI__NAME:
+                return isSetName();
+            case SclPackage.DOI__REFERS_TO_DO:
+                return isSetRefersToDO();
         }
         return super.eIsSet(featureID);
     }
@@ -435,8 +756,46 @@ public class DOIImpl extends DataObjectImpl implements DOI {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (ix: ");
         if (ixESet) result.append(ix); else result.append("<unset>");
+        result.append(", accessControl: ");
+        if (accessControlESet) result.append(accessControl); else result.append("<unset>");
+        result.append(", name: ");
+        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
+    }
+
+    @Override
+    protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
+        String messagePrefix = "while resolving link from DOI on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
+        if(( getName() == null ) || getName().isEmpty() ) return;
+        
+        if( getParentAnyLN().getRefersToLNodeType() == null ) return;
+        console.verbose( messagePrefix + "found LNodeType on line " + getParentAnyLN().getRefersToLNodeType().getLineNumber() );
+
+        List< DO > res =
+                getParentAnyLN()
+                .getRefersToLNodeType()
+                .getDO()
+                .stream()
+                .filter(  d -> getName().equals( d.getName() ))
+                .collect( Collectors.toList() );
+
+        String mess = "DO( name = " + getName() + " )";
+        if( res.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess );
+            return;
+        }
+        if( res.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess );
+            return;
+        }
+        setRefersToDO( res.get( 0 ) );
+        console.info( "DOI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl

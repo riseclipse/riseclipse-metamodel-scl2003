@@ -39,7 +39,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DOIItemProvider extends DataObjectItemProvider {
+public class DOIItemProvider extends UnNamingItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -62,6 +62,9 @@ public class DOIItemProvider extends DataObjectItemProvider {
             super.getPropertyDescriptors(object);
 
             addIxPropertyDescriptor(object);
+            addAccessControlPropertyDescriptor(object);
+            addNamePropertyDescriptor(object);
+            addRefersToDOPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -84,6 +87,72 @@ public class DOIItemProvider extends DataObjectItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Access Control feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addAccessControlPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DOI_accessControl_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DOI_accessControl_feature", "_UI_DOI_type"),
+                 SclPackage.eINSTANCE.getDOI_AccessControl(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DOI_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DOI_name_feature", "_UI_DOI_type"),
+                 SclPackage.eINSTANCE.getDOI_Name(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To DO feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToDOPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DOI_RefersToDO_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DOI_RefersToDO_feature", "_UI_DOI_type"),
+                 SclPackage.eINSTANCE.getDOI_RefersToDO(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }
@@ -158,6 +227,8 @@ public class DOIItemProvider extends DataObjectItemProvider {
 
         switch (notification.getFeatureID(DOI.class)) {
             case SclPackage.DOI__IX:
+            case SclPackage.DOI__ACCESS_CONTROL:
+            case SclPackage.DOI__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.DOI__DAI:

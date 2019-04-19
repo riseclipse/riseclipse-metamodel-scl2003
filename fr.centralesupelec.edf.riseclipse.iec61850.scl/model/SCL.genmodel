@@ -263,6 +263,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/RefersToDAType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredByFCDA"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredByExtRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataAttribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredByDAI"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataAttribute/ReferredBySDI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//BDA">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//BDA/ParentDAType"/>
@@ -281,19 +284,17 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/transient"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DO/ParentLNodeType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DO/RefersToDOType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DO/accessControl"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DO/ReferredByDOI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOType/cdc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOType/iedType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/DA"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredByDO"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredByAbstractDataObject"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ParentDataTypeTemplates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/SDO"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredBySDO"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOType/ReferredByExtRef"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataTypeTemplates">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DataTypeTemplates/DAType"/>
@@ -327,10 +328,8 @@
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SDO">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/count"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDO/ParentDOType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDO/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDO/RefersToDOType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDO/ReferredBySDI"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Val">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Val/sGroup"/>
@@ -469,12 +468,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DAI/Val"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/ParentDOI"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DAI/ParentSDI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DAI/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DAI/RefersToAbstractDataAttribute"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DOI">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/ix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DOI/ParentAnyLN"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/DAI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/SDI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/accessControl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DOI/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//DOI/RefersToDO"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//DataObjectDirectory">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//DataObjectDirectory/ParentServices"/>
@@ -511,7 +515,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/srcPrefix"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/ParentInputs"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToAbstractDataAttribute"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToDOType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ExtRef/RefersToAbstractDataObject"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pServT"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pLN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ExtRef/pDO"/>
@@ -712,6 +716,9 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/ParentDOI"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/SubSDI"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//SDI/ParentSDI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SDI/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/RefersToSDO"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//SDI/RefersToAbstractDataAttribute"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//SGEdit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SGEdit/resvTms"/>
@@ -1009,12 +1016,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Voltage"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
-    <genClasses image="false" ecoreClass="SCL.ecore#//DataObject">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataObject/accessControl"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataObject/name"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="SCL.ecore#//DataAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//DataAttribute/name"/>
+    <genClasses image="false" ecoreClass="SCL.ecore#//AbstractDataObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataObject/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataObject/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataObject/RefersToDOType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AbstractDataObject/ReferredByExtRef"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//SclObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/lineNumber"/>

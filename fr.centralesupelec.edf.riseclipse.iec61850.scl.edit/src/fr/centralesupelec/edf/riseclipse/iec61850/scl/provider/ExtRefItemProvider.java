@@ -75,7 +75,7 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
             addSrcLNInstPropertyDescriptor(object);
             addSrcPrefixPropertyDescriptor(object);
             addRefersToAbstractDataAttributePropertyDescriptor(object);
-            addRefersToDOTypePropertyDescriptor(object);
+            addRefersToAbstractDataObjectPropertyDescriptor(object);
             addPServTPropertyDescriptor(object);
             addPLNPropertyDescriptor(object);
             addPDOPropertyDescriptor(object);
@@ -416,19 +416,19 @@ public class ExtRefItemProvider extends BaseElementItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Refers To DO Type feature.
+     * This adds a property descriptor for the Refers To Abstract Data Object feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToDOTypePropertyDescriptor(Object object) {
+    protected void addRefersToAbstractDataObjectPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_ExtRef_RefersToDOType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_RefersToDOType_feature", "_UI_ExtRef_type"),
-                 SclPackage.eINSTANCE.getExtRef_RefersToDOType(),
+                 getString("_UI_ExtRef_RefersToAbstractDataObject_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_ExtRef_RefersToAbstractDataObject_feature", "_UI_ExtRef_type"),
+                 SclPackage.eINSTANCE.getExtRef_RefersToAbstractDataObject(),
                  true,
                  false,
                  true,
