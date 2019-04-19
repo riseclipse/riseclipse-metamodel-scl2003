@@ -2768,6 +2768,26 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getAbstractDataAttribute_ReferredByDAI() {
+        return (EReference)getAbstractDataAttribute().getEStructuralFeatures().get(12);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getAbstractDataAttribute_ReferredBySDI() {
+        return (EReference)getAbstractDataAttribute().getEStructuralFeatures().get(13);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getBDA() {
         if (bdaEClass == null) {
             bdaEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(24);
@@ -3313,6 +3333,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getSDO_ParentDOType() {
         return (EReference)getSDO().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSDO_ReferredBySDI() {
+        return (EReference)getSDO().getEStructuralFeatures().get(2);
     }
 
     /**
@@ -5277,6 +5307,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getDAI_Name() {
         return (EAttribute)getDAI().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getDAI_RefersToAbstractDataAttribute() {
+        return (EReference)getDAI().getEStructuralFeatures().get(8);
     }
 
     /**
@@ -7481,6 +7521,26 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EAttribute getSDI_Name() {
         return (EAttribute)getSDI().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSDI_RefersToSDO() {
+        return (EReference)getSDI().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getSDI_RefersToAbstractDataAttribute() {
+        return (EReference)getSDI().getEStructuralFeatures().get(8);
     }
 
     /**

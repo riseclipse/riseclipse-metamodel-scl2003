@@ -72,6 +72,8 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
             addReferredByFCDAPropertyDescriptor(object);
             addReferredByExtRefPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
+            addReferredByDAIPropertyDescriptor(object);
+            addReferredBySDIPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -314,6 +316,50 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By DAI feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByDAIPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_ReferredByDAI_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByDAI_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByDAI(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By SDI feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredBySDIPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_ReferredBySDI_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredBySDI_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredBySDI(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

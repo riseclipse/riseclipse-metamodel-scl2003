@@ -18,6 +18,8 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>SDO</b></em>'.
@@ -29,6 +31,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getCount <em>Count</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO()
@@ -112,5 +115,42 @@ public interface SDO extends AbstractDataObject {
      * @generated
      */
     void setParentDOType(DOType value);
+
+    /**
+     * Returns the value of the '<em><b>Referred By SDI</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By SDI</em>' reference list.
+     * @see #isSetReferredBySDI()
+     * @see #unsetReferredBySDI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_ReferredBySDI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO
+     * @model opposite="RefersToSDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<SDI> getReferredBySDI();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredBySDI()
+     * @see #getReferredBySDI()
+     * @generated
+     */
+    void unsetReferredBySDI();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By SDI</em>' reference list is set.
+     * @see #unsetReferredBySDI()
+     * @see #getReferredBySDI()
+     * @generated
+     */
+    boolean isSetReferredBySDI();
 
 } // SDO

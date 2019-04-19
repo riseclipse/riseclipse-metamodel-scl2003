@@ -773,6 +773,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         if(( getName() == null ) || getName().isEmpty() ) return;
+        
+        if( getParentAnyLN().getRefersToLNodeType() == null ) return;
+        console.verbose( messagePrefix + "found LNodeType on line " + getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
         List< DO > res =
                 getParentAnyLN()

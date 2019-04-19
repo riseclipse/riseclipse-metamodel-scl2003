@@ -18,7 +18,14 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
+
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -28,11 +35,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,6 +61,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getParentSDI <em>Parent SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getRefersToSDO <em>Refers To SDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -160,6 +174,44 @@ public class SDIImpl extends UnNamingImpl implements SDI {
      * @ordered
      */
     protected boolean nameESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToSDO() <em>Refers To SDO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToSDO()
+     * @generated
+     * @ordered
+     */
+    protected SDO refersToSDO;
+
+    /**
+     * This is true if the Refers To SDO reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToSDOESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToAbstractDataAttribute() <em>Refers To Abstract Data Attribute</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToAbstractDataAttribute()
+     * @generated
+     * @ordered
+     */
+    protected AbstractDataAttribute refersToAbstractDataAttribute;
+
+    /**
+     * This is true if the Refers To Abstract Data Attribute reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToAbstractDataAttributeESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -484,6 +536,204 @@ public class SDIImpl extends UnNamingImpl implements SDI {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SDO getRefersToSDO() {
+        return refersToSDO;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToSDO(SDO newRefersToSDO, NotificationChain msgs) {
+        SDO oldRefersToSDO = refersToSDO;
+        refersToSDO = newRefersToSDO;
+        boolean oldRefersToSDOESet = refersToSDOESet;
+        refersToSDOESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SDI__REFERS_TO_SDO, oldRefersToSDO, newRefersToSDO, !oldRefersToSDOESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToSDO(SDO newRefersToSDO) {
+        if (newRefersToSDO != refersToSDO) {
+            NotificationChain msgs = null;
+            if (refersToSDO != null)
+                msgs = ((InternalEObject)refersToSDO).eInverseRemove(this, SclPackage.SDO__REFERRED_BY_SDI, SDO.class, msgs);
+            if (newRefersToSDO != null)
+                msgs = ((InternalEObject)newRefersToSDO).eInverseAdd(this, SclPackage.SDO__REFERRED_BY_SDI, SDO.class, msgs);
+            msgs = basicSetRefersToSDO(newRefersToSDO, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToSDOESet = refersToSDOESet;
+            refersToSDOESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__REFERS_TO_SDO, newRefersToSDO, newRefersToSDO, !oldRefersToSDOESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToSDO(NotificationChain msgs) {
+        SDO oldRefersToSDO = refersToSDO;
+        refersToSDO = null;
+        boolean oldRefersToSDOESet = refersToSDOESet;
+        refersToSDOESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__REFERS_TO_SDO, oldRefersToSDO, null, oldRefersToSDOESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToSDO() {
+        if (refersToSDO != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToSDO).eInverseRemove(this, SclPackage.SDO__REFERRED_BY_SDI, SDO.class, msgs);
+            msgs = basicUnsetRefersToSDO(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToSDOESet = refersToSDOESet;
+            refersToSDOESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__REFERS_TO_SDO, null, null, oldRefersToSDOESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToSDO() {
+        return refersToSDOESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public AbstractDataAttribute getRefersToAbstractDataAttribute() {
+        return refersToAbstractDataAttribute;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToAbstractDataAttribute(AbstractDataAttribute newRefersToAbstractDataAttribute, NotificationChain msgs) {
+        AbstractDataAttribute oldRefersToAbstractDataAttribute = refersToAbstractDataAttribute;
+        refersToAbstractDataAttribute = newRefersToAbstractDataAttribute;
+        boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
+        refersToAbstractDataAttributeESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute, newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToAbstractDataAttribute(AbstractDataAttribute newRefersToAbstractDataAttribute) {
+        if (newRefersToAbstractDataAttribute != refersToAbstractDataAttribute) {
+            NotificationChain msgs = null;
+            if (refersToAbstractDataAttribute != null)
+                msgs = ((InternalEObject)refersToAbstractDataAttribute).eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, AbstractDataAttribute.class, msgs);
+            if (newRefersToAbstractDataAttribute != null)
+                msgs = ((InternalEObject)newRefersToAbstractDataAttribute).eInverseAdd(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, AbstractDataAttribute.class, msgs);
+            msgs = basicSetRefersToAbstractDataAttribute(newRefersToAbstractDataAttribute, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
+            refersToAbstractDataAttributeESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, newRefersToAbstractDataAttribute, newRefersToAbstractDataAttribute, !oldRefersToAbstractDataAttributeESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToAbstractDataAttribute(NotificationChain msgs) {
+        AbstractDataAttribute oldRefersToAbstractDataAttribute = refersToAbstractDataAttribute;
+        refersToAbstractDataAttribute = null;
+        boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
+        refersToAbstractDataAttributeESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, oldRefersToAbstractDataAttribute, null, oldRefersToAbstractDataAttributeESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToAbstractDataAttribute() {
+        if (refersToAbstractDataAttribute != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToAbstractDataAttribute).eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, AbstractDataAttribute.class, msgs);
+            msgs = basicUnsetRefersToAbstractDataAttribute(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToAbstractDataAttributeESet = refersToAbstractDataAttributeESet;
+            refersToAbstractDataAttributeESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, null, null, oldRefersToAbstractDataAttributeESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToAbstractDataAttribute() {
+        return refersToAbstractDataAttributeESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -503,6 +753,14 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetParentSDI((SDI)otherEnd, msgs);
+            case SclPackage.SDI__REFERS_TO_SDO:
+                if (refersToSDO != null)
+                    msgs = ((InternalEObject)refersToSDO).eInverseRemove(this, SclPackage.SDO__REFERRED_BY_SDI, SDO.class, msgs);
+                return basicSetRefersToSDO((SDO)otherEnd, msgs);
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                if (refersToAbstractDataAttribute != null)
+                    msgs = ((InternalEObject)refersToAbstractDataAttribute).eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, AbstractDataAttribute.class, msgs);
+                return basicSetRefersToAbstractDataAttribute((AbstractDataAttribute)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -523,6 +781,10 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 return ((InternalEList<?>)getSubSDI()).basicRemove(otherEnd, msgs);
             case SclPackage.SDI__PARENT_SDI:
                 return basicSetParentSDI(null, msgs);
+            case SclPackage.SDI__REFERS_TO_SDO:
+                return basicUnsetRefersToSDO(msgs);
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return basicUnsetRefersToAbstractDataAttribute(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -565,6 +827,10 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 return getParentSDI();
             case SclPackage.SDI__NAME:
                 return getName();
+            case SclPackage.SDI__REFERS_TO_SDO:
+                return getRefersToSDO();
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return getRefersToAbstractDataAttribute();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -601,6 +867,12 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             case SclPackage.SDI__NAME:
                 setName((String)newValue);
                 return;
+            case SclPackage.SDI__REFERS_TO_SDO:
+                setRefersToSDO((SDO)newValue);
+                return;
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                setRefersToAbstractDataAttribute((AbstractDataAttribute)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -634,6 +906,12 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             case SclPackage.SDI__NAME:
                 unsetName();
                 return;
+            case SclPackage.SDI__REFERS_TO_SDO:
+                unsetRefersToSDO();
+                return;
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                unsetRefersToAbstractDataAttribute();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -660,6 +938,10 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 return getParentSDI() != null;
             case SclPackage.SDI__NAME:
                 return isSetName();
+            case SclPackage.SDI__REFERS_TO_SDO:
+                return isSetRefersToSDO();
+            case SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+                return isSetRefersToAbstractDataAttribute();
         }
         return super.eIsSet(featureID);
     }
@@ -682,6 +964,162 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
+    }
+
+    @Override
+    protected void doResolveLinks() {
+        // see Issue #13
+        super.doResolveLinks();
+        
+        if(( getName() == null ) || getName().isEmpty() ) return;
+
+        if( ! doResolveLinkWithParentDOI() ) {
+            if( ! doResolveLinkWithParentSDI() ) {
+                //
+            }
+        }
+    }
+    
+    private boolean doResolveLinkWithParentDOI() {
+        if( getParentDOI() == null ) return false;
+
+        String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
+        DO do_ = getParentDOI().getRefersToDO();
+        if( do_ == null ) return false;
+        console.verbose( messagePrefix + "found DO on line " + do_.getLineNumber() );
+
+        do_.resolveLinks();
+        DOType dot = do_.getRefersToDOType();
+        if( dot == null ) return false;
+        console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
+
+        List< SDO > res1 =
+                dot
+                .getSDO()
+                .stream()
+                .filter( d -> getName().equals( d.getName() ))
+                .collect( Collectors.toList() );
+
+        String mess1 = "SDO( name = " + getName() + " )";
+        if( res1.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess1 );
+        }
+        else if( res1.size() == 1 ) {
+            setRefersToSDO( res1.get( 0 ) );
+            console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
+        }
+        
+        List< DA > res2 =
+                dot
+                .getDA()
+                .stream()
+                .filter(  d -> getName().equals( d.getName() ))
+                .collect( Collectors.toList() );
+
+        String mess2 = "DA( name = " + getName() + " )";
+        if( res2.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess2 );
+        }
+        else if( res2.size() == 1 ) {
+            setRefersToAbstractDataAttribute( res2.get( 0 ));
+            console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        }
+        
+        if(( getRefersToSDO() == null ) && ( getRefersToAbstractDataAttribute() == null )) {
+            console.error( messagePrefix + "no SDO or DA found using ParentDOI" );
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean doResolveLinkWithParentSDI() {
+        if( getParentSDI() == null ) return false;
+
+        String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+        
+        SDO sdo = getParentSDI().getRefersToSDO();
+        
+        if( sdo != null ) {
+            console.verbose( messagePrefix + "found SDO on line " + sdo.getLineNumber() );
+            sdo.resolveLinks();
+            
+            DOType dot = sdo.getRefersToDOType();
+            if( dot == null ) return false;
+            console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
+            
+            List< SDO > res1 =
+                    dot
+                    .getSDO()
+                    .stream()
+                    .filter(  d -> getName().equals( d.getName() ))
+                    .collect( Collectors.toList() );
+
+            String mess1 = "SDO( name = " + getName() + " )";
+            if( res1.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess1 );
+                return false;
+            }
+            if( res1.size() > 0 ) {
+                setRefersToSDO( res1.get( 0 ));
+                console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
+                return true;
+            }
+            
+            List< DA > res2 =
+                    dot
+                    .getDA()
+                    .stream()
+                    .filter(  d -> getName().equals( d.getName() ))
+                    .collect( Collectors.toList() );
+
+            String mess2 = "DA( name = " + getName() + " )";
+            if( res2.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess2 );
+                return false;
+            }
+            if( res2.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess2 );
+                return false;
+            }
+            setRefersToAbstractDataAttribute( res2.get( 0 ));
+            console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+            return true;
+        }
+        
+        AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
+        if( att == null ) {
+            console.error( messagePrefix + "cannot find SDO or AbstractDataAttribute" );
+            return false;
+        }
+        att.resolveLinks();
+        console.verbose( messagePrefix + "found AbstractDataAttribute on line " + att.getLineNumber() );
+        
+        DAType dat = att.getRefersToDAType();
+        if( dat == null ) return false;
+        console.verbose( messagePrefix + "found DAType on line " + dat.getLineNumber() );
+        
+        List< BDA > res =
+                dat
+                .getBDA()
+                .stream()
+                .filter( b -> getName().equals( b.getName() ))
+                .collect( Collectors.toList() );
+
+        String mess = "BDA( name = " + getName() + " )";
+        if( res.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess );
+            return false;
+        }
+        if( res.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess );
+            return false;
+        }
+        setRefersToAbstractDataAttribute( res.get( 0 ));
+        console.info( "SDI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        return true;
     }
 
 } //SDIImpl

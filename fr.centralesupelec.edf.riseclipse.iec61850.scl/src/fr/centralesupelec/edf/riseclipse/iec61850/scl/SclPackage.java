@@ -4332,13 +4332,31 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_ATTRIBUTE__NAME = UN_NAMING_FEATURE_COUNT + 11;
 
     /**
+     * The feature id for the '<em><b>Referred By DAI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI = UN_NAMING_FEATURE_COUNT + 12;
+
+    /**
+     * The feature id for the '<em><b>Referred By SDI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI = UN_NAMING_FEATURE_COUNT + 13;
+
+    /**
      * The number of structural features of the '<em>Abstract Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 12;
+    int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
@@ -4510,6 +4528,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__NAME = ABSTRACT_DATA_ATTRIBUTE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By DAI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__REFERRED_BY_DAI = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI;
+
+    /**
+     * The feature id for the '<em><b>Referred By SDI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__REFERRED_BY_SDI = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI;
 
     /**
      * The feature id for the '<em><b>Parent DA Type</b></em>' container reference.
@@ -4699,6 +4735,24 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__NAME = ABSTRACT_DATA_ATTRIBUTE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Referred By DAI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__REFERRED_BY_DAI = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI;
+
+    /**
+     * The feature id for the '<em><b>Referred By SDI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__REFERRED_BY_SDI = ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -5836,13 +5890,22 @@ public interface SclPackage extends EPackage {
     int SDO__PARENT_DO_TYPE = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Referred By SDI</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO__REFERRED_BY_SDI = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
+
+    /**
      * The number of structural features of the '<em>SDO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 2;
+    int SDO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of operations of the '<em>SDO</em>' class.
@@ -8291,13 +8354,22 @@ public interface SclPackage extends EPackage {
     int DAI__NAME = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = UN_NAMING_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>DAI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DAI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
+    int DAI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>DAI</em>' class.
@@ -12451,13 +12523,31 @@ public interface SclPackage extends EPackage {
     int SDI__NAME = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
+     * The feature id for the '<em><b>Refers To SDO</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__REFERS_TO_SDO = UN_NAMING_FEATURE_COUNT + 7;
+
+    /**
+     * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = UN_NAMING_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>SDI</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SDI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 7;
+    int SDI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The number of operations of the '<em>SDI</em>' class.
@@ -20230,6 +20320,28 @@ public interface SclPackage extends EPackage {
     EAttribute getAbstractDataAttribute_Name();
 
     /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By DAI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI()
+     * @see #getAbstractDataAttribute()
+     * @generated
+     */
+    EReference getAbstractDataAttribute_ReferredByDAI();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By SDI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI()
+     * @see #getAbstractDataAttribute()
+     * @generated
+     */
+    EReference getAbstractDataAttribute_ReferredBySDI();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA <em>BDA</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20789,6 +20901,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getSDO_ParentDOType();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By SDI</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI()
+     * @see #getSDO()
+     * @generated
+     */
+    EReference getSDO_ReferredBySDI();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Val <em>Val</em>}'.
@@ -22784,6 +22907,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getDAI_Name();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getRefersToAbstractDataAttribute()
+     * @see #getDAI()
+     * @generated
+     */
+    EReference getDAI_RefersToAbstractDataAttribute();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI <em>DOI</em>}'.
@@ -25045,6 +25179,28 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSDI_Name();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To SDO</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO()
+     * @see #getSDI()
+     * @generated
+     */
+    EReference getSDI_RefersToSDO();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Abstract Data Attribute</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute()
+     * @see #getSDI()
+     * @generated
+     */
+    EReference getSDI_RefersToAbstractDataAttribute();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit <em>SG Edit</em>}'.

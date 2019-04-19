@@ -36,6 +36,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentSDI <em>Parent SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI()
@@ -332,5 +334,107 @@ public interface SDI extends UnNaming {
      * @generated
      */
     boolean isSetName();
+
+    /**
+     * Returns the value of the '<em><b>Refers To SDO</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To SDO</em>' reference.
+     * @see #isSetRefersToSDO()
+     * @see #unsetRefersToSDO()
+     * @see #setRefersToSDO(SDO)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_RefersToSDO()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI
+     * @model opposite="ReferredBySDI" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    SDO getRefersToSDO();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To SDO</em>' reference.
+     * @see #isSetRefersToSDO()
+     * @see #unsetRefersToSDO()
+     * @see #getRefersToSDO()
+     * @generated
+     */
+    void setRefersToSDO(SDO value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToSDO()
+     * @see #getRefersToSDO()
+     * @see #setRefersToSDO(SDO)
+     * @generated
+     */
+    void unsetRefersToSDO();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To SDO</em>' reference is set.
+     * @see #unsetRefersToSDO()
+     * @see #getRefersToSDO()
+     * @see #setRefersToSDO(SDO)
+     * @generated
+     */
+    boolean isSetRefersToSDO();
+
+    /**
+     * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To Abstract Data Attribute</em>' reference.
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_RefersToAbstractDataAttribute()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI
+     * @model opposite="ReferredBySDI" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    AbstractDataAttribute getRefersToAbstractDataAttribute();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To Abstract Data Attribute</em>' reference.
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
+     * @generated
+     */
+    void setRefersToAbstractDataAttribute(AbstractDataAttribute value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
+     * @generated
+     */
+    void unsetRefersToAbstractDataAttribute();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To Abstract Data Attribute</em>' reference is set.
+     * @see #unsetRefersToAbstractDataAttribute()
+     * @see #getRefersToAbstractDataAttribute()
+     * @see #setRefersToAbstractDataAttribute(AbstractDataAttribute)
+     * @generated
+     */
+    boolean isSetRefersToAbstractDataAttribute();
 
 } // SDI

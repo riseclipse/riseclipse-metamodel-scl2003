@@ -66,6 +66,7 @@ public class DAIItemProvider extends UnNamingItemProvider {
             addValImportPropertyDescriptor(object);
             addValKindPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
+            addRefersToAbstractDataAttributePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -176,6 +177,28 @@ public class DAIItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To Abstract Data Attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToAbstractDataAttributePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DAI_RefersToAbstractDataAttribute_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DAI_RefersToAbstractDataAttribute_feature", "_UI_DAI_type"),
+                 SclPackage.eINSTANCE.getDAI_RefersToAbstractDataAttribute(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

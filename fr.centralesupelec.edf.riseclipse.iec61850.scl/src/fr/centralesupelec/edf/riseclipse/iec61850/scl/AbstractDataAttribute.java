@@ -41,6 +41,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute()
@@ -641,5 +643,79 @@ public interface AbstractDataAttribute extends UnNaming {
      * @generated
      */
     boolean isSetName();
+
+    /**
+     * Returns the value of the '<em><b>Referred By DAI</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By DAI</em>' reference list.
+     * @see #isSetReferredByDAI()
+     * @see #unsetReferredByDAI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_ReferredByDAI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getRefersToAbstractDataAttribute
+     * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<DAI> getReferredByDAI();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByDAI()
+     * @see #getReferredByDAI()
+     * @generated
+     */
+    void unsetReferredByDAI();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By DAI</em>' reference list is set.
+     * @see #unsetReferredByDAI()
+     * @see #getReferredByDAI()
+     * @generated
+     */
+    boolean isSetReferredByDAI();
+
+    /**
+     * Returns the value of the '<em><b>Referred By SDI</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By SDI</em>' reference list.
+     * @see #isSetReferredBySDI()
+     * @see #unsetReferredBySDI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_ReferredBySDI()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute
+     * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<SDI> getReferredBySDI();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredBySDI()
+     * @see #getReferredBySDI()
+     * @generated
+     */
+    void unsetReferredBySDI();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By SDI</em>' reference list is set.
+     * @see #unsetReferredBySDI()
+     * @see #getReferredBySDI()
+     * @generated
+     */
+    boolean isSetReferredBySDI();
 
 } // AbstractDataAttribute

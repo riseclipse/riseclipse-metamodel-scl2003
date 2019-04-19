@@ -64,6 +64,8 @@ public class SDIItemProvider extends UnNamingItemProvider {
             addIxPropertyDescriptor(object);
             addSAddrPropertyDescriptor(object);
             addNamePropertyDescriptor(object);
+            addRefersToSDOPropertyDescriptor(object);
+            addRefersToAbstractDataAttributePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -130,6 +132,50 @@ public class SDIItemProvider extends UnNamingItemProvider {
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To SDO feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToSDOPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SDI_RefersToSDO_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_RefersToSDO_feature", "_UI_SDI_type"),
+                 SclPackage.eINSTANCE.getSDI_RefersToSDO(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To Abstract Data Attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToAbstractDataAttributePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SDI_RefersToAbstractDataAttribute_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_RefersToAbstractDataAttribute_feature", "_UI_SDI_type"),
+                 SclPackage.eINSTANCE.getSDI_RefersToAbstractDataAttribute(),
+                 true,
+                 false,
+                 true,
+                 null,
                  null,
                  null));
     }

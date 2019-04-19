@@ -37,11 +37,13 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
@@ -68,6 +70,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredByDAI <em>Referred By DAI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AbstractDataAttributeImpl#getReferredBySDI <em>Referred By SDI</em>}</li>
  * </ul>
  *
  * @generated
@@ -343,6 +347,26 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @ordered
      */
     protected boolean nameESet;
+
+    /**
+     * The cached value of the '{@link #getReferredByDAI() <em>Referred By DAI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByDAI()
+     * @generated
+     * @ordered
+     */
+    protected EList<DAI> referredByDAI;
+
+    /**
+     * The cached value of the '{@link #getReferredBySDI() <em>Referred By SDI</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredBySDI()
+     * @generated
+     * @ordered
+     */
+    protected EList<SDI> referredBySDI;
 
     /**
      * <!-- begin-user-doc -->
@@ -1015,6 +1039,72 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList<DAI> getReferredByDAI() {
+        if (referredByDAI == null) {
+            referredByDAI = new EObjectWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+        }
+        return referredByDAI;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByDAI() {
+        if (referredByDAI != null) ((InternalEList.Unsettable<?>)referredByDAI).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByDAI() {
+        return referredByDAI != null && ((InternalEList.Unsettable<?>)referredByDAI).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList<SDI> getReferredBySDI() {
+        if (referredBySDI == null) {
+            referredBySDI = new EObjectWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+        }
+        return referredBySDI;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredBySDI() {
+        if (referredBySDI != null) ((InternalEList.Unsettable<?>)referredBySDI).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredBySDI() {
+        return referredBySDI != null && ((InternalEList.Unsettable<?>)referredBySDI).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1033,6 +1123,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDAI()).basicAdd(otherEnd, msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDI()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -1055,6 +1149,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
                 return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                return ((InternalEList<?>)getReferredByDAI()).basicRemove(otherEnd, msgs);
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                return ((InternalEList<?>)getReferredBySDI()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -1091,6 +1189,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return getReferredByExtRef();
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
                 return getName();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                return getReferredByDAI();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                return getReferredBySDI();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -1143,6 +1245,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
                 setName((String)newValue);
                 return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                getReferredByDAI().clear();
+                getReferredByDAI().addAll((Collection<? extends DAI>)newValue);
+                return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                getReferredBySDI().clear();
+                getReferredBySDI().addAll((Collection<? extends SDI>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -1191,6 +1301,12 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
                 unsetName();
                 return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                unsetReferredByDAI();
+                return;
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                unsetReferredBySDI();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -1227,6 +1343,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return isSetReferredByExtRef();
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
                 return isSetName();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+                return isSetReferredByDAI();
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+                return isSetReferredBySDI();
         }
         return super.eIsSet(featureID);
     }
