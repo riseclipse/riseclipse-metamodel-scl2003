@@ -40,13 +40,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute()
  * @model abstract="true"
  * @generated
  */
-public interface AbstractDataAttribute extends DataAttribute {
+public interface AbstractDataAttribute extends UnNaming {
     /**
      * Returns the value of the '<em><b>BType</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -591,5 +592,54 @@ public interface AbstractDataAttribute extends DataAttribute {
      * @generated
      */
     boolean isSetReferredByExtRef();
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #setName(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAbstractDataAttribute_Name()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    void unsetName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Name</em>' attribute is set.
+     * @see #unsetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    boolean isSetName();
 
 } // AbstractDataAttribute

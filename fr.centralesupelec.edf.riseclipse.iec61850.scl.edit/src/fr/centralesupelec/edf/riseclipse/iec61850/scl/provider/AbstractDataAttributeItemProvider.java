@@ -39,7 +39,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider {
+public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -71,6 +71,7 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
             addRefersToDATypePropertyDescriptor(object);
             addReferredByFCDAPropertyDescriptor(object);
             addReferredByExtRefPropertyDescriptor(object);
+            addNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -296,6 +297,28 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
     }
 
     /**
+     * This adds a property descriptor for the Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_AbstractDataAttribute_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_name_feature", "_UI_AbstractDataAttribute_type"),
+                 SclPackage.eINSTANCE.getAbstractDataAttribute_Name(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -369,6 +392,7 @@ public class AbstractDataAttributeItemProvider extends DataAttributeItemProvider
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:

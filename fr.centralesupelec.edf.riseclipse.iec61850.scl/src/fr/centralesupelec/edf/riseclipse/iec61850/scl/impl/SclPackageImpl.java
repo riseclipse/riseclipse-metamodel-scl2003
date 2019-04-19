@@ -1154,14 +1154,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
-    private EClass dataObjectEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass dataAttributeEClass = null;
+    private EClass abstractDataObjectEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -2765,6 +2758,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getAbstractDataAttribute_Name() {
+        return (EAttribute)getAbstractDataAttribute().getEStructuralFeatures().get(11);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getBDA() {
         if (bdaEClass == null) {
             bdaEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(24);
@@ -2917,18 +2920,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getDO_Type() {
-        return (EAttribute)getDO().getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getDO_ParentLNodeType() {
-        return (EReference)getDO().getEStructuralFeatures().get(2);
+        return (EReference)getDO().getEStructuralFeatures().get(1);
     }
 
     /**
@@ -2937,8 +2930,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getDO_RefersToDOType() {
-        return (EReference)getDO().getEStructuralFeatures().get(3);
+    public EAttribute getDO_AccessControl() {
+        return (EAttribute)getDO().getEStructuralFeatures().get(2);
     }
 
     /**
@@ -2990,7 +2983,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getDOType_ReferredByDO() {
+    public EReference getDOType_ReferredByAbstractDataObject() {
         return (EReference)getDOType().getEStructuralFeatures().get(3);
     }
 
@@ -3012,26 +3005,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getDOType_SDO() {
         return (EReference)getDOType().getEStructuralFeatures().get(5);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getDOType_ReferredBySDO() {
-        return (EReference)getDOType().getEStructuralFeatures().get(6);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getDOType_ReferredByExtRef() {
-        return (EReference)getDOType().getEStructuralFeatures().get(7);
     }
 
     /**
@@ -3328,38 +3301,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getSDO_Type() {
-        return (EAttribute)getSDO().getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getSDO_ParentDOType() {
-        return (EReference)getSDO().getEStructuralFeatures().get(2);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getSDO_Name() {
-        return (EAttribute)getSDO().getEStructuralFeatures().get(3);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EReference getSDO_RefersToDOType() {
-        return (EReference)getSDO().getEStructuralFeatures().get(4);
+        return (EReference)getSDO().getEStructuralFeatures().get(1);
     }
 
     /**
@@ -3423,7 +3366,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getBitRateInMbPerSec() {
         if (bitRateInMbPerSecEClass == null) {
-            bitRateInMbPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(168);
+            bitRateInMbPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(167);
         }
         return bitRateInMbPerSecEClass;
     }
@@ -3466,7 +3409,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMinTime() {
         if (minTimeEClass == null) {
-            minTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(169);
+            minTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(168);
         }
         return minTimeEClass;
     }
@@ -3479,7 +3422,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMaxTime() {
         if (maxTimeEClass == null) {
-            maxTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(170);
+            maxTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(169);
         }
         return maxTimeEClass;
     }
@@ -3492,7 +3435,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getBitRate() {
         if (bitRateEClass == null) {
-            bitRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(171);
+            bitRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(170);
         }
         return bitRateEClass;
     }
@@ -3515,7 +3458,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSmpRate() {
         if (smpRateEClass == null) {
-            smpRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(172);
+            smpRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(171);
         }
         return smpRateEClass;
     }
@@ -3548,7 +3491,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSamplesPerSec() {
         if (samplesPerSecEClass == null) {
-            samplesPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(173);
+            samplesPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(172);
         }
         return samplesPerSecEClass;
     }
@@ -3581,7 +3524,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSecPerSamples() {
         if (secPerSamplesEClass == null) {
-            secPerSamplesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(174);
+            secPerSamplesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(173);
         }
         return secPerSamplesEClass;
     }
@@ -3614,7 +3557,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMcSecurity() {
         if (mcSecurityEClass == null) {
-            mcSecurityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(175);
+            mcSecurityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(174);
         }
         return mcSecurityEClass;
     }
@@ -3677,7 +3620,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgAuthentication() {
         if (agAuthenticationEClass == null) {
-            agAuthenticationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(176);
+            agAuthenticationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(175);
         }
         return agAuthenticationEClass;
     }
@@ -3740,7 +3683,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgSmvOpts() {
         if (agSmvOptsEClass == null) {
-            agSmvOptsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(177);
+            agSmvOptsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(176);
         }
         return agSmvOptsEClass;
     }
@@ -3833,7 +3776,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgOptFields() {
         if (agOptFieldsEClass == null) {
-            agOptFieldsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(178);
+            agOptFieldsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(177);
         }
         return agOptFieldsEClass;
     }
@@ -3936,7 +3879,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgDesc() {
         if (agDescEClass == null) {
-            agDescEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(179);
+            agDescEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(178);
         }
         return agDescEClass;
     }
@@ -3959,7 +3902,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgLDRef() {
         if (agLDRefEClass == null) {
-            agLDRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(180);
+            agLDRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(179);
         }
         return agLDRefEClass;
     }
@@ -3992,7 +3935,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgLNRef() {
         if (agLNRefEClass == null) {
-            agLNRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(181);
+            agLNRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(180);
         }
         return agLNRefEClass;
     }
@@ -4035,7 +3978,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgDATrgOp() {
         if (agDATrgOpEClass == null) {
-            agDATrgOpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(182);
+            agDATrgOpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(181);
         }
         return agDATrgOpEClass;
     }
@@ -4078,7 +4021,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgVirtual() {
         if (agVirtualEClass == null) {
-            agVirtualEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(183);
+            agVirtualEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(182);
         }
         return agVirtualEClass;
     }
@@ -4101,7 +4044,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getDurationInMilliSec() {
         if (durationInMilliSecEClass == null) {
-            durationInMilliSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(167);
+            durationInMilliSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(166);
         }
         return durationInMilliSecEClass;
     }
@@ -5322,6 +5265,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getDAI_Name() {
+        return (EAttribute)getDAI().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getDOI() {
         if (doiEClass == null) {
             doiEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(56);
@@ -5367,6 +5320,26 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getDOI_SDI() {
         return (EReference)getDOI().getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getDOI_AccessControl() {
+        return (EAttribute)getDOI().getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getDOI_Name() {
+        return (EAttribute)getDOI().getEStructuralFeatures().get(5);
     }
 
     /**
@@ -5693,7 +5666,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EReference getExtRef_RefersToDOType() {
+    public EReference getExtRef_RefersToAbstractDataObject() {
         return (EReference)getExtRef().getEStructuralFeatures().get(16);
     }
 
@@ -7478,6 +7451,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getSDI_ParentSDI() {
         return (EReference)getSDI().getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getSDI_Name() {
+        return (EAttribute)getSDI().getEStructuralFeatures().get(6);
     }
 
     /**
@@ -10154,21 +10137,11 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EClass getDataObject() {
-        if (dataObjectEClass == null) {
-            dataObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(153);
+    public EClass getAbstractDataObject() {
+        if (abstractDataObjectEClass == null) {
+            abstractDataObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(153);
         }
-        return dataObjectEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EAttribute getDataObject_AccessControl() {
-        return (EAttribute)getDataObject().getEStructuralFeatures().get(0);
+        return abstractDataObjectEClass;
     }
 
     /**
@@ -10177,21 +10150,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getDataObject_Name() {
-        return (EAttribute)getDataObject().getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EClass getDataAttribute() {
-        if (dataAttributeEClass == null) {
-            dataAttributeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(154);
-        }
-        return dataAttributeEClass;
+    public EAttribute getAbstractDataObject_Name() {
+        return (EAttribute)getAbstractDataObject().getEStructuralFeatures().get(0);
     }
 
     /**
@@ -10200,8 +10160,28 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getDataAttribute_Name() {
-        return (EAttribute)getDataAttribute().getEStructuralFeatures().get(0);
+    public EAttribute getAbstractDataObject_Type() {
+        return (EAttribute)getAbstractDataObject().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getAbstractDataObject_RefersToDOType() {
+        return (EReference)getAbstractDataObject().getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getAbstractDataObject_ReferredByExtRef() {
+        return (EReference)getAbstractDataObject().getEStructuralFeatures().get(3);
     }
 
     /**
@@ -10212,7 +10192,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSclObject() {
         if (sclObjectEClass == null) {
-            sclObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(155);
+            sclObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(154);
         }
         return sclObjectEClass;
     }
@@ -10235,7 +10215,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getUnNaming() {
         if (unNamingEClass == null) {
-            unNamingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(156);
+            unNamingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(155);
         }
         return unNamingEClass;
     }
@@ -10248,7 +10228,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceYesNo() {
         if (serviceYesNoEClass == null) {
-            serviceYesNoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(157);
+            serviceYesNoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(156);
         }
         return serviceYesNoEClass;
     }
@@ -10261,7 +10241,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithOptionalMax() {
         if (serviceWithOptionalMaxEClass == null) {
-            serviceWithOptionalMaxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(158);
+            serviceWithOptionalMaxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(157);
         }
         return serviceWithOptionalMaxEClass;
     }
@@ -10284,7 +10264,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxNonZero() {
         if (serviceWithMaxNonZeroEClass == null) {
-            serviceWithMaxNonZeroEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(159);
+            serviceWithMaxNonZeroEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(158);
         }
         return serviceWithMaxNonZeroEClass;
     }
@@ -10307,7 +10287,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceConfReportControl() {
         if (serviceConfReportControlEClass == null) {
-            serviceConfReportControlEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(160);
+            serviceConfReportControlEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(159);
         }
         return serviceConfReportControlEClass;
     }
@@ -10350,7 +10330,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxAndMaxAttributes() {
         if (serviceWithMaxAndMaxAttributesEClass == null) {
-            serviceWithMaxAndMaxAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(161);
+            serviceWithMaxAndMaxAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(160);
         }
         return serviceWithMaxAndMaxAttributesEClass;
     }
@@ -10373,7 +10353,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxAndModify() {
         if (serviceWithMaxAndModifyEClass == null) {
-            serviceWithMaxAndModifyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(162);
+            serviceWithMaxAndModifyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(161);
         }
         return serviceWithMaxAndModifyEClass;
     }
@@ -10396,7 +10376,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceForConfDataSet() {
         if (serviceForConfDataSetEClass == null) {
-            serviceForConfDataSetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(163);
+            serviceForConfDataSetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(162);
         }
         return serviceForConfDataSetEClass;
     }
@@ -10419,7 +10399,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getCert() {
         if (certEClass == null) {
-            certEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(164);
+            certEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(163);
         }
         return certEClass;
     }
@@ -10452,7 +10432,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getValueWithUnit() {
         if (valueWithUnitEClass == null) {
-            valueWithUnitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(165);
+            valueWithUnitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(164);
         }
         return valueWithUnitEClass;
     }
@@ -10495,7 +10475,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getDurationInSec() {
         if (durationInSecEClass == null) {
-            durationInSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(166);
+            durationInSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(165);
         }
         return durationInSecEClass;
     }

@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
@@ -40,6 +41,8 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -73,7 +76,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getSrcPrefix <em>Src Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getParentInputs <em>Parent Inputs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToDOType <em>Refers To DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPServT <em>PServ T</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExtRefImpl#getPDO <em>PDO</em>}</li>
@@ -539,23 +542,23 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     protected boolean refersToAbstractDataAttributeESet;
 
     /**
-     * The cached value of the '{@link #getRefersToDOType() <em>Refers To DO Type</em>}' reference.
+     * The cached value of the '{@link #getRefersToAbstractDataObject() <em>Refers To Abstract Data Object</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getRefersToDOType()
+     * @see #getRefersToAbstractDataObject()
      * @generated
      * @ordered
      */
-    protected DOType refersToDOType;
+    protected AbstractDataObject refersToAbstractDataObject;
 
     /**
-     * This is true if the Refers To DO Type reference has been set.
+     * This is true if the Refers To Abstract Data Object reference has been set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    protected boolean refersToDOTypeESet;
+    protected boolean refersToAbstractDataObjectESet;
 
     /**
      * The default value of the '{@link #getPServT() <em>PServ T</em>}' attribute.
@@ -1559,8 +1562,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public DOType getRefersToDOType() {
-        return refersToDOType;
+    public AbstractDataObject getRefersToAbstractDataObject() {
+        return refersToAbstractDataObject;
     }
 
     /**
@@ -1568,13 +1571,13 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToDOType(DOType newRefersToDOType, NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = newRefersToDOType;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = true;
+    public NotificationChain basicSetRefersToAbstractDataObject(AbstractDataObject newRefersToAbstractDataObject, NotificationChain msgs) {
+        AbstractDataObject oldRefersToAbstractDataObject = refersToAbstractDataObject;
+        refersToAbstractDataObject = newRefersToAbstractDataObject;
+        boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
+        refersToAbstractDataObjectESet = true;
         if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet);
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, oldRefersToAbstractDataObject, newRefersToAbstractDataObject, !oldRefersToAbstractDataObjectESet);
             if (msgs == null) msgs = notification; else msgs.add(notification);
         }
         return msgs;
@@ -1586,21 +1589,21 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public void setRefersToDOType(DOType newRefersToDOType) {
-        if (newRefersToDOType != refersToDOType) {
+    public void setRefersToAbstractDataObject(AbstractDataObject newRefersToAbstractDataObject) {
+        if (newRefersToAbstractDataObject != refersToAbstractDataObject) {
             NotificationChain msgs = null;
-            if (refersToDOType != null)
-                msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, DOType.class, msgs);
-            if (newRefersToDOType != null)
-                msgs = ((InternalEObject)newRefersToDOType).eInverseAdd(this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, DOType.class, msgs);
-            msgs = basicSetRefersToDOType(newRefersToDOType, msgs);
+            if (refersToAbstractDataObject != null)
+                msgs = ((InternalEObject)refersToAbstractDataObject).eInverseRemove(this, SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs);
+            if (newRefersToAbstractDataObject != null)
+                msgs = ((InternalEObject)newRefersToAbstractDataObject).eInverseAdd(this, SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs);
+            msgs = basicSetRefersToAbstractDataObject(newRefersToAbstractDataObject, msgs);
             if (msgs != null) msgs.dispatch();
         }
         else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = true;
+            boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
+            refersToAbstractDataObjectESet = true;
             if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet));
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, newRefersToAbstractDataObject, newRefersToAbstractDataObject, !oldRefersToAbstractDataObjectESet));
         }
     }
 
@@ -1609,13 +1612,13 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToDOType(NotificationChain msgs) {
-        DOType oldRefersToDOType = refersToDOType;
-        refersToDOType = null;
-        boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-        refersToDOTypeESet = false;
+    public NotificationChain basicUnsetRefersToAbstractDataObject(NotificationChain msgs) {
+        AbstractDataObject oldRefersToAbstractDataObject = refersToAbstractDataObject;
+        refersToAbstractDataObject = null;
+        boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
+        refersToAbstractDataObjectESet = false;
         if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DO_TYPE, oldRefersToDOType, null, oldRefersToDOTypeESet);
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, oldRefersToAbstractDataObject, null, oldRefersToAbstractDataObjectESet);
             if (msgs == null) msgs = notification; else msgs.add(notification);
         }
         return msgs;
@@ -1627,18 +1630,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public void unsetRefersToDOType() {
-        if (refersToDOType != null) {
+    public void unsetRefersToAbstractDataObject() {
+        if (refersToAbstractDataObject != null) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, DOType.class, msgs);
-            msgs = basicUnsetRefersToDOType(msgs);
+            msgs = ((InternalEObject)refersToAbstractDataObject).eInverseRemove(this, SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs);
+            msgs = basicUnsetRefersToAbstractDataObject(msgs);
             if (msgs != null) msgs.dispatch();
         }
         else {
-            boolean oldRefersToDOTypeESet = refersToDOTypeESet;
-            refersToDOTypeESet = false;
+            boolean oldRefersToAbstractDataObjectESet = refersToAbstractDataObjectESet;
+            refersToAbstractDataObjectESet = false;
             if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet));
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT, null, null, oldRefersToAbstractDataObjectESet));
         }
     }
 
@@ -1648,8 +1651,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
      * @generated
      */
     @Override
-    public boolean isSetRefersToDOType() {
-        return refersToDOTypeESet;
+    public boolean isSetRefersToAbstractDataObject() {
+        return refersToAbstractDataObjectESet;
     }
 
     /**
@@ -2017,10 +2020,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 if (refersToAbstractDataAttribute != null)
                     msgs = ((InternalEObject)refersToAbstractDataAttribute).eInverseRemove(this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, AbstractDataAttribute.class, msgs);
                 return basicSetRefersToAbstractDataAttribute((AbstractDataAttribute)otherEnd, msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                if (refersToDOType != null)
-                    msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_EXT_REF, DOType.class, msgs);
-                return basicSetRefersToDOType((DOType)otherEnd, msgs);
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                if (refersToAbstractDataObject != null)
+                    msgs = ((InternalEObject)refersToAbstractDataObject).eInverseRemove(this, SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, AbstractDataObject.class, msgs);
+                return basicSetRefersToAbstractDataObject((AbstractDataObject)otherEnd, msgs);
             case SclPackage.EXT_REF__REFERS_TO_CONTROL:
                 if (refersToControl != null)
                     msgs = ((InternalEObject)refersToControl).eInverseRemove(this, SclPackage.CONTROL__REFERRED_BY_EXT_REF, Control.class, msgs);
@@ -2041,8 +2044,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return basicSetParentInputs(null, msgs);
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return basicUnsetRefersToAbstractDataAttribute(msgs);
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                return basicUnsetRefersToDOType(msgs);
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                return basicUnsetRefersToAbstractDataObject(msgs);
             case SclPackage.EXT_REF__REFERS_TO_CONTROL:
                 return basicUnsetRefersToControl(msgs);
         }
@@ -2105,8 +2108,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return getParentInputs();
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return getRefersToAbstractDataAttribute();
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                return getRefersToDOType();
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                return getRefersToAbstractDataObject();
             case SclPackage.EXT_REF__PSERV_T:
                 return getPServT();
             case SclPackage.EXT_REF__PLN:
@@ -2180,8 +2183,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 setRefersToAbstractDataAttribute((AbstractDataAttribute)newValue);
                 return;
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                setRefersToDOType((DOType)newValue);
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                setRefersToAbstractDataObject((AbstractDataObject)newValue);
                 return;
             case SclPackage.EXT_REF__PSERV_T:
                 setPServT((ServiceType)newValue);
@@ -2261,8 +2264,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 unsetRefersToAbstractDataAttribute();
                 return;
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                unsetRefersToDOType();
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                unsetRefersToAbstractDataObject();
                 return;
             case SclPackage.EXT_REF__PSERV_T:
                 unsetPServT();
@@ -2325,8 +2328,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 return getParentInputs() != null;
             case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
                 return isSetRefersToAbstractDataAttribute();
-            case SclPackage.EXT_REF__REFERS_TO_DO_TYPE:
-                return isSetRefersToDOType();
+            case SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT:
+                return isSetRefersToAbstractDataObject();
             case SclPackage.EXT_REF__PSERV_T:
                 return isSetPServT();
             case SclPackage.EXT_REF__PLN:
@@ -2429,6 +2432,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     protected void doResolveLinks() {
         // see Issue #13
         super.doResolveLinks();
+        
+        Pair< IED, LDevice > args = doResolveDataLink();
+        doResolveCBLink( args );
+    }
+    
+    private Pair< IED, LDevice > doResolveDataLink() {
 
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
@@ -2449,16 +2458,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // srcLNInst    The LN instance number of the LN where the source control block resides – if missing, no instance number exists (LLN0)
         // srcCBName    The source CB name; if missing, then all othere srcXX attributes should also be missing, i.e. no source control block is given.
 
-        if( getIedName() == null ) return;
+        IED ied = null;
+        LDevice lDevice = null;
+        
+        if( getIedName() == null ) return Pair.of( ied, lDevice );
 
         // No link if no doName
-        if( getDoName() == null ) return;
-        if( getDoName().isEmpty() ) return;
+        if( getDoName() == null ) return Pair.of( ied, lDevice );
+        if( getDoName().isEmpty() ) return Pair.of( ied, lDevice );
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
         IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
-        IED ied = null;
         if( "@".equals( getIedName() )) {
             EObject object = this;
             while(( object != null ) && !( object instanceof IED ) ) {
@@ -2477,7 +2488,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         if( ied == null ) {
             console.verbose( messagePrefix + "IED named " + getIedName() + " not found" );
-            return;
+            return Pair.of( ied, lDevice );
         }
         console.verbose( messagePrefix + "found IED ( name = " + ied.getName() + " ) on line " + ied.getLineNumber() );
 
@@ -2497,25 +2508,25 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         String mess1 = "LDevice( inst = " + getLdInst() + " ))";
         if( res1.isEmpty() ) {
             console.error( messagePrefix + "cannot find " + mess1 );
-            return;
+            return Pair.of( ied, lDevice );
         }
         if( res1.size() > 1 ) {
             console.error( messagePrefix + "found several " + mess1 );
-            return;
+            return Pair.of( ied, lDevice );
         }
-        LDevice lDevice = res1.get( 0 );
+        lDevice = res1.get( 0 );
         console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
 
         AnyLN anyLN = null;
         if( "LLN0".equals( getLnClass() )) {
             if( lDevice.getLN0() == null ) {
                 console.error( messagePrefix + "cannot find LN0" );
-                return;
+                return Pair.of( ied, lDevice );
             }
             anyLN = lDevice.getLN0();
         }
         else {
-            if( getLnInst() == null ) return;
+            if( getLnInst() == null ) return Pair.of( ied, lDevice );
             // find inside an LN with
             //   LN.lnClass == FCDA.lnClass
             //   LN.prefix == FCDA.prefix
@@ -2529,19 +2540,19 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
             if( res2.isEmpty() ) {
                 console.error( messagePrefix + "cannot find " + mess2 );
-                return;
+                return Pair.of( ied, lDevice );
             }
             if( res2.size() > 1 ) {
                 console.error( messagePrefix + "found several " + mess2 );
-                return;
+                return Pair.of( ied, lDevice );
             }
             anyLN = res2.get( 0 );
             console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
         }
-        if( anyLN == null ) return;
+        if( anyLN == null ) return Pair.of( ied, lDevice );
         anyLN.resolveLinks();
 
-        if( anyLN.getRefersToLNodeType() == null ) return;
+        if( anyLN.getRefersToLNodeType() == null ) return Pair.of( ied, lDevice );
         console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
 
         // doName and daName are structured using . as separator
@@ -2563,20 +2574,21 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         String mess3a = "DO ( name = " + doNames[0] + " )";
         if( res3a.isEmpty() ) {
             console.error( messagePrefix + "cannot find " + mess3a );
-            return;
+            return Pair.of( ied, lDevice );
         }
         if( res3a.size() > 1 ) {
             console.error( messagePrefix + "found several " + mess3a );
-            return;
+            return Pair.of( ied, lDevice );
         }
-        console.verbose( messagePrefix + "found " + mess3a + " on line " + res3a.get( 0 ).getLineNumber() );
 
-        res3a.get( 0 ).resolveLinks();
-        DOType doType = res3a.get( 0 ).getRefersToDOType();
-        if( doType == null ) return;
-        console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
+        AbstractDataObject ado = res3a.get( 0 );
+        console.verbose( messagePrefix + "found " + mess3a + " on line " + ado.getLineNumber() );
+        ado.resolveLinks();
 
         for( int i = 1; i < doNames.length; ++i ) {
+            DOType doType = ado.getRefersToDOType();
+            if( doType == null ) return Pair.of( ied, lDevice );
+            console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
             String name = doNames[i];
             List< SDO > res3b =
                     doType
@@ -2588,163 +2600,187 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
             if( res3b.isEmpty() ) {
                 console.error( messagePrefix + "cannot find " + mess3b );
-                return;
+                return Pair.of( ied, lDevice );
             }
             if( res3b.size() > 1 ) {
                 console.error( messagePrefix + "found several " + mess3b );
-                return;
+                return Pair.of( ied, lDevice );
             }
-            console.verbose( messagePrefix + "found " + mess3b + " on line " + res3b.get( 0 ).getLineNumber() );
+            ado = res3b.get( 0 );
+            console.verbose( messagePrefix + "found " + mess3b + " on line " + ado.getLineNumber() );
 
-            res3b.get( 0 ).resolveLinks();
-            doType = res3b.get( 0 ).getRefersToDOType();
-            if( doType == null ) return;
-            console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
+            ado.resolveLinks();
         }
-        setRefersToDOType( doType );
+        // Set link to DO/SDO only if no daName
+        if( getDaName() == null ) {
+            setRefersToAbstractDataObject( ado );
+            console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataObject ( name = " + ado.getName() + " ) on line " + ado.getLineNumber() );
+            return Pair.of( ied, lDevice );
+        }
 
-        if( getDaName() != null ) {
-            // The first daName gives us the DA inside the DOType
-            // If daName is structured, find the DAType and its BDA using remaining doName
+        DOType doType = ado.getRefersToDOType();
+        if( doType == null ) return Pair.of( ied, lDevice );
+        console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
+        // The first daName gives us the DA inside the DOType
+        // If daName is structured, find the DAType and its BDA using remaining doName
 
-            final String[] daNames = getDaName().split( "\\.", -1 );
-            List< DA > res4a =
-                    doType
-                    .getDA()
+        final String[] daNames = getDaName().split( "\\.", -1 );
+        List< DA > res4a =
+                doType
+                .getDA()
+                .stream()
+                .filter(  da -> da.getName().equals( daNames[0] ))
+                .collect( Collectors.toList() );
+
+        String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
+        if( res4a.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess4a );
+            return Pair.of( ied, lDevice );
+        }
+        if( res4a.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess4a );
+            return Pair.of( ied, lDevice );
+        }
+        AbstractDataAttribute da = res4a.get( 0 );
+        console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
+
+        for( int i = 1; i < daNames.length; ++i ) {
+            da.resolveLinks();
+
+            String name = daNames[i];
+            List< BDA > res4b =
+                    da
+                    .getRefersToDAType()
+                    .getBDA()
                     .stream()
-                    .filter(  da -> da.getName().equals( daNames[0] ))
+                    .filter(  bda -> name.equals(  bda.getName() ))
                     .collect( Collectors.toList() );
 
-            String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
-            if( res4a.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess4a );
-                return;
+            String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
+            if( res4b.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess4b );
+                return Pair.of( ied, lDevice );
             }
-            if( res4a.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess4a );
-                return;
+            if( res4b.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess4b );
+                return Pair.of( ied, lDevice );
             }
-            AbstractDataAttribute da = res4a.get( 0 );
-            console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
-
-            for( int i = 1; i < daNames.length; ++i ) {
-                da.resolveLinks();
-
-                String name = daNames[i];
-                List< BDA > res4b =
-                        da
-                        .getRefersToDAType()
-                        .getBDA()
-                        .stream()
-                        .filter(  bda -> name.equals(  bda.getName() ))
-                        .collect( Collectors.toList() );
-
-                String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
-                if( res4b.isEmpty() ) {
-                    console.error( messagePrefix + "cannot find " + mess4b );
-                    return;
-                }
-                if( res4b.size() > 1 ) {
-                    console.error( messagePrefix + "found several " + mess4b );
-                    return;
-                }
-                da = res4b.get( 0 );
-                console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
-            }
-
-            console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
-            setRefersToAbstractDataAttribute( da );
-
-            if( getSrcCBName() == null ) return;
-            if( getSrcCBName().isEmpty() ) return;
-
-            if(( getSrcLDInst() != null ) || ( ! getSrcLDInst().isEmpty() )) {
-
-                List< LDevice > res5 = 
-                        ied
-                        .getAccessPoint()
-                        .stream()
-                        .map( ap -> ap.getServer() )
-                        .filter( s -> s != null )
-                        .map( s -> s.getLDevice() )
-                        .filter( ld -> ld != null )
-                        .flatMap( ld -> ld.stream() )
-                        .filter( ld -> getSrcLDInst().equals( ld.getInst() ))
-                        .collect( Collectors.toList() );
-
-                String mess5 = "LDevice( inst = " + getSrcLDInst() + " ))";
-                if( res5.isEmpty() ) {
-                    console.error( messagePrefix + "cannot find " + mess5 );
-                    return;
-                }
-                if( res5.size() > 1 ) {
-                    console.error( messagePrefix + "found several " + mess5 );
-                    return;
-                }
-                lDevice = res5.get( 0 );
-                console.verbose( messagePrefix + "found " + mess5 + " on line " + lDevice.getLineNumber() );
-            }
-
-            anyLN = null;
-            if( "LLN0".equals( getSrcLNClass() )) {
-                if( lDevice.getLN0() == null ) {
-                    console.error( messagePrefix + "cannot find LN0" );
-                    return;
-                }
-                anyLN = lDevice.getLN0();
-            }
-            else {
-                if( getSrcLNInst()== null ) return;
-                // find inside an LN with
-                //   LN.lnClass == FCDA.lnClass
-                //   LN.prefix == FCDA.prefix
-                //   LN.inst == FCDA.lnInst
-                List< LN > res6 = lDevice
-                        .getLN()
-                        .stream()
-                        .filter( ln ->  getSrcLNClass().equals( ln.getLnClass() ) && getSrcLNInst().equals( ln.getInst() ) && getSrcPrefix().equals( ln.getPrefix() ))
-                        .collect( Collectors.toList() );
-
-                String mess6 = "LN( lnClass = " + getSrcLNClass() + ", inst = " + getSrcLNInst() + " )";
-                if( res6.isEmpty() ) {
-                    console.error( messagePrefix + "cannot find " + mess6 );
-                    return;
-                }
-                if( res6.size() > 1 ) {
-                    console.error( messagePrefix + "found several " + mess6 );
-                    return;
-                }
-                anyLN = res6.get( 0 );
-                console.verbose( messagePrefix + "found " + mess6 + " on line " + anyLN.getLineNumber() );
-            }
-            if( anyLN == null ) return;
-            anyLN.resolveLinks();
-
-            List< Control > listControls = new ArrayList< Control >();
-            listControls.addAll( anyLN.getLogControl() );
-            listControls.addAll( anyLN.getReportControl() );
-            if( "LLN0".equals( getSrcLNClass() )) {
-                listControls.addAll( lDevice.getLN0().getGSEControl() );
-                listControls.addAll( lDevice.getLN0().getSampledValueControl() );
-            }
-
-            List< Control > res7 =
-                      listControls
-                    .stream()
-                    .filter( c -> getSrcCBName().equals( c.getName() ))
-                    .collect( Collectors.toList() );
-            String mess7 = "Control( name = " + getSrcCBName() + " )";
-            if( res7.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess7 );
-                return;
-            }
-            if( res7.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess7 );
-                return;
-            }
-            setRefersToControl( res7.get( 0 ));
-            console.info( "ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
+            da = res4b.get( 0 );
+            console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
         }
+
+        console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
+        setRefersToAbstractDataAttribute( da );
+        
+        return Pair.of( ied, lDevice );
+    }
+
+    private void doResolveCBLink( Pair< IED, LDevice > args ) {
+
+        // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
+        // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
+        // srcLNClass   The LN class of the LN, where the source control block resides; if missing, LLN0 
+        // srcLNInst    The LN instance number of the LN where the source control block resides – if missing, no instance number exists (LLN0)
+        // srcCBName    The source CB name; if missing, then all othere srcXX attributes should also be missing, i.e. no source control block is given.
+
+        IED ied = args.getLeft();
+        LDevice lDevice = args.getRight();
+        
+        if( ied == null ) return;
+
+        String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
+        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
+
+        if( getSrcCBName() == null ) return;
+        if( getSrcCBName().isEmpty() ) return;
+
+        if(( getSrcLDInst() != null ) || ( ! getSrcLDInst().isEmpty() )) {
+
+            List< LDevice > res5 = 
+                    ied
+                    .getAccessPoint()
+                    .stream()
+                    .map( ap -> ap.getServer() )
+                    .filter( s -> s != null )
+                    .map( s -> s.getLDevice() )
+                    .filter( ld -> ld != null )
+                    .flatMap( ld -> ld.stream() )
+                    .filter( ld -> getSrcLDInst().equals( ld.getInst() ))
+                    .collect( Collectors.toList() );
+
+            String mess5 = "LDevice( inst = " + getSrcLDInst() + " ))";
+            if( res5.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess5 );
+                return;
+            }
+            if( res5.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess5 );
+                return;
+            }
+            lDevice = res5.get( 0 );
+            console.verbose( messagePrefix + "found " + mess5 + " on line " + lDevice.getLineNumber() );
+        }
+        if( lDevice == null ) return;
+
+        AnyLN anyLN = null;
+        if( "LLN0".equals( getSrcLNClass() )) {
+            if( lDevice.getLN0() == null ) {
+                console.error( messagePrefix + "cannot find LN0" );
+                return;
+            }
+            anyLN = lDevice.getLN0();
+        }
+        else {
+            if( getSrcLNInst()== null ) return;
+            // find inside an LN with
+            //   LN.lnClass == FCDA.lnClass
+            //   LN.prefix == FCDA.prefix
+            //   LN.inst == FCDA.lnInst
+            List< LN > res6 = lDevice
+                    .getLN()
+                    .stream()
+                    .filter( ln ->  getSrcLNClass().equals( ln.getLnClass() ) && getSrcLNInst().equals( ln.getInst() ) && getSrcPrefix().equals( ln.getPrefix() ))
+                    .collect( Collectors.toList() );
+
+            String mess6 = "LN( lnClass = " + getSrcLNClass() + ", inst = " + getSrcLNInst() + " )";
+            if( res6.isEmpty() ) {
+                console.error( messagePrefix + "cannot find " + mess6 );
+                return;
+            }
+            if( res6.size() > 1 ) {
+                console.error( messagePrefix + "found several " + mess6 );
+                return;
+            }
+            anyLN = res6.get( 0 );
+            console.verbose( messagePrefix + "found " + mess6 + " on line " + anyLN.getLineNumber() );
+        }
+        if( anyLN == null ) return;
+        anyLN.resolveLinks();
+
+        List< Control > listControls = new ArrayList< Control >();
+        listControls.addAll( anyLN.getLogControl() );
+        listControls.addAll( anyLN.getReportControl() );
+        if( "LLN0".equals( getSrcLNClass() )) {
+            listControls.addAll( lDevice.getLN0().getGSEControl() );
+            listControls.addAll( lDevice.getLN0().getSampledValueControl() );
+        }
+
+        List< Control > res7 =
+                  listControls
+                .stream()
+                .filter( c -> getSrcCBName().equals( c.getName() ))
+                .collect( Collectors.toList() );
+        String mess7 = "Control( name = " + getSrcCBName() + " )";
+        if( res7.isEmpty() ) {
+            console.error( messagePrefix + "cannot find " + mess7 );
+            return;
+        }
+        if( res7.size() > 1 ) {
+            console.error( messagePrefix + "found several " + mess7 );
+            return;
+        }
+        setRefersToControl( res7.get( 0 ));
+        console.info( "ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
 
     }
 

@@ -47,11 +47,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getDAI <em>DAI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getSDI <em>SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getAccessControl <em>Access Control</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DOIImpl extends DataObjectImpl implements DOI {
+public class DOIImpl extends UnNamingImpl implements DOI {
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -100,6 +102,64 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * @ordered
      */
     protected EList<SDI> sdi;
+
+    /**
+     * The default value of the '{@link #getAccessControl() <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAccessControl()
+     * @generated
+     * @ordered
+     */
+    protected static final String ACCESS_CONTROL_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getAccessControl() <em>Access Control</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getAccessControl()
+     * @generated
+     * @ordered
+     */
+    protected String accessControl = ACCESS_CONTROL_EDEFAULT;
+
+    /**
+     * This is true if the Access Control attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean accessControlESet;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -284,6 +344,106 @@ public class DOIImpl extends DataObjectImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getAccessControl() {
+        return accessControl;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setAccessControl(String newAccessControl) {
+        String oldAccessControl = accessControl;
+        accessControl = newAccessControl;
+        boolean oldAccessControlESet = accessControlESet;
+        accessControlESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, accessControl, !oldAccessControlESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetAccessControl() {
+        String oldAccessControl = accessControl;
+        boolean oldAccessControlESet = accessControlESet;
+        accessControl = ACCESS_CONTROL_EDEFAULT;
+        accessControlESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, ACCESS_CONTROL_EDEFAULT, oldAccessControlESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetAccessControl() {
+        return accessControlESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
+        boolean oldNameESet = nameESet;
+        nameESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__NAME, oldName, name, !oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetName() {
+        String oldName = name;
+        boolean oldNameESet = nameESet;
+        name = NAME_EDEFAULT;
+        nameESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetName() {
+        return nameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -348,6 +508,10 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return getDAI();
             case SclPackage.DOI__SDI:
                 return getSDI();
+            case SclPackage.DOI__ACCESS_CONTROL:
+                return getAccessControl();
+            case SclPackage.DOI__NAME:
+                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -375,6 +539,12 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 getSDI().clear();
                 getSDI().addAll((Collection<? extends SDI>)newValue);
                 return;
+            case SclPackage.DOI__ACCESS_CONTROL:
+                setAccessControl((String)newValue);
+                return;
+            case SclPackage.DOI__NAME:
+                setName((String)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -399,6 +569,12 @@ public class DOIImpl extends DataObjectImpl implements DOI {
             case SclPackage.DOI__SDI:
                 unsetSDI();
                 return;
+            case SclPackage.DOI__ACCESS_CONTROL:
+                unsetAccessControl();
+                return;
+            case SclPackage.DOI__NAME:
+                unsetName();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -419,6 +595,10 @@ public class DOIImpl extends DataObjectImpl implements DOI {
                 return isSetDAI();
             case SclPackage.DOI__SDI:
                 return isSetSDI();
+            case SclPackage.DOI__ACCESS_CONTROL:
+                return isSetAccessControl();
+            case SclPackage.DOI__NAME:
+                return isSetName();
         }
         return super.eIsSet(featureID);
     }
@@ -435,6 +615,10 @@ public class DOIImpl extends DataObjectImpl implements DOI {
         StringBuilder result = new StringBuilder(super.toString());
         result.append(" (ix: ");
         if (ixESet) result.append(ix); else result.append("<unset>");
+        result.append(", accessControl: ");
+        if (accessControlESet) result.append(accessControl); else result.append("<unset>");
+        result.append(", name: ");
+        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

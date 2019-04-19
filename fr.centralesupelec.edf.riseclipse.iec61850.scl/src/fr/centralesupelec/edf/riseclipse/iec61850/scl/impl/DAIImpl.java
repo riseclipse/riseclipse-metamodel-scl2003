@@ -51,11 +51,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getVal <em>Val</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getParentSDI <em>Parent SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DAIImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DAIImpl extends DataAttributeImpl implements DAI {
+public class DAIImpl extends UnNamingImpl implements DAI {
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -181,6 +182,35 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * @ordered
      */
     protected EList<Val> val;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -525,6 +555,56 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
+        boolean oldNameESet = nameESet;
+        nameESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DAI__NAME, oldName, name, !oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetName() {
+        String oldName = name;
+        boolean oldNameESet = nameESet;
+        name = NAME_EDEFAULT;
+        nameESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DAI__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetName() {
+        return nameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -599,6 +679,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
                 return getParentDOI();
             case SclPackage.DAI__PARENT_SDI:
                 return getParentSDI();
+            case SclPackage.DAI__NAME:
+                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -634,6 +716,9 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
             case SclPackage.DAI__PARENT_SDI:
                 setParentSDI((SDI)newValue);
                 return;
+            case SclPackage.DAI__NAME:
+                setName((String)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -667,6 +752,9 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
             case SclPackage.DAI__PARENT_SDI:
                 setParentSDI((SDI)null);
                 return;
+            case SclPackage.DAI__NAME:
+                unsetName();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -693,6 +781,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
                 return getParentDOI() != null;
             case SclPackage.DAI__PARENT_SDI:
                 return getParentSDI() != null;
+            case SclPackage.DAI__NAME:
+                return isSetName();
         }
         return super.eIsSet(featureID);
     }
@@ -715,6 +805,8 @@ public class DAIImpl extends DataAttributeImpl implements DAI {
         if (valImportESet) result.append(valImport); else result.append("<unset>");
         result.append(", valKind: ");
         if (valKindESet) result.append(valKind); else result.append("<unset>");
+        result.append(", name: ");
+        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

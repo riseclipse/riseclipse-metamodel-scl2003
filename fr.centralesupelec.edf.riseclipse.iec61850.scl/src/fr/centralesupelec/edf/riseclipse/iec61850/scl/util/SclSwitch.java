@@ -19,178 +19,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRateInMbPerSec;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Cert;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.P;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.PAddr;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerSystemResource;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceForConfDataSet;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettings;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMax;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndMaxAttributes;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxNonZero;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceYesNo;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueWithUnit;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
-
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -474,7 +303,6 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.ABSTRACT_DATA_ATTRIBUTE: {
                 AbstractDataAttribute abstractDataAttribute = (AbstractDataAttribute)theEObject;
                 T result = caseAbstractDataAttribute(abstractDataAttribute);
-                if (result == null) result = caseDataAttribute(abstractDataAttribute);
                 if (result == null) result = caseUnNaming(abstractDataAttribute);
                 if (result == null) result = caseBaseElement(abstractDataAttribute);
                 if (result == null) result = caseAgDesc(abstractDataAttribute);
@@ -487,7 +315,6 @@ public class SclSwitch<T> extends Switch<T> {
                 BDA bda = (BDA)theEObject;
                 T result = caseBDA(bda);
                 if (result == null) result = caseAbstractDataAttribute(bda);
-                if (result == null) result = caseDataAttribute(bda);
                 if (result == null) result = caseUnNaming(bda);
                 if (result == null) result = caseBaseElement(bda);
                 if (result == null) result = caseAgDesc(bda);
@@ -501,7 +328,6 @@ public class SclSwitch<T> extends Switch<T> {
                 T result = caseDA(da);
                 if (result == null) result = caseAbstractDataAttribute(da);
                 if (result == null) result = caseAgDATrgOp(da);
-                if (result == null) result = caseDataAttribute(da);
                 if (result == null) result = caseUnNaming(da);
                 if (result == null) result = caseBaseElement(da);
                 if (result == null) result = caseAgDesc(da);
@@ -524,7 +350,7 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.DO: {
                 DO do_ = (DO)theEObject;
                 T result = caseDO(do_);
-                if (result == null) result = caseDataObject(do_);
+                if (result == null) result = caseAbstractDataObject(do_);
                 if (result == null) result = caseUnNaming(do_);
                 if (result == null) result = caseBaseElement(do_);
                 if (result == null) result = caseAgDesc(do_);
@@ -592,6 +418,7 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.SDO: {
                 SDO sdo = (SDO)theEObject;
                 T result = caseSDO(sdo);
+                if (result == null) result = caseAbstractDataObject(sdo);
                 if (result == null) result = caseUnNaming(sdo);
                 if (result == null) result = caseBaseElement(sdo);
                 if (result == null) result = caseAgDesc(sdo);
@@ -787,7 +614,6 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.DAI: {
                 DAI dai = (DAI)theEObject;
                 T result = caseDAI(dai);
-                if (result == null) result = caseDataAttribute(dai);
                 if (result == null) result = caseUnNaming(dai);
                 if (result == null) result = caseBaseElement(dai);
                 if (result == null) result = caseAgDesc(dai);
@@ -799,7 +625,6 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.DOI: {
                 DOI doi = (DOI)theEObject;
                 T result = caseDOI(doi);
-                if (result == null) result = caseDataObject(doi);
                 if (result == null) result = caseUnNaming(doi);
                 if (result == null) result = caseBaseElement(doi);
                 if (result == null) result = caseAgDesc(doi);
@@ -1144,7 +969,6 @@ public class SclSwitch<T> extends Switch<T> {
             case SclPackage.SDI: {
                 SDI sdi = (SDI)theEObject;
                 T result = caseSDI(sdi);
-                if (result == null) result = caseDataAttribute(sdi);
                 if (result == null) result = caseUnNaming(sdi);
                 if (result == null) result = caseBaseElement(sdi);
                 if (result == null) result = caseAgDesc(sdi);
@@ -1660,25 +1484,14 @@ public class SclSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
-            case SclPackage.DATA_OBJECT: {
-                DataObject dataObject = (DataObject)theEObject;
-                T result = caseDataObject(dataObject);
-                if (result == null) result = caseUnNaming(dataObject);
-                if (result == null) result = caseBaseElement(dataObject);
-                if (result == null) result = caseAgDesc(dataObject);
-                if (result == null) result = caseExplicitLinkResolver(dataObject);
-                if (result == null) result = caseSclObject(dataObject);
-                if (result == null) result = defaultCase(theEObject);
-                return result;
-            }
-            case SclPackage.DATA_ATTRIBUTE: {
-                DataAttribute dataAttribute = (DataAttribute)theEObject;
-                T result = caseDataAttribute(dataAttribute);
-                if (result == null) result = caseUnNaming(dataAttribute);
-                if (result == null) result = caseBaseElement(dataAttribute);
-                if (result == null) result = caseAgDesc(dataAttribute);
-                if (result == null) result = caseExplicitLinkResolver(dataAttribute);
-                if (result == null) result = caseSclObject(dataAttribute);
+            case SclPackage.ABSTRACT_DATA_OBJECT: {
+                AbstractDataObject abstractDataObject = (AbstractDataObject)theEObject;
+                T result = caseAbstractDataObject(abstractDataObject);
+                if (result == null) result = caseUnNaming(abstractDataObject);
+                if (result == null) result = caseBaseElement(abstractDataObject);
+                if (result == null) result = caseAgDesc(abstractDataObject);
+                if (result == null) result = caseExplicitLinkResolver(abstractDataObject);
+                if (result == null) result = caseSclObject(abstractDataObject);
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
@@ -3996,32 +3809,17 @@ public class SclSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Data Object</em>'.
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Data Object</em>'.
      * <!-- begin-user-doc -->
      * This implementation returns null;
      * returning a non-null result will terminate the switch.
      * <!-- end-user-doc -->
      * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Data Object</em>'.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Data Object</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseDataObject(DataObject object) {
-        return null;
-    }
-
-    /**
-     * Returns the result of interpreting the object as an instance of '<em>Data Attribute</em>'.
-     * <!-- begin-user-doc -->
-     * This implementation returns null;
-     * returning a non-null result will terminate the switch.
-     * <!-- end-user-doc -->
-     * @param object the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Data Attribute</em>'.
-     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-     * @generated
-     */
-    public T caseDataAttribute(DataAttribute object) {
+    public T caseAbstractDataObject(AbstractDataObject object) {
         return null;
     }
 

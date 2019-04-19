@@ -35,13 +35,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getParentSDI <em>Parent SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI()
  * @model
  * @generated
  */
-public interface SDI extends DataAttribute {
+public interface SDI extends UnNaming {
     /**
      * Returns the value of the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -282,5 +283,54 @@ public interface SDI extends DataAttribute {
      * @generated
      */
     void setParentSDI( SDI value );
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #setName(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDI_Name()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    void unsetName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Name</em>' attribute is set.
+     * @see #unsetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    boolean isSetName();
 
 } // SDI

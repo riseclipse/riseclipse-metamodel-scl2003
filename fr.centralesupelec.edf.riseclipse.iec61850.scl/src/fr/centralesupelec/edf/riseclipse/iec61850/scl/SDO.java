@@ -28,17 +28,14 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getCount <em>Count</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getParentDOType <em>Parent DO Type</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getRefersToDOType <em>Refers To DO Type</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO()
  * @model
  * @generated
  */
-public interface SDO extends UnNaming {
+public interface SDO extends AbstractDataObject {
     /**
      * Returns the value of the '<em><b>Count</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -93,59 +90,6 @@ public interface SDO extends UnNaming {
     boolean isSetCount();
 
     /**
-     * Returns the value of the '<em><b>Type</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Type</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #setType(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_Type()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getType();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Type</em>' attribute.
-     * @see #isSetType()
-     * @see #unsetType()
-     * @see #getType()
-     * @generated
-     */
-    void setType( String value );
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getType <em>Type</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
-    void unsetType();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getType <em>Type</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Type</em>' attribute is set.
-     * @see #unsetType()
-     * @see #getType()
-     * @see #setType(String)
-     * @generated
-     */
-    boolean isSetType();
-
-    /**
      * Returns the value of the '<em><b>Parent DO Type</b></em>' container reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}'.
      * <!-- begin-user-doc -->
@@ -168,113 +112,5 @@ public interface SDO extends UnNaming {
      * @generated
      */
     void setParentDOType(DOType value);
-
-    /**
-     * Returns the value of the '<em><b>Name</b></em>' attribute.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Name</em>' attribute isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Name</em>' attribute.
-     * @see #isSetName()
-     * @see #unsetName()
-     * @see #setName(String)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_Name()
-     * @model unsettable="true"
-     * @generated
-     */
-    String getName();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Name</em>' attribute.
-     * @see #isSetName()
-     * @see #unsetName()
-     * @see #getName()
-     * @generated
-     */
-    void setName(String value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetName()
-     * @see #getName()
-     * @see #setName(String)
-     * @generated
-     */
-    void unsetName();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getName <em>Name</em>}' attribute is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Name</em>' attribute is set.
-     * @see #unsetName()
-     * @see #getName()
-     * @see #setName(String)
-     * @generated
-     */
-    boolean isSetName();
-
-    /**
-     * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredBySDO <em>Referred By SDO</em>}'.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Refers To DO Type</em>' reference isn't clear,
-     * there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSDO_RefersToDOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredBySDO
-     * @model opposite="ReferredBySDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
-     * @generated
-     */
-    DOType getRefersToDOType();
-
-    /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @generated
-     */
-    void setRefersToDOType(DOType value);
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getRefersToDOType <em>Refers To DO Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @generated
-     */
-    void unsetRefersToDOType();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @generated
-     */
-    boolean isSetRefersToDOType();
 
 } // SDO

@@ -39,7 +39,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SDIItemProvider extends DataAttributeItemProvider {
+public class SDIItemProvider extends UnNamingItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -63,6 +63,7 @@ public class SDIItemProvider extends DataAttributeItemProvider {
 
             addIxPropertyDescriptor(object);
             addSAddrPropertyDescriptor(object);
+            addNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -103,6 +104,28 @@ public class SDIItemProvider extends DataAttributeItemProvider {
                  getString("_UI_SDI_sAddr_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_SDI_sAddr_feature", "_UI_SDI_type"),
                  SclPackage.eINSTANCE.getSDI_SAddr(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SDI_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_name_feature", "_UI_SDI_type"),
+                 SclPackage.eINSTANCE.getSDI_Name(),
                  true,
                  false,
                  false,
@@ -182,6 +205,7 @@ public class SDIItemProvider extends DataAttributeItemProvider {
         switch (notification.getFeatureID(SDI.class)) {
             case SclPackage.SDI__IX:
             case SclPackage.SDI__SADDR:
+            case SclPackage.SDI__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.SDI__DAI:

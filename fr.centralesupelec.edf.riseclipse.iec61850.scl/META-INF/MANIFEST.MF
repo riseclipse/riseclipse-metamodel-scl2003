@@ -15,5 +15,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  fr.centralesupelec.edf.riseclipse.main,
- org.eclipse.jdt.annotation
+ org.eclipse.jdt.annotation,
+ org.apache.commons.lang3
 Bundle-ActivationPolicy: lazy

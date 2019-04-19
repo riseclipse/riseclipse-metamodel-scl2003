@@ -63,9 +63,7 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
 
             addCdcPropertyDescriptor(object);
             addIedTypePropertyDescriptor(object);
-            addReferredByDOPropertyDescriptor(object);
-            addReferredBySDOPropertyDescriptor(object);
-            addReferredByExtRefPropertyDescriptor(object);
+            addReferredByAbstractDataObjectPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -115,63 +113,19 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Referred By DO feature.
+     * This adds a property descriptor for the Referred By Abstract Data Object feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByDOPropertyDescriptor(Object object) {
+    protected void addReferredByAbstractDataObjectPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DOType_ReferredByDO_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_ReferredByDO_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_ReferredByDO(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By SDO feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredBySDOPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DOType_ReferredBySDO_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_ReferredBySDO_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_ReferredBySDO(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Referred By Ext Ref feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addReferredByExtRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DOType_ReferredByExtRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_ReferredByExtRef_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_ReferredByExtRef(),
+                 getString("_UI_DOType_ReferredByAbstractDataObject_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_ReferredByAbstractDataObject_feature", "_UI_DOType_type"),
+                 SclPackage.eINSTANCE.getDOType_ReferredByAbstractDataObject(),
                  true,
                  false,
                  true,

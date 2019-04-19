@@ -37,7 +37,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DOItemProvider extends DataObjectItemProvider {
+public class DOItemProvider extends AbstractDataObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -60,8 +60,7 @@ public class DOItemProvider extends DataObjectItemProvider {
             super.getPropertyDescriptors(object);
 
             addTransientPropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
-            addRefersToDOTypePropertyDescriptor(object);
+            addAccessControlPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -89,45 +88,23 @@ public class DOItemProvider extends DataObjectItemProvider {
     }
 
     /**
-     * This adds a property descriptor for the Type feature.
+     * This adds a property descriptor for the Access Control feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
+    protected void addAccessControlPropertyDescriptor(Object object) {
         itemPropertyDescriptors.add
             (createItemPropertyDescriptor
                 (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
                  getResourceLocator(),
-                 getString("_UI_DO_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DO_type_feature", "_UI_DO_type"),
-                 SclPackage.eINSTANCE.getDO_Type(),
+                 getString("_UI_DO_accessControl_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DO_accessControl_feature", "_UI_DO_type"),
+                 SclPackage.eINSTANCE.getDO_AccessControl(),
                  true,
                  false,
                  false,
                  ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
-    }
-
-    /**
-     * This adds a property descriptor for the Refers To DO Type feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addRefersToDOTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DO_RefersToDOType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DO_RefersToDOType_feature", "_UI_DO_type"),
-                 SclPackage.eINSTANCE.getDO_RefersToDOType(),
-                 true,
-                 false,
-                 true,
-                 null,
                  null,
                  null));
     }
@@ -171,7 +148,7 @@ public class DOItemProvider extends DataObjectItemProvider {
 
         switch (notification.getFeatureID(DO.class)) {
             case SclPackage.DO__TRANSIENT:
-            case SclPackage.DO__TYPE:
+            case SclPackage.DO__ACCESS_CONTROL:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

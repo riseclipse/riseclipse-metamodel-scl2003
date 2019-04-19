@@ -39,7 +39,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DAIItemProvider extends DataAttributeItemProvider {
+public class DAIItemProvider extends UnNamingItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
@@ -65,6 +65,7 @@ public class DAIItemProvider extends DataAttributeItemProvider {
             addSAddrPropertyDescriptor(object);
             addValImportPropertyDescriptor(object);
             addValKindPropertyDescriptor(object);
+            addNamePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -158,6 +159,28 @@ public class DAIItemProvider extends DataAttributeItemProvider {
     }
 
     /**
+     * This adds a property descriptor for the Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_DAI_name_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_DAI_name_feature", "_UI_DAI_type"),
+                 SclPackage.eINSTANCE.getDAI_Name(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
      * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -229,6 +252,7 @@ public class DAIItemProvider extends DataAttributeItemProvider {
             case SclPackage.DAI__SADDR:
             case SclPackage.DAI__VAL_IMPORT:
             case SclPackage.DAI__VAL_KIND:
+            case SclPackage.DAI__NAME:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
             case SclPackage.DAI__VAL:

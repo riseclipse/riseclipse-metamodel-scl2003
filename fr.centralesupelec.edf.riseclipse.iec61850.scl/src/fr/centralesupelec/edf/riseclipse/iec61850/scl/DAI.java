@@ -36,13 +36,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getVal <em>Val</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getParentSDI <em>Parent SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI()
  * @model
  * @generated
  */
-public interface DAI extends DataAttribute {
+public interface DAI extends UnNaming {
     /**
      * Returns the value of the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->
@@ -346,5 +347,54 @@ public interface DAI extends DataAttribute {
      * @generated
      */
     void setParentSDI(SDI value);
+
+    /**
+     * Returns the value of the '<em><b>Name</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #setName(String)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getDAI_Name()
+     * @model unsettable="true"
+     * @generated
+     */
+    String getName();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Name</em>' attribute.
+     * @see #isSetName()
+     * @see #unsetName()
+     * @see #getName()
+     * @generated
+     */
+    void setName(String value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getName <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    void unsetName();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getName <em>Name</em>}' attribute is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Name</em>' attribute is set.
+     * @see #unsetName()
+     * @see #getName()
+     * @see #setName(String)
+     * @generated
+     */
+    boolean isSetName();
 
 } // DAI

@@ -18,6 +18,176 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Address;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyContentFromOtherNamespace;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Authentication;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRate;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.BitRateInMbPerSec;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Cert;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Certificate;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.CommProt;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfDataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLNs;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLdName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfLogControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfReportControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSG;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConfSigRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithTriggerOpt;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInSec;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DynDataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumVal;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqFunction;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.EqSubFunction;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Equipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.FileHandling;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Function;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSESecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEDir;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GSSE;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetCBValues;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataObjectDefinition;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDataSetValue;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.GetDirectory;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Header;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.History;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Line;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.MaxTime;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.McSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.MinTime;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Naming;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.NeutralPoint;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.OptFields;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.P;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.PAddr;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.P_PhysConn;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerSystemResource;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Private;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Protocol;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.RedProt;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SGEdit;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSecurity;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SamplesPerSec;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SecPerSamples;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceForConfDataSet;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceSettings;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMax;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndMaxAttributes;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndModify;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxNonZero;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithOptionalMax;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceYesNo;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Services;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SetDataSetValue;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SettingGroups;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmpRate;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Subject;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimerActivatedControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.TrgOps;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueHandling;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValueWithUnit;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.Voltage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -641,12 +811,8 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
                 return createExplicitLinkResolverAdapter();
             }
             @Override
-            public Adapter caseDataObject(DataObject object) {
-                return createDataObjectAdapter();
-            }
-            @Override
-            public Adapter caseDataAttribute(DataAttribute object) {
-                return createDataAttributeAdapter();
+            public Adapter caseAbstractDataObject(AbstractDataObject object) {
+                return createAbstractDataObjectAdapter();
             }
             @Override
             public Adapter caseSclObject(SclObject object) {
@@ -3024,30 +3190,16 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject <em>Data Object</em>}'.
+     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject <em>Abstract Data Object</em>}'.
      * <!-- begin-user-doc -->
      * This default implementation returns null so that we can easily ignore cases;
      * it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObject
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject
      * @generated
      */
-    public Adapter createDataObjectAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute <em>Data Attribute</em>}'.
-     * <!-- begin-user-doc -->
-     * This default implementation returns null so that we can easily ignore cases;
-     * it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
-     * @return the new adapter.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DataAttribute
-     * @generated
-     */
-    public Adapter createDataAttributeAdapter() {
+    public Adapter createAbstractDataObjectAdapter() {
         return null;
     }
 

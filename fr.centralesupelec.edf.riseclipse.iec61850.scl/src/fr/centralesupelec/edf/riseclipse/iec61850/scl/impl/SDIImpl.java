@@ -48,11 +48,12 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getParentDOI <em>Parent DOI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getSubSDI <em>Sub SDI</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getParentSDI <em>Parent SDI</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SDIImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SDIImpl extends DataAttributeImpl implements SDI {
+public class SDIImpl extends UnNamingImpl implements SDI {
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -130,6 +131,35 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
      * @ordered
      */
     protected EList<SDI> subSDI;
+
+    /**
+     * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAME_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getName()
+     * @generated
+     * @ordered
+     */
+    protected String name = NAME_EDEFAULT;
+
+    /**
+     * This is true if the Name attribute has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean nameESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -404,6 +434,56 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setName(String newName) {
+        String oldName = name;
+        name = newName;
+        boolean oldNameESet = nameESet;
+        nameESet = true;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDI__NAME, oldName, name, !oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetName() {
+        String oldName = name;
+        boolean oldNameESet = nameESet;
+        name = NAME_EDEFAULT;
+        nameESet = false;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDI__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetName() {
+        return nameESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      */
@@ -483,6 +563,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
                 return getSubSDI();
             case SclPackage.SDI__PARENT_SDI:
                 return getParentSDI();
+            case SclPackage.SDI__NAME:
+                return getName();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -516,6 +598,9 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
             case SclPackage.SDI__PARENT_SDI:
                 setParentSDI((SDI)newValue);
                 return;
+            case SclPackage.SDI__NAME:
+                setName((String)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -546,6 +631,9 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
             case SclPackage.SDI__PARENT_SDI:
                 setParentSDI((SDI)null);
                 return;
+            case SclPackage.SDI__NAME:
+                unsetName();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -570,6 +658,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
                 return isSetSubSDI();
             case SclPackage.SDI__PARENT_SDI:
                 return getParentSDI() != null;
+            case SclPackage.SDI__NAME:
+                return isSetName();
         }
         return super.eIsSet(featureID);
     }
@@ -588,6 +678,8 @@ public class SDIImpl extends DataAttributeImpl implements SDI {
         if (ixESet) result.append(ix); else result.append("<unset>");
         result.append(", sAddr: ");
         if (sAddrESet) result.append(sAddr); else result.append("<unset>");
+        result.append(", name: ");
+        if (nameESet) result.append(name); else result.append("<unset>");
         result.append(')');
         return result.toString();
     }

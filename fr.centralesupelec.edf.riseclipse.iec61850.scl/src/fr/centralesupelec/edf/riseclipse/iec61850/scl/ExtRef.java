@@ -43,7 +43,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getSrcPrefix <em>Src Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getParentInputs <em>Parent Inputs</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}</li>
@@ -878,55 +878,55 @@ public interface ExtRef extends BaseElement, AgDesc {
     boolean isSetRefersToAbstractDataAttribute();
 
     /**
-     * Returns the value of the '<em><b>Refers To DO Type</b></em>' reference.
-     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
+     * Returns the value of the '<em><b>Refers To Abstract Data Object</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getReferredByExtRef <em>Referred By Ext Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #setRefersToDOType(DOType)
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToDOType()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByExtRef
+     * @return the value of the '<em>Refers To Abstract Data Object</em>' reference.
+     * @see #isSetRefersToAbstractDataObject()
+     * @see #unsetRefersToAbstractDataObject()
+     * @see #setRefersToAbstractDataObject(AbstractDataObject)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getExtRef_RefersToAbstractDataObject()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getReferredByExtRef
      * @model opposite="ReferredByExtRef" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    DOType getRefersToDOType();
+    AbstractDataObject getRefersToAbstractDataObject();
 
     /**
-     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Refers To DO Type</em>' reference.
-     * @see #isSetRefersToDOType()
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
+     * @param value the new value of the '<em>Refers To Abstract Data Object</em>' reference.
+     * @see #isSetRefersToAbstractDataObject()
+     * @see #unsetRefersToAbstractDataObject()
+     * @see #getRefersToAbstractDataObject()
      * @generated
      */
-    void setRefersToDOType(DOType value);
+    void setRefersToAbstractDataObject(AbstractDataObject value);
 
     /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference.
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}' reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #isSetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
+     * @see #isSetRefersToAbstractDataObject()
+     * @see #getRefersToAbstractDataObject()
+     * @see #setRefersToAbstractDataObject(AbstractDataObject)
      * @generated
      */
-    void unsetRefersToDOType();
+    void unsetRefersToAbstractDataObject();
 
     /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToDOType <em>Refers To DO Type</em>}' reference is set.
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}' reference is set.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Refers To DO Type</em>' reference is set.
-     * @see #unsetRefersToDOType()
-     * @see #getRefersToDOType()
-     * @see #setRefersToDOType(DOType)
+     * @return whether the value of the '<em>Refers To Abstract Data Object</em>' reference is set.
+     * @see #unsetRefersToAbstractDataObject()
+     * @see #getRefersToAbstractDataObject()
+     * @see #setRefersToAbstractDataObject(AbstractDataObject)
      * @generated
      */
-    boolean isSetRefersToDOType();
+    boolean isSetRefersToAbstractDataObject();
 
     /**
      * Returns the value of the '<em><b>PServ T</b></em>' attribute.
