@@ -25,7 +25,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -51,7 +51,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
+public class KDCImpl extends SclObjectImpl implements KDC {
     /**
      * The default value of the '{@link #getApName() <em>Ap Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -547,20 +547,20 @@ public class KDCImpl extends ExplicitLinkResolverImpl implements KDC {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         if( getIedName() == null ) return;
         if( getApName() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from KDC on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getIedName().equals( ied.getName() ))
                 .collect( Collectors.toList() );

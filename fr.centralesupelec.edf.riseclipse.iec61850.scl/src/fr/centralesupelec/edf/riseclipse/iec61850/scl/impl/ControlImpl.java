@@ -26,8 +26,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -398,13 +398,11 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public AnyLN getParentAnyLN() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        throw new RiseClipseFatalException( "Control.getParentAnyLN() called", null );
     }
 
     /**
@@ -565,9 +563,9 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // name    Name of the report control block. This name is relative to the LN hosting the RCB, and shall be unique within the LN
         // desc    The description text 
@@ -577,7 +575,6 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         if( getDatSet() == null ) return;
         if( getParentAnyLN() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from Control on line " + getLineNumber() + ": ";
 
         // find an DataSet with

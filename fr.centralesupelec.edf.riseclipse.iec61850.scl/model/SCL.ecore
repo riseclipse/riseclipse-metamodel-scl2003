@@ -43,7 +43,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaseElement" abstract="true" eSuperTypes="#//ExplicitLinkResolver">
+  <eClassifiers xsi:type="ecore:EClass" name="BaseElement" abstract="true" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Private" ordered="false"
         upperBound="-1" eType="#//Private" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//Private/ParentBaseElement"/>
@@ -451,7 +451,7 @@
         eType="#//SDO" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//SDO/ParentDOType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeTemplates" eSuperTypes="#//ExplicitLinkResolver">
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeTemplates" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DAType" ordered="false"
         upperBound="-1" eType="#//DAType" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DAType/ParentDataTypeTemplates"/>
@@ -694,7 +694,7 @@
         eType="#//IssuerName" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//IssuerName/ParentCertificate"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ClientLN" eSuperTypes="#//ExplicitLinkResolver #//AgLNRef">
+  <eClassifiers xsi:type="ecore:EClass" name="ClientLN" eSuperTypes="#//SclObject #//AgLNRef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apRef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentRptEnabled" ordered="false"
@@ -949,7 +949,7 @@
         eType="#//Control" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Control/ReferredByExtRef"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FCDA" eSuperTypes="#//ExplicitLinkResolver">
+  <eClassifiers xsi:type="ecore:EClass" name="FCDA" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="daName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="doName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1089,7 +1089,7 @@
         eType="#//IEDName" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//IEDName/RefersToIED"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IEDName" eSuperTypes="#//ExplicitLinkResolver">
+  <eClassifiers xsi:type="ecore:EClass" name="IEDName" eSuperTypes="#//SclObject">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
       <details key="kind" value="simple"/>
     </eAnnotations>
@@ -1134,7 +1134,7 @@
         eType="#//Certificate" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Certificate/IssuerName"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KDC" eSuperTypes="#//ExplicitLinkResolver">
+  <eClassifiers xsi:type="ecore:EClass" name="KDC" eSuperTypes="#//SclObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2121,8 +2121,6 @@
     <eLiterals name="buffered" value="1"/>
     <eLiterals name="both" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExplicitLinkResolver" abstract="true"
-      eSuperTypes="#//SclObject"/>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDataObject" abstract="true"
       eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -2137,9 +2135,16 @@
         eOpposite="#//ExtRef/RefersToAbstractDataObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SclObject" abstract="true">
+    <eOperations name="buildExplicitLinks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="console" eType="#//IRiseClipseConsole"/>
+      <eParameters name="forceUpdate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" transient="true"
         defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="explicitLinksBuilt" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" transient="true"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UnNaming" abstract="true" eSuperTypes="#//BaseElement #//AgDesc"/>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceYesNo" eSuperTypes="#//SclObject"/>
@@ -2373,4 +2378,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="virtual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IRiseClipseConsole" instanceClassName="fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole"
+      abstract="true" interface="true"/>
 </ecore:EPackage>

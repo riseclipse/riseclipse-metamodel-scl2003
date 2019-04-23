@@ -28,7 +28,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -918,9 +918,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // lnInst   The LN instance identification. Can only be missing for lnClass=LLN0, meaning as value here the empty string
         // lnClass  The LN class as defined in IEC 61850-7-x
@@ -934,7 +934,6 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         if( getLnClass() == null ) return;
 
         String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         // Resolve only if attribute is not None
         // Default value is None
@@ -946,7 +945,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // find an IED with
         //   IED.name == LNode.iedName
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getIedName().equals( ied.getName() ))
                 .collect( Collectors.toList() );

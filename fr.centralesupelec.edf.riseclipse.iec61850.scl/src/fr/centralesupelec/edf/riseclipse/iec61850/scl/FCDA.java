@@ -45,7 +45,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FCDA extends ExplicitLinkResolver {
+public interface FCDA extends SclObject {
     /**
      * Returns the value of the '<em><b>Da Name</b></em>' attribute.
      * <!-- begin-user-doc -->

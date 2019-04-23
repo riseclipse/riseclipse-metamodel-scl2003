@@ -32,7 +32,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -63,7 +63,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
+public class ClientLNImpl extends SclObjectImpl implements ClientLN {
     /**
      * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1076,9 +1076,9 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // iedName The name of the IED where the LN resides
         // apRef   The name of the access point via which the IED shall be accessed. Optional, not needed if the IED has only one access point.
@@ -1094,13 +1094,13 @@ public class ClientLNImpl extends ExplicitLinkResolverImpl implements ClientLN {
         // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
         if( getLdInst().equals( "LD0" )) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from ClientLN on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == ClientLN.iedName
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getIedName().equals( ied.getName() ))
                 .collect( Collectors.toList() );

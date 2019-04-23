@@ -32,7 +32,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -1167,9 +1167,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // kind            The kind of pre-configured association, pre-established or predefined
         // associationID   The identification of a pre-configured association (otherwise empty)
@@ -1183,13 +1183,13 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         if( getLdInst() == null ) return;
         if( getLnClass() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from Association on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == Association.iedName
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getIedName().equals( ied.getName() ))
                 .collect( Collectors.toList() );

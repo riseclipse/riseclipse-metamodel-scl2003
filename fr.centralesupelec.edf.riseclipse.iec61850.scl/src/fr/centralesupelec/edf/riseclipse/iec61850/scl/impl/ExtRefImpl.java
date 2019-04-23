@@ -35,7 +35,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.ArrayList;
@@ -2429,15 +2429,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
-        Pair< IED, LDevice > args = doResolveDataLink();
-        doResolveCBLink( args );
+        Pair< IED, LDevice > args = doResolveDataLink( console );
+        doResolveCBLink( console, args );
     }
     
-    private Pair< IED, LDevice > doResolveDataLink() {
+    private Pair< IED, LDevice > doResolveDataLink( IRiseClipseConsole console ) {
 
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
@@ -2468,7 +2468,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( getDoName().isEmpty() ) return Pair.of( ied, lDevice );
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         if( "@".equals( getIedName() )) {
             EObject object = this;
@@ -2479,7 +2478,8 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         else {
             ied =
-                    get_IEDs()
+                    SclUtilities
+                    .get_IEDs( this )
                     .stream()
                     .filter( i -> getIedName().equals(  i.getName() ))
                     .findAny()
@@ -2550,7 +2550,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
         }
         if( anyLN == null ) return Pair.of( ied, lDevice );
-        anyLN.resolveLinks();
+        anyLN.buildExplicitLinks( console, false );
 
         if( anyLN.getRefersToLNodeType() == null ) return Pair.of( ied, lDevice );
         console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
@@ -2583,7 +2583,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         AbstractDataObject ado = res3a.get( 0 );
         console.verbose( messagePrefix + "found " + mess3a + " on line " + ado.getLineNumber() );
-        ado.resolveLinks();
+        ado.buildExplicitLinks( console, false );
 
         for( int i = 1; i < doNames.length; ++i ) {
             DOType doType = ado.getRefersToDOType();
@@ -2609,7 +2609,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ado = res3b.get( 0 );
             console.verbose( messagePrefix + "found " + mess3b + " on line " + ado.getLineNumber() );
 
-            ado.resolveLinks();
+            ado.buildExplicitLinks( console, false );
         }
         // Set link to DO/SDO only if no daName
         if( getDaName() == null ) {
@@ -2645,7 +2645,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
 
         for( int i = 1; i < daNames.length; ++i ) {
-            da.resolveLinks();
+            da.buildExplicitLinks( console, false );
 
             String name = daNames[i];
             List< BDA > res4b =
@@ -2675,7 +2675,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         return Pair.of( ied, lDevice );
     }
 
-    private void doResolveCBLink( Pair< IED, LDevice > args ) {
+    private void doResolveCBLink( IRiseClipseConsole console, Pair< IED, LDevice > args ) {
 
         // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
         // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
@@ -2689,7 +2689,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( ied == null ) return;
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         if( getSrcCBName() == null ) return;
         if( getSrcCBName().isEmpty() ) return;
@@ -2755,7 +2754,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             console.verbose( messagePrefix + "found " + mess6 + " on line " + anyLN.getLineNumber() );
         }
         if( anyLN == null ) return;
-        anyLN.resolveLinks();
+        anyLN.buildExplicitLinks( console, false );
 
         List< Control > listControls = new ArrayList< Control >();
         listControls.addAll( anyLN.getLogControl() );

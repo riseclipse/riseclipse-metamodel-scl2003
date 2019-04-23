@@ -50,7 +50,7 @@ public class SclResourceSetImpl extends RiseClipseResourceSet {
         for( Resource resource : getResources() ) {
             if( resource instanceof SclResourceImpl ) {
                 SCL scl = ( SCL ) resource.getContents().get( 0 );
-                scl.resolveLinks();
+                scl.buildExplicitLinks( console, false );
             }
         }
         

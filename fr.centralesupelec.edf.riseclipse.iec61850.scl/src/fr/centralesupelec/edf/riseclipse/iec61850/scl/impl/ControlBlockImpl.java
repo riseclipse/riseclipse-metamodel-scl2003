@@ -29,8 +29,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
@@ -474,13 +474,11 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        throw new RiseClipseFatalException( "ControlBlock.getParentConnectedAP() called", null );
     }
 
     /**
@@ -640,9 +638,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // desc    Textual description
         // ldInst  The instance identification of the LD within this IED, on which the control block is located.
@@ -656,11 +654,9 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         if( getLdInst() == null ) return;
         if( getCbName() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from ControlBlock on line " + getLineNumber() + ": ";
 
         if( getParentConnectedAP() == null ) return;
-        getParentConnectedAP().resolveLinks();
         if( getParentConnectedAP().getRefersToAccessPoint() == null ) return;
         IED ied = getParentConnectedAP().getRefersToAccessPoint().getParentIED();
         if( ied == null ) return;

@@ -45,7 +45,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -959,30 +958,29 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         if(( getName() == null ) || getName().isEmpty() ) return;
         
-        if( ! doResolveLinkWithParentDOI() ) {
-            if( ! doResolveLinkWithParentSDI() ) {
+        if( ! doBuildExplicitLinkWithParentDOI( console )) {
+            if( ! doBuildExplicitLinkWithParentSDI( console )) {
                 //
             }
         }
     }
         
-    private boolean doResolveLinkWithParentDOI() {
+    private boolean doBuildExplicitLinkWithParentDOI( IRiseClipseConsole console ) {
         if( getParentDOI() == null ) return false;
         
         String messagePrefix = "while resolving link from DAI on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return false;
         console.verbose( messagePrefix + "found DO on line " + do_.getLineNumber() );
 
-        do_.resolveLinks();
+        do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         if( dot == null ) return false;
         console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
@@ -1010,16 +1008,15 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         return true;
     }
         
-    private boolean doResolveLinkWithParentSDI() {
+    private boolean doBuildExplicitLinkWithParentSDI( IRiseClipseConsole console ) {
         if( getParentSDI() == null ) return false;
         
         String messagePrefix = "while resolving link from DAI on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) return false;
         
-        att.resolveLinks();
+        att.buildExplicitLinks( console, false );
         console.verbose( messagePrefix + "found AbstractDataAttribute on line " + att.getLineNumber() );
         
         DAType dat = att.getRefersToDAType();

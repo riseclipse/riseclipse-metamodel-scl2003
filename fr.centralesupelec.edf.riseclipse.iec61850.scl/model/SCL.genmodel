@@ -1015,7 +1015,6 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/ParentSubstation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//VoltageLevel/Voltage"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="SCL.ecore#//ExplicitLinkResolver"/>
     <genClasses image="false" ecoreClass="SCL.ecore#//AbstractDataObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataObject/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AbstractDataObject/type"/>
@@ -1024,6 +1023,11 @@
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//SclObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/lineNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//SclObject/explicitLinksBuilt"/>
+      <genOperations ecoreOperation="SCL.ecore#//SclObject/buildExplicitLinks">
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/console"/>
+        <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/forceUpdate"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//UnNaming"/>
     <genClasses ecoreClass="SCL.ecore#//ServiceYesNo"/>
@@ -1139,5 +1143,6 @@
     <genClasses image="false" ecoreClass="SCL.ecore#//AgVirtual">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgVirtual/virtual"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="SCL.ecore#//IRiseClipseConsole"/>
   </genPackages>
 </genmodel:GenModel>

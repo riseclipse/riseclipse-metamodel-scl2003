@@ -26,7 +26,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Terminal;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.List;
@@ -1103,9 +1103,9 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
 
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
@@ -1121,7 +1121,6 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         if( getCNodeName() == null ) return;
 
         String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         if( getSubstationName() != null && ! getSubstationName().isEmpty() ) {
 
@@ -1136,7 +1135,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             //   Substation.name == Terminal.substationName
             Substation substation = null;
             List< Substation > res1 =
-                    get_Substations()
+                    SclUtilities
+                    .get_Substations( this )
                     .stream()
                     .filter(  s -> getSubstationName().equals( s.getName() ))
                     .collect( Collectors.toList() );
@@ -1227,7 +1227,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             //   Line.name == Terminal.lineName
             Line line = null;
             List< Line > res5 =
-                    get_SCL()
+                    SclUtilities
+                    .get_SCL( this )
                     .getLine()
                     .stream()
                     .filter( l -> getLineName().equals( l.getName() ))

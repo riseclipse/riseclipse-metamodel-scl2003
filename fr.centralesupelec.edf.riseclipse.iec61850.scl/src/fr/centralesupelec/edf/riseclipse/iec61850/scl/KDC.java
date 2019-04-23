@@ -37,7 +37,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model
  * @generated
  */
-public interface KDC extends ExplicitLinkResolver {
+public interface KDC extends SclObject {
     /**
      * Returns the value of the '<em><b>Ap Name</b></em>' attribute.
      * <!-- begin-user-doc -->

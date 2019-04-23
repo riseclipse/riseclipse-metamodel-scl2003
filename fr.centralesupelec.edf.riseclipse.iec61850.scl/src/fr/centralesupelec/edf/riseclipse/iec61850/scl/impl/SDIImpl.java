@@ -43,7 +43,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -967,30 +966,29 @@ public class SDIImpl extends UnNamingImpl implements SDI {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         if(( getName() == null ) || getName().isEmpty() ) return;
 
-        if( ! doResolveLinkWithParentDOI() ) {
-            if( ! doResolveLinkWithParentSDI() ) {
+        if( ! doResolveLinkWithParentDOI( console )) {
+            if( ! doResolveLinkWithParentSDI( console )) {
                 //
             }
         }
     }
     
-    private boolean doResolveLinkWithParentDOI() {
+    private boolean doResolveLinkWithParentDOI( IRiseClipseConsole console ) {
         if( getParentDOI() == null ) return false;
 
         String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return false;
         console.verbose( messagePrefix + "found DO on line " + do_.getLineNumber() );
 
-        do_.resolveLinks();
+        do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         if( dot == null ) return false;
         console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
@@ -1034,17 +1032,16 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         return true;
     }
     
-    private boolean doResolveLinkWithParentSDI() {
+    private boolean doResolveLinkWithParentSDI( IRiseClipseConsole console ) {
         if( getParentSDI() == null ) return false;
 
         String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         SDO sdo = getParentSDI().getRefersToSDO();
         
         if( sdo != null ) {
             console.verbose( messagePrefix + "found SDO on line " + sdo.getLineNumber() );
-            sdo.resolveLinks();
+            sdo.buildExplicitLinks( console, false );
             
             DOType dot = sdo.getRefersToDOType();
             if( dot == null ) return false;
@@ -1094,7 +1091,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             console.error( messagePrefix + "cannot find SDO or AbstractDataAttribute" );
             return false;
         }
-        att.resolveLinks();
+        att.buildExplicitLinks( console, false );
         console.verbose( messagePrefix + "found AbstractDataAttribute on line " + att.getLineNumber() );
         
         DAType dat = att.getRefersToDAType();

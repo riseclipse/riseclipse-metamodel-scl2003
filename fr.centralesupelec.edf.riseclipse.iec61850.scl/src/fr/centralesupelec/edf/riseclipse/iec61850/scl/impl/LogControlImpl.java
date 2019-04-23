@@ -28,7 +28,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -1238,9 +1237,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // name         the name of the log control block
         // desc         a description text
@@ -1258,7 +1257,6 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         if( getLogName() == null ) return;
         
         String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         EObject object = this;
         while(( object != null ) && !( object instanceof IED ) ) {

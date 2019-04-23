@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * @model abstract="true"
  * @generated
  */
-public interface BaseElement extends ExplicitLinkResolver {
+public interface BaseElement extends SclObject {
     /**
      * Returns the value of the '<em><b>Private</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private}.

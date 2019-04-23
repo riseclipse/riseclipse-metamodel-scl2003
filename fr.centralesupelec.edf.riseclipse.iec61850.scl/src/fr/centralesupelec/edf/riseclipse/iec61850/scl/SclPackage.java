@@ -82,7 +82,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSclObject()
      * @generated
      */
-    int SCL_OBJECT = 141;
+    int SCL_OBJECT = 140;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -94,13 +94,31 @@ public interface SclPackage extends EPackage {
     int SCL_OBJECT__LINE_NUMBER = 0;
 
     /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_OBJECT__EXPLICIT_LINKS_BUILT = 1;
+
+    /**
      * The number of structural features of the '<em>Object</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_OBJECT_FEATURE_COUNT = 1;
+    int SCL_OBJECT_FEATURE_COUNT = 2;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = 0;
 
     /**
      * The number of operations of the '<em>Object</em>' class.
@@ -109,7 +127,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SCL_OBJECT_OPERATION_COUNT = 0;
+    int SCL_OBJECT_OPERATION_COUNT = 1;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyContentFromOtherNamespaceImpl <em>Any Content From Other Namespace</em>}' class.
@@ -129,6 +147,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_CONTENT_FROM_OTHER_NAMESPACE__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_CONTENT_FROM_OTHER_NAMESPACE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -176,6 +203,15 @@ public interface SclPackage extends EPackage {
     int ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_CONTENT_FROM_OTHER_NAMESPACE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Any Content From Other Namespace</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -183,43 +219,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_CONTENT_FROM_OTHER_NAMESPACE_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
-
-    /**
-     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExplicitLinkResolverImpl <em>Explicit Link Resolver</em>}' class.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ExplicitLinkResolverImpl
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getExplicitLinkResolver()
-     * @generated
-     */
-    int EXPLICIT_LINK_RESOLVER = 139;
-
-    /**
-     * The feature id for the '<em><b>Line Number</b></em>' attribute.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXPLICIT_LINK_RESOLVER__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
-
-    /**
-     * The number of structural features of the '<em>Explicit Link Resolver</em>' class.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXPLICIT_LINK_RESOLVER_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 0;
-
-    /**
-     * The number of operations of the '<em>Explicit Link Resolver</em>' class.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int EXPLICIT_LINK_RESOLVER_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.BaseElementImpl <em>Base Element</em>}' class.
@@ -238,7 +237,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int BASE_ELEMENT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_ELEMENT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -247,7 +255,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT__PRIVATE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int BASE_ELEMENT__PRIVATE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Text</b></em>' containment reference.
@@ -256,7 +264,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT__TEXT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int BASE_ELEMENT__TEXT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Any</b></em>' attribute list.
@@ -265,7 +273,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT__ANY = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int BASE_ELEMENT__ANY = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Any Attribute</b></em>' attribute list.
@@ -274,7 +282,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT__ANY_ATTRIBUTE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int BASE_ELEMENT__ANY_ATTRIBUTE = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>Base Element</em>' class.
@@ -283,7 +291,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int BASE_ELEMENT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Base Element</em>' class.
@@ -292,7 +309,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int BASE_ELEMENT_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int BASE_ELEMENT_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.HeaderImpl <em>Header</em>}' class.
@@ -312,6 +329,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HEADER__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HEADER__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -395,6 +421,15 @@ public interface SclPackage extends EPackage {
     int HEADER_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HEADER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Header</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -421,6 +456,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HISTORY__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HISTORY__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Header</b></em>' container reference.
@@ -450,6 +494,15 @@ public interface SclPackage extends EPackage {
     int HISTORY_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HISTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>History</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -476,6 +529,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HITEM__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HITEM__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Revision</b></em>' attribute.
@@ -550,6 +612,15 @@ public interface SclPackage extends EPackage {
     int HITEM_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HITEM___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Hitem</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -576,6 +647,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ID_NAMING__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -641,6 +721,15 @@ public interface SclPackage extends EPackage {
     int ID_NAMING_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>ID Naming</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -667,6 +756,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NAMING__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -732,6 +830,15 @@ public interface SclPackage extends EPackage {
     int NAMING_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Naming</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -758,6 +865,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_CONTAINER__LINE_NUMBER = NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -832,6 +948,15 @@ public interface SclPackage extends EPackage {
     int LNODE_CONTAINER_FEATURE_COUNT = NAMING_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>LNode Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -858,6 +983,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_SYSTEM_RESOURCE__LINE_NUMBER = LNODE_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT = LNODE_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -932,6 +1066,15 @@ public interface SclPackage extends EPackage {
     int POWER_SYSTEM_RESOURCE_FEATURE_COUNT = LNODE_CONTAINER_FEATURE_COUNT + 0;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Power System Resource</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -958,6 +1101,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1050,6 +1202,15 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>General Equipment Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1076,6 +1237,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LINE__LINE_NUMBER = GENERAL_EQUIPMENT_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE__EXPLICIT_LINKS_BUILT = GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1240,6 +1410,15 @@ public interface SclPackage extends EPackage {
     int LINE_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Line</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1266,6 +1445,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PRIVATE__LINE_NUMBER = ANY_CONTENT_FROM_OTHER_NAMESPACE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE__EXPLICIT_LINKS_BUILT = ANY_CONTENT_FROM_OTHER_NAMESPACE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Mixed</b></em>' attribute list.
@@ -1340,6 +1528,15 @@ public interface SclPackage extends EPackage {
     int PRIVATE_FEATURE_COUNT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_CONTENT_FROM_OTHER_NAMESPACE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Private</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1366,6 +1563,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROCESS__LINE_NUMBER = GENERAL_EQUIPMENT_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS__EXPLICIT_LINKS_BUILT = GENERAL_EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1521,6 +1727,15 @@ public interface SclPackage extends EPackage {
     int PROCESS_FEATURE_COUNT = GENERAL_EQUIPMENT_CONTAINER_FEATURE_COUNT + 7;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Process</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1547,6 +1762,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SCL__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -1684,6 +1908,15 @@ public interface SclPackage extends EPackage {
     int SCL_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 10;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SCL</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1710,6 +1943,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TEXT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -1757,6 +1999,15 @@ public interface SclPackage extends EPackage {
     int TEXT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Text</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1783,6 +2034,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ADDRESS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Connected AP</b></em>' container reference.
@@ -1819,6 +2079,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ADDRESS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Address</em>' class.
@@ -2067,7 +2336,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getBitRateInMbPerSec()
      * @generated
      */
-    int BIT_RATE_IN_MB_PER_SEC = 154;
+    int BIT_RATE_IN_MB_PER_SEC = 153;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DurationInMilliSecImpl <em>Duration In Milli Sec</em>}' class.
@@ -2077,7 +2346,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getDurationInMilliSec()
      * @generated
      */
-    int DURATION_IN_MILLI_SEC = 153;
+    int DURATION_IN_MILLI_SEC = 152;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AccessControlImpl <em>Access Control</em>}' class.
@@ -3087,7 +3356,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getUnNaming()
      * @generated
      */
-    int UN_NAMING = 142;
+    int UN_NAMING = 141;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -3097,6 +3366,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int UN_NAMING__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UN_NAMING__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3153,6 +3431,15 @@ public interface SclPackage extends EPackage {
     int UN_NAMING_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Un Naming</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3169,6 +3456,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int COMMUNICATION__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMUNICATION__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3243,6 +3539,15 @@ public interface SclPackage extends EPackage {
     int COMMUNICATION_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMUNICATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Communication</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3259,6 +3564,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTED_AP__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTED_AP__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3405,6 +3719,15 @@ public interface SclPackage extends EPackage {
     int CONNECTED_AP_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTED_AP___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Connected AP</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3421,6 +3744,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_BLOCK__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3513,6 +3845,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_BLOCK_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3538,6 +3879,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE__LINE_NUMBER = CONTROL_BLOCK__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE__EXPLICIT_LINKS_BUILT = CONTROL_BLOCK__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3657,6 +4007,15 @@ public interface SclPackage extends EPackage {
     int GSE_FEATURE_COUNT = CONTROL_BLOCK_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3682,6 +4041,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PADDR__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PADDR__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -3711,6 +4079,15 @@ public interface SclPackage extends EPackage {
     int PADDR_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>PAddr</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3727,6 +4104,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int P__LINE_NUMBER = PADDR__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int P__EXPLICIT_LINKS_BUILT = PADDR__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -3765,6 +4151,15 @@ public interface SclPackage extends EPackage {
     int P_FEATURE_COUNT = PADDR_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int P___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>P</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3781,6 +4176,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PPHYS_CONN__LINE_NUMBER = PADDR__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PPHYS_CONN__EXPLICIT_LINKS_BUILT = PADDR__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -3819,6 +4223,15 @@ public interface SclPackage extends EPackage {
     int PPHYS_CONN_FEATURE_COUNT = PADDR_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PPHYS_CONN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>PPhys Conn</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3835,6 +4248,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PHYS_CONN__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PHYS_CONN__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -3918,6 +4340,15 @@ public interface SclPackage extends EPackage {
     int PHYS_CONN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PHYS_CONN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Phys Conn</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3934,6 +4365,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV__LINE_NUMBER = CONTROL_BLOCK__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV__EXPLICIT_LINKS_BUILT = CONTROL_BLOCK__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4035,6 +4475,15 @@ public interface SclPackage extends EPackage {
     int SMV_FEATURE_COUNT = CONTROL_BLOCK_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4060,6 +4509,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_NETWORK__LINE_NUMBER = NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4161,6 +4619,15 @@ public interface SclPackage extends EPackage {
     int SUB_NETWORK_FEATURE_COUNT = NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Sub Network</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4177,6 +4644,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4359,6 +4835,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4375,6 +4860,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA__LINE_NUMBER = ABSTRACT_DATA_ATTRIBUTE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4566,6 +5060,15 @@ public interface SclPackage extends EPackage {
     int BDA_FEATURE_COUNT = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>BDA</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4582,6 +5085,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA__LINE_NUMBER = ABSTRACT_DATA_ATTRIBUTE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_ATTRIBUTE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4818,6 +5330,15 @@ public interface SclPackage extends EPackage {
     int DA_FEATURE_COUNT = ABSTRACT_DATA_ATTRIBUTE_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DA</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4834,6 +5355,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DA_TYPE__LINE_NUMBER = ID_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -4944,6 +5474,15 @@ public interface SclPackage extends EPackage {
     int DA_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DA Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4960,7 +5499,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAbstractDataObject()
      * @generated
      */
-    int ABSTRACT_DATA_OBJECT = 140;
+    int ABSTRACT_DATA_OBJECT = 139;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -4970,6 +5509,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_OBJECT__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5062,6 +5610,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_DATA_OBJECT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Abstract Data Object</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5078,6 +5635,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO__LINE_NUMBER = ABSTRACT_DATA_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5206,6 +5772,15 @@ public interface SclPackage extends EPackage {
     int DO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5222,6 +5797,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DO_TYPE__LINE_NUMBER = ID_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5341,6 +5925,15 @@ public interface SclPackage extends EPackage {
     int DO_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DO Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5356,7 +5949,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int DATA_TYPE_TEMPLATES__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_TYPE_TEMPLATES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>DA Type</b></em>' containment reference list.
@@ -5365,7 +5967,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__DA_TYPE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int DATA_TYPE_TEMPLATES__DA_TYPE = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>DO Type</b></em>' containment reference list.
@@ -5374,7 +5976,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__DO_TYPE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int DATA_TYPE_TEMPLATES__DO_TYPE = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Enum Type</b></em>' containment reference list.
@@ -5383,7 +5985,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__ENUM_TYPE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int DATA_TYPE_TEMPLATES__ENUM_TYPE = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>LNode Type</b></em>' containment reference list.
@@ -5392,7 +5994,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__LNODE_TYPE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int DATA_TYPE_TEMPLATES__LNODE_TYPE = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent SCL</b></em>' container reference.
@@ -5401,7 +6003,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES__PARENT_SCL = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int DATA_TYPE_TEMPLATES__PARENT_SCL = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The number of structural features of the '<em>Data Type Templates</em>' class.
@@ -5410,7 +6012,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
+    int DATA_TYPE_TEMPLATES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 5;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_TYPE_TEMPLATES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Data Type Templates</em>' class.
@@ -5419,7 +6030,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DATA_TYPE_TEMPLATES_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int DATA_TYPE_TEMPLATES_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -5429,6 +6040,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_TYPE__LINE_NUMBER = ID_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5521,6 +6141,15 @@ public interface SclPackage extends EPackage {
     int ENUM_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Enum Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5537,6 +6166,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_VAL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -5584,6 +6222,15 @@ public interface SclPackage extends EPackage {
     int ENUM_VAL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Enum Val</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5600,6 +6247,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE_TYPE__LINE_NUMBER = ID_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__EXPLICIT_LINKS_BUILT = ID_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5710,6 +6366,15 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>LNode Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5726,6 +6391,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROT_NS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROT_NS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -5773,6 +6447,15 @@ public interface SclPackage extends EPackage {
     int PROT_NS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROT_NS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Prot Ns</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5789,6 +6472,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDO__LINE_NUMBER = ABSTRACT_DATA_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO__EXPLICIT_LINKS_BUILT = ABSTRACT_DATA_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -5908,6 +6600,15 @@ public interface SclPackage extends EPackage {
     int SDO_FEATURE_COUNT = ABSTRACT_DATA_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SDO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5924,6 +6625,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VAL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>SGroup</b></em>' attribute.
@@ -5971,6 +6681,15 @@ public interface SclPackage extends EPackage {
     int VAL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Val</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5987,7 +6706,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getMinTime()
      * @generated
      */
-    int MIN_TIME = 155;
+    int MIN_TIME = 154;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.MaxTimeImpl <em>Max Time</em>}' class.
@@ -5997,7 +6716,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getMaxTime()
      * @generated
      */
-    int MAX_TIME = 156;
+    int MAX_TIME = 155;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -6007,6 +6726,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_CONTROL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_CONTROL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent LDevice</b></em>' container reference.
@@ -6027,6 +6755,15 @@ public interface SclPackage extends EPackage {
     int ACCESS_CONTROL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Access Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6043,6 +6780,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_POINT__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_POINT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6225,6 +6971,15 @@ public interface SclPackage extends EPackage {
     int ACCESS_POINT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_POINT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Access Point</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6241,6 +6996,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_LN__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6450,6 +7214,15 @@ public interface SclPackage extends EPackage {
     int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 17;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6475,6 +7248,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ASSOCIATION__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6612,6 +7394,15 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 10;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Association</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6628,6 +7419,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int AUTHENTICATION__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AUTHENTICATION__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Certificate</b></em>' attribute.
@@ -6693,6 +7493,15 @@ public interface SclPackage extends EPackage {
     int AUTHENTICATION_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AUTHENTICATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Authentication</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6709,6 +7518,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CERTIFICATE__LINE_NUMBER = NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE__EXPLICIT_LINKS_BUILT = NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -6810,6 +7628,15 @@ public interface SclPackage extends EPackage {
     int CERTIFICATE_FEATURE_COUNT = NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Certificate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6825,7 +7652,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int CLIENT_LN__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -6834,7 +7670,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__DESC = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int CLIENT_LN__DESC = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ied Name</b></em>' attribute.
@@ -6843,7 +7679,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int CLIENT_LN__IED_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
@@ -6852,7 +7688,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__LD_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int CLIENT_LN__LD_INST = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -6861,7 +7697,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__LN_CLASS = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int CLIENT_LN__LN_CLASS = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
@@ -6870,7 +7706,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__LN_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int CLIENT_LN__LN_INST = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -6879,7 +7715,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
+    int CLIENT_LN__PREFIX = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
@@ -6888,7 +7724,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__AP_REF = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
+    int CLIENT_LN__AP_REF = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Parent Rpt Enabled</b></em>' container reference.
@@ -6897,7 +7733,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__PARENT_RPT_ENABLED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
+    int CLIENT_LN__PARENT_RPT_ENABLED = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -6906,7 +7742,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN__REFERS_TO_ANY_LN = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
+    int CLIENT_LN__REFERS_TO_ANY_LN = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The number of structural features of the '<em>Client LN</em>' class.
@@ -6915,7 +7751,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 9;
+    int CLIENT_LN_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Client LN</em>' class.
@@ -6924,7 +7769,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int CLIENT_LN_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int CLIENT_LN_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -6934,6 +7779,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CLIENT_SERVICES__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Buf Report</b></em>' attribute.
@@ -7098,6 +7952,15 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 17;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Client Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7114,6 +7977,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int COMM_PROT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Ipv6</b></em>' attribute.
@@ -7143,6 +8015,15 @@ public interface SclPackage extends EPackage {
     int COMM_PROT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Comm Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7159,6 +8040,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7179,6 +8069,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service With Max</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7195,7 +8094,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceWithMaxAndMaxAttributes()
      * @generated
      */
-    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES = 147;
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES = 146;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7205,6 +8104,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7234,6 +8142,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service With Max And Max Attributes</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7250,7 +8167,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceForConfDataSet()
      * @generated
      */
-    int SERVICE_FOR_CONF_DATA_SET = 149;
+    int SERVICE_FOR_CONF_DATA_SET = 148;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7260,6 +8177,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_FOR_CONF_DATA_SET__LINE_NUMBER = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_FOR_CONF_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7298,6 +8224,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_FOR_CONF_DATA_SET_FEATURE_COUNT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_FOR_CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service For Conf Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7314,6 +8249,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_DATA_SET__LINE_NUMBER = SERVICE_FOR_CONF_DATA_SET__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_FOR_CONF_DATA_SET__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7361,6 +8305,15 @@ public interface SclPackage extends EPackage {
     int CONF_DATA_SET_FEATURE_COUNT = SERVICE_FOR_CONF_DATA_SET_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_FOR_CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7377,6 +8330,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LNS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LNS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Fix Ln Inst</b></em>' attribute.
@@ -7415,6 +8377,15 @@ public interface SclPackage extends EPackage {
     int CONF_LNS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LNS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf LNs</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7431,7 +8402,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceYesNo()
      * @generated
      */
-    int SERVICE_YES_NO = 143;
+    int SERVICE_YES_NO = 142;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7443,6 +8414,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_YES_NO__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
 
     /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_YES_NO__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
+
+    /**
      * The number of structural features of the '<em>Service Yes No</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7450,6 +8430,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_YES_NO_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 0;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>Service Yes No</em>' class.
@@ -7470,6 +8459,15 @@ public interface SclPackage extends EPackage {
     int CONF_LD_NAME__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LD_NAME__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7488,6 +8486,15 @@ public interface SclPackage extends EPackage {
     int CONF_LD_NAME_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LD_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf Ld Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7504,7 +8511,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceWithMaxNonZero()
      * @generated
      */
-    int SERVICE_WITH_MAX_NON_ZERO = 145;
+    int SERVICE_WITH_MAX_NON_ZERO = 144;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7514,6 +8521,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_NON_ZERO__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7534,6 +8550,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service With Max Non Zero</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7550,6 +8575,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LOG_CONTROL__LINE_NUMBER = SERVICE_WITH_MAX_NON_ZERO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LOG_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7579,6 +8613,15 @@ public interface SclPackage extends EPackage {
     int CONF_LOG_CONTROL_FEATURE_COUNT = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LOG_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf Log Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7595,7 +8638,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceConfReportControl()
      * @generated
      */
-    int SERVICE_CONF_REPORT_CONTROL = 146;
+    int SERVICE_CONF_REPORT_CONTROL = 145;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7605,6 +8648,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_CONF_REPORT_CONTROL__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7652,6 +8704,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service Conf Report Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7668,6 +8729,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_REPORT_CONTROL__LINE_NUMBER = SERVICE_CONF_REPORT_CONTROL__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_CONF_REPORT_CONTROL__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7724,6 +8794,15 @@ public interface SclPackage extends EPackage {
     int CONF_REPORT_CONTROL_FEATURE_COUNT = SERVICE_CONF_REPORT_CONTROL_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf Report Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7740,6 +8819,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_SG__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SG__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
@@ -7769,6 +8857,15 @@ public interface SclPackage extends EPackage {
     int CONF_SG_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SG___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf SG</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7785,6 +8882,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_SIG_REF__LINE_NUMBER = SERVICE_WITH_MAX_NON_ZERO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SIG_REF__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_NON_ZERO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -7814,6 +8920,15 @@ public interface SclPackage extends EPackage {
     int CONF_SIG_REF_FEATURE_COUNT = SERVICE_WITH_MAX_NON_ZERO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SIG_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conf Sig Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7830,6 +8945,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -7922,6 +9046,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7947,6 +9080,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_IED_NAME__LINE_NUMBER = CONTROL__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT = CONTROL__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8075,6 +9217,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_IED_NAME_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8100,6 +9251,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_TRIGGER_OPT__LINE_NUMBER = CONTROL__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT = CONTROL__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8210,6 +9370,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8235,6 +9404,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DAI__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8372,6 +9550,15 @@ public interface SclPackage extends EPackage {
     int DAI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DAI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8388,6 +9575,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DOI__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8507,6 +9703,15 @@ public interface SclPackage extends EPackage {
     int DOI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>DOI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8523,6 +9728,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_OBJECT_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_OBJECT_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -8543,6 +9757,15 @@ public interface SclPackage extends EPackage {
     int DATA_OBJECT_DIRECTORY_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_OBJECT_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Data Object Directory</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8559,6 +9782,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_SET__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -8651,6 +9883,15 @@ public interface SclPackage extends EPackage {
     int DATA_SET_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8667,6 +9908,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_SET_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -8687,6 +9937,15 @@ public interface SclPackage extends EPackage {
     int DATA_SET_DIRECTORY_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Data Set Directory</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8703,7 +9962,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceWithOptionalMax()
      * @generated
      */
-    int SERVICE_WITH_OPTIONAL_MAX = 144;
+    int SERVICE_WITH_OPTIONAL_MAX = 143;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -8713,6 +9972,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_OPTIONAL_MAX__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_OPTIONAL_MAX__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8733,6 +10001,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_OPTIONAL_MAX_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_OPTIONAL_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service With Optional Max</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8749,6 +10026,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_ASSOCIATION__LINE_NUMBER = SERVICE_WITH_OPTIONAL_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_ASSOCIATION__EXPLICIT_LINKS_BUILT = SERVICE_WITH_OPTIONAL_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8778,6 +10064,15 @@ public interface SclPackage extends EPackage {
     int DYN_ASSOCIATION_FEATURE_COUNT = SERVICE_WITH_OPTIONAL_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_ASSOCIATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_OPTIONAL_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Dyn Association</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8794,6 +10089,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_DATA_SET__LINE_NUMBER = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_DATA_SET__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -8832,6 +10136,15 @@ public interface SclPackage extends EPackage {
     int DYN_DATA_SET_FEATURE_COUNT = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Dyn Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8848,6 +10161,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EXT_REF__LINE_NUMBER = BASE_ELEMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF__EXPLICIT_LINKS_BUILT = BASE_ELEMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9102,6 +10424,15 @@ public interface SclPackage extends EPackage {
     int EXT_REF_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 23;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Ext Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9117,7 +10448,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int FCDA__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Da Name</b></em>' attribute.
@@ -9126,7 +10466,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__DA_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int FCDA__DA_NAME = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Do Name</b></em>' attribute.
@@ -9135,7 +10475,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__DO_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int FCDA__DO_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Fc</b></em>' attribute.
@@ -9144,7 +10484,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__FC = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int FCDA__FC = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ix</b></em>' attribute.
@@ -9153,7 +10493,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__IX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int FCDA__IX = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
@@ -9162,7 +10502,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__LD_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int FCDA__LD_INST = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -9171,7 +10511,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__LN_CLASS = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
+    int FCDA__LN_CLASS = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
@@ -9180,7 +10520,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__LN_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
+    int FCDA__LN_INST = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -9189,7 +10529,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
+    int FCDA__PREFIX = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Parent Data Set</b></em>' container reference.
@@ -9198,7 +10538,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__PARENT_DATA_SET = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
+    int FCDA__PARENT_DATA_SET = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.
@@ -9207,7 +10547,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 9;
+    int FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>FCDA</em>' class.
@@ -9216,7 +10556,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 10;
+    int FCDA_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>FCDA</em>' class.
@@ -9225,7 +10574,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int FCDA_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int FCDA_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -9235,6 +10584,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FILE_HANDLING__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FILE_HANDLING__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Ftp</b></em>' attribute.
@@ -9282,6 +10640,15 @@ public interface SclPackage extends EPackage {
     int FILE_HANDLING_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FILE_HANDLING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>File Handling</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9298,6 +10665,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9354,6 +10730,15 @@ public interface SclPackage extends EPackage {
     int GOOSE_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>GOOSE</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9370,6 +10755,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE_SECURITY__LINE_NUMBER = CERTIFICATE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY__EXPLICIT_LINKS_BUILT = CERTIFICATE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9480,6 +10874,15 @@ public interface SclPackage extends EPackage {
     int GOOSE_SECURITY_FEATURE_COUNT = CERTIFICATE_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>GOOSE Security</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9496,6 +10899,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_CONTROL__LINE_NUMBER = CONTROL_WITH_IED_NAME__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -9669,6 +11081,15 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9696,6 +11117,15 @@ public interface SclPackage extends EPackage {
     int GSE_DIR__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
 
     /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_DIR__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
+
+    /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9714,6 +11144,15 @@ public interface SclPackage extends EPackage {
     int GSE_DIR_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_DIR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>GSE Dir</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9730,6 +11169,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_SETTINGS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -9759,6 +11207,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_SETTINGS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9775,6 +11232,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSE_SETTINGS__LINE_NUMBER = SERVICE_SETTINGS__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -9849,6 +11315,15 @@ public interface SclPackage extends EPackage {
     int GSE_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>GSE Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9865,6 +11340,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GSSE__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSSE__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -9894,6 +11378,15 @@ public interface SclPackage extends EPackage {
     int GSSE_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>GSSE</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9910,6 +11403,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_CB_VALUES__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CB_VALUES__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -9930,6 +11432,15 @@ public interface SclPackage extends EPackage {
     int GET_CB_VALUES_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CB_VALUES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Get CB Values</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9946,6 +11457,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DATA_OBJECT_DEFINITION__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_OBJECT_DEFINITION__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -9966,6 +11486,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_OBJECT_DEFINITION_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_OBJECT_DEFINITION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Get Data Object Definition</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9982,6 +11511,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DATA_SET_VALUE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_SET_VALUE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -10002,6 +11540,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_SET_VALUE_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_SET_VALUE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Get Data Set Value</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10018,6 +11565,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DIRECTORY__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DIRECTORY__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -10038,6 +11594,15 @@ public interface SclPackage extends EPackage {
     int GET_DIRECTORY_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Get Directory</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10054,6 +11619,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int IED__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10236,6 +11810,15 @@ public interface SclPackage extends EPackage {
     int IED_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>IED</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10251,7 +11834,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int IED_NAME__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED_NAME__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Ap Ref</b></em>' attribute.
@@ -10260,7 +11852,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__AP_REF = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int IED_NAME__AP_REF = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ld Inst</b></em>' attribute.
@@ -10269,7 +11861,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__LD_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int IED_NAME__LD_INST = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -10278,7 +11870,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__LN_CLASS = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int IED_NAME__LN_CLASS = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Ln Inst</b></em>' attribute.
@@ -10287,7 +11879,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__LN_INST = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int IED_NAME__LN_INST = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -10296,7 +11888,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__PREFIX = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int IED_NAME__PREFIX = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Parent Control With IED Name</b></em>' container reference.
@@ -10305,7 +11897,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__PARENT_CONTROL_WITH_IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 5;
+    int IED_NAME__PARENT_CONTROL_WITH_IED_NAME = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Refers To Any LN</b></em>' reference.
@@ -10314,7 +11906,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__REFERS_TO_ANY_LN = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 6;
+    int IED_NAME__REFERS_TO_ANY_LN = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -10323,7 +11915,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__VALUE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 7;
+    int IED_NAME__VALUE = SCL_OBJECT_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To IED</b></em>' reference.
@@ -10332,7 +11924,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__REFERS_TO_IED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 8;
+    int IED_NAME__REFERS_TO_IED = SCL_OBJECT_FEATURE_COUNT + 8;
 
     /**
      * The feature id for the '<em><b>Refers To LDevice</b></em>' reference.
@@ -10341,7 +11933,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME__REFERS_TO_LDEVICE = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 9;
+    int IED_NAME__REFERS_TO_LDEVICE = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
      * The number of structural features of the '<em>IED Name</em>' class.
@@ -10350,7 +11942,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 10;
+    int IED_NAME_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>IED Name</em>' class.
@@ -10359,7 +11960,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int IED_NAME_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int IED_NAME_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -10369,6 +11970,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int INPUTS__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUTS__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10443,6 +12053,15 @@ public interface SclPackage extends EPackage {
     int INPUTS_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUTS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Inputs</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10459,7 +12078,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getCert()
      * @generated
      */
-    int CERT = 150;
+    int CERT = 149;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -10469,6 +12088,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CERT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
@@ -10498,6 +12126,15 @@ public interface SclPackage extends EPackage {
     int CERT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Cert</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10514,6 +12151,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ISSUER_NAME__LINE_NUMBER = CERT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ISSUER_NAME__EXPLICIT_LINKS_BUILT = CERT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
@@ -10552,6 +12198,15 @@ public interface SclPackage extends EPackage {
     int ISSUER_NAME_FEATURE_COUNT = CERT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ISSUER_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Issuer Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10567,7 +12222,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC__LINE_NUMBER = EXPLICIT_LINK_RESOLVER__LINE_NUMBER;
+    int KDC__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Ap Name</b></em>' attribute.
@@ -10576,7 +12240,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC__AP_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 0;
+    int KDC__AP_NAME = SCL_OBJECT_FEATURE_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Ied Name</b></em>' attribute.
@@ -10585,7 +12249,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC__IED_NAME = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 1;
+    int KDC__IED_NAME = SCL_OBJECT_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Parent IED</b></em>' container reference.
@@ -10594,7 +12258,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC__PARENT_IED = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 2;
+    int KDC__PARENT_IED = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Refers To Access Point</b></em>' reference.
@@ -10603,7 +12267,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC__REFERS_TO_ACCESS_POINT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 3;
+    int KDC__REFERS_TO_ACCESS_POINT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
      * The number of structural features of the '<em>KDC</em>' class.
@@ -10612,7 +12276,16 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC_FEATURE_COUNT = EXPLICIT_LINK_RESOLVER_FEATURE_COUNT + 4;
+    int KDC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
+
+    /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
      * The number of operations of the '<em>KDC</em>' class.
@@ -10621,7 +12294,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int KDC_OPERATION_COUNT = EXPLICIT_LINK_RESOLVER_OPERATION_COUNT + 0;
+    int KDC_OPERATION_COUNT = SCL_OBJECT_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -10631,6 +12304,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LDEVICE__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -10759,6 +12441,15 @@ public interface SclPackage extends EPackage {
     int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>LDevice</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10775,6 +12466,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN__LINE_NUMBER = ANY_LN__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN__EXPLICIT_LINKS_BUILT = ANY_LN__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11011,6 +12711,15 @@ public interface SclPackage extends EPackage {
     int LN_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11036,6 +12745,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__LINE_NUMBER = ANY_LN__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0__EXPLICIT_LINKS_BUILT = ANY_LN__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11290,6 +13008,15 @@ public interface SclPackage extends EPackage {
     int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11315,6 +13042,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11398,6 +13134,15 @@ public interface SclPackage extends EPackage {
     int LOG_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Log</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11414,6 +13159,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_CONTROL__LINE_NUMBER = CONTROL_WITH_TRIGGER_OPT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -11623,6 +13377,15 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 11;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11648,6 +13411,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_SETTINGS__LINE_NUMBER = SERVICE_SETTINGS__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -11713,6 +13485,15 @@ public interface SclPackage extends EPackage {
     int LOG_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Log Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11729,6 +13510,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int OPT_FIELDS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Buf Ovfl</b></em>' attribute.
@@ -11830,6 +13620,15 @@ public interface SclPackage extends EPackage {
     int OPT_FIELDS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 10;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Opt Fields</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11846,6 +13645,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROTOCOL__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Must Understand</b></em>' attribute.
@@ -11875,6 +13683,15 @@ public interface SclPackage extends EPackage {
     int PROTOCOL_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Protocol</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11891,6 +13708,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int READ_WRITE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int READ_WRITE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -11911,6 +13737,15 @@ public interface SclPackage extends EPackage {
     int READ_WRITE_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int READ_WRITE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Read Write</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11927,6 +13762,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RED_PROT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RED_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Hsr</b></em>' attribute.
@@ -11974,6 +13818,15 @@ public interface SclPackage extends EPackage {
     int RED_PROT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RED_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Red Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11990,6 +13843,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int REPORT_CONTROL__LINE_NUMBER = CONTROL_WITH_TRIGGER_OPT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_TRIGGER_OPT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12172,6 +14034,15 @@ public interface SclPackage extends EPackage {
     int REPORT_CONTROL_FEATURE_COUNT = CONTROL_WITH_TRIGGER_OPT_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12197,6 +14068,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int REPORT_SETTINGS__LINE_NUMBER = SERVICE_SETTINGS__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -12298,6 +14178,15 @@ public interface SclPackage extends EPackage {
     int REPORT_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Report Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12314,6 +14203,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RPT_ENABLED__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RPT_ENABLED__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12397,6 +14295,15 @@ public interface SclPackage extends EPackage {
     int RPT_ENABLED_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RPT_ENABLED___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Rpt Enabled</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12413,6 +14320,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SDI__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12550,6 +14466,15 @@ public interface SclPackage extends EPackage {
     int SDI_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SDI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12566,6 +14491,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SG_EDIT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SG_EDIT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Resv Tms</b></em>' attribute.
@@ -12595,6 +14529,15 @@ public interface SclPackage extends EPackage {
     int SG_EDIT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SG_EDIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SG Edit</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12611,6 +14554,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SECURITY__LINE_NUMBER = CERTIFICATE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY__EXPLICIT_LINKS_BUILT = CERTIFICATE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -12721,6 +14673,15 @@ public interface SclPackage extends EPackage {
     int SMV_SECURITY_FEATURE_COUNT = CERTIFICATE_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SMV Security</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12737,6 +14698,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SETTINGS__LINE_NUMBER = SERVICE_SETTINGS__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS__EXPLICIT_LINKS_BUILT = SERVICE_SETTINGS__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Cb Name</b></em>' attribute.
@@ -12883,6 +14853,15 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS_FEATURE_COUNT = SERVICE_SETTINGS_FEATURE_COUNT + 13;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SMV Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12899,6 +14878,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SM_VSC__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -12964,6 +14952,15 @@ public interface SclPackage extends EPackage {
     int SM_VSC_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>SM Vsc</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12980,6 +14977,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLED_VALUE_CONTROL__LINE_NUMBER = CONTROL_WITH_IED_NAME__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL__EXPLICIT_LINKS_BUILT = CONTROL_WITH_IED_NAME__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13180,6 +15186,15 @@ public interface SclPackage extends EPackage {
     int SAMPLED_VALUE_CONTROL_FEATURE_COUNT = CONTROL_WITH_IED_NAME_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13205,6 +15220,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVER__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13306,6 +15330,15 @@ public interface SclPackage extends EPackage {
     int SERVER_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Server</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13322,6 +15355,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVER_AT__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER_AT__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13405,6 +15447,15 @@ public interface SclPackage extends EPackage {
     int SERVER_AT_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER_AT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Server At</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13421,6 +15472,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICES__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Name Length</b></em>' attribute.
@@ -13756,6 +15816,15 @@ public interface SclPackage extends EPackage {
     int SERVICES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 36;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13772,6 +15841,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SET_DATA_SET_VALUE__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SET_DATA_SET_VALUE__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -13792,6 +15870,15 @@ public interface SclPackage extends EPackage {
     int SET_DATA_SET_VALUE_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SET_DATA_SET_VALUE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Set Data Set Value</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13808,6 +15895,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SETTING_CONTROL__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_CONTROL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -13900,6 +15996,15 @@ public interface SclPackage extends EPackage {
     int SETTING_CONTROL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Setting Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13916,6 +16021,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SETTING_GROUPS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_GROUPS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Conf SG</b></em>' containment reference.
@@ -13954,6 +16068,15 @@ public interface SclPackage extends EPackage {
     int SETTING_GROUPS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_GROUPS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Setting Groups</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13970,6 +16093,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_OPTS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' attribute.
@@ -14062,6 +16194,15 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 9;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Smv Opts</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14078,6 +16219,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBJECT__LINE_NUMBER = CERT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBJECT__EXPLICIT_LINKS_BUILT = CERT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Common Name</b></em>' attribute.
@@ -14116,6 +16266,15 @@ public interface SclPackage extends EPackage {
     int SUBJECT_FEATURE_COUNT = CERT_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Subject</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14132,6 +16291,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUP_SUBSCRIPTION__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUP_SUBSCRIPTION__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max Go</b></em>' attribute.
@@ -14170,6 +16338,15 @@ public interface SclPackage extends EPackage {
     int SUP_SUBSCRIPTION_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUP_SUBSCRIPTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Sup Subscription</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14186,6 +16363,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TIME_SYNC_PROT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>C37 238</b></em>' attribute.
@@ -14251,6 +16437,15 @@ public interface SclPackage extends EPackage {
     int TIME_SYNC_PROT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Time Sync Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14267,6 +16462,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TIMER_ACTIVATED_CONTROL__LINE_NUMBER = SERVICE_YES_NO__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIMER_ACTIVATED_CONTROL__EXPLICIT_LINKS_BUILT = SERVICE_YES_NO__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Services</b></em>' container reference.
@@ -14287,6 +16491,15 @@ public interface SclPackage extends EPackage {
     int TIMER_ACTIVATED_CONTROL_FEATURE_COUNT = SERVICE_YES_NO_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIMER_ACTIVATED_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Timer Activated Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14303,6 +16516,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRG_OPS__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRG_OPS__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -14368,6 +16590,15 @@ public interface SclPackage extends EPackage {
     int TRG_OPS_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRG_OPS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Trg Ops</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14384,6 +16615,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VALUE_HANDLING__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_HANDLING__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Set To RO</b></em>' attribute.
@@ -14413,6 +16653,15 @@ public interface SclPackage extends EPackage {
     int VALUE_HANDLING_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_HANDLING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Value Handling</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14429,6 +16678,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14512,6 +16770,15 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14528,6 +16795,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_CONDUCTING_EQUIPMENT__LINE_NUMBER = EQUIPMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14629,6 +16905,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT = EQUIPMENT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Abstract Conducting Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14645,6 +16930,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_EQ_FUNC_SUB_FUNC__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14746,6 +17040,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Abstract Eq Func Sub Func</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14762,6 +17065,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT_CONTAINER__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14854,6 +17166,15 @@ public interface SclPackage extends EPackage {
     int EQUIPMENT_CONTAINER_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Equipment Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14870,6 +17191,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY__LINE_NUMBER = EQUIPMENT_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -14998,6 +17328,15 @@ public interface SclPackage extends EPackage {
     int BAY_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Bay</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15014,6 +17353,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONDUCTING_EQUIPMENT__LINE_NUMBER = ABSTRACT_CONDUCTING_EQUIPMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT = ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15178,6 +17526,15 @@ public interface SclPackage extends EPackage {
     int CONDUCTING_EQUIPMENT_FEATURE_COUNT = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 7;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Conducting Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15194,6 +17551,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTIVITY_NODE__LINE_NUMBER = LNODE_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE__EXPLICIT_LINKS_BUILT = LNODE_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15304,6 +17670,15 @@ public interface SclPackage extends EPackage {
     int CONNECTIVITY_NODE_FEATURE_COUNT = LNODE_CONTAINER_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Connectivity Node</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15320,6 +17695,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_FUNCTION__LINE_NUMBER = ABSTRACT_EQ_FUNC_SUB_FUNC__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION__EXPLICIT_LINKS_BUILT = ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15475,6 +17859,15 @@ public interface SclPackage extends EPackage {
     int EQ_FUNCTION_FEATURE_COUNT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Eq Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15491,6 +17884,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_SUB_FUNCTION__LINE_NUMBER = ABSTRACT_EQ_FUNC_SUB_FUNC__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION__EXPLICIT_LINKS_BUILT = ABSTRACT_EQ_FUNC_SUB_FUNC__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15601,6 +18003,15 @@ public interface SclPackage extends EPackage {
     int EQ_SUB_FUNCTION_FEATURE_COUNT = ABSTRACT_EQ_FUNC_SUB_FUNC_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Eq Sub Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15617,6 +18028,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FUNCTION__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15763,6 +18183,15 @@ public interface SclPackage extends EPackage {
     int FUNCTION_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15779,6 +18208,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT__LINE_NUMBER = EQUIPMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -15925,6 +18363,15 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT_FEATURE_COUNT = EQUIPMENT_FEATURE_COUNT + 7;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>General Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15941,6 +18388,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16069,6 +18525,15 @@ public interface SclPackage extends EPackage {
     int LNODE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>LNode</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16085,6 +18550,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TERMINAL__LINE_NUMBER = UN_NAMING__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL__EXPLICIT_LINKS_BUILT = UN_NAMING__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16231,6 +18705,15 @@ public interface SclPackage extends EPackage {
     int TERMINAL_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Terminal</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16247,6 +18730,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NEUTRAL_POINT__LINE_NUMBER = TERMINAL__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT__EXPLICIT_LINKS_BUILT = TERMINAL__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16402,6 +18894,15 @@ public interface SclPackage extends EPackage {
     int NEUTRAL_POINT_FEATURE_COUNT = TERMINAL_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = TERMINAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Neutral Point</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16418,6 +18919,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_TRANSFORMER__LINE_NUMBER = EQUIPMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER__EXPLICIT_LINKS_BUILT = EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16546,6 +19056,15 @@ public interface SclPackage extends EPackage {
     int POWER_TRANSFORMER_FEATURE_COUNT = EQUIPMENT_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Power Transformer</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16562,6 +19081,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_EQUIPMENT__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16690,6 +19218,15 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Sub Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16706,6 +19243,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_FUNCTION__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16834,6 +19380,15 @@ public interface SclPackage extends EPackage {
     int SUB_FUNCTION_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Sub Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16850,6 +19405,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUBSTATION__LINE_NUMBER = EQUIPMENT_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -16978,6 +19542,15 @@ public interface SclPackage extends EPackage {
     int SUBSTATION_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 4;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Substation</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16994,6 +19567,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TAP_CHANGER__LINE_NUMBER = POWER_SYSTEM_RESOURCE__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER__EXPLICIT_LINKS_BUILT = POWER_SYSTEM_RESOURCE__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17113,6 +19695,15 @@ public interface SclPackage extends EPackage {
     int TAP_CHANGER_FEATURE_COUNT = POWER_SYSTEM_RESOURCE_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Tap Changer</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17129,6 +19720,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TRANSFORMER_WINDING__LINE_NUMBER = ABSTRACT_CONDUCTING_EQUIPMENT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING__EXPLICIT_LINKS_BUILT = ABSTRACT_CONDUCTING_EQUIPMENT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17275,6 +19875,15 @@ public interface SclPackage extends EPackage {
     int TRANSFORMER_WINDING_FEATURE_COUNT = ABSTRACT_CONDUCTING_EQUIPMENT_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Transformer Winding</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17291,7 +19900,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getValueWithUnit()
      * @generated
      */
-    int VALUE_WITH_UNIT = 151;
+    int VALUE_WITH_UNIT = 150;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -17301,6 +19910,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VALUE_WITH_UNIT__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17339,6 +19957,15 @@ public interface SclPackage extends EPackage {
     int VALUE_WITH_UNIT_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Value With Unit</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17355,6 +19982,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE__LINE_NUMBER = VALUE_WITH_UNIT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE__EXPLICIT_LINKS_BUILT = VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17411,6 +20047,15 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Voltage</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17427,6 +20072,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE_LEVEL__LINE_NUMBER = EQUIPMENT_CONTAINER__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL__EXPLICIT_LINKS_BUILT = EQUIPMENT_CONTAINER__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Private</b></em>' containment reference list.
@@ -17573,6 +20227,15 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_LEVEL_FEATURE_COUNT = EQUIPMENT_CONTAINER_FEATURE_COUNT + 6;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Voltage Level</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17589,7 +20252,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getServiceWithMaxAndModify()
      * @generated
      */
-    int SERVICE_WITH_MAX_AND_MODIFY = 148;
+    int SERVICE_WITH_MAX_AND_MODIFY = 147;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -17599,6 +20262,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MODIFY__LINE_NUMBER = SERVICE_WITH_MAX__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MODIFY__EXPLICIT_LINKS_BUILT = SERVICE_WITH_MAX__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -17628,6 +20300,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_AND_MODIFY_FEATURE_COUNT = SERVICE_WITH_MAX_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MODIFY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Service With Max And Modify</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17644,7 +20325,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getDurationInSec()
      * @generated
      */
-    int DURATION_IN_SEC = 152;
+    int DURATION_IN_SEC = 151;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -17654,6 +20335,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DURATION_IN_SEC__LINE_NUMBER = VALUE_WITH_UNIT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_SEC__EXPLICIT_LINKS_BUILT = VALUE_WITH_UNIT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17692,6 +20382,15 @@ public interface SclPackage extends EPackage {
     int DURATION_IN_SEC_FEATURE_COUNT = VALUE_WITH_UNIT_FEATURE_COUNT + 0;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Duration In Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17708,6 +20407,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DURATION_IN_MILLI_SEC__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17746,6 +20454,15 @@ public interface SclPackage extends EPackage {
     int DURATION_IN_MILLI_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Duration In Milli Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17762,6 +20479,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BIT_RATE_IN_MB_PER_SEC__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE_IN_MB_PER_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17800,6 +20526,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE_IN_MB_PER_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 3;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE_IN_MB_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Bit Rate In Mb Per Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17816,6 +20551,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MIN_TIME__LINE_NUMBER = DURATION_IN_MILLI_SEC__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME__EXPLICIT_LINKS_BUILT = DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17854,6 +20598,15 @@ public interface SclPackage extends EPackage {
     int MIN_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Min Time</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17870,6 +20623,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MAX_TIME__LINE_NUMBER = DURATION_IN_MILLI_SEC__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME__EXPLICIT_LINKS_BUILT = DURATION_IN_MILLI_SEC__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17908,6 +20670,15 @@ public interface SclPackage extends EPackage {
     int MAX_TIME_FEATURE_COUNT = DURATION_IN_MILLI_SEC_FEATURE_COUNT + 0;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Max Time</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17924,7 +20695,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getBitRate()
      * @generated
      */
-    int BIT_RATE = 157;
+    int BIT_RATE = 156;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -17934,6 +20705,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BIT_RATE__LINE_NUMBER = BIT_RATE_IN_MB_PER_SEC__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE__EXPLICIT_LINKS_BUILT = BIT_RATE_IN_MB_PER_SEC__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -17981,6 +20761,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE_FEATURE_COUNT = BIT_RATE_IN_MB_PER_SEC_FEATURE_COUNT + 1;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BIT_RATE_IN_MB_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Bit Rate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17997,7 +20786,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSmpRate()
      * @generated
      */
-    int SMP_RATE = 158;
+    int SMP_RATE = 157;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -18007,6 +20796,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMP_RATE__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -18036,6 +20834,15 @@ public interface SclPackage extends EPackage {
     int SMP_RATE_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Smp Rate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18052,7 +20859,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSamplesPerSec()
      * @generated
      */
-    int SAMPLES_PER_SEC = 159;
+    int SAMPLES_PER_SEC = 158;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -18062,6 +20869,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SAMPLES_PER_SEC__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -18091,6 +20907,15 @@ public interface SclPackage extends EPackage {
     int SAMPLES_PER_SEC_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Samples Per Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18107,7 +20932,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getSecPerSamples()
      * @generated
      */
-    int SEC_PER_SAMPLES = 160;
+    int SEC_PER_SAMPLES = 159;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -18117,6 +20942,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SEC_PER_SAMPLES__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -18146,6 +20980,15 @@ public interface SclPackage extends EPackage {
     int SEC_PER_SAMPLES_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 2;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Sec Per Samples</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18162,7 +21005,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getMcSecurity()
      * @generated
      */
-    int MC_SECURITY = 161;
+    int MC_SECURITY = 160;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -18172,6 +21015,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MC_SECURITY__LINE_NUMBER = SCL_OBJECT__LINE_NUMBER;
+
+    /**
+     * The feature id for the '<em><b>Explicit Links Built</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY__EXPLICIT_LINKS_BUILT = SCL_OBJECT__EXPLICIT_LINKS_BUILT;
 
     /**
      * The feature id for the '<em><b>Parent Client Services</b></em>' container reference.
@@ -18228,6 +21080,15 @@ public interface SclPackage extends EPackage {
     int MC_SECURITY_FEATURE_COUNT = SCL_OBJECT_FEATURE_COUNT + 5;
 
     /**
+     * The operation id for the '<em>Build Explicit Links</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
      * The number of operations of the '<em>Mc Security</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18244,7 +21105,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgAuthentication()
      * @generated
      */
-    int AG_AUTHENTICATION = 162;
+    int AG_AUTHENTICATION = 161;
 
     /**
      * The feature id for the '<em><b>Certificate</b></em>' attribute.
@@ -18317,7 +21178,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgSmvOpts()
      * @generated
      */
-    int AG_SMV_OPTS = 163;
+    int AG_SMV_OPTS = 162;
 
     /**
      * The feature id for the '<em><b>Data Set</b></em>' attribute.
@@ -18417,7 +21278,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgOptFields()
      * @generated
      */
-    int AG_OPT_FIELDS = 164;
+    int AG_OPT_FIELDS = 163;
 
     /**
      * The feature id for the '<em><b>Buf Ovfl</b></em>' attribute.
@@ -18526,7 +21387,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgDesc()
      * @generated
      */
-    int AG_DESC = 165;
+    int AG_DESC = 164;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -18563,7 +21424,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgLDRef()
      * @generated
      */
-    int AG_LD_REF = 166;
+    int AG_LD_REF = 165;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -18618,7 +21479,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgLNRef()
      * @generated
      */
-    int AG_LN_REF = 167;
+    int AG_LN_REF = 166;
 
     /**
      * The feature id for the '<em><b>Desc</b></em>' attribute.
@@ -18700,7 +21561,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgDATrgOp()
      * @generated
      */
-    int AG_DA_TRG_OP = 168;
+    int AG_DA_TRG_OP = 167;
 
     /**
      * The feature id for the '<em><b>Dchg</b></em>' attribute.
@@ -18755,7 +21616,7 @@ public interface SclPackage extends EPackage {
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getAgVirtual()
      * @generated
      */
-    int AG_VIRTUAL = 169;
+    int AG_VIRTUAL = 168;
 
     /**
      * The feature id for the '<em><b>Virtual</b></em>' attribute.
@@ -18783,6 +21644,34 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int AG_VIRTUAL_OPERATION_COUNT = 0;
+
+    /**
+     * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl#getIRiseClipseConsole()
+     * @generated
+     */
+    int IRISE_CLIPSE_CONSOLE = 169;
+
+    /**
+     * The number of structural features of the '<em>IRise Clipse Console</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IRISE_CLIPSE_CONSOLE_FEATURE_COUNT = 0;
+
+    /**
+     * The number of operations of the '<em>IRise Clipse Console</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IRISE_CLIPSE_CONSOLE_OPERATION_COUNT = 0;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum <em>Association Kind Enum</em>}' enum.
@@ -21643,6 +24532,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getAgVirtual_Virtual();
+
+    /**
+     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole <em>IRise Clipse Console</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>IRise Clipse Console</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole
+     * @model instanceClass="fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole"
+     * @generated
+     */
+    EClass getIRiseClipseConsole();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec <em>Duration In Milli Sec</em>}'.
@@ -27930,16 +30830,6 @@ public interface SclPackage extends EPackage {
     EReference getVoltageLevel_Voltage();
 
     /**
-     * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver <em>Explicit Link Resolver</em>}'.
-     * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @return the meta object for class '<em>Explicit Link Resolver</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver
-     * @generated
-     */
-    EClass getExplicitLinkResolver();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject <em>Abstract Data Object</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -28013,6 +30903,27 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getSclObject_LineNumber();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt <em>Explicit Links Built</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Explicit Links Built</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt()
+     * @see #getSclObject()
+     * @generated
+     */
+    EAttribute getSclObject_ExplicitLinksBuilt();
+
+    /**
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, boolean) <em>Build Explicit Links</em>}' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the '<em>Build Explicit Links</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, boolean)
+     * @generated
+     */
+    EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_boolean();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming <em>Un Naming</em>}'.

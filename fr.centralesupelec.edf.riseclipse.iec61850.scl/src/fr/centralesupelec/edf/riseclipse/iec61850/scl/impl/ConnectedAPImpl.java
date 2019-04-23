@@ -27,7 +27,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
@@ -977,9 +977,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // iedName a name identifying the IED
         // apName  a name identifying this access point within the IED
@@ -988,13 +988,13 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         if( getIedName() == null ) return;
         if( getApName() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from ConnectedAP on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getIedName().equals( ied.getName() ))
                 .collect( Collectors.toList() );

@@ -33,8 +33,9 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -1055,13 +1056,11 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     @Override
     public LDevice getParentLDevice() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        throw new RiseClipseFatalException( "AnyLN.getParentLDevice() called", null );
     }
 
     /**
@@ -1413,19 +1412,18 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // lnType  The instantiable type definition of this logical node, reference to a LNodeType definition
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
         if( getLnType() == null ) return;
-        DataTypeTemplates dtt = get_DataTypeTemplates();
+        DataTypeTemplates dtt = SclUtilities.get_DataTypeTemplates( this );
         if( dtt == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from AnyLN on line " + getLineNumber() + ": ";
 
         List< LNodeType > res = //shallowSearchObjects( dtt.getLNodeType(), s );

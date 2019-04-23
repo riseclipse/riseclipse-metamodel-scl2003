@@ -29,7 +29,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -61,7 +61,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
+public class IEDNameImpl extends SclObjectImpl implements IEDName {
     /**
      * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1189,9 +1189,9 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // apRef        The reference to the access point on the IED, via which the data shall flow. Optional, only needed if the IED has more than one access point.
         // ldInst       Identifies the destination LD in the IED. Optional.
@@ -1204,13 +1204,13 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         if( getValue() == null ) return;
         if( getValue().isEmpty() ) return;
         
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from IEDName on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == value
         List< IED > res1 =
-                get_IEDs()
+                SclUtilities
+                .get_IEDs( this )
                 .stream()
                 .filter( ied -> getValue().equals( ied.getName() ))
                 .collect( Collectors.toList() );

@@ -54,7 +54,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *
  * @generated
  */
-public class DataTypeTemplatesImpl extends ExplicitLinkResolverImpl implements DataTypeTemplates {
+public class DataTypeTemplatesImpl extends SclObjectImpl implements DataTypeTemplates {
     /**
      * The cached value of the '{@link #getDAType() <em>DA Type</em>}' containment reference list.
      * <!-- begin-user-doc -->

@@ -36,7 +36,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
@@ -73,7 +72,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
+public class FCDAImpl extends SclObjectImpl implements FCDA {
     /**
      * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1041,9 +1040,9 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
@@ -1066,7 +1065,6 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         if( getDoName() == null ) return;
         
         String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         // The LN we are looking for is in the same IED/Server
         EObject object = this;
@@ -1132,7 +1130,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
         }
         if( anyLN == null ) return;
-        anyLN.resolveLinks();
+        anyLN.buildExplicitLinks( console, false );
         
         if( anyLN.getRefersToLNodeType() == null ) return;
         console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
@@ -1164,7 +1162,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         }
         console.verbose( messagePrefix + "found " + mess3a + " on line " + res3a.get( 0 ).getLineNumber() );
         
-        res3a.get( 0 ).resolveLinks();
+        res3a.get( 0 ).buildExplicitLinks( console, false );
         DOType doType = res3a.get( 0 ).getRefersToDOType();
         if( doType == null ) return;
         console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
@@ -1189,7 +1187,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             }
             console.verbose( messagePrefix + "found " + mess3b + " on line " + res3b.get( 0 ).getLineNumber() );
 
-            res3b.get( 0 ).resolveLinks();
+            res3b.get( 0 ).buildExplicitLinks( console, false );
             doType = res3b.get( 0 ).getRefersToDOType();
             if( doType == null ) return;
             console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
@@ -1220,7 +1218,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
             console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
             
             for( int i = 1; i < daNames.length; ++i ) {
-                da.resolveLinks();
+                da.buildExplicitLinks( console, false );
                 
                 String name = daNames[i];
                 List< BDA > res4b =

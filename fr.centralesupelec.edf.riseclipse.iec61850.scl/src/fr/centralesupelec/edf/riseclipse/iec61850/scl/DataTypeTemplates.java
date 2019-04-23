@@ -40,7 +40,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DataTypeTemplates extends ExplicitLinkResolver {
+public interface DataTypeTemplates extends SclObject {
     /**
      * Returns the value of the '<em><b>DA Type</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType}.
