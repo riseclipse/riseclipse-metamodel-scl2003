@@ -1136,18 +1136,15 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             Substation substation = null;
             List< Substation > res1 =
                     SclUtilities
-                    .get_Substations( this )
+                    .getSCL( this )
+                    .getSubstation()
                     .stream()
                     .filter(  s -> getSubstationName().equals( s.getName() ))
                     .collect( Collectors.toList() );
             
             String mess1 = "Substation( name = " + getSubstationName() + " )";
-            if( res1.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess1 );
-                return;
-            }
-            if( res1.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess1 );
+            if( res1.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, res1.size() );
                 return;
             }
             substation = res1.get( 0 );
@@ -1164,12 +1161,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                         .collect( Collectors.toList() );
             
             String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
-            if( res2.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess2 );
-                return;
-            }
-            if( res2.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess2 );
+            if( res2.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, res2.size() );
                 return;
             }
             voltageLevel = res2.get( 0 );
@@ -1186,12 +1179,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     .collect( Collectors.toList() );
                     
             String mess3 = "Bay( name = " + getBayName() + " )";
-            if( res3.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess3 );
-                return;
-            }
-            if( res3.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess3 );
+            if( res3.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, res3.size() );
                 return;
             }
             bay = res3.get( 0 );
@@ -1207,12 +1196,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     .collect( Collectors.toList() );
                     
             String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
-            if( res4.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess4 );
-                return;
-            }
-            if( res4.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess4 );
+            if( res4.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess4, res4.size() );
                 return;
             }
             setRefersToConnectivityNode( res4.get( 0 ) );
@@ -1228,19 +1213,15 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             Line line = null;
             List< Line > res5 =
                     SclUtilities
-                    .get_SCL( this )
+                    .getSCL( this )
                     .getLine()
                     .stream()
                     .filter( l -> getLineName().equals( l.getName() ))
                     .collect( Collectors.toList() );
                     
             String mess5 = "Line( name = " + getLineName() + " )";
-            if( res5.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess5 );
-                return;
-            }
-            if( res5.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess5 );
+            if( res5.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess5, res5.size() );
                 return;
             }
             line = res5.get( 0 );
@@ -1256,12 +1237,8 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     .collect( Collectors.toList() );
 
             String mess6 = "ConnectivityNode( name = " + getCNodeName() + " )";
-            if( res6.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess6 );
-                return;
-            }
-            if( res6.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess6 );
+            if( res6.size() != 1 ) {
+	            SclUtilities.displayNotFoundError( console, messagePrefix, mess6, res6.size() );
                 return;
             }
             setRefersToConnectivityNode( res6.get( 0 ));

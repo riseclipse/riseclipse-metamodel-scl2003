@@ -45,6 +45,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -1031,12 +1032,8 @@ public class DAIImpl extends UnNamingImpl implements DAI {
                 .collect( Collectors.toList() );
 
         String mess = "BDA( name = " + getName() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
-            return false;
-        }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
             return false;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));

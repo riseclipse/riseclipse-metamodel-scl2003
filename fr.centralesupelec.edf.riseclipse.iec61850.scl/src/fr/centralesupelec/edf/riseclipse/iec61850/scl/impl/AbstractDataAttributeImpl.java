@@ -1396,7 +1396,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         // valKind              Determines how the value shall be interpreted if any is given
 
         if( getType() == null ) return;
-        DataTypeTemplates dtt = SclUtilities.get_DataTypeTemplates( this );
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
 
         String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
@@ -1413,12 +1413,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
 
             String mess = "EnumType( id = " + getType() + " )";
-            if( res.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess );
+            if( res.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
@@ -1436,12 +1432,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
                     
             String mess = "DAType( id = " + getType() + " )";
-            if( res.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess );
+            if( res.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );

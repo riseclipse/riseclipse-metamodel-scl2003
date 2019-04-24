@@ -26,6 +26,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Control;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
@@ -587,15 +588,11 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
                 .collect( Collectors.toList() );
         
         String mess = "DataSet( name = " + getDatSet() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
             return;
         }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
-            return;
-        }
-        setRefersToDataSet( res.get( 0 ) );
+        setRefersToDataSet( res.get( 0 ));
         console.info( "Control on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDataSet().getLineNumber() );
     }
 

@@ -490,7 +490,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
         if( getType() == null ) return;
-        DataTypeTemplates dtt = SclUtilities.get_DataTypeTemplates( this );
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
 
         String messagePrefix = "while resolving link from DO on line " + getLineNumber() + ": ";
@@ -503,12 +503,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 .collect( Collectors.toList() );
                 
         String mess = "DOType( id = " + getType() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
-            return;
-        }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDOType( res.get( 0 ));

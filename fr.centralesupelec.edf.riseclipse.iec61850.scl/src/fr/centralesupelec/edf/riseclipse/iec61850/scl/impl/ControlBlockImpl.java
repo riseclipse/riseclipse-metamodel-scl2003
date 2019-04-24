@@ -29,10 +29,13 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 import java.lang.reflect.InvocationTargetException;
+
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -663,37 +666,21 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
 
         // find an LDevice with
         //   LDevice.inst == ControlBlock.ldInst
-        List< LDevice > res1 = 
-                ied
-                .getAccessPoint()
-                .stream()
-                .map( ap -> ap.getServer() )
-                .filter( s -> s != null )
-                .map( s -> s.getLDevice() )
-                .filter( ld -> ld != null )
-                .flatMap( ld -> ld.stream() )
-                .filter( ld -> getLdInst().equals( ld.getInst() ))
-                .collect( Collectors.toList() );
-
+        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied, getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
+        if( lDevice.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
             return;
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
-            return;
-        }
-        LDevice lDevice = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
-        if( lDevice.getLN0() == null ) return;
+        if( lDevice.getLeft().getLN0() == null ) return;
 
         List< ControlWithIEDName > l2 = new ArrayList< ControlWithIEDName >();
-        l2.addAll( lDevice.getLN0().getGSEControl() );
-        l2.addAll( lDevice.getLN0().getSampledValueControl() );
+        l2.addAll( lDevice.getLeft().getLN0().getGSEControl() );
+        l2.addAll( lDevice.getLeft().getLN0().getSampledValueControl() );
         
         List< ControlWithIEDName > res2 =
                 l2
@@ -702,12 +689,8 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
                 .collect( Collectors.toList() );
         
         String mess2 = "ControlWithIEDName( name = " + getCbName() + " )";
-        if( res2.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess2 );
-            return;
-        }
-        if( res2.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess2 );
+        if( res2.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, res2.size() );
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ));

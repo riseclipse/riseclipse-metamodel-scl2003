@@ -18,22 +18,19 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Log;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -1258,73 +1255,28 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         
         String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
         
-        EObject object = this;
-        while(( object != null ) && !( object instanceof IED ) ) {
-            object = object.eContainer();
-        }
-        if( object == null ) return;
-        IED ied = ( IED ) object;
-
-        LDevice lDevice = null;
-        if( getLdInst() != null ) {
-            List< LDevice > res1 = 
-                    ied
-                    .getAccessPoint()
-                    .stream()
-                    .map( ap -> ap.getServer() )
-                    .filter( s -> s != null )
-                    .map( s -> s.getLDevice() )
-                    .filter( ld -> ld != null )
-                    .flatMap( ld -> ld.stream() )
-                    .filter( ld -> getLdInst().equals( ld.getInst() ))
-                    .collect( Collectors.toList() );
-
+        IED ied = SclUtilities.getMyIED( this );
+        LDevice lDevice = this.getParentAnyLN().getParentLDevice();
+        
+        if(( getLdInst() != null ) && ( ! getLdInst().isEmpty() )) {
+            Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             String mess1 = "LDevice( inst = " + getLdInst() + " )";
-            if( res1.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess1 );
+            if( lDevice1.getLeft() == null ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice1.getRight() );
                 return;
             }
-            if( res1.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess1 );
-                return;
-            }
-            lDevice  = res1.get( 0 );
+            lDevice = lDevice1.getLeft();
             console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
         }
-        // To please the compiler
-        if( lDevice == null ) return;
 
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
-        if(( getLnClass() == null ) || getLnClass().isEmpty() || ( "LLN0".equals( getLnClass() ))) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return;
-            }
-            setRefersToAnyLN( lDevice.getLN0() );
+        Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
+        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
+            return;
         }
-        else {
-            if( getLnInst() == null ) return;
-            // find inside an LN with
-            //   LN.lnClass == FCDA.lnClass
-            //   LN.prefix == FCDA.prefix
-            //   LN.inst == FCDA.lnInst
-            List< LN > res3 = lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
-
-            if( res3.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess3 );
-                return;
-            }
-            if( res3.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess3 );
-                return;
-            }
-            setRefersToAnyLN( res3.get( 0 ) );
-        }
-        console.info( "LogControl on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        setRefersToAnyLN( anyLN.getLeft() );
+        console.info( "LogControl on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAnyLN().getLineNumber() );
         
     }
 
