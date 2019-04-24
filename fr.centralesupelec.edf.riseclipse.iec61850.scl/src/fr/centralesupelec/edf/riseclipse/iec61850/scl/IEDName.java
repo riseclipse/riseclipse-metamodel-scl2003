@@ -43,7 +43,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model extendedMetaData="kind='simple'"
  * @generated
  */
-public interface IEDName extends ExplicitLinkResolver {
+public interface IEDName extends SclObject {
     /**
      * Returns the value of the '<em><b>Ap Ref</b></em>' attribute.
      * <!-- begin-user-doc -->

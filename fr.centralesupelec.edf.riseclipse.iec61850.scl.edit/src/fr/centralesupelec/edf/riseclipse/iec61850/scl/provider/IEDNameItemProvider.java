@@ -38,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * @generated
  */
 public class IEDNameItemProvider 
-    extends ExplicitLinkResolverItemProvider {
+    extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->

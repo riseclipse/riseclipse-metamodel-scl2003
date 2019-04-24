@@ -21,20 +21,17 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AssociationKindEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -1167,9 +1164,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // kind            The kind of pre-configured association, pre-established or predefined
         // associationID   The identification of a pre-configured association (otherwise empty)
@@ -1183,91 +1180,36 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         if( getLdInst() == null ) return;
         if( getLnClass() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from Association on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == Association.iedName
-        List< IED > res1 =
-                get_IEDs()
-                .stream()
-                .filter( ied -> getIedName().equals( ied.getName() ))
-                .collect( Collectors.toList() );
-
-        IED ied = null;
+        Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
+        if( ied.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
-            return;
-        }
-        ied = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
-
-        // The following is copy/paste from ExtRef/FCDA
-        // TODO: factor out ?
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
 
         // find inside an LDevice with
         //   LDevice.name == Association.ldInst
-        List< LDevice > res2 = 
-                ied
-                .getAccessPoint()
-                .stream()
-                .map( ap -> ap.getServer() )
-                .filter( s -> s != null )
-                .map( s -> s.getLDevice() )
-                .filter( ld -> ld != null )
-                .flatMap( ld -> ld.stream() )
-                .filter( ld -> getLdInst().equals( ld.getInst() ))
-                .collect( Collectors.toList() );
-
+        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess2 = "LDevice( inst = " + getLdInst() + " )";
-        if( res2.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess2 );
+        if( lDevice.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, lDevice.getRight() );
             return;
         }
-        if( res2.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess2 );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
+
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, anyLN.getRight() );
             return;
         }
-        LDevice lDevice = res2.get( 0 );
-        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLineNumber() );
-
-        if( "LLN0".equals( getLnClass() )) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return;
-            }
-            setRefersToAnyLN( lDevice.getLN0() );
-            console.info( "Association on line " + getLineNumber() + " refers to LN0 on line " + getRefersToAnyLN().getLineNumber() );
-        }
-        else {
-            if( getLnInst() == null ) return;
-            // find inside an LN with
-            //   LN.lnClass == FCDA.lnClass
-            //   LN.prefix == FCDA.prefix
-            //   LN.inst == FCDA.lnInst
-            List< LN > res3 = lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
-
-            String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
-            if( res3.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess3 );
-                return;
-            }
-            if( res3.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess3 );
-                return;
-            }
-            setRefersToAnyLN( res3.get( 0 ));
-            console.info( "Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
-        }
+        setRefersToAnyLN( anyLN.getLeft() );
+        console.info( "Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //AssociationImpl

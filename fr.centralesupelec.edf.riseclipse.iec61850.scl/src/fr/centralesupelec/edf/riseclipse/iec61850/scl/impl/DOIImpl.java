@@ -38,7 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -765,12 +765,11 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         String messagePrefix = "while resolving link from DOI on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
         if(( getName() == null ) || getName().isEmpty() ) return;
         
@@ -782,16 +781,12 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
-                .filter(  d -> getName().equals( d.getName() ))
+                .filter( d -> getName().equals( d.getName() ))
                 .collect( Collectors.toList() );
 
         String mess = "DO( name = " + getName() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
-            return;
-        }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDO( res.get( 0 ) );

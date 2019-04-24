@@ -18,20 +18,17 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -456,40 +453,23 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         if( getApName() == null ) return;
 
         String messagePrefix = "while resolving link from ServerAt on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         
-        IED ied = null;
-        EObject object = this;
-        while(( object != null ) && !( object instanceof IED ) ) {
-            object = object.eContainer();
-        }
-        if( object != null ) ied = ( IED ) object;
-        else return;
+        IED ied = SclUtilities.getMyIED( this );
 
-        List< AccessPoint > res = 
-                ied
-                .getAccessPoint()
-                .stream()
-                .filter(  ap ->  getApName().equals( ap.getName() ))
-                .collect( Collectors.toList() );
-        
+        Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied, getApName() );
         String mess = "AccessPoint( name = " + getApName() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
+        if( ap.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, ap.getRight() );
             return;
         }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
-            return;
-        }
-        setRefersToAccessPoint( res.get( 0 ) );
+        setRefersToAccessPoint( ap.getLeft() );
         console.info( "ServerAt on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 

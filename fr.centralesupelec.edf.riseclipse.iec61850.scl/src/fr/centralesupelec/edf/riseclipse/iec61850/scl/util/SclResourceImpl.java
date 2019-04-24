@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.xmi.XMLLoad;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExplicitLinkResolver;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseResource;
 
@@ -57,8 +57,8 @@ public class SclResourceImpl extends XMLResourceImpl implements IRiseClipseResou
     @Override
     public void finalizeLoad( IRiseClipseConsole console ) {
         if( getContents().size() > 0 ) {
-            ExplicitLinkResolver scl = ( ExplicitLinkResolver ) getContents().get( 0 );
-            scl.resolveLinks();
+            SCL scl = ( SCL ) getContents().get( 0 );
+            scl.buildExplicitLinks( console, false );
         }
     }
     

@@ -26,7 +26,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
@@ -386,9 +386,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // name     The SDO name
         // desc     Descriptive text for the SDO
@@ -397,11 +397,10 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
         
         if( getType() == null ) return;
-        DataTypeTemplates dtt = get_DataTypeTemplates();
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
 
         String messagePrefix = "while resolving link from SDO on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         List< DOType > res =
                 dtt
@@ -411,12 +410,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
                 .collect( Collectors.toList() );
         
         String mess = "DOType( id = " + getType() + " )";
-        if( res.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess );
-            return;
-        }
-        if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDOType( res.get( 0 ) );

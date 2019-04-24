@@ -19,6 +19,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 
 import java.util.List;
@@ -32,14 +33,14 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.FCEnum;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
+
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -73,7 +74,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
+public class FCDAImpl extends SclObjectImpl implements FCDA {
     /**
      * The default value of the '{@link #getDaName() <em>Da Name</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1041,9 +1042,9 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
@@ -1066,76 +1067,38 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         if( getDoName() == null ) return;
         
         String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         // The LN we are looking for is in the same IED/Server
         EObject object = this;
-        while(( object != null ) && !( object instanceof Server ) ) {
+        while(( object != null ) && !( object instanceof AccessPoint ) ) {
             object = object.eContainer();
         }
         if( object == null ) {
-            console.verbose( messagePrefix + "Server not found" );
+            console.verbose( messagePrefix + "AccessPoint not found" );
             return;
         }
-        Server server = ( Server ) object;
-        console.verbose( messagePrefix + "found Server on line " + server.getLineNumber() );
-
-        List< LDevice > res1 = 
-               server
-              .getLDevice()
-              .stream()
-              .filter( ld -> getLdInst().equals( ld.getInst() ))
-              .collect( Collectors.toList() );
-
+        AccessPoint ap = ( AccessPoint ) object;
+        console.verbose( messagePrefix + "found Server on line " + ap.getServer().getLineNumber() );
+        
+        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap, getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
+        if( lDevice.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
             return;
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
+        
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
             return;
         }
-        LDevice lDevice = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLeft().getLineNumber() );
+        anyLN.getLeft().buildExplicitLinks( console, false );
         
-        AnyLN anyLN = null;
-        if( "LLN0".equals( getLnClass() )) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return;
-            }
-            anyLN = lDevice.getLN0();
-        }
-        else {
-            if( getLnInst() == null ) return;
-            // find inside an LN with
-            //   LN.lnClass == FCDA.lnClass
-            //   LN.prefix == FCDA.prefix
-            //   LN.inst == FCDA.lnInst
-            List< LN > res2 = lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
-            
-            String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
-            if( res2.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess2 );
-                return;
-            }
-            if( res2.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess2 );
-                return;
-            }
-            anyLN = res2.get( 0 );
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
-        }
-        if( anyLN == null ) return;
-        anyLN.resolveLinks();
-        
-        if( anyLN.getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
+        if( anyLN.getLeft().getRefersToLNodeType() == null ) return;
+        console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
         
         // doName and daName are structured using . as separator
         // The first doName let us find the DO inside the LNodeType
@@ -1147,6 +1110,7 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
         final String[] doNames = getDoName().split( "\\.", -1 );
         List< DO > res3a =
                  anyLN
+                .getLeft()
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
@@ -1154,17 +1118,13 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                 .collect( Collectors.toList() );
         
         String mess3a = "DO ( name = " + doNames[0] + " )";
-        if( res3a.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess3a );
-            return;
-        }
-        if( res3a.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess3a );
+        if( res3a.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess3a, res3a.size() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess3a + " on line " + res3a.get( 0 ).getLineNumber() );
         
-        res3a.get( 0 ).resolveLinks();
+        res3a.get( 0 ).buildExplicitLinks( console, false );
         DOType doType = res3a.get( 0 ).getRefersToDOType();
         if( doType == null ) return;
         console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
@@ -1179,17 +1139,13 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                     .collect( Collectors.toList() );
             
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
-            if( res3b.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess3b );
-                return;
-            }
-            if( res3b.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess3b );
+            if( res3b.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess3b, res3b.size() );
                 return;
             }
             console.verbose( messagePrefix + "found " + mess3b + " on line " + res3b.get( 0 ).getLineNumber() );
 
-            res3b.get( 0 ).resolveLinks();
+            res3b.get( 0 ).buildExplicitLinks( console, false );
             doType = res3b.get( 0 ).getRefersToDOType();
             if( doType == null ) return;
             console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
@@ -1208,19 +1164,15 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                     .collect( Collectors.toList() );
             
             String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
-            if( res4a.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess4a );
-                return;
-            }
-            if( res4a.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess4a );
+            if( res4a.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess4a, res4a.size() );
                 return;
             }
             AbstractDataAttribute da = res4a.get( 0 );
             console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
             
             for( int i = 1; i < daNames.length; ++i ) {
-                da.resolveLinks();
+                da.buildExplicitLinks( console, false );
                 
                 String name = daNames[i];
                 List< BDA > res4b =
@@ -1232,12 +1184,8 @@ public class FCDAImpl extends ExplicitLinkResolverImpl implements FCDA {
                         .collect( Collectors.toList() );
                         
                 String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
-                if( res4b.isEmpty() ) {
-                    console.error( messagePrefix + "cannot find " + mess4b );
-                    return;
-                }
-                if( res4b.size() > 1 ) {
-                    console.error( messagePrefix + "found several " + mess4b );
+                if( res4b.size() != 1 ) {
+                    SclUtilities.displayNotFoundError( console, messagePrefix, mess4b, res4b.size() );
                     return;
                 }
                 da = res4b.get( 0 );

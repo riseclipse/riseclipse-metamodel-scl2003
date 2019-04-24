@@ -51,7 +51,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Text;
  *
  * @generated
  */
-public abstract class BaseElementImpl extends ExplicitLinkResolverImpl implements BaseElement {
+public abstract class BaseElementImpl extends SclObjectImpl implements BaseElement {
     /**
      * The cached value of the '{@link #getPrivate() <em>Private</em>}' containment reference list.
      * <!-- begin-user-doc -->

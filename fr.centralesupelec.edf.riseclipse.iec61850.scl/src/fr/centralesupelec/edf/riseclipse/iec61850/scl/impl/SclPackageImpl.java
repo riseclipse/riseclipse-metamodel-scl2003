@@ -419,6 +419,13 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    private EClass iRiseClipseConsoleEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     private EClass durationInMilliSecEClass = null;
 
     /**
@@ -1141,13 +1148,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     private EClass voltageLevelEClass = null;
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    private EClass explicitLinkResolverEClass = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -3406,7 +3406,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getBitRateInMbPerSec() {
         if (bitRateInMbPerSecEClass == null) {
-            bitRateInMbPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(167);
+            bitRateInMbPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(166);
         }
         return bitRateInMbPerSecEClass;
     }
@@ -3449,7 +3449,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMinTime() {
         if (minTimeEClass == null) {
-            minTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(168);
+            minTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(167);
         }
         return minTimeEClass;
     }
@@ -3462,7 +3462,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMaxTime() {
         if (maxTimeEClass == null) {
-            maxTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(169);
+            maxTimeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(168);
         }
         return maxTimeEClass;
     }
@@ -3475,7 +3475,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getBitRate() {
         if (bitRateEClass == null) {
-            bitRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(170);
+            bitRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(169);
         }
         return bitRateEClass;
     }
@@ -3498,7 +3498,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSmpRate() {
         if (smpRateEClass == null) {
-            smpRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(171);
+            smpRateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(170);
         }
         return smpRateEClass;
     }
@@ -3531,7 +3531,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSamplesPerSec() {
         if (samplesPerSecEClass == null) {
-            samplesPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(172);
+            samplesPerSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(171);
         }
         return samplesPerSecEClass;
     }
@@ -3564,7 +3564,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSecPerSamples() {
         if (secPerSamplesEClass == null) {
-            secPerSamplesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(173);
+            secPerSamplesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(172);
         }
         return secPerSamplesEClass;
     }
@@ -3597,7 +3597,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getMcSecurity() {
         if (mcSecurityEClass == null) {
-            mcSecurityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(174);
+            mcSecurityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(173);
         }
         return mcSecurityEClass;
     }
@@ -3660,7 +3660,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgAuthentication() {
         if (agAuthenticationEClass == null) {
-            agAuthenticationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(175);
+            agAuthenticationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(174);
         }
         return agAuthenticationEClass;
     }
@@ -3723,7 +3723,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgSmvOpts() {
         if (agSmvOptsEClass == null) {
-            agSmvOptsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(176);
+            agSmvOptsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(175);
         }
         return agSmvOptsEClass;
     }
@@ -3816,7 +3816,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgOptFields() {
         if (agOptFieldsEClass == null) {
-            agOptFieldsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(177);
+            agOptFieldsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(176);
         }
         return agOptFieldsEClass;
     }
@@ -3919,7 +3919,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgDesc() {
         if (agDescEClass == null) {
-            agDescEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(178);
+            agDescEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(177);
         }
         return agDescEClass;
     }
@@ -3942,7 +3942,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgLDRef() {
         if (agLDRefEClass == null) {
-            agLDRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(179);
+            agLDRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(178);
         }
         return agLDRefEClass;
     }
@@ -3975,7 +3975,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgLNRef() {
         if (agLNRefEClass == null) {
-            agLNRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(180);
+            agLNRefEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(179);
         }
         return agLNRefEClass;
     }
@@ -4018,7 +4018,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgDATrgOp() {
         if (agDATrgOpEClass == null) {
-            agDATrgOpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(181);
+            agDATrgOpEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(180);
         }
         return agDATrgOpEClass;
     }
@@ -4061,7 +4061,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getAgVirtual() {
         if (agVirtualEClass == null) {
-            agVirtualEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(182);
+            agVirtualEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(181);
         }
         return agVirtualEClass;
     }
@@ -4082,9 +4082,22 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EClass getIRiseClipseConsole() {
+        if (iRiseClipseConsoleEClass == null) {
+            iRiseClipseConsoleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(182);
+        }
+        return iRiseClipseConsoleEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getDurationInMilliSec() {
         if (durationInMilliSecEClass == null) {
-            durationInMilliSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(166);
+            durationInMilliSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(165);
         }
         return durationInMilliSecEClass;
     }
@@ -10200,26 +10213,13 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
 
     /**
      * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public EClass getExplicitLinkResolver() {
-        if (explicitLinkResolverEClass == null) {
-            explicitLinkResolverEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(152);
-        }
-        return explicitLinkResolverEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     @Override
     public EClass getAbstractDataObject() {
         if (abstractDataObjectEClass == null) {
-            abstractDataObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(153);
+            abstractDataObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(152);
         }
         return abstractDataObjectEClass;
     }
@@ -10272,7 +10272,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getSclObject() {
         if (sclObjectEClass == null) {
-            sclObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(154);
+            sclObjectEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(153);
         }
         return sclObjectEClass;
     }
@@ -10293,9 +10293,29 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EAttribute getSclObject_ExplicitLinksBuilt() {
+        return (EAttribute)getSclObject().getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_boolean() {
+        return getSclObject().getEOperations().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getUnNaming() {
         if (unNamingEClass == null) {
-            unNamingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(155);
+            unNamingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(154);
         }
         return unNamingEClass;
     }
@@ -10308,7 +10328,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceYesNo() {
         if (serviceYesNoEClass == null) {
-            serviceYesNoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(156);
+            serviceYesNoEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(155);
         }
         return serviceYesNoEClass;
     }
@@ -10321,7 +10341,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithOptionalMax() {
         if (serviceWithOptionalMaxEClass == null) {
-            serviceWithOptionalMaxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(157);
+            serviceWithOptionalMaxEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(156);
         }
         return serviceWithOptionalMaxEClass;
     }
@@ -10344,7 +10364,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxNonZero() {
         if (serviceWithMaxNonZeroEClass == null) {
-            serviceWithMaxNonZeroEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(158);
+            serviceWithMaxNonZeroEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(157);
         }
         return serviceWithMaxNonZeroEClass;
     }
@@ -10367,7 +10387,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceConfReportControl() {
         if (serviceConfReportControlEClass == null) {
-            serviceConfReportControlEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(159);
+            serviceConfReportControlEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(158);
         }
         return serviceConfReportControlEClass;
     }
@@ -10410,7 +10430,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxAndMaxAttributes() {
         if (serviceWithMaxAndMaxAttributesEClass == null) {
-            serviceWithMaxAndMaxAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(160);
+            serviceWithMaxAndMaxAttributesEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(159);
         }
         return serviceWithMaxAndMaxAttributesEClass;
     }
@@ -10433,7 +10453,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceWithMaxAndModify() {
         if (serviceWithMaxAndModifyEClass == null) {
-            serviceWithMaxAndModifyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(161);
+            serviceWithMaxAndModifyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(160);
         }
         return serviceWithMaxAndModifyEClass;
     }
@@ -10456,7 +10476,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getServiceForConfDataSet() {
         if (serviceForConfDataSetEClass == null) {
-            serviceForConfDataSetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(162);
+            serviceForConfDataSetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(161);
         }
         return serviceForConfDataSetEClass;
     }
@@ -10479,7 +10499,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getCert() {
         if (certEClass == null) {
-            certEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(163);
+            certEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(162);
         }
         return certEClass;
     }
@@ -10512,7 +10532,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getValueWithUnit() {
         if (valueWithUnitEClass == null) {
-            valueWithUnitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(164);
+            valueWithUnitEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(163);
         }
         return valueWithUnitEClass;
     }
@@ -10555,7 +10575,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EClass getDurationInSec() {
         if (durationInSecEClass == null) {
-            durationInSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(165);
+            durationInSecEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(164);
         }
         return durationInSecEClass;
     }

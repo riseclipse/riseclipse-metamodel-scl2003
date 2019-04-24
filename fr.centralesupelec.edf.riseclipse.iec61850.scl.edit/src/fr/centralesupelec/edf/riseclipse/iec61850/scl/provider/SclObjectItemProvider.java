@@ -77,6 +77,7 @@ public class SclObjectItemProvider
             super.getPropertyDescriptors(object);
 
             addLineNumberPropertyDescriptor(object);
+            addExplicitLinksBuiltPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -104,6 +105,28 @@ public class SclObjectItemProvider
     }
 
 	/**
+     * This adds a property descriptor for the Explicit Links Built feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addExplicitLinksBuiltPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_SclObject_explicitLinksBuilt_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_SclObject_explicitLinksBuilt_feature", "_UI_SclObject_type"),
+                 SclPackage.eINSTANCE.getSclObject_ExplicitLinksBuilt(),
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
      * This returns the label text for the adapted class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +152,7 @@ public class SclObjectItemProvider
 
         switch (notification.getFeatureID(SclObject.class)) {
             case SclPackage.SCL_OBJECT__LINE_NUMBER:
+            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }

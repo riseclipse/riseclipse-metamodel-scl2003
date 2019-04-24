@@ -18,6 +18,7 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getLineNumber <em>Line Number</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt <em>Explicit Links Built</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject()
@@ -63,5 +65,36 @@ public interface SclObject extends EObject {
      * @generated
      */
     void setLineNumber( int value );
+
+    /**
+     * Returns the value of the '<em><b>Explicit Links Built</b></em>' attribute.
+     * The default value is <code>"false"</code>.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Explicit Links Built</em>' attribute.
+     * @see #setExplicitLinksBuilt(boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getSclObject_ExplicitLinksBuilt()
+     * @model default="false" required="true" transient="true"
+     * @generated
+     */
+    boolean isExplicitLinksBuilt();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#isExplicitLinksBuilt <em>Explicit Links Built</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Explicit Links Built</em>' attribute.
+     * @see #isExplicitLinksBuilt()
+     * @generated
+     */
+    void setExplicitLinksBuilt(boolean value);
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model consoleType="fr.centralesupelec.edf.riseclipse.iec61850.scl.IRiseClipseConsole"
+     * @generated
+     */
+    boolean buildExplicitLinks(IRiseClipseConsole console, boolean forceUpdate);
 
 } // SclObject

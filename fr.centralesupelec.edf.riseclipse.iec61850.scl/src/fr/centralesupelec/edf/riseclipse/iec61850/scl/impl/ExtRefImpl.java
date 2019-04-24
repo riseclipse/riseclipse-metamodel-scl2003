@@ -31,11 +31,10 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceType;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.ArrayList;
@@ -46,7 +45,6 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -2429,15 +2427,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
-        Pair< IED, LDevice > args = doResolveDataLink();
-        doResolveCBLink( args );
+        Pair< IED, LDevice > args = doBuildDataLink( console );
+        doBuildCBLink( console, args );
     }
     
-    private Pair< IED, LDevice > doResolveDataLink() {
+    private Pair< IED, LDevice > doBuildDataLink( IRiseClipseConsole console ) {
 
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
@@ -2458,102 +2456,48 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // srcLNInst    The LN instance number of the LN where the source control block resides – if missing, no instance number exists (LLN0)
         // srcCBName    The source CB name; if missing, then all othere srcXX attributes should also be missing, i.e. no source control block is given.
 
-        IED ied = null;
-        LDevice lDevice = null;
-        
-        if( getIedName() == null ) return Pair.of( ied, lDevice );
+        if( getIedName() == null ) return Pair.of( null, null );
 
         // No link if no doName
-        if( getDoName() == null ) return Pair.of( ied, lDevice );
-        if( getDoName().isEmpty() ) return Pair.of( ied, lDevice );
+        if( getDoName() == null ) return Pair.of( null, null );
+        if( getDoName().isEmpty() ) return Pair.of( null, null );
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
+        Pair< IED, Integer > ied = null;
         if( "@".equals( getIedName() )) {
-            EObject object = this;
-            while(( object != null ) && !( object instanceof IED ) ) {
-                object = object.eContainer();
-            }
-            if( object != null ) ied = ( IED ) object;
+            ied = Pair.of( SclUtilities.getMyIED( this ), 1 );
         }
         else {
-            ied =
-                    get_IEDs()
-                    .stream()
-                    .filter( i -> getIedName().equals(  i.getName() ))
-                    .findAny()
-                    .map( i -> i )
-                    .orElse( null );
+            ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         }
-        if( ied == null ) {
-            console.verbose( messagePrefix + "IED named " + getIedName() + " not found" );
-            return Pair.of( ied, lDevice );
+        if( ied.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, "IED( name = " + getIedName() + " )", ied.getRight() );
+            return Pair.of( null, null );
         }
-        console.verbose( messagePrefix + "found IED ( name = " + ied.getName() + " ) on line " + ied.getLineNumber() );
+        console.verbose( messagePrefix + "found IED ( name = " + ied.getLeft().getName() + " ) on line " + ied.getLeft().getLineNumber() );
 
-        // TODO : quite similar to FCDA
-        List< LDevice > res1 = 
-                ied
-                .getAccessPoint()
-                .stream()
-                .map( ap -> ap.getServer() )
-                .filter( s -> s != null )
-                .map( s -> s.getLDevice() )
-                .filter( ld -> ld != null )
-                .flatMap( ld -> ld.stream() )
-                .filter( ld -> getLdInst().equals( ld.getInst() ))
-                .collect( Collectors.toList() );
-
+        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
-            return Pair.of( ied, lDevice );
+        if( lDevice.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
+            return Pair.of( ied.getLeft(), lDevice.getLeft() );
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
-            return Pair.of( ied, lDevice );
-        }
-        lDevice = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
+        Pair< IED, LDevice > finalRes = Pair.of( ied.getLeft(), lDevice.getLeft() );
+        
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
 
-        AnyLN anyLN = null;
-        if( "LLN0".equals( getLnClass() )) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return Pair.of( ied, lDevice );
-            }
-            anyLN = lDevice.getLN0();
+        Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
+            return finalRes;
         }
-        else {
-            if( getLnInst() == null ) return Pair.of( ied, lDevice );
-            // find inside an LN with
-            //   LN.lnClass == FCDA.lnClass
-            //   LN.prefix == FCDA.prefix
-            //   LN.inst == FCDA.lnInst
-            List< LN > res2 = lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLeft().getLineNumber() );
+        anyLN.getLeft().buildExplicitLinks( console, false );
 
-            String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
-            if( res2.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess2 );
-                return Pair.of( ied, lDevice );
-            }
-            if( res2.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess2 );
-                return Pair.of( ied, lDevice );
-            }
-            anyLN = res2.get( 0 );
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLineNumber() );
-        }
-        if( anyLN == null ) return Pair.of( ied, lDevice );
-        anyLN.resolveLinks();
-
-        if( anyLN.getRefersToLNodeType() == null ) return Pair.of( ied, lDevice );
-        console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getRefersToLNodeType().getLineNumber() );
+        if( anyLN.getLeft().getRefersToLNodeType() == null ) return finalRes;
+        console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
 
         // doName and daName are structured using . as separator
         // The first doName let us find the DO inside the LNodeType
@@ -2565,6 +2509,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         final String[] doNames = getDoName().split( "\\.", -1 );
         List< DO > res3a =
                 anyLN
+                .getLeft()
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
@@ -2572,22 +2517,18 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         String mess3a = "DO ( name = " + doNames[0] + " )";
-        if( res3a.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess3a );
-            return Pair.of( ied, lDevice );
-        }
-        if( res3a.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess3a );
-            return Pair.of( ied, lDevice );
+        if( res3a.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess3a, res3a.size() );
+            return finalRes;
         }
 
         AbstractDataObject ado = res3a.get( 0 );
         console.verbose( messagePrefix + "found " + mess3a + " on line " + ado.getLineNumber() );
-        ado.resolveLinks();
+        ado.buildExplicitLinks( console, false );
 
         for( int i = 1; i < doNames.length; ++i ) {
             DOType doType = ado.getRefersToDOType();
-            if( doType == null ) return Pair.of( ied, lDevice );
+            if( doType == null ) return finalRes;
             console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
             String name = doNames[i];
             List< SDO > res3b =
@@ -2598,28 +2539,24 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
-            if( res3b.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess3b );
-                return Pair.of( ied, lDevice );
-            }
-            if( res3b.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess3b );
-                return Pair.of( ied, lDevice );
+            if( res3b.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess3b, res3b.size() );
+                return finalRes;
             }
             ado = res3b.get( 0 );
             console.verbose( messagePrefix + "found " + mess3b + " on line " + ado.getLineNumber() );
 
-            ado.resolveLinks();
+            ado.buildExplicitLinks( console, false );
         }
         // Set link to DO/SDO only if no daName
         if( getDaName() == null ) {
             setRefersToAbstractDataObject( ado );
             console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataObject ( name = " + ado.getName() + " ) on line " + ado.getLineNumber() );
-            return Pair.of( ied, lDevice );
+            return finalRes;
         }
 
         DOType doType = ado.getRefersToDOType();
-        if( doType == null ) return Pair.of( ied, lDevice );
+        if( doType == null ) return finalRes;
         console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
         // The first daName gives us the DA inside the DOType
         // If daName is structured, find the DAType and its BDA using remaining doName
@@ -2633,19 +2570,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
 
         String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
-        if( res4a.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess4a );
-            return Pair.of( ied, lDevice );
-        }
-        if( res4a.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess4a );
-            return Pair.of( ied, lDevice );
+        if( res4a.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess4a, res4a.size() );
+            return finalRes;
         }
         AbstractDataAttribute da = res4a.get( 0 );
         console.verbose( messagePrefix + "found " + mess4a + " on line " + da.getLineNumber() );
 
         for( int i = 1; i < daNames.length; ++i ) {
-            da.resolveLinks();
+            da.buildExplicitLinks( console, false );
 
             String name = daNames[i];
             List< BDA > res4b =
@@ -2657,13 +2590,9 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                     .collect( Collectors.toList() );
 
             String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
-            if( res4b.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess4b );
-                return Pair.of( ied, lDevice );
-            }
-            if( res4b.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess4b );
-                return Pair.of( ied, lDevice );
+            if( res4b.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess4b, res4b.size() );
+                return finalRes;
             }
             da = res4b.get( 0 );
             console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
@@ -2672,10 +2601,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
         setRefersToAbstractDataAttribute( da );
         
-        return Pair.of( ied, lDevice );
+        return finalRes;
     }
 
-    private void doResolveCBLink( Pair< IED, LDevice > args ) {
+    private void doBuildCBLink( IRiseClipseConsole console, Pair< IED, LDevice > args ) {
 
         // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
         // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
@@ -2689,94 +2618,47 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( ied == null ) return;
 
         String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
 
         if( getSrcCBName() == null ) return;
         if( getSrcCBName().isEmpty() ) return;
 
         if(( getSrcLDInst() != null ) || ( ! getSrcLDInst().isEmpty() )) {
 
-            List< LDevice > res5 = 
-                    ied
-                    .getAccessPoint()
-                    .stream()
-                    .map( ap -> ap.getServer() )
-                    .filter( s -> s != null )
-                    .map( s -> s.getLDevice() )
-                    .filter( ld -> ld != null )
-                    .flatMap( ld -> ld.stream() )
-                    .filter( ld -> getSrcLDInst().equals( ld.getInst() ))
-                    .collect( Collectors.toList() );
-
+            Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getSrcLDInst() );
             String mess5 = "LDevice( inst = " + getSrcLDInst() + " )";
-            if( res5.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess5 );
+            if( lDevice1.getLeft() == null ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess5, lDevice1.getRight() );
                 return;
             }
-            if( res5.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess5 );
-                return;
-            }
-            lDevice = res5.get( 0 );
+            lDevice = lDevice1.getLeft();
             console.verbose( messagePrefix + "found " + mess5 + " on line " + lDevice.getLineNumber() );
         }
         if( lDevice == null ) return;
 
-        AnyLN anyLN = null;
-        if( "LLN0".equals( getSrcLNClass() )) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return;
-            }
-            anyLN = lDevice.getLN0();
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
+        String mess6 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess6, anyLN.getRight() );
+            return;
         }
-        else {
-            if( getSrcLNInst()== null ) return;
-            // find inside an LN with
-            //   LN.lnClass == FCDA.lnClass
-            //   LN.prefix == FCDA.prefix
-            //   LN.inst == FCDA.lnInst
-            List< LN > res6 = lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getSrcLNClass().equals( ln.getLnClass() ) && getSrcLNInst().equals( ln.getInst() ) && getSrcPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
-
-            String mess6 = "LN( lnClass = " + getSrcLNClass() + ", inst = " + getSrcLNInst() + " )";
-            if( res6.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess6 );
-                return;
-            }
-            if( res6.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess6 );
-                return;
-            }
-            anyLN = res6.get( 0 );
-            console.verbose( messagePrefix + "found " + mess6 + " on line " + anyLN.getLineNumber() );
-        }
-        if( anyLN == null ) return;
-        anyLN.resolveLinks();
+        anyLN.getLeft().buildExplicitLinks( console, false );
 
         List< Control > listControls = new ArrayList< Control >();
-        listControls.addAll( anyLN.getLogControl() );
-        listControls.addAll( anyLN.getReportControl() );
+        listControls.addAll( anyLN.getLeft().getLogControl() );
+        listControls.addAll( anyLN.getLeft().getReportControl() );
         if( "LLN0".equals( getSrcLNClass() )) {
             listControls.addAll( lDevice.getLN0().getGSEControl() );
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
         }
 
         List< Control > res7 =
-                  listControls
+                listControls
                 .stream()
                 .filter( c -> getSrcCBName().equals( c.getName() ))
                 .collect( Collectors.toList() );
         String mess7 = "Control( name = " + getSrcCBName() + " )";
-        if( res7.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess7 );
-            return;
-        }
-        if( res7.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess7 );
+        if( res7.size() != 1 ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess7, res7.size() );
             return;
         }
         setRefersToControl( res7.get( 0 ));

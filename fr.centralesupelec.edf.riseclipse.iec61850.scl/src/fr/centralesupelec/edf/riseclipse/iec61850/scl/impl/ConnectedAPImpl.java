@@ -27,13 +27,11 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SMV;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -977,9 +975,9 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // iedName a name identifying the IED
         // apName  a name identifying this access point within the IED
@@ -988,46 +986,24 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         if( getIedName() == null ) return;
         if( getApName() == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from ConnectedAP on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
-        List< IED > res1 =
-                get_IEDs()
-                .stream()
-                .filter( ied -> getIedName().equals( ied.getName() ))
-                .collect( Collectors.toList() );
-
-        IED ied = null;
+        Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
+        if( ied.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
-            return;
-        }
-        ied = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
-        
-        List< AccessPoint > res2 =
-                ied
-                .getAccessPoint()
-                .stream()
-                .filter(  a -> getApName().equals( a.getName() ))
-                .collect( Collectors.toList() );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         String mess2 = "AccessPoint( name = " + getApName() + " )";
-        if( res2.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess2 );
+        if( ap.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, ap.getRight() );
             return;
         }
-        if( res2.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess2 );
-            return;
-        }
-        setRefersToAccessPoint( res2.get( 0 ));
+        setRefersToAccessPoint( ap.getLeft() );
         console.info( "ConnectedAP on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 

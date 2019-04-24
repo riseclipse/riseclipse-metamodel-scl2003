@@ -36,7 +36,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  * @model
  * @generated
  */
-public interface ClientLN extends ExplicitLinkResolver, AgLNRef {
+public interface ClientLN extends SclObject, AgLNRef {
     /**
      * Returns the value of the '<em><b>Ap Ref</b></em>' attribute.
      * <!-- begin-user-doc -->

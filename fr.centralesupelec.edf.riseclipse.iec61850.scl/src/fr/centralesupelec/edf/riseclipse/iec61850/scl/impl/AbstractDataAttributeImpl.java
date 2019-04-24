@@ -47,7 +47,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 /**
@@ -1380,9 +1380,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // desc                 Some descriptive text for the attribute
         // name                 The attribute name; the type tAttributeEnum restricts to the attribute names from IEC 61850-7-3, plus new ones starting with lower case letters
@@ -1396,10 +1396,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         // valKind              Determines how the value shall be interpreted if any is given
 
         if( getType() == null ) return;
-        DataTypeTemplates dtt = get_DataTypeTemplates();
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
 
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
 
         if( "Enum".equals( getBType() ) ) {
@@ -1414,12 +1413,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
 
             String mess = "EnumType( id = " + getType() + " )";
-            if( res.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess );
+            if( res.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
@@ -1437,12 +1432,8 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     .collect( Collectors.toList() );
                     
             String mess = "DAType( id = " + getType() + " )";
-            if( res.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess );
-                return;
-            }
-            if( res.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess );
+            if( res.size() != 1 ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );

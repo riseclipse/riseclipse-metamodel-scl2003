@@ -18,20 +18,17 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
-import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -61,7 +58,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
+public class IEDNameImpl extends SclObjectImpl implements IEDName {
     /**
      * The default value of the '{@link #getApRef() <em>Ap Ref</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1189,9 +1186,9 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
     }
 
     @Override
-    protected void doResolveLinks() {
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
-        super.doResolveLinks();
+        super.doBuildExplicitLinks( console );
         
         // apRef        The reference to the access point on the IED, via which the data shall flow. Optional, only needed if the IED has more than one access point.
         // ldInst       Identifies the destination LD in the IED. Optional.
@@ -1204,128 +1201,67 @@ public class IEDNameImpl extends ExplicitLinkResolverImpl implements IEDName {
         if( getValue() == null ) return;
         if( getValue().isEmpty() ) return;
         
-        IRiseClipseConsole console = AbstractRiseClipseConsole.getConsole();
         String messagePrefix = "while resolving link from IEDName on line " + getLineNumber() + ": ";
 
         // find an IED with
         //   IED.name == value
-        List< IED > res1 =
-                get_IEDs()
-                .stream()
-                .filter( ied -> getValue().equals( ied.getName() ))
-                .collect( Collectors.toList() );
-
-        IED ied = null;
+        Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getValue() );
         String mess1 = "IED( name = " + getValue() + " )";
-        if( res1.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess1 );
+        if( ied.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        if( res1.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess1 );
-            return;
-        }
-        ied = res1.get( 0 );
         
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            setRefersToIED( ied );
-            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess1 + " on line " + ied.getLineNumber() );
+            setRefersToIED( ied.getLeft() );
+            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess1 + " on line " + ied.getLeft().getLineNumber() );
             return;
         }
         
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLineNumber() );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
         
-        AccessPoint ap = null;
+        Pair< AccessPoint, Integer > ap = null;
         if(( getApRef() == null ) || getApRef().isEmpty() ) {
-            if( ied.getAccessPoint().size() == 0 ) {
-                console.verbose( messagePrefix + "no AccessPoint found in ied " + ied.getName() );
+            if( ied.getLeft().getAccessPoint().size() == 0 ) {
+                console.error( messagePrefix + "no AccessPoint found in ied ( name = " + ied.getLeft().getName() + " )" );
                 return;
             }
-            if( ied.getAccessPoint().size() > 1 ) {
-                console.verbose( messagePrefix + "found several AccessPoint in ied " + ied.getName() + " but apRef not specified" );
+            if( ied.getLeft().getAccessPoint().size() > 1 ) {
+                console.error( messagePrefix + "found several AccessPoint in ied ( name = " + ied.getLeft().getName() + " ) but apRef not specified" );
                 return;
             }
-            ap = ied.getAccessPoint().get( 0 );
+            ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
         }
         else {
-            List< AccessPoint > res2 =
-                    ied
-                    .getAccessPoint()
-                    .stream()
-                    .filter(  a -> getApRef().equals( a.getName() ))
-                    .collect( Collectors.toList() );
+            ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             String mess2 = "AccessPoint( name = " + getApRef() + " )";
-            if( res2.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess2 );
+            if( ap.getLeft() == null ) {
+                SclUtilities.displayNotFoundError( console, messagePrefix, mess2, ap.getRight() );
                 return;
             }
-            if( res2.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess2 );
-                return;
-            }
-            ap = res2.get( 0 );
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLineNumber() );
+            console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLeft().getLineNumber() );
         }
-        List< LDevice > res3 = 
-                ap
-                .getServer()
-                .getLDevice()
-                .stream()
-                .filter( ld -> getLdInst().equals( ld.getInst() ))
-                .collect( Collectors.toList() );
-
+        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess3 = "LDevice( inst = " + getLdInst() + " )";
-        if( res3.isEmpty() ) {
-            console.error( messagePrefix + "cannot find " + mess3 );
+        if( lDevice.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, lDevice.getRight() );
             return;
-        }
-        if( res3.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess3 );
-            return;
-        }
-        LDevice lDevice = res3.get( 0 );
-        
+        }        
         if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            setRefersToLDevice( lDevice );
-            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess3 + " on line " + lDevice.getLineNumber() );
+            setRefersToLDevice( lDevice.getLeft() );
+            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToLDevice().getLineNumber() );
             return;
         }
-        
-        console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLineNumber() );
+        console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLeft().getLineNumber() );
 
-        if( "LLN0".equals( getLnClass() )) {
-            if( lDevice.getLN0() == null ) {
-                console.error( messagePrefix + "cannot find LN0" );
-                return;
-            }
-            setRefersToAnyLN( lDevice.getLN0() );
-            console.info( "IEDName on line " + getLineNumber() + " refers to LN0 on line " + getRefersToAnyLN().getLineNumber() );
+        Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        if( anyLN.getLeft() == null ) {
+            SclUtilities.displayNotFoundError( console, messagePrefix, mess4, anyLN.getRight() );
+            return;
         }
-        else {
-            if( getLnInst() == null ) return;
-            // find inside an LN with
-            //   LN.lnClass == ClientLN.lnClass
-            //   LN.prefix == ClientLN.prefix
-            //   LN.inst == ClientLN.lnInst
-            List< LN > res4 = 
-                    lDevice
-                    .getLN()
-                    .stream()
-                    .filter( ln ->  getLnClass().equals( ln.getLnClass() ) && getLnInst().equals( ln.getInst() ) && getPrefix().equals( ln.getPrefix() ))
-                    .collect( Collectors.toList() );
-
-            String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
-            if( res4.isEmpty() ) {
-                console.error( messagePrefix + "cannot find " + mess4 );
-                return;
-            }
-            if( res4.size() > 1 ) {
-                console.error( messagePrefix + "found several " + mess4 );
-                return;
-            }
-            setRefersToAnyLN( res4.get( 0 ));
-            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
-        }
+        setRefersToAnyLN( anyLN.getLeft() );
+        console.info( "ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //IEDNameImpl
