@@ -978,27 +978,27 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return;
         }
 
-        if( ! doResolveLinkWithParentDOI( console )) {
-            if( ! doResolveLinkWithParentSDI( console )) {
-                //
-            }
+        if( getParentDOI() != null ) {
+            doResolveLinkWithParentDOI( console, messagePrefix );
+        }
+        else if( getParentSDI() != null ) {
+            doResolveLinkWithParentSDI( console, messagePrefix );
+        }
+        else {
+            // Unexpected
         }
     }
     
-    private boolean doResolveLinkWithParentDOI( IRiseClipseConsole console ) {
-        if( getParentDOI() == null ) return false;
-
-        String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
-        
+    private void doResolveLinkWithParentDOI( IRiseClipseConsole console, String messagePrefix ) {
         DO do_ = getParentDOI().getRefersToDO();
         // No error or warning message here: if this happens, error should have been detected before
-        if( do_ == null ) return false;
+        if( do_ == null ) return;
         console.verbose( messagePrefix + "found DO on line " + do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( dot == null ) return false;
+        if( dot == null ) return;
         console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
 
         List< SDO > res1 =
@@ -1011,11 +1011,13 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         String mess1 = "SDO( name = " + getName() + " )";
         // Not an error if res1.size() == 0: will look for a DA
         if( res1.size() > 1 ) {
-            console.warning( messagePrefix + "found several " + mess1 );
+            console.warning( messagePrefix + "found several " + mess1 + " using ParentDOI" );
+            return;
         }
-        else if( res1.size() == 1 ) {
-            setRefersToSDO( res1.get( 0 ) );
+        if( res1.size() == 1 ) {
+            setRefersToSDO( res1.get( 0 ));
             console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
+            return;
         }
         
         List< DA > res2 =
@@ -1026,35 +1028,28 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 .collect( Collectors.toList() );
 
         String mess2 = "DA( name = " + getName() + " )";
-        if( res2.size() > 1 ) {
-            console.warning( messagePrefix + "found several " + mess2 );
-        }
-        else if( res2.size() == 1 ) {
-            setRefersToAbstractDataAttribute( res2.get( 0 ));
-            console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
-        }
-        
-        if(( getRefersToSDO() == null ) && ( getRefersToAbstractDataAttribute() == null )) {
+        // Specific message if res2.size() == 0
+        if( res2.size() == 0 ) {
             console.warning( messagePrefix + "no SDO or DA found using ParentDOI" );
-            return false;
+            return;
         }
-        return true;
+        if( res2.size() > 1 ) {
+            console.warning( messagePrefix + "found several " + mess2 + " using ParentDOI" );
+            return;
+        }
+        setRefersToAbstractDataAttribute( res2.get( 0 ));
+        console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
     }
     
-    private boolean doResolveLinkWithParentSDI( IRiseClipseConsole console ) {
-        if( getParentSDI() == null ) return false;
-
-        String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
-        
-        SDO sdo = getParentSDI().getRefersToSDO();
-        
+    private void doResolveLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
+        SDO sdo = getParentSDI().getRefersToSDO();        
         if( sdo != null ) {
             console.verbose( messagePrefix + "found SDO on line " + sdo.getLineNumber() );
             sdo.buildExplicitLinks( console, false );
             
             DOType dot = sdo.getRefersToDOType();
             // No error or warning message here: if this happens, error should have been detected before
-            if( dot == null ) return false;
+            if( dot == null ) return;
             console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
             
             List< SDO > res1 =
@@ -1067,13 +1062,13 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             String mess1 = "SDO( name = " + getName() + " )";
             // Not an error if res1.size() == 0: will look for a DA
             if( res1.size() > 1 ) {
-                console.warning( messagePrefix + "found several " + mess1 );
-                return false;
+                console.warning( messagePrefix + "found several " + mess1 + " using ParentSDI" );
+                return;
             }
             if( res1.size() == 1 ) {
                 setRefersToSDO( res1.get( 0 ));
                 console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
-                return true;
+                return;
             }
             
             List< DA > res2 =
@@ -1087,28 +1082,30 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             // Specific message if res2.size() == 0
             if( res2.size() == 0 ) {
                 console.warning( messagePrefix + "no SDO or DA found using ParentSDI" );
-                return false;
+                return;
             }
             if( res2.size() > 1 ) {
                 console.warning( messagePrefix + "found several " + mess2 + " using ParentSDI" );
-                return false;
+                return;
             }
             setRefersToAbstractDataAttribute( res2.get( 0 ));
             console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
-            return true;
+            return;
+            
         }
         
+        // When getParentSDI().getRefersToSDO() == null
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) {
             console.warning( messagePrefix + "cannot find SDO or AbstractDataAttribute using ParentSDI" );
-            return false;
+            return;
         }
-        att.buildExplicitLinks( console, false );
         console.verbose( messagePrefix + "found AbstractDataAttribute on line " + att.getLineNumber() );
-        
+
+        att.buildExplicitLinks( console, false );
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
-        if( dat == null ) return false;
+        if( dat == null ) return;
         console.verbose( messagePrefix + "found DAType on line " + dat.getLineNumber() );
         
         List< BDA > res =
@@ -1121,11 +1118,10 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         String mess = "BDA( name = " + getName() + " )";
         if( res.size() != 1 ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
-            return false;
+            return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));
         console.info( "SDI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
-        return true;
     }
 
 } //SDIImpl
