@@ -2497,7 +2497,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         Pair< IED, LDevice > finalRes = Pair.of( ied.getLeft(), lDevice.getLeft() );
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess2 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess2 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+        }
+        mess2 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return finalRes;
@@ -2647,7 +2652,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( lDevice == null ) return;
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess6 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess6 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess6 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess6 += ", prefix = " + getPrefix();
+        }
+        mess6 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess6, anyLN.getRight() );
             return;

@@ -1277,7 +1277,12 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         }
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess2 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess2 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+        }
+        mess2 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return;

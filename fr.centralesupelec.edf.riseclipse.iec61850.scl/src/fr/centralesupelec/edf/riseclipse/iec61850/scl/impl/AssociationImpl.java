@@ -1212,7 +1212,12 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess3 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess3 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess3 += ", prefix = " + getPrefix();
+        }
+        mess3 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, anyLN.getRight() );
             return;

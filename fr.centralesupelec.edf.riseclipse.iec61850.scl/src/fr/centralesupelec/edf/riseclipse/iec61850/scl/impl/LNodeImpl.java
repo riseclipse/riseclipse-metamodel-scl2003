@@ -962,13 +962,17 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         }
         console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
 
- 
         // find inside an LN with
         //   LN.lnClass == LNode.lnClass
         //   LN.prefix == LNode.prefix
         //   LN.inst == LNode.lnInst
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess3 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess3 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess3 += ", prefix = " + getPrefix();
+        }
+        mess3 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, anyLN.getRight() );
             return;

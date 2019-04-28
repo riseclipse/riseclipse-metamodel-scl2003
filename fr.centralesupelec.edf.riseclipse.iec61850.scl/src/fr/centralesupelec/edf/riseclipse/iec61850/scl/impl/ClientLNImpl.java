@@ -1147,7 +1147,12 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess4 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess4 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess4 += ", prefix = " + getPrefix();
+        }
+        mess4 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, anyLN.getRight() );
             return;

@@ -1098,7 +1098,12 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
         
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess2 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess2 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+        }
+        mess2 += " )";
         if( anyLN.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return;
