@@ -1251,18 +1251,25 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // logEna       TRUE enables immediate logging; FALSE prohibits logging until enabled online
         // reasonCode   If true, the reason code for the event trigger is also stored into the log – see IEC 61850-7-2
         
-        if( getLogName() == null ) return;
-        
         String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
         
+        if(( getLogName() == null ) || getLogName().isEmpty() ) {
+            console.warning( messagePrefix + "logName is missing" );
+            return;
+        }
+        
+        // No error or warning messages here: if this happens, error should have been detected before
         IED ied = SclUtilities.getMyIED( this );
-        LDevice lDevice = this.getParentAnyLN().getParentLDevice();
+        if( ied == null ) return;
+        if( getParentAnyLN() == null ) return;
+        LDevice lDevice = getParentAnyLN().getParentLDevice();
+        if( lDevice == null ) return;
         
         if(( getLdInst() != null ) && ( ! getLdInst().isEmpty() )) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             String mess1 = "LDevice( inst = " + getLdInst() + " )";
             if( lDevice1.getLeft() == null ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice1.getRight() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice1.getRight() );
                 return;
             }
             lDevice = lDevice1.getLeft();
@@ -1272,7 +1279,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
         String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

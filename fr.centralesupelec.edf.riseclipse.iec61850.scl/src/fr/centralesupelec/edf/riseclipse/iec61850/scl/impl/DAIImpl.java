@@ -1001,7 +1001,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return false;
         }
         if( res.size() > 1 ) {
-            console.error( messagePrefix + "found several " + mess );
+            console.warning( messagePrefix + "found several " + mess );
             return false;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
@@ -1033,7 +1033,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
 
         String mess = "BDA( name = " + getName() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return false;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));

@@ -489,11 +489,15 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //                  access control definition applies
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
-        if( getType() == null ) return;
+        String messagePrefix = "while resolving link from DO on line " + getLineNumber() + ": ";
+
+        if(( getType() == null ) || getType().isEmpty() ) {
+            console.warning( messagePrefix + "type is missing" );
+            return;
+        }
+        // No error or warning message here: if this happens, error should have been detected before
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
-
-        String messagePrefix = "while resolving link from DO on line " + getLineNumber() + ": ";
 
         List< DOType > res = 
                 dtt
@@ -504,7 +508,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
                 
         String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDOType( res.get( 0 ));

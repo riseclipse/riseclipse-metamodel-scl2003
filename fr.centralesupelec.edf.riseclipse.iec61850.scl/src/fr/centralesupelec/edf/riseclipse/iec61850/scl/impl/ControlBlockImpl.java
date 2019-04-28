@@ -650,15 +650,22 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         //         An LN is not necessary, as these control blocks are only in LLN0.
         // cbName  The name of the control block within the LLN0 of the LD ldInst.
 
-        // TODO: update comment
+        // TODO: validate assumption
         // Assumption : we need both an ied name and a ld instance to uniquely identify a LDevice.
         //              We will use the iedName provided by the enclosing connectedAP.
 
-        if( getLdInst() == null ) return;
-        if( getCbName() == null ) return;
-
         String messagePrefix = "while resolving link from ControlBlock on line " + getLineNumber() + ": ";
 
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            console.warning( messagePrefix + "ldInst is missing" );
+            return;
+        }
+        if(( getCbName() == null ) || getCbName().isEmpty() ) {
+            console.warning( messagePrefix + "cbName is missing" );
+            return;
+        }
+
+        // No error or warning messages here: if this happens, error should have been detected before
         if( getParentConnectedAP() == null ) return;
         if( getParentConnectedAP().getRefersToAccessPoint() == null ) return;
         IED ied = getParentConnectedAP().getRefersToAccessPoint().getParentIED();
@@ -669,14 +676,17 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied, getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
-        if( lDevice.getLeft().getLN0() == null ) return;
+        if( lDevice.getLeft().getLN0() == null ) {
+            console.warning( messagePrefix + "LN0 is missing" );
+            return;
+        }
 
         List< ControlWithIEDName > l2 = new ArrayList< ControlWithIEDName >();
         l2.addAll( lDevice.getLeft().getLN0().getGSEControl() );
@@ -690,7 +700,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         
         String mess2 = "ControlWithIEDName( name = " + getCbName() + " )";
         if( res2.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, res2.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ));

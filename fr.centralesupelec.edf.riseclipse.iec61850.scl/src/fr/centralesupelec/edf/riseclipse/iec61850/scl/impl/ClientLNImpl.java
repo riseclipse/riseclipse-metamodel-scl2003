@@ -1085,20 +1085,33 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         // lnInst  The instance id of this LN instance of below LN class in the IED
         // desc    optional descriptive text, e.g. about purpose of the client
 
-        if( getIedName() == null ) return;
-        if( getLdInst() == null ) return;
-        if( getLnClass() == null ) return;
-        // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
-        if( getLdInst().equals( "LD0" )) return;
-
         String messagePrefix = "while resolving link from ClientLN on line " + getLineNumber() + ": ";
+
+        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+            console.warning( messagePrefix + "iedName is missing" );
+            return;
+        }
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            console.warning( messagePrefix + "ldInst is missing" );
+            return;
+        }
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            console.warning( messagePrefix + "lnClass is missing" );
+            return;
+        }
+
+        // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
+        if( "LD0".equals( getLdInst() )) {
+            console.verbose( messagePrefix + "ldInst is LD0: pure client access point, therefore no link" );
+            return;
+        }
 
         // find an IED with
         //   IED.name == ClientLN.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
@@ -1106,11 +1119,11 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         Pair< AccessPoint, Integer > ap = null;
         if(( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.error( messagePrefix + "no AccessPoint found in ied ( name = " + ied.getLeft().getName() + " )" );
+                console.warning( messagePrefix + "no AccessPoint found in ied ( name = " + ied.getLeft().getName() + " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.error( messagePrefix + "found several AccessPoint in ied ( name = " + ied.getLeft().getName() + " ) but apRef not specified" );
+                console.warning( messagePrefix + "found several AccessPoint in ied ( name = " + ied.getLeft().getName() + " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1119,7 +1132,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             ap = SclUtilities.getAccessPoint( ied.getLeft(), getApRef() );
             String mess2 = "AccessPoint( name = " + getApRef() + " )";
             if( ap.getLeft() == null ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess2, ap.getRight() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
                 return;
             }
             console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLeft().getLineNumber() );
@@ -1128,7 +1141,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
         String mess3 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, lDevice.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
             return;
         }        
         console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLeft().getLineNumber() );
@@ -1136,7 +1149,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         String mess4 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess4, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, anyLN.getRight() );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

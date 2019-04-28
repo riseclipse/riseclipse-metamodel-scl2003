@@ -457,16 +457,21 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        if( getApName() == null ) return;
-
         String messagePrefix = "while resolving link from ServerAt on line " + getLineNumber() + ": ";
         
+        if(( getApName() == null ) || getApName().isEmpty() ) {
+            console.warning( messagePrefix + "apName is missing" );
+            return;
+        }
+
+        // No error or warning messages here: if this happens, error should have been detected before
         IED ied = SclUtilities.getMyIED( this );
+        if( ied == null ) return;
 
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied, getApName() );
         String mess = "AccessPoint( name = " + getApName() + " )";
         if( ap.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, ap.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, ap.getRight() );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );

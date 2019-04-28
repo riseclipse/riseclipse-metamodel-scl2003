@@ -1118,9 +1118,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // cNodeName        The (relative) name of the connectivityNode within its bay
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
-        if( getCNodeName() == null ) return;
-
         String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
+        
+        if(( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
+            console.warning( messagePrefix + "cNodeName is missing" );
+            return;
+        }
         
         if( getSubstationName() != null && ! getSubstationName().isEmpty() ) {
 
@@ -1128,8 +1131,14 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                 // TODO: this error should be detected in OCL
             }
 
-            if( getVoltageLevelName() == null ) return;
-            if( getBayName() == null ) return;
+            if(( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
+                console.warning( messagePrefix + "voltageLevelName is missing" );
+                return;
+            }
+            if(( getBayName() == null ) || getBayName().isEmpty() ) {
+                console.warning( messagePrefix + "bayName is missing" );
+                return;
+            }
 
             // find a Substation with
             //   Substation.name == Terminal.substationName
@@ -1144,7 +1153,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             
             String mess1 = "Substation( name = " + getSubstationName() + " )";
             if( res1.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, res1.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, res1.size() );
                 return;
             }
             substation = res1.get( 0 );
@@ -1162,7 +1171,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             
             String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
             if( res2.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, res2.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
                 return;
             }
             voltageLevel = res2.get( 0 );
@@ -1180,7 +1189,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     
             String mess3 = "Bay( name = " + getBayName() + " )";
             if( res3.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, res3.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, res3.size() );
                 return;
             }
             bay = res3.get( 0 );
@@ -1197,7 +1206,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     
             String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
             if( res4.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess4, res4.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, res4.size() );
                 return;
             }
             setRefersToConnectivityNode( res4.get( 0 ) );
@@ -1221,7 +1230,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
                     
             String mess5 = "Line( name = " + getLineName() + " )";
             if( res5.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess5, res5.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess5, res5.size() );
                 return;
             }
             line = res5.get( 0 );
@@ -1238,7 +1247,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
 
             String mess6 = "ConnectivityNode( name = " + getCNodeName() + " )";
             if( res6.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess6, res6.size() );
+	            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess6, res6.size() );
                 return;
             }
             setRefersToConnectivityNode( res6.get( 0 ));
