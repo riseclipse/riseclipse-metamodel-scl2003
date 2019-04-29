@@ -771,8 +771,13 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         
         String messagePrefix = "while resolving link from DOI on line " + getLineNumber() + ": ";
         
-        if(( getName() == null ) || getName().isEmpty() ) return;
+        if(( getName() == null ) || getName().isEmpty() ) {
+            console.warning( messagePrefix + "name is missing" );
+            return;
+        }
         
+        // No error or warning message here: if this happens, error should have been detected before
+        if( getParentAnyLN() == null ) return;
         if( getParentAnyLN().getRefersToLNodeType() == null ) return;
         console.verbose( messagePrefix + "found LNodeType on line " + getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
@@ -786,7 +791,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
 
         String mess = "DO( name = " + getName() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDO( res.get( 0 ) );

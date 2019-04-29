@@ -1107,6 +1107,21 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
+        String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
+        
+        if( getSubstationName() != null ) {
+            doBuildExplicitLinkWithSubstation( console, messagePrefix );
+        }
+        else if( getLineName() != null ) {
+            doBuildExplicitLinkWithLine( console, messagePrefix );
+        }
+        else {
+            // TODO: processName ?
+        }
+    }
+    
+    private void doBuildExplicitLinkWithSubstation( IRiseClipseConsole console, String messagePrefix ) {
+
         // name             The optional relative name of the terminal at this Equipment. The default is the empty string, which means that the name
         //                  of the ConnectivityNode is also the terminal identification.
         // desc             Descriptive text to the terminal
@@ -1118,132 +1133,129 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // cNodeName        The (relative) name of the connectivityNode within its bay
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
-        if( getCNodeName() == null ) return;
+        if(( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
+            console.warning( messagePrefix + "cNodeName is missing" );
+            return;
+        }
+        if(( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
+            console.warning( messagePrefix + "voltageLevelName is missing" );
+            return;
+        }
+        if(( getBayName() == null ) || getBayName().isEmpty() ) {
+            console.warning( messagePrefix + "bayName is missing" );
+            return;
+        }
 
-        String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
+        // find a Substation with
+        //   Substation.name == Terminal.substationName
+        List< Substation > res1 =
+                SclUtilities
+                .getSCL( this )
+                .getSubstation()
+                .stream()
+                .filter(  s -> getSubstationName().equals( s.getName() ))
+                .collect( Collectors.toList() );
         
-        if( getSubstationName() != null && ! getSubstationName().isEmpty() ) {
-
-            if( isSetLineName() || isSetProcessName() ) {
-                // TODO: this error should be detected in OCL
-            }
-
-            if( getVoltageLevelName() == null ) return;
-            if( getBayName() == null ) return;
-
-            // find a Substation with
-            //   Substation.name == Terminal.substationName
-            Substation substation = null;
-            List< Substation > res1 =
-                    SclUtilities
-                    .getSCL( this )
-                    .getSubstation()
-                    .stream()
-                    .filter(  s -> getSubstationName().equals( s.getName() ))
-                    .collect( Collectors.toList() );
-            
-            String mess1 = "Substation( name = " + getSubstationName() + " )";
-            if( res1.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, res1.size() );
-                return;
-            }
-            substation = res1.get( 0 );
-            console.verbose( messagePrefix + "found " + mess1 + " on line " + substation.getLineNumber() );
-
-            // find a VoltageLevel with
-            //   VoltageLevel.name == Terminal.voltageLevelName
-            VoltageLevel voltageLevel = null;
-            List< VoltageLevel > res2 =
-                        substation
-                        .getVoltageLevel()
-                        .stream()
-                        .filter(  vl -> getVoltageLevelName().equals( vl.getName() ))
-                        .collect( Collectors.toList() );
-            
-            String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
-            if( res2.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, res2.size() );
-                return;
-            }
-            voltageLevel = res2.get( 0 );
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + voltageLevel.getLineNumber() );
-
-            // find a Bay with
-            //   Bay.name == Terminal.bayName
-            Bay bay = null;
-            List< Bay > res3 =
-                    voltageLevel
-                    .getBay()
-                    .stream()
-                    .filter(  b -> getBayName().equals( b.getName() ))
-                    .collect( Collectors.toList() );
-                    
-            String mess3 = "Bay( name = " + getBayName() + " )";
-            if( res3.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, res3.size() );
-                return;
-            }
-            bay = res3.get( 0 );
-            console.verbose( messagePrefix + "found " + mess3 + " on line " + voltageLevel.getLineNumber() );
-
-            // find a ConnectivityNode with
-            //   ConnectivityNode.name == Terminal.bayName
-            List< ConnectivityNode > res4 =
-                    bay
-                    .getConnectivityNode()
-                    .stream()
-                    .filter( cn -> getCNodeName().equals( cn.getName() ))
-                    .collect( Collectors.toList() );
-                    
-            String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
-            if( res4.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess4, res4.size() );
-                return;
-            }
-            setRefersToConnectivityNode( res4.get( 0 ) );
-            console.info( "Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        String mess1 = "Substation( name = " + getSubstationName() + " )";
+        if( res1.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, res1.size() );
+            return;
         }
-        else if( getLineName() != null && ! getLineName().isEmpty() ) {
+        Substation substation = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + substation.getLineNumber() );
 
-            if( getProcessName() == null ) return;
-            if( getProcessName().isEmpty() ) return;
-
-            // find a Line with
-            //   Line.name == Terminal.lineName
-            Line line = null;
-            List< Line > res5 =
-                    SclUtilities
-                    .getSCL( this )
-                    .getLine()
+        // find a VoltageLevel with
+        //   VoltageLevel.name == Terminal.voltageLevelName
+        List< VoltageLevel > res2 =
+                    substation
+                    .getVoltageLevel()
                     .stream()
-                    .filter( l -> getLineName().equals( l.getName() ))
+                    .filter(  vl -> getVoltageLevelName().equals( vl.getName() ))
                     .collect( Collectors.toList() );
-                    
-            String mess5 = "Line( name = " + getLineName() + " )";
-            if( res5.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess5, res5.size() );
-                return;
-            }
-            line = res5.get( 0 );
-            console.verbose( messagePrefix + "found " + mess5 + " on line " + line.getLineNumber() );
-
-            // find a ConnectivityNode with
-            //   ConnectivityNode.name == Terminal.bayName
-            List< ConnectivityNode > res6 =
-                    line.
-                    getConnectivityNode()
-                    .stream()
-                    .filter( cn -> getCNodeName().equals( cn.getName() ))
-                    .collect( Collectors.toList() );
-
-            String mess6 = "ConnectivityNode( name = " + getCNodeName() + " )";
-            if( res6.size() != 1 ) {
-	            SclUtilities.displayNotFoundError( console, messagePrefix, mess6, res6.size() );
-                return;
-            }
-            setRefersToConnectivityNode( res6.get( 0 ));
-            console.info( "Terminal on line " + getLineNumber() + " refers to " + mess6 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        
+        String mess2 = "VoltageLevel( name = " + getVoltageLevelName() + " )";
+        if( res2.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
+            return;
         }
+        VoltageLevel voltageLevel = res2.get( 0 );
+        console.verbose( messagePrefix + "found " + mess2 + " on line " + voltageLevel.getLineNumber() );
+
+        // find a Bay with
+        //   Bay.name == Terminal.bayName
+        List< Bay > res3 =
+                voltageLevel
+                .getBay()
+                .stream()
+                .filter(  b -> getBayName().equals( b.getName() ))
+                .collect( Collectors.toList() );
+                
+        String mess3 = "Bay( name = " + getBayName() + " )";
+        if( res3.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, res3.size() );
+            return;
+        }
+        Bay bay = res3.get( 0 );
+        console.verbose( messagePrefix + "found " + mess3 + " on line " + voltageLevel.getLineNumber() );
+
+        // find a ConnectivityNode with
+        //   ConnectivityNode.name == Terminal.bayName
+        List< ConnectivityNode > res4 =
+                bay
+                .getConnectivityNode()
+                .stream()
+                .filter( cn -> getCNodeName().equals( cn.getName() ))
+                .collect( Collectors.toList() );
+                
+        String mess4 = "ConnectivityNode( name = " + getCNodeName() + " )";
+        if( res4.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4, res4.size() );
+            return;
+        }
+        setRefersToConnectivityNode( res4.get( 0 ));
+        console.info( "Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+    }
+
+    private void doBuildExplicitLinkWithLine( IRiseClipseConsole console, String messagePrefix ) {
+        if(( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
+            console.warning( messagePrefix + "cNodeName is missing" );
+            return;
+        }
+
+        // find a Line with
+        //   Line.name == Terminal.lineName
+        List< Line > res1 =
+                SclUtilities
+                .getSCL( this )
+                .getLine()
+                .stream()
+                .filter( l -> getLineName().equals( l.getName() ))
+                .collect( Collectors.toList() );
+                
+        String mess1 = "Line( name = " + getLineName() + " )";
+        if( res1.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, res1.size() );
+            return;
+        }
+        Line line = res1.get( 0 );
+        console.verbose( messagePrefix + "found " + mess1 + " on line " + line.getLineNumber() );
+
+        // find a ConnectivityNode with
+        //   ConnectivityNode.name == Terminal.bayName
+        List< ConnectivityNode > res2 =
+                line.
+                getConnectivityNode()
+                .stream()
+                .filter( cn -> getCNodeName().equals( cn.getName() ))
+                .collect( Collectors.toList() );
+
+        String mess2 = "ConnectivityNode( name = " + getCNodeName() + " )";
+        if( res2.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, res2.size() );
+            return;
+        }
+        setRefersToConnectivityNode( res2.get( 0 ));
+        console.info( "Terminal on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToConnectivityNode().getLineNumber() );
     }
 
 } //TerminalImpl

@@ -2431,12 +2431,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        Pair< IED, LDevice > args = doBuildDataLink( console );
-        doBuildCBLink( console, args );
+        String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
+        Pair< IED, LDevice > args = doBuildExplicitDataLink( console, messagePrefix );
+        doBuildExplicitCBLink( console, messagePrefix, args );
     }
     
-    private Pair< IED, LDevice > doBuildDataLink( IRiseClipseConsole console ) {
+    private Pair< IED, LDevice > doBuildExplicitDataLink( IRiseClipseConsole console, String mPrefix ) {
 
+        String messagePrefix = mPrefix + "(looking for data) ";
+        
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
         // prefix       The LN prefix
@@ -2450,19 +2453,17 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // intAddr      The internal address to which the input is bound. Only the IED tool of the concerned IED shall use the value. All other tools shall preserve it unchanged.
         // desc         A free description / text. Can e.g. be used at system engineering time to tell the IED engineer the purpose of this incoming data
         // serviceType  Optional, values: Poll, Report, GOOSE, SMV, Typically used at system design time to specify the service type to be used for sending the needed input data
-        // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
-        // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
-        // srcLNClass   The LN class of the LN, where the source control block resides; if missing, LLN0 
-        // srcLNInst    The LN instance number of the LN where the source control block resides – if missing, no instance number exists (LLN0)
-        // srcCBName    The source CB name; if missing, then all othere srcXX attributes should also be missing, i.e. no source control block is given.
 
-        if( getIedName() == null ) return Pair.of( null, null );
+        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+            console.warning( messagePrefix + "iedName is missing" );
+            return Pair.of( null, null );
+        }
 
-        // No link if no doName
-        if( getDoName() == null ) return Pair.of( null, null );
-        if( getDoName().isEmpty() ) return Pair.of( null, null );
-
-        String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
+        if(( getDoName() == null ) || getDoName().isEmpty() ) {
+            // No link if no doName
+            console.verbose( messagePrefix + "doName is absent" );
+            return Pair.of( null, null );
+        }
 
         Pair< IED, Integer > ied = null;
         if( "@".equals( getIedName() )) {
@@ -2472,30 +2473,46 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         }
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, "IED( name = " + getIedName() + " )", ied.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, "IED( name = " + getIedName() + " )", ied.getRight() );
             return Pair.of( null, null );
         }
         console.verbose( messagePrefix + "found IED ( name = " + ied.getLeft().getName() + " ) on line " + ied.getLeft().getLineNumber() );
 
+        // Only now so that we can give back ied
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            console.warning( messagePrefix + "ldInst is missing" );
+            return Pair.of( ied.getLeft(), null );
+        }
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            console.warning( messagePrefix + "lnClass is missing" );
+            return Pair.of( ied.getLeft(), null );
+        }
+
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
-            return Pair.of( ied.getLeft(), lDevice.getLeft() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
+            return Pair.of( ied.getLeft(), null );
         }
-        Pair< IED, LDevice > finalRes = Pair.of( ied.getLeft(), lDevice.getLeft() );
-        
         console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
 
+        Pair< IED, LDevice > finalRes = Pair.of( ied.getLeft(), lDevice.getLeft() );
+
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess2 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess2 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+        }
+        mess2 += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return finalRes;
         }
         console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
 
+        // No error or warning message here: if this happens, error should have been detected before
         if( anyLN.getLeft().getRefersToLNodeType() == null ) return finalRes;
         console.verbose( messagePrefix + "found LNodeType on line " + anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
 
@@ -2518,7 +2535,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         String mess3a = "DO ( name = " + doNames[0] + " )";
         if( res3a.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess3a, res3a.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3a, res3a.size() );
             return finalRes;
         }
 
@@ -2540,7 +2557,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
             if( res3b.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess3b, res3b.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3b, res3b.size() );
                 return finalRes;
             }
             ado = res3b.get( 0 );
@@ -2556,10 +2573,12 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
 
         DOType doType = ado.getRefersToDOType();
+        // No error or warning message here: if this happens, error should have been detected before
         if( doType == null ) return finalRes;
         console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
+        
         // The first daName gives us the DA inside the DOType
-        // If daName is structured, find the DAType and its BDA using remaining doName
+        // If daName is structured, find the DAType and its BDA using remaining daName
 
         final String[] daNames = getDaName().split( "\\.", -1 );
         List< DA > res4a =
@@ -2571,7 +2590,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
         String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
         if( res4a.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess4a, res4a.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4a, res4a.size() );
             return finalRes;
         }
         AbstractDataAttribute da = res4a.get( 0 );
@@ -2591,7 +2610,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
 
             String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
             if( res4b.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess4b, res4b.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
                 return finalRes;
             }
             da = res4b.get( 0 );
@@ -2604,8 +2623,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         return finalRes;
     }
 
-    private void doBuildCBLink( IRiseClipseConsole console, Pair< IED, LDevice > args ) {
+    private void doBuildExplicitCBLink( IRiseClipseConsole console, String mPrefix, Pair< IED, LDevice > args ) {
 
+        String messagePrefix = mPrefix + "(looking for control) ";
+        
         // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
         // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
         // srcLNClass   The LN class of the LN, where the source control block resides; if missing, LLN0 
@@ -2617,17 +2638,16 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         
         if( ied == null ) return;
 
-        String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
-
-        if( getSrcCBName() == null ) return;
-        if( getSrcCBName().isEmpty() ) return;
+        if(( getSrcCBName() == null ) || getSrcCBName().isEmpty() ) {
+            console.verbose( messagePrefix + "srcCBName is absent" );
+            return;
+        }
 
         if(( getSrcLDInst() != null ) || ( ! getSrcLDInst().isEmpty() )) {
-
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getSrcLDInst() );
             String mess5 = "LDevice( inst = " + getSrcLDInst() + " )";
             if( lDevice1.getLeft() == null ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess5, lDevice1.getRight() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess5, lDevice1.getRight() );
                 return;
             }
             lDevice = lDevice1.getLeft();
@@ -2636,12 +2656,17 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( lDevice == null ) return;
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess6 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess6 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess6 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess6 += ", prefix = " + getPrefix();
+        }
+        mess6 += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess6, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess6, anyLN.getRight() );
             return;
         }
-        anyLN.getLeft().buildExplicitLinks( console, false );
+        console.verbose( messagePrefix + "found " + mess6 + " on line " + anyLN.getLeft().getLineNumber() );
 
         List< Control > listControls = new ArrayList< Control >();
         listControls.addAll( anyLN.getLeft().getLogControl() );
@@ -2649,6 +2674,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         if( "LLN0".equals( getSrcLNClass() )) {
             listControls.addAll( lDevice.getLN0().getGSEControl() );
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
+        }
+        if( listControls.size() == 0 ) {
+            console.warning( messagePrefix + "control not found because there are none of them in AnyLN line " + anyLN.getLeft().getLineNumber() );
+            return;
         }
 
         List< Control > res7 =
@@ -2658,12 +2687,11 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
                 .collect( Collectors.toList() );
         String mess7 = "Control( name = " + getSrcCBName() + " )";
         if( res7.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess7, res7.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess7, res7.size() );
             return;
         }
         setRefersToControl( res7.get( 0 ));
         console.info( "ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
-
     }
 
 } //ExtRefImpl

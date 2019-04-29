@@ -1395,14 +1395,24 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         //                      A referenced attribute shall exist in the same type definition. The default value 0 states that the attribute is no array.
         // valKind              Determines how the value shall be interpreted if any is given
 
-        if( getType() == null ) return;
-        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) return;
-
+        if( ! ( "Enum".equals( getBType() ) || "Struct".equals( getBType() ))) {
+            return;
+        }
         String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
 
-        if( "Enum".equals( getBType() ) ) {
-            
+        if(( getType() == null ) || getType().isEmpty() ) {
+            console.warning( messagePrefix + "type is missing" );
+            return;
+        }
+
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
+        if( dtt == null ) {
+            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            return;
+        }
+
+        if( "Enum".equals( getBType() )) {
+
             // find an EnumType with
             //   EnumType.id == DA.type
             List< EnumType > res = 
@@ -1414,13 +1424,13 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
 
             String mess = "EnumType( id = " + getType() + " )";
             if( res.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
             console.info( "AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToEnumType().getLineNumber() );
         }
-        else if( "Struct".equals( getBType() ) ) {
+        else if( "Struct".equals( getBType() )) {
 
             // find an DAType with
             //   DAType.id == DA.type
@@ -1433,7 +1443,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                     
             String mess = "DAType( id = " + getType() + " )";
             if( res.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );

@@ -549,17 +549,23 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        if( getIedName() == null ) return;
-        if( getApName() == null ) return;
-
         String messagePrefix = "while resolving link from KDC on line " + getLineNumber() + ": ";
+
+        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+            console.warning( messagePrefix + "iedName is missing" );
+            return;
+        }
+        if(( getApName() == null ) || getApName().isEmpty() ) {
+            console.warning( messagePrefix + "apName is missing" );
+            return;
+        }
 
         // find an IED with
         //   IED.name == ConnectedAP.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
@@ -567,7 +573,7 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         String mess2 = "AccessPoint( name = " + getApName() + " )";
         if( ap.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, ap.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );

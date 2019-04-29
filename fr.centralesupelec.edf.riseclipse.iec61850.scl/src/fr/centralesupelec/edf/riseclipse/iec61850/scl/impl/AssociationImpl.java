@@ -1176,18 +1176,27 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         // prefix          The LN prefix
         // lnInst          The instance number of the client LN
 
-        if( getIedName() == null ) return;
-        if( getLdInst() == null ) return;
-        if( getLnClass() == null ) return;
-
         String messagePrefix = "while resolving link from Association on line " + getLineNumber() + ": ";
+
+        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+            console.warning( messagePrefix + "iedName is missing " );
+            return;
+        }
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            console.warning( messagePrefix + "ldInst is missing " );
+            return;
+        }
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            console.warning( messagePrefix + "lnClass is missing " );
+            return;
+        }
 
         // find an IED with
         //   IED.name == Association.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
@@ -1197,15 +1206,20 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess2 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, lDevice.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, lDevice.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess3 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess3 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess3 += ", prefix = " + getPrefix();
+        }
+        mess3 += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, anyLN.getRight() );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

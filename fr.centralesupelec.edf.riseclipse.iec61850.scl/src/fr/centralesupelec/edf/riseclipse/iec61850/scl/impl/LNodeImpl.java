@@ -928,14 +928,17 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //          detailed function specification than possible by LN class alone, if the LN is not allocated to an IED
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
-        if( getLnClass() == null ) return;
-
         String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
-        
+
         // Resolve only if attribute is not None
         // Default value is None
         if(( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() )) {
             console.verbose( messagePrefix + "link to AnyLN not resolved because iedName is absent or None" );
+            return;
+        }
+        
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            console.warning( messagePrefix + "lnClass is missing" );
             return;
         }
 
@@ -944,7 +947,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
         String mess1 = "IED( name = " + getIedName() + " )";
         if( ied.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, ied.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
@@ -954,20 +957,24 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess2 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, lDevice.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, lDevice.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
 
- 
         // find inside an LN with
         //   LN.lnClass == LNode.lnClass
         //   LN.prefix == LNode.prefix
         //   LN.inst == LNode.lnInst
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess3 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess3 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess3 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess3 += ", prefix = " + getPrefix();
+        }
+        mess3 += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess3, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, anyLN.getRight() );
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );

@@ -396,11 +396,17 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         // count    The number or reference to an attribute defining the number of array elements,
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
         
-        if( getType() == null ) return;
-        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) return;
-
         String messagePrefix = "while resolving link from SDO on line " + getLineNumber() + ": ";
+
+        if(( getType() == null ) || getType().isEmpty() ) {
+            console.warning( messagePrefix + "type is missing" );
+            return;
+        }
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
+        if( dtt == null ) {
+            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            return;
+        }
 
         List< DOType > res =
                 dtt
@@ -411,7 +417,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         
         String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDOType( res.get( 0 ) );

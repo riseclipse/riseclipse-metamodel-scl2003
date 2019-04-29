@@ -1420,13 +1420,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
-        if( getLnType() == null ) return;
-        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
-        if( dtt == null ) return;
-
         String messagePrefix = "while resolving link from AnyLN on line " + getLineNumber() + ": ";
 
-        List< LNodeType > res = //shallowSearchObjects( dtt.getLNodeType(), s );
+        if(( getLnType() == null ) || getLnType().isEmpty() ) {
+            console.warning( messagePrefix + "lnType is missing" );
+            return;
+        }
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
+        if( dtt == null ) {
+            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            return;
+        }
+
+        List< LNodeType > res =
                 dtt
                 .getLNodeType()
                 .stream()
@@ -1435,14 +1441,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         
         String mess = "LNodeType( id = " + getLnType() + " )";
         if( res.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess, res.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
         console.info( "AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
         
         if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
-            console.error( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
+            console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
         }
     }
 

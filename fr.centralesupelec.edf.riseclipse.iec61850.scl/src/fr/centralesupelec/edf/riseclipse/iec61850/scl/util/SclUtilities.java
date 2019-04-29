@@ -130,8 +130,8 @@ public class SclUtilities {
         return Pair.of( res.get( 0 ), 1 );
     }
 
-    public static void displayNotFoundError( IRiseClipseConsole console, String prefix, String suffix, int nb ) {
-        console.error( prefix + (( nb == 0 ) ? "cannot find " : "found several " ) + suffix );
+    public static void displayNotFoundWarning( IRiseClipseConsole console, String prefix, String suffix, int nb ) {
+        console.warning( prefix + (( nb == 0 ) ? "cannot find " : "found several " ) + suffix );
     }
     
 }

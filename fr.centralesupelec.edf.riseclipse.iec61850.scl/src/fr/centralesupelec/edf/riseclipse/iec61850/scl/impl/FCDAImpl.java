@@ -1062,19 +1062,28 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         // ix       An index to select an array element in case that one of the data elements is an array. The ix value shall be identical to the
         //          ArrayElementNumber value in the doName or daName part.
 
-        if( getLdInst() == null ) return;
-        if( getLnClass() == null ) return;
-        if( getDoName() == null ) return;
-        
         String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
 
+        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+            console.warning( messagePrefix + "ldInst is missing" );
+            return;
+        }
+        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+            console.warning( messagePrefix + "lnClass is missing" );
+            return;
+        }
+        if(( getDoName() == null ) || getDoName().isEmpty() ) {
+            console.warning( messagePrefix + "doName is missing" );
+            return;
+        }
+        
         // The LN we are looking for is in the same IED/Server
         EObject object = this;
         while(( object != null ) && !( object instanceof AccessPoint ) ) {
             object = object.eContainer();
         }
         if( object == null ) {
-            console.verbose( messagePrefix + "AccessPoint not found" );
+            console.warning( messagePrefix + "AccessPoint not found" );
             return;
         }
         AccessPoint ap = ( AccessPoint ) object;
@@ -1083,15 +1092,20 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap, getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess1, lDevice.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
         
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
-        String mess2 = "LN( lnClass = " + getLnClass() + ", inst = " + getLnInst() + " )";
+        String mess2 = "LN( lnClass = " + getLnClass();
+        if( getLnInst() != null ) {
+            mess2 += ", inst = " + getLnInst();
+            if( getPrefix() != "" ) mess2 += ", prefix = " + getPrefix();
+        }
+        mess2 += " )";
         if( anyLN.getLeft() == null ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess2, anyLN.getRight() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, anyLN.getRight() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess2 + " on line " + anyLN.getLeft().getLineNumber() );
@@ -1119,13 +1133,14 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         
         String mess3a = "DO ( name = " + doNames[0] + " )";
         if( res3a.size() != 1 ) {
-            SclUtilities.displayNotFoundError( console, messagePrefix, mess3a, res3a.size() );
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3a, res3a.size() );
             return;
         }
         console.verbose( messagePrefix + "found " + mess3a + " on line " + res3a.get( 0 ).getLineNumber() );
         
         res3a.get( 0 ).buildExplicitLinks( console, false );
         DOType doType = res3a.get( 0 ).getRefersToDOType();
+        // No error or warning message here: if this happens, error should have been detected before
         if( doType == null ) return;
         console.verbose( messagePrefix + "found DOType on line " + doType.getLineNumber() );
         
@@ -1140,7 +1155,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
             if( res3b.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess3b, res3b.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3b, res3b.size() );
                 return;
             }
             console.verbose( messagePrefix + "found " + mess3b + " on line " + res3b.get( 0 ).getLineNumber() );
@@ -1165,7 +1180,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             
             String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
             if( res4a.size() != 1 ) {
-                SclUtilities.displayNotFoundError( console, messagePrefix, mess4a, res4a.size() );
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4a, res4a.size() );
                 return;
             }
             AbstractDataAttribute da = res4a.get( 0 );
@@ -1185,7 +1200,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                         
                 String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
                 if( res4b.size() != 1 ) {
-                    SclUtilities.displayNotFoundError( console, messagePrefix, mess4b, res4b.size() );
+                    SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
                     return;
                 }
                 da = res4b.get( 0 );
@@ -1214,7 +1229,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
                 }
             }
             else {
-                console.error( "FCDA (line " + getLineNumber() + ") does not refer to any AbstractDataAttribute" );
+                console.warning( "FCDA (line " + getLineNumber() + ") does not refer to any AbstractDataAttribute" );
             }
         }
 
