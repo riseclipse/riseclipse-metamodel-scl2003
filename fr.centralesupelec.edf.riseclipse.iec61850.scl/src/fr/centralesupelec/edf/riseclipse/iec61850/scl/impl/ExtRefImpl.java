@@ -2436,8 +2436,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         doBuildExplicitCBLink( console, messagePrefix, args );
     }
     
-    private Pair< IED, LDevice > doBuildExplicitDataLink( IRiseClipseConsole console, String messagePrefix ) {
+    private Pair< IED, LDevice > doBuildExplicitDataLink( IRiseClipseConsole console, String mPrefix ) {
 
+        String messagePrefix = mPrefix + "(looking for data) ";
+        
         // iedName      The name of the IED from where the input comes
         // ldInst       The LD instance name from where the input comes
         // prefix       The LN prefix
@@ -2621,8 +2623,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         return finalRes;
     }
 
-    private void doBuildExplicitCBLink( IRiseClipseConsole console, String messagePrefix, Pair< IED, LDevice > args ) {
+    private void doBuildExplicitCBLink( IRiseClipseConsole console, String mPrefix, Pair< IED, LDevice > args ) {
 
+        String messagePrefix = mPrefix + "(looking for control) ";
+        
         // srcLDInst    The LD inst of the source control block – if missing, same as ldInst above
         // srcPrefix    The prefix of the LN instance, where the source control block resides; if missing, no prefix
         // srcLNClass   The LN class of the LN, where the source control block resides; if missing, LLN0 
