@@ -2666,7 +2666,6 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess6, anyLN.getRight() );
             return;
         }
-        anyLN.getLeft().buildExplicitLinks( console, false );
 
         List< Control > listControls = new ArrayList< Control >();
         listControls.addAll( anyLN.getLeft().getLogControl() );
