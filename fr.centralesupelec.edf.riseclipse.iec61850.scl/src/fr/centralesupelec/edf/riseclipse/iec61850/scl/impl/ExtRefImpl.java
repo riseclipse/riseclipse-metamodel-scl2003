@@ -2671,6 +2671,10 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             listControls.addAll( lDevice.getLN0().getGSEControl() );
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
         }
+        if( listControls.size() == 0 ) {
+            console.warning( messagePrefix + "control not found because there are none of them in AnyLN line " + anyLN.getLeft().getLineNumber() );
+            return;
+        }
 
         List< Control > res7 =
                 listControls
