@@ -81,6 +81,9 @@ public class SclUtilities {
     }
 
     public static Pair< LDevice, Integer > getLDevice( @NonNull AccessPoint accessPoint, @NonNull String ldInst ) {
+        if( accessPoint.getServer() == null ) {
+            return Pair.of( null, 0 );
+        }
         List< LDevice > res = 
                 accessPoint
                 .getServer()
