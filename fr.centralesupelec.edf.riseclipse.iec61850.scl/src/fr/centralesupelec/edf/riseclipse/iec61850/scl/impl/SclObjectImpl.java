@@ -158,7 +158,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * @generated NOT
      */
     @Override
-    public boolean buildExplicitLinks( IRiseClipseConsole console, boolean forceUpdate ) {
+    public boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate ) {
         if( ( ! forceUpdate ) && isExplicitLinksBuilt() ) return true;
         
         // Parent's links must be built before children's one

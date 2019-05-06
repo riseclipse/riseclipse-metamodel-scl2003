@@ -30916,14 +30916,14 @@ public interface SclPackage extends EPackage {
     EAttribute getSclObject_ExplicitLinksBuilt();
 
     /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, boolean) <em>Build Explicit Links</em>}' operation.
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, java.lang.Boolean) <em>Build Explicit Links</em>}' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @return the meta object for the '<em>Build Explicit Links</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, boolean)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#buildExplicitLinks(fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole, java.lang.Boolean)
      * @generated
      */
-    EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_boolean();
+    EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_Boolean();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming <em>Un Naming</em>}'.
