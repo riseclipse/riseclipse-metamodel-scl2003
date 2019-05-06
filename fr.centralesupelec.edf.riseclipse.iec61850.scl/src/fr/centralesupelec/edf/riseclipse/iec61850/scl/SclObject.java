@@ -95,6 +95,6 @@ public interface SclObject extends EObject {
      * @model consoleType="fr.centralesupelec.edf.riseclipse.iec61850.scl.IRiseClipseConsole"
      * @generated
      */
-    boolean buildExplicitLinks(IRiseClipseConsole console, boolean forceUpdate);
+    boolean buildExplicitLinks(IRiseClipseConsole console, Boolean forceUpdate);
 
 } // SclObject
