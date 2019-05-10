@@ -2455,7 +2455,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // serviceType  Optional, values: Poll, Report, GOOSE, SMV, Typically used at system design time to specify the service type to be used for sending the needed input data
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
-            // no warning id no iedName
+            // no warning if no iedName
             console.verbose( messagePrefix + "do not look for DA because iedName is missing" );
             return Pair.of( null, null );
         }
