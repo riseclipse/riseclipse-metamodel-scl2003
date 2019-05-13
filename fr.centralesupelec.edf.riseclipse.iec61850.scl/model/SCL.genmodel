@@ -319,6 +319,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/DO"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ParentDataTypeTemplates"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ReferredByAnyLN"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeType/ReferredByLNode"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ProtNs">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ProtNs/type"/>
@@ -942,6 +943,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LNode/prefix"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNode/RefersToAnyLN"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LNode/ParentLNodeContainer"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LNode/RefersToLNodeType"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LNodeContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LNodeContainer/LNode"/>

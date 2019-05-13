@@ -33,13 +33,17 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
 
 public class SclUtilities {
 
-    public static SCL getSCL( SclObject object ) {
+    public static @NonNull SCL getSCL( SclObject object ) {
         EObject scl = object;
         while(( scl != null ) && ! ( scl instanceof SCL )) {
             scl = scl.eContainer();
+        }
+        if( scl == null ) {
+            throw new RiseClipseFatalException( "root container is not SCL", null );
         }
         return ( SCL ) scl;
     }
