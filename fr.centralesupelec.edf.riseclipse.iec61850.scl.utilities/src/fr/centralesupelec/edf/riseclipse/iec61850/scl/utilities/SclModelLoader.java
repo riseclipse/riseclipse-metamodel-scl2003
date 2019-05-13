@@ -23,19 +23,21 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceFactoryImpl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceSetImpl;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseModelLoader;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseModelLoader;
 import fr.centralesupelec.edf.riseclipse.util.TextRiseClipseConsole;
 
-public class SclModelLoader extends RiseClipseModelLoader {
+public class SclModelLoader extends AbstractRiseClipseModelLoader {
 
     public SclModelLoader( IRiseClipseConsole console ) {
         super( console );
+        
+        reset();
     }
 
-    @Override
     public void reset() {
-        super.reset();
+        super.reset( new SclResourceSetImpl( true, console ));
 
         // Register the appropriate resource factory to handle all file
         // extensions.
