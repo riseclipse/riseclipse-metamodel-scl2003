@@ -19,13 +19,18 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
@@ -51,6 +56,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getParentLNodeContainer <em>Parent LNode Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeImpl#getRefersToLNodeType <em>Refers To LNode Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -248,6 +254,25 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @ordered
      */
     protected boolean refersToAnyLNESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToLNodeType() <em>Refers To LNode Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToLNodeType()
+     * @generated
+     * @ordered
+     */
+    protected LNodeType refersToLNodeType;
+
+    /**
+     * This is true if the Refers To LNode Type reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToLNodeTypeESet;
 
     /**
      * <!-- begin-user-doc -->
@@ -716,6 +741,105 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
      * @generated
      */
     @Override
+    public LNodeType getRefersToLNodeType() {
+        return refersToLNodeType;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToLNodeType(LNodeType newRefersToLNodeType, NotificationChain msgs) {
+        LNodeType oldRefersToLNodeType = refersToLNodeType;
+        refersToLNodeType = newRefersToLNodeType;
+        boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
+        refersToLNodeTypeESet = true;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToLNodeType(LNodeType newRefersToLNodeType) {
+        if (newRefersToLNodeType != refersToLNodeType) {
+            NotificationChain msgs = null;
+            if (refersToLNodeType != null)
+                msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs);
+            if (newRefersToLNodeType != null)
+                msgs = ((InternalEObject)newRefersToLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs);
+            msgs = basicSetRefersToLNodeType(newRefersToLNodeType, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
+            refersToLNodeTypeESet = true;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE, newRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToLNodeType(NotificationChain msgs) {
+        LNodeType oldRefersToLNodeType = refersToLNodeType;
+        refersToLNodeType = null;
+        boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
+        refersToLNodeTypeESet = false;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, null, oldRefersToLNodeTypeESet);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToLNodeType() {
+        if (refersToLNodeType != null) {
+            NotificationChain msgs = null;
+            msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs);
+            msgs = basicUnsetRefersToLNodeType(msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
+            refersToLNodeTypeESet = false;
+            if (eNotificationRequired())
+                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LNODE__REFERS_TO_LNODE_TYPE, null, null, oldRefersToLNodeTypeESet));
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToLNodeType() {
+        return refersToLNodeTypeESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
         switch (featureID) {
             case SclPackage.LNODE__REFERS_TO_ANY_LN:
@@ -726,6 +850,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 if (eInternalContainer() != null)
                     msgs = eBasicRemoveFromContainer(msgs);
                 return basicSetParentLNodeContainer((LNodeContainer)otherEnd, msgs);
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                if (refersToLNodeType != null)
+                    msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, LNodeType.class, msgs);
+                return basicSetRefersToLNodeType((LNodeType)otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -742,6 +870,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 return basicUnsetRefersToAnyLN(msgs);
             case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
                 return basicSetParentLNodeContainer(null, msgs);
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                return basicUnsetRefersToLNodeType(msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -784,6 +914,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 return getRefersToAnyLN();
             case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
                 return getParentLNodeContainer();
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                return getRefersToLNodeType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -819,6 +951,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 return;
             case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
                 setParentLNodeContainer((LNodeContainer)newValue);
+                return;
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                setRefersToLNodeType((LNodeType)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -856,6 +991,9 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
                 setParentLNodeContainer((LNodeContainer)null);
                 return;
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                unsetRefersToLNodeType();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -884,6 +1022,8 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
                 return isSetRefersToAnyLN();
             case SclPackage.LNODE__PARENT_LNODE_CONTAINER:
                 return getParentLNodeContainer() != null;
+            case SclPackage.LNODE__REFERS_TO_LNODE_TYPE:
+                return isSetRefersToLNodeType();
         }
         return super.eIsSet(featureID);
     }
@@ -919,6 +1059,15 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
+        String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
+        doBuildExplicitAnyLNLink( console, messagePrefix );
+        doBuildExplicitLNodeTypeLink( console, messagePrefix );
+    }
+
+    private void doBuildExplicitAnyLNLink( IRiseClipseConsole console, String mPrefix ) {
+
+        String messagePrefix = mPrefix + "(looking for LN) ";
+        
         // lnInst   The LN instance identification. Can only be missing for lnClass=LLN0, meaning as value here the empty string
         // lnClass  The LN class as defined in IEC 61850-7-x
         // iedName  The name of the IED which contains the LN, none if used for specification (default if attribute is not specified)
@@ -926,9 +1075,6 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         //          result in unique LN instance identification, i.e. may contain the LD name
         // prefix   The LN prefix used in the IED (if needed; default, if not specified, is the empty string). Can be used for more
         //          detailed function specification than possible by LN class alone, if the LN is not allocated to an IED
-        // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
-
-        String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
 
         // Resolve only if attribute is not None
         // Default value is None
@@ -981,4 +1127,40 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         console.info( "LNode on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
+    private void doBuildExplicitLNodeTypeLink( IRiseClipseConsole console, String mPrefix ) {
+
+        String messagePrefix = mPrefix + "(looking for LNodeType) ";
+        
+        // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
+
+        if(( getLnType() == null ) || getLnType().isEmpty() ) {
+            console.verbose( messagePrefix + "link not resolved because lnType is missing" );
+            return;
+        }
+        DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
+        if( dtt == null ) {
+            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            return;
+        }
+
+        List< LNodeType > res =
+                dtt
+                .getLNodeType()
+                .stream()
+                .filter( lnt -> getLnType().equals( lnt.getId() ))
+                .collect( Collectors.toList() );
+        
+        String mess = "LNodeType( id = " + getLnType() + " )";
+        if( res.size() != 1 ) {
+            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+            return;
+        }
+        setRefersToLNodeType( res.get( 0 ) );
+        console.info( "AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
+        
+        if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
+            console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
+        }
+    }
+    
 } //LNodeImpl

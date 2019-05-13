@@ -3255,6 +3255,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getLNodeType_ReferredByLNode() {
+        return (EReference)getLNodeType().getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getProtNs() {
         if (protNsEClass == null) {
             protNsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(33);
@@ -9563,6 +9573,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLNode_ParentLNodeContainer() {
         return (EReference)getLNode().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getLNode_RefersToLNodeType() {
+        return (EReference)getLNode().getEStructuralFeatures().get(8);
     }
 
     /**

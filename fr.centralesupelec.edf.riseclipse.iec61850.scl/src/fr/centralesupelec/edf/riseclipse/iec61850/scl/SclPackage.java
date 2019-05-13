@@ -6357,13 +6357,22 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE__REFERRED_BY_ANY_LN = ID_NAMING_FEATURE_COUNT + 4;
 
     /**
+     * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__REFERRED_BY_LNODE = ID_NAMING_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>LNode Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 5;
+    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -18516,13 +18525,22 @@ public interface SclPackage extends EPackage {
     int LNODE__PARENT_LNODE_CONTAINER = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Refers To LNode Type</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE__REFERS_TO_LNODE_TYPE = UN_NAMING_FEATURE_COUNT + 8;
+
+    /**
      * The number of structural features of the '<em>LNode</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
+    int LNODE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -23704,6 +23722,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLNodeType_ReferredByAnyLN();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Referred By LNode</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode()
+     * @see #getLNodeType()
+     * @generated
+     */
+    EReference getLNodeType_ReferredByLNode();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ProtNs <em>Prot Ns</em>}'.
@@ -30169,6 +30198,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLNode_ParentLNodeContainer();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To LNode Type</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType()
+     * @see #getLNode()
+     * @generated
+     */
+    EReference getLNode_RefersToLNodeType();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer <em>LNode Container</em>}'.

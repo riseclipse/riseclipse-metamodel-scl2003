@@ -35,6 +35,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getParentLNodeContainer <em>Parent LNode Container</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode()
@@ -438,5 +439,56 @@ public interface LNode extends UnNaming {
      * @generated
      */
     void setParentLNodeContainer(LNodeContainer value);
+
+    /**
+     * Returns the value of the '<em><b>Refers To LNode Type</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To LNode Type</em>' reference.
+     * @see #isSetRefersToLNodeType()
+     * @see #unsetRefersToLNodeType()
+     * @see #setRefersToLNodeType(LNodeType)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNode_RefersToLNodeType()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode
+     * @model opposite="ReferredByLNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    LNodeType getRefersToLNodeType();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To LNode Type</em>' reference.
+     * @see #isSetRefersToLNodeType()
+     * @see #unsetRefersToLNodeType()
+     * @see #getRefersToLNodeType()
+     * @generated
+     */
+    void setRefersToLNodeType(LNodeType value);
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToLNodeType()
+     * @see #getRefersToLNodeType()
+     * @see #setRefersToLNodeType(LNodeType)
+     * @generated
+     */
+    void unsetRefersToLNodeType();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To LNode Type</em>' reference is set.
+     * @see #unsetRefersToLNodeType()
+     * @see #getRefersToLNodeType()
+     * @see #setRefersToLNodeType(LNodeType)
+     * @generated
+     */
+    boolean isSetRefersToLNodeType();
 
 } // LNode

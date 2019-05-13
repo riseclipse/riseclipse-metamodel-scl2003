@@ -64,6 +64,7 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
             addIedTypePropertyDescriptor(object);
             addLnClassPropertyDescriptor(object);
             addReferredByAnyLNPropertyDescriptor(object);
+            addReferredByLNodePropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -126,6 +127,28 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
                  getString("_UI_LNodeType_ReferredByAnyLN_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_LNodeType_ReferredByAnyLN_feature", "_UI_LNodeType_type"),
                  SclPackage.eINSTANCE.getLNodeType_ReferredByAnyLN(),
+                 true,
+                 false,
+                 true,
+                 null,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Referred By LNode feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addReferredByLNodePropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_LNodeType_ReferredByLNode_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_LNodeType_ReferredByLNode_feature", "_UI_LNodeType_type"),
+                 SclPackage.eINSTANCE.getLNodeType_ReferredByLNode(),
                  true,
                  false,
                  true,

@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType()
@@ -253,5 +254,42 @@ public interface LNodeType extends IDNaming {
      * @generated
      */
     boolean isSetReferredByAnyLN();
+
+    /**
+     * Returns the value of the '<em><b>Referred By LNode</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Referred By LNode</em>' reference list.
+     * @see #isSetReferredByLNode()
+     * @see #unsetReferredByLNode()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLNodeType_ReferredByLNode()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType
+     * @model opposite="RefersToLNodeType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList<LNode> getReferredByLNode();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetReferredByLNode()
+     * @see #getReferredByLNode()
+     * @generated
+     */
+    void unsetReferredByLNode();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Referred By LNode</em>' reference list is set.
+     * @see #unsetReferredByLNode()
+     * @see #getReferredByLNode()
+     * @generated
+     */
+    boolean isSetReferredByLNode();
 
 } // LNodeType

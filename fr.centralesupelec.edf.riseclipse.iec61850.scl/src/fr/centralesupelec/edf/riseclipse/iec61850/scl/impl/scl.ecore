@@ -508,6 +508,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByAnyLN" ordered="false"
         upperBound="-1" eType="#//AnyLN" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//AnyLN/RefersToLNodeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLNode" ordered="false"
+        upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNode/RefersToLNodeType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProtNs" eSuperTypes="#//SclObject">
     <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -1866,6 +1869,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLNodeContainer" ordered="false"
         eType="#//LNodeContainer" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LNodeContainer/LNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RefersToLNodeType" ordered="false"
+        eType="#//LNodeType" transient="true" unsettable="true" resolveProxies="false"
+        eOpposite="#//LNodeType/ReferredByLNode"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LNodeContainer" eSuperTypes="#//Naming">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LNode" ordered="false"

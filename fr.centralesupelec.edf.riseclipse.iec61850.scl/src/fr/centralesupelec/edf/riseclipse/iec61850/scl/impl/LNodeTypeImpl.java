@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -49,6 +50,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getDO <em>DO</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getParentDataTypeTemplates <em>Parent Data Type Templates</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getReferredByAnyLN <em>Referred By Any LN</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LNodeTypeImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +133,16 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * @ordered
      */
     protected EList<AnyLN> referredByAnyLN;
+
+    /**
+     * The cached value of the '{@link #getReferredByLNode() <em>Referred By LNode</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReferredByLNode()
+     * @generated
+     * @ordered
+     */
+    protected EList<LNode> referredByLNode;
 
     /**
      * <!-- begin-user-doc -->
@@ -365,6 +377,39 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public EList<LNode> getReferredByLNode() {
+        if (referredByLNode == null) {
+            referredByLNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LNODE_TYPE__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_LNODE_TYPE);
+        }
+        return referredByLNode;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetReferredByLNode() {
+        if (referredByLNode != null) ((InternalEList.Unsettable<?>)referredByLNode).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetReferredByLNode() {
+        return referredByLNode != null && ((InternalEList.Unsettable<?>)referredByLNode).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -377,6 +422,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAnyLN()).basicAdd(otherEnd, msgs);
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLNode()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -395,6 +442,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return basicSetParentDataTypeTemplates(null, msgs);
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return ((InternalEList<?>)getReferredByAnyLN()).basicRemove(otherEnd, msgs);
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                return ((InternalEList<?>)getReferredByLNode()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -431,6 +480,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return getParentDataTypeTemplates();
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return getReferredByAnyLN();
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                return getReferredByLNode();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -461,6 +512,10 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 getReferredByAnyLN().clear();
                 getReferredByAnyLN().addAll((Collection<? extends AnyLN>)newValue);
                 return;
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                getReferredByLNode().clear();
+                getReferredByLNode().addAll((Collection<? extends LNode>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -488,6 +543,9 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 unsetReferredByAnyLN();
                 return;
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                unsetReferredByLNode();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -510,6 +568,8 @@ public class LNodeTypeImpl extends IDNamingImpl implements LNodeType {
                 return getParentDataTypeTemplates() != null;
             case SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN:
                 return isSetReferredByAnyLN();
+            case SclPackage.LNODE_TYPE__REFERRED_BY_LNODE:
+                return isSetReferredByLNode();
         }
         return super.eIsSet(featureID);
     }
