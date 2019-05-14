@@ -22,20 +22,39 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.SclPackageImpl;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseResource;
+import fr.centralesupelec.edf.riseclipse.util.RiseClipseMetamodel;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseResourceSet;
 
 
 @SuppressWarnings( "unused" )
 public class SclResourceSetImpl extends AbstractRiseClipseResourceSet {
     
+    private SclResourceFactoryImpl resourceFactory;
+
     public SclResourceSetImpl( boolean strictContent, IRiseClipseConsole console ) {
         super( strictContent, console );
+        
+        resourceFactory = new SclResourceFactoryImpl();
+    }
+
+    @Override
+    protected SclResourceImpl createRiseClipseResource( URI uri, String contentType ) {
+        Optional< String > metamodel = RiseClipseMetamodel.findMetamodelFor( uri );
+        if( metamodel.isPresent() && SclPackage.eNS_URI.equals( metamodel.get() )) {
+            return resourceFactory.createResource( uri );
+        }
+        return null;
     }
 
     /* (non-Javadoc)
