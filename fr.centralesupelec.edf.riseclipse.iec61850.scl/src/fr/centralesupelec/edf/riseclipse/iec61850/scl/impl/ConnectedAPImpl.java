@@ -983,7 +983,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         // apName  a name identifying this access point within the IED
         // desc    some descriptive text for this access point at this subnetwork
 
-        String messagePrefix = "while resolving link from ConnectedAP on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from ConnectedAP on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix + "iedName is missing" );
@@ -1010,7 +1010,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "ConnectedAP on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
+        console.info( "[SCL links] ConnectedAP on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ConnectedAPImpl

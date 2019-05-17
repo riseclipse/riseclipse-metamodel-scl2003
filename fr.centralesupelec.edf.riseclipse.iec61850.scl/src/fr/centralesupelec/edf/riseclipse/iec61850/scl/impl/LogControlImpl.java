@@ -1251,7 +1251,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // logEna       TRUE enables immediate logging; FALSE prohibits logging until enabled online
         // reasonCode   If true, the reason code for the event trigger is also stored into the log – see IEC 61850-7-2
         
-        String messagePrefix = "while resolving link from LogControl on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from LogControl on line " + getLineNumber() + ": ";
         
         if(( getLogName() == null ) || getLogName().isEmpty() ) {
             console.warning( messagePrefix + "logName is missing" );
@@ -1288,7 +1288,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "LogControl on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] LogControl on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAnyLN().getLineNumber() );
         
     }
 

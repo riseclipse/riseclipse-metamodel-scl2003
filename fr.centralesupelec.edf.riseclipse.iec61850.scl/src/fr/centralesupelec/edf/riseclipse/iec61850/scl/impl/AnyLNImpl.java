@@ -1420,7 +1420,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
-        String messagePrefix = "while resolving link from AnyLN on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from AnyLN on line " + getLineNumber() + ": ";
 
         if(( getLnType() == null ) || getLnType().isEmpty() ) {
             console.warning( messagePrefix + "lnType is missing" );
@@ -1445,7 +1445,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
+        console.info( "[SCL links] AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
         
         if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
             console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );

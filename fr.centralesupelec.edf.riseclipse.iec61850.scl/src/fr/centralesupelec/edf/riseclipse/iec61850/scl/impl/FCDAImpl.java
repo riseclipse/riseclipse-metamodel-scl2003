@@ -1062,7 +1062,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         // ix       An index to select an array element in case that one of the data elements is an array. The ix value shall be identical to the
         //          ArrayElementNumber value in the doName or daName part.
 
-        String messagePrefix = "while resolving link from FCDA on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from FCDA on line " + getLineNumber() + ": ";
 
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( messagePrefix + "ldInst is missing" );
@@ -1209,7 +1209,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
             
-            console.info( "FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
+            console.info( "[SCL links] FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
             getRefersToAbstractDataAttribute().add( da );
         }
         
@@ -1225,11 +1225,11 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             
             if( getRefersToAbstractDataAttribute().size() > 0 ) {
                 for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                    console.info( "FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + a.getName() + " ) on line " + a.getLineNumber() );
+                    console.info( "[SCL links] FCDA on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + a.getName() + " ) on line " + a.getLineNumber() );
                 }
             }
             else {
-                console.warning( "FCDA (line " + getLineNumber() + ") does not refer to any AbstractDataAttribute" );
+                console.warning( "[SCL links] FCDA (line " + getLineNumber() + ") does not refer to any AbstractDataAttribute" );
             }
         }
 

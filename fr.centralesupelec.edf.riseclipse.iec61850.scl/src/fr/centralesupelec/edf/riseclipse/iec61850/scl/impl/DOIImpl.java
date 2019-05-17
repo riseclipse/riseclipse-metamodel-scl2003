@@ -769,7 +769,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from DOI on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from DOI on line " + getLineNumber() + ": ";
         
         if(( getName() == null ) || getName().isEmpty() ) {
             console.warning( messagePrefix + "name is missing" );
@@ -795,7 +795,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.info( "DOI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDO().getLineNumber() );
+        console.info( "[SCL links] DOI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl

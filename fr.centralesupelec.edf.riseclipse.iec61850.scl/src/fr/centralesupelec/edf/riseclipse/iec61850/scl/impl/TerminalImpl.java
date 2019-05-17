@@ -1107,7 +1107,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
-        String messagePrefix = "while resolving link from Terminal on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from Terminal on line " + getLineNumber() + ": ";
         
         if( getSubstationName() != null ) {
             doBuildExplicitLinkWithSubstation( console, messagePrefix );
@@ -1213,7 +1213,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ));
-        console.info( "Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        console.info( "[SCL links] Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
     }
 
     private void doBuildExplicitLinkWithLine( IRiseClipseConsole console, String messagePrefix ) {
@@ -1255,7 +1255,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ));
-        console.info( "Terminal on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        console.info( "[SCL links] Terminal on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToConnectivityNode().getLineNumber() );
     }
 
 } //TerminalImpl

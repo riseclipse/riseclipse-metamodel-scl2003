@@ -654,7 +654,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         // Assumption : we need both an ied name and a ld instance to uniquely identify a LDevice.
         //              We will use the iedName provided by the enclosing connectedAP.
 
-        String messagePrefix = "while resolving link from ControlBlock on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from ControlBlock on line " + getLineNumber() + ": ";
 
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( messagePrefix + "ldInst is missing" );
@@ -704,7 +704,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ));
-        console.info( "ControlBlock on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToControlWithIEDName().getLineNumber() );
+        console.info( "[SCL links] ControlBlock on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToControlWithIEDName().getLineNumber() );
     }
 
 } //ControlBlockImpl

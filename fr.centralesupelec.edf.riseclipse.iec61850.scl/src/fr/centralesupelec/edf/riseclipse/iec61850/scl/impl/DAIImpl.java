@@ -963,7 +963,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from DAI on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from DAI on line " + getLineNumber() + ": ";
         
         if(( getName() == null ) || getName().isEmpty() ) {
             console.warning( messagePrefix + "name is missing" );
@@ -1006,7 +1006,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( "DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
     }
         
     private void doBuildExplicitLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
@@ -1034,7 +1034,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));
-        console.info( "DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
 } //DAIImpl

@@ -971,7 +971,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from SDI on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from SDI on line " + getLineNumber() + ": ";
         
         if(( getName() == null ) || getName().isEmpty() ) {
             console.warning( messagePrefix + "name is missing" );
@@ -1016,7 +1016,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
         }
         if( res1.size() == 1 ) {
             setRefersToSDO( res1.get( 0 ));
-            console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
+            console.info( "[SCL links] SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
             return;
         }
         
@@ -1038,7 +1038,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return;
         }
         setRefersToAbstractDataAttribute( res2.get( 0 ));
-        console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
     }
     
     private void doResolveLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
@@ -1067,7 +1067,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             }
             if( res1.size() == 1 ) {
                 setRefersToSDO( res1.get( 0 ));
-                console.info( "SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
+                console.info( "[SCL links] SDI on line " + getLineNumber() + " refers to " + mess1 + " on line " + getRefersToSDO().getLineNumber() );
                 return;
             }
             
@@ -1089,7 +1089,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
                 return;
             }
             setRefersToAbstractDataAttribute( res2.get( 0 ));
-            console.info( "SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+            console.info( "[SCL links] SDI on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
             return;
             
         }
@@ -1121,7 +1121,7 @@ public class SDIImpl extends UnNamingImpl implements SDI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));
-        console.info( "SDI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] SDI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
 } //SDIImpl

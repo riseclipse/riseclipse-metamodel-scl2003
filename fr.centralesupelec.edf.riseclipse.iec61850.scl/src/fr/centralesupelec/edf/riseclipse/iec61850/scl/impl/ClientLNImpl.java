@@ -1085,7 +1085,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         // lnInst  The instance id of this LN instance of below LN class in the IED
         // desc    optional descriptive text, e.g. about purpose of the client
 
-        String messagePrefix = "while resolving link from ClientLN on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from ClientLN on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix + "iedName is missing" );
@@ -1158,7 +1158,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //ClientLNImpl

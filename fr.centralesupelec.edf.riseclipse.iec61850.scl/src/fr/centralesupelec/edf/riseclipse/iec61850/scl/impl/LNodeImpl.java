@@ -1059,7 +1059,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from LNode on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from LNode on line " + getLineNumber() + ": ";
         doBuildExplicitAnyLNLink( console, messagePrefix );
         doBuildExplicitLNodeTypeLink( console, messagePrefix );
     }
@@ -1124,7 +1124,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "LNode on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] LNode on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
     private void doBuildExplicitLNodeTypeLink( IRiseClipseConsole console, String mPrefix ) {
@@ -1156,7 +1156,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
+        console.info( "[SCL links] AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
         
         if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
             console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
