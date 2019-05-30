@@ -21,6 +21,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -1068,6 +1069,44 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getNamespace() {
+        List< DOI > lplDoi =
+                getDOI()
+                .stream()
+                .filter( doi -> "NamPlt".equals( doi.getName() ))
+                .collect( Collectors.toList() );
+        if( lplDoi.size() == 1 ) {
+            List< DAI > ldNsDai =
+                    lplDoi
+                    .get( 0 )
+                    .getDAI()
+                    .stream()
+                    .filter( dai -> "lnNs".equals(  dai.getName() ))
+                    .collect( Collectors.toList() );
+            if( ldNsDai.size() == 1 ) {
+                if((         ldNsDai.get( 0 ).getVal().size() == 1 )
+                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+                }
+                if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                    return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        if( getParentLDevice() == null ) return null;
+        return getParentLDevice().getNamespace();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -1385,6 +1424,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         switch (operationID) {
             case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
                 return getParentLDevice();
+            case SclPackage.ANY_LN___GET_NAMESPACE:
+                return getNamespace();
         }
         return super.eInvoke(operationID, arguments);
     }

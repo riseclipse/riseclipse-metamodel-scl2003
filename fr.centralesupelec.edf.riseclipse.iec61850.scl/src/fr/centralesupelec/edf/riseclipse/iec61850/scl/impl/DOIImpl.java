@@ -40,6 +40,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -569,6 +570,35 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
+    public String getNamespace() {
+        List< DAI > ldNsDai =
+                getDAI()
+                .stream()
+                .filter( dai -> "dataNs".equals(  dai.getName() ))
+                .collect( Collectors.toList() );
+        if( ldNsDai.size() == 1 ) {
+            if((         ldNsDai.get( 0 ).getVal().size() == 1 )
+                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+            }
+            if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+            }
+        }
+        if( getParentAnyLN() == null ) return null;
+        return getParentAnyLN().getNamespace();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
@@ -742,6 +772,20 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 return isSetRefersToDO();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+        switch (operationID) {
+            case SclPackage.DOI___GET_NAMESPACE:
+                return getNamespace();
+        }
+        return super.eInvoke(operationID, arguments);
     }
 
     /**

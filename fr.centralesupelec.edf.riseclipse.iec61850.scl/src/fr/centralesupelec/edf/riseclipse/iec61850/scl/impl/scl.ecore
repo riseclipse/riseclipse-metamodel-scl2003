@@ -602,6 +602,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnyLN" abstract="true" eSuperTypes="#//UnNaming">
     <eOperations name="getParentLDevice" eType="#//LDevice"/>
+    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -851,6 +852,7 @@
         resolveProxies="false" eOpposite="#//AbstractDataAttribute/ReferredByDAI"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DOI" eSuperTypes="#//UnNaming">
+    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
@@ -1149,6 +1151,7 @@
         eOpposite="#//AccessPoint/ReferredByKDC"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LDevice" eSuperTypes="#//UnNaming">
+    <eOperations name="getNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="inst" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

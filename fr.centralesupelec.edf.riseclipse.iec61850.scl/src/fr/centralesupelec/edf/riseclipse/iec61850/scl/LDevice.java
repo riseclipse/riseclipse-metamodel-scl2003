@@ -339,6 +339,14 @@ public interface LDevice extends UnNaming {
     boolean isSetReferredByIEDName();
 
     /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    String getNamespace();
+
+    /**
      * Returns the value of the '<em><b>LN0</b></em>' containment reference.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}'.
      * <!-- begin-user-doc -->
