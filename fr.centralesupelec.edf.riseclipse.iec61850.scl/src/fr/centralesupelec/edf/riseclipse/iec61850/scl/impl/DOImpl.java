@@ -489,7 +489,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //                  access control definition applies
         // transient        If set to true, it indicates that the Transient definition from IEC 61850-7-4 applies
 
-        String messagePrefix = "while resolving link from DO on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from DO on line " + getLineNumber() + ": ";
 
         if(( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix + "type is missing" );
@@ -512,7 +512,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             return;
         }
         setRefersToDOType( res.get( 0 ));
-        console.info( "DO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
+        console.info( "[SCL links] DO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
     }
 
 } //DOImpl

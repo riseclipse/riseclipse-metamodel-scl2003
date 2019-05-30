@@ -2431,7 +2431,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from ExtRef on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from ExtRef on line " + getLineNumber() + ": ";
         Pair< IED, LDevice > args = doBuildExplicitDataLink( console, messagePrefix );
         doBuildExplicitCBLink( console, messagePrefix, args );
     }
@@ -2569,7 +2569,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         // Set link to DO/SDO only if no daName
         if( getDaName() == null ) {
             setRefersToAbstractDataObject( ado );
-            console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataObject ( name = " + ado.getName() + " ) on line " + ado.getLineNumber() );
+            console.info( "[SCL links] ExtRef on line " + getLineNumber() + " refers to AbstractDataObject ( name = " + ado.getName() + " ) on line " + ado.getLineNumber() );
             return finalRes;
         }
 
@@ -2618,7 +2618,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             console.verbose( messagePrefix + "found " + mess4b + " on line " + da.getLineNumber() );
         }
 
-        console.info( "ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
+        console.info( "[SCL links] ExtRef on line " + getLineNumber() + " refers to AbstractDataAttribute ( name = " + da.getName() + " ) on line " + da.getLineNumber() );
         setRefersToAbstractDataAttribute( da );
         
         return finalRes;
@@ -2692,7 +2692,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             return;
         }
         setRefersToControl( res7.get( 0 ));
-        console.info( "ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
+        console.info( "[SCL links] ExtRef on line " + getLineNumber() + " refers to " + mess7 + " on line " + getRefersToControl().getLineNumber() );
     }
 
 } //ExtRefImpl

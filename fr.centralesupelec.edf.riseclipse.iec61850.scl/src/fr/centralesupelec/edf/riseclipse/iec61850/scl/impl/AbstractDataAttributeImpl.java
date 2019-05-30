@@ -1398,7 +1398,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         if( ! ( "Enum".equals( getBType() ) || "Struct".equals( getBType() ))) {
             return;
         }
-        String messagePrefix = "while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
 
         if(( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix + "type is missing" );
@@ -1428,7 +1428,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            console.info( "AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToEnumType().getLineNumber() );
+            console.info( "[SCL links] AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToEnumType().getLineNumber() );
         }
         else if( "Struct".equals( getBType() )) {
 
@@ -1447,7 +1447,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.info( "AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDAType().getLineNumber() );
+            console.info( "[SCL links] AbstractDataAttribute on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDAType().getLineNumber() );
         }
     }
 

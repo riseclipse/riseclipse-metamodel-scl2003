@@ -396,7 +396,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         // count    The number or reference to an attribute defining the number of array elements,
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
         
-        String messagePrefix = "while resolving link from SDO on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from SDO on line " + getLineNumber() + ": ";
 
         if(( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix + "type is missing" );
@@ -421,7 +421,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( "SDO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
+        console.info( "[SCL links] SDO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

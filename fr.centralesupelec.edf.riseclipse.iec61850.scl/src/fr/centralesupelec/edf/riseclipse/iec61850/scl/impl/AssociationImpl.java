@@ -1176,7 +1176,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         // prefix          The LN prefix
         // lnInst          The instance number of the client LN
 
-        String messagePrefix = "while resolving link from Association on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from Association on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix + "iedName is missing " );
@@ -1223,7 +1223,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //AssociationImpl

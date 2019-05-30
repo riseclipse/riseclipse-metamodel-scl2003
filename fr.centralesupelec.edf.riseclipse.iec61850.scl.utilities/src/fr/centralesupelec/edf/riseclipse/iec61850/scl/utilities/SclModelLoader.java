@@ -37,7 +37,7 @@ public class SclModelLoader extends AbstractRiseClipseModelLoader {
     }
 
     public void reset() {
-        super.reset( new SclResourceSetImpl( true, console ));
+        super.reset( new SclResourceSetImpl( false, console ));
 
         // Register the appropriate resource factory to handle all file
         // extensions.

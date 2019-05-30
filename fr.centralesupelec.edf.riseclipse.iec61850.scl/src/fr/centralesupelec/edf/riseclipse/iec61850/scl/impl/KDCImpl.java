@@ -549,7 +549,7 @@ public class KDCImpl extends SclObjectImpl implements KDC {
         // see Issue #13
         super.doBuildExplicitLinks( console );
         
-        String messagePrefix = "while resolving link from KDC on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from KDC on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix + "iedName is missing" );
@@ -577,7 +577,7 @@ public class KDCImpl extends SclObjectImpl implements KDC {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "KDC on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
+        console.info( "[SCL links] KDC on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
     }
 
 } //KDCImpl

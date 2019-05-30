@@ -1198,7 +1198,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         
         // We only set the most precise RefersTo (IED / LDevice / AnyLN)
         
-        String messagePrefix = "while resolving link from IEDName on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from IEDName on line " + getLineNumber() + ": ";
 
         if(( getValue() == null ) || getValue().isEmpty() ) {
             console.warning( messagePrefix + "value is missing" );
@@ -1268,7 +1268,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
     }
 
 } //IEDNameImpl
