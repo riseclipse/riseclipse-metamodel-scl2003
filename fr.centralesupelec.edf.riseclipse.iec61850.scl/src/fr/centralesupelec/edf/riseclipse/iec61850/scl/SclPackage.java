@@ -7241,13 +7241,22 @@ public interface SclPackage extends EPackage {
     int ANY_LN___GET_PARENT_LDEVICE = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 1;
+
+    /**
      * The number of operations of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -9721,13 +9730,22 @@ public interface SclPackage extends EPackage {
     int DOI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DOI___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
+
+    /**
      * The number of operations of the '<em>DOI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
+    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12459,13 +12477,22 @@ public interface SclPackage extends EPackage {
     int LDEVICE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
+
+    /**
      * The number of operations of the '<em>LDevice</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
+    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12736,6 +12763,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>LN</em>' class.
@@ -13033,6 +13069,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>LN0</em>' class.
@@ -25009,6 +25054,16 @@ public interface SclPackage extends EPackage {
     EOperation getAnyLN__GetParentLDevice();
 
     /**
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace() <em>Get Namespace</em>}' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the '<em>Get Namespace</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace()
+     * @generated
+     */
+    EOperation getAnyLN__GetNamespace();
+
+    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association <em>Association</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -25934,6 +25989,16 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getDOI_RefersToDO();
+
+    /**
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace() <em>Get Namespace</em>}' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the '<em>Get Namespace</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace()
+     * @generated
+     */
+    EOperation getDOI__GetNamespace();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory <em>Data Object Directory</em>}'.
@@ -27307,6 +27372,16 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLDevice_ReferredByIEDName();
+
+    /**
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace() <em>Get Namespace</em>}' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the '<em>Get Namespace</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace()
+     * @generated
+     */
+    EOperation getLDevice__GetNamespace();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}'.

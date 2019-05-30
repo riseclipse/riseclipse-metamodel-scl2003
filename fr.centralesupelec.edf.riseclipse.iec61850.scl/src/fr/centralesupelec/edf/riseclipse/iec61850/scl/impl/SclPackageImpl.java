@@ -4517,6 +4517,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EOperation getAnyLN__GetNamespace() {
+        return getAnyLN().getEOperations().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getAssociation() {
         if (associationEClass == null) {
             associationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SclPackage.eNS_URI).getEClassifiers().get(39);
@@ -5423,6 +5433,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getDOI_RefersToDO() {
         return (EReference)getDOI().getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EOperation getDOI__GetNamespace() {
+        return getDOI().getEOperations().get(0);
     }
 
     /**
@@ -6765,6 +6785,16 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
     @Override
     public EReference getLDevice_ReferredByIEDName() {
         return (EReference)getLDevice().getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EOperation getLDevice__GetNamespace() {
+        return getLDevice().getEOperations().get(0);
     }
 
     /**

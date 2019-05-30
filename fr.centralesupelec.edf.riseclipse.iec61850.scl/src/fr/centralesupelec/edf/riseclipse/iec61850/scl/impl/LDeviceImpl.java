@@ -19,6 +19,9 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -31,6 +34,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
@@ -38,6 +43,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -575,6 +581,44 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getNamespace() {
+         List< DOI > lplDoi =
+                 getLN0()
+                 .getDOI()
+                 .stream()
+                 .filter( doi -> "NamPlt".equals( doi.getName() ))
+                 .collect( Collectors.toList() );
+         if( lplDoi.size() == 1 ) {
+             List< DAI > ldNsDai =
+                     lplDoi
+                     .get( 0 )
+                     .getDAI()
+                     .stream()
+                     .filter( dai -> "ldNs".equals(  dai.getName() ))
+                     .collect( Collectors.toList() );
+             if( ldNsDai.size() == 1 ) {
+                 if((         ldNsDai.get( 0 ).getVal().size() == 1 )
+                         && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                         && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                     return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+                 }
+                 if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                     return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                 }
+             }
+         }
+         return null;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -839,6 +883,20 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 return isSetReferredByIEDName();
         }
         return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+        switch (operationID) {
+            case SclPackage.LDEVICE___GET_NAMESPACE:
+                return getNamespace();
+        }
+        return super.eInvoke(operationID, arguments);
     }
 
     /**

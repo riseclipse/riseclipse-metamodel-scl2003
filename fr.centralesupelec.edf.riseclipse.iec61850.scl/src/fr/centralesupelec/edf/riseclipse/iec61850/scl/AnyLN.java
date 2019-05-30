@@ -807,4 +807,12 @@ public interface AnyLN extends UnNaming {
      */
     LDevice getParentLDevice();
 
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @model kind="operation"
+     * @generated
+     */
+    String getNamespace();
+
 } // AnyLN
