@@ -34,7 +34,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessControl;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
@@ -585,35 +587,82 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public String getNamespace() {
-         List< DOI > lplDoi =
-                 getLN0()
-                 .getDOI()
-                 .stream()
-                 .filter( doi -> "NamPlt".equals( doi.getName() ))
-                 .collect( Collectors.toList() );
-         if( lplDoi.size() == 1 ) {
-             List< DAI > ldNsDai =
-                     lplDoi
-                     .get( 0 )
-                     .getDAI()
-                     .stream()
-                     .filter( dai -> "ldNs".equals(  dai.getName() ))
-                     .collect( Collectors.toList() );
-             if( ldNsDai.size() == 1 ) {
-                 if((         ldNsDai.get( 0 ).getVal().size() == 1 )
-                         && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                         && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                     return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
-                 }
-                 if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                         && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                     return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
-                 }
-             }
-         }
-         return null;
+        if( getLN0() == null ) return null;
+        List< DOI > namPltDoi =
+                getLN0()
+                .getDOI()
+                .stream()
+                .filter( doi -> "NamPlt".equals( doi.getName() ))
+                .collect( Collectors.toList() );
+        if( namPltDoi.size() == 1 ) {
+            List< DAI > ldNsDai =
+                    namPltDoi
+                    .get( 0 )
+                    .getDAI()
+                    .stream()
+                    .filter( dai -> "ldNs".equals(  dai.getName() ))
+                    .collect( Collectors.toList() );
+            if( ldNsDai.size() == 1 ) {
+                if((         ldNsDai.get( 0 ).getVal().size() == 1 )
+                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+                }
+                if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                    return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                }
+            }
+            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
+                List< DA > lnNsDa =
+                        namPltDoi
+                        .get( 0 )
+                        .getRefersToDO()
+                        .getRefersToDOType()
+                        .getDA()
+                        .stream()
+                        .filter( da -> "ldNs".equals(  da.getName() ))
+                        .collect( Collectors.toList() );
+                if( lnNsDa.size() == 1 ) {
+                    if((         lnNsDa.get( 0 ).getVal().size() == 1 )
+                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                    }
+                }
+            }
+        }
+        
+        if( getLN0().getRefersToLNodeType() == null ) return null;
+        List< DO > namPltDo =
+                getLN0()
+                .getRefersToLNodeType()
+                .getDO()
+                .stream()
+                .filter( do_ -> "NamPlt".equals( do_.getName() ))
+                .collect( Collectors.toList() );
+        if( namPltDo.size() == 1 ) {
+            if( namPltDo.get( 0 ).getRefersToDOType() == null ) return null;
+            List< DA > ldNsDa =
+                    namPltDo
+                    .get( 0 )
+                    .getRefersToDOType()
+                    .getDA()
+                    .stream()
+                    .filter( da -> "ldNs".equals(  da.getName() ))
+                    .collect( Collectors.toList() );
+            if( ldNsDa.size() == 1 ) {
+                if((         ldNsDa.get( 0 ).getVal().size() == 1 )
+                        && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                        && ( ldNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return ldNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        
+        return null;
     }
 
     /**

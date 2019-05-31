@@ -21,7 +21,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -1071,33 +1073,80 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public String getNamespace() {
-        List< DOI > lplDoi =
+        List< DOI > namPltDoi =
                 getDOI()
                 .stream()
                 .filter( doi -> "NamPlt".equals( doi.getName() ))
                 .collect( Collectors.toList() );
-        if( lplDoi.size() == 1 ) {
-            List< DAI > ldNsDai =
-                    lplDoi
+        if( namPltDoi.size() == 1 ) {
+            List< DAI > lnNsDai =
+                    namPltDoi
                     .get( 0 )
                     .getDAI()
                     .stream()
                     .filter( dai -> "lnNs".equals(  dai.getName() ))
                     .collect( Collectors.toList() );
-            if( ldNsDai.size() == 1 ) {
-                if((         ldNsDai.get( 0 ).getVal().size() == 1 )
-                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
+            if( lnNsDai.size() == 1 ) {
+                if((         lnNsDai.get( 0 ).getVal().size() == 1 )
+                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return lnNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
-                if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                        && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                    return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                if((         lnNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
+                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
+                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
+                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
+                    return lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                }
+            }
+            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
+                List< DA > lnNsDa =
+                        namPltDoi
+                        .get( 0 )
+                        .getRefersToDO()
+                        .getRefersToDOType()
+                        .getDA()
+                        .stream()
+                        .filter( da -> "lnNs".equals(  da.getName() ))
+                        .collect( Collectors.toList() );
+                if( lnNsDa.size() == 1 ) {
+                    if((         lnNsDa.get( 0 ).getVal().size() == 1 )
+                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                    }
                 }
             }
         }
+
+        if( getRefersToLNodeType() != null ) {
+            List< DO > namPltDo =
+                    getRefersToLNodeType()
+                    .getDO()
+                    .stream()
+                    .filter( doi -> "NamPlt".equals( doi.getName() ))
+                    .collect( Collectors.toList() );
+            if( namPltDo.size() == 1 ) {
+                if( namPltDo.get( 0 ).getRefersToDOType() != null ) {
+                    List< DA > lnNsDa =
+                            namPltDo
+                            .get( 0 )
+                            .getRefersToDOType()
+                            .getDA()
+                            .stream()
+                            .filter( da -> "lnNs".equals(  da.getName() ))
+                            .collect( Collectors.toList() );
+                    if( lnNsDa.size() == 1 ) {
+                        if((         lnNsDa.get( 0 ).getVal().size() == 1 )
+                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                            return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                        }
+                    }
+                }
+            }
+        }
+
         if( getParentLDevice() == null ) return null;
         return getParentLDevice().getNamespace();
     }
