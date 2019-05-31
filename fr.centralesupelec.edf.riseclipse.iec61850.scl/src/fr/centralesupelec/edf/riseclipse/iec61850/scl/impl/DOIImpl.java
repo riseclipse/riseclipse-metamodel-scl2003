@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
@@ -590,6 +591,24 @@ public class DOIImpl extends UnNamingImpl implements DOI {
                 return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
             }
         }
+        
+        if( getRefersToDO() != null ) {
+            List< DA > lnNsDa =
+                    getRefersToDO()
+                    .getRefersToDOType()
+                    .getDA()
+                    .stream()
+                    .filter( da -> "dataNs".equals(  da.getName() ))
+                    .collect( Collectors.toList() );
+            if( lnNsDa.size() == 1 ) {
+                if((         lnNsDa.get( 0 ).getVal().size() == 1 )
+                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        
         if( getParentAnyLN() == null ) return null;
         return getParentAnyLN().getNamespace();
     }
