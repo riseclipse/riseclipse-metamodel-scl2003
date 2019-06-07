@@ -2644,7 +2644,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
             return;
         }
 
-        if(( getSrcLDInst() != null ) || ( ! getSrcLDInst().isEmpty() )) {
+        if(( getSrcLDInst() != null ) && ( ! getSrcLDInst().isEmpty() )) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getSrcLDInst() );
             String mess5 = "LDevice( inst = " + getSrcLDInst() + " )";
             if( lDevice1.getLeft() == null ) {
@@ -2656,11 +2656,15 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         }
         if( lDevice == null ) return;
 
-        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
-        String mess6 = "LN( lnClass = " + getLnClass();
-        if( getLnInst() != null ) {
-            mess6 += ", inst = " + getLnInst();
-            if( getPrefix() != "" ) mess6 += ", prefix = " + getPrefix();
+        String cbLNClass = "LLN0";
+        if(( getSrcLNClass() != null ) && ( ! getSrcLNClass().isEmpty() )) {
+            cbLNClass = getSrcLNClass();
+        }
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, cbLNClass, getSrcLNInst(), getSrcPrefix() );
+        String mess6 = "LN( lnClass = " + cbLNClass;
+        if( getSrcLNInst() != null ) {
+            mess6 += ", inst = " + getSrcLNInst();
+            if( getSrcPrefix() != "" ) mess6 += ", prefix = " + getSrcPrefix();
         }
         mess6 += " )";
         if( anyLN.getLeft() == null ) {
@@ -2672,7 +2676,7 @@ public class ExtRefImpl extends BaseElementImpl implements ExtRef {
         List< Control > listControls = new ArrayList< Control >();
         listControls.addAll( anyLN.getLeft().getLogControl() );
         listControls.addAll( anyLN.getLeft().getReportControl() );
-        if( "LLN0".equals( getSrcLNClass() )) {
+        if( "LLN0".equals( cbLNClass )) {
             listControls.addAll( lDevice.getLN0().getGSEControl() );
             listControls.addAll( lDevice.getLN0().getSampledValueControl() );
         }
