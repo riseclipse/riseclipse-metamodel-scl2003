@@ -24,20 +24,17 @@ import org.eclipse.emf.ecore.resource.Resource;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceFactoryImpl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclResourceSetImpl;
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.AbstractRiseClipseModelLoader;
-import fr.centralesupelec.edf.riseclipse.util.TextRiseClipseConsole;
 
 public class SclModelLoader extends AbstractRiseClipseModelLoader {
 
-    public SclModelLoader( IRiseClipseConsole console ) {
-        super( console );
-        
+    public SclModelLoader() {
         reset();
     }
 
     public void reset() {
-        super.reset( new SclResourceSetImpl( false, console ));
+        super.reset( new SclResourceSetImpl( false ));
 
         // Register the appropriate resource factory to handle all file
         // extensions.
@@ -51,7 +48,7 @@ public class SclModelLoader extends AbstractRiseClipseModelLoader {
     public Resource loadWithoutValidation( String name ) {
         Object eValidator = EValidator.Registry.INSTANCE.remove( SclPackage.eINSTANCE );
 
-        Resource resource = load( name );
+        Resource resource = load( name, AbstractRiseClipseConsole.getConsole() );
 
         if( eValidator != null ) {
             EValidator.Registry.INSTANCE.put( SclPackage.eINSTANCE, eValidator );
@@ -60,12 +57,11 @@ public class SclModelLoader extends AbstractRiseClipseModelLoader {
     }
 
     public static void main( String[] args ) {
-        IRiseClipseConsole console = new TextRiseClipseConsole();
-        SclModelLoader loader = new SclModelLoader( console );
+        SclModelLoader loader = new SclModelLoader();
 
         for( int i = 0; i < args.length; ++i ) {
             @SuppressWarnings( "unused" )
-            Resource resource = loader.load( args[i] );
+            Resource resource = loader.load( args[i], AbstractRiseClipseConsole.getConsole() );
         }
     }
 
