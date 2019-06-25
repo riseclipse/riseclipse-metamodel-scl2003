@@ -19,7 +19,6 @@
  */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
 
-import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseResourceSet;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseResourceSetFactory;
 
@@ -29,8 +28,8 @@ public class SclResourceSetFactory implements IRiseClipseResourceSetFactory {
      * @see fr.centralesupelec.edf.riseclipse.util.IRiseClipseResourceSetFactory#createResourceSet()
      */
     @Override
-    public IRiseClipseResourceSet createResourceSet( boolean strictContent, IRiseClipseConsole console ) {
-        return new SclResourceSetImpl( strictContent, console );
+    public IRiseClipseResourceSet createResourceSet( boolean strictContent ) {
+        return new SclResourceSetImpl( strictContent );
     }
 
 }
