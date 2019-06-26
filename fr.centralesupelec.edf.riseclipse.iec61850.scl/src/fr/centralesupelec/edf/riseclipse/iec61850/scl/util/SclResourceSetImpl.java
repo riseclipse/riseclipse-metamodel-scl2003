@@ -42,8 +42,8 @@ public class SclResourceSetImpl extends AbstractRiseClipseResourceSet {
     
     private SclResourceFactoryImpl resourceFactory;
 
-    public SclResourceSetImpl( boolean strictContent, IRiseClipseConsole console ) {
-        super( strictContent, console );
+    public SclResourceSetImpl( boolean strictContent ) {
+        super( strictContent );
         
         resourceFactory = new SclResourceFactoryImpl();
     }
