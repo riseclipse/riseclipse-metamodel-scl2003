@@ -1134,15 +1134,15 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
         // neutralPoint     If true, this terminal connects to a neutral (star) point of all power transformer windings. Default value is false.
 
         if(( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-            console.warning( messagePrefix + "cNodeName is missing" );
+            console.warning( messagePrefix, "cNodeName is missing" );
             return;
         }
         if(( getVoltageLevelName() == null ) || getVoltageLevelName().isEmpty() ) {
-            console.warning( messagePrefix + "voltageLevelName is missing" );
+            console.warning( messagePrefix, "voltageLevelName is missing" );
             return;
         }
         if(( getBayName() == null ) || getBayName().isEmpty() ) {
-            console.warning( messagePrefix + "bayName is missing" );
+            console.warning( messagePrefix, "bayName is missing" );
             return;
         }
 
@@ -1162,7 +1162,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Substation substation = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + substation.getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", substation.getLineNumber() );
 
         // find a VoltageLevel with
         //   VoltageLevel.name == Terminal.voltageLevelName
@@ -1179,7 +1179,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         VoltageLevel voltageLevel = res2.get( 0 );
-        console.verbose( messagePrefix + "found " + mess2 + " on line " + voltageLevel.getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess2, " on line ", voltageLevel.getLineNumber() );
 
         // find a Bay with
         //   Bay.name == Terminal.bayName
@@ -1196,7 +1196,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Bay bay = res3.get( 0 );
-        console.verbose( messagePrefix + "found " + mess3 + " on line " + voltageLevel.getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess3, " on line ", voltageLevel.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1213,12 +1213,12 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res4.get( 0 ));
-        console.info( "[SCL links] Terminal on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        console.info( "[SCL links] Terminal on line ", getLineNumber(), " refers to ", mess4, " on line ", getRefersToConnectivityNode().getLineNumber() );
     }
 
     private void doBuildExplicitLinkWithLine( IRiseClipseConsole console, String messagePrefix ) {
         if(( getCNodeName() == null ) || getCNodeName().isEmpty() ) {
-            console.warning( messagePrefix + "cNodeName is missing" );
+            console.warning( messagePrefix, "cNodeName is missing" );
             return;
         }
 
@@ -1238,7 +1238,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         Line line = res1.get( 0 );
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + line.getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", line.getLineNumber() );
 
         // find a ConnectivityNode with
         //   ConnectivityNode.name == Terminal.bayName
@@ -1255,7 +1255,7 @@ public class TerminalImpl extends UnNamingImpl implements Terminal {
             return;
         }
         setRefersToConnectivityNode( res2.get( 0 ));
-        console.info( "[SCL links] Terminal on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToConnectivityNode().getLineNumber() );
+        console.info( "[SCL links] Terminal on line ", getLineNumber(), " refers to ", mess2 + " on line ", getRefersToConnectivityNode().getLineNumber() );
     }
 
 } //TerminalImpl

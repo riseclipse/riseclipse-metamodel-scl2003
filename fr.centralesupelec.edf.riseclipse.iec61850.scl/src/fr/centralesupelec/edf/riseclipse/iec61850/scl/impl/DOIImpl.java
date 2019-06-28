@@ -835,14 +835,14 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         String messagePrefix = "[SCL links] while resolving link from DOI on line " + getLineNumber() + ": ";
         
         if(( getName() == null ) || getName().isEmpty() ) {
-            console.warning( messagePrefix + "name is missing" );
+            console.warning( messagePrefix, "name is missing" );
             return;
         }
         
         // No error or warning message here: if this happens, error should have been detected before
         if( getParentAnyLN() == null ) return;
         if( getParentAnyLN().getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix + "found LNodeType on line " + getParentAnyLN().getRefersToLNodeType().getLineNumber() );
+        console.verbose( messagePrefix, "found LNodeType on line ", getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
         List< DO > res =
                 getParentAnyLN()
@@ -858,7 +858,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.info( "[SCL links] DOI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDO().getLineNumber() );
+        console.info( "[SCL links] DOI on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl

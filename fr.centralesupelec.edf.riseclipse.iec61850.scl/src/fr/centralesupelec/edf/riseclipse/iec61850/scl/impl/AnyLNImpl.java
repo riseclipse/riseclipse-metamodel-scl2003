@@ -1513,12 +1513,12 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         String messagePrefix = "[SCL links] while resolving link from AnyLN on line " + getLineNumber() + ": ";
 
         if(( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.warning( messagePrefix + "lnType is missing" );
+            console.warning( messagePrefix, "lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            console.warning( messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1535,10 +1535,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "[SCL links] AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
+        console.info( "[SCL links] AnyLN on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToLNodeType().getLineNumber() );
         
         if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
-            console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
+            console.warning( messagePrefix, "lnClass in ", mess, "(", getRefersToLNodeType().getLnClass(), ") is not ", getLnClass() );
         }
     }
 

@@ -1254,7 +1254,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         String messagePrefix = "[SCL links] while resolving link from LogControl on line " + getLineNumber() + ": ";
         
         if(( getLogName() == null ) || getLogName().isEmpty() ) {
-            console.warning( messagePrefix + "logName is missing" );
+            console.warning( messagePrefix, "logName is missing" );
             return;
         }
         
@@ -1273,7 +1273,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
                 return;
             }
             lDevice = lDevice1.getLeft();
-            console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLineNumber() );
+            console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLineNumber() );
         }
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
@@ -1288,7 +1288,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] LogControl on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] LogControl on line ", getLineNumber(), " refers to ", mess2, " on line ", getRefersToAnyLN().getLineNumber() );
         
     }
 

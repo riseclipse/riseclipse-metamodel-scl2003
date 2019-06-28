@@ -138,7 +138,7 @@ public class SclUtilities {
     }
 
     public static void displayNotFoundWarning( IRiseClipseConsole console, String prefix, String suffix, int nb ) {
-        console.warning( prefix + (( nb == 0 ) ? "cannot find " : "found several " ) + suffix );
+        console.warning( prefix, (( nb == 0 ) ? "cannot find " : "found several " ), suffix );
     }
     
 }

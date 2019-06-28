@@ -399,12 +399,12 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         String messagePrefix = "[SCL links] while resolving link from SDO on line " + getLineNumber() + ": ";
 
         if(( getType() == null ) || getType().isEmpty() ) {
-            console.warning( messagePrefix + "type is missing" );
+            console.warning( messagePrefix, "type is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            console.warning( messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -421,7 +421,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( "[SCL links] SDO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
+        console.info( "[SCL links] SDO on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

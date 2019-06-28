@@ -966,7 +966,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         String messagePrefix = "[SCL links] while resolving link from DAI on line " + getLineNumber() + ": ";
         
         if(( getName() == null ) || getName().isEmpty() ) {
-            console.warning( messagePrefix + "name is missing" );
+            console.warning( messagePrefix, "name is missing" );
             return;
         }
         
@@ -985,13 +985,13 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         // No error or warning messages here: if this happens, error should have been detected before
         DO do_ = getParentDOI().getRefersToDO();
         if( do_ == null ) return;
-        console.verbose( messagePrefix + "found DO on line " + do_.getLineNumber() );
+        console.verbose( messagePrefix, "found DO on line ", do_.getLineNumber() );
 
         do_.buildExplicitLinks( console, false );
         DOType dot = do_.getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dot == null ) return;
-        console.verbose( messagePrefix + "found DOType on line " + dot.getLineNumber() );
+        console.verbose( messagePrefix, "found DOType on line ", dot.getLineNumber() );
         
         List< DA > res =
                 dot
@@ -1006,7 +1006,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ) );
-        console.info( "[SCL links] DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToAbstractDataAttribute().getLineNumber() );
     }
         
     private void doBuildExplicitLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
@@ -1014,12 +1014,12 @@ public class DAIImpl extends UnNamingImpl implements DAI {
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
         if( att == null ) return;
         att.buildExplicitLinks( console, false );
-        console.verbose( messagePrefix + "found AbstractDataAttribute on line " + att.getLineNumber() );
+        console.verbose( messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
         
         DAType dat = att.getRefersToDAType();
         // No error or warning message here: if this happens, error should have been detected before
         if( dat == null ) return;
-        console.verbose( messagePrefix + "found DAType on line " + dat.getLineNumber() );
+        console.verbose( messagePrefix, "found DAType on line ", dat.getLineNumber() );
         
         List< BDA > res =
                 dat
@@ -1034,7 +1034,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             return;
         }
         setRefersToAbstractDataAttribute( res.get( 0 ));
-        console.info( "[SCL links] DAI on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAbstractDataAttribute().getLineNumber() );
+        console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToAbstractDataAttribute().getLineNumber() );
     }
 
 } //DAIImpl

@@ -1179,15 +1179,15 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         String messagePrefix = "[SCL links] while resolving link from Association on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( messagePrefix + "iedName is missing " );
+            console.warning( messagePrefix, "iedName is missing " );
             return;
         }
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( messagePrefix + "ldInst is missing " );
+            console.warning( messagePrefix, "ldInst is missing " );
             return;
         }
         if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( messagePrefix + "lnClass is missing " );
+            console.warning( messagePrefix, "lnClass is missing " );
             return;
         }
 
@@ -1199,7 +1199,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
 
         // find inside an LDevice with
         //   LDevice.name == Association.ldInst
@@ -1209,7 +1209,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, lDevice.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess2, " on line ", lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         String mess3 = "LN( lnClass = " + getLnClass();
@@ -1223,7 +1223,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] Association on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] Association on line ", getLineNumber(), " refers to ", mess3, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
 } //AssociationImpl
