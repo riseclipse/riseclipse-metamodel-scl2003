@@ -460,7 +460,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         String messagePrefix = "[SCL links] while resolving link from ServerAt on line " + getLineNumber() + ": ";
         
         if(( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( messagePrefix + "apName is missing" );
+            console.warning( messagePrefix, "apName is missing" );
             return;
         }
 
@@ -475,7 +475,7 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "[SCL links] ServerAt on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToAccessPoint().getLineNumber() );
+        console.info( "[SCL links] ServerAt on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ServerAtImpl

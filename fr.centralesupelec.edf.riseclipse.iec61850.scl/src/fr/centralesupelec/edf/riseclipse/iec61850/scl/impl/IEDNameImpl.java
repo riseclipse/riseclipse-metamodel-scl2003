@@ -1201,7 +1201,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         String messagePrefix = "[SCL links] while resolving link from IEDName on line " + getLineNumber() + ": ";
 
         if(( getValue() == null ) || getValue().isEmpty() ) {
-            console.warning( messagePrefix + "value is missing" );
+            console.warning( messagePrefix, "value is missing" );
             return;
         }
         
@@ -1216,20 +1216,20 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
             setRefersToIED( ied.getLeft() );
-            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+            console.info( "IEDName on line ", getLineNumber(), " refers to ", mess1, " on line ", ied.getLeft().getLineNumber() );
             return;
         }
         
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
         
         Pair< AccessPoint, Integer > ap = null;
         if(( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( messagePrefix + "no AccessPoint found in ied ( name = " + ied.getLeft().getName() + " )" );
+                console.warning( messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( messagePrefix + "found several AccessPoint in ied ( name = " + ied.getLeft().getName() + " ) but apRef not specified" );
+                console.warning( messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(), " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1241,7 +1241,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
                 SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
                 return;
             }
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLeft().getLineNumber() );
+            console.verbose( messagePrefix, "found ", mess2, " on line ", ap.getLeft().getLineNumber() );
         }
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ied.getLeft(), getLdInst() );
         String mess3 = "LDevice( inst = " + getLdInst() + " )";
@@ -1251,10 +1251,10 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
         }        
         if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
             setRefersToLDevice( lDevice.getLeft() );
-            console.info( "IEDName on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToLDevice().getLineNumber() );
+            console.info( "IEDName on line ", getLineNumber(), " refers to ", mess3, " on line ", getRefersToLDevice().getLineNumber() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         String mess4 = "LN( lnClass = " + getLnClass();
@@ -1268,7 +1268,7 @@ public class IEDNameImpl extends SclObjectImpl implements IEDName {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] ClientLN on line ", getLineNumber(), " refers to ", mess4, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
 } //IEDNameImpl

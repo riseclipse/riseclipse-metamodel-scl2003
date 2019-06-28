@@ -986,11 +986,11 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         String messagePrefix = "[SCL links] while resolving link from ConnectedAP on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( messagePrefix + "iedName is missing" );
+            console.warning( messagePrefix, "iedName is missing" );
             return;
         }
         if(( getApName() == null ) || getApName().isEmpty() ) {
-            console.warning( messagePrefix + "apName is missing" );
+            console.warning( messagePrefix, "apName is missing" );
             return;
         }
 
@@ -1002,7 +1002,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
         Pair< AccessPoint, Integer > ap = SclUtilities.getAccessPoint( ied.getLeft(), getApName() );
         String mess2 = "AccessPoint( name = " + getApName() + " )";
         if( ap.getLeft() == null ) {
@@ -1010,7 +1010,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "[SCL links] ConnectedAP on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToAccessPoint().getLineNumber() );
+        console.info( "[SCL links] ConnectedAP on line ", getLineNumber(), " refers to ", mess2, " on line ", getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ConnectedAPImpl

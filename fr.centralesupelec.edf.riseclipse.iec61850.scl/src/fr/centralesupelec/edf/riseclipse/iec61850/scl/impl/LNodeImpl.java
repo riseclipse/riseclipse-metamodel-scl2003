@@ -1079,12 +1079,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // Resolve only if attribute is not None
         // Default value is None
         if(( getIedName() == null ) || getIedName().isEmpty() || "None".equals( getIedName() )) {
-            console.verbose( messagePrefix + "link to AnyLN not resolved because iedName is absent or None" );
+            console.verbose( messagePrefix, "link to AnyLN not resolved because iedName is absent or None" );
             return;
         }
         
         if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( messagePrefix + "lnClass is missing" );
+            console.warning( messagePrefix, "lnClass is missing" );
             return;
         }
 
@@ -1096,7 +1096,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
         
         // find inside an LDevice with
         //   LDevice.name == LNode.ldInst
@@ -1106,7 +1106,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, lDevice.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess2 + " on line " + lDevice.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess2, " on line ", lDevice.getLeft().getLineNumber() );
 
         // find inside an LN with
         //   LN.lnClass == LNode.lnClass
@@ -1124,7 +1124,7 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] LNode on line " + getLineNumber() + " refers to " + mess3 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] LNode on line ", getLineNumber(), " refers to ", mess3, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
     private void doBuildExplicitLNodeTypeLink( IRiseClipseConsole console, String mPrefix ) {
@@ -1134,12 +1134,12 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
         // lnType   The logical node type definition containing more detailed functional specification. Might be missing, if the LN is allocated to an IED.
 
         if(( getLnType() == null ) || getLnType().isEmpty() ) {
-            console.verbose( messagePrefix + "link not resolved because lnType is missing" );
+            console.verbose( messagePrefix, "link not resolved because lnType is missing" );
             return;
         }
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) {
-            console.warning( messagePrefix + "DataTypeTemplates is missing" );
+            console.warning( messagePrefix, "DataTypeTemplates is missing" );
             return;
         }
 
@@ -1156,10 +1156,10 @@ public class LNodeImpl extends UnNamingImpl implements LNode {
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "[SCL links] AnyLN on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToLNodeType().getLineNumber() );
+        console.info( "[SCL links] AnyLN on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToLNodeType().getLineNumber() );
         
         if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
-            console.warning( messagePrefix + "lnClass in " + mess + "(" + getRefersToLNodeType().getLnClass() + ") is not " + getLnClass() );
+            console.warning( messagePrefix, "lnClass in ", mess, "(", getRefersToLNodeType().getLnClass(), ") is not ", getLnClass() );
         }
     }
     

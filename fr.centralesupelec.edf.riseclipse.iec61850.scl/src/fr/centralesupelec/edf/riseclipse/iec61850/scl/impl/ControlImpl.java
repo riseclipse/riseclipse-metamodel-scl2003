@@ -576,7 +576,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
         String messagePrefix = "[SCL links] while resolving link from Control on line " + getLineNumber() + ": ";
 
         if(( getDatSet() == null ) || getDatSet().isEmpty() ) {
-            console.warning( messagePrefix + "datSet is missing" );
+            console.warning( messagePrefix, "datSet is missing" );
             return;
         }
 
@@ -598,7 +598,7 @@ public abstract class ControlImpl extends UnNamingImpl implements Control {
             return;
         }
         setRefersToDataSet( res.get( 0 ));
-        console.info( "[SCL links] Control on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDataSet().getLineNumber() );
+        console.info( "[SCL links] Control on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDataSet().getLineNumber() );
     }
 
 } //ControlImpl

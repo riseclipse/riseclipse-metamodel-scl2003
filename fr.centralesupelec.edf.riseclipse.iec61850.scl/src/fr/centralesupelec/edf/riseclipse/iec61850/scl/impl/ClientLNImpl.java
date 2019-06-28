@@ -1088,21 +1088,21 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         String messagePrefix = "[SCL links] while resolving link from ClientLN on line " + getLineNumber() + ": ";
 
         if(( getIedName() == null ) || getIedName().isEmpty() ) {
-            console.warning( messagePrefix + "iedName is missing" );
+            console.warning( messagePrefix, "iedName is missing" );
             return;
         }
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( messagePrefix + "ldInst is missing" );
+            console.warning( messagePrefix, "ldInst is missing" );
             return;
         }
         if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
-            console.warning( messagePrefix + "lnClass is missing" );
+            console.warning( messagePrefix, "lnClass is missing" );
             return;
         }
 
         // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
         if( "LD0".equals( getLdInst() )) {
-            console.verbose( messagePrefix + "ldInst is LD0: pure client access point, therefore no link" );
+            console.verbose( messagePrefix, "ldInst is LD0: pure client access point, therefore no link" );
             return;
         }
 
@@ -1114,16 +1114,16 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, ied.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + ied.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
         
         Pair< AccessPoint, Integer > ap = null;
         if(( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( messagePrefix + "no AccessPoint found in ied ( name = " + ied.getLeft().getName() + " )" );
+                console.warning( messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( messagePrefix + "found several AccessPoint in ied ( name = " + ied.getLeft().getName() + " ) but apRef not specified" );
+                console.warning( messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(), " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1135,7 +1135,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
                 SclUtilities.displayNotFoundWarning( console, messagePrefix, mess2, ap.getRight() );
                 return;
             }
-            console.verbose( messagePrefix + "found " + mess2 + " on line " + ap.getLeft().getLineNumber() );
+            console.verbose( messagePrefix, "found ", mess2, " on line ", ap.getLeft().getLineNumber() );
         }
 
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
@@ -1144,7 +1144,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
             return;
         }        
-        console.verbose( messagePrefix + "found " + mess3 + " on line " + lDevice.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
 
         Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         String mess4 = "LN( lnClass = " + getLnClass();
@@ -1158,7 +1158,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] ClientLN on line " + getLineNumber() + " refers to " + mess4 + " on line " + getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] ClientLN on line ", getLineNumber(), " refers to ", mess4, " on line ", getRefersToAnyLN().getLineNumber() );
     }
 
 } //ClientLNImpl

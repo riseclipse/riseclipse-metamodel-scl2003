@@ -492,7 +492,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         String messagePrefix = "[SCL links] while resolving link from DO on line " + getLineNumber() + ": ";
 
         if(( getType() == null ) || getType().isEmpty() ) {
-            console.warning( messagePrefix + "type is missing" );
+            console.warning( messagePrefix, "type is missing" );
             return;
         }
         // No error or warning message here: if this happens, error should have been detected before
@@ -512,7 +512,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
             return;
         }
         setRefersToDOType( res.get( 0 ));
-        console.info( "[SCL links] DO on line " + getLineNumber() + " refers to " + mess + " on line " + getRefersToDOType().getLineNumber() );
+        console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDOType().getLineNumber() );
     }
 
 } //DOImpl

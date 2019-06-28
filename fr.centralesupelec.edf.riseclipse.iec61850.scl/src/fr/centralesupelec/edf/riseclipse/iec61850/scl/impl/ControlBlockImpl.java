@@ -657,11 +657,11 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
         String messagePrefix = "[SCL links] while resolving link from ControlBlock on line " + getLineNumber() + ": ";
 
         if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
-            console.warning( messagePrefix + "ldInst is missing" );
+            console.warning( messagePrefix, "ldInst is missing" );
             return;
         }
         if(( getCbName() == null ) || getCbName().isEmpty() ) {
-            console.warning( messagePrefix + "cbName is missing" );
+            console.warning( messagePrefix, "cbName is missing" );
             return;
         }
 
@@ -679,12 +679,12 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess1, lDevice.getRight() );
             return;
         }
-        console.verbose( messagePrefix + "found " + mess1 + " on line " + lDevice.getLeft().getLineNumber() );
+        console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLeft().getLineNumber() );
 
         // Find a ControlWithIEDName inside LN0 of LDevice with
         //   ControlWithIEDName.name == ControlBlock.bName
         if( lDevice.getLeft().getLN0() == null ) {
-            console.warning( messagePrefix + "LN0 is missing" );
+            console.warning( messagePrefix, "LN0 is missing" );
             return;
         }
 
@@ -704,7 +704,7 @@ public abstract class ControlBlockImpl extends UnNamingImpl implements ControlBl
             return;
         }
         setRefersToControlWithIEDName( res2.get( 0 ));
-        console.info( "[SCL links] ControlBlock on line " + getLineNumber() + " refers to " + mess2 + " on line " + getRefersToControlWithIEDName().getLineNumber() );
+        console.info( "[SCL links] ControlBlock on line ", getLineNumber(), " refers to ", mess2, " on line ", getRefersToControlWithIEDName().getLineNumber() );
     }
 
 } //ControlBlockImpl
