@@ -9,7 +9,7 @@
 
   <parent>
     <groupId>fr.centralesupelec.edf.riseclipse</groupId>
-    <artifactId>RiseClipseMetamodel_SCL2003</artifactId>
+    <artifactId>riseclipse-metamodel-scl2003</artifactId>
     <version>1.0.2-SNAPSHOT</version>
   </parent>
 
