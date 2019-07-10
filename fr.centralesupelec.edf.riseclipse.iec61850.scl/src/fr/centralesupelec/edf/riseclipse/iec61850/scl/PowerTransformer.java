@@ -114,7 +114,7 @@ public interface PowerTransformer extends Equipment {
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -159,7 +159,7 @@ public interface PowerTransformer extends Equipment {
      * @see #getParentEquipmentContainer()
      * @generated
      */
-    void setParentEquipmentContainer(EquipmentContainer value);
+    void setParentEquipmentContainer( EquipmentContainer value );
 
     /**
      * Returns the value of the '<em><b>Sub Equipment</b></em>' containment reference list.
@@ -179,7 +179,7 @@ public interface PowerTransformer extends Equipment {
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubEquipment> getSubEquipment();
+    EList< SubEquipment > getSubEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getSubEquipment <em>Sub Equipment</em>}' containment reference list.
@@ -220,7 +220,7 @@ public interface PowerTransformer extends Equipment {
      * @model opposite="ParentPowerTransformer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<TransformerWinding> getTransformerWinding();
+    EList< TransformerWinding > getTransformerWinding();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PowerTransformer#getTransformerWinding <em>Transformer Winding</em>}' containment reference list.

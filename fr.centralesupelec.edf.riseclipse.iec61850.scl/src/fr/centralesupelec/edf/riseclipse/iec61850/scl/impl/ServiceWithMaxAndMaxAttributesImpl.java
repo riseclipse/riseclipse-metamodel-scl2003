@@ -107,13 +107,15 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * @generated
      */
     @Override
-    public void setMaxAttributes(Integer newMaxAttributes) {
+    public void setMaxAttributes( Integer newMaxAttributes ) {
         Integer oldMaxAttributes = maxAttributes;
         maxAttributes = newMaxAttributes;
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributesESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes, maxAttributes, !oldMaxAttributesESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes, maxAttributes,
+                    !oldMaxAttributesESet ) );
     }
 
     /**
@@ -127,8 +129,10 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributes = MAX_ATTRIBUTES_EDEFAULT;
         maxAttributesESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes, MAX_ATTRIBUTES_EDEFAULT, oldMaxAttributesESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES, oldMaxAttributes,
+                    MAX_ATTRIBUTES_EDEFAULT, oldMaxAttributesESet ) );
     }
 
     /**
@@ -147,12 +151,12 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
-                return getMaxAttributes();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
+            return getMaxAttributes();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -161,13 +165,13 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
-                setMaxAttributes((Integer)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
+            setMaxAttributes( ( Integer ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -176,13 +180,13 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
-                unsetMaxAttributes();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
+            unsetMaxAttributes();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -191,12 +195,12 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
-                return isSetMaxAttributes();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
+            return isSetMaxAttributes();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -206,12 +210,15 @@ public class ServiceWithMaxAndMaxAttributesImpl extends ServiceWithMaxImpl imple
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (maxAttributes: ");
-        if (maxAttributesESet) result.append(maxAttributes); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (maxAttributes: " );
+        if( maxAttributesESet )
+            result.append( maxAttributes );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

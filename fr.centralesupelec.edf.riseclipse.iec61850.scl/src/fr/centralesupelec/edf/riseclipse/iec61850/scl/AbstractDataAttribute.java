@@ -134,7 +134,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @see #getCount()
      * @generated
      */
-    void setCount(String value);
+    void setCount( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getCount <em>Count</em>}' attribute.
@@ -406,7 +406,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @see #getRefersToEnumType()
      * @generated
      */
-    void setRefersToEnumType(EnumType value);
+    void setRefersToEnumType( EnumType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToEnumType <em>Refers To Enum Type</em>}' reference.
@@ -449,7 +449,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @model opposite="ParentAbstractDataAttribute" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Val> getVal();
+    EList< Val > getVal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getVal <em>Val</em>}' containment reference list.
@@ -498,7 +498,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @see #getRefersToDAType()
      * @generated
      */
-    void setRefersToDAType(DAType value);
+    void setRefersToDAType( DAType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getRefersToDAType <em>Refers To DA Type</em>}' reference.
@@ -537,7 +537,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<FCDA> getReferredByFCDA();
+    EList< FCDA > getReferredByFCDA();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByFCDA <em>Referred By FCDA</em>}' reference list.
@@ -574,7 +574,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<ExtRef> getReferredByExtRef();
+    EList< ExtRef > getReferredByExtRef();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list.
@@ -621,7 +621,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getName <em>Name</em>}' attribute.
@@ -660,7 +660,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<DAI> getReferredByDAI();
+    EList< DAI > getReferredByDAI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredByDAI <em>Referred By DAI</em>}' reference list.
@@ -697,7 +697,7 @@ public interface AbstractDataAttribute extends UnNaming {
      * @model opposite="RefersToAbstractDataAttribute" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<SDI> getReferredBySDI();
+    EList< SDI > getReferredBySDI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataAttribute#getReferredBySDI <em>Referred By SDI</em>}' reference list.

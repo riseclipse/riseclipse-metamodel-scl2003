@@ -59,6 +59,6 @@ public interface DataObjectDirectory extends ServiceYesNo {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // DataObjectDirectory

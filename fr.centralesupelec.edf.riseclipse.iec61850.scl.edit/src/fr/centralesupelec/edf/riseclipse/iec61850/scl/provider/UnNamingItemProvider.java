@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -48,8 +47,8 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public UnNamingItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public UnNamingItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,11 +58,11 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDescPropertyDescriptor(object);
+            addDescPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,19 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDescPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDesc_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
-                 SclPackage.eINSTANCE.getAgDesc_Desc(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDescPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDesc_desc_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type" ),
+                        SclPackage.eINSTANCE.getAgDesc_Desc(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,11 +95,10 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        UnNaming unNaming = (UnNaming)object;
-        return getString("_UI_UnNaming_type") + " " + unNaming.getLineNumber();
+    public String getText( Object object ) {
+        UnNaming unNaming = ( UnNaming ) object;
+        return getString( "_UI_UnNaming_type" ) + " " + unNaming.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -111,15 +108,15 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(UnNaming.class)) {
-            case SclPackage.UN_NAMING__DESC:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( UnNaming.class ) ) {
+        case SclPackage.UN_NAMING__DESC:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -130,8 +127,8 @@ public class UnNamingItemProvider extends BaseElementItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

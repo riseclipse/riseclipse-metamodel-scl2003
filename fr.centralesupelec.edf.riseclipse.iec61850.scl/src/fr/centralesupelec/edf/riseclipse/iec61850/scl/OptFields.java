@@ -59,6 +59,6 @@ public interface OptFields extends SclObject, AgOptFields {
      * @see #getParentReportControl()
      * @generated
      */
-    void setParentReportControl(ReportControl value);
+    void setParentReportControl( ReportControl value );
 
 } // OptFields

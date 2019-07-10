@@ -176,8 +176,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         intgPd = newIntgPd == null ? INTG_PD_EDEFAULT : newIntgPd;
         boolean oldIntgPdESet = intgPdESet;
         intgPdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd, intgPd,
+                    !oldIntgPdESet ) );
     }
 
     /**
@@ -191,8 +192,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldIntgPdESet = intgPdESet;
         intgPd = INTG_PD_EDEFAULT;
         intgPdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__INTG_PD, oldIntgPd,
+                    INTG_PD_EDEFAULT, oldIntgPdESet ) );
     }
 
     /**
@@ -226,8 +228,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         logEna = newLogEna == null ? LOG_ENA_EDEFAULT : newLogEna;
         boolean oldLogEnaESet = logEnaESet;
         logEnaESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna, logEna, !oldLogEnaESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna, logEna,
+                    !oldLogEnaESet ) );
     }
 
     /**
@@ -241,8 +244,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldLogEnaESet = logEnaESet;
         logEna = LOG_ENA_EDEFAULT;
         logEnaESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna, LOG_ENA_EDEFAULT, oldLogEnaESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__LOG_ENA, oldLogEna,
+                    LOG_ENA_EDEFAULT, oldLogEnaESet ) );
     }
 
     /**
@@ -276,8 +280,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         trgOps = newTrgOps == null ? TRG_OPS_EDEFAULT : newTrgOps;
         boolean oldTrgOpsESet = trgOpsESet;
         trgOpsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps, trgOps, !oldTrgOpsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps, trgOps,
+                    !oldTrgOpsESet ) );
     }
 
     /**
@@ -291,8 +296,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
         boolean oldTrgOpsESet = trgOpsESet;
         trgOps = TRG_OPS_EDEFAULT;
         trgOpsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps, TRG_OPS_EDEFAULT, oldTrgOpsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_SETTINGS__TRG_OPS, oldTrgOps,
+                    TRG_OPS_EDEFAULT, oldTrgOpsESet ) );
     }
 
     /**
@@ -312,8 +318,8 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -321,8 +327,9 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.LOG_SETTINGS__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.LOG_SETTINGS__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -332,20 +339,24 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.LOG_SETTINGS__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__LOG_SETTINGS, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__LOG_SETTINGS,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_SETTINGS__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_SETTINGS__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -355,13 +366,13 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -371,11 +382,11 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -385,11 +396,11 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__LOG_SETTINGS, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__LOG_SETTINGS, Services.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -399,17 +410,17 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__INTG_PD:
-                return getIntgPd();
-            case SclPackage.LOG_SETTINGS__LOG_ENA:
-                return getLogEna();
-            case SclPackage.LOG_SETTINGS__TRG_OPS:
-                return getTrgOps();
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                return getParentServices();
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__INTG_PD:
+            return getIntgPd();
+        case SclPackage.LOG_SETTINGS__LOG_ENA:
+            return getLogEna();
+        case SclPackage.LOG_SETTINGS__TRG_OPS:
+            return getTrgOps();
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            return getParentServices();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -419,21 +430,21 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__INTG_PD:
-                setIntgPd((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.LOG_SETTINGS__LOG_ENA:
-                setLogEna((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.LOG_SETTINGS__TRG_OPS:
-                setTrgOps((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__INTG_PD:
+            setIntgPd( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.LOG_SETTINGS__LOG_ENA:
+            setLogEna( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.LOG_SETTINGS__TRG_OPS:
+            setTrgOps( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -443,21 +454,21 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__INTG_PD:
-                unsetIntgPd();
-                return;
-            case SclPackage.LOG_SETTINGS__LOG_ENA:
-                unsetLogEna();
-                return;
-            case SclPackage.LOG_SETTINGS__TRG_OPS:
-                unsetTrgOps();
-                return;
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__INTG_PD:
+            unsetIntgPd();
+            return;
+        case SclPackage.LOG_SETTINGS__LOG_ENA:
+            unsetLogEna();
+            return;
+        case SclPackage.LOG_SETTINGS__TRG_OPS:
+            unsetTrgOps();
+            return;
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -467,17 +478,17 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_SETTINGS__INTG_PD:
-                return isSetIntgPd();
-            case SclPackage.LOG_SETTINGS__LOG_ENA:
-                return isSetLogEna();
-            case SclPackage.LOG_SETTINGS__TRG_OPS:
-                return isSetTrgOps();
-            case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
-                return getParentServices() != null;
+        switch( featureID ) {
+        case SclPackage.LOG_SETTINGS__INTG_PD:
+            return isSetIntgPd();
+        case SclPackage.LOG_SETTINGS__LOG_ENA:
+            return isSetLogEna();
+        case SclPackage.LOG_SETTINGS__TRG_OPS:
+            return isSetTrgOps();
+        case SclPackage.LOG_SETTINGS__PARENT_SERVICES:
+            return getParentServices() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -487,16 +498,25 @@ public class LogSettingsImpl extends ServiceSettingsImpl implements LogSettings 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (intgPd: ");
-        if (intgPdESet) result.append(intgPd); else result.append("<unset>");
-        result.append(", logEna: ");
-        if (logEnaESet) result.append(logEna); else result.append("<unset>");
-        result.append(", trgOps: ");
-        if (trgOpsESet) result.append(trgOps); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (intgPd: " );
+        if( intgPdESet )
+            result.append( intgPd );
+        else
+            result.append( "<unset>" );
+        result.append( ", logEna: " );
+        if( logEnaESet )
+            result.append( logEna );
+        else
+            result.append( "<unset>" );
+        result.append( ", trgOps: " );
+        if( trgOpsESet )
+            result.append( trgOps );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

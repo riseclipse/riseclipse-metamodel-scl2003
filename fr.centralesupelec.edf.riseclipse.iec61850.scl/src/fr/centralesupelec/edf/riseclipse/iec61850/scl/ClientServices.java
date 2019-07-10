@@ -658,7 +658,7 @@ public interface ClientServices extends SclObject {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Time Sync Prot</b></em>' containment reference.
@@ -743,7 +743,7 @@ public interface ClientServices extends SclObject {
      * @see #getRGOOSE()
      * @generated
      */
-    void setRGOOSE(Boolean value);
+    void setRGOOSE( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRGOOSE <em>RGOOSE</em>}' attribute.
@@ -796,7 +796,7 @@ public interface ClientServices extends SclObject {
      * @see #getRSV()
      * @generated
      */
-    void setRSV(Boolean value);
+    void setRSV( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getRSV <em>RSV</em>}' attribute.
@@ -849,7 +849,7 @@ public interface ClientServices extends SclObject {
      * @see #getNoIctBinding()
      * @generated
      */
-    void setNoIctBinding(Boolean value);
+    void setNoIctBinding( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getNoIctBinding <em>No Ict Binding</em>}' attribute.
@@ -904,7 +904,7 @@ public interface ClientServices extends SclObject {
      * @see #getMcSecurity()
      * @generated
      */
-    void setMcSecurity(McSecurity value);
+    void setMcSecurity( McSecurity value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientServices#getMcSecurity <em>Mc Security</em>}' containment reference.

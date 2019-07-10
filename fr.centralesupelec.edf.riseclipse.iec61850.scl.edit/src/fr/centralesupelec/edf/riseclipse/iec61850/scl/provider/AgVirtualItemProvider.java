@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -49,9 +48,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AgVirtualItemProvider 
-    extends ItemProviderAdapter
-    implements
+public class AgVirtualItemProvider
+        extends ItemProviderAdapter
+        implements
         IEditingDomainItemProvider,
         IStructuredItemContentProvider,
         ITreeItemContentProvider,
@@ -63,8 +62,8 @@ public class AgVirtualItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    public AgVirtualItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AgVirtualItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -74,11 +73,11 @@ public class AgVirtualItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addVirtualPropertyDescriptor(object);
+            addVirtualPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -89,20 +88,20 @@ public class AgVirtualItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addVirtualPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgVirtual_virtual_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature", "_UI_AgVirtual_type"),
-                 SclPackage.eINSTANCE.getAgVirtual_Virtual(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addVirtualPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgVirtual_virtual_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature",
+                                "_UI_AgVirtual_type" ),
+                        SclPackage.eINSTANCE.getAgVirtual_Virtual(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -112,14 +111,12 @@ public class AgVirtualItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        Boolean labelValue = ((AgVirtual)object).getVirtual();
+    public String getText( Object object ) {
+        Boolean labelValue = ( ( AgVirtual ) object ).getVirtual();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AgVirtual_type") :
-            getString("_UI_AgVirtual_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_AgVirtual_type" )
+                : getString( "_UI_AgVirtual_type" ) + " " + label;
     }
-
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -129,15 +126,15 @@ public class AgVirtualItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AgVirtual.class)) {
-            case SclPackage.AG_VIRTUAL__VIRTUAL:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( AgVirtual.class ) ) {
+        case SclPackage.AG_VIRTUAL__VIRTUAL:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -148,8 +145,8 @@ public class AgVirtualItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
     /**

@@ -63,7 +63,7 @@ public interface AgVirtual extends EObject {
      * @see #getVirtual()
      * @generated
      */
-    void setVirtual(Boolean value);
+    void setVirtual( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgVirtual#getVirtual <em>Virtual</em>}' attribute.

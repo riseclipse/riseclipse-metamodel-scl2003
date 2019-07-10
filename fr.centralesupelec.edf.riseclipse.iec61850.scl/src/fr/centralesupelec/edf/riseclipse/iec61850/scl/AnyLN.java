@@ -245,7 +245,7 @@ public interface AnyLN extends UnNaming {
      * @see #getRefersToLNodeType()
      * @generated
      */
-    void setRefersToLNodeType(LNodeType value);
+    void setRefersToLNodeType( LNodeType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getRefersToLNodeType <em>Refers To LNode Type</em>}' reference.
@@ -343,7 +343,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Log> getLog();
+    EList< Log > getLog();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLog <em>Log</em>}' containment reference list.
@@ -384,7 +384,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DOI> getDOI();
+    EList< DOI > getDOI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDOI <em>DOI</em>}' containment reference list.
@@ -426,7 +426,7 @@ public interface AnyLN extends UnNaming {
      *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
-    EList<ReportControl> getReportControl();
+    EList< ReportControl > getReportControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReportControl <em>Report Control</em>}' containment reference list.
@@ -468,7 +468,7 @@ public interface AnyLN extends UnNaming {
      *        extendedMetaData="group='#ControlWithTriggerOpt'"
      * @generated
      */
-    EList<LogControl> getLogControl();
+    EList< LogControl > getLogControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getLogControl <em>Log Control</em>}' containment reference list.
@@ -509,7 +509,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DataSet> getDataSet();
+    EList< DataSet > getDataSet();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getDataSet <em>Data Set</em>}' containment reference list.
@@ -550,7 +550,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<ClientLN> getReferredByClientLN();
+    EList< ClientLN > getReferredByClientLN();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByClientLN <em>Referred By Client LN</em>}' reference list.
@@ -591,7 +591,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<LogControl> getReferredByLogControl();
+    EList< LogControl > getReferredByLogControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLogControl <em>Referred By Log Control</em>}' reference list.
@@ -632,7 +632,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<Association> getReferredByAssociation();
+    EList< Association > getReferredByAssociation();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByAssociation <em>Referred By Association</em>}' reference list.
@@ -669,7 +669,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<IEDName> getReferredByIEDName();
+    EList< IEDName > getReferredByIEDName();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}' reference list.
@@ -706,7 +706,7 @@ public interface AnyLN extends UnNaming {
      * @model opposite="RefersToAnyLN" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<LNode> getReferredByLNode();
+    EList< LNode > getReferredByLNode();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}' reference list.

@@ -5,10 +5,11 @@
     editorDirectory="/fr.centralesupelec.edf.riseclipse.iec61850.scl.editor/src" modelPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl"
     modelName="SCL" editPluginClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.provider.SCLEditPlugin"
     editorPluginClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.presentation.SCLEditorPlugin"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.tests.SCLAllTests"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    testSuiteClass="fr.centralesupelec.edf.riseclipse.iec61850.scl.tests.SCLAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.edit" editorPluginID="fr.centralesupelec.edf.riseclipse.iec61850.scl.editor"
-    operationReflection="true" importOrganizing="true">
+    operationReflection="true" importOrganizing="true" cleanup="true">
   <foreignModel>file:/Z:/CEI/Model4SCL/SCL.ecore</foreignModel>
   <genPackages prefix="Scl" basePackage="fr.centralesupelec.edf.riseclipse.iec61850"
       resource="XML" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false"

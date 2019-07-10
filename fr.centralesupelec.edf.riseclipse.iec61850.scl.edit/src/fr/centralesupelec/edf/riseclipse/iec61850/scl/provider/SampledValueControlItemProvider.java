@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    public SampledValueControlItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SampledValueControlItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,16 +58,16 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addMulticastPropertyDescriptor(object);
-            addNofASDUPropertyDescriptor(object);
-            addSecurityEnablePropertyDescriptor(object);
-            addSmpModPropertyDescriptor(object);
-            addSmpRatePropertyDescriptor(object);
-            addSmvIDPropertyDescriptor(object);
+            addMulticastPropertyDescriptor( object );
+            addNofASDUPropertyDescriptor( object );
+            addSecurityEnablePropertyDescriptor( object );
+            addSmpModPropertyDescriptor( object );
+            addSmpRatePropertyDescriptor( object );
+            addSmvIDPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -79,20 +78,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMulticastPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_multicast_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_multicast_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_Multicast(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMulticastPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_multicast_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SampledValueControl_multicast_feature",
+                                "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_Multicast(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -101,20 +100,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNofASDUPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_nofASDU_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_nofASDU_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_NofASDU(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNofASDUPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_nofASDU_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SampledValueControl_nofASDU_feature",
+                                "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_NofASDU(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -123,20 +122,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSecurityEnablePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_securityEnable_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_securityEnable_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_SecurityEnable(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSecurityEnablePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_securityEnable_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_SampledValueControl_securityEnable_feature", "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_SecurityEnable(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -145,20 +144,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSmpModPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_smpMod_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smpMod_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_SmpMod(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSmpModPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_smpMod_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smpMod_feature",
+                                "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_SmpMod(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -167,20 +166,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSmpRatePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_smpRate_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smpRate_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_SmpRate(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSmpRatePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_smpRate_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smpRate_feature",
+                                "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_SmpRate(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -189,20 +188,20 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSmvIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SampledValueControl_smvID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smvID_feature", "_UI_SampledValueControl_type"),
-                 SclPackage.eINSTANCE.getSampledValueControl_SmvID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSmvIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SampledValueControl_smvID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SampledValueControl_smvID_feature",
+                                "_UI_SampledValueControl_type" ),
+                        SclPackage.eINSTANCE.getSampledValueControl_SmvID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -214,10 +213,10 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getSampledValueControl_SmvOpts());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSampledValueControl_SmvOpts() );
         }
         return childrenFeatures;
     }
@@ -228,11 +227,11 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -242,8 +241,8 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SampledValueControl"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SampledValueControl" ) );
     }
 
     /**
@@ -253,13 +252,11 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((SampledValueControl)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_SampledValueControl_type") :
-            getString("_UI_SampledValueControl_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( SampledValueControl ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_SampledValueControl_type" )
+                : getString( "_UI_SampledValueControl_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -269,23 +266,23 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SampledValueControl.class)) {
-            case SclPackage.SAMPLED_VALUE_CONTROL__MULTICAST:
-            case SclPackage.SAMPLED_VALUE_CONTROL__NOF_ASDU:
-            case SclPackage.SAMPLED_VALUE_CONTROL__SECURITY_ENABLE:
-            case SclPackage.SAMPLED_VALUE_CONTROL__SMP_MOD:
-            case SclPackage.SAMPLED_VALUE_CONTROL__SMP_RATE:
-            case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( SampledValueControl.class ) ) {
+        case SclPackage.SAMPLED_VALUE_CONTROL__MULTICAST:
+        case SclPackage.SAMPLED_VALUE_CONTROL__NOF_ASDU:
+        case SclPackage.SAMPLED_VALUE_CONTROL__SECURITY_ENABLE:
+        case SclPackage.SAMPLED_VALUE_CONTROL__SMP_MOD:
+        case SclPackage.SAMPLED_VALUE_CONTROL__SMP_RATE:
+        case SclPackage.SAMPLED_VALUE_CONTROL__SMV_ID:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -296,13 +293,11 @@ public class SampledValueControlItemProvider extends ControlWithIEDNameItemProvi
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSampledValueControl_SmvOpts(),
-                 SclFactory.eINSTANCE.createSmvOpts()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSampledValueControl_SmvOpts(),
+                SclFactory.eINSTANCE.createSmvOpts() ) );
     }
 
 }

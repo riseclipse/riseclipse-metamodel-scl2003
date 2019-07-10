@@ -180,7 +180,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      * @ordered
      */
-    protected EList<ProtNs> protNs;
+    protected EList< ProtNs > protNs;
 
     /**
      * <!-- begin-user-doc -->
@@ -222,8 +222,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         dchg = newDchg;
         boolean oldDchgESet = dchgESet;
         dchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__DCHG, oldDchg, dchg, !oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA__DCHG, oldDchg, dchg,
+                    !oldDchgESet ) );
     }
 
     /**
@@ -237,8 +238,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         boolean oldDchgESet = dchgESet;
         dchg = DCHG_EDEFAULT;
         dchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__DCHG, oldDchg, DCHG_EDEFAULT, oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA__DCHG, oldDchg, DCHG_EDEFAULT,
+                    oldDchgESet ) );
     }
 
     /**
@@ -272,8 +274,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         dupd = newDupd;
         boolean oldDupdESet = dupdESet;
         dupdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__DUPD, oldDupd, dupd, !oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA__DUPD, oldDupd, dupd,
+                    !oldDupdESet ) );
     }
 
     /**
@@ -287,8 +290,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         boolean oldDupdESet = dupdESet;
         dupd = DUPD_EDEFAULT;
         dupdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__DUPD, oldDupd, DUPD_EDEFAULT, oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA__DUPD, oldDupd, DUPD_EDEFAULT,
+                    oldDupdESet ) );
     }
 
     /**
@@ -322,8 +326,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         fc = newFc == null ? FC_EDEFAULT : newFc;
         boolean oldFcESet = fcESet;
         fcESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__FC, oldFc, fc, !oldFcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA__FC, oldFc, fc, !oldFcESet ) );
     }
 
     /**
@@ -337,8 +341,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         boolean oldFcESet = fcESet;
         fc = FC_EDEFAULT;
         fcESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__FC, oldFc, FC_EDEFAULT, oldFcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA__FC, oldFc, FC_EDEFAULT,
+                    oldFcESet ) );
     }
 
     /**
@@ -358,8 +363,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public DOType getParentDOType() {
-        if (eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE) return null;
-        return (DOType)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE ) return null;
+        return ( DOType ) eInternalContainer();
     }
 
     /**
@@ -367,8 +372,8 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDOType(DOType newParentDOType, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDOType, SclPackage.DA__PARENT_DO_TYPE, msgs);
+    public NotificationChain basicSetParentDOType( DOType newParentDOType, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDOType, SclPackage.DA__PARENT_DO_TYPE, msgs );
         return msgs;
     }
 
@@ -378,20 +383,23 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      */
     @Override
-    public void setParentDOType(DOType newParentDOType) {
-        if (newParentDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE && newParentDOType != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDOType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDOType( DOType newParentDOType ) {
+        if( newParentDOType != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DA__PARENT_DO_TYPE && newParentDOType != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDOType ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDOType != null)
-                msgs = ((InternalEObject)newParentDOType).eInverseAdd(this, SclPackage.DO_TYPE__DA, DOType.class, msgs);
-            msgs = basicSetParentDOType(newParentDOType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDOType != null )
+                msgs = ( ( InternalEObject ) newParentDOType ).eInverseAdd( this, SclPackage.DO_TYPE__DA, DOType.class,
+                        msgs );
+            msgs = basicSetParentDOType( newParentDOType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__PARENT_DO_TYPE, newParentDOType, newParentDOType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA__PARENT_DO_TYPE, newParentDOType,
+                    newParentDOType ) );
     }
 
     /**
@@ -415,8 +423,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         qchg = newQchg;
         boolean oldQchgESet = qchgESet;
         qchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA__QCHG, oldQchg, qchg, !oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA__QCHG, oldQchg, qchg,
+                    !oldQchgESet ) );
     }
 
     /**
@@ -430,8 +439,9 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         boolean oldQchgESet = qchgESet;
         qchg = QCHG_EDEFAULT;
         qchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA__QCHG, oldQchg, QCHG_EDEFAULT, oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA__QCHG, oldQchg, QCHG_EDEFAULT,
+                    oldQchgESet ) );
     }
 
     /**
@@ -444,6 +454,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
         return qchgESet;
     }
 
+    @Override
     public boolean isSetType() {
         return isSetRefersToDAType();
     }
@@ -454,9 +465,10 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      */
     @Override
-    public EList<ProtNs> getProtNs() {
-        if (protNs == null) {
-            protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA__PROT_NS, SclPackage.PROT_NS__PARENT_DA);
+    public EList< ProtNs > getProtNs() {
+        if( protNs == null ) {
+            protNs = new EObjectContainmentWithInverseEList.Unsettable< ProtNs >( ProtNs.class, this,
+                    SclPackage.DA__PROT_NS, SclPackage.PROT_NS__PARENT_DA );
         }
         return protNs;
     }
@@ -468,7 +480,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public void unsetProtNs() {
-        if (protNs != null) ((InternalEList.Unsettable<?>)protNs).unset();
+        if( protNs != null ) ( ( InternalEList.Unsettable< ? > ) protNs ).unset();
     }
 
     /**
@@ -478,7 +490,7 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public boolean isSetProtNs() {
-        return protNs != null && ((InternalEList.Unsettable<?>)protNs).isSet();
+        return protNs != null && ( ( InternalEList.Unsettable< ? > ) protNs ).isSet();
     }
 
     /**
@@ -489,15 +501,16 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DA__PARENT_DO_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDOType((DOType)otherEnd, msgs);
-            case SclPackage.DA__PROT_NS:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getProtNs()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DA__PARENT_DO_TYPE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDOType( ( DOType ) otherEnd, msgs );
+        case SclPackage.DA__PROT_NS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getProtNs() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -507,13 +520,13 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DA__PARENT_DO_TYPE:
-                return basicSetParentDOType(null, msgs);
-            case SclPackage.DA__PROT_NS:
-                return ((InternalEList<?>)getProtNs()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DA__PARENT_DO_TYPE:
+            return basicSetParentDOType( null, msgs );
+        case SclPackage.DA__PROT_NS:
+            return ( ( InternalEList< ? > ) getProtNs() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -523,11 +536,11 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DA__PARENT_DO_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DO_TYPE__DA, DOType.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DA__PARENT_DO_TYPE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DO_TYPE__DA, DOType.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -537,21 +550,21 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DA__DCHG:
-                return getDchg();
-            case SclPackage.DA__DUPD:
-                return getDupd();
-            case SclPackage.DA__QCHG:
-                return getQchg();
-            case SclPackage.DA__FC:
-                return getFc();
-            case SclPackage.DA__PARENT_DO_TYPE:
-                return getParentDOType();
-            case SclPackage.DA__PROT_NS:
-                return getProtNs();
+        switch( featureID ) {
+        case SclPackage.DA__DCHG:
+            return getDchg();
+        case SclPackage.DA__DUPD:
+            return getDupd();
+        case SclPackage.DA__QCHG:
+            return getQchg();
+        case SclPackage.DA__FC:
+            return getFc();
+        case SclPackage.DA__PARENT_DO_TYPE:
+            return getParentDOType();
+        case SclPackage.DA__PROT_NS:
+            return getProtNs();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -562,28 +575,28 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DA__DCHG:
-                setDchg((Boolean)newValue);
-                return;
-            case SclPackage.DA__DUPD:
-                setDupd((Boolean)newValue);
-                return;
-            case SclPackage.DA__QCHG:
-                setQchg((Boolean)newValue);
-                return;
-            case SclPackage.DA__FC:
-                setFc((FCEnum)newValue);
-                return;
-            case SclPackage.DA__PARENT_DO_TYPE:
-                setParentDOType((DOType)newValue);
-                return;
-            case SclPackage.DA__PROT_NS:
-                getProtNs().clear();
-                getProtNs().addAll((Collection<? extends ProtNs>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DA__DCHG:
+            setDchg( ( Boolean ) newValue );
+            return;
+        case SclPackage.DA__DUPD:
+            setDupd( ( Boolean ) newValue );
+            return;
+        case SclPackage.DA__QCHG:
+            setQchg( ( Boolean ) newValue );
+            return;
+        case SclPackage.DA__FC:
+            setFc( ( FCEnum ) newValue );
+            return;
+        case SclPackage.DA__PARENT_DO_TYPE:
+            setParentDOType( ( DOType ) newValue );
+            return;
+        case SclPackage.DA__PROT_NS:
+            getProtNs().clear();
+            getProtNs().addAll( ( Collection< ? extends ProtNs > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -593,27 +606,27 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DA__DCHG:
-                unsetDchg();
-                return;
-            case SclPackage.DA__DUPD:
-                unsetDupd();
-                return;
-            case SclPackage.DA__QCHG:
-                unsetQchg();
-                return;
-            case SclPackage.DA__FC:
-                unsetFc();
-                return;
-            case SclPackage.DA__PARENT_DO_TYPE:
-                setParentDOType((DOType)null);
-                return;
-            case SclPackage.DA__PROT_NS:
-                unsetProtNs();
-                return;
+        switch( featureID ) {
+        case SclPackage.DA__DCHG:
+            unsetDchg();
+            return;
+        case SclPackage.DA__DUPD:
+            unsetDupd();
+            return;
+        case SclPackage.DA__QCHG:
+            unsetQchg();
+            return;
+        case SclPackage.DA__FC:
+            unsetFc();
+            return;
+        case SclPackage.DA__PARENT_DO_TYPE:
+            setParentDOType( ( DOType ) null );
+            return;
+        case SclPackage.DA__PROT_NS:
+            unsetProtNs();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -623,21 +636,43 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.DA__DCHG:
+            return isSetDchg();
+        case SclPackage.DA__DUPD:
+            return isSetDupd();
+        case SclPackage.DA__QCHG:
+            return isSetQchg();
+        case SclPackage.DA__FC:
+            return isSetFc();
+        case SclPackage.DA__PARENT_DO_TYPE:
+            return getParentDOType() != null;
+        case SclPackage.DA__PROT_NS:
+            return isSetProtNs();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDATrgOp.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.DA__DCHG:
-                return isSetDchg();
+                return SclPackage.AG_DA_TRG_OP__DCHG;
             case SclPackage.DA__DUPD:
-                return isSetDupd();
+                return SclPackage.AG_DA_TRG_OP__DUPD;
             case SclPackage.DA__QCHG:
-                return isSetQchg();
-            case SclPackage.DA__FC:
-                return isSetFc();
-            case SclPackage.DA__PARENT_DO_TYPE:
-                return getParentDOType() != null;
-            case SclPackage.DA__PROT_NS:
-                return isSetProtNs();
+                return SclPackage.AG_DA_TRG_OP__QCHG;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -646,34 +681,20 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDATrgOp.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.DA__DCHG: return SclPackage.AG_DA_TRG_OP__DCHG;
-                case SclPackage.DA__DUPD: return SclPackage.AG_DA_TRG_OP__DUPD;
-                case SclPackage.DA__QCHG: return SclPackage.AG_DA_TRG_OP__QCHG;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDATrgOp.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DA_TRG_OP__DCHG:
+                return SclPackage.DA__DCHG;
+            case SclPackage.AG_DA_TRG_OP__DUPD:
+                return SclPackage.DA__DUPD;
+            case SclPackage.AG_DA_TRG_OP__QCHG:
+                return SclPackage.DA__QCHG;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDATrgOp.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DA_TRG_OP__DCHG: return SclPackage.DA__DCHG;
-                case SclPackage.AG_DA_TRG_OP__DUPD: return SclPackage.DA__DUPD;
-                case SclPackage.AG_DA_TRG_OP__QCHG: return SclPackage.DA__QCHG;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     @Override
@@ -693,18 +714,30 @@ public class DAImpl extends AbstractDataAttributeImpl implements DA {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (dchg: ");
-        if (dchgESet) result.append(dchg); else result.append("<unset>");
-        result.append(", dupd: ");
-        if (dupdESet) result.append(dupd); else result.append("<unset>");
-        result.append(", qchg: ");
-        if (qchgESet) result.append(qchg); else result.append("<unset>");
-        result.append(", fc: ");
-        if (fcESet) result.append(fc); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (dchg: " );
+        if( dchgESet )
+            result.append( dchg );
+        else
+            result.append( "<unset>" );
+        result.append( ", dupd: " );
+        if( dupdESet )
+            result.append( dupd );
+        else
+            result.append( "<unset>" );
+        result.append( ", qchg: " );
+        if( qchgESet )
+            result.append( qchg );
+        else
+            result.append( "<unset>" );
+        result.append( ", fc: " );
+        if( fcESet )
+            result.append( fc );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

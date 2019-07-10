@@ -115,7 +115,7 @@ public interface Val extends SclObject {
      * @see #getParentAbstractDataAttribute()
      * @generated
      */
-    void setParentAbstractDataAttribute(AbstractDataAttribute value);
+    void setParentAbstractDataAttribute( AbstractDataAttribute value );
 
     /**
      * Returns the value of the '<em><b>Parent DAI</b></em>' container reference.
@@ -139,7 +139,7 @@ public interface Val extends SclObject {
      * @see #getParentDAI()
      * @generated
      */
-    void setParentDAI(DAI value);
+    void setParentDAI( DAI value );
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

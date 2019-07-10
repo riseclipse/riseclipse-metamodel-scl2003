@@ -64,7 +64,7 @@ public interface AgDesc extends EObject {
      * @see #getDesc()
      * @generated
      */
-    void setDesc(String value);
+    void setDesc( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc#getDesc <em>Desc</em>}' attribute.

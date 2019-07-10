@@ -67,7 +67,7 @@ public interface GSE extends ControlBlock {
      * @see #getMaxTime()
      * @generated
      */
-    void setMaxTime(MaxTime value);
+    void setMaxTime( MaxTime value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getMaxTime <em>Max Time</em>}' containment reference.
@@ -104,6 +104,7 @@ public interface GSE extends ControlBlock {
      * @model opposite="GSE" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
+    @Override
     ConnectedAP getParentConnectedAP();
 
     /**
@@ -114,7 +115,7 @@ public interface GSE extends ControlBlock {
      * @see #getParentConnectedAP()
      * @generated
      */
-    void setParentConnectedAP(ConnectedAP value);
+    void setParentConnectedAP( ConnectedAP value );
 
     /**
      * Returns the value of the '<em><b>Min Time</b></em>' containment reference.
@@ -144,7 +145,7 @@ public interface GSE extends ControlBlock {
      * @see #getMinTime()
      * @generated
      */
-    void setMinTime(MinTime value);
+    void setMinTime( MinTime value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSE#getMinTime <em>Min Time</em>}' containment reference.

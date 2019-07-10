@@ -59,7 +59,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * @generated
      * @ordered
      */
-    protected EList<Hitem> hitem;
+    protected EList< Hitem > hitem;
 
     /**
      * <!-- begin-user-doc -->
@@ -87,8 +87,8 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public Header getParentHeader() {
-        if (eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER) return null;
-        return (Header)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER ) return null;
+        return ( Header ) eInternalContainer();
     }
 
     /**
@@ -96,8 +96,8 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentHeader(Header newParentHeader, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentHeader, SclPackage.HISTORY__PARENT_HEADER, msgs);
+    public NotificationChain basicSetParentHeader( Header newParentHeader, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentHeader, SclPackage.HISTORY__PARENT_HEADER, msgs );
         return msgs;
     }
 
@@ -107,20 +107,23 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * @generated
      */
     @Override
-    public void setParentHeader(Header newParentHeader) {
-        if (newParentHeader != eInternalContainer() || (eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER && newParentHeader != null)) {
-            if (EcoreUtil.isAncestor(this, newParentHeader))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentHeader( Header newParentHeader ) {
+        if( newParentHeader != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.HISTORY__PARENT_HEADER && newParentHeader != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentHeader ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentHeader != null)
-                msgs = ((InternalEObject)newParentHeader).eInverseAdd(this, SclPackage.HEADER__HISTORY, Header.class, msgs);
-            msgs = basicSetParentHeader(newParentHeader, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentHeader != null )
+                msgs = ( ( InternalEObject ) newParentHeader ).eInverseAdd( this, SclPackage.HEADER__HISTORY,
+                        Header.class, msgs );
+            msgs = basicSetParentHeader( newParentHeader, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.HISTORY__PARENT_HEADER, newParentHeader, newParentHeader));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.HISTORY__PARENT_HEADER, newParentHeader,
+                    newParentHeader ) );
     }
 
     /**
@@ -129,9 +132,10 @@ public class HistoryImpl extends SclObjectImpl implements History {
      * @generated
      */
     @Override
-    public EList<Hitem> getHitem() {
-        if (hitem == null) {
-            hitem = new EObjectContainmentWithInverseEList.Unsettable<Hitem>(Hitem.class, this, SclPackage.HISTORY__HITEM, SclPackage.HITEM__PARENT_HISTORY);
+    public EList< Hitem > getHitem() {
+        if( hitem == null ) {
+            hitem = new EObjectContainmentWithInverseEList.Unsettable< Hitem >( Hitem.class, this,
+                    SclPackage.HISTORY__HITEM, SclPackage.HITEM__PARENT_HISTORY );
         }
         return hitem;
     }
@@ -143,7 +147,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public void unsetHitem() {
-        if (hitem != null) ((InternalEList.Unsettable<?>)hitem).unset();
+        if( hitem != null ) ( ( InternalEList.Unsettable< ? > ) hitem ).unset();
     }
 
     /**
@@ -153,7 +157,7 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public boolean isSetHitem() {
-        return hitem != null && ((InternalEList.Unsettable<?>)hitem).isSet();
+        return hitem != null && ( ( InternalEList.Unsettable< ? > ) hitem ).isSet();
     }
 
     /**
@@ -164,15 +168,16 @@ public class HistoryImpl extends SclObjectImpl implements History {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentHeader((Header)otherEnd, msgs);
-            case SclPackage.HISTORY__HITEM:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getHitem()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentHeader( ( Header ) otherEnd, msgs );
+        case SclPackage.HISTORY__HITEM:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getHitem() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -182,13 +187,13 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                return basicSetParentHeader(null, msgs);
-            case SclPackage.HISTORY__HITEM:
-                return ((InternalEList<?>)getHitem()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            return basicSetParentHeader( null, msgs );
+        case SclPackage.HISTORY__HITEM:
+            return ( ( InternalEList< ? > ) getHitem() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -198,11 +203,11 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.HEADER__HISTORY, Header.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            return eInternalContainer().eInverseRemove( this, SclPackage.HEADER__HISTORY, Header.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -212,13 +217,13 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                return getParentHeader();
-            case SclPackage.HISTORY__HITEM:
-                return getHitem();
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            return getParentHeader();
+        case SclPackage.HISTORY__HITEM:
+            return getHitem();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -229,16 +234,16 @@ public class HistoryImpl extends SclObjectImpl implements History {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                setParentHeader((Header)newValue);
-                return;
-            case SclPackage.HISTORY__HITEM:
-                getHitem().clear();
-                getHitem().addAll((Collection<? extends Hitem>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            setParentHeader( ( Header ) newValue );
+            return;
+        case SclPackage.HISTORY__HITEM:
+            getHitem().clear();
+            getHitem().addAll( ( Collection< ? extends Hitem > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -248,15 +253,15 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                setParentHeader((Header)null);
-                return;
-            case SclPackage.HISTORY__HITEM:
-                unsetHitem();
-                return;
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            setParentHeader( ( Header ) null );
+            return;
+        case SclPackage.HISTORY__HITEM:
+            unsetHitem();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -266,13 +271,13 @@ public class HistoryImpl extends SclObjectImpl implements History {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.HISTORY__PARENT_HEADER:
-                return getParentHeader() != null;
-            case SclPackage.HISTORY__HITEM:
-                return isSetHitem();
+        switch( featureID ) {
+        case SclPackage.HISTORY__PARENT_HEADER:
+            return getParentHeader() != null;
+        case SclPackage.HISTORY__HITEM:
+            return isSetHitem();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //HistoryImpl

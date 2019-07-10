@@ -71,8 +71,8 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public Certificate getParentCertificate() {
-        if (eContainerFeatureID() != SclPackage.ISSUER_NAME__PARENT_CERTIFICATE) return null;
-        return (Certificate)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ISSUER_NAME__PARENT_CERTIFICATE ) return null;
+        return ( Certificate ) eInternalContainer();
     }
 
     /**
@@ -80,8 +80,9 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentCertificate(Certificate newParentCertificate, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentCertificate, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, msgs);
+    public NotificationChain basicSetParentCertificate( Certificate newParentCertificate, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentCertificate, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE,
+                msgs );
         return msgs;
     }
 
@@ -91,20 +92,24 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      * @generated
      */
     @Override
-    public void setParentCertificate(Certificate newParentCertificate) {
-        if (newParentCertificate != eInternalContainer() || (eContainerFeatureID() != SclPackage.ISSUER_NAME__PARENT_CERTIFICATE && newParentCertificate != null)) {
-            if (EcoreUtil.isAncestor(this, newParentCertificate))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentCertificate( Certificate newParentCertificate ) {
+        if( newParentCertificate != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ISSUER_NAME__PARENT_CERTIFICATE
+                        && newParentCertificate != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentCertificate ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentCertificate != null)
-                msgs = ((InternalEObject)newParentCertificate).eInverseAdd(this, SclPackage.CERTIFICATE__ISSUER_NAME, Certificate.class, msgs);
-            msgs = basicSetParentCertificate(newParentCertificate, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentCertificate != null )
+                msgs = ( ( InternalEObject ) newParentCertificate ).eInverseAdd( this,
+                        SclPackage.CERTIFICATE__ISSUER_NAME, Certificate.class, msgs );
+            msgs = basicSetParentCertificate( newParentCertificate, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE, newParentCertificate, newParentCertificate));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ISSUER_NAME__PARENT_CERTIFICATE,
+                    newParentCertificate, newParentCertificate ) );
     }
 
     /**
@@ -114,13 +119,13 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentCertificate((Certificate)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentCertificate( ( Certificate ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -130,11 +135,11 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                return basicSetParentCertificate(null, msgs);
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            return basicSetParentCertificate( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -144,11 +149,12 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CERTIFICATE__ISSUER_NAME, Certificate.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CERTIFICATE__ISSUER_NAME, Certificate.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -158,11 +164,11 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                return getParentCertificate();
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            return getParentCertificate();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -172,12 +178,12 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                setParentCertificate((Certificate)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            setParentCertificate( ( Certificate ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -187,12 +193,12 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                setParentCertificate((Certificate)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            setParentCertificate( ( Certificate ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -202,11 +208,11 @@ public class IssuerNameImpl extends CertImpl implements IssuerName {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
-                return getParentCertificate() != null;
+        switch( featureID ) {
+        case SclPackage.ISSUER_NAME__PARENT_CERTIFICATE:
+            return getParentCertificate() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //IssuerNameImpl

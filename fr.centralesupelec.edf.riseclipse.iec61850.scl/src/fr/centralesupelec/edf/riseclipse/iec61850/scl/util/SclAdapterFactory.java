@@ -52,7 +52,7 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public SclAdapterFactory() {
-        if (modelPackage == null) {
+        if( modelPackage == null ) {
             modelPackage = SclPackage.eINSTANCE;
         }
     }
@@ -67,11 +67,11 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType( Object object ) {
-        if (object == modelPackage) {
+        if( object == modelPackage ) {
             return true;
         }
-        if (object instanceof EObject) {
-            return ((EObject)object).eClass().getEPackage() == modelPackage;
+        if( object instanceof EObject ) {
+            return ( ( EObject ) object ).eClass().getEPackage() == modelPackage;
         }
         return false;
     }
@@ -82,692 +82,862 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      * 
      * @generated
      */
-    protected SclSwitch<Adapter> modelSwitch = new SclSwitch<Adapter>() {
-            @Override
-            public Adapter caseAnyContentFromOtherNamespace(AnyContentFromOtherNamespace object) {
-                return createAnyContentFromOtherNamespaceAdapter();
-            }
-            @Override
-            public Adapter caseBaseElement(BaseElement object) {
-                return createBaseElementAdapter();
-            }
-            @Override
-            public Adapter caseHeader(Header object) {
-                return createHeaderAdapter();
-            }
-            @Override
-            public Adapter caseHistory(History object) {
-                return createHistoryAdapter();
-            }
-            @Override
-            public Adapter caseHitem(Hitem object) {
-                return createHitemAdapter();
-            }
-            @Override
-            public Adapter caseIDNaming(IDNaming object) {
-                return createIDNamingAdapter();
-            }
-            @Override
-            public Adapter caseLine(Line object) {
-                return createLineAdapter();
-            }
-            @Override
-            public Adapter caseNaming(Naming object) {
-                return createNamingAdapter();
-            }
-            @Override
-            public Adapter casePrivate(Private object) {
-                return createPrivateAdapter();
-            }
-            @Override
-            public Adapter caseProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process object) {
-                return createProcessAdapter();
-            }
-            @Override
-            public Adapter caseSCL(SCL object) {
-                return createSCLAdapter();
-            }
-            @Override
-            public Adapter caseText(Text object) {
-                return createTextAdapter();
-            }
-            @Override
-            public Adapter caseAddress(Address object) {
-                return createAddressAdapter();
-            }
-            @Override
-            public Adapter caseCommunication(Communication object) {
-                return createCommunicationAdapter();
-            }
-            @Override
-            public Adapter caseConnectedAP(ConnectedAP object) {
-                return createConnectedAPAdapter();
-            }
-            @Override
-            public Adapter caseControlBlock(ControlBlock object) {
-                return createControlBlockAdapter();
-            }
-            @Override
-            public Adapter caseGSE(GSE object) {
-                return createGSEAdapter();
-            }
-            @Override
-            public Adapter caseP(P object) {
-                return createPAdapter();
-            }
-            @Override
-            public Adapter casePAddr(PAddr object) {
-                return createPAddrAdapter();
-            }
-            @Override
-            public Adapter caseP_PhysConn(P_PhysConn object) {
-                return createP_PhysConnAdapter();
-            }
-            @Override
-            public Adapter casePhysConn(PhysConn object) {
-                return createPhysConnAdapter();
-            }
-            @Override
-            public Adapter caseSMV(SMV object) {
-                return createSMVAdapter();
-            }
-            @Override
-            public Adapter caseSubNetwork(SubNetwork object) {
-                return createSubNetworkAdapter();
-            }
-            @Override
-            public Adapter caseAbstractDataAttribute(AbstractDataAttribute object) {
-                return createAbstractDataAttributeAdapter();
-            }
-            @Override
-            public Adapter caseBDA(BDA object) {
-                return createBDAAdapter();
-            }
-            @Override
-            public Adapter caseDA(DA object) {
-                return createDAAdapter();
-            }
-            @Override
-            public Adapter caseDAType(DAType object) {
-                return createDATypeAdapter();
-            }
-            @Override
-            public Adapter caseDO(DO object) {
-                return createDOAdapter();
-            }
-            @Override
-            public Adapter caseDOType(DOType object) {
-                return createDOTypeAdapter();
-            }
-            @Override
-            public Adapter caseDataTypeTemplates(DataTypeTemplates object) {
-                return createDataTypeTemplatesAdapter();
-            }
-            @Override
-            public Adapter caseEnumType(EnumType object) {
-                return createEnumTypeAdapter();
-            }
-            @Override
-            public Adapter caseEnumVal(EnumVal object) {
-                return createEnumValAdapter();
-            }
-            @Override
-            public Adapter caseLNodeType(LNodeType object) {
-                return createLNodeTypeAdapter();
-            }
-            @Override
-            public Adapter caseProtNs(ProtNs object) {
-                return createProtNsAdapter();
-            }
-            @Override
-            public Adapter caseSDO(SDO object) {
-                return createSDOAdapter();
-            }
-            @Override
-            public Adapter caseVal(Val object) {
-                return createValAdapter();
-            }
-            @Override
-            public Adapter caseAccessControl(AccessControl object) {
-                return createAccessControlAdapter();
-            }
-            @Override
-            public Adapter caseAccessPoint(AccessPoint object) {
-                return createAccessPointAdapter();
-            }
-            @Override
-            public Adapter caseAnyLN(AnyLN object) {
-                return createAnyLNAdapter();
-            }
-            @Override
-            public Adapter caseAssociation(Association object) {
-                return createAssociationAdapter();
-            }
-            @Override
-            public Adapter caseAuthentication(Authentication object) {
-                return createAuthenticationAdapter();
-            }
-            @Override
-            public Adapter caseCertificate(Certificate object) {
-                return createCertificateAdapter();
-            }
-            @Override
-            public Adapter caseClientLN(ClientLN object) {
-                return createClientLNAdapter();
-            }
-            @Override
-            public Adapter caseClientServices(ClientServices object) {
-                return createClientServicesAdapter();
-            }
-            @Override
-            public Adapter caseCommProt(CommProt object) {
-                return createCommProtAdapter();
-            }
-            @Override
-            public Adapter caseConfDataSet(ConfDataSet object) {
-                return createConfDataSetAdapter();
-            }
-            @Override
-            public Adapter caseConfLNs(ConfLNs object) {
-                return createConfLNsAdapter();
-            }
-            @Override
-            public Adapter caseConfLdName(ConfLdName object) {
-                return createConfLdNameAdapter();
-            }
-            @Override
-            public Adapter caseConfLogControl(ConfLogControl object) {
-                return createConfLogControlAdapter();
-            }
-            @Override
-            public Adapter caseConfReportControl(ConfReportControl object) {
-                return createConfReportControlAdapter();
-            }
-            @Override
-            public Adapter caseConfSG(ConfSG object) {
-                return createConfSGAdapter();
-            }
-            @Override
-            public Adapter caseConfSigRef(ConfSigRef object) {
-                return createConfSigRefAdapter();
-            }
-            @Override
-            public Adapter caseControl(Control object) {
-                return createControlAdapter();
-            }
-            @Override
-            public Adapter caseControlWithIEDName(ControlWithIEDName object) {
-                return createControlWithIEDNameAdapter();
-            }
-            @Override
-            public Adapter caseControlWithTriggerOpt(ControlWithTriggerOpt object) {
-                return createControlWithTriggerOptAdapter();
-            }
-            @Override
-            public Adapter caseDAI(DAI object) {
-                return createDAIAdapter();
-            }
-            @Override
-            public Adapter caseDOI(DOI object) {
-                return createDOIAdapter();
-            }
-            @Override
-            public Adapter caseDataObjectDirectory(DataObjectDirectory object) {
-                return createDataObjectDirectoryAdapter();
-            }
-            @Override
-            public Adapter caseDataSet(DataSet object) {
-                return createDataSetAdapter();
-            }
-            @Override
-            public Adapter caseDataSetDirectory(DataSetDirectory object) {
-                return createDataSetDirectoryAdapter();
-            }
-            @Override
-            public Adapter caseDynAssociation(DynAssociation object) {
-                return createDynAssociationAdapter();
-            }
-            @Override
-            public Adapter caseDynDataSet(DynDataSet object) {
-                return createDynDataSetAdapter();
-            }
-            @Override
-            public Adapter caseExtRef(ExtRef object) {
-                return createExtRefAdapter();
-            }
-            @Override
-            public Adapter caseFCDA(FCDA object) {
-                return createFCDAAdapter();
-            }
-            @Override
-            public Adapter caseFileHandling(FileHandling object) {
-                return createFileHandlingAdapter();
-            }
-            @Override
-            public Adapter caseGOOSE(GOOSE object) {
-                return createGOOSEAdapter();
-            }
-            @Override
-            public Adapter caseGOOSESecurity(GOOSESecurity object) {
-                return createGOOSESecurityAdapter();
-            }
-            @Override
-            public Adapter caseGSEControl(GSEControl object) {
-                return createGSEControlAdapter();
-            }
-            @Override
-            public Adapter caseGSEDir(GSEDir object) {
-                return createGSEDirAdapter();
-            }
-            @Override
-            public Adapter caseGSESettings(GSESettings object) {
-                return createGSESettingsAdapter();
-            }
-            @Override
-            public Adapter caseGSSE(GSSE object) {
-                return createGSSEAdapter();
-            }
-            @Override
-            public Adapter caseGetCBValues(GetCBValues object) {
-                return createGetCBValuesAdapter();
-            }
-            @Override
-            public Adapter caseGetDataObjectDefinition(GetDataObjectDefinition object) {
-                return createGetDataObjectDefinitionAdapter();
-            }
-            @Override
-            public Adapter caseGetDataSetValue(GetDataSetValue object) {
-                return createGetDataSetValueAdapter();
-            }
-            @Override
-            public Adapter caseGetDirectory(GetDirectory object) {
-                return createGetDirectoryAdapter();
-            }
-            @Override
-            public Adapter caseIED(IED object) {
-                return createIEDAdapter();
-            }
-            @Override
-            public Adapter caseIEDName(IEDName object) {
-                return createIEDNameAdapter();
-            }
-            @Override
-            public Adapter caseInputs(Inputs object) {
-                return createInputsAdapter();
-            }
-            @Override
-            public Adapter caseIssuerName(IssuerName object) {
-                return createIssuerNameAdapter();
-            }
-            @Override
-            public Adapter caseKDC(KDC object) {
-                return createKDCAdapter();
-            }
-            @Override
-            public Adapter caseLDevice(LDevice object) {
-                return createLDeviceAdapter();
-            }
-            @Override
-            public Adapter caseLN(LN object) {
-                return createLNAdapter();
-            }
-            @Override
-            public Adapter caseLN0(LN0 object) {
-                return createLN0Adapter();
-            }
-            @Override
-            public Adapter caseLog(Log object) {
-                return createLogAdapter();
-            }
-            @Override
-            public Adapter caseLogControl(LogControl object) {
-                return createLogControlAdapter();
-            }
-            @Override
-            public Adapter caseLogSettings(LogSettings object) {
-                return createLogSettingsAdapter();
-            }
-            @Override
-            public Adapter caseOptFields(OptFields object) {
-                return createOptFieldsAdapter();
-            }
-            @Override
-            public Adapter caseProtocol(Protocol object) {
-                return createProtocolAdapter();
-            }
-            @Override
-            public Adapter caseReadWrite(ReadWrite object) {
-                return createReadWriteAdapter();
-            }
-            @Override
-            public Adapter caseRedProt(RedProt object) {
-                return createRedProtAdapter();
-            }
-            @Override
-            public Adapter caseReportControl(ReportControl object) {
-                return createReportControlAdapter();
-            }
-            @Override
-            public Adapter caseReportSettings(ReportSettings object) {
-                return createReportSettingsAdapter();
-            }
-            @Override
-            public Adapter caseRptEnabled(RptEnabled object) {
-                return createRptEnabledAdapter();
-            }
-            @Override
-            public Adapter caseSDI(SDI object) {
-                return createSDIAdapter();
-            }
-            @Override
-            public Adapter caseSGEdit(SGEdit object) {
-                return createSGEditAdapter();
-            }
-            @Override
-            public Adapter caseSMVSecurity(SMVSecurity object) {
-                return createSMVSecurityAdapter();
-            }
-            @Override
-            public Adapter caseSMVSettings(SMVSettings object) {
-                return createSMVSettingsAdapter();
-            }
-            @Override
-            public Adapter caseSMVsc(SMVsc object) {
-                return createSMVscAdapter();
-            }
-            @Override
-            public Adapter caseSampledValueControl(SampledValueControl object) {
-                return createSampledValueControlAdapter();
-            }
-            @Override
-            public Adapter caseServer(Server object) {
-                return createServerAdapter();
-            }
-            @Override
-            public Adapter caseServerAt(ServerAt object) {
-                return createServerAtAdapter();
-            }
-            @Override
-            public Adapter caseServiceSettings(ServiceSettings object) {
-                return createServiceSettingsAdapter();
-            }
-            @Override
-            public Adapter caseServiceWithMax(ServiceWithMax object) {
-                return createServiceWithMaxAdapter();
-            }
-            @Override
-            public Adapter caseServices(Services object) {
-                return createServicesAdapter();
-            }
-            @Override
-            public Adapter caseSetDataSetValue(SetDataSetValue object) {
-                return createSetDataSetValueAdapter();
-            }
-            @Override
-            public Adapter caseSettingControl(SettingControl object) {
-                return createSettingControlAdapter();
-            }
-            @Override
-            public Adapter caseSettingGroups(SettingGroups object) {
-                return createSettingGroupsAdapter();
-            }
-            @Override
-            public Adapter caseSmvOpts(SmvOpts object) {
-                return createSmvOptsAdapter();
-            }
-            @Override
-            public Adapter caseSubject(Subject object) {
-                return createSubjectAdapter();
-            }
-            @Override
-            public Adapter caseSupSubscription(SupSubscription object) {
-                return createSupSubscriptionAdapter();
-            }
-            @Override
-            public Adapter caseTimeSyncProt(TimeSyncProt object) {
-                return createTimeSyncProtAdapter();
-            }
-            @Override
-            public Adapter caseTimerActivatedControl(TimerActivatedControl object) {
-                return createTimerActivatedControlAdapter();
-            }
-            @Override
-            public Adapter caseTrgOps(TrgOps object) {
-                return createTrgOpsAdapter();
-            }
-            @Override
-            public Adapter caseValueHandling(ValueHandling object) {
-                return createValueHandlingAdapter();
-            }
-            @Override
-            public Adapter caseAbstractConductingEquipment(AbstractConductingEquipment object) {
-                return createAbstractConductingEquipmentAdapter();
-            }
-            @Override
-            public Adapter caseAbstractEqFuncSubFunc(AbstractEqFuncSubFunc object) {
-                return createAbstractEqFuncSubFuncAdapter();
-            }
-            @Override
-            public Adapter caseBay(Bay object) {
-                return createBayAdapter();
-            }
-            @Override
-            public Adapter caseConductingEquipment(ConductingEquipment object) {
-                return createConductingEquipmentAdapter();
-            }
-            @Override
-            public Adapter caseConnectivityNode(ConnectivityNode object) {
-                return createConnectivityNodeAdapter();
-            }
-            @Override
-            public Adapter caseEqFunction(EqFunction object) {
-                return createEqFunctionAdapter();
-            }
-            @Override
-            public Adapter caseEqSubFunction(EqSubFunction object) {
-                return createEqSubFunctionAdapter();
-            }
-            @Override
-            public Adapter caseEquipment(Equipment object) {
-                return createEquipmentAdapter();
-            }
-            @Override
-            public Adapter caseEquipmentContainer(EquipmentContainer object) {
-                return createEquipmentContainerAdapter();
-            }
-            @Override
-            public Adapter caseFunction(Function object) {
-                return createFunctionAdapter();
-            }
-            @Override
-            public Adapter caseGeneralEquipment(GeneralEquipment object) {
-                return createGeneralEquipmentAdapter();
-            }
-            @Override
-            public Adapter caseGeneralEquipmentContainer(GeneralEquipmentContainer object) {
-                return createGeneralEquipmentContainerAdapter();
-            }
-            @Override
-            public Adapter caseLNode(LNode object) {
-                return createLNodeAdapter();
-            }
-            @Override
-            public Adapter caseLNodeContainer(LNodeContainer object) {
-                return createLNodeContainerAdapter();
-            }
-            @Override
-            public Adapter caseNeutralPoint(NeutralPoint object) {
-                return createNeutralPointAdapter();
-            }
-            @Override
-            public Adapter casePowerSystemResource(PowerSystemResource object) {
-                return createPowerSystemResourceAdapter();
-            }
-            @Override
-            public Adapter casePowerTransformer(PowerTransformer object) {
-                return createPowerTransformerAdapter();
-            }
-            @Override
-            public Adapter caseSubEquipment(SubEquipment object) {
-                return createSubEquipmentAdapter();
-            }
-            @Override
-            public Adapter caseSubFunction(SubFunction object) {
-                return createSubFunctionAdapter();
-            }
-            @Override
-            public Adapter caseSubstation(Substation object) {
-                return createSubstationAdapter();
-            }
-            @Override
-            public Adapter caseTapChanger(TapChanger object) {
-                return createTapChangerAdapter();
-            }
-            @Override
-            public Adapter caseTerminal(Terminal object) {
-                return createTerminalAdapter();
-            }
-            @Override
-            public Adapter caseTransformerWinding(TransformerWinding object) {
-                return createTransformerWindingAdapter();
-            }
-            @Override
-            public Adapter caseVoltage(Voltage object) {
-                return createVoltageAdapter();
-            }
-            @Override
-            public Adapter caseVoltageLevel(VoltageLevel object) {
-                return createVoltageLevelAdapter();
-            }
-            @Override
-            public Adapter caseAbstractDataObject(AbstractDataObject object) {
-                return createAbstractDataObjectAdapter();
-            }
-            @Override
-            public Adapter caseSclObject(SclObject object) {
-                return createSclObjectAdapter();
-            }
-            @Override
-            public Adapter caseUnNaming(UnNaming object) {
-                return createUnNamingAdapter();
-            }
-            @Override
-            public Adapter caseServiceYesNo(ServiceYesNo object) {
-                return createServiceYesNoAdapter();
-            }
-            @Override
-            public Adapter caseServiceWithOptionalMax(ServiceWithOptionalMax object) {
-                return createServiceWithOptionalMaxAdapter();
-            }
-            @Override
-            public Adapter caseServiceWithMaxNonZero(ServiceWithMaxNonZero object) {
-                return createServiceWithMaxNonZeroAdapter();
-            }
-            @Override
-            public Adapter caseServiceConfReportControl(ServiceConfReportControl object) {
-                return createServiceConfReportControlAdapter();
-            }
-            @Override
-            public Adapter caseServiceWithMaxAndMaxAttributes(ServiceWithMaxAndMaxAttributes object) {
-                return createServiceWithMaxAndMaxAttributesAdapter();
-            }
-            @Override
-            public Adapter caseServiceWithMaxAndModify(ServiceWithMaxAndModify object) {
-                return createServiceWithMaxAndModifyAdapter();
-            }
-            @Override
-            public Adapter caseServiceForConfDataSet(ServiceForConfDataSet object) {
-                return createServiceForConfDataSetAdapter();
-            }
-            @Override
-            public Adapter caseCert(Cert object) {
-                return createCertAdapter();
-            }
-            @Override
-            public Adapter caseValueWithUnit(ValueWithUnit object) {
-                return createValueWithUnitAdapter();
-            }
-            @Override
-            public Adapter caseDurationInSec(DurationInSec object) {
-                return createDurationInSecAdapter();
-            }
-            @Override
-            public Adapter caseDurationInMilliSec(DurationInMilliSec object) {
-                return createDurationInMilliSecAdapter();
-            }
-            @Override
-            public Adapter caseBitRateInMbPerSec(BitRateInMbPerSec object) {
-                return createBitRateInMbPerSecAdapter();
-            }
-            @Override
-            public Adapter caseMinTime(MinTime object) {
-                return createMinTimeAdapter();
-            }
-            @Override
-            public Adapter caseMaxTime(MaxTime object) {
-                return createMaxTimeAdapter();
-            }
-            @Override
-            public Adapter caseBitRate(BitRate object) {
-                return createBitRateAdapter();
-            }
-            @Override
-            public Adapter caseSmpRate(SmpRate object) {
-                return createSmpRateAdapter();
-            }
-            @Override
-            public Adapter caseSamplesPerSec(SamplesPerSec object) {
-                return createSamplesPerSecAdapter();
-            }
-            @Override
-            public Adapter caseSecPerSamples(SecPerSamples object) {
-                return createSecPerSamplesAdapter();
-            }
-            @Override
-            public Adapter caseMcSecurity(McSecurity object) {
-                return createMcSecurityAdapter();
-            }
-            @Override
-            public Adapter caseAgAuthentication(AgAuthentication object) {
-                return createAgAuthenticationAdapter();
-            }
-            @Override
-            public Adapter caseAgSmvOpts(AgSmvOpts object) {
-                return createAgSmvOptsAdapter();
-            }
-            @Override
-            public Adapter caseAgOptFields(AgOptFields object) {
-                return createAgOptFieldsAdapter();
-            }
-            @Override
-            public Adapter caseAgDesc(AgDesc object) {
-                return createAgDescAdapter();
-            }
-            @Override
-            public Adapter caseAgLDRef(AgLDRef object) {
-                return createAgLDRefAdapter();
-            }
-            @Override
-            public Adapter caseAgLNRef(AgLNRef object) {
-                return createAgLNRefAdapter();
-            }
-            @Override
-            public Adapter caseAgDATrgOp(AgDATrgOp object) {
-                return createAgDATrgOpAdapter();
-            }
-            @Override
-            public Adapter caseAgVirtual(AgVirtual object) {
-                return createAgVirtualAdapter();
-            }
-            @Override
-            public Adapter caseIRiseClipseConsole(IRiseClipseConsole object) {
-                return createIRiseClipseConsoleAdapter();
-            }
-            @Override
-            public Adapter defaultCase(EObject object) {
-                return createEObjectAdapter();
-            }
-        };
+    protected SclSwitch< Adapter > modelSwitch = new SclSwitch< Adapter >() {
+        @Override
+        public Adapter caseAnyContentFromOtherNamespace( AnyContentFromOtherNamespace object ) {
+            return createAnyContentFromOtherNamespaceAdapter();
+        }
+
+        @Override
+        public Adapter caseBaseElement( BaseElement object ) {
+            return createBaseElementAdapter();
+        }
+
+        @Override
+        public Adapter caseHeader( Header object ) {
+            return createHeaderAdapter();
+        }
+
+        @Override
+        public Adapter caseHistory( History object ) {
+            return createHistoryAdapter();
+        }
+
+        @Override
+        public Adapter caseHitem( Hitem object ) {
+            return createHitemAdapter();
+        }
+
+        @Override
+        public Adapter caseIDNaming( IDNaming object ) {
+            return createIDNamingAdapter();
+        }
+
+        @Override
+        public Adapter caseLine( Line object ) {
+            return createLineAdapter();
+        }
+
+        @Override
+        public Adapter caseNaming( Naming object ) {
+            return createNamingAdapter();
+        }
+
+        @Override
+        public Adapter casePrivate( Private object ) {
+            return createPrivateAdapter();
+        }
+
+        @Override
+        public Adapter caseProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process object ) {
+            return createProcessAdapter();
+        }
+
+        @Override
+        public Adapter caseSCL( SCL object ) {
+            return createSCLAdapter();
+        }
+
+        @Override
+        public Adapter caseText( Text object ) {
+            return createTextAdapter();
+        }
+
+        @Override
+        public Adapter caseAddress( Address object ) {
+            return createAddressAdapter();
+        }
+
+        @Override
+        public Adapter caseCommunication( Communication object ) {
+            return createCommunicationAdapter();
+        }
+
+        @Override
+        public Adapter caseConnectedAP( ConnectedAP object ) {
+            return createConnectedAPAdapter();
+        }
+
+        @Override
+        public Adapter caseControlBlock( ControlBlock object ) {
+            return createControlBlockAdapter();
+        }
+
+        @Override
+        public Adapter caseGSE( GSE object ) {
+            return createGSEAdapter();
+        }
+
+        @Override
+        public Adapter caseP( P object ) {
+            return createPAdapter();
+        }
+
+        @Override
+        public Adapter casePAddr( PAddr object ) {
+            return createPAddrAdapter();
+        }
+
+        @Override
+        public Adapter caseP_PhysConn( P_PhysConn object ) {
+            return createP_PhysConnAdapter();
+        }
+
+        @Override
+        public Adapter casePhysConn( PhysConn object ) {
+            return createPhysConnAdapter();
+        }
+
+        @Override
+        public Adapter caseSMV( SMV object ) {
+            return createSMVAdapter();
+        }
+
+        @Override
+        public Adapter caseSubNetwork( SubNetwork object ) {
+            return createSubNetworkAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractDataAttribute( AbstractDataAttribute object ) {
+            return createAbstractDataAttributeAdapter();
+        }
+
+        @Override
+        public Adapter caseBDA( BDA object ) {
+            return createBDAAdapter();
+        }
+
+        @Override
+        public Adapter caseDA( DA object ) {
+            return createDAAdapter();
+        }
+
+        @Override
+        public Adapter caseDAType( DAType object ) {
+            return createDATypeAdapter();
+        }
+
+        @Override
+        public Adapter caseDO( DO object ) {
+            return createDOAdapter();
+        }
+
+        @Override
+        public Adapter caseDOType( DOType object ) {
+            return createDOTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseDataTypeTemplates( DataTypeTemplates object ) {
+            return createDataTypeTemplatesAdapter();
+        }
+
+        @Override
+        public Adapter caseEnumType( EnumType object ) {
+            return createEnumTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseEnumVal( EnumVal object ) {
+            return createEnumValAdapter();
+        }
+
+        @Override
+        public Adapter caseLNodeType( LNodeType object ) {
+            return createLNodeTypeAdapter();
+        }
+
+        @Override
+        public Adapter caseProtNs( ProtNs object ) {
+            return createProtNsAdapter();
+        }
+
+        @Override
+        public Adapter caseSDO( SDO object ) {
+            return createSDOAdapter();
+        }
+
+        @Override
+        public Adapter caseVal( Val object ) {
+            return createValAdapter();
+        }
+
+        @Override
+        public Adapter caseAccessControl( AccessControl object ) {
+            return createAccessControlAdapter();
+        }
+
+        @Override
+        public Adapter caseAccessPoint( AccessPoint object ) {
+            return createAccessPointAdapter();
+        }
+
+        @Override
+        public Adapter caseAnyLN( AnyLN object ) {
+            return createAnyLNAdapter();
+        }
+
+        @Override
+        public Adapter caseAssociation( Association object ) {
+            return createAssociationAdapter();
+        }
+
+        @Override
+        public Adapter caseAuthentication( Authentication object ) {
+            return createAuthenticationAdapter();
+        }
+
+        @Override
+        public Adapter caseCertificate( Certificate object ) {
+            return createCertificateAdapter();
+        }
+
+        @Override
+        public Adapter caseClientLN( ClientLN object ) {
+            return createClientLNAdapter();
+        }
+
+        @Override
+        public Adapter caseClientServices( ClientServices object ) {
+            return createClientServicesAdapter();
+        }
+
+        @Override
+        public Adapter caseCommProt( CommProt object ) {
+            return createCommProtAdapter();
+        }
+
+        @Override
+        public Adapter caseConfDataSet( ConfDataSet object ) {
+            return createConfDataSetAdapter();
+        }
+
+        @Override
+        public Adapter caseConfLNs( ConfLNs object ) {
+            return createConfLNsAdapter();
+        }
+
+        @Override
+        public Adapter caseConfLdName( ConfLdName object ) {
+            return createConfLdNameAdapter();
+        }
+
+        @Override
+        public Adapter caseConfLogControl( ConfLogControl object ) {
+            return createConfLogControlAdapter();
+        }
+
+        @Override
+        public Adapter caseConfReportControl( ConfReportControl object ) {
+            return createConfReportControlAdapter();
+        }
+
+        @Override
+        public Adapter caseConfSG( ConfSG object ) {
+            return createConfSGAdapter();
+        }
+
+        @Override
+        public Adapter caseConfSigRef( ConfSigRef object ) {
+            return createConfSigRefAdapter();
+        }
+
+        @Override
+        public Adapter caseControl( Control object ) {
+            return createControlAdapter();
+        }
+
+        @Override
+        public Adapter caseControlWithIEDName( ControlWithIEDName object ) {
+            return createControlWithIEDNameAdapter();
+        }
+
+        @Override
+        public Adapter caseControlWithTriggerOpt( ControlWithTriggerOpt object ) {
+            return createControlWithTriggerOptAdapter();
+        }
+
+        @Override
+        public Adapter caseDAI( DAI object ) {
+            return createDAIAdapter();
+        }
+
+        @Override
+        public Adapter caseDOI( DOI object ) {
+            return createDOIAdapter();
+        }
+
+        @Override
+        public Adapter caseDataObjectDirectory( DataObjectDirectory object ) {
+            return createDataObjectDirectoryAdapter();
+        }
+
+        @Override
+        public Adapter caseDataSet( DataSet object ) {
+            return createDataSetAdapter();
+        }
+
+        @Override
+        public Adapter caseDataSetDirectory( DataSetDirectory object ) {
+            return createDataSetDirectoryAdapter();
+        }
+
+        @Override
+        public Adapter caseDynAssociation( DynAssociation object ) {
+            return createDynAssociationAdapter();
+        }
+
+        @Override
+        public Adapter caseDynDataSet( DynDataSet object ) {
+            return createDynDataSetAdapter();
+        }
+
+        @Override
+        public Adapter caseExtRef( ExtRef object ) {
+            return createExtRefAdapter();
+        }
+
+        @Override
+        public Adapter caseFCDA( FCDA object ) {
+            return createFCDAAdapter();
+        }
+
+        @Override
+        public Adapter caseFileHandling( FileHandling object ) {
+            return createFileHandlingAdapter();
+        }
+
+        @Override
+        public Adapter caseGOOSE( GOOSE object ) {
+            return createGOOSEAdapter();
+        }
+
+        @Override
+        public Adapter caseGOOSESecurity( GOOSESecurity object ) {
+            return createGOOSESecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseGSEControl( GSEControl object ) {
+            return createGSEControlAdapter();
+        }
+
+        @Override
+        public Adapter caseGSEDir( GSEDir object ) {
+            return createGSEDirAdapter();
+        }
+
+        @Override
+        public Adapter caseGSESettings( GSESettings object ) {
+            return createGSESettingsAdapter();
+        }
+
+        @Override
+        public Adapter caseGSSE( GSSE object ) {
+            return createGSSEAdapter();
+        }
+
+        @Override
+        public Adapter caseGetCBValues( GetCBValues object ) {
+            return createGetCBValuesAdapter();
+        }
+
+        @Override
+        public Adapter caseGetDataObjectDefinition( GetDataObjectDefinition object ) {
+            return createGetDataObjectDefinitionAdapter();
+        }
+
+        @Override
+        public Adapter caseGetDataSetValue( GetDataSetValue object ) {
+            return createGetDataSetValueAdapter();
+        }
+
+        @Override
+        public Adapter caseGetDirectory( GetDirectory object ) {
+            return createGetDirectoryAdapter();
+        }
+
+        @Override
+        public Adapter caseIED( IED object ) {
+            return createIEDAdapter();
+        }
+
+        @Override
+        public Adapter caseIEDName( IEDName object ) {
+            return createIEDNameAdapter();
+        }
+
+        @Override
+        public Adapter caseInputs( Inputs object ) {
+            return createInputsAdapter();
+        }
+
+        @Override
+        public Adapter caseIssuerName( IssuerName object ) {
+            return createIssuerNameAdapter();
+        }
+
+        @Override
+        public Adapter caseKDC( KDC object ) {
+            return createKDCAdapter();
+        }
+
+        @Override
+        public Adapter caseLDevice( LDevice object ) {
+            return createLDeviceAdapter();
+        }
+
+        @Override
+        public Adapter caseLN( LN object ) {
+            return createLNAdapter();
+        }
+
+        @Override
+        public Adapter caseLN0( LN0 object ) {
+            return createLN0Adapter();
+        }
+
+        @Override
+        public Adapter caseLog( Log object ) {
+            return createLogAdapter();
+        }
+
+        @Override
+        public Adapter caseLogControl( LogControl object ) {
+            return createLogControlAdapter();
+        }
+
+        @Override
+        public Adapter caseLogSettings( LogSettings object ) {
+            return createLogSettingsAdapter();
+        }
+
+        @Override
+        public Adapter caseOptFields( OptFields object ) {
+            return createOptFieldsAdapter();
+        }
+
+        @Override
+        public Adapter caseProtocol( Protocol object ) {
+            return createProtocolAdapter();
+        }
+
+        @Override
+        public Adapter caseReadWrite( ReadWrite object ) {
+            return createReadWriteAdapter();
+        }
+
+        @Override
+        public Adapter caseRedProt( RedProt object ) {
+            return createRedProtAdapter();
+        }
+
+        @Override
+        public Adapter caseReportControl( ReportControl object ) {
+            return createReportControlAdapter();
+        }
+
+        @Override
+        public Adapter caseReportSettings( ReportSettings object ) {
+            return createReportSettingsAdapter();
+        }
+
+        @Override
+        public Adapter caseRptEnabled( RptEnabled object ) {
+            return createRptEnabledAdapter();
+        }
+
+        @Override
+        public Adapter caseSDI( SDI object ) {
+            return createSDIAdapter();
+        }
+
+        @Override
+        public Adapter caseSGEdit( SGEdit object ) {
+            return createSGEditAdapter();
+        }
+
+        @Override
+        public Adapter caseSMVSecurity( SMVSecurity object ) {
+            return createSMVSecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseSMVSettings( SMVSettings object ) {
+            return createSMVSettingsAdapter();
+        }
+
+        @Override
+        public Adapter caseSMVsc( SMVsc object ) {
+            return createSMVscAdapter();
+        }
+
+        @Override
+        public Adapter caseSampledValueControl( SampledValueControl object ) {
+            return createSampledValueControlAdapter();
+        }
+
+        @Override
+        public Adapter caseServer( Server object ) {
+            return createServerAdapter();
+        }
+
+        @Override
+        public Adapter caseServerAt( ServerAt object ) {
+            return createServerAtAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceSettings( ServiceSettings object ) {
+            return createServiceSettingsAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMax( ServiceWithMax object ) {
+            return createServiceWithMaxAdapter();
+        }
+
+        @Override
+        public Adapter caseServices( Services object ) {
+            return createServicesAdapter();
+        }
+
+        @Override
+        public Adapter caseSetDataSetValue( SetDataSetValue object ) {
+            return createSetDataSetValueAdapter();
+        }
+
+        @Override
+        public Adapter caseSettingControl( SettingControl object ) {
+            return createSettingControlAdapter();
+        }
+
+        @Override
+        public Adapter caseSettingGroups( SettingGroups object ) {
+            return createSettingGroupsAdapter();
+        }
+
+        @Override
+        public Adapter caseSmvOpts( SmvOpts object ) {
+            return createSmvOptsAdapter();
+        }
+
+        @Override
+        public Adapter caseSubject( Subject object ) {
+            return createSubjectAdapter();
+        }
+
+        @Override
+        public Adapter caseSupSubscription( SupSubscription object ) {
+            return createSupSubscriptionAdapter();
+        }
+
+        @Override
+        public Adapter caseTimeSyncProt( TimeSyncProt object ) {
+            return createTimeSyncProtAdapter();
+        }
+
+        @Override
+        public Adapter caseTimerActivatedControl( TimerActivatedControl object ) {
+            return createTimerActivatedControlAdapter();
+        }
+
+        @Override
+        public Adapter caseTrgOps( TrgOps object ) {
+            return createTrgOpsAdapter();
+        }
+
+        @Override
+        public Adapter caseValueHandling( ValueHandling object ) {
+            return createValueHandlingAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractConductingEquipment( AbstractConductingEquipment object ) {
+            return createAbstractConductingEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractEqFuncSubFunc( AbstractEqFuncSubFunc object ) {
+            return createAbstractEqFuncSubFuncAdapter();
+        }
+
+        @Override
+        public Adapter caseBay( Bay object ) {
+            return createBayAdapter();
+        }
+
+        @Override
+        public Adapter caseConductingEquipment( ConductingEquipment object ) {
+            return createConductingEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseConnectivityNode( ConnectivityNode object ) {
+            return createConnectivityNodeAdapter();
+        }
+
+        @Override
+        public Adapter caseEqFunction( EqFunction object ) {
+            return createEqFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseEqSubFunction( EqSubFunction object ) {
+            return createEqSubFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseEquipment( Equipment object ) {
+            return createEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseEquipmentContainer( EquipmentContainer object ) {
+            return createEquipmentContainerAdapter();
+        }
+
+        @Override
+        public Adapter caseFunction( Function object ) {
+            return createFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseGeneralEquipment( GeneralEquipment object ) {
+            return createGeneralEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseGeneralEquipmentContainer( GeneralEquipmentContainer object ) {
+            return createGeneralEquipmentContainerAdapter();
+        }
+
+        @Override
+        public Adapter caseLNode( LNode object ) {
+            return createLNodeAdapter();
+        }
+
+        @Override
+        public Adapter caseLNodeContainer( LNodeContainer object ) {
+            return createLNodeContainerAdapter();
+        }
+
+        @Override
+        public Adapter caseNeutralPoint( NeutralPoint object ) {
+            return createNeutralPointAdapter();
+        }
+
+        @Override
+        public Adapter casePowerSystemResource( PowerSystemResource object ) {
+            return createPowerSystemResourceAdapter();
+        }
+
+        @Override
+        public Adapter casePowerTransformer( PowerTransformer object ) {
+            return createPowerTransformerAdapter();
+        }
+
+        @Override
+        public Adapter caseSubEquipment( SubEquipment object ) {
+            return createSubEquipmentAdapter();
+        }
+
+        @Override
+        public Adapter caseSubFunction( SubFunction object ) {
+            return createSubFunctionAdapter();
+        }
+
+        @Override
+        public Adapter caseSubstation( Substation object ) {
+            return createSubstationAdapter();
+        }
+
+        @Override
+        public Adapter caseTapChanger( TapChanger object ) {
+            return createTapChangerAdapter();
+        }
+
+        @Override
+        public Adapter caseTerminal( Terminal object ) {
+            return createTerminalAdapter();
+        }
+
+        @Override
+        public Adapter caseTransformerWinding( TransformerWinding object ) {
+            return createTransformerWindingAdapter();
+        }
+
+        @Override
+        public Adapter caseVoltage( Voltage object ) {
+            return createVoltageAdapter();
+        }
+
+        @Override
+        public Adapter caseVoltageLevel( VoltageLevel object ) {
+            return createVoltageLevelAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractDataObject( AbstractDataObject object ) {
+            return createAbstractDataObjectAdapter();
+        }
+
+        @Override
+        public Adapter caseSclObject( SclObject object ) {
+            return createSclObjectAdapter();
+        }
+
+        @Override
+        public Adapter caseUnNaming( UnNaming object ) {
+            return createUnNamingAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceYesNo( ServiceYesNo object ) {
+            return createServiceYesNoAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithOptionalMax( ServiceWithOptionalMax object ) {
+            return createServiceWithOptionalMaxAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxNonZero( ServiceWithMaxNonZero object ) {
+            return createServiceWithMaxNonZeroAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceConfReportControl( ServiceConfReportControl object ) {
+            return createServiceConfReportControlAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxAndMaxAttributes( ServiceWithMaxAndMaxAttributes object ) {
+            return createServiceWithMaxAndMaxAttributesAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceWithMaxAndModify( ServiceWithMaxAndModify object ) {
+            return createServiceWithMaxAndModifyAdapter();
+        }
+
+        @Override
+        public Adapter caseServiceForConfDataSet( ServiceForConfDataSet object ) {
+            return createServiceForConfDataSetAdapter();
+        }
+
+        @Override
+        public Adapter caseCert( Cert object ) {
+            return createCertAdapter();
+        }
+
+        @Override
+        public Adapter caseValueWithUnit( ValueWithUnit object ) {
+            return createValueWithUnitAdapter();
+        }
+
+        @Override
+        public Adapter caseDurationInSec( DurationInSec object ) {
+            return createDurationInSecAdapter();
+        }
+
+        @Override
+        public Adapter caseDurationInMilliSec( DurationInMilliSec object ) {
+            return createDurationInMilliSecAdapter();
+        }
+
+        @Override
+        public Adapter caseBitRateInMbPerSec( BitRateInMbPerSec object ) {
+            return createBitRateInMbPerSecAdapter();
+        }
+
+        @Override
+        public Adapter caseMinTime( MinTime object ) {
+            return createMinTimeAdapter();
+        }
+
+        @Override
+        public Adapter caseMaxTime( MaxTime object ) {
+            return createMaxTimeAdapter();
+        }
+
+        @Override
+        public Adapter caseBitRate( BitRate object ) {
+            return createBitRateAdapter();
+        }
+
+        @Override
+        public Adapter caseSmpRate( SmpRate object ) {
+            return createSmpRateAdapter();
+        }
+
+        @Override
+        public Adapter caseSamplesPerSec( SamplesPerSec object ) {
+            return createSamplesPerSecAdapter();
+        }
+
+        @Override
+        public Adapter caseSecPerSamples( SecPerSamples object ) {
+            return createSecPerSamplesAdapter();
+        }
+
+        @Override
+        public Adapter caseMcSecurity( McSecurity object ) {
+            return createMcSecurityAdapter();
+        }
+
+        @Override
+        public Adapter caseAgAuthentication( AgAuthentication object ) {
+            return createAgAuthenticationAdapter();
+        }
+
+        @Override
+        public Adapter caseAgSmvOpts( AgSmvOpts object ) {
+            return createAgSmvOptsAdapter();
+        }
+
+        @Override
+        public Adapter caseAgOptFields( AgOptFields object ) {
+            return createAgOptFieldsAdapter();
+        }
+
+        @Override
+        public Adapter caseAgDesc( AgDesc object ) {
+            return createAgDescAdapter();
+        }
+
+        @Override
+        public Adapter caseAgLDRef( AgLDRef object ) {
+            return createAgLDRefAdapter();
+        }
+
+        @Override
+        public Adapter caseAgLNRef( AgLNRef object ) {
+            return createAgLNRefAdapter();
+        }
+
+        @Override
+        public Adapter caseAgDATrgOp( AgDATrgOp object ) {
+            return createAgDATrgOpAdapter();
+        }
+
+        @Override
+        public Adapter caseAgVirtual( AgVirtual object ) {
+            return createAgVirtualAdapter();
+        }
+
+        @Override
+        public Adapter caseIRiseClipseConsole( IRiseClipseConsole object ) {
+            return createIRiseClipseConsoleAdapter();
+        }
+
+        @Override
+        public Adapter defaultCase( EObject object ) {
+            return createEObjectAdapter();
+        }
+    };
 
     /**
      * Creates an adapter for the <code>target</code>.
@@ -779,7 +949,7 @@ public class SclAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public Adapter createAdapter( Notifier target ) {
-        return modelSwitch.doSwitch((EObject)target);
+        return modelSwitch.doSwitch( ( EObject ) target );
     }
 
     /**

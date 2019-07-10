@@ -59,6 +59,6 @@ public interface P extends PAddr {
      * @see #getParentAddress()
      * @generated
      */
-    void setParentAddress(Address value);
+    void setParentAddress( Address value );
 
 } // P

@@ -63,5 +63,5 @@ public class SclResourceImpl extends XMLResourceImpl implements IRiseClipseResou
             scl.buildExplicitLinks( console, false );
         }
     }
-    
+
 } // SclResourceImpl

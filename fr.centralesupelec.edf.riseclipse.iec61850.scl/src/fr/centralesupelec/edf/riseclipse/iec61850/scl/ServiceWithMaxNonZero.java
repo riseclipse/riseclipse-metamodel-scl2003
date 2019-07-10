@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service With Max Non Zero</b></em>'.
@@ -66,7 +65,7 @@ public interface ServiceWithMaxNonZero extends SclObject {
      * @see #getMax()
      * @generated
      */
-    void setMax(Integer value);
+    void setMax( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxNonZero#getMax <em>Max</em>}' attribute.

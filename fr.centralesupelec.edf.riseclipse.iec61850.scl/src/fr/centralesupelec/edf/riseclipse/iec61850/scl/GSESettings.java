@@ -177,7 +177,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Mc Security</b></em>' containment reference.
@@ -209,7 +209,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #getMcSecurity()
      * @generated
      */
-    void setMcSecurity(McSecurity value);
+    void setMcSecurity( McSecurity value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getMcSecurity <em>Mc Security</em>}' containment reference.
@@ -262,7 +262,7 @@ public interface GSESettings extends ServiceSettings {
      * @see #getKdaParticipant()
      * @generated
      */
-    void setKdaParticipant(Boolean value);
+    void setKdaParticipant( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GSESettings#getKdaParticipant <em>Kda Participant</em>}' attribute.

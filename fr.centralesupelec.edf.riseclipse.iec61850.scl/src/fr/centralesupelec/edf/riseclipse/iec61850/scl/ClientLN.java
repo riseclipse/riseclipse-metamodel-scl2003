@@ -114,7 +114,7 @@ public interface ClientLN extends SclObject, AgLNRef {
      * @see #getParentRptEnabled()
      * @generated
      */
-    void setParentRptEnabled(RptEnabled value);
+    void setParentRptEnabled( RptEnabled value );
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
@@ -146,7 +146,7 @@ public interface ClientLN extends SclObject, AgLNRef {
      * @see #getRefersToAnyLN()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void setRefersToAnyLN( AnyLN value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.

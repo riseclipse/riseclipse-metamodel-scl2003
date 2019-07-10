@@ -167,8 +167,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         ord = newOrd;
         boolean oldOrdESet = ordESet;
         ordESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__ORD, oldOrd, ord, !oldOrdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__ORD, oldOrd, ord,
+                    !oldOrdESet ) );
     }
 
     /**
@@ -182,8 +183,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         boolean oldOrdESet = ordESet;
         ord = ORD_EDEFAULT;
         ordESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ENUM_VAL__ORD, oldOrd, ORD_EDEFAULT, oldOrdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ENUM_VAL__ORD, oldOrd, ORD_EDEFAULT,
+                    oldOrdESet ) );
     }
 
     /**
@@ -203,8 +205,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public EnumType getParentEnumType() {
-        if (eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE) return null;
-        return (EnumType)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE ) return null;
+        return ( EnumType ) eInternalContainer();
     }
 
     /**
@@ -212,8 +214,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentEnumType(EnumType newParentEnumType, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentEnumType, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE, msgs);
+    public NotificationChain basicSetParentEnumType( EnumType newParentEnumType, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentEnumType, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE, msgs );
         return msgs;
     }
 
@@ -223,20 +225,23 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @generated
      */
     @Override
-    public void setParentEnumType(EnumType newParentEnumType) {
-        if (newParentEnumType != eInternalContainer() || (eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE && newParentEnumType != null)) {
-            if (EcoreUtil.isAncestor(this, newParentEnumType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentEnumType( EnumType newParentEnumType ) {
+        if( newParentEnumType != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ENUM_VAL__PARENT_ENUM_TYPE && newParentEnumType != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentEnumType ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentEnumType != null)
-                msgs = ((InternalEObject)newParentEnumType).eInverseAdd(this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs);
-            msgs = basicSetParentEnumType(newParentEnumType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentEnumType != null )
+                msgs = ( ( InternalEObject ) newParentEnumType ).eInverseAdd( this, SclPackage.ENUM_TYPE__ENUM_VAL,
+                        EnumType.class, msgs );
+            msgs = basicSetParentEnumType( newParentEnumType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE, newParentEnumType, newParentEnumType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__PARENT_ENUM_TYPE,
+                    newParentEnumType, newParentEnumType ) );
     }
 
     /**
@@ -258,8 +263,8 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
     public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__VALUE, oldValue, value));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__VALUE, oldValue, value ) );
     }
 
     /**
@@ -278,13 +283,14 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ENUM_VAL__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ENUM_VAL__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -298,8 +304,9 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ENUM_VAL__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ENUM_VAL__DESC, oldDesc, DESC_EDEFAULT,
+                    oldDescESet ) );
     }
 
     /**
@@ -319,13 +326,13 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentEnumType((EnumType)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentEnumType( ( EnumType ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -335,11 +342,11 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                return basicSetParentEnumType(null, msgs);
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            return basicSetParentEnumType( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -349,11 +356,11 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ENUM_TYPE__ENUM_VAL, EnumType.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -363,17 +370,17 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ENUM_VAL__DESC:
-                return getDesc();
-            case SclPackage.ENUM_VAL__ORD:
-                return getOrd();
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                return getParentEnumType();
-            case SclPackage.ENUM_VAL__VALUE:
-                return getValue();
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__DESC:
+            return getDesc();
+        case SclPackage.ENUM_VAL__ORD:
+            return getOrd();
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            return getParentEnumType();
+        case SclPackage.ENUM_VAL__VALUE:
+            return getValue();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -383,21 +390,21 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ENUM_VAL__DESC:
-                setDesc((String)newValue);
-                return;
-            case SclPackage.ENUM_VAL__ORD:
-                setOrd((Integer)newValue);
-                return;
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                setParentEnumType((EnumType)newValue);
-                return;
-            case SclPackage.ENUM_VAL__VALUE:
-                setValue((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__DESC:
+            setDesc( ( String ) newValue );
+            return;
+        case SclPackage.ENUM_VAL__ORD:
+            setOrd( ( Integer ) newValue );
+            return;
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            setParentEnumType( ( EnumType ) newValue );
+            return;
+        case SclPackage.ENUM_VAL__VALUE:
+            setValue( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -407,21 +414,21 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ENUM_VAL__DESC:
-                unsetDesc();
-                return;
-            case SclPackage.ENUM_VAL__ORD:
-                unsetOrd();
-                return;
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                setParentEnumType((EnumType)null);
-                return;
-            case SclPackage.ENUM_VAL__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__DESC:
+            unsetDesc();
+            return;
+        case SclPackage.ENUM_VAL__ORD:
+            unsetOrd();
+            return;
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            setParentEnumType( ( EnumType ) null );
+            return;
+        case SclPackage.ENUM_VAL__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -431,17 +438,35 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.ENUM_VAL__DESC:
+            return isSetDesc();
+        case SclPackage.ENUM_VAL__ORD:
+            return isSetOrd();
+        case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
+            return getParentEnumType() != null;
+        case SclPackage.ENUM_VAL__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.ENUM_VAL__DESC:
-                return isSetDesc();
-            case SclPackage.ENUM_VAL__ORD:
-                return isSetOrd();
-            case SclPackage.ENUM_VAL__PARENT_ENUM_TYPE:
-                return getParentEnumType() != null;
-            case SclPackage.ENUM_VAL__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -450,30 +475,16 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.ENUM_VAL__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.ENUM_VAL__DESC;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.ENUM_VAL__DESC;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -483,16 +494,22 @@ public class EnumValImpl extends SclObjectImpl implements EnumVal {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(", ord: ");
-        if (ordESet) result.append(ord); else result.append("<unset>");
-        result.append(", value: ");
-        result.append(value);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ", ord: " );
+        if( ordESet )
+            result.append( ord );
+        else
+            result.append( "<unset>" );
+        result.append( ", value: " );
+        result.append( value );
+        result.append( ')' );
         return result.toString();
     }
 

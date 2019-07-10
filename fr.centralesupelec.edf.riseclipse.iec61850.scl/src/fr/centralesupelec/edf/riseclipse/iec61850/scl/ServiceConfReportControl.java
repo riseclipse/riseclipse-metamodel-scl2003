@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service Conf Report Control</b></em>'.
@@ -71,7 +70,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @see #getBufMode()
      * @generated
      */
-    void setBufMode(bufModeEnum value);
+    void setBufMode( bufModeEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getBufMode <em>Buf Mode</em>}' attribute.
@@ -124,7 +123,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @see #getBufConf()
      * @generated
      */
-    void setBufConf(Boolean value);
+    void setBufConf( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getBufConf <em>Buf Conf</em>}' attribute.
@@ -177,7 +176,7 @@ public interface ServiceConfReportControl extends ServiceWithMax {
      * @see #getMaxBuf()
      * @generated
      */
-    void setMaxBuf(Integer value);
+    void setMaxBuf( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceConfReportControl#getMaxBuf <em>Max Buf</em>}' attribute.

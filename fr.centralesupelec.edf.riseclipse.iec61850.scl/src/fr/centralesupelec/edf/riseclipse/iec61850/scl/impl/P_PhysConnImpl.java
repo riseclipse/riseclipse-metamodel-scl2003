@@ -71,8 +71,8 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public PhysConn getParentPhysConn() {
-        if (eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN) return null;
-        return (PhysConn)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN ) return null;
+        return ( PhysConn ) eInternalContainer();
     }
 
     /**
@@ -80,8 +80,9 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentPhysConn(PhysConn newParentPhysConn, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentPhysConn, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN, msgs);
+    public NotificationChain basicSetParentPhysConn( PhysConn newParentPhysConn, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentPhysConn, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN,
+                msgs );
         return msgs;
     }
 
@@ -91,20 +92,23 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      * @generated
      */
     @Override
-    public void setParentPhysConn(PhysConn newParentPhysConn) {
-        if (newParentPhysConn != eInternalContainer() || (eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN && newParentPhysConn != null)) {
-            if (EcoreUtil.isAncestor(this, newParentPhysConn))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentPhysConn( PhysConn newParentPhysConn ) {
+        if( newParentPhysConn != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.PPHYS_CONN__PARENT_PHYS_CONN && newParentPhysConn != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentPhysConn ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentPhysConn != null)
-                msgs = ((InternalEObject)newParentPhysConn).eInverseAdd(this, SclPackage.PHYS_CONN__P, PhysConn.class, msgs);
-            msgs = basicSetParentPhysConn(newParentPhysConn, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentPhysConn != null )
+                msgs = ( ( InternalEObject ) newParentPhysConn ).eInverseAdd( this, SclPackage.PHYS_CONN__P,
+                        PhysConn.class, msgs );
+            msgs = basicSetParentPhysConn( newParentPhysConn, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN, newParentPhysConn, newParentPhysConn));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PPHYS_CONN__PARENT_PHYS_CONN,
+                    newParentPhysConn, newParentPhysConn ) );
     }
 
     /**
@@ -114,13 +118,13 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentPhysConn((PhysConn)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentPhysConn( ( PhysConn ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -130,11 +134,11 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                return basicSetParentPhysConn(null, msgs);
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            return basicSetParentPhysConn( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -144,11 +148,11 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.PHYS_CONN__P, PhysConn.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            return eInternalContainer().eInverseRemove( this, SclPackage.PHYS_CONN__P, PhysConn.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -158,11 +162,11 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                return getParentPhysConn();
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            return getParentPhysConn();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -172,12 +176,12 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                setParentPhysConn((PhysConn)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            setParentPhysConn( ( PhysConn ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -187,12 +191,12 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                setParentPhysConn((PhysConn)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            setParentPhysConn( ( PhysConn ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -202,11 +206,11 @@ public class P_PhysConnImpl extends PAddrImpl implements P_PhysConn {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
-                return getParentPhysConn() != null;
+        switch( featureID ) {
+        case SclPackage.PPHYS_CONN__PARENT_PHYS_CONN:
+            return getParentPhysConn() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //P_PhysConnImpl

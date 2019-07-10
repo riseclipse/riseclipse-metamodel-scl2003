@@ -59,6 +59,6 @@ public interface DynDataSet extends ServiceWithMaxAndMaxAttributes {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // DynDataSet

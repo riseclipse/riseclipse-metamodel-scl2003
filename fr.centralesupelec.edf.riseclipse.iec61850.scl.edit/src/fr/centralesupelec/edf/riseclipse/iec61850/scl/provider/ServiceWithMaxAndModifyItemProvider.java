@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -48,8 +47,8 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    public ServiceWithMaxAndModifyItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ServiceWithMaxAndModifyItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,11 +58,11 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addModifyPropertyDescriptor(object);
+            addModifyPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,20 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addModifyPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ServiceWithMaxAndModify_modify_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceWithMaxAndModify_modify_feature", "_UI_ServiceWithMaxAndModify_type"),
-                 SclPackage.eINSTANCE.getServiceWithMaxAndModify_Modify(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addModifyPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServiceWithMaxAndModify_modify_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ServiceWithMaxAndModify_modify_feature",
+                                "_UI_ServiceWithMaxAndModify_type" ),
+                        SclPackage.eINSTANCE.getServiceWithMaxAndModify_Modify(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,8 +96,8 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceWithMaxAndModify"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ServiceWithMaxAndModify" ) );
     }
 
     /**
@@ -108,11 +107,10 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceWithMaxAndModify serviceWithMaxAndModify = (ServiceWithMaxAndModify)object;
-        return getString("_UI_ServiceWithMaxAndModify_type") + " " + serviceWithMaxAndModify.getLineNumber();
+    public String getText( Object object ) {
+        ServiceWithMaxAndModify serviceWithMaxAndModify = ( ServiceWithMaxAndModify ) object;
+        return getString( "_UI_ServiceWithMaxAndModify_type" ) + " " + serviceWithMaxAndModify.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -122,15 +120,15 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ServiceWithMaxAndModify.class)) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ServiceWithMaxAndModify.class ) ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MODIFY__MODIFY:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -141,8 +139,8 @@ public class ServiceWithMaxAndModifyItemProvider extends ServiceWithMaxItemProvi
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

@@ -67,7 +67,7 @@ public interface DurationInMilliSec extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue(BigDecimal value);
+    void setValue( BigDecimal value );
 
     /**
      * Returns the value of the '<em><b>Multiplier</b></em>' attribute.
@@ -100,7 +100,7 @@ public interface DurationInMilliSec extends SclObject {
      * @see #getMultiplier()
      * @generated
      */
-    void setMultiplier(UnitMultiplierEnum value);
+    void setMultiplier( UnitMultiplierEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec#getMultiplier <em>Multiplier</em>}' attribute.
@@ -153,7 +153,7 @@ public interface DurationInMilliSec extends SclObject {
      * @see #getUnit()
      * @generated
      */
-    void setUnit(String value);
+    void setUnit( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DurationInMilliSec#getUnit <em>Unit</em>}' attribute.

@@ -58,7 +58,7 @@ public interface AbstractConductingEquipment extends Equipment {
      * @model opposite="ParentAbstractConductingEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubEquipment> getSubEquipment();
+    EList< SubEquipment > getSubEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getSubEquipment <em>Sub Equipment</em>}' containment reference list.
@@ -99,7 +99,7 @@ public interface AbstractConductingEquipment extends Equipment {
      * @model opposite="ParentAbstractConductingEquipment" containment="true" unsettable="true" upper="2" ordered="false"
      * @generated
      */
-    EList<Terminal> getTerminal();
+    EList< Terminal > getTerminal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractConductingEquipment#getTerminal <em>Terminal</em>}' containment reference list.

@@ -393,7 +393,7 @@ public interface LNode extends UnNaming {
      * @see #getRefersToAnyLN()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void setRefersToAnyLN( AnyLN value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
@@ -440,7 +440,7 @@ public interface LNode extends UnNaming {
      * @see #getParentLNodeContainer()
      * @generated
      */
-    void setParentLNodeContainer(LNodeContainer value);
+    void setParentLNodeContainer( LNodeContainer value );
 
     /**
      * Returns the value of the '<em><b>Refers To LNode Type</b></em>' reference.
@@ -468,7 +468,7 @@ public interface LNode extends UnNaming {
      * @see #getRefersToLNodeType()
      * @generated
      */
-    void setRefersToLNodeType(LNodeType value);
+    void setRefersToLNodeType( LNodeType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode#getRefersToLNodeType <em>Refers To LNode Type</em>}' reference.

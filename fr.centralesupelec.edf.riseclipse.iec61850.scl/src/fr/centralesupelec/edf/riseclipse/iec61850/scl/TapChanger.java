@@ -113,7 +113,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -154,7 +154,7 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @model opposite="ParentTapChanger" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubEquipment> getSubEquipment();
+    EList< SubEquipment > getSubEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TapChanger#getSubEquipment <em>Sub Equipment</em>}' containment reference list.
@@ -199,6 +199,6 @@ public interface TapChanger extends PowerSystemResource, AgVirtual {
      * @see #getParentTransformerWinding()
      * @generated
      */
-    void setParentTransformerWinding(TransformerWinding value);
+    void setParentTransformerWinding( TransformerWinding value );
 
 } // TapChanger

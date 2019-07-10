@@ -183,7 +183,7 @@ public interface ConnectedAP extends UnNaming {
      * @see #getRedProt()
      * @generated
      */
-    void setRedProt(String value);
+    void setRedProt( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getRedProt <em>Red Prot</em>}' attribute.
@@ -285,7 +285,7 @@ public interface ConnectedAP extends UnNaming {
      * @see #getParentSubNetwork()
      * @generated
      */
-    void setParentSubNetwork(SubNetwork value);
+    void setParentSubNetwork( SubNetwork value );
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.
@@ -317,7 +317,7 @@ public interface ConnectedAP extends UnNaming {
      * @see #getRefersToAccessPoint()
      * @generated
      */
-    void setRefersToAccessPoint(AccessPoint value);
+    void setRefersToAccessPoint( AccessPoint value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getRefersToAccessPoint <em>Refers To Access Point</em>}' reference.
@@ -360,7 +360,7 @@ public interface ConnectedAP extends UnNaming {
      * @model opposite="ParentConnectedAP" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<PhysConn> getPhysConn();
+    EList< PhysConn > getPhysConn();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getPhysConn <em>Phys Conn</em>}' containment reference list.
@@ -402,7 +402,7 @@ public interface ConnectedAP extends UnNaming {
      *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */
-    EList<GSE> getGSE();
+    EList< GSE > getGSE();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getGSE <em>GSE</em>}' containment reference list.
@@ -444,7 +444,7 @@ public interface ConnectedAP extends UnNaming {
      *        extendedMetaData="group='#ControlBlock'"
      * @generated
      */
-    EList<SMV> getSMV();
+    EList< SMV > getSMV();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getSMV <em>SMV</em>}' containment reference list.

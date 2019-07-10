@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service For Conf Data Set</b></em>'.
@@ -66,7 +65,7 @@ public interface ServiceForConfDataSet extends ServiceWithMaxAndMaxAttributes {
      * @see #getModify()
      * @generated
      */
-    void setModify(Boolean value);
+    void setModify( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceForConfDataSet#getModify <em>Modify</em>}' attribute.

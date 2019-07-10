@@ -140,8 +140,9 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PADDR__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PADDR__TYPE, oldType, type,
+                    !oldTypeESet ) );
     }
 
     /**
@@ -155,8 +156,9 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PADDR__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PADDR__TYPE, oldType, TYPE_EDEFAULT,
+                    oldTypeESet ) );
     }
 
     /**
@@ -190,8 +192,9 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         value = newValue;
         boolean oldValueESet = valueESet;
         valueESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PADDR__VALUE, oldValue, value, !oldValueESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PADDR__VALUE, oldValue, value,
+                    !oldValueESet ) );
     }
 
     /**
@@ -205,8 +208,9 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
         boolean oldValueESet = valueESet;
         value = VALUE_EDEFAULT;
         valueESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PADDR__VALUE, oldValue, VALUE_EDEFAULT, oldValueESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PADDR__VALUE, oldValue, VALUE_EDEFAULT,
+                    oldValueESet ) );
     }
 
     /**
@@ -226,13 +230,13 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.PADDR__TYPE:
-                return getType();
-            case SclPackage.PADDR__VALUE:
-                return getValue();
+        switch( featureID ) {
+        case SclPackage.PADDR__TYPE:
+            return getType();
+        case SclPackage.PADDR__VALUE:
+            return getValue();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -242,15 +246,15 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.PADDR__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.PADDR__VALUE:
-                setValue((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.PADDR__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.PADDR__VALUE:
+            setValue( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -260,15 +264,15 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PADDR__TYPE:
-                unsetType();
-                return;
-            case SclPackage.PADDR__VALUE:
-                unsetValue();
-                return;
+        switch( featureID ) {
+        case SclPackage.PADDR__TYPE:
+            unsetType();
+            return;
+        case SclPackage.PADDR__VALUE:
+            unsetValue();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -278,13 +282,13 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PADDR__TYPE:
-                return isSetType();
-            case SclPackage.PADDR__VALUE:
-                return isSetValue();
+        switch( featureID ) {
+        case SclPackage.PADDR__TYPE:
+            return isSetType();
+        case SclPackage.PADDR__VALUE:
+            return isSetValue();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -294,14 +298,20 @@ public class PAddrImpl extends SclObjectImpl implements PAddr {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", value: ");
-        if (valueESet) result.append(value); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ", value: " );
+        if( valueESet )
+            result.append( value );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

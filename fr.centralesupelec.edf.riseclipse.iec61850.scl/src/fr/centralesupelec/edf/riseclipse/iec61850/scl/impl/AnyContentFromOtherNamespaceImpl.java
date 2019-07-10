@@ -93,8 +93,8 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public FeatureMap getMixed() {
-        if (mixed == null) {
-            mixed = new BasicFeatureMap(this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED);
+        if( mixed == null ) {
+            mixed = new BasicFeatureMap( this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED );
         }
         return mixed;
     }
@@ -106,7 +106,8 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public FeatureMap getGroup() {
-        return (FeatureMap)getMixed().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Group());
+        return ( FeatureMap ) getMixed().< FeatureMap.Entry > list(
+                SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Group() );
     }
 
     /**
@@ -116,7 +117,8 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public FeatureMap getAny() {
-        return (FeatureMap)getGroup().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Any());
+        return ( FeatureMap ) getGroup().< FeatureMap.Entry > list(
+                SclPackage.eINSTANCE.getAnyContentFromOtherNamespace_Any() );
     }
 
     /**
@@ -126,8 +128,8 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public FeatureMap getAnyAttribute() {
-        if (anyAttribute == null) {
-            anyAttribute = new BasicFeatureMap(this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE);
+        if( anyAttribute == null ) {
+            anyAttribute = new BasicFeatureMap( this, SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE );
         }
         return anyAttribute;
     }
@@ -139,17 +141,17 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-                return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-                return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-                return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-                return ((InternalEList<?>)getAnyAttribute()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
+            return ( ( InternalEList< ? > ) getMixed() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
+            return ( ( InternalEList< ? > ) getGroup() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
+            return ( ( InternalEList< ? > ) getAny() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
+            return ( ( InternalEList< ? > ) getAnyAttribute() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -159,21 +161,21 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-                if (coreType) return getMixed();
-                return ((FeatureMap.Internal)getMixed()).getWrapper();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-                if (coreType) return getGroup();
-                return ((FeatureMap.Internal)getGroup()).getWrapper();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-                if (coreType) return getAny();
-                return ((FeatureMap.Internal)getAny()).getWrapper();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-                if (coreType) return getAnyAttribute();
-                return ((FeatureMap.Internal)getAnyAttribute()).getWrapper();
+        switch( featureID ) {
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
+            if( coreType ) return getMixed();
+            return ( ( FeatureMap.Internal ) getMixed() ).getWrapper();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
+            if( coreType ) return getGroup();
+            return ( ( FeatureMap.Internal ) getGroup() ).getWrapper();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
+            if( coreType ) return getAny();
+            return ( ( FeatureMap.Internal ) getAny() ).getWrapper();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
+            if( coreType ) return getAnyAttribute();
+            return ( ( FeatureMap.Internal ) getAnyAttribute() ).getWrapper();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -183,21 +185,21 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-                ((FeatureMap.Internal)getMixed()).set(newValue);
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-                ((FeatureMap.Internal)getGroup()).set(newValue);
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-                ((FeatureMap.Internal)getAny()).set(newValue);
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-                ((FeatureMap.Internal)getAnyAttribute()).set(newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
+            ( ( FeatureMap.Internal ) getMixed() ).set( newValue );
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
+            ( ( FeatureMap.Internal ) getGroup() ).set( newValue );
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
+            ( ( FeatureMap.Internal ) getAny() ).set( newValue );
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
+            ( ( FeatureMap.Internal ) getAnyAttribute() ).set( newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -207,21 +209,21 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-                getMixed().clear();
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-                getGroup().clear();
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-                getAny().clear();
-                return;
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-                getAnyAttribute().clear();
-                return;
+        switch( featureID ) {
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
+            getMixed().clear();
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
+            getGroup().clear();
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
+            getAny().clear();
+            return;
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
+            getAnyAttribute().clear();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -231,17 +233,17 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
-                return mixed != null && !mixed.isEmpty();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
-                return !getGroup().isEmpty();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
-                return !getAny().isEmpty();
-            case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
-                return anyAttribute != null && !anyAttribute.isEmpty();
+        switch( featureID ) {
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__MIXED:
+            return mixed != null && !mixed.isEmpty();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__GROUP:
+            return !getGroup().isEmpty();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY:
+            return !getAny().isEmpty();
+        case SclPackage.ANY_CONTENT_FROM_OTHER_NAMESPACE__ANY_ATTRIBUTE:
+            return anyAttribute != null && !anyAttribute.isEmpty();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -251,14 +253,14 @@ public abstract class AnyContentFromOtherNamespaceImpl extends SclObjectImpl imp
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (mixed: ");
-        result.append(mixed);
-        result.append(", anyAttribute: ");
-        result.append(anyAttribute);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (mixed: " );
+        result.append( mixed );
+        result.append( ", anyAttribute: " );
+        result.append( anyAttribute );
+        result.append( ')' );
         return result.toString();
     }
 

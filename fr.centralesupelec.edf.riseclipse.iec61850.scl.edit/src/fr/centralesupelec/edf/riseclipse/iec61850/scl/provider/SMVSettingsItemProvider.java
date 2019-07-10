@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -49,8 +48,8 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public SMVSettingsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SMVSettingsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -60,18 +59,18 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addSvIDPropertyDescriptor(object);
-            addOptFieldsPropertyDescriptor(object);
-            addSmpRateAttributePropertyDescriptor(object);
-            addSamplesPerSecAttributePropertyDescriptor(object);
-            addPdcTimeStampPropertyDescriptor(object);
-            addSynchSrcIdPropertyDescriptor(object);
-            addNofASDUPropertyDescriptor(object);
-            addKdaParticipantPropertyDescriptor(object);
+            addSvIDPropertyDescriptor( object );
+            addOptFieldsPropertyDescriptor( object );
+            addSmpRateAttributePropertyDescriptor( object );
+            addSamplesPerSecAttributePropertyDescriptor( object );
+            addPdcTimeStampPropertyDescriptor( object );
+            addSynchSrcIdPropertyDescriptor( object );
+            addNofASDUPropertyDescriptor( object );
+            addKdaParticipantPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -82,20 +81,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSvIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_svID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_svID_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_SvID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSvIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_svID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_svID_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_SvID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -104,20 +103,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOptFieldsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_optFields_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_optFields_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_OptFields(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOptFieldsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_optFields_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_optFields_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_OptFields(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -126,20 +125,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSmpRateAttributePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_smpRateAttribute_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_smpRateAttribute_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_SmpRateAttribute(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSmpRateAttributePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_smpRateAttribute_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_smpRateAttribute_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_SmpRateAttribute(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -148,20 +147,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSamplesPerSecAttributePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_samplesPerSecAttribute_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_samplesPerSecAttribute_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_SamplesPerSecAttribute(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSamplesPerSecAttributePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_samplesPerSecAttribute_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_SMVSettings_samplesPerSecAttribute_feature", "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_SamplesPerSecAttribute(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -170,20 +169,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addPdcTimeStampPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_pdcTimeStamp_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_pdcTimeStamp_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_PdcTimeStamp(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addPdcTimeStampPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_pdcTimeStamp_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_pdcTimeStamp_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_PdcTimeStamp(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -192,20 +191,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSynchSrcIdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_synchSrcId_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_synchSrcId_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_SynchSrcId(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSynchSrcIdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_synchSrcId_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_synchSrcId_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_SynchSrcId(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -214,20 +213,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNofASDUPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_nofASDU_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_nofASDU_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_NofASDU(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNofASDUPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_nofASDU_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_nofASDU_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_NofASDU(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -236,20 +235,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addKdaParticipantPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SMVSettings_kdaParticipant_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SMVSettings_kdaParticipant_feature", "_UI_SMVSettings_type"),
-                 SclPackage.eINSTANCE.getSMVSettings_KdaParticipant(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addKdaParticipantPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SMVSettings_kdaParticipant_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SMVSettings_kdaParticipant_feature",
+                                "_UI_SMVSettings_type" ),
+                        SclPackage.eINSTANCE.getSMVSettings_KdaParticipant(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -261,13 +260,13 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SmpRate());
-            childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SamplesPerSec());
-            childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_SecPerSamples());
-            childrenFeatures.add(SclPackage.eINSTANCE.getSMVSettings_McSecurity());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSMVSettings_SmpRate() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSMVSettings_SamplesPerSec() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSMVSettings_SecPerSamples() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSMVSettings_McSecurity() );
         }
         return childrenFeatures;
     }
@@ -278,11 +277,11 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -292,8 +291,8 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SMVSettings"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SMVSettings" ) );
     }
 
     /**
@@ -303,14 +302,12 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceSettingsNoDynEnum labelValue = ((SMVSettings)object).getCbName();
+    public String getText( Object object ) {
+        ServiceSettingsNoDynEnum labelValue = ( ( SMVSettings ) object ).getCbName();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_SMVSettings_type") :
-            getString("_UI_SMVSettings_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_SMVSettings_type" )
+                : getString( "_UI_SMVSettings_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -320,28 +317,28 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SMVSettings.class)) {
-            case SclPackage.SMV_SETTINGS__SV_ID:
-            case SclPackage.SMV_SETTINGS__OPT_FIELDS:
-            case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
-            case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
-            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
-            case SclPackage.SMV_SETTINGS__NOF_ASDU:
-            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( SMVSettings.class ) ) {
+        case SclPackage.SMV_SETTINGS__SV_ID:
+        case SclPackage.SMV_SETTINGS__OPT_FIELDS:
+        case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
+        case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+        case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+        case SclPackage.SMV_SETTINGS__NOF_ASDU:
+        case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -352,28 +349,20 @@ public class SMVSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSMVSettings_SmpRate(),
-                 SclFactory.eINSTANCE.createSmpRate()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_SmpRate(),
+                SclFactory.eINSTANCE.createSmpRate() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSMVSettings_SamplesPerSec(),
-                 SclFactory.eINSTANCE.createSamplesPerSec()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_SamplesPerSec(),
+                SclFactory.eINSTANCE.createSamplesPerSec() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSMVSettings_SecPerSamples(),
-                 SclFactory.eINSTANCE.createSecPerSamples()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_SecPerSamples(),
+                SclFactory.eINSTANCE.createSecPerSamples() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
-                 SclFactory.eINSTANCE.createMcSecurity()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSMVSettings_McSecurity(),
+                SclFactory.eINSTANCE.createMcSecurity() ) );
     }
 
 }

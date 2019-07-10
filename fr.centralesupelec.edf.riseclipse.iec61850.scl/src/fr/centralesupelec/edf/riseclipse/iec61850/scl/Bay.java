@@ -64,7 +64,7 @@ public interface Bay extends EquipmentContainer {
      * @see #getParentVoltageLevel()
      * @generated
      */
-    void setParentVoltageLevel(VoltageLevel value);
+    void setParentVoltageLevel( VoltageLevel value );
 
     /**
      * Returns the value of the '<em><b>Function</b></em>' containment reference list.
@@ -84,7 +84,7 @@ public interface Bay extends EquipmentContainer {
      * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Function> getFunction();
+    EList< Function > getFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getFunction <em>Function</em>}' containment reference list.
@@ -125,7 +125,7 @@ public interface Bay extends EquipmentContainer {
      * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConnectivityNode> getConnectivityNode();
+    EList< ConnectivityNode > getConnectivityNode();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConnectivityNode <em>Connectivity Node</em>}' containment reference list.
@@ -166,7 +166,7 @@ public interface Bay extends EquipmentContainer {
      * @model opposite="ParentBay" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConductingEquipment> getConductingEquipment();
+    EList< ConductingEquipment > getConductingEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Bay#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.

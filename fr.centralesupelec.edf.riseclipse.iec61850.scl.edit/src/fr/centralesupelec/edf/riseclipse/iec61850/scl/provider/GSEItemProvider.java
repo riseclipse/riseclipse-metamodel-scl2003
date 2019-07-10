@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public GSEItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public GSEItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,9 +56,9 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -74,11 +73,11 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getGSE_MinTime());
-            childrenFeatures.add(SclPackage.eINSTANCE.getGSE_MaxTime());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getGSE_MinTime() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getGSE_MaxTime() );
         }
         return childrenFeatures;
     }
@@ -89,11 +88,11 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -103,8 +102,8 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/GSE"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/GSE" ) );
     }
 
     /**
@@ -114,13 +113,11 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((GSE)object).getCbName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_GSE_type") :
-            getString("_UI_GSE_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( GSE ) object ).getCbName();
+        return label == null || label.length() == 0 ? getString( "_UI_GSE_type" )
+                : getString( "_UI_GSE_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -130,16 +127,16 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(GSE.class)) {
-            case SclPackage.GSE__MIN_TIME:
-            case SclPackage.GSE__MAX_TIME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( GSE.class ) ) {
+        case SclPackage.GSE__MIN_TIME:
+        case SclPackage.GSE__MAX_TIME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -150,18 +147,14 @@ public class GSEItemProvider extends ControlBlockItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getGSE_MinTime(),
-                 SclFactory.eINSTANCE.createMinTime()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSE_MinTime(),
+                SclFactory.eINSTANCE.createMinTime() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getGSE_MaxTime(),
-                 SclFactory.eINSTANCE.createMaxTime()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSE_MaxTime(),
+                SclFactory.eINSTANCE.createMaxTime() ) );
     }
 
 }

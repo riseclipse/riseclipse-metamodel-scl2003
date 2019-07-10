@@ -44,7 +44,7 @@ public class SclXMLProcessor extends XMLProcessor {
      * @generated
      */
     public SclXMLProcessor() {
-        super((EPackage.Registry.INSTANCE));
+        super( ( EPackage.Registry.INSTANCE ) );
         SclPackage.eINSTANCE.eClass();
     }
 
@@ -54,11 +54,11 @@ public class SclXMLProcessor extends XMLProcessor {
      * @generated
      */
     @Override
-    protected Map<String, Resource.Factory> getRegistrations() {
-        if (registrations == null) {
+    protected Map< String, Resource.Factory > getRegistrations() {
+        if( registrations == null ) {
             super.getRegistrations();
-            registrations.put(XML_EXTENSION, new SclResourceFactoryImpl());
-            registrations.put(STAR_EXTENSION, new SclResourceFactoryImpl());
+            registrations.put( XML_EXTENSION, new SclResourceFactoryImpl() );
+            registrations.put( STAR_EXTENSION, new SclResourceFactoryImpl() );
         }
         return registrations;
     }

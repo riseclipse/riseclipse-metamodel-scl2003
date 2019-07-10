@@ -171,6 +171,6 @@ public interface SettingGroups extends SclObject {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // SettingGroups

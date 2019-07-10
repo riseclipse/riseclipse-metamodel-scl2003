@@ -35,7 +35,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
@@ -102,7 +101,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      * @ordered
      */
-    protected EList<DAI> dai;
+    protected EList< DAI > dai;
 
     /**
      * The cached value of the '{@link #getSDI() <em>SDI</em>}' containment reference list.
@@ -112,7 +111,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      * @ordered
      */
-    protected EList<SDI> sdi;
+    protected EList< SDI > sdi;
 
     /**
      * The default value of the '{@link #getAccessControl() <em>Access Control</em>}' attribute.
@@ -231,8 +230,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         ix = newIx;
         boolean oldIxESet = ixESet;
         ixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__IX, oldIx, ix, !oldIxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__IX, oldIx, ix, !oldIxESet ) );
     }
 
     /**
@@ -246,8 +245,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldIxESet = ixESet;
         ix = IX_EDEFAULT;
         ixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__IX, oldIx, IX_EDEFAULT, oldIxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__IX, oldIx, IX_EDEFAULT,
+                    oldIxESet ) );
     }
 
     /**
@@ -267,8 +267,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if (eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN ) return null;
+        return ( AnyLN ) eInternalContainer();
     }
 
     /**
@@ -276,8 +276,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.DOI__PARENT_ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN( AnyLN newParentAnyLN, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAnyLN, SclPackage.DOI__PARENT_ANY_LN, msgs );
         return msgs;
     }
 
@@ -287,20 +287,23 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public void setParentAnyLN(AnyLN newParentAnyLN) {
-        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN && newParentAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAnyLN( AnyLN newParentAnyLN ) {
+        if( newParentAnyLN != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DOI__PARENT_ANY_LN && newParentAnyLN != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAnyLN != null)
-                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__DOI, AnyLN.class, msgs);
-            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAnyLN != null )
+                msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__DOI, AnyLN.class,
+                        msgs );
+            msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__PARENT_ANY_LN, newParentAnyLN,
+                    newParentAnyLN ) );
     }
 
     /**
@@ -309,9 +312,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public EList<DAI> getDAI() {
-        if (dai == null) {
-            dai = new EObjectContainmentWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.DOI__DAI, SclPackage.DAI__PARENT_DOI);
+    public EList< DAI > getDAI() {
+        if( dai == null ) {
+            dai = new EObjectContainmentWithInverseEList.Unsettable< DAI >( DAI.class, this, SclPackage.DOI__DAI,
+                    SclPackage.DAI__PARENT_DOI );
         }
         return dai;
     }
@@ -323,7 +327,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void unsetDAI() {
-        if (dai != null) ((InternalEList.Unsettable<?>)dai).unset();
+        if( dai != null ) ( ( InternalEList.Unsettable< ? > ) dai ).unset();
     }
 
     /**
@@ -333,7 +337,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public boolean isSetDAI() {
-        return dai != null && ((InternalEList.Unsettable<?>)dai).isSet();
+        return dai != null && ( ( InternalEList.Unsettable< ? > ) dai ).isSet();
     }
 
     /**
@@ -342,9 +346,10 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public EList<SDI> getSDI() {
-        if (sdi == null) {
-            sdi = new EObjectContainmentWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.DOI__SDI, SclPackage.SDI__PARENT_DOI);
+    public EList< SDI > getSDI() {
+        if( sdi == null ) {
+            sdi = new EObjectContainmentWithInverseEList.Unsettable< SDI >( SDI.class, this, SclPackage.DOI__SDI,
+                    SclPackage.SDI__PARENT_DOI );
         }
         return sdi;
     }
@@ -356,7 +361,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void unsetSDI() {
-        if (sdi != null) ((InternalEList.Unsettable<?>)sdi).unset();
+        if( sdi != null ) ( ( InternalEList.Unsettable< ? > ) sdi ).unset();
     }
 
     /**
@@ -366,7 +371,7 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public boolean isSetSDI() {
-        return sdi != null && ((InternalEList.Unsettable<?>)sdi).isSet();
+        return sdi != null && ( ( InternalEList.Unsettable< ? > ) sdi ).isSet();
     }
 
     /**
@@ -385,13 +390,14 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public void setAccessControl(String newAccessControl) {
+    public void setAccessControl( String newAccessControl ) {
         String oldAccessControl = accessControl;
         accessControl = newAccessControl;
         boolean oldAccessControlESet = accessControlESet;
         accessControlESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, accessControl, !oldAccessControlESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl,
+                    accessControl, !oldAccessControlESet ) );
     }
 
     /**
@@ -405,8 +411,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldAccessControlESet = accessControlESet;
         accessControl = ACCESS_CONTROL_EDEFAULT;
         accessControlESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl, ACCESS_CONTROL_EDEFAULT, oldAccessControlESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__ACCESS_CONTROL, oldAccessControl,
+                    ACCESS_CONTROL_EDEFAULT, oldAccessControlESet ) );
     }
 
     /**
@@ -435,13 +442,14 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public void setName(String newName) {
+    public void setName( String newName ) {
         String oldName = name;
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__NAME, oldName, name,
+                    !oldNameESet ) );
     }
 
     /**
@@ -455,8 +463,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__NAME, oldName, NAME_EDEFAULT,
+                    oldNameESet ) );
     }
 
     /**
@@ -484,14 +493,18 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToDO(DO newRefersToDO, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToDO( DO newRefersToDO, NotificationChain msgs ) {
         DO oldRefersToDO = refersToDO;
         refersToDO = newRefersToDO;
         boolean oldRefersToDOESet = refersToDOESet;
         refersToDOESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, newRefersToDO, !oldRefersToDOESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, newRefersToDO, !oldRefersToDOESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -502,21 +515,24 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public void setRefersToDO(DO newRefersToDO) {
-        if (newRefersToDO != refersToDO) {
+    public void setRefersToDO( DO newRefersToDO ) {
+        if( newRefersToDO != refersToDO ) {
             NotificationChain msgs = null;
-            if (refersToDO != null)
-                msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
-            if (newRefersToDO != null)
-                msgs = ((InternalEObject)newRefersToDO).eInverseAdd(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
-            msgs = basicSetRefersToDO(newRefersToDO, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToDO != null )
+                msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI,
+                        DO.class, msgs );
+            if( newRefersToDO != null )
+                msgs = ( ( InternalEObject ) newRefersToDO ).eInverseAdd( this, SclPackage.DO__REFERRED_BY_DOI,
+                        DO.class, msgs );
+            msgs = basicSetRefersToDO( newRefersToDO, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDOESet = refersToDOESet;
             refersToDOESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, newRefersToDO, newRefersToDO, !oldRefersToDOESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DOI__REFERS_TO_DO, newRefersToDO,
+                        newRefersToDO, !oldRefersToDOESet ) );
         }
     }
 
@@ -525,14 +541,18 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToDO(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToDO( NotificationChain msgs ) {
         DO oldRefersToDO = refersToDO;
         refersToDO = null;
         boolean oldRefersToDOESet = refersToDOESet;
         refersToDOESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, null, oldRefersToDOESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.DOI__REFERS_TO_DO, oldRefersToDO, null, oldRefersToDOESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -544,17 +564,19 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void unsetRefersToDO() {
-        if (refersToDO != null) {
+        if( refersToDO != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
-            msgs = basicUnsetRefersToDO(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI, DO.class,
+                    msgs );
+            msgs = basicUnsetRefersToDO( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDOESet = refersToDOESet;
             refersToDOESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, null, null, oldRefersToDOESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DOI__REFERS_TO_DO, null, null,
+                        oldRefersToDOESet ) );
         }
     }
 
@@ -575,44 +597,9 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public String getNamespace() {
-        List< DAI > ldNsDai =
-                getDAI()
-                .stream()
-                .filter( dai -> "dataNs".equals(  dai.getName() ))
-                .collect( Collectors.toList() );
-        if( ldNsDai.size() == 1 ) {
-            if((         ldNsDai.get( 0 ).getVal().size() == 1 )
-                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                    && ( ldNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                return ldNsDai.get( 0 ).getVal().get( 0 ).getValue();
-            }
-            if((         ldNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                    && ( ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                return ldNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
-            }
-        }
-        
-        if( getRefersToDO() != null ) {
-            List< DA > lnNsDa =
-                    getRefersToDO()
-                    .getRefersToDOType()
-                    .getDA()
-                    .stream()
-                    .filter( da -> "dataNs".equals(  da.getName() ))
-                    .collect( Collectors.toList() );
-            if( lnNsDa.size() == 1 ) {
-                if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                }
-            }
-        }
-        
-        if( getParentAnyLN() == null ) return null;
-        return getParentAnyLN().getNamespace();
+        // TODO: implement this method
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -623,21 +610,22 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DOI__PARENT_ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.DOI__DAI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDAI()).basicAdd(otherEnd, msgs);
-            case SclPackage.DOI__SDI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDI()).basicAdd(otherEnd, msgs);
-            case SclPackage.DOI__REFERS_TO_DO:
-                if (refersToDO != null)
-                    msgs = ((InternalEObject)refersToDO).eInverseRemove(this, SclPackage.DO__REFERRED_BY_DOI, DO.class, msgs);
-                return basicSetRefersToDO((DO)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DOI__PARENT_ANY_LN:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
+        case SclPackage.DOI__DAI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDAI() ).basicAdd( otherEnd, msgs );
+        case SclPackage.DOI__SDI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSDI() ).basicAdd( otherEnd, msgs );
+        case SclPackage.DOI__REFERS_TO_DO:
+            if( refersToDO != null )
+                msgs = ( ( InternalEObject ) refersToDO ).eInverseRemove( this, SclPackage.DO__REFERRED_BY_DOI,
+                        DO.class, msgs );
+            return basicSetRefersToDO( ( DO ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -647,17 +635,17 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DOI__PARENT_ANY_LN:
-                return basicSetParentAnyLN(null, msgs);
-            case SclPackage.DOI__DAI:
-                return ((InternalEList<?>)getDAI()).basicRemove(otherEnd, msgs);
-            case SclPackage.DOI__SDI:
-                return ((InternalEList<?>)getSDI()).basicRemove(otherEnd, msgs);
-            case SclPackage.DOI__REFERS_TO_DO:
-                return basicUnsetRefersToDO(msgs);
+        switch( featureID ) {
+        case SclPackage.DOI__PARENT_ANY_LN:
+            return basicSetParentAnyLN( null, msgs );
+        case SclPackage.DOI__DAI:
+            return ( ( InternalEList< ? > ) getDAI() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DOI__SDI:
+            return ( ( InternalEList< ? > ) getSDI() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DOI__REFERS_TO_DO:
+            return basicUnsetRefersToDO( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -667,11 +655,11 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DOI__PARENT_ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__DOI, AnyLN.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DOI__PARENT_ANY_LN:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ANY_LN__DOI, AnyLN.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -681,23 +669,23 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DOI__IX:
-                return getIx();
-            case SclPackage.DOI__PARENT_ANY_LN:
-                return getParentAnyLN();
-            case SclPackage.DOI__DAI:
-                return getDAI();
-            case SclPackage.DOI__SDI:
-                return getSDI();
-            case SclPackage.DOI__ACCESS_CONTROL:
-                return getAccessControl();
-            case SclPackage.DOI__NAME:
-                return getName();
-            case SclPackage.DOI__REFERS_TO_DO:
-                return getRefersToDO();
+        switch( featureID ) {
+        case SclPackage.DOI__IX:
+            return getIx();
+        case SclPackage.DOI__PARENT_ANY_LN:
+            return getParentAnyLN();
+        case SclPackage.DOI__DAI:
+            return getDAI();
+        case SclPackage.DOI__SDI:
+            return getSDI();
+        case SclPackage.DOI__ACCESS_CONTROL:
+            return getAccessControl();
+        case SclPackage.DOI__NAME:
+            return getName();
+        case SclPackage.DOI__REFERS_TO_DO:
+            return getRefersToDO();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -708,32 +696,32 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DOI__IX:
-                setIx((Integer)newValue);
-                return;
-            case SclPackage.DOI__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.DOI__DAI:
-                getDAI().clear();
-                getDAI().addAll((Collection<? extends DAI>)newValue);
-                return;
-            case SclPackage.DOI__SDI:
-                getSDI().clear();
-                getSDI().addAll((Collection<? extends SDI>)newValue);
-                return;
-            case SclPackage.DOI__ACCESS_CONTROL:
-                setAccessControl((String)newValue);
-                return;
-            case SclPackage.DOI__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.DOI__REFERS_TO_DO:
-                setRefersToDO((DO)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DOI__IX:
+            setIx( ( Integer ) newValue );
+            return;
+        case SclPackage.DOI__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.DOI__DAI:
+            getDAI().clear();
+            getDAI().addAll( ( Collection< ? extends DAI > ) newValue );
+            return;
+        case SclPackage.DOI__SDI:
+            getSDI().clear();
+            getSDI().addAll( ( Collection< ? extends SDI > ) newValue );
+            return;
+        case SclPackage.DOI__ACCESS_CONTROL:
+            setAccessControl( ( String ) newValue );
+            return;
+        case SclPackage.DOI__NAME:
+            setName( ( String ) newValue );
+            return;
+        case SclPackage.DOI__REFERS_TO_DO:
+            setRefersToDO( ( DO ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -743,30 +731,30 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DOI__IX:
-                unsetIx();
-                return;
-            case SclPackage.DOI__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)null);
-                return;
-            case SclPackage.DOI__DAI:
-                unsetDAI();
-                return;
-            case SclPackage.DOI__SDI:
-                unsetSDI();
-                return;
-            case SclPackage.DOI__ACCESS_CONTROL:
-                unsetAccessControl();
-                return;
-            case SclPackage.DOI__NAME:
-                unsetName();
-                return;
-            case SclPackage.DOI__REFERS_TO_DO:
-                unsetRefersToDO();
-                return;
+        switch( featureID ) {
+        case SclPackage.DOI__IX:
+            unsetIx();
+            return;
+        case SclPackage.DOI__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) null );
+            return;
+        case SclPackage.DOI__DAI:
+            unsetDAI();
+            return;
+        case SclPackage.DOI__SDI:
+            unsetSDI();
+            return;
+        case SclPackage.DOI__ACCESS_CONTROL:
+            unsetAccessControl();
+            return;
+        case SclPackage.DOI__NAME:
+            unsetName();
+            return;
+        case SclPackage.DOI__REFERS_TO_DO:
+            unsetRefersToDO();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -776,23 +764,23 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DOI__IX:
-                return isSetIx();
-            case SclPackage.DOI__PARENT_ANY_LN:
-                return getParentAnyLN() != null;
-            case SclPackage.DOI__DAI:
-                return isSetDAI();
-            case SclPackage.DOI__SDI:
-                return isSetSDI();
-            case SclPackage.DOI__ACCESS_CONTROL:
-                return isSetAccessControl();
-            case SclPackage.DOI__NAME:
-                return isSetName();
-            case SclPackage.DOI__REFERS_TO_DO:
-                return isSetRefersToDO();
+        switch( featureID ) {
+        case SclPackage.DOI__IX:
+            return isSetIx();
+        case SclPackage.DOI__PARENT_ANY_LN:
+            return getParentAnyLN() != null;
+        case SclPackage.DOI__DAI:
+            return isSetDAI();
+        case SclPackage.DOI__SDI:
+            return isSetSDI();
+        case SclPackage.DOI__ACCESS_CONTROL:
+            return isSetAccessControl();
+        case SclPackage.DOI__NAME:
+            return isSetName();
+        case SclPackage.DOI__REFERS_TO_DO:
+            return isSetRefersToDO();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -801,12 +789,12 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      * @generated
      */
     @Override
-    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-        switch (operationID) {
-            case SclPackage.DOI___GET_NAMESPACE:
-                return getNamespace();
+    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
+        switch( operationID ) {
+        case SclPackage.DOI___GET_NAMESPACE:
+            return getNamespace();
         }
-        return super.eInvoke(operationID, arguments);
+        return super.eInvoke( operationID, arguments );
     }
 
     /**
@@ -816,16 +804,25 @@ public class DOIImpl extends UnNamingImpl implements DOI {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (ix: ");
-        if (ixESet) result.append(ix); else result.append("<unset>");
-        result.append(", accessControl: ");
-        if (accessControlESet) result.append(accessControl); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (ix: " );
+        if( ixESet )
+            result.append( ix );
+        else
+            result.append( "<unset>" );
+        result.append( ", accessControl: " );
+        if( accessControlESet )
+            result.append( accessControl );
+        else
+            result.append( "<unset>" );
+        result.append( ", name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -833,25 +830,25 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         String messagePrefix = "[SCL links] while resolving link from DOI on line " + getLineNumber() + ": ";
-        
-        if(( getName() == null ) || getName().isEmpty() ) {
+
+        if( ( getName() == null ) || getName().isEmpty() ) {
             console.warning( messagePrefix, "name is missing" );
             return;
         }
-        
+
         // No error or warning message here: if this happens, error should have been detected before
         if( getParentAnyLN() == null ) return;
         if( getParentAnyLN().getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix, "found LNodeType on line ", getParentAnyLN().getRefersToLNodeType().getLineNumber() );
+        console.verbose( messagePrefix, "found LNodeType on line ",
+                getParentAnyLN().getRefersToLNodeType().getLineNumber() );
 
-        List< DO > res =
-                getParentAnyLN()
+        List< DO > res = getParentAnyLN()
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
-                .filter( d -> getName().equals( d.getName() ))
+                .filter( d -> getName().equals( d.getName() ) )
                 .collect( Collectors.toList() );
 
         String mess = "DO( name = " + getName() + " )";
@@ -860,7 +857,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return;
         }
         setRefersToDO( res.get( 0 ) );
-        console.info( "[SCL links] DOI on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDO().getLineNumber() );
+        console.info( "[SCL links] DOI on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToDO().getLineNumber() );
     }
 
 } //DOIImpl

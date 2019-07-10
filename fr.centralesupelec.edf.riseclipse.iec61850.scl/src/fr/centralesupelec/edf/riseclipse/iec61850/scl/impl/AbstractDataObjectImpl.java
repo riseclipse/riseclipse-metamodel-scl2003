@@ -142,7 +142,7 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      * @ordered
      */
-    protected EList<ExtRef> referredByExtRef;
+    protected EList< ExtRef > referredByExtRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -179,13 +179,14 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public void setName(String newName) {
+    public void setName( String newName ) {
         String oldName = name;
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__NAME, oldName,
+                    name, !oldNameESet ) );
     }
 
     /**
@@ -199,8 +200,9 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__NAME, oldName,
+                    NAME_EDEFAULT, oldNameESet ) );
     }
 
     /**
@@ -229,13 +231,14 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public void setType(String newType) {
+    public void setType( String newType ) {
         String oldType = type;
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__TYPE, oldType,
+                    type, !oldTypeESet ) );
     }
 
     /**
@@ -249,8 +252,9 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__TYPE, oldType,
+                    TYPE_EDEFAULT, oldTypeESet ) );
     }
 
     /**
@@ -278,14 +282,19 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToDOType(DOType newRefersToDOType, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToDOType( DOType newRefersToDOType, NotificationChain msgs ) {
         DOType oldRefersToDOType = refersToDOType;
         refersToDOType = newRefersToDOType;
         boolean oldRefersToDOTypeESet = refersToDOTypeESet;
         refersToDOTypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, oldRefersToDOType, newRefersToDOType,
+                    !oldRefersToDOTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -296,21 +305,25 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public void setRefersToDOType(DOType newRefersToDOType) {
-        if (newRefersToDOType != refersToDOType) {
+    public void setRefersToDOType( DOType newRefersToDOType ) {
+        if( newRefersToDOType != refersToDOType ) {
             NotificationChain msgs = null;
-            if (refersToDOType != null)
-                msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs);
-            if (newRefersToDOType != null)
-                msgs = ((InternalEObject)newRefersToDOType).eInverseAdd(this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs);
-            msgs = basicSetRefersToDOType(newRefersToDOType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToDOType != null )
+                msgs = ( ( InternalEObject ) refersToDOType ).eInverseRemove( this,
+                        SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs );
+            if( newRefersToDOType != null )
+                msgs = ( ( InternalEObject ) newRefersToDOType ).eInverseAdd( this,
+                        SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs );
+            msgs = basicSetRefersToDOType( newRefersToDOType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDOTypeESet = refersToDOTypeESet;
             refersToDOTypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType, !oldRefersToDOTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET,
+                        SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, newRefersToDOType, newRefersToDOType,
+                        !oldRefersToDOTypeESet ) );
         }
     }
 
@@ -319,14 +332,19 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToDOType(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToDOType( NotificationChain msgs ) {
         DOType oldRefersToDOType = refersToDOType;
         refersToDOType = null;
         boolean oldRefersToDOTypeESet = refersToDOTypeESet;
         refersToDOTypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, oldRefersToDOType, null, oldRefersToDOTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, oldRefersToDOType, null,
+                    oldRefersToDOTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -338,17 +356,19 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      */
     @Override
     public void unsetRefersToDOType() {
-        if (refersToDOType != null) {
+        if( refersToDOType != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs);
-            msgs = basicUnsetRefersToDOType(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToDOType ).eInverseRemove( this,
+                    SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs );
+            msgs = basicUnsetRefersToDOType( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDOTypeESet = refersToDOTypeESet;
             refersToDOTypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET,
+                        SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE, null, null, oldRefersToDOTypeESet ) );
         }
     }
 
@@ -368,9 +388,11 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT);
+    public EList< ExtRef > getReferredByExtRef() {
+        if( referredByExtRef == null ) {
+            referredByExtRef = new EObjectWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+                    SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF,
+                    SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_OBJECT );
         }
         return referredByExtRef;
     }
@@ -382,7 +404,7 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      */
     @Override
     public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
+        if( referredByExtRef != null ) ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
     }
 
     /**
@@ -392,7 +414,7 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      */
     @Override
     public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
+        return referredByExtRef != null && ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).isSet();
     }
 
     /**
@@ -400,34 +422,20 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                if (refersToDOType != null)
-                    msgs = ((InternalEObject)refersToDOType).eInverseRemove(this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs);
-                return basicSetRefersToDOType((DOType)otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
+    public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            if( refersToDOType != null )
+                msgs = ( ( InternalEObject ) refersToDOType ).eInverseRemove( this,
+                        SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, DOType.class, msgs );
+            return basicSetRefersToDOType( ( DOType ) otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByExtRef() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                return basicUnsetRefersToDOType(msgs);
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -436,44 +444,14 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
-                return getName();
-            case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
-                return getType();
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                return getRefersToDOType();
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            return basicUnsetRefersToDOType( msgs );
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            return ( ( InternalEList< ? > ) getReferredByExtRef() ).basicRemove( otherEnd, msgs );
         }
-        return super.eGet(featureID, resolve, coreType);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                setRefersToDOType((DOType)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
-                return;
-        }
-        super.eSet(featureID, newValue);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -482,22 +460,44 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
-                unsetName();
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
-                unsetType();
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                unsetRefersToDOType();
-                return;
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
-                return;
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
+            return getName();
+        case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
+            return getType();
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            return getRefersToDOType();
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            return getReferredByExtRef();
         }
-        super.eUnset(featureID);
+        return super.eGet( featureID, resolve, coreType );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @SuppressWarnings( "unchecked" )
+    @Override
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
+            setName( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            setRefersToDOType( ( DOType ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            getReferredByExtRef().clear();
+            getReferredByExtRef().addAll( ( Collection< ? extends ExtRef > ) newValue );
+            return;
+        }
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -506,18 +506,42 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
-                return isSetName();
-            case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
-                return isSetType();
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
-                return isSetRefersToDOType();
-            case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
+            unsetName();
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
+            unsetType();
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            unsetRefersToDOType();
+            return;
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            unsetReferredByExtRef();
+            return;
         }
-        return super.eIsSet(featureID);
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_OBJECT__NAME:
+            return isSetName();
+        case SclPackage.ABSTRACT_DATA_OBJECT__TYPE:
+            return isSetType();
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE:
+            return isSetRefersToDOType();
+        case SclPackage.ABSTRACT_DATA_OBJECT__REFERRED_BY_EXT_REF:
+            return isSetReferredByExtRef();
+        }
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -527,14 +551,20 @@ public abstract class AbstractDataObjectImpl extends UnNamingImpl implements Abs
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ", type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

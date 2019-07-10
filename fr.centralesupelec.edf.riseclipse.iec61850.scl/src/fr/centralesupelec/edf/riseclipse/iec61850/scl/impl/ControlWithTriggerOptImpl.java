@@ -135,8 +135,9 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
         intgPd = newIntgPd;
         boolean oldIntgPdESet = intgPdESet;
         intgPdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, intgPd, !oldIntgPdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD,
+                    oldIntgPd, intgPd, !oldIntgPdESet ) );
     }
 
     /**
@@ -150,8 +151,9 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
         boolean oldIntgPdESet = intgPdESet;
         intgPd = INTG_PD_EDEFAULT;
         intgPdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD, oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD,
+                    oldIntgPd, INTG_PD_EDEFAULT, oldIntgPdESet ) );
     }
 
     /**
@@ -184,9 +186,13 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
         trgOps = newTrgOps;
         boolean oldTrgOpsESet = trgOpsESet;
         trgOpsESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, newTrgOps, !oldTrgOpsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, newTrgOps, !oldTrgOpsESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -198,20 +204,23 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public void setTrgOps( TrgOps newTrgOps ) {
-        if (newTrgOps != trgOps) {
+        if( newTrgOps != trgOps ) {
             NotificationChain msgs = null;
-            if (trgOps != null)
-                msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            if (newTrgOps != null)
-                msgs = ((InternalEObject)newTrgOps).eInverseAdd(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            msgs = basicSetTrgOps(newTrgOps, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( trgOps != null )
+                msgs = ( ( InternalEObject ) trgOps ).eInverseRemove( this,
+                        SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs );
+            if( newTrgOps != null )
+                msgs = ( ( InternalEObject ) newTrgOps ).eInverseAdd( this,
+                        SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs );
+            msgs = basicSetTrgOps( newTrgOps, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTrgOpsESet = trgOpsESet;
             trgOpsESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, newTrgOps, newTrgOps, !oldTrgOpsESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS,
+                        newTrgOps, newTrgOps, !oldTrgOpsESet ) );
         }
     }
 
@@ -225,9 +234,13 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
         trgOps = null;
         boolean oldTrgOpsESet = trgOpsESet;
         trgOpsESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, null, oldTrgOpsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, oldTrgOps, null, oldTrgOpsESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -239,17 +252,19 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public void unsetTrgOps() {
-        if (trgOps != null) {
+        if( trgOps != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)trgOps).eInverseRemove(this, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs);
-            msgs = basicUnsetTrgOps(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) trgOps ).eInverseRemove( this,
+                    SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, TrgOps.class, msgs );
+            msgs = basicUnsetTrgOps( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTrgOpsESet = trgOpsESet;
             trgOpsESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, null, oldTrgOpsESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS,
+                        null, null, oldTrgOpsESet ) );
         }
     }
 
@@ -270,13 +285,14 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                if (trgOps != null)
-                    msgs = ((InternalEObject)trgOps).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, msgs);
-                return basicSetTrgOps((TrgOps)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            if( trgOps != null )
+                msgs = ( ( InternalEObject ) trgOps ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, null, msgs );
+            return basicSetTrgOps( ( TrgOps ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -286,11 +302,11 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return basicUnsetTrgOps(msgs);
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            return basicUnsetTrgOps( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -300,13 +316,13 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                return getIntgPd();
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return getTrgOps();
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+            return getIntgPd();
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            return getTrgOps();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -316,15 +332,15 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                setIntgPd((Integer)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                setTrgOps((TrgOps)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+            setIntgPd( ( Integer ) newValue );
+            return;
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            setTrgOps( ( TrgOps ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -334,15 +350,15 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                unsetIntgPd();
-                return;
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                unsetTrgOps();
-                return;
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+            unsetIntgPd();
+            return;
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            unsetTrgOps();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -352,13 +368,13 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                return isSetIntgPd();
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                return isSetTrgOps();
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+            return isSetIntgPd();
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            return isSetTrgOps();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -368,12 +384,15 @@ public abstract class ControlWithTriggerOptImpl extends ControlImpl implements C
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (intgPd: ");
-        if (intgPdESet) result.append(intgPd); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (intgPd: " );
+        if( intgPdESet )
+            result.append( intgPd );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -58,7 +58,7 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<PowerTransformer> getPowerTransformer();
+    EList< PowerTransformer > getPowerTransformer();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getPowerTransformer <em>Power Transformer</em>}' containment reference list.
@@ -99,7 +99,7 @@ public interface EquipmentContainer extends PowerSystemResource {
      * @model opposite="ParentEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<GeneralEquipment> getGeneralEquipment();
+    EList< GeneralEquipment > getGeneralEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EquipmentContainer#getGeneralEquipment <em>General Equipment</em>}' containment reference list.

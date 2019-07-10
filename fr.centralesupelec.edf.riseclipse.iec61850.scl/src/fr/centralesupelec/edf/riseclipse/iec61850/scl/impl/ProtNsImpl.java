@@ -138,8 +138,9 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROT_NS__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROT_NS__TYPE, oldType, type,
+                    !oldTypeESet ) );
     }
 
     /**
@@ -153,8 +154,9 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PROT_NS__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PROT_NS__TYPE, oldType, TYPE_EDEFAULT,
+                    oldTypeESet ) );
     }
 
     /**
@@ -174,8 +176,8 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public DA getParentDA() {
-        if (eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA) return null;
-        return (DA)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA ) return null;
+        return ( DA ) eInternalContainer();
     }
 
     /**
@@ -183,8 +185,8 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDA(DA newParentDA, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDA, SclPackage.PROT_NS__PARENT_DA, msgs);
+    public NotificationChain basicSetParentDA( DA newParentDA, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDA, SclPackage.PROT_NS__PARENT_DA, msgs );
         return msgs;
     }
 
@@ -194,20 +196,22 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * @generated
      */
     @Override
-    public void setParentDA(DA newParentDA) {
-        if (newParentDA != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA && newParentDA != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDA))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDA( DA newParentDA ) {
+        if( newParentDA != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA && newParentDA != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDA ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDA != null)
-                msgs = ((InternalEObject)newParentDA).eInverseAdd(this, SclPackage.DA__PROT_NS, DA.class, msgs);
-            msgs = basicSetParentDA(newParentDA, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDA != null )
+                msgs = ( ( InternalEObject ) newParentDA ).eInverseAdd( this, SclPackage.DA__PROT_NS, DA.class, msgs );
+            msgs = basicSetParentDA( newParentDA, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROT_NS__PARENT_DA, newParentDA, newParentDA));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROT_NS__PARENT_DA, newParentDA,
+                    newParentDA ) );
     }
 
     /**
@@ -217,8 +221,8 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public DAType getParentDAType() {
-        if (eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA_TYPE) return null;
-        return (DAType)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA_TYPE ) return null;
+        return ( DAType ) eInternalContainer();
     }
 
     /**
@@ -226,8 +230,8 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDAType(DAType newParentDAType, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDAType, SclPackage.PROT_NS__PARENT_DA_TYPE, msgs);
+    public NotificationChain basicSetParentDAType( DAType newParentDAType, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDAType, SclPackage.PROT_NS__PARENT_DA_TYPE, msgs );
         return msgs;
     }
 
@@ -237,20 +241,23 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * @generated
      */
     @Override
-    public void setParentDAType(DAType newParentDAType) {
-        if (newParentDAType != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA_TYPE && newParentDAType != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDAType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDAType( DAType newParentDAType ) {
+        if( newParentDAType != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.PROT_NS__PARENT_DA_TYPE && newParentDAType != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDAType ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDAType != null)
-                msgs = ((InternalEObject)newParentDAType).eInverseAdd(this, SclPackage.DA_TYPE__PROT_NS, DAType.class, msgs);
-            msgs = basicSetParentDAType(newParentDAType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDAType != null )
+                msgs = ( ( InternalEObject ) newParentDAType ).eInverseAdd( this, SclPackage.DA_TYPE__PROT_NS,
+                        DAType.class, msgs );
+            msgs = basicSetParentDAType( newParentDAType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROT_NS__PARENT_DA_TYPE, newParentDAType, newParentDAType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROT_NS__PARENT_DA_TYPE, newParentDAType,
+                    newParentDAType ) );
     }
 
     /**
@@ -269,11 +276,11 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      * @generated
      */
     @Override
-    public void setValue(String newValue) {
+    public void setValue( String newValue ) {
         String oldValue = value;
         value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROT_NS__VALUE, oldValue, value));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROT_NS__VALUE, oldValue, value ) );
     }
 
     /**
@@ -283,17 +290,17 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__PARENT_DA:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDA((DA)otherEnd, msgs);
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDAType((DAType)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.PROT_NS__PARENT_DA:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDA( ( DA ) otherEnd, msgs );
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDAType( ( DAType ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -303,13 +310,13 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__PARENT_DA:
-                return basicSetParentDA(null, msgs);
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                return basicSetParentDAType(null, msgs);
+        switch( featureID ) {
+        case SclPackage.PROT_NS__PARENT_DA:
+            return basicSetParentDA( null, msgs );
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            return basicSetParentDAType( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -319,13 +326,13 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.PROT_NS__PARENT_DA:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DA__PROT_NS, DA.class, msgs);
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DA_TYPE__PROT_NS, DAType.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.PROT_NS__PARENT_DA:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DA__PROT_NS, DA.class, msgs );
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DA_TYPE__PROT_NS, DAType.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -335,17 +342,17 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__TYPE:
-                return getType();
-            case SclPackage.PROT_NS__PARENT_DA:
-                return getParentDA();
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                return getParentDAType();
-            case SclPackage.PROT_NS__VALUE:
-                return getValue();
+        switch( featureID ) {
+        case SclPackage.PROT_NS__TYPE:
+            return getType();
+        case SclPackage.PROT_NS__PARENT_DA:
+            return getParentDA();
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            return getParentDAType();
+        case SclPackage.PROT_NS__VALUE:
+            return getValue();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -355,21 +362,21 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.PROT_NS__PARENT_DA:
-                setParentDA((DA)newValue);
-                return;
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                setParentDAType((DAType)newValue);
-                return;
-            case SclPackage.PROT_NS__VALUE:
-                setValue((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.PROT_NS__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.PROT_NS__PARENT_DA:
+            setParentDA( ( DA ) newValue );
+            return;
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            setParentDAType( ( DAType ) newValue );
+            return;
+        case SclPackage.PROT_NS__VALUE:
+            setValue( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -379,21 +386,21 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__TYPE:
-                unsetType();
-                return;
-            case SclPackage.PROT_NS__PARENT_DA:
-                setParentDA((DA)null);
-                return;
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                setParentDAType((DAType)null);
-                return;
-            case SclPackage.PROT_NS__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
+        switch( featureID ) {
+        case SclPackage.PROT_NS__TYPE:
+            unsetType();
+            return;
+        case SclPackage.PROT_NS__PARENT_DA:
+            setParentDA( ( DA ) null );
+            return;
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            setParentDAType( ( DAType ) null );
+            return;
+        case SclPackage.PROT_NS__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -403,17 +410,17 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PROT_NS__TYPE:
-                return isSetType();
-            case SclPackage.PROT_NS__PARENT_DA:
-                return getParentDA() != null;
-            case SclPackage.PROT_NS__PARENT_DA_TYPE:
-                return getParentDAType() != null;
-            case SclPackage.PROT_NS__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        switch( featureID ) {
+        case SclPackage.PROT_NS__TYPE:
+            return isSetType();
+        case SclPackage.PROT_NS__PARENT_DA:
+            return getParentDA() != null;
+        case SclPackage.PROT_NS__PARENT_DA_TYPE:
+            return getParentDAType() != null;
+        case SclPackage.PROT_NS__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -423,14 +430,17 @@ public class ProtNsImpl extends SclObjectImpl implements ProtNs {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", value: ");
-        result.append(value);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ", value: " );
+        result.append( value );
+        result.append( ')' );
         return result.toString();
     }
 

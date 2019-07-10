@@ -58,7 +58,7 @@ public interface Communication extends UnNaming {
      * @model opposite="ParentCommunication" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubNetwork> getSubNetwork();
+    EList< SubNetwork > getSubNetwork();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Communication#getSubNetwork <em>Sub Network</em>}' containment reference list.
@@ -103,6 +103,6 @@ public interface Communication extends UnNaming {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
 } // Communication

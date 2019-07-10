@@ -324,6 +324,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @model opposite="ReportControl" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
+    @Override
     AnyLN getParentAnyLN();
 
     /**
@@ -334,7 +335,7 @@ public interface ReportControl extends ControlWithTriggerOpt {
      * @see #getParentAnyLN()
      * @generated
      */
-    void setParentAnyLN(AnyLN value);
+    void setParentAnyLN( AnyLN value );
 
     /**
      * Returns the value of the '<em><b>Opt Fields</b></em>' containment reference.

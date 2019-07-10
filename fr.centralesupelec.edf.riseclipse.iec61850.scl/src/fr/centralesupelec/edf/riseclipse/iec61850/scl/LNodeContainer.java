@@ -57,7 +57,7 @@ public interface LNodeContainer extends Naming {
      * @model opposite="ParentLNodeContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<LNode> getLNode();
+    EList< LNode > getLNode();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeContainer#getLNode <em>LNode</em>}' containment reference list.

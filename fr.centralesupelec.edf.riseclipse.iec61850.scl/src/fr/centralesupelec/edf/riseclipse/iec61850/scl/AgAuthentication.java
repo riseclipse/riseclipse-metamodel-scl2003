@@ -67,7 +67,7 @@ public interface AgAuthentication extends EObject {
      * @see #getCertificate()
      * @generated
      */
-    void setCertificate(Boolean value);
+    void setCertificate( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getCertificate <em>Certificate</em>}' attribute.
@@ -116,7 +116,7 @@ public interface AgAuthentication extends EObject {
      * @see #getNone()
      * @generated
      */
-    void setNone(Boolean value);
+    void setNone( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getNone <em>None</em>}' attribute.
@@ -165,7 +165,7 @@ public interface AgAuthentication extends EObject {
      * @see #getPassword()
      * @generated
      */
-    void setPassword(Boolean value);
+    void setPassword( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getPassword <em>Password</em>}' attribute.
@@ -214,7 +214,7 @@ public interface AgAuthentication extends EObject {
      * @see #getStrong()
      * @generated
      */
-    void setStrong(Boolean value);
+    void setStrong( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getStrong <em>Strong</em>}' attribute.
@@ -263,7 +263,7 @@ public interface AgAuthentication extends EObject {
      * @see #getWeak()
      * @generated
      */
-    void setWeak(Boolean value);
+    void setWeak( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getWeak <em>Weak</em>}' attribute.

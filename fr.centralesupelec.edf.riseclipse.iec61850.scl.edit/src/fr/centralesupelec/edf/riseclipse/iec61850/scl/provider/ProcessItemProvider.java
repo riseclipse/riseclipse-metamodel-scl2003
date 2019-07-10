@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -47,8 +46,8 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ProcessItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ProcessItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,11 +57,11 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addTypePropertyDescriptor(object);
+            addTypePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -73,20 +72,20 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Process_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Process_type_feature", "_UI_Process_type"),
-                 SclPackage.eINSTANCE.getProcess_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Process_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Process_type_feature",
+                                "_UI_Process_type" ),
+                        SclPackage.eINSTANCE.getProcess_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -98,13 +97,13 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getProcess_Line());
-            childrenFeatures.add(SclPackage.eINSTANCE.getProcess_ConductingEquipment());
-            childrenFeatures.add(SclPackage.eINSTANCE.getProcess_Substation());
-            childrenFeatures.add(SclPackage.eINSTANCE.getProcess_SubProcesses());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getProcess_Line() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getProcess_ConductingEquipment() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getProcess_Substation() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getProcess_SubProcesses() );
         }
         return childrenFeatures;
     }
@@ -115,11 +114,11 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -129,8 +128,8 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Process"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Process" ) );
     }
 
     /**
@@ -140,13 +139,11 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((fr.centralesupelec.edf.riseclipse.iec61850.scl.Process)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Process_type") :
-            getString("_UI_Process_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_Process_type" )
+                : getString( "_UI_Process_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -156,21 +153,21 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class)) {
-            case SclPackage.PROCESS__TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.PROCESS__LINE:
-            case SclPackage.PROCESS__CONDUCTING_EQUIPMENT:
-            case SclPackage.PROCESS__SUBSTATION:
-            case SclPackage.PROCESS__SUB_PROCESSES:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class ) ) {
+        case SclPackage.PROCESS__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.PROCESS__LINE:
+        case SclPackage.PROCESS__CONDUCTING_EQUIPMENT:
+        case SclPackage.PROCESS__SUBSTATION:
+        case SclPackage.PROCESS__SUB_PROCESSES:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -181,28 +178,20 @@ public class ProcessItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getProcess_Line(),
-                 SclFactory.eINSTANCE.createLine()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getProcess_Line(),
+                SclFactory.eINSTANCE.createLine() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getProcess_ConductingEquipment(),
-                 SclFactory.eINSTANCE.createConductingEquipment()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getProcess_ConductingEquipment(),
+                SclFactory.eINSTANCE.createConductingEquipment() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getProcess_Substation(),
-                 SclFactory.eINSTANCE.createSubstation()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getProcess_Substation(),
+                SclFactory.eINSTANCE.createSubstation() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getProcess_SubProcesses(),
-                 SclFactory.eINSTANCE.createProcess()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getProcess_SubProcesses(),
+                SclFactory.eINSTANCE.createProcess() ) );
     }
 
 }

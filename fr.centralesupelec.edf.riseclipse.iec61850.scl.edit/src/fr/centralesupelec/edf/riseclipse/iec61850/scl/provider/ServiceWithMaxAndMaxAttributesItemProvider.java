@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -48,8 +47,8 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * <!-- end-user-doc -->
      * @generated
      */
-    public ServiceWithMaxAndMaxAttributesItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ServiceWithMaxAndMaxAttributesItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,11 +58,11 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addMaxAttributesPropertyDescriptor(object);
+            addMaxAttributesPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,21 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxAttributesPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ServiceWithMaxAndMaxAttributes_maxAttributes_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceWithMaxAndMaxAttributes_maxAttributes_feature", "_UI_ServiceWithMaxAndMaxAttributes_type"),
-                 SclPackage.eINSTANCE.getServiceWithMaxAndMaxAttributes_MaxAttributes(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxAttributesPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServiceWithMaxAndMaxAttributes_maxAttributes_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_ServiceWithMaxAndMaxAttributes_maxAttributes_feature",
+                                "_UI_ServiceWithMaxAndMaxAttributes_type" ),
+                        SclPackage.eINSTANCE.getServiceWithMaxAndMaxAttributes_MaxAttributes(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,8 +97,8 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceWithMaxAndMaxAttributes"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ServiceWithMaxAndMaxAttributes" ) );
     }
 
     /**
@@ -108,11 +108,11 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceWithMaxAndMaxAttributes serviceWithMaxAndMaxAttributes = (ServiceWithMaxAndMaxAttributes)object;
-        return getString("_UI_ServiceWithMaxAndMaxAttributes_type") + " " + serviceWithMaxAndMaxAttributes.getLineNumber();
+    public String getText( Object object ) {
+        ServiceWithMaxAndMaxAttributes serviceWithMaxAndMaxAttributes = ( ServiceWithMaxAndMaxAttributes ) object;
+        return getString( "_UI_ServiceWithMaxAndMaxAttributes_type" ) + " "
+                + serviceWithMaxAndMaxAttributes.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -122,15 +122,15 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ServiceWithMaxAndMaxAttributes.class)) {
-            case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ServiceWithMaxAndMaxAttributes.class ) ) {
+        case SclPackage.SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES__MAX_ATTRIBUTES:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -141,8 +141,8 @@ public class ServiceWithMaxAndMaxAttributesItemProvider extends ServiceWithMaxIt
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

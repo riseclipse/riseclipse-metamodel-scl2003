@@ -333,7 +333,7 @@ public interface Header extends SclObject {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
     /**
      * Returns the value of the '<em><b>Text</b></em>' containment reference.

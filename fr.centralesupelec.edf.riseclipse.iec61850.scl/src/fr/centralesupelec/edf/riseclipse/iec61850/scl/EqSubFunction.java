@@ -59,6 +59,6 @@ public interface EqSubFunction extends AbstractEqFuncSubFunc {
      * @see #getParentAbstractEqFuncSubFunc()
      * @generated
      */
-    void setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc value);
+    void setParentAbstractEqFuncSubFunc( AbstractEqFuncSubFunc value );
 
 } // EqSubFunction

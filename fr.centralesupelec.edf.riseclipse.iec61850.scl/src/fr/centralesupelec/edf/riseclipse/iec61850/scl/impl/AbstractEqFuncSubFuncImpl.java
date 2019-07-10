@@ -93,7 +93,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * @generated
      * @ordered
      */
-    protected EList<EqSubFunction> eqSubFunction;
+    protected EList< EqSubFunction > eqSubFunction;
 
     /**
      * The cached value of the '{@link #getSubGeneralEquipment() <em>Sub General Equipment</em>}' containment reference list.
@@ -103,7 +103,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * @generated
      * @ordered
      */
-    protected EList<GeneralEquipment> subGeneralEquipment;
+    protected EList< GeneralEquipment > subGeneralEquipment;
 
     /**
      * <!-- begin-user-doc -->
@@ -145,8 +145,9 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType,
+                    type, !oldTypeESet ) );
     }
 
     /**
@@ -160,8 +161,9 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE,
+                    oldType, TYPE_EDEFAULT, oldTypeESet ) );
     }
 
     /**
@@ -180,9 +182,11 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * @generated
      */
     @Override
-    public EList<EqSubFunction> getEqSubFunction() {
-        if (eqSubFunction == null) {
-            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable<EqSubFunction>(EqSubFunction.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION, SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC);
+    public EList< EqSubFunction > getEqSubFunction() {
+        if( eqSubFunction == null ) {
+            eqSubFunction = new EObjectContainmentWithInverseEList.Unsettable< EqSubFunction >( EqSubFunction.class,
+                    this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION,
+                    SclPackage.EQ_SUB_FUNCTION__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC );
         }
         return eqSubFunction;
     }
@@ -194,7 +198,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public void unsetEqSubFunction() {
-        if (eqSubFunction != null) ((InternalEList.Unsettable<?>)eqSubFunction).unset();
+        if( eqSubFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqSubFunction ).unset();
     }
 
     /**
@@ -204,7 +208,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public boolean isSetEqSubFunction() {
-        return eqSubFunction != null && ((InternalEList.Unsettable<?>)eqSubFunction).isSet();
+        return eqSubFunction != null && ( ( InternalEList.Unsettable< ? > ) eqSubFunction ).isSet();
     }
 
     /**
@@ -213,9 +217,11 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      * @generated
      */
     @Override
-    public EList<GeneralEquipment> getSubGeneralEquipment() {
-        if (subGeneralEquipment == null) {
-            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC);
+    public EList< GeneralEquipment > getSubGeneralEquipment() {
+        if( subGeneralEquipment == null ) {
+            subGeneralEquipment = new EObjectContainmentWithInverseEList.Unsettable< GeneralEquipment >(
+                    GeneralEquipment.class, this, SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT,
+                    SclPackage.GENERAL_EQUIPMENT__PARENT_ABSTRACT_EQ_FUNC_SUB_FUNC );
         }
         return subGeneralEquipment;
     }
@@ -227,7 +233,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public void unsetSubGeneralEquipment() {
-        if (subGeneralEquipment != null) ((InternalEList.Unsettable<?>)subGeneralEquipment).unset();
+        if( subGeneralEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subGeneralEquipment ).unset();
     }
 
     /**
@@ -237,7 +243,7 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public boolean isSetSubGeneralEquipment() {
-        return subGeneralEquipment != null && ((InternalEList.Unsettable<?>)subGeneralEquipment).isSet();
+        return subGeneralEquipment != null && ( ( InternalEList.Unsettable< ? > ) subGeneralEquipment ).isSet();
     }
 
     /**
@@ -248,13 +254,15 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqSubFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubGeneralEquipment()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getEqSubFunction() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubGeneralEquipment() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -264,13 +272,13 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return ((InternalEList<?>)getEqSubFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return ((InternalEList<?>)getSubGeneralEquipment()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            return ( ( InternalEList< ? > ) getEqSubFunction() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            return ( ( InternalEList< ? > ) getSubGeneralEquipment() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -280,15 +288,15 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                return getType();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return getEqSubFunction();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return getSubGeneralEquipment();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+            return getType();
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            return getEqSubFunction();
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            return getSubGeneralEquipment();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -299,20 +307,20 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                getEqSubFunction().clear();
-                getEqSubFunction().addAll((Collection<? extends EqSubFunction>)newValue);
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                getSubGeneralEquipment().clear();
-                getSubGeneralEquipment().addAll((Collection<? extends GeneralEquipment>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            getEqSubFunction().clear();
+            getEqSubFunction().addAll( ( Collection< ? extends EqSubFunction > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            getSubGeneralEquipment().clear();
+            getSubGeneralEquipment().addAll( ( Collection< ? extends GeneralEquipment > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -322,18 +330,18 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                unsetType();
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                unsetEqSubFunction();
-                return;
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                unsetSubGeneralEquipment();
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+            unsetType();
+            return;
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            unsetEqSubFunction();
+            return;
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            unsetSubGeneralEquipment();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -343,15 +351,15 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
-                return isSetType();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
-                return isSetEqSubFunction();
-            case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
-                return isSetSubGeneralEquipment();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__TYPE:
+            return isSetType();
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__EQ_SUB_FUNCTION:
+            return isSetEqSubFunction();
+        case SclPackage.ABSTRACT_EQ_FUNC_SUB_FUNC__SUB_GENERAL_EQUIPMENT:
+            return isSetSubGeneralEquipment();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -361,12 +369,15 @@ public class AbstractEqFuncSubFuncImpl extends PowerSystemResourceImpl implement
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

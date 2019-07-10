@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ConnectivityNodeItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ConnectivityNodeItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,12 +56,12 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addPathNamePropertyDescriptor(object);
-            addReferredByTerminalPropertyDescriptor(object);
+            addPathNamePropertyDescriptor( object );
+            addReferredByTerminalPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -73,20 +72,20 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addPathNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectivityNode_pathName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectivityNode_pathName_feature", "_UI_ConnectivityNode_type"),
-                 SclPackage.eINSTANCE.getConnectivityNode_PathName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addPathNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectivityNode_pathName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectivityNode_pathName_feature",
+                                "_UI_ConnectivityNode_type" ),
+                        SclPackage.eINSTANCE.getConnectivityNode_PathName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -95,20 +94,20 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByTerminalPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectivityNode_ReferredByTerminal_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectivityNode_ReferredByTerminal_feature", "_UI_ConnectivityNode_type"),
-                 SclPackage.eINSTANCE.getConnectivityNode_ReferredByTerminal(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByTerminalPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectivityNode_ReferredByTerminal_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_ConnectivityNode_ReferredByTerminal_feature", "_UI_ConnectivityNode_type" ),
+                        SclPackage.eINSTANCE.getConnectivityNode_ReferredByTerminal(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,26 +117,24 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectivityNode"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ConnectivityNode" ) );
     }
 
     /**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
+     * This returns the label text for the adapted class.
+     * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
+     * @generated NOT
+     */
     @Override
-    public String getText(Object object) {
-    	// Use pathName as display text
-		//String label = ((ConnectivityNode)object).getName();
-		String label = ((ConnectivityNode)object).getPathName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ConnectivityNode_type") :
-			getString("_UI_ConnectivityNode_type") + " " + label;
-	}
-    
+    public String getText( Object object ) {
+        // Use pathName as display text
+        //String label = ((ConnectivityNode)object).getName();
+        String label = ( ( ConnectivityNode ) object ).getPathName();
+        return label == null || label.length() == 0 ? getString( "_UI_ConnectivityNode_type" )
+                : getString( "_UI_ConnectivityNode_type" ) + " " + label;
+    }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -147,15 +144,15 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ConnectivityNode.class)) {
-            case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ConnectivityNode.class ) ) {
+        case SclPackage.CONNECTIVITY_NODE__PATH_NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -166,8 +163,8 @@ public class ConnectivityNodeItemProvider extends LNodeContainerItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

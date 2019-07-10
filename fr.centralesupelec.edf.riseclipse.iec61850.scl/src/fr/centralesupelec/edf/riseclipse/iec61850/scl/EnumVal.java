@@ -114,7 +114,7 @@ public interface EnumVal extends SclObject, AgDesc {
      * @see #getParentEnumType()
      * @generated
      */
-    void setParentEnumType(EnumType value);
+    void setParentEnumType( EnumType value );
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

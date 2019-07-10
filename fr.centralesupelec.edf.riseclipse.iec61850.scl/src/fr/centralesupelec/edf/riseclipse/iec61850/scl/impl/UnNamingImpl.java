@@ -108,13 +108,14 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.UN_NAMING__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.UN_NAMING__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -128,8 +129,9 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.UN_NAMING__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.UN_NAMING__DESC, oldDesc,
+                    DESC_EDEFAULT, oldDescESet ) );
     }
 
     /**
@@ -148,12 +150,12 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.UN_NAMING__DESC:
-                return getDesc();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.UN_NAMING__DESC:
+            return getDesc();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -162,13 +164,13 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.UN_NAMING__DESC:
-                setDesc((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.UN_NAMING__DESC:
+            setDesc( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -177,13 +179,13 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.UN_NAMING__DESC:
-                unsetDesc();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.UN_NAMING__DESC:
+            unsetDesc();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -192,12 +194,12 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.UN_NAMING__DESC:
-                return isSetDesc();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.UN_NAMING__DESC:
+            return isSetDesc();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -206,14 +208,16 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.UN_NAMING__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.UN_NAMING__DESC:
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -222,14 +226,16 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      * @generated
      */
     @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.UN_NAMING__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.UN_NAMING__DESC;
+            default:
+                return -1;
             }
         }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -239,12 +245,15 @@ public abstract class UnNamingImpl extends BaseElementImpl implements UnNaming {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

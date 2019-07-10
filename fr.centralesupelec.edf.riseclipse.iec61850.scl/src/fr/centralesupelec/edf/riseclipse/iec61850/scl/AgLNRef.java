@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ag LN Ref</b></em>'.
@@ -64,7 +63,7 @@ public interface AgLNRef extends AgLDRef {
      * @see #getLnClass()
      * @generated
      */
-    void setLnClass(String value);
+    void setLnClass( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnClass <em>Ln Class</em>}' attribute.
@@ -113,7 +112,7 @@ public interface AgLNRef extends AgLDRef {
      * @see #getLnInst()
      * @generated
      */
-    void setLnInst(String value);
+    void setLnInst( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getLnInst <em>Ln Inst</em>}' attribute.
@@ -163,7 +162,7 @@ public interface AgLNRef extends AgLDRef {
      * @see #getPrefix()
      * @generated
      */
-    void setPrefix(String value);
+    void setPrefix( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef#getPrefix <em>Prefix</em>}' attribute.

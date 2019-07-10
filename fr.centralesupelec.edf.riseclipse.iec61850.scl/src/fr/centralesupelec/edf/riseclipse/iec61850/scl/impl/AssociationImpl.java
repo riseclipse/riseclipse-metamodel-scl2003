@@ -349,13 +349,14 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -369,8 +370,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__DESC, oldDesc,
+                    DESC_EDEFAULT, oldDescESet ) );
     }
 
     /**
@@ -404,8 +406,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         associationID = newAssociationID;
         boolean oldAssociationIDESet = associationIDESet;
         associationIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, associationID, !oldAssociationIDESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__ASSOCIATION_ID,
+                    oldAssociationID, associationID, !oldAssociationIDESet ) );
     }
 
     /**
@@ -419,8 +422,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldAssociationIDESet = associationIDESet;
         associationID = ASSOCIATION_ID_EDEFAULT;
         associationIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__ASSOCIATION_ID, oldAssociationID, ASSOCIATION_ID_EDEFAULT, oldAssociationIDESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__ASSOCIATION_ID,
+                    oldAssociationID, ASSOCIATION_ID_EDEFAULT, oldAssociationIDESet ) );
     }
 
     /**
@@ -454,8 +458,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__IED_NAME, oldIedName,
+                    iedName, !oldIedNameESet ) );
     }
 
     /**
@@ -469,8 +474,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__IED_NAME, oldIedName,
+                    IED_NAME_EDEFAULT, oldIedNameESet ) );
     }
 
     /**
@@ -504,8 +510,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         kind = newKind == null ? KIND_EDEFAULT : newKind;
         boolean oldKindESet = kindESet;
         kindESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__KIND, oldKind, kind, !oldKindESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__KIND, oldKind, kind,
+                    !oldKindESet ) );
     }
 
     /**
@@ -519,8 +526,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldKindESet = kindESet;
         kind = KIND_EDEFAULT;
         kindESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__KIND, oldKind, KIND_EDEFAULT, oldKindESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__KIND, oldKind,
+                    KIND_EDEFAULT, oldKindESet ) );
     }
 
     /**
@@ -540,8 +548,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public Server getParentServer() {
-        if (eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER) return null;
-        return (Server)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER ) return null;
+        return ( Server ) eInternalContainer();
     }
 
     /**
@@ -549,8 +557,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServer(Server newParentServer, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServer, SclPackage.ASSOCIATION__PARENT_SERVER, msgs);
+    public NotificationChain basicSetParentServer( Server newParentServer, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServer, SclPackage.ASSOCIATION__PARENT_SERVER, msgs );
         return msgs;
     }
 
@@ -560,20 +568,23 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
-    public void setParentServer(Server newParentServer) {
-        if (newParentServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER && newParentServer != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServer))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServer( Server newParentServer ) {
+        if( newParentServer != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ASSOCIATION__PARENT_SERVER && newParentServer != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServer ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServer != null)
-                msgs = ((InternalEObject)newParentServer).eInverseAdd(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
-            msgs = basicSetParentServer(newParentServer, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServer != null )
+                msgs = ( ( InternalEObject ) newParentServer ).eInverseAdd( this, SclPackage.SERVER__ASSOCIATION,
+                        Server.class, msgs );
+            msgs = basicSetParentServer( newParentServer, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__PARENT_SERVER, newParentServer, newParentServer));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__PARENT_SERVER,
+                    newParentServer, newParentServer ) );
     }
 
     /**
@@ -597,8 +608,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, ldInst,
+                    !oldLdInstESet ) );
     }
 
     /**
@@ -612,8 +624,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__LD_INST, oldLdInst,
+                    LD_INST_EDEFAULT, oldLdInstESet ) );
     }
 
     /**
@@ -647,8 +660,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass,
+                    lnClass, !oldLnClassESet ) );
     }
 
     /**
@@ -662,8 +676,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -697,8 +712,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, lnInst,
+                    !oldLnInstESet ) );
     }
 
     /**
@@ -712,8 +728,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__LN_INST, oldLnInst,
+                    LN_INST_EDEFAULT, oldLnInstESet ) );
     }
 
     /**
@@ -747,8 +764,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, prefix,
+                    !oldPrefixESet ) );
     }
 
     /**
@@ -762,8 +780,9 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__PREFIX, oldPrefix,
+                    PREFIX_EDEFAULT, oldPrefixESet ) );
     }
 
     /**
@@ -796,9 +815,14 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         refersToAnyLN = newRefersToAnyLN;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN,
+                    !oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -810,20 +834,23 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
-        if (newRefersToAnyLN != refersToAnyLN) {
+        if( newRefersToAnyLN != refersToAnyLN ) {
             NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs );
+            if( newRefersToAnyLN != null )
+                msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this,
+                        SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs );
+            msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN,
+                        newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
         }
     }
 
@@ -837,9 +864,13 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         refersToAnyLN = null;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -851,17 +882,19 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
+        if( refersToAnyLN != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                    SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs );
+            msgs = basicUnsetRefersToAnyLN( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN,
+                        null, null, oldRefersToAnyLNESet ) );
         }
     }
 
@@ -882,17 +915,18 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServer((Server)otherEnd, msgs);
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServer( ( Server ) otherEnd, msgs );
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, AnyLN.class, msgs );
+            return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -902,13 +936,13 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                return basicSetParentServer(null, msgs);
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            return basicSetParentServer( null, msgs );
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            return basicUnsetRefersToAnyLN( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -918,11 +952,11 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVER__ASSOCIATION, Server.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -932,29 +966,29 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__DESC:
-                return getDesc();
-            case SclPackage.ASSOCIATION__IED_NAME:
-                return getIedName();
-            case SclPackage.ASSOCIATION__LD_INST:
-                return getLdInst();
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                return getLnClass();
-            case SclPackage.ASSOCIATION__LN_INST:
-                return getLnInst();
-            case SclPackage.ASSOCIATION__PREFIX:
-                return getPrefix();
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return getAssociationID();
-            case SclPackage.ASSOCIATION__KIND:
-                return getKind();
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                return getParentServer();
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__DESC:
+            return getDesc();
+        case SclPackage.ASSOCIATION__IED_NAME:
+            return getIedName();
+        case SclPackage.ASSOCIATION__LD_INST:
+            return getLdInst();
+        case SclPackage.ASSOCIATION__LN_CLASS:
+            return getLnClass();
+        case SclPackage.ASSOCIATION__LN_INST:
+            return getLnInst();
+        case SclPackage.ASSOCIATION__PREFIX:
+            return getPrefix();
+        case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            return getAssociationID();
+        case SclPackage.ASSOCIATION__KIND:
+            return getKind();
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            return getParentServer();
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            return getRefersToAnyLN();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -964,39 +998,39 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__DESC:
-                setDesc((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                setAssociationID((String)newValue);
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                setKind((AssociationKindEnum)newValue);
-                return;
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                setParentServer((Server)newValue);
-                return;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__DESC:
+            setDesc( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__IED_NAME:
+            setIedName( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__LD_INST:
+            setLdInst( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__LN_INST:
+            setLnInst( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__PREFIX:
+            setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            setAssociationID( ( String ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__KIND:
+            setKind( ( AssociationKindEnum ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            setParentServer( ( Server ) newValue );
+            return;
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            setRefersToAnyLN( ( AnyLN ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1006,39 +1040,39 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ASSOCIATION__DESC:
-                unsetDesc();
-                return;
-            case SclPackage.ASSOCIATION__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.ASSOCIATION__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.ASSOCIATION__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.ASSOCIATION__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.ASSOCIATION__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                unsetAssociationID();
-                return;
-            case SclPackage.ASSOCIATION__KIND:
-                unsetKind();
-                return;
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                setParentServer((Server)null);
-                return;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__DESC:
+            unsetDesc();
+            return;
+        case SclPackage.ASSOCIATION__IED_NAME:
+            unsetIedName();
+            return;
+        case SclPackage.ASSOCIATION__LD_INST:
+            unsetLdInst();
+            return;
+        case SclPackage.ASSOCIATION__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.ASSOCIATION__LN_INST:
+            unsetLnInst();
+            return;
+        case SclPackage.ASSOCIATION__PREFIX:
+            unsetPrefix();
+            return;
+        case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            unsetAssociationID();
+            return;
+        case SclPackage.ASSOCIATION__KIND:
+            unsetKind();
+            return;
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            setParentServer( ( Server ) null );
+            return;
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            unsetRefersToAnyLN();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1048,29 +1082,69 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.ASSOCIATION__DESC:
+            return isSetDesc();
+        case SclPackage.ASSOCIATION__IED_NAME:
+            return isSetIedName();
+        case SclPackage.ASSOCIATION__LD_INST:
+            return isSetLdInst();
+        case SclPackage.ASSOCIATION__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.ASSOCIATION__LN_INST:
+            return isSetLnInst();
+        case SclPackage.ASSOCIATION__PREFIX:
+            return isSetPrefix();
+        case SclPackage.ASSOCIATION__ASSOCIATION_ID:
+            return isSetAssociationID();
+        case SclPackage.ASSOCIATION__KIND:
+            return isSetKind();
+        case SclPackage.ASSOCIATION__PARENT_SERVER:
+            return getParentServer() != null;
+        case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
+            return isSetRefersToAnyLN();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.ASSOCIATION__DESC:
-                return isSetDesc();
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgLDRef.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.ASSOCIATION__IED_NAME:
-                return isSetIedName();
+                return SclPackage.AG_LD_REF__IED_NAME;
             case SclPackage.ASSOCIATION__LD_INST:
-                return isSetLdInst();
+                return SclPackage.AG_LD_REF__LD_INST;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgLNRef.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.ASSOCIATION__LN_CLASS:
-                return isSetLnClass();
+                return SclPackage.AG_LN_REF__LN_CLASS;
             case SclPackage.ASSOCIATION__LN_INST:
-                return isSetLnInst();
+                return SclPackage.AG_LN_REF__LN_INST;
             case SclPackage.ASSOCIATION__PREFIX:
-                return isSetPrefix();
-            case SclPackage.ASSOCIATION__ASSOCIATION_ID:
-                return isSetAssociationID();
-            case SclPackage.ASSOCIATION__KIND:
-                return isSetKind();
-            case SclPackage.ASSOCIATION__PARENT_SERVER:
-                return getParentServer() != null;
-            case SclPackage.ASSOCIATION__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
+                return SclPackage.AG_LN_REF__PREFIX;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -1079,60 +1153,38 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.ASSOCIATION__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.ASSOCIATION__DESC;
+            default:
+                return -1;
             }
         }
-        if (baseClass == AgLDRef.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.ASSOCIATION__IED_NAME: return SclPackage.AG_LD_REF__IED_NAME;
-                case SclPackage.ASSOCIATION__LD_INST: return SclPackage.AG_LD_REF__LD_INST;
-                default: return -1;
+        if( baseClass == AgLDRef.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_LD_REF__IED_NAME:
+                return SclPackage.ASSOCIATION__IED_NAME;
+            case SclPackage.AG_LD_REF__LD_INST:
+                return SclPackage.ASSOCIATION__LD_INST;
+            default:
+                return -1;
             }
         }
-        if (baseClass == AgLNRef.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.ASSOCIATION__LN_CLASS: return SclPackage.AG_LN_REF__LN_CLASS;
-                case SclPackage.ASSOCIATION__LN_INST: return SclPackage.AG_LN_REF__LN_INST;
-                case SclPackage.ASSOCIATION__PREFIX: return SclPackage.AG_LN_REF__PREFIX;
-                default: return -1;
+        if( baseClass == AgLNRef.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_LN_REF__LN_CLASS:
+                return SclPackage.ASSOCIATION__LN_CLASS;
+            case SclPackage.AG_LN_REF__LN_INST:
+                return SclPackage.ASSOCIATION__LN_INST;
+            case SclPackage.AG_LN_REF__PREFIX:
+                return SclPackage.ASSOCIATION__PREFIX;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.ASSOCIATION__DESC;
-                default: return -1;
-            }
-        }
-        if (baseClass == AgLDRef.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_LD_REF__IED_NAME: return SclPackage.ASSOCIATION__IED_NAME;
-                case SclPackage.AG_LD_REF__LD_INST: return SclPackage.ASSOCIATION__LD_INST;
-                default: return -1;
-            }
-        }
-        if (baseClass == AgLNRef.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_LN_REF__LN_CLASS: return SclPackage.ASSOCIATION__LN_CLASS;
-                case SclPackage.AG_LN_REF__LN_INST: return SclPackage.ASSOCIATION__LN_INST;
-                case SclPackage.AG_LN_REF__PREFIX: return SclPackage.ASSOCIATION__PREFIX;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -1142,26 +1194,50 @@ public class AssociationImpl extends BaseElementImpl implements Association {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(", iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", associationID: ");
-        if (associationIDESet) result.append(associationID); else result.append("<unset>");
-        result.append(", kind: ");
-        if (kindESet) result.append(kind); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ", iedName: " );
+        if( iedNameESet )
+            result.append( iedName );
+        else
+            result.append( "<unset>" );
+        result.append( ", ldInst: " );
+        if( ldInstESet )
+            result.append( ldInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnInst: " );
+        if( lnInstESet )
+            result.append( lnInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", prefix: " );
+        if( prefixESet )
+            result.append( prefix );
+        else
+            result.append( "<unset>" );
+        result.append( ", associationID: " );
+        if( associationIDESet )
+            result.append( associationID );
+        else
+            result.append( "<unset>" );
+        result.append( ", kind: " );
+        if( kindESet )
+            result.append( kind );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1169,7 +1245,7 @@ public class AssociationImpl extends BaseElementImpl implements Association {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // kind            The kind of pre-configured association, pre-established or predefined
         // associationID   The identification of a pre-configured association (otherwise empty)
         // iedName         The reference identifying the IED on which the client resides
@@ -1180,15 +1256,15 @@ public class AssociationImpl extends BaseElementImpl implements Association {
 
         String messagePrefix = "[SCL links] while resolving link from Association on line " + getLineNumber() + ": ";
 
-        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+        if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix, "iedName is missing " );
             return;
         }
-        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( messagePrefix, "ldInst is missing " );
             return;
         }
-        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             console.warning( messagePrefix, "lnClass is missing " );
             return;
         }
@@ -1213,7 +1289,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
         }
         console.verbose( messagePrefix, "found ", mess2, " on line ", lDevice.getLeft().getLineNumber() );
 
-        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
+                getPrefix() );
         String mess3 = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess3 += ", inst = " + getLnInst();
@@ -1225,7 +1302,8 @@ public class AssociationImpl extends BaseElementImpl implements Association {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] Association on line ", getLineNumber(), " refers to ", mess3, " on line ", getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] Association on line ", getLineNumber(), " refers to ", mess3, " on line ",
+                getRefersToAnyLN().getLineNumber() );
     }
 
 } //AssociationImpl

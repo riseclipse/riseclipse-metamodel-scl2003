@@ -488,6 +488,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @model opposite="LogControl" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
+    @Override
     AnyLN getParentAnyLN();
 
     /**
@@ -498,7 +499,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #getParentAnyLN()
      * @generated
      */
-    void setParentAnyLN(AnyLN value);
+    void setParentAnyLN( AnyLN value );
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
@@ -530,7 +531,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #getRefersToAnyLN()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void setRefersToAnyLN( AnyLN value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
@@ -585,7 +586,7 @@ public interface LogControl extends ControlWithTriggerOpt {
      * @see #getRefersToLog()
      * @generated
      */
-    void setRefersToLog(Log value);
+    void setRefersToLog( Log value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getRefersToLog <em>Refers To Log</em>}' reference.

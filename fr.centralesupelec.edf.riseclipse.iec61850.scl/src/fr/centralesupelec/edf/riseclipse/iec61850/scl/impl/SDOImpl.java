@@ -95,7 +95,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * @generated
      * @ordered
      */
-    protected EList<SDI> referredBySDI;
+    protected EList< SDI > referredBySDI;
 
     /**
      * <!-- begin-user-doc -->
@@ -132,13 +132,14 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * @generated
      */
     @Override
-    public void setCount(String newCount) {
+    public void setCount( String newCount ) {
         String oldCount = count;
         count = newCount;
         boolean oldCountESet = countESet;
         countESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__COUNT, oldCount, count, !oldCountESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SDO__COUNT, oldCount, count,
+                    !oldCountESet ) );
     }
 
     /**
@@ -152,8 +153,9 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
         boolean oldCountESet = countESet;
         count = COUNT_EDEFAULT;
         countESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SDO__COUNT, oldCount, COUNT_EDEFAULT, oldCountESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SDO__COUNT, oldCount, COUNT_EDEFAULT,
+                    oldCountESet ) );
     }
 
     /**
@@ -173,8 +175,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public DOType getParentDOType() {
-        if (eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE) return null;
-        return (DOType)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE ) return null;
+        return ( DOType ) eInternalContainer();
     }
 
     /**
@@ -182,8 +184,8 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDOType(DOType newParentDOType, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDOType, SclPackage.SDO__PARENT_DO_TYPE, msgs);
+    public NotificationChain basicSetParentDOType( DOType newParentDOType, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDOType, SclPackage.SDO__PARENT_DO_TYPE, msgs );
         return msgs;
     }
 
@@ -193,20 +195,23 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * @generated
      */
     @Override
-    public void setParentDOType(DOType newParentDOType) {
-        if (newParentDOType != eInternalContainer() || (eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE && newParentDOType != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDOType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDOType( DOType newParentDOType ) {
+        if( newParentDOType != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SDO__PARENT_DO_TYPE && newParentDOType != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDOType ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDOType != null)
-                msgs = ((InternalEObject)newParentDOType).eInverseAdd(this, SclPackage.DO_TYPE__SDO, DOType.class, msgs);
-            msgs = basicSetParentDOType(newParentDOType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDOType != null )
+                msgs = ( ( InternalEObject ) newParentDOType ).eInverseAdd( this, SclPackage.DO_TYPE__SDO, DOType.class,
+                        msgs );
+            msgs = basicSetParentDOType( newParentDOType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SDO__PARENT_DO_TYPE, newParentDOType, newParentDOType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SDO__PARENT_DO_TYPE, newParentDOType,
+                    newParentDOType ) );
     }
 
     /**
@@ -215,9 +220,10 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * @generated
      */
     @Override
-    public EList<SDI> getReferredBySDI() {
-        if (referredBySDI == null) {
-            referredBySDI = new EObjectWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.SDO__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_SDO);
+    public EList< SDI > getReferredBySDI() {
+        if( referredBySDI == null ) {
+            referredBySDI = new EObjectWithInverseEList.Unsettable< SDI >( SDI.class, this,
+                    SclPackage.SDO__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_SDO );
         }
         return referredBySDI;
     }
@@ -229,7 +235,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public void unsetReferredBySDI() {
-        if (referredBySDI != null) ((InternalEList.Unsettable<?>)referredBySDI).unset();
+        if( referredBySDI != null ) ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
     }
 
     /**
@@ -239,7 +245,7 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public boolean isSetReferredBySDI() {
-        return referredBySDI != null && ((InternalEList.Unsettable<?>)referredBySDI).isSet();
+        return referredBySDI != null && ( ( InternalEList.Unsettable< ? > ) referredBySDI ).isSet();
     }
 
     /**
@@ -247,18 +253,19 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDOType((DOType)otherEnd, msgs);
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDI()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDOType( ( DOType ) otherEnd, msgs );
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySDI() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -268,13 +275,13 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                return basicSetParentDOType(null, msgs);
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                return ((InternalEList<?>)getReferredBySDI()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            return basicSetParentDOType( null, msgs );
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            return ( ( InternalEList< ? > ) getReferredBySDI() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -284,11 +291,11 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DO_TYPE__SDO, DOType.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DO_TYPE__SDO, DOType.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -298,15 +305,15 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SDO__COUNT:
-                return getCount();
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                return getParentDOType();
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                return getReferredBySDI();
+        switch( featureID ) {
+        case SclPackage.SDO__COUNT:
+            return getCount();
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            return getParentDOType();
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            return getReferredBySDI();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -314,22 +321,22 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SDO__COUNT:
-                setCount((String)newValue);
-                return;
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                setParentDOType((DOType)newValue);
-                return;
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                getReferredBySDI().clear();
-                getReferredBySDI().addAll((Collection<? extends SDI>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SDO__COUNT:
+            setCount( ( String ) newValue );
+            return;
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            setParentDOType( ( DOType ) newValue );
+            return;
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            getReferredBySDI().clear();
+            getReferredBySDI().addAll( ( Collection< ? extends SDI > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -339,18 +346,18 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SDO__COUNT:
-                unsetCount();
-                return;
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                setParentDOType((DOType)null);
-                return;
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                unsetReferredBySDI();
-                return;
+        switch( featureID ) {
+        case SclPackage.SDO__COUNT:
+            unsetCount();
+            return;
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            setParentDOType( ( DOType ) null );
+            return;
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            unsetReferredBySDI();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -360,15 +367,15 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SDO__COUNT:
-                return isSetCount();
-            case SclPackage.SDO__PARENT_DO_TYPE:
-                return getParentDOType() != null;
-            case SclPackage.SDO__REFERRED_BY_SDI:
-                return isSetReferredBySDI();
+        switch( featureID ) {
+        case SclPackage.SDO__COUNT:
+            return isSetCount();
+        case SclPackage.SDO__PARENT_DO_TYPE:
+            return getParentDOType() != null;
+        case SclPackage.SDO__REFERRED_BY_SDI:
+            return isSetReferredBySDI();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -378,12 +385,15 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (count: ");
-        if (countESet) result.append(count); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (count: " );
+        if( countESet )
+            result.append( count );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -391,16 +401,16 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // name     The SDO name
         // desc     Descriptive text for the SDO
         // type     References the DOType defining the contents of the SDO
         // count    The number or reference to an attribute defining the number of array elements,
         //          if this element has an ARRAY type. If missing, the default value is 0 (no array)
-        
+
         String messagePrefix = "[SCL links] while resolving link from SDO on line " + getLineNumber() + ": ";
 
-        if(( getType() == null ) || getType().isEmpty() ) {
+        if( ( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix, "type is missing" );
             return;
         }
@@ -410,20 +420,20 @@ public class SDOImpl extends AbstractDataObjectImpl implements SDO {
             return;
         }
 
-        List< DOType > res =
-                dtt
+        List< DOType > res = dtt
                 .getDOType()
                 .stream()
-                .filter( sdo -> getType().equals(  sdo.getId() ))
+                .filter( sdo -> getType().equals( sdo.getId() ) )
                 .collect( Collectors.toList() );
-        
+
         String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToDOType( res.get( 0 ) );
-        console.info( "[SCL links] SDO on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDOType().getLineNumber() );
+        console.info( "[SCL links] SDO on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToDOType().getLineNumber() );
     }
 
 } //SDOImpl

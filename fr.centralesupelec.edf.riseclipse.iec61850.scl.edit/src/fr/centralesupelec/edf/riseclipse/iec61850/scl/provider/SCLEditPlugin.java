@@ -54,9 +54,8 @@ public final class SCLEditPlugin extends EMFPlugin {
      * @generated
      */
     public SCLEditPlugin() {
-        super
-          (new ResourceLocator [] {
-           });
+        super( new ResourceLocator[] {
+        } );
     }
 
     /**

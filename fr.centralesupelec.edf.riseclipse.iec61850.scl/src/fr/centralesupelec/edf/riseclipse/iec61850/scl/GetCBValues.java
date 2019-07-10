@@ -59,6 +59,6 @@ public interface GetCBValues extends ServiceYesNo {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // GetCBValues

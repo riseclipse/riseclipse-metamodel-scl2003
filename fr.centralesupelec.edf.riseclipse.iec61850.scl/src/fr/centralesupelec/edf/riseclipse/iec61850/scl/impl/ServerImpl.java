@@ -93,7 +93,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      * @ordered
      */
-    protected EList<Association> association;
+    protected EList< Association > association;
 
     /**
      * The cached value of the '{@link #getAuthentication() <em>Authentication</em>}' containment reference.
@@ -122,7 +122,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      * @ordered
      */
-    protected EList<LDevice> lDevice;
+    protected EList< LDevice > lDevice;
 
     /**
      * <!-- begin-user-doc -->
@@ -164,8 +164,9 @@ public class ServerImpl extends UnNamingImpl implements Server {
         timeout = newTimeout;
         boolean oldTimeoutESet = timeoutESet;
         timeoutESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__TIMEOUT, oldTimeout, timeout, !oldTimeoutESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER__TIMEOUT, oldTimeout, timeout,
+                    !oldTimeoutESet ) );
     }
 
     /**
@@ -179,8 +180,9 @@ public class ServerImpl extends UnNamingImpl implements Server {
         boolean oldTimeoutESet = timeoutESet;
         timeout = TIMEOUT_EDEFAULT;
         timeoutESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER__TIMEOUT, oldTimeout, TIMEOUT_EDEFAULT, oldTimeoutESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVER__TIMEOUT, oldTimeout,
+                    TIMEOUT_EDEFAULT, oldTimeoutESet ) );
     }
 
     /**
@@ -200,8 +202,8 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public AccessPoint getParentAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT) return null;
-        return (AccessPoint)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT ) return null;
+        return ( AccessPoint ) eInternalContainer();
     }
 
     /**
@@ -209,8 +211,9 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.SERVER__PARENT_ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint( AccessPoint newParentAccessPoint, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAccessPoint, SclPackage.SERVER__PARENT_ACCESS_POINT,
+                msgs );
         return msgs;
     }
 
@@ -220,20 +223,24 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      */
     @Override
-    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
-        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAccessPoint( AccessPoint newParentAccessPoint ) {
+        if( newParentAccessPoint != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SERVER__PARENT_ACCESS_POINT
+                        && newParentAccessPoint != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAccessPoint != null)
-                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class, msgs);
-            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAccessPoint != null )
+                msgs = ( ( InternalEObject ) newParentAccessPoint ).eInverseAdd( this, SclPackage.ACCESS_POINT__SERVER,
+                        AccessPoint.class, msgs );
+            msgs = basicSetParentAccessPoint( newParentAccessPoint, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER__PARENT_ACCESS_POINT,
+                    newParentAccessPoint, newParentAccessPoint ) );
     }
 
     /**
@@ -242,9 +249,10 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      */
     @Override
-    public EList<Association> getAssociation() {
-        if (association == null) {
-            association = new EObjectContainmentWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.SERVER__ASSOCIATION, SclPackage.ASSOCIATION__PARENT_SERVER);
+    public EList< Association > getAssociation() {
+        if( association == null ) {
+            association = new EObjectContainmentWithInverseEList.Unsettable< Association >( Association.class, this,
+                    SclPackage.SERVER__ASSOCIATION, SclPackage.ASSOCIATION__PARENT_SERVER );
         }
         return association;
     }
@@ -256,7 +264,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public void unsetAssociation() {
-        if (association != null) ((InternalEList.Unsettable<?>)association).unset();
+        if( association != null ) ( ( InternalEList.Unsettable< ? > ) association ).unset();
     }
 
     /**
@@ -266,7 +274,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public boolean isSetAssociation() {
-        return association != null && ((InternalEList.Unsettable<?>)association).isSet();
+        return association != null && ( ( InternalEList.Unsettable< ? > ) association ).isSet();
     }
 
     /**
@@ -289,9 +297,13 @@ public class ServerImpl extends UnNamingImpl implements Server {
         authentication = newAuthentication;
         boolean oldAuthenticationESet = authenticationESet;
         authenticationESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__AUTHENTICATION, oldAuthentication, newAuthentication, !oldAuthenticationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SERVER__AUTHENTICATION, oldAuthentication, newAuthentication, !oldAuthenticationESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -303,20 +315,23 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public void setAuthentication( Authentication newAuthentication ) {
-        if (newAuthentication != authentication) {
+        if( newAuthentication != authentication ) {
             NotificationChain msgs = null;
-            if (authentication != null)
-                msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
-            if (newAuthentication != null)
-                msgs = ((InternalEObject)newAuthentication).eInverseAdd(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
-            msgs = basicSetAuthentication(newAuthentication, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( authentication != null )
+                msgs = ( ( InternalEObject ) authentication ).eInverseRemove( this,
+                        SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs );
+            if( newAuthentication != null )
+                msgs = ( ( InternalEObject ) newAuthentication ).eInverseAdd( this,
+                        SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs );
+            msgs = basicSetAuthentication( newAuthentication, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldAuthenticationESet = authenticationESet;
             authenticationESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER__AUTHENTICATION, newAuthentication, newAuthentication, !oldAuthenticationESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER__AUTHENTICATION,
+                        newAuthentication, newAuthentication, !oldAuthenticationESet ) );
         }
     }
 
@@ -330,9 +345,13 @@ public class ServerImpl extends UnNamingImpl implements Server {
         authentication = null;
         boolean oldAuthenticationESet = authenticationESet;
         authenticationESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER__AUTHENTICATION, oldAuthentication, null, oldAuthenticationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SERVER__AUTHENTICATION, oldAuthentication, null, oldAuthenticationESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -344,17 +363,19 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public void unsetAuthentication() {
-        if (authentication != null) {
+        if( authentication != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)authentication).eInverseRemove(this, SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs);
-            msgs = basicUnsetAuthentication(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) authentication ).eInverseRemove( this,
+                    SclPackage.AUTHENTICATION__PARENT_SERVER, Authentication.class, msgs );
+            msgs = basicUnsetAuthentication( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldAuthenticationESet = authenticationESet;
             authenticationESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER__AUTHENTICATION, null, null, oldAuthenticationESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVER__AUTHENTICATION, null, null,
+                        oldAuthenticationESet ) );
         }
     }
 
@@ -374,9 +395,10 @@ public class ServerImpl extends UnNamingImpl implements Server {
      * @generated
      */
     @Override
-    public EList<LDevice> getLDevice() {
-        if (lDevice == null) {
-            lDevice = new EObjectContainmentWithInverseEList.Unsettable<LDevice>(LDevice.class, this, SclPackage.SERVER__LDEVICE, SclPackage.LDEVICE__PARENT_SERVER);
+    public EList< LDevice > getLDevice() {
+        if( lDevice == null ) {
+            lDevice = new EObjectContainmentWithInverseEList.Unsettable< LDevice >( LDevice.class, this,
+                    SclPackage.SERVER__LDEVICE, SclPackage.LDEVICE__PARENT_SERVER );
         }
         return lDevice;
     }
@@ -388,7 +410,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public void unsetLDevice() {
-        if (lDevice != null) ((InternalEList.Unsettable<?>)lDevice).unset();
+        if( lDevice != null ) ( ( InternalEList.Unsettable< ? > ) lDevice ).unset();
     }
 
     /**
@@ -398,7 +420,7 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public boolean isSetLDevice() {
-        return lDevice != null && ((InternalEList.Unsettable<?>)lDevice).isSet();
+        return lDevice != null && ( ( InternalEList.Unsettable< ? > ) lDevice ).isSet();
     }
 
     /**
@@ -409,21 +431,24 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
-            case SclPackage.SERVER__ASSOCIATION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getAssociation()).basicAdd(otherEnd, msgs);
-            case SclPackage.SERVER__AUTHENTICATION:
-                if (authentication != null)
-                    msgs = ((InternalEObject)authentication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SERVER__AUTHENTICATION, null, msgs);
-                return basicSetAuthentication((Authentication)otherEnd, msgs);
-            case SclPackage.SERVER__LDEVICE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLDevice()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAccessPoint( ( AccessPoint ) otherEnd, msgs );
+        case SclPackage.SERVER__ASSOCIATION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getAssociation() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.SERVER__AUTHENTICATION:
+            if( authentication != null )
+                msgs = ( ( InternalEObject ) authentication ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SERVER__AUTHENTICATION, null, msgs );
+            return basicSetAuthentication( ( Authentication ) otherEnd, msgs );
+        case SclPackage.SERVER__LDEVICE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLDevice() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -433,17 +458,17 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                return basicSetParentAccessPoint(null, msgs);
-            case SclPackage.SERVER__ASSOCIATION:
-                return ((InternalEList<?>)getAssociation()).basicRemove(otherEnd, msgs);
-            case SclPackage.SERVER__AUTHENTICATION:
-                return basicUnsetAuthentication(msgs);
-            case SclPackage.SERVER__LDEVICE:
-                return ((InternalEList<?>)getLDevice()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            return basicSetParentAccessPoint( null, msgs );
+        case SclPackage.SERVER__ASSOCIATION:
+            return ( ( InternalEList< ? > ) getAssociation() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SERVER__AUTHENTICATION:
+            return basicUnsetAuthentication( msgs );
+        case SclPackage.SERVER__LDEVICE:
+            return ( ( InternalEList< ? > ) getLDevice() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -453,11 +478,12 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ACCESS_POINT__SERVER, AccessPoint.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -467,19 +493,19 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SERVER__TIMEOUT:
-                return getTimeout();
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                return getParentAccessPoint();
-            case SclPackage.SERVER__ASSOCIATION:
-                return getAssociation();
-            case SclPackage.SERVER__AUTHENTICATION:
-                return getAuthentication();
-            case SclPackage.SERVER__LDEVICE:
-                return getLDevice();
+        switch( featureID ) {
+        case SclPackage.SERVER__TIMEOUT:
+            return getTimeout();
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            return getParentAccessPoint();
+        case SclPackage.SERVER__ASSOCIATION:
+            return getAssociation();
+        case SclPackage.SERVER__AUTHENTICATION:
+            return getAuthentication();
+        case SclPackage.SERVER__LDEVICE:
+            return getLDevice();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -490,26 +516,26 @@ public class ServerImpl extends UnNamingImpl implements Server {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SERVER__TIMEOUT:
-                setTimeout((Integer)newValue);
-                return;
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)newValue);
-                return;
-            case SclPackage.SERVER__ASSOCIATION:
-                getAssociation().clear();
-                getAssociation().addAll((Collection<? extends Association>)newValue);
-                return;
-            case SclPackage.SERVER__AUTHENTICATION:
-                setAuthentication((Authentication)newValue);
-                return;
-            case SclPackage.SERVER__LDEVICE:
-                getLDevice().clear();
-                getLDevice().addAll((Collection<? extends LDevice>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVER__TIMEOUT:
+            setTimeout( ( Integer ) newValue );
+            return;
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) newValue );
+            return;
+        case SclPackage.SERVER__ASSOCIATION:
+            getAssociation().clear();
+            getAssociation().addAll( ( Collection< ? extends Association > ) newValue );
+            return;
+        case SclPackage.SERVER__AUTHENTICATION:
+            setAuthentication( ( Authentication ) newValue );
+            return;
+        case SclPackage.SERVER__LDEVICE:
+            getLDevice().clear();
+            getLDevice().addAll( ( Collection< ? extends LDevice > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -519,24 +545,24 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVER__TIMEOUT:
-                unsetTimeout();
-                return;
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)null);
-                return;
-            case SclPackage.SERVER__ASSOCIATION:
-                unsetAssociation();
-                return;
-            case SclPackage.SERVER__AUTHENTICATION:
-                unsetAuthentication();
-                return;
-            case SclPackage.SERVER__LDEVICE:
-                unsetLDevice();
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVER__TIMEOUT:
+            unsetTimeout();
+            return;
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) null );
+            return;
+        case SclPackage.SERVER__ASSOCIATION:
+            unsetAssociation();
+            return;
+        case SclPackage.SERVER__AUTHENTICATION:
+            unsetAuthentication();
+            return;
+        case SclPackage.SERVER__LDEVICE:
+            unsetLDevice();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -546,19 +572,19 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVER__TIMEOUT:
-                return isSetTimeout();
-            case SclPackage.SERVER__PARENT_ACCESS_POINT:
-                return getParentAccessPoint() != null;
-            case SclPackage.SERVER__ASSOCIATION:
-                return isSetAssociation();
-            case SclPackage.SERVER__AUTHENTICATION:
-                return isSetAuthentication();
-            case SclPackage.SERVER__LDEVICE:
-                return isSetLDevice();
+        switch( featureID ) {
+        case SclPackage.SERVER__TIMEOUT:
+            return isSetTimeout();
+        case SclPackage.SERVER__PARENT_ACCESS_POINT:
+            return getParentAccessPoint() != null;
+        case SclPackage.SERVER__ASSOCIATION:
+            return isSetAssociation();
+        case SclPackage.SERVER__AUTHENTICATION:
+            return isSetAuthentication();
+        case SclPackage.SERVER__LDEVICE:
+            return isSetLDevice();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -568,12 +594,15 @@ public class ServerImpl extends UnNamingImpl implements Server {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (timeout: ");
-        if (timeoutESet) result.append(timeout); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (timeout: " );
+        if( timeoutESet )
+            result.append( timeout );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

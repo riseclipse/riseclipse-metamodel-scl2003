@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -48,8 +47,8 @@ public class CertItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public CertItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public CertItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,12 +58,12 @@ public class CertItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addCommonNamePropertyDescriptor(object);
-            addIdHierarchyPropertyDescriptor(object);
+            addCommonNamePropertyDescriptor( object );
+            addIdHierarchyPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,20 @@ public class CertItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCommonNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Cert_commonName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Cert_commonName_feature", "_UI_Cert_type"),
-                 SclPackage.eINSTANCE.getCert_CommonName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCommonNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Cert_commonName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Cert_commonName_feature",
+                                "_UI_Cert_type" ),
+                        SclPackage.eINSTANCE.getCert_CommonName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +96,20 @@ public class CertItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIdHierarchyPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Cert_idHierarchy_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Cert_idHierarchy_feature", "_UI_Cert_type"),
-                 SclPackage.eINSTANCE.getCert_IdHierarchy(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIdHierarchyPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Cert_idHierarchy_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Cert_idHierarchy_feature",
+                                "_UI_Cert_type" ),
+                        SclPackage.eINSTANCE.getCert_IdHierarchy(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,8 +119,8 @@ public class CertItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Cert"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Cert" ) );
     }
 
     /**
@@ -131,13 +130,11 @@ public class CertItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((Cert)object).getCommonName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Cert_type") :
-            getString("_UI_Cert_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( Cert ) object ).getCommonName();
+        return label == null || label.length() == 0 ? getString( "_UI_Cert_type" )
+                : getString( "_UI_Cert_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -147,16 +144,16 @@ public class CertItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(Cert.class)) {
-            case SclPackage.CERT__COMMON_NAME:
-            case SclPackage.CERT__ID_HIERARCHY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( Cert.class ) ) {
+        case SclPackage.CERT__COMMON_NAME:
+        case SclPackage.CERT__ID_HIERARCHY:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -167,8 +164,8 @@ public class CertItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

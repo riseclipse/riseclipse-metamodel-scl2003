@@ -112,7 +112,7 @@ public interface RptEnabled extends UnNaming {
      * @model opposite="ParentRptEnabled" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ClientLN> getClientLN();
+    EList< ClientLN > getClientLN();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.RptEnabled#getClientLN <em>Client LN</em>}' containment reference list.
@@ -157,6 +157,6 @@ public interface RptEnabled extends UnNaming {
      * @see #getParentReportControl()
      * @generated
      */
-    void setParentReportControl(ReportControl value);
+    void setParentReportControl( ReportControl value );
 
 } // RptEnabled

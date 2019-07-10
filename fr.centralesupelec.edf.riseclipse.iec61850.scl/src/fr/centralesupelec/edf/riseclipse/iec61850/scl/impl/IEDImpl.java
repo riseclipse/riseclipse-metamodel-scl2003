@@ -277,7 +277,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected EList<AccessPoint> accessPoint;
+    protected EList< AccessPoint > accessPoint;
 
     /**
      * The cached value of the '{@link #getKDC() <em>KDC</em>}' containment reference list.
@@ -287,7 +287,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      * @ordered
      */
-    protected EList<KDC> kdc;
+    protected EList< KDC > kdc;
 
     /**
      * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
@@ -425,8 +425,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         configVersion = newConfigVersion;
         boolean oldConfigVersionESet = configVersionESet;
         configVersionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, configVersion, !oldConfigVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion,
+                    configVersion, !oldConfigVersionESet ) );
     }
 
     /**
@@ -440,8 +441,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldConfigVersionESet = configVersionESet;
         configVersion = CONFIG_VERSION_EDEFAULT;
         configVersionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion, CONFIG_VERSION_EDEFAULT, oldConfigVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__CONFIG_VERSION, oldConfigVersion,
+                    CONFIG_VERSION_EDEFAULT, oldConfigVersionESet ) );
     }
 
     /**
@@ -470,13 +472,14 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setEngRight(String newEngRight) {
+    public void setEngRight( String newEngRight ) {
         String oldEngRight = engRight;
         engRight = newEngRight;
         boolean oldEngRightESet = engRightESet;
         engRightESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ENG_RIGHT, oldEngRight, engRight, !oldEngRightESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ENG_RIGHT, oldEngRight, engRight,
+                    !oldEngRightESet ) );
     }
 
     /**
@@ -490,8 +493,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldEngRightESet = engRightESet;
         engRight = ENG_RIGHT_EDEFAULT;
         engRightESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ENG_RIGHT, oldEngRight, ENG_RIGHT_EDEFAULT, oldEngRightESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ENG_RIGHT, oldEngRight,
+                    ENG_RIGHT_EDEFAULT, oldEngRightESet ) );
     }
 
     /**
@@ -525,8 +529,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         manufacturer = newManufacturer;
         boolean oldManufacturerESet = manufacturerESet;
         manufacturerESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__MANUFACTURER, oldManufacturer, manufacturer, !oldManufacturerESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__MANUFACTURER, oldManufacturer,
+                    manufacturer, !oldManufacturerESet ) );
     }
 
     /**
@@ -540,8 +545,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldManufacturerESet = manufacturerESet;
         manufacturer = MANUFACTURER_EDEFAULT;
         manufacturerESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__MANUFACTURER, oldManufacturer, MANUFACTURER_EDEFAULT, oldManufacturerESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__MANUFACTURER, oldManufacturer,
+                    MANUFACTURER_EDEFAULT, oldManufacturerESet ) );
     }
 
     /**
@@ -570,13 +576,14 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setOriginalSclRevision(String newOriginalSclRevision) {
+    public void setOriginalSclRevision( String newOriginalSclRevision ) {
         String oldOriginalSclRevision = originalSclRevision;
         originalSclRevision = newOriginalSclRevision;
         boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
         originalSclRevisionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, originalSclRevision, !oldOriginalSclRevisionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_REVISION,
+                    oldOriginalSclRevision, originalSclRevision, !oldOriginalSclRevisionESet ) );
     }
 
     /**
@@ -590,8 +597,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclRevisionESet = originalSclRevisionESet;
         originalSclRevision = ORIGINAL_SCL_REVISION_EDEFAULT;
         originalSclRevisionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_REVISION, oldOriginalSclRevision, ORIGINAL_SCL_REVISION_EDEFAULT, oldOriginalSclRevisionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_REVISION,
+                    oldOriginalSclRevision, ORIGINAL_SCL_REVISION_EDEFAULT, oldOriginalSclRevisionESet ) );
     }
 
     /**
@@ -620,13 +628,14 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setOriginalSclVersion(String newOriginalSclVersion) {
+    public void setOriginalSclVersion( String newOriginalSclVersion ) {
         String oldOriginalSclVersion = originalSclVersion;
         originalSclVersion = newOriginalSclVersion;
         boolean oldOriginalSclVersionESet = originalSclVersionESet;
         originalSclVersionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, originalSclVersion, !oldOriginalSclVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_VERSION,
+                    oldOriginalSclVersion, originalSclVersion, !oldOriginalSclVersionESet ) );
     }
 
     /**
@@ -640,8 +649,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclVersionESet = originalSclVersionESet;
         originalSclVersion = ORIGINAL_SCL_VERSION_EDEFAULT;
         originalSclVersionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_VERSION, oldOriginalSclVersion, ORIGINAL_SCL_VERSION_EDEFAULT, oldOriginalSclVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_VERSION,
+                    oldOriginalSclVersion, ORIGINAL_SCL_VERSION_EDEFAULT, oldOriginalSclVersionESet ) );
     }
 
     /**
@@ -675,8 +685,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         owner = newOwner;
         boolean oldOwnerESet = ownerESet;
         ownerESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__OWNER, oldOwner, owner, !oldOwnerESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__OWNER, oldOwner, owner,
+                    !oldOwnerESet ) );
     }
 
     /**
@@ -690,8 +701,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOwnerESet = ownerESet;
         owner = OWNER_EDEFAULT;
         ownerESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__OWNER, oldOwner, OWNER_EDEFAULT, oldOwnerESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__OWNER, oldOwner, OWNER_EDEFAULT,
+                    oldOwnerESet ) );
     }
 
     /**
@@ -725,8 +737,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__TYPE, oldType, type,
+                    !oldTypeESet ) );
     }
 
     /**
@@ -740,8 +753,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__TYPE, oldType, TYPE_EDEFAULT,
+                    oldTypeESet ) );
     }
 
     /**
@@ -760,9 +774,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public EList<AccessPoint> getAccessPoint() {
-        if (accessPoint == null) {
-            accessPoint = new EObjectContainmentWithInverseEList.Unsettable<AccessPoint>(AccessPoint.class, this, SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__PARENT_IED);
+    public EList< AccessPoint > getAccessPoint() {
+        if( accessPoint == null ) {
+            accessPoint = new EObjectContainmentWithInverseEList.Unsettable< AccessPoint >( AccessPoint.class, this,
+                    SclPackage.IED__ACCESS_POINT, SclPackage.ACCESS_POINT__PARENT_IED );
         }
         return accessPoint;
     }
@@ -774,7 +789,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetAccessPoint() {
-        if (accessPoint != null) ((InternalEList.Unsettable<?>)accessPoint).unset();
+        if( accessPoint != null ) ( ( InternalEList.Unsettable< ? > ) accessPoint ).unset();
     }
 
     /**
@@ -784,7 +799,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public boolean isSetAccessPoint() {
-        return accessPoint != null && ((InternalEList.Unsettable<?>)accessPoint).isSet();
+        return accessPoint != null && ( ( InternalEList.Unsettable< ? > ) accessPoint ).isSet();
     }
 
     /**
@@ -793,9 +808,10 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public EList<KDC> getKDC() {
-        if (kdc == null) {
-            kdc = new EObjectContainmentWithInverseEList.Unsettable<KDC>(KDC.class, this, SclPackage.IED__KDC, SclPackage.KDC__PARENT_IED);
+    public EList< KDC > getKDC() {
+        if( kdc == null ) {
+            kdc = new EObjectContainmentWithInverseEList.Unsettable< KDC >( KDC.class, this, SclPackage.IED__KDC,
+                    SclPackage.KDC__PARENT_IED );
         }
         return kdc;
     }
@@ -807,7 +823,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetKDC() {
-        if (kdc != null) ((InternalEList.Unsettable<?>)kdc).unset();
+        if( kdc != null ) ( ( InternalEList.Unsettable< ? > ) kdc ).unset();
     }
 
     /**
@@ -817,7 +833,7 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public boolean isSetKDC() {
-        return kdc != null && ((InternalEList.Unsettable<?>)kdc).isSet();
+        return kdc != null && ( ( InternalEList.Unsettable< ? > ) kdc ).isSet();
     }
 
     /**
@@ -840,9 +856,13 @@ public class IEDImpl extends UnNamingImpl implements IED {
         services = newServices;
         boolean oldServicesESet = servicesESet;
         servicesESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, oldServices, newServices, !oldServicesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.IED__SERVICES,
+                    oldServices, newServices, !oldServicesESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -854,20 +874,23 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void setServices( Services newServices ) {
-        if (newServices != services) {
+        if( newServices != services ) {
             NotificationChain msgs = null;
-            if (services != null)
-                msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
-            if (newServices != null)
-                msgs = ((InternalEObject)newServices).eInverseAdd(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
-            msgs = basicSetServices(newServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( services != null )
+                msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_IED,
+                        Services.class, msgs );
+            if( newServices != null )
+                msgs = ( ( InternalEObject ) newServices ).eInverseAdd( this, SclPackage.SERVICES__PARENT_IED,
+                        Services.class, msgs );
+            msgs = basicSetServices( newServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__SERVICES, newServices, newServices, !oldServicesESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__SERVICES, newServices,
+                        newServices, !oldServicesESet ) );
         }
     }
 
@@ -881,9 +904,13 @@ public class IEDImpl extends UnNamingImpl implements IED {
         services = null;
         boolean oldServicesESet = servicesESet;
         servicesESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, oldServices, null, oldServicesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__SERVICES,
+                    oldServices, null, oldServicesESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -895,17 +922,19 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetServices() {
-        if (services != null) {
+        if( services != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)services).eInverseRemove(this, SclPackage.SERVICES__PARENT_IED, Services.class, msgs);
-            msgs = basicUnsetServices(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) services ).eInverseRemove( this, SclPackage.SERVICES__PARENT_IED,
+                    Services.class, msgs );
+            msgs = basicUnsetServices( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldServicesESet = servicesESet;
             servicesESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__SERVICES, null, null, oldServicesESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__SERVICES, null, null,
+                        oldServicesESet ) );
         }
     }
 
@@ -926,8 +955,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public SCL getParentSCL() {
-        if (eContainerFeatureID() != SclPackage.IED__PARENT_SCL) return null;
-        return (SCL)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.IED__PARENT_SCL ) return null;
+        return ( SCL ) eInternalContainer();
     }
 
     /**
@@ -935,8 +964,8 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.IED__PARENT_SCL, msgs);
+    public NotificationChain basicSetParentSCL( SCL newParentSCL, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentSCL, SclPackage.IED__PARENT_SCL, msgs );
         return msgs;
     }
 
@@ -946,20 +975,22 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setParentSCL(SCL newParentSCL) {
-        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.IED__PARENT_SCL && newParentSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newParentSCL))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentSCL( SCL newParentSCL ) {
+        if( newParentSCL != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.IED__PARENT_SCL && newParentSCL != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentSCL != null)
-                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__IED, SCL.class, msgs);
-            msgs = basicSetParentSCL(newParentSCL, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentSCL != null )
+                msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__IED, SCL.class, msgs );
+            msgs = basicSetParentSCL( newParentSCL, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__PARENT_SCL, newParentSCL, newParentSCL));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__PARENT_SCL, newParentSCL,
+                    newParentSCL ) );
     }
 
     /**
@@ -978,13 +1009,14 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setName(String newName) {
+    public void setName( String newName ) {
         String oldName = name;
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__NAME, oldName, name,
+                    !oldNameESet ) );
     }
 
     /**
@@ -998,8 +1030,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__NAME, oldName, NAME_EDEFAULT,
+                    oldNameESet ) );
     }
 
     /**
@@ -1028,13 +1061,14 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setOriginalSclRelease(Integer newOriginalSclRelease) {
+    public void setOriginalSclRelease( Integer newOriginalSclRelease ) {
         Integer oldOriginalSclRelease = originalSclRelease;
         originalSclRelease = newOriginalSclRelease;
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclReleaseESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, originalSclRelease, !oldOriginalSclReleaseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__ORIGINAL_SCL_RELEASE,
+                    oldOriginalSclRelease, originalSclRelease, !oldOriginalSclReleaseESet ) );
     }
 
     /**
@@ -1048,8 +1082,9 @@ public class IEDImpl extends UnNamingImpl implements IED {
         boolean oldOriginalSclReleaseESet = originalSclReleaseESet;
         originalSclRelease = ORIGINAL_SCL_RELEASE_EDEFAULT;
         originalSclReleaseESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_RELEASE, oldOriginalSclRelease, ORIGINAL_SCL_RELEASE_EDEFAULT, oldOriginalSclReleaseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__ORIGINAL_SCL_RELEASE,
+                    oldOriginalSclRelease, ORIGINAL_SCL_RELEASE_EDEFAULT, oldOriginalSclReleaseESet ) );
     }
 
     /**
@@ -1077,14 +1112,19 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetReferredByIEDName(IEDName newReferredByIEDName, NotificationChain msgs) {
+    public NotificationChain basicSetReferredByIEDName( IEDName newReferredByIEDName, NotificationChain msgs ) {
         IEDName oldReferredByIEDName = referredByIEDName;
         referredByIEDName = newReferredByIEDName;
         boolean oldReferredByIEDNameESet = referredByIEDNameESet;
         referredByIEDNameESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, newReferredByIEDName,
+                    !oldReferredByIEDNameESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1095,21 +1135,24 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * @generated
      */
     @Override
-    public void setReferredByIEDName(IEDName newReferredByIEDName) {
-        if (newReferredByIEDName != referredByIEDName) {
+    public void setReferredByIEDName( IEDName newReferredByIEDName ) {
+        if( newReferredByIEDName != referredByIEDName ) {
             NotificationChain msgs = null;
-            if (referredByIEDName != null)
-                msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs);
-            if (newReferredByIEDName != null)
-                msgs = ((InternalEObject)newReferredByIEDName).eInverseAdd(this, SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs);
-            msgs = basicSetReferredByIEDName(newReferredByIEDName, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( referredByIEDName != null )
+                msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
+                        SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
+            if( newReferredByIEDName != null )
+                msgs = ( ( InternalEObject ) newReferredByIEDName ).eInverseAdd( this,
+                        SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
+            msgs = basicSetReferredByIEDName( newReferredByIEDName, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.IED__REFERRED_BY_IED_NAME, newReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.IED__REFERRED_BY_IED_NAME,
+                        newReferredByIEDName, newReferredByIEDName, !oldReferredByIEDNameESet ) );
         }
     }
 
@@ -1118,14 +1161,18 @@ public class IEDImpl extends UnNamingImpl implements IED {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetReferredByIEDName(NotificationChain msgs) {
+    public NotificationChain basicUnsetReferredByIEDName( NotificationChain msgs ) {
         IEDName oldReferredByIEDName = referredByIEDName;
         referredByIEDName = null;
         boolean oldReferredByIEDNameESet = referredByIEDNameESet;
         referredByIEDNameESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, null, oldReferredByIEDNameESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.IED__REFERRED_BY_IED_NAME, oldReferredByIEDName, null, oldReferredByIEDNameESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1137,17 +1184,19 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void unsetReferredByIEDName() {
-        if (referredByIEDName != null) {
+        if( referredByIEDName != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs);
-            msgs = basicUnsetReferredByIEDName(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this, SclPackage.IED_NAME__REFERS_TO_IED,
+                    IEDName.class, msgs );
+            msgs = basicUnsetReferredByIEDName( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldReferredByIEDNameESet = referredByIEDNameESet;
             referredByIEDNameESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.IED__REFERRED_BY_IED_NAME, null, null, oldReferredByIEDNameESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.IED__REFERRED_BY_IED_NAME, null,
+                        null, oldReferredByIEDNameESet ) );
         }
     }
 
@@ -1169,25 +1218,28 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED__ACCESS_POINT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getAccessPoint()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__KDC:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getKDC()).basicAdd(otherEnd, msgs);
-            case SclPackage.IED__SERVICES:
-                if (services != null)
-                    msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs);
-                return basicSetServices((Services)otherEnd, msgs);
-            case SclPackage.IED__PARENT_SCL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentSCL((SCL)otherEnd, msgs);
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                if (referredByIEDName != null)
-                    msgs = ((InternalEObject)referredByIEDName).eInverseRemove(this, SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs);
-                return basicSetReferredByIEDName((IEDName)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.IED__ACCESS_POINT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getAccessPoint() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.IED__KDC:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getKDC() ).basicAdd( otherEnd, msgs );
+        case SclPackage.IED__SERVICES:
+            if( services != null )
+                msgs = ( ( InternalEObject ) services ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.IED__SERVICES, null, msgs );
+            return basicSetServices( ( Services ) otherEnd, msgs );
+        case SclPackage.IED__PARENT_SCL:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentSCL( ( SCL ) otherEnd, msgs );
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            if( referredByIEDName != null )
+                msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
+                        SclPackage.IED_NAME__REFERS_TO_IED, IEDName.class, msgs );
+            return basicSetReferredByIEDName( ( IEDName ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1197,19 +1249,19 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.IED__ACCESS_POINT:
-                return ((InternalEList<?>)getAccessPoint()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__KDC:
-                return ((InternalEList<?>)getKDC()).basicRemove(otherEnd, msgs);
-            case SclPackage.IED__SERVICES:
-                return basicUnsetServices(msgs);
-            case SclPackage.IED__PARENT_SCL:
-                return basicSetParentSCL(null, msgs);
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                return basicUnsetReferredByIEDName(msgs);
+        switch( featureID ) {
+        case SclPackage.IED__ACCESS_POINT:
+            return ( ( InternalEList< ? > ) getAccessPoint() ).basicRemove( otherEnd, msgs );
+        case SclPackage.IED__KDC:
+            return ( ( InternalEList< ? > ) getKDC() ).basicRemove( otherEnd, msgs );
+        case SclPackage.IED__SERVICES:
+            return basicUnsetServices( msgs );
+        case SclPackage.IED__PARENT_SCL:
+            return basicSetParentSCL( null, msgs );
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            return basicUnsetReferredByIEDName( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1219,11 +1271,11 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.IED__PARENT_SCL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SCL__IED, SCL.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.IED__PARENT_SCL:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SCL__IED, SCL.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -1233,37 +1285,37 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                return getConfigVersion();
-            case SclPackage.IED__ENG_RIGHT:
-                return getEngRight();
-            case SclPackage.IED__MANUFACTURER:
-                return getManufacturer();
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                return getOriginalSclRevision();
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                return getOriginalSclVersion();
-            case SclPackage.IED__OWNER:
-                return getOwner();
-            case SclPackage.IED__TYPE:
-                return getType();
-            case SclPackage.IED__ACCESS_POINT:
-                return getAccessPoint();
-            case SclPackage.IED__KDC:
-                return getKDC();
-            case SclPackage.IED__SERVICES:
-                return getServices();
-            case SclPackage.IED__PARENT_SCL:
-                return getParentSCL();
-            case SclPackage.IED__NAME:
-                return getName();
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                return getOriginalSclRelease();
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                return getReferredByIEDName();
+        switch( featureID ) {
+        case SclPackage.IED__CONFIG_VERSION:
+            return getConfigVersion();
+        case SclPackage.IED__ENG_RIGHT:
+            return getEngRight();
+        case SclPackage.IED__MANUFACTURER:
+            return getManufacturer();
+        case SclPackage.IED__ORIGINAL_SCL_REVISION:
+            return getOriginalSclRevision();
+        case SclPackage.IED__ORIGINAL_SCL_VERSION:
+            return getOriginalSclVersion();
+        case SclPackage.IED__OWNER:
+            return getOwner();
+        case SclPackage.IED__TYPE:
+            return getType();
+        case SclPackage.IED__ACCESS_POINT:
+            return getAccessPoint();
+        case SclPackage.IED__KDC:
+            return getKDC();
+        case SclPackage.IED__SERVICES:
+            return getServices();
+        case SclPackage.IED__PARENT_SCL:
+            return getParentSCL();
+        case SclPackage.IED__NAME:
+            return getName();
+        case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+            return getOriginalSclRelease();
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            return getReferredByIEDName();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1274,53 +1326,53 @@ public class IEDImpl extends UnNamingImpl implements IED {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                setConfigVersion((String)newValue);
-                return;
-            case SclPackage.IED__ENG_RIGHT:
-                setEngRight((String)newValue);
-                return;
-            case SclPackage.IED__MANUFACTURER:
-                setManufacturer((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                setOriginalSclRevision((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                setOriginalSclVersion((String)newValue);
-                return;
-            case SclPackage.IED__OWNER:
-                setOwner((String)newValue);
-                return;
-            case SclPackage.IED__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.IED__ACCESS_POINT:
-                getAccessPoint().clear();
-                getAccessPoint().addAll((Collection<? extends AccessPoint>)newValue);
-                return;
-            case SclPackage.IED__KDC:
-                getKDC().clear();
-                getKDC().addAll((Collection<? extends KDC>)newValue);
-                return;
-            case SclPackage.IED__SERVICES:
-                setServices((Services)newValue);
-                return;
-            case SclPackage.IED__PARENT_SCL:
-                setParentSCL((SCL)newValue);
-                return;
-            case SclPackage.IED__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                setOriginalSclRelease((Integer)newValue);
-                return;
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                setReferredByIEDName((IEDName)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.IED__CONFIG_VERSION:
+            setConfigVersion( ( String ) newValue );
+            return;
+        case SclPackage.IED__ENG_RIGHT:
+            setEngRight( ( String ) newValue );
+            return;
+        case SclPackage.IED__MANUFACTURER:
+            setManufacturer( ( String ) newValue );
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_REVISION:
+            setOriginalSclRevision( ( String ) newValue );
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_VERSION:
+            setOriginalSclVersion( ( String ) newValue );
+            return;
+        case SclPackage.IED__OWNER:
+            setOwner( ( String ) newValue );
+            return;
+        case SclPackage.IED__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.IED__ACCESS_POINT:
+            getAccessPoint().clear();
+            getAccessPoint().addAll( ( Collection< ? extends AccessPoint > ) newValue );
+            return;
+        case SclPackage.IED__KDC:
+            getKDC().clear();
+            getKDC().addAll( ( Collection< ? extends KDC > ) newValue );
+            return;
+        case SclPackage.IED__SERVICES:
+            setServices( ( Services ) newValue );
+            return;
+        case SclPackage.IED__PARENT_SCL:
+            setParentSCL( ( SCL ) newValue );
+            return;
+        case SclPackage.IED__NAME:
+            setName( ( String ) newValue );
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+            setOriginalSclRelease( ( Integer ) newValue );
+            return;
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            setReferredByIEDName( ( IEDName ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1330,51 +1382,51 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                unsetConfigVersion();
-                return;
-            case SclPackage.IED__ENG_RIGHT:
-                unsetEngRight();
-                return;
-            case SclPackage.IED__MANUFACTURER:
-                unsetManufacturer();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                unsetOriginalSclRevision();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                unsetOriginalSclVersion();
-                return;
-            case SclPackage.IED__OWNER:
-                unsetOwner();
-                return;
-            case SclPackage.IED__TYPE:
-                unsetType();
-                return;
-            case SclPackage.IED__ACCESS_POINT:
-                unsetAccessPoint();
-                return;
-            case SclPackage.IED__KDC:
-                unsetKDC();
-                return;
-            case SclPackage.IED__SERVICES:
-                unsetServices();
-                return;
-            case SclPackage.IED__PARENT_SCL:
-                setParentSCL((SCL)null);
-                return;
-            case SclPackage.IED__NAME:
-                unsetName();
-                return;
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                unsetOriginalSclRelease();
-                return;
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                unsetReferredByIEDName();
-                return;
+        switch( featureID ) {
+        case SclPackage.IED__CONFIG_VERSION:
+            unsetConfigVersion();
+            return;
+        case SclPackage.IED__ENG_RIGHT:
+            unsetEngRight();
+            return;
+        case SclPackage.IED__MANUFACTURER:
+            unsetManufacturer();
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_REVISION:
+            unsetOriginalSclRevision();
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_VERSION:
+            unsetOriginalSclVersion();
+            return;
+        case SclPackage.IED__OWNER:
+            unsetOwner();
+            return;
+        case SclPackage.IED__TYPE:
+            unsetType();
+            return;
+        case SclPackage.IED__ACCESS_POINT:
+            unsetAccessPoint();
+            return;
+        case SclPackage.IED__KDC:
+            unsetKDC();
+            return;
+        case SclPackage.IED__SERVICES:
+            unsetServices();
+            return;
+        case SclPackage.IED__PARENT_SCL:
+            setParentSCL( ( SCL ) null );
+            return;
+        case SclPackage.IED__NAME:
+            unsetName();
+            return;
+        case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+            unsetOriginalSclRelease();
+            return;
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            unsetReferredByIEDName();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1384,37 +1436,37 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.IED__CONFIG_VERSION:
-                return isSetConfigVersion();
-            case SclPackage.IED__ENG_RIGHT:
-                return isSetEngRight();
-            case SclPackage.IED__MANUFACTURER:
-                return isSetManufacturer();
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-                return isSetOriginalSclRevision();
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-                return isSetOriginalSclVersion();
-            case SclPackage.IED__OWNER:
-                return isSetOwner();
-            case SclPackage.IED__TYPE:
-                return isSetType();
-            case SclPackage.IED__ACCESS_POINT:
-                return isSetAccessPoint();
-            case SclPackage.IED__KDC:
-                return isSetKDC();
-            case SclPackage.IED__SERVICES:
-                return isSetServices();
-            case SclPackage.IED__PARENT_SCL:
-                return getParentSCL() != null;
-            case SclPackage.IED__NAME:
-                return isSetName();
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                return isSetOriginalSclRelease();
-            case SclPackage.IED__REFERRED_BY_IED_NAME:
-                return isSetReferredByIEDName();
+        switch( featureID ) {
+        case SclPackage.IED__CONFIG_VERSION:
+            return isSetConfigVersion();
+        case SclPackage.IED__ENG_RIGHT:
+            return isSetEngRight();
+        case SclPackage.IED__MANUFACTURER:
+            return isSetManufacturer();
+        case SclPackage.IED__ORIGINAL_SCL_REVISION:
+            return isSetOriginalSclRevision();
+        case SclPackage.IED__ORIGINAL_SCL_VERSION:
+            return isSetOriginalSclVersion();
+        case SclPackage.IED__OWNER:
+            return isSetOwner();
+        case SclPackage.IED__TYPE:
+            return isSetType();
+        case SclPackage.IED__ACCESS_POINT:
+            return isSetAccessPoint();
+        case SclPackage.IED__KDC:
+            return isSetKDC();
+        case SclPackage.IED__SERVICES:
+            return isSetServices();
+        case SclPackage.IED__PARENT_SCL:
+            return getParentSCL() != null;
+        case SclPackage.IED__NAME:
+            return isSetName();
+        case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+            return isSetOriginalSclRelease();
+        case SclPackage.IED__REFERRED_BY_IED_NAME:
+            return isSetReferredByIEDName();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1424,28 +1476,55 @@ public class IEDImpl extends UnNamingImpl implements IED {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (configVersion: ");
-        if (configVersionESet) result.append(configVersion); else result.append("<unset>");
-        result.append(", engRight: ");
-        if (engRightESet) result.append(engRight); else result.append("<unset>");
-        result.append(", manufacturer: ");
-        if (manufacturerESet) result.append(manufacturer); else result.append("<unset>");
-        result.append(", originalSclRevision: ");
-        if (originalSclRevisionESet) result.append(originalSclRevision); else result.append("<unset>");
-        result.append(", originalSclVersion: ");
-        if (originalSclVersionESet) result.append(originalSclVersion); else result.append("<unset>");
-        result.append(", owner: ");
-        if (ownerESet) result.append(owner); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(", originalSclRelease: ");
-        if (originalSclReleaseESet) result.append(originalSclRelease); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (configVersion: " );
+        if( configVersionESet )
+            result.append( configVersion );
+        else
+            result.append( "<unset>" );
+        result.append( ", engRight: " );
+        if( engRightESet )
+            result.append( engRight );
+        else
+            result.append( "<unset>" );
+        result.append( ", manufacturer: " );
+        if( manufacturerESet )
+            result.append( manufacturer );
+        else
+            result.append( "<unset>" );
+        result.append( ", originalSclRevision: " );
+        if( originalSclRevisionESet )
+            result.append( originalSclRevision );
+        else
+            result.append( "<unset>" );
+        result.append( ", originalSclVersion: " );
+        if( originalSclVersionESet )
+            result.append( originalSclVersion );
+        else
+            result.append( "<unset>" );
+        result.append( ", owner: " );
+        if( ownerESet )
+            result.append( owner );
+        else
+            result.append( "<unset>" );
+        result.append( ", type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ", name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ", originalSclRelease: " );
+        if( originalSclReleaseESet )
+            result.append( originalSclRelease );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

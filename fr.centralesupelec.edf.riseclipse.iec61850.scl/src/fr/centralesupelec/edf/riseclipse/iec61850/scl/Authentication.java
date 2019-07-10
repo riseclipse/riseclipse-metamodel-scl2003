@@ -59,6 +59,6 @@ public interface Authentication extends SclObject, AgAuthentication {
      * @see #getParentServer()
      * @generated
      */
-    void setParentServer(Server value);
+    void setParentServer( Server value );
 
 } // Authentication

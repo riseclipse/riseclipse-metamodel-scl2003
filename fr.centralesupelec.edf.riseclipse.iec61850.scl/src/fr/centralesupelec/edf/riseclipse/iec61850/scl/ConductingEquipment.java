@@ -120,7 +120,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #getParentBay()
      * @generated
      */
-    void setParentBay(Bay value);
+    void setParentBay( Bay value );
 
     /**
      * Returns the value of the '<em><b>Parent Function</b></em>' container reference.
@@ -144,7 +144,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #getParentFunction()
      * @generated
      */
-    void setParentFunction(Function value);
+    void setParentFunction( Function value );
 
     /**
      * Returns the value of the '<em><b>Parent Sub Function</b></em>' container reference.
@@ -168,7 +168,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #getParentSubFunction()
      * @generated
      */
-    void setParentSubFunction(SubFunction value);
+    void setParentSubFunction( SubFunction value );
 
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
@@ -188,7 +188,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @model opposite="ParentConductingEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConductingEquipment#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -233,7 +233,7 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #getParentLine()
      * @generated
      */
-    void setParentLine(Line value);
+    void setParentLine( Line value );
 
     /**
      * Returns the value of the '<em><b>Parent Process</b></em>' container reference.
@@ -257,6 +257,6 @@ public interface ConductingEquipment extends AbstractConductingEquipment {
      * @see #getParentProcess()
      * @generated
      */
-    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
+    void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
 
 } // ConductingEquipment

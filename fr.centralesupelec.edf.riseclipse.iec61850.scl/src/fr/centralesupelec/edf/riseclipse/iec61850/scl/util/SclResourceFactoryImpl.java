@@ -53,7 +53,7 @@ public class SclResourceFactoryImpl extends ResourceFactoryImpl implements IRise
      */
     @Override
     public SclResourceImpl createResource( URI uri ) {
-        SclResourceImpl result = new SclResourceImpl(uri);
+        SclResourceImpl result = new SclResourceImpl( uri );
         result.getDefaultSaveOptions().put( XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE );
         result.getDefaultLoadOptions().put( XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE );
 

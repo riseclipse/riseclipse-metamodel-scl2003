@@ -122,7 +122,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      * @ordered
      */
-    protected EList<EqFunction> eqFunction;
+    protected EList< EqFunction > eqFunction;
 
     /**
      * The cached value of the '{@link #getSubEquipment() <em>Sub Equipment</em>}' containment reference list.
@@ -132,7 +132,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      * @ordered
      */
-    protected EList<SubEquipment> subEquipment;
+    protected EList< SubEquipment > subEquipment;
 
     /**
      * <!-- begin-user-doc -->
@@ -174,8 +174,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TAP_CHANGER__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__TYPE, oldType, type,
+                    !oldTypeESet ) );
     }
 
     /**
@@ -189,8 +190,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TAP_CHANGER__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TAP_CHANGER__TYPE, oldType,
+                    TYPE_EDEFAULT, oldTypeESet ) );
     }
 
     /**
@@ -224,8 +226,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         virtual = newVirtual;
         boolean oldVirtualESet = virtualESet;
         virtualESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual, virtual, !oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual,
+                    virtual, !oldVirtualESet ) );
     }
 
     /**
@@ -239,8 +242,9 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
         boolean oldVirtualESet = virtualESet;
         virtual = VIRTUAL_EDEFAULT;
         virtualESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual, VIRTUAL_EDEFAULT, oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TAP_CHANGER__VIRTUAL, oldVirtual,
+                    VIRTUAL_EDEFAULT, oldVirtualESet ) );
     }
 
     /**
@@ -259,9 +263,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public EList<EqFunction> getEqFunction() {
-        if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER);
+    public EList< EqFunction > getEqFunction() {
+        if( eqFunction == null ) {
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< EqFunction >( EqFunction.class, this,
+                    SclPackage.TAP_CHANGER__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TAP_CHANGER );
         }
         return eqFunction;
     }
@@ -273,7 +278,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public void unsetEqFunction() {
-        if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
+        if( eqFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
     }
 
     /**
@@ -283,7 +288,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public boolean isSetEqFunction() {
-        return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
+        return eqFunction != null && ( ( InternalEList.Unsettable< ? > ) eqFunction ).isSet();
     }
 
     /**
@@ -292,9 +297,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public EList<SubEquipment> getSubEquipment() {
-        if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER);
+    public EList< SubEquipment > getSubEquipment() {
+        if( subEquipment == null ) {
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< SubEquipment >( SubEquipment.class, this,
+                    SclPackage.TAP_CHANGER__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_TAP_CHANGER );
         }
         return subEquipment;
     }
@@ -306,7 +312,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public void unsetSubEquipment() {
-        if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
+        if( subEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
     }
 
     /**
@@ -316,7 +322,7 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public boolean isSetSubEquipment() {
-        return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
+        return subEquipment != null && ( ( InternalEList.Unsettable< ? > ) subEquipment ).isSet();
     }
 
     /**
@@ -326,8 +332,8 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public TransformerWinding getParentTransformerWinding() {
-        if (eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING) return null;
-        return (TransformerWinding)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING ) return null;
+        return ( TransformerWinding ) eInternalContainer();
     }
 
     /**
@@ -335,8 +341,10 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentTransformerWinding(TransformerWinding newParentTransformerWinding, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentTransformerWinding, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, msgs);
+    public NotificationChain basicSetParentTransformerWinding( TransformerWinding newParentTransformerWinding,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentTransformerWinding,
+                SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, msgs );
         return msgs;
     }
 
@@ -346,20 +354,24 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public void setParentTransformerWinding(TransformerWinding newParentTransformerWinding) {
-        if (newParentTransformerWinding != eInternalContainer() || (eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING && newParentTransformerWinding != null)) {
-            if (EcoreUtil.isAncestor(this, newParentTransformerWinding))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentTransformerWinding( TransformerWinding newParentTransformerWinding ) {
+        if( newParentTransformerWinding != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING
+                        && newParentTransformerWinding != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentTransformerWinding ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentTransformerWinding != null)
-                msgs = ((InternalEObject)newParentTransformerWinding).eInverseAdd(this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs);
-            msgs = basicSetParentTransformerWinding(newParentTransformerWinding, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentTransformerWinding != null )
+                msgs = ( ( InternalEObject ) newParentTransformerWinding ).eInverseAdd( this,
+                        SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs );
+            msgs = basicSetParentTransformerWinding( newParentTransformerWinding, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, newParentTransformerWinding, newParentTransformerWinding));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING,
+                    newParentTransformerWinding, newParentTransformerWinding ) );
     }
 
     /**
@@ -370,17 +382,19 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentTransformerWinding((TransformerWinding)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getEqFunction() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubEquipment() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentTransformerWinding( ( TransformerWinding ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -390,15 +404,15 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                return basicSetParentTransformerWinding(null, msgs);
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            return ( ( InternalEList< ? > ) getEqFunction() ).basicRemove( otherEnd, msgs );
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            return ( ( InternalEList< ? > ) getSubEquipment() ).basicRemove( otherEnd, msgs );
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            return basicSetParentTransformerWinding( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -408,11 +422,12 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                return eInternalContainer().eInverseRemove(this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, TransformerWinding.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            return eInternalContainer().eInverseRemove( this, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER,
+                    TransformerWinding.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -422,19 +437,19 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TAP_CHANGER__VIRTUAL:
-                return getVirtual();
-            case SclPackage.TAP_CHANGER__TYPE:
-                return getType();
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                return getEqFunction();
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                return getSubEquipment();
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                return getParentTransformerWinding();
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__VIRTUAL:
+            return getVirtual();
+        case SclPackage.TAP_CHANGER__TYPE:
+            return getType();
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            return getEqFunction();
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            return getSubEquipment();
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            return getParentTransformerWinding();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -445,26 +460,26 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TAP_CHANGER__VIRTUAL:
-                setVirtual((Boolean)newValue);
-                return;
-            case SclPackage.TAP_CHANGER__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                getEqFunction().clear();
-                getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
-                return;
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                getSubEquipment().clear();
-                getSubEquipment().addAll((Collection<? extends SubEquipment>)newValue);
-                return;
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                setParentTransformerWinding((TransformerWinding)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__VIRTUAL:
+            setVirtual( ( Boolean ) newValue );
+            return;
+        case SclPackage.TAP_CHANGER__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            getEqFunction().clear();
+            getEqFunction().addAll( ( Collection< ? extends EqFunction > ) newValue );
+            return;
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            getSubEquipment().clear();
+            getSubEquipment().addAll( ( Collection< ? extends SubEquipment > ) newValue );
+            return;
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            setParentTransformerWinding( ( TransformerWinding ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -474,24 +489,24 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TAP_CHANGER__VIRTUAL:
-                unsetVirtual();
-                return;
-            case SclPackage.TAP_CHANGER__TYPE:
-                unsetType();
-                return;
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                unsetEqFunction();
-                return;
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                unsetSubEquipment();
-                return;
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                setParentTransformerWinding((TransformerWinding)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__VIRTUAL:
+            unsetVirtual();
+            return;
+        case SclPackage.TAP_CHANGER__TYPE:
+            unsetType();
+            return;
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            unsetEqFunction();
+            return;
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            unsetSubEquipment();
+            return;
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            setParentTransformerWinding( ( TransformerWinding ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -501,19 +516,37 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.TAP_CHANGER__VIRTUAL:
+            return isSetVirtual();
+        case SclPackage.TAP_CHANGER__TYPE:
+            return isSetType();
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+            return isSetEqFunction();
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            return isSetSubEquipment();
+        case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
+            return getParentTransformerWinding() != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgVirtual.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.TAP_CHANGER__VIRTUAL:
-                return isSetVirtual();
-            case SclPackage.TAP_CHANGER__TYPE:
-                return isSetType();
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-                return isSetEqFunction();
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                return isSetSubEquipment();
-            case SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING:
-                return getParentTransformerWinding() != null;
+                return SclPackage.AG_VIRTUAL__VIRTUAL;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -522,30 +555,16 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgVirtual.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.TAP_CHANGER__VIRTUAL: return SclPackage.AG_VIRTUAL__VIRTUAL;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgVirtual.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_VIRTUAL__VIRTUAL:
+                return SclPackage.TAP_CHANGER__VIRTUAL;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgVirtual.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_VIRTUAL__VIRTUAL: return SclPackage.TAP_CHANGER__VIRTUAL;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -555,14 +574,20 @@ public class TapChangerImpl extends PowerSystemResourceImpl implements TapChange
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (virtual: ");
-        if (virtualESet) result.append(virtual); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (virtual: " );
+        if( virtualESet )
+            result.append( virtual );
+        else
+            result.append( "<unset>" );
+        result.append( ", type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

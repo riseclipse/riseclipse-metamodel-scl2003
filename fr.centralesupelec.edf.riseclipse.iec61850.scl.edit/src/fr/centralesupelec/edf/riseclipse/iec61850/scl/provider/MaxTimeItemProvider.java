@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -44,8 +43,8 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public MaxTimeItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public MaxTimeItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -55,9 +54,9 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -70,8 +69,8 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/MaxTime"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/MaxTime" ) );
     }
 
     /**
@@ -81,11 +80,10 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        MaxTime maxTime = (MaxTime)object;
-        return getString("_UI_MaxTime_type") + " " + maxTime.getLineNumber();
+    public String getText( Object object ) {
+        MaxTime maxTime = ( MaxTime ) object;
+        return getString( "_UI_MaxTime_type" ) + " " + maxTime.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -95,9 +93,8 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -108,8 +105,8 @@ public class MaxTimeItemProvider extends DurationInMilliSecItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

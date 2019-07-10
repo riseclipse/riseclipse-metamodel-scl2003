@@ -125,7 +125,7 @@ public interface Control extends UnNaming {
      * @see #getRefersToDataSet()
      * @generated
      */
-    void setRefersToDataSet(DataSet value);
+    void setRefersToDataSet( DataSet value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getRefersToDataSet <em>Refers To Data Set</em>}' reference.
@@ -178,7 +178,7 @@ public interface Control extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getName <em>Name</em>}' attribute.
@@ -217,7 +217,7 @@ public interface Control extends UnNaming {
      * @model opposite="RefersToControl" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<ExtRef> getReferredByExtRef();
+    EList< ExtRef > getReferredByExtRef();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Control#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list.

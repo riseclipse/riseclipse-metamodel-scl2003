@@ -280,7 +280,7 @@ public interface DAI extends UnNaming {
      * @model opposite="ParentDAI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Val> getVal();
+    EList< Val > getVal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getVal <em>Val</em>}' containment reference list.
@@ -325,7 +325,7 @@ public interface DAI extends UnNaming {
      * @see #getParentDOI()
      * @generated
      */
-    void setParentDOI(DOI value);
+    void setParentDOI( DOI value );
 
     /**
      * Returns the value of the '<em><b>Parent SDI</b></em>' container reference.
@@ -349,7 +349,7 @@ public interface DAI extends UnNaming {
      * @see #getParentSDI()
      * @generated
      */
-    void setParentSDI(SDI value);
+    void setParentSDI( SDI value );
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -375,7 +375,7 @@ public interface DAI extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getName <em>Name</em>}' attribute.
@@ -426,7 +426,7 @@ public interface DAI extends UnNaming {
      * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void setRefersToAbstractDataAttribute(AbstractDataAttribute value);
+    void setRefersToAbstractDataAttribute( AbstractDataAttribute value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.

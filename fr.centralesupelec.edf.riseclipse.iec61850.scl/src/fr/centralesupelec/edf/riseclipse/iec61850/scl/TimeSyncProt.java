@@ -223,7 +223,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #getParentClientServices()
      * @generated
      */
-    void setParentClientServices(ClientServices value);
+    void setParentClientServices( ClientServices value );
 
     /**
      * Returns the value of the '<em><b>Parent Services</b></em>' container reference.
@@ -247,7 +247,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Iec61850 93</b></em>' attribute.
@@ -277,7 +277,7 @@ public interface TimeSyncProt extends SclObject {
      * @see #getIec61850_9_3()
      * @generated
      */
-    void setIec61850_9_3(Boolean value);
+    void setIec61850_9_3( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt#getIec61850_9_3 <em>Iec61850 93</em>}' attribute.

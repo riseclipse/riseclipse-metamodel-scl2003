@@ -59,6 +59,6 @@ public interface BDA extends AbstractDataAttribute {
      * @see #getParentDAType()
      * @generated
      */
-    void setParentDAType(DAType value);
+    void setParentDAType( DAType value );
 
 } // BDA

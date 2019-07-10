@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SmvOpts;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SmvOptsItemProvider 
-    extends SclObjectItemProvider {
+public class SmvOptsItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public SmvOptsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SmvOptsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,18 +57,18 @@ public class SmvOptsItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDataSetPropertyDescriptor(object);
-            addRefreshTimePropertyDescriptor(object);
-            addSampleRatePropertyDescriptor(object);
-            addSampleSynchronizedPropertyDescriptor(object);
-            addSecurityPropertyDescriptor(object);
-            addTimestampPropertyDescriptor(object);
-            addSynchSourceIdPropertyDescriptor(object);
-            addDataRefPropertyDescriptor(object);
+            addDataSetPropertyDescriptor( object );
+            addRefreshTimePropertyDescriptor( object );
+            addSampleRatePropertyDescriptor( object );
+            addSampleSynchronizedPropertyDescriptor( object );
+            addSecurityPropertyDescriptor( object );
+            addTimestampPropertyDescriptor( object );
+            addSynchSourceIdPropertyDescriptor( object );
+            addDataRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -80,20 +79,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_dataSet_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_dataSet_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_DataSet(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataSetPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_dataSet_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_dataSet_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_DataSet(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -102,20 +101,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefreshTimePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_refreshTime_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_refreshTime_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_RefreshTime(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addRefreshTimePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_refreshTime_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_refreshTime_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_RefreshTime(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -124,20 +123,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSampleRatePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_sampleRate_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_sampleRate_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_SampleRate(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSampleRatePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_sampleRate_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_sampleRate_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_SampleRate(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -146,20 +145,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSampleSynchronizedPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_sampleSynchronized_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_sampleSynchronized_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_SampleSynchronized(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSampleSynchronizedPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_sampleSynchronized_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_sampleSynchronized_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_SampleSynchronized(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -168,20 +167,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSecurityPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_security_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_security_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_Security(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSecurityPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_security_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_security_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_Security(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -190,20 +189,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTimestampPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_timestamp_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_timestamp_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_Timestamp(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTimestampPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_timestamp_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_timestamp_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_Timestamp(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -212,20 +211,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSynchSourceIdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_synchSourceId_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_synchSourceId_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_SynchSourceId(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSynchSourceIdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_synchSourceId_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_synchSourceId_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_SynchSourceId(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -234,20 +233,20 @@ public class SmvOptsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgSmvOpts_dataRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_dataRef_feature", "_UI_AgSmvOpts_type"),
-                 SclPackage.eINSTANCE.getAgSmvOpts_DataRef(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgSmvOpts_dataRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgSmvOpts_dataRef_feature",
+                                "_UI_AgSmvOpts_type" ),
+                        SclPackage.eINSTANCE.getAgSmvOpts_DataRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -257,8 +256,8 @@ public class SmvOptsItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SmvOpts"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SmvOpts" ) );
     }
 
     /**
@@ -268,11 +267,10 @@ public class SmvOptsItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        SmvOpts smvOpts = (SmvOpts)object;
-        return getString("_UI_SmvOpts_type") + " " + smvOpts.getLineNumber();
+    public String getText( Object object ) {
+        SmvOpts smvOpts = ( SmvOpts ) object;
+        return getString( "_UI_SmvOpts_type" ) + " " + smvOpts.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -282,22 +280,22 @@ public class SmvOptsItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SmvOpts.class)) {
-            case SclPackage.SMV_OPTS__DATA_SET:
-            case SclPackage.SMV_OPTS__REFRESH_TIME:
-            case SclPackage.SMV_OPTS__SAMPLE_RATE:
-            case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
-            case SclPackage.SMV_OPTS__SECURITY:
-            case SclPackage.SMV_OPTS__TIMESTAMP:
-            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
-            case SclPackage.SMV_OPTS__DATA_REF:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( SmvOpts.class ) ) {
+        case SclPackage.SMV_OPTS__DATA_SET:
+        case SclPackage.SMV_OPTS__REFRESH_TIME:
+        case SclPackage.SMV_OPTS__SAMPLE_RATE:
+        case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
+        case SclPackage.SMV_OPTS__SECURITY:
+        case SclPackage.SMV_OPTS__TIMESTAMP:
+        case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+        case SclPackage.SMV_OPTS__DATA_REF:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -308,8 +306,8 @@ public class SmvOptsItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

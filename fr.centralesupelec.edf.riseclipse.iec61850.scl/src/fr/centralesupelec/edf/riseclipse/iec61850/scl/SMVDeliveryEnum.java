@@ -121,7 +121,7 @@ public enum SMVDeliveryEnum implements Enumerator {
             UNICAST,
             MULTICAST,
             BOTH,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>SMV Delivery Enum</b></em>' enumerators.
@@ -129,7 +129,7 @@ public enum SMVDeliveryEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<SMVDeliveryEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< SMVDeliveryEnum > VALUES = Collections.unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>SMV Delivery Enum</b></em>' literal with the specified literal value.
@@ -140,9 +140,9 @@ public enum SMVDeliveryEnum implements Enumerator {
      * @generated
      */
     public static SMVDeliveryEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             SMVDeliveryEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -158,9 +158,9 @@ public enum SMVDeliveryEnum implements Enumerator {
      * @generated
      */
     public static SMVDeliveryEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             SMVDeliveryEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -176,10 +176,13 @@ public enum SMVDeliveryEnum implements Enumerator {
      * @generated
      */
     public static SMVDeliveryEnum get( int value ) {
-        switch (value) {
-            case UNICAST_VALUE: return UNICAST;
-            case MULTICAST_VALUE: return MULTICAST;
-            case BOTH_VALUE: return BOTH;
+        switch( value ) {
+        case UNICAST_VALUE:
+            return UNICAST;
+        case MULTICAST_VALUE:
+            return MULTICAST;
+        case BOTH_VALUE:
+            return BOTH;
         }
         return null;
     }
@@ -224,7 +227,7 @@ public enum SMVDeliveryEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -234,7 +237,7 @@ public enum SMVDeliveryEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -244,7 +247,7 @@ public enum SMVDeliveryEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

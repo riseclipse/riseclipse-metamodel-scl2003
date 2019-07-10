@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class KDCItemProvider 
-    extends SclObjectItemProvider {
+public class KDCItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public KDCItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public KDCItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,13 +57,13 @@ public class KDCItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addApNamePropertyDescriptor(object);
-            addIedNamePropertyDescriptor(object);
-            addRefersToAccessPointPropertyDescriptor(object);
+            addApNamePropertyDescriptor( object );
+            addIedNamePropertyDescriptor( object );
+            addRefersToAccessPointPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,19 @@ public class KDCItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addApNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_KDC_apName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_KDC_apName_feature", "_UI_KDC_type"),
-                 SclPackage.eINSTANCE.getKDC_ApName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addApNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_KDC_apName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_KDC_apName_feature", "_UI_KDC_type" ),
+                        SclPackage.eINSTANCE.getKDC_ApName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +95,19 @@ public class KDCItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIedNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_KDC_iedName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_KDC_iedName_feature", "_UI_KDC_type"),
-                 SclPackage.eINSTANCE.getKDC_IedName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIedNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_KDC_iedName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_KDC_iedName_feature", "_UI_KDC_type" ),
+                        SclPackage.eINSTANCE.getKDC_IedName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,20 +116,20 @@ public class KDCItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToAccessPointPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_KDC_RefersToAccessPoint_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_KDC_RefersToAccessPoint_feature", "_UI_KDC_type"),
-                 SclPackage.eINSTANCE.getKDC_RefersToAccessPoint(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToAccessPointPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_KDC_RefersToAccessPoint_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_KDC_RefersToAccessPoint_feature",
+                                "_UI_KDC_type" ),
+                        SclPackage.eINSTANCE.getKDC_RefersToAccessPoint(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -142,8 +139,8 @@ public class KDCItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/KDC"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/KDC" ) );
     }
 
     /**
@@ -153,13 +150,11 @@ public class KDCItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((KDC)object).getApName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_KDC_type") :
-            getString("_UI_KDC_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( KDC ) object ).getApName();
+        return label == null || label.length() == 0 ? getString( "_UI_KDC_type" )
+                : getString( "_UI_KDC_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -169,16 +164,16 @@ public class KDCItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(KDC.class)) {
-            case SclPackage.KDC__AP_NAME:
-            case SclPackage.KDC__IED_NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( KDC.class ) ) {
+        case SclPackage.KDC__AP_NAME:
+        case SclPackage.KDC__IED_NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -189,8 +184,8 @@ public class KDCItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

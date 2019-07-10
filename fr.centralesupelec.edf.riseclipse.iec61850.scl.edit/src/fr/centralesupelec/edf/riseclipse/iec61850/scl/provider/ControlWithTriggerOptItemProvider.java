@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ControlWithTriggerOptItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ControlWithTriggerOptItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,11 +58,11 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addIntgPdPropertyDescriptor(object);
+            addIntgPdPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,20 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIntgPdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ControlWithTriggerOpt_intgPd_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ControlWithTriggerOpt_intgPd_feature", "_UI_ControlWithTriggerOpt_type"),
-                 SclPackage.eINSTANCE.getControlWithTriggerOpt_IntgPd(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIntgPdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlWithTriggerOpt_intgPd_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ControlWithTriggerOpt_intgPd_feature",
+                                "_UI_ControlWithTriggerOpt_type" ),
+                        SclPackage.eINSTANCE.getControlWithTriggerOpt_IntgPd(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -99,10 +98,10 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getControlWithTriggerOpt_TrgOps());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getControlWithTriggerOpt_TrgOps() );
         }
         return childrenFeatures;
     }
@@ -113,11 +112,11 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -127,8 +126,8 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlWithTriggerOpt"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ControlWithTriggerOpt" ) );
     }
 
     /**
@@ -138,13 +137,11 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((ControlWithTriggerOpt)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_ControlWithTriggerOpt_type") :
-            getString("_UI_ControlWithTriggerOpt_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( ControlWithTriggerOpt ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_ControlWithTriggerOpt_type" )
+                : getString( "_UI_ControlWithTriggerOpt_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -154,18 +151,18 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ControlWithTriggerOpt.class)) {
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( ControlWithTriggerOpt.class ) ) {
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__INTG_PD:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -176,13 +173,11 @@ public class ControlWithTriggerOptItemProvider extends ControlItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getControlWithTriggerOpt_TrgOps(),
-                 SclFactory.eINSTANCE.createTrgOps()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getControlWithTriggerOpt_TrgOps(),
+                SclFactory.eINSTANCE.createTrgOps() ) );
     }
 
 }

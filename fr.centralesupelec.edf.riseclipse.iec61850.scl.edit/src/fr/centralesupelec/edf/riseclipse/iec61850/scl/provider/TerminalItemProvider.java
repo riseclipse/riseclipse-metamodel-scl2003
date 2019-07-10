@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public TerminalItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public TerminalItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,19 +56,19 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBayNamePropertyDescriptor(object);
-            addCNodeNamePropertyDescriptor(object);
-            addConnectivityNodePropertyDescriptor(object);
-            addProcessNamePropertyDescriptor(object);
-            addSubstationNamePropertyDescriptor(object);
-            addVoltageLevelNamePropertyDescriptor(object);
-            addRefersToConnectivityNodePropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addLineNamePropertyDescriptor(object);
+            addBayNamePropertyDescriptor( object );
+            addCNodeNamePropertyDescriptor( object );
+            addConnectivityNodePropertyDescriptor( object );
+            addProcessNamePropertyDescriptor( object );
+            addSubstationNamePropertyDescriptor( object );
+            addVoltageLevelNamePropertyDescriptor( object );
+            addRefersToConnectivityNodePropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addLineNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -80,20 +79,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBayNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_bayName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_bayName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_BayName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBayNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_bayName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_bayName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_BayName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -102,20 +101,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCNodeNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_cNodeName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_cNodeName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_CNodeName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCNodeNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_cNodeName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_cNodeName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_CNodeName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -124,20 +123,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addConnectivityNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_connectivityNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_connectivityNode_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_ConnectivityNode(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addConnectivityNodePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_connectivityNode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_connectivityNode_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_ConnectivityNode(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -146,20 +145,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addProcessNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_processName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_processName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_ProcessName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addProcessNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_processName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_processName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_ProcessName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -168,20 +167,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSubstationNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_substationName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_substationName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_SubstationName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSubstationNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_substationName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_substationName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_SubstationName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -190,20 +189,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addVoltageLevelNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_voltageLevelName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_voltageLevelName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_VoltageLevelName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addVoltageLevelNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_voltageLevelName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_voltageLevelName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_VoltageLevelName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -212,20 +211,20 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToConnectivityNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_RefersToConnectivityNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_RefersToConnectivityNode_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_RefersToConnectivityNode(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToConnectivityNodePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_RefersToConnectivityNode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_Terminal_RefersToConnectivityNode_feature", "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_RefersToConnectivityNode(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -234,53 +233,53 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_name_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_name_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_name_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_Name(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
-                /**
-     * This adds a property descriptor for the Line Name feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected void addLineNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Terminal_lineName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Terminal_lineName_feature", "_UI_Terminal_type"),
-                 SclPackage.eINSTANCE.getTerminal_LineName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    /**
+    * This adds a property descriptor for the Line Name feature.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+    protected void addLineNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Terminal_lineName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Terminal_lineName_feature",
+                                "_UI_Terminal_type" ),
+                        SclPackage.eINSTANCE.getTerminal_LineName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
-                /**
-     * This returns Terminal.gif.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
+    /**
+    * This returns Terminal.gif.
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Terminal"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Terminal" ) );
     }
 
     /**
@@ -290,13 +289,11 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((Terminal)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Terminal_type") :
-            getString("_UI_Terminal_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( Terminal ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_Terminal_type" )
+                : getString( "_UI_Terminal_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -306,22 +303,22 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(Terminal.class)) {
-            case SclPackage.TERMINAL__BAY_NAME:
-            case SclPackage.TERMINAL__CNODE_NAME:
-            case SclPackage.TERMINAL__CONNECTIVITY_NODE:
-            case SclPackage.TERMINAL__PROCESS_NAME:
-            case SclPackage.TERMINAL__SUBSTATION_NAME:
-            case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
-            case SclPackage.TERMINAL__NAME:
-            case SclPackage.TERMINAL__LINE_NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( Terminal.class ) ) {
+        case SclPackage.TERMINAL__BAY_NAME:
+        case SclPackage.TERMINAL__CNODE_NAME:
+        case SclPackage.TERMINAL__CONNECTIVITY_NODE:
+        case SclPackage.TERMINAL__PROCESS_NAME:
+        case SclPackage.TERMINAL__SUBSTATION_NAME:
+        case SclPackage.TERMINAL__VOLTAGE_LEVEL_NAME:
+        case SclPackage.TERMINAL__NAME:
+        case SclPackage.TERMINAL__LINE_NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -332,8 +329,8 @@ public class TerminalItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

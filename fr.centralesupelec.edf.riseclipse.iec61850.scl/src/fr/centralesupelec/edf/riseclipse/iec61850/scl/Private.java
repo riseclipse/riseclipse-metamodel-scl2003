@@ -167,6 +167,6 @@ public interface Private extends AnyContentFromOtherNamespace {
      * @see #getParentBaseElement()
      * @generated
      */
-    void setParentBaseElement(BaseElement value);
+    void setParentBaseElement( BaseElement value );
 
 } // Private

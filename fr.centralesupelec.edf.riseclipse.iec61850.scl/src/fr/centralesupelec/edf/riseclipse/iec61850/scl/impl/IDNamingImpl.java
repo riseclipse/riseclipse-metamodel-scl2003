@@ -143,8 +143,8 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
         id = newId;
         boolean oldIdESet = idESet;
         idESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ID_NAMING__ID, oldId, id, !oldIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ID_NAMING__ID, oldId, id, !oldIdESet ) );
     }
 
     /**
@@ -158,8 +158,9 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
         boolean oldIdESet = idESet;
         id = ID_EDEFAULT;
         idESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ID_NAMING__ID, oldId, ID_EDEFAULT, oldIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ID_NAMING__ID, oldId, ID_EDEFAULT,
+                    oldIdESet ) );
     }
 
     /**
@@ -188,13 +189,14 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ID_NAMING__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ID_NAMING__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -208,8 +210,9 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ID_NAMING__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ID_NAMING__DESC, oldDesc,
+                    DESC_EDEFAULT, oldDescESet ) );
     }
 
     /**
@@ -229,13 +232,13 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ID_NAMING__DESC:
-                return getDesc();
-            case SclPackage.ID_NAMING__ID:
-                return getId();
+        switch( featureID ) {
+        case SclPackage.ID_NAMING__DESC:
+            return getDesc();
+        case SclPackage.ID_NAMING__ID:
+            return getId();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -245,15 +248,15 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ID_NAMING__DESC:
-                setDesc((String)newValue);
-                return;
-            case SclPackage.ID_NAMING__ID:
-                setId((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ID_NAMING__DESC:
+            setDesc( ( String ) newValue );
+            return;
+        case SclPackage.ID_NAMING__ID:
+            setId( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -263,15 +266,15 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ID_NAMING__DESC:
-                unsetDesc();
-                return;
-            case SclPackage.ID_NAMING__ID:
-                unsetId();
-                return;
+        switch( featureID ) {
+        case SclPackage.ID_NAMING__DESC:
+            unsetDesc();
+            return;
+        case SclPackage.ID_NAMING__ID:
+            unsetId();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -281,13 +284,31 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.ID_NAMING__DESC:
+            return isSetDesc();
+        case SclPackage.ID_NAMING__ID:
+            return isSetId();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.ID_NAMING__DESC:
-                return isSetDesc();
-            case SclPackage.ID_NAMING__ID:
-                return isSetId();
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -296,30 +317,16 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.ID_NAMING__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.ID_NAMING__DESC;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.ID_NAMING__DESC;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -329,14 +336,20 @@ public class IDNamingImpl extends BaseElementImpl implements IDNaming {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(", id: ");
-        if (idESet) result.append(id); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ", id: " );
+        if( idESet )
+            result.append( id );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

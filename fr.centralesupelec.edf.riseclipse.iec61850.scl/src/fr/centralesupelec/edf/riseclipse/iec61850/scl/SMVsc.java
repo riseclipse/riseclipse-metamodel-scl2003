@@ -173,7 +173,7 @@ public interface SMVsc extends ServiceWithMax {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Sv</b></em>' attribute.
@@ -203,7 +203,7 @@ public interface SMVsc extends ServiceWithMax {
      * @see #getSv()
      * @generated
      */
-    void setSv(Boolean value);
+    void setSv( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getSv <em>Sv</em>}' attribute.
@@ -256,7 +256,7 @@ public interface SMVsc extends ServiceWithMax {
      * @see #getRSV()
      * @generated
      */
-    void setRSV(Boolean value);
+    void setRSV( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVsc#getRSV <em>RSV</em>}' attribute.

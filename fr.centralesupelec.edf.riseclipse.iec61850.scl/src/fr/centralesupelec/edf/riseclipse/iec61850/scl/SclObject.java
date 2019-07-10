@@ -89,7 +89,7 @@ public interface SclObject extends EObject {
      * @see #isExplicitLinksBuilt()
      * @generated
      */
-    void setExplicitLinksBuilt(boolean value);
+    void setExplicitLinksBuilt( boolean value );
 
     /**
      * <!-- begin-user-doc -->
@@ -97,6 +97,6 @@ public interface SclObject extends EObject {
      * @model consoleType="fr.centralesupelec.edf.riseclipse.iec61850.scl.IRiseClipseConsole"
      * @generated
      */
-    boolean buildExplicitLinks(IRiseClipseConsole console, Boolean forceUpdate);
+    boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate );
 
 } // SclObject

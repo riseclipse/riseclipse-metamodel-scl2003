@@ -169,7 +169,7 @@ public interface LNodeType extends IDNaming {
      * @model opposite="ParentLNodeType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DO> getDO();
+    EList< DO > getDO();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getDO <em>DO</em>}' containment reference list.
@@ -214,7 +214,7 @@ public interface LNodeType extends IDNaming {
      * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setParentDataTypeTemplates(DataTypeTemplates value);
+    void setParentDataTypeTemplates( DataTypeTemplates value );
 
     /**
      * Returns the value of the '<em><b>Referred By Any LN</b></em>' reference list.
@@ -234,7 +234,7 @@ public interface LNodeType extends IDNaming {
      * @model opposite="RefersToLNodeType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<AnyLN> getReferredByAnyLN();
+    EList< AnyLN > getReferredByAnyLN();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByAnyLN <em>Referred By Any LN</em>}' reference list.
@@ -271,7 +271,7 @@ public interface LNodeType extends IDNaming {
      * @model opposite="RefersToLNodeType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<LNode> getReferredByLNode();
+    EList< LNode > getReferredByLNode();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LNodeType#getReferredByLNode <em>Referred By LNode</em>}' reference list.

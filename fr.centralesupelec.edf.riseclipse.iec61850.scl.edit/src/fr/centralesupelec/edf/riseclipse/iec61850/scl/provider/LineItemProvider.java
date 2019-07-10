@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public LineItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public LineItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,13 +58,13 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addTypePropertyDescriptor(object);
-            addNomFreqPropertyDescriptor(object);
-            addNumPhasesPropertyDescriptor(object);
+            addTypePropertyDescriptor( object );
+            addNomFreqPropertyDescriptor( object );
+            addNumPhasesPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -76,20 +75,19 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Line_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Line_type_feature", "_UI_Line_type"),
-                 SclPackage.eINSTANCE.getLine_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Line_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Line_type_feature", "_UI_Line_type" ),
+                        SclPackage.eINSTANCE.getLine_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -98,20 +96,19 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNomFreqPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Line_nomFreq_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Line_nomFreq_feature", "_UI_Line_type"),
-                 SclPackage.eINSTANCE.getLine_NomFreq(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNomFreqPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Line_nomFreq_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Line_nomFreq_feature", "_UI_Line_type" ),
+                        SclPackage.eINSTANCE.getLine_NomFreq(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,20 +117,20 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNumPhasesPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Line_numPhases_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Line_numPhases_feature", "_UI_Line_type"),
-                 SclPackage.eINSTANCE.getLine_NumPhases(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNumPhasesPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Line_numPhases_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Line_numPhases_feature",
+                                "_UI_Line_type" ),
+                        SclPackage.eINSTANCE.getLine_NumPhases(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -145,12 +142,12 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getLine_ConnectivityNode());
-            childrenFeatures.add(SclPackage.eINSTANCE.getLine_ConductingEquipment());
-            childrenFeatures.add(SclPackage.eINSTANCE.getLine_Voltage());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLine_ConnectivityNode() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLine_ConductingEquipment() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getLine_Voltage() );
         }
         return childrenFeatures;
     }
@@ -161,11 +158,11 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -175,8 +172,8 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Line"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Line" ) );
     }
 
     /**
@@ -186,13 +183,11 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((Line)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Line_type") :
-            getString("_UI_Line_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( Line ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_Line_type" )
+                : getString( "_UI_Line_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -202,22 +197,22 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(Line.class)) {
-            case SclPackage.LINE__TYPE:
-            case SclPackage.LINE__NOM_FREQ:
-            case SclPackage.LINE__NUM_PHASES:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.LINE__CONNECTIVITY_NODE:
-            case SclPackage.LINE__CONDUCTING_EQUIPMENT:
-            case SclPackage.LINE__VOLTAGE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( Line.class ) ) {
+        case SclPackage.LINE__TYPE:
+        case SclPackage.LINE__NOM_FREQ:
+        case SclPackage.LINE__NUM_PHASES:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.LINE__CONNECTIVITY_NODE:
+        case SclPackage.LINE__CONDUCTING_EQUIPMENT:
+        case SclPackage.LINE__VOLTAGE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -228,23 +223,17 @@ public class LineItemProvider extends GeneralEquipmentContainerItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getLine_ConnectivityNode(),
-                 SclFactory.eINSTANCE.createConnectivityNode()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLine_ConnectivityNode(),
+                SclFactory.eINSTANCE.createConnectivityNode() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getLine_ConductingEquipment(),
-                 SclFactory.eINSTANCE.createConductingEquipment()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLine_ConductingEquipment(),
+                SclFactory.eINSTANCE.createConductingEquipment() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getLine_Voltage(),
-                 SclFactory.eINSTANCE.createVoltage()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getLine_Voltage(),
+                SclFactory.eINSTANCE.createVoltage() ) );
     }
 
 }

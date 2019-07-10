@@ -126,7 +126,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @generated
      * @ordered
      */
-    protected EList<DOI> referredByDOI;
+    protected EList< DOI > referredByDOI;
 
     /**
      * <!-- begin-user-doc -->
@@ -168,8 +168,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         transient_ = newTransient;
         boolean oldTransientESet = transientESet;
         transientESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__TRANSIENT, oldTransient, transient_, !oldTransientESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__TRANSIENT, oldTransient, transient_,
+                    !oldTransientESet ) );
     }
 
     /**
@@ -183,8 +184,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         boolean oldTransientESet = transientESet;
         transient_ = TRANSIENT_EDEFAULT;
         transientESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__TRANSIENT, oldTransient, TRANSIENT_EDEFAULT, oldTransientESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO__TRANSIENT, oldTransient,
+                    TRANSIENT_EDEFAULT, oldTransientESet ) );
     }
 
     /**
@@ -204,8 +206,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public LNodeType getParentLNodeType() {
-        if (eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE) return null;
-        return (LNodeType)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE ) return null;
+        return ( LNodeType ) eInternalContainer();
     }
 
     /**
@@ -213,8 +215,8 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentLNodeType(LNodeType newParentLNodeType, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentLNodeType, SclPackage.DO__PARENT_LNODE_TYPE, msgs);
+    public NotificationChain basicSetParentLNodeType( LNodeType newParentLNodeType, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentLNodeType, SclPackage.DO__PARENT_LNODE_TYPE, msgs );
         return msgs;
     }
 
@@ -224,20 +226,23 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @generated
      */
     @Override
-    public void setParentLNodeType(LNodeType newParentLNodeType) {
-        if (newParentLNodeType != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE && newParentLNodeType != null)) {
-            if (EcoreUtil.isAncestor(this, newParentLNodeType))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentLNodeType( LNodeType newParentLNodeType ) {
+        if( newParentLNodeType != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DO__PARENT_LNODE_TYPE && newParentLNodeType != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentLNodeType ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentLNodeType != null)
-                msgs = ((InternalEObject)newParentLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
-            msgs = basicSetParentLNodeType(newParentLNodeType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentLNodeType != null )
+                msgs = ( ( InternalEObject ) newParentLNodeType ).eInverseAdd( this, SclPackage.LNODE_TYPE__DO,
+                        LNodeType.class, msgs );
+            msgs = basicSetParentLNodeType( newParentLNodeType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__PARENT_LNODE_TYPE, newParentLNodeType, newParentLNodeType));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__PARENT_LNODE_TYPE,
+                    newParentLNodeType, newParentLNodeType ) );
     }
 
     /**
@@ -256,13 +261,14 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @generated
      */
     @Override
-    public void setAccessControl(String newAccessControl) {
+    public void setAccessControl( String newAccessControl ) {
         String oldAccessControl = accessControl;
         accessControl = newAccessControl;
         boolean oldAccessControlESet = accessControlESet;
         accessControlESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl, accessControl, !oldAccessControlESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl,
+                    accessControl, !oldAccessControlESet ) );
     }
 
     /**
@@ -276,8 +282,9 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         boolean oldAccessControlESet = accessControlESet;
         accessControl = ACCESS_CONTROL_EDEFAULT;
         accessControlESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl, ACCESS_CONTROL_EDEFAULT, oldAccessControlESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO__ACCESS_CONTROL, oldAccessControl,
+                    ACCESS_CONTROL_EDEFAULT, oldAccessControlESet ) );
     }
 
     /**
@@ -296,9 +303,10 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * @generated
      */
     @Override
-    public EList<DOI> getReferredByDOI() {
-        if (referredByDOI == null) {
-            referredByDOI = new EObjectWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.DO__REFERRED_BY_DOI, SclPackage.DOI__REFERS_TO_DO);
+    public EList< DOI > getReferredByDOI() {
+        if( referredByDOI == null ) {
+            referredByDOI = new EObjectWithInverseEList.Unsettable< DOI >( DOI.class, this,
+                    SclPackage.DO__REFERRED_BY_DOI, SclPackage.DOI__REFERS_TO_DO );
         }
         return referredByDOI;
     }
@@ -310,7 +318,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public void unsetReferredByDOI() {
-        if (referredByDOI != null) ((InternalEList.Unsettable<?>)referredByDOI).unset();
+        if( referredByDOI != null ) ( ( InternalEList.Unsettable< ? > ) referredByDOI ).unset();
     }
 
     /**
@@ -320,7 +328,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public boolean isSetReferredByDOI() {
-        return referredByDOI != null && ((InternalEList.Unsettable<?>)referredByDOI).isSet();
+        return referredByDOI != null && ( ( InternalEList.Unsettable< ? > ) referredByDOI ).isSet();
     }
 
     /**
@@ -328,18 +336,19 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentLNodeType((LNodeType)otherEnd, msgs);
-            case SclPackage.DO__REFERRED_BY_DOI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDOI()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentLNodeType( ( LNodeType ) otherEnd, msgs );
+        case SclPackage.DO__REFERRED_BY_DOI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByDOI() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -349,13 +358,13 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                return basicSetParentLNodeType(null, msgs);
-            case SclPackage.DO__REFERRED_BY_DOI:
-                return ((InternalEList<?>)getReferredByDOI()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            return basicSetParentLNodeType( null, msgs );
+        case SclPackage.DO__REFERRED_BY_DOI:
+            return ( ( InternalEList< ? > ) getReferredByDOI() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -365,11 +374,11 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.LNODE_TYPE__DO, LNodeType.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -379,17 +388,17 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                return getTransient();
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                return getParentLNodeType();
-            case SclPackage.DO__ACCESS_CONTROL:
-                return getAccessControl();
-            case SclPackage.DO__REFERRED_BY_DOI:
-                return getReferredByDOI();
+        switch( featureID ) {
+        case SclPackage.DO__TRANSIENT:
+            return getTransient();
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            return getParentLNodeType();
+        case SclPackage.DO__ACCESS_CONTROL:
+            return getAccessControl();
+        case SclPackage.DO__REFERRED_BY_DOI:
+            return getReferredByDOI();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -397,25 +406,25 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                setTransient((Boolean)newValue);
-                return;
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                setParentLNodeType((LNodeType)newValue);
-                return;
-            case SclPackage.DO__ACCESS_CONTROL:
-                setAccessControl((String)newValue);
-                return;
-            case SclPackage.DO__REFERRED_BY_DOI:
-                getReferredByDOI().clear();
-                getReferredByDOI().addAll((Collection<? extends DOI>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DO__TRANSIENT:
+            setTransient( ( Boolean ) newValue );
+            return;
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            setParentLNodeType( ( LNodeType ) newValue );
+            return;
+        case SclPackage.DO__ACCESS_CONTROL:
+            setAccessControl( ( String ) newValue );
+            return;
+        case SclPackage.DO__REFERRED_BY_DOI:
+            getReferredByDOI().clear();
+            getReferredByDOI().addAll( ( Collection< ? extends DOI > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -425,21 +434,21 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                unsetTransient();
-                return;
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                setParentLNodeType((LNodeType)null);
-                return;
-            case SclPackage.DO__ACCESS_CONTROL:
-                unsetAccessControl();
-                return;
-            case SclPackage.DO__REFERRED_BY_DOI:
-                unsetReferredByDOI();
-                return;
+        switch( featureID ) {
+        case SclPackage.DO__TRANSIENT:
+            unsetTransient();
+            return;
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            setParentLNodeType( ( LNodeType ) null );
+            return;
+        case SclPackage.DO__ACCESS_CONTROL:
+            unsetAccessControl();
+            return;
+        case SclPackage.DO__REFERRED_BY_DOI:
+            unsetReferredByDOI();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -449,17 +458,17 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO__TRANSIENT:
-                return isSetTransient();
-            case SclPackage.DO__PARENT_LNODE_TYPE:
-                return getParentLNodeType() != null;
-            case SclPackage.DO__ACCESS_CONTROL:
-                return isSetAccessControl();
-            case SclPackage.DO__REFERRED_BY_DOI:
-                return isSetReferredByDOI();
+        switch( featureID ) {
+        case SclPackage.DO__TRANSIENT:
+            return isSetTransient();
+        case SclPackage.DO__PARENT_LNODE_TYPE:
+            return getParentLNodeType() != null;
+        case SclPackage.DO__ACCESS_CONTROL:
+            return isSetAccessControl();
+        case SclPackage.DO__REFERRED_BY_DOI:
+            return isSetReferredByDOI();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -469,14 +478,20 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (transient: ");
-        if (transientESet) result.append(transient_); else result.append("<unset>");
-        result.append(", accessControl: ");
-        if (accessControlESet) result.append(accessControl); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (transient: " );
+        if( transientESet )
+            result.append( transient_ );
+        else
+            result.append( "<unset>" );
+        result.append( ", accessControl: " );
+        if( accessControlESet )
+            result.append( accessControl );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -484,7 +499,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // name             The data object name as specified for example in IEC 61850-7-4
         // type             The type references the id of a DOType definition
         // accessControl    Access control definition for this DO. If it is missing then any higher-level
@@ -493,7 +508,7 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
 
         String messagePrefix = "[SCL links] while resolving link from DO on line " + getLineNumber() + ": ";
 
-        if(( getType() == null ) || getType().isEmpty() ) {
+        if( ( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix, "type is missing" );
             return;
         }
@@ -501,20 +516,20 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         DataTypeTemplates dtt = SclUtilities.getSCL( this ).getDataTypeTemplates();
         if( dtt == null ) return;
 
-        List< DOType > res = 
-                dtt
+        List< DOType > res = dtt
                 .getDOType()
                 .stream()
-                .filter(  d -> getType().equals( d.getId() ))
+                .filter( d -> getType().equals( d.getId() ) )
                 .collect( Collectors.toList() );
-                
+
         String mess = "DOType( id = " + getType() + " )";
         if( res.size() != 1 ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
-        setRefersToDOType( res.get( 0 ));
-        console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDOType().getLineNumber() );
+        setRefersToDOType( res.get( 0 ) );
+        console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToDOType().getLineNumber() );
     }
 
 } //DOImpl

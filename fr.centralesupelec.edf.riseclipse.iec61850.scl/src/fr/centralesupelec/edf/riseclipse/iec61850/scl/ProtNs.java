@@ -115,7 +115,7 @@ public interface ProtNs extends SclObject {
      * @see #getParentDA()
      * @generated
      */
-    void setParentDA(DA value);
+    void setParentDA( DA value );
 
     /**
      * Returns the value of the '<em><b>Parent DA Type</b></em>' container reference.
@@ -139,7 +139,7 @@ public interface ProtNs extends SclObject {
      * @see #getParentDAType()
      * @generated
      */
-    void setParentDAType(DAType value);
+    void setParentDAType( DAType value );
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -165,6 +165,6 @@ public interface ProtNs extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue(String value);
+    void setValue( String value );
 
 } // ProtNs

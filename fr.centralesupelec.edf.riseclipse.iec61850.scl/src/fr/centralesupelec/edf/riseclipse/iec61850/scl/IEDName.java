@@ -334,7 +334,7 @@ public interface IEDName extends SclObject {
      * @see #getParentControlWithIEDName()
      * @generated
      */
-    void setParentControlWithIEDName(ControlWithIEDName value);
+    void setParentControlWithIEDName( ControlWithIEDName value );
 
     /**
      * Returns the value of the '<em><b>Refers To Any LN</b></em>' reference.
@@ -366,7 +366,7 @@ public interface IEDName extends SclObject {
      * @see #getRefersToAnyLN()
      * @generated
      */
-    void setRefersToAnyLN(AnyLN value);
+    void setRefersToAnyLN( AnyLN value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToAnyLN <em>Refers To Any LN</em>}' reference.
@@ -420,7 +420,7 @@ public interface IEDName extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue(String value);
+    void setValue( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getValue <em>Value</em>}' attribute.
@@ -471,7 +471,7 @@ public interface IEDName extends SclObject {
      * @see #getRefersToIED()
      * @generated
      */
-    void setRefersToIED(IED value);
+    void setRefersToIED( IED value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToIED <em>Refers To IED</em>}' reference.
@@ -522,7 +522,7 @@ public interface IEDName extends SclObject {
      * @see #getRefersToLDevice()
      * @generated
      */
-    void setRefersToLDevice(LDevice value);
+    void setRefersToLDevice( LDevice value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName#getRefersToLDevice <em>Refers To LDevice</em>}' reference.

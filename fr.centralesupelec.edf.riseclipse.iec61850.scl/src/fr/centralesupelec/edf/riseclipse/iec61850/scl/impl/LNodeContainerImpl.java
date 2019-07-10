@@ -58,7 +58,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      * @generated
      * @ordered
      */
-    protected EList<LNode> lNode;
+    protected EList< LNode > lNode;
 
     /**
      * <!-- begin-user-doc -->
@@ -85,9 +85,10 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      * @generated
      */
     @Override
-    public EList<LNode> getLNode() {
-        if (lNode == null) {
-            lNode = new EObjectContainmentWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__PARENT_LNODE_CONTAINER);
+    public EList< LNode > getLNode() {
+        if( lNode == null ) {
+            lNode = new EObjectContainmentWithInverseEList.Unsettable< LNode >( LNode.class, this,
+                    SclPackage.LNODE_CONTAINER__LNODE, SclPackage.LNODE__PARENT_LNODE_CONTAINER );
         }
         return lNode;
     }
@@ -99,7 +100,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public void unsetLNode() {
-        if (lNode != null) ((InternalEList.Unsettable<?>)lNode).unset();
+        if( lNode != null ) ( ( InternalEList.Unsettable< ? > ) lNode ).unset();
     }
 
     /**
@@ -109,7 +110,7 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public boolean isSetLNode() {
-        return lNode != null && ((InternalEList.Unsettable<?>)lNode).isSet();
+        return lNode != null && ( ( InternalEList.Unsettable< ? > ) lNode ).isSet();
     }
 
     /**
@@ -120,11 +121,12 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLNode()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLNode() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -134,11 +136,11 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                return ((InternalEList<?>)getLNode()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            return ( ( InternalEList< ? > ) getLNode() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -148,11 +150,11 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                return getLNode();
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            return getLNode();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -163,13 +165,13 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                getLNode().clear();
-                getLNode().addAll((Collection<? extends LNode>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            getLNode().clear();
+            getLNode().addAll( ( Collection< ? extends LNode > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -179,12 +181,12 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                unsetLNode();
-                return;
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            unsetLNode();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -194,11 +196,11 @@ public class LNodeContainerImpl extends NamingImpl implements LNodeContainer {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LNODE_CONTAINER__LNODE:
-                return isSetLNode();
+        switch( featureID ) {
+        case SclPackage.LNODE_CONTAINER__LNODE:
+            return isSetLNode();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //LNodeContainerImpl

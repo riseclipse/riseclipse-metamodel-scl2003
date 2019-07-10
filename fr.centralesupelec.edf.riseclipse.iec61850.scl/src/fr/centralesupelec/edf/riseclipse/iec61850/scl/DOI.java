@@ -120,7 +120,7 @@ public interface DOI extends UnNaming {
      * @see #getParentAnyLN()
      * @generated
      */
-    void setParentAnyLN(AnyLN value);
+    void setParentAnyLN( AnyLN value );
 
     /**
      * Returns the value of the '<em><b>DAI</b></em>' containment reference list.
@@ -140,7 +140,7 @@ public interface DOI extends UnNaming {
      * @model opposite="ParentDOI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DAI> getDAI();
+    EList< DAI > getDAI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getDAI <em>DAI</em>}' containment reference list.
@@ -181,7 +181,7 @@ public interface DOI extends UnNaming {
      * @model opposite="ParentDOI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SDI> getSDI();
+    EList< SDI > getSDI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getSDI <em>SDI</em>}' containment reference list.
@@ -228,7 +228,7 @@ public interface DOI extends UnNaming {
      * @see #getAccessControl()
      * @generated
      */
-    void setAccessControl(String value);
+    void setAccessControl( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getAccessControl <em>Access Control</em>}' attribute.
@@ -277,7 +277,7 @@ public interface DOI extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getName <em>Name</em>}' attribute.
@@ -328,7 +328,7 @@ public interface DOI extends UnNaming {
      * @see #getRefersToDO()
      * @generated
      */
-    void setRefersToDO(DO value);
+    void setRefersToDO( DO value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getRefersToDO <em>Refers To DO</em>}' reference.

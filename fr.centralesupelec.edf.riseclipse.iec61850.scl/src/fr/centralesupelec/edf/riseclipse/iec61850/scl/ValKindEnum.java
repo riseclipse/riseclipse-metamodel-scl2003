@@ -147,7 +147,7 @@ public enum ValKindEnum implements Enumerator {
             CONF,
             RO,
             SET,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Val Kind Enum</b></em>' enumerators.
@@ -155,7 +155,7 @@ public enum ValKindEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ValKindEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< ValKindEnum > VALUES = Collections.unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Val Kind Enum</b></em>' literal with the specified literal value.
@@ -166,9 +166,9 @@ public enum ValKindEnum implements Enumerator {
      * @generated
      */
     public static ValKindEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ValKindEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -184,9 +184,9 @@ public enum ValKindEnum implements Enumerator {
      * @generated
      */
     public static ValKindEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ValKindEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -202,11 +202,15 @@ public enum ValKindEnum implements Enumerator {
      * @generated
      */
     public static ValKindEnum get( int value ) {
-        switch (value) {
-            case SPEC_VALUE: return SPEC;
-            case CONF_VALUE: return CONF;
-            case RO_VALUE: return RO;
-            case SET_VALUE: return SET;
+        switch( value ) {
+        case SPEC_VALUE:
+            return SPEC;
+        case CONF_VALUE:
+            return CONF;
+        case RO_VALUE:
+            return RO;
+        case SET_VALUE:
+            return SET;
         }
         return null;
     }
@@ -251,7 +255,7 @@ public enum ValKindEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -261,7 +265,7 @@ public enum ValKindEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -271,7 +275,7 @@ public enum ValKindEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

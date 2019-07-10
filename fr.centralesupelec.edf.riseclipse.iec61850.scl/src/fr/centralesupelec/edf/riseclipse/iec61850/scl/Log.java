@@ -63,7 +63,7 @@ public interface Log extends UnNaming {
      * @see #getParentAnyLN()
      * @generated
      */
-    void setParentAnyLN(AnyLN value);
+    void setParentAnyLN( AnyLN value );
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -93,7 +93,7 @@ public interface Log extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getName <em>Name</em>}' attribute.
@@ -136,7 +136,7 @@ public interface Log extends UnNaming {
      * @model opposite="RefersToLog" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<LogControl> getReferredByLogControl();
+    EList< LogControl > getReferredByLogControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log#getReferredByLogControl <em>Referred By Log Control</em>}' reference list.

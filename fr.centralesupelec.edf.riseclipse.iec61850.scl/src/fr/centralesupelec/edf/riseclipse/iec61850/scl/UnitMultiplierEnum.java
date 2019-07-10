@@ -589,7 +589,7 @@ public enum UnitMultiplierEnum implements Enumerator {
             Z,
             Y,
             NONE,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Unit Multiplier Enum</b></em>' enumerators.
@@ -597,7 +597,8 @@ public enum UnitMultiplierEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<UnitMultiplierEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< UnitMultiplierEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Unit Multiplier Enum</b></em>' literal with the specified literal value.
@@ -608,9 +609,9 @@ public enum UnitMultiplierEnum implements Enumerator {
      * @generated
      */
     public static UnitMultiplierEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             UnitMultiplierEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -626,9 +627,9 @@ public enum UnitMultiplierEnum implements Enumerator {
      * @generated
      */
     public static UnitMultiplierEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             UnitMultiplierEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -644,28 +645,49 @@ public enum UnitMultiplierEnum implements Enumerator {
      * @generated
      */
     public static UnitMultiplierEnum get( int value ) {
-        switch (value) {
-            case MILLI_VALUE: return MILLI;
-            case K_VALUE: return K;
-            case M_VALUE: return M;
-            case MU_VALUE: return MU;
-            case YOCTO_VALUE: return YOCTO;
-            case ZEPTO_VALUE: return ZEPTO;
-            case A_VALUE: return A;
-            case F_VALUE: return F;
-            case PICO_VALUE: return PICO;
-            case N_VALUE: return N;
-            case C_VALUE: return C;
-            case D_VALUE: return D;
-            case DA_VALUE: return DA;
-            case H_VALUE: return H;
-            case G_VALUE: return G;
-            case T_VALUE: return T;
-            case P_VALUE: return P;
-            case E_VALUE: return E;
-            case Z_VALUE: return Z;
-            case Y_VALUE: return Y;
-            case NONE_VALUE: return NONE;
+        switch( value ) {
+        case MILLI_VALUE:
+            return MILLI;
+        case K_VALUE:
+            return K;
+        case M_VALUE:
+            return M;
+        case MU_VALUE:
+            return MU;
+        case YOCTO_VALUE:
+            return YOCTO;
+        case ZEPTO_VALUE:
+            return ZEPTO;
+        case A_VALUE:
+            return A;
+        case F_VALUE:
+            return F;
+        case PICO_VALUE:
+            return PICO;
+        case N_VALUE:
+            return N;
+        case C_VALUE:
+            return C;
+        case D_VALUE:
+            return D;
+        case DA_VALUE:
+            return DA;
+        case H_VALUE:
+            return H;
+        case G_VALUE:
+            return G;
+        case T_VALUE:
+            return T;
+        case P_VALUE:
+            return P;
+        case E_VALUE:
+            return E;
+        case Z_VALUE:
+            return Z;
+        case Y_VALUE:
+            return Y;
+        case NONE_VALUE:
+            return NONE;
         }
         return null;
     }
@@ -710,7 +732,7 @@ public enum UnitMultiplierEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -720,7 +742,7 @@ public enum UnitMultiplierEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -730,7 +752,7 @@ public enum UnitMultiplierEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

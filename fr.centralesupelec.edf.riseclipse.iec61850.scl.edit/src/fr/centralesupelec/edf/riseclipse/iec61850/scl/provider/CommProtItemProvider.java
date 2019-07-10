@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CommProtItemProvider 
-    extends SclObjectItemProvider {
+public class CommProtItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public CommProtItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public CommProtItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,11 +57,11 @@ public class CommProtItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addIpv6PropertyDescriptor(object);
+            addIpv6PropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -73,20 +72,20 @@ public class CommProtItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIpv6PropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_CommProt_ipv6_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_CommProt_ipv6_feature", "_UI_CommProt_type"),
-                 SclPackage.eINSTANCE.getCommProt_Ipv6(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIpv6PropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_CommProt_ipv6_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_CommProt_ipv6_feature",
+                                "_UI_CommProt_type" ),
+                        SclPackage.eINSTANCE.getCommProt_Ipv6(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,8 +95,8 @@ public class CommProtItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/CommProt"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/CommProt" ) );
     }
 
     /**
@@ -107,11 +106,10 @@ public class CommProtItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        CommProt commProt = (CommProt)object;
-        return getString("_UI_CommProt_type") + " " + commProt.getLineNumber();
+    public String getText( Object object ) {
+        CommProt commProt = ( CommProt ) object;
+        return getString( "_UI_CommProt_type" ) + " " + commProt.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -121,15 +119,15 @@ public class CommProtItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(CommProt.class)) {
-            case SclPackage.COMM_PROT__IPV6:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( CommProt.class ) ) {
+        case SclPackage.COMM_PROT__IPV6:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -140,8 +138,8 @@ public class CommProtItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

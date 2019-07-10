@@ -60,7 +60,7 @@ public interface Substation extends EquipmentContainer {
      * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Function> getFunction();
+    EList< Function > getFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getFunction <em>Function</em>}' containment reference list.
@@ -101,7 +101,7 @@ public interface Substation extends EquipmentContainer {
      * @model opposite="ParentSubstation" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<VoltageLevel> getVoltageLevel();
+    EList< VoltageLevel > getVoltageLevel();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Substation#getVoltageLevel <em>Voltage Level</em>}' containment reference list.
@@ -146,7 +146,7 @@ public interface Substation extends EquipmentContainer {
      * @see #getParentProcess()
      * @generated
      */
-    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
+    void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
 
     /**
      * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
@@ -170,6 +170,6 @@ public interface Substation extends EquipmentContainer {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
 } // Substation

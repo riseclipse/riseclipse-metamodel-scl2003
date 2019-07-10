@@ -59,6 +59,6 @@ public interface P_PhysConn extends PAddr {
      * @see #getParentPhysConn()
      * @generated
      */
-    void setParentPhysConn(PhysConn value);
+    void setParentPhysConn( PhysConn value );
 
 } // P_PhysConn

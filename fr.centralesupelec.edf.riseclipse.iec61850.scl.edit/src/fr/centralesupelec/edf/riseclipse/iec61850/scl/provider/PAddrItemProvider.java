@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PAddrItemProvider 
-    extends SclObjectItemProvider {
+public class PAddrItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public PAddrItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public PAddrItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,12 +57,12 @@ public class PAddrItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addTypePropertyDescriptor(object);
-            addValuePropertyDescriptor(object);
+            addTypePropertyDescriptor( object );
+            addValuePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,19 @@ public class PAddrItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_PAddr_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_PAddr_type_feature", "_UI_PAddr_type"),
-                 SclPackage.eINSTANCE.getPAddr_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_PAddr_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_PAddr_type_feature", "_UI_PAddr_type" ),
+                        SclPackage.eINSTANCE.getPAddr_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +94,19 @@ public class PAddrItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addValuePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_PAddr_value_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_PAddr_value_feature", "_UI_PAddr_type"),
-                 SclPackage.eINSTANCE.getPAddr_Value(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addValuePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_PAddr_value_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_PAddr_value_feature", "_UI_PAddr_type" ),
+                        SclPackage.eINSTANCE.getPAddr_Value(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,8 +116,8 @@ public class PAddrItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/PAddr"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/PAddr" ) );
     }
 
     /**
@@ -130,11 +127,10 @@ public class PAddrItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        PAddr pAddr = (PAddr)object;
-        return getString("_UI_PAddr_type") + " " + pAddr.getLineNumber();
+    public String getText( Object object ) {
+        PAddr pAddr = ( PAddr ) object;
+        return getString( "_UI_PAddr_type" ) + " " + pAddr.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -144,16 +140,16 @@ public class PAddrItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(PAddr.class)) {
-            case SclPackage.PADDR__TYPE:
-            case SclPackage.PADDR__VALUE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( PAddr.class ) ) {
+        case SclPackage.PADDR__TYPE:
+        case SclPackage.PADDR__VALUE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -164,8 +160,8 @@ public class PAddrItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

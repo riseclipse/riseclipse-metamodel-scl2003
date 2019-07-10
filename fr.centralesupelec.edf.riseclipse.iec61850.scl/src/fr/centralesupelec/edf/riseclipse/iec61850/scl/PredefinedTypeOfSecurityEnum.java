@@ -121,7 +121,7 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
             NONE,
             SIGNATURE,
             SIGNATURE_AND_ENCRYPTION,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Predefined Type Of Security Enum</b></em>' enumerators.
@@ -129,7 +129,8 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<PredefinedTypeOfSecurityEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< PredefinedTypeOfSecurityEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Predefined Type Of Security Enum</b></em>' literal with the specified literal value.
@@ -140,9 +141,9 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      * @generated
      */
     public static PredefinedTypeOfSecurityEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             PredefinedTypeOfSecurityEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -158,9 +159,9 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      * @generated
      */
     public static PredefinedTypeOfSecurityEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             PredefinedTypeOfSecurityEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -176,10 +177,13 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      * @generated
      */
     public static PredefinedTypeOfSecurityEnum get( int value ) {
-        switch (value) {
-            case NONE_VALUE: return NONE;
-            case SIGNATURE_VALUE: return SIGNATURE;
-            case SIGNATURE_AND_ENCRYPTION_VALUE: return SIGNATURE_AND_ENCRYPTION;
+        switch( value ) {
+        case NONE_VALUE:
+            return NONE;
+        case SIGNATURE_VALUE:
+            return SIGNATURE;
+        case SIGNATURE_AND_ENCRYPTION_VALUE:
+            return SIGNATURE_AND_ENCRYPTION;
         }
         return null;
     }
@@ -224,7 +228,7 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -234,7 +238,7 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -244,7 +248,7 @@ public enum PredefinedTypeOfSecurityEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

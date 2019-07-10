@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -49,9 +48,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AgDATrgOpItemProvider 
-    extends ItemProviderAdapter
-    implements
+public class AgDATrgOpItemProvider
+        extends ItemProviderAdapter
+        implements
         IEditingDomainItemProvider,
         IStructuredItemContentProvider,
         ITreeItemContentProvider,
@@ -63,8 +62,8 @@ public class AgDATrgOpItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    public AgDATrgOpItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AgDATrgOpItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -74,13 +73,13 @@ public class AgDATrgOpItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDchgPropertyDescriptor(object);
-            addDupdPropertyDescriptor(object);
-            addQchgPropertyDescriptor(object);
+            addDchgPropertyDescriptor( object );
+            addDupdPropertyDescriptor( object );
+            addQchgPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -91,20 +90,20 @@ public class AgDATrgOpItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDchgPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_dchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dchg_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Dchg(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDchgPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_dchg_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dchg_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Dchg(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -113,20 +112,20 @@ public class AgDATrgOpItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDupdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_dupd_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dupd_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Dupd(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDupdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_dupd_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dupd_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Dupd(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -135,20 +134,20 @@ public class AgDATrgOpItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addQchgPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_qchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_qchg_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Qchg(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addQchgPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_qchg_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_qchg_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Qchg(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -158,14 +157,12 @@ public class AgDATrgOpItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        Boolean labelValue = ((AgDATrgOp)object).getDchg();
+    public String getText( Object object ) {
+        Boolean labelValue = ( ( AgDATrgOp ) object ).getDchg();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AgDATrgOp_type") :
-            getString("_UI_AgDATrgOp_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_AgDATrgOp_type" )
+                : getString( "_UI_AgDATrgOp_type" ) + " " + label;
     }
-
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -175,17 +172,17 @@ public class AgDATrgOpItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AgDATrgOp.class)) {
-            case SclPackage.AG_DA_TRG_OP__DCHG:
-            case SclPackage.AG_DA_TRG_OP__DUPD:
-            case SclPackage.AG_DA_TRG_OP__QCHG:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( AgDATrgOp.class ) ) {
+        case SclPackage.AG_DA_TRG_OP__DCHG:
+        case SclPackage.AG_DA_TRG_OP__DUPD:
+        case SclPackage.AG_DA_TRG_OP__QCHG:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -196,8 +193,8 @@ public class AgDATrgOpItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
     /**

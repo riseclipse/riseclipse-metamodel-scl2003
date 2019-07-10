@@ -147,7 +147,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected EList<Line> line;
+    protected EList< Line > line;
 
     /**
      * The cached value of the '{@link #getProcess() <em>Process</em>}' containment reference list.
@@ -157,7 +157,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> process;
+    protected EList< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > process;
 
     /**
      * The cached value of the '{@link #getIED() <em>IED</em>}' containment reference list.
@@ -167,7 +167,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected EList<IED> ied;
+    protected EList< IED > ied;
 
     /**
      * The cached value of the '{@link #getDataTypeTemplates() <em>Data Type Templates</em>}' containment reference.
@@ -215,7 +215,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      * @ordered
      */
-    protected EList<Substation> substation;
+    protected EList< Substation > substation;
 
     /**
      * The default value of the '{@link #getRelease() <em>Release</em>}' attribute.
@@ -286,8 +286,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         revision = newRevision;
         boolean oldRevisionESet = revisionESet;
         revisionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__REVISION, oldRevision, revision, !oldRevisionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__REVISION, oldRevision, revision,
+                    !oldRevisionESet ) );
     }
 
     /**
@@ -301,8 +302,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldRevisionESet = revisionESet;
         revision = REVISION_EDEFAULT;
         revisionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__REVISION, oldRevision, REVISION_EDEFAULT, oldRevisionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__REVISION, oldRevision,
+                    REVISION_EDEFAULT, oldRevisionESet ) );
     }
 
     /**
@@ -336,8 +338,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         version = newVersion;
         boolean oldVersionESet = versionESet;
         versionESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__VERSION, oldVersion, version, !oldVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__VERSION, oldVersion, version,
+                    !oldVersionESet ) );
     }
 
     /**
@@ -351,8 +354,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldVersionESet = versionESet;
         version = VERSION_EDEFAULT;
         versionESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__VERSION, oldVersion, VERSION_EDEFAULT, oldVersionESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__VERSION, oldVersion,
+                    VERSION_EDEFAULT, oldVersionESet ) );
     }
 
     /**
@@ -385,9 +389,13 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         header = newHeader;
         boolean oldHeaderESet = headerESet;
         headerESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SCL__HEADER, oldHeader, newHeader, !oldHeaderESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.SCL__HEADER,
+                    oldHeader, newHeader, !oldHeaderESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -399,20 +407,23 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void setHeader( Header newHeader ) {
-        if (newHeader != header) {
+        if( newHeader != header ) {
             NotificationChain msgs = null;
-            if (header != null)
-                msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
-            if (newHeader != null)
-                msgs = ((InternalEObject)newHeader).eInverseAdd(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
-            msgs = basicSetHeader(newHeader, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( header != null )
+                msgs = ( ( InternalEObject ) header ).eInverseRemove( this, SclPackage.HEADER__PARENT_SCL, Header.class,
+                        msgs );
+            if( newHeader != null )
+                msgs = ( ( InternalEObject ) newHeader ).eInverseAdd( this, SclPackage.HEADER__PARENT_SCL, Header.class,
+                        msgs );
+            msgs = basicSetHeader( newHeader, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldHeaderESet = headerESet;
             headerESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__HEADER, newHeader, newHeader, !oldHeaderESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__HEADER, newHeader, newHeader,
+                        !oldHeaderESet ) );
         }
     }
 
@@ -426,9 +437,13 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         header = null;
         boolean oldHeaderESet = headerESet;
         headerESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__HEADER, oldHeader, null, oldHeaderESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__HEADER,
+                    oldHeader, null, oldHeaderESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -440,17 +455,19 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetHeader() {
-        if (header != null) {
+        if( header != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)header).eInverseRemove(this, SclPackage.HEADER__PARENT_SCL, Header.class, msgs);
-            msgs = basicUnsetHeader(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) header ).eInverseRemove( this, SclPackage.HEADER__PARENT_SCL, Header.class,
+                    msgs );
+            msgs = basicUnsetHeader( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldHeaderESet = headerESet;
             headerESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__HEADER, null, null, oldHeaderESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__HEADER, null, null,
+                        oldHeaderESet ) );
         }
     }
 
@@ -470,9 +487,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     @Override
-    public EList<Line> getLine() {
-        if (line == null) {
-            line = new EObjectContainmentWithInverseEList.Unsettable<Line>(Line.class, this, SclPackage.SCL__LINE, SclPackage.LINE__PARENT_SCL);
+    public EList< Line > getLine() {
+        if( line == null ) {
+            line = new EObjectContainmentWithInverseEList.Unsettable< Line >( Line.class, this, SclPackage.SCL__LINE,
+                    SclPackage.LINE__PARENT_SCL );
         }
         return line;
     }
@@ -484,7 +502,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetLine() {
-        if (line != null) ((InternalEList.Unsettable<?>)line).unset();
+        if( line != null ) ( ( InternalEList.Unsettable< ? > ) line ).unset();
     }
 
     /**
@@ -494,7 +512,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public boolean isSetLine() {
-        return line != null && ((InternalEList.Unsettable<?>)line).isSet();
+        return line != null && ( ( InternalEList.Unsettable< ? > ) line ).isSet();
     }
 
     /**
@@ -503,9 +521,11 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     @Override
-    public EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getProcess() {
-        if (process == null) {
-            process = new EObjectContainmentWithInverseEList.Unsettable<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS, SclPackage.PROCESS__PARENT_SCL);
+    public EList< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > getProcess() {
+        if( process == null ) {
+            process = new EObjectContainmentWithInverseEList.Unsettable< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process >(
+                    fr.centralesupelec.edf.riseclipse.iec61850.scl.Process.class, this, SclPackage.SCL__PROCESS,
+                    SclPackage.PROCESS__PARENT_SCL );
         }
         return process;
     }
@@ -517,7 +537,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetProcess() {
-        if (process != null) ((InternalEList.Unsettable<?>)process).unset();
+        if( process != null ) ( ( InternalEList.Unsettable< ? > ) process ).unset();
     }
 
     /**
@@ -527,7 +547,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public boolean isSetProcess() {
-        return process != null && ((InternalEList.Unsettable<?>)process).isSet();
+        return process != null && ( ( InternalEList.Unsettable< ? > ) process ).isSet();
     }
 
     /**
@@ -536,9 +556,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     @Override
-    public EList<IED> getIED() {
-        if (ied == null) {
-            ied = new EObjectContainmentWithInverseEList.Unsettable<IED>(IED.class, this, SclPackage.SCL__IED, SclPackage.IED__PARENT_SCL);
+    public EList< IED > getIED() {
+        if( ied == null ) {
+            ied = new EObjectContainmentWithInverseEList.Unsettable< IED >( IED.class, this, SclPackage.SCL__IED,
+                    SclPackage.IED__PARENT_SCL );
         }
         return ied;
     }
@@ -550,7 +571,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetIED() {
-        if (ied != null) ((InternalEList.Unsettable<?>)ied).unset();
+        if( ied != null ) ( ( InternalEList.Unsettable< ? > ) ied ).unset();
     }
 
     /**
@@ -560,7 +581,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public boolean isSetIED() {
-        return ied != null && ((InternalEList.Unsettable<?>)ied).isSet();
+        return ied != null && ( ( InternalEList.Unsettable< ? > ) ied ).isSet();
     }
 
     /**
@@ -578,14 +599,20 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetDataTypeTemplates( DataTypeTemplates newDataTypeTemplates, NotificationChain msgs ) {
+    public NotificationChain basicSetDataTypeTemplates( DataTypeTemplates newDataTypeTemplates,
+            NotificationChain msgs ) {
         DataTypeTemplates oldDataTypeTemplates = dataTypeTemplates;
         dataTypeTemplates = newDataTypeTemplates;
         boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
         dataTypeTemplatesESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, newDataTypeTemplates, !oldDataTypeTemplatesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, newDataTypeTemplates,
+                    !oldDataTypeTemplatesESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -597,20 +624,23 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void setDataTypeTemplates( DataTypeTemplates newDataTypeTemplates ) {
-        if (newDataTypeTemplates != dataTypeTemplates) {
+        if( newDataTypeTemplates != dataTypeTemplates ) {
             NotificationChain msgs = null;
-            if (dataTypeTemplates != null)
-                msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
-            if (newDataTypeTemplates != null)
-                msgs = ((InternalEObject)newDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
-            msgs = basicSetDataTypeTemplates(newDataTypeTemplates, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( dataTypeTemplates != null )
+                msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
+                        SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
+            if( newDataTypeTemplates != null )
+                msgs = ( ( InternalEObject ) newDataTypeTemplates ).eInverseAdd( this,
+                        SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
+            msgs = basicSetDataTypeTemplates( newDataTypeTemplates, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
             dataTypeTemplatesESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__DATA_TYPE_TEMPLATES, newDataTypeTemplates, newDataTypeTemplates, !oldDataTypeTemplatesESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__DATA_TYPE_TEMPLATES,
+                        newDataTypeTemplates, newDataTypeTemplates, !oldDataTypeTemplatesESet ) );
         }
     }
 
@@ -624,9 +654,13 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         dataTypeTemplates = null;
         boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
         dataTypeTemplatesESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, null, oldDataTypeTemplatesESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SCL__DATA_TYPE_TEMPLATES, oldDataTypeTemplates, null, oldDataTypeTemplatesESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -638,17 +672,19 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetDataTypeTemplates() {
-        if (dataTypeTemplates != null) {
+        if( dataTypeTemplates != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs);
-            msgs = basicUnsetDataTypeTemplates(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
+                    SclPackage.DATA_TYPE_TEMPLATES__PARENT_SCL, DataTypeTemplates.class, msgs );
+            msgs = basicUnsetDataTypeTemplates( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldDataTypeTemplatesESet = dataTypeTemplatesESet;
             dataTypeTemplatesESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__DATA_TYPE_TEMPLATES, null, null, oldDataTypeTemplatesESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__DATA_TYPE_TEMPLATES, null,
+                        null, oldDataTypeTemplatesESet ) );
         }
     }
 
@@ -682,9 +718,13 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         communication = newCommunication;
         boolean oldCommunicationESet = communicationESet;
         communicationESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SCL__COMMUNICATION, oldCommunication, newCommunication, !oldCommunicationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SCL__COMMUNICATION, oldCommunication, newCommunication, !oldCommunicationESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -696,20 +736,23 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void setCommunication( Communication newCommunication ) {
-        if (newCommunication != communication) {
+        if( newCommunication != communication ) {
             NotificationChain msgs = null;
-            if (communication != null)
-                msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
-            if (newCommunication != null)
-                msgs = ((InternalEObject)newCommunication).eInverseAdd(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
-            msgs = basicSetCommunication(newCommunication, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( communication != null )
+                msgs = ( ( InternalEObject ) communication ).eInverseRemove( this, SclPackage.COMMUNICATION__PARENT_SCL,
+                        Communication.class, msgs );
+            if( newCommunication != null )
+                msgs = ( ( InternalEObject ) newCommunication ).eInverseAdd( this, SclPackage.COMMUNICATION__PARENT_SCL,
+                        Communication.class, msgs );
+            msgs = basicSetCommunication( newCommunication, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldCommunicationESet = communicationESet;
             communicationESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__COMMUNICATION, newCommunication, newCommunication, !oldCommunicationESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__COMMUNICATION, newCommunication,
+                        newCommunication, !oldCommunicationESet ) );
         }
     }
 
@@ -723,9 +766,13 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         communication = null;
         boolean oldCommunicationESet = communicationESet;
         communicationESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__COMMUNICATION, oldCommunication, null, oldCommunicationESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SCL__COMMUNICATION, oldCommunication, null, oldCommunicationESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -737,17 +784,19 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetCommunication() {
-        if (communication != null) {
+        if( communication != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)communication).eInverseRemove(this, SclPackage.COMMUNICATION__PARENT_SCL, Communication.class, msgs);
-            msgs = basicUnsetCommunication(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) communication ).eInverseRemove( this, SclPackage.COMMUNICATION__PARENT_SCL,
+                    Communication.class, msgs );
+            msgs = basicUnsetCommunication( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldCommunicationESet = communicationESet;
             communicationESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__COMMUNICATION, null, null, oldCommunicationESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__COMMUNICATION, null, null,
+                        oldCommunicationESet ) );
         }
     }
 
@@ -767,9 +816,10 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     @Override
-    public EList<Substation> getSubstation() {
-        if (substation == null) {
-            substation = new EObjectContainmentWithInverseEList.Unsettable<Substation>(Substation.class, this, SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__PARENT_SCL);
+    public EList< Substation > getSubstation() {
+        if( substation == null ) {
+            substation = new EObjectContainmentWithInverseEList.Unsettable< Substation >( Substation.class, this,
+                    SclPackage.SCL__SUBSTATION, SclPackage.SUBSTATION__PARENT_SCL );
         }
         return substation;
     }
@@ -781,7 +831,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void unsetSubstation() {
-        if (substation != null) ((InternalEList.Unsettable<?>)substation).unset();
+        if( substation != null ) ( ( InternalEList.Unsettable< ? > ) substation ).unset();
     }
 
     /**
@@ -791,7 +841,7 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public boolean isSetSubstation() {
-        return substation != null && ((InternalEList.Unsettable<?>)substation).isSet();
+        return substation != null && ( ( InternalEList.Unsettable< ? > ) substation ).isSet();
     }
 
     /**
@@ -810,13 +860,14 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      * @generated
      */
     @Override
-    public void setRelease(Integer newRelease) {
+    public void setRelease( Integer newRelease ) {
         Integer oldRelease = release;
         release = newRelease;
         boolean oldReleaseESet = releaseESet;
         releaseESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL__RELEASE, oldRelease, release, !oldReleaseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL__RELEASE, oldRelease, release,
+                    !oldReleaseESet ) );
     }
 
     /**
@@ -830,8 +881,9 @@ public class SCLImpl extends BaseElementImpl implements SCL {
         boolean oldReleaseESet = releaseESet;
         release = RELEASE_EDEFAULT;
         releaseESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SCL__RELEASE, oldRelease, RELEASE_EDEFAULT, oldReleaseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SCL__RELEASE, oldRelease,
+                    RELEASE_EDEFAULT, oldReleaseESet ) );
     }
 
     /**
@@ -852,29 +904,34 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SCL__HEADER:
-                if (header != null)
-                    msgs = ((InternalEObject)header).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SCL__HEADER, null, msgs);
-                return basicSetHeader((Header)otherEnd, msgs);
-            case SclPackage.SCL__LINE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLine()).basicAdd(otherEnd, msgs);
-            case SclPackage.SCL__PROCESS:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getProcess()).basicAdd(otherEnd, msgs);
-            case SclPackage.SCL__IED:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getIED()).basicAdd(otherEnd, msgs);
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                if (dataTypeTemplates != null)
-                    msgs = ((InternalEObject)dataTypeTemplates).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SCL__DATA_TYPE_TEMPLATES, null, msgs);
-                return basicSetDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
-            case SclPackage.SCL__COMMUNICATION:
-                if (communication != null)
-                    msgs = ((InternalEObject)communication).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SCL__COMMUNICATION, null, msgs);
-                return basicSetCommunication((Communication)otherEnd, msgs);
-            case SclPackage.SCL__SUBSTATION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubstation()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SCL__HEADER:
+            if( header != null )
+                msgs = ( ( InternalEObject ) header ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SCL__HEADER, null, msgs );
+            return basicSetHeader( ( Header ) otherEnd, msgs );
+        case SclPackage.SCL__LINE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLine() ).basicAdd( otherEnd, msgs );
+        case SclPackage.SCL__PROCESS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getProcess() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.SCL__IED:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getIED() ).basicAdd( otherEnd, msgs );
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            if( dataTypeTemplates != null )
+                msgs = ( ( InternalEObject ) dataTypeTemplates ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SCL__DATA_TYPE_TEMPLATES, null, msgs );
+            return basicSetDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
+        case SclPackage.SCL__COMMUNICATION:
+            if( communication != null )
+                msgs = ( ( InternalEObject ) communication ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SCL__COMMUNICATION, null, msgs );
+            return basicSetCommunication( ( Communication ) otherEnd, msgs );
+        case SclPackage.SCL__SUBSTATION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubstation() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -884,23 +941,23 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SCL__HEADER:
-                return basicUnsetHeader(msgs);
-            case SclPackage.SCL__LINE:
-                return ((InternalEList<?>)getLine()).basicRemove(otherEnd, msgs);
-            case SclPackage.SCL__PROCESS:
-                return ((InternalEList<?>)getProcess()).basicRemove(otherEnd, msgs);
-            case SclPackage.SCL__IED:
-                return ((InternalEList<?>)getIED()).basicRemove(otherEnd, msgs);
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                return basicUnsetDataTypeTemplates(msgs);
-            case SclPackage.SCL__COMMUNICATION:
-                return basicUnsetCommunication(msgs);
-            case SclPackage.SCL__SUBSTATION:
-                return ((InternalEList<?>)getSubstation()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SCL__HEADER:
+            return basicUnsetHeader( msgs );
+        case SclPackage.SCL__LINE:
+            return ( ( InternalEList< ? > ) getLine() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SCL__PROCESS:
+            return ( ( InternalEList< ? > ) getProcess() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SCL__IED:
+            return ( ( InternalEList< ? > ) getIED() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            return basicUnsetDataTypeTemplates( msgs );
+        case SclPackage.SCL__COMMUNICATION:
+            return basicUnsetCommunication( msgs );
+        case SclPackage.SCL__SUBSTATION:
+            return ( ( InternalEList< ? > ) getSubstation() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -910,29 +967,29 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SCL__REVISION:
-                return getRevision();
-            case SclPackage.SCL__VERSION:
-                return getVersion();
-            case SclPackage.SCL__HEADER:
-                return getHeader();
-            case SclPackage.SCL__LINE:
-                return getLine();
-            case SclPackage.SCL__PROCESS:
-                return getProcess();
-            case SclPackage.SCL__IED:
-                return getIED();
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                return getDataTypeTemplates();
-            case SclPackage.SCL__COMMUNICATION:
-                return getCommunication();
-            case SclPackage.SCL__SUBSTATION:
-                return getSubstation();
-            case SclPackage.SCL__RELEASE:
-                return getRelease();
+        switch( featureID ) {
+        case SclPackage.SCL__REVISION:
+            return getRevision();
+        case SclPackage.SCL__VERSION:
+            return getVersion();
+        case SclPackage.SCL__HEADER:
+            return getHeader();
+        case SclPackage.SCL__LINE:
+            return getLine();
+        case SclPackage.SCL__PROCESS:
+            return getProcess();
+        case SclPackage.SCL__IED:
+            return getIED();
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            return getDataTypeTemplates();
+        case SclPackage.SCL__COMMUNICATION:
+            return getCommunication();
+        case SclPackage.SCL__SUBSTATION:
+            return getSubstation();
+        case SclPackage.SCL__RELEASE:
+            return getRelease();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -943,43 +1000,44 @@ public class SCLImpl extends BaseElementImpl implements SCL {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SCL__REVISION:
-                setRevision((String)newValue);
-                return;
-            case SclPackage.SCL__VERSION:
-                setVersion((String)newValue);
-                return;
-            case SclPackage.SCL__HEADER:
-                setHeader((Header)newValue);
-                return;
-            case SclPackage.SCL__LINE:
-                getLine().clear();
-                getLine().addAll((Collection<? extends Line>)newValue);
-                return;
-            case SclPackage.SCL__PROCESS:
-                getProcess().clear();
-                getProcess().addAll((Collection<? extends fr.centralesupelec.edf.riseclipse.iec61850.scl.Process>)newValue);
-                return;
-            case SclPackage.SCL__IED:
-                getIED().clear();
-                getIED().addAll((Collection<? extends IED>)newValue);
-                return;
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                setDataTypeTemplates((DataTypeTemplates)newValue);
-                return;
-            case SclPackage.SCL__COMMUNICATION:
-                setCommunication((Communication)newValue);
-                return;
-            case SclPackage.SCL__SUBSTATION:
-                getSubstation().clear();
-                getSubstation().addAll((Collection<? extends Substation>)newValue);
-                return;
-            case SclPackage.SCL__RELEASE:
-                setRelease((Integer)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SCL__REVISION:
+            setRevision( ( String ) newValue );
+            return;
+        case SclPackage.SCL__VERSION:
+            setVersion( ( String ) newValue );
+            return;
+        case SclPackage.SCL__HEADER:
+            setHeader( ( Header ) newValue );
+            return;
+        case SclPackage.SCL__LINE:
+            getLine().clear();
+            getLine().addAll( ( Collection< ? extends Line > ) newValue );
+            return;
+        case SclPackage.SCL__PROCESS:
+            getProcess().clear();
+            getProcess().addAll(
+                    ( Collection< ? extends fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > ) newValue );
+            return;
+        case SclPackage.SCL__IED:
+            getIED().clear();
+            getIED().addAll( ( Collection< ? extends IED > ) newValue );
+            return;
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            setDataTypeTemplates( ( DataTypeTemplates ) newValue );
+            return;
+        case SclPackage.SCL__COMMUNICATION:
+            setCommunication( ( Communication ) newValue );
+            return;
+        case SclPackage.SCL__SUBSTATION:
+            getSubstation().clear();
+            getSubstation().addAll( ( Collection< ? extends Substation > ) newValue );
+            return;
+        case SclPackage.SCL__RELEASE:
+            setRelease( ( Integer ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -989,39 +1047,39 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SCL__REVISION:
-                unsetRevision();
-                return;
-            case SclPackage.SCL__VERSION:
-                unsetVersion();
-                return;
-            case SclPackage.SCL__HEADER:
-                unsetHeader();
-                return;
-            case SclPackage.SCL__LINE:
-                unsetLine();
-                return;
-            case SclPackage.SCL__PROCESS:
-                unsetProcess();
-                return;
-            case SclPackage.SCL__IED:
-                unsetIED();
-                return;
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                unsetDataTypeTemplates();
-                return;
-            case SclPackage.SCL__COMMUNICATION:
-                unsetCommunication();
-                return;
-            case SclPackage.SCL__SUBSTATION:
-                unsetSubstation();
-                return;
-            case SclPackage.SCL__RELEASE:
-                unsetRelease();
-                return;
+        switch( featureID ) {
+        case SclPackage.SCL__REVISION:
+            unsetRevision();
+            return;
+        case SclPackage.SCL__VERSION:
+            unsetVersion();
+            return;
+        case SclPackage.SCL__HEADER:
+            unsetHeader();
+            return;
+        case SclPackage.SCL__LINE:
+            unsetLine();
+            return;
+        case SclPackage.SCL__PROCESS:
+            unsetProcess();
+            return;
+        case SclPackage.SCL__IED:
+            unsetIED();
+            return;
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            unsetDataTypeTemplates();
+            return;
+        case SclPackage.SCL__COMMUNICATION:
+            unsetCommunication();
+            return;
+        case SclPackage.SCL__SUBSTATION:
+            unsetSubstation();
+            return;
+        case SclPackage.SCL__RELEASE:
+            unsetRelease();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1031,29 +1089,29 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SCL__REVISION:
-                return isSetRevision();
-            case SclPackage.SCL__VERSION:
-                return isSetVersion();
-            case SclPackage.SCL__HEADER:
-                return isSetHeader();
-            case SclPackage.SCL__LINE:
-                return isSetLine();
-            case SclPackage.SCL__PROCESS:
-                return isSetProcess();
-            case SclPackage.SCL__IED:
-                return isSetIED();
-            case SclPackage.SCL__DATA_TYPE_TEMPLATES:
-                return isSetDataTypeTemplates();
-            case SclPackage.SCL__COMMUNICATION:
-                return isSetCommunication();
-            case SclPackage.SCL__SUBSTATION:
-                return isSetSubstation();
-            case SclPackage.SCL__RELEASE:
-                return isSetRelease();
+        switch( featureID ) {
+        case SclPackage.SCL__REVISION:
+            return isSetRevision();
+        case SclPackage.SCL__VERSION:
+            return isSetVersion();
+        case SclPackage.SCL__HEADER:
+            return isSetHeader();
+        case SclPackage.SCL__LINE:
+            return isSetLine();
+        case SclPackage.SCL__PROCESS:
+            return isSetProcess();
+        case SclPackage.SCL__IED:
+            return isSetIED();
+        case SclPackage.SCL__DATA_TYPE_TEMPLATES:
+            return isSetDataTypeTemplates();
+        case SclPackage.SCL__COMMUNICATION:
+            return isSetCommunication();
+        case SclPackage.SCL__SUBSTATION:
+            return isSetSubstation();
+        case SclPackage.SCL__RELEASE:
+            return isSetRelease();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1063,16 +1121,25 @@ public class SCLImpl extends BaseElementImpl implements SCL {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (revision: ");
-        if (revisionESet) result.append(revision); else result.append("<unset>");
-        result.append(", version: ");
-        if (versionESet) result.append(version); else result.append("<unset>");
-        result.append(", release: ");
-        if (releaseESet) result.append(release); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (revision: " );
+        if( revisionESet )
+            result.append( revision );
+        else
+            result.append( "<unset>" );
+        result.append( ", version: " );
+        if( versionESet )
+            result.append( version );
+        else
+            result.append( "<unset>" );
+        result.append( ", release: " );
+        if( releaseESet )
+            result.append( release );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

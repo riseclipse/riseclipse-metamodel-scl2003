@@ -228,13 +228,14 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void setCertificate(Boolean newCertificate) {
+    public void setCertificate( Boolean newCertificate ) {
         Boolean oldCertificate = certificate;
         certificate = newCertificate;
         boolean oldCertificateESet = certificateESet;
         certificateESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_AUTHENTICATION__CERTIFICATE, oldCertificate, certificate, !oldCertificateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__CERTIFICATE,
+                    oldCertificate, certificate, !oldCertificateESet ) );
     }
 
     /**
@@ -248,8 +249,9 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldCertificateESet = certificateESet;
         certificate = CERTIFICATE_EDEFAULT;
         certificateESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__CERTIFICATE, oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__CERTIFICATE,
+                    oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet ) );
     }
 
     /**
@@ -278,13 +280,14 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void setNone(Boolean newNone) {
+    public void setNone( Boolean newNone ) {
         Boolean oldNone = none;
         none = newNone;
         boolean oldNoneESet = noneESet;
         noneESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_AUTHENTICATION__NONE, oldNone, none, !oldNoneESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__NONE, oldNone, none,
+                    !oldNoneESet ) );
     }
 
     /**
@@ -298,8 +301,9 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldNoneESet = noneESet;
         none = NONE_EDEFAULT;
         noneESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__NONE, oldNone, NONE_EDEFAULT, oldNoneESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__NONE, oldNone,
+                    NONE_EDEFAULT, oldNoneESet ) );
     }
 
     /**
@@ -328,13 +332,14 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void setPassword(Boolean newPassword) {
+    public void setPassword( Boolean newPassword ) {
         Boolean oldPassword = password;
         password = newPassword;
         boolean oldPasswordESet = passwordESet;
         passwordESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_AUTHENTICATION__PASSWORD, oldPassword, password, !oldPasswordESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__PASSWORD, oldPassword,
+                    password, !oldPasswordESet ) );
     }
 
     /**
@@ -348,8 +353,9 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldPasswordESet = passwordESet;
         password = PASSWORD_EDEFAULT;
         passwordESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__PASSWORD, oldPassword, PASSWORD_EDEFAULT, oldPasswordESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__PASSWORD,
+                    oldPassword, PASSWORD_EDEFAULT, oldPasswordESet ) );
     }
 
     /**
@@ -378,13 +384,14 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void setStrong(Boolean newStrong) {
+    public void setStrong( Boolean newStrong ) {
         Boolean oldStrong = strong;
         strong = newStrong;
         boolean oldStrongESet = strongESet;
         strongESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong, strong, !oldStrongESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong,
+                    strong, !oldStrongESet ) );
     }
 
     /**
@@ -398,8 +405,9 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldStrongESet = strongESet;
         strong = STRONG_EDEFAULT;
         strongESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong, STRONG_EDEFAULT, oldStrongESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__STRONG, oldStrong,
+                    STRONG_EDEFAULT, oldStrongESet ) );
     }
 
     /**
@@ -428,13 +436,14 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void setWeak(Boolean newWeak) {
+    public void setWeak( Boolean newWeak ) {
         Boolean oldWeak = weak;
         weak = newWeak;
         boolean oldWeakESet = weakESet;
         weakESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak, weak, !oldWeakESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak, weak,
+                    !oldWeakESet ) );
     }
 
     /**
@@ -448,8 +457,9 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
         boolean oldWeakESet = weakESet;
         weak = WEAK_EDEFAULT;
         weakESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak, WEAK_EDEFAULT, oldWeakESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_AUTHENTICATION__WEAK, oldWeak,
+                    WEAK_EDEFAULT, oldWeakESet ) );
     }
 
     /**
@@ -468,20 +478,20 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
-                return getCertificate();
-            case SclPackage.AG_AUTHENTICATION__NONE:
-                return getNone();
-            case SclPackage.AG_AUTHENTICATION__PASSWORD:
-                return getPassword();
-            case SclPackage.AG_AUTHENTICATION__STRONG:
-                return getStrong();
-            case SclPackage.AG_AUTHENTICATION__WEAK:
-                return getWeak();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
+            return getCertificate();
+        case SclPackage.AG_AUTHENTICATION__NONE:
+            return getNone();
+        case SclPackage.AG_AUTHENTICATION__PASSWORD:
+            return getPassword();
+        case SclPackage.AG_AUTHENTICATION__STRONG:
+            return getStrong();
+        case SclPackage.AG_AUTHENTICATION__WEAK:
+            return getWeak();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -490,25 +500,25 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
-                setCertificate((Boolean)newValue);
-                return;
-            case SclPackage.AG_AUTHENTICATION__NONE:
-                setNone((Boolean)newValue);
-                return;
-            case SclPackage.AG_AUTHENTICATION__PASSWORD:
-                setPassword((Boolean)newValue);
-                return;
-            case SclPackage.AG_AUTHENTICATION__STRONG:
-                setStrong((Boolean)newValue);
-                return;
-            case SclPackage.AG_AUTHENTICATION__WEAK:
-                setWeak((Boolean)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
+            setCertificate( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_AUTHENTICATION__NONE:
+            setNone( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_AUTHENTICATION__PASSWORD:
+            setPassword( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_AUTHENTICATION__STRONG:
+            setStrong( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_AUTHENTICATION__WEAK:
+            setWeak( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -517,25 +527,25 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
-                unsetCertificate();
-                return;
-            case SclPackage.AG_AUTHENTICATION__NONE:
-                unsetNone();
-                return;
-            case SclPackage.AG_AUTHENTICATION__PASSWORD:
-                unsetPassword();
-                return;
-            case SclPackage.AG_AUTHENTICATION__STRONG:
-                unsetStrong();
-                return;
-            case SclPackage.AG_AUTHENTICATION__WEAK:
-                unsetWeak();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
+            unsetCertificate();
+            return;
+        case SclPackage.AG_AUTHENTICATION__NONE:
+            unsetNone();
+            return;
+        case SclPackage.AG_AUTHENTICATION__PASSWORD:
+            unsetPassword();
+            return;
+        case SclPackage.AG_AUTHENTICATION__STRONG:
+            unsetStrong();
+            return;
+        case SclPackage.AG_AUTHENTICATION__WEAK:
+            unsetWeak();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -544,20 +554,20 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
-                return isSetCertificate();
-            case SclPackage.AG_AUTHENTICATION__NONE:
-                return isSetNone();
-            case SclPackage.AG_AUTHENTICATION__PASSWORD:
-                return isSetPassword();
-            case SclPackage.AG_AUTHENTICATION__STRONG:
-                return isSetStrong();
-            case SclPackage.AG_AUTHENTICATION__WEAK:
-                return isSetWeak();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
+            return isSetCertificate();
+        case SclPackage.AG_AUTHENTICATION__NONE:
+            return isSetNone();
+        case SclPackage.AG_AUTHENTICATION__PASSWORD:
+            return isSetPassword();
+        case SclPackage.AG_AUTHENTICATION__STRONG:
+            return isSetStrong();
+        case SclPackage.AG_AUTHENTICATION__WEAK:
+            return isSetWeak();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -567,20 +577,35 @@ public class AgAuthenticationImpl extends MinimalEObjectImpl.Container implement
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (certificate: ");
-        if (certificateESet) result.append(certificate); else result.append("<unset>");
-        result.append(", none: ");
-        if (noneESet) result.append(none); else result.append("<unset>");
-        result.append(", password: ");
-        if (passwordESet) result.append(password); else result.append("<unset>");
-        result.append(", strong: ");
-        if (strongESet) result.append(strong); else result.append("<unset>");
-        result.append(", weak: ");
-        if (weakESet) result.append(weak); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (certificate: " );
+        if( certificateESet )
+            result.append( certificate );
+        else
+            result.append( "<unset>" );
+        result.append( ", none: " );
+        if( noneESet )
+            result.append( none );
+        else
+            result.append( "<unset>" );
+        result.append( ", password: " );
+        if( passwordESet )
+            result.append( password );
+        else
+            result.append( "<unset>" );
+        result.append( ", strong: " );
+        if( strongESet )
+            result.append( strong );
+        else
+            result.append( "<unset>" );
+        result.append( ", weak: " );
+        if( weakESet )
+            result.append( weak );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

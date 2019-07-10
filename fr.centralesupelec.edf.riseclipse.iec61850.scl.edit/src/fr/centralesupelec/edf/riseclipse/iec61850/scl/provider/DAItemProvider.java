@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DAItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public DAItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,14 +58,14 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDchgPropertyDescriptor(object);
-            addDupdPropertyDescriptor(object);
-            addQchgPropertyDescriptor(object);
-            addFcPropertyDescriptor(object);
+            addDchgPropertyDescriptor( object );
+            addDupdPropertyDescriptor( object );
+            addQchgPropertyDescriptor( object );
+            addFcPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -77,20 +76,20 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDchgPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_dchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dchg_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Dchg(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDchgPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_dchg_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dchg_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Dchg(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -99,20 +98,20 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDupdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_dupd_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dupd_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Dupd(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDupdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_dupd_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_dupd_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Dupd(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -121,20 +120,19 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addFcPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DA_fc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DA_fc_feature", "_UI_DA_type"),
-                 SclPackage.eINSTANCE.getDA_Fc(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addFcPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DA_fc_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DA_fc_feature", "_UI_DA_type" ),
+                        SclPackage.eINSTANCE.getDA_Fc(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -143,20 +141,20 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addQchgPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDATrgOp_qchg_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_qchg_feature", "_UI_AgDATrgOp_type"),
-                 SclPackage.eINSTANCE.getAgDATrgOp_Qchg(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addQchgPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDATrgOp_qchg_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDATrgOp_qchg_feature",
+                                "_UI_AgDATrgOp_type" ),
+                        SclPackage.eINSTANCE.getAgDATrgOp_Qchg(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -168,10 +166,10 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getDA_ProtNs());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDA_ProtNs() );
         }
         return childrenFeatures;
     }
@@ -182,11 +180,11 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -196,8 +194,8 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/DA"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/DA" ) );
     }
 
     /**
@@ -207,13 +205,11 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((DA)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_DA_type") :
-            getString("_UI_DA_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( DA ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_DA_type" )
+                : getString( "_UI_DA_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -223,21 +219,21 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(DA.class)) {
-            case SclPackage.DA__DCHG:
-            case SclPackage.DA__DUPD:
-            case SclPackage.DA__QCHG:
-            case SclPackage.DA__FC:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.DA__PROT_NS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( DA.class ) ) {
+        case SclPackage.DA__DCHG:
+        case SclPackage.DA__DUPD:
+        case SclPackage.DA__QCHG:
+        case SclPackage.DA__FC:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.DA__PROT_NS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -248,13 +244,11 @@ public class DAItemProvider extends AbstractDataAttributeItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getDA_ProtNs(),
-                 SclFactory.eINSTANCE.createProtNs()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDA_ProtNs(),
+                SclFactory.eINSTANCE.createProtNs() ) );
     }
 
 }

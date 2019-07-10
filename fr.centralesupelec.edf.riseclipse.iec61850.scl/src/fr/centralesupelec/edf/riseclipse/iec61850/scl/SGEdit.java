@@ -113,6 +113,6 @@ public interface SGEdit extends SclObject {
      * @see #getParentSettingGroups()
      * @generated
      */
-    void setParentSettingGroups(SettingGroups value);
+    void setParentSettingGroups( SettingGroups value );
 
 } // SGEdit

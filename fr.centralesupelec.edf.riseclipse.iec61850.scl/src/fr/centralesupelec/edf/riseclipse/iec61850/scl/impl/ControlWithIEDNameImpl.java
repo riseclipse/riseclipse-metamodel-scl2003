@@ -91,7 +91,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * @generated
      * @ordered
      */
-    protected EList<IEDName> iedName;
+    protected EList< IEDName > iedName;
 
     /**
      * The cached value of the '{@link #getReferredByControlBlock() <em>Referred By Control Block</em>}' reference list.
@@ -101,7 +101,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * @generated
      * @ordered
      */
-    protected EList<ControlBlock> referredByControlBlock;
+    protected EList< ControlBlock > referredByControlBlock;
 
     /**
      * The cached value of the '{@link #getProtocol() <em>Protocol</em>}' containment reference.
@@ -162,8 +162,9 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         confRev = newConfRev;
         boolean oldConfRevESet = confRevESet;
         confRevESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, confRev, !oldConfRevESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV,
+                    oldConfRev, confRev, !oldConfRevESet ) );
     }
 
     /**
@@ -177,8 +178,9 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         boolean oldConfRevESet = confRevESet;
         confRev = CONF_REV_EDEFAULT;
         confRevESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV, oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__CONF_REV,
+                    oldConfRev, CONF_REV_EDEFAULT, oldConfRevESet ) );
     }
 
     /**
@@ -197,9 +199,10 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * @generated
      */
     @Override
-    public EList<IEDName> getIEDName() {
-        if (iedName == null) {
-            iedName = new EObjectContainmentWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME);
+    public EList< IEDName > getIEDName() {
+        if( iedName == null ) {
+            iedName = new EObjectContainmentWithInverseEList.Unsettable< IEDName >( IEDName.class, this,
+                    SclPackage.CONTROL_WITH_IED_NAME__IED_NAME, SclPackage.IED_NAME__PARENT_CONTROL_WITH_IED_NAME );
         }
         return iedName;
     }
@@ -211,7 +214,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public void unsetIEDName() {
-        if (iedName != null) ((InternalEList.Unsettable<?>)iedName).unset();
+        if( iedName != null ) ( ( InternalEList.Unsettable< ? > ) iedName ).unset();
     }
 
     /**
@@ -221,7 +224,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public boolean isSetIEDName() {
-        return iedName != null && ((InternalEList.Unsettable<?>)iedName).isSet();
+        return iedName != null && ( ( InternalEList.Unsettable< ? > ) iedName ).isSet();
     }
 
     /**
@@ -230,9 +233,11 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      * @generated
      */
     @Override
-    public EList<ControlBlock> getReferredByControlBlock() {
-        if (referredByControlBlock == null) {
-            referredByControlBlock = new EObjectWithInverseEList.Unsettable<ControlBlock>(ControlBlock.class, this, SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK, SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME);
+    public EList< ControlBlock > getReferredByControlBlock() {
+        if( referredByControlBlock == null ) {
+            referredByControlBlock = new EObjectWithInverseEList.Unsettable< ControlBlock >( ControlBlock.class, this,
+                    SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK,
+                    SclPackage.CONTROL_BLOCK__REFERS_TO_CONTROL_WITH_IED_NAME );
         }
         return referredByControlBlock;
     }
@@ -244,7 +249,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public void unsetReferredByControlBlock() {
-        if (referredByControlBlock != null) ((InternalEList.Unsettable<?>)referredByControlBlock).unset();
+        if( referredByControlBlock != null ) ( ( InternalEList.Unsettable< ? > ) referredByControlBlock ).unset();
     }
 
     /**
@@ -254,7 +259,7 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public boolean isSetReferredByControlBlock() {
-        return referredByControlBlock != null && ((InternalEList.Unsettable<?>)referredByControlBlock).isSet();
+        return referredByControlBlock != null && ( ( InternalEList.Unsettable< ? > ) referredByControlBlock ).isSet();
     }
 
     /**
@@ -277,9 +282,13 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         protocol = newProtocol;
         boolean oldProtocolESet = protocolESet;
         protocolESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, newProtocol, !oldProtocolESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, newProtocol, !oldProtocolESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -291,20 +300,23 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public void setProtocol( Protocol newProtocol ) {
-        if (newProtocol != protocol) {
+        if( newProtocol != protocol ) {
             NotificationChain msgs = null;
-            if (protocol != null)
-                msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            if (newProtocol != null)
-                msgs = ((InternalEObject)newProtocol).eInverseAdd(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            msgs = basicSetProtocol(newProtocol, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( protocol != null )
+                msgs = ( ( InternalEObject ) protocol ).eInverseRemove( this,
+                        SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs );
+            if( newProtocol != null )
+                msgs = ( ( InternalEObject ) newProtocol ).eInverseAdd( this,
+                        SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs );
+            msgs = basicSetProtocol( newProtocol, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldProtocolESet = protocolESet;
             protocolESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, newProtocol, newProtocol, !oldProtocolESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL,
+                        newProtocol, newProtocol, !oldProtocolESet ) );
         }
     }
 
@@ -318,9 +330,13 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
         protocol = null;
         boolean oldProtocolESet = protocolESet;
         protocolESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, null, oldProtocolESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, oldProtocol, null, oldProtocolESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -332,17 +348,19 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public void unsetProtocol() {
-        if (protocol != null) {
+        if( protocol != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)protocol).eInverseRemove(this, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs);
-            msgs = basicUnsetProtocol(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) protocol ).eInverseRemove( this,
+                    SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, Protocol.class, msgs );
+            msgs = basicUnsetProtocol( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldProtocolESet = protocolESet;
             protocolESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, null, oldProtocolESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL,
+                        null, null, oldProtocolESet ) );
         }
     }
 
@@ -364,17 +382,20 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getIEDName()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByControlBlock()).basicAdd(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                if (protocol != null)
-                    msgs = ((InternalEObject)protocol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, msgs);
-                return basicSetProtocol((Protocol)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getIEDName() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByControlBlock() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            if( protocol != null )
+                msgs = ( ( InternalEObject ) protocol ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, null, msgs );
+            return basicSetProtocol( ( Protocol ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -384,15 +405,15 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return ((InternalEList<?>)getIEDName()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return ((InternalEList<?>)getReferredByControlBlock()).basicRemove(otherEnd, msgs);
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return basicUnsetProtocol(msgs);
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            return ( ( InternalEList< ? > ) getIEDName() ).basicRemove( otherEnd, msgs );
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            return ( ( InternalEList< ? > ) getReferredByControlBlock() ).basicRemove( otherEnd, msgs );
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            return basicUnsetProtocol( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -402,17 +423,17 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                return getConfRev();
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return getIEDName();
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return getReferredByControlBlock();
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return getProtocol();
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+            return getConfRev();
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            return getIEDName();
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            return getReferredByControlBlock();
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            return getProtocol();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -423,23 +444,23 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                setConfRev((Integer)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                getIEDName().clear();
-                getIEDName().addAll((Collection<? extends IEDName>)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                getReferredByControlBlock().clear();
-                getReferredByControlBlock().addAll((Collection<? extends ControlBlock>)newValue);
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                setProtocol((Protocol)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+            setConfRev( ( Integer ) newValue );
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            getIEDName().clear();
+            getIEDName().addAll( ( Collection< ? extends IEDName > ) newValue );
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            getReferredByControlBlock().clear();
+            getReferredByControlBlock().addAll( ( Collection< ? extends ControlBlock > ) newValue );
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            setProtocol( ( Protocol ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -449,21 +470,21 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                unsetConfRev();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                unsetIEDName();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                unsetReferredByControlBlock();
-                return;
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                unsetProtocol();
-                return;
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+            unsetConfRev();
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            unsetIEDName();
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            unsetReferredByControlBlock();
+            return;
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            unsetProtocol();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -473,17 +494,17 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
-                return isSetConfRev();
-            case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
-                return isSetIEDName();
-            case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
-                return isSetReferredByControlBlock();
-            case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
-                return isSetProtocol();
+        switch( featureID ) {
+        case SclPackage.CONTROL_WITH_IED_NAME__CONF_REV:
+            return isSetConfRev();
+        case SclPackage.CONTROL_WITH_IED_NAME__IED_NAME:
+            return isSetIEDName();
+        case SclPackage.CONTROL_WITH_IED_NAME__REFERRED_BY_CONTROL_BLOCK:
+            return isSetReferredByControlBlock();
+        case SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL:
+            return isSetProtocol();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -493,12 +514,15 @@ public class ControlWithIEDNameImpl extends ControlImpl implements ControlWithIE
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (confRev: ");
-        if (confRevESet) result.append(confRev); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (confRev: " );
+        if( confRevESet )
+            result.append( confRev );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

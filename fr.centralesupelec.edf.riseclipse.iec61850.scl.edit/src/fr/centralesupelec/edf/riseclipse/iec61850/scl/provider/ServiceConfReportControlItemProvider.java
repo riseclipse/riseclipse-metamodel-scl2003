@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
@@ -48,8 +47,8 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * <!-- end-user-doc -->
      * @generated
      */
-    public ServiceConfReportControlItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ServiceConfReportControlItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,13 +58,13 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBufModePropertyDescriptor(object);
-            addBufConfPropertyDescriptor(object);
-            addMaxBufPropertyDescriptor(object);
+            addBufModePropertyDescriptor( object );
+            addBufConfPropertyDescriptor( object );
+            addMaxBufPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -76,20 +75,20 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBufModePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ServiceConfReportControl_bufMode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_bufMode_feature", "_UI_ServiceConfReportControl_type"),
-                 SclPackage.eINSTANCE.getServiceConfReportControl_BufMode(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBufModePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServiceConfReportControl_bufMode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_bufMode_feature",
+                                "_UI_ServiceConfReportControl_type" ),
+                        SclPackage.eINSTANCE.getServiceConfReportControl_BufMode(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -98,20 +97,20 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBufConfPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ServiceConfReportControl_bufConf_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_bufConf_feature", "_UI_ServiceConfReportControl_type"),
-                 SclPackage.eINSTANCE.getServiceConfReportControl_BufConf(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBufConfPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServiceConfReportControl_bufConf_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_bufConf_feature",
+                                "_UI_ServiceConfReportControl_type" ),
+                        SclPackage.eINSTANCE.getServiceConfReportControl_BufConf(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,20 +119,20 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxBufPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ServiceConfReportControl_maxBuf_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_maxBuf_feature", "_UI_ServiceConfReportControl_type"),
-                 SclPackage.eINSTANCE.getServiceConfReportControl_MaxBuf(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxBufPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ServiceConfReportControl_maxBuf_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ServiceConfReportControl_maxBuf_feature",
+                                "_UI_ServiceConfReportControl_type" ),
+                        SclPackage.eINSTANCE.getServiceConfReportControl_MaxBuf(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -143,8 +142,8 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ServiceConfReportControl"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ServiceConfReportControl" ) );
     }
 
     /**
@@ -154,11 +153,10 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceConfReportControl serviceConfReportControl = (ServiceConfReportControl)object;
-        return getString("_UI_ServiceConfReportControl_type") + " " + serviceConfReportControl.getLineNumber();
+    public String getText( Object object ) {
+        ServiceConfReportControl serviceConfReportControl = ( ServiceConfReportControl ) object;
+        return getString( "_UI_ServiceConfReportControl_type" ) + " " + serviceConfReportControl.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -168,17 +166,17 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ServiceConfReportControl.class)) {
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
-            case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ServiceConfReportControl.class ) ) {
+        case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_MODE:
+        case SclPackage.SERVICE_CONF_REPORT_CONTROL__BUF_CONF:
+        case SclPackage.SERVICE_CONF_REPORT_CONTROL__MAX_BUF:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -189,8 +187,8 @@ public class ServiceConfReportControlItemProvider extends ServiceWithMaxItemProv
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

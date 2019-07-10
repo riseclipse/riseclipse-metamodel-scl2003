@@ -59,7 +59,7 @@ public interface EnumType extends IDNaming {
      * @model opposite="RefersToEnumType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<AbstractDataAttribute> getReferredByAbstractDataAttribute();
+    EList< AbstractDataAttribute > getReferredByAbstractDataAttribute();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}' reference list.
@@ -104,7 +104,7 @@ public interface EnumType extends IDNaming {
      * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setParentDataTypeTemplates(DataTypeTemplates value);
+    void setParentDataTypeTemplates( DataTypeTemplates value );
 
     /**
      * Returns the value of the '<em><b>Enum Val</b></em>' containment reference list.
@@ -124,7 +124,7 @@ public interface EnumType extends IDNaming {
      * @model opposite="ParentEnumType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EnumVal> getEnumVal();
+    EList< EnumVal > getEnumVal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.EnumType#getEnumVal <em>Enum Val</em>}' containment reference list.

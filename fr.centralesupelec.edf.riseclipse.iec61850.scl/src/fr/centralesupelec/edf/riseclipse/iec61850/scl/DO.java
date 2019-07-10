@@ -118,7 +118,7 @@ public interface DO extends AbstractDataObject {
      * @see #getParentLNodeType()
      * @generated
      */
-    void setParentLNodeType(LNodeType value);
+    void setParentLNodeType( LNodeType value );
 
     /**
      * Returns the value of the '<em><b>Access Control</b></em>' attribute.
@@ -144,7 +144,7 @@ public interface DO extends AbstractDataObject {
      * @see #getAccessControl()
      * @generated
      */
-    void setAccessControl(String value);
+    void setAccessControl( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getAccessControl <em>Access Control</em>}' attribute.
@@ -183,7 +183,7 @@ public interface DO extends AbstractDataObject {
      * @model opposite="RefersToDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<DOI> getReferredByDOI();
+    EList< DOI > getReferredByDOI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DO#getReferredByDOI <em>Referred By DOI</em>}' reference list.

@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BitRateInMbPerSecItemProvider 
-    extends SclObjectItemProvider {
+public class BitRateInMbPerSecItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public BitRateInMbPerSecItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public BitRateInMbPerSecItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,13 +57,13 @@ public class BitRateInMbPerSecItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addValuePropertyDescriptor(object);
-            addMultiplierPropertyDescriptor(object);
-            addUnitPropertyDescriptor(object);
+            addValuePropertyDescriptor( object );
+            addMultiplierPropertyDescriptor( object );
+            addUnitPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,20 @@ public class BitRateInMbPerSecItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addValuePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_BitRateInMbPerSec_value_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_value_feature", "_UI_BitRateInMbPerSec_type"),
-                 SclPackage.eINSTANCE.getBitRateInMbPerSec_Value(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addValuePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_BitRateInMbPerSec_value_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_value_feature",
+                                "_UI_BitRateInMbPerSec_type" ),
+                        SclPackage.eINSTANCE.getBitRateInMbPerSec_Value(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +96,20 @@ public class BitRateInMbPerSecItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMultiplierPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_BitRateInMbPerSec_multiplier_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_multiplier_feature", "_UI_BitRateInMbPerSec_type"),
-                 SclPackage.eINSTANCE.getBitRateInMbPerSec_Multiplier(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMultiplierPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_BitRateInMbPerSec_multiplier_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_multiplier_feature",
+                                "_UI_BitRateInMbPerSec_type" ),
+                        SclPackage.eINSTANCE.getBitRateInMbPerSec_Multiplier(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,20 +118,20 @@ public class BitRateInMbPerSecItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addUnitPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_BitRateInMbPerSec_unit_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_unit_feature", "_UI_BitRateInMbPerSec_type"),
-                 SclPackage.eINSTANCE.getBitRateInMbPerSec_Unit(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addUnitPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_BitRateInMbPerSec_unit_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_BitRateInMbPerSec_unit_feature",
+                                "_UI_BitRateInMbPerSec_type" ),
+                        SclPackage.eINSTANCE.getBitRateInMbPerSec_Unit(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -142,8 +141,8 @@ public class BitRateInMbPerSecItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/BitRateInMbPerSec"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/BitRateInMbPerSec" ) );
     }
 
     /**
@@ -153,11 +152,10 @@ public class BitRateInMbPerSecItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        BitRateInMbPerSec bitRateInMbPerSec = (BitRateInMbPerSec)object;
-        return getString("_UI_BitRateInMbPerSec_type") + " " + bitRateInMbPerSec.getLineNumber();
+    public String getText( Object object ) {
+        BitRateInMbPerSec bitRateInMbPerSec = ( BitRateInMbPerSec ) object;
+        return getString( "_UI_BitRateInMbPerSec_type" ) + " " + bitRateInMbPerSec.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -167,17 +165,17 @@ public class BitRateInMbPerSecItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(BitRateInMbPerSec.class)) {
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( BitRateInMbPerSec.class ) ) {
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -188,8 +186,8 @@ public class BitRateInMbPerSecItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

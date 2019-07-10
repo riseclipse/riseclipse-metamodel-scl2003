@@ -236,8 +236,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         certificate = newCertificate;
         boolean oldCertificateESet = certificateESet;
         certificateESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__CERTIFICATE, oldCertificate, certificate, !oldCertificateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__CERTIFICATE,
+                    oldCertificate, certificate, !oldCertificateESet ) );
     }
 
     /**
@@ -251,8 +252,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldCertificateESet = certificateESet;
         certificate = CERTIFICATE_EDEFAULT;
         certificateESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AUTHENTICATION__CERTIFICATE, oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__CERTIFICATE,
+                    oldCertificate, CERTIFICATE_EDEFAULT, oldCertificateESet ) );
     }
 
     /**
@@ -286,8 +288,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         none = newNone;
         boolean oldNoneESet = noneESet;
         noneESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__NONE, oldNone, none, !oldNoneESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__NONE, oldNone, none,
+                    !oldNoneESet ) );
     }
 
     /**
@@ -301,8 +304,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldNoneESet = noneESet;
         none = NONE_EDEFAULT;
         noneESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AUTHENTICATION__NONE, oldNone, NONE_EDEFAULT, oldNoneESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__NONE, oldNone,
+                    NONE_EDEFAULT, oldNoneESet ) );
     }
 
     /**
@@ -336,8 +340,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         password = newPassword;
         boolean oldPasswordESet = passwordESet;
         passwordESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword, password, !oldPasswordESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword,
+                    password, !oldPasswordESet ) );
     }
 
     /**
@@ -351,8 +356,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldPasswordESet = passwordESet;
         password = PASSWORD_EDEFAULT;
         passwordESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword, PASSWORD_EDEFAULT, oldPasswordESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__PASSWORD, oldPassword,
+                    PASSWORD_EDEFAULT, oldPasswordESet ) );
     }
 
     /**
@@ -386,8 +392,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         strong = newStrong;
         boolean oldStrongESet = strongESet;
         strongESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__STRONG, oldStrong, strong, !oldStrongESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__STRONG, oldStrong,
+                    strong, !oldStrongESet ) );
     }
 
     /**
@@ -401,8 +408,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldStrongESet = strongESet;
         strong = STRONG_EDEFAULT;
         strongESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AUTHENTICATION__STRONG, oldStrong, STRONG_EDEFAULT, oldStrongESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__STRONG, oldStrong,
+                    STRONG_EDEFAULT, oldStrongESet ) );
     }
 
     /**
@@ -436,8 +444,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         weak = newWeak;
         boolean oldWeakESet = weakESet;
         weakESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__WEAK, oldWeak, weak, !oldWeakESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__WEAK, oldWeak, weak,
+                    !oldWeakESet ) );
     }
 
     /**
@@ -451,8 +460,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
         boolean oldWeakESet = weakESet;
         weak = WEAK_EDEFAULT;
         weakESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AUTHENTICATION__WEAK, oldWeak, WEAK_EDEFAULT, oldWeakESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AUTHENTICATION__WEAK, oldWeak,
+                    WEAK_EDEFAULT, oldWeakESet ) );
     }
 
     /**
@@ -472,8 +482,8 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public Server getParentServer() {
-        if (eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER) return null;
-        return (Server)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER ) return null;
+        return ( Server ) eInternalContainer();
     }
 
     /**
@@ -481,8 +491,9 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServer(Server newParentServer, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServer, SclPackage.AUTHENTICATION__PARENT_SERVER, msgs);
+    public NotificationChain basicSetParentServer( Server newParentServer, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServer, SclPackage.AUTHENTICATION__PARENT_SERVER,
+                msgs );
         return msgs;
     }
 
@@ -492,20 +503,23 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      */
     @Override
-    public void setParentServer(Server newParentServer) {
-        if (newParentServer != eInternalContainer() || (eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER && newParentServer != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServer))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServer( Server newParentServer ) {
+        if( newParentServer != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.AUTHENTICATION__PARENT_SERVER && newParentServer != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServer ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServer != null)
-                msgs = ((InternalEObject)newParentServer).eInverseAdd(this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs);
-            msgs = basicSetParentServer(newParentServer, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServer != null )
+                msgs = ( ( InternalEObject ) newParentServer ).eInverseAdd( this, SclPackage.SERVER__AUTHENTICATION,
+                        Server.class, msgs );
+            msgs = basicSetParentServer( newParentServer, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AUTHENTICATION__PARENT_SERVER, newParentServer, newParentServer));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AUTHENTICATION__PARENT_SERVER,
+                    newParentServer, newParentServer ) );
     }
 
     /**
@@ -515,13 +529,13 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServer((Server)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServer( ( Server ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -531,11 +545,11 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                return basicSetParentServer(null, msgs);
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            return basicSetParentServer( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -545,11 +559,11 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVER__AUTHENTICATION, Server.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -559,21 +573,21 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.AUTHENTICATION__CERTIFICATE:
-                return getCertificate();
-            case SclPackage.AUTHENTICATION__NONE:
-                return getNone();
-            case SclPackage.AUTHENTICATION__PASSWORD:
-                return getPassword();
-            case SclPackage.AUTHENTICATION__STRONG:
-                return getStrong();
-            case SclPackage.AUTHENTICATION__WEAK:
-                return getWeak();
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                return getParentServer();
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__CERTIFICATE:
+            return getCertificate();
+        case SclPackage.AUTHENTICATION__NONE:
+            return getNone();
+        case SclPackage.AUTHENTICATION__PASSWORD:
+            return getPassword();
+        case SclPackage.AUTHENTICATION__STRONG:
+            return getStrong();
+        case SclPackage.AUTHENTICATION__WEAK:
+            return getWeak();
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            return getParentServer();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -583,27 +597,27 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.AUTHENTICATION__CERTIFICATE:
-                setCertificate((Boolean)newValue);
-                return;
-            case SclPackage.AUTHENTICATION__NONE:
-                setNone((Boolean)newValue);
-                return;
-            case SclPackage.AUTHENTICATION__PASSWORD:
-                setPassword((Boolean)newValue);
-                return;
-            case SclPackage.AUTHENTICATION__STRONG:
-                setStrong((Boolean)newValue);
-                return;
-            case SclPackage.AUTHENTICATION__WEAK:
-                setWeak((Boolean)newValue);
-                return;
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                setParentServer((Server)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__CERTIFICATE:
+            setCertificate( ( Boolean ) newValue );
+            return;
+        case SclPackage.AUTHENTICATION__NONE:
+            setNone( ( Boolean ) newValue );
+            return;
+        case SclPackage.AUTHENTICATION__PASSWORD:
+            setPassword( ( Boolean ) newValue );
+            return;
+        case SclPackage.AUTHENTICATION__STRONG:
+            setStrong( ( Boolean ) newValue );
+            return;
+        case SclPackage.AUTHENTICATION__WEAK:
+            setWeak( ( Boolean ) newValue );
+            return;
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            setParentServer( ( Server ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -613,27 +627,27 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.AUTHENTICATION__CERTIFICATE:
-                unsetCertificate();
-                return;
-            case SclPackage.AUTHENTICATION__NONE:
-                unsetNone();
-                return;
-            case SclPackage.AUTHENTICATION__PASSWORD:
-                unsetPassword();
-                return;
-            case SclPackage.AUTHENTICATION__STRONG:
-                unsetStrong();
-                return;
-            case SclPackage.AUTHENTICATION__WEAK:
-                unsetWeak();
-                return;
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                setParentServer((Server)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__CERTIFICATE:
+            unsetCertificate();
+            return;
+        case SclPackage.AUTHENTICATION__NONE:
+            unsetNone();
+            return;
+        case SclPackage.AUTHENTICATION__PASSWORD:
+            unsetPassword();
+            return;
+        case SclPackage.AUTHENTICATION__STRONG:
+            unsetStrong();
+            return;
+        case SclPackage.AUTHENTICATION__WEAK:
+            unsetWeak();
+            return;
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            setParentServer( ( Server ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -643,21 +657,47 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.AUTHENTICATION__CERTIFICATE:
+            return isSetCertificate();
+        case SclPackage.AUTHENTICATION__NONE:
+            return isSetNone();
+        case SclPackage.AUTHENTICATION__PASSWORD:
+            return isSetPassword();
+        case SclPackage.AUTHENTICATION__STRONG:
+            return isSetStrong();
+        case SclPackage.AUTHENTICATION__WEAK:
+            return isSetWeak();
+        case SclPackage.AUTHENTICATION__PARENT_SERVER:
+            return getParentServer() != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgAuthentication.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.AUTHENTICATION__CERTIFICATE:
-                return isSetCertificate();
+                return SclPackage.AG_AUTHENTICATION__CERTIFICATE;
             case SclPackage.AUTHENTICATION__NONE:
-                return isSetNone();
+                return SclPackage.AG_AUTHENTICATION__NONE;
             case SclPackage.AUTHENTICATION__PASSWORD:
-                return isSetPassword();
+                return SclPackage.AG_AUTHENTICATION__PASSWORD;
             case SclPackage.AUTHENTICATION__STRONG:
-                return isSetStrong();
+                return SclPackage.AG_AUTHENTICATION__STRONG;
             case SclPackage.AUTHENTICATION__WEAK:
-                return isSetWeak();
-            case SclPackage.AUTHENTICATION__PARENT_SERVER:
-                return getParentServer() != null;
+                return SclPackage.AG_AUTHENTICATION__WEAK;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -666,38 +706,24 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgAuthentication.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.AUTHENTICATION__CERTIFICATE: return SclPackage.AG_AUTHENTICATION__CERTIFICATE;
-                case SclPackage.AUTHENTICATION__NONE: return SclPackage.AG_AUTHENTICATION__NONE;
-                case SclPackage.AUTHENTICATION__PASSWORD: return SclPackage.AG_AUTHENTICATION__PASSWORD;
-                case SclPackage.AUTHENTICATION__STRONG: return SclPackage.AG_AUTHENTICATION__STRONG;
-                case SclPackage.AUTHENTICATION__WEAK: return SclPackage.AG_AUTHENTICATION__WEAK;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgAuthentication.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_AUTHENTICATION__CERTIFICATE:
+                return SclPackage.AUTHENTICATION__CERTIFICATE;
+            case SclPackage.AG_AUTHENTICATION__NONE:
+                return SclPackage.AUTHENTICATION__NONE;
+            case SclPackage.AG_AUTHENTICATION__PASSWORD:
+                return SclPackage.AUTHENTICATION__PASSWORD;
+            case SclPackage.AG_AUTHENTICATION__STRONG:
+                return SclPackage.AUTHENTICATION__STRONG;
+            case SclPackage.AG_AUTHENTICATION__WEAK:
+                return SclPackage.AUTHENTICATION__WEAK;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgAuthentication.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_AUTHENTICATION__CERTIFICATE: return SclPackage.AUTHENTICATION__CERTIFICATE;
-                case SclPackage.AG_AUTHENTICATION__NONE: return SclPackage.AUTHENTICATION__NONE;
-                case SclPackage.AG_AUTHENTICATION__PASSWORD: return SclPackage.AUTHENTICATION__PASSWORD;
-                case SclPackage.AG_AUTHENTICATION__STRONG: return SclPackage.AUTHENTICATION__STRONG;
-                case SclPackage.AG_AUTHENTICATION__WEAK: return SclPackage.AUTHENTICATION__WEAK;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -707,20 +733,35 @@ public class AuthenticationImpl extends SclObjectImpl implements Authentication 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (certificate: ");
-        if (certificateESet) result.append(certificate); else result.append("<unset>");
-        result.append(", none: ");
-        if (noneESet) result.append(none); else result.append("<unset>");
-        result.append(", password: ");
-        if (passwordESet) result.append(password); else result.append("<unset>");
-        result.append(", strong: ");
-        if (strongESet) result.append(strong); else result.append("<unset>");
-        result.append(", weak: ");
-        if (weakESet) result.append(weak); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (certificate: " );
+        if( certificateESet )
+            result.append( certificate );
+        else
+            result.append( "<unset>" );
+        result.append( ", none: " );
+        if( noneESet )
+            result.append( none );
+        else
+            result.append( "<unset>" );
+        result.append( ", password: " );
+        if( passwordESet )
+            result.append( password );
+        else
+            result.append( "<unset>" );
+        result.append( ", strong: " );
+        if( strongESet )
+            result.append( strong );
+        else
+            result.append( "<unset>" );
+        result.append( ", weak: " );
+        if( weakESet )
+            result.append( weak );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

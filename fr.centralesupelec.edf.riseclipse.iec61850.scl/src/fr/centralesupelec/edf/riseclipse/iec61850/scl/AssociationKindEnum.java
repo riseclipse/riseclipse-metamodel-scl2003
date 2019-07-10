@@ -95,7 +95,7 @@ public enum AssociationKindEnum implements Enumerator {
     private static final AssociationKindEnum[] VALUES_ARRAY = new AssociationKindEnum[] {
             PRE_ESTABLISHED,
             PREDEFINED,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Association Kind Enum</b></em>' enumerators.
@@ -103,7 +103,8 @@ public enum AssociationKindEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<AssociationKindEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< AssociationKindEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Association Kind Enum</b></em>' literal with the specified literal value.
@@ -114,9 +115,9 @@ public enum AssociationKindEnum implements Enumerator {
      * @generated
      */
     public static AssociationKindEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             AssociationKindEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -132,9 +133,9 @@ public enum AssociationKindEnum implements Enumerator {
      * @generated
      */
     public static AssociationKindEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             AssociationKindEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -150,9 +151,11 @@ public enum AssociationKindEnum implements Enumerator {
      * @generated
      */
     public static AssociationKindEnum get( int value ) {
-        switch (value) {
-            case PRE_ESTABLISHED_VALUE: return PRE_ESTABLISHED;
-            case PREDEFINED_VALUE: return PREDEFINED;
+        switch( value ) {
+        case PRE_ESTABLISHED_VALUE:
+            return PRE_ESTABLISHED;
+        case PREDEFINED_VALUE:
+            return PREDEFINED;
         }
         return null;
     }
@@ -197,7 +200,7 @@ public enum AssociationKindEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -207,7 +210,7 @@ public enum AssociationKindEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -217,7 +220,7 @@ public enum AssociationKindEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

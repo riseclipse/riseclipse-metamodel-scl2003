@@ -63,7 +63,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      * @ordered
      */
-    protected EList<Function> function;
+    protected EList< Function > function;
 
     /**
      * The cached value of the '{@link #getConnectivityNode() <em>Connectivity Node</em>}' containment reference list.
@@ -73,7 +73,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      * @ordered
      */
-    protected EList<ConnectivityNode> connectivityNode;
+    protected EList< ConnectivityNode > connectivityNode;
 
     /**
      * The cached value of the '{@link #getConductingEquipment() <em>Conducting Equipment</em>}' containment reference list.
@@ -83,7 +83,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      * @ordered
      */
-    protected EList<ConductingEquipment> conductingEquipment;
+    protected EList< ConductingEquipment > conductingEquipment;
 
     /**
      * <!-- begin-user-doc -->
@@ -111,8 +111,8 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public VoltageLevel getParentVoltageLevel() {
-        if (eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL) return null;
-        return (VoltageLevel)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL ) return null;
+        return ( VoltageLevel ) eInternalContainer();
     }
 
     /**
@@ -120,8 +120,9 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentVoltageLevel(VoltageLevel newParentVoltageLevel, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentVoltageLevel, SclPackage.BAY__PARENT_VOLTAGE_LEVEL, msgs);
+    public NotificationChain basicSetParentVoltageLevel( VoltageLevel newParentVoltageLevel, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentVoltageLevel, SclPackage.BAY__PARENT_VOLTAGE_LEVEL,
+                msgs );
         return msgs;
     }
 
@@ -131,20 +132,24 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      */
     @Override
-    public void setParentVoltageLevel(VoltageLevel newParentVoltageLevel) {
-        if (newParentVoltageLevel != eInternalContainer() || (eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL && newParentVoltageLevel != null)) {
-            if (EcoreUtil.isAncestor(this, newParentVoltageLevel))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentVoltageLevel( VoltageLevel newParentVoltageLevel ) {
+        if( newParentVoltageLevel != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.BAY__PARENT_VOLTAGE_LEVEL
+                        && newParentVoltageLevel != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentVoltageLevel ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentVoltageLevel != null)
-                msgs = ((InternalEObject)newParentVoltageLevel).eInverseAdd(this, SclPackage.VOLTAGE_LEVEL__BAY, VoltageLevel.class, msgs);
-            msgs = basicSetParentVoltageLevel(newParentVoltageLevel, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentVoltageLevel != null )
+                msgs = ( ( InternalEObject ) newParentVoltageLevel ).eInverseAdd( this, SclPackage.VOLTAGE_LEVEL__BAY,
+                        VoltageLevel.class, msgs );
+            msgs = basicSetParentVoltageLevel( newParentVoltageLevel, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BAY__PARENT_VOLTAGE_LEVEL, newParentVoltageLevel, newParentVoltageLevel));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BAY__PARENT_VOLTAGE_LEVEL,
+                    newParentVoltageLevel, newParentVoltageLevel ) );
     }
 
     /**
@@ -153,9 +158,10 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      */
     @Override
-    public EList<Function> getFunction() {
-        if (function == null) {
-            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.BAY__FUNCTION, SclPackage.FUNCTION__PARENT_BAY);
+    public EList< Function > getFunction() {
+        if( function == null ) {
+            function = new EObjectContainmentWithInverseEList.Unsettable< Function >( Function.class, this,
+                    SclPackage.BAY__FUNCTION, SclPackage.FUNCTION__PARENT_BAY );
         }
         return function;
     }
@@ -167,7 +173,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetFunction() {
-        if (function != null) ((InternalEList.Unsettable<?>)function).unset();
+        if( function != null ) ( ( InternalEList.Unsettable< ? > ) function ).unset();
     }
 
     /**
@@ -177,7 +183,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public boolean isSetFunction() {
-        return function != null && ((InternalEList.Unsettable<?>)function).isSet();
+        return function != null && ( ( InternalEList.Unsettable< ? > ) function ).isSet();
     }
 
     /**
@@ -186,9 +192,11 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      */
     @Override
-    public EList<ConnectivityNode> getConnectivityNode() {
-        if (connectivityNode == null) {
-            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable<ConnectivityNode>(ConnectivityNode.class, this, SclPackage.BAY__CONNECTIVITY_NODE, SclPackage.CONNECTIVITY_NODE__PARENT_BAY);
+    public EList< ConnectivityNode > getConnectivityNode() {
+        if( connectivityNode == null ) {
+            connectivityNode = new EObjectContainmentWithInverseEList.Unsettable< ConnectivityNode >(
+                    ConnectivityNode.class, this, SclPackage.BAY__CONNECTIVITY_NODE,
+                    SclPackage.CONNECTIVITY_NODE__PARENT_BAY );
         }
         return connectivityNode;
     }
@@ -200,7 +208,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetConnectivityNode() {
-        if (connectivityNode != null) ((InternalEList.Unsettable<?>)connectivityNode).unset();
+        if( connectivityNode != null ) ( ( InternalEList.Unsettable< ? > ) connectivityNode ).unset();
     }
 
     /**
@@ -210,7 +218,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public boolean isSetConnectivityNode() {
-        return connectivityNode != null && ((InternalEList.Unsettable<?>)connectivityNode).isSet();
+        return connectivityNode != null && ( ( InternalEList.Unsettable< ? > ) connectivityNode ).isSet();
     }
 
     /**
@@ -219,9 +227,11 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      * @generated
      */
     @Override
-    public EList<ConductingEquipment> getConductingEquipment() {
-        if (conductingEquipment == null) {
-            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable<ConductingEquipment>(ConductingEquipment.class, this, SclPackage.BAY__CONDUCTING_EQUIPMENT, SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY);
+    public EList< ConductingEquipment > getConductingEquipment() {
+        if( conductingEquipment == null ) {
+            conductingEquipment = new EObjectContainmentWithInverseEList.Unsettable< ConductingEquipment >(
+                    ConductingEquipment.class, this, SclPackage.BAY__CONDUCTING_EQUIPMENT,
+                    SclPackage.CONDUCTING_EQUIPMENT__PARENT_BAY );
         }
         return conductingEquipment;
     }
@@ -233,7 +243,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void unsetConductingEquipment() {
-        if (conductingEquipment != null) ((InternalEList.Unsettable<?>)conductingEquipment).unset();
+        if( conductingEquipment != null ) ( ( InternalEList.Unsettable< ? > ) conductingEquipment ).unset();
     }
 
     /**
@@ -243,7 +253,7 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public boolean isSetConductingEquipment() {
-        return conductingEquipment != null && ((InternalEList.Unsettable<?>)conductingEquipment).isSet();
+        return conductingEquipment != null && ( ( InternalEList.Unsettable< ? > ) conductingEquipment ).isSet();
     }
 
     /**
@@ -254,19 +264,22 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentVoltageLevel((VoltageLevel)otherEnd, msgs);
-            case SclPackage.BAY__FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectivityNode()).basicAdd(otherEnd, msgs);
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getConductingEquipment()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentVoltageLevel( ( VoltageLevel ) otherEnd, msgs );
+        case SclPackage.BAY__FUNCTION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getFunction() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getConnectivityNode() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getConductingEquipment() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -276,17 +289,17 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                return basicSetParentVoltageLevel(null, msgs);
-            case SclPackage.BAY__FUNCTION:
-                return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                return ((InternalEList<?>)getConnectivityNode()).basicRemove(otherEnd, msgs);
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                return ((InternalEList<?>)getConductingEquipment()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            return basicSetParentVoltageLevel( null, msgs );
+        case SclPackage.BAY__FUNCTION:
+            return ( ( InternalEList< ? > ) getFunction() ).basicRemove( otherEnd, msgs );
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            return ( ( InternalEList< ? > ) getConnectivityNode() ).basicRemove( otherEnd, msgs );
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            return ( ( InternalEList< ? > ) getConductingEquipment() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -296,11 +309,11 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.VOLTAGE_LEVEL__BAY, VoltageLevel.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            return eInternalContainer().eInverseRemove( this, SclPackage.VOLTAGE_LEVEL__BAY, VoltageLevel.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -310,17 +323,17 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                return getParentVoltageLevel();
-            case SclPackage.BAY__FUNCTION:
-                return getFunction();
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                return getConnectivityNode();
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                return getConductingEquipment();
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            return getParentVoltageLevel();
+        case SclPackage.BAY__FUNCTION:
+            return getFunction();
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            return getConnectivityNode();
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            return getConductingEquipment();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -331,24 +344,24 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                setParentVoltageLevel((VoltageLevel)newValue);
-                return;
-            case SclPackage.BAY__FUNCTION:
-                getFunction().clear();
-                getFunction().addAll((Collection<? extends Function>)newValue);
-                return;
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                getConnectivityNode().clear();
-                getConnectivityNode().addAll((Collection<? extends ConnectivityNode>)newValue);
-                return;
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                getConductingEquipment().clear();
-                getConductingEquipment().addAll((Collection<? extends ConductingEquipment>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            setParentVoltageLevel( ( VoltageLevel ) newValue );
+            return;
+        case SclPackage.BAY__FUNCTION:
+            getFunction().clear();
+            getFunction().addAll( ( Collection< ? extends Function > ) newValue );
+            return;
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            getConnectivityNode().clear();
+            getConnectivityNode().addAll( ( Collection< ? extends ConnectivityNode > ) newValue );
+            return;
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            getConductingEquipment().clear();
+            getConductingEquipment().addAll( ( Collection< ? extends ConductingEquipment > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -358,21 +371,21 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                setParentVoltageLevel((VoltageLevel)null);
-                return;
-            case SclPackage.BAY__FUNCTION:
-                unsetFunction();
-                return;
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                unsetConnectivityNode();
-                return;
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                unsetConductingEquipment();
-                return;
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            setParentVoltageLevel( ( VoltageLevel ) null );
+            return;
+        case SclPackage.BAY__FUNCTION:
+            unsetFunction();
+            return;
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            unsetConnectivityNode();
+            return;
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            unsetConductingEquipment();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -382,17 +395,17 @@ public class BayImpl extends EquipmentContainerImpl implements Bay {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
-                return getParentVoltageLevel() != null;
-            case SclPackage.BAY__FUNCTION:
-                return isSetFunction();
-            case SclPackage.BAY__CONNECTIVITY_NODE:
-                return isSetConnectivityNode();
-            case SclPackage.BAY__CONDUCTING_EQUIPMENT:
-                return isSetConductingEquipment();
+        switch( featureID ) {
+        case SclPackage.BAY__PARENT_VOLTAGE_LEVEL:
+            return getParentVoltageLevel() != null;
+        case SclPackage.BAY__FUNCTION:
+            return isSetFunction();
+        case SclPackage.BAY__CONNECTIVITY_NODE:
+            return isSetConnectivityNode();
+        case SclPackage.BAY__CONDUCTING_EQUIPMENT:
+            return isSetConductingEquipment();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //BayImpl

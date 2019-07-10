@@ -61,7 +61,7 @@ public interface Voltage extends ValueWithUnit {
      * @see #getParentLine()
      * @generated
      */
-    void setParentLine(Line value);
+    void setParentLine( Line value );
 
     /**
      * Returns the value of the '<em><b>Parent Voltage Level</b></em>' container reference.
@@ -85,6 +85,6 @@ public interface Voltage extends ValueWithUnit {
      * @see #getParentVoltageLevel()
      * @generated
      */
-    void setParentVoltageLevel(VoltageLevel value);
+    void setParentVoltageLevel( VoltageLevel value );
 
 } // Voltage

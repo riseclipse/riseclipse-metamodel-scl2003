@@ -113,6 +113,6 @@ public interface Protocol extends SclObject {
      * @see #getParentControlWithIEDName()
      * @generated
      */
-    void setParentControlWithIEDName(ControlWithIEDName value);
+    void setParentControlWithIEDName( ControlWithIEDName value );
 
 } // Protocol

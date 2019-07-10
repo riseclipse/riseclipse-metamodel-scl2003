@@ -125,7 +125,7 @@ public interface SubNetwork extends Naming {
      * @see #getBitRate()
      * @generated
      */
-    void setBitRate(BitRate value);
+    void setBitRate( BitRate value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getBitRate <em>Bit Rate</em>}' containment reference.
@@ -172,7 +172,7 @@ public interface SubNetwork extends Naming {
      * @see #getParentCommunication()
      * @generated
      */
-    void setParentCommunication(Communication value);
+    void setParentCommunication( Communication value );
 
     /**
      * Returns the value of the '<em><b>Connected AP</b></em>' containment reference list.
@@ -192,7 +192,7 @@ public interface SubNetwork extends Naming {
      * @model opposite="ParentSubNetwork" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConnectedAP> getConnectedAP();
+    EList< ConnectedAP > getConnectedAP();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubNetwork#getConnectedAP <em>Connected AP</em>}' containment reference list.

@@ -61,7 +61,7 @@ public interface BaseElement extends SclObject {
      * @model opposite="ParentBaseElement" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Private> getPrivate();
+    EList< Private > getPrivate();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.BaseElement#getPrivate <em>Private</em>}' containment reference list.

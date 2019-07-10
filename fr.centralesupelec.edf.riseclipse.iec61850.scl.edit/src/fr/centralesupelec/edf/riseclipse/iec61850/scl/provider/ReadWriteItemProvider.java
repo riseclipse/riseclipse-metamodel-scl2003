@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -35,16 +34,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.ReadWrite;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReadWriteItemProvider 
-    extends ServiceYesNoItemProvider {
+public class ReadWriteItemProvider
+        extends ServiceYesNoItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public ReadWriteItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ReadWriteItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -54,9 +53,9 @@ public class ReadWriteItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -69,8 +68,8 @@ public class ReadWriteItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ReadWrite"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ReadWrite" ) );
     }
 
     /**
@@ -80,11 +79,10 @@ public class ReadWriteItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ReadWrite readWrite = (ReadWrite)object;
-        return getString("_UI_ReadWrite_type") + " " + readWrite.getLineNumber();
+    public String getText( Object object ) {
+        ReadWrite readWrite = ( ReadWrite ) object;
+        return getString( "_UI_ReadWrite_type" ) + " " + readWrite.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -94,9 +92,8 @@ public class ReadWriteItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -107,8 +104,8 @@ public class ReadWriteItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

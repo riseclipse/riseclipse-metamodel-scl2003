@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -42,8 +41,8 @@ public class PItemProvider extends PAddrItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public PItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -53,9 +52,9 @@ public class PItemProvider extends PAddrItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -68,8 +67,8 @@ public class PItemProvider extends PAddrItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/P"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/P" ) );
     }
 
     /**
@@ -79,11 +78,10 @@ public class PItemProvider extends PAddrItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        P p = (P)object;
-        return getString("_UI_P_type") + " " + p.getLineNumber();
+    public String getText( Object object ) {
+        P p = ( P ) object;
+        return getString( "_UI_P_type" ) + " " + p.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -93,9 +91,8 @@ public class PItemProvider extends PAddrItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -106,8 +103,8 @@ public class PItemProvider extends PAddrItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

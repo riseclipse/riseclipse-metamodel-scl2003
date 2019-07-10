@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Service With Max And Max Attributes</b></em>'.
@@ -66,7 +65,7 @@ public interface ServiceWithMaxAndMaxAttributes extends ServiceWithMax {
      * @see #getMaxAttributes()
      * @generated
      */
-    void setMaxAttributes(Integer value);
+    void setMaxAttributes( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServiceWithMaxAndMaxAttributes#getMaxAttributes <em>Max Attributes</em>}' attribute.

@@ -137,13 +137,14 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public void setIedName(String newIedName) {
+    public void setIedName( String newIedName ) {
         String oldIedName = iedName;
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_LD_REF__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LD_REF__IED_NAME, oldIedName, iedName,
+                    !oldIedNameESet ) );
     }
 
     /**
@@ -157,8 +158,9 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_LD_REF__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LD_REF__IED_NAME, oldIedName,
+                    IED_NAME_EDEFAULT, oldIedNameESet ) );
     }
 
     /**
@@ -187,13 +189,14 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public void setLdInst(String newLdInst) {
+    public void setLdInst( String newLdInst ) {
         String oldLdInst = ldInst;
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_LD_REF__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LD_REF__LD_INST, oldLdInst, ldInst,
+                    !oldLdInstESet ) );
     }
 
     /**
@@ -207,8 +210,9 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_LD_REF__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LD_REF__LD_INST, oldLdInst,
+                    LD_INST_EDEFAULT, oldLdInstESet ) );
     }
 
     /**
@@ -227,14 +231,14 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_LD_REF__IED_NAME:
-                return getIedName();
-            case SclPackage.AG_LD_REF__LD_INST:
-                return getLdInst();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_LD_REF__IED_NAME:
+            return getIedName();
+        case SclPackage.AG_LD_REF__LD_INST:
+            return getLdInst();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -243,16 +247,16 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_LD_REF__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.AG_LD_REF__LD_INST:
-                setLdInst((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_LD_REF__IED_NAME:
+            setIedName( ( String ) newValue );
+            return;
+        case SclPackage.AG_LD_REF__LD_INST:
+            setLdInst( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -261,16 +265,16 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_LD_REF__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.AG_LD_REF__LD_INST:
-                unsetLdInst();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_LD_REF__IED_NAME:
+            unsetIedName();
+            return;
+        case SclPackage.AG_LD_REF__LD_INST:
+            unsetLdInst();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -279,14 +283,14 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_LD_REF__IED_NAME:
-                return isSetIedName();
-            case SclPackage.AG_LD_REF__LD_INST:
-                return isSetLdInst();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_LD_REF__IED_NAME:
+            return isSetIedName();
+        case SclPackage.AG_LD_REF__LD_INST:
+            return isSetLdInst();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -296,14 +300,20 @@ public abstract class AgLDRefImpl extends AgDescImpl implements AgLDRef {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (iedName: " );
+        if( iedNameESet )
+            result.append( iedName );
+        else
+            result.append( "<unset>" );
+        result.append( ", ldInst: " );
+        if( ldInstESet )
+            result.append( ldInst );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

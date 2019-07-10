@@ -59,6 +59,6 @@ public interface GSSE extends ServiceWithMax {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // GSSE

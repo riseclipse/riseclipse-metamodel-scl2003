@@ -59,6 +59,6 @@ public interface SMVSecurity extends Certificate {
      * @see #getParentAccessPoint()
      * @generated
      */
-    void setParentAccessPoint(AccessPoint value);
+    void setParentAccessPoint( AccessPoint value );
 
 } // SMVSecurity

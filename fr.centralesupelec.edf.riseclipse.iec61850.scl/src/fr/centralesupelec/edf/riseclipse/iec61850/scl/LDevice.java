@@ -232,7 +232,7 @@ public interface LDevice extends UnNaming {
      * @see #getParentServer()
      * @generated
      */
-    void setParentServer(Server value);
+    void setParentServer( Server value );
 
     /**
      * Returns the value of the '<em><b>Any LN</b></em>' attribute list.
@@ -266,7 +266,7 @@ public interface LDevice extends UnNaming {
      *        extendedMetaData="group='#AnyLN'"
      * @generated
      */
-    EList<LN> getLN();
+    EList< LN > getLN();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}' containment reference list.
@@ -315,7 +315,7 @@ public interface LDevice extends UnNaming {
      * @see #getReferredByIEDName()
      * @generated
      */
-    void setReferredByIEDName(IEDName value);
+    void setReferredByIEDName( IEDName value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}' reference.

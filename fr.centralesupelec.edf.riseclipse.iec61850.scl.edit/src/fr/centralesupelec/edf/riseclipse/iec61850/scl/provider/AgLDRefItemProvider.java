@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -48,8 +47,8 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public AgLDRefItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AgLDRefItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,12 +58,12 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addIedNamePropertyDescriptor(object);
-            addLdInstPropertyDescriptor(object);
+            addIedNamePropertyDescriptor( object );
+            addLdInstPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,20 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIedNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgLDRef_iedName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_iedName_feature", "_UI_AgLDRef_type"),
-                 SclPackage.eINSTANCE.getAgLDRef_IedName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIedNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgLDRef_iedName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgLDRef_iedName_feature",
+                                "_UI_AgLDRef_type" ),
+                        SclPackage.eINSTANCE.getAgLDRef_IedName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +96,20 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLdInstPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgLDRef_ldInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgLDRef_ldInst_feature", "_UI_AgLDRef_type"),
-                 SclPackage.eINSTANCE.getAgLDRef_LdInst(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addLdInstPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgLDRef_ldInst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgLDRef_ldInst_feature",
+                                "_UI_AgLDRef_type" ),
+                        SclPackage.eINSTANCE.getAgLDRef_LdInst(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,13 +119,11 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((AgLDRef)object).getIedName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AgLDRef_type") :
-            getString("_UI_AgLDRef_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( AgLDRef ) object ).getIedName();
+        return label == null || label.length() == 0 ? getString( "_UI_AgLDRef_type" )
+                : getString( "_UI_AgLDRef_type" ) + " " + label;
     }
-
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -136,16 +133,16 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AgLDRef.class)) {
-            case SclPackage.AG_LD_REF__IED_NAME:
-            case SclPackage.AG_LD_REF__LD_INST:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( AgLDRef.class ) ) {
+        case SclPackage.AG_LD_REF__IED_NAME:
+        case SclPackage.AG_LD_REF__LD_INST:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -156,8 +153,8 @@ public class AgLDRefItemProvider extends AgDescItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

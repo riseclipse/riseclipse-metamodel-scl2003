@@ -122,7 +122,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getParentProcess()
      * @generated
      */
-    void setParentProcess(fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value);
+    void setParentProcess( fr.centralesupelec.edf.riseclipse.iec61850.scl.Process value );
 
     /**
      * Returns the value of the '<em><b>Parent SCL</b></em>' container reference.
@@ -146,7 +146,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
     /**
      * Returns the value of the '<em><b>Connectivity Node</b></em>' containment reference list.
@@ -166,7 +166,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConnectivityNode> getConnectivityNode();
+    EList< ConnectivityNode > getConnectivityNode();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConnectivityNode <em>Connectivity Node</em>}' containment reference list.
@@ -207,7 +207,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @model opposite="ParentLine" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConductingEquipment> getConductingEquipment();
+    EList< ConductingEquipment > getConductingEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
@@ -260,7 +260,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getVoltage()
      * @generated
      */
-    void setVoltage(Voltage value);
+    void setVoltage( Voltage value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getVoltage <em>Voltage</em>}' containment reference.
@@ -313,7 +313,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getNomFreq()
      * @generated
      */
-    void setNomFreq(BigDecimal value);
+    void setNomFreq( BigDecimal value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNomFreq <em>Nom Freq</em>}' attribute.
@@ -366,7 +366,7 @@ public interface Line extends GeneralEquipmentContainer {
      * @see #getNumPhases()
      * @generated
      */
-    void setNumPhases(Integer value);
+    void setNumPhases( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Line#getNumPhases <em>Num Phases</em>}' attribute.

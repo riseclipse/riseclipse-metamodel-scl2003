@@ -49,6 +49,7 @@ public interface SMV extends ControlBlock {
      * @model opposite="SMV" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
+    @Override
     ConnectedAP getParentConnectedAP();
 
     /**
@@ -59,6 +60,6 @@ public interface SMV extends ControlBlock {
      * @see #getParentConnectedAP()
      * @generated
      */
-    void setParentConnectedAP(ConnectedAP value);
+    void setParentConnectedAP( ConnectedAP value );
 
 } // SMV

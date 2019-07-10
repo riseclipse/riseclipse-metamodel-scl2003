@@ -114,7 +114,7 @@ public interface DAType extends IDNaming {
      * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<BDA> getBDA();
+    EList< BDA > getBDA();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getBDA <em>BDA</em>}' containment reference list.
@@ -151,7 +151,7 @@ public interface DAType extends IDNaming {
      * @model opposite="RefersToDAType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<AbstractDataAttribute> getReferredByAbstractDataAttribute();
+    EList< AbstractDataAttribute > getReferredByAbstractDataAttribute();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getReferredByAbstractDataAttribute <em>Referred By Abstract Data Attribute</em>}' reference list.
@@ -196,7 +196,7 @@ public interface DAType extends IDNaming {
      * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setParentDataTypeTemplates(DataTypeTemplates value);
+    void setParentDataTypeTemplates( DataTypeTemplates value );
 
     /**
      * Returns the value of the '<em><b>Prot Ns</b></em>' containment reference list.
@@ -216,7 +216,7 @@ public interface DAType extends IDNaming {
      * @model opposite="ParentDAType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ProtNs> getProtNs();
+    EList< ProtNs > getProtNs();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DAType#getProtNs <em>Prot Ns</em>}' containment reference list.

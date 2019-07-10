@@ -168,7 +168,7 @@ public interface KDC extends SclObject {
      * @see #getParentIED()
      * @generated
      */
-    void setParentIED(IED value);
+    void setParentIED( IED value );
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.
@@ -200,7 +200,7 @@ public interface KDC extends SclObject {
      * @see #getRefersToAccessPoint()
      * @generated
      */
-    void setRefersToAccessPoint(AccessPoint value);
+    void setRefersToAccessPoint( AccessPoint value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC#getRefersToAccessPoint <em>Refers To Access Point</em>}' reference.

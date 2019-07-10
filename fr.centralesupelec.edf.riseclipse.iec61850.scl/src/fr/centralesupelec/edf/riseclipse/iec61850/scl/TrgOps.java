@@ -329,6 +329,6 @@ public interface TrgOps extends SclObject {
      * @see #getParentControlWithTriggerOpt()
      * @generated
      */
-    void setParentControlWithTriggerOpt(ControlWithTriggerOpt value);
+    void setParentControlWithTriggerOpt( ControlWithTriggerOpt value );
 
 } // TrgOps

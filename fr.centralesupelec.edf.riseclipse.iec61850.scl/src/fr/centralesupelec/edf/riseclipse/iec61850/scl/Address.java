@@ -63,7 +63,7 @@ public interface Address extends SclObject {
      * @see #getParentConnectedAP()
      * @generated
      */
-    void setParentConnectedAP(ConnectedAP value);
+    void setParentConnectedAP( ConnectedAP value );
 
     /**
      * Returns the value of the '<em><b>Parent Control Block</b></em>' container reference.
@@ -87,7 +87,7 @@ public interface Address extends SclObject {
      * @see #getParentControlBlock()
      * @generated
      */
-    void setParentControlBlock(ControlBlock value);
+    void setParentControlBlock( ControlBlock value );
 
     /**
      * Returns the value of the '<em><b>P</b></em>' containment reference list.
@@ -107,7 +107,7 @@ public interface Address extends SclObject {
      * @model opposite="ParentAddress" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<P> getP();
+    EList< P > getP();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Address#getP <em>P</em>}' containment reference list.

@@ -127,8 +127,9 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
     public void setLineNumber( int newLineNumber ) {
         int oldLineNumber = lineNumber;
         lineNumber = newLineNumber;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL_OBJECT__LINE_NUMBER, oldLineNumber, lineNumber));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__LINE_NUMBER, oldLineNumber,
+                    lineNumber ) );
     }
 
     /**
@@ -147,11 +148,12 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setExplicitLinksBuilt(boolean newExplicitLinksBuilt) {
+    public void setExplicitLinksBuilt( boolean newExplicitLinksBuilt ) {
         boolean oldExplicitLinksBuilt = explicitLinksBuilt;
         explicitLinksBuilt = newExplicitLinksBuilt;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT, oldExplicitLinksBuilt, explicitLinksBuilt));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT,
+                    oldExplicitLinksBuilt, explicitLinksBuilt ) );
     }
 
     /**
@@ -161,12 +163,12 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate ) {
-        if( ( ! forceUpdate ) && isExplicitLinksBuilt() ) return true;
-        
+        if( ( !forceUpdate ) && isExplicitLinksBuilt() ) return true;
+
         // Parent's links must be built before children's one
         // because children may need them
         doBuildExplicitLinks( console );
-        
+
         // Calls on children may lead to recursion
         setExplicitLinksBuilt( true );
 
@@ -180,7 +182,7 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
 
         return false;
     }
-    
+
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // Default do nothing
     }
@@ -192,13 +194,13 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SCL_OBJECT__LINE_NUMBER:
-                return getLineNumber();
-            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
-                return isExplicitLinksBuilt();
+        switch( featureID ) {
+        case SclPackage.SCL_OBJECT__LINE_NUMBER:
+            return getLineNumber();
+        case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
+            return isExplicitLinksBuilt();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -208,15 +210,15 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SCL_OBJECT__LINE_NUMBER:
-                setLineNumber((Integer)newValue);
-                return;
-            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
-                setExplicitLinksBuilt((Boolean)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SCL_OBJECT__LINE_NUMBER:
+            setLineNumber( ( Integer ) newValue );
+            return;
+        case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
+            setExplicitLinksBuilt( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -226,15 +228,15 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SCL_OBJECT__LINE_NUMBER:
-                setLineNumber(LINE_NUMBER_EDEFAULT);
-                return;
-            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
-                setExplicitLinksBuilt(EXPLICIT_LINKS_BUILT_EDEFAULT);
-                return;
+        switch( featureID ) {
+        case SclPackage.SCL_OBJECT__LINE_NUMBER:
+            setLineNumber( LINE_NUMBER_EDEFAULT );
+            return;
+        case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
+            setExplicitLinksBuilt( EXPLICIT_LINKS_BUILT_EDEFAULT );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -244,13 +246,13 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SCL_OBJECT__LINE_NUMBER:
-                return lineNumber != LINE_NUMBER_EDEFAULT;
-            case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
-                return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
+        switch( featureID ) {
+        case SclPackage.SCL_OBJECT__LINE_NUMBER:
+            return lineNumber != LINE_NUMBER_EDEFAULT;
+        case SclPackage.SCL_OBJECT__EXPLICIT_LINKS_BUILT:
+            return explicitLinksBuilt != EXPLICIT_LINKS_BUILT_EDEFAULT;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -259,12 +261,12 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-        switch (operationID) {
-            case SclPackage.SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
-                return buildExplicitLinks((IRiseClipseConsole)arguments.get(0), (Boolean)arguments.get(1));
+    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
+        switch( operationID ) {
+        case SclPackage.SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
+            return buildExplicitLinks( ( IRiseClipseConsole ) arguments.get( 0 ), ( Boolean ) arguments.get( 1 ) );
         }
-        return super.eInvoke(operationID, arguments);
+        return super.eInvoke( operationID, arguments );
     }
 
     /**
@@ -274,14 +276,14 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (lineNumber: ");
-        result.append(lineNumber);
-        result.append(", explicitLinksBuilt: ");
-        result.append(explicitLinksBuilt);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (lineNumber: " );
+        result.append( lineNumber );
+        result.append( ", explicitLinksBuilt: " );
+        result.append( explicitLinksBuilt );
+        result.append( ')' );
         return result.toString();
     }
 

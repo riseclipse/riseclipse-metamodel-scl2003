@@ -71,8 +71,8 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.CONF_LD_NAME__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.CONF_LD_NAME__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -80,8 +80,9 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.CONF_LD_NAME__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.CONF_LD_NAME__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -91,20 +92,24 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CONF_LD_NAME__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.CONF_LD_NAME__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__CONF_LD_NAME, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__CONF_LD_NAME,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CONF_LD_NAME__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CONF_LD_NAME__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -114,13 +119,13 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -130,11 +135,11 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -144,11 +149,11 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__CONF_LD_NAME, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__CONF_LD_NAME, Services.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -158,11 +163,11 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                return getParentServices();
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            return getParentServices();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -172,12 +177,12 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -187,12 +192,12 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -202,11 +207,11 @@ public class ConfLdNameImpl extends ServiceYesNoImpl implements ConfLdName {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
-                return getParentServices() != null;
+        switch( featureID ) {
+        case SclPackage.CONF_LD_NAME__PARENT_SERVICES:
+            return getParentServices() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //ConfLdNameImpl

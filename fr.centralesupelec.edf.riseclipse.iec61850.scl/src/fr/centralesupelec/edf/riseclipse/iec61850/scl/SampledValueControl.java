@@ -393,7 +393,7 @@ public interface SampledValueControl extends ControlWithIEDName {
      * @see #getParentLN0()
      * @generated
      */
-    void setParentLN0(LN0 value);
+    void setParentLN0( LN0 value );
 
     /**
      * Returns the value of the '<em><b>Smv Opts</b></em>' containment reference.

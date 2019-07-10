@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Bit Rate</b></em>'.
@@ -61,5 +60,5 @@ public interface BitRate extends BitRateInMbPerSec {
      * @see #getParentSubNetwork()
      * @generated
      */
-    void setParentSubNetwork(SubNetwork value);
+    void setParentSubNetwork( SubNetwork value );
 } // BitRate

@@ -60,7 +60,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * @generated
      * @ordered
      */
-    protected EList<SubEquipment> subEquipment;
+    protected EList< SubEquipment > subEquipment;
 
     /**
      * The cached value of the '{@link #getTerminal() <em>Terminal</em>}' containment reference list.
@@ -70,7 +70,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * @generated
      * @ordered
      */
-    protected EList<Terminal> terminal;
+    protected EList< Terminal > terminal;
 
     /**
      * <!-- begin-user-doc -->
@@ -97,9 +97,11 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * @generated
      */
     @Override
-    public EList<SubEquipment> getSubEquipment() {
-        if (subEquipment == null) {
-            subEquipment = new EObjectContainmentWithInverseEList.Unsettable<SubEquipment>(SubEquipment.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT, SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT);
+    public EList< SubEquipment > getSubEquipment() {
+        if( subEquipment == null ) {
+            subEquipment = new EObjectContainmentWithInverseEList.Unsettable< SubEquipment >( SubEquipment.class, this,
+                    SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT,
+                    SclPackage.SUB_EQUIPMENT__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT );
         }
         return subEquipment;
     }
@@ -111,7 +113,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public void unsetSubEquipment() {
-        if (subEquipment != null) ((InternalEList.Unsettable<?>)subEquipment).unset();
+        if( subEquipment != null ) ( ( InternalEList.Unsettable< ? > ) subEquipment ).unset();
     }
 
     /**
@@ -121,7 +123,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public boolean isSetSubEquipment() {
-        return subEquipment != null && ((InternalEList.Unsettable<?>)subEquipment).isSet();
+        return subEquipment != null && ( ( InternalEList.Unsettable< ? > ) subEquipment ).isSet();
     }
 
     /**
@@ -130,9 +132,11 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      * @generated
      */
     @Override
-    public EList<Terminal> getTerminal() {
-        if (terminal == null) {
-            terminal = new EObjectContainmentWithInverseEList.Unsettable<Terminal>(Terminal.class, this, SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL, SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT);
+    public EList< Terminal > getTerminal() {
+        if( terminal == null ) {
+            terminal = new EObjectContainmentWithInverseEList.Unsettable< Terminal >( Terminal.class, this,
+                    SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL,
+                    SclPackage.TERMINAL__PARENT_ABSTRACT_CONDUCTING_EQUIPMENT );
         }
         return terminal;
     }
@@ -144,7 +148,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public void unsetTerminal() {
-        if (terminal != null) ((InternalEList.Unsettable<?>)terminal).unset();
+        if( terminal != null ) ( ( InternalEList.Unsettable< ? > ) terminal ).unset();
     }
 
     /**
@@ -154,7 +158,7 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public boolean isSetTerminal() {
-        return terminal != null && ((InternalEList.Unsettable<?>)terminal).isSet();
+        return terminal != null && ( ( InternalEList.Unsettable< ? > ) terminal ).isSet();
     }
 
     /**
@@ -165,13 +169,15 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubEquipment()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getTerminal()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubEquipment() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getTerminal() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -181,13 +187,13 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return ((InternalEList<?>)getSubEquipment()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return ((InternalEList<?>)getTerminal()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            return ( ( InternalEList< ? > ) getSubEquipment() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            return ( ( InternalEList< ? > ) getTerminal() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -197,13 +203,13 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return getSubEquipment();
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return getTerminal();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            return getSubEquipment();
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            return getTerminal();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -214,17 +220,17 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                getSubEquipment().clear();
-                getSubEquipment().addAll((Collection<? extends SubEquipment>)newValue);
-                return;
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                getTerminal().clear();
-                getTerminal().addAll((Collection<? extends Terminal>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            getSubEquipment().clear();
+            getSubEquipment().addAll( ( Collection< ? extends SubEquipment > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            getTerminal().clear();
+            getTerminal().addAll( ( Collection< ? extends Terminal > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -234,15 +240,15 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                unsetSubEquipment();
-                return;
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                unsetTerminal();
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            unsetSubEquipment();
+            return;
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            unsetTerminal();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -252,13 +258,13 @@ public class AbstractConductingEquipmentImpl extends EquipmentImpl implements Ab
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
-                return isSetSubEquipment();
-            case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
-                return isSetTerminal();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__SUB_EQUIPMENT:
+            return isSetSubEquipment();
+        case SclPackage.ABSTRACT_CONDUCTING_EQUIPMENT__TERMINAL:
+            return isSetTerminal();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //AbstractConductingEquipmentImpl

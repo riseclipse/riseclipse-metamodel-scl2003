@@ -498,7 +498,7 @@ public interface FCDA extends SclObject {
      * @see #getParentDataSet()
      * @generated
      */
-    void setParentDataSet(DataSet value);
+    void setParentDataSet( DataSet value );
 
     /**
      * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference list.
@@ -514,7 +514,7 @@ public interface FCDA extends SclObject {
      * @model opposite="ReferredByFCDA" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<AbstractDataAttribute> getRefersToAbstractDataAttribute();
+    EList< AbstractDataAttribute > getRefersToAbstractDataAttribute();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.FCDA#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference list.

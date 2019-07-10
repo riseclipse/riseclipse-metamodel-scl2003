@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 
@@ -49,9 +48,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AgDescItemProvider 
-    extends ItemProviderAdapter
-    implements
+public class AgDescItemProvider
+        extends ItemProviderAdapter
+        implements
         IEditingDomainItemProvider,
         IStructuredItemContentProvider,
         ITreeItemContentProvider,
@@ -63,8 +62,8 @@ public class AgDescItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    public AgDescItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AgDescItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -74,11 +73,11 @@ public class AgDescItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDescPropertyDescriptor(object);
+            addDescPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -89,20 +88,19 @@ public class AgDescItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDescPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgDesc_desc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type"),
-                 SclPackage.eINSTANCE.getAgDesc_Desc(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDescPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgDesc_desc_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgDesc_desc_feature", "_UI_AgDesc_type" ),
+                        SclPackage.eINSTANCE.getAgDesc_Desc(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -112,13 +110,11 @@ public class AgDescItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((AgDesc)object).getDesc();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AgDesc_type") :
-            getString("_UI_AgDesc_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( AgDesc ) object ).getDesc();
+        return label == null || label.length() == 0 ? getString( "_UI_AgDesc_type" )
+                : getString( "_UI_AgDesc_type" ) + " " + label;
     }
-
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -128,15 +124,15 @@ public class AgDescItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AgDesc.class)) {
-            case SclPackage.AG_DESC__DESC:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( AgDesc.class ) ) {
+        case SclPackage.AG_DESC__DESC:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -147,8 +143,8 @@ public class AgDescItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
     /**

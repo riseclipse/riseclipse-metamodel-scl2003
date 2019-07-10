@@ -139,8 +139,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         apName = newApName;
         boolean oldApNameESet = apNameESet;
         apNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER_AT__AP_NAME, oldApName, apName, !oldApNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER_AT__AP_NAME, oldApName, apName,
+                    !oldApNameESet ) );
     }
 
     /**
@@ -154,8 +155,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
         boolean oldApNameESet = apNameESet;
         apName = AP_NAME_EDEFAULT;
         apNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER_AT__AP_NAME, oldApName, AP_NAME_EDEFAULT, oldApNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVER_AT__AP_NAME, oldApName,
+                    AP_NAME_EDEFAULT, oldApNameESet ) );
     }
 
     /**
@@ -175,8 +177,8 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public AccessPoint getParentAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.SERVER_AT__PARENT_ACCESS_POINT) return null;
-        return (AccessPoint)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SERVER_AT__PARENT_ACCESS_POINT ) return null;
+        return ( AccessPoint ) eInternalContainer();
     }
 
     /**
@@ -184,8 +186,9 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.SERVER_AT__PARENT_ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint( AccessPoint newParentAccessPoint, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAccessPoint, SclPackage.SERVER_AT__PARENT_ACCESS_POINT,
+                msgs );
         return msgs;
     }
 
@@ -195,20 +198,24 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * @generated
      */
     @Override
-    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
-        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SERVER_AT__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAccessPoint( AccessPoint newParentAccessPoint ) {
+        if( newParentAccessPoint != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SERVER_AT__PARENT_ACCESS_POINT
+                        && newParentAccessPoint != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAccessPoint != null)
-                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SERVER_AT, AccessPoint.class, msgs);
-            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAccessPoint != null )
+                msgs = ( ( InternalEObject ) newParentAccessPoint ).eInverseAdd( this,
+                        SclPackage.ACCESS_POINT__SERVER_AT, AccessPoint.class, msgs );
+            msgs = basicSetParentAccessPoint( newParentAccessPoint, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER_AT__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER_AT__PARENT_ACCESS_POINT,
+                    newParentAccessPoint, newParentAccessPoint ) );
     }
 
     /**
@@ -226,14 +233,19 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToAccessPoint(AccessPoint newRefersToAccessPoint, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToAccessPoint( AccessPoint newRefersToAccessPoint, NotificationChain msgs ) {
         AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
         refersToAccessPoint = newRefersToAccessPoint;
         boolean oldRefersToAccessPointESet = refersToAccessPointESet;
         refersToAccessPointESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, newRefersToAccessPoint,
+                    !oldRefersToAccessPointESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -244,21 +256,24 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * @generated
      */
     @Override
-    public void setRefersToAccessPoint(AccessPoint newRefersToAccessPoint) {
-        if (newRefersToAccessPoint != refersToAccessPoint) {
+    public void setRefersToAccessPoint( AccessPoint newRefersToAccessPoint ) {
+        if( newRefersToAccessPoint != refersToAccessPoint ) {
             NotificationChain msgs = null;
-            if (refersToAccessPoint != null)
-                msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs);
-            if (newRefersToAccessPoint != null)
-                msgs = ((InternalEObject)newRefersToAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs);
-            msgs = basicSetRefersToAccessPoint(newRefersToAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToAccessPoint != null )
+                msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
+                        SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs );
+            if( newRefersToAccessPoint != null )
+                msgs = ( ( InternalEObject ) newRefersToAccessPoint ).eInverseAdd( this,
+                        SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs );
+            msgs = basicSetRefersToAccessPoint( newRefersToAccessPoint, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAccessPointESet = refersToAccessPointESet;
             refersToAccessPointESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, newRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT,
+                        newRefersToAccessPoint, newRefersToAccessPoint, !oldRefersToAccessPointESet ) );
         }
     }
 
@@ -267,14 +282,19 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToAccessPoint(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToAccessPoint( NotificationChain msgs ) {
         AccessPoint oldRefersToAccessPoint = refersToAccessPoint;
         refersToAccessPoint = null;
         boolean oldRefersToAccessPointESet = refersToAccessPointESet;
         refersToAccessPointESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, null, oldRefersToAccessPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, oldRefersToAccessPoint, null,
+                    oldRefersToAccessPointESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -286,17 +306,19 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public void unsetRefersToAccessPoint() {
-        if (refersToAccessPoint != null) {
+        if( refersToAccessPoint != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs);
-            msgs = basicUnsetRefersToAccessPoint(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
+                    SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs );
+            msgs = basicUnsetRefersToAccessPoint( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAccessPointESet = refersToAccessPointESet;
             refersToAccessPointESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT, null, null, oldRefersToAccessPointESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT,
+                        null, null, oldRefersToAccessPointESet ) );
         }
     }
 
@@ -317,17 +339,18 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                if (refersToAccessPoint != null)
-                    msgs = ((InternalEObject)refersToAccessPoint).eInverseRemove(this, SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs);
-                return basicSetRefersToAccessPoint((AccessPoint)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAccessPoint( ( AccessPoint ) otherEnd, msgs );
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            if( refersToAccessPoint != null )
+                msgs = ( ( InternalEObject ) refersToAccessPoint ).eInverseRemove( this,
+                        SclPackage.ACCESS_POINT__REFERRED_BY_SERVER_AT, AccessPoint.class, msgs );
+            return basicSetRefersToAccessPoint( ( AccessPoint ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -337,13 +360,13 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                return basicSetParentAccessPoint(null, msgs);
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                return basicUnsetRefersToAccessPoint(msgs);
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            return basicSetParentAccessPoint( null, msgs );
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            return basicUnsetRefersToAccessPoint( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -353,11 +376,12 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__SERVER_AT, AccessPoint.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ACCESS_POINT__SERVER_AT, AccessPoint.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -367,15 +391,15 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__AP_NAME:
-                return getApName();
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                return getParentAccessPoint();
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                return getRefersToAccessPoint();
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__AP_NAME:
+            return getApName();
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            return getParentAccessPoint();
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            return getRefersToAccessPoint();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -385,18 +409,18 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__AP_NAME:
-                setApName((String)newValue);
-                return;
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)newValue);
-                return;
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                setRefersToAccessPoint((AccessPoint)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__AP_NAME:
+            setApName( ( String ) newValue );
+            return;
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) newValue );
+            return;
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            setRefersToAccessPoint( ( AccessPoint ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -406,18 +430,18 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__AP_NAME:
-                unsetApName();
-                return;
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)null);
-                return;
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                unsetRefersToAccessPoint();
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__AP_NAME:
+            unsetApName();
+            return;
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) null );
+            return;
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            unsetRefersToAccessPoint();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -427,15 +451,15 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVER_AT__AP_NAME:
-                return isSetApName();
-            case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
-                return getParentAccessPoint() != null;
-            case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
-                return isSetRefersToAccessPoint();
+        switch( featureID ) {
+        case SclPackage.SERVER_AT__AP_NAME:
+            return isSetApName();
+        case SclPackage.SERVER_AT__PARENT_ACCESS_POINT:
+            return getParentAccessPoint() != null;
+        case SclPackage.SERVER_AT__REFERS_TO_ACCESS_POINT:
+            return isSetRefersToAccessPoint();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -445,12 +469,15 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (apName: ");
-        if (apNameESet) result.append(apName); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (apName: " );
+        if( apNameESet )
+            result.append( apName );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -458,10 +485,10 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         String messagePrefix = "[SCL links] while resolving link from ServerAt on line " + getLineNumber() + ": ";
-        
-        if(( getApName() == null ) || getApName().isEmpty() ) {
+
+        if( ( getApName() == null ) || getApName().isEmpty() ) {
             console.warning( messagePrefix, "apName is missing" );
             return;
         }
@@ -477,7 +504,8 @@ public class ServerAtImpl extends UnNamingImpl implements ServerAt {
             return;
         }
         setRefersToAccessPoint( ap.getLeft() );
-        console.info( "[SCL links] ServerAt on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToAccessPoint().getLineNumber() );
+        console.info( "[SCL links] ServerAt on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToAccessPoint().getLineNumber() );
     }
 
 } //ServerAtImpl

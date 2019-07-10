@@ -147,7 +147,7 @@ public enum ServiceType implements Enumerator {
             REPORT,
             GOOSE,
             SMV,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Service Type</b></em>' enumerators.
@@ -155,7 +155,7 @@ public enum ServiceType implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ServiceType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< ServiceType > VALUES = Collections.unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Service Type</b></em>' literal with the specified literal value.
@@ -166,9 +166,9 @@ public enum ServiceType implements Enumerator {
      * @generated
      */
     public static ServiceType get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceType result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -184,9 +184,9 @@ public enum ServiceType implements Enumerator {
      * @generated
      */
     public static ServiceType getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceType result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -202,11 +202,15 @@ public enum ServiceType implements Enumerator {
      * @generated
      */
     public static ServiceType get( int value ) {
-        switch (value) {
-            case POLL_VALUE: return POLL;
-            case REPORT_VALUE: return REPORT;
-            case GOOSE_VALUE: return GOOSE;
-            case SMV_VALUE: return SMV;
+        switch( value ) {
+        case POLL_VALUE:
+            return POLL;
+        case REPORT_VALUE:
+            return REPORT;
+        case GOOSE_VALUE:
+            return GOOSE;
+        case SMV_VALUE:
+            return SMV;
         }
         return null;
     }
@@ -251,7 +255,7 @@ public enum ServiceType implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -261,7 +265,7 @@ public enum ServiceType implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -271,7 +275,7 @@ public enum ServiceType implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

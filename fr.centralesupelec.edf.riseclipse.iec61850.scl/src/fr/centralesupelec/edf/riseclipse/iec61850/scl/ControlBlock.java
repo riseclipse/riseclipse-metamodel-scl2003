@@ -231,7 +231,7 @@ public interface ControlBlock extends UnNaming {
      * @see #getRefersToControlWithIEDName()
      * @generated
      */
-    void setRefersToControlWithIEDName(ControlWithIEDName value);
+    void setRefersToControlWithIEDName( ControlWithIEDName value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock#getRefersToControlWithIEDName <em>Refers To Control With IED Name</em>}' reference.

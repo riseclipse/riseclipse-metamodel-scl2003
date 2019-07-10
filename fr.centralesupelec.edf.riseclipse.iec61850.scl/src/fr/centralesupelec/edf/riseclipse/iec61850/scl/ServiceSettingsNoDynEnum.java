@@ -95,7 +95,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
     private static final ServiceSettingsNoDynEnum[] VALUES_ARRAY = new ServiceSettingsNoDynEnum[] {
             CONF,
             FIX,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Service Settings No Dyn Enum</b></em>' enumerators.
@@ -103,7 +103,8 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ServiceSettingsNoDynEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< ServiceSettingsNoDynEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Service Settings No Dyn Enum</b></em>' literal with the specified literal value.
@@ -114,9 +115,9 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -132,9 +133,9 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -150,9 +151,11 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum get( int value ) {
-        switch (value) {
-            case CONF_VALUE: return CONF;
-            case FIX_VALUE: return FIX;
+        switch( value ) {
+        case CONF_VALUE:
+            return CONF;
+        case FIX_VALUE:
+            return FIX;
         }
         return null;
     }
@@ -197,7 +200,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -207,7 +210,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -217,7 +220,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

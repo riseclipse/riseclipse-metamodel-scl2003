@@ -107,13 +107,14 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * @generated
      */
     @Override
-    public void setMax(Integer newMax) {
+    public void setMax( Integer newMax ) {
         Integer oldMax = max;
         max = newMax;
         boolean oldMaxESet = maxESet;
         maxESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX, oldMax, max, !oldMaxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX, oldMax,
+                    max, !oldMaxESet ) );
     }
 
     /**
@@ -127,8 +128,9 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
         boolean oldMaxESet = maxESet;
         max = MAX_EDEFAULT;
         maxESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX, oldMax, MAX_EDEFAULT, oldMaxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX, oldMax,
+                    MAX_EDEFAULT, oldMaxESet ) );
     }
 
     /**
@@ -147,12 +149,12 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
-                return getMax();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
+            return getMax();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -161,13 +163,13 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
-                setMax((Integer)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
+            setMax( ( Integer ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -176,13 +178,13 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
-                unsetMax();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
+            unsetMax();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -191,12 +193,12 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
-                return isSetMax();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SERVICE_WITH_MAX_NON_ZERO__MAX:
+            return isSetMax();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -206,12 +208,15 @@ public class ServiceWithMaxNonZeroImpl extends SclObjectImpl implements ServiceW
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (max: ");
-        if (maxESet) result.append(max); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (max: " );
+        if( maxESet )
+            result.append( max );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

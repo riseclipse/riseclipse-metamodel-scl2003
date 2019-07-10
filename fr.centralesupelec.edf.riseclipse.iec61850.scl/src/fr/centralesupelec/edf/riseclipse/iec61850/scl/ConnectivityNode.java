@@ -117,7 +117,7 @@ public interface ConnectivityNode extends LNodeContainer {
      * @see #getParentBay()
      * @generated
      */
-    void setParentBay(Bay value);
+    void setParentBay( Bay value );
 
     /**
      * Returns the value of the '<em><b>Referred By Terminal</b></em>' reference list.
@@ -137,7 +137,7 @@ public interface ConnectivityNode extends LNodeContainer {
      * @model opposite="RefersToConnectivityNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<Terminal> getReferredByTerminal();
+    EList< Terminal > getReferredByTerminal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}' reference list.
@@ -182,6 +182,6 @@ public interface ConnectivityNode extends LNodeContainer {
      * @see #getParentLine()
      * @generated
      */
-    void setParentLine(Line value);
+    void setParentLine( Line value );
 
 } // ConnectivityNode

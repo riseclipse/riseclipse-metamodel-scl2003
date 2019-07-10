@@ -152,11 +152,12 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void setValue(BigDecimal newValue) {
+    public void setValue( BigDecimal newValue ) {
         BigDecimal oldValue = value;
         value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE, oldValue, value));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE, oldValue,
+                    value ) );
     }
 
     /**
@@ -175,13 +176,14 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void setMultiplier(UnitMultiplierEnum newMultiplier) {
+    public void setMultiplier( UnitMultiplierEnum newMultiplier ) {
         UnitMultiplierEnum oldMultiplier = multiplier;
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
         boolean oldMultiplierESet = multiplierESet;
         multiplierESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER, oldMultiplier, multiplier, !oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER,
+                    oldMultiplier, multiplier, !oldMultiplierESet ) );
     }
 
     /**
@@ -195,8 +197,9 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
         boolean oldMultiplierESet = multiplierESet;
         multiplier = MULTIPLIER_EDEFAULT;
         multiplierESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER, oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER,
+                    oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet ) );
     }
 
     /**
@@ -225,13 +228,14 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void setUnit(String newUnit) {
+    public void setUnit( String newUnit ) {
         String oldUnit = unit;
         unit = newUnit;
         boolean oldUnitESet = unitESet;
         unitESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT, oldUnit, unit, !oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT, oldUnit,
+                    unit, !oldUnitESet ) );
     }
 
     /**
@@ -245,8 +249,9 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
         boolean oldUnitESet = unitESet;
         unit = UNIT_EDEFAULT;
         unitESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT, oldUnit, UNIT_EDEFAULT, oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT, oldUnit,
+                    UNIT_EDEFAULT, oldUnitESet ) );
     }
 
     /**
@@ -265,16 +270,16 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-                return getValue();
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
-                return getMultiplier();
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
-                return getUnit();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
+            return getValue();
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
+            return getMultiplier();
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
+            return getUnit();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -283,19 +288,19 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-                setValue((BigDecimal)newValue);
-                return;
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
-                setMultiplier((UnitMultiplierEnum)newValue);
-                return;
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
-                setUnit((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
+            setValue( ( BigDecimal ) newValue );
+            return;
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
+            setMultiplier( ( UnitMultiplierEnum ) newValue );
+            return;
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
+            setUnit( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -304,19 +309,19 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
-                unsetMultiplier();
-                return;
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
-                unsetUnit();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
+            unsetMultiplier();
+            return;
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
+            unsetUnit();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -325,16 +330,16 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
-                return isSetMultiplier();
-            case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
-                return isSetUnit();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__MULTIPLIER:
+            return isSetMultiplier();
+        case SclPackage.BIT_RATE_IN_MB_PER_SEC__UNIT:
+            return isSetUnit();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -344,16 +349,22 @@ public class BitRateInMbPerSecImpl extends SclObjectImpl implements BitRateInMbP
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (value: ");
-        result.append(value);
-        result.append(", multiplier: ");
-        if (multiplierESet) result.append(multiplier); else result.append("<unset>");
-        result.append(", unit: ");
-        if (unitESet) result.append(unit); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (value: " );
+        result.append( value );
+        result.append( ", multiplier: " );
+        if( multiplierESet )
+            result.append( multiplier );
+        else
+            result.append( "<unset>" );
+        result.append( ", unit: " );
+        if( unitESet )
+            result.append( unit );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -35,16 +34,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DynAssociation;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DynAssociationItemProvider 
-    extends ServiceWithOptionalMaxItemProvider {
+public class DynAssociationItemProvider
+        extends ServiceWithOptionalMaxItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public DynAssociationItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public DynAssociationItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -54,9 +53,9 @@ public class DynAssociationItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -69,8 +68,8 @@ public class DynAssociationItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/DynAssociation"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/DynAssociation" ) );
     }
 
     /**
@@ -80,11 +79,10 @@ public class DynAssociationItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        DynAssociation dynAssociation = (DynAssociation)object;
-        return getString("_UI_DynAssociation_type") + " " + dynAssociation.getLineNumber();
+    public String getText( Object object ) {
+        DynAssociation dynAssociation = ( DynAssociation ) object;
+        return getString( "_UI_DynAssociation_type" ) + " " + dynAssociation.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -94,9 +92,8 @@ public class DynAssociationItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -107,8 +104,8 @@ public class DynAssociationItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

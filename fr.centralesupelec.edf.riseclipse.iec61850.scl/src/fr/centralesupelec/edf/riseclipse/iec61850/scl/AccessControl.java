@@ -59,6 +59,6 @@ public interface AccessControl extends SclObject {
      * @see #getParentLDevice()
      * @generated
      */
-    void setParentLDevice(LDevice value);
+    void setParentLDevice( LDevice value );
 
 } // AccessControl

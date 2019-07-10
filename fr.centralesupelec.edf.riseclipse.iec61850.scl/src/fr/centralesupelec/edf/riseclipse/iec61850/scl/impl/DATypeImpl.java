@@ -94,7 +94,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      * @ordered
      */
-    protected EList<BDA> bda;
+    protected EList< BDA > bda;
 
     /**
      * The cached value of the '{@link #getReferredByAbstractDataAttribute() <em>Referred By Abstract Data Attribute</em>}' reference list.
@@ -104,7 +104,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      * @ordered
      */
-    protected EList<AbstractDataAttribute> referredByAbstractDataAttribute;
+    protected EList< AbstractDataAttribute > referredByAbstractDataAttribute;
 
     /**
      * The cached value of the '{@link #getProtNs() <em>Prot Ns</em>}' containment reference list.
@@ -114,7 +114,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      * @ordered
      */
-    protected EList<ProtNs> protNs;
+    protected EList< ProtNs > protNs;
 
     /**
      * <!-- begin-user-doc -->
@@ -156,8 +156,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         iedType = newIedType;
         boolean oldIedTypeESet = iedTypeESet;
         iedTypeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA_TYPE__IED_TYPE, oldIedType, iedType, !oldIedTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA_TYPE__IED_TYPE, oldIedType, iedType,
+                    !oldIedTypeESet ) );
     }
 
     /**
@@ -171,8 +172,9 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
         boolean oldIedTypeESet = iedTypeESet;
         iedType = IED_TYPE_EDEFAULT;
         iedTypeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DA_TYPE__IED_TYPE, oldIedType, IED_TYPE_EDEFAULT, oldIedTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DA_TYPE__IED_TYPE, oldIedType,
+                    IED_TYPE_EDEFAULT, oldIedTypeESet ) );
     }
 
     /**
@@ -191,9 +193,10 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public EList<BDA> getBDA() {
-        if (bda == null) {
-            bda = new EObjectContainmentWithInverseEList.Unsettable<BDA>(BDA.class, this, SclPackage.DA_TYPE__BDA, SclPackage.BDA__PARENT_DA_TYPE);
+    public EList< BDA > getBDA() {
+        if( bda == null ) {
+            bda = new EObjectContainmentWithInverseEList.Unsettable< BDA >( BDA.class, this, SclPackage.DA_TYPE__BDA,
+                    SclPackage.BDA__PARENT_DA_TYPE );
         }
         return bda;
     }
@@ -205,7 +208,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetBDA() {
-        if (bda != null) ((InternalEList.Unsettable<?>)bda).unset();
+        if( bda != null ) ( ( InternalEList.Unsettable< ? > ) bda ).unset();
     }
 
     /**
@@ -215,7 +218,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public boolean isSetBDA() {
-        return bda != null && ((InternalEList.Unsettable<?>)bda).isSet();
+        return bda != null && ( ( InternalEList.Unsettable< ? > ) bda ).isSet();
     }
 
     /**
@@ -224,9 +227,11 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public EList<AbstractDataAttribute> getReferredByAbstractDataAttribute() {
-        if (referredByAbstractDataAttribute == null) {
-            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE);
+    public EList< AbstractDataAttribute > getReferredByAbstractDataAttribute() {
+        if( referredByAbstractDataAttribute == null ) {
+            referredByAbstractDataAttribute = new EObjectWithInverseEList.Unsettable< AbstractDataAttribute >(
+                    AbstractDataAttribute.class, this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE );
         }
         return referredByAbstractDataAttribute;
     }
@@ -238,7 +243,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetReferredByAbstractDataAttribute() {
-        if (referredByAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).unset();
+        if( referredByAbstractDataAttribute != null )
+            ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataAttribute ).unset();
     }
 
     /**
@@ -248,7 +254,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public boolean isSetReferredByAbstractDataAttribute() {
-        return referredByAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)referredByAbstractDataAttribute).isSet();
+        return referredByAbstractDataAttribute != null
+                && ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataAttribute ).isSet();
     }
 
     /**
@@ -258,8 +265,8 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public DataTypeTemplates getParentDataTypeTemplates() {
-        if (eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES) return null;
-        return (DataTypeTemplates)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES ) return null;
+        return ( DataTypeTemplates ) eInternalContainer();
     }
 
     /**
@@ -267,8 +274,10 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDataTypeTemplates, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs);
+    public NotificationChain basicSetParentDataTypeTemplates( DataTypeTemplates newParentDataTypeTemplates,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDataTypeTemplates,
+                SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs );
         return msgs;
     }
 
@@ -278,20 +287,24 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public void setParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates) {
-        if (newParentDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES && newParentDataTypeTemplates != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDataTypeTemplates))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDataTypeTemplates( DataTypeTemplates newParentDataTypeTemplates ) {
+        if( newParentDataTypeTemplates != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES
+                        && newParentDataTypeTemplates != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDataTypeTemplates != null)
-                msgs = ((InternalEObject)newParentDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, DataTypeTemplates.class, msgs);
-            msgs = basicSetParentDataTypeTemplates(newParentDataTypeTemplates, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDataTypeTemplates != null )
+                msgs = ( ( InternalEObject ) newParentDataTypeTemplates ).eInverseAdd( this,
+                        SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, DataTypeTemplates.class, msgs );
+            msgs = basicSetParentDataTypeTemplates( newParentDataTypeTemplates, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES, newParentDataTypeTemplates, newParentDataTypeTemplates));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES,
+                    newParentDataTypeTemplates, newParentDataTypeTemplates ) );
     }
 
     /**
@@ -300,9 +313,10 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      * @generated
      */
     @Override
-    public EList<ProtNs> getProtNs() {
-        if (protNs == null) {
-            protNs = new EObjectContainmentWithInverseEList.Unsettable<ProtNs>(ProtNs.class, this, SclPackage.DA_TYPE__PROT_NS, SclPackage.PROT_NS__PARENT_DA_TYPE);
+    public EList< ProtNs > getProtNs() {
+        if( protNs == null ) {
+            protNs = new EObjectContainmentWithInverseEList.Unsettable< ProtNs >( ProtNs.class, this,
+                    SclPackage.DA_TYPE__PROT_NS, SclPackage.PROT_NS__PARENT_DA_TYPE );
         }
         return protNs;
     }
@@ -314,7 +328,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void unsetProtNs() {
-        if (protNs != null) ((InternalEList.Unsettable<?>)protNs).unset();
+        if( protNs != null ) ( ( InternalEList.Unsettable< ? > ) protNs ).unset();
     }
 
     /**
@@ -324,7 +338,7 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public boolean isSetProtNs() {
-        return protNs != null && ((InternalEList.Unsettable<?>)protNs).isSet();
+        return protNs != null && ( ( InternalEList.Unsettable< ? > ) protNs ).isSet();
     }
 
     /**
@@ -335,19 +349,21 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__BDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getBDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAbstractDataAttribute()).basicAdd(otherEnd, msgs);
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
-            case SclPackage.DA_TYPE__PROT_NS:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getProtNs()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__BDA:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getBDA() ).basicAdd( otherEnd, msgs );
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAbstractDataAttribute() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
+        case SclPackage.DA_TYPE__PROT_NS:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getProtNs() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -357,17 +373,17 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__BDA:
-                return ((InternalEList<?>)getBDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                return ((InternalEList<?>)getReferredByAbstractDataAttribute()).basicRemove(otherEnd, msgs);
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return basicSetParentDataTypeTemplates(null, msgs);
-            case SclPackage.DA_TYPE__PROT_NS:
-                return ((InternalEList<?>)getProtNs()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__BDA:
+            return ( ( InternalEList< ? > ) getBDA() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            return ( ( InternalEList< ? > ) getReferredByAbstractDataAttribute() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return basicSetParentDataTypeTemplates( null, msgs );
+        case SclPackage.DA_TYPE__PROT_NS:
+            return ( ( InternalEList< ? > ) getProtNs() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -377,11 +393,12 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE, DataTypeTemplates.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DATA_TYPE_TEMPLATES__DA_TYPE,
+                    DataTypeTemplates.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -391,19 +408,19 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__IED_TYPE:
-                return getIedType();
-            case SclPackage.DA_TYPE__BDA:
-                return getBDA();
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                return getReferredByAbstractDataAttribute();
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return getParentDataTypeTemplates();
-            case SclPackage.DA_TYPE__PROT_NS:
-                return getProtNs();
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__IED_TYPE:
+            return getIedType();
+        case SclPackage.DA_TYPE__BDA:
+            return getBDA();
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            return getReferredByAbstractDataAttribute();
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return getParentDataTypeTemplates();
+        case SclPackage.DA_TYPE__PROT_NS:
+            return getProtNs();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -414,27 +431,27 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__IED_TYPE:
-                setIedType((String)newValue);
-                return;
-            case SclPackage.DA_TYPE__BDA:
-                getBDA().clear();
-                getBDA().addAll((Collection<? extends BDA>)newValue);
-                return;
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                getReferredByAbstractDataAttribute().clear();
-                getReferredByAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
-                return;
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                setParentDataTypeTemplates((DataTypeTemplates)newValue);
-                return;
-            case SclPackage.DA_TYPE__PROT_NS:
-                getProtNs().clear();
-                getProtNs().addAll((Collection<? extends ProtNs>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__IED_TYPE:
+            setIedType( ( String ) newValue );
+            return;
+        case SclPackage.DA_TYPE__BDA:
+            getBDA().clear();
+            getBDA().addAll( ( Collection< ? extends BDA > ) newValue );
+            return;
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            getReferredByAbstractDataAttribute().clear();
+            getReferredByAbstractDataAttribute().addAll( ( Collection< ? extends AbstractDataAttribute > ) newValue );
+            return;
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            setParentDataTypeTemplates( ( DataTypeTemplates ) newValue );
+            return;
+        case SclPackage.DA_TYPE__PROT_NS:
+            getProtNs().clear();
+            getProtNs().addAll( ( Collection< ? extends ProtNs > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -444,24 +461,24 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__IED_TYPE:
-                unsetIedType();
-                return;
-            case SclPackage.DA_TYPE__BDA:
-                unsetBDA();
-                return;
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                unsetReferredByAbstractDataAttribute();
-                return;
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                setParentDataTypeTemplates((DataTypeTemplates)null);
-                return;
-            case SclPackage.DA_TYPE__PROT_NS:
-                unsetProtNs();
-                return;
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__IED_TYPE:
+            unsetIedType();
+            return;
+        case SclPackage.DA_TYPE__BDA:
+            unsetBDA();
+            return;
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            unsetReferredByAbstractDataAttribute();
+            return;
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            setParentDataTypeTemplates( ( DataTypeTemplates ) null );
+            return;
+        case SclPackage.DA_TYPE__PROT_NS:
+            unsetProtNs();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -471,19 +488,19 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DA_TYPE__IED_TYPE:
-                return isSetIedType();
-            case SclPackage.DA_TYPE__BDA:
-                return isSetBDA();
-            case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
-                return isSetReferredByAbstractDataAttribute();
-            case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return getParentDataTypeTemplates() != null;
-            case SclPackage.DA_TYPE__PROT_NS:
-                return isSetProtNs();
+        switch( featureID ) {
+        case SclPackage.DA_TYPE__IED_TYPE:
+            return isSetIedType();
+        case SclPackage.DA_TYPE__BDA:
+            return isSetBDA();
+        case SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE:
+            return isSetReferredByAbstractDataAttribute();
+        case SclPackage.DA_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return getParentDataTypeTemplates() != null;
+        case SclPackage.DA_TYPE__PROT_NS:
+            return isSetProtNs();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -493,12 +510,15 @@ public class DATypeImpl extends IDNamingImpl implements DAType {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (iedType: ");
-        if (iedTypeESet) result.append(iedType); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (iedType: " );
+        if( iedTypeESet )
+            result.append( iedType );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

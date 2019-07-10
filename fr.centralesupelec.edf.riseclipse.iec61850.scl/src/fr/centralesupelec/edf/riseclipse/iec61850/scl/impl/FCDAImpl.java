@@ -317,7 +317,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * @generated
      * @ordered
      */
-    protected EList<AbstractDataAttribute> refersToAbstractDataAttribute;
+    protected EList< AbstractDataAttribute > refersToAbstractDataAttribute;
 
     /**
      * <!-- begin-user-doc -->
@@ -359,8 +359,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         daName = newDaName;
         boolean oldDaNameESet = daNameESet;
         daNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DA_NAME, oldDaName, daName, !oldDaNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__DA_NAME, oldDaName, daName,
+                    !oldDaNameESet ) );
     }
 
     /**
@@ -374,8 +375,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldDaNameESet = daNameESet;
         daName = DA_NAME_EDEFAULT;
         daNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DA_NAME, oldDaName, DA_NAME_EDEFAULT, oldDaNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__DA_NAME, oldDaName,
+                    DA_NAME_EDEFAULT, oldDaNameESet ) );
     }
 
     /**
@@ -409,8 +411,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         doName = newDoName;
         boolean oldDoNameESet = doNameESet;
         doNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__DO_NAME, oldDoName, doName, !oldDoNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__DO_NAME, oldDoName, doName,
+                    !oldDoNameESet ) );
     }
 
     /**
@@ -424,8 +427,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldDoNameESet = doNameESet;
         doName = DO_NAME_EDEFAULT;
         doNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__DO_NAME, oldDoName, DO_NAME_EDEFAULT, oldDoNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__DO_NAME, oldDoName,
+                    DO_NAME_EDEFAULT, oldDoNameESet ) );
     }
 
     /**
@@ -459,8 +463,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         fc = newFc == null ? FC_EDEFAULT : newFc;
         boolean oldFcESet = fcESet;
         fcESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__FC, oldFc, fc, !oldFcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__FC, oldFc, fc, !oldFcESet ) );
     }
 
     /**
@@ -474,8 +478,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldFcESet = fcESet;
         fc = FC_EDEFAULT;
         fcESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__FC, oldFc, FC_EDEFAULT, oldFcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__FC, oldFc, FC_EDEFAULT,
+                    oldFcESet ) );
     }
 
     /**
@@ -509,8 +514,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         ix = newIx;
         boolean oldIxESet = ixESet;
         ixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__IX, oldIx, ix, !oldIxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__IX, oldIx, ix, !oldIxESet ) );
     }
 
     /**
@@ -524,8 +529,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldIxESet = ixESet;
         ix = IX_EDEFAULT;
         ixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__IX, oldIx, IX_EDEFAULT, oldIxESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__IX, oldIx, IX_EDEFAULT,
+                    oldIxESet ) );
     }
 
     /**
@@ -559,8 +565,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LD_INST, oldLdInst, ldInst,
+                    !oldLdInstESet ) );
     }
 
     /**
@@ -574,8 +581,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LD_INST, oldLdInst,
+                    LD_INST_EDEFAULT, oldLdInstESet ) );
     }
 
     /**
@@ -609,8 +617,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LN_CLASS, oldLnClass, lnClass,
+                    !oldLnClassESet ) );
     }
 
     /**
@@ -624,8 +633,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -659,8 +669,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__LN_INST, oldLnInst, lnInst,
+                    !oldLnInstESet ) );
     }
 
     /**
@@ -674,8 +685,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__LN_INST, oldLnInst,
+                    LN_INST_EDEFAULT, oldLnInstESet ) );
     }
 
     /**
@@ -709,8 +721,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__PREFIX, oldPrefix, prefix,
+                    !oldPrefixESet ) );
     }
 
     /**
@@ -724,8 +737,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FCDA__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FCDA__PREFIX, oldPrefix,
+                    PREFIX_EDEFAULT, oldPrefixESet ) );
     }
 
     /**
@@ -745,8 +759,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public DataSet getParentDataSet() {
-        if (eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET) return null;
-        return (DataSet)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET ) return null;
+        return ( DataSet ) eInternalContainer();
     }
 
     /**
@@ -754,8 +768,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDataSet(DataSet newParentDataSet, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDataSet, SclPackage.FCDA__PARENT_DATA_SET, msgs);
+    public NotificationChain basicSetParentDataSet( DataSet newParentDataSet, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDataSet, SclPackage.FCDA__PARENT_DATA_SET, msgs );
         return msgs;
     }
 
@@ -765,20 +779,23 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * @generated
      */
     @Override
-    public void setParentDataSet(DataSet newParentDataSet) {
-        if (newParentDataSet != eInternalContainer() || (eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET && newParentDataSet != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDataSet))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDataSet( DataSet newParentDataSet ) {
+        if( newParentDataSet != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.FCDA__PARENT_DATA_SET && newParentDataSet != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDataSet ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDataSet != null)
-                msgs = ((InternalEObject)newParentDataSet).eInverseAdd(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
-            msgs = basicSetParentDataSet(newParentDataSet, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDataSet != null )
+                msgs = ( ( InternalEObject ) newParentDataSet ).eInverseAdd( this, SclPackage.DATA_SET__FCDA,
+                        DataSet.class, msgs );
+            msgs = basicSetParentDataSet( newParentDataSet, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FCDA__PARENT_DATA_SET, newParentDataSet, newParentDataSet));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FCDA__PARENT_DATA_SET, newParentDataSet,
+                    newParentDataSet ) );
     }
 
     /**
@@ -787,9 +804,11 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * @generated
      */
     @Override
-    public EList<AbstractDataAttribute> getRefersToAbstractDataAttribute() {
-        if (refersToAbstractDataAttribute == null) {
-            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse<AbstractDataAttribute>(AbstractDataAttribute.class, this, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA);
+    public EList< AbstractDataAttribute > getRefersToAbstractDataAttribute() {
+        if( refersToAbstractDataAttribute == null ) {
+            refersToAbstractDataAttribute = new EObjectWithInverseEList.Unsettable.ManyInverse< AbstractDataAttribute >(
+                    AbstractDataAttribute.class, this, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA );
         }
         return refersToAbstractDataAttribute;
     }
@@ -801,7 +820,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public void unsetRefersToAbstractDataAttribute() {
-        if (refersToAbstractDataAttribute != null) ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).unset();
+        if( refersToAbstractDataAttribute != null )
+            ( ( InternalEList.Unsettable< ? > ) refersToAbstractDataAttribute ).unset();
     }
 
     /**
@@ -811,7 +831,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public boolean isSetRefersToAbstractDataAttribute() {
-        return refersToAbstractDataAttribute != null && ((InternalEList.Unsettable<?>)refersToAbstractDataAttribute).isSet();
+        return refersToAbstractDataAttribute != null
+                && ( ( InternalEList.Unsettable< ? > ) refersToAbstractDataAttribute ).isSet();
     }
 
     /**
@@ -819,18 +840,19 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDataSet((DataSet)otherEnd, msgs);
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getRefersToAbstractDataAttribute()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDataSet( ( DataSet ) otherEnd, msgs );
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getRefersToAbstractDataAttribute() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -840,13 +862,13 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                return basicSetParentDataSet(null, msgs);
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                return ((InternalEList<?>)getRefersToAbstractDataAttribute()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            return basicSetParentDataSet( null, msgs );
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            return ( ( InternalEList< ? > ) getRefersToAbstractDataAttribute() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -856,11 +878,11 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DATA_SET__FCDA, DataSet.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -870,29 +892,29 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                return getDaName();
-            case SclPackage.FCDA__DO_NAME:
-                return getDoName();
-            case SclPackage.FCDA__FC:
-                return getFc();
-            case SclPackage.FCDA__IX:
-                return getIx();
-            case SclPackage.FCDA__LD_INST:
-                return getLdInst();
-            case SclPackage.FCDA__LN_CLASS:
-                return getLnClass();
-            case SclPackage.FCDA__LN_INST:
-                return getLnInst();
-            case SclPackage.FCDA__PREFIX:
-                return getPrefix();
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                return getParentDataSet();
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                return getRefersToAbstractDataAttribute();
+        switch( featureID ) {
+        case SclPackage.FCDA__DA_NAME:
+            return getDaName();
+        case SclPackage.FCDA__DO_NAME:
+            return getDoName();
+        case SclPackage.FCDA__FC:
+            return getFc();
+        case SclPackage.FCDA__IX:
+            return getIx();
+        case SclPackage.FCDA__LD_INST:
+            return getLdInst();
+        case SclPackage.FCDA__LN_CLASS:
+            return getLnClass();
+        case SclPackage.FCDA__LN_INST:
+            return getLnInst();
+        case SclPackage.FCDA__PREFIX:
+            return getPrefix();
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            return getParentDataSet();
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            return getRefersToAbstractDataAttribute();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -900,43 +922,43 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                setDaName((String)newValue);
-                return;
-            case SclPackage.FCDA__DO_NAME:
-                setDoName((String)newValue);
-                return;
-            case SclPackage.FCDA__FC:
-                setFc((FCEnum)newValue);
-                return;
-            case SclPackage.FCDA__IX:
-                setIx((Integer)newValue);
-                return;
-            case SclPackage.FCDA__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.FCDA__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.FCDA__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.FCDA__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                setParentDataSet((DataSet)newValue);
-                return;
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                getRefersToAbstractDataAttribute().clear();
-                getRefersToAbstractDataAttribute().addAll((Collection<? extends AbstractDataAttribute>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.FCDA__DA_NAME:
+            setDaName( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__DO_NAME:
+            setDoName( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__FC:
+            setFc( ( FCEnum ) newValue );
+            return;
+        case SclPackage.FCDA__IX:
+            setIx( ( Integer ) newValue );
+            return;
+        case SclPackage.FCDA__LD_INST:
+            setLdInst( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__LN_INST:
+            setLnInst( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__PREFIX:
+            setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            setParentDataSet( ( DataSet ) newValue );
+            return;
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            getRefersToAbstractDataAttribute().clear();
+            getRefersToAbstractDataAttribute().addAll( ( Collection< ? extends AbstractDataAttribute > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -946,39 +968,39 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                unsetDaName();
-                return;
-            case SclPackage.FCDA__DO_NAME:
-                unsetDoName();
-                return;
-            case SclPackage.FCDA__FC:
-                unsetFc();
-                return;
-            case SclPackage.FCDA__IX:
-                unsetIx();
-                return;
-            case SclPackage.FCDA__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.FCDA__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.FCDA__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.FCDA__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                setParentDataSet((DataSet)null);
-                return;
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                unsetRefersToAbstractDataAttribute();
-                return;
+        switch( featureID ) {
+        case SclPackage.FCDA__DA_NAME:
+            unsetDaName();
+            return;
+        case SclPackage.FCDA__DO_NAME:
+            unsetDoName();
+            return;
+        case SclPackage.FCDA__FC:
+            unsetFc();
+            return;
+        case SclPackage.FCDA__IX:
+            unsetIx();
+            return;
+        case SclPackage.FCDA__LD_INST:
+            unsetLdInst();
+            return;
+        case SclPackage.FCDA__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.FCDA__LN_INST:
+            unsetLnInst();
+            return;
+        case SclPackage.FCDA__PREFIX:
+            unsetPrefix();
+            return;
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            setParentDataSet( ( DataSet ) null );
+            return;
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            unsetRefersToAbstractDataAttribute();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -988,29 +1010,29 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FCDA__DA_NAME:
-                return isSetDaName();
-            case SclPackage.FCDA__DO_NAME:
-                return isSetDoName();
-            case SclPackage.FCDA__FC:
-                return isSetFc();
-            case SclPackage.FCDA__IX:
-                return isSetIx();
-            case SclPackage.FCDA__LD_INST:
-                return isSetLdInst();
-            case SclPackage.FCDA__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.FCDA__LN_INST:
-                return isSetLnInst();
-            case SclPackage.FCDA__PREFIX:
-                return isSetPrefix();
-            case SclPackage.FCDA__PARENT_DATA_SET:
-                return getParentDataSet() != null;
-            case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
-                return isSetRefersToAbstractDataAttribute();
+        switch( featureID ) {
+        case SclPackage.FCDA__DA_NAME:
+            return isSetDaName();
+        case SclPackage.FCDA__DO_NAME:
+            return isSetDoName();
+        case SclPackage.FCDA__FC:
+            return isSetFc();
+        case SclPackage.FCDA__IX:
+            return isSetIx();
+        case SclPackage.FCDA__LD_INST:
+            return isSetLdInst();
+        case SclPackage.FCDA__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.FCDA__LN_INST:
+            return isSetLnInst();
+        case SclPackage.FCDA__PREFIX:
+            return isSetPrefix();
+        case SclPackage.FCDA__PARENT_DATA_SET:
+            return getParentDataSet() != null;
+        case SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE:
+            return isSetRefersToAbstractDataAttribute();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1020,26 +1042,50 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (daName: ");
-        if (daNameESet) result.append(daName); else result.append("<unset>");
-        result.append(", doName: ");
-        if (doNameESet) result.append(doName); else result.append("<unset>");
-        result.append(", fc: ");
-        if (fcESet) result.append(fc); else result.append("<unset>");
-        result.append(", ix: ");
-        if (ixESet) result.append(ix); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (daName: " );
+        if( daNameESet )
+            result.append( daName );
+        else
+            result.append( "<unset>" );
+        result.append( ", doName: " );
+        if( doNameESet )
+            result.append( doName );
+        else
+            result.append( "<unset>" );
+        result.append( ", fc: " );
+        if( fcESet )
+            result.append( fc );
+        else
+            result.append( "<unset>" );
+        result.append( ", ix: " );
+        if( ixESet )
+            result.append( ix );
+        else
+            result.append( "<unset>" );
+        result.append( ", ldInst: " );
+        if( ldInstESet )
+            result.append( ldInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnInst: " );
+        if( lnInstESet )
+            result.append( lnInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", prefix: " );
+        if( prefixESet )
+            result.append( prefix );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1047,7 +1093,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // ldInst   The LD where the DO resides; shall always be specified except for GSSE
         // prefix   Prefix identifying together with lnInst and lnClass the LN where the DO resides; optional, default value is the empty string
         // lnClass  LN class of the LN where the DO resides; shall always be specified except for GSSE DataLabel empty string
@@ -1066,22 +1112,22 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         String messagePrefix = "[SCL links] while resolving link from FCDA on line " + getLineNumber() + ": ";
 
-        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( messagePrefix, "ldInst is missing" );
             return;
         }
-        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             console.warning( messagePrefix, "lnClass is missing" );
             return;
         }
-        if(( getDoName() == null ) || getDoName().isEmpty() ) {
+        if( ( getDoName() == null ) || getDoName().isEmpty() ) {
             console.warning( messagePrefix, "doName is missing" );
             return;
         }
-        
+
         // The LN we are looking for is in the same IED/Server
         EObject object = this;
-        while(( object != null ) && !( object instanceof AccessPoint ) ) {
+        while( ( object != null ) && !( object instanceof AccessPoint ) ) {
             object = object.eContainer();
         }
         if( object == null ) {
@@ -1090,7 +1136,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         }
         AccessPoint ap = ( AccessPoint ) object;
         console.verbose( messagePrefix, "found Server on line ", ap.getServer().getLineNumber() );
-        
+
         Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap, getLdInst() );
         String mess1 = "LDevice( inst = " + getLdInst() + " )";
         if( lDevice.getLeft() == null ) {
@@ -1098,8 +1144,9 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             return;
         }
         console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLeft().getLineNumber() );
-        
-        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
+                getPrefix() );
         String mess2 = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess2 += ", inst = " + getLnInst();
@@ -1112,49 +1159,48 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         }
         console.verbose( messagePrefix, "found ", mess2, " on line ", anyLN.getLeft().getLineNumber() );
         anyLN.getLeft().buildExplicitLinks( console, false );
-        
+
         if( anyLN.getLeft().getRefersToLNodeType() == null ) return;
-        console.verbose( messagePrefix, "found LNodeType on line ", anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
-        
+        console.verbose( messagePrefix, "found LNodeType on line ",
+                anyLN.getLeft().getRefersToLNodeType().getLineNumber() );
+
         // doName and daName are structured using . as separator
         // The first doName let us find the DO inside the LNodeType
         // referred by the LN
         // The type attribute of the DO give us the DOType with its id attribute
         // If doName is simple, use daName to find the DA in the DOType
         // If doName is structured, find the SDO and its DOType using remaining doName
-        
+
         final String[] doNames = getDoName().split( "\\.", -1 );
-        List< DO > res3a =
-                 anyLN
+        List< DO > res3a = anyLN
                 .getLeft()
                 .getRefersToLNodeType()
                 .getDO()
                 .stream()
-                .filter( do2 -> doNames[0].equals( do2.getName() ))
+                .filter( do2 -> doNames[0].equals( do2.getName() ) )
                 .collect( Collectors.toList() );
-        
+
         String mess3a = "DO ( name = " + doNames[0] + " )";
         if( res3a.size() != 1 ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3a, res3a.size() );
             return;
         }
         console.verbose( messagePrefix, "found ", mess3a, " on line ", res3a.get( 0 ).getLineNumber() );
-        
+
         res3a.get( 0 ).buildExplicitLinks( console, false );
         DOType doType = res3a.get( 0 ).getRefersToDOType();
         // No error or warning message here: if this happens, error should have been detected before
         if( doType == null ) return;
         console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
-        
+
         for( int i = 1; i < doNames.length; ++i ) {
             String name = doNames[i];
-            List< SDO > res3b =
-                    doType
+            List< SDO > res3b = doType
                     .getSDO()
                     .stream()
-                    .filter( sdo ->  name.equals( sdo.getName() ))
+                    .filter( sdo -> name.equals( sdo.getName() ) )
                     .collect( Collectors.toList() );
-            
+
             String mess3b = "SDO ( name = " + name + " ) in DOType on line " + doType.getLineNumber();
             if( res3b.size() != 1 ) {
                 SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3b, res3b.size() );
@@ -1167,19 +1213,18 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             if( doType == null ) return;
             console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
         }
-        
+
         if( getDaName() != null ) {
             // The first daName gives us the DA inside the DOType
             // If daName is structured, find the DAType and its BDA using remaining doName
-            
+
             final String[] daNames = getDaName().split( "\\.", -1 );
-            List< DA > res4a =
-                     doType
+            List< DA > res4a = doType
                     .getDA()
                     .stream()
-                    .filter(  da -> da.getName().equals( daNames[0] ))
+                    .filter( da -> da.getName().equals( daNames[0] ) )
                     .collect( Collectors.toList() );
-            
+
             String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
             if( res4a.size() != 1 ) {
                 SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4a, res4a.size() );
@@ -1187,20 +1232,20 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             }
             AbstractDataAttribute da = res4a.get( 0 );
             console.verbose( messagePrefix, "found ", mess4a, " on line ", da.getLineNumber() );
-            
+
             for( int i = 1; i < daNames.length; ++i ) {
                 da.buildExplicitLinks( console, false );
-                
+
                 String name = daNames[i];
-                List< BDA > res4b =
-                        da
+                List< BDA > res4b = da
                         .getRefersToDAType()
                         .getBDA()
                         .stream()
-                        .filter(  bda -> name.equals(  bda.getName() ))
+                        .filter( bda -> name.equals( bda.getName() ) )
                         .collect( Collectors.toList() );
-                        
-                String mess4b = "BDA ( name = " + name + " ) in DAType on line " + da.getRefersToDAType().getLineNumber();
+
+                String mess4b = "BDA ( name = " + name + " ) in DAType on line "
+                        + da.getRefersToDAType().getLineNumber();
                 if( res4b.size() != 1 ) {
                     SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
                     return;
@@ -1210,28 +1255,32 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             }
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
-            
-            console.info( "[SCL links] FCDA on line ", getLineNumber(), " refers to AbstractDataAttribute ( name = ", da.getName(), " ) on line ", da.getLineNumber() );
+
+            console.info( "[SCL links] FCDA on line ", getLineNumber(), " refers to AbstractDataAttribute ( name = ",
+                    da.getName(), " ) on line ", da.getLineNumber() );
             getRefersToAbstractDataAttribute().add( da );
         }
-        
+
         else {
             // daName – if missing, all attributes with functional characteristic given by fc are selected.
             if( getFc() == null ) return;
-            
+
             doType
-            .getDA()
-            .stream()
-            .filter(  da -> da.getFc().equals( getFc() ))
-            .collect( Collectors.toCollection(() -> getRefersToAbstractDataAttribute() ));
-            
+                    .getDA()
+                    .stream()
+                    .filter( da -> da.getFc().equals( getFc() ) )
+                    .collect( Collectors.toCollection( () -> getRefersToAbstractDataAttribute() ) );
+
             if( getRefersToAbstractDataAttribute().size() > 0 ) {
                 for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                    console.info( "[SCL links] FCDA on line ", getLineNumber(), " refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ", a.getLineNumber() );
+                    console.info( "[SCL links] FCDA on line ", getLineNumber(),
+                            " refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
+                            a.getLineNumber() );
                 }
             }
             else {
-                console.warning( "[SCL links] FCDA (line ", getLineNumber(), ") does not refer to any AbstractDataAttribute" );
+                console.warning( "[SCL links] FCDA (line ", getLineNumber(),
+                        ") does not refer to any AbstractDataAttribute" );
             }
         }
 

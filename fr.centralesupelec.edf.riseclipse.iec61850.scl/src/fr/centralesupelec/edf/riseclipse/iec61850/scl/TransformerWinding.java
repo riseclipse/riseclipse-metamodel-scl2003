@@ -114,7 +114,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @model opposite="ParentTransformerWinding" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.TransformerWinding#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -214,7 +214,7 @@ public interface TransformerWinding extends AbstractConductingEquipment {
      * @see #getParentPowerTransformer()
      * @generated
      */
-    void setParentPowerTransformer(PowerTransformer value);
+    void setParentPowerTransformer( PowerTransformer value );
 
     /**
      * Returns the value of the '<em><b>Tap Changer</b></em>' containment reference.

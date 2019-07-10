@@ -115,7 +115,7 @@ public interface SubFunction extends PowerSystemResource {
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConductingEquipment> getConductingEquipment();
+    EList< ConductingEquipment > getConductingEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
@@ -160,7 +160,7 @@ public interface SubFunction extends PowerSystemResource {
      * @see #getParentFunction()
      * @generated
      */
-    void setParentFunction(Function value);
+    void setParentFunction( Function value );
 
     /**
      * Returns the value of the '<em><b>General Equipment</b></em>' containment reference list.
@@ -180,7 +180,7 @@ public interface SubFunction extends PowerSystemResource {
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<GeneralEquipment> getGeneralEquipment();
+    EList< GeneralEquipment > getGeneralEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getGeneralEquipment <em>General Equipment</em>}' containment reference list.
@@ -221,7 +221,7 @@ public interface SubFunction extends PowerSystemResource {
      * @model opposite="ParentSubFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubFunction> getSubSubFunctions();
+    EList< SubFunction > getSubSubFunctions();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubFunction#getSubSubFunctions <em>Sub Sub Functions</em>}' containment reference list.
@@ -266,6 +266,6 @@ public interface SubFunction extends PowerSystemResource {
      * @see #getParentSubFunction()
      * @generated
      */
-    void setParentSubFunction(SubFunction value);
+    void setParentSubFunction( SubFunction value );
 
 } // SubFunction

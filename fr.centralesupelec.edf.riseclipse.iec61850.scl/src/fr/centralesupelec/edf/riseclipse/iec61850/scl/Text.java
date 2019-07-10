@@ -115,7 +115,7 @@ public interface Text extends SclObject {
      * @see #getParentBaseElement()
      * @generated
      */
-    void setParentBaseElement(BaseElement value);
+    void setParentBaseElement( BaseElement value );
 
     /**
      * Returns the value of the '<em><b>Parent Header</b></em>' container reference.
@@ -139,7 +139,7 @@ public interface Text extends SclObject {
      * @see #getParentHeader()
      * @generated
      */
-    void setParentHeader(Header value);
+    void setParentHeader( Header value );
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.

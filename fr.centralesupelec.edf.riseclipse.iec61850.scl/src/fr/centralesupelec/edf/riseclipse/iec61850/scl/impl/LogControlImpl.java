@@ -69,7 +69,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      * @ordered
      */
-    protected static final Integer BUF_TIME_EDEFAULT = new Integer(0);
+    protected static final Integer BUF_TIME_EDEFAULT = new Integer( 0 );
 
     /**
      * The cached value of the '{@link #getBufTime() <em>Buf Time</em>}' attribute.
@@ -371,8 +371,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         bufTime = newBufTime;
         boolean oldBufTimeESet = bufTimeESet;
         bufTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, bufTime, !oldBufTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime,
+                    bufTime, !oldBufTimeESet ) );
     }
 
     /**
@@ -386,8 +387,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldBufTimeESet = bufTimeESet;
         bufTime = BUF_TIME_EDEFAULT;
         bufTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime, BUF_TIME_EDEFAULT, oldBufTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__BUF_TIME, oldBufTime,
+                    BUF_TIME_EDEFAULT, oldBufTimeESet ) );
     }
 
     /**
@@ -421,8 +423,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, ldInst,
+                    !oldLdInstESet ) );
     }
 
     /**
@@ -436,8 +439,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__LD_INST, oldLdInst,
+                    LD_INST_EDEFAULT, oldLdInstESet ) );
     }
 
     /**
@@ -471,8 +475,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass,
+                    lnClass, !oldLnClassESet ) );
     }
 
     /**
@@ -486,8 +491,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -521,8 +527,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, lnInst,
+                    !oldLnInstESet ) );
     }
 
     /**
@@ -536,8 +543,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__LN_INST, oldLnInst,
+                    LN_INST_EDEFAULT, oldLnInstESet ) );
     }
 
     /**
@@ -571,8 +579,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         logEna = newLogEna;
         boolean oldLogEnaESet = logEnaESet;
         logEnaESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, logEna, !oldLogEnaESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, logEna,
+                    !oldLogEnaESet ) );
     }
 
     /**
@@ -586,8 +595,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldLogEnaESet = logEnaESet;
         logEna = LOG_ENA_EDEFAULT;
         logEnaESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna, LOG_ENA_EDEFAULT, oldLogEnaESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_ENA, oldLogEna,
+                    LOG_ENA_EDEFAULT, oldLogEnaESet ) );
     }
 
     /**
@@ -621,8 +631,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         logName = newLogName;
         boolean oldLogNameESet = logNameESet;
         logNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, logName, !oldLogNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName,
+                    logName, !oldLogNameESet ) );
     }
 
     /**
@@ -636,8 +647,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldLogNameESet = logNameESet;
         logName = LOG_NAME_EDEFAULT;
         logNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName, LOG_NAME_EDEFAULT, oldLogNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__LOG_NAME, oldLogName,
+                    LOG_NAME_EDEFAULT, oldLogNameESet ) );
     }
 
     /**
@@ -671,8 +683,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, prefix,
+                    !oldPrefixESet ) );
     }
 
     /**
@@ -686,8 +699,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__PREFIX, oldPrefix,
+                    PREFIX_EDEFAULT, oldPrefixESet ) );
     }
 
     /**
@@ -721,8 +735,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         reasonCode = newReasonCode;
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCodeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, reasonCode, !oldReasonCodeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode,
+                    reasonCode, !oldReasonCodeESet ) );
     }
 
     /**
@@ -736,8 +751,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         boolean oldReasonCodeESet = reasonCodeESet;
         reasonCode = REASON_CODE_EDEFAULT;
         reasonCodeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REASON_CODE, oldReasonCode, REASON_CODE_EDEFAULT, oldReasonCodeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__REASON_CODE,
+                    oldReasonCode, REASON_CODE_EDEFAULT, oldReasonCodeESet ) );
     }
 
     /**
@@ -757,8 +773,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if (eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN ) return null;
+        return ( AnyLN ) eInternalContainer();
     }
 
     /**
@@ -766,8 +782,8 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.LOG_CONTROL__PARENT_ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN( AnyLN newParentAnyLN, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAnyLN, SclPackage.LOG_CONTROL__PARENT_ANY_LN, msgs );
         return msgs;
     }
 
@@ -777,20 +793,23 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      */
     @Override
-    public void setParentAnyLN(AnyLN newParentAnyLN) {
-        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN && newParentAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAnyLN( AnyLN newParentAnyLN ) {
+        if( newParentAnyLN != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.LOG_CONTROL__PARENT_ANY_LN && newParentAnyLN != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAnyLN != null)
-                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAnyLN != null )
+                msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__LOG_CONTROL,
+                        AnyLN.class, msgs );
+            msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__PARENT_ANY_LN,
+                    newParentAnyLN, newParentAnyLN ) );
     }
 
     /**
@@ -813,9 +832,14 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         refersToAnyLN = newRefersToAnyLN;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN,
+                    !oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -827,20 +851,23 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
-        if (newRefersToAnyLN != refersToAnyLN) {
+        if( newRefersToAnyLN != refersToAnyLN ) {
             NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
+            if( newRefersToAnyLN != null )
+                msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this,
+                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
+            msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN,
+                        newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
         }
     }
 
@@ -854,9 +881,13 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         refersToAnyLN = null;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -868,17 +899,19 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
+        if( refersToAnyLN != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                    SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
+            msgs = basicUnsetRefersToAnyLN( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN,
+                        null, null, oldRefersToAnyLNESet ) );
         }
     }
 
@@ -907,14 +940,18 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToLog(Log newRefersToLog, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToLog( Log newRefersToLog, NotificationChain msgs ) {
         Log oldRefersToLog = refersToLog;
         refersToLog = newRefersToLog;
         boolean oldRefersToLogESet = refersToLogESet;
         refersToLogESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_LOG, oldRefersToLog, newRefersToLog, !oldRefersToLogESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.LOG_CONTROL__REFERS_TO_LOG, oldRefersToLog, newRefersToLog, !oldRefersToLogESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -925,21 +962,24 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * @generated
      */
     @Override
-    public void setRefersToLog(Log newRefersToLog) {
-        if (newRefersToLog != refersToLog) {
+    public void setRefersToLog( Log newRefersToLog ) {
+        if( newRefersToLog != refersToLog ) {
             NotificationChain msgs = null;
-            if (refersToLog != null)
-                msgs = ((InternalEObject)refersToLog).eInverseRemove(this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs);
-            if (newRefersToLog != null)
-                msgs = ((InternalEObject)newRefersToLog).eInverseAdd(this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs);
-            msgs = basicSetRefersToLog(newRefersToLog, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToLog != null )
+                msgs = ( ( InternalEObject ) refersToLog ).eInverseRemove( this,
+                        SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs );
+            if( newRefersToLog != null )
+                msgs = ( ( InternalEObject ) newRefersToLog ).eInverseAdd( this,
+                        SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs );
+            msgs = basicSetRefersToLog( newRefersToLog, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToLogESet = refersToLogESet;
             refersToLogESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_LOG, newRefersToLog, newRefersToLog, !oldRefersToLogESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.LOG_CONTROL__REFERS_TO_LOG,
+                        newRefersToLog, newRefersToLog, !oldRefersToLogESet ) );
         }
     }
 
@@ -948,14 +988,18 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToLog(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToLog( NotificationChain msgs ) {
         Log oldRefersToLog = refersToLog;
         refersToLog = null;
         boolean oldRefersToLogESet = refersToLogESet;
         refersToLogESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_LOG, oldRefersToLog, null, oldRefersToLogESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LOG_CONTROL__REFERS_TO_LOG, oldRefersToLog, null, oldRefersToLogESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -967,17 +1011,19 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public void unsetRefersToLog() {
-        if (refersToLog != null) {
+        if( refersToLog != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToLog).eInverseRemove(this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs);
-            msgs = basicUnsetRefersToLog(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToLog ).eInverseRemove( this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL,
+                    Log.class, msgs );
+            msgs = basicUnsetRefersToLog( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToLogESet = refersToLogESet;
             refersToLogESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_LOG, null, null, oldRefersToLogESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.LOG_CONTROL__REFERS_TO_LOG, null,
+                        null, oldRefersToLogESet ) );
         }
     }
 
@@ -998,21 +1044,23 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                if (refersToLog != null)
-                    msgs = ((InternalEObject)refersToLog).eInverseRemove(this, SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs);
-                return basicSetRefersToLog((Log)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, AnyLN.class, msgs );
+            return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            if( refersToLog != null )
+                msgs = ( ( InternalEObject ) refersToLog ).eInverseRemove( this,
+                        SclPackage.LOG__REFERRED_BY_LOG_CONTROL, Log.class, msgs );
+            return basicSetRefersToLog( ( Log ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1022,15 +1070,15 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                return basicSetParentAnyLN(null, msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                return basicUnsetRefersToLog(msgs);
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            return basicSetParentAnyLN( null, msgs );
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            return basicUnsetRefersToAnyLN( msgs );
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            return basicUnsetRefersToLog( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1040,11 +1088,11 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ANY_LN__LOG_CONTROL, AnyLN.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -1054,31 +1102,31 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                return getBufTime();
-            case SclPackage.LOG_CONTROL__LD_INST:
-                return getLdInst();
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                return getLnClass();
-            case SclPackage.LOG_CONTROL__LN_INST:
-                return getLnInst();
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                return getLogEna();
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                return getLogName();
-            case SclPackage.LOG_CONTROL__PREFIX:
-                return getPrefix();
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                return getReasonCode();
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                return getParentAnyLN();
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                return getRefersToLog();
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__BUF_TIME:
+            return getBufTime();
+        case SclPackage.LOG_CONTROL__LD_INST:
+            return getLdInst();
+        case SclPackage.LOG_CONTROL__LN_CLASS:
+            return getLnClass();
+        case SclPackage.LOG_CONTROL__LN_INST:
+            return getLnInst();
+        case SclPackage.LOG_CONTROL__LOG_ENA:
+            return getLogEna();
+        case SclPackage.LOG_CONTROL__LOG_NAME:
+            return getLogName();
+        case SclPackage.LOG_CONTROL__PREFIX:
+            return getPrefix();
+        case SclPackage.LOG_CONTROL__REASON_CODE:
+            return getReasonCode();
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            return getParentAnyLN();
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            return getRefersToAnyLN();
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            return getRefersToLog();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1088,42 +1136,42 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                setBufTime((Integer)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                setLogEna((Boolean)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                setLogName((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                setReasonCode((Boolean)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                setRefersToLog((Log)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__BUF_TIME:
+            setBufTime( ( Integer ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__LD_INST:
+            setLdInst( ( String ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__LN_INST:
+            setLnInst( ( String ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__LOG_ENA:
+            setLogEna( ( Boolean ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__LOG_NAME:
+            setLogName( ( String ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__PREFIX:
+            setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__REASON_CODE:
+            setReasonCode( ( Boolean ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            setRefersToAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            setRefersToLog( ( Log ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1133,42 +1181,42 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                unsetBufTime();
-                return;
-            case SclPackage.LOG_CONTROL__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.LOG_CONTROL__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                unsetLogEna();
-                return;
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                unsetLogName();
-                return;
-            case SclPackage.LOG_CONTROL__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                unsetReasonCode();
-                return;
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)null);
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                unsetRefersToLog();
-                return;
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__BUF_TIME:
+            unsetBufTime();
+            return;
+        case SclPackage.LOG_CONTROL__LD_INST:
+            unsetLdInst();
+            return;
+        case SclPackage.LOG_CONTROL__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.LOG_CONTROL__LN_INST:
+            unsetLnInst();
+            return;
+        case SclPackage.LOG_CONTROL__LOG_ENA:
+            unsetLogEna();
+            return;
+        case SclPackage.LOG_CONTROL__LOG_NAME:
+            unsetLogName();
+            return;
+        case SclPackage.LOG_CONTROL__PREFIX:
+            unsetPrefix();
+            return;
+        case SclPackage.LOG_CONTROL__REASON_CODE:
+            unsetReasonCode();
+            return;
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) null );
+            return;
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            unsetRefersToAnyLN();
+            return;
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            unsetRefersToLog();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1178,31 +1226,31 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.LOG_CONTROL__BUF_TIME:
-                return isSetBufTime();
-            case SclPackage.LOG_CONTROL__LD_INST:
-                return isSetLdInst();
-            case SclPackage.LOG_CONTROL__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.LOG_CONTROL__LN_INST:
-                return isSetLnInst();
-            case SclPackage.LOG_CONTROL__LOG_ENA:
-                return isSetLogEna();
-            case SclPackage.LOG_CONTROL__LOG_NAME:
-                return isSetLogName();
-            case SclPackage.LOG_CONTROL__PREFIX:
-                return isSetPrefix();
-            case SclPackage.LOG_CONTROL__REASON_CODE:
-                return isSetReasonCode();
-            case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
-                return getParentAnyLN() != null;
-            case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
-            case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
-                return isSetRefersToLog();
+        switch( featureID ) {
+        case SclPackage.LOG_CONTROL__BUF_TIME:
+            return isSetBufTime();
+        case SclPackage.LOG_CONTROL__LD_INST:
+            return isSetLdInst();
+        case SclPackage.LOG_CONTROL__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.LOG_CONTROL__LN_INST:
+            return isSetLnInst();
+        case SclPackage.LOG_CONTROL__LOG_ENA:
+            return isSetLogEna();
+        case SclPackage.LOG_CONTROL__LOG_NAME:
+            return isSetLogName();
+        case SclPackage.LOG_CONTROL__PREFIX:
+            return isSetPrefix();
+        case SclPackage.LOG_CONTROL__REASON_CODE:
+            return isSetReasonCode();
+        case SclPackage.LOG_CONTROL__PARENT_ANY_LN:
+            return getParentAnyLN() != null;
+        case SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN:
+            return isSetRefersToAnyLN();
+        case SclPackage.LOG_CONTROL__REFERS_TO_LOG:
+            return isSetRefersToLog();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1212,26 +1260,50 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (bufTime: ");
-        if (bufTimeESet) result.append(bufTime); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", logEna: ");
-        if (logEnaESet) result.append(logEna); else result.append("<unset>");
-        result.append(", logName: ");
-        if (logNameESet) result.append(logName); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", reasonCode: ");
-        if (reasonCodeESet) result.append(reasonCode); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (bufTime: " );
+        if( bufTimeESet )
+            result.append( bufTime );
+        else
+            result.append( "<unset>" );
+        result.append( ", ldInst: " );
+        if( ldInstESet )
+            result.append( ldInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnInst: " );
+        if( lnInstESet )
+            result.append( lnInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", logEna: " );
+        if( logEnaESet )
+            result.append( logEna );
+        else
+            result.append( "<unset>" );
+        result.append( ", logName: " );
+        if( logNameESet )
+            result.append( logName );
+        else
+            result.append( "<unset>" );
+        result.append( ", prefix: " );
+        if( prefixESet )
+            result.append( prefix );
+        else
+            result.append( "<unset>" );
+        result.append( ", reasonCode: " );
+        if( reasonCodeESet )
+            result.append( reasonCode );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1239,7 +1311,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // name         the name of the log control block
         // desc         a description text
         // datSet       the name of the data set whose values shall be logged; datSet should only be missing within an ICD-File,
@@ -1252,22 +1324,22 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
         // logName      Relative name of the log within its hosting LN; name of the log element
         // logEna       TRUE enables immediate logging; FALSE prohibits logging until enabled online
         // reasonCode   If true, the reason code for the event trigger is also stored into the log – see IEC 61850-7-2
-        
+
         String messagePrefix = "[SCL links] while resolving link from LogControl on line " + getLineNumber() + ": ";
-        
-        if(( getLogName() == null ) || getLogName().isEmpty() ) {
+
+        if( ( getLogName() == null ) || getLogName().isEmpty() ) {
             console.warning( messagePrefix, "logName is missing" );
             return;
         }
-        
+
         // No error or warning messages here: if this happens, error should have been detected before
         IED ied = SclUtilities.getMyIED( this );
         if( ied == null ) return;
         if( getParentAnyLN() == null ) return;
         LDevice lDevice = getParentAnyLN().getParentLDevice();
         if( lDevice == null ) return;
-        
-        if(( getLdInst() != null ) && ( ! getLdInst().isEmpty() )) {
+
+        if( ( getLdInst() != null ) && ( !getLdInst().isEmpty() ) ) {
             Pair< LDevice, Integer > lDevice1 = SclUtilities.getLDevice( ied, getLdInst() );
             String mess1 = "LDevice( inst = " + getLdInst() + " )";
             if( lDevice1.getLeft() == null ) {
@@ -1278,7 +1350,7 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             console.verbose( messagePrefix, "found ", mess1, " on line ", lDevice.getLineNumber() );
         }
 
-        Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice, getLnClass(), getLnInst(), getPrefix() );
         String mess2 = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess2 += ", inst = " + getLnInst();
@@ -1290,8 +1362,9 @@ public class LogControlImpl extends ControlWithTriggerOptImpl implements LogCont
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] LogControl on line ", getLineNumber(), " refers to ", mess2, " on line ", getRefersToAnyLN().getLineNumber() );
-        
+        console.info( "[SCL links] LogControl on line ", getLineNumber(), " refers to ", mess2, " on line ",
+                getRefersToAnyLN().getLineNumber() );
+
     }
 
 } //LogControlImpl

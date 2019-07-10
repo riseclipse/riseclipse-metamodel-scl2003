@@ -59,6 +59,6 @@ public interface ConfDataSet extends ServiceForConfDataSet {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // ConfDataSet

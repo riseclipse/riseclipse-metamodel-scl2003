@@ -59,6 +59,6 @@ public interface IssuerName extends Cert {
      * @see #getParentCertificate()
      * @generated
      */
-    void setParentCertificate(Certificate value);
+    void setParentCertificate( Certificate value );
 
 } // IssuerName

@@ -66,7 +66,7 @@ public interface AbstractDataObject extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getName <em>Name</em>}' attribute.
@@ -115,7 +115,7 @@ public interface AbstractDataObject extends UnNaming {
      * @see #getType()
      * @generated
      */
-    void setType(String value);
+    void setType( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getType <em>Type</em>}' attribute.
@@ -166,7 +166,7 @@ public interface AbstractDataObject extends UnNaming {
      * @see #getRefersToDOType()
      * @generated
      */
-    void setRefersToDOType(DOType value);
+    void setRefersToDOType( DOType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getRefersToDOType <em>Refers To DO Type</em>}' reference.
@@ -205,7 +205,7 @@ public interface AbstractDataObject extends UnNaming {
      * @model opposite="RefersToAbstractDataObject" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<ExtRef> getReferredByExtRef();
+    EList< ExtRef > getReferredByExtRef();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject#getReferredByExtRef <em>Referred By Ext Ref</em>}' reference list.

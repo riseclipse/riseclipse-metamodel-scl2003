@@ -115,7 +115,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Goose</b></em>' attribute.
@@ -145,7 +145,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #getGoose()
      * @generated
      */
-    void setGoose(Boolean value);
+    void setGoose( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getGoose <em>Goose</em>}' attribute.
@@ -198,7 +198,7 @@ public interface GOOSE extends ServiceWithMax {
      * @see #getRGOOSE()
      * @generated
      */
-    void setRGOOSE(Boolean value);
+    void setRGOOSE( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GOOSE#getRGOOSE <em>RGOOSE</em>}' attribute.

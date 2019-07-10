@@ -58,7 +58,7 @@ public interface GeneralEquipmentContainer extends PowerSystemResource {
      * @model opposite="ParentGeneralEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Function> getFunction();
+    EList< Function > getFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getFunction <em>Function</em>}' containment reference list.
@@ -99,7 +99,7 @@ public interface GeneralEquipmentContainer extends PowerSystemResource {
      * @model opposite="ParentGeneralEquipmentContainer" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<GeneralEquipment> getGeneralEquipment();
+    EList< GeneralEquipment > getGeneralEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipmentContainer#getGeneralEquipment <em>General Equipment</em>}' containment reference list.

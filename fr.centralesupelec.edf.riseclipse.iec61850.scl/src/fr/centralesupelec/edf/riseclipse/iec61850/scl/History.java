@@ -62,7 +62,7 @@ public interface History extends SclObject {
      * @see #getParentHeader()
      * @generated
      */
-    void setParentHeader(Header value);
+    void setParentHeader( Header value );
 
     /**
      * Returns the value of the '<em><b>Hitem</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface History extends SclObject {
      * @model opposite="ParentHistory" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Hitem> getHitem();
+    EList< Hitem > getHitem();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.History#getHitem <em>Hitem</em>}' containment reference list.

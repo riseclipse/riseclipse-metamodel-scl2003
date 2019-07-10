@@ -122,7 +122,7 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
      * @see #getParentAbstractConductingEquipment()
      * @generated
      */
-    void setParentAbstractConductingEquipment(AbstractConductingEquipment value);
+    void setParentAbstractConductingEquipment( AbstractConductingEquipment value );
 
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
@@ -142,7 +142,7 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
      * @model opposite="ParentSubEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SubEquipment#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -187,7 +187,7 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
      * @see #getParentPowerTransformer()
      * @generated
      */
-    void setParentPowerTransformer(PowerTransformer value);
+    void setParentPowerTransformer( PowerTransformer value );
 
     /**
      * Returns the value of the '<em><b>Parent Tap Changer</b></em>' container reference.
@@ -211,6 +211,6 @@ public interface SubEquipment extends PowerSystemResource, AgVirtual {
      * @see #getParentTapChanger()
      * @generated
      */
-    void setParentTapChanger(TapChanger value);
+    void setParentTapChanger( TapChanger value );
 
 } // SubEquipment

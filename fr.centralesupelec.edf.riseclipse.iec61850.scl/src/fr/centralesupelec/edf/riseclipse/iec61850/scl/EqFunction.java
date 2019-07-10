@@ -64,7 +64,7 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentConductingEquipment()
      * @generated
      */
-    void setParentConductingEquipment(ConductingEquipment value);
+    void setParentConductingEquipment( ConductingEquipment value );
 
     /**
      * Returns the value of the '<em><b>Parent General Equipment</b></em>' container reference.
@@ -88,7 +88,7 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentGeneralEquipment()
      * @generated
      */
-    void setParentGeneralEquipment(GeneralEquipment value);
+    void setParentGeneralEquipment( GeneralEquipment value );
 
     /**
      * Returns the value of the '<em><b>Parent Power Transformer</b></em>' container reference.
@@ -112,7 +112,7 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentPowerTransformer()
      * @generated
      */
-    void setParentPowerTransformer(PowerTransformer value);
+    void setParentPowerTransformer( PowerTransformer value );
 
     /**
      * Returns the value of the '<em><b>Parent Sub Equipment</b></em>' container reference.
@@ -136,7 +136,7 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentSubEquipment()
      * @generated
      */
-    void setParentSubEquipment(SubEquipment value);
+    void setParentSubEquipment( SubEquipment value );
 
     /**
      * Returns the value of the '<em><b>Parent Transformer Winding</b></em>' container reference.
@@ -160,7 +160,7 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentTransformerWinding()
      * @generated
      */
-    void setParentTransformerWinding(TransformerWinding value);
+    void setParentTransformerWinding( TransformerWinding value );
 
     /**
      * Returns the value of the '<em><b>Parent Tap Changer</b></em>' container reference.
@@ -184,6 +184,6 @@ public interface EqFunction extends AbstractEqFuncSubFunc {
      * @see #getParentTapChanger()
      * @generated
      */
-    void setParentTapChanger(TapChanger value);
+    void setParentTapChanger( TapChanger value );
 
 } // EqFunction

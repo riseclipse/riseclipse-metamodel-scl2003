@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public TapChangerItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public TapChangerItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,12 +58,12 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addVirtualPropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
+            addVirtualPropertyDescriptor( object );
+            addTypePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,20 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_TapChanger_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TapChanger_type_feature", "_UI_TapChanger_type"),
-                 SclPackage.eINSTANCE.getTapChanger_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_TapChanger_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_TapChanger_type_feature",
+                                "_UI_TapChanger_type" ),
+                        SclPackage.eINSTANCE.getTapChanger_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +96,20 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addVirtualPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgVirtual_virtual_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature", "_UI_AgVirtual_type"),
-                 SclPackage.eINSTANCE.getAgVirtual_Virtual(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addVirtualPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgVirtual_virtual_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgVirtual_virtual_feature",
+                                "_UI_AgVirtual_type" ),
+                        SclPackage.eINSTANCE.getAgVirtual_Virtual(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -122,11 +121,11 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getTapChanger_EqFunction());
-            childrenFeatures.add(SclPackage.eINSTANCE.getTapChanger_SubEquipment());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getTapChanger_EqFunction() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getTapChanger_SubEquipment() );
         }
         return childrenFeatures;
     }
@@ -137,11 +136,11 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -151,8 +150,8 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/TapChanger"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/TapChanger" ) );
     }
 
     /**
@@ -162,13 +161,11 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((TapChanger)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_TapChanger_type") :
-            getString("_UI_TapChanger_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( TapChanger ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_TapChanger_type" )
+                : getString( "_UI_TapChanger_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -178,20 +175,20 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(TapChanger.class)) {
-            case SclPackage.TAP_CHANGER__VIRTUAL:
-            case SclPackage.TAP_CHANGER__TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.TAP_CHANGER__EQ_FUNCTION:
-            case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( TapChanger.class ) ) {
+        case SclPackage.TAP_CHANGER__VIRTUAL:
+        case SclPackage.TAP_CHANGER__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.TAP_CHANGER__EQ_FUNCTION:
+        case SclPackage.TAP_CHANGER__SUB_EQUIPMENT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -202,18 +199,14 @@ public class TapChangerItemProvider extends PowerSystemResourceItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getTapChanger_EqFunction(),
-                 SclFactory.eINSTANCE.createEqFunction()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getTapChanger_EqFunction(),
+                SclFactory.eINSTANCE.createEqFunction() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getTapChanger_SubEquipment(),
-                 SclFactory.eINSTANCE.createSubEquipment()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getTapChanger_SubEquipment(),
+                SclFactory.eINSTANCE.createSubEquipment() ) );
     }
 
 }

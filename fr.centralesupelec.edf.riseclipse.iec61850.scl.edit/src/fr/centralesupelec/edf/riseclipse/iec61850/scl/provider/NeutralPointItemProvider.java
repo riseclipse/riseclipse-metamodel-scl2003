@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -42,8 +41,8 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NeutralPointItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public NeutralPointItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -53,9 +52,9 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -68,8 +67,8 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/NeutralPoint"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/NeutralPoint" ) );
     }
 
     /**
@@ -79,13 +78,11 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((NeutralPoint)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_NeutralPoint_type") :
-            getString("_UI_NeutralPoint_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( NeutralPoint ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_NeutralPoint_type" )
+                : getString( "_UI_NeutralPoint_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -95,9 +92,8 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -108,8 +104,8 @@ public class NeutralPointItemProvider extends TerminalItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

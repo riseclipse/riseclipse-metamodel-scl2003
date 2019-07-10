@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConfLNsItemProvider 
-    extends SclObjectItemProvider {
+public class ConfLNsItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public ConfLNsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ConfLNsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,12 +57,12 @@ public class ConfLNsItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addFixLnInstPropertyDescriptor(object);
-            addFixPrefixPropertyDescriptor(object);
+            addFixLnInstPropertyDescriptor( object );
+            addFixPrefixPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,20 @@ public class ConfLNsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addFixLnInstPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConfLNs_fixLnInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConfLNs_fixLnInst_feature", "_UI_ConfLNs_type"),
-                 SclPackage.eINSTANCE.getConfLNs_FixLnInst(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addFixLnInstPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConfLNs_fixLnInst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConfLNs_fixLnInst_feature",
+                                "_UI_ConfLNs_type" ),
+                        SclPackage.eINSTANCE.getConfLNs_FixLnInst(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +95,20 @@ public class ConfLNsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addFixPrefixPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConfLNs_fixPrefix_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConfLNs_fixPrefix_feature", "_UI_ConfLNs_type"),
-                 SclPackage.eINSTANCE.getConfLNs_FixPrefix(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addFixPrefixPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConfLNs_fixPrefix_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConfLNs_fixPrefix_feature",
+                                "_UI_ConfLNs_type" ),
+                        SclPackage.eINSTANCE.getConfLNs_FixPrefix(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,8 +118,8 @@ public class ConfLNsItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ConfLNs"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ConfLNs" ) );
     }
 
     /**
@@ -130,11 +129,10 @@ public class ConfLNsItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ConfLNs confLNs = (ConfLNs)object;
-        return getString("_UI_ConfLNs_type") + " " + confLNs.getLineNumber();
+    public String getText( Object object ) {
+        ConfLNs confLNs = ( ConfLNs ) object;
+        return getString( "_UI_ConfLNs_type" ) + " " + confLNs.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -144,16 +142,16 @@ public class ConfLNsItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ConfLNs.class)) {
-            case SclPackage.CONF_LNS__FIX_LN_INST:
-            case SclPackage.CONF_LNS__FIX_PREFIX:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ConfLNs.class ) ) {
+        case SclPackage.CONF_LNS__FIX_LN_INST:
+        case SclPackage.CONF_LNS__FIX_PREFIX:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -164,8 +162,8 @@ public class ConfLNsItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

@@ -116,7 +116,7 @@ public interface PhysConn extends UnNaming {
      * @see #getParentConnectedAP()
      * @generated
      */
-    void setParentConnectedAP(ConnectedAP value);
+    void setParentConnectedAP( ConnectedAP value );
 
     /**
      * Returns the value of the '<em><b>P</b></em>' containment reference list.
@@ -136,7 +136,7 @@ public interface PhysConn extends UnNaming {
      * @model opposite="ParentPhysConn" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<P_PhysConn> getP();
+    EList< P_PhysConn > getP();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.PhysConn#getP <em>P</em>}' containment reference list.

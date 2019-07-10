@@ -119,7 +119,7 @@ public interface DA extends AbstractDataAttribute, AgDATrgOp {
      * @see #getParentDOType()
      * @generated
      */
-    void setParentDOType(DOType value);
+    void setParentDOType( DOType value );
 
     /**
      * Returns the value of the '<em><b>Prot Ns</b></em>' containment reference list.
@@ -139,7 +139,7 @@ public interface DA extends AbstractDataAttribute, AgDATrgOp {
      * @model opposite="ParentDA" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ProtNs> getProtNs();
+    EList< ProtNs > getProtNs();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DA#getProtNs <em>Prot Ns</em>}' containment reference list.

@@ -59,6 +59,6 @@ public interface NeutralPoint extends Terminal {
      * @see #getParentTransformerWinding()
      * @generated
      */
-    void setParentTransformerWinding(TransformerWinding value);
+    void setParentTransformerWinding( TransformerWinding value );
 
 } // NeutralPoint

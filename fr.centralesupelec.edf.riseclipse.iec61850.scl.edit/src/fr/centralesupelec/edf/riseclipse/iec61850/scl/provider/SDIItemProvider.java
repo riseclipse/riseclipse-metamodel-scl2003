@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public SDIItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SDIItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,15 +58,15 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addIxPropertyDescriptor(object);
-            addSAddrPropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addRefersToSDOPropertyDescriptor(object);
-            addRefersToAbstractDataAttributePropertyDescriptor(object);
+            addIxPropertyDescriptor( object );
+            addSAddrPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addRefersToSDOPropertyDescriptor( object );
+            addRefersToAbstractDataAttributePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -78,20 +77,19 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIxPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDI_ix_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_ix_feature", "_UI_SDI_type"),
-                 SclPackage.eINSTANCE.getSDI_Ix(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIxPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDI_ix_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDI_ix_feature", "_UI_SDI_type" ),
+                        SclPackage.eINSTANCE.getSDI_Ix(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -100,20 +98,19 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSAddrPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDI_sAddr_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_sAddr_feature", "_UI_SDI_type"),
-                 SclPackage.eINSTANCE.getSDI_SAddr(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSAddrPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDI_sAddr_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDI_sAddr_feature", "_UI_SDI_type" ),
+                        SclPackage.eINSTANCE.getSDI_SAddr(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -122,20 +119,19 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDI_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_name_feature", "_UI_SDI_type"),
-                 SclPackage.eINSTANCE.getSDI_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDI_name_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDI_name_feature", "_UI_SDI_type" ),
+                        SclPackage.eINSTANCE.getSDI_Name(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -144,20 +140,20 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToSDOPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDI_RefersToSDO_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_RefersToSDO_feature", "_UI_SDI_type"),
-                 SclPackage.eINSTANCE.getSDI_RefersToSDO(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToSDOPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDI_RefersToSDO_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDI_RefersToSDO_feature",
+                                "_UI_SDI_type" ),
+                        SclPackage.eINSTANCE.getSDI_RefersToSDO(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -166,20 +162,20 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToAbstractDataAttributePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDI_RefersToAbstractDataAttribute_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDI_RefersToAbstractDataAttribute_feature", "_UI_SDI_type"),
-                 SclPackage.eINSTANCE.getSDI_RefersToAbstractDataAttribute(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToAbstractDataAttributePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDI_RefersToAbstractDataAttribute_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_SDI_RefersToAbstractDataAttribute_feature", "_UI_SDI_type" ),
+                        SclPackage.eINSTANCE.getSDI_RefersToAbstractDataAttribute(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -191,11 +187,11 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getSDI_DAI());
-            childrenFeatures.add(SclPackage.eINSTANCE.getSDI_SubSDI());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSDI_DAI() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getSDI_SubSDI() );
         }
         return childrenFeatures;
     }
@@ -206,11 +202,11 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -220,8 +216,8 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SDI"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SDI" ) );
     }
 
     /**
@@ -231,13 +227,11 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((SDI)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_SDI_type") :
-            getString("_UI_SDI_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( SDI ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_SDI_type" )
+                : getString( "_UI_SDI_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -247,21 +241,21 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SDI.class)) {
-            case SclPackage.SDI__IX:
-            case SclPackage.SDI__SADDR:
-            case SclPackage.SDI__NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.SDI__DAI:
-            case SclPackage.SDI__SUB_SDI:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( SDI.class ) ) {
+        case SclPackage.SDI__IX:
+        case SclPackage.SDI__SADDR:
+        case SclPackage.SDI__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.SDI__DAI:
+        case SclPackage.SDI__SUB_SDI:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -272,18 +266,14 @@ public class SDIItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSDI_DAI(),
-                 SclFactory.eINSTANCE.createDAI()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSDI_DAI(),
+                SclFactory.eINSTANCE.createDAI() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getSDI_SubSDI(),
-                 SclFactory.eINSTANCE.createSDI()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getSDI_SubSDI(),
+                SclFactory.eINSTANCE.createSDI() ) );
     }
 
 }

@@ -95,7 +95,7 @@ public enum GSEControlTypeEnum implements Enumerator {
     private static final GSEControlTypeEnum[] VALUES_ARRAY = new GSEControlTypeEnum[] {
             GSSE,
             GOOSE,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>GSE Control Type Enum</b></em>' enumerators.
@@ -103,7 +103,8 @@ public enum GSEControlTypeEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<GSEControlTypeEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< GSEControlTypeEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>GSE Control Type Enum</b></em>' literal with the specified literal value.
@@ -114,9 +115,9 @@ public enum GSEControlTypeEnum implements Enumerator {
      * @generated
      */
     public static GSEControlTypeEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             GSEControlTypeEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -132,9 +133,9 @@ public enum GSEControlTypeEnum implements Enumerator {
      * @generated
      */
     public static GSEControlTypeEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             GSEControlTypeEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -150,9 +151,11 @@ public enum GSEControlTypeEnum implements Enumerator {
      * @generated
      */
     public static GSEControlTypeEnum get( int value ) {
-        switch (value) {
-            case GSSE_VALUE: return GSSE;
-            case GOOSE_VALUE: return GOOSE;
+        switch( value ) {
+        case GSSE_VALUE:
+            return GSSE;
+        case GOOSE_VALUE:
+            return GOOSE;
         }
         return null;
     }
@@ -197,7 +200,7 @@ public enum GSEControlTypeEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -207,7 +210,7 @@ public enum GSEControlTypeEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -217,7 +220,7 @@ public enum GSEControlTypeEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

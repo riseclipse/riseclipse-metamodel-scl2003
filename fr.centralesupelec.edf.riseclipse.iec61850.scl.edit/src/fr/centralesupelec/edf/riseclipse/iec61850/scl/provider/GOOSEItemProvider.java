@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public GOOSEItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public GOOSEItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,13 +56,13 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addFixedOffsPropertyDescriptor(object);
-            addGoosePropertyDescriptor(object);
-            addRGOOSEPropertyDescriptor(object);
+            addFixedOffsPropertyDescriptor( object );
+            addGoosePropertyDescriptor( object );
+            addRGOOSEPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,20 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addFixedOffsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GOOSE_fixedOffs_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GOOSE_fixedOffs_feature", "_UI_GOOSE_type"),
-                 SclPackage.eINSTANCE.getGOOSE_FixedOffs(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addFixedOffsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GOOSE_fixedOffs_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GOOSE_fixedOffs_feature",
+                                "_UI_GOOSE_type" ),
+                        SclPackage.eINSTANCE.getGOOSE_FixedOffs(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +95,19 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addGoosePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GOOSE_goose_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GOOSE_goose_feature", "_UI_GOOSE_type"),
-                 SclPackage.eINSTANCE.getGOOSE_Goose(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addGoosePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GOOSE_goose_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GOOSE_goose_feature", "_UI_GOOSE_type" ),
+                        SclPackage.eINSTANCE.getGOOSE_Goose(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,20 +116,19 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRGOOSEPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GOOSE_rGOOSE_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GOOSE_rGOOSE_feature", "_UI_GOOSE_type"),
-                 SclPackage.eINSTANCE.getGOOSE_RGOOSE(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addRGOOSEPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GOOSE_rGOOSE_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GOOSE_rGOOSE_feature", "_UI_GOOSE_type" ),
+                        SclPackage.eINSTANCE.getGOOSE_RGOOSE(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -141,8 +138,8 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/GOOSE"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/GOOSE" ) );
     }
 
     /**
@@ -152,11 +149,10 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        GOOSE goose = (GOOSE)object;
-        return getString("_UI_GOOSE_type") + " " + goose.getLineNumber();
+    public String getText( Object object ) {
+        GOOSE goose = ( GOOSE ) object;
+        return getString( "_UI_GOOSE_type" ) + " " + goose.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -166,17 +162,17 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(GOOSE.class)) {
-            case SclPackage.GOOSE__FIXED_OFFS:
-            case SclPackage.GOOSE__GOOSE:
-            case SclPackage.GOOSE__RGOOSE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( GOOSE.class ) ) {
+        case SclPackage.GOOSE__FIXED_OFFS:
+        case SclPackage.GOOSE__GOOSE:
+        case SclPackage.GOOSE__RGOOSE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -187,8 +183,8 @@ public class GOOSEItemProvider extends ServiceWithMaxItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

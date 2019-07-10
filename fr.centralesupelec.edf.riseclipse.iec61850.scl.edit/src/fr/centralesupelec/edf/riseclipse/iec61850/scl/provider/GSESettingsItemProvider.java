@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -49,8 +48,8 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public GSESettingsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public GSESettingsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -60,13 +59,13 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addAppIDPropertyDescriptor(object);
-            addDataLabelPropertyDescriptor(object);
-            addKdaParticipantPropertyDescriptor(object);
+            addAppIDPropertyDescriptor( object );
+            addDataLabelPropertyDescriptor( object );
+            addKdaParticipantPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -77,20 +76,20 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addAppIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSESettings_appID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_appID_feature", "_UI_GSESettings_type"),
-                 SclPackage.eINSTANCE.getGSESettings_AppID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addAppIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSESettings_appID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSESettings_appID_feature",
+                                "_UI_GSESettings_type" ),
+                        SclPackage.eINSTANCE.getGSESettings_AppID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -99,20 +98,20 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataLabelPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSESettings_dataLabel_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_dataLabel_feature", "_UI_GSESettings_type"),
-                 SclPackage.eINSTANCE.getGSESettings_DataLabel(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataLabelPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSESettings_dataLabel_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSESettings_dataLabel_feature",
+                                "_UI_GSESettings_type" ),
+                        SclPackage.eINSTANCE.getGSESettings_DataLabel(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -121,20 +120,20 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addKdaParticipantPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSESettings_kdaParticipant_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSESettings_kdaParticipant_feature", "_UI_GSESettings_type"),
-                 SclPackage.eINSTANCE.getGSESettings_KdaParticipant(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addKdaParticipantPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSESettings_kdaParticipant_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSESettings_kdaParticipant_feature",
+                                "_UI_GSESettings_type" ),
+                        SclPackage.eINSTANCE.getGSESettings_KdaParticipant(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -146,10 +145,10 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getGSESettings_McSecurity());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getGSESettings_McSecurity() );
         }
         return childrenFeatures;
     }
@@ -160,11 +159,11 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -174,8 +173,8 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/GSESettings"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/GSESettings" ) );
     }
 
     /**
@@ -185,14 +184,12 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceSettingsNoDynEnum labelValue = ((GSESettings)object).getCbName();
+    public String getText( Object object ) {
+        ServiceSettingsNoDynEnum labelValue = ( ( GSESettings ) object ).getCbName();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_GSESettings_type") :
-            getString("_UI_GSESettings_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_GSESettings_type" )
+                : getString( "_UI_GSESettings_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -202,20 +199,20 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(GSESettings.class)) {
-            case SclPackage.GSE_SETTINGS__APP_ID:
-            case SclPackage.GSE_SETTINGS__DATA_LABEL:
-            case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.GSE_SETTINGS__MC_SECURITY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( GSESettings.class ) ) {
+        case SclPackage.GSE_SETTINGS__APP_ID:
+        case SclPackage.GSE_SETTINGS__DATA_LABEL:
+        case SclPackage.GSE_SETTINGS__KDA_PARTICIPANT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.GSE_SETTINGS__MC_SECURITY:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -226,13 +223,11 @@ public class GSESettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getGSESettings_McSecurity(),
-                 SclFactory.eINSTANCE.createMcSecurity()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getGSESettings_McSecurity(),
+                SclFactory.eINSTANCE.createMcSecurity() ) );
     }
 
 }

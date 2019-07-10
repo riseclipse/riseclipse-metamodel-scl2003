@@ -318,13 +318,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setDataSet(Boolean newDataSet) {
+    public void setDataSet( Boolean newDataSet ) {
         Boolean oldDataSet = dataSet;
         dataSet = newDataSet;
         boolean oldDataSetESet = dataSetESet;
         dataSetESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet, dataSet, !oldDataSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet,
+                    dataSet, !oldDataSetESet ) );
     }
 
     /**
@@ -338,8 +339,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDataSetESet = dataSetESet;
         dataSet = DATA_SET_EDEFAULT;
         dataSetESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet, DATA_SET_EDEFAULT, oldDataSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_SET, oldDataSet,
+                    DATA_SET_EDEFAULT, oldDataSetESet ) );
     }
 
     /**
@@ -368,13 +370,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setRefreshTime(Boolean newRefreshTime) {
+    public void setRefreshTime( Boolean newRefreshTime ) {
         Boolean oldRefreshTime = refreshTime;
         refreshTime = newRefreshTime;
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__REFRESH_TIME, oldRefreshTime, refreshTime, !oldRefreshTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__REFRESH_TIME,
+                    oldRefreshTime, refreshTime, !oldRefreshTimeESet ) );
     }
 
     /**
@@ -388,8 +391,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTime = REFRESH_TIME_EDEFAULT;
         refreshTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__REFRESH_TIME, oldRefreshTime, REFRESH_TIME_EDEFAULT, oldRefreshTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__REFRESH_TIME,
+                    oldRefreshTime, REFRESH_TIME_EDEFAULT, oldRefreshTimeESet ) );
     }
 
     /**
@@ -418,13 +422,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setSampleRate(Boolean newSampleRate) {
+    public void setSampleRate( Boolean newSampleRate ) {
         Boolean oldSampleRate = sampleRate;
         sampleRate = newSampleRate;
         boolean oldSampleRateESet = sampleRateESet;
         sampleRateESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE, oldSampleRate, sampleRate, !oldSampleRateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE, oldSampleRate,
+                    sampleRate, !oldSampleRateESet ) );
     }
 
     /**
@@ -438,8 +443,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSampleRateESet = sampleRateESet;
         sampleRate = SAMPLE_RATE_EDEFAULT;
         sampleRateESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE, oldSampleRate, SAMPLE_RATE_EDEFAULT, oldSampleRateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_RATE,
+                    oldSampleRate, SAMPLE_RATE_EDEFAULT, oldSampleRateESet ) );
     }
 
     /**
@@ -468,13 +474,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setSampleSynchronized(Boolean newSampleSynchronized) {
+    public void setSampleSynchronized( Boolean newSampleSynchronized ) {
         Boolean oldSampleSynchronized = sampleSynchronized;
         sampleSynchronized = newSampleSynchronized;
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronizedESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED, oldSampleSynchronized, sampleSynchronized, !oldSampleSynchronizedESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED,
+                    oldSampleSynchronized, sampleSynchronized, !oldSampleSynchronizedESet ) );
     }
 
     /**
@@ -488,8 +495,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronized = SAMPLE_SYNCHRONIZED_EDEFAULT;
         sampleSynchronizedESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED, oldSampleSynchronized, SAMPLE_SYNCHRONIZED_EDEFAULT, oldSampleSynchronizedESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED,
+                    oldSampleSynchronized, SAMPLE_SYNCHRONIZED_EDEFAULT, oldSampleSynchronizedESet ) );
     }
 
     /**
@@ -518,13 +526,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setSecurity(Boolean newSecurity) {
+    public void setSecurity( Boolean newSecurity ) {
         Boolean oldSecurity = security;
         security = newSecurity;
         boolean oldSecurityESet = securityESet;
         securityESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity, security, !oldSecurityESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity,
+                    security, !oldSecurityESet ) );
     }
 
     /**
@@ -538,8 +547,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSecurityESet = securityESet;
         security = SECURITY_EDEFAULT;
         securityESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity, SECURITY_EDEFAULT, oldSecurityESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SECURITY, oldSecurity,
+                    SECURITY_EDEFAULT, oldSecurityESet ) );
     }
 
     /**
@@ -568,13 +578,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setTimestamp(Boolean newTimestamp) {
+    public void setTimestamp( Boolean newTimestamp ) {
         Boolean oldTimestamp = timestamp;
         timestamp = newTimestamp;
         boolean oldTimestampESet = timestampESet;
         timestampESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp, timestamp, !oldTimestampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp,
+                    timestamp, !oldTimestampESet ) );
     }
 
     /**
@@ -588,8 +599,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldTimestampESet = timestampESet;
         timestamp = TIMESTAMP_EDEFAULT;
         timestampESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp, TIMESTAMP_EDEFAULT, oldTimestampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__TIMESTAMP, oldTimestamp,
+                    TIMESTAMP_EDEFAULT, oldTimestampESet ) );
     }
 
     /**
@@ -618,13 +630,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setSynchSourceId(Boolean newSynchSourceId) {
+    public void setSynchSourceId( Boolean newSynchSourceId ) {
         Boolean oldSynchSourceId = synchSourceId;
         synchSourceId = newSynchSourceId;
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceIdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID,
+                    oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet ) );
     }
 
     /**
@@ -638,8 +651,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceId = SYNCH_SOURCE_ID_EDEFAULT;
         synchSourceIdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID,
+                    oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet ) );
     }
 
     /**
@@ -668,13 +682,14 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setDataRef(Boolean newDataRef) {
+    public void setDataRef( Boolean newDataRef ) {
         Boolean oldDataRef = dataRef;
         dataRef = newDataRef;
         boolean oldDataRefESet = dataRefESet;
         dataRefESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef, dataRef, !oldDataRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef,
+                    dataRef, !oldDataRefESet ) );
     }
 
     /**
@@ -688,8 +703,9 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDataRefESet = dataRefESet;
         dataRef = DATA_REF_EDEFAULT;
         dataRefESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef, DATA_REF_EDEFAULT, oldDataRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_SMV_OPTS__DATA_REF, oldDataRef,
+                    DATA_REF_EDEFAULT, oldDataRefESet ) );
     }
 
     /**
@@ -708,26 +724,26 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_SMV_OPTS__DATA_SET:
-                return getDataSet();
-            case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
-                return getRefreshTime();
-            case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
-                return getSampleRate();
-            case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                return getSampleSynchronized();
-            case SclPackage.AG_SMV_OPTS__SECURITY:
-                return getSecurity();
-            case SclPackage.AG_SMV_OPTS__TIMESTAMP:
-                return getTimestamp();
-            case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
-                return getSynchSourceId();
-            case SclPackage.AG_SMV_OPTS__DATA_REF:
-                return getDataRef();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_SMV_OPTS__DATA_SET:
+            return getDataSet();
+        case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
+            return getRefreshTime();
+        case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
+            return getSampleRate();
+        case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            return getSampleSynchronized();
+        case SclPackage.AG_SMV_OPTS__SECURITY:
+            return getSecurity();
+        case SclPackage.AG_SMV_OPTS__TIMESTAMP:
+            return getTimestamp();
+        case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+            return getSynchSourceId();
+        case SclPackage.AG_SMV_OPTS__DATA_REF:
+            return getDataRef();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -736,34 +752,34 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_SMV_OPTS__DATA_SET:
-                setDataSet((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
-                setRefreshTime((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
-                setSampleRate((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                setSampleSynchronized((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__SECURITY:
-                setSecurity((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__TIMESTAMP:
-                setTimestamp((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
-                setSynchSourceId((Boolean)newValue);
-                return;
-            case SclPackage.AG_SMV_OPTS__DATA_REF:
-                setDataRef((Boolean)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_SMV_OPTS__DATA_SET:
+            setDataSet( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
+            setRefreshTime( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
+            setSampleRate( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            setSampleSynchronized( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__SECURITY:
+            setSecurity( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__TIMESTAMP:
+            setTimestamp( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+            setSynchSourceId( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_SMV_OPTS__DATA_REF:
+            setDataRef( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -772,34 +788,34 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_SMV_OPTS__DATA_SET:
-                unsetDataSet();
-                return;
-            case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
-                unsetRefreshTime();
-                return;
-            case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
-                unsetSampleRate();
-                return;
-            case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                unsetSampleSynchronized();
-                return;
-            case SclPackage.AG_SMV_OPTS__SECURITY:
-                unsetSecurity();
-                return;
-            case SclPackage.AG_SMV_OPTS__TIMESTAMP:
-                unsetTimestamp();
-                return;
-            case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
-                unsetSynchSourceId();
-                return;
-            case SclPackage.AG_SMV_OPTS__DATA_REF:
-                unsetDataRef();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_SMV_OPTS__DATA_SET:
+            unsetDataSet();
+            return;
+        case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
+            unsetRefreshTime();
+            return;
+        case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
+            unsetSampleRate();
+            return;
+        case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            unsetSampleSynchronized();
+            return;
+        case SclPackage.AG_SMV_OPTS__SECURITY:
+            unsetSecurity();
+            return;
+        case SclPackage.AG_SMV_OPTS__TIMESTAMP:
+            unsetTimestamp();
+            return;
+        case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+            unsetSynchSourceId();
+            return;
+        case SclPackage.AG_SMV_OPTS__DATA_REF:
+            unsetDataRef();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -808,26 +824,26 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_SMV_OPTS__DATA_SET:
-                return isSetDataSet();
-            case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
-                return isSetRefreshTime();
-            case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
-                return isSetSampleRate();
-            case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                return isSetSampleSynchronized();
-            case SclPackage.AG_SMV_OPTS__SECURITY:
-                return isSetSecurity();
-            case SclPackage.AG_SMV_OPTS__TIMESTAMP:
-                return isSetTimestamp();
-            case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
-                return isSetSynchSourceId();
-            case SclPackage.AG_SMV_OPTS__DATA_REF:
-                return isSetDataRef();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_SMV_OPTS__DATA_SET:
+            return isSetDataSet();
+        case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
+            return isSetRefreshTime();
+        case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
+            return isSetSampleRate();
+        case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            return isSetSampleSynchronized();
+        case SclPackage.AG_SMV_OPTS__SECURITY:
+            return isSetSecurity();
+        case SclPackage.AG_SMV_OPTS__TIMESTAMP:
+            return isSetTimestamp();
+        case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+            return isSetSynchSourceId();
+        case SclPackage.AG_SMV_OPTS__DATA_REF:
+            return isSetDataRef();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -837,26 +853,50 @@ public abstract class AgSmvOptsImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (dataSet: ");
-        if (dataSetESet) result.append(dataSet); else result.append("<unset>");
-        result.append(", refreshTime: ");
-        if (refreshTimeESet) result.append(refreshTime); else result.append("<unset>");
-        result.append(", sampleRate: ");
-        if (sampleRateESet) result.append(sampleRate); else result.append("<unset>");
-        result.append(", sampleSynchronized: ");
-        if (sampleSynchronizedESet) result.append(sampleSynchronized); else result.append("<unset>");
-        result.append(", security: ");
-        if (securityESet) result.append(security); else result.append("<unset>");
-        result.append(", timestamp: ");
-        if (timestampESet) result.append(timestamp); else result.append("<unset>");
-        result.append(", synchSourceId: ");
-        if (synchSourceIdESet) result.append(synchSourceId); else result.append("<unset>");
-        result.append(", dataRef: ");
-        if (dataRefESet) result.append(dataRef); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (dataSet: " );
+        if( dataSetESet )
+            result.append( dataSet );
+        else
+            result.append( "<unset>" );
+        result.append( ", refreshTime: " );
+        if( refreshTimeESet )
+            result.append( refreshTime );
+        else
+            result.append( "<unset>" );
+        result.append( ", sampleRate: " );
+        if( sampleRateESet )
+            result.append( sampleRate );
+        else
+            result.append( "<unset>" );
+        result.append( ", sampleSynchronized: " );
+        if( sampleSynchronizedESet )
+            result.append( sampleSynchronized );
+        else
+            result.append( "<unset>" );
+        result.append( ", security: " );
+        if( securityESet )
+            result.append( security );
+        else
+            result.append( "<unset>" );
+        result.append( ", timestamp: " );
+        if( timestampESet )
+            result.append( timestamp );
+        else
+            result.append( "<unset>" );
+        result.append( ", synchSourceId: " );
+        if( synchSourceIdESet )
+            result.append( synchSourceId );
+        else
+            result.append( "<unset>" );
+        result.append( ", dataRef: " );
+        if( dataRefESet )
+            result.append( dataRef );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

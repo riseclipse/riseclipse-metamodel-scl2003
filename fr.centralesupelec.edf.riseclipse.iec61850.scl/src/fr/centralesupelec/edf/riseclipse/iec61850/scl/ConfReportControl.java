@@ -59,6 +59,6 @@ public interface ConfReportControl extends ServiceConfReportControl {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // ConfReportControl

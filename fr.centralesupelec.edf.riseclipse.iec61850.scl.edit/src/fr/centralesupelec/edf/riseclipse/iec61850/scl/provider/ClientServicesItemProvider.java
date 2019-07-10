@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -41,16 +40,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClientServicesItemProvider 
-    extends SclObjectItemProvider {
+public class ClientServicesItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public ClientServicesItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ClientServicesItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -60,24 +59,24 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBufReportPropertyDescriptor(object);
-            addGoosePropertyDescriptor(object);
-            addGssePropertyDescriptor(object);
-            addMaxAttributesPropertyDescriptor(object);
-            addMaxGOOSEPropertyDescriptor(object);
-            addMaxReportsPropertyDescriptor(object);
-            addMaxSMVPropertyDescriptor(object);
-            addReadLogPropertyDescriptor(object);
-            addSupportsLdNamePropertyDescriptor(object);
-            addSvPropertyDescriptor(object);
-            addUnbufReportPropertyDescriptor(object);
-            addRGOOSEPropertyDescriptor(object);
-            addRSVPropertyDescriptor(object);
-            addNoIctBindingPropertyDescriptor(object);
+            addBufReportPropertyDescriptor( object );
+            addGoosePropertyDescriptor( object );
+            addGssePropertyDescriptor( object );
+            addMaxAttributesPropertyDescriptor( object );
+            addMaxGOOSEPropertyDescriptor( object );
+            addMaxReportsPropertyDescriptor( object );
+            addMaxSMVPropertyDescriptor( object );
+            addReadLogPropertyDescriptor( object );
+            addSupportsLdNamePropertyDescriptor( object );
+            addSvPropertyDescriptor( object );
+            addUnbufReportPropertyDescriptor( object );
+            addRGOOSEPropertyDescriptor( object );
+            addRSVPropertyDescriptor( object );
+            addNoIctBindingPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -88,20 +87,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBufReportPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_bufReport_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_bufReport_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_BufReport(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBufReportPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_bufReport_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_bufReport_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_BufReport(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -110,20 +109,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addGoosePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_goose_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_goose_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_Goose(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addGoosePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_goose_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_goose_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_Goose(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -132,20 +131,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addGssePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_gsse_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_gsse_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_Gsse(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addGssePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_gsse_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_gsse_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_Gsse(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -154,20 +153,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxAttributesPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_maxAttributes_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_maxAttributes_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_MaxAttributes(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxAttributesPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_maxAttributes_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_maxAttributes_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_MaxAttributes(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -176,20 +175,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxGOOSEPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_maxGOOSE_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_maxGOOSE_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_MaxGOOSE(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxGOOSEPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_maxGOOSE_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_maxGOOSE_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_MaxGOOSE(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -198,20 +197,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxReportsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_maxReports_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_maxReports_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_MaxReports(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxReportsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_maxReports_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_maxReports_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_MaxReports(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -220,20 +219,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxSMVPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_maxSMV_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_maxSMV_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_MaxSMV(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxSMVPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_maxSMV_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_maxSMV_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_MaxSMV(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -242,20 +241,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReadLogPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_readLog_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_readLog_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_ReadLog(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addReadLogPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_readLog_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_readLog_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_ReadLog(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -264,20 +263,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSupportsLdNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_supportsLdName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_supportsLdName_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_SupportsLdName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSupportsLdNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_supportsLdName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_supportsLdName_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_SupportsLdName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -286,20 +285,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSvPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_sv_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_sv_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_Sv(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSvPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_sv_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_sv_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_Sv(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -308,20 +307,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addUnbufReportPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_unbufReport_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_unbufReport_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_UnbufReport(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addUnbufReportPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_unbufReport_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_unbufReport_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_UnbufReport(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -330,20 +329,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRGOOSEPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_rGOOSE_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_rGOOSE_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_RGOOSE(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addRGOOSEPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_rGOOSE_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_rGOOSE_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_RGOOSE(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -352,20 +351,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRSVPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_rSV_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_rSV_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_RSV(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addRSVPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_rSV_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_rSV_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_RSV(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -374,20 +373,20 @@ public class ClientServicesItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNoIctBindingPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ClientServices_noIctBinding_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ClientServices_noIctBinding_feature", "_UI_ClientServices_type"),
-                 SclPackage.eINSTANCE.getClientServices_NoIctBinding(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNoIctBindingPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ClientServices_noIctBinding_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ClientServices_noIctBinding_feature",
+                                "_UI_ClientServices_type" ),
+                        SclPackage.eINSTANCE.getClientServices_NoIctBinding(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -399,11 +398,11 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getClientServices_TimeSyncProt());
-            childrenFeatures.add(SclPackage.eINSTANCE.getClientServices_McSecurity());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_TimeSyncProt() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getClientServices_McSecurity() );
         }
         return childrenFeatures;
     }
@@ -414,11 +413,11 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -428,8 +427,8 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ClientServices"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ClientServices" ) );
     }
 
     /**
@@ -439,14 +438,12 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        Boolean labelValue = ((ClientServices)object).getSupportsLdName();
+    public String getText( Object object ) {
+        Boolean labelValue = ( ( ClientServices ) object ).getSupportsLdName();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_ClientServices_type") :
-            getString("_UI_ClientServices_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_ClientServices_type" )
+                : getString( "_UI_ClientServices_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -456,32 +453,32 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ClientServices.class)) {
-            case SclPackage.CLIENT_SERVICES__BUF_REPORT:
-            case SclPackage.CLIENT_SERVICES__GOOSE:
-            case SclPackage.CLIENT_SERVICES__GSSE:
-            case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
-            case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
-            case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
-            case SclPackage.CLIENT_SERVICES__MAX_SMV:
-            case SclPackage.CLIENT_SERVICES__READ_LOG:
-            case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
-            case SclPackage.CLIENT_SERVICES__SV:
-            case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
-            case SclPackage.CLIENT_SERVICES__RGOOSE:
-            case SclPackage.CLIENT_SERVICES__RSV:
-            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( ClientServices.class ) ) {
+        case SclPackage.CLIENT_SERVICES__BUF_REPORT:
+        case SclPackage.CLIENT_SERVICES__GOOSE:
+        case SclPackage.CLIENT_SERVICES__GSSE:
+        case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
+        case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
+        case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
+        case SclPackage.CLIENT_SERVICES__MAX_SMV:
+        case SclPackage.CLIENT_SERVICES__READ_LOG:
+        case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
+        case SclPackage.CLIENT_SERVICES__SV:
+        case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+        case SclPackage.CLIENT_SERVICES__RGOOSE:
+        case SclPackage.CLIENT_SERVICES__RSV:
+        case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -492,18 +489,14 @@ public class ClientServicesItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getClientServices_TimeSyncProt(),
-                 SclFactory.eINSTANCE.createTimeSyncProt()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_TimeSyncProt(),
+                SclFactory.eINSTANCE.createTimeSyncProt() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getClientServices_McSecurity(),
-                 SclFactory.eINSTANCE.createMcSecurity()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getClientServices_McSecurity(),
+                SclFactory.eINSTANCE.createMcSecurity() ) );
     }
 
 }

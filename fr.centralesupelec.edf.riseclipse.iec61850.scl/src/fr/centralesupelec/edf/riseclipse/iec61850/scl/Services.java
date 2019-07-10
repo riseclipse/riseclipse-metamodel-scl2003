@@ -100,7 +100,7 @@ public interface Services extends SclObject {
      * @see #getNameLength()
      * @generated
      */
-    void setNameLength(Integer value);
+    void setNameLength( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getNameLength <em>Name Length</em>}' attribute.
@@ -147,7 +147,7 @@ public interface Services extends SclObject {
      * @see #getParentAccessPoint()
      * @generated
      */
-    void setParentAccessPoint(AccessPoint value);
+    void setParentAccessPoint( AccessPoint value );
 
     /**
      * Returns the value of the '<em><b>Client Services</b></em>' containment reference.
@@ -1326,7 +1326,7 @@ public interface Services extends SclObject {
      * @see #getParentIED()
      * @generated
      */
-    void setParentIED(IED value);
+    void setParentIED( IED value );
 
     /**
      * Returns the value of the '<em><b>Log Settings</b></em>' containment reference.
@@ -1963,7 +1963,7 @@ public interface Services extends SclObject {
      * @see #getSMVSettings()
      * @generated
      */
-    void setSMVSettings(SMVSettings value);
+    void setSMVSettings( SMVSettings value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Services#getSMVSettings <em>SMV Settings</em>}' containment reference.

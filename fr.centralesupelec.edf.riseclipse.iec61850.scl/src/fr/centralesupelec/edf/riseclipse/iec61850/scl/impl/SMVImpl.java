@@ -71,8 +71,8 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        if (eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP) return null;
-        return (ConnectedAP)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP ) return null;
+        return ( ConnectedAP ) eInternalContainer();
     }
 
     /**
@@ -80,8 +80,9 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentConnectedAP(ConnectedAP newParentConnectedAP, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentConnectedAP, SclPackage.SMV__PARENT_CONNECTED_AP, msgs);
+    public NotificationChain basicSetParentConnectedAP( ConnectedAP newParentConnectedAP, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentConnectedAP, SclPackage.SMV__PARENT_CONNECTED_AP,
+                msgs );
         return msgs;
     }
 
@@ -91,20 +92,23 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      * @generated
      */
     @Override
-    public void setParentConnectedAP(ConnectedAP newParentConnectedAP) {
-        if (newParentConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP && newParentConnectedAP != null)) {
-            if (EcoreUtil.isAncestor(this, newParentConnectedAP))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentConnectedAP( ConnectedAP newParentConnectedAP ) {
+        if( newParentConnectedAP != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SMV__PARENT_CONNECTED_AP && newParentConnectedAP != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentConnectedAP != null)
-                msgs = ((InternalEObject)newParentConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__SMV, ConnectedAP.class, msgs);
-            msgs = basicSetParentConnectedAP(newParentConnectedAP, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentConnectedAP != null )
+                msgs = ( ( InternalEObject ) newParentConnectedAP ).eInverseAdd( this, SclPackage.CONNECTED_AP__SMV,
+                        ConnectedAP.class, msgs );
+            msgs = basicSetParentConnectedAP( newParentConnectedAP, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV__PARENT_CONNECTED_AP, newParentConnectedAP, newParentConnectedAP));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV__PARENT_CONNECTED_AP,
+                    newParentConnectedAP, newParentConnectedAP ) );
     }
 
     /**
@@ -114,13 +118,13 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentConnectedAP((ConnectedAP)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentConnectedAP( ( ConnectedAP ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -130,11 +134,11 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                return basicSetParentConnectedAP(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            return basicSetParentConnectedAP( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -144,11 +148,11 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__SMV, ConnectedAP.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CONNECTED_AP__SMV, ConnectedAP.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -158,11 +162,11 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                return getParentConnectedAP();
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            return getParentConnectedAP();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -172,12 +176,12 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                setParentConnectedAP((ConnectedAP)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            setParentConnectedAP( ( ConnectedAP ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -187,12 +191,12 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                setParentConnectedAP((ConnectedAP)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            setParentConnectedAP( ( ConnectedAP ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -202,11 +206,11 @@ public class SMVImpl extends ControlBlockImpl implements SMV {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SMV__PARENT_CONNECTED_AP:
-                return getParentConnectedAP() != null;
+        switch( featureID ) {
+        case SclPackage.SMV__PARENT_CONNECTED_AP:
+            return getParentConnectedAP() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //SMVImpl

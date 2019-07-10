@@ -381,7 +381,7 @@ public enum FCEnum implements Enumerator {
             SR,
             BL,
             OR,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>FC Enum</b></em>' enumerators.
@@ -389,7 +389,7 @@ public enum FCEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<FCEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< FCEnum > VALUES = Collections.unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>FC Enum</b></em>' literal with the specified literal value.
@@ -400,9 +400,9 @@ public enum FCEnum implements Enumerator {
      * @generated
      */
     public static FCEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             FCEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -418,9 +418,9 @@ public enum FCEnum implements Enumerator {
      * @generated
      */
     public static FCEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             FCEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -436,20 +436,33 @@ public enum FCEnum implements Enumerator {
      * @generated
      */
     public static FCEnum get( int value ) {
-        switch (value) {
-            case ST_VALUE: return ST;
-            case MX_VALUE: return MX;
-            case CO_VALUE: return CO;
-            case SP_VALUE: return SP;
-            case SG_VALUE: return SG;
-            case SE_VALUE: return SE;
-            case SV_VALUE: return SV;
-            case CF_VALUE: return CF;
-            case DC_VALUE: return DC;
-            case EX_VALUE: return EX;
-            case SR_VALUE: return SR;
-            case BL_VALUE: return BL;
-            case OR_VALUE: return OR;
+        switch( value ) {
+        case ST_VALUE:
+            return ST;
+        case MX_VALUE:
+            return MX;
+        case CO_VALUE:
+            return CO;
+        case SP_VALUE:
+            return SP;
+        case SG_VALUE:
+            return SG;
+        case SE_VALUE:
+            return SE;
+        case SV_VALUE:
+            return SV;
+        case CF_VALUE:
+            return CF;
+        case DC_VALUE:
+            return DC;
+        case EX_VALUE:
+            return EX;
+        case SR_VALUE:
+            return SR;
+        case BL_VALUE:
+            return BL;
+        case OR_VALUE:
+            return OR;
         }
         return null;
     }
@@ -494,7 +507,7 @@ public enum FCEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -504,7 +517,7 @@ public enum FCEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -514,7 +527,7 @@ public enum FCEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

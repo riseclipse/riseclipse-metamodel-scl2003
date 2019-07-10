@@ -113,7 +113,7 @@ public interface ControlWithIEDName extends Control {
      * @model opposite="ParentControlWithIEDName" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<IEDName> getIEDName();
+    EList< IEDName > getIEDName();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getIEDName <em>IED Name</em>}' containment reference list.
@@ -154,7 +154,7 @@ public interface ControlWithIEDName extends Control {
      * @model opposite="RefersToControlWithIEDName" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<ControlBlock> getReferredByControlBlock();
+    EList< ControlBlock > getReferredByControlBlock();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlWithIEDName#getReferredByControlBlock <em>Referred By Control Block</em>}' reference list.

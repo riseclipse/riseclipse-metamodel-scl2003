@@ -143,8 +143,9 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NAMING__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.NAMING__NAME, oldName, name,
+                    !oldNameESet ) );
     }
 
     /**
@@ -158,8 +159,9 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.NAMING__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.NAMING__NAME, oldName, NAME_EDEFAULT,
+                    oldNameESet ) );
     }
 
     /**
@@ -188,13 +190,14 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.NAMING__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.NAMING__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -208,8 +211,9 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.NAMING__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.NAMING__DESC, oldDesc, DESC_EDEFAULT,
+                    oldDescESet ) );
     }
 
     /**
@@ -229,13 +233,13 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.NAMING__DESC:
-                return getDesc();
-            case SclPackage.NAMING__NAME:
-                return getName();
+        switch( featureID ) {
+        case SclPackage.NAMING__DESC:
+            return getDesc();
+        case SclPackage.NAMING__NAME:
+            return getName();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -245,15 +249,15 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.NAMING__DESC:
-                setDesc((String)newValue);
-                return;
-            case SclPackage.NAMING__NAME:
-                setName((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.NAMING__DESC:
+            setDesc( ( String ) newValue );
+            return;
+        case SclPackage.NAMING__NAME:
+            setName( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -263,15 +267,15 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.NAMING__DESC:
-                unsetDesc();
-                return;
-            case SclPackage.NAMING__NAME:
-                unsetName();
-                return;
+        switch( featureID ) {
+        case SclPackage.NAMING__DESC:
+            unsetDesc();
+            return;
+        case SclPackage.NAMING__NAME:
+            unsetName();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -281,13 +285,31 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.NAMING__DESC:
+            return isSetDesc();
+        case SclPackage.NAMING__NAME:
+            return isSetName();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.NAMING__DESC:
-                return isSetDesc();
-            case SclPackage.NAMING__NAME:
-                return isSetName();
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -296,30 +318,16 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.NAMING__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.NAMING__DESC;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.NAMING__DESC;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -329,14 +337,20 @@ public abstract class NamingImpl extends BaseElementImpl implements Naming {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ", name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -205,7 +205,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected EList<SmpRate> smpRate;
+    protected EList< SmpRate > smpRate;
     /**
      * The cached value of the '{@link #getSamplesPerSec() <em>Samples Per Sec</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -214,7 +214,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected EList<SamplesPerSec> samplesPerSec;
+    protected EList< SamplesPerSec > samplesPerSec;
     /**
      * The cached value of the '{@link #getSecPerSamples() <em>Sec Per Samples</em>}' containment reference list.
      * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      * @ordered
      */
-    protected EList<SecPerSamples> secPerSamples;
+    protected EList< SecPerSamples > secPerSamples;
 
     /**
      * The default value of the '{@link #getSynchSrcId() <em>Synch Src Id</em>}' attribute.
@@ -357,13 +357,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setSvID(ServiceSettingsEnum newSvID) {
+    public void setSvID( ServiceSettingsEnum newSvID ) {
         ServiceSettingsEnum oldSvID = svID;
         svID = newSvID == null ? SV_ID_EDEFAULT : newSvID;
         boolean oldSvIDESet = svIDESet;
         svIDESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SV_ID, oldSvID, svID, !oldSvIDESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__SV_ID, oldSvID, svID,
+                    !oldSvIDESet ) );
     }
 
     /**
@@ -377,8 +378,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldSvIDESet = svIDESet;
         svID = SV_ID_EDEFAULT;
         svIDESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__SV_ID, oldSvID, SV_ID_EDEFAULT, oldSvIDESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__SV_ID, oldSvID,
+                    SV_ID_EDEFAULT, oldSvIDESet ) );
     }
 
     /**
@@ -407,13 +409,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setOptFields(ServiceSettingsEnum newOptFields) {
+    public void setOptFields( ServiceSettingsEnum newOptFields ) {
         ServiceSettingsEnum oldOptFields = optFields;
         optFields = newOptFields == null ? OPT_FIELDS_EDEFAULT : newOptFields;
         boolean oldOptFieldsESet = optFieldsESet;
         optFieldsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__OPT_FIELDS, oldOptFields, optFields, !oldOptFieldsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__OPT_FIELDS, oldOptFields,
+                    optFields, !oldOptFieldsESet ) );
     }
 
     /**
@@ -427,8 +430,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldOptFieldsESet = optFieldsESet;
         optFields = OPT_FIELDS_EDEFAULT;
         optFieldsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__OPT_FIELDS, oldOptFields, OPT_FIELDS_EDEFAULT, oldOptFieldsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__OPT_FIELDS, oldOptFields,
+                    OPT_FIELDS_EDEFAULT, oldOptFieldsESet ) );
     }
 
     /**
@@ -457,13 +461,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setSmpRateAttribute(ServiceSettingsEnum newSmpRateAttribute) {
+    public void setSmpRateAttribute( ServiceSettingsEnum newSmpRateAttribute ) {
         ServiceSettingsEnum oldSmpRateAttribute = smpRateAttribute;
         smpRateAttribute = newSmpRateAttribute == null ? SMP_RATE_ATTRIBUTE_EDEFAULT : newSmpRateAttribute;
         boolean oldSmpRateAttributeESet = smpRateAttributeESet;
         smpRateAttributeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE, oldSmpRateAttribute, smpRateAttribute, !oldSmpRateAttributeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE,
+                    oldSmpRateAttribute, smpRateAttribute, !oldSmpRateAttributeESet ) );
     }
 
     /**
@@ -477,8 +482,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldSmpRateAttributeESet = smpRateAttributeESet;
         smpRateAttribute = SMP_RATE_ATTRIBUTE_EDEFAULT;
         smpRateAttributeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE, oldSmpRateAttribute, SMP_RATE_ATTRIBUTE_EDEFAULT, oldSmpRateAttributeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE,
+                    oldSmpRateAttribute, SMP_RATE_ATTRIBUTE_EDEFAULT, oldSmpRateAttributeESet ) );
     }
 
     /**
@@ -507,13 +513,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setSamplesPerSecAttribute(boolean newSamplesPerSecAttribute) {
+    public void setSamplesPerSecAttribute( boolean newSamplesPerSecAttribute ) {
         boolean oldSamplesPerSecAttribute = samplesPerSecAttribute;
         samplesPerSecAttribute = newSamplesPerSecAttribute;
         boolean oldSamplesPerSecAttributeESet = samplesPerSecAttributeESet;
         samplesPerSecAttributeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE, oldSamplesPerSecAttribute, samplesPerSecAttribute, !oldSamplesPerSecAttributeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE,
+                    oldSamplesPerSecAttribute, samplesPerSecAttribute, !oldSamplesPerSecAttributeESet ) );
     }
 
     /**
@@ -527,8 +534,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldSamplesPerSecAttributeESet = samplesPerSecAttributeESet;
         samplesPerSecAttribute = SAMPLES_PER_SEC_ATTRIBUTE_EDEFAULT;
         samplesPerSecAttributeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE, oldSamplesPerSecAttribute, SAMPLES_PER_SEC_ATTRIBUTE_EDEFAULT, oldSamplesPerSecAttributeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE, oldSamplesPerSecAttribute,
+                    SAMPLES_PER_SEC_ATTRIBUTE_EDEFAULT, oldSamplesPerSecAttributeESet ) );
     }
 
     /**
@@ -557,13 +566,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setPdcTimeStamp(boolean newPdcTimeStamp) {
+    public void setPdcTimeStamp( boolean newPdcTimeStamp ) {
         boolean oldPdcTimeStamp = pdcTimeStamp;
         pdcTimeStamp = newPdcTimeStamp;
         boolean oldPdcTimeStampESet = pdcTimeStampESet;
         pdcTimeStampESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__PDC_TIME_STAMP, oldPdcTimeStamp, pdcTimeStamp, !oldPdcTimeStampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__PDC_TIME_STAMP,
+                    oldPdcTimeStamp, pdcTimeStamp, !oldPdcTimeStampESet ) );
     }
 
     /**
@@ -577,8 +587,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldPdcTimeStampESet = pdcTimeStampESet;
         pdcTimeStamp = PDC_TIME_STAMP_EDEFAULT;
         pdcTimeStampESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__PDC_TIME_STAMP, oldPdcTimeStamp, PDC_TIME_STAMP_EDEFAULT, oldPdcTimeStampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__PDC_TIME_STAMP,
+                    oldPdcTimeStamp, PDC_TIME_STAMP_EDEFAULT, oldPdcTimeStampESet ) );
     }
 
     /**
@@ -597,9 +608,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public EList<SmpRate> getSmpRate() {
-        if (smpRate == null) {
-            smpRate = new EObjectContainmentWithInverseEList.Unsettable<SmpRate>(SmpRate.class, this, SclPackage.SMV_SETTINGS__SMP_RATE, SclPackage.SMP_RATE__PARENT_SMV_SETTINGS);
+    public EList< SmpRate > getSmpRate() {
+        if( smpRate == null ) {
+            smpRate = new EObjectContainmentWithInverseEList.Unsettable< SmpRate >( SmpRate.class, this,
+                    SclPackage.SMV_SETTINGS__SMP_RATE, SclPackage.SMP_RATE__PARENT_SMV_SETTINGS );
         }
         return smpRate;
     }
@@ -611,7 +623,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public void unsetSmpRate() {
-        if (smpRate != null) ((InternalEList.Unsettable<?>)smpRate).unset();
+        if( smpRate != null ) ( ( InternalEList.Unsettable< ? > ) smpRate ).unset();
     }
 
     /**
@@ -621,7 +633,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public boolean isSetSmpRate() {
-        return smpRate != null && ((InternalEList.Unsettable<?>)smpRate).isSet();
+        return smpRate != null && ( ( InternalEList.Unsettable< ? > ) smpRate ).isSet();
     }
 
     /**
@@ -630,9 +642,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public EList<SamplesPerSec> getSamplesPerSec() {
-        if (samplesPerSec == null) {
-            samplesPerSec = new EObjectContainmentWithInverseEList.Unsettable<SamplesPerSec>(SamplesPerSec.class, this, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC, SclPackage.SAMPLES_PER_SEC__PARENT_SMV_SETTINGS);
+    public EList< SamplesPerSec > getSamplesPerSec() {
+        if( samplesPerSec == null ) {
+            samplesPerSec = new EObjectContainmentWithInverseEList.Unsettable< SamplesPerSec >( SamplesPerSec.class,
+                    this, SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC, SclPackage.SAMPLES_PER_SEC__PARENT_SMV_SETTINGS );
         }
         return samplesPerSec;
     }
@@ -644,7 +657,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public void unsetSamplesPerSec() {
-        if (samplesPerSec != null) ((InternalEList.Unsettable<?>)samplesPerSec).unset();
+        if( samplesPerSec != null ) ( ( InternalEList.Unsettable< ? > ) samplesPerSec ).unset();
     }
 
     /**
@@ -654,7 +667,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public boolean isSetSamplesPerSec() {
-        return samplesPerSec != null && ((InternalEList.Unsettable<?>)samplesPerSec).isSet();
+        return samplesPerSec != null && ( ( InternalEList.Unsettable< ? > ) samplesPerSec ).isSet();
     }
 
     /**
@@ -663,9 +676,10 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public EList<SecPerSamples> getSecPerSamples() {
-        if (secPerSamples == null) {
-            secPerSamples = new EObjectContainmentWithInverseEList.Unsettable<SecPerSamples>(SecPerSamples.class, this, SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES, SclPackage.SEC_PER_SAMPLES__PARENT_SMV_SETTINGS);
+    public EList< SecPerSamples > getSecPerSamples() {
+        if( secPerSamples == null ) {
+            secPerSamples = new EObjectContainmentWithInverseEList.Unsettable< SecPerSamples >( SecPerSamples.class,
+                    this, SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES, SclPackage.SEC_PER_SAMPLES__PARENT_SMV_SETTINGS );
         }
         return secPerSamples;
     }
@@ -677,7 +691,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public void unsetSecPerSamples() {
-        if (secPerSamples != null) ((InternalEList.Unsettable<?>)secPerSamples).unset();
+        if( secPerSamples != null ) ( ( InternalEList.Unsettable< ? > ) secPerSamples ).unset();
     }
 
     /**
@@ -687,7 +701,7 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public boolean isSetSecPerSamples() {
-        return secPerSamples != null && ((InternalEList.Unsettable<?>)secPerSamples).isSet();
+        return secPerSamples != null && ( ( InternalEList.Unsettable< ? > ) secPerSamples ).isSet();
     }
 
     /**
@@ -697,8 +711,8 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.SMV_SETTINGS__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SMV_SETTINGS__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -706,8 +720,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.SMV_SETTINGS__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.SMV_SETTINGS__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -717,20 +732,24 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_SETTINGS__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SMV_SETTINGS__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__SMV_SETTINGS, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__SMV_SETTINGS,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -749,13 +768,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setSynchSrcId(Boolean newSynchSrcId) {
+    public void setSynchSrcId( Boolean newSynchSrcId ) {
         Boolean oldSynchSrcId = synchSrcId;
         synchSrcId = newSynchSrcId;
         boolean oldSynchSrcIdESet = synchSrcIdESet;
         synchSrcIdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID, oldSynchSrcId, synchSrcId, !oldSynchSrcIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID,
+                    oldSynchSrcId, synchSrcId, !oldSynchSrcIdESet ) );
     }
 
     /**
@@ -769,8 +789,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldSynchSrcIdESet = synchSrcIdESet;
         synchSrcId = SYNCH_SRC_ID_EDEFAULT;
         synchSrcIdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID, oldSynchSrcId, SYNCH_SRC_ID_EDEFAULT, oldSynchSrcIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__SYNCH_SRC_ID,
+                    oldSynchSrcId, SYNCH_SRC_ID_EDEFAULT, oldSynchSrcIdESet ) );
     }
 
     /**
@@ -799,13 +820,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setNofASDU(ServiceSettingsNoDynEnum newNofASDU) {
+    public void setNofASDU( ServiceSettingsNoDynEnum newNofASDU ) {
         ServiceSettingsNoDynEnum oldNofASDU = nofASDU;
         nofASDU = newNofASDU == null ? NOF_ASDU_EDEFAULT : newNofASDU;
         boolean oldNofASDUESet = nofASDUESet;
         nofASDUESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU, nofASDU, !oldNofASDUESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU,
+                    nofASDU, !oldNofASDUESet ) );
     }
 
     /**
@@ -819,8 +841,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldNofASDUESet = nofASDUESet;
         nofASDU = NOF_ASDU_EDEFAULT;
         nofASDUESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU, NOF_ASDU_EDEFAULT, oldNofASDUESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__NOF_ASDU, oldNofASDU,
+                    NOF_ASDU_EDEFAULT, oldNofASDUESet ) );
     }
 
     /**
@@ -849,13 +872,14 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setKdaParticipant(Boolean newKdaParticipant) {
+    public void setKdaParticipant( Boolean newKdaParticipant ) {
         Boolean oldKdaParticipant = kdaParticipant;
         kdaParticipant = newKdaParticipant;
         boolean oldKdaParticipantESet = kdaParticipantESet;
         kdaParticipantESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, kdaParticipant, !oldKdaParticipantESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT,
+                    oldKdaParticipant, kdaParticipant, !oldKdaParticipantESet ) );
     }
 
     /**
@@ -869,8 +893,9 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
         boolean oldKdaParticipantESet = kdaParticipantESet;
         kdaParticipant = KDA_PARTICIPANT_EDEFAULT;
         kdaParticipantESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT, oldKdaParticipant, KDA_PARTICIPANT_EDEFAULT, oldKdaParticipantESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__KDA_PARTICIPANT,
+                    oldKdaParticipant, KDA_PARTICIPANT_EDEFAULT, oldKdaParticipantESet ) );
     }
 
     /**
@@ -898,14 +923,18 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetMcSecurity(McSecurity newMcSecurity, NotificationChain msgs) {
+    public NotificationChain basicSetMcSecurity( McSecurity newMcSecurity, NotificationChain msgs ) {
         McSecurity oldMcSecurity = mcSecurity;
         mcSecurity = newMcSecurity;
         boolean oldMcSecurityESet = mcSecurityESet;
         mcSecurityESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -916,21 +945,24 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public void setMcSecurity(McSecurity newMcSecurity) {
-        if (newMcSecurity != mcSecurity) {
+    public void setMcSecurity( McSecurity newMcSecurity ) {
+        if( newMcSecurity != mcSecurity ) {
             NotificationChain msgs = null;
-            if (mcSecurity != null)
-                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, McSecurity.class, msgs);
-            if (newMcSecurity != null)
-                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, McSecurity.class, msgs);
-            msgs = basicSetMcSecurity(newMcSecurity, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( mcSecurity != null )
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, McSecurity.class, msgs );
+            if( newMcSecurity != null )
+                msgs = ( ( InternalEObject ) newMcSecurity ).eInverseAdd( this,
+                        SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, McSecurity.class, msgs );
+            msgs = basicSetMcSecurity( newMcSecurity, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SETTINGS__MC_SECURITY, newMcSecurity, newMcSecurity, !oldMcSecurityESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SETTINGS__MC_SECURITY,
+                        newMcSecurity, newMcSecurity, !oldMcSecurityESet ) );
         }
     }
 
@@ -939,14 +971,18 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetMcSecurity(NotificationChain msgs) {
+    public NotificationChain basicUnsetMcSecurity( NotificationChain msgs ) {
         McSecurity oldMcSecurity = mcSecurity;
         mcSecurity = null;
         boolean oldMcSecurityESet = mcSecurityESet;
         mcSecurityESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SMV_SETTINGS__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -958,17 +994,19 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public void unsetMcSecurity() {
-        if (mcSecurity != null) {
+        if( mcSecurity != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS, McSecurity.class, msgs);
-            msgs = basicUnsetMcSecurity(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this, SclPackage.MC_SECURITY__PARENT_SMV_SETTINGS,
+                    McSecurity.class, msgs );
+            msgs = basicUnsetMcSecurity( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_SETTINGS__MC_SECURITY, null, null, oldMcSecurityESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_SETTINGS__MC_SECURITY, null,
+                        null, oldMcSecurityESet ) );
         }
     }
 
@@ -987,26 +1025,30 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSmpRate()).basicAdd(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSamplesPerSec()).basicAdd(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSecPerSamples()).basicAdd(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                if (mcSecurity != null)
-                    msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SMV_SETTINGS__MC_SECURITY, null, msgs);
-                return basicSetMcSecurity((McSecurity)otherEnd, msgs);
+    public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSmpRate() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSamplesPerSec() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSecPerSamples() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            if( mcSecurity != null )
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SMV_SETTINGS__MC_SECURITY, null, msgs );
+            return basicSetMcSecurity( ( McSecurity ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1015,20 +1057,20 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                return ((InternalEList<?>)getSmpRate()).basicRemove(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                return ((InternalEList<?>)getSamplesPerSec()).basicRemove(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                return ((InternalEList<?>)getSecPerSamples()).basicRemove(otherEnd, msgs);
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                return basicUnsetMcSecurity(msgs);
+    public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            return ( ( InternalEList< ? > ) getSmpRate() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            return ( ( InternalEList< ? > ) getSamplesPerSec() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            return ( ( InternalEList< ? > ) getSecPerSamples() ).basicRemove( otherEnd, msgs );
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            return basicUnsetMcSecurity( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1037,12 +1079,12 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SMV_SETTINGS, Services.class, msgs);
+    public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__SMV_SETTINGS, Services.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -1051,36 +1093,36 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SV_ID:
-                return getSvID();
-            case SclPackage.SMV_SETTINGS__OPT_FIELDS:
-                return getOptFields();
-            case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
-                return getSmpRateAttribute();
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
-                return isSamplesPerSecAttribute();
-            case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
-                return isPdcTimeStamp();
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                return getSmpRate();
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                return getSamplesPerSec();
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                return getSecPerSamples();
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                return getParentServices();
-            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
-                return getSynchSrcId();
-            case SclPackage.SMV_SETTINGS__NOF_ASDU:
-                return getNofASDU();
-            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
-                return getKdaParticipant();
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                return getMcSecurity();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SV_ID:
+            return getSvID();
+        case SclPackage.SMV_SETTINGS__OPT_FIELDS:
+            return getOptFields();
+        case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
+            return getSmpRateAttribute();
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
+            return isSamplesPerSecAttribute();
+        case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+            return isPdcTimeStamp();
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            return getSmpRate();
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            return getSamplesPerSec();
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            return getSecPerSamples();
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            return getParentServices();
+        case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+            return getSynchSrcId();
+        case SclPackage.SMV_SETTINGS__NOF_ASDU:
+            return getNofASDU();
+        case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+            return getKdaParticipant();
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            return getMcSecurity();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1088,105 +1130,54 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * <!-- end-user-doc -->
      * @generated
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings( "unchecked" )
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SV_ID:
-                setSvID((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__OPT_FIELDS:
-                setOptFields((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
-                setSmpRateAttribute((ServiceSettingsEnum)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
-                setSamplesPerSecAttribute((Boolean)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
-                setPdcTimeStamp((Boolean)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                getSmpRate().clear();
-                getSmpRate().addAll((Collection<? extends SmpRate>)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                getSamplesPerSec().clear();
-                getSamplesPerSec().addAll((Collection<? extends SamplesPerSec>)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                getSecPerSamples().clear();
-                getSecPerSamples().addAll((Collection<? extends SecPerSamples>)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
-                setSynchSrcId((Boolean)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__NOF_ASDU:
-                setNofASDU((ServiceSettingsNoDynEnum)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
-                setKdaParticipant((Boolean)newValue);
-                return;
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                setMcSecurity((McSecurity)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SV_ID:
+            setSvID( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__OPT_FIELDS:
+            setOptFields( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
+            setSmpRateAttribute( ( ServiceSettingsEnum ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
+            setSamplesPerSecAttribute( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+            setPdcTimeStamp( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            getSmpRate().clear();
+            getSmpRate().addAll( ( Collection< ? extends SmpRate > ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            getSamplesPerSec().clear();
+            getSamplesPerSec().addAll( ( Collection< ? extends SamplesPerSec > ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            getSecPerSamples().clear();
+            getSecPerSamples().addAll( ( Collection< ? extends SecPerSamples > ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+            setSynchSrcId( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__NOF_ASDU:
+            setNofASDU( ( ServiceSettingsNoDynEnum ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+            setKdaParticipant( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            setMcSecurity( ( McSecurity ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SV_ID:
-                unsetSvID();
-                return;
-            case SclPackage.SMV_SETTINGS__OPT_FIELDS:
-                unsetOptFields();
-                return;
-            case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
-                unsetSmpRateAttribute();
-                return;
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
-                unsetSamplesPerSecAttribute();
-                return;
-            case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
-                unsetPdcTimeStamp();
-                return;
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                unsetSmpRate();
-                return;
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                unsetSamplesPerSec();
-                return;
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                unsetSecPerSamples();
-                return;
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
-            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
-                unsetSynchSrcId();
-                return;
-            case SclPackage.SMV_SETTINGS__NOF_ASDU:
-                unsetNofASDU();
-                return;
-            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
-                unsetKdaParticipant();
-                return;
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                unsetMcSecurity();
-                return;
-        }
-        super.eUnset(featureID);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1195,36 +1186,87 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.SMV_SETTINGS__SV_ID:
-                return isSetSvID();
-            case SclPackage.SMV_SETTINGS__OPT_FIELDS:
-                return isSetOptFields();
-            case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
-                return isSetSmpRateAttribute();
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
-                return isSetSamplesPerSecAttribute();
-            case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
-                return isSetPdcTimeStamp();
-            case SclPackage.SMV_SETTINGS__SMP_RATE:
-                return isSetSmpRate();
-            case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
-                return isSetSamplesPerSec();
-            case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
-                return isSetSecPerSamples();
-            case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
-                return getParentServices() != null;
-            case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
-                return isSetSynchSrcId();
-            case SclPackage.SMV_SETTINGS__NOF_ASDU:
-                return isSetNofASDU();
-            case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
-                return isSetKdaParticipant();
-            case SclPackage.SMV_SETTINGS__MC_SECURITY:
-                return isSetMcSecurity();
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SV_ID:
+            unsetSvID();
+            return;
+        case SclPackage.SMV_SETTINGS__OPT_FIELDS:
+            unsetOptFields();
+            return;
+        case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
+            unsetSmpRateAttribute();
+            return;
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
+            unsetSamplesPerSecAttribute();
+            return;
+        case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+            unsetPdcTimeStamp();
+            return;
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            unsetSmpRate();
+            return;
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            unsetSamplesPerSec();
+            return;
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            unsetSecPerSamples();
+            return;
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
+        case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+            unsetSynchSrcId();
+            return;
+        case SclPackage.SMV_SETTINGS__NOF_ASDU:
+            unsetNofASDU();
+            return;
+        case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+            unsetKdaParticipant();
+            return;
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            unsetMcSecurity();
+            return;
         }
-        return super.eIsSet(featureID);
+        super.eUnset( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.SMV_SETTINGS__SV_ID:
+            return isSetSvID();
+        case SclPackage.SMV_SETTINGS__OPT_FIELDS:
+            return isSetOptFields();
+        case SclPackage.SMV_SETTINGS__SMP_RATE_ATTRIBUTE:
+            return isSetSmpRateAttribute();
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC_ATTRIBUTE:
+            return isSetSamplesPerSecAttribute();
+        case SclPackage.SMV_SETTINGS__PDC_TIME_STAMP:
+            return isSetPdcTimeStamp();
+        case SclPackage.SMV_SETTINGS__SMP_RATE:
+            return isSetSmpRate();
+        case SclPackage.SMV_SETTINGS__SAMPLES_PER_SEC:
+            return isSetSamplesPerSec();
+        case SclPackage.SMV_SETTINGS__SEC_PER_SAMPLES:
+            return isSetSecPerSamples();
+        case SclPackage.SMV_SETTINGS__PARENT_SERVICES:
+            return getParentServices() != null;
+        case SclPackage.SMV_SETTINGS__SYNCH_SRC_ID:
+            return isSetSynchSrcId();
+        case SclPackage.SMV_SETTINGS__NOF_ASDU:
+            return isSetNofASDU();
+        case SclPackage.SMV_SETTINGS__KDA_PARTICIPANT:
+            return isSetKdaParticipant();
+        case SclPackage.SMV_SETTINGS__MC_SECURITY:
+            return isSetMcSecurity();
+        }
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1234,26 +1276,50 @@ public class SMVSettingsImpl extends ServiceSettingsImpl implements SMVSettings 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (svID: ");
-        if (svIDESet) result.append(svID); else result.append("<unset>");
-        result.append(", optFields: ");
-        if (optFieldsESet) result.append(optFields); else result.append("<unset>");
-        result.append(", smpRateAttribute: ");
-        if (smpRateAttributeESet) result.append(smpRateAttribute); else result.append("<unset>");
-        result.append(", samplesPerSecAttribute: ");
-        if (samplesPerSecAttributeESet) result.append(samplesPerSecAttribute); else result.append("<unset>");
-        result.append(", pdcTimeStamp: ");
-        if (pdcTimeStampESet) result.append(pdcTimeStamp); else result.append("<unset>");
-        result.append(", synchSrcId: ");
-        if (synchSrcIdESet) result.append(synchSrcId); else result.append("<unset>");
-        result.append(", nofASDU: ");
-        if (nofASDUESet) result.append(nofASDU); else result.append("<unset>");
-        result.append(", kdaParticipant: ");
-        if (kdaParticipantESet) result.append(kdaParticipant); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (svID: " );
+        if( svIDESet )
+            result.append( svID );
+        else
+            result.append( "<unset>" );
+        result.append( ", optFields: " );
+        if( optFieldsESet )
+            result.append( optFields );
+        else
+            result.append( "<unset>" );
+        result.append( ", smpRateAttribute: " );
+        if( smpRateAttributeESet )
+            result.append( smpRateAttribute );
+        else
+            result.append( "<unset>" );
+        result.append( ", samplesPerSecAttribute: " );
+        if( samplesPerSecAttributeESet )
+            result.append( samplesPerSecAttribute );
+        else
+            result.append( "<unset>" );
+        result.append( ", pdcTimeStamp: " );
+        if( pdcTimeStampESet )
+            result.append( pdcTimeStamp );
+        else
+            result.append( "<unset>" );
+        result.append( ", synchSrcId: " );
+        if( synchSrcIdESet )
+            result.append( synchSrcId );
+        else
+            result.append( "<unset>" );
+        result.append( ", nofASDU: " );
+        if( nofASDUESet )
+            result.append( nofASDU );
+        else
+            result.append( "<unset>" );
+        result.append( ", kdaParticipant: " );
+        if( kdaParticipantESet )
+            result.append( kdaParticipant );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -120,7 +120,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #getParentAbstractEqFuncSubFunc()
      * @generated
      */
-    void setParentAbstractEqFuncSubFunc(AbstractEqFuncSubFunc value);
+    void setParentAbstractEqFuncSubFunc( AbstractEqFuncSubFunc value );
 
     /**
      * Returns the value of the '<em><b>Eq Function</b></em>' containment reference list.
@@ -140,7 +140,7 @@ public interface GeneralEquipment extends Equipment {
      * @model opposite="ParentGeneralEquipment" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqFunction> getEqFunction();
+    EList< EqFunction > getEqFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.GeneralEquipment#getEqFunction <em>Eq Function</em>}' containment reference list.
@@ -185,7 +185,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #getParentEquipmentContainer()
      * @generated
      */
-    void setParentEquipmentContainer(EquipmentContainer value);
+    void setParentEquipmentContainer( EquipmentContainer value );
 
     /**
      * Returns the value of the '<em><b>Parent Function</b></em>' container reference.
@@ -209,7 +209,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #getParentFunction()
      * @generated
      */
-    void setParentFunction(Function value);
+    void setParentFunction( Function value );
 
     /**
      * Returns the value of the '<em><b>Parent General Equipment Container</b></em>' container reference.
@@ -233,7 +233,7 @@ public interface GeneralEquipment extends Equipment {
      * @see #getParentGeneralEquipmentContainer()
      * @generated
      */
-    void setParentGeneralEquipmentContainer(GeneralEquipmentContainer value);
+    void setParentGeneralEquipmentContainer( GeneralEquipmentContainer value );
 
     /**
      * Returns the value of the '<em><b>Parent Sub Function</b></em>' container reference.
@@ -257,6 +257,6 @@ public interface GeneralEquipment extends Equipment {
      * @see #getParentSubFunction()
      * @generated
      */
-    void setParentSubFunction(SubFunction value);
+    void setParentSubFunction( SubFunction value );
 
 } // GeneralEquipment

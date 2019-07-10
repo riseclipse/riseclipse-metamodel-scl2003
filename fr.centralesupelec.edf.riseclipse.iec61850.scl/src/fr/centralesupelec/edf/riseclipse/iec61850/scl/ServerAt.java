@@ -114,7 +114,7 @@ public interface ServerAt extends UnNaming {
      * @see #getParentAccessPoint()
      * @generated
      */
-    void setParentAccessPoint(AccessPoint value);
+    void setParentAccessPoint( AccessPoint value );
 
     /**
      * Returns the value of the '<em><b>Refers To Access Point</b></em>' reference.
@@ -146,7 +146,7 @@ public interface ServerAt extends UnNaming {
      * @see #getRefersToAccessPoint()
      * @generated
      */
-    void setRefersToAccessPoint(AccessPoint value);
+    void setRefersToAccessPoint( AccessPoint value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ServerAt#getRefersToAccessPoint <em>Refers To Access Point</em>}' reference.

@@ -69,7 +69,7 @@ public interface SDO extends AbstractDataObject {
      * @see #getCount()
      * @generated
      */
-    void setCount(String value);
+    void setCount( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getCount <em>Count</em>}' attribute.
@@ -116,7 +116,7 @@ public interface SDO extends AbstractDataObject {
      * @see #getParentDOType()
      * @generated
      */
-    void setParentDOType(DOType value);
+    void setParentDOType( DOType value );
 
     /**
      * Returns the value of the '<em><b>Referred By SDI</b></em>' reference list.
@@ -132,7 +132,7 @@ public interface SDO extends AbstractDataObject {
      * @model opposite="RefersToSDO" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<SDI> getReferredBySDI();
+    EList< SDI > getReferredBySDI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO#getReferredBySDI <em>Referred By SDI</em>}' reference list.

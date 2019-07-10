@@ -175,8 +175,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         ftp = newFtp;
         boolean oldFtpESet = ftpESet;
         ftpESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FILE_HANDLING__FTP, oldFtp, ftp, !oldFtpESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__FTP, oldFtp, ftp,
+                    !oldFtpESet ) );
     }
 
     /**
@@ -190,8 +191,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldFtpESet = ftpESet;
         ftp = FTP_EDEFAULT;
         ftpESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FILE_HANDLING__FTP, oldFtp, FTP_EDEFAULT, oldFtpESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__FTP, oldFtp,
+                    FTP_EDEFAULT, oldFtpESet ) );
     }
 
     /**
@@ -225,8 +227,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         ftps = newFtps;
         boolean oldFtpsESet = ftpsESet;
         ftpsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FILE_HANDLING__FTPS, oldFtps, ftps, !oldFtpsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__FTPS, oldFtps, ftps,
+                    !oldFtpsESet ) );
     }
 
     /**
@@ -240,8 +243,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldFtpsESet = ftpsESet;
         ftps = FTPS_EDEFAULT;
         ftpsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FILE_HANDLING__FTPS, oldFtps, FTPS_EDEFAULT, oldFtpsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__FTPS, oldFtps,
+                    FTPS_EDEFAULT, oldFtpsESet ) );
     }
 
     /**
@@ -275,8 +279,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         mms = newMms;
         boolean oldMmsESet = mmsESet;
         mmsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FILE_HANDLING__MMS, oldMms, mms, !oldMmsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__MMS, oldMms, mms,
+                    !oldMmsESet ) );
     }
 
     /**
@@ -290,8 +295,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
         boolean oldMmsESet = mmsESet;
         mms = MMS_EDEFAULT;
         mmsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.FILE_HANDLING__MMS, oldMms, MMS_EDEFAULT, oldMmsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.FILE_HANDLING__MMS, oldMms,
+                    MMS_EDEFAULT, oldMmsESet ) );
     }
 
     /**
@@ -311,8 +317,8 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -320,8 +326,9 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.FILE_HANDLING__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.FILE_HANDLING__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -331,20 +338,24 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.FILE_HANDLING__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__FILE_HANDLING, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__FILE_HANDLING,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.FILE_HANDLING__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.FILE_HANDLING__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -354,13 +365,13 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -370,11 +381,11 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -384,11 +395,12 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__FILE_HANDLING, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__FILE_HANDLING, Services.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -398,17 +410,17 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__FTP:
-                return getFtp();
-            case SclPackage.FILE_HANDLING__FTPS:
-                return getFtps();
-            case SclPackage.FILE_HANDLING__MMS:
-                return getMms();
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                return getParentServices();
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__FTP:
+            return getFtp();
+        case SclPackage.FILE_HANDLING__FTPS:
+            return getFtps();
+        case SclPackage.FILE_HANDLING__MMS:
+            return getMms();
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            return getParentServices();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -418,21 +430,21 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__FTP:
-                setFtp((Boolean)newValue);
-                return;
-            case SclPackage.FILE_HANDLING__FTPS:
-                setFtps((Boolean)newValue);
-                return;
-            case SclPackage.FILE_HANDLING__MMS:
-                setMms((Boolean)newValue);
-                return;
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__FTP:
+            setFtp( ( Boolean ) newValue );
+            return;
+        case SclPackage.FILE_HANDLING__FTPS:
+            setFtps( ( Boolean ) newValue );
+            return;
+        case SclPackage.FILE_HANDLING__MMS:
+            setMms( ( Boolean ) newValue );
+            return;
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -442,21 +454,21 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__FTP:
-                unsetFtp();
-                return;
-            case SclPackage.FILE_HANDLING__FTPS:
-                unsetFtps();
-                return;
-            case SclPackage.FILE_HANDLING__MMS:
-                unsetMms();
-                return;
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__FTP:
+            unsetFtp();
+            return;
+        case SclPackage.FILE_HANDLING__FTPS:
+            unsetFtps();
+            return;
+        case SclPackage.FILE_HANDLING__MMS:
+            unsetMms();
+            return;
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -466,17 +478,17 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.FILE_HANDLING__FTP:
-                return isSetFtp();
-            case SclPackage.FILE_HANDLING__FTPS:
-                return isSetFtps();
-            case SclPackage.FILE_HANDLING__MMS:
-                return isSetMms();
-            case SclPackage.FILE_HANDLING__PARENT_SERVICES:
-                return getParentServices() != null;
+        switch( featureID ) {
+        case SclPackage.FILE_HANDLING__FTP:
+            return isSetFtp();
+        case SclPackage.FILE_HANDLING__FTPS:
+            return isSetFtps();
+        case SclPackage.FILE_HANDLING__MMS:
+            return isSetMms();
+        case SclPackage.FILE_HANDLING__PARENT_SERVICES:
+            return getParentServices() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -486,16 +498,25 @@ public class FileHandlingImpl extends SclObjectImpl implements FileHandling {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (ftp: ");
-        if (ftpESet) result.append(ftp); else result.append("<unset>");
-        result.append(", ftps: ");
-        if (ftpsESet) result.append(ftps); else result.append("<unset>");
-        result.append(", mms: ");
-        if (mmsESet) result.append(mms); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (ftp: " );
+        if( ftpESet )
+            result.append( ftp );
+        else
+            result.append( "<unset>" );
+        result.append( ", ftps: " );
+        if( ftpsESet )
+            result.append( ftps );
+        else
+            result.append( "<unset>" );
+        result.append( ", mms: " );
+        if( mmsESet )
+            result.append( mms );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

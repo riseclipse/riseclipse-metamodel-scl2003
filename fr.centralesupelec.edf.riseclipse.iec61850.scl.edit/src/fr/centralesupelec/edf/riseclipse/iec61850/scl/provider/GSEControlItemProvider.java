@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public GSEControlItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public GSEControlItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,14 +56,14 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addAppIDPropertyDescriptor(object);
-            addFixedOffsPropertyDescriptor(object);
-            addSecurityEnablePropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
+            addAppIDPropertyDescriptor( object );
+            addFixedOffsPropertyDescriptor( object );
+            addSecurityEnablePropertyDescriptor( object );
+            addTypePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +74,20 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addAppIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSEControl_appID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSEControl_appID_feature", "_UI_GSEControl_type"),
-                 SclPackage.eINSTANCE.getGSEControl_AppID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addAppIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSEControl_appID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_appID_feature",
+                                "_UI_GSEControl_type" ),
+                        SclPackage.eINSTANCE.getGSEControl_AppID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +96,20 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addFixedOffsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSEControl_fixedOffs_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSEControl_fixedOffs_feature", "_UI_GSEControl_type"),
-                 SclPackage.eINSTANCE.getGSEControl_FixedOffs(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addFixedOffsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSEControl_fixedOffs_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_fixedOffs_feature",
+                                "_UI_GSEControl_type" ),
+                        SclPackage.eINSTANCE.getGSEControl_FixedOffs(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,20 +118,20 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSecurityEnablePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSEControl_securityEnable_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSEControl_securityEnable_feature", "_UI_GSEControl_type"),
-                 SclPackage.eINSTANCE.getGSEControl_SecurityEnable(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSecurityEnablePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSEControl_securityEnable_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_securityEnable_feature",
+                                "_UI_GSEControl_type" ),
+                        SclPackage.eINSTANCE.getGSEControl_SecurityEnable(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -141,20 +140,20 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_GSEControl_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_GSEControl_type_feature", "_UI_GSEControl_type"),
-                 SclPackage.eINSTANCE.getGSEControl_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_GSEControl_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_GSEControl_type_feature",
+                                "_UI_GSEControl_type" ),
+                        SclPackage.eINSTANCE.getGSEControl_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -164,8 +163,8 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/GSEControl"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/GSEControl" ) );
     }
 
     /**
@@ -175,13 +174,11 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((GSEControl)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_GSEControl_type") :
-            getString("_UI_GSEControl_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( GSEControl ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_GSEControl_type" )
+                : getString( "_UI_GSEControl_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -191,18 +188,18 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(GSEControl.class)) {
-            case SclPackage.GSE_CONTROL__APP_ID:
-            case SclPackage.GSE_CONTROL__FIXED_OFFS:
-            case SclPackage.GSE_CONTROL__SECURITY_ENABLE:
-            case SclPackage.GSE_CONTROL__TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( GSEControl.class ) ) {
+        case SclPackage.GSE_CONTROL__APP_ID:
+        case SclPackage.GSE_CONTROL__FIXED_OFFS:
+        case SclPackage.GSE_CONTROL__SECURITY_ENABLE:
+        case SclPackage.GSE_CONTROL__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -213,8 +210,8 @@ public class GSEControlItemProvider extends ControlWithIEDNameItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

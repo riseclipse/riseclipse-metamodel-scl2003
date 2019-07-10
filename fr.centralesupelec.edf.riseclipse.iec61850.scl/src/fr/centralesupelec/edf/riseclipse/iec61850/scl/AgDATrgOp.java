@@ -66,7 +66,7 @@ public interface AgDATrgOp extends EObject {
      * @see #getDchg()
      * @generated
      */
-    void setDchg(Boolean value);
+    void setDchg( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDchg <em>Dchg</em>}' attribute.
@@ -116,7 +116,7 @@ public interface AgDATrgOp extends EObject {
      * @see #getDupd()
      * @generated
      */
-    void setDupd(Boolean value);
+    void setDupd( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getDupd <em>Dupd</em>}' attribute.
@@ -166,7 +166,7 @@ public interface AgDATrgOp extends EObject {
      * @see #getQchg()
      * @generated
      */
-    void setQchg(Boolean value);
+    void setQchg( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp#getQchg <em>Qchg</em>}' attribute.

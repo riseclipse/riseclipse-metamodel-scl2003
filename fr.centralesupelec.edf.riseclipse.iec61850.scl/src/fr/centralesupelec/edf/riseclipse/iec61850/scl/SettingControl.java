@@ -222,6 +222,6 @@ public interface SettingControl extends UnNaming {
      * @see #getParentLN0()
      * @generated
      */
-    void setParentLN0(LN0 value);
+    void setParentLN0( LN0 value );
 
 } // SettingControl

@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.TimeSyncProt;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TimeSyncProtItemProvider 
-    extends SclObjectItemProvider {
+public class TimeSyncProtItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public TimeSyncProtItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public TimeSyncProtItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,14 +57,14 @@ public class TimeSyncProtItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addC37_238PropertyDescriptor(object);
-            addOtherPropertyDescriptor(object);
-            addSntpPropertyDescriptor(object);
-            addIec61850_9_3PropertyDescriptor(object);
+            addC37_238PropertyDescriptor( object );
+            addOtherPropertyDescriptor( object );
+            addSntpPropertyDescriptor( object );
+            addIec61850_9_3PropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -76,20 +75,20 @@ public class TimeSyncProtItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addC37_238PropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_TimeSyncProt_c37_238_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_c37_238_feature", "_UI_TimeSyncProt_type"),
-                 SclPackage.eINSTANCE.getTimeSyncProt_C37_238(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addC37_238PropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_TimeSyncProt_c37_238_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_c37_238_feature",
+                                "_UI_TimeSyncProt_type" ),
+                        SclPackage.eINSTANCE.getTimeSyncProt_C37_238(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -98,20 +97,20 @@ public class TimeSyncProtItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOtherPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_TimeSyncProt_other_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_other_feature", "_UI_TimeSyncProt_type"),
-                 SclPackage.eINSTANCE.getTimeSyncProt_Other(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOtherPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_TimeSyncProt_other_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_other_feature",
+                                "_UI_TimeSyncProt_type" ),
+                        SclPackage.eINSTANCE.getTimeSyncProt_Other(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,20 +119,20 @@ public class TimeSyncProtItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSntpPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_TimeSyncProt_sntp_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_sntp_feature", "_UI_TimeSyncProt_type"),
-                 SclPackage.eINSTANCE.getTimeSyncProt_Sntp(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSntpPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_TimeSyncProt_sntp_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_sntp_feature",
+                                "_UI_TimeSyncProt_type" ),
+                        SclPackage.eINSTANCE.getTimeSyncProt_Sntp(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -142,20 +141,20 @@ public class TimeSyncProtItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIec61850_9_3PropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_TimeSyncProt_iec61850_9_3_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_iec61850_9_3_feature", "_UI_TimeSyncProt_type"),
-                 SclPackage.eINSTANCE.getTimeSyncProt_Iec61850_9_3(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIec61850_9_3PropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_TimeSyncProt_iec61850_9_3_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_TimeSyncProt_iec61850_9_3_feature",
+                                "_UI_TimeSyncProt_type" ),
+                        SclPackage.eINSTANCE.getTimeSyncProt_Iec61850_9_3(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -165,8 +164,8 @@ public class TimeSyncProtItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/TimeSyncProt"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/TimeSyncProt" ) );
     }
 
     /**
@@ -176,11 +175,10 @@ public class TimeSyncProtItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        TimeSyncProt timeSyncProt = (TimeSyncProt)object;
-        return getString("_UI_TimeSyncProt_type") + " " + timeSyncProt.getLineNumber();
+    public String getText( Object object ) {
+        TimeSyncProt timeSyncProt = ( TimeSyncProt ) object;
+        return getString( "_UI_TimeSyncProt_type" ) + " " + timeSyncProt.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -190,18 +188,18 @@ public class TimeSyncProtItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(TimeSyncProt.class)) {
-            case SclPackage.TIME_SYNC_PROT__C37_238:
-            case SclPackage.TIME_SYNC_PROT__OTHER:
-            case SclPackage.TIME_SYNC_PROT__SNTP:
-            case SclPackage.TIME_SYNC_PROT__IEC61850_93:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( TimeSyncProt.class ) ) {
+        case SclPackage.TIME_SYNC_PROT__C37_238:
+        case SclPackage.TIME_SYNC_PROT__OTHER:
+        case SclPackage.TIME_SYNC_PROT__SNTP:
+        case SclPackage.TIME_SYNC_PROT__IEC61850_93:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -212,8 +210,8 @@ public class TimeSyncProtItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

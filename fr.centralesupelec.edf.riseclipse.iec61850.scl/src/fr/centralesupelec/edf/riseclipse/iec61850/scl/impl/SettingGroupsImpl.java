@@ -126,9 +126,13 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         confSG = newConfSG;
         boolean oldConfSGESet = confSGESet;
         confSGESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, newConfSG, !oldConfSGESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, newConfSG, !oldConfSGESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -140,20 +144,23 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void setConfSG( ConfSG newConfSG ) {
-        if (newConfSG != confSG) {
+        if( newConfSG != confSG ) {
             NotificationChain msgs = null;
-            if (confSG != null)
-                msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS, ConfSG.class, msgs);
-            if (newConfSG != null)
-                msgs = ((InternalEObject)newConfSG).eInverseAdd(this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS, ConfSG.class, msgs);
-            msgs = basicSetConfSG(newConfSG, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( confSG != null )
+                msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
+                        ConfSG.class, msgs );
+            if( newConfSG != null )
+                msgs = ( ( InternalEObject ) newConfSG ).eInverseAdd( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
+                        ConfSG.class, msgs );
+            msgs = basicSetConfSG( newConfSG, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfSGESet = confSGESet;
             confSGESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, newConfSG, newConfSG, !oldConfSGESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__CONF_SG, newConfSG,
+                        newConfSG, !oldConfSGESet ) );
         }
     }
 
@@ -167,9 +174,13 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         confSG = null;
         boolean oldConfSGESet = confSGESet;
         confSGESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, null, oldConfSGESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SETTING_GROUPS__CONF_SG, oldConfSG, null, oldConfSGESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -181,17 +192,19 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void unsetConfSG() {
-        if (confSG != null) {
+        if( confSG != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)confSG).eInverseRemove(this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS, ConfSG.class, msgs);
-            msgs = basicUnsetConfSG(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this, SclPackage.CONF_SG__PARENT_SETTING_GROUPS,
+                    ConfSG.class, msgs );
+            msgs = basicUnsetConfSG( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldConfSGESet = confSGESet;
             confSGESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, null, null, oldConfSGESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_GROUPS__CONF_SG, null,
+                        null, oldConfSGESet ) );
         }
     }
 
@@ -225,9 +238,13 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         sgEdit = newSGEdit;
         boolean oldSGEditESet = sgEditESet;
         sgEditESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, newSGEdit, !oldSGEditESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, newSGEdit, !oldSGEditESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -239,20 +256,23 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void setSGEdit( SGEdit newSGEdit ) {
-        if (newSGEdit != sgEdit) {
+        if( newSGEdit != sgEdit ) {
             NotificationChain msgs = null;
-            if (sgEdit != null)
-                msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, SGEdit.class, msgs);
-            if (newSGEdit != null)
-                msgs = ((InternalEObject)newSGEdit).eInverseAdd(this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, SGEdit.class, msgs);
-            msgs = basicSetSGEdit(newSGEdit, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( sgEdit != null )
+                msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
+                        SGEdit.class, msgs );
+            if( newSGEdit != null )
+                msgs = ( ( InternalEObject ) newSGEdit ).eInverseAdd( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
+                        SGEdit.class, msgs );
+            msgs = basicSetSGEdit( newSGEdit, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSGEditESet = sgEditESet;
             sgEditESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, newSGEdit, newSGEdit, !oldSGEditESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__SG_EDIT, newSGEdit,
+                        newSGEdit, !oldSGEditESet ) );
         }
     }
 
@@ -266,9 +286,13 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
         sgEdit = null;
         boolean oldSGEditESet = sgEditESet;
         sgEditESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, null, oldSGEditESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.SETTING_GROUPS__SG_EDIT, oldSGEdit, null, oldSGEditESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -280,17 +304,19 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void unsetSGEdit() {
-        if (sgEdit != null) {
+        if( sgEdit != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)sgEdit).eInverseRemove(this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, SGEdit.class, msgs);
-            msgs = basicUnsetSGEdit(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
+                    SGEdit.class, msgs );
+            msgs = basicUnsetSGEdit( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldSGEditESet = sgEditESet;
             sgEditESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, null, null, oldSGEditESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SETTING_GROUPS__SG_EDIT, null,
+                        null, oldSGEditESet ) );
         }
     }
 
@@ -311,8 +337,8 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -320,8 +346,9 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.SETTING_GROUPS__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.SETTING_GROUPS__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -331,20 +358,24 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SETTING_GROUPS__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__SETTING_GROUPS,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SETTING_GROUPS__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SETTING_GROUPS__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -354,21 +385,23 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                if (confSG != null)
-                    msgs = ((InternalEObject)confSG).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__CONF_SG, null, msgs);
-                return basicSetConfSG((ConfSG)otherEnd, msgs);
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                if (sgEdit != null)
-                    msgs = ((InternalEObject)sgEdit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__SG_EDIT, null, msgs);
-                return basicSetSGEdit((SGEdit)otherEnd, msgs);
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            if( confSG != null )
+                msgs = ( ( InternalEObject ) confSG ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__CONF_SG, null, msgs );
+            return basicSetConfSG( ( ConfSG ) otherEnd, msgs );
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            if( sgEdit != null )
+                msgs = ( ( InternalEObject ) sgEdit ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.SETTING_GROUPS__SG_EDIT, null, msgs );
+            return basicSetSGEdit( ( SGEdit ) otherEnd, msgs );
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -378,15 +411,15 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return basicUnsetConfSG(msgs);
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return basicUnsetSGEdit(msgs);
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            return basicUnsetConfSG( msgs );
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            return basicUnsetSGEdit( msgs );
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -396,11 +429,12 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SETTING_GROUPS, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__SETTING_GROUPS, Services.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -410,15 +444,15 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return getConfSG();
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return getSGEdit();
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                return getParentServices();
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            return getConfSG();
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            return getSGEdit();
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            return getParentServices();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -428,18 +462,18 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                setConfSG((ConfSG)newValue);
-                return;
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                setSGEdit((SGEdit)newValue);
-                return;
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            setConfSG( ( ConfSG ) newValue );
+            return;
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            setSGEdit( ( SGEdit ) newValue );
+            return;
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -449,18 +483,18 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                unsetConfSG();
-                return;
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                unsetSGEdit();
-                return;
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            unsetConfSG();
+            return;
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            unsetSGEdit();
+            return;
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -470,15 +504,15 @@ public class SettingGroupsImpl extends SclObjectImpl implements SettingGroups {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SETTING_GROUPS__CONF_SG:
-                return isSetConfSG();
-            case SclPackage.SETTING_GROUPS__SG_EDIT:
-                return isSetSGEdit();
-            case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
-                return getParentServices() != null;
+        switch( featureID ) {
+        case SclPackage.SETTING_GROUPS__CONF_SG:
+            return isSetConfSG();
+        case SclPackage.SETTING_GROUPS__SG_EDIT:
+            return isSetSGEdit();
+        case SclPackage.SETTING_GROUPS__PARENT_SERVICES:
+            return getParentServices() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //SettingGroupsImpl

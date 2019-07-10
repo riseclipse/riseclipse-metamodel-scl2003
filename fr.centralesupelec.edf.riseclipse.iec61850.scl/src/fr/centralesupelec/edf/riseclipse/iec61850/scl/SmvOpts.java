@@ -59,6 +59,6 @@ public interface SmvOpts extends SclObject, AgSmvOpts {
      * @see #getParentSampledValueControl()
      * @generated
      */
-    void setParentSampledValueControl(SampledValueControl value);
+    void setParentSampledValueControl( SampledValueControl value );
 
 } // SmvOpts

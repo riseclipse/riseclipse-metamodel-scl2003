@@ -61,7 +61,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * @generated
      * @ordered
      */
-    protected EList<P> p;
+    protected EList< P > p;
 
     /**
      * <!-- begin-user-doc -->
@@ -89,8 +89,8 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public ConnectedAP getParentConnectedAP() {
-        if (eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONNECTED_AP) return null;
-        return (ConnectedAP)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONNECTED_AP ) return null;
+        return ( ConnectedAP ) eInternalContainer();
     }
 
     /**
@@ -98,8 +98,9 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentConnectedAP(ConnectedAP newParentConnectedAP, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentConnectedAP, SclPackage.ADDRESS__PARENT_CONNECTED_AP, msgs);
+    public NotificationChain basicSetParentConnectedAP( ConnectedAP newParentConnectedAP, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentConnectedAP, SclPackage.ADDRESS__PARENT_CONNECTED_AP,
+                msgs );
         return msgs;
     }
 
@@ -109,20 +110,24 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * @generated
      */
     @Override
-    public void setParentConnectedAP(ConnectedAP newParentConnectedAP) {
-        if (newParentConnectedAP != eInternalContainer() || (eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONNECTED_AP && newParentConnectedAP != null)) {
-            if (EcoreUtil.isAncestor(this, newParentConnectedAP))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentConnectedAP( ConnectedAP newParentConnectedAP ) {
+        if( newParentConnectedAP != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONNECTED_AP
+                        && newParentConnectedAP != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentConnectedAP ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentConnectedAP != null)
-                msgs = ((InternalEObject)newParentConnectedAP).eInverseAdd(this, SclPackage.CONNECTED_AP__ADDRESS, ConnectedAP.class, msgs);
-            msgs = basicSetParentConnectedAP(newParentConnectedAP, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentConnectedAP != null )
+                msgs = ( ( InternalEObject ) newParentConnectedAP ).eInverseAdd( this, SclPackage.CONNECTED_AP__ADDRESS,
+                        ConnectedAP.class, msgs );
+            msgs = basicSetParentConnectedAP( newParentConnectedAP, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ADDRESS__PARENT_CONNECTED_AP, newParentConnectedAP, newParentConnectedAP));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ADDRESS__PARENT_CONNECTED_AP,
+                    newParentConnectedAP, newParentConnectedAP ) );
     }
 
     /**
@@ -132,8 +137,8 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public ControlBlock getParentControlBlock() {
-        if (eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONTROL_BLOCK) return null;
-        return (ControlBlock)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONTROL_BLOCK ) return null;
+        return ( ControlBlock ) eInternalContainer();
     }
 
     /**
@@ -141,8 +146,9 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentControlBlock(ControlBlock newParentControlBlock, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentControlBlock, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK, msgs);
+    public NotificationChain basicSetParentControlBlock( ControlBlock newParentControlBlock, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentControlBlock, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK,
+                msgs );
         return msgs;
     }
 
@@ -152,20 +158,24 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * @generated
      */
     @Override
-    public void setParentControlBlock(ControlBlock newParentControlBlock) {
-        if (newParentControlBlock != eInternalContainer() || (eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONTROL_BLOCK && newParentControlBlock != null)) {
-            if (EcoreUtil.isAncestor(this, newParentControlBlock))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentControlBlock( ControlBlock newParentControlBlock ) {
+        if( newParentControlBlock != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ADDRESS__PARENT_CONTROL_BLOCK
+                        && newParentControlBlock != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentControlBlock ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentControlBlock != null)
-                msgs = ((InternalEObject)newParentControlBlock).eInverseAdd(this, SclPackage.CONTROL_BLOCK__ADDRESS, ControlBlock.class, msgs);
-            msgs = basicSetParentControlBlock(newParentControlBlock, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentControlBlock != null )
+                msgs = ( ( InternalEObject ) newParentControlBlock ).eInverseAdd( this,
+                        SclPackage.CONTROL_BLOCK__ADDRESS, ControlBlock.class, msgs );
+            msgs = basicSetParentControlBlock( newParentControlBlock, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK, newParentControlBlock, newParentControlBlock));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ADDRESS__PARENT_CONTROL_BLOCK,
+                    newParentControlBlock, newParentControlBlock ) );
     }
 
     /**
@@ -174,9 +184,10 @@ public class AddressImpl extends SclObjectImpl implements Address {
      * @generated
      */
     @Override
-    public EList<P> getP() {
-        if (p == null) {
-            p = new EObjectContainmentWithInverseEList.Unsettable<P>(P.class, this, SclPackage.ADDRESS__P, SclPackage.P__PARENT_ADDRESS);
+    public EList< P > getP() {
+        if( p == null ) {
+            p = new EObjectContainmentWithInverseEList.Unsettable< P >( P.class, this, SclPackage.ADDRESS__P,
+                    SclPackage.P__PARENT_ADDRESS );
         }
         return p;
     }
@@ -188,7 +199,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public void unsetP() {
-        if (p != null) ((InternalEList.Unsettable<?>)p).unset();
+        if( p != null ) ( ( InternalEList.Unsettable< ? > ) p ).unset();
     }
 
     /**
@@ -198,7 +209,7 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public boolean isSetP() {
-        return p != null && ((InternalEList.Unsettable<?>)p).isSet();
+        return p != null && ( ( InternalEList.Unsettable< ? > ) p ).isSet();
     }
 
     /**
@@ -209,19 +220,19 @@ public class AddressImpl extends SclObjectImpl implements Address {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentConnectedAP((ConnectedAP)otherEnd, msgs);
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentControlBlock((ControlBlock)otherEnd, msgs);
-            case SclPackage.ADDRESS__P:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getP()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentConnectedAP( ( ConnectedAP ) otherEnd, msgs );
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentControlBlock( ( ControlBlock ) otherEnd, msgs );
+        case SclPackage.ADDRESS__P:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getP() ).basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -231,15 +242,15 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                return basicSetParentConnectedAP(null, msgs);
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                return basicSetParentControlBlock(null, msgs);
-            case SclPackage.ADDRESS__P:
-                return ((InternalEList<?>)getP()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            return basicSetParentConnectedAP( null, msgs );
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            return basicSetParentControlBlock( null, msgs );
+        case SclPackage.ADDRESS__P:
+            return ( ( InternalEList< ? > ) getP() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -249,13 +260,15 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONNECTED_AP__ADDRESS, ConnectedAP.class, msgs);
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_BLOCK__ADDRESS, ControlBlock.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CONNECTED_AP__ADDRESS, ConnectedAP.class,
+                    msgs );
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CONTROL_BLOCK__ADDRESS, ControlBlock.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -265,15 +278,15 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                return getParentConnectedAP();
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                return getParentControlBlock();
-            case SclPackage.ADDRESS__P:
-                return getP();
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            return getParentConnectedAP();
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            return getParentControlBlock();
+        case SclPackage.ADDRESS__P:
+            return getP();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -284,19 +297,19 @@ public class AddressImpl extends SclObjectImpl implements Address {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                setParentConnectedAP((ConnectedAP)newValue);
-                return;
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                setParentControlBlock((ControlBlock)newValue);
-                return;
-            case SclPackage.ADDRESS__P:
-                getP().clear();
-                getP().addAll((Collection<? extends P>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            setParentConnectedAP( ( ConnectedAP ) newValue );
+            return;
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            setParentControlBlock( ( ControlBlock ) newValue );
+            return;
+        case SclPackage.ADDRESS__P:
+            getP().clear();
+            getP().addAll( ( Collection< ? extends P > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -306,18 +319,18 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                setParentConnectedAP((ConnectedAP)null);
-                return;
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                setParentControlBlock((ControlBlock)null);
-                return;
-            case SclPackage.ADDRESS__P:
-                unsetP();
-                return;
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            setParentConnectedAP( ( ConnectedAP ) null );
+            return;
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            setParentControlBlock( ( ControlBlock ) null );
+            return;
+        case SclPackage.ADDRESS__P:
+            unsetP();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -327,15 +340,15 @@ public class AddressImpl extends SclObjectImpl implements Address {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
-                return getParentConnectedAP() != null;
-            case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
-                return getParentControlBlock() != null;
-            case SclPackage.ADDRESS__P:
-                return isSetP();
+        switch( featureID ) {
+        case SclPackage.ADDRESS__PARENT_CONNECTED_AP:
+            return getParentConnectedAP() != null;
+        case SclPackage.ADDRESS__PARENT_CONTROL_BLOCK:
+            return getParentControlBlock() != null;
+        case SclPackage.ADDRESS__P:
+            return isSetP();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //AddressImpl

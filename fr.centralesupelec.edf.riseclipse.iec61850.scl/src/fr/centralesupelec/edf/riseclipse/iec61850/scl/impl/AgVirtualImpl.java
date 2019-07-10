@@ -108,13 +108,14 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setVirtual(Boolean newVirtual) {
+    public void setVirtual( Boolean newVirtual ) {
         Boolean oldVirtual = virtual;
         virtual = newVirtual;
         boolean oldVirtualESet = virtualESet;
         virtualESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual, virtual, !oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual, virtual,
+                    !oldVirtualESet ) );
     }
 
     /**
@@ -128,8 +129,9 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
         boolean oldVirtualESet = virtualESet;
         virtual = VIRTUAL_EDEFAULT;
         virtualESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual, VIRTUAL_EDEFAULT, oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_VIRTUAL__VIRTUAL, oldVirtual,
+                    VIRTUAL_EDEFAULT, oldVirtualESet ) );
     }
 
     /**
@@ -148,12 +150,12 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_VIRTUAL__VIRTUAL:
-                return getVirtual();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_VIRTUAL__VIRTUAL:
+            return getVirtual();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -162,13 +164,13 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_VIRTUAL__VIRTUAL:
-                setVirtual((Boolean)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_VIRTUAL__VIRTUAL:
+            setVirtual( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -177,13 +179,13 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_VIRTUAL__VIRTUAL:
-                unsetVirtual();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_VIRTUAL__VIRTUAL:
+            unsetVirtual();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -192,12 +194,12 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_VIRTUAL__VIRTUAL:
-                return isSetVirtual();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_VIRTUAL__VIRTUAL:
+            return isSetVirtual();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -207,12 +209,15 @@ public abstract class AgVirtualImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (virtual: ");
-        if (virtualESet) result.append(virtual); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (virtual: " );
+        if( virtualESet )
+            result.append( virtual );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

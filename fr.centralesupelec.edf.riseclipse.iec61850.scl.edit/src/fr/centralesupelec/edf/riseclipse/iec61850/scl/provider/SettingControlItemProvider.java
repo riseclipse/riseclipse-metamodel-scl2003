@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -46,8 +45,8 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public SettingControlItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SettingControlItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,13 +56,13 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addActSGPropertyDescriptor(object);
-            addNumOfSGsPropertyDescriptor(object);
-            addResvTmsPropertyDescriptor(object);
+            addActSGPropertyDescriptor( object );
+            addNumOfSGsPropertyDescriptor( object );
+            addResvTmsPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +73,20 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addActSGPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SettingControl_actSG_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SettingControl_actSG_feature", "_UI_SettingControl_type"),
-                 SclPackage.eINSTANCE.getSettingControl_ActSG(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addActSGPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SettingControl_actSG_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SettingControl_actSG_feature",
+                                "_UI_SettingControl_type" ),
+                        SclPackage.eINSTANCE.getSettingControl_ActSG(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +95,20 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNumOfSGsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SettingControl_numOfSGs_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SettingControl_numOfSGs_feature", "_UI_SettingControl_type"),
-                 SclPackage.eINSTANCE.getSettingControl_NumOfSGs(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNumOfSGsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SettingControl_numOfSGs_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SettingControl_numOfSGs_feature",
+                                "_UI_SettingControl_type" ),
+                        SclPackage.eINSTANCE.getSettingControl_NumOfSGs(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,20 +117,20 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addResvTmsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SettingControl_resvTms_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SettingControl_resvTms_feature", "_UI_SettingControl_type"),
-                 SclPackage.eINSTANCE.getSettingControl_ResvTms(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addResvTmsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SettingControl_resvTms_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SettingControl_resvTms_feature",
+                                "_UI_SettingControl_type" ),
+                        SclPackage.eINSTANCE.getSettingControl_ResvTms(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -141,8 +140,8 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SettingControl"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SettingControl" ) );
     }
 
     /**
@@ -152,11 +151,10 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        SettingControl settingControl = (SettingControl)object;
-        return getString("_UI_SettingControl_type") + " " + settingControl.getLineNumber();
+    public String getText( Object object ) {
+        SettingControl settingControl = ( SettingControl ) object;
+        return getString( "_UI_SettingControl_type" ) + " " + settingControl.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -166,17 +164,17 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SettingControl.class)) {
-            case SclPackage.SETTING_CONTROL__ACT_SG:
-            case SclPackage.SETTING_CONTROL__NUM_OF_SGS:
-            case SclPackage.SETTING_CONTROL__RESV_TMS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( SettingControl.class ) ) {
+        case SclPackage.SETTING_CONTROL__ACT_SG:
+        case SclPackage.SETTING_CONTROL__NUM_OF_SGS:
+        case SclPackage.SETTING_CONTROL__RESV_TMS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -187,8 +185,8 @@ public class SettingControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

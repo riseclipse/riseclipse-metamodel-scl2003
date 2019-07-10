@@ -63,7 +63,7 @@ public interface LN0 extends AnyLN {
      *        extendedMetaData="group='#ControlWithIEDName'"
      * @generated
      */
-    EList<GSEControl> getGSEControl();
+    EList< GSEControl > getGSEControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getGSEControl <em>GSE Control</em>}' containment reference list.
@@ -98,6 +98,7 @@ public interface LN0 extends AnyLN {
      * @model opposite="LN0" resolveProxies="false" unsettable="true" ordered="false"
      * @generated
      */
+    @Override
     LDevice getParentLDevice();
 
     /**
@@ -108,7 +109,7 @@ public interface LN0 extends AnyLN {
      * @see #getParentLDevice()
      * @generated
      */
-    void setParentLDevice(LDevice value);
+    void setParentLDevice( LDevice value );
 
     /**
      * Returns the value of the '<em><b>Sampled Value Control</b></em>' containment reference list.
@@ -129,7 +130,7 @@ public interface LN0 extends AnyLN {
      *        extendedMetaData="group='#ControlWithIEDName'"
      * @generated
      */
-    EList<SampledValueControl> getSampledValueControl();
+    EList< SampledValueControl > getSampledValueControl();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl <em>Sampled Value Control</em>}' containment reference list.

@@ -61,7 +61,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DAType> getDAType();
+    EList< DAType > getDAType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list.
@@ -102,7 +102,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DOType> getDOType();
+    EList< DOType > getDOType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list.
@@ -143,7 +143,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EnumType> getEnumType();
+    EList< EnumType > getEnumType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list.
@@ -184,7 +184,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<LNodeType> getLNodeType();
+    EList< LNodeType > getLNodeType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list.
@@ -229,6 +229,6 @@ public interface DataTypeTemplates extends SclObject {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
 } // DataTypeTemplates

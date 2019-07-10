@@ -112,7 +112,7 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
      * @model opposite="ParentAbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EqSubFunction> getEqSubFunction();
+    EList< EqSubFunction > getEqSubFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getEqSubFunction <em>Eq Sub Function</em>}' containment reference list.
@@ -153,7 +153,7 @@ public interface AbstractEqFuncSubFunc extends PowerSystemResource {
      * @model opposite="ParentAbstractEqFuncSubFunc" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<GeneralEquipment> getSubGeneralEquipment();
+    EList< GeneralEquipment > getSubGeneralEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractEqFuncSubFunc#getSubGeneralEquipment <em>Sub General Equipment</em>}' containment reference list.

@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Samples Per Sec</b></em>'.
@@ -64,7 +63,7 @@ public interface SamplesPerSec extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue(Integer value);
+    void setValue( Integer value );
 
     /**
      * Returns the value of the '<em><b>Parent SMV Settings</b></em>' container reference.
@@ -88,6 +87,6 @@ public interface SamplesPerSec extends SclObject {
      * @see #getParentSMVSettings()
      * @generated
      */
-    void setParentSMVSettings(SMVSettings value);
+    void setParentSMVSettings( SMVSettings value );
 
 } // SamplesPerSec

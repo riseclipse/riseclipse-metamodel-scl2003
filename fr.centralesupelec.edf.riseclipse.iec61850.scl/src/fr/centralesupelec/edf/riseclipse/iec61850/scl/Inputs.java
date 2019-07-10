@@ -62,7 +62,7 @@ public interface Inputs extends UnNaming {
      * @see #getParentAnyLN()
      * @generated
      */
-    void setParentAnyLN(AnyLN value);
+    void setParentAnyLN( AnyLN value );
 
     /**
      * Returns the value of the '<em><b>Ext Ref</b></em>' containment reference list.
@@ -82,7 +82,7 @@ public interface Inputs extends UnNaming {
      * @model opposite="ParentInputs" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ExtRef> getExtRef();
+    EList< ExtRef > getExtRef();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs#getExtRef <em>Ext Ref</em>}' containment reference list.

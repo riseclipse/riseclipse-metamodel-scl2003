@@ -383,6 +383,6 @@ public interface Hitem extends SclObject {
      * @see #getParentHistory()
      * @generated
      */
-    void setParentHistory(History value);
+    void setParentHistory( History value );
 
 } // Hitem

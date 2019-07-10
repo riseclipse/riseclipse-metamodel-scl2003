@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -42,8 +41,8 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * <!-- end-user-doc -->
      * @generated
      */
-    public PowerSystemResourceItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public PowerSystemResourceItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -53,9 +52,9 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -68,8 +67,8 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/PowerSystemResource"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/PowerSystemResource" ) );
     }
 
     /**
@@ -79,13 +78,11 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((PowerSystemResource)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_PowerSystemResource_type") :
-            getString("_UI_PowerSystemResource_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( PowerSystemResource ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_PowerSystemResource_type" )
+                : getString( "_UI_PowerSystemResource_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -95,9 +92,8 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -108,8 +104,8 @@ public class PowerSystemResourceItemProvider extends LNodeContainerItemProvider 
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

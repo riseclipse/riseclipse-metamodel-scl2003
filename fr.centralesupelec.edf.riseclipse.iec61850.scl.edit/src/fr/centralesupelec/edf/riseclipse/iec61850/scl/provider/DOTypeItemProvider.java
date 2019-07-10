@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -48,8 +47,8 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public DOTypeItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public DOTypeItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -59,13 +58,13 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addCdcPropertyDescriptor(object);
-            addIedTypePropertyDescriptor(object);
-            addReferredByAbstractDataObjectPropertyDescriptor(object);
+            addCdcPropertyDescriptor( object );
+            addIedTypePropertyDescriptor( object );
+            addReferredByAbstractDataObjectPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -76,20 +75,19 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCdcPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DOType_cdc_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_cdc_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_Cdc(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCdcPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DOType_cdc_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DOType_cdc_feature", "_UI_DOType_type" ),
+                        SclPackage.eINSTANCE.getDOType_Cdc(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -98,20 +96,20 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIedTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DOType_iedType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_iedType_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_IedType(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIedTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DOType_iedType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_DOType_iedType_feature",
+                                "_UI_DOType_type" ),
+                        SclPackage.eINSTANCE.getDOType_IedType(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -120,20 +118,20 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByAbstractDataObjectPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_DOType_ReferredByAbstractDataObject_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_DOType_ReferredByAbstractDataObject_feature", "_UI_DOType_type"),
-                 SclPackage.eINSTANCE.getDOType_ReferredByAbstractDataObject(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByAbstractDataObjectPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_DOType_ReferredByAbstractDataObject_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_DOType_ReferredByAbstractDataObject_feature", "_UI_DOType_type" ),
+                        SclPackage.eINSTANCE.getDOType_ReferredByAbstractDataObject(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -145,11 +143,11 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getDOType_DA());
-            childrenFeatures.add(SclPackage.eINSTANCE.getDOType_SDO());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDOType_DA() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getDOType_SDO() );
         }
         return childrenFeatures;
     }
@@ -160,11 +158,11 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -174,8 +172,8 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/DOType"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/DOType" ) );
     }
 
     /**
@@ -185,13 +183,11 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((DOType)object).getId();
-        return label == null || label.length() == 0 ?
-            getString("_UI_DOType_type") :
-            getString("_UI_DOType_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( DOType ) object ).getId();
+        return label == null || label.length() == 0 ? getString( "_UI_DOType_type" )
+                : getString( "_UI_DOType_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -201,20 +197,20 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(DOType.class)) {
-            case SclPackage.DO_TYPE__CDC:
-            case SclPackage.DO_TYPE__IED_TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.DO_TYPE__DA:
-            case SclPackage.DO_TYPE__SDO:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( DOType.class ) ) {
+        case SclPackage.DO_TYPE__CDC:
+        case SclPackage.DO_TYPE__IED_TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.DO_TYPE__DA:
+        case SclPackage.DO_TYPE__SDO:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -225,18 +221,14 @@ public class DOTypeItemProvider extends IDNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getDOType_DA(),
-                 SclFactory.eINSTANCE.createDA()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOType_DA(),
+                SclFactory.eINSTANCE.createDA() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getDOType_SDO(),
-                 SclFactory.eINSTANCE.createSDO()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getDOType_SDO(),
+                SclFactory.eINSTANCE.createSDO() ) );
     }
 
 }

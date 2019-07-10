@@ -59,7 +59,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * @generated
      * @ordered
      */
-    protected EList<ExtRef> extRef;
+    protected EList< ExtRef > extRef;
 
     /**
      * <!-- begin-user-doc -->
@@ -87,8 +87,8 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if (eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN ) return null;
+        return ( AnyLN ) eInternalContainer();
     }
 
     /**
@@ -96,8 +96,8 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.INPUTS__PARENT_ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN( AnyLN newParentAnyLN, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAnyLN, SclPackage.INPUTS__PARENT_ANY_LN, msgs );
         return msgs;
     }
 
@@ -107,20 +107,23 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * @generated
      */
     @Override
-    public void setParentAnyLN(AnyLN newParentAnyLN) {
-        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN && newParentAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAnyLN( AnyLN newParentAnyLN ) {
+        if( newParentAnyLN != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.INPUTS__PARENT_ANY_LN && newParentAnyLN != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAnyLN != null)
-                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__INPUTS, AnyLN.class, msgs);
-            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAnyLN != null )
+                msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__INPUTS, AnyLN.class,
+                        msgs );
+            msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.INPUTS__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.INPUTS__PARENT_ANY_LN, newParentAnyLN,
+                    newParentAnyLN ) );
     }
 
     /**
@@ -129,9 +132,10 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      * @generated
      */
     @Override
-    public EList<ExtRef> getExtRef() {
-        if (extRef == null) {
-            extRef = new EObjectContainmentWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.INPUTS__EXT_REF, SclPackage.EXT_REF__PARENT_INPUTS);
+    public EList< ExtRef > getExtRef() {
+        if( extRef == null ) {
+            extRef = new EObjectContainmentWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+                    SclPackage.INPUTS__EXT_REF, SclPackage.EXT_REF__PARENT_INPUTS );
         }
         return extRef;
     }
@@ -143,7 +147,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public void unsetExtRef() {
-        if (extRef != null) ((InternalEList.Unsettable<?>)extRef).unset();
+        if( extRef != null ) ( ( InternalEList.Unsettable< ? > ) extRef ).unset();
     }
 
     /**
@@ -153,7 +157,7 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public boolean isSetExtRef() {
-        return extRef != null && ((InternalEList.Unsettable<?>)extRef).isSet();
+        return extRef != null && ( ( InternalEList.Unsettable< ? > ) extRef ).isSet();
     }
 
     /**
@@ -164,15 +168,16 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.INPUTS__EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtRef()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
+        case SclPackage.INPUTS__EXT_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getExtRef() ).basicAdd( otherEnd,
+                    msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -182,13 +187,13 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                return basicSetParentAnyLN(null, msgs);
-            case SclPackage.INPUTS__EXT_REF:
-                return ((InternalEList<?>)getExtRef()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            return basicSetParentAnyLN( null, msgs );
+        case SclPackage.INPUTS__EXT_REF:
+            return ( ( InternalEList< ? > ) getExtRef() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -198,11 +203,11 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__INPUTS, AnyLN.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ANY_LN__INPUTS, AnyLN.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -212,13 +217,13 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                return getParentAnyLN();
-            case SclPackage.INPUTS__EXT_REF:
-                return getExtRef();
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            return getParentAnyLN();
+        case SclPackage.INPUTS__EXT_REF:
+            return getExtRef();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -229,16 +234,16 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.INPUTS__EXT_REF:
-                getExtRef().clear();
-                getExtRef().addAll((Collection<? extends ExtRef>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.INPUTS__EXT_REF:
+            getExtRef().clear();
+            getExtRef().addAll( ( Collection< ? extends ExtRef > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -248,15 +253,15 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)null);
-                return;
-            case SclPackage.INPUTS__EXT_REF:
-                unsetExtRef();
-                return;
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) null );
+            return;
+        case SclPackage.INPUTS__EXT_REF:
+            unsetExtRef();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -266,13 +271,13 @@ public class InputsImpl extends UnNamingImpl implements Inputs {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.INPUTS__PARENT_ANY_LN:
-                return getParentAnyLN() != null;
-            case SclPackage.INPUTS__EXT_REF:
-                return isSetExtRef();
+        switch( featureID ) {
+        case SclPackage.INPUTS__PARENT_ANY_LN:
+            return getParentAnyLN() != null;
+        case SclPackage.INPUTS__EXT_REF:
+            return isSetExtRef();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //InputsImpl

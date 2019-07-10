@@ -113,8 +113,9 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
         virtual = newVirtual;
         boolean oldVirtualESet = virtualESet;
         virtualESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.EQUIPMENT__VIRTUAL, oldVirtual, virtual, !oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.EQUIPMENT__VIRTUAL, oldVirtual, virtual,
+                    !oldVirtualESet ) );
     }
 
     /**
@@ -128,8 +129,9 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
         boolean oldVirtualESet = virtualESet;
         virtual = VIRTUAL_EDEFAULT;
         virtualESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.EQUIPMENT__VIRTUAL, oldVirtual, VIRTUAL_EDEFAULT, oldVirtualESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.EQUIPMENT__VIRTUAL, oldVirtual,
+                    VIRTUAL_EDEFAULT, oldVirtualESet ) );
     }
 
     /**
@@ -149,11 +151,11 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.EQUIPMENT__VIRTUAL:
-                return getVirtual();
+        switch( featureID ) {
+        case SclPackage.EQUIPMENT__VIRTUAL:
+            return getVirtual();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -163,12 +165,12 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.EQUIPMENT__VIRTUAL:
-                setVirtual((Boolean)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.EQUIPMENT__VIRTUAL:
+            setVirtual( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -178,12 +180,12 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.EQUIPMENT__VIRTUAL:
-                unsetVirtual();
-                return;
+        switch( featureID ) {
+        case SclPackage.EQUIPMENT__VIRTUAL:
+            unsetVirtual();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -193,11 +195,29 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.EQUIPMENT__VIRTUAL:
+            return isSetVirtual();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgVirtual.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.EQUIPMENT__VIRTUAL:
-                return isSetVirtual();
+                return SclPackage.AG_VIRTUAL__VIRTUAL;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -206,30 +226,16 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgVirtual.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.EQUIPMENT__VIRTUAL: return SclPackage.AG_VIRTUAL__VIRTUAL;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgVirtual.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_VIRTUAL__VIRTUAL:
+                return SclPackage.EQUIPMENT__VIRTUAL;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgVirtual.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_VIRTUAL__VIRTUAL: return SclPackage.EQUIPMENT__VIRTUAL;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -239,12 +245,15 @@ public class EquipmentImpl extends PowerSystemResourceImpl implements Equipment 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (virtual: ");
-        if (virtualESet) result.append(virtual); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (virtual: " );
+        if( virtualESet )
+            result.append( virtual );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

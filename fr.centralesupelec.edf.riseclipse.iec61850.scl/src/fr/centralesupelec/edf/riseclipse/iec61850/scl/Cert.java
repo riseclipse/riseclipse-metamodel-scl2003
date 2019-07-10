@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Cert</b></em>'.
@@ -67,7 +66,7 @@ public interface Cert extends SclObject {
      * @see #getCommonName()
      * @generated
      */
-    void setCommonName(String value);
+    void setCommonName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Cert#getCommonName <em>Common Name</em>}' attribute.
@@ -120,7 +119,7 @@ public interface Cert extends SclObject {
      * @see #getIdHierarchy()
      * @generated
      */
-    void setIdHierarchy(String value);
+    void setIdHierarchy( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Cert#getIdHierarchy <em>Id Hierarchy</em>}' attribute.

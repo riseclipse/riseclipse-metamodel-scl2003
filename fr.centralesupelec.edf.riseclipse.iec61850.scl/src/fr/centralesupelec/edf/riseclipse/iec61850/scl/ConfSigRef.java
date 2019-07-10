@@ -59,6 +59,6 @@ public interface ConfSigRef extends ServiceWithMaxNonZero {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // ConfSigRef

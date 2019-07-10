@@ -59,6 +59,6 @@ public interface DynAssociation extends ServiceWithOptionalMax {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
 } // DynAssociation

@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ag LD Ref</b></em>'.
@@ -63,7 +62,7 @@ public interface AgLDRef extends AgDesc {
      * @see #getIedName()
      * @generated
      */
-    void setIedName(String value);
+    void setIedName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getIedName <em>Ied Name</em>}' attribute.
@@ -112,7 +111,7 @@ public interface AgLDRef extends AgDesc {
      * @see #getLdInst()
      * @generated
      */
-    void setLdInst(String value);
+    void setLdInst( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLDRef#getLdInst <em>Ld Inst</em>}' attribute.

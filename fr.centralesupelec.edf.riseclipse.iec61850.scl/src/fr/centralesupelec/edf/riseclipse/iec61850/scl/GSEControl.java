@@ -284,6 +284,6 @@ public interface GSEControl extends ControlWithIEDName {
      * @see #getParentLN0()
      * @generated
      */
-    void setParentLN0(LN0 value);
+    void setParentLN0( LN0 value );
 
 } // GSEControl

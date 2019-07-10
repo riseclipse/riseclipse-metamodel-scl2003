@@ -20,7 +20,6 @@
 */
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -39,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OptFieldsItemProvider 
-    extends SclObjectItemProvider {
+public class OptFieldsItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public OptFieldsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public OptFieldsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -58,19 +57,19 @@ public class OptFieldsItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBufOvflPropertyDescriptor(object);
-            addConfigRefPropertyDescriptor(object);
-            addDataRefPropertyDescriptor(object);
-            addDataSetPropertyDescriptor(object);
-            addEntryIDPropertyDescriptor(object);
-            addReasonCodePropertyDescriptor(object);
-            addSeqNumPropertyDescriptor(object);
-            addTimeStampPropertyDescriptor(object);
-            addSegmentationPropertyDescriptor(object);
+            addBufOvflPropertyDescriptor( object );
+            addConfigRefPropertyDescriptor( object );
+            addDataRefPropertyDescriptor( object );
+            addDataSetPropertyDescriptor( object );
+            addEntryIDPropertyDescriptor( object );
+            addReasonCodePropertyDescriptor( object );
+            addSeqNumPropertyDescriptor( object );
+            addTimeStampPropertyDescriptor( object );
+            addSegmentationPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -81,20 +80,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBufOvflPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_bufOvfl_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_bufOvfl_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_BufOvfl(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBufOvflPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_bufOvfl_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_bufOvfl_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_BufOvfl(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -103,20 +102,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addConfigRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_configRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_configRef_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_ConfigRef(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addConfigRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_configRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_configRef_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_ConfigRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -125,20 +124,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_dataRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataRef_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_DataRef(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_dataRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataRef_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_DataRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -147,20 +146,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_dataSet_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataSet_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_DataSet(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataSetPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_dataSet_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataSet_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_DataSet(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -169,20 +168,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addEntryIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_entryID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_entryID_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_EntryID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addEntryIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_entryID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_entryID_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_EntryID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -191,20 +190,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReasonCodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_reasonCode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_reasonCode_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_ReasonCode(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addReasonCodePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_reasonCode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_reasonCode_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_ReasonCode(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -213,20 +212,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSeqNumPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_seqNum_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_seqNum_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_SeqNum(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSeqNumPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_seqNum_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_seqNum_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_SeqNum(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -235,20 +234,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTimeStampPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_timeStamp_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_timeStamp_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_TimeStamp(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTimeStampPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_timeStamp_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_timeStamp_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_TimeStamp(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -257,20 +256,20 @@ public class OptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSegmentationPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_segmentation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_segmentation_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_Segmentation(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSegmentationPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_segmentation_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_segmentation_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_Segmentation(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -280,8 +279,8 @@ public class OptFieldsItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/OptFields"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/OptFields" ) );
     }
 
     /**
@@ -291,11 +290,10 @@ public class OptFieldsItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        OptFields optFields = (OptFields)object;
-        return getString("_UI_OptFields_type") + " " + optFields.getLineNumber();
+    public String getText( Object object ) {
+        OptFields optFields = ( OptFields ) object;
+        return getString( "_UI_OptFields_type" ) + " " + optFields.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -305,23 +303,23 @@ public class OptFieldsItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(OptFields.class)) {
-            case SclPackage.OPT_FIELDS__BUF_OVFL:
-            case SclPackage.OPT_FIELDS__CONFIG_REF:
-            case SclPackage.OPT_FIELDS__DATA_REF:
-            case SclPackage.OPT_FIELDS__DATA_SET:
-            case SclPackage.OPT_FIELDS__ENTRY_ID:
-            case SclPackage.OPT_FIELDS__REASON_CODE:
-            case SclPackage.OPT_FIELDS__SEQ_NUM:
-            case SclPackage.OPT_FIELDS__TIME_STAMP:
-            case SclPackage.OPT_FIELDS__SEGMENTATION:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( OptFields.class ) ) {
+        case SclPackage.OPT_FIELDS__BUF_OVFL:
+        case SclPackage.OPT_FIELDS__CONFIG_REF:
+        case SclPackage.OPT_FIELDS__DATA_REF:
+        case SclPackage.OPT_FIELDS__DATA_SET:
+        case SclPackage.OPT_FIELDS__ENTRY_ID:
+        case SclPackage.OPT_FIELDS__REASON_CODE:
+        case SclPackage.OPT_FIELDS__SEQ_NUM:
+        case SclPackage.OPT_FIELDS__TIME_STAMP:
+        case SclPackage.OPT_FIELDS__SEGMENTATION:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -332,8 +330,8 @@ public class OptFieldsItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

@@ -116,7 +116,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Line> getLine();
+    EList< Line > getLine();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getLine <em>Line</em>}' containment reference list.
@@ -161,7 +161,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
@@ -181,7 +181,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConductingEquipment> getConductingEquipment();
+    EList< ConductingEquipment > getConductingEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
@@ -222,7 +222,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Substation> getSubstation();
+    EList< Substation > getSubstation();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubstation <em>Substation</em>}' containment reference list.
@@ -263,7 +263,7 @@ public interface Process extends GeneralEquipmentContainer {
      * @model opposite="ParentProcess" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Process> getSubProcesses();
+    EList< Process > getSubProcesses();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process#getSubProcesses <em>Sub Processes</em>}' containment reference list.

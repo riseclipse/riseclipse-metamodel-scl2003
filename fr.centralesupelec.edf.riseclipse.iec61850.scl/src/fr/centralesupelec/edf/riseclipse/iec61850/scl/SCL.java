@@ -227,7 +227,7 @@ public interface SCL extends BaseElement {
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Line> getLine();
+    EList< Line > getLine();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getLine <em>Line</em>}' containment reference list.
@@ -268,7 +268,7 @@ public interface SCL extends BaseElement {
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<fr.centralesupelec.edf.riseclipse.iec61850.scl.Process> getProcess();
+    EList< fr.centralesupelec.edf.riseclipse.iec61850.scl.Process > getProcess();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getProcess <em>Process</em>}' containment reference list.
@@ -309,7 +309,7 @@ public interface SCL extends BaseElement {
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<IED> getIED();
+    EList< IED > getIED();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getIED <em>IED</em>}' containment reference list.
@@ -460,7 +460,7 @@ public interface SCL extends BaseElement {
      * @model opposite="ParentSCL" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Substation> getSubstation();
+    EList< Substation > getSubstation();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getSubstation <em>Substation</em>}' containment reference list.
@@ -511,7 +511,7 @@ public interface SCL extends BaseElement {
      * @see #getRelease()
      * @generated
      */
-    void setRelease(Integer value);
+    void setRelease( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SCL#getRelease <em>Release</em>}' attribute.
