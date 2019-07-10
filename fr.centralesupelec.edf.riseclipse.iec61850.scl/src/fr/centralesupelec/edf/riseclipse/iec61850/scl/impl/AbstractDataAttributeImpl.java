@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
@@ -278,7 +280,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      * @ordered
      */
-    protected EList<Val> val;
+    protected EList< Val > val;
 
     /**
      * The cached value of the '{@link #getRefersToDAType() <em>Refers To DA Type</em>}' reference.
@@ -307,7 +309,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      * @ordered
      */
-    protected EList<FCDA> referredByFCDA;
+    protected EList< FCDA > referredByFCDA;
 
     /**
      * The cached value of the '{@link #getReferredByExtRef() <em>Referred By Ext Ref</em>}' reference list.
@@ -317,7 +319,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      * @ordered
      */
-    protected EList<ExtRef> referredByExtRef;
+    protected EList< ExtRef > referredByExtRef;
 
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -356,7 +358,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      * @ordered
      */
-    protected EList<DAI> referredByDAI;
+    protected EList< DAI > referredByDAI;
 
     /**
      * The cached value of the '{@link #getReferredBySDI() <em>Referred By SDI</em>}' reference list.
@@ -366,7 +368,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      * @ordered
      */
-    protected EList<SDI> referredBySDI;
+    protected EList< SDI > referredBySDI;
 
     /**
      * <!-- begin-user-doc -->
@@ -408,8 +410,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         bType = newBType;
         boolean oldBTypeESet = bTypeESet;
         bTypeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE, oldBType, bType, !oldBTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE, oldBType,
+                    bType, !oldBTypeESet ) );
     }
 
     /**
@@ -423,8 +426,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldBTypeESet = bTypeESet;
         bType = BTYPE_EDEFAULT;
         bTypeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE, oldBType, BTYPE_EDEFAULT, oldBTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE,
+                    oldBType, BTYPE_EDEFAULT, oldBTypeESet ) );
     }
 
     /**
@@ -453,13 +457,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public void setCount(String newCount) {
+    public void setCount( String newCount ) {
         String oldCount = count;
         count = newCount;
         boolean oldCountESet = countESet;
         countESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT, oldCount, count, !oldCountESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT, oldCount,
+                    count, !oldCountESet ) );
     }
 
     /**
@@ -473,8 +478,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldCountESet = countESet;
         count = COUNT_EDEFAULT;
         countESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT, oldCount, COUNT_EDEFAULT, oldCountESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT,
+                    oldCount, COUNT_EDEFAULT, oldCountESet ) );
     }
 
     /**
@@ -508,8 +514,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         sAddr = newSAddr;
         boolean oldSAddrESet = sAddrESet;
         sAddrESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR, oldSAddr, sAddr, !oldSAddrESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR, oldSAddr,
+                    sAddr, !oldSAddrESet ) );
     }
 
     /**
@@ -523,8 +530,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldSAddrESet = sAddrESet;
         sAddr = SADDR_EDEFAULT;
         sAddrESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR, oldSAddr, SADDR_EDEFAULT, oldSAddrESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR,
+                    oldSAddr, SADDR_EDEFAULT, oldSAddrESet ) );
     }
 
     /**
@@ -558,8 +566,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType,
+                    type, !oldTypeESet ) );
     }
 
     /**
@@ -573,8 +582,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE, oldType,
+                    TYPE_EDEFAULT, oldTypeESet ) );
     }
 
     /**
@@ -608,8 +618,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         valImport = newValImport;
         boolean oldValImportESet = valImportESet;
         valImportESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT, oldValImport, valImport, !oldValImportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT,
+                    oldValImport, valImport, !oldValImportESet ) );
     }
 
     /**
@@ -623,8 +634,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldValImportESet = valImportESet;
         valImport = VAL_IMPORT_EDEFAULT;
         valImportESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT, oldValImport, VAL_IMPORT_EDEFAULT, oldValImportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT,
+                    oldValImport, VAL_IMPORT_EDEFAULT, oldValImportESet ) );
     }
 
     /**
@@ -658,8 +670,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         valKind = newValKind == null ? VAL_KIND_EDEFAULT : newValKind;
         boolean oldValKindESet = valKindESet;
         valKindESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND, oldValKind, valKind, !oldValKindESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND,
+                    oldValKind, valKind, !oldValKindESet ) );
     }
 
     /**
@@ -673,8 +686,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldValKindESet = valKindESet;
         valKind = VAL_KIND_EDEFAULT;
         valKindESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND, oldValKind, VAL_KIND_EDEFAULT, oldValKindESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND,
+                    oldValKind, VAL_KIND_EDEFAULT, oldValKindESet ) );
     }
 
     /**
@@ -702,14 +716,19 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToEnumType(EnumType newRefersToEnumType, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToEnumType( EnumType newRefersToEnumType, NotificationChain msgs ) {
         EnumType oldRefersToEnumType = refersToEnumType;
         refersToEnumType = newRefersToEnumType;
         boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
         refersToEnumTypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, newRefersToEnumType, !oldRefersToEnumTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, newRefersToEnumType,
+                    !oldRefersToEnumTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -720,21 +739,25 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public void setRefersToEnumType(EnumType newRefersToEnumType) {
-        if (newRefersToEnumType != refersToEnumType) {
+    public void setRefersToEnumType( EnumType newRefersToEnumType ) {
+        if( newRefersToEnumType != refersToEnumType ) {
             NotificationChain msgs = null;
-            if (refersToEnumType != null)
-                msgs = ((InternalEObject)refersToEnumType).eInverseRemove(this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs);
-            if (newRefersToEnumType != null)
-                msgs = ((InternalEObject)newRefersToEnumType).eInverseAdd(this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs);
-            msgs = basicSetRefersToEnumType(newRefersToEnumType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToEnumType != null )
+                msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
+                        SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            if( newRefersToEnumType != null )
+                msgs = ( ( InternalEObject ) newRefersToEnumType ).eInverseAdd( this,
+                        SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            msgs = basicSetRefersToEnumType( newRefersToEnumType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
             refersToEnumTypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, newRefersToEnumType, newRefersToEnumType, !oldRefersToEnumTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET,
+                        SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, newRefersToEnumType,
+                        newRefersToEnumType, !oldRefersToEnumTypeESet ) );
         }
     }
 
@@ -743,14 +766,19 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToEnumType(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToEnumType( NotificationChain msgs ) {
         EnumType oldRefersToEnumType = refersToEnumType;
         refersToEnumType = null;
         boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
         refersToEnumTypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, null, oldRefersToEnumTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, oldRefersToEnumType, null,
+                    oldRefersToEnumTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -762,17 +790,20 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetRefersToEnumType() {
-        if (refersToEnumType != null) {
+        if( refersToEnumType != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToEnumType).eInverseRemove(this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs);
-            msgs = basicUnsetRefersToEnumType(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
+                    SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            msgs = basicUnsetRefersToEnumType( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToEnumTypeESet = refersToEnumTypeESet;
             refersToEnumTypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, null, null, oldRefersToEnumTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET,
+                        SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE, null, null,
+                        oldRefersToEnumTypeESet ) );
         }
     }
 
@@ -792,9 +823,10 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public EList<Val> getVal() {
-        if (val == null) {
-            val = new EObjectContainmentWithInverseEList.Unsettable<Val>(Val.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE);
+    public EList< Val > getVal() {
+        if( val == null ) {
+            val = new EObjectContainmentWithInverseEList.Unsettable< Val >( Val.class, this,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL, SclPackage.VAL__PARENT_ABSTRACT_DATA_ATTRIBUTE );
         }
         return val;
     }
@@ -806,7 +838,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetVal() {
-        if (val != null) ((InternalEList.Unsettable<?>)val).unset();
+        if( val != null ) ( ( InternalEList.Unsettable< ? > ) val ).unset();
     }
 
     /**
@@ -816,7 +848,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean isSetVal() {
-        return val != null && ((InternalEList.Unsettable<?>)val).isSet();
+        return val != null && ( ( InternalEList.Unsettable< ? > ) val ).isSet();
     }
 
     /**
@@ -834,14 +866,19 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToDAType(DAType newRefersToDAType, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToDAType( DAType newRefersToDAType, NotificationChain msgs ) {
         DAType oldRefersToDAType = refersToDAType;
         refersToDAType = newRefersToDAType;
         boolean oldRefersToDATypeESet = refersToDATypeESet;
         refersToDATypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, newRefersToDAType, !oldRefersToDATypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, newRefersToDAType,
+                    !oldRefersToDATypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -852,21 +889,25 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public void setRefersToDAType(DAType newRefersToDAType) {
-        if (newRefersToDAType != refersToDAType) {
+    public void setRefersToDAType( DAType newRefersToDAType ) {
+        if( newRefersToDAType != refersToDAType ) {
             NotificationChain msgs = null;
-            if (refersToDAType != null)
-                msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs);
-            if (newRefersToDAType != null)
-                msgs = ((InternalEObject)newRefersToDAType).eInverseAdd(this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs);
-            msgs = basicSetRefersToDAType(newRefersToDAType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToDAType != null )
+                msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
+                        SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            if( newRefersToDAType != null )
+                msgs = ( ( InternalEObject ) newRefersToDAType ).eInverseAdd( this,
+                        SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            msgs = basicSetRefersToDAType( newRefersToDAType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDATypeESet = refersToDATypeESet;
             refersToDATypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, newRefersToDAType, newRefersToDAType, !oldRefersToDATypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET,
+                        SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, newRefersToDAType, newRefersToDAType,
+                        !oldRefersToDATypeESet ) );
         }
     }
 
@@ -875,14 +916,19 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToDAType(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToDAType( NotificationChain msgs ) {
         DAType oldRefersToDAType = refersToDAType;
         refersToDAType = null;
         boolean oldRefersToDATypeESet = refersToDATypeESet;
         refersToDATypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, null, oldRefersToDATypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, oldRefersToDAType, null,
+                    oldRefersToDATypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -894,17 +940,19 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetRefersToDAType() {
-        if (refersToDAType != null) {
+        if( refersToDAType != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs);
-            msgs = basicUnsetRefersToDAType(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
+                    SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            msgs = basicUnsetRefersToDAType( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToDATypeESet = refersToDATypeESet;
             refersToDATypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, null, null, oldRefersToDATypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET,
+                        SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE, null, null, oldRefersToDATypeESet ) );
         }
     }
 
@@ -924,9 +972,11 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public EList<FCDA> getReferredByFCDA() {
-        if (referredByFCDA == null) {
-            referredByFCDA = new EObjectWithInverseEList.Unsettable.ManyInverse<FCDA>(FCDA.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA, SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+    public EList< FCDA > getReferredByFCDA() {
+        if( referredByFCDA == null ) {
+            referredByFCDA = new EObjectWithInverseEList.Unsettable.ManyInverse< FCDA >( FCDA.class, this,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA,
+                    SclPackage.FCDA__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
         return referredByFCDA;
     }
@@ -938,7 +988,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByFCDA() {
-        if (referredByFCDA != null) ((InternalEList.Unsettable<?>)referredByFCDA).unset();
+        if( referredByFCDA != null ) ( ( InternalEList.Unsettable< ? > ) referredByFCDA ).unset();
     }
 
     /**
@@ -948,7 +998,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean isSetReferredByFCDA() {
-        return referredByFCDA != null && ((InternalEList.Unsettable<?>)referredByFCDA).isSet();
+        return referredByFCDA != null && ( ( InternalEList.Unsettable< ? > ) referredByFCDA ).isSet();
     }
 
     /**
@@ -957,9 +1007,11 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public EList<ExtRef> getReferredByExtRef() {
-        if (referredByExtRef == null) {
-            referredByExtRef = new EObjectWithInverseEList.Unsettable<ExtRef>(ExtRef.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF, SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+    public EList< ExtRef > getReferredByExtRef() {
+        if( referredByExtRef == null ) {
+            referredByExtRef = new EObjectWithInverseEList.Unsettable< ExtRef >( ExtRef.class, this,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF,
+                    SclPackage.EXT_REF__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
         return referredByExtRef;
     }
@@ -971,7 +1023,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByExtRef() {
-        if (referredByExtRef != null) ((InternalEList.Unsettable<?>)referredByExtRef).unset();
+        if( referredByExtRef != null ) ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).unset();
     }
 
     /**
@@ -981,7 +1033,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean isSetReferredByExtRef() {
-        return referredByExtRef != null && ((InternalEList.Unsettable<?>)referredByExtRef).isSet();
+        return referredByExtRef != null && ( ( InternalEList.Unsettable< ? > ) referredByExtRef ).isSet();
     }
 
     /**
@@ -1000,13 +1052,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public void setName(String newName) {
+    public void setName( String newName ) {
         String oldName = name;
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName,
+                    name, !oldNameESet ) );
     }
 
     /**
@@ -1020,8 +1073,9 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME, oldName,
+                    NAME_EDEFAULT, oldNameESet ) );
     }
 
     /**
@@ -1040,9 +1094,11 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public EList<DAI> getReferredByDAI() {
-        if (referredByDAI == null) {
-            referredByDAI = new EObjectWithInverseEList.Unsettable<DAI>(DAI.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI, SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+    public EList< DAI > getReferredByDAI() {
+        if( referredByDAI == null ) {
+            referredByDAI = new EObjectWithInverseEList.Unsettable< DAI >( DAI.class, this,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI,
+                    SclPackage.DAI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
         return referredByDAI;
     }
@@ -1054,7 +1110,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredByDAI() {
-        if (referredByDAI != null) ((InternalEList.Unsettable<?>)referredByDAI).unset();
+        if( referredByDAI != null ) ( ( InternalEList.Unsettable< ? > ) referredByDAI ).unset();
     }
 
     /**
@@ -1064,7 +1120,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean isSetReferredByDAI() {
-        return referredByDAI != null && ((InternalEList.Unsettable<?>)referredByDAI).isSet();
+        return referredByDAI != null && ( ( InternalEList.Unsettable< ? > ) referredByDAI ).isSet();
     }
 
     /**
@@ -1073,9 +1129,11 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      * @generated
      */
     @Override
-    public EList<SDI> getReferredBySDI() {
-        if (referredBySDI == null) {
-            referredBySDI = new EObjectWithInverseEList.Unsettable<SDI>(SDI.class, this, SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI, SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE);
+    public EList< SDI > getReferredBySDI() {
+        if( referredBySDI == null ) {
+            referredBySDI = new EObjectWithInverseEList.Unsettable< SDI >( SDI.class, this,
+                    SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI,
+                    SclPackage.SDI__REFERS_TO_ABSTRACT_DATA_ATTRIBUTE );
         }
         return referredBySDI;
     }
@@ -1087,7 +1145,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void unsetReferredBySDI() {
-        if (referredBySDI != null) ((InternalEList.Unsettable<?>)referredBySDI).unset();
+        if( referredBySDI != null ) ( ( InternalEList.Unsettable< ? > ) referredBySDI ).unset();
     }
 
     /**
@@ -1097,7 +1155,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean isSetReferredBySDI() {
-        return referredBySDI != null && ((InternalEList.Unsettable<?>)referredBySDI).isSet();
+        return referredBySDI != null && ( ( InternalEList.Unsettable< ? > ) referredBySDI ).isSet();
     }
 
     /**
@@ -1108,27 +1166,33 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                if (refersToEnumType != null)
-                    msgs = ((InternalEObject)refersToEnumType).eInverseRemove(this, SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs);
-                return basicSetRefersToEnumType((EnumType)otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getVal()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                if (refersToDAType != null)
-                    msgs = ((InternalEObject)refersToDAType).eInverseRemove(this, SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs);
-                return basicSetRefersToDAType((DAType)otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByFCDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByExtRef()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByDAI()).basicAdd(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredBySDI()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            if( refersToEnumType != null )
+                msgs = ( ( InternalEObject ) refersToEnumType ).eInverseRemove( this,
+                        SclPackage.ENUM_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, EnumType.class, msgs );
+            return basicSetRefersToEnumType( ( EnumType ) otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getVal() ).basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            if( refersToDAType != null )
+                msgs = ( ( InternalEObject ) refersToDAType ).eInverseRemove( this,
+                        SclPackage.DA_TYPE__REFERRED_BY_ABSTRACT_DATA_ATTRIBUTE, DAType.class, msgs );
+            return basicSetRefersToDAType( ( DAType ) otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByFCDA() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByExtRef() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByDAI() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredBySDI() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1138,23 +1202,23 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                return basicUnsetRefersToEnumType(msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                return ((InternalEList<?>)getVal()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                return basicUnsetRefersToDAType(msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return ((InternalEList<?>)getReferredByFCDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return ((InternalEList<?>)getReferredByExtRef()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                return ((InternalEList<?>)getReferredByDAI()).basicRemove(otherEnd, msgs);
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                return ((InternalEList<?>)getReferredBySDI()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            return basicUnsetRefersToEnumType( msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            return ( ( InternalEList< ? > ) getVal() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            return basicUnsetRefersToDAType( msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            return ( ( InternalEList< ? > ) getReferredByFCDA() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            return ( ( InternalEList< ? > ) getReferredByExtRef() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            return ( ( InternalEList< ? > ) getReferredByDAI() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            return ( ( InternalEList< ? > ) getReferredBySDI() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1164,37 +1228,37 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
-                return getBType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
-                return getCount();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
-                return getSAddr();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
-                return getType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
-                return getValImport();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
-                return getValKind();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                return getRefersToEnumType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                return getVal();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                return getRefersToDAType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return getReferredByFCDA();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return getReferredByExtRef();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
-                return getName();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                return getReferredByDAI();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                return getReferredBySDI();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
+            return getBType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
+            return getCount();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
+            return getSAddr();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
+            return getType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
+            return getValImport();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+            return getValKind();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            return getRefersToEnumType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            return getVal();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            return getRefersToDAType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            return getReferredByFCDA();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            return getReferredByExtRef();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
+            return getName();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            return getReferredByDAI();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            return getReferredBySDI();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1205,56 +1269,56 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
-                setBType((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
-                setCount((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
-                setSAddr((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
-                setValImport((Boolean)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
-                setValKind((ValKindEnum)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                setRefersToEnumType((EnumType)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                getVal().clear();
-                getVal().addAll((Collection<? extends Val>)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                setRefersToDAType((DAType)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                getReferredByFCDA().clear();
-                getReferredByFCDA().addAll((Collection<? extends FCDA>)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                getReferredByExtRef().clear();
-                getReferredByExtRef().addAll((Collection<? extends ExtRef>)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
-                setName((String)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                getReferredByDAI().clear();
-                getReferredByDAI().addAll((Collection<? extends DAI>)newValue);
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                getReferredBySDI().clear();
-                getReferredBySDI().addAll((Collection<? extends SDI>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
+            setBType( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
+            setCount( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
+            setSAddr( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
+            setValImport( ( Boolean ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+            setValKind( ( ValKindEnum ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            setRefersToEnumType( ( EnumType ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            getVal().clear();
+            getVal().addAll( ( Collection< ? extends Val > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            setRefersToDAType( ( DAType ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            getReferredByFCDA().clear();
+            getReferredByFCDA().addAll( ( Collection< ? extends FCDA > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            getReferredByExtRef().clear();
+            getReferredByExtRef().addAll( ( Collection< ? extends ExtRef > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
+            setName( ( String ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            getReferredByDAI().clear();
+            getReferredByDAI().addAll( ( Collection< ? extends DAI > ) newValue );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            getReferredBySDI().clear();
+            getReferredBySDI().addAll( ( Collection< ? extends SDI > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1264,51 +1328,51 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
-                unsetBType();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
-                unsetCount();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
-                unsetSAddr();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
-                unsetType();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
-                unsetValImport();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
-                unsetValKind();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                unsetRefersToEnumType();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                unsetVal();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                unsetRefersToDAType();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                unsetReferredByFCDA();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                unsetReferredByExtRef();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
-                unsetName();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                unsetReferredByDAI();
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                unsetReferredBySDI();
-                return;
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
+            unsetBType();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
+            unsetCount();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
+            unsetSAddr();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
+            unsetType();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
+            unsetValImport();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+            unsetValKind();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            unsetRefersToEnumType();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            unsetVal();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            unsetRefersToDAType();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            unsetReferredByFCDA();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            unsetReferredByExtRef();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
+            unsetName();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            unsetReferredByDAI();
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            unsetReferredBySDI();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1318,37 +1382,37 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
-                return isSetBType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
-                return isSetCount();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
-                return isSetSAddr();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
-                return isSetType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
-                return isSetValImport();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
-                return isSetValKind();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
-                return isSetRefersToEnumType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                return isSetVal();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
-                return isSetRefersToDAType();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
-                return isSetReferredByFCDA();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
-                return isSetReferredByExtRef();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
-                return isSetName();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
-                return isSetReferredByDAI();
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
-                return isSetReferredBySDI();
+        switch( featureID ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
+            return isSetBType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
+            return isSetCount();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
+            return isSetSAddr();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
+            return isSetType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
+            return isSetValImport();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+            return isSetValKind();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_ENUM_TYPE:
+            return isSetRefersToEnumType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            return isSetVal();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERS_TO_DA_TYPE:
+            return isSetRefersToDAType();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_FCDA:
+            return isSetReferredByFCDA();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_EXT_REF:
+            return isSetReferredByExtRef();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
+            return isSetName();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_DAI:
+            return isSetReferredByDAI();
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__REFERRED_BY_SDI:
+            return isSetReferredBySDI();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1358,24 +1422,45 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (bType: ");
-        if (bTypeESet) result.append(bType); else result.append("<unset>");
-        result.append(", count: ");
-        if (countESet) result.append(count); else result.append("<unset>");
-        result.append(", sAddr: ");
-        if (sAddrESet) result.append(sAddr); else result.append("<unset>");
-        result.append(", type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(", valImport: ");
-        if (valImportESet) result.append(valImport); else result.append("<unset>");
-        result.append(", valKind: ");
-        if (valKindESet) result.append(valKind); else result.append("<unset>");
-        result.append(", name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (bType: " );
+        if( bTypeESet )
+            result.append( bType );
+        else
+            result.append( "<unset>" );
+        result.append( ", count: " );
+        if( countESet )
+            result.append( count );
+        else
+            result.append( "<unset>" );
+        result.append( ", sAddr: " );
+        if( sAddrESet )
+            result.append( sAddr );
+        else
+            result.append( "<unset>" );
+        result.append( ", type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ", valImport: " );
+        if( valImportESet )
+            result.append( valImport );
+        else
+            result.append( "<unset>" );
+        result.append( ", valKind: " );
+        if( valKindESet )
+            result.append( valKind );
+        else
+            result.append( "<unset>" );
+        result.append( ", name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1383,7 +1468,7 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // desc                 Some descriptive text for the attribute
         // name                 The attribute name; the type tAttributeEnum restricts to the attribute names from IEC 61850-7-3, plus new ones starting with lower case letters
         // fc                   The functional constraint for this attribute; fc=SE always also implies fc=SG; fc=SG means that the values are visible, but not editable
@@ -1395,12 +1480,13 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
         //                      A referenced attribute shall exist in the same type definition. The default value 0 states that the attribute is no array.
         // valKind              Determines how the value shall be interpreted if any is given
 
-        if( ! ( "Enum".equals( getBType() ) || "Struct".equals( getBType() ))) {
+        if( !( "Enum".equals( getBType() ) || "Struct".equals( getBType() ) ) ) {
             return;
         }
-        String messagePrefix = "[SCL links] while resolving link from AbstractDataAttribute on line " + getLineNumber() + ": ";
+        String messagePrefix = "[SCL links] while resolving link from AbstractDataAttribute on line " + getLineNumber()
+                + ": ";
 
-        if(( getType() == null ) || getType().isEmpty() ) {
+        if( ( getType() == null ) || getType().isEmpty() ) {
             console.warning( messagePrefix, "type is missing" );
             return;
         }
@@ -1411,15 +1497,14 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
             return;
         }
 
-        if( "Enum".equals( getBType() )) {
+        if( "Enum".equals( getBType() ) ) {
 
             // find an EnumType with
             //   EnumType.id == DA.type
-            List< EnumType > res = 
-                    dtt
+            List< EnumType > res = dtt
                     .getEnumType()
                     .stream()
-                    .filter( et -> getType().equals( et.getId() ))
+                    .filter( et -> getType().equals( et.getId() ) )
                     .collect( Collectors.toList() );
 
             String mess = "EnumType( id = " + getType() + " )";
@@ -1428,26 +1513,27 @@ public abstract class AbstractDataAttributeImpl extends UnNamingImpl implements 
                 return;
             }
             setRefersToEnumType( res.get( 0 ) );
-            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToEnumType().getLineNumber() );
+            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess,
+                    " on line ", getRefersToEnumType().getLineNumber() );
         }
-        else if( "Struct".equals( getBType() )) {
+        else if( "Struct".equals( getBType() ) ) {
 
             // find an DAType with
             //   DAType.id == DA.type
-            List< DAType > res = 
-                    dtt
+            List< DAType > res = dtt
                     .getDAType()
                     .stream()
-                    .filter( et -> getType().equals( et.getId() ))
+                    .filter( et -> getType().equals( et.getId() ) )
                     .collect( Collectors.toList() );
-                    
+
             String mess = "DAType( id = " + getType() + " )";
             if( res.size() != 1 ) {
                 SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
                 return;
             }
             setRefersToDAType( res.get( 0 ) );
-            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToDAType().getLineNumber() );
+            console.info( "[SCL links] AbstractDataAttribute on line ", getLineNumber(), " refers to ", mess,
+                    " on line ", getRefersToDAType().getLineNumber() );
         }
     }
 

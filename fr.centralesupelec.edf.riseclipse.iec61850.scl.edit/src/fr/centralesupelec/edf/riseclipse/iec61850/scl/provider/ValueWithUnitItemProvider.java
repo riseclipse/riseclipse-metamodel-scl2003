@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ValueWithUnitItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ValueWithUnitItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,13 +58,13 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addValuePropertyDescriptor(object);
-            addMultiplierPropertyDescriptor(object);
-            addUnitPropertyDescriptor(object);
+            addValuePropertyDescriptor( object );
+            addMultiplierPropertyDescriptor( object );
+            addUnitPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +75,20 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addValuePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ValueWithUnit_value_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_value_feature", "_UI_ValueWithUnit_type"),
-                 SclPackage.eINSTANCE.getValueWithUnit_Value(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addValuePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ValueWithUnit_value_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_value_feature",
+                                "_UI_ValueWithUnit_type" ),
+                        SclPackage.eINSTANCE.getValueWithUnit_Value(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +97,20 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMultiplierPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ValueWithUnit_multiplier_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_multiplier_feature", "_UI_ValueWithUnit_type"),
-                 SclPackage.eINSTANCE.getValueWithUnit_Multiplier(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMultiplierPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ValueWithUnit_multiplier_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_multiplier_feature",
+                                "_UI_ValueWithUnit_type" ),
+                        SclPackage.eINSTANCE.getValueWithUnit_Multiplier(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,20 +119,20 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addUnitPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ValueWithUnit_unit_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_unit_feature", "_UI_ValueWithUnit_type"),
-                 SclPackage.eINSTANCE.getValueWithUnit_Unit(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addUnitPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ValueWithUnit_unit_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ValueWithUnit_unit_feature",
+                                "_UI_ValueWithUnit_type" ),
+                        SclPackage.eINSTANCE.getValueWithUnit_Unit(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -141,8 +142,8 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ValueWithUnit"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ValueWithUnit" ) );
     }
 
     /**
@@ -152,11 +153,10 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ValueWithUnit valueWithUnit = (ValueWithUnit)object;
-        return getString("_UI_ValueWithUnit_type") + " " + valueWithUnit.getLineNumber();
+    public String getText( Object object ) {
+        ValueWithUnit valueWithUnit = ( ValueWithUnit ) object;
+        return getString( "_UI_ValueWithUnit_type" ) + " " + valueWithUnit.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -166,17 +166,17 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ValueWithUnit.class)) {
-            case SclPackage.VALUE_WITH_UNIT__VALUE:
-            case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
-            case SclPackage.VALUE_WITH_UNIT__UNIT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( ValueWithUnit.class ) ) {
+        case SclPackage.VALUE_WITH_UNIT__VALUE:
+        case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
+        case SclPackage.VALUE_WITH_UNIT__UNIT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -187,8 +187,8 @@ public class ValueWithUnitItemProvider extends SclObjectItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDesc;
@@ -107,13 +108,14 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_DESC__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_DESC__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -127,8 +129,9 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_DESC__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_DESC__DESC, oldDesc, DESC_EDEFAULT,
+                    oldDescESet ) );
     }
 
     /**
@@ -147,12 +150,12 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_DESC__DESC:
-                return getDesc();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_DESC__DESC:
+            return getDesc();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -161,13 +164,13 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_DESC__DESC:
-                setDesc((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_DESC__DESC:
+            setDesc( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -176,13 +179,13 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_DESC__DESC:
-                unsetDesc();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_DESC__DESC:
+            unsetDesc();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -191,12 +194,12 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_DESC__DESC:
-                return isSetDesc();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_DESC__DESC:
+            return isSetDesc();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -206,12 +209,15 @@ public abstract class AgDescImpl extends MinimalEObjectImpl.Container implements
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

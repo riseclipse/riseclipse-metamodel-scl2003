@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -45,8 +46,8 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public LogSettingsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public LogSettingsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -56,13 +57,13 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addIntgPdPropertyDescriptor(object);
-            addLogEnaPropertyDescriptor(object);
-            addTrgOpsPropertyDescriptor(object);
+            addIntgPdPropertyDescriptor( object );
+            addLogEnaPropertyDescriptor( object );
+            addTrgOpsPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -73,20 +74,20 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIntgPdPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LogSettings_intgPd_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LogSettings_intgPd_feature", "_UI_LogSettings_type"),
-                 SclPackage.eINSTANCE.getLogSettings_IntgPd(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIntgPdPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LogSettings_intgPd_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LogSettings_intgPd_feature",
+                                "_UI_LogSettings_type" ),
+                        SclPackage.eINSTANCE.getLogSettings_IntgPd(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -95,20 +96,20 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLogEnaPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LogSettings_logEna_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LogSettings_logEna_feature", "_UI_LogSettings_type"),
-                 SclPackage.eINSTANCE.getLogSettings_LogEna(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addLogEnaPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LogSettings_logEna_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LogSettings_logEna_feature",
+                                "_UI_LogSettings_type" ),
+                        SclPackage.eINSTANCE.getLogSettings_LogEna(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -117,20 +118,20 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTrgOpsPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_LogSettings_trgOps_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_LogSettings_trgOps_feature", "_UI_LogSettings_type"),
-                 SclPackage.eINSTANCE.getLogSettings_TrgOps(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTrgOpsPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LogSettings_trgOps_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_LogSettings_trgOps_feature",
+                                "_UI_LogSettings_type" ),
+                        SclPackage.eINSTANCE.getLogSettings_TrgOps(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -140,8 +141,8 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/LogSettings"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/LogSettings" ) );
     }
 
     /**
@@ -151,14 +152,12 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        ServiceSettingsNoDynEnum labelValue = ((LogSettings)object).getCbName();
+    public String getText( Object object ) {
+        ServiceSettingsNoDynEnum labelValue = ( ( LogSettings ) object ).getCbName();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_LogSettings_type") :
-            getString("_UI_LogSettings_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_LogSettings_type" )
+                : getString( "_UI_LogSettings_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -168,17 +167,17 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(LogSettings.class)) {
-            case SclPackage.LOG_SETTINGS__INTG_PD:
-            case SclPackage.LOG_SETTINGS__LOG_ENA:
-            case SclPackage.LOG_SETTINGS__TRG_OPS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( LogSettings.class ) ) {
+        case SclPackage.LOG_SETTINGS__INTG_PD:
+        case SclPackage.LOG_SETTINGS__LOG_ENA:
+        case SclPackage.LOG_SETTINGS__TRG_OPS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -189,8 +188,8 @@ public class LogSettingsItemProvider extends ServiceSettingsItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

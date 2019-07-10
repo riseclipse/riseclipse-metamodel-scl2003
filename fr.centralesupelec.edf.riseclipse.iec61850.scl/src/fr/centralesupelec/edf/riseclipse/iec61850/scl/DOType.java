@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -167,7 +169,7 @@ public interface DOType extends IDNaming {
      * @model opposite="ParentDOType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DA> getDA();
+    EList< DA > getDA();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getDA <em>DA</em>}' containment reference list.
@@ -204,7 +206,7 @@ public interface DOType extends IDNaming {
      * @model opposite="RefersToDOType" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<AbstractDataObject> getReferredByAbstractDataObject();
+    EList< AbstractDataObject > getReferredByAbstractDataObject();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getReferredByAbstractDataObject <em>Referred By Abstract Data Object</em>}' reference list.
@@ -249,7 +251,7 @@ public interface DOType extends IDNaming {
      * @see #getParentDataTypeTemplates()
      * @generated
      */
-    void setParentDataTypeTemplates(DataTypeTemplates value);
+    void setParentDataTypeTemplates( DataTypeTemplates value );
 
     /**
      * Returns the value of the '<em><b>SDO</b></em>' containment reference list.
@@ -269,7 +271,7 @@ public interface DOType extends IDNaming {
      * @model opposite="ParentDOType" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SDO> getSDO();
+    EList< SDO > getSDO();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType#getSDO <em>SDO</em>}' containment reference list.

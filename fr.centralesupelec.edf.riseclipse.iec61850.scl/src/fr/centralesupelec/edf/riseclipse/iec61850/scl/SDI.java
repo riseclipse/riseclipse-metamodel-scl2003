@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -169,7 +171,7 @@ public interface SDI extends UnNaming {
      * @model opposite="ParentSDI" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DAI> getDAI();
+    EList< DAI > getDAI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getDAI <em>DAI</em>}' containment reference list.
@@ -214,7 +216,7 @@ public interface SDI extends UnNaming {
      * @see #getParentDOI()
      * @generated
      */
-    void setParentDOI(DOI value);
+    void setParentDOI( DOI value );
 
     /**
      * Returns the value of the '<em><b>Sub SDI</b></em>' containment reference list.
@@ -235,7 +237,7 @@ public interface SDI extends UnNaming {
      *        extendedMetaData="kind='element' name='SDI' namespace='http://www.iec.ch/61850/2003/SCL'"
      * @generated
      */
-    EList<SDI> getSubSDI();
+    EList< SDI > getSubSDI();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getSubSDI <em>Sub SDI</em>}' containment reference list.
@@ -310,7 +312,7 @@ public interface SDI extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getName <em>Name</em>}' attribute.
@@ -361,7 +363,7 @@ public interface SDI extends UnNaming {
      * @see #getRefersToSDO()
      * @generated
      */
-    void setRefersToSDO(SDO value);
+    void setRefersToSDO( SDO value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToSDO <em>Refers To SDO</em>}' reference.
@@ -412,7 +414,7 @@ public interface SDI extends UnNaming {
      * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void setRefersToAbstractDataAttribute(AbstractDataAttribute value);
+    void setRefersToAbstractDataAttribute( AbstractDataAttribute value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.

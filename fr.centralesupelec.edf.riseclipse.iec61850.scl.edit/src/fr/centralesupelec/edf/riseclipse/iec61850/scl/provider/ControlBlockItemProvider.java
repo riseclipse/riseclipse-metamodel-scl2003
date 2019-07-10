@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ControlBlockItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ControlBlockItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,13 +58,13 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addCbNamePropertyDescriptor(object);
-            addLdInstPropertyDescriptor(object);
-            addRefersToControlWithIEDNamePropertyDescriptor(object);
+            addCbNamePropertyDescriptor( object );
+            addLdInstPropertyDescriptor( object );
+            addRefersToControlWithIEDNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -74,20 +75,20 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCbNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ControlBlock_cbName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ControlBlock_cbName_feature", "_UI_ControlBlock_type"),
-                 SclPackage.eINSTANCE.getControlBlock_CbName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCbNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlBlock_cbName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ControlBlock_cbName_feature",
+                                "_UI_ControlBlock_type" ),
+                        SclPackage.eINSTANCE.getControlBlock_CbName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -96,20 +97,20 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLdInstPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ControlBlock_ldInst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ControlBlock_ldInst_feature", "_UI_ControlBlock_type"),
-                 SclPackage.eINSTANCE.getControlBlock_LdInst(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addLdInstPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlBlock_ldInst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ControlBlock_ldInst_feature",
+                                "_UI_ControlBlock_type" ),
+                        SclPackage.eINSTANCE.getControlBlock_LdInst(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,20 +119,20 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToControlWithIEDNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ControlBlock_RefersToControlWithIEDName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ControlBlock_RefersToControlWithIEDName_feature", "_UI_ControlBlock_type"),
-                 SclPackage.eINSTANCE.getControlBlock_RefersToControlWithIEDName(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToControlWithIEDNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ControlBlock_RefersToControlWithIEDName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_ControlBlock_RefersToControlWithIEDName_feature", "_UI_ControlBlock_type" ),
+                        SclPackage.eINSTANCE.getControlBlock_RefersToControlWithIEDName(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -143,10 +144,10 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getControlBlock_Address());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getControlBlock_Address() );
         }
         return childrenFeatures;
     }
@@ -157,11 +158,11 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -171,8 +172,8 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ControlBlock"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ControlBlock" ) );
     }
 
     /**
@@ -182,13 +183,11 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((ControlBlock)object).getCbName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_ControlBlock_type") :
-            getString("_UI_ControlBlock_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( ControlBlock ) object ).getCbName();
+        return label == null || label.length() == 0 ? getString( "_UI_ControlBlock_type" )
+                : getString( "_UI_ControlBlock_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -198,19 +197,19 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ControlBlock.class)) {
-            case SclPackage.CONTROL_BLOCK__CB_NAME:
-            case SclPackage.CONTROL_BLOCK__LD_INST:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.CONTROL_BLOCK__ADDRESS:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( ControlBlock.class ) ) {
+        case SclPackage.CONTROL_BLOCK__CB_NAME:
+        case SclPackage.CONTROL_BLOCK__LD_INST:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.CONTROL_BLOCK__ADDRESS:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -221,13 +220,11 @@ public class ControlBlockItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getControlBlock_Address(),
-                 SclFactory.eINSTANCE.createAddress()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getControlBlock_Address(),
+                SclFactory.eINSTANCE.createAddress() ) );
     }
 
 }

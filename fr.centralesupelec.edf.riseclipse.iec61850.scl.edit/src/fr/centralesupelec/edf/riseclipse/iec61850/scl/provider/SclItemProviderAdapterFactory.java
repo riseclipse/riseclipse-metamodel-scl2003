@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
 
 import java.util.ArrayList;
@@ -48,7 +50,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SclItemProviderAdapterFactory extends SclAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class SclItemProviderAdapterFactory extends SclAdapterFactory
+        implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory.
      * <!-- begin-user-doc -->
@@ -71,7 +74,7 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * <!-- end-user-doc -->
      * @generated
      */
-    protected Collection<Object> supportedTypes = new ArrayList<Object>();
+    protected Collection< Object > supportedTypes = new ArrayList< Object >();
 
     /**
      * This constructs an instance.
@@ -80,11 +83,11 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     public SclItemProviderAdapterFactory() {
-        supportedTypes.add(IEditingDomainItemProvider.class);
-        supportedTypes.add(IStructuredItemContentProvider.class);
-        supportedTypes.add(ITreeItemContentProvider.class);
-        supportedTypes.add(IItemLabelProvider.class);
-        supportedTypes.add(IItemPropertySource.class);
+        supportedTypes.add( IEditingDomainItemProvider.class );
+        supportedTypes.add( IStructuredItemContentProvider.class );
+        supportedTypes.add( ITreeItemContentProvider.class );
+        supportedTypes.add( IItemLabelProvider.class );
+        supportedTypes.add( IItemPropertySource.class );
     }
 
     /**
@@ -103,8 +106,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createHeaderAdapter() {
-        if (headerItemProvider == null) {
-            headerItemProvider = new HeaderItemProvider(this);
+        if( headerItemProvider == null ) {
+            headerItemProvider = new HeaderItemProvider( this );
         }
 
         return headerItemProvider;
@@ -126,8 +129,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createHistoryAdapter() {
-        if (historyItemProvider == null) {
-            historyItemProvider = new HistoryItemProvider(this);
+        if( historyItemProvider == null ) {
+            historyItemProvider = new HistoryItemProvider( this );
         }
 
         return historyItemProvider;
@@ -149,8 +152,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createHitemAdapter() {
-        if (hitemItemProvider == null) {
-            hitemItemProvider = new HitemItemProvider(this);
+        if( hitemItemProvider == null ) {
+            hitemItemProvider = new HitemItemProvider( this );
         }
 
         return hitemItemProvider;
@@ -172,8 +175,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createIDNamingAdapter() {
-        if (idNamingItemProvider == null) {
-            idNamingItemProvider = new IDNamingItemProvider(this);
+        if( idNamingItemProvider == null ) {
+            idNamingItemProvider = new IDNamingItemProvider( this );
         }
 
         return idNamingItemProvider;
@@ -195,8 +198,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLineAdapter() {
-        if (lineItemProvider == null) {
-            lineItemProvider = new LineItemProvider(this);
+        if( lineItemProvider == null ) {
+            lineItemProvider = new LineItemProvider( this );
         }
 
         return lineItemProvider;
@@ -218,8 +221,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPrivateAdapter() {
-        if (privateItemProvider == null) {
-            privateItemProvider = new PrivateItemProvider(this);
+        if( privateItemProvider == null ) {
+            privateItemProvider = new PrivateItemProvider( this );
         }
 
         return privateItemProvider;
@@ -241,8 +244,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createProcessAdapter() {
-        if (processItemProvider == null) {
-            processItemProvider = new ProcessItemProvider(this);
+        if( processItemProvider == null ) {
+            processItemProvider = new ProcessItemProvider( this );
         }
 
         return processItemProvider;
@@ -264,8 +267,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSCLAdapter() {
-        if (sclItemProvider == null) {
-            sclItemProvider = new SCLItemProvider(this);
+        if( sclItemProvider == null ) {
+            sclItemProvider = new SCLItemProvider( this );
         }
 
         return sclItemProvider;
@@ -287,8 +290,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTextAdapter() {
-        if (textItemProvider == null) {
-            textItemProvider = new TextItemProvider(this);
+        if( textItemProvider == null ) {
+            textItemProvider = new TextItemProvider( this );
         }
 
         return textItemProvider;
@@ -310,8 +313,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAddressAdapter() {
-        if (addressItemProvider == null) {
-            addressItemProvider = new AddressItemProvider(this);
+        if( addressItemProvider == null ) {
+            addressItemProvider = new AddressItemProvider( this );
         }
 
         return addressItemProvider;
@@ -333,8 +336,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createCommunicationAdapter() {
-        if (communicationItemProvider == null) {
-            communicationItemProvider = new CommunicationItemProvider(this);
+        if( communicationItemProvider == null ) {
+            communicationItemProvider = new CommunicationItemProvider( this );
         }
 
         return communicationItemProvider;
@@ -356,8 +359,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConnectedAPAdapter() {
-        if (connectedAPItemProvider == null) {
-            connectedAPItemProvider = new ConnectedAPItemProvider(this);
+        if( connectedAPItemProvider == null ) {
+            connectedAPItemProvider = new ConnectedAPItemProvider( this );
         }
 
         return connectedAPItemProvider;
@@ -379,8 +382,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGSEAdapter() {
-        if (gseItemProvider == null) {
-            gseItemProvider = new GSEItemProvider(this);
+        if( gseItemProvider == null ) {
+            gseItemProvider = new GSEItemProvider( this );
         }
 
         return gseItemProvider;
@@ -402,8 +405,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPAdapter() {
-        if (pItemProvider == null) {
-            pItemProvider = new PItemProvider(this);
+        if( pItemProvider == null ) {
+            pItemProvider = new PItemProvider( this );
         }
 
         return pItemProvider;
@@ -425,8 +428,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPAddrAdapter() {
-        if (pAddrItemProvider == null) {
-            pAddrItemProvider = new PAddrItemProvider(this);
+        if( pAddrItemProvider == null ) {
+            pAddrItemProvider = new PAddrItemProvider( this );
         }
 
         return pAddrItemProvider;
@@ -448,8 +451,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createP_PhysConnAdapter() {
-        if (p_PhysConnItemProvider == null) {
-            p_PhysConnItemProvider = new P_PhysConnItemProvider(this);
+        if( p_PhysConnItemProvider == null ) {
+            p_PhysConnItemProvider = new P_PhysConnItemProvider( this );
         }
 
         return p_PhysConnItemProvider;
@@ -471,8 +474,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPhysConnAdapter() {
-        if (physConnItemProvider == null) {
-            physConnItemProvider = new PhysConnItemProvider(this);
+        if( physConnItemProvider == null ) {
+            physConnItemProvider = new PhysConnItemProvider( this );
         }
 
         return physConnItemProvider;
@@ -494,8 +497,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSMVAdapter() {
-        if (smvItemProvider == null) {
-            smvItemProvider = new SMVItemProvider(this);
+        if( smvItemProvider == null ) {
+            smvItemProvider = new SMVItemProvider( this );
         }
 
         return smvItemProvider;
@@ -517,8 +520,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSubNetworkAdapter() {
-        if (subNetworkItemProvider == null) {
-            subNetworkItemProvider = new SubNetworkItemProvider(this);
+        if( subNetworkItemProvider == null ) {
+            subNetworkItemProvider = new SubNetworkItemProvider( this );
         }
 
         return subNetworkItemProvider;
@@ -540,8 +543,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createBDAAdapter() {
-        if (bdaItemProvider == null) {
-            bdaItemProvider = new BDAItemProvider(this);
+        if( bdaItemProvider == null ) {
+            bdaItemProvider = new BDAItemProvider( this );
         }
 
         return bdaItemProvider;
@@ -563,8 +566,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDAAdapter() {
-        if (daItemProvider == null) {
-            daItemProvider = new DAItemProvider(this);
+        if( daItemProvider == null ) {
+            daItemProvider = new DAItemProvider( this );
         }
 
         return daItemProvider;
@@ -586,8 +589,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDATypeAdapter() {
-        if (daTypeItemProvider == null) {
-            daTypeItemProvider = new DATypeItemProvider(this);
+        if( daTypeItemProvider == null ) {
+            daTypeItemProvider = new DATypeItemProvider( this );
         }
 
         return daTypeItemProvider;
@@ -609,8 +612,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDOAdapter() {
-        if (doItemProvider == null) {
-            doItemProvider = new DOItemProvider(this);
+        if( doItemProvider == null ) {
+            doItemProvider = new DOItemProvider( this );
         }
 
         return doItemProvider;
@@ -632,8 +635,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDOTypeAdapter() {
-        if (doTypeItemProvider == null) {
-            doTypeItemProvider = new DOTypeItemProvider(this);
+        if( doTypeItemProvider == null ) {
+            doTypeItemProvider = new DOTypeItemProvider( this );
         }
 
         return doTypeItemProvider;
@@ -655,8 +658,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDataTypeTemplatesAdapter() {
-        if (dataTypeTemplatesItemProvider == null) {
-            dataTypeTemplatesItemProvider = new DataTypeTemplatesItemProvider(this);
+        if( dataTypeTemplatesItemProvider == null ) {
+            dataTypeTemplatesItemProvider = new DataTypeTemplatesItemProvider( this );
         }
 
         return dataTypeTemplatesItemProvider;
@@ -678,8 +681,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEnumTypeAdapter() {
-        if (enumTypeItemProvider == null) {
-            enumTypeItemProvider = new EnumTypeItemProvider(this);
+        if( enumTypeItemProvider == null ) {
+            enumTypeItemProvider = new EnumTypeItemProvider( this );
         }
 
         return enumTypeItemProvider;
@@ -701,8 +704,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEnumValAdapter() {
-        if (enumValItemProvider == null) {
-            enumValItemProvider = new EnumValItemProvider(this);
+        if( enumValItemProvider == null ) {
+            enumValItemProvider = new EnumValItemProvider( this );
         }
 
         return enumValItemProvider;
@@ -724,8 +727,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLNodeTypeAdapter() {
-        if (lNodeTypeItemProvider == null) {
-            lNodeTypeItemProvider = new LNodeTypeItemProvider(this);
+        if( lNodeTypeItemProvider == null ) {
+            lNodeTypeItemProvider = new LNodeTypeItemProvider( this );
         }
 
         return lNodeTypeItemProvider;
@@ -747,8 +750,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createProtNsAdapter() {
-        if (protNsItemProvider == null) {
-            protNsItemProvider = new ProtNsItemProvider(this);
+        if( protNsItemProvider == null ) {
+            protNsItemProvider = new ProtNsItemProvider( this );
         }
 
         return protNsItemProvider;
@@ -770,8 +773,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSDOAdapter() {
-        if (sdoItemProvider == null) {
-            sdoItemProvider = new SDOItemProvider(this);
+        if( sdoItemProvider == null ) {
+            sdoItemProvider = new SDOItemProvider( this );
         }
 
         return sdoItemProvider;
@@ -793,8 +796,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createValAdapter() {
-        if (valItemProvider == null) {
-            valItemProvider = new ValItemProvider(this);
+        if( valItemProvider == null ) {
+            valItemProvider = new ValItemProvider( this );
         }
 
         return valItemProvider;
@@ -816,8 +819,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createBitRateInMbPerSecAdapter() {
-        if (bitRateInMbPerSecItemProvider == null) {
-            bitRateInMbPerSecItemProvider = new BitRateInMbPerSecItemProvider(this);
+        if( bitRateInMbPerSecItemProvider == null ) {
+            bitRateInMbPerSecItemProvider = new BitRateInMbPerSecItemProvider( this );
         }
 
         return bitRateInMbPerSecItemProvider;
@@ -839,8 +842,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createMinTimeAdapter() {
-        if (minTimeItemProvider == null) {
-            minTimeItemProvider = new MinTimeItemProvider(this);
+        if( minTimeItemProvider == null ) {
+            minTimeItemProvider = new MinTimeItemProvider( this );
         }
 
         return minTimeItemProvider;
@@ -862,8 +865,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createMaxTimeAdapter() {
-        if (maxTimeItemProvider == null) {
-            maxTimeItemProvider = new MaxTimeItemProvider(this);
+        if( maxTimeItemProvider == null ) {
+            maxTimeItemProvider = new MaxTimeItemProvider( this );
         }
 
         return maxTimeItemProvider;
@@ -885,8 +888,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createBitRateAdapter() {
-        if (bitRateItemProvider == null) {
-            bitRateItemProvider = new BitRateItemProvider(this);
+        if( bitRateItemProvider == null ) {
+            bitRateItemProvider = new BitRateItemProvider( this );
         }
 
         return bitRateItemProvider;
@@ -908,8 +911,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSmpRateAdapter() {
-        if (smpRateItemProvider == null) {
-            smpRateItemProvider = new SmpRateItemProvider(this);
+        if( smpRateItemProvider == null ) {
+            smpRateItemProvider = new SmpRateItemProvider( this );
         }
 
         return smpRateItemProvider;
@@ -931,8 +934,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSamplesPerSecAdapter() {
-        if (samplesPerSecItemProvider == null) {
-            samplesPerSecItemProvider = new SamplesPerSecItemProvider(this);
+        if( samplesPerSecItemProvider == null ) {
+            samplesPerSecItemProvider = new SamplesPerSecItemProvider( this );
         }
 
         return samplesPerSecItemProvider;
@@ -954,8 +957,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSecPerSamplesAdapter() {
-        if (secPerSamplesItemProvider == null) {
-            secPerSamplesItemProvider = new SecPerSamplesItemProvider(this);
+        if( secPerSamplesItemProvider == null ) {
+            secPerSamplesItemProvider = new SecPerSamplesItemProvider( this );
         }
 
         return secPerSamplesItemProvider;
@@ -977,8 +980,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createMcSecurityAdapter() {
-        if (mcSecurityItemProvider == null) {
-            mcSecurityItemProvider = new McSecurityItemProvider(this);
+        if( mcSecurityItemProvider == null ) {
+            mcSecurityItemProvider = new McSecurityItemProvider( this );
         }
 
         return mcSecurityItemProvider;
@@ -1000,8 +1003,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAgAuthenticationAdapter() {
-        if (agAuthenticationItemProvider == null) {
-            agAuthenticationItemProvider = new AgAuthenticationItemProvider(this);
+        if( agAuthenticationItemProvider == null ) {
+            agAuthenticationItemProvider = new AgAuthenticationItemProvider( this );
         }
 
         return agAuthenticationItemProvider;
@@ -1023,8 +1026,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAgLNRefAdapter() {
-        if (agLNRefItemProvider == null) {
-            agLNRefItemProvider = new AgLNRefItemProvider(this);
+        if( agLNRefItemProvider == null ) {
+            agLNRefItemProvider = new AgLNRefItemProvider( this );
         }
 
         return agLNRefItemProvider;
@@ -1046,8 +1049,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDurationInMilliSecAdapter() {
-        if (durationInMilliSecItemProvider == null) {
-            durationInMilliSecItemProvider = new DurationInMilliSecItemProvider(this);
+        if( durationInMilliSecItemProvider == null ) {
+            durationInMilliSecItemProvider = new DurationInMilliSecItemProvider( this );
         }
 
         return durationInMilliSecItemProvider;
@@ -1069,8 +1072,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAccessControlAdapter() {
-        if (accessControlItemProvider == null) {
-            accessControlItemProvider = new AccessControlItemProvider(this);
+        if( accessControlItemProvider == null ) {
+            accessControlItemProvider = new AccessControlItemProvider( this );
         }
 
         return accessControlItemProvider;
@@ -1092,8 +1095,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAccessPointAdapter() {
-        if (accessPointItemProvider == null) {
-            accessPointItemProvider = new AccessPointItemProvider(this);
+        if( accessPointItemProvider == null ) {
+            accessPointItemProvider = new AccessPointItemProvider( this );
         }
 
         return accessPointItemProvider;
@@ -1115,8 +1118,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAssociationAdapter() {
-        if (associationItemProvider == null) {
-            associationItemProvider = new AssociationItemProvider(this);
+        if( associationItemProvider == null ) {
+            associationItemProvider = new AssociationItemProvider( this );
         }
 
         return associationItemProvider;
@@ -1138,8 +1141,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAuthenticationAdapter() {
-        if (authenticationItemProvider == null) {
-            authenticationItemProvider = new AuthenticationItemProvider(this);
+        if( authenticationItemProvider == null ) {
+            authenticationItemProvider = new AuthenticationItemProvider( this );
         }
 
         return authenticationItemProvider;
@@ -1161,8 +1164,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createCertificateAdapter() {
-        if (certificateItemProvider == null) {
-            certificateItemProvider = new CertificateItemProvider(this);
+        if( certificateItemProvider == null ) {
+            certificateItemProvider = new CertificateItemProvider( this );
         }
 
         return certificateItemProvider;
@@ -1184,8 +1187,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createClientLNAdapter() {
-        if (clientLNItemProvider == null) {
-            clientLNItemProvider = new ClientLNItemProvider(this);
+        if( clientLNItemProvider == null ) {
+            clientLNItemProvider = new ClientLNItemProvider( this );
         }
 
         return clientLNItemProvider;
@@ -1207,8 +1210,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createClientServicesAdapter() {
-        if (clientServicesItemProvider == null) {
-            clientServicesItemProvider = new ClientServicesItemProvider(this);
+        if( clientServicesItemProvider == null ) {
+            clientServicesItemProvider = new ClientServicesItemProvider( this );
         }
 
         return clientServicesItemProvider;
@@ -1230,8 +1233,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createCommProtAdapter() {
-        if (commProtItemProvider == null) {
-            commProtItemProvider = new CommProtItemProvider(this);
+        if( commProtItemProvider == null ) {
+            commProtItemProvider = new CommProtItemProvider( this );
         }
 
         return commProtItemProvider;
@@ -1253,8 +1256,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfDataSetAdapter() {
-        if (confDataSetItemProvider == null) {
-            confDataSetItemProvider = new ConfDataSetItemProvider(this);
+        if( confDataSetItemProvider == null ) {
+            confDataSetItemProvider = new ConfDataSetItemProvider( this );
         }
 
         return confDataSetItemProvider;
@@ -1276,8 +1279,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfLNsAdapter() {
-        if (confLNsItemProvider == null) {
-            confLNsItemProvider = new ConfLNsItemProvider(this);
+        if( confLNsItemProvider == null ) {
+            confLNsItemProvider = new ConfLNsItemProvider( this );
         }
 
         return confLNsItemProvider;
@@ -1299,8 +1302,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfLdNameAdapter() {
-        if (confLdNameItemProvider == null) {
-            confLdNameItemProvider = new ConfLdNameItemProvider(this);
+        if( confLdNameItemProvider == null ) {
+            confLdNameItemProvider = new ConfLdNameItemProvider( this );
         }
 
         return confLdNameItemProvider;
@@ -1322,8 +1325,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfLogControlAdapter() {
-        if (confLogControlItemProvider == null) {
-            confLogControlItemProvider = new ConfLogControlItemProvider(this);
+        if( confLogControlItemProvider == null ) {
+            confLogControlItemProvider = new ConfLogControlItemProvider( this );
         }
 
         return confLogControlItemProvider;
@@ -1345,8 +1348,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfReportControlAdapter() {
-        if (confReportControlItemProvider == null) {
-            confReportControlItemProvider = new ConfReportControlItemProvider(this);
+        if( confReportControlItemProvider == null ) {
+            confReportControlItemProvider = new ConfReportControlItemProvider( this );
         }
 
         return confReportControlItemProvider;
@@ -1368,8 +1371,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfSGAdapter() {
-        if (confSGItemProvider == null) {
-            confSGItemProvider = new ConfSGItemProvider(this);
+        if( confSGItemProvider == null ) {
+            confSGItemProvider = new ConfSGItemProvider( this );
         }
 
         return confSGItemProvider;
@@ -1391,8 +1394,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConfSigRefAdapter() {
-        if (confSigRefItemProvider == null) {
-            confSigRefItemProvider = new ConfSigRefItemProvider(this);
+        if( confSigRefItemProvider == null ) {
+            confSigRefItemProvider = new ConfSigRefItemProvider( this );
         }
 
         return confSigRefItemProvider;
@@ -1414,8 +1417,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createControlWithIEDNameAdapter() {
-        if (controlWithIEDNameItemProvider == null) {
-            controlWithIEDNameItemProvider = new ControlWithIEDNameItemProvider(this);
+        if( controlWithIEDNameItemProvider == null ) {
+            controlWithIEDNameItemProvider = new ControlWithIEDNameItemProvider( this );
         }
 
         return controlWithIEDNameItemProvider;
@@ -1437,8 +1440,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDAIAdapter() {
-        if (daiItemProvider == null) {
-            daiItemProvider = new DAIItemProvider(this);
+        if( daiItemProvider == null ) {
+            daiItemProvider = new DAIItemProvider( this );
         }
 
         return daiItemProvider;
@@ -1460,8 +1463,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDOIAdapter() {
-        if (doiItemProvider == null) {
-            doiItemProvider = new DOIItemProvider(this);
+        if( doiItemProvider == null ) {
+            doiItemProvider = new DOIItemProvider( this );
         }
 
         return doiItemProvider;
@@ -1483,8 +1486,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDataObjectDirectoryAdapter() {
-        if (dataObjectDirectoryItemProvider == null) {
-            dataObjectDirectoryItemProvider = new DataObjectDirectoryItemProvider(this);
+        if( dataObjectDirectoryItemProvider == null ) {
+            dataObjectDirectoryItemProvider = new DataObjectDirectoryItemProvider( this );
         }
 
         return dataObjectDirectoryItemProvider;
@@ -1506,8 +1509,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDataSetAdapter() {
-        if (dataSetItemProvider == null) {
-            dataSetItemProvider = new DataSetItemProvider(this);
+        if( dataSetItemProvider == null ) {
+            dataSetItemProvider = new DataSetItemProvider( this );
         }
 
         return dataSetItemProvider;
@@ -1529,8 +1532,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDataSetDirectoryAdapter() {
-        if (dataSetDirectoryItemProvider == null) {
-            dataSetDirectoryItemProvider = new DataSetDirectoryItemProvider(this);
+        if( dataSetDirectoryItemProvider == null ) {
+            dataSetDirectoryItemProvider = new DataSetDirectoryItemProvider( this );
         }
 
         return dataSetDirectoryItemProvider;
@@ -1552,8 +1555,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDynAssociationAdapter() {
-        if (dynAssociationItemProvider == null) {
-            dynAssociationItemProvider = new DynAssociationItemProvider(this);
+        if( dynAssociationItemProvider == null ) {
+            dynAssociationItemProvider = new DynAssociationItemProvider( this );
         }
 
         return dynAssociationItemProvider;
@@ -1575,8 +1578,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDynDataSetAdapter() {
-        if (dynDataSetItemProvider == null) {
-            dynDataSetItemProvider = new DynDataSetItemProvider(this);
+        if( dynDataSetItemProvider == null ) {
+            dynDataSetItemProvider = new DynDataSetItemProvider( this );
         }
 
         return dynDataSetItemProvider;
@@ -1598,8 +1601,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createExtRefAdapter() {
-        if (extRefItemProvider == null) {
-            extRefItemProvider = new ExtRefItemProvider(this);
+        if( extRefItemProvider == null ) {
+            extRefItemProvider = new ExtRefItemProvider( this );
         }
 
         return extRefItemProvider;
@@ -1621,8 +1624,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createFCDAAdapter() {
-        if (fcdaItemProvider == null) {
-            fcdaItemProvider = new FCDAItemProvider(this);
+        if( fcdaItemProvider == null ) {
+            fcdaItemProvider = new FCDAItemProvider( this );
         }
 
         return fcdaItemProvider;
@@ -1644,8 +1647,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createFileHandlingAdapter() {
-        if (fileHandlingItemProvider == null) {
-            fileHandlingItemProvider = new FileHandlingItemProvider(this);
+        if( fileHandlingItemProvider == null ) {
+            fileHandlingItemProvider = new FileHandlingItemProvider( this );
         }
 
         return fileHandlingItemProvider;
@@ -1667,8 +1670,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGOOSEAdapter() {
-        if (gooseItemProvider == null) {
-            gooseItemProvider = new GOOSEItemProvider(this);
+        if( gooseItemProvider == null ) {
+            gooseItemProvider = new GOOSEItemProvider( this );
         }
 
         return gooseItemProvider;
@@ -1690,8 +1693,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGOOSESecurityAdapter() {
-        if (gooseSecurityItemProvider == null) {
-            gooseSecurityItemProvider = new GOOSESecurityItemProvider(this);
+        if( gooseSecurityItemProvider == null ) {
+            gooseSecurityItemProvider = new GOOSESecurityItemProvider( this );
         }
 
         return gooseSecurityItemProvider;
@@ -1713,8 +1716,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGSEControlAdapter() {
-        if (gseControlItemProvider == null) {
-            gseControlItemProvider = new GSEControlItemProvider(this);
+        if( gseControlItemProvider == null ) {
+            gseControlItemProvider = new GSEControlItemProvider( this );
         }
 
         return gseControlItemProvider;
@@ -1736,8 +1739,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGSEDirAdapter() {
-        if (gseDirItemProvider == null) {
-            gseDirItemProvider = new GSEDirItemProvider(this);
+        if( gseDirItemProvider == null ) {
+            gseDirItemProvider = new GSEDirItemProvider( this );
         }
 
         return gseDirItemProvider;
@@ -1759,8 +1762,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGSESettingsAdapter() {
-        if (gseSettingsItemProvider == null) {
-            gseSettingsItemProvider = new GSESettingsItemProvider(this);
+        if( gseSettingsItemProvider == null ) {
+            gseSettingsItemProvider = new GSESettingsItemProvider( this );
         }
 
         return gseSettingsItemProvider;
@@ -1782,8 +1785,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGSSEAdapter() {
-        if (gsseItemProvider == null) {
-            gsseItemProvider = new GSSEItemProvider(this);
+        if( gsseItemProvider == null ) {
+            gsseItemProvider = new GSSEItemProvider( this );
         }
 
         return gsseItemProvider;
@@ -1805,8 +1808,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGetCBValuesAdapter() {
-        if (getCBValuesItemProvider == null) {
-            getCBValuesItemProvider = new GetCBValuesItemProvider(this);
+        if( getCBValuesItemProvider == null ) {
+            getCBValuesItemProvider = new GetCBValuesItemProvider( this );
         }
 
         return getCBValuesItemProvider;
@@ -1828,8 +1831,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGetDataObjectDefinitionAdapter() {
-        if (getDataObjectDefinitionItemProvider == null) {
-            getDataObjectDefinitionItemProvider = new GetDataObjectDefinitionItemProvider(this);
+        if( getDataObjectDefinitionItemProvider == null ) {
+            getDataObjectDefinitionItemProvider = new GetDataObjectDefinitionItemProvider( this );
         }
 
         return getDataObjectDefinitionItemProvider;
@@ -1851,8 +1854,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGetDataSetValueAdapter() {
-        if (getDataSetValueItemProvider == null) {
-            getDataSetValueItemProvider = new GetDataSetValueItemProvider(this);
+        if( getDataSetValueItemProvider == null ) {
+            getDataSetValueItemProvider = new GetDataSetValueItemProvider( this );
         }
 
         return getDataSetValueItemProvider;
@@ -1874,8 +1877,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGetDirectoryAdapter() {
-        if (getDirectoryItemProvider == null) {
-            getDirectoryItemProvider = new GetDirectoryItemProvider(this);
+        if( getDirectoryItemProvider == null ) {
+            getDirectoryItemProvider = new GetDirectoryItemProvider( this );
         }
 
         return getDirectoryItemProvider;
@@ -1897,8 +1900,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createIEDAdapter() {
-        if (iedItemProvider == null) {
-            iedItemProvider = new IEDItemProvider(this);
+        if( iedItemProvider == null ) {
+            iedItemProvider = new IEDItemProvider( this );
         }
 
         return iedItemProvider;
@@ -1920,8 +1923,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createIEDNameAdapter() {
-        if (iedNameItemProvider == null) {
-            iedNameItemProvider = new IEDNameItemProvider(this);
+        if( iedNameItemProvider == null ) {
+            iedNameItemProvider = new IEDNameItemProvider( this );
         }
 
         return iedNameItemProvider;
@@ -1943,8 +1946,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createInputsAdapter() {
-        if (inputsItemProvider == null) {
-            inputsItemProvider = new InputsItemProvider(this);
+        if( inputsItemProvider == null ) {
+            inputsItemProvider = new InputsItemProvider( this );
         }
 
         return inputsItemProvider;
@@ -1966,8 +1969,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createIssuerNameAdapter() {
-        if (issuerNameItemProvider == null) {
-            issuerNameItemProvider = new IssuerNameItemProvider(this);
+        if( issuerNameItemProvider == null ) {
+            issuerNameItemProvider = new IssuerNameItemProvider( this );
         }
 
         return issuerNameItemProvider;
@@ -1989,8 +1992,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createKDCAdapter() {
-        if (kdcItemProvider == null) {
-            kdcItemProvider = new KDCItemProvider(this);
+        if( kdcItemProvider == null ) {
+            kdcItemProvider = new KDCItemProvider( this );
         }
 
         return kdcItemProvider;
@@ -2012,8 +2015,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLDeviceAdapter() {
-        if (lDeviceItemProvider == null) {
-            lDeviceItemProvider = new LDeviceItemProvider(this);
+        if( lDeviceItemProvider == null ) {
+            lDeviceItemProvider = new LDeviceItemProvider( this );
         }
 
         return lDeviceItemProvider;
@@ -2035,8 +2038,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLNAdapter() {
-        if (lnItemProvider == null) {
-            lnItemProvider = new LNItemProvider(this);
+        if( lnItemProvider == null ) {
+            lnItemProvider = new LNItemProvider( this );
         }
 
         return lnItemProvider;
@@ -2058,8 +2061,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLN0Adapter() {
-        if (ln0ItemProvider == null) {
-            ln0ItemProvider = new LN0ItemProvider(this);
+        if( ln0ItemProvider == null ) {
+            ln0ItemProvider = new LN0ItemProvider( this );
         }
 
         return ln0ItemProvider;
@@ -2081,8 +2084,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLogAdapter() {
-        if (logItemProvider == null) {
-            logItemProvider = new LogItemProvider(this);
+        if( logItemProvider == null ) {
+            logItemProvider = new LogItemProvider( this );
         }
 
         return logItemProvider;
@@ -2104,8 +2107,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLogControlAdapter() {
-        if (logControlItemProvider == null) {
-            logControlItemProvider = new LogControlItemProvider(this);
+        if( logControlItemProvider == null ) {
+            logControlItemProvider = new LogControlItemProvider( this );
         }
 
         return logControlItemProvider;
@@ -2127,8 +2130,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLogSettingsAdapter() {
-        if (logSettingsItemProvider == null) {
-            logSettingsItemProvider = new LogSettingsItemProvider(this);
+        if( logSettingsItemProvider == null ) {
+            logSettingsItemProvider = new LogSettingsItemProvider( this );
         }
 
         return logSettingsItemProvider;
@@ -2150,8 +2153,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createOptFieldsAdapter() {
-        if (optFieldsItemProvider == null) {
-            optFieldsItemProvider = new OptFieldsItemProvider(this);
+        if( optFieldsItemProvider == null ) {
+            optFieldsItemProvider = new OptFieldsItemProvider( this );
         }
 
         return optFieldsItemProvider;
@@ -2173,8 +2176,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createProtocolAdapter() {
-        if (protocolItemProvider == null) {
-            protocolItemProvider = new ProtocolItemProvider(this);
+        if( protocolItemProvider == null ) {
+            protocolItemProvider = new ProtocolItemProvider( this );
         }
 
         return protocolItemProvider;
@@ -2196,8 +2199,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createReadWriteAdapter() {
-        if (readWriteItemProvider == null) {
-            readWriteItemProvider = new ReadWriteItemProvider(this);
+        if( readWriteItemProvider == null ) {
+            readWriteItemProvider = new ReadWriteItemProvider( this );
         }
 
         return readWriteItemProvider;
@@ -2219,8 +2222,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createRedProtAdapter() {
-        if (redProtItemProvider == null) {
-            redProtItemProvider = new RedProtItemProvider(this);
+        if( redProtItemProvider == null ) {
+            redProtItemProvider = new RedProtItemProvider( this );
         }
 
         return redProtItemProvider;
@@ -2242,8 +2245,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createReportControlAdapter() {
-        if (reportControlItemProvider == null) {
-            reportControlItemProvider = new ReportControlItemProvider(this);
+        if( reportControlItemProvider == null ) {
+            reportControlItemProvider = new ReportControlItemProvider( this );
         }
 
         return reportControlItemProvider;
@@ -2265,8 +2268,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createReportSettingsAdapter() {
-        if (reportSettingsItemProvider == null) {
-            reportSettingsItemProvider = new ReportSettingsItemProvider(this);
+        if( reportSettingsItemProvider == null ) {
+            reportSettingsItemProvider = new ReportSettingsItemProvider( this );
         }
 
         return reportSettingsItemProvider;
@@ -2288,8 +2291,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createRptEnabledAdapter() {
-        if (rptEnabledItemProvider == null) {
-            rptEnabledItemProvider = new RptEnabledItemProvider(this);
+        if( rptEnabledItemProvider == null ) {
+            rptEnabledItemProvider = new RptEnabledItemProvider( this );
         }
 
         return rptEnabledItemProvider;
@@ -2311,8 +2314,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSDIAdapter() {
-        if (sdiItemProvider == null) {
-            sdiItemProvider = new SDIItemProvider(this);
+        if( sdiItemProvider == null ) {
+            sdiItemProvider = new SDIItemProvider( this );
         }
 
         return sdiItemProvider;
@@ -2334,8 +2337,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSGEditAdapter() {
-        if (sgEditItemProvider == null) {
-            sgEditItemProvider = new SGEditItemProvider(this);
+        if( sgEditItemProvider == null ) {
+            sgEditItemProvider = new SGEditItemProvider( this );
         }
 
         return sgEditItemProvider;
@@ -2357,8 +2360,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSMVSecurityAdapter() {
-        if (smvSecurityItemProvider == null) {
-            smvSecurityItemProvider = new SMVSecurityItemProvider(this);
+        if( smvSecurityItemProvider == null ) {
+            smvSecurityItemProvider = new SMVSecurityItemProvider( this );
         }
 
         return smvSecurityItemProvider;
@@ -2380,8 +2383,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSMVSettingsAdapter() {
-        if (smvSettingsItemProvider == null) {
-            smvSettingsItemProvider = new SMVSettingsItemProvider(this);
+        if( smvSettingsItemProvider == null ) {
+            smvSettingsItemProvider = new SMVSettingsItemProvider( this );
         }
 
         return smvSettingsItemProvider;
@@ -2403,8 +2406,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSMVscAdapter() {
-        if (smVscItemProvider == null) {
-            smVscItemProvider = new SMVscItemProvider(this);
+        if( smVscItemProvider == null ) {
+            smVscItemProvider = new SMVscItemProvider( this );
         }
 
         return smVscItemProvider;
@@ -2426,8 +2429,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSampledValueControlAdapter() {
-        if (sampledValueControlItemProvider == null) {
-            sampledValueControlItemProvider = new SampledValueControlItemProvider(this);
+        if( sampledValueControlItemProvider == null ) {
+            sampledValueControlItemProvider = new SampledValueControlItemProvider( this );
         }
 
         return sampledValueControlItemProvider;
@@ -2449,8 +2452,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServerAdapter() {
-        if (serverItemProvider == null) {
-            serverItemProvider = new ServerItemProvider(this);
+        if( serverItemProvider == null ) {
+            serverItemProvider = new ServerItemProvider( this );
         }
 
         return serverItemProvider;
@@ -2472,8 +2475,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServerAtAdapter() {
-        if (serverAtItemProvider == null) {
-            serverAtItemProvider = new ServerAtItemProvider(this);
+        if( serverAtItemProvider == null ) {
+            serverAtItemProvider = new ServerAtItemProvider( this );
         }
 
         return serverAtItemProvider;
@@ -2495,8 +2498,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceSettingsAdapter() {
-        if (serviceSettingsItemProvider == null) {
-            serviceSettingsItemProvider = new ServiceSettingsItemProvider(this);
+        if( serviceSettingsItemProvider == null ) {
+            serviceSettingsItemProvider = new ServiceSettingsItemProvider( this );
         }
 
         return serviceSettingsItemProvider;
@@ -2518,8 +2521,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceWithMaxAdapter() {
-        if (serviceWithMaxItemProvider == null) {
-            serviceWithMaxItemProvider = new ServiceWithMaxItemProvider(this);
+        if( serviceWithMaxItemProvider == null ) {
+            serviceWithMaxItemProvider = new ServiceWithMaxItemProvider( this );
         }
 
         return serviceWithMaxItemProvider;
@@ -2541,8 +2544,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServicesAdapter() {
-        if (servicesItemProvider == null) {
-            servicesItemProvider = new ServicesItemProvider(this);
+        if( servicesItemProvider == null ) {
+            servicesItemProvider = new ServicesItemProvider( this );
         }
 
         return servicesItemProvider;
@@ -2564,8 +2567,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSetDataSetValueAdapter() {
-        if (setDataSetValueItemProvider == null) {
-            setDataSetValueItemProvider = new SetDataSetValueItemProvider(this);
+        if( setDataSetValueItemProvider == null ) {
+            setDataSetValueItemProvider = new SetDataSetValueItemProvider( this );
         }
 
         return setDataSetValueItemProvider;
@@ -2587,8 +2590,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSettingControlAdapter() {
-        if (settingControlItemProvider == null) {
-            settingControlItemProvider = new SettingControlItemProvider(this);
+        if( settingControlItemProvider == null ) {
+            settingControlItemProvider = new SettingControlItemProvider( this );
         }
 
         return settingControlItemProvider;
@@ -2610,8 +2613,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSettingGroupsAdapter() {
-        if (settingGroupsItemProvider == null) {
-            settingGroupsItemProvider = new SettingGroupsItemProvider(this);
+        if( settingGroupsItemProvider == null ) {
+            settingGroupsItemProvider = new SettingGroupsItemProvider( this );
         }
 
         return settingGroupsItemProvider;
@@ -2633,8 +2636,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSmvOptsAdapter() {
-        if (smvOptsItemProvider == null) {
-            smvOptsItemProvider = new SmvOptsItemProvider(this);
+        if( smvOptsItemProvider == null ) {
+            smvOptsItemProvider = new SmvOptsItemProvider( this );
         }
 
         return smvOptsItemProvider;
@@ -2656,8 +2659,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSubjectAdapter() {
-        if (subjectItemProvider == null) {
-            subjectItemProvider = new SubjectItemProvider(this);
+        if( subjectItemProvider == null ) {
+            subjectItemProvider = new SubjectItemProvider( this );
         }
 
         return subjectItemProvider;
@@ -2679,8 +2682,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSupSubscriptionAdapter() {
-        if (supSubscriptionItemProvider == null) {
-            supSubscriptionItemProvider = new SupSubscriptionItemProvider(this);
+        if( supSubscriptionItemProvider == null ) {
+            supSubscriptionItemProvider = new SupSubscriptionItemProvider( this );
         }
 
         return supSubscriptionItemProvider;
@@ -2702,8 +2705,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTimeSyncProtAdapter() {
-        if (timeSyncProtItemProvider == null) {
-            timeSyncProtItemProvider = new TimeSyncProtItemProvider(this);
+        if( timeSyncProtItemProvider == null ) {
+            timeSyncProtItemProvider = new TimeSyncProtItemProvider( this );
         }
 
         return timeSyncProtItemProvider;
@@ -2725,8 +2728,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTimerActivatedControlAdapter() {
-        if (timerActivatedControlItemProvider == null) {
-            timerActivatedControlItemProvider = new TimerActivatedControlItemProvider(this);
+        if( timerActivatedControlItemProvider == null ) {
+            timerActivatedControlItemProvider = new TimerActivatedControlItemProvider( this );
         }
 
         return timerActivatedControlItemProvider;
@@ -2748,8 +2751,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTrgOpsAdapter() {
-        if (trgOpsItemProvider == null) {
-            trgOpsItemProvider = new TrgOpsItemProvider(this);
+        if( trgOpsItemProvider == null ) {
+            trgOpsItemProvider = new TrgOpsItemProvider( this );
         }
 
         return trgOpsItemProvider;
@@ -2771,8 +2774,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createValueHandlingAdapter() {
-        if (valueHandlingItemProvider == null) {
-            valueHandlingItemProvider = new ValueHandlingItemProvider(this);
+        if( valueHandlingItemProvider == null ) {
+            valueHandlingItemProvider = new ValueHandlingItemProvider( this );
         }
 
         return valueHandlingItemProvider;
@@ -2794,8 +2797,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAbstractConductingEquipmentAdapter() {
-        if (abstractConductingEquipmentItemProvider == null) {
-            abstractConductingEquipmentItemProvider = new AbstractConductingEquipmentItemProvider(this);
+        if( abstractConductingEquipmentItemProvider == null ) {
+            abstractConductingEquipmentItemProvider = new AbstractConductingEquipmentItemProvider( this );
         }
 
         return abstractConductingEquipmentItemProvider;
@@ -2817,8 +2820,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createAbstractEqFuncSubFuncAdapter() {
-        if (abstractEqFuncSubFuncItemProvider == null) {
-            abstractEqFuncSubFuncItemProvider = new AbstractEqFuncSubFuncItemProvider(this);
+        if( abstractEqFuncSubFuncItemProvider == null ) {
+            abstractEqFuncSubFuncItemProvider = new AbstractEqFuncSubFuncItemProvider( this );
         }
 
         return abstractEqFuncSubFuncItemProvider;
@@ -2840,8 +2843,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createBayAdapter() {
-        if (bayItemProvider == null) {
-            bayItemProvider = new BayItemProvider(this);
+        if( bayItemProvider == null ) {
+            bayItemProvider = new BayItemProvider( this );
         }
 
         return bayItemProvider;
@@ -2863,8 +2866,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConductingEquipmentAdapter() {
-        if (conductingEquipmentItemProvider == null) {
-            conductingEquipmentItemProvider = new ConductingEquipmentItemProvider(this);
+        if( conductingEquipmentItemProvider == null ) {
+            conductingEquipmentItemProvider = new ConductingEquipmentItemProvider( this );
         }
 
         return conductingEquipmentItemProvider;
@@ -2886,8 +2889,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createConnectivityNodeAdapter() {
-        if (connectivityNodeItemProvider == null) {
-            connectivityNodeItemProvider = new ConnectivityNodeItemProvider(this);
+        if( connectivityNodeItemProvider == null ) {
+            connectivityNodeItemProvider = new ConnectivityNodeItemProvider( this );
         }
 
         return connectivityNodeItemProvider;
@@ -2909,8 +2912,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEqFunctionAdapter() {
-        if (eqFunctionItemProvider == null) {
-            eqFunctionItemProvider = new EqFunctionItemProvider(this);
+        if( eqFunctionItemProvider == null ) {
+            eqFunctionItemProvider = new EqFunctionItemProvider( this );
         }
 
         return eqFunctionItemProvider;
@@ -2932,8 +2935,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEqSubFunctionAdapter() {
-        if (eqSubFunctionItemProvider == null) {
-            eqSubFunctionItemProvider = new EqSubFunctionItemProvider(this);
+        if( eqSubFunctionItemProvider == null ) {
+            eqSubFunctionItemProvider = new EqSubFunctionItemProvider( this );
         }
 
         return eqSubFunctionItemProvider;
@@ -2955,8 +2958,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEquipmentAdapter() {
-        if (equipmentItemProvider == null) {
-            equipmentItemProvider = new EquipmentItemProvider(this);
+        if( equipmentItemProvider == null ) {
+            equipmentItemProvider = new EquipmentItemProvider( this );
         }
 
         return equipmentItemProvider;
@@ -2978,8 +2981,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createEquipmentContainerAdapter() {
-        if (equipmentContainerItemProvider == null) {
-            equipmentContainerItemProvider = new EquipmentContainerItemProvider(this);
+        if( equipmentContainerItemProvider == null ) {
+            equipmentContainerItemProvider = new EquipmentContainerItemProvider( this );
         }
 
         return equipmentContainerItemProvider;
@@ -3001,8 +3004,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createFunctionAdapter() {
-        if (functionItemProvider == null) {
-            functionItemProvider = new FunctionItemProvider(this);
+        if( functionItemProvider == null ) {
+            functionItemProvider = new FunctionItemProvider( this );
         }
 
         return functionItemProvider;
@@ -3024,8 +3027,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGeneralEquipmentAdapter() {
-        if (generalEquipmentItemProvider == null) {
-            generalEquipmentItemProvider = new GeneralEquipmentItemProvider(this);
+        if( generalEquipmentItemProvider == null ) {
+            generalEquipmentItemProvider = new GeneralEquipmentItemProvider( this );
         }
 
         return generalEquipmentItemProvider;
@@ -3047,8 +3050,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createGeneralEquipmentContainerAdapter() {
-        if (generalEquipmentContainerItemProvider == null) {
-            generalEquipmentContainerItemProvider = new GeneralEquipmentContainerItemProvider(this);
+        if( generalEquipmentContainerItemProvider == null ) {
+            generalEquipmentContainerItemProvider = new GeneralEquipmentContainerItemProvider( this );
         }
 
         return generalEquipmentContainerItemProvider;
@@ -3070,8 +3073,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLNodeAdapter() {
-        if (lNodeItemProvider == null) {
-            lNodeItemProvider = new LNodeItemProvider(this);
+        if( lNodeItemProvider == null ) {
+            lNodeItemProvider = new LNodeItemProvider( this );
         }
 
         return lNodeItemProvider;
@@ -3093,8 +3096,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createLNodeContainerAdapter() {
-        if (lNodeContainerItemProvider == null) {
-            lNodeContainerItemProvider = new LNodeContainerItemProvider(this);
+        if( lNodeContainerItemProvider == null ) {
+            lNodeContainerItemProvider = new LNodeContainerItemProvider( this );
         }
 
         return lNodeContainerItemProvider;
@@ -3116,8 +3119,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createNeutralPointAdapter() {
-        if (neutralPointItemProvider == null) {
-            neutralPointItemProvider = new NeutralPointItemProvider(this);
+        if( neutralPointItemProvider == null ) {
+            neutralPointItemProvider = new NeutralPointItemProvider( this );
         }
 
         return neutralPointItemProvider;
@@ -3139,8 +3142,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPowerSystemResourceAdapter() {
-        if (powerSystemResourceItemProvider == null) {
-            powerSystemResourceItemProvider = new PowerSystemResourceItemProvider(this);
+        if( powerSystemResourceItemProvider == null ) {
+            powerSystemResourceItemProvider = new PowerSystemResourceItemProvider( this );
         }
 
         return powerSystemResourceItemProvider;
@@ -3162,8 +3165,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createPowerTransformerAdapter() {
-        if (powerTransformerItemProvider == null) {
-            powerTransformerItemProvider = new PowerTransformerItemProvider(this);
+        if( powerTransformerItemProvider == null ) {
+            powerTransformerItemProvider = new PowerTransformerItemProvider( this );
         }
 
         return powerTransformerItemProvider;
@@ -3185,8 +3188,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSubEquipmentAdapter() {
-        if (subEquipmentItemProvider == null) {
-            subEquipmentItemProvider = new SubEquipmentItemProvider(this);
+        if( subEquipmentItemProvider == null ) {
+            subEquipmentItemProvider = new SubEquipmentItemProvider( this );
         }
 
         return subEquipmentItemProvider;
@@ -3208,8 +3211,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSubFunctionAdapter() {
-        if (subFunctionItemProvider == null) {
-            subFunctionItemProvider = new SubFunctionItemProvider(this);
+        if( subFunctionItemProvider == null ) {
+            subFunctionItemProvider = new SubFunctionItemProvider( this );
         }
 
         return subFunctionItemProvider;
@@ -3231,8 +3234,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createSubstationAdapter() {
-        if (substationItemProvider == null) {
-            substationItemProvider = new SubstationItemProvider(this);
+        if( substationItemProvider == null ) {
+            substationItemProvider = new SubstationItemProvider( this );
         }
 
         return substationItemProvider;
@@ -3254,8 +3257,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTapChangerAdapter() {
-        if (tapChangerItemProvider == null) {
-            tapChangerItemProvider = new TapChangerItemProvider(this);
+        if( tapChangerItemProvider == null ) {
+            tapChangerItemProvider = new TapChangerItemProvider( this );
         }
 
         return tapChangerItemProvider;
@@ -3277,8 +3280,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTerminalAdapter() {
-        if (terminalItemProvider == null) {
-            terminalItemProvider = new TerminalItemProvider(this);
+        if( terminalItemProvider == null ) {
+            terminalItemProvider = new TerminalItemProvider( this );
         }
 
         return terminalItemProvider;
@@ -3300,8 +3303,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createTransformerWindingAdapter() {
-        if (transformerWindingItemProvider == null) {
-            transformerWindingItemProvider = new TransformerWindingItemProvider(this);
+        if( transformerWindingItemProvider == null ) {
+            transformerWindingItemProvider = new TransformerWindingItemProvider( this );
         }
 
         return transformerWindingItemProvider;
@@ -3323,8 +3326,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createVoltageAdapter() {
-        if (voltageItemProvider == null) {
-            voltageItemProvider = new VoltageItemProvider(this);
+        if( voltageItemProvider == null ) {
+            voltageItemProvider = new VoltageItemProvider( this );
         }
 
         return voltageItemProvider;
@@ -3346,8 +3349,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createVoltageLevelAdapter() {
-        if (voltageLevelItemProvider == null) {
-            voltageLevelItemProvider = new VoltageLevelItemProvider(this);
+        if( voltageLevelItemProvider == null ) {
+            voltageLevelItemProvider = new VoltageLevelItemProvider( this );
         }
 
         return voltageLevelItemProvider;
@@ -3369,8 +3372,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceYesNoAdapter() {
-        if (serviceYesNoItemProvider == null) {
-            serviceYesNoItemProvider = new ServiceYesNoItemProvider(this);
+        if( serviceYesNoItemProvider == null ) {
+            serviceYesNoItemProvider = new ServiceYesNoItemProvider( this );
         }
 
         return serviceYesNoItemProvider;
@@ -3392,8 +3395,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceWithOptionalMaxAdapter() {
-        if (serviceWithOptionalMaxItemProvider == null) {
-            serviceWithOptionalMaxItemProvider = new ServiceWithOptionalMaxItemProvider(this);
+        if( serviceWithOptionalMaxItemProvider == null ) {
+            serviceWithOptionalMaxItemProvider = new ServiceWithOptionalMaxItemProvider( this );
         }
 
         return serviceWithOptionalMaxItemProvider;
@@ -3415,8 +3418,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceWithMaxNonZeroAdapter() {
-        if (serviceWithMaxNonZeroItemProvider == null) {
-            serviceWithMaxNonZeroItemProvider = new ServiceWithMaxNonZeroItemProvider(this);
+        if( serviceWithMaxNonZeroItemProvider == null ) {
+            serviceWithMaxNonZeroItemProvider = new ServiceWithMaxNonZeroItemProvider( this );
         }
 
         return serviceWithMaxNonZeroItemProvider;
@@ -3438,8 +3441,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceConfReportControlAdapter() {
-        if (serviceConfReportControlItemProvider == null) {
-            serviceConfReportControlItemProvider = new ServiceConfReportControlItemProvider(this);
+        if( serviceConfReportControlItemProvider == null ) {
+            serviceConfReportControlItemProvider = new ServiceConfReportControlItemProvider( this );
         }
 
         return serviceConfReportControlItemProvider;
@@ -3461,8 +3464,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceWithMaxAndMaxAttributesAdapter() {
-        if (serviceWithMaxAndMaxAttributesItemProvider == null) {
-            serviceWithMaxAndMaxAttributesItemProvider = new ServiceWithMaxAndMaxAttributesItemProvider(this);
+        if( serviceWithMaxAndMaxAttributesItemProvider == null ) {
+            serviceWithMaxAndMaxAttributesItemProvider = new ServiceWithMaxAndMaxAttributesItemProvider( this );
         }
 
         return serviceWithMaxAndMaxAttributesItemProvider;
@@ -3484,8 +3487,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceWithMaxAndModifyAdapter() {
-        if (serviceWithMaxAndModifyItemProvider == null) {
-            serviceWithMaxAndModifyItemProvider = new ServiceWithMaxAndModifyItemProvider(this);
+        if( serviceWithMaxAndModifyItemProvider == null ) {
+            serviceWithMaxAndModifyItemProvider = new ServiceWithMaxAndModifyItemProvider( this );
         }
 
         return serviceWithMaxAndModifyItemProvider;
@@ -3507,8 +3510,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createServiceForConfDataSetAdapter() {
-        if (serviceForConfDataSetItemProvider == null) {
-            serviceForConfDataSetItemProvider = new ServiceForConfDataSetItemProvider(this);
+        if( serviceForConfDataSetItemProvider == null ) {
+            serviceForConfDataSetItemProvider = new ServiceForConfDataSetItemProvider( this );
         }
 
         return serviceForConfDataSetItemProvider;
@@ -3530,8 +3533,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createCertAdapter() {
-        if (certItemProvider == null) {
-            certItemProvider = new CertItemProvider(this);
+        if( certItemProvider == null ) {
+            certItemProvider = new CertItemProvider( this );
         }
 
         return certItemProvider;
@@ -3553,8 +3556,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createValueWithUnitAdapter() {
-        if (valueWithUnitItemProvider == null) {
-            valueWithUnitItemProvider = new ValueWithUnitItemProvider(this);
+        if( valueWithUnitItemProvider == null ) {
+            valueWithUnitItemProvider = new ValueWithUnitItemProvider( this );
         }
 
         return valueWithUnitItemProvider;
@@ -3576,8 +3579,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public Adapter createDurationInSecAdapter() {
-        if (durationInSecItemProvider == null) {
-            durationInSecItemProvider = new DurationInSecItemProvider(this);
+        if( durationInSecItemProvider == null ) {
+            durationInSecItemProvider = new DurationInSecItemProvider( this );
         }
 
         return durationInSecItemProvider;
@@ -3601,7 +3604,7 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+    public void setParentAdapterFactory( ComposedAdapterFactory parentAdapterFactory ) {
         this.parentAdapterFactory = parentAdapterFactory;
     }
 
@@ -3611,8 +3614,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public boolean isFactoryForType(Object type) {
-        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    public boolean isFactoryForType( Object type ) {
+        return supportedTypes.contains( type ) || super.isFactoryForType( type );
     }
 
     /**
@@ -3622,8 +3625,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public Adapter adapt(Notifier notifier, Object type) {
-        return super.adapt(notifier, this);
+    public Adapter adapt( Notifier notifier, Object type ) {
+        return super.adapt( notifier, this );
     }
 
     /**
@@ -3632,10 +3635,10 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public Object adapt(Object object, Object type) {
-        if (isFactoryForType(type)) {
-            Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+    public Object adapt( Object object, Object type ) {
+        if( isFactoryForType( type ) ) {
+            Object adapter = super.adapt( object, type );
+            if( !( type instanceof Class< ? > ) || ( ( ( Class< ? > ) type ).isInstance( adapter ) ) ) {
                 return adapter;
             }
         }
@@ -3650,8 +3653,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public void addListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.addListener(notifyChangedListener);
+    public void addListener( INotifyChangedListener notifyChangedListener ) {
+        changeNotifier.addListener( notifyChangedListener );
     }
 
     /**
@@ -3661,8 +3664,8 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public void removeListener(INotifyChangedListener notifyChangedListener) {
-        changeNotifier.removeListener(notifyChangedListener);
+    public void removeListener( INotifyChangedListener notifyChangedListener ) {
+        changeNotifier.removeListener( notifyChangedListener );
     }
 
     /**
@@ -3672,11 +3675,11 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      * @generated
      */
     @Override
-    public void fireNotifyChanged(Notification notification) {
-        changeNotifier.fireNotifyChanged(notification);
+    public void fireNotifyChanged( Notification notification ) {
+        changeNotifier.fireNotifyChanged( notification );
 
-        if (parentAdapterFactory != null) {
-            parentAdapterFactory.fireNotifyChanged(notification);
+        if( parentAdapterFactory != null ) {
+            parentAdapterFactory.fireNotifyChanged( notification );
         }
     }
 
@@ -3688,158 +3691,158 @@ public class SclItemProviderAdapterFactory extends SclAdapterFactory implements 
      */
     @Override
     public void dispose() {
-        if (headerItemProvider != null) headerItemProvider.dispose();
-        if (historyItemProvider != null) historyItemProvider.dispose();
-        if (hitemItemProvider != null) hitemItemProvider.dispose();
-        if (idNamingItemProvider != null) idNamingItemProvider.dispose();
-        if (lineItemProvider != null) lineItemProvider.dispose();
-        if (privateItemProvider != null) privateItemProvider.dispose();
-        if (processItemProvider != null) processItemProvider.dispose();
-        if (sclItemProvider != null) sclItemProvider.dispose();
-        if (textItemProvider != null) textItemProvider.dispose();
-        if (addressItemProvider != null) addressItemProvider.dispose();
-        if (communicationItemProvider != null) communicationItemProvider.dispose();
-        if (connectedAPItemProvider != null) connectedAPItemProvider.dispose();
-        if (gseItemProvider != null) gseItemProvider.dispose();
-        if (pItemProvider != null) pItemProvider.dispose();
-        if (pAddrItemProvider != null) pAddrItemProvider.dispose();
-        if (p_PhysConnItemProvider != null) p_PhysConnItemProvider.dispose();
-        if (physConnItemProvider != null) physConnItemProvider.dispose();
-        if (smvItemProvider != null) smvItemProvider.dispose();
-        if (subNetworkItemProvider != null) subNetworkItemProvider.dispose();
-        if (bdaItemProvider != null) bdaItemProvider.dispose();
-        if (daItemProvider != null) daItemProvider.dispose();
-        if (daTypeItemProvider != null) daTypeItemProvider.dispose();
-        if (doItemProvider != null) doItemProvider.dispose();
-        if (doTypeItemProvider != null) doTypeItemProvider.dispose();
-        if (dataTypeTemplatesItemProvider != null) dataTypeTemplatesItemProvider.dispose();
-        if (enumTypeItemProvider != null) enumTypeItemProvider.dispose();
-        if (enumValItemProvider != null) enumValItemProvider.dispose();
-        if (lNodeTypeItemProvider != null) lNodeTypeItemProvider.dispose();
-        if (protNsItemProvider != null) protNsItemProvider.dispose();
-        if (sdoItemProvider != null) sdoItemProvider.dispose();
-        if (valItemProvider != null) valItemProvider.dispose();
-        if (accessControlItemProvider != null) accessControlItemProvider.dispose();
-        if (accessPointItemProvider != null) accessPointItemProvider.dispose();
-        if (associationItemProvider != null) associationItemProvider.dispose();
-        if (authenticationItemProvider != null) authenticationItemProvider.dispose();
-        if (certificateItemProvider != null) certificateItemProvider.dispose();
-        if (clientLNItemProvider != null) clientLNItemProvider.dispose();
-        if (clientServicesItemProvider != null) clientServicesItemProvider.dispose();
-        if (commProtItemProvider != null) commProtItemProvider.dispose();
-        if (confDataSetItemProvider != null) confDataSetItemProvider.dispose();
-        if (confLNsItemProvider != null) confLNsItemProvider.dispose();
-        if (confLdNameItemProvider != null) confLdNameItemProvider.dispose();
-        if (confLogControlItemProvider != null) confLogControlItemProvider.dispose();
-        if (confReportControlItemProvider != null) confReportControlItemProvider.dispose();
-        if (confSGItemProvider != null) confSGItemProvider.dispose();
-        if (confSigRefItemProvider != null) confSigRefItemProvider.dispose();
-        if (controlWithIEDNameItemProvider != null) controlWithIEDNameItemProvider.dispose();
-        if (daiItemProvider != null) daiItemProvider.dispose();
-        if (doiItemProvider != null) doiItemProvider.dispose();
-        if (dataObjectDirectoryItemProvider != null) dataObjectDirectoryItemProvider.dispose();
-        if (dataSetItemProvider != null) dataSetItemProvider.dispose();
-        if (dataSetDirectoryItemProvider != null) dataSetDirectoryItemProvider.dispose();
-        if (dynAssociationItemProvider != null) dynAssociationItemProvider.dispose();
-        if (dynDataSetItemProvider != null) dynDataSetItemProvider.dispose();
-        if (extRefItemProvider != null) extRefItemProvider.dispose();
-        if (fcdaItemProvider != null) fcdaItemProvider.dispose();
-        if (fileHandlingItemProvider != null) fileHandlingItemProvider.dispose();
-        if (gooseItemProvider != null) gooseItemProvider.dispose();
-        if (gooseSecurityItemProvider != null) gooseSecurityItemProvider.dispose();
-        if (gseControlItemProvider != null) gseControlItemProvider.dispose();
-        if (gseDirItemProvider != null) gseDirItemProvider.dispose();
-        if (gseSettingsItemProvider != null) gseSettingsItemProvider.dispose();
-        if (gsseItemProvider != null) gsseItemProvider.dispose();
-        if (getCBValuesItemProvider != null) getCBValuesItemProvider.dispose();
-        if (getDataObjectDefinitionItemProvider != null) getDataObjectDefinitionItemProvider.dispose();
-        if (getDataSetValueItemProvider != null) getDataSetValueItemProvider.dispose();
-        if (getDirectoryItemProvider != null) getDirectoryItemProvider.dispose();
-        if (iedItemProvider != null) iedItemProvider.dispose();
-        if (iedNameItemProvider != null) iedNameItemProvider.dispose();
-        if (inputsItemProvider != null) inputsItemProvider.dispose();
-        if (issuerNameItemProvider != null) issuerNameItemProvider.dispose();
-        if (kdcItemProvider != null) kdcItemProvider.dispose();
-        if (lDeviceItemProvider != null) lDeviceItemProvider.dispose();
-        if (lnItemProvider != null) lnItemProvider.dispose();
-        if (ln0ItemProvider != null) ln0ItemProvider.dispose();
-        if (logItemProvider != null) logItemProvider.dispose();
-        if (logControlItemProvider != null) logControlItemProvider.dispose();
-        if (logSettingsItemProvider != null) logSettingsItemProvider.dispose();
-        if (optFieldsItemProvider != null) optFieldsItemProvider.dispose();
-        if (protocolItemProvider != null) protocolItemProvider.dispose();
-        if (readWriteItemProvider != null) readWriteItemProvider.dispose();
-        if (redProtItemProvider != null) redProtItemProvider.dispose();
-        if (reportControlItemProvider != null) reportControlItemProvider.dispose();
-        if (reportSettingsItemProvider != null) reportSettingsItemProvider.dispose();
-        if (rptEnabledItemProvider != null) rptEnabledItemProvider.dispose();
-        if (sdiItemProvider != null) sdiItemProvider.dispose();
-        if (sgEditItemProvider != null) sgEditItemProvider.dispose();
-        if (smvSecurityItemProvider != null) smvSecurityItemProvider.dispose();
-        if (smvSettingsItemProvider != null) smvSettingsItemProvider.dispose();
-        if (smVscItemProvider != null) smVscItemProvider.dispose();
-        if (sampledValueControlItemProvider != null) sampledValueControlItemProvider.dispose();
-        if (serverItemProvider != null) serverItemProvider.dispose();
-        if (serverAtItemProvider != null) serverAtItemProvider.dispose();
-        if (serviceSettingsItemProvider != null) serviceSettingsItemProvider.dispose();
-        if (serviceWithMaxItemProvider != null) serviceWithMaxItemProvider.dispose();
-        if (servicesItemProvider != null) servicesItemProvider.dispose();
-        if (setDataSetValueItemProvider != null) setDataSetValueItemProvider.dispose();
-        if (settingControlItemProvider != null) settingControlItemProvider.dispose();
-        if (settingGroupsItemProvider != null) settingGroupsItemProvider.dispose();
-        if (smvOptsItemProvider != null) smvOptsItemProvider.dispose();
-        if (subjectItemProvider != null) subjectItemProvider.dispose();
-        if (supSubscriptionItemProvider != null) supSubscriptionItemProvider.dispose();
-        if (timeSyncProtItemProvider != null) timeSyncProtItemProvider.dispose();
-        if (timerActivatedControlItemProvider != null) timerActivatedControlItemProvider.dispose();
-        if (trgOpsItemProvider != null) trgOpsItemProvider.dispose();
-        if (valueHandlingItemProvider != null) valueHandlingItemProvider.dispose();
-        if (abstractConductingEquipmentItemProvider != null) abstractConductingEquipmentItemProvider.dispose();
-        if (abstractEqFuncSubFuncItemProvider != null) abstractEqFuncSubFuncItemProvider.dispose();
-        if (bayItemProvider != null) bayItemProvider.dispose();
-        if (conductingEquipmentItemProvider != null) conductingEquipmentItemProvider.dispose();
-        if (connectivityNodeItemProvider != null) connectivityNodeItemProvider.dispose();
-        if (eqFunctionItemProvider != null) eqFunctionItemProvider.dispose();
-        if (eqSubFunctionItemProvider != null) eqSubFunctionItemProvider.dispose();
-        if (equipmentItemProvider != null) equipmentItemProvider.dispose();
-        if (equipmentContainerItemProvider != null) equipmentContainerItemProvider.dispose();
-        if (functionItemProvider != null) functionItemProvider.dispose();
-        if (generalEquipmentItemProvider != null) generalEquipmentItemProvider.dispose();
-        if (generalEquipmentContainerItemProvider != null) generalEquipmentContainerItemProvider.dispose();
-        if (lNodeItemProvider != null) lNodeItemProvider.dispose();
-        if (lNodeContainerItemProvider != null) lNodeContainerItemProvider.dispose();
-        if (neutralPointItemProvider != null) neutralPointItemProvider.dispose();
-        if (powerSystemResourceItemProvider != null) powerSystemResourceItemProvider.dispose();
-        if (powerTransformerItemProvider != null) powerTransformerItemProvider.dispose();
-        if (subEquipmentItemProvider != null) subEquipmentItemProvider.dispose();
-        if (subFunctionItemProvider != null) subFunctionItemProvider.dispose();
-        if (substationItemProvider != null) substationItemProvider.dispose();
-        if (tapChangerItemProvider != null) tapChangerItemProvider.dispose();
-        if (terminalItemProvider != null) terminalItemProvider.dispose();
-        if (transformerWindingItemProvider != null) transformerWindingItemProvider.dispose();
-        if (voltageItemProvider != null) voltageItemProvider.dispose();
-        if (voltageLevelItemProvider != null) voltageLevelItemProvider.dispose();
-        if (serviceYesNoItemProvider != null) serviceYesNoItemProvider.dispose();
-        if (serviceWithOptionalMaxItemProvider != null) serviceWithOptionalMaxItemProvider.dispose();
-        if (serviceWithMaxNonZeroItemProvider != null) serviceWithMaxNonZeroItemProvider.dispose();
-        if (serviceConfReportControlItemProvider != null) serviceConfReportControlItemProvider.dispose();
-        if (serviceWithMaxAndMaxAttributesItemProvider != null) serviceWithMaxAndMaxAttributesItemProvider.dispose();
-        if (serviceWithMaxAndModifyItemProvider != null) serviceWithMaxAndModifyItemProvider.dispose();
-        if (serviceForConfDataSetItemProvider != null) serviceForConfDataSetItemProvider.dispose();
-        if (certItemProvider != null) certItemProvider.dispose();
-        if (valueWithUnitItemProvider != null) valueWithUnitItemProvider.dispose();
-        if (durationInSecItemProvider != null) durationInSecItemProvider.dispose();
-        if (durationInMilliSecItemProvider != null) durationInMilliSecItemProvider.dispose();
-        if (bitRateInMbPerSecItemProvider != null) bitRateInMbPerSecItemProvider.dispose();
-        if (minTimeItemProvider != null) minTimeItemProvider.dispose();
-        if (maxTimeItemProvider != null) maxTimeItemProvider.dispose();
-        if (bitRateItemProvider != null) bitRateItemProvider.dispose();
-        if (smpRateItemProvider != null) smpRateItemProvider.dispose();
-        if (samplesPerSecItemProvider != null) samplesPerSecItemProvider.dispose();
-        if (secPerSamplesItemProvider != null) secPerSamplesItemProvider.dispose();
-        if (mcSecurityItemProvider != null) mcSecurityItemProvider.dispose();
-        if (agAuthenticationItemProvider != null) agAuthenticationItemProvider.dispose();
-        if (agLNRefItemProvider != null) agLNRefItemProvider.dispose();
+        if( headerItemProvider != null ) headerItemProvider.dispose();
+        if( historyItemProvider != null ) historyItemProvider.dispose();
+        if( hitemItemProvider != null ) hitemItemProvider.dispose();
+        if( idNamingItemProvider != null ) idNamingItemProvider.dispose();
+        if( lineItemProvider != null ) lineItemProvider.dispose();
+        if( privateItemProvider != null ) privateItemProvider.dispose();
+        if( processItemProvider != null ) processItemProvider.dispose();
+        if( sclItemProvider != null ) sclItemProvider.dispose();
+        if( textItemProvider != null ) textItemProvider.dispose();
+        if( addressItemProvider != null ) addressItemProvider.dispose();
+        if( communicationItemProvider != null ) communicationItemProvider.dispose();
+        if( connectedAPItemProvider != null ) connectedAPItemProvider.dispose();
+        if( gseItemProvider != null ) gseItemProvider.dispose();
+        if( pItemProvider != null ) pItemProvider.dispose();
+        if( pAddrItemProvider != null ) pAddrItemProvider.dispose();
+        if( p_PhysConnItemProvider != null ) p_PhysConnItemProvider.dispose();
+        if( physConnItemProvider != null ) physConnItemProvider.dispose();
+        if( smvItemProvider != null ) smvItemProvider.dispose();
+        if( subNetworkItemProvider != null ) subNetworkItemProvider.dispose();
+        if( bdaItemProvider != null ) bdaItemProvider.dispose();
+        if( daItemProvider != null ) daItemProvider.dispose();
+        if( daTypeItemProvider != null ) daTypeItemProvider.dispose();
+        if( doItemProvider != null ) doItemProvider.dispose();
+        if( doTypeItemProvider != null ) doTypeItemProvider.dispose();
+        if( dataTypeTemplatesItemProvider != null ) dataTypeTemplatesItemProvider.dispose();
+        if( enumTypeItemProvider != null ) enumTypeItemProvider.dispose();
+        if( enumValItemProvider != null ) enumValItemProvider.dispose();
+        if( lNodeTypeItemProvider != null ) lNodeTypeItemProvider.dispose();
+        if( protNsItemProvider != null ) protNsItemProvider.dispose();
+        if( sdoItemProvider != null ) sdoItemProvider.dispose();
+        if( valItemProvider != null ) valItemProvider.dispose();
+        if( accessControlItemProvider != null ) accessControlItemProvider.dispose();
+        if( accessPointItemProvider != null ) accessPointItemProvider.dispose();
+        if( associationItemProvider != null ) associationItemProvider.dispose();
+        if( authenticationItemProvider != null ) authenticationItemProvider.dispose();
+        if( certificateItemProvider != null ) certificateItemProvider.dispose();
+        if( clientLNItemProvider != null ) clientLNItemProvider.dispose();
+        if( clientServicesItemProvider != null ) clientServicesItemProvider.dispose();
+        if( commProtItemProvider != null ) commProtItemProvider.dispose();
+        if( confDataSetItemProvider != null ) confDataSetItemProvider.dispose();
+        if( confLNsItemProvider != null ) confLNsItemProvider.dispose();
+        if( confLdNameItemProvider != null ) confLdNameItemProvider.dispose();
+        if( confLogControlItemProvider != null ) confLogControlItemProvider.dispose();
+        if( confReportControlItemProvider != null ) confReportControlItemProvider.dispose();
+        if( confSGItemProvider != null ) confSGItemProvider.dispose();
+        if( confSigRefItemProvider != null ) confSigRefItemProvider.dispose();
+        if( controlWithIEDNameItemProvider != null ) controlWithIEDNameItemProvider.dispose();
+        if( daiItemProvider != null ) daiItemProvider.dispose();
+        if( doiItemProvider != null ) doiItemProvider.dispose();
+        if( dataObjectDirectoryItemProvider != null ) dataObjectDirectoryItemProvider.dispose();
+        if( dataSetItemProvider != null ) dataSetItemProvider.dispose();
+        if( dataSetDirectoryItemProvider != null ) dataSetDirectoryItemProvider.dispose();
+        if( dynAssociationItemProvider != null ) dynAssociationItemProvider.dispose();
+        if( dynDataSetItemProvider != null ) dynDataSetItemProvider.dispose();
+        if( extRefItemProvider != null ) extRefItemProvider.dispose();
+        if( fcdaItemProvider != null ) fcdaItemProvider.dispose();
+        if( fileHandlingItemProvider != null ) fileHandlingItemProvider.dispose();
+        if( gooseItemProvider != null ) gooseItemProvider.dispose();
+        if( gooseSecurityItemProvider != null ) gooseSecurityItemProvider.dispose();
+        if( gseControlItemProvider != null ) gseControlItemProvider.dispose();
+        if( gseDirItemProvider != null ) gseDirItemProvider.dispose();
+        if( gseSettingsItemProvider != null ) gseSettingsItemProvider.dispose();
+        if( gsseItemProvider != null ) gsseItemProvider.dispose();
+        if( getCBValuesItemProvider != null ) getCBValuesItemProvider.dispose();
+        if( getDataObjectDefinitionItemProvider != null ) getDataObjectDefinitionItemProvider.dispose();
+        if( getDataSetValueItemProvider != null ) getDataSetValueItemProvider.dispose();
+        if( getDirectoryItemProvider != null ) getDirectoryItemProvider.dispose();
+        if( iedItemProvider != null ) iedItemProvider.dispose();
+        if( iedNameItemProvider != null ) iedNameItemProvider.dispose();
+        if( inputsItemProvider != null ) inputsItemProvider.dispose();
+        if( issuerNameItemProvider != null ) issuerNameItemProvider.dispose();
+        if( kdcItemProvider != null ) kdcItemProvider.dispose();
+        if( lDeviceItemProvider != null ) lDeviceItemProvider.dispose();
+        if( lnItemProvider != null ) lnItemProvider.dispose();
+        if( ln0ItemProvider != null ) ln0ItemProvider.dispose();
+        if( logItemProvider != null ) logItemProvider.dispose();
+        if( logControlItemProvider != null ) logControlItemProvider.dispose();
+        if( logSettingsItemProvider != null ) logSettingsItemProvider.dispose();
+        if( optFieldsItemProvider != null ) optFieldsItemProvider.dispose();
+        if( protocolItemProvider != null ) protocolItemProvider.dispose();
+        if( readWriteItemProvider != null ) readWriteItemProvider.dispose();
+        if( redProtItemProvider != null ) redProtItemProvider.dispose();
+        if( reportControlItemProvider != null ) reportControlItemProvider.dispose();
+        if( reportSettingsItemProvider != null ) reportSettingsItemProvider.dispose();
+        if( rptEnabledItemProvider != null ) rptEnabledItemProvider.dispose();
+        if( sdiItemProvider != null ) sdiItemProvider.dispose();
+        if( sgEditItemProvider != null ) sgEditItemProvider.dispose();
+        if( smvSecurityItemProvider != null ) smvSecurityItemProvider.dispose();
+        if( smvSettingsItemProvider != null ) smvSettingsItemProvider.dispose();
+        if( smVscItemProvider != null ) smVscItemProvider.dispose();
+        if( sampledValueControlItemProvider != null ) sampledValueControlItemProvider.dispose();
+        if( serverItemProvider != null ) serverItemProvider.dispose();
+        if( serverAtItemProvider != null ) serverAtItemProvider.dispose();
+        if( serviceSettingsItemProvider != null ) serviceSettingsItemProvider.dispose();
+        if( serviceWithMaxItemProvider != null ) serviceWithMaxItemProvider.dispose();
+        if( servicesItemProvider != null ) servicesItemProvider.dispose();
+        if( setDataSetValueItemProvider != null ) setDataSetValueItemProvider.dispose();
+        if( settingControlItemProvider != null ) settingControlItemProvider.dispose();
+        if( settingGroupsItemProvider != null ) settingGroupsItemProvider.dispose();
+        if( smvOptsItemProvider != null ) smvOptsItemProvider.dispose();
+        if( subjectItemProvider != null ) subjectItemProvider.dispose();
+        if( supSubscriptionItemProvider != null ) supSubscriptionItemProvider.dispose();
+        if( timeSyncProtItemProvider != null ) timeSyncProtItemProvider.dispose();
+        if( timerActivatedControlItemProvider != null ) timerActivatedControlItemProvider.dispose();
+        if( trgOpsItemProvider != null ) trgOpsItemProvider.dispose();
+        if( valueHandlingItemProvider != null ) valueHandlingItemProvider.dispose();
+        if( abstractConductingEquipmentItemProvider != null ) abstractConductingEquipmentItemProvider.dispose();
+        if( abstractEqFuncSubFuncItemProvider != null ) abstractEqFuncSubFuncItemProvider.dispose();
+        if( bayItemProvider != null ) bayItemProvider.dispose();
+        if( conductingEquipmentItemProvider != null ) conductingEquipmentItemProvider.dispose();
+        if( connectivityNodeItemProvider != null ) connectivityNodeItemProvider.dispose();
+        if( eqFunctionItemProvider != null ) eqFunctionItemProvider.dispose();
+        if( eqSubFunctionItemProvider != null ) eqSubFunctionItemProvider.dispose();
+        if( equipmentItemProvider != null ) equipmentItemProvider.dispose();
+        if( equipmentContainerItemProvider != null ) equipmentContainerItemProvider.dispose();
+        if( functionItemProvider != null ) functionItemProvider.dispose();
+        if( generalEquipmentItemProvider != null ) generalEquipmentItemProvider.dispose();
+        if( generalEquipmentContainerItemProvider != null ) generalEquipmentContainerItemProvider.dispose();
+        if( lNodeItemProvider != null ) lNodeItemProvider.dispose();
+        if( lNodeContainerItemProvider != null ) lNodeContainerItemProvider.dispose();
+        if( neutralPointItemProvider != null ) neutralPointItemProvider.dispose();
+        if( powerSystemResourceItemProvider != null ) powerSystemResourceItemProvider.dispose();
+        if( powerTransformerItemProvider != null ) powerTransformerItemProvider.dispose();
+        if( subEquipmentItemProvider != null ) subEquipmentItemProvider.dispose();
+        if( subFunctionItemProvider != null ) subFunctionItemProvider.dispose();
+        if( substationItemProvider != null ) substationItemProvider.dispose();
+        if( tapChangerItemProvider != null ) tapChangerItemProvider.dispose();
+        if( terminalItemProvider != null ) terminalItemProvider.dispose();
+        if( transformerWindingItemProvider != null ) transformerWindingItemProvider.dispose();
+        if( voltageItemProvider != null ) voltageItemProvider.dispose();
+        if( voltageLevelItemProvider != null ) voltageLevelItemProvider.dispose();
+        if( serviceYesNoItemProvider != null ) serviceYesNoItemProvider.dispose();
+        if( serviceWithOptionalMaxItemProvider != null ) serviceWithOptionalMaxItemProvider.dispose();
+        if( serviceWithMaxNonZeroItemProvider != null ) serviceWithMaxNonZeroItemProvider.dispose();
+        if( serviceConfReportControlItemProvider != null ) serviceConfReportControlItemProvider.dispose();
+        if( serviceWithMaxAndMaxAttributesItemProvider != null ) serviceWithMaxAndMaxAttributesItemProvider.dispose();
+        if( serviceWithMaxAndModifyItemProvider != null ) serviceWithMaxAndModifyItemProvider.dispose();
+        if( serviceForConfDataSetItemProvider != null ) serviceForConfDataSetItemProvider.dispose();
+        if( certItemProvider != null ) certItemProvider.dispose();
+        if( valueWithUnitItemProvider != null ) valueWithUnitItemProvider.dispose();
+        if( durationInSecItemProvider != null ) durationInSecItemProvider.dispose();
+        if( durationInMilliSecItemProvider != null ) durationInMilliSecItemProvider.dispose();
+        if( bitRateInMbPerSecItemProvider != null ) bitRateInMbPerSecItemProvider.dispose();
+        if( minTimeItemProvider != null ) minTimeItemProvider.dispose();
+        if( maxTimeItemProvider != null ) maxTimeItemProvider.dispose();
+        if( bitRateItemProvider != null ) bitRateItemProvider.dispose();
+        if( smpRateItemProvider != null ) smpRateItemProvider.dispose();
+        if( samplesPerSecItemProvider != null ) samplesPerSecItemProvider.dispose();
+        if( secPerSamplesItemProvider != null ) secPerSamplesItemProvider.dispose();
+        if( mcSecurityItemProvider != null ) mcSecurityItemProvider.dispose();
+        if( agAuthenticationItemProvider != null ) agAuthenticationItemProvider.dispose();
+        if( agLNRefItemProvider != null ) agLNRefItemProvider.dispose();
     }
 
 }

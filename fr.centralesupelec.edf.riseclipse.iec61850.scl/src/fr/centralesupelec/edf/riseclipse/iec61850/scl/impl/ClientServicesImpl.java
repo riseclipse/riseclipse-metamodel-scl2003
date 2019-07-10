@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -545,8 +547,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         bufReport = newBufReport;
         boolean oldBufReportESet = bufReportESet;
         bufReportESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__BUF_REPORT, oldBufReport, bufReport, !oldBufReportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__BUF_REPORT,
+                    oldBufReport, bufReport, !oldBufReportESet ) );
     }
 
     /**
@@ -560,8 +563,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldBufReportESet = bufReportESet;
         bufReport = BUF_REPORT_EDEFAULT;
         bufReportESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__BUF_REPORT, oldBufReport, BUF_REPORT_EDEFAULT, oldBufReportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__BUF_REPORT,
+                    oldBufReport, BUF_REPORT_EDEFAULT, oldBufReportESet ) );
     }
 
     /**
@@ -595,8 +599,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         goose = newGoose;
         boolean oldGooseESet = gooseESet;
         gooseESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__GOOSE, oldGoose, goose, !oldGooseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__GOOSE, oldGoose, goose,
+                    !oldGooseESet ) );
     }
 
     /**
@@ -610,8 +615,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldGooseESet = gooseESet;
         goose = GOOSE_EDEFAULT;
         gooseESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__GOOSE, oldGoose, GOOSE_EDEFAULT, oldGooseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__GOOSE, oldGoose,
+                    GOOSE_EDEFAULT, oldGooseESet ) );
     }
 
     /**
@@ -645,8 +651,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         gsse = newGsse;
         boolean oldGsseESet = gsseESet;
         gsseESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__GSSE, oldGsse, gsse, !oldGsseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__GSSE, oldGsse, gsse,
+                    !oldGsseESet ) );
     }
 
     /**
@@ -660,8 +667,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldGsseESet = gsseESet;
         gsse = GSSE_EDEFAULT;
         gsseESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__GSSE, oldGsse, GSSE_EDEFAULT, oldGsseESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__GSSE, oldGsse,
+                    GSSE_EDEFAULT, oldGsseESet ) );
     }
 
     /**
@@ -695,8 +703,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         maxAttributes = newMaxAttributes;
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributesESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES, oldMaxAttributes, maxAttributes, !oldMaxAttributesESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES,
+                    oldMaxAttributes, maxAttributes, !oldMaxAttributesESet ) );
     }
 
     /**
@@ -710,8 +719,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldMaxAttributesESet = maxAttributesESet;
         maxAttributes = MAX_ATTRIBUTES_EDEFAULT;
         maxAttributesESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES, oldMaxAttributes, MAX_ATTRIBUTES_EDEFAULT, oldMaxAttributesESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES,
+                    oldMaxAttributes, MAX_ATTRIBUTES_EDEFAULT, oldMaxAttributesESet ) );
     }
 
     /**
@@ -745,8 +755,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         maxGOOSE = newMaxGOOSE;
         boolean oldMaxGOOSEESet = maxGOOSEESet;
         maxGOOSEESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_GOOSE, oldMaxGOOSE, maxGOOSE, !oldMaxGOOSEESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_GOOSE, oldMaxGOOSE,
+                    maxGOOSE, !oldMaxGOOSEESet ) );
     }
 
     /**
@@ -760,8 +771,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldMaxGOOSEESet = maxGOOSEESet;
         maxGOOSE = MAX_GOOSE_EDEFAULT;
         maxGOOSEESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_GOOSE, oldMaxGOOSE, MAX_GOOSE_EDEFAULT, oldMaxGOOSEESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_GOOSE,
+                    oldMaxGOOSE, MAX_GOOSE_EDEFAULT, oldMaxGOOSEESet ) );
     }
 
     /**
@@ -795,8 +807,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         maxReports = newMaxReports;
         boolean oldMaxReportsESet = maxReportsESet;
         maxReportsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_REPORTS, oldMaxReports, maxReports, !oldMaxReportsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_REPORTS,
+                    oldMaxReports, maxReports, !oldMaxReportsESet ) );
     }
 
     /**
@@ -810,8 +823,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldMaxReportsESet = maxReportsESet;
         maxReports = MAX_REPORTS_EDEFAULT;
         maxReportsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_REPORTS, oldMaxReports, MAX_REPORTS_EDEFAULT, oldMaxReportsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_REPORTS,
+                    oldMaxReports, MAX_REPORTS_EDEFAULT, oldMaxReportsESet ) );
     }
 
     /**
@@ -845,8 +859,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         maxSMV = newMaxSMV;
         boolean oldMaxSMVESet = maxSMVESet;
         maxSMVESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_SMV, oldMaxSMV, maxSMV, !oldMaxSMVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MAX_SMV, oldMaxSMV,
+                    maxSMV, !oldMaxSMVESet ) );
     }
 
     /**
@@ -860,8 +875,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldMaxSMVESet = maxSMVESet;
         maxSMV = MAX_SMV_EDEFAULT;
         maxSMVESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_SMV, oldMaxSMV, MAX_SMV_EDEFAULT, oldMaxSMVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MAX_SMV, oldMaxSMV,
+                    MAX_SMV_EDEFAULT, oldMaxSMVESet ) );
     }
 
     /**
@@ -895,8 +911,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         readLog = newReadLog;
         boolean oldReadLogESet = readLogESet;
         readLogESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__READ_LOG, oldReadLog, readLog, !oldReadLogESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__READ_LOG, oldReadLog,
+                    readLog, !oldReadLogESet ) );
     }
 
     /**
@@ -910,8 +927,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldReadLogESet = readLogESet;
         readLog = READ_LOG_EDEFAULT;
         readLogESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__READ_LOG, oldReadLog, READ_LOG_EDEFAULT, oldReadLogESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__READ_LOG, oldReadLog,
+                    READ_LOG_EDEFAULT, oldReadLogESet ) );
     }
 
     /**
@@ -945,8 +963,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         supportsLdName = newSupportsLdName;
         boolean oldSupportsLdNameESet = supportsLdNameESet;
         supportsLdNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME, oldSupportsLdName, supportsLdName, !oldSupportsLdNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME,
+                    oldSupportsLdName, supportsLdName, !oldSupportsLdNameESet ) );
     }
 
     /**
@@ -960,8 +979,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldSupportsLdNameESet = supportsLdNameESet;
         supportsLdName = SUPPORTS_LD_NAME_EDEFAULT;
         supportsLdNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME, oldSupportsLdName, SUPPORTS_LD_NAME_EDEFAULT, oldSupportsLdNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME,
+                    oldSupportsLdName, SUPPORTS_LD_NAME_EDEFAULT, oldSupportsLdNameESet ) );
     }
 
     /**
@@ -995,8 +1015,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         sv = newSv;
         boolean oldSvESet = svESet;
         svESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__SV, oldSv, sv, !oldSvESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__SV, oldSv, sv,
+                    !oldSvESet ) );
     }
 
     /**
@@ -1010,8 +1031,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldSvESet = svESet;
         sv = SV_EDEFAULT;
         svESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SV, oldSv, SV_EDEFAULT, oldSvESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__SV, oldSv,
+                    SV_EDEFAULT, oldSvESet ) );
     }
 
     /**
@@ -1045,8 +1067,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         unbufReport = newUnbufReport;
         boolean oldUnbufReportESet = unbufReportESet;
         unbufReportESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__UNBUF_REPORT, oldUnbufReport, unbufReport, !oldUnbufReportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__UNBUF_REPORT,
+                    oldUnbufReport, unbufReport, !oldUnbufReportESet ) );
     }
 
     /**
@@ -1060,8 +1083,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldUnbufReportESet = unbufReportESet;
         unbufReport = UNBUF_REPORT_EDEFAULT;
         unbufReportESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__UNBUF_REPORT, oldUnbufReport, UNBUF_REPORT_EDEFAULT, oldUnbufReportESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__UNBUF_REPORT,
+                    oldUnbufReport, UNBUF_REPORT_EDEFAULT, oldUnbufReportESet ) );
     }
 
     /**
@@ -1081,8 +1105,8 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.CLIENT_SERVICES__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.CLIENT_SERVICES__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -1090,8 +1114,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.CLIENT_SERVICES__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.CLIENT_SERVICES__PARENT_SERVICES,
+                msgs );
         return msgs;
     }
 
@@ -1101,20 +1126,24 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_SERVICES__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.CLIENT_SERVICES__PARENT_SERVICES
+                        && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__CLIENT_SERVICES, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this,
+                        SclPackage.SERVICES__CLIENT_SERVICES, Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -1137,9 +1166,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         timeSyncProt = newTimeSyncProt;
         boolean oldTimeSyncProtESet = timeSyncProtESet;
         timeSyncProtESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, newTimeSyncProt, !oldTimeSyncProtESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, newTimeSyncProt,
+                    !oldTimeSyncProtESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1151,20 +1185,23 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public void setTimeSyncProt( TimeSyncProt newTimeSyncProt ) {
-        if (newTimeSyncProt != timeSyncProt) {
+        if( newTimeSyncProt != timeSyncProt ) {
             NotificationChain msgs = null;
-            if (timeSyncProt != null)
-                msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs);
-            if (newTimeSyncProt != null)
-                msgs = ((InternalEObject)newTimeSyncProt).eInverseAdd(this, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs);
-            msgs = basicSetTimeSyncProt(newTimeSyncProt, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( timeSyncProt != null )
+                msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
+                        SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs );
+            if( newTimeSyncProt != null )
+                msgs = ( ( InternalEObject ) newTimeSyncProt ).eInverseAdd( this,
+                        SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs );
+            msgs = basicSetTimeSyncProt( newTimeSyncProt, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimeSyncProtESet = timeSyncProtESet;
             timeSyncProtESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, newTimeSyncProt, newTimeSyncProt, !oldTimeSyncProtESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT,
+                        newTimeSyncProt, newTimeSyncProt, !oldTimeSyncProtESet ) );
         }
     }
 
@@ -1178,9 +1215,13 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         timeSyncProt = null;
         boolean oldTimeSyncProtESet = timeSyncProtESet;
         timeSyncProtESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, null, oldTimeSyncProtESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, oldTimeSyncProt, null, oldTimeSyncProtESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1192,17 +1233,19 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public void unsetTimeSyncProt() {
-        if (timeSyncProt != null) {
+        if( timeSyncProt != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs);
-            msgs = basicUnsetTimeSyncProt(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
+                    SclPackage.TIME_SYNC_PROT__PARENT_CLIENT_SERVICES, TimeSyncProt.class, msgs );
+            msgs = basicUnsetTimeSyncProt( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTimeSyncProtESet = timeSyncProtESet;
             timeSyncProtESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, null, null, oldTimeSyncProtESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT,
+                        null, null, oldTimeSyncProtESet ) );
         }
     }
 
@@ -1232,13 +1275,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setRGOOSE(Boolean newRGOOSE) {
+    public void setRGOOSE( Boolean newRGOOSE ) {
         Boolean oldRGOOSE = rGOOSE;
         rGOOSE = newRGOOSE;
         boolean oldRGOOSEESet = rGOOSEESet;
         rGOOSEESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE, rGOOSE, !oldRGOOSEESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE,
+                    rGOOSE, !oldRGOOSEESet ) );
     }
 
     /**
@@ -1252,8 +1296,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldRGOOSEESet = rGOOSEESet;
         rGOOSE = RGOOSE_EDEFAULT;
         rGOOSEESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE, RGOOSE_EDEFAULT, oldRGOOSEESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RGOOSE, oldRGOOSE,
+                    RGOOSE_EDEFAULT, oldRGOOSEESet ) );
     }
 
     /**
@@ -1282,13 +1327,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setRSV(Boolean newRSV) {
+    public void setRSV( Boolean newRSV ) {
         Boolean oldRSV = rSV;
         rSV = newRSV;
         boolean oldRSVESet = rSVESet;
         rSVESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__RSV, oldRSV, rSV, !oldRSVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__RSV, oldRSV, rSV,
+                    !oldRSVESet ) );
     }
 
     /**
@@ -1302,8 +1348,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldRSVESet = rSVESet;
         rSV = RSV_EDEFAULT;
         rSVESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RSV, oldRSV, RSV_EDEFAULT, oldRSVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__RSV, oldRSV,
+                    RSV_EDEFAULT, oldRSVESet ) );
     }
 
     /**
@@ -1332,13 +1379,14 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setNoIctBinding(Boolean newNoIctBinding) {
+    public void setNoIctBinding( Boolean newNoIctBinding ) {
         Boolean oldNoIctBinding = noIctBinding;
         noIctBinding = newNoIctBinding;
         boolean oldNoIctBindingESet = noIctBindingESet;
         noIctBindingESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING, oldNoIctBinding, noIctBinding, !oldNoIctBindingESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING,
+                    oldNoIctBinding, noIctBinding, !oldNoIctBindingESet ) );
     }
 
     /**
@@ -1352,8 +1400,9 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
         boolean oldNoIctBindingESet = noIctBindingESet;
         noIctBinding = NO_ICT_BINDING_EDEFAULT;
         noIctBindingESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING, oldNoIctBinding, NO_ICT_BINDING_EDEFAULT, oldNoIctBindingESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__NO_ICT_BINDING,
+                    oldNoIctBinding, NO_ICT_BINDING_EDEFAULT, oldNoIctBindingESet ) );
     }
 
     /**
@@ -1381,14 +1430,18 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetMcSecurity(McSecurity newMcSecurity, NotificationChain msgs) {
+    public NotificationChain basicSetMcSecurity( McSecurity newMcSecurity, NotificationChain msgs ) {
         McSecurity oldMcSecurity = mcSecurity;
         mcSecurity = newMcSecurity;
         boolean oldMcSecurityESet = mcSecurityESet;
         mcSecurityESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, newMcSecurity, !oldMcSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1399,21 +1452,24 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * @generated
      */
     @Override
-    public void setMcSecurity(McSecurity newMcSecurity) {
-        if (newMcSecurity != mcSecurity) {
+    public void setMcSecurity( McSecurity newMcSecurity ) {
+        if( newMcSecurity != mcSecurity ) {
             NotificationChain msgs = null;
-            if (mcSecurity != null)
-                msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs);
-            if (newMcSecurity != null)
-                msgs = ((InternalEObject)newMcSecurity).eInverseAdd(this, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs);
-            msgs = basicSetMcSecurity(newMcSecurity, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( mcSecurity != null )
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            if( newMcSecurity != null )
+                msgs = ( ( InternalEObject ) newMcSecurity ).eInverseAdd( this,
+                        SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            msgs = basicSetMcSecurity( newMcSecurity, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_SERVICES__MC_SECURITY, newMcSecurity, newMcSecurity, !oldMcSecurityESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_SERVICES__MC_SECURITY,
+                        newMcSecurity, newMcSecurity, !oldMcSecurityESet ) );
         }
     }
 
@@ -1422,14 +1478,18 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetMcSecurity(NotificationChain msgs) {
+    public NotificationChain basicUnsetMcSecurity( NotificationChain msgs ) {
         McSecurity oldMcSecurity = mcSecurity;
         mcSecurity = null;
         boolean oldMcSecurityESet = mcSecurityESet;
         mcSecurityESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_SERVICES__MC_SECURITY, oldMcSecurity, null, oldMcSecurityESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -1441,17 +1501,19 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public void unsetMcSecurity() {
-        if (mcSecurity != null) {
+        if( mcSecurity != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs);
-            msgs = basicUnsetMcSecurity(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                    SclPackage.MC_SECURITY__PARENT_CLIENT_SERVICES, McSecurity.class, msgs );
+            msgs = basicUnsetMcSecurity( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldMcSecurityESet = mcSecurityESet;
             mcSecurityESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MC_SECURITY, null, null, oldMcSecurityESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_SERVICES__MC_SECURITY, null,
+                        null, oldMcSecurityESet ) );
         }
     }
 
@@ -1472,21 +1534,23 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                if (timeSyncProt != null)
-                    msgs = ((InternalEObject)timeSyncProt).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, null, msgs);
-                return basicSetTimeSyncProt((TimeSyncProt)otherEnd, msgs);
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                if (mcSecurity != null)
-                    msgs = ((InternalEObject)mcSecurity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__MC_SECURITY, null, msgs);
-                return basicSetMcSecurity((McSecurity)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            if( timeSyncProt != null )
+                msgs = ( ( InternalEObject ) timeSyncProt ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT, null, msgs );
+            return basicSetTimeSyncProt( ( TimeSyncProt ) otherEnd, msgs );
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            if( mcSecurity != null )
+                msgs = ( ( InternalEObject ) mcSecurity ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.CLIENT_SERVICES__MC_SECURITY, null, msgs );
+            return basicSetMcSecurity( ( McSecurity ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1496,15 +1560,15 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                return basicUnsetTimeSyncProt(msgs);
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                return basicUnsetMcSecurity(msgs);
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            return basicUnsetTimeSyncProt( msgs );
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            return basicUnsetMcSecurity( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1514,11 +1578,12 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__CLIENT_SERVICES, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__CLIENT_SERVICES, Services.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -1528,43 +1593,43 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__BUF_REPORT:
-                return getBufReport();
-            case SclPackage.CLIENT_SERVICES__GOOSE:
-                return getGoose();
-            case SclPackage.CLIENT_SERVICES__GSSE:
-                return getGsse();
-            case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
-                return getMaxAttributes();
-            case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
-                return getMaxGOOSE();
-            case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
-                return getMaxReports();
-            case SclPackage.CLIENT_SERVICES__MAX_SMV:
-                return getMaxSMV();
-            case SclPackage.CLIENT_SERVICES__READ_LOG:
-                return getReadLog();
-            case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
-                return getSupportsLdName();
-            case SclPackage.CLIENT_SERVICES__SV:
-                return getSv();
-            case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
-                return getUnbufReport();
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                return getParentServices();
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                return getTimeSyncProt();
-            case SclPackage.CLIENT_SERVICES__RGOOSE:
-                return getRGOOSE();
-            case SclPackage.CLIENT_SERVICES__RSV:
-                return getRSV();
-            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
-                return getNoIctBinding();
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                return getMcSecurity();
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__BUF_REPORT:
+            return getBufReport();
+        case SclPackage.CLIENT_SERVICES__GOOSE:
+            return getGoose();
+        case SclPackage.CLIENT_SERVICES__GSSE:
+            return getGsse();
+        case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
+            return getMaxAttributes();
+        case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
+            return getMaxGOOSE();
+        case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
+            return getMaxReports();
+        case SclPackage.CLIENT_SERVICES__MAX_SMV:
+            return getMaxSMV();
+        case SclPackage.CLIENT_SERVICES__READ_LOG:
+            return getReadLog();
+        case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
+            return getSupportsLdName();
+        case SclPackage.CLIENT_SERVICES__SV:
+            return getSv();
+        case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+            return getUnbufReport();
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            return getParentServices();
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            return getTimeSyncProt();
+        case SclPackage.CLIENT_SERVICES__RGOOSE:
+            return getRGOOSE();
+        case SclPackage.CLIENT_SERVICES__RSV:
+            return getRSV();
+        case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+            return getNoIctBinding();
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            return getMcSecurity();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1574,60 +1639,60 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__BUF_REPORT:
-                setBufReport((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__GOOSE:
-                setGoose((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__GSSE:
-                setGsse((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
-                setMaxAttributes((Integer)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
-                setMaxGOOSE((Integer)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
-                setMaxReports((Integer)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_SMV:
-                setMaxSMV((Integer)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__READ_LOG:
-                setReadLog((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
-                setSupportsLdName((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__SV:
-                setSv((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
-                setUnbufReport((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                setTimeSyncProt((TimeSyncProt)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__RGOOSE:
-                setRGOOSE((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__RSV:
-                setRSV((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
-                setNoIctBinding((Boolean)newValue);
-                return;
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                setMcSecurity((McSecurity)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__BUF_REPORT:
+            setBufReport( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__GOOSE:
+            setGoose( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__GSSE:
+            setGsse( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
+            setMaxAttributes( ( Integer ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
+            setMaxGOOSE( ( Integer ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
+            setMaxReports( ( Integer ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_SMV:
+            setMaxSMV( ( Integer ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__READ_LOG:
+            setReadLog( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
+            setSupportsLdName( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__SV:
+            setSv( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+            setUnbufReport( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            setTimeSyncProt( ( TimeSyncProt ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__RGOOSE:
+            setRGOOSE( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__RSV:
+            setRSV( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+            setNoIctBinding( ( Boolean ) newValue );
+            return;
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            setMcSecurity( ( McSecurity ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1637,60 +1702,60 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__BUF_REPORT:
-                unsetBufReport();
-                return;
-            case SclPackage.CLIENT_SERVICES__GOOSE:
-                unsetGoose();
-                return;
-            case SclPackage.CLIENT_SERVICES__GSSE:
-                unsetGsse();
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
-                unsetMaxAttributes();
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
-                unsetMaxGOOSE();
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
-                unsetMaxReports();
-                return;
-            case SclPackage.CLIENT_SERVICES__MAX_SMV:
-                unsetMaxSMV();
-                return;
-            case SclPackage.CLIENT_SERVICES__READ_LOG:
-                unsetReadLog();
-                return;
-            case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
-                unsetSupportsLdName();
-                return;
-            case SclPackage.CLIENT_SERVICES__SV:
-                unsetSv();
-                return;
-            case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
-                unsetUnbufReport();
-                return;
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                unsetTimeSyncProt();
-                return;
-            case SclPackage.CLIENT_SERVICES__RGOOSE:
-                unsetRGOOSE();
-                return;
-            case SclPackage.CLIENT_SERVICES__RSV:
-                unsetRSV();
-                return;
-            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
-                unsetNoIctBinding();
-                return;
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                unsetMcSecurity();
-                return;
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__BUF_REPORT:
+            unsetBufReport();
+            return;
+        case SclPackage.CLIENT_SERVICES__GOOSE:
+            unsetGoose();
+            return;
+        case SclPackage.CLIENT_SERVICES__GSSE:
+            unsetGsse();
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
+            unsetMaxAttributes();
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
+            unsetMaxGOOSE();
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
+            unsetMaxReports();
+            return;
+        case SclPackage.CLIENT_SERVICES__MAX_SMV:
+            unsetMaxSMV();
+            return;
+        case SclPackage.CLIENT_SERVICES__READ_LOG:
+            unsetReadLog();
+            return;
+        case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
+            unsetSupportsLdName();
+            return;
+        case SclPackage.CLIENT_SERVICES__SV:
+            unsetSv();
+            return;
+        case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+            unsetUnbufReport();
+            return;
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            unsetTimeSyncProt();
+            return;
+        case SclPackage.CLIENT_SERVICES__RGOOSE:
+            unsetRGOOSE();
+            return;
+        case SclPackage.CLIENT_SERVICES__RSV:
+            unsetRSV();
+            return;
+        case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+            unsetNoIctBinding();
+            return;
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            unsetMcSecurity();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1700,43 +1765,43 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_SERVICES__BUF_REPORT:
-                return isSetBufReport();
-            case SclPackage.CLIENT_SERVICES__GOOSE:
-                return isSetGoose();
-            case SclPackage.CLIENT_SERVICES__GSSE:
-                return isSetGsse();
-            case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
-                return isSetMaxAttributes();
-            case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
-                return isSetMaxGOOSE();
-            case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
-                return isSetMaxReports();
-            case SclPackage.CLIENT_SERVICES__MAX_SMV:
-                return isSetMaxSMV();
-            case SclPackage.CLIENT_SERVICES__READ_LOG:
-                return isSetReadLog();
-            case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
-                return isSetSupportsLdName();
-            case SclPackage.CLIENT_SERVICES__SV:
-                return isSetSv();
-            case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
-                return isSetUnbufReport();
-            case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
-                return getParentServices() != null;
-            case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
-                return isSetTimeSyncProt();
-            case SclPackage.CLIENT_SERVICES__RGOOSE:
-                return isSetRGOOSE();
-            case SclPackage.CLIENT_SERVICES__RSV:
-                return isSetRSV();
-            case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
-                return isSetNoIctBinding();
-            case SclPackage.CLIENT_SERVICES__MC_SECURITY:
-                return isSetMcSecurity();
+        switch( featureID ) {
+        case SclPackage.CLIENT_SERVICES__BUF_REPORT:
+            return isSetBufReport();
+        case SclPackage.CLIENT_SERVICES__GOOSE:
+            return isSetGoose();
+        case SclPackage.CLIENT_SERVICES__GSSE:
+            return isSetGsse();
+        case SclPackage.CLIENT_SERVICES__MAX_ATTRIBUTES:
+            return isSetMaxAttributes();
+        case SclPackage.CLIENT_SERVICES__MAX_GOOSE:
+            return isSetMaxGOOSE();
+        case SclPackage.CLIENT_SERVICES__MAX_REPORTS:
+            return isSetMaxReports();
+        case SclPackage.CLIENT_SERVICES__MAX_SMV:
+            return isSetMaxSMV();
+        case SclPackage.CLIENT_SERVICES__READ_LOG:
+            return isSetReadLog();
+        case SclPackage.CLIENT_SERVICES__SUPPORTS_LD_NAME:
+            return isSetSupportsLdName();
+        case SclPackage.CLIENT_SERVICES__SV:
+            return isSetSv();
+        case SclPackage.CLIENT_SERVICES__UNBUF_REPORT:
+            return isSetUnbufReport();
+        case SclPackage.CLIENT_SERVICES__PARENT_SERVICES:
+            return getParentServices() != null;
+        case SclPackage.CLIENT_SERVICES__TIME_SYNC_PROT:
+            return isSetTimeSyncProt();
+        case SclPackage.CLIENT_SERVICES__RGOOSE:
+            return isSetRGOOSE();
+        case SclPackage.CLIENT_SERVICES__RSV:
+            return isSetRSV();
+        case SclPackage.CLIENT_SERVICES__NO_ICT_BINDING:
+            return isSetNoIctBinding();
+        case SclPackage.CLIENT_SERVICES__MC_SECURITY:
+            return isSetMcSecurity();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1746,38 +1811,80 @@ public class ClientServicesImpl extends SclObjectImpl implements ClientServices 
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (bufReport: ");
-        if (bufReportESet) result.append(bufReport); else result.append("<unset>");
-        result.append(", goose: ");
-        if (gooseESet) result.append(goose); else result.append("<unset>");
-        result.append(", gsse: ");
-        if (gsseESet) result.append(gsse); else result.append("<unset>");
-        result.append(", maxAttributes: ");
-        if (maxAttributesESet) result.append(maxAttributes); else result.append("<unset>");
-        result.append(", maxGOOSE: ");
-        if (maxGOOSEESet) result.append(maxGOOSE); else result.append("<unset>");
-        result.append(", maxReports: ");
-        if (maxReportsESet) result.append(maxReports); else result.append("<unset>");
-        result.append(", maxSMV: ");
-        if (maxSMVESet) result.append(maxSMV); else result.append("<unset>");
-        result.append(", readLog: ");
-        if (readLogESet) result.append(readLog); else result.append("<unset>");
-        result.append(", supportsLdName: ");
-        if (supportsLdNameESet) result.append(supportsLdName); else result.append("<unset>");
-        result.append(", sv: ");
-        if (svESet) result.append(sv); else result.append("<unset>");
-        result.append(", unbufReport: ");
-        if (unbufReportESet) result.append(unbufReport); else result.append("<unset>");
-        result.append(", rGOOSE: ");
-        if (rGOOSEESet) result.append(rGOOSE); else result.append("<unset>");
-        result.append(", rSV: ");
-        if (rSVESet) result.append(rSV); else result.append("<unset>");
-        result.append(", noIctBinding: ");
-        if (noIctBindingESet) result.append(noIctBinding); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (bufReport: " );
+        if( bufReportESet )
+            result.append( bufReport );
+        else
+            result.append( "<unset>" );
+        result.append( ", goose: " );
+        if( gooseESet )
+            result.append( goose );
+        else
+            result.append( "<unset>" );
+        result.append( ", gsse: " );
+        if( gsseESet )
+            result.append( gsse );
+        else
+            result.append( "<unset>" );
+        result.append( ", maxAttributes: " );
+        if( maxAttributesESet )
+            result.append( maxAttributes );
+        else
+            result.append( "<unset>" );
+        result.append( ", maxGOOSE: " );
+        if( maxGOOSEESet )
+            result.append( maxGOOSE );
+        else
+            result.append( "<unset>" );
+        result.append( ", maxReports: " );
+        if( maxReportsESet )
+            result.append( maxReports );
+        else
+            result.append( "<unset>" );
+        result.append( ", maxSMV: " );
+        if( maxSMVESet )
+            result.append( maxSMV );
+        else
+            result.append( "<unset>" );
+        result.append( ", readLog: " );
+        if( readLogESet )
+            result.append( readLog );
+        else
+            result.append( "<unset>" );
+        result.append( ", supportsLdName: " );
+        if( supportsLdNameESet )
+            result.append( supportsLdName );
+        else
+            result.append( "<unset>" );
+        result.append( ", sv: " );
+        if( svESet )
+            result.append( sv );
+        else
+            result.append( "<unset>" );
+        result.append( ", unbufReport: " );
+        if( unbufReportESet )
+            result.append( unbufReport );
+        else
+            result.append( "<unset>" );
+        result.append( ", rGOOSE: " );
+        if( rGOOSEESet )
+            result.append( rGOOSE );
+        else
+            result.append( "<unset>" );
+        result.append( ", rSV: " );
+        if( rSVESet )
+            result.append( rSV );
+        else
+            result.append( "<unset>" );
+        result.append( ", noIctBinding: " );
+        if( noIctBindingESet )
+            result.append( noIctBinding );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

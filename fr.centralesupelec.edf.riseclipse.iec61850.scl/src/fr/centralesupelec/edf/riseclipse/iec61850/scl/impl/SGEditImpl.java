@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -113,8 +115,9 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         resvTms = newResvTms;
         boolean oldResvTmsESet = resvTmsESet;
         resvTmsESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, resvTms, !oldResvTmsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, resvTms,
+                    !oldResvTmsESet ) );
     }
 
     /**
@@ -128,8 +131,9 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
         boolean oldResvTmsESet = resvTmsESet;
         resvTms = RESV_TMS_EDEFAULT;
         resvTmsESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms, RESV_TMS_EDEFAULT, oldResvTmsESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SG_EDIT__RESV_TMS, oldResvTms,
+                    RESV_TMS_EDEFAULT, oldResvTmsESet ) );
     }
 
     /**
@@ -149,8 +153,8 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public SettingGroups getParentSettingGroups() {
-        if (eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS) return null;
-        return (SettingGroups)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS ) return null;
+        return ( SettingGroups ) eInternalContainer();
     }
 
     /**
@@ -158,8 +162,10 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentSettingGroups(SettingGroups newParentSettingGroups, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentSettingGroups, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, msgs);
+    public NotificationChain basicSetParentSettingGroups( SettingGroups newParentSettingGroups,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentSettingGroups,
+                SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, msgs );
         return msgs;
     }
 
@@ -169,20 +175,24 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      * @generated
      */
     @Override
-    public void setParentSettingGroups(SettingGroups newParentSettingGroups) {
-        if (newParentSettingGroups != eInternalContainer() || (eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS && newParentSettingGroups != null)) {
-            if (EcoreUtil.isAncestor(this, newParentSettingGroups))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentSettingGroups( SettingGroups newParentSettingGroups ) {
+        if( newParentSettingGroups != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SG_EDIT__PARENT_SETTING_GROUPS
+                        && newParentSettingGroups != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentSettingGroups ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentSettingGroups != null)
-                msgs = ((InternalEObject)newParentSettingGroups).eInverseAdd(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
-            msgs = basicSetParentSettingGroups(newParentSettingGroups, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentSettingGroups != null )
+                msgs = ( ( InternalEObject ) newParentSettingGroups ).eInverseAdd( this,
+                        SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs );
+            msgs = basicSetParentSettingGroups( newParentSettingGroups, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS, newParentSettingGroups, newParentSettingGroups));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SG_EDIT__PARENT_SETTING_GROUPS,
+                    newParentSettingGroups, newParentSettingGroups ) );
     }
 
     /**
@@ -192,13 +202,13 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentSettingGroups((SettingGroups)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentSettingGroups( ( SettingGroups ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -208,11 +218,11 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                return basicSetParentSettingGroups(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            return basicSetParentSettingGroups( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -222,11 +232,12 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SETTING_GROUPS__SG_EDIT, SettingGroups.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -236,13 +247,13 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                return getResvTms();
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                return getParentSettingGroups();
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__RESV_TMS:
+            return getResvTms();
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            return getParentSettingGroups();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -252,15 +263,15 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                setResvTms((Boolean)newValue);
-                return;
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                setParentSettingGroups((SettingGroups)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__RESV_TMS:
+            setResvTms( ( Boolean ) newValue );
+            return;
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            setParentSettingGroups( ( SettingGroups ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -270,15 +281,15 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                unsetResvTms();
-                return;
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                setParentSettingGroups((SettingGroups)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__RESV_TMS:
+            unsetResvTms();
+            return;
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            setParentSettingGroups( ( SettingGroups ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -288,13 +299,13 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SG_EDIT__RESV_TMS:
-                return isSetResvTms();
-            case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
-                return getParentSettingGroups() != null;
+        switch( featureID ) {
+        case SclPackage.SG_EDIT__RESV_TMS:
+            return isSetResvTms();
+        case SclPackage.SG_EDIT__PARENT_SETTING_GROUPS:
+            return getParentSettingGroups() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -304,12 +315,15 @@ public class SGEditImpl extends SclObjectImpl implements SGEdit {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (resvTms: ");
-        if (resvTmsESet) result.append(resvTms); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (resvTms: " );
+        if( resvTmsESet )
+            result.append( resvTms );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public IEDItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public IEDItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,20 +58,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addConfigVersionPropertyDescriptor(object);
-            addEngRightPropertyDescriptor(object);
-            addManufacturerPropertyDescriptor(object);
-            addOriginalSclRevisionPropertyDescriptor(object);
-            addOriginalSclVersionPropertyDescriptor(object);
-            addOwnerPropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addOriginalSclReleasePropertyDescriptor(object);
-            addReferredByIEDNamePropertyDescriptor(object);
+            addConfigVersionPropertyDescriptor( object );
+            addEngRightPropertyDescriptor( object );
+            addManufacturerPropertyDescriptor( object );
+            addOriginalSclRevisionPropertyDescriptor( object );
+            addOriginalSclVersionPropertyDescriptor( object );
+            addOwnerPropertyDescriptor( object );
+            addTypePropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addOriginalSclReleasePropertyDescriptor( object );
+            addReferredByIEDNamePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -81,20 +82,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addConfigVersionPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_configVersion_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_configVersion_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_ConfigVersion(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addConfigVersionPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_configVersion_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_configVersion_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_ConfigVersion(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -103,20 +104,19 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addEngRightPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_engRight_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_engRight_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_EngRight(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addEngRightPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_engRight_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_engRight_feature", "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_EngRight(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -125,20 +125,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addManufacturerPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_manufacturer_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_manufacturer_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_Manufacturer(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addManufacturerPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_manufacturer_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_manufacturer_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_Manufacturer(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -147,20 +147,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOriginalSclRevisionPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_originalSclRevision_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_originalSclRevision_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_OriginalSclRevision(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOriginalSclRevisionPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_originalSclRevision_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_originalSclRevision_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_OriginalSclRevision(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -169,20 +169,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOriginalSclVersionPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_originalSclVersion_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_originalSclVersion_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_OriginalSclVersion(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOriginalSclVersionPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_originalSclVersion_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_originalSclVersion_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_OriginalSclVersion(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -191,20 +191,19 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOwnerPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_owner_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_owner_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_Owner(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOwnerPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_owner_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_owner_feature", "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_Owner(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -213,20 +212,19 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_type_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_type_feature", "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -235,20 +233,19 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_name_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_name_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_name_feature", "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_Name(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -257,20 +254,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addOriginalSclReleasePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_originalSclRelease_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_originalSclRelease_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_OriginalSclRelease(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addOriginalSclReleasePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_originalSclRelease_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_originalSclRelease_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_OriginalSclRelease(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -279,20 +276,20 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByIEDNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_IED_ReferredByIEDName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_IED_ReferredByIEDName_feature", "_UI_IED_type"),
-                 SclPackage.eINSTANCE.getIED_ReferredByIEDName(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByIEDNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_IED_ReferredByIEDName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_IED_ReferredByIEDName_feature",
+                                "_UI_IED_type" ),
+                        SclPackage.eINSTANCE.getIED_ReferredByIEDName(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -304,12 +301,12 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getIED_AccessPoint());
-            childrenFeatures.add(SclPackage.eINSTANCE.getIED_KDC());
-            childrenFeatures.add(SclPackage.eINSTANCE.getIED_Services());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getIED_AccessPoint() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getIED_KDC() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getIED_Services() );
         }
         return childrenFeatures;
     }
@@ -320,11 +317,11 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -334,8 +331,8 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/IED"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/IED" ) );
     }
 
     /**
@@ -345,13 +342,11 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((IED)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_IED_type") :
-            getString("_UI_IED_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( IED ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_IED_type" )
+                : getString( "_UI_IED_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -361,28 +356,28 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(IED.class)) {
-            case SclPackage.IED__CONFIG_VERSION:
-            case SclPackage.IED__ENG_RIGHT:
-            case SclPackage.IED__MANUFACTURER:
-            case SclPackage.IED__ORIGINAL_SCL_REVISION:
-            case SclPackage.IED__ORIGINAL_SCL_VERSION:
-            case SclPackage.IED__OWNER:
-            case SclPackage.IED__TYPE:
-            case SclPackage.IED__NAME:
-            case SclPackage.IED__ORIGINAL_SCL_RELEASE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.IED__ACCESS_POINT:
-            case SclPackage.IED__KDC:
-            case SclPackage.IED__SERVICES:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( IED.class ) ) {
+        case SclPackage.IED__CONFIG_VERSION:
+        case SclPackage.IED__ENG_RIGHT:
+        case SclPackage.IED__MANUFACTURER:
+        case SclPackage.IED__ORIGINAL_SCL_REVISION:
+        case SclPackage.IED__ORIGINAL_SCL_VERSION:
+        case SclPackage.IED__OWNER:
+        case SclPackage.IED__TYPE:
+        case SclPackage.IED__NAME:
+        case SclPackage.IED__ORIGINAL_SCL_RELEASE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.IED__ACCESS_POINT:
+        case SclPackage.IED__KDC:
+        case SclPackage.IED__SERVICES:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -393,23 +388,17 @@ public class IEDItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getIED_AccessPoint(),
-                 SclFactory.eINSTANCE.createAccessPoint()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIED_AccessPoint(),
+                SclFactory.eINSTANCE.createAccessPoint() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getIED_KDC(),
-                 SclFactory.eINSTANCE.createKDC()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIED_KDC(),
+                SclFactory.eINSTANCE.createKDC() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getIED_Services(),
-                 SclFactory.eINSTANCE.createServices()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getIED_Services(),
+                SclFactory.eINSTANCE.createServices() ) );
     }
 
 }

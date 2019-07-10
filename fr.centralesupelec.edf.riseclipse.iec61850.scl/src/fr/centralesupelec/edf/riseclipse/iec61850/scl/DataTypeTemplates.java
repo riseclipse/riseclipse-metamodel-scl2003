@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -59,7 +61,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DAType> getDAType();
+    EList< DAType > getDAType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDAType <em>DA Type</em>}' containment reference list.
@@ -100,7 +102,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<DOType> getDOType();
+    EList< DOType > getDOType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getDOType <em>DO Type</em>}' containment reference list.
@@ -141,7 +143,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<EnumType> getEnumType();
+    EList< EnumType > getEnumType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getEnumType <em>Enum Type</em>}' containment reference list.
@@ -182,7 +184,7 @@ public interface DataTypeTemplates extends SclObject {
      * @model opposite="ParentDataTypeTemplates" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<LNodeType> getLNodeType();
+    EList< LNodeType > getLNodeType();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates#getLNodeType <em>LNode Type</em>}' containment reference list.
@@ -227,6 +229,6 @@ public interface DataTypeTemplates extends SclObject {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
 } // DataTypeTemplates

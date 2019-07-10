@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
@@ -323,8 +325,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         apRef = newApRef;
         boolean oldApRefESet = apRefESet;
         apRefESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__AP_REF, oldApRef, apRef, !oldApRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__AP_REF, oldApRef, apRef,
+                    !oldApRefESet ) );
     }
 
     /**
@@ -338,8 +341,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldApRefESet = apRefESet;
         apRef = AP_REF_EDEFAULT;
         apRefESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__AP_REF, oldApRef, AP_REF_EDEFAULT, oldApRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__AP_REF, oldApRef,
+                    AP_REF_EDEFAULT, oldApRefESet ) );
     }
 
     /**
@@ -359,8 +363,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public RptEnabled getParentRptEnabled() {
-        if (eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED) return null;
-        return (RptEnabled)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED ) return null;
+        return ( RptEnabled ) eInternalContainer();
     }
 
     /**
@@ -368,8 +372,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentRptEnabled(RptEnabled newParentRptEnabled, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentRptEnabled, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED, msgs);
+    public NotificationChain basicSetParentRptEnabled( RptEnabled newParentRptEnabled, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentRptEnabled, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED,
+                msgs );
         return msgs;
     }
 
@@ -379,20 +384,24 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @generated
      */
     @Override
-    public void setParentRptEnabled(RptEnabled newParentRptEnabled) {
-        if (newParentRptEnabled != eInternalContainer() || (eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED && newParentRptEnabled != null)) {
-            if (EcoreUtil.isAncestor(this, newParentRptEnabled))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentRptEnabled( RptEnabled newParentRptEnabled ) {
+        if( newParentRptEnabled != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.CLIENT_LN__PARENT_RPT_ENABLED
+                        && newParentRptEnabled != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentRptEnabled ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentRptEnabled != null)
-                msgs = ((InternalEObject)newParentRptEnabled).eInverseAdd(this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class, msgs);
-            msgs = basicSetParentRptEnabled(newParentRptEnabled, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentRptEnabled != null )
+                msgs = ( ( InternalEObject ) newParentRptEnabled ).eInverseAdd( this, SclPackage.RPT_ENABLED__CLIENT_LN,
+                        RptEnabled.class, msgs );
+            msgs = basicSetParentRptEnabled( newParentRptEnabled, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED, newParentRptEnabled, newParentRptEnabled));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__PARENT_RPT_ENABLED,
+                    newParentRptEnabled, newParentRptEnabled ) );
     }
 
     /**
@@ -416,8 +425,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         iedName = newIedName;
         boolean oldIedNameESet = iedNameESet;
         iedNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__IED_NAME, oldIedName, iedName, !oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__IED_NAME, oldIedName, iedName,
+                    !oldIedNameESet ) );
     }
 
     /**
@@ -431,8 +441,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldIedNameESet = iedNameESet;
         iedName = IED_NAME_EDEFAULT;
         iedNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__IED_NAME, oldIedName, IED_NAME_EDEFAULT, oldIedNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__IED_NAME, oldIedName,
+                    IED_NAME_EDEFAULT, oldIedNameESet ) );
     }
 
     /**
@@ -466,8 +477,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         ldInst = newLdInst;
         boolean oldLdInstESet = ldInstESet;
         ldInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__LD_INST, oldLdInst, ldInst, !oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LD_INST, oldLdInst, ldInst,
+                    !oldLdInstESet ) );
     }
 
     /**
@@ -481,8 +493,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLdInstESet = ldInstESet;
         ldInst = LD_INST_EDEFAULT;
         ldInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__LD_INST, oldLdInst, LD_INST_EDEFAULT, oldLdInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LD_INST, oldLdInst,
+                    LD_INST_EDEFAULT, oldLdInstESet ) );
     }
 
     /**
@@ -516,8 +529,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass, lnClass,
+                    !oldLnClassESet ) );
     }
 
     /**
@@ -531,8 +545,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -566,8 +581,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__LN_INST, oldLnInst, lnInst,
+                    !oldLnInstESet ) );
     }
 
     /**
@@ -581,8 +597,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__LN_INST, oldLnInst,
+                    LN_INST_EDEFAULT, oldLnInstESet ) );
     }
 
     /**
@@ -616,8 +633,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__PREFIX, oldPrefix, prefix,
+                    !oldPrefixESet ) );
     }
 
     /**
@@ -631,8 +649,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__PREFIX, oldPrefix,
+                    PREFIX_EDEFAULT, oldPrefixESet ) );
     }
 
     /**
@@ -661,13 +680,14 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @generated
      */
     @Override
-    public void setDesc(String newDesc) {
+    public void setDesc( String newDesc ) {
         String oldDesc = desc;
         desc = newDesc;
         boolean oldDescESet = descESet;
         descESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__DESC, oldDesc, desc, !oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__DESC, oldDesc, desc,
+                    !oldDescESet ) );
     }
 
     /**
@@ -681,8 +701,9 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         boolean oldDescESet = descESet;
         desc = DESC_EDEFAULT;
         descESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__DESC, oldDesc, DESC_EDEFAULT, oldDescESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__DESC, oldDesc,
+                    DESC_EDEFAULT, oldDescESet ) );
     }
 
     /**
@@ -710,14 +731,18 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToAnyLN(AnyLN newRefersToAnyLN, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToAnyLN( AnyLN newRefersToAnyLN, NotificationChain msgs ) {
         AnyLN oldRefersToAnyLN = refersToAnyLN;
         refersToAnyLN = newRefersToAnyLN;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -728,21 +753,24 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @generated
      */
     @Override
-    public void setRefersToAnyLN(AnyLN newRefersToAnyLN) {
-        if (newRefersToAnyLN != refersToAnyLN) {
+    public void setRefersToAnyLN( AnyLN newRefersToAnyLN ) {
+        if( newRefersToAnyLN != refersToAnyLN ) {
             NotificationChain msgs = null;
-            if (refersToAnyLN != null)
-                msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs);
-            if (newRefersToAnyLN != null)
-                msgs = ((InternalEObject)newRefersToAnyLN).eInverseAdd(this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs);
-            msgs = basicSetRefersToAnyLN(newRefersToAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
+            if( newRefersToAnyLN != null )
+                msgs = ( ( InternalEObject ) newRefersToAnyLN ).eInverseAdd( this,
+                        SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
+            msgs = basicSetRefersToAnyLN( newRefersToAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN,
+                        newRefersToAnyLN, newRefersToAnyLN, !oldRefersToAnyLNESet ) );
         }
     }
 
@@ -751,14 +779,18 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToAnyLN(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToAnyLN( NotificationChain msgs ) {
         AnyLN oldRefersToAnyLN = refersToAnyLN;
         refersToAnyLN = null;
         boolean oldRefersToAnyLNESet = refersToAnyLNESet;
         refersToAnyLNESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, oldRefersToAnyLN, null, oldRefersToAnyLNESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -770,17 +802,19 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public void unsetRefersToAnyLN() {
-        if (refersToAnyLN != null) {
+        if( refersToAnyLN != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs);
-            msgs = basicUnsetRefersToAnyLN(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN,
+                    AnyLN.class, msgs );
+            msgs = basicUnsetRefersToAnyLN( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToAnyLNESet = refersToAnyLNESet;
             refersToAnyLNESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, null, null, oldRefersToAnyLNESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN, null,
+                        null, oldRefersToAnyLNESet ) );
         }
     }
 
@@ -801,17 +835,18 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentRptEnabled((RptEnabled)otherEnd, msgs);
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                if (refersToAnyLN != null)
-                    msgs = ((InternalEObject)refersToAnyLN).eInverseRemove(this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs);
-                return basicSetRefersToAnyLN((AnyLN)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentRptEnabled( ( RptEnabled ) otherEnd, msgs );
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            if( refersToAnyLN != null )
+                msgs = ( ( InternalEObject ) refersToAnyLN ).eInverseRemove( this,
+                        SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, AnyLN.class, msgs );
+            return basicSetRefersToAnyLN( ( AnyLN ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -821,13 +856,13 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                return basicSetParentRptEnabled(null, msgs);
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                return basicUnsetRefersToAnyLN(msgs);
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            return basicSetParentRptEnabled( null, msgs );
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            return basicUnsetRefersToAnyLN( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -837,11 +872,12 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                return eInternalContainer().eInverseRemove(this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            return eInternalContainer().eInverseRemove( this, SclPackage.RPT_ENABLED__CLIENT_LN, RptEnabled.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -851,27 +887,27 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_LN__DESC:
-                return getDesc();
-            case SclPackage.CLIENT_LN__IED_NAME:
-                return getIedName();
-            case SclPackage.CLIENT_LN__LD_INST:
-                return getLdInst();
-            case SclPackage.CLIENT_LN__LN_CLASS:
-                return getLnClass();
-            case SclPackage.CLIENT_LN__LN_INST:
-                return getLnInst();
-            case SclPackage.CLIENT_LN__PREFIX:
-                return getPrefix();
-            case SclPackage.CLIENT_LN__AP_REF:
-                return getApRef();
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                return getParentRptEnabled();
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                return getRefersToAnyLN();
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__DESC:
+            return getDesc();
+        case SclPackage.CLIENT_LN__IED_NAME:
+            return getIedName();
+        case SclPackage.CLIENT_LN__LD_INST:
+            return getLdInst();
+        case SclPackage.CLIENT_LN__LN_CLASS:
+            return getLnClass();
+        case SclPackage.CLIENT_LN__LN_INST:
+            return getLnInst();
+        case SclPackage.CLIENT_LN__PREFIX:
+            return getPrefix();
+        case SclPackage.CLIENT_LN__AP_REF:
+            return getApRef();
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            return getParentRptEnabled();
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            return getRefersToAnyLN();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -881,36 +917,36 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_LN__DESC:
-                setDesc((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__IED_NAME:
-                setIedName((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__LD_INST:
-                setLdInst((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__PREFIX:
-                setPrefix((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__AP_REF:
-                setApRef((String)newValue);
-                return;
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                setParentRptEnabled((RptEnabled)newValue);
-                return;
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                setRefersToAnyLN((AnyLN)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__DESC:
+            setDesc( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__IED_NAME:
+            setIedName( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__LD_INST:
+            setLdInst( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__LN_INST:
+            setLnInst( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__PREFIX:
+            setPrefix( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__AP_REF:
+            setApRef( ( String ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            setParentRptEnabled( ( RptEnabled ) newValue );
+            return;
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            setRefersToAnyLN( ( AnyLN ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -920,36 +956,36 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.CLIENT_LN__DESC:
-                unsetDesc();
-                return;
-            case SclPackage.CLIENT_LN__IED_NAME:
-                unsetIedName();
-                return;
-            case SclPackage.CLIENT_LN__LD_INST:
-                unsetLdInst();
-                return;
-            case SclPackage.CLIENT_LN__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.CLIENT_LN__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.CLIENT_LN__PREFIX:
-                unsetPrefix();
-                return;
-            case SclPackage.CLIENT_LN__AP_REF:
-                unsetApRef();
-                return;
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                setParentRptEnabled((RptEnabled)null);
-                return;
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                unsetRefersToAnyLN();
-                return;
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__DESC:
+            unsetDesc();
+            return;
+        case SclPackage.CLIENT_LN__IED_NAME:
+            unsetIedName();
+            return;
+        case SclPackage.CLIENT_LN__LD_INST:
+            unsetLdInst();
+            return;
+        case SclPackage.CLIENT_LN__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.CLIENT_LN__LN_INST:
+            unsetLnInst();
+            return;
+        case SclPackage.CLIENT_LN__PREFIX:
+            unsetPrefix();
+            return;
+        case SclPackage.CLIENT_LN__AP_REF:
+            unsetApRef();
+            return;
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            setParentRptEnabled( ( RptEnabled ) null );
+            return;
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            unsetRefersToAnyLN();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -959,27 +995,67 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.CLIENT_LN__DESC:
+            return isSetDesc();
+        case SclPackage.CLIENT_LN__IED_NAME:
+            return isSetIedName();
+        case SclPackage.CLIENT_LN__LD_INST:
+            return isSetLdInst();
+        case SclPackage.CLIENT_LN__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.CLIENT_LN__LN_INST:
+            return isSetLnInst();
+        case SclPackage.CLIENT_LN__PREFIX:
+            return isSetPrefix();
+        case SclPackage.CLIENT_LN__AP_REF:
+            return isSetApRef();
+        case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
+            return getParentRptEnabled() != null;
+        case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
+            return isSetRefersToAnyLN();
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.CLIENT_LN__DESC:
-                return isSetDesc();
+                return SclPackage.AG_DESC__DESC;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgLDRef.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.CLIENT_LN__IED_NAME:
-                return isSetIedName();
+                return SclPackage.AG_LD_REF__IED_NAME;
             case SclPackage.CLIENT_LN__LD_INST:
-                return isSetLdInst();
+                return SclPackage.AG_LD_REF__LD_INST;
+            default:
+                return -1;
+            }
+        }
+        if( baseClass == AgLNRef.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.CLIENT_LN__LN_CLASS:
-                return isSetLnClass();
+                return SclPackage.AG_LN_REF__LN_CLASS;
             case SclPackage.CLIENT_LN__LN_INST:
-                return isSetLnInst();
+                return SclPackage.AG_LN_REF__LN_INST;
             case SclPackage.CLIENT_LN__PREFIX:
-                return isSetPrefix();
-            case SclPackage.CLIENT_LN__AP_REF:
-                return isSetApRef();
-            case SclPackage.CLIENT_LN__PARENT_RPT_ENABLED:
-                return getParentRptEnabled() != null;
-            case SclPackage.CLIENT_LN__REFERS_TO_ANY_LN:
-                return isSetRefersToAnyLN();
+                return SclPackage.AG_LN_REF__PREFIX;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -988,60 +1064,38 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.CLIENT_LN__DESC: return SclPackage.AG_DESC__DESC;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgDesc.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_DESC__DESC:
+                return SclPackage.CLIENT_LN__DESC;
+            default:
+                return -1;
             }
         }
-        if (baseClass == AgLDRef.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.CLIENT_LN__IED_NAME: return SclPackage.AG_LD_REF__IED_NAME;
-                case SclPackage.CLIENT_LN__LD_INST: return SclPackage.AG_LD_REF__LD_INST;
-                default: return -1;
+        if( baseClass == AgLDRef.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_LD_REF__IED_NAME:
+                return SclPackage.CLIENT_LN__IED_NAME;
+            case SclPackage.AG_LD_REF__LD_INST:
+                return SclPackage.CLIENT_LN__LD_INST;
+            default:
+                return -1;
             }
         }
-        if (baseClass == AgLNRef.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.CLIENT_LN__LN_CLASS: return SclPackage.AG_LN_REF__LN_CLASS;
-                case SclPackage.CLIENT_LN__LN_INST: return SclPackage.AG_LN_REF__LN_INST;
-                case SclPackage.CLIENT_LN__PREFIX: return SclPackage.AG_LN_REF__PREFIX;
-                default: return -1;
+        if( baseClass == AgLNRef.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_LN_REF__LN_CLASS:
+                return SclPackage.CLIENT_LN__LN_CLASS;
+            case SclPackage.AG_LN_REF__LN_INST:
+                return SclPackage.CLIENT_LN__LN_INST;
+            case SclPackage.AG_LN_REF__PREFIX:
+                return SclPackage.CLIENT_LN__PREFIX;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgDesc.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_DESC__DESC: return SclPackage.CLIENT_LN__DESC;
-                default: return -1;
-            }
-        }
-        if (baseClass == AgLDRef.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_LD_REF__IED_NAME: return SclPackage.CLIENT_LN__IED_NAME;
-                case SclPackage.AG_LD_REF__LD_INST: return SclPackage.CLIENT_LN__LD_INST;
-                default: return -1;
-            }
-        }
-        if (baseClass == AgLNRef.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_LN_REF__LN_CLASS: return SclPackage.CLIENT_LN__LN_CLASS;
-                case SclPackage.AG_LN_REF__LN_INST: return SclPackage.CLIENT_LN__LN_INST;
-                case SclPackage.AG_LN_REF__PREFIX: return SclPackage.CLIENT_LN__PREFIX;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -1051,24 +1105,45 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (desc: ");
-        if (descESet) result.append(desc); else result.append("<unset>");
-        result.append(", iedName: ");
-        if (iedNameESet) result.append(iedName); else result.append("<unset>");
-        result.append(", ldInst: ");
-        if (ldInstESet) result.append(ldInst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(", apRef: ");
-        if (apRefESet) result.append(apRef); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (desc: " );
+        if( descESet )
+            result.append( desc );
+        else
+            result.append( "<unset>" );
+        result.append( ", iedName: " );
+        if( iedNameESet )
+            result.append( iedName );
+        else
+            result.append( "<unset>" );
+        result.append( ", ldInst: " );
+        if( ldInstESet )
+            result.append( ldInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnInst: " );
+        if( lnInstESet )
+            result.append( lnInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", prefix: " );
+        if( prefixESet )
+            result.append( prefix );
+        else
+            result.append( "<unset>" );
+        result.append( ", apRef: " );
+        if( apRefESet )
+            result.append( apRef );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1076,7 +1151,7 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // iedName The name of the IED where the LN resides
         // apRef   The name of the access point via which the IED shall be accessed. Optional, not needed if the IED has only one access point.
         // ldInst  The instance identification of the LD where the LN resides
@@ -1087,21 +1162,21 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
 
         String messagePrefix = "[SCL links] while resolving link from ClientLN on line " + getLineNumber() + ": ";
 
-        if(( getIedName() == null ) || getIedName().isEmpty() ) {
+        if( ( getIedName() == null ) || getIedName().isEmpty() ) {
             console.warning( messagePrefix, "iedName is missing" );
             return;
         }
-        if(( getLdInst() == null ) || getLdInst().isEmpty() ) {
+        if( ( getLdInst() == null ) || getLdInst().isEmpty() ) {
             console.warning( messagePrefix, "ldInst is missing" );
             return;
         }
-        if(( getLnClass() == null ) || getLnClass().isEmpty() ) {
+        if( ( getLnClass() == null ) || getLnClass().isEmpty() ) {
             console.warning( messagePrefix, "lnClass is missing" );
             return;
         }
 
         // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
-        if( "LD0".equals( getLdInst() )) {
+        if( "LD0".equals( getLdInst() ) ) {
             console.verbose( messagePrefix, "ldInst is LD0: pure client access point, therefore no link" );
             return;
         }
@@ -1115,15 +1190,17 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         console.verbose( messagePrefix, "found ", mess1, " on line ", ied.getLeft().getLineNumber() );
-        
+
         Pair< AccessPoint, Integer > ap = null;
-        if(( getApRef() == null ) || getApRef().isEmpty() ) {
+        if( ( getApRef() == null ) || getApRef().isEmpty() ) {
             if( ied.getLeft().getAccessPoint().size() == 0 ) {
-                console.warning( messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(), " )" );
+                console.warning( messagePrefix, "no AccessPoint found in ied ( name = ", ied.getLeft().getName(),
+                        " )" );
                 return;
             }
             if( ied.getLeft().getAccessPoint().size() > 1 ) {
-                console.warning( messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(), " ) but apRef not specified" );
+                console.warning( messagePrefix, "found several AccessPoint in ied ( name = ", ied.getLeft().getName(),
+                        " ) but apRef not specified" );
                 return;
             }
             ap = Pair.of( ied.getLeft().getAccessPoint().get( 0 ), 1 );
@@ -1143,10 +1220,11 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
         if( lDevice.getLeft() == null ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
             return;
-        }        
+        }
         console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
 
-        Pair< AnyLN,Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
+                getPrefix() );
         String mess4 = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess4 += ", inst = " + getLnInst();
@@ -1158,7 +1236,8 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
         setRefersToAnyLN( anyLN.getLeft() );
-        console.info( "[SCL links] ClientLN on line ", getLineNumber(), " refers to ", mess4, " on line ", getRefersToAnyLN().getLineNumber() );
+        console.info( "[SCL links] ClientLN on line ", getLineNumber(), " refers to ", mess4, " on line ",
+                getRefersToAnyLN().getLineNumber() );
     }
 
 } //ClientLNImpl

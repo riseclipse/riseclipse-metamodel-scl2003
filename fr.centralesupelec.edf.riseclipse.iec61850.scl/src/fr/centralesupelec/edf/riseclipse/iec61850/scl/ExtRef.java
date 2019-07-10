@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 /**
@@ -824,7 +826,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getParentInputs()
      * @generated
      */
-    void setParentInputs(Inputs value);
+    void setParentInputs( Inputs value );
 
     /**
      * Returns the value of the '<em><b>Refers To Abstract Data Attribute</b></em>' reference.
@@ -852,7 +854,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getRefersToAbstractDataAttribute()
      * @generated
      */
-    void setRefersToAbstractDataAttribute(AbstractDataAttribute value);
+    void setRefersToAbstractDataAttribute( AbstractDataAttribute value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataAttribute <em>Refers To Abstract Data Attribute</em>}' reference.
@@ -903,7 +905,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getRefersToAbstractDataObject()
      * @generated
      */
-    void setRefersToAbstractDataObject(AbstractDataObject value);
+    void setRefersToAbstractDataObject( AbstractDataObject value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToAbstractDataObject <em>Refers To Abstract Data Object</em>}' reference.
@@ -959,7 +961,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getPServT()
      * @generated
      */
-    void setPServT(ServiceType value);
+    void setPServT( ServiceType value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPServT <em>PServ T</em>}' attribute.
@@ -1012,7 +1014,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getPLN()
      * @generated
      */
-    void setPLN(String value);
+    void setPLN( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPLN <em>PLN</em>}' attribute.
@@ -1065,7 +1067,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getPDO()
      * @generated
      */
-    void setPDO(String value);
+    void setPDO( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDO <em>PDO</em>}' attribute.
@@ -1118,7 +1120,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getPDA()
      * @generated
      */
-    void setPDA(String value);
+    void setPDA( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getPDA <em>PDA</em>}' attribute.
@@ -1169,7 +1171,7 @@ public interface ExtRef extends BaseElement, AgDesc {
      * @see #getRefersToControl()
      * @generated
      */
-    void setRefersToControl(Control value);
+    void setRefersToControl( Control value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ExtRef#getRefersToControl <em>Refers To Control</em>}' reference.

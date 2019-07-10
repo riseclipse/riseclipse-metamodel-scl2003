@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -44,8 +45,8 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public SDOItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SDOItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -55,12 +56,12 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addCountPropertyDescriptor(object);
-            addReferredBySDIPropertyDescriptor(object);
+            addCountPropertyDescriptor( object );
+            addReferredBySDIPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -71,20 +72,19 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCountPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDO_count_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_count_feature", "_UI_SDO_type"),
-                 SclPackage.eINSTANCE.getSDO_Count(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCountPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDO_count_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDO_count_feature", "_UI_SDO_type" ),
+                        SclPackage.eINSTANCE.getSDO_Count(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -93,20 +93,20 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredBySDIPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SDO_ReferredBySDI_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SDO_ReferredBySDI_feature", "_UI_SDO_type"),
-                 SclPackage.eINSTANCE.getSDO_ReferredBySDI(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredBySDIPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SDO_ReferredBySDI_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SDO_ReferredBySDI_feature",
+                                "_UI_SDO_type" ),
+                        SclPackage.eINSTANCE.getSDO_ReferredBySDI(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -116,8 +116,8 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SDO"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SDO" ) );
     }
 
     /**
@@ -127,13 +127,11 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((SDO)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_SDO_type") :
-            getString("_UI_SDO_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( SDO ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_SDO_type" )
+                : getString( "_UI_SDO_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -143,15 +141,15 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SDO.class)) {
-            case SclPackage.SDO__COUNT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( SDO.class ) ) {
+        case SclPackage.SDO__COUNT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -162,8 +160,8 @@ public class SDOItemProvider extends AbstractDataObjectItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

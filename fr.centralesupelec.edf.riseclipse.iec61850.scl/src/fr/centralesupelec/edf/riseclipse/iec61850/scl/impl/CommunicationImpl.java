@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
@@ -57,7 +59,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * @generated
      * @ordered
      */
-    protected EList<SubNetwork> subNetwork;
+    protected EList< SubNetwork > subNetwork;
 
     /**
      * <!-- begin-user-doc -->
@@ -84,9 +86,10 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * @generated
      */
     @Override
-    public EList<SubNetwork> getSubNetwork() {
-        if (subNetwork == null) {
-            subNetwork = new EObjectContainmentWithInverseEList.Unsettable<SubNetwork>(SubNetwork.class, this, SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__PARENT_COMMUNICATION);
+    public EList< SubNetwork > getSubNetwork() {
+        if( subNetwork == null ) {
+            subNetwork = new EObjectContainmentWithInverseEList.Unsettable< SubNetwork >( SubNetwork.class, this,
+                    SclPackage.COMMUNICATION__SUB_NETWORK, SclPackage.SUB_NETWORK__PARENT_COMMUNICATION );
         }
         return subNetwork;
     }
@@ -98,7 +101,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public void unsetSubNetwork() {
-        if (subNetwork != null) ((InternalEList.Unsettable<?>)subNetwork).unset();
+        if( subNetwork != null ) ( ( InternalEList.Unsettable< ? > ) subNetwork ).unset();
     }
 
     /**
@@ -108,7 +111,7 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public boolean isSetSubNetwork() {
-        return subNetwork != null && ((InternalEList.Unsettable<?>)subNetwork).isSet();
+        return subNetwork != null && ( ( InternalEList.Unsettable< ? > ) subNetwork ).isSet();
     }
 
     /**
@@ -118,8 +121,8 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public SCL getParentSCL() {
-        if (eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL) return null;
-        return (SCL)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL ) return null;
+        return ( SCL ) eInternalContainer();
     }
 
     /**
@@ -127,8 +130,8 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentSCL(SCL newParentSCL, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentSCL, SclPackage.COMMUNICATION__PARENT_SCL, msgs);
+    public NotificationChain basicSetParentSCL( SCL newParentSCL, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentSCL, SclPackage.COMMUNICATION__PARENT_SCL, msgs );
         return msgs;
     }
 
@@ -138,20 +141,23 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      * @generated
      */
     @Override
-    public void setParentSCL(SCL newParentSCL) {
-        if (newParentSCL != eInternalContainer() || (eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL && newParentSCL != null)) {
-            if (EcoreUtil.isAncestor(this, newParentSCL))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentSCL( SCL newParentSCL ) {
+        if( newParentSCL != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.COMMUNICATION__PARENT_SCL && newParentSCL != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentSCL ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentSCL != null)
-                msgs = ((InternalEObject)newParentSCL).eInverseAdd(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
-            msgs = basicSetParentSCL(newParentSCL, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentSCL != null )
+                msgs = ( ( InternalEObject ) newParentSCL ).eInverseAdd( this, SclPackage.SCL__COMMUNICATION, SCL.class,
+                        msgs );
+            msgs = basicSetParentSCL( newParentSCL, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.COMMUNICATION__PARENT_SCL, newParentSCL, newParentSCL));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.COMMUNICATION__PARENT_SCL, newParentSCL,
+                    newParentSCL ) );
     }
 
     /**
@@ -162,15 +168,16 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubNetwork()).basicAdd(otherEnd, msgs);
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentSCL((SCL)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSubNetwork() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentSCL( ( SCL ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -180,13 +187,13 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return ((InternalEList<?>)getSubNetwork()).basicRemove(otherEnd, msgs);
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                return basicSetParentSCL(null, msgs);
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            return ( ( InternalEList< ? > ) getSubNetwork() ).basicRemove( otherEnd, msgs );
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            return basicSetParentSCL( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -196,11 +203,11 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SCL__COMMUNICATION, SCL.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -210,13 +217,13 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return getSubNetwork();
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                return getParentSCL();
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            return getSubNetwork();
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            return getParentSCL();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -227,16 +234,16 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                getSubNetwork().clear();
-                getSubNetwork().addAll((Collection<? extends SubNetwork>)newValue);
-                return;
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                setParentSCL((SCL)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            getSubNetwork().clear();
+            getSubNetwork().addAll( ( Collection< ? extends SubNetwork > ) newValue );
+            return;
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            setParentSCL( ( SCL ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -246,15 +253,15 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                unsetSubNetwork();
-                return;
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                setParentSCL((SCL)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            unsetSubNetwork();
+            return;
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            setParentSCL( ( SCL ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -264,13 +271,13 @@ public class CommunicationImpl extends UnNamingImpl implements Communication {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.COMMUNICATION__SUB_NETWORK:
-                return isSetSubNetwork();
-            case SclPackage.COMMUNICATION__PARENT_SCL:
-                return getParentSCL() != null;
+        switch( featureID ) {
+        case SclPackage.COMMUNICATION__SUB_NETWORK:
+            return isSetSubNetwork();
+        case SclPackage.COMMUNICATION__PARENT_SCL:
+            return getParentSCL() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //CommunicationImpl

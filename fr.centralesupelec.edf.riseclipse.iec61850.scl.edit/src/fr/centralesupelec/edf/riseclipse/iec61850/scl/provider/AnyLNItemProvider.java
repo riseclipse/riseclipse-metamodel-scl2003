@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public AnyLNItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AnyLNItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,19 +58,19 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addInstPropertyDescriptor(object);
-            addLnClassPropertyDescriptor(object);
-            addLnTypePropertyDescriptor(object);
-            addRefersToLNodeTypePropertyDescriptor(object);
-            addReferredByClientLNPropertyDescriptor(object);
-            addReferredByLogControlPropertyDescriptor(object);
-            addReferredByAssociationPropertyDescriptor(object);
-            addReferredByIEDNamePropertyDescriptor(object);
-            addReferredByLNodePropertyDescriptor(object);
+            addInstPropertyDescriptor( object );
+            addLnClassPropertyDescriptor( object );
+            addLnTypePropertyDescriptor( object );
+            addRefersToLNodeTypePropertyDescriptor( object );
+            addReferredByClientLNPropertyDescriptor( object );
+            addReferredByLogControlPropertyDescriptor( object );
+            addReferredByAssociationPropertyDescriptor( object );
+            addReferredByIEDNamePropertyDescriptor( object );
+            addReferredByLNodePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -80,20 +81,19 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addInstPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_inst_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_inst_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_Inst(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addInstPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_inst_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_inst_feature", "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_Inst(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -102,20 +102,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLnClassPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_lnClass_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_lnClass_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_LnClass(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addLnClassPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_lnClass_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_lnClass_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_LnClass(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -124,20 +124,19 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addLnTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_lnType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_lnType_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_LnType(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addLnTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_lnType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_lnType_feature", "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_LnType(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -146,20 +145,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToLNodeTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_RefersToLNodeType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_RefersToLNodeType_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_RefersToLNodeType(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToLNodeTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_RefersToLNodeType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_RefersToLNodeType_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_RefersToLNodeType(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -168,20 +167,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByClientLNPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByClientLN_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByClientLN_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByClientLN(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByClientLNPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByClientLN_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByClientLN_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByClientLN(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -190,20 +189,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByLogControlPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByLogControl_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLogControl_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByLogControl(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByLogControlPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByLogControl_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLogControl_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByLogControl(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -212,20 +211,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByAssociationPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByAssociation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByAssociation_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByAssociation(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByAssociationPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByAssociation_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByAssociation_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByAssociation(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -234,20 +233,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByIEDNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByIEDName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByIEDName_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByIEDName(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByIEDNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByIEDName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByIEDName_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByIEDName(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -256,20 +255,20 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByLNodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AnyLN_ReferredByLNode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLNode_feature", "_UI_AnyLN_type"),
-                 SclPackage.eINSTANCE.getAnyLN_ReferredByLNode(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByLNodePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AnyLN_ReferredByLNode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AnyLN_ReferredByLNode_feature",
+                                "_UI_AnyLN_type" ),
+                        SclPackage.eINSTANCE.getAnyLN_ReferredByLNode(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -281,16 +280,16 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_Inputs());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_Log());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_DOI());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_ReportControl());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_LogControl());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_DataSet());
-            childrenFeatures.add(SclPackage.eINSTANCE.getAnyLN_Control());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Inputs() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Log() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_DOI() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_LogControl() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_DataSet() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Control() );
         }
         return childrenFeatures;
     }
@@ -301,11 +300,11 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -315,8 +314,8 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/AnyLN"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/AnyLN" ) );
     }
 
     /**
@@ -326,11 +325,10 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        AnyLN anyLN = (AnyLN)object;
-        return getString("_UI_AnyLN_type") + " " + anyLN.getLineNumber();
+    public String getText( Object object ) {
+        AnyLN anyLN = ( AnyLN ) object;
+        return getString( "_UI_AnyLN_type" ) + " " + anyLN.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -340,26 +338,26 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AnyLN.class)) {
-            case SclPackage.ANY_LN__INST:
-            case SclPackage.ANY_LN__LN_CLASS:
-            case SclPackage.ANY_LN__LN_TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.ANY_LN__INPUTS:
-            case SclPackage.ANY_LN__LOG:
-            case SclPackage.ANY_LN__DOI:
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-            case SclPackage.ANY_LN__LOG_CONTROL:
-            case SclPackage.ANY_LN__DATA_SET:
-            case SclPackage.ANY_LN__CONTROL:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( AnyLN.class ) ) {
+        case SclPackage.ANY_LN__INST:
+        case SclPackage.ANY_LN__LN_CLASS:
+        case SclPackage.ANY_LN__LN_TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.ANY_LN__INPUTS:
+        case SclPackage.ANY_LN__LOG:
+        case SclPackage.ANY_LN__DOI:
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+        case SclPackage.ANY_LN__LOG_CONTROL:
+        case SclPackage.ANY_LN__DATA_SET:
+        case SclPackage.ANY_LN__CONTROL:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -370,38 +368,26 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_Inputs(),
-                 SclFactory.eINSTANCE.createInputs()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_Inputs(),
+                SclFactory.eINSTANCE.createInputs() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_Log(),
-                 SclFactory.eINSTANCE.createLog()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_Log(),
+                SclFactory.eINSTANCE.createLog() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_DOI(),
-                 SclFactory.eINSTANCE.createDOI()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_DOI(),
+                SclFactory.eINSTANCE.createDOI() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_ReportControl(),
-                 SclFactory.eINSTANCE.createReportControl()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_ReportControl(),
+                SclFactory.eINSTANCE.createReportControl() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_LogControl(),
-                 SclFactory.eINSTANCE.createLogControl()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_LogControl(),
+                SclFactory.eINSTANCE.createLogControl() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAnyLN_DataSet(),
-                 SclFactory.eINSTANCE.createDataSet()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAnyLN_DataSet(),
+                SclFactory.eINSTANCE.createDataSet() ) );
     }
 
 }

@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -233,8 +235,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         dchg = newDchg;
         boolean oldDchgESet = dchgESet;
         dchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DCHG, oldDchg, dchg, !oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__DCHG, oldDchg, dchg,
+                    !oldDchgESet ) );
     }
 
     /**
@@ -248,8 +251,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldDchgESet = dchgESet;
         dchg = DCHG_EDEFAULT;
         dchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DCHG, oldDchg, DCHG_EDEFAULT, oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__DCHG, oldDchg, DCHG_EDEFAULT,
+                    oldDchgESet ) );
     }
 
     /**
@@ -283,8 +287,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         dupd = newDupd;
         boolean oldDupdESet = dupdESet;
         dupdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__DUPD, oldDupd, dupd, !oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__DUPD, oldDupd, dupd,
+                    !oldDupdESet ) );
     }
 
     /**
@@ -298,8 +303,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldDupdESet = dupdESet;
         dupd = DUPD_EDEFAULT;
         dupdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__DUPD, oldDupd, DUPD_EDEFAULT, oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__DUPD, oldDupd, DUPD_EDEFAULT,
+                    oldDupdESet ) );
     }
 
     /**
@@ -333,8 +339,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         gi = newGi;
         boolean oldGiESet = giESet;
         giESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__GI, oldGi, gi, !oldGiESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__GI, oldGi, gi, !oldGiESet ) );
     }
 
     /**
@@ -348,8 +354,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldGiESet = giESet;
         gi = GI_EDEFAULT;
         giESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__GI, oldGi, GI_EDEFAULT, oldGiESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__GI, oldGi, GI_EDEFAULT,
+                    oldGiESet ) );
     }
 
     /**
@@ -383,8 +390,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         period = newPeriod;
         boolean oldPeriodESet = periodESet;
         periodESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__PERIOD, oldPeriod, period, !oldPeriodESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__PERIOD, oldPeriod, period,
+                    !oldPeriodESet ) );
     }
 
     /**
@@ -398,8 +406,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldPeriodESet = periodESet;
         period = PERIOD_EDEFAULT;
         periodESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__PERIOD, oldPeriod, PERIOD_EDEFAULT, oldPeriodESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__PERIOD, oldPeriod,
+                    PERIOD_EDEFAULT, oldPeriodESet ) );
     }
 
     /**
@@ -433,8 +442,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         qchg = newQchg;
         boolean oldQchgESet = qchgESet;
         qchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__QCHG, oldQchg, qchg, !oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__QCHG, oldQchg, qchg,
+                    !oldQchgESet ) );
     }
 
     /**
@@ -448,8 +458,9 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
         boolean oldQchgESet = qchgESet;
         qchg = QCHG_EDEFAULT;
         qchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRG_OPS__QCHG, oldQchg, QCHG_EDEFAULT, oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRG_OPS__QCHG, oldQchg, QCHG_EDEFAULT,
+                    oldQchgESet ) );
     }
 
     /**
@@ -469,8 +480,8 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public ControlWithTriggerOpt getParentControlWithTriggerOpt() {
-        if (eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT) return null;
-        return (ControlWithTriggerOpt)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT ) return null;
+        return ( ControlWithTriggerOpt ) eInternalContainer();
     }
 
     /**
@@ -478,8 +489,10 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentControlWithTriggerOpt(ControlWithTriggerOpt newParentControlWithTriggerOpt, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentControlWithTriggerOpt, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, msgs);
+    public NotificationChain basicSetParentControlWithTriggerOpt( ControlWithTriggerOpt newParentControlWithTriggerOpt,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentControlWithTriggerOpt,
+                SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, msgs );
         return msgs;
     }
 
@@ -489,20 +502,24 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      * @generated
      */
     @Override
-    public void setParentControlWithTriggerOpt(ControlWithTriggerOpt newParentControlWithTriggerOpt) {
-        if (newParentControlWithTriggerOpt != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT && newParentControlWithTriggerOpt != null)) {
-            if (EcoreUtil.isAncestor(this, newParentControlWithTriggerOpt))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentControlWithTriggerOpt( ControlWithTriggerOpt newParentControlWithTriggerOpt ) {
+        if( newParentControlWithTriggerOpt != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT
+                        && newParentControlWithTriggerOpt != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentControlWithTriggerOpt ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentControlWithTriggerOpt != null)
-                msgs = ((InternalEObject)newParentControlWithTriggerOpt).eInverseAdd(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
-            msgs = basicSetParentControlWithTriggerOpt(newParentControlWithTriggerOpt, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentControlWithTriggerOpt != null )
+                msgs = ( ( InternalEObject ) newParentControlWithTriggerOpt ).eInverseAdd( this,
+                        SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs );
+            msgs = basicSetParentControlWithTriggerOpt( newParentControlWithTriggerOpt, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT, newParentControlWithTriggerOpt, newParentControlWithTriggerOpt));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT,
+                    newParentControlWithTriggerOpt, newParentControlWithTriggerOpt ) );
     }
 
     /**
@@ -512,13 +529,13 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentControlWithTriggerOpt((ControlWithTriggerOpt)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentControlWithTriggerOpt( ( ControlWithTriggerOpt ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -528,11 +545,11 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                return basicSetParentControlWithTriggerOpt(null, msgs);
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            return basicSetParentControlWithTriggerOpt( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -542,11 +559,12 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS, ControlWithTriggerOpt.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CONTROL_WITH_TRIGGER_OPT__TRG_OPS,
+                    ControlWithTriggerOpt.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -556,21 +574,21 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                return getDchg();
-            case SclPackage.TRG_OPS__DUPD:
-                return getDupd();
-            case SclPackage.TRG_OPS__GI:
-                return getGi();
-            case SclPackage.TRG_OPS__PERIOD:
-                return getPeriod();
-            case SclPackage.TRG_OPS__QCHG:
-                return getQchg();
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                return getParentControlWithTriggerOpt();
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__DCHG:
+            return getDchg();
+        case SclPackage.TRG_OPS__DUPD:
+            return getDupd();
+        case SclPackage.TRG_OPS__GI:
+            return getGi();
+        case SclPackage.TRG_OPS__PERIOD:
+            return getPeriod();
+        case SclPackage.TRG_OPS__QCHG:
+            return getQchg();
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            return getParentControlWithTriggerOpt();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -580,27 +598,27 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                setDchg((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__DUPD:
-                setDupd((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__GI:
-                setGi((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__PERIOD:
-                setPeriod((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__QCHG:
-                setQchg((Boolean)newValue);
-                return;
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                setParentControlWithTriggerOpt((ControlWithTriggerOpt)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__DCHG:
+            setDchg( ( Boolean ) newValue );
+            return;
+        case SclPackage.TRG_OPS__DUPD:
+            setDupd( ( Boolean ) newValue );
+            return;
+        case SclPackage.TRG_OPS__GI:
+            setGi( ( Boolean ) newValue );
+            return;
+        case SclPackage.TRG_OPS__PERIOD:
+            setPeriod( ( Boolean ) newValue );
+            return;
+        case SclPackage.TRG_OPS__QCHG:
+            setQchg( ( Boolean ) newValue );
+            return;
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            setParentControlWithTriggerOpt( ( ControlWithTriggerOpt ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -610,27 +628,27 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                unsetDchg();
-                return;
-            case SclPackage.TRG_OPS__DUPD:
-                unsetDupd();
-                return;
-            case SclPackage.TRG_OPS__GI:
-                unsetGi();
-                return;
-            case SclPackage.TRG_OPS__PERIOD:
-                unsetPeriod();
-                return;
-            case SclPackage.TRG_OPS__QCHG:
-                unsetQchg();
-                return;
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                setParentControlWithTriggerOpt((ControlWithTriggerOpt)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__DCHG:
+            unsetDchg();
+            return;
+        case SclPackage.TRG_OPS__DUPD:
+            unsetDupd();
+            return;
+        case SclPackage.TRG_OPS__GI:
+            unsetGi();
+            return;
+        case SclPackage.TRG_OPS__PERIOD:
+            unsetPeriod();
+            return;
+        case SclPackage.TRG_OPS__QCHG:
+            unsetQchg();
+            return;
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            setParentControlWithTriggerOpt( ( ControlWithTriggerOpt ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -640,21 +658,21 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRG_OPS__DCHG:
-                return isSetDchg();
-            case SclPackage.TRG_OPS__DUPD:
-                return isSetDupd();
-            case SclPackage.TRG_OPS__GI:
-                return isSetGi();
-            case SclPackage.TRG_OPS__PERIOD:
-                return isSetPeriod();
-            case SclPackage.TRG_OPS__QCHG:
-                return isSetQchg();
-            case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
-                return getParentControlWithTriggerOpt() != null;
+        switch( featureID ) {
+        case SclPackage.TRG_OPS__DCHG:
+            return isSetDchg();
+        case SclPackage.TRG_OPS__DUPD:
+            return isSetDupd();
+        case SclPackage.TRG_OPS__GI:
+            return isSetGi();
+        case SclPackage.TRG_OPS__PERIOD:
+            return isSetPeriod();
+        case SclPackage.TRG_OPS__QCHG:
+            return isSetQchg();
+        case SclPackage.TRG_OPS__PARENT_CONTROL_WITH_TRIGGER_OPT:
+            return getParentControlWithTriggerOpt() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -664,20 +682,35 @@ public class TrgOpsImpl extends SclObjectImpl implements TrgOps {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (dchg: ");
-        if (dchgESet) result.append(dchg); else result.append("<unset>");
-        result.append(", dupd: ");
-        if (dupdESet) result.append(dupd); else result.append("<unset>");
-        result.append(", gi: ");
-        if (giESet) result.append(gi); else result.append("<unset>");
-        result.append(", period: ");
-        if (periodESet) result.append(period); else result.append("<unset>");
-        result.append(", qchg: ");
-        if (qchgESet) result.append(qchg); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (dchg: " );
+        if( dchgESet )
+            result.append( dchg );
+        else
+            result.append( "<unset>" );
+        result.append( ", dupd: " );
+        if( dupdESet )
+            result.append( dupd );
+        else
+            result.append( "<unset>" );
+        result.append( ", gi: " );
+        if( giESet )
+            result.append( gi );
+        else
+            result.append( "<unset>" );
+        result.append( ", period: " );
+        if( periodESet )
+            result.append( period );
+        else
+            result.append( "<unset>" );
+        result.append( ", qchg: " );
+        if( qchgESet )
+            result.append( qchg );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

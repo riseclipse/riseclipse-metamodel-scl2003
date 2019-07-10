@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -140,8 +142,9 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         cbName = newCbName == null ? CB_NAME_EDEFAULT : newCbName;
         boolean oldCbNameESet = cbNameESet;
         cbNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName, cbName, !oldCbNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName,
+                    cbName, !oldCbNameESet ) );
     }
 
     /**
@@ -155,8 +158,9 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         boolean oldCbNameESet = cbNameESet;
         cbName = CB_NAME_EDEFAULT;
         cbNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName, CB_NAME_EDEFAULT, oldCbNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__CB_NAME, oldCbName,
+                    CB_NAME_EDEFAULT, oldCbNameESet ) );
     }
 
     /**
@@ -190,8 +194,9 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         datSet = newDatSet == null ? DAT_SET_EDEFAULT : newDatSet;
         boolean oldDatSetESet = datSetESet;
         datSetESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet, datSet, !oldDatSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet,
+                    datSet, !oldDatSetESet ) );
     }
 
     /**
@@ -205,8 +210,9 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
         boolean oldDatSetESet = datSetESet;
         datSet = DAT_SET_EDEFAULT;
         datSetESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet, DAT_SET_EDEFAULT, oldDatSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SERVICE_SETTINGS__DAT_SET, oldDatSet,
+                    DAT_SET_EDEFAULT, oldDatSetESet ) );
     }
 
     /**
@@ -226,13 +232,13 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SERVICE_SETTINGS__CB_NAME:
-                return getCbName();
-            case SclPackage.SERVICE_SETTINGS__DAT_SET:
-                return getDatSet();
+        switch( featureID ) {
+        case SclPackage.SERVICE_SETTINGS__CB_NAME:
+            return getCbName();
+        case SclPackage.SERVICE_SETTINGS__DAT_SET:
+            return getDatSet();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -242,15 +248,15 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SERVICE_SETTINGS__CB_NAME:
-                setCbName((ServiceSettingsNoDynEnum)newValue);
-                return;
-            case SclPackage.SERVICE_SETTINGS__DAT_SET:
-                setDatSet((ServiceSettingsEnum)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVICE_SETTINGS__CB_NAME:
+            setCbName( ( ServiceSettingsNoDynEnum ) newValue );
+            return;
+        case SclPackage.SERVICE_SETTINGS__DAT_SET:
+            setDatSet( ( ServiceSettingsEnum ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -260,15 +266,15 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVICE_SETTINGS__CB_NAME:
-                unsetCbName();
-                return;
-            case SclPackage.SERVICE_SETTINGS__DAT_SET:
-                unsetDatSet();
-                return;
+        switch( featureID ) {
+        case SclPackage.SERVICE_SETTINGS__CB_NAME:
+            unsetCbName();
+            return;
+        case SclPackage.SERVICE_SETTINGS__DAT_SET:
+            unsetDatSet();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -278,13 +284,13 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SERVICE_SETTINGS__CB_NAME:
-                return isSetCbName();
-            case SclPackage.SERVICE_SETTINGS__DAT_SET:
-                return isSetDatSet();
+        switch( featureID ) {
+        case SclPackage.SERVICE_SETTINGS__CB_NAME:
+            return isSetCbName();
+        case SclPackage.SERVICE_SETTINGS__DAT_SET:
+            return isSetDatSet();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -294,14 +300,20 @@ public class ServiceSettingsImpl extends SclObjectImpl implements ServiceSetting
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (cbName: ");
-        if (cbNameESet) result.append(cbName); else result.append("<unset>");
-        result.append(", datSet: ");
-        if (datSetESet) result.append(datSet); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (cbName: " );
+        if( cbNameESet )
+            result.append( cbName );
+        else
+            result.append( "<unset>" );
+        result.append( ", datSet: " );
+        if( datSetESet )
+            result.append( datSet );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

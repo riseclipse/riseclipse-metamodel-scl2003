@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public PowerTransformerItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public PowerTransformerItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,11 +58,11 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addTypePropertyDescriptor(object);
+            addTypePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -72,20 +73,20 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_PowerTransformer_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_PowerTransformer_type_feature", "_UI_PowerTransformer_type"),
-                 SclPackage.eINSTANCE.getPowerTransformer_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_PowerTransformer_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_PowerTransformer_type_feature",
+                                "_UI_PowerTransformer_type" ),
+                        SclPackage.eINSTANCE.getPowerTransformer_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,12 +98,12 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getPowerTransformer_EqFunction());
-            childrenFeatures.add(SclPackage.eINSTANCE.getPowerTransformer_SubEquipment());
-            childrenFeatures.add(SclPackage.eINSTANCE.getPowerTransformer_TransformerWinding());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getPowerTransformer_EqFunction() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getPowerTransformer_SubEquipment() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getPowerTransformer_TransformerWinding() );
         }
         return childrenFeatures;
     }
@@ -113,11 +114,11 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -127,8 +128,8 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/PowerTransformer"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/PowerTransformer" ) );
     }
 
     /**
@@ -138,13 +139,11 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((PowerTransformer)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_PowerTransformer_type") :
-            getString("_UI_PowerTransformer_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( PowerTransformer ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_PowerTransformer_type" )
+                : getString( "_UI_PowerTransformer_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -154,20 +153,20 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(PowerTransformer.class)) {
-            case SclPackage.POWER_TRANSFORMER__TYPE:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
-            case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
-            case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( PowerTransformer.class ) ) {
+        case SclPackage.POWER_TRANSFORMER__TYPE:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.POWER_TRANSFORMER__EQ_FUNCTION:
+        case SclPackage.POWER_TRANSFORMER__SUB_EQUIPMENT:
+        case SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -178,23 +177,17 @@ public class PowerTransformerItemProvider extends EquipmentItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getPowerTransformer_EqFunction(),
-                 SclFactory.eINSTANCE.createEqFunction()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPowerTransformer_EqFunction(),
+                SclFactory.eINSTANCE.createEqFunction() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getPowerTransformer_SubEquipment(),
-                 SclFactory.eINSTANCE.createSubEquipment()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPowerTransformer_SubEquipment(),
+                SclFactory.eINSTANCE.createSubEquipment() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getPowerTransformer_TransformerWinding(),
-                 SclFactory.eINSTANCE.createTransformerWinding()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getPowerTransformer_TransformerWinding(),
+                SclFactory.eINSTANCE.createTransformerWinding() ) );
     }
 
 }

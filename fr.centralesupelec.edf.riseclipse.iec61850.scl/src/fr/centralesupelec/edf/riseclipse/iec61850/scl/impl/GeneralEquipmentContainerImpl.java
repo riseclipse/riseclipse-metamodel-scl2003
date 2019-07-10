@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
@@ -58,7 +60,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * @generated
      * @ordered
      */
-    protected EList<Function> function;
+    protected EList< Function > function;
 
     /**
      * The cached value of the '{@link #getGeneralEquipment() <em>General Equipment</em>}' containment reference list.
@@ -68,7 +70,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * @generated
      * @ordered
      */
-    protected EList<GeneralEquipment> generalEquipment;
+    protected EList< GeneralEquipment > generalEquipment;
 
     /**
      * <!-- begin-user-doc -->
@@ -95,9 +97,11 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * @generated
      */
     @Override
-    public EList<Function> getFunction() {
-        if (function == null) {
-            function = new EObjectContainmentWithInverseEList.Unsettable<Function>(Function.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION, SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER);
+    public EList< Function > getFunction() {
+        if( function == null ) {
+            function = new EObjectContainmentWithInverseEList.Unsettable< Function >( Function.class, this,
+                    SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION,
+                    SclPackage.FUNCTION__PARENT_GENERAL_EQUIPMENT_CONTAINER );
         }
         return function;
     }
@@ -109,7 +113,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public void unsetFunction() {
-        if (function != null) ((InternalEList.Unsettable<?>)function).unset();
+        if( function != null ) ( ( InternalEList.Unsettable< ? > ) function ).unset();
     }
 
     /**
@@ -119,7 +123,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public boolean isSetFunction() {
-        return function != null && ((InternalEList.Unsettable<?>)function).isSet();
+        return function != null && ( ( InternalEList.Unsettable< ? > ) function ).isSet();
     }
 
     /**
@@ -128,9 +132,11 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      * @generated
      */
     @Override
-    public EList<GeneralEquipment> getGeneralEquipment() {
-        if (generalEquipment == null) {
-            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable<GeneralEquipment>(GeneralEquipment.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT, SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER);
+    public EList< GeneralEquipment > getGeneralEquipment() {
+        if( generalEquipment == null ) {
+            generalEquipment = new EObjectContainmentWithInverseEList.Unsettable< GeneralEquipment >(
+                    GeneralEquipment.class, this, SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT,
+                    SclPackage.GENERAL_EQUIPMENT__PARENT_GENERAL_EQUIPMENT_CONTAINER );
         }
         return generalEquipment;
     }
@@ -142,7 +148,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public void unsetGeneralEquipment() {
-        if (generalEquipment != null) ((InternalEList.Unsettable<?>)generalEquipment).unset();
+        if( generalEquipment != null ) ( ( InternalEList.Unsettable< ? > ) generalEquipment ).unset();
     }
 
     /**
@@ -152,7 +158,7 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public boolean isSetGeneralEquipment() {
-        return generalEquipment != null && ((InternalEList.Unsettable<?>)generalEquipment).isSet();
+        return generalEquipment != null && ( ( InternalEList.Unsettable< ? > ) generalEquipment ).isSet();
     }
 
     /**
@@ -163,13 +169,15 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getGeneralEquipment()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getFunction() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getGeneralEquipment() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -179,13 +187,13 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                return ((InternalEList<?>)getGeneralEquipment()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            return ( ( InternalEList< ? > ) getFunction() ).basicRemove( otherEnd, msgs );
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            return ( ( InternalEList< ? > ) getGeneralEquipment() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -195,13 +203,13 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                return getFunction();
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                return getGeneralEquipment();
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            return getFunction();
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            return getGeneralEquipment();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -212,17 +220,17 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                getFunction().clear();
-                getFunction().addAll((Collection<? extends Function>)newValue);
-                return;
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                getGeneralEquipment().clear();
-                getGeneralEquipment().addAll((Collection<? extends GeneralEquipment>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            getFunction().clear();
+            getFunction().addAll( ( Collection< ? extends Function > ) newValue );
+            return;
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            getGeneralEquipment().clear();
+            getGeneralEquipment().addAll( ( Collection< ? extends GeneralEquipment > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -232,15 +240,15 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                unsetFunction();
-                return;
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                unsetGeneralEquipment();
-                return;
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            unsetFunction();
+            return;
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            unsetGeneralEquipment();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -250,13 +258,13 @@ public class GeneralEquipmentContainerImpl extends PowerSystemResourceImpl imple
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
-                return isSetFunction();
-            case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
-                return isSetGeneralEquipment();
+        switch( featureID ) {
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__FUNCTION:
+            return isSetFunction();
+        case SclPackage.GENERAL_EQUIPMENT_CONTAINER__GENERAL_EQUIPMENT:
+            return isSetGeneralEquipment();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //GeneralEquipmentContainerImpl

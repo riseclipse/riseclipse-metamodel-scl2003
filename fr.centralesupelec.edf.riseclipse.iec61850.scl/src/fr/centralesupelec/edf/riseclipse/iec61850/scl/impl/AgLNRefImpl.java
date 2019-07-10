@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgLNRef;
@@ -166,13 +167,14 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public void setLnClass(String newLnClass) {
+    public void setLnClass( String newLnClass ) {
         String oldLnClass = lnClass;
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass, lnClass,
+                    !oldLnClassESet ) );
     }
 
     /**
@@ -186,8 +188,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -216,13 +219,14 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public void setLnInst(String newLnInst) {
+    public void setLnInst( String newLnInst ) {
         String oldLnInst = lnInst;
         lnInst = newLnInst;
         boolean oldLnInstESet = lnInstESet;
         lnInstESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_LN_REF__LN_INST, oldLnInst, lnInst, !oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__LN_INST, oldLnInst, lnInst,
+                    !oldLnInstESet ) );
     }
 
     /**
@@ -236,8 +240,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldLnInstESet = lnInstESet;
         lnInst = LN_INST_EDEFAULT;
         lnInstESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_LN_REF__LN_INST, oldLnInst, LN_INST_EDEFAULT, oldLnInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__LN_INST, oldLnInst,
+                    LN_INST_EDEFAULT, oldLnInstESet ) );
     }
 
     /**
@@ -266,13 +271,14 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public void setPrefix(String newPrefix) {
+    public void setPrefix( String newPrefix ) {
         String oldPrefix = prefix;
         prefix = newPrefix;
         boolean oldPrefixESet = prefixESet;
         prefixESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_LN_REF__PREFIX, oldPrefix, prefix, !oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_LN_REF__PREFIX, oldPrefix, prefix,
+                    !oldPrefixESet ) );
     }
 
     /**
@@ -286,8 +292,9 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
         boolean oldPrefixESet = prefixESet;
         prefix = PREFIX_EDEFAULT;
         prefixESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_LN_REF__PREFIX, oldPrefix, PREFIX_EDEFAULT, oldPrefixESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_LN_REF__PREFIX, oldPrefix,
+                    PREFIX_EDEFAULT, oldPrefixESet ) );
     }
 
     /**
@@ -306,16 +313,16 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_LN_REF__LN_CLASS:
-                return getLnClass();
-            case SclPackage.AG_LN_REF__LN_INST:
-                return getLnInst();
-            case SclPackage.AG_LN_REF__PREFIX:
-                return getPrefix();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_LN_REF__LN_CLASS:
+            return getLnClass();
+        case SclPackage.AG_LN_REF__LN_INST:
+            return getLnInst();
+        case SclPackage.AG_LN_REF__PREFIX:
+            return getPrefix();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -324,19 +331,19 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_LN_REF__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.AG_LN_REF__LN_INST:
-                setLnInst((String)newValue);
-                return;
-            case SclPackage.AG_LN_REF__PREFIX:
-                setPrefix((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_LN_REF__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.AG_LN_REF__LN_INST:
+            setLnInst( ( String ) newValue );
+            return;
+        case SclPackage.AG_LN_REF__PREFIX:
+            setPrefix( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -345,19 +352,19 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_LN_REF__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.AG_LN_REF__LN_INST:
-                unsetLnInst();
-                return;
-            case SclPackage.AG_LN_REF__PREFIX:
-                unsetPrefix();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_LN_REF__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.AG_LN_REF__LN_INST:
+            unsetLnInst();
+            return;
+        case SclPackage.AG_LN_REF__PREFIX:
+            unsetPrefix();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -366,16 +373,16 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_LN_REF__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.AG_LN_REF__LN_INST:
-                return isSetLnInst();
-            case SclPackage.AG_LN_REF__PREFIX:
-                return isSetPrefix();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_LN_REF__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.AG_LN_REF__LN_INST:
+            return isSetLnInst();
+        case SclPackage.AG_LN_REF__PREFIX:
+            return isSetPrefix();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -385,16 +392,25 @@ public class AgLNRefImpl extends AgLDRefImpl implements AgLNRef {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnInst: ");
-        if (lnInstESet) result.append(lnInst); else result.append("<unset>");
-        result.append(", prefix: ");
-        if (prefixESet) result.append(prefix); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnInst: " );
+        if( lnInstESet )
+            result.append( lnInst );
+        else
+            result.append( "<unset>" );
+        result.append( ", prefix: " );
+        if( prefixESet )
+            result.append( prefix );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

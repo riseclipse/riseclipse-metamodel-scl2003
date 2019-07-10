@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -82,7 +84,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getSvID()
      * @generated
      */
-    void setSvID(ServiceSettingsEnum value);
+    void setSvID( ServiceSettingsEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSvID <em>Sv ID</em>}' attribute.
@@ -139,7 +141,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getOptFields()
      * @generated
      */
-    void setOptFields(ServiceSettingsEnum value);
+    void setOptFields( ServiceSettingsEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getOptFields <em>Opt Fields</em>}' attribute.
@@ -197,7 +199,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getSmpRateAttribute()
      * @generated
      */
-    void setSmpRateAttribute(ServiceSettingsEnum value);
+    void setSmpRateAttribute( ServiceSettingsEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRateAttribute <em>Smp Rate Attribute</em>}' attribute.
@@ -252,7 +254,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #isSamplesPerSecAttribute()
      * @generated
      */
-    void setSamplesPerSecAttribute(boolean value);
+    void setSamplesPerSecAttribute( boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isSamplesPerSecAttribute <em>Samples Per Sec Attribute</em>}' attribute.
@@ -306,7 +308,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #isPdcTimeStamp()
      * @generated
      */
-    void setPdcTimeStamp(boolean value);
+    void setPdcTimeStamp( boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#isPdcTimeStamp <em>Pdc Time Stamp</em>}' attribute.
@@ -349,7 +351,7 @@ public interface SMVSettings extends ServiceSettings {
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SmpRate> getSmpRate();
+    EList< SmpRate > getSmpRate();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSmpRate <em>Smp Rate</em>}' containment reference list.
@@ -390,7 +392,7 @@ public interface SMVSettings extends ServiceSettings {
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SamplesPerSec> getSamplesPerSec();
+    EList< SamplesPerSec > getSamplesPerSec();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSamplesPerSec <em>Samples Per Sec</em>}' containment reference list.
@@ -431,7 +433,7 @@ public interface SMVSettings extends ServiceSettings {
      * @model opposite="ParentSMVSettings" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SecPerSamples> getSecPerSamples();
+    EList< SecPerSamples > getSecPerSamples();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSecPerSamples <em>Sec Per Samples</em>}' containment reference list.
@@ -476,7 +478,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getParentServices()
      * @generated
      */
-    void setParentServices(Services value);
+    void setParentServices( Services value );
 
     /**
      * Returns the value of the '<em><b>Synch Src Id</b></em>' attribute.
@@ -507,7 +509,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getSynchSrcId()
      * @generated
      */
-    void setSynchSrcId(Boolean value);
+    void setSynchSrcId( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getSynchSrcId <em>Synch Src Id</em>}' attribute.
@@ -564,7 +566,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getNofASDU()
      * @generated
      */
-    void setNofASDU(ServiceSettingsNoDynEnum value);
+    void setNofASDU( ServiceSettingsNoDynEnum value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getNofASDU <em>Nof ASDU</em>}' attribute.
@@ -618,7 +620,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getKdaParticipant()
      * @generated
      */
-    void setKdaParticipant(Boolean value);
+    void setKdaParticipant( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getKdaParticipant <em>Kda Participant</em>}' attribute.
@@ -673,7 +675,7 @@ public interface SMVSettings extends ServiceSettings {
      * @see #getMcSecurity()
      * @generated
      */
-    void setMcSecurity(McSecurity value);
+    void setMcSecurity( McSecurity value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SMVSettings#getMcSecurity <em>Mc Security</em>}' containment reference.

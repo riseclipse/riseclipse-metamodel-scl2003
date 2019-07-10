@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -69,8 +71,8 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public Address getParentAddress() {
-        if (eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS) return null;
-        return (Address)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS ) return null;
+        return ( Address ) eInternalContainer();
     }
 
     /**
@@ -78,8 +80,8 @@ public class PImpl extends PAddrImpl implements P {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAddress(Address newParentAddress, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAddress, SclPackage.P__PARENT_ADDRESS, msgs);
+    public NotificationChain basicSetParentAddress( Address newParentAddress, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAddress, SclPackage.P__PARENT_ADDRESS, msgs );
         return msgs;
     }
 
@@ -89,20 +91,23 @@ public class PImpl extends PAddrImpl implements P {
      * @generated
      */
     @Override
-    public void setParentAddress(Address newParentAddress) {
-        if (newParentAddress != eInternalContainer() || (eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS && newParentAddress != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAddress))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAddress( Address newParentAddress ) {
+        if( newParentAddress != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.P__PARENT_ADDRESS && newParentAddress != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAddress ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAddress != null)
-                msgs = ((InternalEObject)newParentAddress).eInverseAdd(this, SclPackage.ADDRESS__P, Address.class, msgs);
-            msgs = basicSetParentAddress(newParentAddress, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAddress != null )
+                msgs = ( ( InternalEObject ) newParentAddress ).eInverseAdd( this, SclPackage.ADDRESS__P, Address.class,
+                        msgs );
+            msgs = basicSetParentAddress( newParentAddress, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.P__PARENT_ADDRESS, newParentAddress, newParentAddress));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.P__PARENT_ADDRESS, newParentAddress,
+                    newParentAddress ) );
     }
 
     /**
@@ -112,13 +117,13 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAddress((Address)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAddress( ( Address ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -128,11 +133,11 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                return basicSetParentAddress(null, msgs);
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            return basicSetParentAddress( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -142,11 +147,11 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.P__PARENT_ADDRESS:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ADDRESS__P, Address.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ADDRESS__P, Address.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -156,11 +161,11 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                return getParentAddress();
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            return getParentAddress();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -170,12 +175,12 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                setParentAddress((Address)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            setParentAddress( ( Address ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -185,12 +190,12 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                setParentAddress((Address)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            setParentAddress( ( Address ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -200,11 +205,11 @@ public class PImpl extends PAddrImpl implements P {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.P__PARENT_ADDRESS:
-                return getParentAddress() != null;
+        switch( featureID ) {
+        case SclPackage.P__PARENT_ADDRESS:
+            return getParentAddress() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //PImpl

@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 /**
@@ -113,7 +115,7 @@ public interface ProtNs extends SclObject {
      * @see #getParentDA()
      * @generated
      */
-    void setParentDA(DA value);
+    void setParentDA( DA value );
 
     /**
      * Returns the value of the '<em><b>Parent DA Type</b></em>' container reference.
@@ -137,7 +139,7 @@ public interface ProtNs extends SclObject {
      * @see #getParentDAType()
      * @generated
      */
-    void setParentDAType(DAType value);
+    void setParentDAType( DAType value );
 
     /**
      * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -163,6 +165,6 @@ public interface ProtNs extends SclObject {
      * @see #getValue()
      * @generated
      */
-    void setValue(String value);
+    void setValue( String value );
 
 } // ProtNs

@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -135,13 +137,14 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public void setCommonName(String newCommonName) {
+    public void setCommonName( String newCommonName ) {
         String oldCommonName = commonName;
         commonName = newCommonName;
         boolean oldCommonNameESet = commonNameESet;
         commonNameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CERT__COMMON_NAME, oldCommonName, commonName, !oldCommonNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERT__COMMON_NAME, oldCommonName,
+                    commonName, !oldCommonNameESet ) );
     }
 
     /**
@@ -155,8 +158,9 @@ public class CertImpl extends SclObjectImpl implements Cert {
         boolean oldCommonNameESet = commonNameESet;
         commonName = COMMON_NAME_EDEFAULT;
         commonNameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CERT__COMMON_NAME, oldCommonName, COMMON_NAME_EDEFAULT, oldCommonNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERT__COMMON_NAME, oldCommonName,
+                    COMMON_NAME_EDEFAULT, oldCommonNameESet ) );
     }
 
     /**
@@ -185,13 +189,14 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public void setIdHierarchy(String newIdHierarchy) {
+    public void setIdHierarchy( String newIdHierarchy ) {
         String oldIdHierarchy = idHierarchy;
         idHierarchy = newIdHierarchy;
         boolean oldIdHierarchyESet = idHierarchyESet;
         idHierarchyESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy, idHierarchy, !oldIdHierarchyESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy,
+                    idHierarchy, !oldIdHierarchyESet ) );
     }
 
     /**
@@ -205,8 +210,9 @@ public class CertImpl extends SclObjectImpl implements Cert {
         boolean oldIdHierarchyESet = idHierarchyESet;
         idHierarchy = ID_HIERARCHY_EDEFAULT;
         idHierarchyESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy, ID_HIERARCHY_EDEFAULT, oldIdHierarchyESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.CERT__ID_HIERARCHY, oldIdHierarchy,
+                    ID_HIERARCHY_EDEFAULT, oldIdHierarchyESet ) );
     }
 
     /**
@@ -225,14 +231,14 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.CERT__COMMON_NAME:
-                return getCommonName();
-            case SclPackage.CERT__ID_HIERARCHY:
-                return getIdHierarchy();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.CERT__COMMON_NAME:
+            return getCommonName();
+        case SclPackage.CERT__ID_HIERARCHY:
+            return getIdHierarchy();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -241,16 +247,16 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.CERT__COMMON_NAME:
-                setCommonName((String)newValue);
-                return;
-            case SclPackage.CERT__ID_HIERARCHY:
-                setIdHierarchy((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.CERT__COMMON_NAME:
+            setCommonName( ( String ) newValue );
+            return;
+        case SclPackage.CERT__ID_HIERARCHY:
+            setIdHierarchy( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -259,16 +265,16 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.CERT__COMMON_NAME:
-                unsetCommonName();
-                return;
-            case SclPackage.CERT__ID_HIERARCHY:
-                unsetIdHierarchy();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.CERT__COMMON_NAME:
+            unsetCommonName();
+            return;
+        case SclPackage.CERT__ID_HIERARCHY:
+            unsetIdHierarchy();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -277,14 +283,14 @@ public class CertImpl extends SclObjectImpl implements Cert {
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.CERT__COMMON_NAME:
-                return isSetCommonName();
-            case SclPackage.CERT__ID_HIERARCHY:
-                return isSetIdHierarchy();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.CERT__COMMON_NAME:
+            return isSetCommonName();
+        case SclPackage.CERT__ID_HIERARCHY:
+            return isSetIdHierarchy();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -294,14 +300,20 @@ public class CertImpl extends SclObjectImpl implements Cert {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (commonName: ");
-        if (commonNameESet) result.append(commonName); else result.append("<unset>");
-        result.append(", idHierarchy: ");
-        if (idHierarchyESet) result.append(idHierarchy); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (commonName: " );
+        if( commonNameESet )
+            result.append( commonName );
+        else
+            result.append( "<unset>" );
+        result.append( ", idHierarchy: " );
+        if( idHierarchyESet )
+            result.append( idHierarchy );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

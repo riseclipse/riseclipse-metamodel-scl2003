@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts;
@@ -324,8 +326,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         dataSet = newDataSet;
         boolean oldDataSetESet = dataSetESet;
         dataSetESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__DATA_SET, oldDataSet, dataSet, !oldDataSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__DATA_SET, oldDataSet, dataSet,
+                    !oldDataSetESet ) );
     }
 
     /**
@@ -339,8 +342,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldDataSetESet = dataSetESet;
         dataSet = DATA_SET_EDEFAULT;
         dataSetESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__DATA_SET, oldDataSet, DATA_SET_EDEFAULT, oldDataSetESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__DATA_SET, oldDataSet,
+                    DATA_SET_EDEFAULT, oldDataSetESet ) );
     }
 
     /**
@@ -374,8 +378,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         refreshTime = newRefreshTime;
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTimeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__REFRESH_TIME, oldRefreshTime, refreshTime, !oldRefreshTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__REFRESH_TIME, oldRefreshTime,
+                    refreshTime, !oldRefreshTimeESet ) );
     }
 
     /**
@@ -389,8 +394,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldRefreshTimeESet = refreshTimeESet;
         refreshTime = REFRESH_TIME_EDEFAULT;
         refreshTimeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__REFRESH_TIME, oldRefreshTime, REFRESH_TIME_EDEFAULT, oldRefreshTimeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__REFRESH_TIME, oldRefreshTime,
+                    REFRESH_TIME_EDEFAULT, oldRefreshTimeESet ) );
     }
 
     /**
@@ -424,8 +430,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         sampleRate = newSampleRate;
         boolean oldSampleRateESet = sampleRateESet;
         sampleRateESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SAMPLE_RATE, oldSampleRate, sampleRate, !oldSampleRateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__SAMPLE_RATE, oldSampleRate,
+                    sampleRate, !oldSampleRateESet ) );
     }
 
     /**
@@ -439,8 +446,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldSampleRateESet = sampleRateESet;
         sampleRate = SAMPLE_RATE_EDEFAULT;
         sampleRateESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__SAMPLE_RATE, oldSampleRate, SAMPLE_RATE_EDEFAULT, oldSampleRateESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__SAMPLE_RATE, oldSampleRate,
+                    SAMPLE_RATE_EDEFAULT, oldSampleRateESet ) );
     }
 
     /**
@@ -474,8 +482,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         sampleSynchronized = newSampleSynchronized;
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronizedESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED, oldSampleSynchronized, sampleSynchronized, !oldSampleSynchronizedESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED,
+                    oldSampleSynchronized, sampleSynchronized, !oldSampleSynchronizedESet ) );
     }
 
     /**
@@ -489,8 +498,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldSampleSynchronizedESet = sampleSynchronizedESet;
         sampleSynchronized = SAMPLE_SYNCHRONIZED_EDEFAULT;
         sampleSynchronizedESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED, oldSampleSynchronized, SAMPLE_SYNCHRONIZED_EDEFAULT, oldSampleSynchronizedESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED,
+                    oldSampleSynchronized, SAMPLE_SYNCHRONIZED_EDEFAULT, oldSampleSynchronizedESet ) );
     }
 
     /**
@@ -524,8 +534,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         security = newSecurity;
         boolean oldSecurityESet = securityESet;
         securityESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SECURITY, oldSecurity, security, !oldSecurityESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__SECURITY, oldSecurity,
+                    security, !oldSecurityESet ) );
     }
 
     /**
@@ -539,8 +550,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldSecurityESet = securityESet;
         security = SECURITY_EDEFAULT;
         securityESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__SECURITY, oldSecurity, SECURITY_EDEFAULT, oldSecurityESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__SECURITY, oldSecurity,
+                    SECURITY_EDEFAULT, oldSecurityESet ) );
     }
 
     /**
@@ -574,8 +586,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         timestamp = newTimestamp;
         boolean oldTimestampESet = timestampESet;
         timestampESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__TIMESTAMP, oldTimestamp, timestamp, !oldTimestampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__TIMESTAMP, oldTimestamp,
+                    timestamp, !oldTimestampESet ) );
     }
 
     /**
@@ -589,8 +602,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldTimestampESet = timestampESet;
         timestamp = TIMESTAMP_EDEFAULT;
         timestampESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__TIMESTAMP, oldTimestamp, TIMESTAMP_EDEFAULT, oldTimestampESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__TIMESTAMP, oldTimestamp,
+                    TIMESTAMP_EDEFAULT, oldTimestampESet ) );
     }
 
     /**
@@ -619,13 +633,14 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
-    public void setSynchSourceId(Boolean newSynchSourceId) {
+    public void setSynchSourceId( Boolean newSynchSourceId ) {
         Boolean oldSynchSourceId = synchSourceId;
         synchSourceId = newSynchSourceId;
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceIdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID,
+                    oldSynchSourceId, synchSourceId, !oldSynchSourceIdESet ) );
     }
 
     /**
@@ -639,8 +654,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldSynchSourceIdESet = synchSourceIdESet;
         synchSourceId = SYNCH_SOURCE_ID_EDEFAULT;
         synchSourceIdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID, oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__SYNCH_SOURCE_ID,
+                    oldSynchSourceId, SYNCH_SOURCE_ID_EDEFAULT, oldSynchSourceIdESet ) );
     }
 
     /**
@@ -669,13 +685,14 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
-    public void setDataRef(Boolean newDataRef) {
+    public void setDataRef( Boolean newDataRef ) {
         Boolean oldDataRef = dataRef;
         dataRef = newDataRef;
         boolean oldDataRefESet = dataRefESet;
         dataRefESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef, dataRef, !oldDataRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef, dataRef,
+                    !oldDataRefESet ) );
     }
 
     /**
@@ -689,8 +706,9 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
         boolean oldDataRefESet = dataRefESet;
         dataRef = DATA_REF_EDEFAULT;
         dataRefESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef, DATA_REF_EDEFAULT, oldDataRefESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SMV_OPTS__DATA_REF, oldDataRef,
+                    DATA_REF_EDEFAULT, oldDataRefESet ) );
     }
 
     /**
@@ -710,8 +728,8 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public SampledValueControl getParentSampledValueControl() {
-        if (eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL) return null;
-        return (SampledValueControl)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL ) return null;
+        return ( SampledValueControl ) eInternalContainer();
     }
 
     /**
@@ -719,8 +737,10 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentSampledValueControl(SampledValueControl newParentSampledValueControl, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentSampledValueControl, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, msgs);
+    public NotificationChain basicSetParentSampledValueControl( SampledValueControl newParentSampledValueControl,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentSampledValueControl,
+                SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, msgs );
         return msgs;
     }
 
@@ -730,20 +750,24 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
-    public void setParentSampledValueControl(SampledValueControl newParentSampledValueControl) {
-        if (newParentSampledValueControl != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL && newParentSampledValueControl != null)) {
-            if (EcoreUtil.isAncestor(this, newParentSampledValueControl))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentSampledValueControl( SampledValueControl newParentSampledValueControl ) {
+        if( newParentSampledValueControl != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL
+                        && newParentSampledValueControl != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentSampledValueControl ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentSampledValueControl != null)
-                msgs = ((InternalEObject)newParentSampledValueControl).eInverseAdd(this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs);
-            msgs = basicSetParentSampledValueControl(newParentSampledValueControl, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentSampledValueControl != null )
+                msgs = ( ( InternalEObject ) newParentSampledValueControl ).eInverseAdd( this,
+                        SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs );
+            msgs = basicSetParentSampledValueControl( newParentSampledValueControl, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL, newParentSampledValueControl, newParentSampledValueControl));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL,
+                    newParentSampledValueControl, newParentSampledValueControl ) );
     }
 
     /**
@@ -753,13 +777,13 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentSampledValueControl((SampledValueControl)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentSampledValueControl( ( SampledValueControl ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -769,11 +793,11 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                return basicSetParentSampledValueControl(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            return basicSetParentSampledValueControl( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -783,11 +807,12 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS, SampledValueControl.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SAMPLED_VALUE_CONTROL__SMV_OPTS,
+                    SampledValueControl.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -797,27 +822,27 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SMV_OPTS__DATA_SET:
-                return getDataSet();
-            case SclPackage.SMV_OPTS__REFRESH_TIME:
-                return getRefreshTime();
-            case SclPackage.SMV_OPTS__SAMPLE_RATE:
-                return getSampleRate();
-            case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                return getSampleSynchronized();
-            case SclPackage.SMV_OPTS__SECURITY:
-                return getSecurity();
-            case SclPackage.SMV_OPTS__TIMESTAMP:
-                return getTimestamp();
-            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
-                return getSynchSourceId();
-            case SclPackage.SMV_OPTS__DATA_REF:
-                return getDataRef();
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                return getParentSampledValueControl();
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__DATA_SET:
+            return getDataSet();
+        case SclPackage.SMV_OPTS__REFRESH_TIME:
+            return getRefreshTime();
+        case SclPackage.SMV_OPTS__SAMPLE_RATE:
+            return getSampleRate();
+        case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            return getSampleSynchronized();
+        case SclPackage.SMV_OPTS__SECURITY:
+            return getSecurity();
+        case SclPackage.SMV_OPTS__TIMESTAMP:
+            return getTimestamp();
+        case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+            return getSynchSourceId();
+        case SclPackage.SMV_OPTS__DATA_REF:
+            return getDataRef();
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            return getParentSampledValueControl();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -827,36 +852,36 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SMV_OPTS__DATA_SET:
-                setDataSet((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__REFRESH_TIME:
-                setRefreshTime((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__SAMPLE_RATE:
-                setSampleRate((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                setSampleSynchronized((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__SECURITY:
-                setSecurity((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__TIMESTAMP:
-                setTimestamp((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
-                setSynchSourceId((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__DATA_REF:
-                setDataRef((Boolean)newValue);
-                return;
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                setParentSampledValueControl((SampledValueControl)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__DATA_SET:
+            setDataSet( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__REFRESH_TIME:
+            setRefreshTime( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__SAMPLE_RATE:
+            setSampleRate( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            setSampleSynchronized( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__SECURITY:
+            setSecurity( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__TIMESTAMP:
+            setTimestamp( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+            setSynchSourceId( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__DATA_REF:
+            setDataRef( ( Boolean ) newValue );
+            return;
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            setParentSampledValueControl( ( SampledValueControl ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -866,36 +891,36 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SMV_OPTS__DATA_SET:
-                unsetDataSet();
-                return;
-            case SclPackage.SMV_OPTS__REFRESH_TIME:
-                unsetRefreshTime();
-                return;
-            case SclPackage.SMV_OPTS__SAMPLE_RATE:
-                unsetSampleRate();
-                return;
-            case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                unsetSampleSynchronized();
-                return;
-            case SclPackage.SMV_OPTS__SECURITY:
-                unsetSecurity();
-                return;
-            case SclPackage.SMV_OPTS__TIMESTAMP:
-                unsetTimestamp();
-                return;
-            case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
-                unsetSynchSourceId();
-                return;
-            case SclPackage.SMV_OPTS__DATA_REF:
-                unsetDataRef();
-                return;
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                setParentSampledValueControl((SampledValueControl)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__DATA_SET:
+            unsetDataSet();
+            return;
+        case SclPackage.SMV_OPTS__REFRESH_TIME:
+            unsetRefreshTime();
+            return;
+        case SclPackage.SMV_OPTS__SAMPLE_RATE:
+            unsetSampleRate();
+            return;
+        case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            unsetSampleSynchronized();
+            return;
+        case SclPackage.SMV_OPTS__SECURITY:
+            unsetSecurity();
+            return;
+        case SclPackage.SMV_OPTS__TIMESTAMP:
+            unsetTimestamp();
+            return;
+        case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+            unsetSynchSourceId();
+            return;
+        case SclPackage.SMV_OPTS__DATA_REF:
+            unsetDataRef();
+            return;
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            setParentSampledValueControl( ( SampledValueControl ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -905,27 +930,59 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
+        switch( featureID ) {
+        case SclPackage.SMV_OPTS__DATA_SET:
+            return isSetDataSet();
+        case SclPackage.SMV_OPTS__REFRESH_TIME:
+            return isSetRefreshTime();
+        case SclPackage.SMV_OPTS__SAMPLE_RATE:
+            return isSetSampleRate();
+        case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
+            return isSetSampleSynchronized();
+        case SclPackage.SMV_OPTS__SECURITY:
+            return isSetSecurity();
+        case SclPackage.SMV_OPTS__TIMESTAMP:
+            return isSetTimestamp();
+        case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
+            return isSetSynchSourceId();
+        case SclPackage.SMV_OPTS__DATA_REF:
+            return isSetDataRef();
+        case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
+            return getParentSampledValueControl() != null;
+        }
+        return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgSmvOpts.class ) {
+            switch( derivedFeatureID ) {
             case SclPackage.SMV_OPTS__DATA_SET:
-                return isSetDataSet();
+                return SclPackage.AG_SMV_OPTS__DATA_SET;
             case SclPackage.SMV_OPTS__REFRESH_TIME:
-                return isSetRefreshTime();
+                return SclPackage.AG_SMV_OPTS__REFRESH_TIME;
             case SclPackage.SMV_OPTS__SAMPLE_RATE:
-                return isSetSampleRate();
+                return SclPackage.AG_SMV_OPTS__SAMPLE_RATE;
             case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED:
-                return isSetSampleSynchronized();
+                return SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED;
             case SclPackage.SMV_OPTS__SECURITY:
-                return isSetSecurity();
+                return SclPackage.AG_SMV_OPTS__SECURITY;
             case SclPackage.SMV_OPTS__TIMESTAMP:
-                return isSetTimestamp();
+                return SclPackage.AG_SMV_OPTS__TIMESTAMP;
             case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID:
-                return isSetSynchSourceId();
+                return SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID;
             case SclPackage.SMV_OPTS__DATA_REF:
-                return isSetDataRef();
-            case SclPackage.SMV_OPTS__PARENT_SAMPLED_VALUE_CONTROL:
-                return getParentSampledValueControl() != null;
+                return SclPackage.AG_SMV_OPTS__DATA_REF;
+            default:
+                return -1;
+            }
         }
-        return super.eIsSet(featureID);
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
     }
 
     /**
@@ -934,44 +991,30 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == AgSmvOpts.class) {
-            switch (derivedFeatureID) {
-                case SclPackage.SMV_OPTS__DATA_SET: return SclPackage.AG_SMV_OPTS__DATA_SET;
-                case SclPackage.SMV_OPTS__REFRESH_TIME: return SclPackage.AG_SMV_OPTS__REFRESH_TIME;
-                case SclPackage.SMV_OPTS__SAMPLE_RATE: return SclPackage.AG_SMV_OPTS__SAMPLE_RATE;
-                case SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED: return SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED;
-                case SclPackage.SMV_OPTS__SECURITY: return SclPackage.AG_SMV_OPTS__SECURITY;
-                case SclPackage.SMV_OPTS__TIMESTAMP: return SclPackage.AG_SMV_OPTS__TIMESTAMP;
-                case SclPackage.SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID;
-                case SclPackage.SMV_OPTS__DATA_REF: return SclPackage.AG_SMV_OPTS__DATA_REF;
-                default: return -1;
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == AgSmvOpts.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.AG_SMV_OPTS__DATA_SET:
+                return SclPackage.SMV_OPTS__DATA_SET;
+            case SclPackage.AG_SMV_OPTS__REFRESH_TIME:
+                return SclPackage.SMV_OPTS__REFRESH_TIME;
+            case SclPackage.AG_SMV_OPTS__SAMPLE_RATE:
+                return SclPackage.SMV_OPTS__SAMPLE_RATE;
+            case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED:
+                return SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED;
+            case SclPackage.AG_SMV_OPTS__SECURITY:
+                return SclPackage.SMV_OPTS__SECURITY;
+            case SclPackage.AG_SMV_OPTS__TIMESTAMP:
+                return SclPackage.SMV_OPTS__TIMESTAMP;
+            case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID:
+                return SclPackage.SMV_OPTS__SYNCH_SOURCE_ID;
+            case SclPackage.AG_SMV_OPTS__DATA_REF:
+                return SclPackage.SMV_OPTS__DATA_REF;
+            default:
+                return -1;
             }
         }
-        return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == AgSmvOpts.class) {
-            switch (baseFeatureID) {
-                case SclPackage.AG_SMV_OPTS__DATA_SET: return SclPackage.SMV_OPTS__DATA_SET;
-                case SclPackage.AG_SMV_OPTS__REFRESH_TIME: return SclPackage.SMV_OPTS__REFRESH_TIME;
-                case SclPackage.AG_SMV_OPTS__SAMPLE_RATE: return SclPackage.SMV_OPTS__SAMPLE_RATE;
-                case SclPackage.AG_SMV_OPTS__SAMPLE_SYNCHRONIZED: return SclPackage.SMV_OPTS__SAMPLE_SYNCHRONIZED;
-                case SclPackage.AG_SMV_OPTS__SECURITY: return SclPackage.SMV_OPTS__SECURITY;
-                case SclPackage.AG_SMV_OPTS__TIMESTAMP: return SclPackage.SMV_OPTS__TIMESTAMP;
-                case SclPackage.AG_SMV_OPTS__SYNCH_SOURCE_ID: return SclPackage.SMV_OPTS__SYNCH_SOURCE_ID;
-                case SclPackage.AG_SMV_OPTS__DATA_REF: return SclPackage.SMV_OPTS__DATA_REF;
-                default: return -1;
-            }
-        }
-        return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**
@@ -981,26 +1024,50 @@ public class SmvOptsImpl extends SclObjectImpl implements SmvOpts {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (dataSet: ");
-        if (dataSetESet) result.append(dataSet); else result.append("<unset>");
-        result.append(", refreshTime: ");
-        if (refreshTimeESet) result.append(refreshTime); else result.append("<unset>");
-        result.append(", sampleRate: ");
-        if (sampleRateESet) result.append(sampleRate); else result.append("<unset>");
-        result.append(", sampleSynchronized: ");
-        if (sampleSynchronizedESet) result.append(sampleSynchronized); else result.append("<unset>");
-        result.append(", security: ");
-        if (securityESet) result.append(security); else result.append("<unset>");
-        result.append(", timestamp: ");
-        if (timestampESet) result.append(timestamp); else result.append("<unset>");
-        result.append(", synchSourceId: ");
-        if (synchSourceIdESet) result.append(synchSourceId); else result.append("<unset>");
-        result.append(", dataRef: ");
-        if (dataRefESet) result.append(dataRef); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (dataSet: " );
+        if( dataSetESet )
+            result.append( dataSet );
+        else
+            result.append( "<unset>" );
+        result.append( ", refreshTime: " );
+        if( refreshTimeESet )
+            result.append( refreshTime );
+        else
+            result.append( "<unset>" );
+        result.append( ", sampleRate: " );
+        if( sampleRateESet )
+            result.append( sampleRate );
+        else
+            result.append( "<unset>" );
+        result.append( ", sampleSynchronized: " );
+        if( sampleSynchronizedESet )
+            result.append( sampleSynchronized );
+        else
+            result.append( "<unset>" );
+        result.append( ", security: " );
+        if( securityESet )
+            result.append( security );
+        else
+            result.append( "<unset>" );
+        result.append( ", timestamp: " );
+        if( timestampESet )
+            result.append( timestamp );
+        else
+            result.append( "<unset>" );
+        result.append( ", synchSourceId: " );
+        if( synchSourceIdESet )
+            result.append( synchSourceId );
+        else
+            result.append( "<unset>" );
+        result.append( ", dataRef: " );
+        if( dataRefESet )
+            result.append( dataRef );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

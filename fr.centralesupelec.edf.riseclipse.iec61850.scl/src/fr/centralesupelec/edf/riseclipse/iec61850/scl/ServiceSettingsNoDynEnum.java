@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import java.util.Arrays;
@@ -93,7 +95,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
     private static final ServiceSettingsNoDynEnum[] VALUES_ARRAY = new ServiceSettingsNoDynEnum[] {
             CONF,
             FIX,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Service Settings No Dyn Enum</b></em>' enumerators.
@@ -101,7 +103,8 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ServiceSettingsNoDynEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< ServiceSettingsNoDynEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Service Settings No Dyn Enum</b></em>' literal with the specified literal value.
@@ -112,9 +115,9 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -130,9 +133,9 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsNoDynEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -148,9 +151,11 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsNoDynEnum get( int value ) {
-        switch (value) {
-            case CONF_VALUE: return CONF;
-            case FIX_VALUE: return FIX;
+        switch( value ) {
+        case CONF_VALUE:
+            return CONF;
+        case FIX_VALUE:
+            return FIX;
         }
         return null;
     }
@@ -195,7 +200,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -205,7 +210,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -215,7 +220,7 @@ public enum ServiceSettingsNoDynEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

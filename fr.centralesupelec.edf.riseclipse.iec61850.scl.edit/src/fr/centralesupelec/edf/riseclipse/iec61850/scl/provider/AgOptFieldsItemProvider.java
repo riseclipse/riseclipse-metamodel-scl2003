@@ -1,24 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
@@ -48,9 +48,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AgOptFieldsItemProvider 
-    extends ItemProviderAdapter
-    implements
+public class AgOptFieldsItemProvider
+        extends ItemProviderAdapter
+        implements
         IEditingDomainItemProvider,
         IStructuredItemContentProvider,
         ITreeItemContentProvider,
@@ -62,8 +62,8 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    public AgOptFieldsItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AgOptFieldsItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -73,19 +73,19 @@ public class AgOptFieldsItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBufOvflPropertyDescriptor(object);
-            addConfigRefPropertyDescriptor(object);
-            addDataRefPropertyDescriptor(object);
-            addDataSetPropertyDescriptor(object);
-            addEntryIDPropertyDescriptor(object);
-            addReasonCodePropertyDescriptor(object);
-            addSeqNumPropertyDescriptor(object);
-            addTimeStampPropertyDescriptor(object);
-            addSegmentationPropertyDescriptor(object);
+            addBufOvflPropertyDescriptor( object );
+            addConfigRefPropertyDescriptor( object );
+            addDataRefPropertyDescriptor( object );
+            addDataSetPropertyDescriptor( object );
+            addEntryIDPropertyDescriptor( object );
+            addReasonCodePropertyDescriptor( object );
+            addSeqNumPropertyDescriptor( object );
+            addTimeStampPropertyDescriptor( object );
+            addSegmentationPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -96,20 +96,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBufOvflPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_bufOvfl_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_bufOvfl_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_BufOvfl(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBufOvflPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_bufOvfl_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_bufOvfl_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_BufOvfl(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -118,20 +118,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addConfigRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_configRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_configRef_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_ConfigRef(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addConfigRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_configRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_configRef_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_ConfigRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -140,20 +140,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_dataRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataRef_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_DataRef(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_dataRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataRef_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_DataRef(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -162,20 +162,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDataSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_dataSet_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataSet_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_DataSet(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDataSetPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_dataSet_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_dataSet_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_DataSet(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -184,20 +184,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addEntryIDPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_entryID_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_entryID_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_EntryID(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addEntryIDPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_entryID_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_entryID_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_EntryID(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -206,20 +206,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReasonCodePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_reasonCode_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_reasonCode_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_ReasonCode(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addReasonCodePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_reasonCode_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_reasonCode_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_ReasonCode(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -228,20 +228,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSeqNumPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_seqNum_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_seqNum_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_SeqNum(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSeqNumPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_seqNum_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_seqNum_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_SeqNum(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -250,20 +250,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTimeStampPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_timeStamp_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_timeStamp_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_TimeStamp(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTimeStampPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_timeStamp_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_timeStamp_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_TimeStamp(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -272,20 +272,20 @@ public class AgOptFieldsItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSegmentationPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AgOptFields_segmentation_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AgOptFields_segmentation_feature", "_UI_AgOptFields_type"),
-                 SclPackage.eINSTANCE.getAgOptFields_Segmentation(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSegmentationPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AgOptFields_segmentation_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AgOptFields_segmentation_feature",
+                                "_UI_AgOptFields_type" ),
+                        SclPackage.eINSTANCE.getAgOptFields_Segmentation(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -295,14 +295,12 @@ public class AgOptFieldsItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        Boolean labelValue = ((AgOptFields)object).getBufOvfl();
+    public String getText( Object object ) {
+        Boolean labelValue = ( ( AgOptFields ) object ).getBufOvfl();
         String label = labelValue == null ? null : labelValue.toString();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AgOptFields_type") :
-            getString("_UI_AgOptFields_type") + " " + label;
+        return label == null || label.length() == 0 ? getString( "_UI_AgOptFields_type" )
+                : getString( "_UI_AgOptFields_type" ) + " " + label;
     }
-
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -312,23 +310,23 @@ public class AgOptFieldsItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AgOptFields.class)) {
-            case SclPackage.AG_OPT_FIELDS__BUF_OVFL:
-            case SclPackage.AG_OPT_FIELDS__CONFIG_REF:
-            case SclPackage.AG_OPT_FIELDS__DATA_REF:
-            case SclPackage.AG_OPT_FIELDS__DATA_SET:
-            case SclPackage.AG_OPT_FIELDS__ENTRY_ID:
-            case SclPackage.AG_OPT_FIELDS__REASON_CODE:
-            case SclPackage.AG_OPT_FIELDS__SEQ_NUM:
-            case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
-            case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( AgOptFields.class ) ) {
+        case SclPackage.AG_OPT_FIELDS__BUF_OVFL:
+        case SclPackage.AG_OPT_FIELDS__CONFIG_REF:
+        case SclPackage.AG_OPT_FIELDS__DATA_REF:
+        case SclPackage.AG_OPT_FIELDS__DATA_SET:
+        case SclPackage.AG_OPT_FIELDS__ENTRY_ID:
+        case SclPackage.AG_OPT_FIELDS__REASON_CODE:
+        case SclPackage.AG_OPT_FIELDS__SEQ_NUM:
+        case SclPackage.AG_OPT_FIELDS__TIME_STAMP:
+        case SclPackage.AG_OPT_FIELDS__SEGMENTATION:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -339,8 +337,8 @@ public class AgOptFieldsItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
     /**

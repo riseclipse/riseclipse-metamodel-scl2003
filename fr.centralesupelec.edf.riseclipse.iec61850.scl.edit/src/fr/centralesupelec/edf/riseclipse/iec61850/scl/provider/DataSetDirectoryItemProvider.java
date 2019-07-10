@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -33,16 +34,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSetDirectory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataSetDirectoryItemProvider 
-    extends ServiceYesNoItemProvider {
+public class DataSetDirectoryItemProvider
+        extends ServiceYesNoItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public DataSetDirectoryItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public DataSetDirectoryItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -52,9 +53,9 @@ public class DataSetDirectoryItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -67,8 +68,8 @@ public class DataSetDirectoryItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/DataSetDirectory"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/DataSetDirectory" ) );
     }
 
     /**
@@ -78,11 +79,10 @@ public class DataSetDirectoryItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        DataSetDirectory dataSetDirectory = (DataSetDirectory)object;
-        return getString("_UI_DataSetDirectory_type") + " " + dataSetDirectory.getLineNumber();
+    public String getText( Object object ) {
+        DataSetDirectory dataSetDirectory = ( DataSetDirectory ) object;
+        return getString( "_UI_DataSetDirectory_type" ) + " " + dataSetDirectory.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -92,9 +92,8 @@ public class DataSetDirectoryItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -105,8 +104,8 @@ public class DataSetDirectoryItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

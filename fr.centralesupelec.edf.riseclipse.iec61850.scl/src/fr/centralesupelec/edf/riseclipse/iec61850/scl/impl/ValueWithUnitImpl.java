@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.math.BigDecimal;
@@ -159,11 +161,12 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public void setValue(BigDecimal newValue) {
+    public void setValue( BigDecimal newValue ) {
         BigDecimal oldValue = value;
         value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_WITH_UNIT__VALUE, oldValue, value));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__VALUE, oldValue,
+                    value ) );
     }
 
     /**
@@ -182,13 +185,14 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public void setMultiplier(UnitMultiplierEnum newMultiplier) {
+    public void setMultiplier( UnitMultiplierEnum newMultiplier ) {
         UnitMultiplierEnum oldMultiplier = multiplier;
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
         boolean oldMultiplierESet = multiplierESet;
         multiplierESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER, oldMultiplier, multiplier, !oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER,
+                    oldMultiplier, multiplier, !oldMultiplierESet ) );
     }
 
     /**
@@ -202,8 +206,9 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         boolean oldMultiplierESet = multiplierESet;
         multiplier = MULTIPLIER_EDEFAULT;
         multiplierESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER, oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__MULTIPLIER,
+                    oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet ) );
     }
 
     /**
@@ -232,13 +237,14 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public void setUnit(String newUnit) {
+    public void setUnit( String newUnit ) {
         String oldUnit = unit;
         unit = newUnit;
         boolean oldUnitESet = unitESet;
         unitESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit, unit, !oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit, unit,
+                    !oldUnitESet ) );
     }
 
     /**
@@ -252,8 +258,9 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
         boolean oldUnitESet = unitESet;
         unit = UNIT_EDEFAULT;
         unitESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit, UNIT_EDEFAULT, oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.VALUE_WITH_UNIT__UNIT, oldUnit,
+                    UNIT_EDEFAULT, oldUnitESet ) );
     }
 
     /**
@@ -272,16 +279,16 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.VALUE_WITH_UNIT__VALUE:
-                return getValue();
-            case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
-                return getMultiplier();
-            case SclPackage.VALUE_WITH_UNIT__UNIT:
-                return getUnit();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.VALUE_WITH_UNIT__VALUE:
+            return getValue();
+        case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
+            return getMultiplier();
+        case SclPackage.VALUE_WITH_UNIT__UNIT:
+            return getUnit();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -290,19 +297,19 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.VALUE_WITH_UNIT__VALUE:
-                setValue((BigDecimal)newValue);
-                return;
-            case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
-                setMultiplier((UnitMultiplierEnum)newValue);
-                return;
-            case SclPackage.VALUE_WITH_UNIT__UNIT:
-                setUnit((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.VALUE_WITH_UNIT__VALUE:
+            setValue( ( BigDecimal ) newValue );
+            return;
+        case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
+            setMultiplier( ( UnitMultiplierEnum ) newValue );
+            return;
+        case SclPackage.VALUE_WITH_UNIT__UNIT:
+            setUnit( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -311,19 +318,19 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.VALUE_WITH_UNIT__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-            case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
-                unsetMultiplier();
-                return;
-            case SclPackage.VALUE_WITH_UNIT__UNIT:
-                unsetUnit();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.VALUE_WITH_UNIT__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
+        case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
+            unsetMultiplier();
+            return;
+        case SclPackage.VALUE_WITH_UNIT__UNIT:
+            unsetUnit();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -332,16 +339,16 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.VALUE_WITH_UNIT__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-            case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
-                return isSetMultiplier();
-            case SclPackage.VALUE_WITH_UNIT__UNIT:
-                return isSetUnit();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.VALUE_WITH_UNIT__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+        case SclPackage.VALUE_WITH_UNIT__MULTIPLIER:
+            return isSetMultiplier();
+        case SclPackage.VALUE_WITH_UNIT__UNIT:
+            return isSetUnit();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -351,16 +358,22 @@ public class ValueWithUnitImpl extends SclObjectImpl implements ValueWithUnit {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (value: ");
-        result.append(value);
-        result.append(", multiplier: ");
-        if (multiplierESet) result.append(multiplier); else result.append("<unset>");
-        result.append(", unit: ");
-        if (unitESet) result.append(unit); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (value: " );
+        result.append( value );
+        result.append( ", multiplier: " );
+        if( multiplierESet )
+            result.append( multiplier );
+        else
+            result.append( "<unset>" );
+        result.append( ", unit: " );
+        if( unitESet )
+            result.append( unit );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

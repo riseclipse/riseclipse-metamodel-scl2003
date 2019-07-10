@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -119,7 +121,7 @@ public interface Function extends PowerSystemResource {
      * @see #getParentBay()
      * @generated
      */
-    void setParentBay(Bay value);
+    void setParentBay( Bay value );
 
     /**
      * Returns the value of the '<em><b>Conducting Equipment</b></em>' containment reference list.
@@ -139,7 +141,7 @@ public interface Function extends PowerSystemResource {
      * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<ConductingEquipment> getConductingEquipment();
+    EList< ConductingEquipment > getConductingEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getConductingEquipment <em>Conducting Equipment</em>}' containment reference list.
@@ -184,7 +186,7 @@ public interface Function extends PowerSystemResource {
      * @see #getParentGeneralEquipmentContainer()
      * @generated
      */
-    void setParentGeneralEquipmentContainer(GeneralEquipmentContainer value);
+    void setParentGeneralEquipmentContainer( GeneralEquipmentContainer value );
 
     /**
      * Returns the value of the '<em><b>Parent Substation</b></em>' container reference.
@@ -208,7 +210,7 @@ public interface Function extends PowerSystemResource {
      * @see #getParentSubstation()
      * @generated
      */
-    void setParentSubstation(Substation value);
+    void setParentSubstation( Substation value );
 
     /**
      * Returns the value of the '<em><b>Parent Voltage Level</b></em>' container reference.
@@ -232,7 +234,7 @@ public interface Function extends PowerSystemResource {
      * @see #getParentVoltageLevel()
      * @generated
      */
-    void setParentVoltageLevel(VoltageLevel value);
+    void setParentVoltageLevel( VoltageLevel value );
 
     /**
      * Returns the value of the '<em><b>Sub Function</b></em>' containment reference list.
@@ -252,7 +254,7 @@ public interface Function extends PowerSystemResource {
      * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<SubFunction> getSubFunction();
+    EList< SubFunction > getSubFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getSubFunction <em>Sub Function</em>}' containment reference list.
@@ -293,7 +295,7 @@ public interface Function extends PowerSystemResource {
      * @model opposite="ParentFunction" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<GeneralEquipment> getGeneralEquipment();
+    EList< GeneralEquipment > getGeneralEquipment();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Function#getGeneralEquipment <em>General Equipment</em>}' containment reference list.

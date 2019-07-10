@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -204,8 +206,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         delivery = newDelivery == null ? DELIVERY_EDEFAULT : newDelivery;
         boolean oldDeliveryESet = deliveryESet;
         deliveryESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__DELIVERY, oldDelivery, delivery, !oldDeliveryESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SM_VSC__DELIVERY, oldDelivery, delivery,
+                    !oldDeliveryESet ) );
     }
 
     /**
@@ -219,8 +222,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         boolean oldDeliveryESet = deliveryESet;
         delivery = DELIVERY_EDEFAULT;
         deliveryESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__DELIVERY, oldDelivery, DELIVERY_EDEFAULT, oldDeliveryESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SM_VSC__DELIVERY, oldDelivery,
+                    DELIVERY_EDEFAULT, oldDeliveryESet ) );
     }
 
     /**
@@ -254,8 +258,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         deliveryConf = newDeliveryConf;
         boolean oldDeliveryConfESet = deliveryConfESet;
         deliveryConfESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__DELIVERY_CONF, oldDeliveryConf, deliveryConf, !oldDeliveryConfESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SM_VSC__DELIVERY_CONF, oldDeliveryConf,
+                    deliveryConf, !oldDeliveryConfESet ) );
     }
 
     /**
@@ -269,8 +274,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         boolean oldDeliveryConfESet = deliveryConfESet;
         deliveryConf = DELIVERY_CONF_EDEFAULT;
         deliveryConfESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__DELIVERY_CONF, oldDeliveryConf, DELIVERY_CONF_EDEFAULT, oldDeliveryConfESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SM_VSC__DELIVERY_CONF, oldDeliveryConf,
+                    DELIVERY_CONF_EDEFAULT, oldDeliveryConfESet ) );
     }
 
     /**
@@ -290,8 +296,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public Services getParentServices() {
-        if (eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES) return null;
-        return (Services)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES ) return null;
+        return ( Services ) eInternalContainer();
     }
 
     /**
@@ -299,8 +305,8 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentServices(Services newParentServices, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentServices, SclPackage.SM_VSC__PARENT_SERVICES, msgs);
+    public NotificationChain basicSetParentServices( Services newParentServices, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentServices, SclPackage.SM_VSC__PARENT_SERVICES, msgs );
         return msgs;
     }
 
@@ -310,20 +316,23 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @generated
      */
     @Override
-    public void setParentServices(Services newParentServices) {
-        if (newParentServices != eInternalContainer() || (eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES && newParentServices != null)) {
-            if (EcoreUtil.isAncestor(this, newParentServices))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentServices( Services newParentServices ) {
+        if( newParentServices != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SM_VSC__PARENT_SERVICES && newParentServices != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentServices ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentServices != null)
-                msgs = ((InternalEObject)newParentServices).eInverseAdd(this, SclPackage.SERVICES__SM_VSC, Services.class, msgs);
-            msgs = basicSetParentServices(newParentServices, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentServices != null )
+                msgs = ( ( InternalEObject ) newParentServices ).eInverseAdd( this, SclPackage.SERVICES__SM_VSC,
+                        Services.class, msgs );
+            msgs = basicSetParentServices( newParentServices, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__PARENT_SERVICES, newParentServices, newParentServices));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SM_VSC__PARENT_SERVICES,
+                    newParentServices, newParentServices ) );
     }
 
     /**
@@ -342,13 +351,13 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @generated
      */
     @Override
-    public void setSv(Boolean newSv) {
+    public void setSv( Boolean newSv ) {
         Boolean oldSv = sv;
         sv = newSv;
         boolean oldSvESet = svESet;
         svESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__SV, oldSv, sv, !oldSvESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SM_VSC__SV, oldSv, sv, !oldSvESet ) );
     }
 
     /**
@@ -362,8 +371,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         boolean oldSvESet = svESet;
         sv = SV_EDEFAULT;
         svESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__SV, oldSv, SV_EDEFAULT, oldSvESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SM_VSC__SV, oldSv, SV_EDEFAULT,
+                    oldSvESet ) );
     }
 
     /**
@@ -392,13 +402,14 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      * @generated
      */
     @Override
-    public void setRSV(Boolean newRSV) {
+    public void setRSV( Boolean newRSV ) {
         Boolean oldRSV = rSV;
         rSV = newRSV;
         boolean oldRSVESet = rSVESet;
         rSVESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SM_VSC__RSV, oldRSV, rSV, !oldRSVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SM_VSC__RSV, oldRSV, rSV,
+                    !oldRSVESet ) );
     }
 
     /**
@@ -412,8 +423,9 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
         boolean oldRSVESet = rSVESet;
         rSV = RSV_EDEFAULT;
         rSVESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.SM_VSC__RSV, oldRSV, RSV_EDEFAULT, oldRSVESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.SM_VSC__RSV, oldRSV, RSV_EDEFAULT,
+                    oldRSVESet ) );
     }
 
     /**
@@ -433,13 +445,13 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentServices((Services)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentServices( ( Services ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -449,11 +461,11 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                return basicSetParentServices(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            return basicSetParentServices( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -463,11 +475,11 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.SERVICES__SM_VSC, Services.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.SERVICES__SM_VSC, Services.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -477,19 +489,19 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__DELIVERY:
-                return getDelivery();
-            case SclPackage.SM_VSC__DELIVERY_CONF:
-                return getDeliveryConf();
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                return getParentServices();
-            case SclPackage.SM_VSC__SV:
-                return getSv();
-            case SclPackage.SM_VSC__RSV:
-                return getRSV();
+        switch( featureID ) {
+        case SclPackage.SM_VSC__DELIVERY:
+            return getDelivery();
+        case SclPackage.SM_VSC__DELIVERY_CONF:
+            return getDeliveryConf();
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            return getParentServices();
+        case SclPackage.SM_VSC__SV:
+            return getSv();
+        case SclPackage.SM_VSC__RSV:
+            return getRSV();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -499,24 +511,24 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__DELIVERY:
-                setDelivery((SMVDeliveryEnum)newValue);
-                return;
-            case SclPackage.SM_VSC__DELIVERY_CONF:
-                setDeliveryConf((Boolean)newValue);
-                return;
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                setParentServices((Services)newValue);
-                return;
-            case SclPackage.SM_VSC__SV:
-                setSv((Boolean)newValue);
-                return;
-            case SclPackage.SM_VSC__RSV:
-                setRSV((Boolean)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SM_VSC__DELIVERY:
+            setDelivery( ( SMVDeliveryEnum ) newValue );
+            return;
+        case SclPackage.SM_VSC__DELIVERY_CONF:
+            setDeliveryConf( ( Boolean ) newValue );
+            return;
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            setParentServices( ( Services ) newValue );
+            return;
+        case SclPackage.SM_VSC__SV:
+            setSv( ( Boolean ) newValue );
+            return;
+        case SclPackage.SM_VSC__RSV:
+            setRSV( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -526,24 +538,24 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__DELIVERY:
-                unsetDelivery();
-                return;
-            case SclPackage.SM_VSC__DELIVERY_CONF:
-                unsetDeliveryConf();
-                return;
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                setParentServices((Services)null);
-                return;
-            case SclPackage.SM_VSC__SV:
-                unsetSv();
-                return;
-            case SclPackage.SM_VSC__RSV:
-                unsetRSV();
-                return;
+        switch( featureID ) {
+        case SclPackage.SM_VSC__DELIVERY:
+            unsetDelivery();
+            return;
+        case SclPackage.SM_VSC__DELIVERY_CONF:
+            unsetDeliveryConf();
+            return;
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            setParentServices( ( Services ) null );
+            return;
+        case SclPackage.SM_VSC__SV:
+            unsetSv();
+            return;
+        case SclPackage.SM_VSC__RSV:
+            unsetRSV();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -553,19 +565,19 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SM_VSC__DELIVERY:
-                return isSetDelivery();
-            case SclPackage.SM_VSC__DELIVERY_CONF:
-                return isSetDeliveryConf();
-            case SclPackage.SM_VSC__PARENT_SERVICES:
-                return getParentServices() != null;
-            case SclPackage.SM_VSC__SV:
-                return isSetSv();
-            case SclPackage.SM_VSC__RSV:
-                return isSetRSV();
+        switch( featureID ) {
+        case SclPackage.SM_VSC__DELIVERY:
+            return isSetDelivery();
+        case SclPackage.SM_VSC__DELIVERY_CONF:
+            return isSetDeliveryConf();
+        case SclPackage.SM_VSC__PARENT_SERVICES:
+            return getParentServices() != null;
+        case SclPackage.SM_VSC__SV:
+            return isSetSv();
+        case SclPackage.SM_VSC__RSV:
+            return isSetRSV();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -575,18 +587,30 @@ public class SMVscImpl extends ServiceWithMaxImpl implements SMVsc {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (delivery: ");
-        if (deliveryESet) result.append(delivery); else result.append("<unset>");
-        result.append(", deliveryConf: ");
-        if (deliveryConfESet) result.append(deliveryConf); else result.append("<unset>");
-        result.append(", sv: ");
-        if (svESet) result.append(sv); else result.append("<unset>");
-        result.append(", rSV: ");
-        if (rSVESet) result.append(rSV); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (delivery: " );
+        if( deliveryESet )
+            result.append( delivery );
+        else
+            result.append( "<unset>" );
+        result.append( ", deliveryConf: " );
+        if( deliveryConfESet )
+            result.append( deliveryConf );
+        else
+            result.append( "<unset>" );
+        result.append( ", sv: " );
+        if( svESet )
+            result.append( sv );
+        else
+            result.append( "<unset>" );
+        result.append( ", rSV: " );
+        if( rSVESet )
+            result.append( rSV );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

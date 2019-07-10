@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AgDATrgOp;
@@ -167,13 +168,14 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setDchg(Boolean newDchg) {
+    public void setDchg( Boolean newDchg ) {
         Boolean oldDchg = dchg;
         dchg = newDchg;
         boolean oldDchgESet = dchgESet;
         dchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_DA_TRG_OP__DCHG, oldDchg, dchg, !oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_DA_TRG_OP__DCHG, oldDchg, dchg,
+                    !oldDchgESet ) );
     }
 
     /**
@@ -187,8 +189,9 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDchgESet = dchgESet;
         dchg = DCHG_EDEFAULT;
         dchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__DCHG, oldDchg, DCHG_EDEFAULT, oldDchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__DCHG, oldDchg,
+                    DCHG_EDEFAULT, oldDchgESet ) );
     }
 
     /**
@@ -217,13 +220,14 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setDupd(Boolean newDupd) {
+    public void setDupd( Boolean newDupd ) {
         Boolean oldDupd = dupd;
         dupd = newDupd;
         boolean oldDupdESet = dupdESet;
         dupdESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_DA_TRG_OP__DUPD, oldDupd, dupd, !oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_DA_TRG_OP__DUPD, oldDupd, dupd,
+                    !oldDupdESet ) );
     }
 
     /**
@@ -237,8 +241,9 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
         boolean oldDupdESet = dupdESet;
         dupd = DUPD_EDEFAULT;
         dupdESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__DUPD, oldDupd, DUPD_EDEFAULT, oldDupdESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__DUPD, oldDupd,
+                    DUPD_EDEFAULT, oldDupdESet ) );
     }
 
     /**
@@ -267,13 +272,14 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void setQchg(Boolean newQchg) {
+    public void setQchg( Boolean newQchg ) {
         Boolean oldQchg = qchg;
         qchg = newQchg;
         boolean oldQchgESet = qchgESet;
         qchgESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.AG_DA_TRG_OP__QCHG, oldQchg, qchg, !oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.AG_DA_TRG_OP__QCHG, oldQchg, qchg,
+                    !oldQchgESet ) );
     }
 
     /**
@@ -287,8 +293,9 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
         boolean oldQchgESet = qchgESet;
         qchg = QCHG_EDEFAULT;
         qchgESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__QCHG, oldQchg, QCHG_EDEFAULT, oldQchgESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.AG_DA_TRG_OP__QCHG, oldQchg,
+                    QCHG_EDEFAULT, oldQchgESet ) );
     }
 
     /**
@@ -307,16 +314,16 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.AG_DA_TRG_OP__DCHG:
-                return getDchg();
-            case SclPackage.AG_DA_TRG_OP__DUPD:
-                return getDupd();
-            case SclPackage.AG_DA_TRG_OP__QCHG:
-                return getQchg();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.AG_DA_TRG_OP__DCHG:
+            return getDchg();
+        case SclPackage.AG_DA_TRG_OP__DUPD:
+            return getDupd();
+        case SclPackage.AG_DA_TRG_OP__QCHG:
+            return getQchg();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -325,19 +332,19 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.AG_DA_TRG_OP__DCHG:
-                setDchg((Boolean)newValue);
-                return;
-            case SclPackage.AG_DA_TRG_OP__DUPD:
-                setDupd((Boolean)newValue);
-                return;
-            case SclPackage.AG_DA_TRG_OP__QCHG:
-                setQchg((Boolean)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.AG_DA_TRG_OP__DCHG:
+            setDchg( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_DA_TRG_OP__DUPD:
+            setDupd( ( Boolean ) newValue );
+            return;
+        case SclPackage.AG_DA_TRG_OP__QCHG:
+            setQchg( ( Boolean ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -346,19 +353,19 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_DA_TRG_OP__DCHG:
-                unsetDchg();
-                return;
-            case SclPackage.AG_DA_TRG_OP__DUPD:
-                unsetDupd();
-                return;
-            case SclPackage.AG_DA_TRG_OP__QCHG:
-                unsetQchg();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_DA_TRG_OP__DCHG:
+            unsetDchg();
+            return;
+        case SclPackage.AG_DA_TRG_OP__DUPD:
+            unsetDupd();
+            return;
+        case SclPackage.AG_DA_TRG_OP__QCHG:
+            unsetQchg();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -367,16 +374,16 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.AG_DA_TRG_OP__DCHG:
-                return isSetDchg();
-            case SclPackage.AG_DA_TRG_OP__DUPD:
-                return isSetDupd();
-            case SclPackage.AG_DA_TRG_OP__QCHG:
-                return isSetQchg();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.AG_DA_TRG_OP__DCHG:
+            return isSetDchg();
+        case SclPackage.AG_DA_TRG_OP__DUPD:
+            return isSetDupd();
+        case SclPackage.AG_DA_TRG_OP__QCHG:
+            return isSetQchg();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -386,16 +393,25 @@ public abstract class AgDATrgOpImpl extends MinimalEObjectImpl.Container impleme
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (dchg: ");
-        if (dchgESet) result.append(dchg); else result.append("<unset>");
-        result.append(", dupd: ");
-        if (dupdESet) result.append(dupd); else result.append("<unset>");
-        result.append(", qchg: ");
-        if (qchgESet) result.append(qchg); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (dchg: " );
+        if( dchgESet )
+            result.append( dchg );
+        else
+            result.append( "<unset>" );
+        result.append( ", dupd: " );
+        if( dupdESet )
+            result.append( dupd );
+        else
+            result.append( "<unset>" );
+        result.append( ", qchg: " );
+        if( qchgESet )
+            result.append( qchg );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

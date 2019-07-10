@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.ecore.EObject;
@@ -66,7 +67,7 @@ public interface AgAuthentication extends EObject {
      * @see #getCertificate()
      * @generated
      */
-    void setCertificate(Boolean value);
+    void setCertificate( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getCertificate <em>Certificate</em>}' attribute.
@@ -115,7 +116,7 @@ public interface AgAuthentication extends EObject {
      * @see #getNone()
      * @generated
      */
-    void setNone(Boolean value);
+    void setNone( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getNone <em>None</em>}' attribute.
@@ -164,7 +165,7 @@ public interface AgAuthentication extends EObject {
      * @see #getPassword()
      * @generated
      */
-    void setPassword(Boolean value);
+    void setPassword( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getPassword <em>Password</em>}' attribute.
@@ -213,7 +214,7 @@ public interface AgAuthentication extends EObject {
      * @see #getStrong()
      * @generated
      */
-    void setStrong(Boolean value);
+    void setStrong( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getStrong <em>Strong</em>}' attribute.
@@ -262,7 +263,7 @@ public interface AgAuthentication extends EObject {
      * @see #getWeak()
      * @generated
      */
-    void setWeak(Boolean value);
+    void setWeak( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgAuthentication#getWeak <em>Weak</em>}' attribute.

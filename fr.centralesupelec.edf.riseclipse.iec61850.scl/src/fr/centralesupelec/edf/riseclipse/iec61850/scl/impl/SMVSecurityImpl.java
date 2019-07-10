@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -69,8 +71,8 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public AccessPoint getParentAccessPoint() {
-        if (eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT) return null;
-        return (AccessPoint)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT ) return null;
+        return ( AccessPoint ) eInternalContainer();
     }
 
     /**
@@ -78,8 +80,9 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAccessPoint(AccessPoint newParentAccessPoint, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAccessPoint, SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT, msgs);
+    public NotificationChain basicSetParentAccessPoint( AccessPoint newParentAccessPoint, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAccessPoint,
+                SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT, msgs );
         return msgs;
     }
 
@@ -89,20 +92,24 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      * @generated
      */
     @Override
-    public void setParentAccessPoint(AccessPoint newParentAccessPoint) {
-        if (newParentAccessPoint != eInternalContainer() || (eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT && newParentAccessPoint != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAccessPoint))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAccessPoint( AccessPoint newParentAccessPoint ) {
+        if( newParentAccessPoint != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT
+                        && newParentAccessPoint != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAccessPoint ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAccessPoint != null)
-                msgs = ((InternalEObject)newParentAccessPoint).eInverseAdd(this, SclPackage.ACCESS_POINT__SMV_SECURITY, AccessPoint.class, msgs);
-            msgs = basicSetParentAccessPoint(newParentAccessPoint, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAccessPoint != null )
+                msgs = ( ( InternalEObject ) newParentAccessPoint ).eInverseAdd( this,
+                        SclPackage.ACCESS_POINT__SMV_SECURITY, AccessPoint.class, msgs );
+            msgs = basicSetParentAccessPoint( newParentAccessPoint, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT, newParentAccessPoint, newParentAccessPoint));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT,
+                    newParentAccessPoint, newParentAccessPoint ) );
     }
 
     /**
@@ -112,13 +119,13 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAccessPoint((AccessPoint)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAccessPoint( ( AccessPoint ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -128,11 +135,11 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                return basicSetParentAccessPoint(null, msgs);
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            return basicSetParentAccessPoint( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -142,11 +149,12 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ACCESS_POINT__SMV_SECURITY, AccessPoint.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ACCESS_POINT__SMV_SECURITY, AccessPoint.class,
+                    msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -156,11 +164,11 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                return getParentAccessPoint();
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            return getParentAccessPoint();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -170,12 +178,12 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -185,12 +193,12 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                setParentAccessPoint((AccessPoint)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            setParentAccessPoint( ( AccessPoint ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -200,11 +208,11 @@ public class SMVSecurityImpl extends CertificateImpl implements SMVSecurity {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
-                return getParentAccessPoint() != null;
+        switch( featureID ) {
+        case SclPackage.SMV_SECURITY__PARENT_ACCESS_POINT:
+            return getParentAccessPoint() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //SMVSecurityImpl

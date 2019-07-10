@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.ecore.EObject;
@@ -70,7 +71,7 @@ public interface AgOptFields extends EObject {
      * @see #getBufOvfl()
      * @generated
      */
-    void setBufOvfl(Boolean value);
+    void setBufOvfl( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getBufOvfl <em>Buf Ovfl</em>}' attribute.
@@ -119,7 +120,7 @@ public interface AgOptFields extends EObject {
      * @see #getConfigRef()
      * @generated
      */
-    void setConfigRef(Boolean value);
+    void setConfigRef( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getConfigRef <em>Config Ref</em>}' attribute.
@@ -168,7 +169,7 @@ public interface AgOptFields extends EObject {
      * @see #getDataRef()
      * @generated
      */
-    void setDataRef(Boolean value);
+    void setDataRef( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataRef <em>Data Ref</em>}' attribute.
@@ -217,7 +218,7 @@ public interface AgOptFields extends EObject {
      * @see #getDataSet()
      * @generated
      */
-    void setDataSet(Boolean value);
+    void setDataSet( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getDataSet <em>Data Set</em>}' attribute.
@@ -266,7 +267,7 @@ public interface AgOptFields extends EObject {
      * @see #getEntryID()
      * @generated
      */
-    void setEntryID(Boolean value);
+    void setEntryID( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getEntryID <em>Entry ID</em>}' attribute.
@@ -315,7 +316,7 @@ public interface AgOptFields extends EObject {
      * @see #getReasonCode()
      * @generated
      */
-    void setReasonCode(Boolean value);
+    void setReasonCode( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getReasonCode <em>Reason Code</em>}' attribute.
@@ -364,7 +365,7 @@ public interface AgOptFields extends EObject {
      * @see #getSeqNum()
      * @generated
      */
-    void setSeqNum(Boolean value);
+    void setSeqNum( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSeqNum <em>Seq Num</em>}' attribute.
@@ -413,7 +414,7 @@ public interface AgOptFields extends EObject {
      * @see #getTimeStamp()
      * @generated
      */
-    void setTimeStamp(Boolean value);
+    void setTimeStamp( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getTimeStamp <em>Time Stamp</em>}' attribute.
@@ -462,7 +463,7 @@ public interface AgOptFields extends EObject {
      * @see #getSegmentation()
      * @generated
      */
-    void setSegmentation(Boolean value);
+    void setSegmentation( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgOptFields#getSegmentation <em>Segmentation</em>}' attribute.

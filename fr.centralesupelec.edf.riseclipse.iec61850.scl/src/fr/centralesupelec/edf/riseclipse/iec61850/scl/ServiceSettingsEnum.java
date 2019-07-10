@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import java.util.Arrays;
@@ -119,7 +121,7 @@ public enum ServiceSettingsEnum implements Enumerator {
             DYN,
             CONF,
             FIX,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Service Settings Enum</b></em>' enumerators.
@@ -127,7 +129,8 @@ public enum ServiceSettingsEnum implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<ServiceSettingsEnum> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< ServiceSettingsEnum > VALUES = Collections
+            .unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Service Settings Enum</b></em>' literal with the specified literal value.
@@ -138,9 +141,9 @@ public enum ServiceSettingsEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsEnum get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsEnum result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -156,9 +159,9 @@ public enum ServiceSettingsEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsEnum getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             ServiceSettingsEnum result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -174,10 +177,13 @@ public enum ServiceSettingsEnum implements Enumerator {
      * @generated
      */
     public static ServiceSettingsEnum get( int value ) {
-        switch (value) {
-            case DYN_VALUE: return DYN;
-            case CONF_VALUE: return CONF;
-            case FIX_VALUE: return FIX;
+        switch( value ) {
+        case DYN_VALUE:
+            return DYN;
+        case CONF_VALUE:
+            return CONF;
+        case FIX_VALUE:
+            return FIX;
         }
         return null;
     }
@@ -222,7 +228,7 @@ public enum ServiceSettingsEnum implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -232,7 +238,7 @@ public enum ServiceSettingsEnum implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -242,7 +248,7 @@ public enum ServiceSettingsEnum implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

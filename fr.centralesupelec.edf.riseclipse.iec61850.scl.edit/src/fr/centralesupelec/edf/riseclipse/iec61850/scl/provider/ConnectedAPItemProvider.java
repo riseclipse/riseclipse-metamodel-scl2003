@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ConnectedAPItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ConnectedAPItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,14 +58,14 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addApNamePropertyDescriptor(object);
-            addIedNamePropertyDescriptor(object);
-            addRedProtPropertyDescriptor(object);
-            addRefersToAccessPointPropertyDescriptor(object);
+            addApNamePropertyDescriptor( object );
+            addIedNamePropertyDescriptor( object );
+            addRedProtPropertyDescriptor( object );
+            addRefersToAccessPointPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -75,20 +76,20 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addApNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectedAP_apName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectedAP_apName_feature", "_UI_ConnectedAP_type"),
-                 SclPackage.eINSTANCE.getConnectedAP_ApName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addApNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectedAP_apName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectedAP_apName_feature",
+                                "_UI_ConnectedAP_type" ),
+                        SclPackage.eINSTANCE.getConnectedAP_ApName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -97,20 +98,20 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addIedNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectedAP_iedName_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectedAP_iedName_feature", "_UI_ConnectedAP_type"),
-                 SclPackage.eINSTANCE.getConnectedAP_IedName(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addIedNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectedAP_iedName_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectedAP_iedName_feature",
+                                "_UI_ConnectedAP_type" ),
+                        SclPackage.eINSTANCE.getConnectedAP_IedName(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -119,20 +120,20 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRedProtPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectedAP_redProt_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectedAP_redProt_feature", "_UI_ConnectedAP_type"),
-                 SclPackage.eINSTANCE.getConnectedAP_RedProt(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addRedProtPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectedAP_redProt_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectedAP_redProt_feature",
+                                "_UI_ConnectedAP_type" ),
+                        SclPackage.eINSTANCE.getConnectedAP_RedProt(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -141,20 +142,20 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToAccessPointPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_ConnectedAP_RefersToAccessPoint_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_ConnectedAP_RefersToAccessPoint_feature", "_UI_ConnectedAP_type"),
-                 SclPackage.eINSTANCE.getConnectedAP_RefersToAccessPoint(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToAccessPointPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_ConnectedAP_RefersToAccessPoint_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_ConnectedAP_RefersToAccessPoint_feature",
+                                "_UI_ConnectedAP_type" ),
+                        SclPackage.eINSTANCE.getConnectedAP_RefersToAccessPoint(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -166,14 +167,14 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_Address());
-            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_PhysConn());
-            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_GSE());
-            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_SMV());
-            childrenFeatures.add(SclPackage.eINSTANCE.getConnectedAP_ControlBlock());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getConnectedAP_Address() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getConnectedAP_PhysConn() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getConnectedAP_GSE() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getConnectedAP_SMV() );
+            childrenFeatures.add( SclPackage.eINSTANCE.getConnectedAP_ControlBlock() );
         }
         return childrenFeatures;
     }
@@ -184,11 +185,11 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -198,8 +199,8 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectedAP"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/ConnectedAP" ) );
     }
 
     /**
@@ -209,13 +210,11 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((ConnectedAP)object).getApName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_ConnectedAP_type") :
-            getString("_UI_ConnectedAP_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( ConnectedAP ) object ).getApName();
+        return label == null || label.length() == 0 ? getString( "_UI_ConnectedAP_type" )
+                : getString( "_UI_ConnectedAP_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -225,24 +224,24 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(ConnectedAP.class)) {
-            case SclPackage.CONNECTED_AP__AP_NAME:
-            case SclPackage.CONNECTED_AP__IED_NAME:
-            case SclPackage.CONNECTED_AP__RED_PROT:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.CONNECTED_AP__ADDRESS:
-            case SclPackage.CONNECTED_AP__PHYS_CONN:
-            case SclPackage.CONNECTED_AP__GSE:
-            case SclPackage.CONNECTED_AP__SMV:
-            case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( ConnectedAP.class ) ) {
+        case SclPackage.CONNECTED_AP__AP_NAME:
+        case SclPackage.CONNECTED_AP__IED_NAME:
+        case SclPackage.CONNECTED_AP__RED_PROT:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.CONNECTED_AP__ADDRESS:
+        case SclPackage.CONNECTED_AP__PHYS_CONN:
+        case SclPackage.CONNECTED_AP__GSE:
+        case SclPackage.CONNECTED_AP__SMV:
+        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -253,28 +252,20 @@ public class ConnectedAPItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getConnectedAP_Address(),
-                 SclFactory.eINSTANCE.createAddress()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getConnectedAP_Address(),
+                SclFactory.eINSTANCE.createAddress() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getConnectedAP_PhysConn(),
-                 SclFactory.eINSTANCE.createPhysConn()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getConnectedAP_PhysConn(),
+                SclFactory.eINSTANCE.createPhysConn() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getConnectedAP_GSE(),
-                 SclFactory.eINSTANCE.createGSE()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getConnectedAP_GSE(),
+                SclFactory.eINSTANCE.createGSE() ) );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getConnectedAP_SMV(),
-                 SclFactory.eINSTANCE.createSMV()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getConnectedAP_SMV(),
+                SclFactory.eINSTANCE.createSMV() ) );
     }
 
 }

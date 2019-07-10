@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -37,16 +38,16 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SupSubscription;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SupSubscriptionItemProvider 
-    extends SclObjectItemProvider {
+public class SupSubscriptionItemProvider
+        extends SclObjectItemProvider {
     /**
      * This constructs an instance from a factory and a notifier.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    public SupSubscriptionItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public SupSubscriptionItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -56,12 +57,12 @@ public class SupSubscriptionItemProvider
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addMaxGoPropertyDescriptor(object);
-            addMaxSvPropertyDescriptor(object);
+            addMaxGoPropertyDescriptor( object );
+            addMaxSvPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -72,20 +73,20 @@ public class SupSubscriptionItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxGoPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SupSubscription_maxGo_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SupSubscription_maxGo_feature", "_UI_SupSubscription_type"),
-                 SclPackage.eINSTANCE.getSupSubscription_MaxGo(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxGoPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SupSubscription_maxGo_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SupSubscription_maxGo_feature",
+                                "_UI_SupSubscription_type" ),
+                        SclPackage.eINSTANCE.getSupSubscription_MaxGo(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -94,20 +95,20 @@ public class SupSubscriptionItemProvider
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addMaxSvPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_SupSubscription_maxSv_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_SupSubscription_maxSv_feature", "_UI_SupSubscription_type"),
-                 SclPackage.eINSTANCE.getSupSubscription_MaxSv(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addMaxSvPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_SupSubscription_maxSv_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_SupSubscription_maxSv_feature",
+                                "_UI_SupSubscription_type" ),
+                        SclPackage.eINSTANCE.getSupSubscription_MaxSv(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -117,8 +118,8 @@ public class SupSubscriptionItemProvider
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/SupSubscription"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/SupSubscription" ) );
     }
 
     /**
@@ -128,11 +129,10 @@ public class SupSubscriptionItemProvider
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        SupSubscription supSubscription = (SupSubscription)object;
-        return getString("_UI_SupSubscription_type") + " " + supSubscription.getLineNumber();
+    public String getText( Object object ) {
+        SupSubscription supSubscription = ( SupSubscription ) object;
+        return getString( "_UI_SupSubscription_type" ) + " " + supSubscription.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -142,16 +142,16 @@ public class SupSubscriptionItemProvider
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(SupSubscription.class)) {
-            case SclPackage.SUP_SUBSCRIPTION__MAX_GO:
-            case SclPackage.SUP_SUBSCRIPTION__MAX_SV:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( SupSubscription.class ) ) {
+        case SclPackage.SUP_SUBSCRIPTION__MAX_GO:
+        case SclPackage.SUP_SUBSCRIPTION__MAX_SV:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -162,8 +162,8 @@ public class SupSubscriptionItemProvider
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

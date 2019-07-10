@@ -1,29 +1,28 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -220,7 +219,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<Log> log;
+    protected EList< Log > log;
 
     /**
      * The cached value of the '{@link #getDOI() <em>DOI</em>}' containment reference list.
@@ -230,7 +229,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<DOI> doi;
+    protected EList< DOI > doi;
 
     /**
      * The cached value of the '{@link #getDataSet() <em>Data Set</em>}' containment reference list.
@@ -240,7 +239,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<DataSet> dataSet;
+    protected EList< DataSet > dataSet;
 
     /**
      * The cached value of the '{@link #getReferredByClientLN() <em>Referred By Client LN</em>}' reference list.
@@ -250,7 +249,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<ClientLN> referredByClientLN;
+    protected EList< ClientLN > referredByClientLN;
 
     /**
      * The cached value of the '{@link #getReferredByLogControl() <em>Referred By Log Control</em>}' reference list.
@@ -260,7 +259,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<LogControl> referredByLogControl;
+    protected EList< LogControl > referredByLogControl;
 
     /**
      * The cached value of the '{@link #getReferredByAssociation() <em>Referred By Association</em>}' reference list.
@@ -270,7 +269,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<Association> referredByAssociation;
+    protected EList< Association > referredByAssociation;
 
     /**
      * The cached value of the '{@link #getReferredByIEDName() <em>Referred By IED Name</em>}' reference list.
@@ -280,7 +279,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<IEDName> referredByIEDName;
+    protected EList< IEDName > referredByIEDName;
 
     /**
      * The cached value of the '{@link #getReferredByLNode() <em>Referred By LNode</em>}' reference list.
@@ -290,7 +289,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      * @ordered
      */
-    protected EList<LNode> referredByLNode;
+    protected EList< LNode > referredByLNode;
 
     /**
      * The cached value of the '{@link #getControl() <em>Control</em>}' attribute list.
@@ -342,8 +341,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         inst = newInst;
         boolean oldInstESet = instESet;
         instESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__INST, oldInst, inst, !oldInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INST, oldInst, inst,
+                    !oldInstESet ) );
     }
 
     /**
@@ -357,8 +357,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldInstESet = instESet;
         inst = INST_EDEFAULT;
         instESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__INST, oldInst, INST_EDEFAULT, oldInstESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INST, oldInst, INST_EDEFAULT,
+                    oldInstESet ) );
     }
 
     /**
@@ -392,8 +393,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         lnClass = newLnClass;
         boolean oldLnClassESet = lnClassESet;
         lnClassESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__LN_CLASS, oldLnClass, lnClass, !oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LN_CLASS, oldLnClass, lnClass,
+                    !oldLnClassESet ) );
     }
 
     /**
@@ -407,8 +409,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldLnClassESet = lnClassESet;
         lnClass = LN_CLASS_EDEFAULT;
         lnClassESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__LN_CLASS, oldLnClass, LN_CLASS_EDEFAULT, oldLnClassESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LN_CLASS, oldLnClass,
+                    LN_CLASS_EDEFAULT, oldLnClassESet ) );
     }
 
     /**
@@ -442,8 +445,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         lnType = newLnType;
         boolean oldLnTypeESet = lnTypeESet;
         lnTypeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__LN_TYPE, oldLnType, lnType, !oldLnTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__LN_TYPE, oldLnType, lnType,
+                    !oldLnTypeESet ) );
     }
 
     /**
@@ -457,8 +461,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         boolean oldLnTypeESet = lnTypeESet;
         lnType = LN_TYPE_EDEFAULT;
         lnTypeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__LN_TYPE, oldLnType, LN_TYPE_EDEFAULT, oldLnTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__LN_TYPE, oldLnType,
+                    LN_TYPE_EDEFAULT, oldLnTypeESet ) );
     }
 
     /**
@@ -486,14 +491,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetRefersToLNodeType(LNodeType newRefersToLNodeType, NotificationChain msgs) {
+    public NotificationChain basicSetRefersToLNodeType( LNodeType newRefersToLNodeType, NotificationChain msgs ) {
         LNodeType oldRefersToLNodeType = refersToLNodeType;
         refersToLNodeType = newRefersToLNodeType;
         boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
         refersToLNodeTypeESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, newRefersToLNodeType,
+                    !oldRefersToLNodeTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -504,21 +514,24 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public void setRefersToLNodeType(LNodeType newRefersToLNodeType) {
-        if (newRefersToLNodeType != refersToLNodeType) {
+    public void setRefersToLNodeType( LNodeType newRefersToLNodeType ) {
+        if( newRefersToLNodeType != refersToLNodeType ) {
             NotificationChain msgs = null;
-            if (refersToLNodeType != null)
-                msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs);
-            if (newRefersToLNodeType != null)
-                msgs = ((InternalEObject)newRefersToLNodeType).eInverseAdd(this, SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs);
-            msgs = basicSetRefersToLNodeType(newRefersToLNodeType, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( refersToLNodeType != null )
+                msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
+                        SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            if( newRefersToLNodeType != null )
+                msgs = ( ( InternalEObject ) newRefersToLNodeType ).eInverseAdd( this,
+                        SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            msgs = basicSetRefersToLNodeType( newRefersToLNodeType, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, newRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE,
+                        newRefersToLNodeType, newRefersToLNodeType, !oldRefersToLNodeTypeESet ) );
         }
     }
 
@@ -527,14 +540,18 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicUnsetRefersToLNodeType(NotificationChain msgs) {
+    public NotificationChain basicUnsetRefersToLNodeType( NotificationChain msgs ) {
         LNodeType oldRefersToLNodeType = refersToLNodeType;
         refersToLNodeType = null;
         boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
         refersToLNodeTypeESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, null, oldRefersToLNodeTypeESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, oldRefersToLNodeType, null, oldRefersToLNodeTypeESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -546,17 +563,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetRefersToLNodeType() {
-        if (refersToLNodeType != null) {
+        if( refersToLNodeType != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs);
-            msgs = basicUnsetRefersToLNodeType(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
+                    SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            msgs = basicUnsetRefersToLNodeType( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldRefersToLNodeTypeESet = refersToLNodeTypeESet;
             refersToLNodeTypeESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, null, null, oldRefersToLNodeTypeESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE, null,
+                        null, oldRefersToLNodeTypeESet ) );
         }
     }
 
@@ -590,9 +609,13 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         inputs = newInputs;
         boolean oldInputsESet = inputsESet;
         inputsESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__INPUTS, oldInputs, newInputs, !oldInputsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INPUTS,
+                    oldInputs, newInputs, !oldInputsESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -604,20 +627,23 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void setInputs( Inputs newInputs ) {
-        if (newInputs != inputs) {
+        if( newInputs != inputs ) {
             NotificationChain msgs = null;
-            if (inputs != null)
-                msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
-            if (newInputs != null)
-                msgs = ((InternalEObject)newInputs).eInverseAdd(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
-            msgs = basicSetInputs(newInputs, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( inputs != null )
+                msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this, SclPackage.INPUTS__PARENT_ANY_LN,
+                        Inputs.class, msgs );
+            if( newInputs != null )
+                msgs = ( ( InternalEObject ) newInputs ).eInverseAdd( this, SclPackage.INPUTS__PARENT_ANY_LN,
+                        Inputs.class, msgs );
+            msgs = basicSetInputs( newInputs, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldInputsESet = inputsESet;
             inputsESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ANY_LN__INPUTS, newInputs, newInputs, !oldInputsESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ANY_LN__INPUTS, newInputs, newInputs,
+                        !oldInputsESet ) );
         }
     }
 
@@ -631,9 +657,13 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         inputs = null;
         boolean oldInputsESet = inputsESet;
         inputsESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__INPUTS, oldInputs, null, oldInputsESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INPUTS,
+                    oldInputs, null, oldInputsESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -645,17 +675,19 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetInputs() {
-        if (inputs != null) {
+        if( inputs != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)inputs).eInverseRemove(this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class, msgs);
-            msgs = basicUnsetInputs(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this, SclPackage.INPUTS__PARENT_ANY_LN, Inputs.class,
+                    msgs );
+            msgs = basicUnsetInputs( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldInputsESet = inputsESet;
             inputsESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.ANY_LN__INPUTS, null, null, oldInputsESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.ANY_LN__INPUTS, null, null,
+                        oldInputsESet ) );
         }
     }
 
@@ -675,9 +707,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<Log> getLog() {
-        if (log == null) {
-            log = new EObjectContainmentWithInverseEList.Unsettable<Log>(Log.class, this, SclPackage.ANY_LN__LOG, SclPackage.LOG__PARENT_ANY_LN);
+    public EList< Log > getLog() {
+        if( log == null ) {
+            log = new EObjectContainmentWithInverseEList.Unsettable< Log >( Log.class, this, SclPackage.ANY_LN__LOG,
+                    SclPackage.LOG__PARENT_ANY_LN );
         }
         return log;
     }
@@ -689,7 +722,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetLog() {
-        if (log != null) ((InternalEList.Unsettable<?>)log).unset();
+        if( log != null ) ( ( InternalEList.Unsettable< ? > ) log ).unset();
     }
 
     /**
@@ -699,7 +732,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetLog() {
-        return log != null && ((InternalEList.Unsettable<?>)log).isSet();
+        return log != null && ( ( InternalEList.Unsettable< ? > ) log ).isSet();
     }
 
     /**
@@ -708,9 +741,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<DOI> getDOI() {
-        if (doi == null) {
-            doi = new EObjectContainmentWithInverseEList.Unsettable<DOI>(DOI.class, this, SclPackage.ANY_LN__DOI, SclPackage.DOI__PARENT_ANY_LN);
+    public EList< DOI > getDOI() {
+        if( doi == null ) {
+            doi = new EObjectContainmentWithInverseEList.Unsettable< DOI >( DOI.class, this, SclPackage.ANY_LN__DOI,
+                    SclPackage.DOI__PARENT_ANY_LN );
         }
         return doi;
     }
@@ -722,7 +756,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetDOI() {
-        if (doi != null) ((InternalEList.Unsettable<?>)doi).unset();
+        if( doi != null ) ( ( InternalEList.Unsettable< ? > ) doi ).unset();
     }
 
     /**
@@ -732,7 +766,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetDOI() {
-        return doi != null && ((InternalEList.Unsettable<?>)doi).isSet();
+        return doi != null && ( ( InternalEList.Unsettable< ? > ) doi ).isSet();
     }
 
     /**
@@ -741,8 +775,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<ReportControl> getReportControl() {
-        return getControlWithTriggerOpt().list(SclPackage.eINSTANCE.getAnyLN_ReportControl());
+    public EList< ReportControl > getReportControl() {
+        return getControlWithTriggerOpt().list( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
     }
 
     /**
@@ -752,7 +786,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReportControl() {
-        ((FeatureMap.Internal)getControlWithTriggerOpt()).clear(SclPackage.eINSTANCE.getAnyLN_ReportControl());
+        ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).clear( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
     }
 
     /**
@@ -762,7 +796,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReportControl() {
-        return !((FeatureMap.Internal)getControlWithTriggerOpt()).isEmpty(SclPackage.eINSTANCE.getAnyLN_ReportControl());
+        return !( ( FeatureMap.Internal ) getControlWithTriggerOpt() )
+                .isEmpty( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
     }
 
     /**
@@ -771,8 +806,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<LogControl> getLogControl() {
-        return getControlWithTriggerOpt().list(SclPackage.eINSTANCE.getAnyLN_LogControl());
+    public EList< LogControl > getLogControl() {
+        return getControlWithTriggerOpt().list( SclPackage.eINSTANCE.getAnyLN_LogControl() );
     }
 
     /**
@@ -782,7 +817,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetLogControl() {
-        ((FeatureMap.Internal)getControlWithTriggerOpt()).clear(SclPackage.eINSTANCE.getAnyLN_LogControl());
+        ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).clear( SclPackage.eINSTANCE.getAnyLN_LogControl() );
     }
 
     /**
@@ -792,7 +827,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetLogControl() {
-        return !((FeatureMap.Internal)getControlWithTriggerOpt()).isEmpty(SclPackage.eINSTANCE.getAnyLN_LogControl());
+        return !( ( FeatureMap.Internal ) getControlWithTriggerOpt() )
+                .isEmpty( SclPackage.eINSTANCE.getAnyLN_LogControl() );
     }
 
     /**
@@ -801,9 +837,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<DataSet> getDataSet() {
-        if (dataSet == null) {
-            dataSet = new EObjectContainmentWithInverseEList.Unsettable<DataSet>(DataSet.class, this, SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__PARENT_ANY_LN);
+    public EList< DataSet > getDataSet() {
+        if( dataSet == null ) {
+            dataSet = new EObjectContainmentWithInverseEList.Unsettable< DataSet >( DataSet.class, this,
+                    SclPackage.ANY_LN__DATA_SET, SclPackage.DATA_SET__PARENT_ANY_LN );
         }
         return dataSet;
     }
@@ -815,7 +852,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetDataSet() {
-        if (dataSet != null) ((InternalEList.Unsettable<?>)dataSet).unset();
+        if( dataSet != null ) ( ( InternalEList.Unsettable< ? > ) dataSet ).unset();
     }
 
     /**
@@ -825,7 +862,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetDataSet() {
-        return dataSet != null && ((InternalEList.Unsettable<?>)dataSet).isSet();
+        return dataSet != null && ( ( InternalEList.Unsettable< ? > ) dataSet ).isSet();
     }
 
     /**
@@ -834,9 +871,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<ClientLN> getReferredByClientLN() {
-        if (referredByClientLN == null) {
-            referredByClientLN = new EObjectWithInverseEList.Unsettable<ClientLN>(ClientLN.class, this, SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN);
+    public EList< ClientLN > getReferredByClientLN() {
+        if( referredByClientLN == null ) {
+            referredByClientLN = new EObjectWithInverseEList.Unsettable< ClientLN >( ClientLN.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN, SclPackage.CLIENT_LN__REFERS_TO_ANY_LN );
         }
         return referredByClientLN;
     }
@@ -848,7 +886,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByClientLN() {
-        if (referredByClientLN != null) ((InternalEList.Unsettable<?>)referredByClientLN).unset();
+        if( referredByClientLN != null ) ( ( InternalEList.Unsettable< ? > ) referredByClientLN ).unset();
     }
 
     /**
@@ -858,7 +896,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReferredByClientLN() {
-        return referredByClientLN != null && ((InternalEList.Unsettable<?>)referredByClientLN).isSet();
+        return referredByClientLN != null && ( ( InternalEList.Unsettable< ? > ) referredByClientLN ).isSet();
     }
 
     /**
@@ -867,9 +905,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<LogControl> getReferredByLogControl() {
-        if (referredByLogControl == null) {
-            referredByLogControl = new EObjectWithInverseEList.Unsettable<LogControl>(LogControl.class, this, SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN);
+    public EList< LogControl > getReferredByLogControl() {
+        if( referredByLogControl == null ) {
+            referredByLogControl = new EObjectWithInverseEList.Unsettable< LogControl >( LogControl.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL, SclPackage.LOG_CONTROL__REFERS_TO_ANY_LN );
         }
         return referredByLogControl;
     }
@@ -881,7 +920,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByLogControl() {
-        if (referredByLogControl != null) ((InternalEList.Unsettable<?>)referredByLogControl).unset();
+        if( referredByLogControl != null ) ( ( InternalEList.Unsettable< ? > ) referredByLogControl ).unset();
     }
 
     /**
@@ -891,7 +930,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReferredByLogControl() {
-        return referredByLogControl != null && ((InternalEList.Unsettable<?>)referredByLogControl).isSet();
+        return referredByLogControl != null && ( ( InternalEList.Unsettable< ? > ) referredByLogControl ).isSet();
     }
 
     /**
@@ -900,9 +939,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<Association> getReferredByAssociation() {
-        if (referredByAssociation == null) {
-            referredByAssociation = new EObjectWithInverseEList.Unsettable<Association>(Association.class, this, SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN);
+    public EList< Association > getReferredByAssociation() {
+        if( referredByAssociation == null ) {
+            referredByAssociation = new EObjectWithInverseEList.Unsettable< Association >( Association.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION, SclPackage.ASSOCIATION__REFERS_TO_ANY_LN );
         }
         return referredByAssociation;
     }
@@ -914,7 +954,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByAssociation() {
-        if (referredByAssociation != null) ((InternalEList.Unsettable<?>)referredByAssociation).unset();
+        if( referredByAssociation != null ) ( ( InternalEList.Unsettable< ? > ) referredByAssociation ).unset();
     }
 
     /**
@@ -924,7 +964,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReferredByAssociation() {
-        return referredByAssociation != null && ((InternalEList.Unsettable<?>)referredByAssociation).isSet();
+        return referredByAssociation != null && ( ( InternalEList.Unsettable< ? > ) referredByAssociation ).isSet();
     }
 
     /**
@@ -933,9 +973,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<IEDName> getReferredByIEDName() {
-        if (referredByIEDName == null) {
-            referredByIEDName = new EObjectWithInverseEList.Unsettable<IEDName>(IEDName.class, this, SclPackage.ANY_LN__REFERRED_BY_IED_NAME, SclPackage.IED_NAME__REFERS_TO_ANY_LN);
+    public EList< IEDName > getReferredByIEDName() {
+        if( referredByIEDName == null ) {
+            referredByIEDName = new EObjectWithInverseEList.Unsettable< IEDName >( IEDName.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_IED_NAME, SclPackage.IED_NAME__REFERS_TO_ANY_LN );
         }
         return referredByIEDName;
     }
@@ -947,7 +988,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByIEDName() {
-        if (referredByIEDName != null) ((InternalEList.Unsettable<?>)referredByIEDName).unset();
+        if( referredByIEDName != null ) ( ( InternalEList.Unsettable< ? > ) referredByIEDName ).unset();
     }
 
     /**
@@ -957,7 +998,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReferredByIEDName() {
-        return referredByIEDName != null && ((InternalEList.Unsettable<?>)referredByIEDName).isSet();
+        return referredByIEDName != null && ( ( InternalEList.Unsettable< ? > ) referredByIEDName ).isSet();
     }
 
     /**
@@ -966,9 +1007,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public EList<LNode> getReferredByLNode() {
-        if (referredByLNode == null) {
-            referredByLNode = new EObjectWithInverseEList.Unsettable<LNode>(LNode.class, this, SclPackage.ANY_LN__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_ANY_LN);
+    public EList< LNode > getReferredByLNode() {
+        if( referredByLNode == null ) {
+            referredByLNode = new EObjectWithInverseEList.Unsettable< LNode >( LNode.class, this,
+                    SclPackage.ANY_LN__REFERRED_BY_LNODE, SclPackage.LNODE__REFERS_TO_ANY_LN );
         }
         return referredByLNode;
     }
@@ -980,7 +1022,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReferredByLNode() {
-        if (referredByLNode != null) ((InternalEList.Unsettable<?>)referredByLNode).unset();
+        if( referredByLNode != null ) ( ( InternalEList.Unsettable< ? > ) referredByLNode ).unset();
     }
 
     /**
@@ -990,7 +1032,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReferredByLNode() {
-        return referredByLNode != null && ((InternalEList.Unsettable<?>)referredByLNode).isSet();
+        return referredByLNode != null && ( ( InternalEList.Unsettable< ? > ) referredByLNode ).isSet();
     }
 
     /**
@@ -1000,7 +1042,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public FeatureMap getControlWithTriggerOpt() {
-        return (FeatureMap)getControl().<FeatureMap.Entry>list(SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt());
+        return ( FeatureMap ) getControl().< FeatureMap.Entry > list(
+                SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
     }
 
     /**
@@ -1010,7 +1053,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetControlWithTriggerOpt() {
-        ((FeatureMap.Internal)getControl()).clear(SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt());
+        ( ( FeatureMap.Internal ) getControl() ).clear( SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
     }
 
     /**
@@ -1020,7 +1063,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetControlWithTriggerOpt() {
-        return !((FeatureMap.Internal)getControl()).isEmpty(SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt());
+        return !( ( FeatureMap.Internal ) getControl() )
+                .isEmpty( SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
     }
 
     /**
@@ -1030,8 +1074,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public FeatureMap getControl() {
-        if (control == null) {
-            control = new BasicFeatureMap(this, SclPackage.ANY_LN__CONTROL);
+        if( control == null ) {
+            control = new BasicFeatureMap( this, SclPackage.ANY_LN__CONTROL );
         }
         return control;
     }
@@ -1043,7 +1087,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetControl() {
-        if (control != null) ((InternalEList.Unsettable<?>)control).unset();
+        if( control != null ) ( ( InternalEList.Unsettable< ? > ) control ).unset();
     }
 
     /**
@@ -1053,7 +1097,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetControl() {
-        return control != null && ((InternalEList.Unsettable<?>)control).isSet();
+        return control != null && ( ( InternalEList.Unsettable< ? > ) control ).isSet();
     }
 
     /**
@@ -1073,82 +1117,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public String getNamespace() {
-        List< DOI > namPltDoi =
-                getDOI()
-                .stream()
-                .filter( doi -> "NamPlt".equals( doi.getName() ))
-                .collect( Collectors.toList() );
-        if( namPltDoi.size() == 1 ) {
-            List< DAI > lnNsDai =
-                    namPltDoi
-                    .get( 0 )
-                    .getDAI()
-                    .stream()
-                    .filter( dai -> "lnNs".equals(  dai.getName() ))
-                    .collect( Collectors.toList() );
-            if( lnNsDai.size() == 1 ) {
-                if((         lnNsDai.get( 0 ).getVal().size() == 1 )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDai.get( 0 ).getVal().get( 0 ).getValue();
-                }
-                if((         lnNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
-                }
-            }
-            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
-                List< DA > lnNsDa =
-                        namPltDoi
-                        .get( 0 )
-                        .getRefersToDO()
-                        .getRefersToDOType()
-                        .getDA()
-                        .stream()
-                        .filter( da -> "lnNs".equals(  da.getName() ))
-                        .collect( Collectors.toList() );
-                if( lnNsDa.size() == 1 ) {
-                    if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                        return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                    }
-                }
-            }
-        }
-
-        if( getRefersToLNodeType() != null ) {
-            List< DO > namPltDo =
-                    getRefersToLNodeType()
-                    .getDO()
-                    .stream()
-                    .filter( doi -> "NamPlt".equals( doi.getName() ))
-                    .collect( Collectors.toList() );
-            if( namPltDo.size() == 1 ) {
-                if( namPltDo.get( 0 ).getRefersToDOType() != null ) {
-                    List< DA > lnNsDa =
-                            namPltDo
-                            .get( 0 )
-                            .getRefersToDOType()
-                            .getDA()
-                            .stream()
-                            .filter( da -> "lnNs".equals(  da.getName() ))
-                            .collect( Collectors.toList() );
-                    if( lnNsDa.size() == 1 ) {
-                        if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                            return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                        }
-                    }
-                }
-            }
-        }
-
-        if( getParentLDevice() == null ) return null;
-        return getParentLDevice().getNamespace();
+        // TODO: implement this method
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -1159,37 +1130,47 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                if (refersToLNodeType != null)
-                    msgs = ((InternalEObject)refersToLNodeType).eInverseRemove(this, SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs);
-                return basicSetRefersToLNodeType((LNodeType)otherEnd, msgs);
-            case SclPackage.ANY_LN__INPUTS:
-                if (inputs != null)
-                    msgs = ((InternalEObject)inputs).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.ANY_LN__INPUTS, null, msgs);
-                return basicSetInputs((Inputs)otherEnd, msgs);
-            case SclPackage.ANY_LN__LOG:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLog()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__DOI:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDOI()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReportControl()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getLogControl()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__DATA_SET:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDataSet()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByClientLN()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLogControl()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAssociation()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByIEDName()).basicAdd(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByLNode()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            if( refersToLNodeType != null )
+                msgs = ( ( InternalEObject ) refersToLNodeType ).eInverseRemove( this,
+                        SclPackage.LNODE_TYPE__REFERRED_BY_ANY_LN, LNodeType.class, msgs );
+            return basicSetRefersToLNodeType( ( LNodeType ) otherEnd, msgs );
+        case SclPackage.ANY_LN__INPUTS:
+            if( inputs != null )
+                msgs = ( ( InternalEObject ) inputs ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.ANY_LN__INPUTS, null, msgs );
+            return basicSetInputs( ( Inputs ) otherEnd, msgs );
+        case SclPackage.ANY_LN__LOG:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLog() ).basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__DOI:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDOI() ).basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReportControl() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getLogControl() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.ANY_LN__DATA_SET:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDataSet() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByClientLN() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLogControl() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAssociation() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByIEDName() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByLNode() )
+                    .basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1199,37 +1180,37 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                return basicUnsetRefersToLNodeType(msgs);
-            case SclPackage.ANY_LN__INPUTS:
-                return basicUnsetInputs(msgs);
-            case SclPackage.ANY_LN__LOG:
-                return ((InternalEList<?>)getLog()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__DOI:
-                return ((InternalEList<?>)getDOI()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                return ((InternalEList<?>)getReportControl()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                return ((InternalEList<?>)getLogControl()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__DATA_SET:
-                return ((InternalEList<?>)getDataSet()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                return ((InternalEList<?>)getReferredByClientLN()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                return ((InternalEList<?>)getReferredByLogControl()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                return ((InternalEList<?>)getReferredByAssociation()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                return ((InternalEList<?>)getReferredByIEDName()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                return ((InternalEList<?>)getReferredByLNode()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-                return ((InternalEList<?>)getControlWithTriggerOpt()).basicRemove(otherEnd, msgs);
-            case SclPackage.ANY_LN__CONTROL:
-                return ((InternalEList<?>)getControl()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            return basicUnsetRefersToLNodeType( msgs );
+        case SclPackage.ANY_LN__INPUTS:
+            return basicUnsetInputs( msgs );
+        case SclPackage.ANY_LN__LOG:
+            return ( ( InternalEList< ? > ) getLog() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__DOI:
+            return ( ( InternalEList< ? > ) getDOI() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            return ( ( InternalEList< ? > ) getReportControl() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            return ( ( InternalEList< ? > ) getLogControl() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__DATA_SET:
+            return ( ( InternalEList< ? > ) getDataSet() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            return ( ( InternalEList< ? > ) getReferredByClientLN() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            return ( ( InternalEList< ? > ) getReferredByLogControl() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            return ( ( InternalEList< ? > ) getReferredByAssociation() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            return ( ( InternalEList< ? > ) getReferredByIEDName() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            return ( ( InternalEList< ? > ) getReferredByLNode() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
+            return ( ( InternalEList< ? > ) getControlWithTriggerOpt() ).basicRemove( otherEnd, msgs );
+        case SclPackage.ANY_LN__CONTROL:
+            return ( ( InternalEList< ? > ) getControl() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -1239,45 +1220,45 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__INST:
-                return getInst();
-            case SclPackage.ANY_LN__LN_CLASS:
-                return getLnClass();
-            case SclPackage.ANY_LN__LN_TYPE:
-                return getLnType();
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                return getRefersToLNodeType();
-            case SclPackage.ANY_LN__INPUTS:
-                return getInputs();
-            case SclPackage.ANY_LN__LOG:
-                return getLog();
-            case SclPackage.ANY_LN__DOI:
-                return getDOI();
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                return getReportControl();
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                return getLogControl();
-            case SclPackage.ANY_LN__DATA_SET:
-                return getDataSet();
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                return getReferredByClientLN();
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                return getReferredByLogControl();
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                return getReferredByAssociation();
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                return getReferredByIEDName();
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                return getReferredByLNode();
-            case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-                if (coreType) return getControlWithTriggerOpt();
-                return ((FeatureMap.Internal)getControlWithTriggerOpt()).getWrapper();
-            case SclPackage.ANY_LN__CONTROL:
-                if (coreType) return getControl();
-                return ((FeatureMap.Internal)getControl()).getWrapper();
+        switch( featureID ) {
+        case SclPackage.ANY_LN__INST:
+            return getInst();
+        case SclPackage.ANY_LN__LN_CLASS:
+            return getLnClass();
+        case SclPackage.ANY_LN__LN_TYPE:
+            return getLnType();
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            return getRefersToLNodeType();
+        case SclPackage.ANY_LN__INPUTS:
+            return getInputs();
+        case SclPackage.ANY_LN__LOG:
+            return getLog();
+        case SclPackage.ANY_LN__DOI:
+            return getDOI();
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            return getReportControl();
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            return getLogControl();
+        case SclPackage.ANY_LN__DATA_SET:
+            return getDataSet();
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            return getReferredByClientLN();
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            return getReferredByLogControl();
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            return getReferredByAssociation();
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            return getReferredByIEDName();
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            return getReferredByLNode();
+        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
+            if( coreType ) return getControlWithTriggerOpt();
+            return ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).getWrapper();
+        case SclPackage.ANY_LN__CONTROL:
+            if( coreType ) return getControl();
+            return ( ( FeatureMap.Internal ) getControl() ).getWrapper();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -1288,70 +1269,70 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__INST:
-                setInst((String)newValue);
-                return;
-            case SclPackage.ANY_LN__LN_CLASS:
-                setLnClass((String)newValue);
-                return;
-            case SclPackage.ANY_LN__LN_TYPE:
-                setLnType((String)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                setRefersToLNodeType((LNodeType)newValue);
-                return;
-            case SclPackage.ANY_LN__INPUTS:
-                setInputs((Inputs)newValue);
-                return;
-            case SclPackage.ANY_LN__LOG:
-                getLog().clear();
-                getLog().addAll((Collection<? extends Log>)newValue);
-                return;
-            case SclPackage.ANY_LN__DOI:
-                getDOI().clear();
-                getDOI().addAll((Collection<? extends DOI>)newValue);
-                return;
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                getReportControl().clear();
-                getReportControl().addAll((Collection<? extends ReportControl>)newValue);
-                return;
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                getLogControl().clear();
-                getLogControl().addAll((Collection<? extends LogControl>)newValue);
-                return;
-            case SclPackage.ANY_LN__DATA_SET:
-                getDataSet().clear();
-                getDataSet().addAll((Collection<? extends DataSet>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                getReferredByClientLN().clear();
-                getReferredByClientLN().addAll((Collection<? extends ClientLN>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                getReferredByLogControl().clear();
-                getReferredByLogControl().addAll((Collection<? extends LogControl>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                getReferredByAssociation().clear();
-                getReferredByAssociation().addAll((Collection<? extends Association>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                getReferredByIEDName().clear();
-                getReferredByIEDName().addAll((Collection<? extends IEDName>)newValue);
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                getReferredByLNode().clear();
-                getReferredByLNode().addAll((Collection<? extends LNode>)newValue);
-                return;
-            case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-                ((FeatureMap.Internal)getControlWithTriggerOpt()).set(newValue);
-                return;
-            case SclPackage.ANY_LN__CONTROL:
-                ((FeatureMap.Internal)getControl()).set(newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ANY_LN__INST:
+            setInst( ( String ) newValue );
+            return;
+        case SclPackage.ANY_LN__LN_CLASS:
+            setLnClass( ( String ) newValue );
+            return;
+        case SclPackage.ANY_LN__LN_TYPE:
+            setLnType( ( String ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            setRefersToLNodeType( ( LNodeType ) newValue );
+            return;
+        case SclPackage.ANY_LN__INPUTS:
+            setInputs( ( Inputs ) newValue );
+            return;
+        case SclPackage.ANY_LN__LOG:
+            getLog().clear();
+            getLog().addAll( ( Collection< ? extends Log > ) newValue );
+            return;
+        case SclPackage.ANY_LN__DOI:
+            getDOI().clear();
+            getDOI().addAll( ( Collection< ? extends DOI > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            getReportControl().clear();
+            getReportControl().addAll( ( Collection< ? extends ReportControl > ) newValue );
+            return;
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            getLogControl().clear();
+            getLogControl().addAll( ( Collection< ? extends LogControl > ) newValue );
+            return;
+        case SclPackage.ANY_LN__DATA_SET:
+            getDataSet().clear();
+            getDataSet().addAll( ( Collection< ? extends DataSet > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            getReferredByClientLN().clear();
+            getReferredByClientLN().addAll( ( Collection< ? extends ClientLN > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            getReferredByLogControl().clear();
+            getReferredByLogControl().addAll( ( Collection< ? extends LogControl > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            getReferredByAssociation().clear();
+            getReferredByAssociation().addAll( ( Collection< ? extends Association > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            getReferredByIEDName().clear();
+            getReferredByIEDName().addAll( ( Collection< ? extends IEDName > ) newValue );
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            getReferredByLNode().clear();
+            getReferredByLNode().addAll( ( Collection< ? extends LNode > ) newValue );
+            return;
+        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
+            ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).set( newValue );
+            return;
+        case SclPackage.ANY_LN__CONTROL:
+            ( ( FeatureMap.Internal ) getControl() ).set( newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -1361,60 +1342,60 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__INST:
-                unsetInst();
-                return;
-            case SclPackage.ANY_LN__LN_CLASS:
-                unsetLnClass();
-                return;
-            case SclPackage.ANY_LN__LN_TYPE:
-                unsetLnType();
-                return;
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                unsetRefersToLNodeType();
-                return;
-            case SclPackage.ANY_LN__INPUTS:
-                unsetInputs();
-                return;
-            case SclPackage.ANY_LN__LOG:
-                unsetLog();
-                return;
-            case SclPackage.ANY_LN__DOI:
-                unsetDOI();
-                return;
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                unsetReportControl();
-                return;
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                unsetLogControl();
-                return;
-            case SclPackage.ANY_LN__DATA_SET:
-                unsetDataSet();
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                unsetReferredByClientLN();
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                unsetReferredByLogControl();
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                unsetReferredByAssociation();
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                unsetReferredByIEDName();
-                return;
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                unsetReferredByLNode();
-                return;
-            case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-                unsetControlWithTriggerOpt();
-                return;
-            case SclPackage.ANY_LN__CONTROL:
-                unsetControl();
-                return;
+        switch( featureID ) {
+        case SclPackage.ANY_LN__INST:
+            unsetInst();
+            return;
+        case SclPackage.ANY_LN__LN_CLASS:
+            unsetLnClass();
+            return;
+        case SclPackage.ANY_LN__LN_TYPE:
+            unsetLnType();
+            return;
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            unsetRefersToLNodeType();
+            return;
+        case SclPackage.ANY_LN__INPUTS:
+            unsetInputs();
+            return;
+        case SclPackage.ANY_LN__LOG:
+            unsetLog();
+            return;
+        case SclPackage.ANY_LN__DOI:
+            unsetDOI();
+            return;
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            unsetReportControl();
+            return;
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            unsetLogControl();
+            return;
+        case SclPackage.ANY_LN__DATA_SET:
+            unsetDataSet();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            unsetReferredByClientLN();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            unsetReferredByLogControl();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            unsetReferredByAssociation();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            unsetReferredByIEDName();
+            return;
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            unsetReferredByLNode();
+            return;
+        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
+            unsetControlWithTriggerOpt();
+            return;
+        case SclPackage.ANY_LN__CONTROL:
+            unsetControl();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -1424,43 +1405,43 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ANY_LN__INST:
-                return isSetInst();
-            case SclPackage.ANY_LN__LN_CLASS:
-                return isSetLnClass();
-            case SclPackage.ANY_LN__LN_TYPE:
-                return isSetLnType();
-            case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
-                return isSetRefersToLNodeType();
-            case SclPackage.ANY_LN__INPUTS:
-                return isSetInputs();
-            case SclPackage.ANY_LN__LOG:
-                return isSetLog();
-            case SclPackage.ANY_LN__DOI:
-                return isSetDOI();
-            case SclPackage.ANY_LN__REPORT_CONTROL:
-                return isSetReportControl();
-            case SclPackage.ANY_LN__LOG_CONTROL:
-                return isSetLogControl();
-            case SclPackage.ANY_LN__DATA_SET:
-                return isSetDataSet();
-            case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
-                return isSetReferredByClientLN();
-            case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
-                return isSetReferredByLogControl();
-            case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
-                return isSetReferredByAssociation();
-            case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
-                return isSetReferredByIEDName();
-            case SclPackage.ANY_LN__REFERRED_BY_LNODE:
-                return isSetReferredByLNode();
-            case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-                return isSetControlWithTriggerOpt();
-            case SclPackage.ANY_LN__CONTROL:
-                return isSetControl();
+        switch( featureID ) {
+        case SclPackage.ANY_LN__INST:
+            return isSetInst();
+        case SclPackage.ANY_LN__LN_CLASS:
+            return isSetLnClass();
+        case SclPackage.ANY_LN__LN_TYPE:
+            return isSetLnType();
+        case SclPackage.ANY_LN__REFERS_TO_LNODE_TYPE:
+            return isSetRefersToLNodeType();
+        case SclPackage.ANY_LN__INPUTS:
+            return isSetInputs();
+        case SclPackage.ANY_LN__LOG:
+            return isSetLog();
+        case SclPackage.ANY_LN__DOI:
+            return isSetDOI();
+        case SclPackage.ANY_LN__REPORT_CONTROL:
+            return isSetReportControl();
+        case SclPackage.ANY_LN__LOG_CONTROL:
+            return isSetLogControl();
+        case SclPackage.ANY_LN__DATA_SET:
+            return isSetDataSet();
+        case SclPackage.ANY_LN__REFERRED_BY_CLIENT_LN:
+            return isSetReferredByClientLN();
+        case SclPackage.ANY_LN__REFERRED_BY_LOG_CONTROL:
+            return isSetReferredByLogControl();
+        case SclPackage.ANY_LN__REFERRED_BY_ASSOCIATION:
+            return isSetReferredByAssociation();
+        case SclPackage.ANY_LN__REFERRED_BY_IED_NAME:
+            return isSetReferredByIEDName();
+        case SclPackage.ANY_LN__REFERRED_BY_LNODE:
+            return isSetReferredByLNode();
+        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
+            return isSetControlWithTriggerOpt();
+        case SclPackage.ANY_LN__CONTROL:
+            return isSetControl();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -1469,14 +1450,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @generated
      */
     @Override
-    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-        switch (operationID) {
-            case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
-                return getParentLDevice();
-            case SclPackage.ANY_LN___GET_NAMESPACE:
-                return getNamespace();
+    public Object eInvoke( int operationID, EList< ? > arguments ) throws InvocationTargetException {
+        switch( operationID ) {
+        case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
+            return getParentLDevice();
+        case SclPackage.ANY_LN___GET_NAMESPACE:
+            return getNamespace();
         }
-        return super.eInvoke(operationID, arguments);
+        return super.eInvoke( operationID, arguments );
     }
 
     /**
@@ -1486,18 +1467,27 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (inst: ");
-        if (instESet) result.append(inst); else result.append("<unset>");
-        result.append(", lnClass: ");
-        if (lnClassESet) result.append(lnClass); else result.append("<unset>");
-        result.append(", lnType: ");
-        if (lnTypeESet) result.append(lnType); else result.append("<unset>");
-        result.append(", Control: ");
-        result.append(control);
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (inst: " );
+        if( instESet )
+            result.append( inst );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnClass: " );
+        if( lnClassESet )
+            result.append( lnClass );
+        else
+            result.append( "<unset>" );
+        result.append( ", lnType: " );
+        if( lnTypeESet )
+            result.append( lnType );
+        else
+            result.append( "<unset>" );
+        result.append( ", Control: " );
+        result.append( control );
+        result.append( ')' );
         return result.toString();
     }
 
@@ -1505,14 +1495,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // see Issue #13
         super.doBuildExplicitLinks( console );
-        
+
         // lnType  The instantiable type definition of this logical node, reference to a LNodeType definition
         // lnClass The LN class according to IEC 61850-7-x
         // inst    The LN instance number identifying this LN – an unsigned integer
 
         String messagePrefix = "[SCL links] while resolving link from AnyLN on line " + getLineNumber() + ": ";
 
-        if(( getLnType() == null ) || getLnType().isEmpty() ) {
+        if( ( getLnType() == null ) || getLnType().isEmpty() ) {
             console.warning( messagePrefix, "lnType is missing" );
             return;
         }
@@ -1522,23 +1512,24 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return;
         }
 
-        List< LNodeType > res =
-                dtt
+        List< LNodeType > res = dtt
                 .getLNodeType()
                 .stream()
-                .filter( lnt -> getLnType().equals( lnt.getId() ))
+                .filter( lnt -> getLnType().equals( lnt.getId() ) )
                 .collect( Collectors.toList() );
-        
+
         String mess = "LNodeType( id = " + getLnType() + " )";
         if( res.size() != 1 ) {
             SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
             return;
         }
         setRefersToLNodeType( res.get( 0 ) );
-        console.info( "[SCL links] AnyLN on line ", getLineNumber(), " refers to ", mess, " on line ", getRefersToLNodeType().getLineNumber() );
-        
-        if(( getLnClass() != null ) && ! getLnClass().equals( getRefersToLNodeType().getLnClass() )) {
-            console.warning( messagePrefix, "lnClass in ", mess, "(", getRefersToLNodeType().getLnClass(), ") is not ", getLnClass() );
+        console.info( "[SCL links] AnyLN on line ", getLineNumber(), " refers to ", mess, " on line ",
+                getRefersToLNodeType().getLineNumber() );
+
+        if( ( getLnClass() != null ) && !getLnClass().equals( getRefersToLNodeType().getLnClass() ) ) {
+            console.warning( messagePrefix, "lnClass in ", mess, "(", getRefersToLNodeType().getLnClass(), ") is not ",
+                    getLnClass() );
         }
     }
 

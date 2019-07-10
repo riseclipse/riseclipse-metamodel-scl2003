@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
@@ -122,7 +124,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      * @ordered
      */
-    protected EList<DA> da;
+    protected EList< DA > da;
 
     /**
      * The cached value of the '{@link #getReferredByAbstractDataObject() <em>Referred By Abstract Data Object</em>}' reference list.
@@ -132,7 +134,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      * @ordered
      */
-    protected EList<AbstractDataObject> referredByAbstractDataObject;
+    protected EList< AbstractDataObject > referredByAbstractDataObject;
 
     /**
      * The cached value of the '{@link #getSDO() <em>SDO</em>}' containment reference list.
@@ -142,7 +144,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      * @ordered
      */
-    protected EList<SDO> sdo;
+    protected EList< SDO > sdo;
 
     /**
      * <!-- begin-user-doc -->
@@ -184,8 +186,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         cdc = newCdc;
         boolean oldCdcESet = cdcESet;
         cdcESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO_TYPE__CDC, oldCdc, cdc, !oldCdcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_TYPE__CDC, oldCdc, cdc,
+                    !oldCdcESet ) );
     }
 
     /**
@@ -199,8 +202,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         boolean oldCdcESet = cdcESet;
         cdc = CDC_EDEFAULT;
         cdcESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO_TYPE__CDC, oldCdc, CDC_EDEFAULT, oldCdcESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_TYPE__CDC, oldCdc, CDC_EDEFAULT,
+                    oldCdcESet ) );
     }
 
     /**
@@ -234,8 +238,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         iedType = newIedType;
         boolean oldIedTypeESet = iedTypeESet;
         iedTypeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO_TYPE__IED_TYPE, oldIedType, iedType, !oldIedTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_TYPE__IED_TYPE, oldIedType, iedType,
+                    !oldIedTypeESet ) );
     }
 
     /**
@@ -249,8 +254,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
         boolean oldIedTypeESet = iedTypeESet;
         iedType = IED_TYPE_EDEFAULT;
         iedTypeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DO_TYPE__IED_TYPE, oldIedType, IED_TYPE_EDEFAULT, oldIedTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DO_TYPE__IED_TYPE, oldIedType,
+                    IED_TYPE_EDEFAULT, oldIedTypeESet ) );
     }
 
     /**
@@ -269,9 +275,10 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public EList<DA> getDA() {
-        if (da == null) {
-            da = new EObjectContainmentWithInverseEList.Unsettable<DA>(DA.class, this, SclPackage.DO_TYPE__DA, SclPackage.DA__PARENT_DO_TYPE);
+    public EList< DA > getDA() {
+        if( da == null ) {
+            da = new EObjectContainmentWithInverseEList.Unsettable< DA >( DA.class, this, SclPackage.DO_TYPE__DA,
+                    SclPackage.DA__PARENT_DO_TYPE );
         }
         return da;
     }
@@ -283,7 +290,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public void unsetDA() {
-        if (da != null) ((InternalEList.Unsettable<?>)da).unset();
+        if( da != null ) ( ( InternalEList.Unsettable< ? > ) da ).unset();
     }
 
     /**
@@ -293,7 +300,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public boolean isSetDA() {
-        return da != null && ((InternalEList.Unsettable<?>)da).isSet();
+        return da != null && ( ( InternalEList.Unsettable< ? > ) da ).isSet();
     }
 
     /**
@@ -302,9 +309,11 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public EList<AbstractDataObject> getReferredByAbstractDataObject() {
-        if (referredByAbstractDataObject == null) {
-            referredByAbstractDataObject = new EObjectWithInverseEList.Unsettable<AbstractDataObject>(AbstractDataObject.class, this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT, SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE);
+    public EList< AbstractDataObject > getReferredByAbstractDataObject() {
+        if( referredByAbstractDataObject == null ) {
+            referredByAbstractDataObject = new EObjectWithInverseEList.Unsettable< AbstractDataObject >(
+                    AbstractDataObject.class, this, SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT,
+                    SclPackage.ABSTRACT_DATA_OBJECT__REFERS_TO_DO_TYPE );
         }
         return referredByAbstractDataObject;
     }
@@ -316,7 +325,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public void unsetReferredByAbstractDataObject() {
-        if (referredByAbstractDataObject != null) ((InternalEList.Unsettable<?>)referredByAbstractDataObject).unset();
+        if( referredByAbstractDataObject != null )
+            ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataObject ).unset();
     }
 
     /**
@@ -326,7 +336,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public boolean isSetReferredByAbstractDataObject() {
-        return referredByAbstractDataObject != null && ((InternalEList.Unsettable<?>)referredByAbstractDataObject).isSet();
+        return referredByAbstractDataObject != null
+                && ( ( InternalEList.Unsettable< ? > ) referredByAbstractDataObject ).isSet();
     }
 
     /**
@@ -336,8 +347,8 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public DataTypeTemplates getParentDataTypeTemplates() {
-        if (eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES) return null;
-        return (DataTypeTemplates)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES ) return null;
+        return ( DataTypeTemplates ) eInternalContainer();
     }
 
     /**
@@ -345,8 +356,10 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentDataTypeTemplates, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs);
+    public NotificationChain basicSetParentDataTypeTemplates( DataTypeTemplates newParentDataTypeTemplates,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentDataTypeTemplates,
+                SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES, msgs );
         return msgs;
     }
 
@@ -356,20 +369,24 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public void setParentDataTypeTemplates(DataTypeTemplates newParentDataTypeTemplates) {
-        if (newParentDataTypeTemplates != eInternalContainer() || (eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES && newParentDataTypeTemplates != null)) {
-            if (EcoreUtil.isAncestor(this, newParentDataTypeTemplates))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentDataTypeTemplates( DataTypeTemplates newParentDataTypeTemplates ) {
+        if( newParentDataTypeTemplates != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES
+                        && newParentDataTypeTemplates != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentDataTypeTemplates ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentDataTypeTemplates != null)
-                msgs = ((InternalEObject)newParentDataTypeTemplates).eInverseAdd(this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs);
-            msgs = basicSetParentDataTypeTemplates(newParentDataTypeTemplates, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentDataTypeTemplates != null )
+                msgs = ( ( InternalEObject ) newParentDataTypeTemplates ).eInverseAdd( this,
+                        SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs );
+            msgs = basicSetParentDataTypeTemplates( newParentDataTypeTemplates, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES, newParentDataTypeTemplates, newParentDataTypeTemplates));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES,
+                    newParentDataTypeTemplates, newParentDataTypeTemplates ) );
     }
 
     /**
@@ -378,9 +395,10 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      * @generated
      */
     @Override
-    public EList<SDO> getSDO() {
-        if (sdo == null) {
-            sdo = new EObjectContainmentWithInverseEList.Unsettable<SDO>(SDO.class, this, SclPackage.DO_TYPE__SDO, SclPackage.SDO__PARENT_DO_TYPE);
+    public EList< SDO > getSDO() {
+        if( sdo == null ) {
+            sdo = new EObjectContainmentWithInverseEList.Unsettable< SDO >( SDO.class, this, SclPackage.DO_TYPE__SDO,
+                    SclPackage.SDO__PARENT_DO_TYPE );
         }
         return sdo;
     }
@@ -392,7 +410,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public void unsetSDO() {
-        if (sdo != null) ((InternalEList.Unsettable<?>)sdo).unset();
+        if( sdo != null ) ( ( InternalEList.Unsettable< ? > ) sdo ).unset();
     }
 
     /**
@@ -402,7 +420,7 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public boolean isSetSDO() {
-        return sdo != null && ((InternalEList.Unsettable<?>)sdo).isSet();
+        return sdo != null && ( ( InternalEList.Unsettable< ? > ) sdo ).isSet();
     }
 
     /**
@@ -413,19 +431,20 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__DA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getDA()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByAbstractDataObject()).basicAdd(otherEnd, msgs);
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentDataTypeTemplates((DataTypeTemplates)otherEnd, msgs);
-            case SclPackage.DO_TYPE__SDO:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getSDO()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__DA:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getDA() ).basicAdd( otherEnd, msgs );
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByAbstractDataObject() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentDataTypeTemplates( ( DataTypeTemplates ) otherEnd, msgs );
+        case SclPackage.DO_TYPE__SDO:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getSDO() ).basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -435,17 +454,17 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__DA:
-                return ((InternalEList<?>)getDA()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                return ((InternalEList<?>)getReferredByAbstractDataObject()).basicRemove(otherEnd, msgs);
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return basicSetParentDataTypeTemplates(null, msgs);
-            case SclPackage.DO_TYPE__SDO:
-                return ((InternalEList<?>)getSDO()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__DA:
+            return ( ( InternalEList< ? > ) getDA() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            return ( ( InternalEList< ? > ) getReferredByAbstractDataObject() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return basicSetParentDataTypeTemplates( null, msgs );
+        case SclPackage.DO_TYPE__SDO:
+            return ( ( InternalEList< ? > ) getSDO() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -455,11 +474,12 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return eInternalContainer().eInverseRemove(this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE, DataTypeTemplates.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return eInternalContainer().eInverseRemove( this, SclPackage.DATA_TYPE_TEMPLATES__DO_TYPE,
+                    DataTypeTemplates.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -469,21 +489,21 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__CDC:
-                return getCdc();
-            case SclPackage.DO_TYPE__IED_TYPE:
-                return getIedType();
-            case SclPackage.DO_TYPE__DA:
-                return getDA();
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                return getReferredByAbstractDataObject();
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return getParentDataTypeTemplates();
-            case SclPackage.DO_TYPE__SDO:
-                return getSDO();
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__CDC:
+            return getCdc();
+        case SclPackage.DO_TYPE__IED_TYPE:
+            return getIedType();
+        case SclPackage.DO_TYPE__DA:
+            return getDA();
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            return getReferredByAbstractDataObject();
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return getParentDataTypeTemplates();
+        case SclPackage.DO_TYPE__SDO:
+            return getSDO();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -494,30 +514,30 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__CDC:
-                setCdc((String)newValue);
-                return;
-            case SclPackage.DO_TYPE__IED_TYPE:
-                setIedType((String)newValue);
-                return;
-            case SclPackage.DO_TYPE__DA:
-                getDA().clear();
-                getDA().addAll((Collection<? extends DA>)newValue);
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                getReferredByAbstractDataObject().clear();
-                getReferredByAbstractDataObject().addAll((Collection<? extends AbstractDataObject>)newValue);
-                return;
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                setParentDataTypeTemplates((DataTypeTemplates)newValue);
-                return;
-            case SclPackage.DO_TYPE__SDO:
-                getSDO().clear();
-                getSDO().addAll((Collection<? extends SDO>)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__CDC:
+            setCdc( ( String ) newValue );
+            return;
+        case SclPackage.DO_TYPE__IED_TYPE:
+            setIedType( ( String ) newValue );
+            return;
+        case SclPackage.DO_TYPE__DA:
+            getDA().clear();
+            getDA().addAll( ( Collection< ? extends DA > ) newValue );
+            return;
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            getReferredByAbstractDataObject().clear();
+            getReferredByAbstractDataObject().addAll( ( Collection< ? extends AbstractDataObject > ) newValue );
+            return;
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            setParentDataTypeTemplates( ( DataTypeTemplates ) newValue );
+            return;
+        case SclPackage.DO_TYPE__SDO:
+            getSDO().clear();
+            getSDO().addAll( ( Collection< ? extends SDO > ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -527,27 +547,27 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__CDC:
-                unsetCdc();
-                return;
-            case SclPackage.DO_TYPE__IED_TYPE:
-                unsetIedType();
-                return;
-            case SclPackage.DO_TYPE__DA:
-                unsetDA();
-                return;
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                unsetReferredByAbstractDataObject();
-                return;
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                setParentDataTypeTemplates((DataTypeTemplates)null);
-                return;
-            case SclPackage.DO_TYPE__SDO:
-                unsetSDO();
-                return;
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__CDC:
+            unsetCdc();
+            return;
+        case SclPackage.DO_TYPE__IED_TYPE:
+            unsetIedType();
+            return;
+        case SclPackage.DO_TYPE__DA:
+            unsetDA();
+            return;
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            unsetReferredByAbstractDataObject();
+            return;
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            setParentDataTypeTemplates( ( DataTypeTemplates ) null );
+            return;
+        case SclPackage.DO_TYPE__SDO:
+            unsetSDO();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -557,21 +577,21 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DO_TYPE__CDC:
-                return isSetCdc();
-            case SclPackage.DO_TYPE__IED_TYPE:
-                return isSetIedType();
-            case SclPackage.DO_TYPE__DA:
-                return isSetDA();
-            case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
-                return isSetReferredByAbstractDataObject();
-            case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
-                return getParentDataTypeTemplates() != null;
-            case SclPackage.DO_TYPE__SDO:
-                return isSetSDO();
+        switch( featureID ) {
+        case SclPackage.DO_TYPE__CDC:
+            return isSetCdc();
+        case SclPackage.DO_TYPE__IED_TYPE:
+            return isSetIedType();
+        case SclPackage.DO_TYPE__DA:
+            return isSetDA();
+        case SclPackage.DO_TYPE__REFERRED_BY_ABSTRACT_DATA_OBJECT:
+            return isSetReferredByAbstractDataObject();
+        case SclPackage.DO_TYPE__PARENT_DATA_TYPE_TEMPLATES:
+            return getParentDataTypeTemplates() != null;
+        case SclPackage.DO_TYPE__SDO:
+            return isSetSDO();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -581,14 +601,20 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (cdc: ");
-        if (cdcESet) result.append(cdc); else result.append("<unset>");
-        result.append(", iedType: ");
-        if (iedTypeESet) result.append(iedType); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (cdc: " );
+        if( cdcESet )
+            result.append( cdc );
+        else
+            result.append( "<unset>" );
+        result.append( ", iedType: " );
+        if( iedTypeESet )
+            result.append( iedType );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

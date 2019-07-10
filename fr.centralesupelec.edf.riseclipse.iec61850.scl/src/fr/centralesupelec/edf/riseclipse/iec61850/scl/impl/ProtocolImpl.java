@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -113,8 +115,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         mustUnderstand = newMustUnderstand;
         boolean oldMustUnderstandESet = mustUnderstandESet;
         mustUnderstandESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROTOCOL__MUST_UNDERSTAND, oldMustUnderstand, mustUnderstand, !oldMustUnderstandESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROTOCOL__MUST_UNDERSTAND,
+                    oldMustUnderstand, mustUnderstand, !oldMustUnderstandESet ) );
     }
 
     /**
@@ -128,8 +131,9 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
         boolean oldMustUnderstandESet = mustUnderstandESet;
         mustUnderstand = MUST_UNDERSTAND_EDEFAULT;
         mustUnderstandESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.PROTOCOL__MUST_UNDERSTAND, oldMustUnderstand, MUST_UNDERSTAND_EDEFAULT, oldMustUnderstandESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.PROTOCOL__MUST_UNDERSTAND,
+                    oldMustUnderstand, MUST_UNDERSTAND_EDEFAULT, oldMustUnderstandESet ) );
     }
 
     /**
@@ -149,8 +153,8 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public ControlWithIEDName getParentControlWithIEDName() {
-        if (eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME) return null;
-        return (ControlWithIEDName)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME ) return null;
+        return ( ControlWithIEDName ) eInternalContainer();
     }
 
     /**
@@ -158,8 +162,10 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentControlWithIEDName, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, msgs);
+    public NotificationChain basicSetParentControlWithIEDName( ControlWithIEDName newParentControlWithIEDName,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentControlWithIEDName,
+                SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, msgs );
         return msgs;
     }
 
@@ -169,20 +175,24 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      * @generated
      */
     @Override
-    public void setParentControlWithIEDName(ControlWithIEDName newParentControlWithIEDName) {
-        if (newParentControlWithIEDName != eInternalContainer() || (eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME && newParentControlWithIEDName != null)) {
-            if (EcoreUtil.isAncestor(this, newParentControlWithIEDName))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentControlWithIEDName( ControlWithIEDName newParentControlWithIEDName ) {
+        if( newParentControlWithIEDName != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME
+                        && newParentControlWithIEDName != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentControlWithIEDName ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentControlWithIEDName != null)
-                msgs = ((InternalEObject)newParentControlWithIEDName).eInverseAdd(this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs);
-            msgs = basicSetParentControlWithIEDName(newParentControlWithIEDName, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentControlWithIEDName != null )
+                msgs = ( ( InternalEObject ) newParentControlWithIEDName ).eInverseAdd( this,
+                        SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs );
+            msgs = basicSetParentControlWithIEDName( newParentControlWithIEDName, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME, newParentControlWithIEDName, newParentControlWithIEDName));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME,
+                    newParentControlWithIEDName, newParentControlWithIEDName ) );
     }
 
     /**
@@ -192,13 +202,13 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentControlWithIEDName((ControlWithIEDName)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentControlWithIEDName( ( ControlWithIEDName ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -208,11 +218,11 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                return basicSetParentControlWithIEDName(null, msgs);
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            return basicSetParentControlWithIEDName( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -222,11 +232,12 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                return eInternalContainer().eInverseRemove(this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL, ControlWithIEDName.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            return eInternalContainer().eInverseRemove( this, SclPackage.CONTROL_WITH_IED_NAME__PROTOCOL,
+                    ControlWithIEDName.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -236,13 +247,13 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__MUST_UNDERSTAND:
-                return getMustUnderstand();
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                return getParentControlWithIEDName();
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__MUST_UNDERSTAND:
+            return getMustUnderstand();
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            return getParentControlWithIEDName();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -252,15 +263,15 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__MUST_UNDERSTAND:
-                setMustUnderstand((Boolean)newValue);
-                return;
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                setParentControlWithIEDName((ControlWithIEDName)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__MUST_UNDERSTAND:
+            setMustUnderstand( ( Boolean ) newValue );
+            return;
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            setParentControlWithIEDName( ( ControlWithIEDName ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -270,15 +281,15 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__MUST_UNDERSTAND:
-                unsetMustUnderstand();
-                return;
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                setParentControlWithIEDName((ControlWithIEDName)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__MUST_UNDERSTAND:
+            unsetMustUnderstand();
+            return;
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            setParentControlWithIEDName( ( ControlWithIEDName ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -288,13 +299,13 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.PROTOCOL__MUST_UNDERSTAND:
-                return isSetMustUnderstand();
-            case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
-                return getParentControlWithIEDName() != null;
+        switch( featureID ) {
+        case SclPackage.PROTOCOL__MUST_UNDERSTAND:
+            return isSetMustUnderstand();
+        case SclPackage.PROTOCOL__PARENT_CONTROL_WITH_IED_NAME:
+            return getParentControlWithIEDName() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -304,12 +315,15 @@ public class ProtocolImpl extends SclObjectImpl implements Protocol {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (mustUnderstand: ");
-        if (mustUnderstandESet) result.append(mustUnderstand); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (mustUnderstand: " );
+        if( mustUnderstandESet )
+            result.append( mustUnderstand );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

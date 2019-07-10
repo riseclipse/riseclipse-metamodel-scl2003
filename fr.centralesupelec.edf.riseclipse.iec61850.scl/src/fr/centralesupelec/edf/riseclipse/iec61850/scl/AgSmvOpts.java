@@ -1,22 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- * 
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.ecore.EObject;
@@ -69,7 +70,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getDataSet()
      * @generated
      */
-    void setDataSet(Boolean value);
+    void setDataSet( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataSet <em>Data Set</em>}' attribute.
@@ -118,7 +119,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getRefreshTime()
      * @generated
      */
-    void setRefreshTime(Boolean value);
+    void setRefreshTime( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getRefreshTime <em>Refresh Time</em>}' attribute.
@@ -167,7 +168,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getSampleRate()
      * @generated
      */
-    void setSampleRate(Boolean value);
+    void setSampleRate( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleRate <em>Sample Rate</em>}' attribute.
@@ -216,7 +217,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getSampleSynchronized()
      * @generated
      */
-    void setSampleSynchronized(Boolean value);
+    void setSampleSynchronized( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSampleSynchronized <em>Sample Synchronized</em>}' attribute.
@@ -265,7 +266,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getSecurity()
      * @generated
      */
-    void setSecurity(Boolean value);
+    void setSecurity( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSecurity <em>Security</em>}' attribute.
@@ -314,7 +315,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getTimestamp()
      * @generated
      */
-    void setTimestamp(Boolean value);
+    void setTimestamp( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getTimestamp <em>Timestamp</em>}' attribute.
@@ -363,7 +364,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getSynchSourceId()
      * @generated
      */
-    void setSynchSourceId(Boolean value);
+    void setSynchSourceId( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getSynchSourceId <em>Synch Source Id</em>}' attribute.
@@ -412,7 +413,7 @@ public interface AgSmvOpts extends EObject {
      * @see #getDataRef()
      * @generated
      */
-    void setDataRef(Boolean value);
+    void setDataRef( Boolean value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AgSmvOpts#getDataRef <em>Data Ref</em>}' attribute.

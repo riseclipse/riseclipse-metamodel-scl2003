@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -69,8 +71,8 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public LDevice getParentLDevice() {
-        if (eContainerFeatureID() != SclPackage.ACCESS_CONTROL__PARENT_LDEVICE) return null;
-        return (LDevice)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.ACCESS_CONTROL__PARENT_LDEVICE ) return null;
+        return ( LDevice ) eInternalContainer();
     }
 
     /**
@@ -78,8 +80,9 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentLDevice(LDevice newParentLDevice, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentLDevice, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, msgs);
+    public NotificationChain basicSetParentLDevice( LDevice newParentLDevice, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentLDevice, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE,
+                msgs );
         return msgs;
     }
 
@@ -89,20 +92,24 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      * @generated
      */
     @Override
-    public void setParentLDevice(LDevice newParentLDevice) {
-        if (newParentLDevice != eInternalContainer() || (eContainerFeatureID() != SclPackage.ACCESS_CONTROL__PARENT_LDEVICE && newParentLDevice != null)) {
-            if (EcoreUtil.isAncestor(this, newParentLDevice))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentLDevice( LDevice newParentLDevice ) {
+        if( newParentLDevice != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.ACCESS_CONTROL__PARENT_LDEVICE
+                        && newParentLDevice != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentLDevice ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentLDevice != null)
-                msgs = ((InternalEObject)newParentLDevice).eInverseAdd(this, SclPackage.LDEVICE__ACCESS_CONTROL, LDevice.class, msgs);
-            msgs = basicSetParentLDevice(newParentLDevice, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentLDevice != null )
+                msgs = ( ( InternalEObject ) newParentLDevice ).eInverseAdd( this, SclPackage.LDEVICE__ACCESS_CONTROL,
+                        LDevice.class, msgs );
+            msgs = basicSetParentLDevice( newParentLDevice, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE, newParentLDevice, newParentLDevice));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.ACCESS_CONTROL__PARENT_LDEVICE,
+                    newParentLDevice, newParentLDevice ) );
     }
 
     /**
@@ -112,13 +119,13 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentLDevice((LDevice)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentLDevice( ( LDevice ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -128,11 +135,11 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                return basicSetParentLDevice(null, msgs);
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            return basicSetParentLDevice( null, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -142,11 +149,11 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                return eInternalContainer().eInverseRemove(this, SclPackage.LDEVICE__ACCESS_CONTROL, LDevice.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            return eInternalContainer().eInverseRemove( this, SclPackage.LDEVICE__ACCESS_CONTROL, LDevice.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -156,11 +163,11 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                return getParentLDevice();
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            return getParentLDevice();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -170,12 +177,12 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                setParentLDevice((LDevice)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            setParentLDevice( ( LDevice ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -185,12 +192,12 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                setParentLDevice((LDevice)null);
-                return;
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            setParentLDevice( ( LDevice ) null );
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -200,11 +207,11 @@ public class AccessControlImpl extends SclObjectImpl implements AccessControl {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
-                return getParentLDevice() != null;
+        switch( featureID ) {
+        case SclPackage.ACCESS_CONTROL__PARENT_LDEVICE:
+            return getParentLDevice() != null;
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
 } //AccessControlImpl

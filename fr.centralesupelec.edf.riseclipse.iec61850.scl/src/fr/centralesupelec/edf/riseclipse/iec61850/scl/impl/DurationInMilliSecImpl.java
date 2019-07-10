@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.math.BigDecimal;
@@ -150,11 +152,12 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void setValue(BigDecimal newValue) {
+    public void setValue( BigDecimal newValue ) {
         BigDecimal oldValue = value;
         value = newValue;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__VALUE, oldValue, value));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__VALUE, oldValue,
+                    value ) );
     }
 
     /**
@@ -173,13 +176,14 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void setMultiplier(UnitMultiplierEnum newMultiplier) {
+    public void setMultiplier( UnitMultiplierEnum newMultiplier ) {
         UnitMultiplierEnum oldMultiplier = multiplier;
         multiplier = newMultiplier == null ? MULTIPLIER_EDEFAULT : newMultiplier;
         boolean oldMultiplierESet = multiplierESet;
         multiplierESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER, oldMultiplier, multiplier, !oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER,
+                    oldMultiplier, multiplier, !oldMultiplierESet ) );
     }
 
     /**
@@ -193,8 +197,9 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         boolean oldMultiplierESet = multiplierESet;
         multiplier = MULTIPLIER_EDEFAULT;
         multiplierESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER, oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER,
+                    oldMultiplier, MULTIPLIER_EDEFAULT, oldMultiplierESet ) );
     }
 
     /**
@@ -223,13 +228,14 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void setUnit(String newUnit) {
+    public void setUnit( String newUnit ) {
         String oldUnit = unit;
         unit = newUnit;
         boolean oldUnitESet = unitESet;
         unitESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit, unit, !oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit,
+                    unit, !oldUnitESet ) );
     }
 
     /**
@@ -243,8 +249,9 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
         boolean oldUnitESet = unitESet;
         unit = UNIT_EDEFAULT;
         unitESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit, UNIT_EDEFAULT, oldUnitESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DURATION_IN_MILLI_SEC__UNIT, oldUnit,
+                    UNIT_EDEFAULT, oldUnitESet ) );
     }
 
     /**
@@ -263,16 +270,16 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-            case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-                return getValue();
-            case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
-                return getMultiplier();
-            case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
-                return getUnit();
+    public Object eGet( int featureID, boolean resolve, boolean coreType ) {
+        switch( featureID ) {
+        case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
+            return getValue();
+        case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
+            return getMultiplier();
+        case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
+            return getUnit();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -281,19 +288,19 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-            case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-                setValue((BigDecimal)newValue);
-                return;
-            case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
-                setMultiplier((UnitMultiplierEnum)newValue);
-                return;
-            case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
-                setUnit((String)newValue);
-                return;
+    public void eSet( int featureID, Object newValue ) {
+        switch( featureID ) {
+        case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
+            setValue( ( BigDecimal ) newValue );
+            return;
+        case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
+            setMultiplier( ( UnitMultiplierEnum ) newValue );
+            return;
+        case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
+            setUnit( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -302,19 +309,19 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-            case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-                setValue(VALUE_EDEFAULT);
-                return;
-            case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
-                unsetMultiplier();
-                return;
-            case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
-                unsetUnit();
-                return;
+    public void eUnset( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
+            setValue( VALUE_EDEFAULT );
+            return;
+        case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
+            unsetMultiplier();
+            return;
+        case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
+            unsetUnit();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -323,16 +330,16 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-            case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
-                return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-            case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
-                return isSetMultiplier();
-            case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
-                return isSetUnit();
+    public boolean eIsSet( int featureID ) {
+        switch( featureID ) {
+        case SclPackage.DURATION_IN_MILLI_SEC__VALUE:
+            return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals( value );
+        case SclPackage.DURATION_IN_MILLI_SEC__MULTIPLIER:
+            return isSetMultiplier();
+        case SclPackage.DURATION_IN_MILLI_SEC__UNIT:
+            return isSetUnit();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -342,16 +349,22 @@ public class DurationInMilliSecImpl extends SclObjectImpl implements DurationInM
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (value: ");
-        result.append(value);
-        result.append(", multiplier: ");
-        if (multiplierESet) result.append(multiplier); else result.append("<unset>");
-        result.append(", unit: ");
-        if (unitESet) result.append(unit); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (value: " );
+        result.append( value );
+        result.append( ", multiplier: " );
+        if( multiplierESet )
+            result.append( multiplier );
+        else
+            result.append( "<unset>" );
+        result.append( ", unit: " );
+        if( unitESet )
+            result.append( unit );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

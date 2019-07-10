@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import java.util.Arrays;
@@ -119,7 +121,7 @@ public enum SmpMod implements Enumerator {
             SMP_PER_PERIOD,
             SMP_PER_SEC,
             SEC_PER_SMP,
-        };
+    };
 
     /**
      * A public read-only list of all the '<em><b>Smp Mod</b></em>' enumerators.
@@ -127,7 +129,7 @@ public enum SmpMod implements Enumerator {
      * <!-- end-user-doc -->
      * @generated
      */
-    public static final List<SmpMod> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+    public static final List< SmpMod > VALUES = Collections.unmodifiableList( Arrays.asList( VALUES_ARRAY ) );
 
     /**
      * Returns the '<em><b>Smp Mod</b></em>' literal with the specified literal value.
@@ -138,9 +140,9 @@ public enum SmpMod implements Enumerator {
      * @generated
      */
     public static SmpMod get( String literal ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             SmpMod result = VALUES_ARRAY[i];
-            if (result.toString().equals(literal)) {
+            if( result.toString().equals( literal ) ) {
                 return result;
             }
         }
@@ -156,9 +158,9 @@ public enum SmpMod implements Enumerator {
      * @generated
      */
     public static SmpMod getByName( String name ) {
-        for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+        for( int i = 0; i < VALUES_ARRAY.length; ++i ) {
             SmpMod result = VALUES_ARRAY[i];
-            if (result.getName().equals(name)) {
+            if( result.getName().equals( name ) ) {
                 return result;
             }
         }
@@ -174,10 +176,13 @@ public enum SmpMod implements Enumerator {
      * @generated
      */
     public static SmpMod get( int value ) {
-        switch (value) {
-            case SMP_PER_PERIOD_VALUE: return SMP_PER_PERIOD;
-            case SMP_PER_SEC_VALUE: return SMP_PER_SEC;
-            case SEC_PER_SMP_VALUE: return SEC_PER_SMP;
+        switch( value ) {
+        case SMP_PER_PERIOD_VALUE:
+            return SMP_PER_PERIOD;
+        case SMP_PER_SEC_VALUE:
+            return SMP_PER_SEC;
+        case SEC_PER_SMP_VALUE:
+            return SEC_PER_SMP;
         }
         return null;
     }
@@ -222,7 +227,7 @@ public enum SmpMod implements Enumerator {
      */
     @Override
     public int getValue() {
-      return value;
+        return value;
     }
 
     /**
@@ -232,7 +237,7 @@ public enum SmpMod implements Enumerator {
      */
     @Override
     public String getName() {
-      return name;
+        return name;
     }
 
     /**
@@ -242,7 +247,7 @@ public enum SmpMod implements Enumerator {
      */
     @Override
     public String getLiteral() {
-      return literal;
+        return literal;
     }
 
     /**

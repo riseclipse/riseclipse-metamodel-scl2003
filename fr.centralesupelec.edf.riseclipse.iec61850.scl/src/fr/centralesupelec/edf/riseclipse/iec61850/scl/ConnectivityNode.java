@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -115,7 +117,7 @@ public interface ConnectivityNode extends LNodeContainer {
      * @see #getParentBay()
      * @generated
      */
-    void setParentBay(Bay value);
+    void setParentBay( Bay value );
 
     /**
      * Returns the value of the '<em><b>Referred By Terminal</b></em>' reference list.
@@ -135,7 +137,7 @@ public interface ConnectivityNode extends LNodeContainer {
      * @model opposite="RefersToConnectivityNode" resolveProxies="false" unsettable="true" transient="true" ordered="false"
      * @generated
      */
-    EList<Terminal> getReferredByTerminal();
+    EList< Terminal > getReferredByTerminal();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectivityNode#getReferredByTerminal <em>Referred By Terminal</em>}' reference list.
@@ -180,6 +182,6 @@ public interface ConnectivityNode extends LNodeContainer {
      * @see #getParentLine()
      * @generated
      */
-    void setParentLine(Line value);
+    void setParentLine( Line value );
 
 } // ConnectivityNode

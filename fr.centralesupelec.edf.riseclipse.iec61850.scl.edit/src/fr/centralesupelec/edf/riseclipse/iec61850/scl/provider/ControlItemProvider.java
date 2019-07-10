@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -44,8 +45,8 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public ControlItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public ControlItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -55,14 +56,14 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addDatSetPropertyDescriptor(object);
-            addRefersToDataSetPropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addReferredByExtRefPropertyDescriptor(object);
+            addDatSetPropertyDescriptor( object );
+            addRefersToDataSetPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addReferredByExtRefPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -73,20 +74,20 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addDatSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Control_datSet_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Control_datSet_feature", "_UI_Control_type"),
-                 SclPackage.eINSTANCE.getControl_DatSet(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addDatSetPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Control_datSet_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Control_datSet_feature",
+                                "_UI_Control_type" ),
+                        SclPackage.eINSTANCE.getControl_DatSet(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -95,20 +96,20 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToDataSetPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Control_RefersToDataSet_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Control_RefersToDataSet_feature", "_UI_Control_type"),
-                 SclPackage.eINSTANCE.getControl_RefersToDataSet(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToDataSetPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Control_RefersToDataSet_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Control_RefersToDataSet_feature",
+                                "_UI_Control_type" ),
+                        SclPackage.eINSTANCE.getControl_RefersToDataSet(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -117,20 +118,20 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Control_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Control_name_feature", "_UI_Control_type"),
-                 SclPackage.eINSTANCE.getControl_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Control_name_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Control_name_feature",
+                                "_UI_Control_type" ),
+                        SclPackage.eINSTANCE.getControl_Name(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -139,20 +140,20 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByExtRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_Control_ReferredByExtRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_Control_ReferredByExtRef_feature", "_UI_Control_type"),
-                 SclPackage.eINSTANCE.getControl_ReferredByExtRef(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByExtRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_Control_ReferredByExtRef_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_Control_ReferredByExtRef_feature",
+                                "_UI_Control_type" ),
+                        SclPackage.eINSTANCE.getControl_ReferredByExtRef(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -162,8 +163,8 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/Control"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/Control" ) );
     }
 
     /**
@@ -173,13 +174,11 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((Control)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_Control_type") :
-            getString("_UI_Control_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( Control ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_Control_type" )
+                : getString( "_UI_Control_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -189,16 +188,16 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(Control.class)) {
-            case SclPackage.CONTROL__DAT_SET:
-            case SclPackage.CONTROL__NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
+        switch( notification.getFeatureID( Control.class ) ) {
+        case SclPackage.CONTROL__DAT_SET:
+        case SclPackage.CONTROL__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -209,8 +208,8 @@ public class ControlItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

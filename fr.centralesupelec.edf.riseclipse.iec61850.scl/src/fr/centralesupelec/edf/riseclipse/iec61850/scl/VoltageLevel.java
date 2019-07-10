@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import java.math.BigDecimal;
@@ -125,7 +127,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see #getNumPhases()
      * @generated
      */
-    void setNumPhases(Integer value);
+    void setNumPhases( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getNumPhases <em>Num Phases</em>}' attribute.
@@ -168,7 +170,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Bay> getBay();
+    EList< Bay > getBay();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getBay <em>Bay</em>}' containment reference list.
@@ -209,7 +211,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @model opposite="ParentVoltageLevel" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<Function> getFunction();
+    EList< Function > getFunction();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.VoltageLevel#getFunction <em>Function</em>}' containment reference list.
@@ -254,7 +256,7 @@ public interface VoltageLevel extends EquipmentContainer {
      * @see #getParentSubstation()
      * @generated
      */
-    void setParentSubstation(Substation value);
+    void setParentSubstation( Substation value );
 
     /**
      * Returns the value of the '<em><b>Voltage</b></em>' containment reference.

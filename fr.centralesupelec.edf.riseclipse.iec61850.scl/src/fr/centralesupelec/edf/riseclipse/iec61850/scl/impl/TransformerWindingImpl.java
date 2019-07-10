@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
@@ -91,7 +93,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * @generated
      * @ordered
      */
-    protected EList<EqFunction> eqFunction;
+    protected EList< EqFunction > eqFunction;
 
     /**
      * The cached value of the '{@link #getNeutralPoint() <em>Neutral Point</em>}' containment reference.
@@ -171,8 +173,9 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         type = newType;
         boolean oldTypeESet = typeESet;
         typeESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__TYPE, oldType, type, !oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRANSFORMER_WINDING__TYPE, oldType, type,
+                    !oldTypeESet ) );
     }
 
     /**
@@ -186,8 +189,9 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         boolean oldTypeESet = typeESet;
         type = TYPE_EDEFAULT;
         typeESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__TYPE, oldType, TYPE_EDEFAULT, oldTypeESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__TYPE, oldType,
+                    TYPE_EDEFAULT, oldTypeESet ) );
     }
 
     /**
@@ -206,9 +210,10 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * @generated
      */
     @Override
-    public EList<EqFunction> getEqFunction() {
-        if (eqFunction == null) {
-            eqFunction = new EObjectContainmentWithInverseEList.Unsettable<EqFunction>(EqFunction.class, this, SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING);
+    public EList< EqFunction > getEqFunction() {
+        if( eqFunction == null ) {
+            eqFunction = new EObjectContainmentWithInverseEList.Unsettable< EqFunction >( EqFunction.class, this,
+                    SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION, SclPackage.EQ_FUNCTION__PARENT_TRANSFORMER_WINDING );
         }
         return eqFunction;
     }
@@ -220,7 +225,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void unsetEqFunction() {
-        if (eqFunction != null) ((InternalEList.Unsettable<?>)eqFunction).unset();
+        if( eqFunction != null ) ( ( InternalEList.Unsettable< ? > ) eqFunction ).unset();
     }
 
     /**
@@ -230,7 +235,7 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public boolean isSetEqFunction() {
-        return eqFunction != null && ((InternalEList.Unsettable<?>)eqFunction).isSet();
+        return eqFunction != null && ( ( InternalEList.Unsettable< ? > ) eqFunction ).isSet();
     }
 
     /**
@@ -253,9 +258,14 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         neutralPoint = newNeutralPoint;
         boolean oldNeutralPointESet = neutralPointESet;
         neutralPointESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, oldNeutralPoint, newNeutralPoint, !oldNeutralPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, oldNeutralPoint, newNeutralPoint,
+                    !oldNeutralPointESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -267,20 +277,23 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void setNeutralPoint( NeutralPoint newNeutralPoint ) {
-        if (newNeutralPoint != neutralPoint) {
+        if( newNeutralPoint != neutralPoint ) {
             NotificationChain msgs = null;
-            if (neutralPoint != null)
-                msgs = ((InternalEObject)neutralPoint).eInverseRemove(this, SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs);
-            if (newNeutralPoint != null)
-                msgs = ((InternalEObject)newNeutralPoint).eInverseAdd(this, SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs);
-            msgs = basicSetNeutralPoint(newNeutralPoint, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( neutralPoint != null )
+                msgs = ( ( InternalEObject ) neutralPoint ).eInverseRemove( this,
+                        SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs );
+            if( newNeutralPoint != null )
+                msgs = ( ( InternalEObject ) newNeutralPoint ).eInverseAdd( this,
+                        SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs );
+            msgs = basicSetNeutralPoint( newNeutralPoint, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldNeutralPointESet = neutralPointESet;
             neutralPointESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, newNeutralPoint, newNeutralPoint, !oldNeutralPointESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT,
+                        newNeutralPoint, newNeutralPoint, !oldNeutralPointESet ) );
         }
     }
 
@@ -294,9 +307,13 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         neutralPoint = null;
         boolean oldNeutralPointESet = neutralPointESet;
         neutralPointESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, oldNeutralPoint, null, oldNeutralPointESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, oldNeutralPoint, null, oldNeutralPointESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -308,17 +325,19 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void unsetNeutralPoint() {
-        if (neutralPoint != null) {
+        if( neutralPoint != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)neutralPoint).eInverseRemove(this, SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs);
-            msgs = basicUnsetNeutralPoint(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) neutralPoint ).eInverseRemove( this,
+                    SclPackage.NEUTRAL_POINT__PARENT_TRANSFORMER_WINDING, NeutralPoint.class, msgs );
+            msgs = basicUnsetNeutralPoint( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldNeutralPointESet = neutralPointESet;
             neutralPointESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, null, null, oldNeutralPointESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT,
+                        null, null, oldNeutralPointESet ) );
         }
     }
 
@@ -339,8 +358,8 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public PowerTransformer getParentPowerTransformer() {
-        if (eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER) return null;
-        return (PowerTransformer)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER ) return null;
+        return ( PowerTransformer ) eInternalContainer();
     }
 
     /**
@@ -348,8 +367,10 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentPowerTransformer(PowerTransformer newParentPowerTransformer, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentPowerTransformer, SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER, msgs);
+    public NotificationChain basicSetParentPowerTransformer( PowerTransformer newParentPowerTransformer,
+            NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentPowerTransformer,
+                SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER, msgs );
         return msgs;
     }
 
@@ -359,20 +380,25 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      * @generated
      */
     @Override
-    public void setParentPowerTransformer(PowerTransformer newParentPowerTransformer) {
-        if (newParentPowerTransformer != eInternalContainer() || (eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER && newParentPowerTransformer != null)) {
-            if (EcoreUtil.isAncestor(this, newParentPowerTransformer))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentPowerTransformer( PowerTransformer newParentPowerTransformer ) {
+        if( newParentPowerTransformer != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER
+                        && newParentPowerTransformer != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentPowerTransformer ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentPowerTransformer != null)
-                msgs = ((InternalEObject)newParentPowerTransformer).eInverseAdd(this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, PowerTransformer.class, msgs);
-            msgs = basicSetParentPowerTransformer(newParentPowerTransformer, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentPowerTransformer != null )
+                msgs = ( ( InternalEObject ) newParentPowerTransformer ).eInverseAdd( this,
+                        SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, PowerTransformer.class, msgs );
+            msgs = basicSetParentPowerTransformer( newParentPowerTransformer, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER, newParentPowerTransformer, newParentPowerTransformer));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET,
+                    SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER, newParentPowerTransformer,
+                    newParentPowerTransformer ) );
     }
 
     /**
@@ -395,9 +421,13 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         tapChanger = newTapChanger;
         boolean oldTapChangerESet = tapChangerESet;
         tapChangerESet = true;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, oldTapChanger, newTapChanger, !oldTapChangerESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, oldTapChanger, newTapChanger, !oldTapChangerESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -409,20 +439,23 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void setTapChanger( TapChanger newTapChanger ) {
-        if (newTapChanger != tapChanger) {
+        if( newTapChanger != tapChanger ) {
             NotificationChain msgs = null;
-            if (tapChanger != null)
-                msgs = ((InternalEObject)tapChanger).eInverseRemove(this, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs);
-            if (newTapChanger != null)
-                msgs = ((InternalEObject)newTapChanger).eInverseAdd(this, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs);
-            msgs = basicSetTapChanger(newTapChanger, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( tapChanger != null )
+                msgs = ( ( InternalEObject ) tapChanger ).eInverseRemove( this,
+                        SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs );
+            if( newTapChanger != null )
+                msgs = ( ( InternalEObject ) newTapChanger ).eInverseAdd( this,
+                        SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs );
+            msgs = basicSetTapChanger( newTapChanger, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTapChangerESet = tapChangerESet;
             tapChangerESet = true;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, newTapChanger, newTapChanger, !oldTapChangerESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER,
+                        newTapChanger, newTapChanger, !oldTapChangerESet ) );
         }
     }
 
@@ -436,9 +469,13 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
         tapChanger = null;
         boolean oldTapChangerESet = tapChangerESet;
         tapChangerESet = false;
-        if (eNotificationRequired()) {
-            ENotificationImpl notification = new ENotificationImpl(this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, oldTapChanger, null, oldTapChangerESet);
-            if (msgs == null) msgs = notification; else msgs.add(notification);
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, oldTapChanger, null, oldTapChangerESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
         }
         return msgs;
     }
@@ -450,17 +487,19 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void unsetTapChanger() {
-        if (tapChanger != null) {
+        if( tapChanger != null ) {
             NotificationChain msgs = null;
-            msgs = ((InternalEObject)tapChanger).eInverseRemove(this, SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs);
-            msgs = basicUnsetTapChanger(msgs);
-            if (msgs != null) msgs.dispatch();
+            msgs = ( ( InternalEObject ) tapChanger ).eInverseRemove( this,
+                    SclPackage.TAP_CHANGER__PARENT_TRANSFORMER_WINDING, TapChanger.class, msgs );
+            msgs = basicUnsetTapChanger( msgs );
+            if( msgs != null ) msgs.dispatch();
         }
         else {
             boolean oldTapChangerESet = tapChangerESet;
             tapChangerESet = false;
-            if (eNotificationRequired())
-                eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, null, null, oldTapChangerESet));
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.TRANSFORMER_WINDING__TAP_CHANGER,
+                        null, null, oldTapChangerESet ) );
         }
     }
 
@@ -482,23 +521,26 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getEqFunction()).basicAdd(otherEnd, msgs);
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                if (neutralPoint != null)
-                    msgs = ((InternalEObject)neutralPoint).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, null, msgs);
-                return basicSetNeutralPoint((NeutralPoint)otherEnd, msgs);
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentPowerTransformer((PowerTransformer)otherEnd, msgs);
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                if (tapChanger != null)
-                    msgs = ((InternalEObject)tapChanger).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, null, msgs);
-                return basicSetTapChanger((TapChanger)otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getEqFunction() ).basicAdd( otherEnd,
+                    msgs );
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            if( neutralPoint != null )
+                msgs = ( ( InternalEObject ) neutralPoint ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT, null, msgs );
+            return basicSetNeutralPoint( ( NeutralPoint ) otherEnd, msgs );
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentPowerTransformer( ( PowerTransformer ) otherEnd, msgs );
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            if( tapChanger != null )
+                msgs = ( ( InternalEObject ) tapChanger ).eInverseRemove( this,
+                        EOPPOSITE_FEATURE_BASE - SclPackage.TRANSFORMER_WINDING__TAP_CHANGER, null, msgs );
+            return basicSetTapChanger( ( TapChanger ) otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -508,17 +550,17 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                return ((InternalEList<?>)getEqFunction()).basicRemove(otherEnd, msgs);
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                return basicUnsetNeutralPoint(msgs);
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                return basicSetParentPowerTransformer(null, msgs);
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                return basicUnsetTapChanger(msgs);
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            return ( ( InternalEList< ? > ) getEqFunction() ).basicRemove( otherEnd, msgs );
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            return basicUnsetNeutralPoint( msgs );
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            return basicSetParentPowerTransformer( null, msgs );
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            return basicUnsetTapChanger( msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -528,11 +570,12 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                return eInternalContainer().eInverseRemove(this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING, PowerTransformer.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            return eInternalContainer().eInverseRemove( this, SclPackage.POWER_TRANSFORMER__TRANSFORMER_WINDING,
+                    PowerTransformer.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -542,19 +585,19 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__TYPE:
-                return getType();
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                return getEqFunction();
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                return getNeutralPoint();
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                return getParentPowerTransformer();
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                return getTapChanger();
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__TYPE:
+            return getType();
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            return getEqFunction();
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            return getNeutralPoint();
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            return getParentPowerTransformer();
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            return getTapChanger();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -565,25 +608,25 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__TYPE:
-                setType((String)newValue);
-                return;
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                getEqFunction().clear();
-                getEqFunction().addAll((Collection<? extends EqFunction>)newValue);
-                return;
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                setNeutralPoint((NeutralPoint)newValue);
-                return;
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                setParentPowerTransformer((PowerTransformer)newValue);
-                return;
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                setTapChanger((TapChanger)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__TYPE:
+            setType( ( String ) newValue );
+            return;
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            getEqFunction().clear();
+            getEqFunction().addAll( ( Collection< ? extends EqFunction > ) newValue );
+            return;
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            setNeutralPoint( ( NeutralPoint ) newValue );
+            return;
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            setParentPowerTransformer( ( PowerTransformer ) newValue );
+            return;
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            setTapChanger( ( TapChanger ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -593,24 +636,24 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__TYPE:
-                unsetType();
-                return;
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                unsetEqFunction();
-                return;
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                unsetNeutralPoint();
-                return;
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                setParentPowerTransformer((PowerTransformer)null);
-                return;
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                unsetTapChanger();
-                return;
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__TYPE:
+            unsetType();
+            return;
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            unsetEqFunction();
+            return;
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            unsetNeutralPoint();
+            return;
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            setParentPowerTransformer( ( PowerTransformer ) null );
+            return;
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            unsetTapChanger();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -620,19 +663,19 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.TRANSFORMER_WINDING__TYPE:
-                return isSetType();
-            case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
-                return isSetEqFunction();
-            case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
-                return isSetNeutralPoint();
-            case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
-                return getParentPowerTransformer() != null;
-            case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
-                return isSetTapChanger();
+        switch( featureID ) {
+        case SclPackage.TRANSFORMER_WINDING__TYPE:
+            return isSetType();
+        case SclPackage.TRANSFORMER_WINDING__EQ_FUNCTION:
+            return isSetEqFunction();
+        case SclPackage.TRANSFORMER_WINDING__NEUTRAL_POINT:
+            return isSetNeutralPoint();
+        case SclPackage.TRANSFORMER_WINDING__PARENT_POWER_TRANSFORMER:
+            return getParentPowerTransformer() != null;
+        case SclPackage.TRANSFORMER_WINDING__TAP_CHANGER:
+            return isSetTapChanger();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -642,12 +685,15 @@ public class TransformerWindingImpl extends AbstractConductingEquipmentImpl impl
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (type: ");
-        if (typeESet) result.append(type); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (type: " );
+        if( typeESet )
+            result.append( type );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

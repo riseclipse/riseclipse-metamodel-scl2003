@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
@@ -131,7 +133,7 @@ public interface IED extends UnNaming {
      * @see #getEngRight()
      * @generated
      */
-    void setEngRight(String value);
+    void setEngRight( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getEngRight <em>Eng Right</em>}' attribute.
@@ -237,7 +239,7 @@ public interface IED extends UnNaming {
      * @see #getOriginalSclRevision()
      * @generated
      */
-    void setOriginalSclRevision(String value);
+    void setOriginalSclRevision( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRevision <em>Original Scl Revision</em>}' attribute.
@@ -290,7 +292,7 @@ public interface IED extends UnNaming {
      * @see #getOriginalSclVersion()
      * @generated
      */
-    void setOriginalSclVersion(String value);
+    void setOriginalSclVersion( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclVersion <em>Original Scl Version</em>}' attribute.
@@ -439,7 +441,7 @@ public interface IED extends UnNaming {
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<AccessPoint> getAccessPoint();
+    EList< AccessPoint > getAccessPoint();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getAccessPoint <em>Access Point</em>}' containment reference list.
@@ -480,7 +482,7 @@ public interface IED extends UnNaming {
      * @model opposite="ParentIED" containment="true" unsettable="true" ordered="false"
      * @generated
      */
-    EList<KDC> getKDC();
+    EList< KDC > getKDC();
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getKDC <em>KDC</em>}' containment reference list.
@@ -580,7 +582,7 @@ public interface IED extends UnNaming {
      * @see #getParentSCL()
      * @generated
      */
-    void setParentSCL(SCL value);
+    void setParentSCL( SCL value );
 
     /**
      * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -610,7 +612,7 @@ public interface IED extends UnNaming {
      * @see #getName()
      * @generated
      */
-    void setName(String value);
+    void setName( String value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getName <em>Name</em>}' attribute.
@@ -663,7 +665,7 @@ public interface IED extends UnNaming {
      * @see #getOriginalSclRelease()
      * @generated
      */
-    void setOriginalSclRelease(Integer value);
+    void setOriginalSclRelease( Integer value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getOriginalSclRelease <em>Original Scl Release</em>}' attribute.
@@ -714,7 +716,7 @@ public interface IED extends UnNaming {
      * @see #getReferredByIEDName()
      * @generated
      */
-    void setReferredByIEDName(IEDName value);
+    void setReferredByIEDName( IEDName value );
 
     /**
      * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.IED#getReferredByIEDName <em>Referred By IED Name</em>}' reference.

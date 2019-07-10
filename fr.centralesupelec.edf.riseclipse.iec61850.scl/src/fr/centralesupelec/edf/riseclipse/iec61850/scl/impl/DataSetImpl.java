@@ -1,21 +1,23 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import java.util.Collection;
@@ -61,7 +63,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      * @ordered
      */
-    protected EList<Control> referredByControl;
+    protected EList< Control > referredByControl;
 
     /**
      * The cached value of the '{@link #getFCDA() <em>FCDA</em>}' containment reference list.
@@ -71,7 +73,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      * @ordered
      */
-    protected EList<FCDA> fcda;
+    protected EList< FCDA > fcda;
 
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -128,8 +130,8 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public AnyLN getParentAnyLN() {
-        if (eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN) return null;
-        return (AnyLN)eInternalContainer();
+        if( eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN ) return null;
+        return ( AnyLN ) eInternalContainer();
     }
 
     /**
@@ -137,8 +139,8 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * <!-- end-user-doc -->
      * @generated
      */
-    public NotificationChain basicSetParentAnyLN(AnyLN newParentAnyLN, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject)newParentAnyLN, SclPackage.DATA_SET__PARENT_ANY_LN, msgs);
+    public NotificationChain basicSetParentAnyLN( AnyLN newParentAnyLN, NotificationChain msgs ) {
+        msgs = eBasicSetContainer( ( InternalEObject ) newParentAnyLN, SclPackage.DATA_SET__PARENT_ANY_LN, msgs );
         return msgs;
     }
 
@@ -148,20 +150,23 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      */
     @Override
-    public void setParentAnyLN(AnyLN newParentAnyLN) {
-        if (newParentAnyLN != eInternalContainer() || (eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN && newParentAnyLN != null)) {
-            if (EcoreUtil.isAncestor(this, newParentAnyLN))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setParentAnyLN( AnyLN newParentAnyLN ) {
+        if( newParentAnyLN != eInternalContainer()
+                || ( eContainerFeatureID() != SclPackage.DATA_SET__PARENT_ANY_LN && newParentAnyLN != null ) ) {
+            if( EcoreUtil.isAncestor( this, newParentAnyLN ) )
+                throw new IllegalArgumentException( "Recursive containment not allowed for " + toString() );
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newParentAnyLN != null)
-                msgs = ((InternalEObject)newParentAnyLN).eInverseAdd(this, SclPackage.ANY_LN__DATA_SET, AnyLN.class, msgs);
-            msgs = basicSetParentAnyLN(newParentAnyLN, msgs);
-            if (msgs != null) msgs.dispatch();
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            if( newParentAnyLN != null )
+                msgs = ( ( InternalEObject ) newParentAnyLN ).eInverseAdd( this, SclPackage.ANY_LN__DATA_SET,
+                        AnyLN.class, msgs );
+            msgs = basicSetParentAnyLN( newParentAnyLN, msgs );
+            if( msgs != null ) msgs.dispatch();
         }
-        else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_SET__PARENT_ANY_LN, newParentAnyLN, newParentAnyLN));
+        else if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__PARENT_ANY_LN, newParentAnyLN,
+                    newParentAnyLN ) );
     }
 
     /**
@@ -170,9 +175,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      */
     @Override
-    public EList<Control> getReferredByControl() {
-        if (referredByControl == null) {
-            referredByControl = new EObjectWithInverseEList.Unsettable<Control>(Control.class, this, SclPackage.DATA_SET__REFERRED_BY_CONTROL, SclPackage.CONTROL__REFERS_TO_DATA_SET);
+    public EList< Control > getReferredByControl() {
+        if( referredByControl == null ) {
+            referredByControl = new EObjectWithInverseEList.Unsettable< Control >( Control.class, this,
+                    SclPackage.DATA_SET__REFERRED_BY_CONTROL, SclPackage.CONTROL__REFERS_TO_DATA_SET );
         }
         return referredByControl;
     }
@@ -184,7 +190,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public void unsetReferredByControl() {
-        if (referredByControl != null) ((InternalEList.Unsettable<?>)referredByControl).unset();
+        if( referredByControl != null ) ( ( InternalEList.Unsettable< ? > ) referredByControl ).unset();
     }
 
     /**
@@ -194,7 +200,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public boolean isSetReferredByControl() {
-        return referredByControl != null && ((InternalEList.Unsettable<?>)referredByControl).isSet();
+        return referredByControl != null && ( ( InternalEList.Unsettable< ? > ) referredByControl ).isSet();
     }
 
     /**
@@ -203,9 +209,10 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      */
     @Override
-    public EList<FCDA> getFCDA() {
-        if (fcda == null) {
-            fcda = new EObjectContainmentWithInverseEList.Unsettable<FCDA>(FCDA.class, this, SclPackage.DATA_SET__FCDA, SclPackage.FCDA__PARENT_DATA_SET);
+    public EList< FCDA > getFCDA() {
+        if( fcda == null ) {
+            fcda = new EObjectContainmentWithInverseEList.Unsettable< FCDA >( FCDA.class, this,
+                    SclPackage.DATA_SET__FCDA, SclPackage.FCDA__PARENT_DATA_SET );
         }
         return fcda;
     }
@@ -217,7 +224,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public void unsetFCDA() {
-        if (fcda != null) ((InternalEList.Unsettable<?>)fcda).unset();
+        if( fcda != null ) ( ( InternalEList.Unsettable< ? > ) fcda ).unset();
     }
 
     /**
@@ -227,7 +234,7 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public boolean isSetFCDA() {
-        return fcda != null && ((InternalEList.Unsettable<?>)fcda).isSet();
+        return fcda != null && ( ( InternalEList.Unsettable< ? > ) fcda ).isSet();
     }
 
     /**
@@ -246,13 +253,14 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      * @generated
      */
     @Override
-    public void setName(String newName) {
+    public void setName( String newName ) {
         String oldName = name;
         name = newName;
         boolean oldNameESet = nameESet;
         nameESet = true;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SclPackage.DATA_SET__NAME, oldName, name, !oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.SET, SclPackage.DATA_SET__NAME, oldName, name,
+                    !oldNameESet ) );
     }
 
     /**
@@ -266,8 +274,9 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
         boolean oldNameESet = nameESet;
         name = NAME_EDEFAULT;
         nameESet = false;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.UNSET, SclPackage.DATA_SET__NAME, oldName, NAME_EDEFAULT, oldNameESet));
+        if( eNotificationRequired() )
+            eNotify( new ENotificationImpl( this, Notification.UNSET, SclPackage.DATA_SET__NAME, oldName, NAME_EDEFAULT,
+                    oldNameESet ) );
     }
 
     /**
@@ -288,17 +297,18 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @SuppressWarnings( "unchecked" )
     @Override
     public NotificationChain eInverseAdd( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                if (eInternalContainer() != null)
-                    msgs = eBasicRemoveFromContainer(msgs);
-                return basicSetParentAnyLN((AnyLN)otherEnd, msgs);
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getReferredByControl()).basicAdd(otherEnd, msgs);
-            case SclPackage.DATA_SET__FCDA:
-                return ((InternalEList<InternalEObject>)(InternalEList<?>)getFCDA()).basicAdd(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            if( eInternalContainer() != null )
+                msgs = eBasicRemoveFromContainer( msgs );
+            return basicSetParentAnyLN( ( AnyLN ) otherEnd, msgs );
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getReferredByControl() )
+                    .basicAdd( otherEnd, msgs );
+        case SclPackage.DATA_SET__FCDA:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getFCDA() ).basicAdd( otherEnd, msgs );
         }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
+        return super.eInverseAdd( otherEnd, featureID, msgs );
     }
 
     /**
@@ -308,15 +318,15 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public NotificationChain eInverseRemove( InternalEObject otherEnd, int featureID, NotificationChain msgs ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                return basicSetParentAnyLN(null, msgs);
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                return ((InternalEList<?>)getReferredByControl()).basicRemove(otherEnd, msgs);
-            case SclPackage.DATA_SET__FCDA:
-                return ((InternalEList<?>)getFCDA()).basicRemove(otherEnd, msgs);
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            return basicSetParentAnyLN( null, msgs );
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            return ( ( InternalEList< ? > ) getReferredByControl() ).basicRemove( otherEnd, msgs );
+        case SclPackage.DATA_SET__FCDA:
+            return ( ( InternalEList< ? > ) getFCDA() ).basicRemove( otherEnd, msgs );
         }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
+        return super.eInverseRemove( otherEnd, featureID, msgs );
     }
 
     /**
@@ -326,11 +336,11 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature( NotificationChain msgs ) {
-        switch (eContainerFeatureID()) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                return eInternalContainer().eInverseRemove(this, SclPackage.ANY_LN__DATA_SET, AnyLN.class, msgs);
+        switch( eContainerFeatureID() ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            return eInternalContainer().eInverseRemove( this, SclPackage.ANY_LN__DATA_SET, AnyLN.class, msgs );
         }
-        return super.eBasicRemoveFromContainerFeature(msgs);
+        return super.eBasicRemoveFromContainerFeature( msgs );
     }
 
     /**
@@ -340,17 +350,17 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                return getParentAnyLN();
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                return getReferredByControl();
-            case SclPackage.DATA_SET__FCDA:
-                return getFCDA();
-            case SclPackage.DATA_SET__NAME:
-                return getName();
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            return getParentAnyLN();
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            return getReferredByControl();
+        case SclPackage.DATA_SET__FCDA:
+            return getFCDA();
+        case SclPackage.DATA_SET__NAME:
+            return getName();
         }
-        return super.eGet(featureID, resolve, coreType);
+        return super.eGet( featureID, resolve, coreType );
     }
 
     /**
@@ -361,23 +371,23 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
     @SuppressWarnings( "unchecked" )
     @Override
     public void eSet( int featureID, Object newValue ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)newValue);
-                return;
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                getReferredByControl().clear();
-                getReferredByControl().addAll((Collection<? extends Control>)newValue);
-                return;
-            case SclPackage.DATA_SET__FCDA:
-                getFCDA().clear();
-                getFCDA().addAll((Collection<? extends FCDA>)newValue);
-                return;
-            case SclPackage.DATA_SET__NAME:
-                setName((String)newValue);
-                return;
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) newValue );
+            return;
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            getReferredByControl().clear();
+            getReferredByControl().addAll( ( Collection< ? extends Control > ) newValue );
+            return;
+        case SclPackage.DATA_SET__FCDA:
+            getFCDA().clear();
+            getFCDA().addAll( ( Collection< ? extends FCDA > ) newValue );
+            return;
+        case SclPackage.DATA_SET__NAME:
+            setName( ( String ) newValue );
+            return;
         }
-        super.eSet(featureID, newValue);
+        super.eSet( featureID, newValue );
     }
 
     /**
@@ -387,21 +397,21 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public void eUnset( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                setParentAnyLN((AnyLN)null);
-                return;
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                unsetReferredByControl();
-                return;
-            case SclPackage.DATA_SET__FCDA:
-                unsetFCDA();
-                return;
-            case SclPackage.DATA_SET__NAME:
-                unsetName();
-                return;
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            setParentAnyLN( ( AnyLN ) null );
+            return;
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            unsetReferredByControl();
+            return;
+        case SclPackage.DATA_SET__FCDA:
+            unsetFCDA();
+            return;
+        case SclPackage.DATA_SET__NAME:
+            unsetName();
+            return;
         }
-        super.eUnset(featureID);
+        super.eUnset( featureID );
     }
 
     /**
@@ -411,17 +421,17 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public boolean eIsSet( int featureID ) {
-        switch (featureID) {
-            case SclPackage.DATA_SET__PARENT_ANY_LN:
-                return getParentAnyLN() != null;
-            case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
-                return isSetReferredByControl();
-            case SclPackage.DATA_SET__FCDA:
-                return isSetFCDA();
-            case SclPackage.DATA_SET__NAME:
-                return isSetName();
+        switch( featureID ) {
+        case SclPackage.DATA_SET__PARENT_ANY_LN:
+            return getParentAnyLN() != null;
+        case SclPackage.DATA_SET__REFERRED_BY_CONTROL:
+            return isSetReferredByControl();
+        case SclPackage.DATA_SET__FCDA:
+            return isSetFCDA();
+        case SclPackage.DATA_SET__NAME:
+            return isSetName();
         }
-        return super.eIsSet(featureID);
+        return super.eIsSet( featureID );
     }
 
     /**
@@ -431,12 +441,15 @@ public class DataSetImpl extends UnNamingImpl implements DataSet {
      */
     @Override
     public String toString() {
-        if (eIsProxy()) return super.toString();
+        if( eIsProxy() ) return super.toString();
 
-        StringBuilder result = new StringBuilder(super.toString());
-        result.append(" (name: ");
-        if (nameESet) result.append(name); else result.append("<unset>");
-        result.append(')');
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (name: " );
+        if( nameESet )
+            result.append( name );
+        else
+            result.append( "<unset>" );
+        result.append( ')' );
         return result.toString();
     }
 

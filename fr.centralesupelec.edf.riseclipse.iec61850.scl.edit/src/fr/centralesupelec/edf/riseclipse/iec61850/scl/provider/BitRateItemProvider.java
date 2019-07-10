@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -42,8 +43,8 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public BitRateItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public BitRateItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -53,9 +54,9 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
         }
         return itemPropertyDescriptors;
@@ -68,8 +69,8 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/BitRate"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/BitRate" ) );
     }
 
     /**
@@ -79,11 +80,10 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        BitRate bitRate = (BitRate)object;
-        return getString("_UI_BitRate_type") + " " + bitRate.getLineNumber();
+    public String getText( Object object ) {
+        BitRate bitRate = ( BitRate ) object;
+        return getString( "_UI_BitRate_type" ) + " " + bitRate.getLineNumber();
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -93,9 +93,8 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
-        super.notifyChanged(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
     }
 
     /**
@@ -106,8 +105,8 @@ public class BitRateItemProvider extends BitRateInMbPerSecItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
     }
 
 }

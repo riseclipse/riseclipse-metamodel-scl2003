@@ -1,23 +1,24 @@
-/**
- *  Copyright (c) 2018 CentraleSupélec & EDF.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- * 
- *  This file is part of the RiseClipse tool
- *  
- *  Contributors:
- *      Computer Science Department, CentraleSupélec
- *      EDF R&D
- *  Contacts:
- *      dominique.marcadet@centralesupelec.fr
- *      aurelie.dehouck-neveu@edf.fr
- *  Web site:
- *      http://wdi.supelec.fr/software/RiseClipse/
- */
+/*
+*************************************************************************
+**  Copyright (c) 2019 CentraleSupélec & EDF.
+**  All rights reserved. This program and the accompanying materials
+**  are made available under the terms of the Eclipse Public License v2.0
+**  which accompanies this distribution, and is available at
+**  https://www.eclipse.org/legal/epl-v20.html
+** 
+**  This file is part of the RiseClipse tool
+**  
+**  Contributors:
+**      Computer Science Department, CentraleSupélec
+**      EDF R&D
+**  Contacts:
+**      dominique.marcadet@centralesupelec.fr
+**      aurelie.dehouck-neveu@edf.fr
+**  Web site:
+**      http://wdi.supelec.fr/software/RiseClipse/
+*************************************************************************
+*/
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.provider;
-
 
 import java.util.Collection;
 import java.util.List;
@@ -46,8 +47,8 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    public AbstractDataAttributeItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
+    public AbstractDataAttributeItemProvider( AdapterFactory adapterFactory ) {
+        super( adapterFactory );
     }
 
     /**
@@ -57,23 +58,23 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+    public List< IItemPropertyDescriptor > getPropertyDescriptors( Object object ) {
+        if( itemPropertyDescriptors == null ) {
+            super.getPropertyDescriptors( object );
 
-            addBTypePropertyDescriptor(object);
-            addCountPropertyDescriptor(object);
-            addSAddrPropertyDescriptor(object);
-            addTypePropertyDescriptor(object);
-            addValImportPropertyDescriptor(object);
-            addValKindPropertyDescriptor(object);
-            addRefersToEnumTypePropertyDescriptor(object);
-            addRefersToDATypePropertyDescriptor(object);
-            addReferredByFCDAPropertyDescriptor(object);
-            addReferredByExtRefPropertyDescriptor(object);
-            addNamePropertyDescriptor(object);
-            addReferredByDAIPropertyDescriptor(object);
-            addReferredBySDIPropertyDescriptor(object);
+            addBTypePropertyDescriptor( object );
+            addCountPropertyDescriptor( object );
+            addSAddrPropertyDescriptor( object );
+            addTypePropertyDescriptor( object );
+            addValImportPropertyDescriptor( object );
+            addValKindPropertyDescriptor( object );
+            addRefersToEnumTypePropertyDescriptor( object );
+            addRefersToDATypePropertyDescriptor( object );
+            addReferredByFCDAPropertyDescriptor( object );
+            addReferredByExtRefPropertyDescriptor( object );
+            addNamePropertyDescriptor( object );
+            addReferredByDAIPropertyDescriptor( object );
+            addReferredBySDIPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -84,20 +85,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addBTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_bType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_bType_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_BType(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addBTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_bType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_bType_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_BType(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -106,20 +107,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addCountPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_count_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_count_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_Count(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addCountPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_count_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_count_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_Count(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -128,20 +129,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addSAddrPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_sAddr_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_sAddr_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_SAddr(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addSAddrPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_sAddr_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_sAddr_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_SAddr(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -150,20 +151,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_type_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_type_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_Type(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_type_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_type_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_Type(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -172,20 +173,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addValImportPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_valImport_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_valImport_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ValImport(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addValImportPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_valImport_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_valImport_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_ValImport(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -194,20 +195,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addValKindPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_valKind_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_valKind_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ValKind(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addValKindPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_valKind_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_valKind_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_ValKind(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -216,20 +217,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToEnumTypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_RefersToEnumType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToEnumType_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToEnumType(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToEnumTypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add( createItemPropertyDescriptor(
+                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                getResourceLocator(),
+                getString( "_UI_AbstractDataAttribute_RefersToEnumType_feature" ),
+                getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToEnumType_feature",
+                        "_UI_AbstractDataAttribute_type" ),
+                SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToEnumType(),
+                true,
+                false,
+                true,
+                null,
+                null,
+                null ) );
     }
 
     /**
@@ -238,20 +239,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addRefersToDATypePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_RefersToDAType_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_RefersToDAType_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToDAType(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addRefersToDATypePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_RefersToDAType_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_AbstractDataAttribute_RefersToDAType_feature", "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_RefersToDAType(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -260,20 +261,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByFCDAPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_ReferredByFCDA_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByFCDA_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByFCDA(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByFCDAPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_ReferredByFCDA_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_AbstractDataAttribute_ReferredByFCDA_feature", "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByFCDA(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -282,20 +283,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByExtRefPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_ReferredByExtRef_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByExtRef_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByExtRef(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByExtRefPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add( createItemPropertyDescriptor(
+                ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                getResourceLocator(),
+                getString( "_UI_AbstractDataAttribute_ReferredByExtRef_feature" ),
+                getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByExtRef_feature",
+                        "_UI_AbstractDataAttribute_type" ),
+                SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByExtRef(),
+                true,
+                false,
+                true,
+                null,
+                null,
+                null ) );
     }
 
     /**
@@ -304,20 +305,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addNamePropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_name_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_name_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_Name(),
-                 true,
-                 false,
-                 false,
-                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                 null,
-                 null));
+    protected void addNamePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_name_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_name_feature",
+                                "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_Name(),
+                        true,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -326,20 +327,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredByDAIPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_ReferredByDAI_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredByDAI_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByDAI(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredByDAIPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_ReferredByDAI_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_AbstractDataAttribute_ReferredByDAI_feature", "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredByDAI(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -348,20 +349,20 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * <!-- end-user-doc -->
      * @generated
      */
-    protected void addReferredBySDIPropertyDescriptor(Object object) {
-        itemPropertyDescriptors.add
-            (createItemPropertyDescriptor
-                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-                 getResourceLocator(),
-                 getString("_UI_AbstractDataAttribute_ReferredBySDI_feature"),
-                 getString("_UI_PropertyDescriptor_description", "_UI_AbstractDataAttribute_ReferredBySDI_feature", "_UI_AbstractDataAttribute_type"),
-                 SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredBySDI(),
-                 true,
-                 false,
-                 true,
-                 null,
-                 null,
-                 null));
+    protected void addReferredBySDIPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_AbstractDataAttribute_ReferredBySDI_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_AbstractDataAttribute_ReferredBySDI_feature", "_UI_AbstractDataAttribute_type" ),
+                        SclPackage.eINSTANCE.getAbstractDataAttribute_ReferredBySDI(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
     }
 
     /**
@@ -373,10 +374,10 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(SclPackage.eINSTANCE.getAbstractDataAttribute_Val());
+    public Collection< ? extends EStructuralFeature > getChildrenFeatures( Object object ) {
+        if( childrenFeatures == null ) {
+            super.getChildrenFeatures( object );
+            childrenFeatures.add( SclPackage.eINSTANCE.getAbstractDataAttribute_Val() );
         }
         return childrenFeatures;
     }
@@ -387,11 +388,11 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
+    protected EStructuralFeature getChildFeature( Object object, Object child ) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
+        return super.getChildFeature( object, child );
     }
 
     /**
@@ -401,8 +402,8 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public Object getImage(Object object) {
-        return overlayImage(object, getResourceLocator().getImage("full/obj16/AbstractDataAttribute"));
+    public Object getImage( Object object ) {
+        return overlayImage( object, getResourceLocator().getImage( "full/obj16/AbstractDataAttribute" ) );
     }
 
     /**
@@ -412,13 +413,11 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public String getText(Object object) {
-        String label = ((AbstractDataAttribute)object).getName();
-        return label == null || label.length() == 0 ?
-            getString("_UI_AbstractDataAttribute_type") :
-            getString("_UI_AbstractDataAttribute_type") + " " + label;
+    public String getText( Object object ) {
+        String label = ( ( AbstractDataAttribute ) object ).getName();
+        return label == null || label.length() == 0 ? getString( "_UI_AbstractDataAttribute_type" )
+                : getString( "_UI_AbstractDataAttribute_type" ) + " " + label;
     }
-    
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -428,24 +427,24 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+    public void notifyChanged( Notification notification ) {
+        updateChildren( notification );
 
-        switch (notification.getFeatureID(AbstractDataAttribute.class)) {
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-                return;
-            case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
-                fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-                return;
+        switch( notification.getFeatureID( AbstractDataAttribute.class ) ) {
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__BTYPE:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__COUNT:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__SADDR:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__TYPE:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_IMPORT:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL_KIND:
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__NAME:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );
+            return;
+        case SclPackage.ABSTRACT_DATA_ATTRIBUTE__VAL:
+            fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
+            return;
         }
-        super.notifyChanged(notification);
+        super.notifyChanged( notification );
     }
 
     /**
@@ -456,13 +455,11 @@ public class AbstractDataAttributeItemProvider extends UnNamingItemProvider {
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+    protected void collectNewChildDescriptors( Collection< Object > newChildDescriptors, Object object ) {
+        super.collectNewChildDescriptors( newChildDescriptors, object );
 
-        newChildDescriptors.add
-            (createChildParameter
-                (SclPackage.eINSTANCE.getAbstractDataAttribute_Val(),
-                 SclFactory.eINSTANCE.createVal()));
+        newChildDescriptors.add( createChildParameter( SclPackage.eINSTANCE.getAbstractDataAttribute_Val(),
+                SclFactory.eINSTANCE.createVal() ) );
     }
 
 }
