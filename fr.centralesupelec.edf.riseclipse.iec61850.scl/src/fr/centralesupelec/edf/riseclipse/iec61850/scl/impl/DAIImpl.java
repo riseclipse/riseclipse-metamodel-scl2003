@@ -44,6 +44,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Val;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ValKindEnum;
@@ -1062,7 +1063,33 @@ public class DAIImpl extends UnNamingImpl implements DAI {
     private void doBuildExplicitLinkWithParentSDI( IRiseClipseConsole console, String messagePrefix ) {
         // No error or warning messages here: if this happens, error should have been detected before
         AbstractDataAttribute att = getParentSDI().getRefersToAbstractDataAttribute();
-        if( att == null ) return;
+        if( att == null ) {
+            // SDI may refers also to an SDO
+            SDO sdo = getParentSDI().getRefersToSDO();
+            if( sdo == null ) return;
+            sdo.buildExplicitLinks( console, false );
+            console.verbose( messagePrefix, "found SDO on line ", sdo.getLineNumber() );
+            DOType dot = sdo.getRefersToDOType();
+            // No error or warning message here: if this happens, error should have been detected before
+            if( dot == null ) return;
+            console.verbose( messagePrefix, "found DOType on line ", dot.getLineNumber() );
+            
+            List< DA > res = dot
+                    .getDA()
+                    .stream()
+                    .filter( d -> getName().equals( d.getName() ) )
+                    .collect( Collectors.toList() );
+
+            String mess = "DA( name = " + getName() + " )";
+            if( res.size() != 1 ) {
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess, res.size() );
+                return;
+            }
+            setRefersToAbstractDataAttribute( res.get( 0 ) );
+            console.info( "[SCL links] DAI on line ", getLineNumber(), " refers to ", mess, " on line ",
+                    getRefersToAbstractDataAttribute().getLineNumber() );
+            return;
+        }
         att.buildExplicitLinks( console, false );
         console.verbose( messagePrefix, "found AbstractDataAttribute on line ", att.getLineNumber() );
 
