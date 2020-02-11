@@ -250,11 +250,11 @@ public class TerminalItemProvider extends UnNamingItemProvider {
     }
 
     /**
-    * This adds a property descriptor for the Line Name feature.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
+     * This adds a property descriptor for the Line Name feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     protected void addLineNamePropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
@@ -272,11 +272,11 @@ public class TerminalItemProvider extends UnNamingItemProvider {
     }
 
     /**
-    * This returns Terminal.gif.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
+     * This returns Terminal.gif.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public Object getImage( Object object ) {
         return overlayImage( object, getResourceLocator().getImage( "full/obj16/Terminal" ) );

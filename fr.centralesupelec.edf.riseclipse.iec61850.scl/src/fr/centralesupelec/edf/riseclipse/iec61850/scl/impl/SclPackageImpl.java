@@ -6896,6 +6896,26 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
+    public EReference getLDevice_RefersToHigherLevelLDevice() {
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 8 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getLDevice_RefersToLowerLevelLDevices() {
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 9 );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EOperation getLDevice__GetNamespace() {
         return getLDevice().getEOperations().get( 0 );
     }

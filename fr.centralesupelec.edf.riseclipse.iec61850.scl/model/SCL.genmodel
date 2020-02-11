@@ -635,6 +635,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN0"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/LN"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/ReferredByIEDName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/RefersToHigherLevelLDevice"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//LDevice/RefersToLowerLevelLDevices"/>
       <genOperations ecoreOperation="SCL.ecore#//LDevice/getNamespace"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//LN">

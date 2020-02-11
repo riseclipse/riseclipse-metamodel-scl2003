@@ -42,6 +42,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice()
@@ -339,6 +341,94 @@ public interface LDevice extends UnNaming {
      * @generated
      */
     boolean isSetReferredByIEDName();
+
+    /**
+     * Returns the value of the '<em><b>Refers To Higher Level LDevice</b></em>' reference.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To Higher Level LDevice</em>' reference.
+     * @see #isSetRefersToHigherLevelLDevice()
+     * @see #unsetRefersToHigherLevelLDevice()
+     * @see #setRefersToHigherLevelLDevice(LDevice)
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_RefersToHigherLevelLDevice()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices
+     * @model opposite="RefersToLowerLevelLDevices" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    LDevice getRefersToHigherLevelLDevice();
+
+    /**
+     * Sets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Refers To Higher Level LDevice</em>' reference.
+     * @see #isSetRefersToHigherLevelLDevice()
+     * @see #unsetRefersToHigherLevelLDevice()
+     * @see #getRefersToHigherLevelLDevice()
+     * @generated
+     */
+    void setRefersToHigherLevelLDevice( LDevice value );
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToHigherLevelLDevice()
+     * @see #getRefersToHigherLevelLDevice()
+     * @see #setRefersToHigherLevelLDevice(LDevice)
+     * @generated
+     */
+    void unsetRefersToHigherLevelLDevice();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}' reference is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To Higher Level LDevice</em>' reference is set.
+     * @see #unsetRefersToHigherLevelLDevice()
+     * @see #getRefersToHigherLevelLDevice()
+     * @see #setRefersToHigherLevelLDevice(LDevice)
+     * @generated
+     */
+    boolean isSetRefersToHigherLevelLDevice();
+
+    /**
+     * Returns the value of the '<em><b>Refers To Lower Level LDevices</b></em>' reference list.
+     * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice}.
+     * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Refers To Lower Level LDevices</em>' reference list.
+     * @see #isSetRefersToLowerLevelLDevices()
+     * @see #unsetRefersToLowerLevelLDevices()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_RefersToLowerLevelLDevices()
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice
+     * @model opposite="RefersToHigherLevelLDevice" resolveProxies="false" unsettable="true" transient="true" ordered="false"
+     * @generated
+     */
+    EList< LDevice > getRefersToLowerLevelLDevices();
+
+    /**
+     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #isSetRefersToLowerLevelLDevices()
+     * @see #getRefersToLowerLevelLDevices()
+     * @generated
+     */
+    void unsetRefersToLowerLevelLDevices();
+
+    /**
+     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}' reference list is set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return whether the value of the '<em>Refers To Lower Level LDevices</em>' reference list is set.
+     * @see #unsetRefersToLowerLevelLDevices()
+     * @see #getRefersToLowerLevelLDevices()
+     * @generated
+     */
+    boolean isSetRefersToLowerLevelLDevices();
 
     /**
      * <!-- begin-user-doc -->

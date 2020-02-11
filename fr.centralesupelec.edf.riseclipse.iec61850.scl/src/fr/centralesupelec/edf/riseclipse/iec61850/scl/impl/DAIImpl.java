@@ -1073,7 +1073,7 @@ public class DAIImpl extends UnNamingImpl implements DAI {
             // No error or warning message here: if this happens, error should have been detected before
             if( dot == null ) return;
             console.verbose( messagePrefix, "found DOType on line ", dot.getLineNumber() );
-            
+
             List< DA > res = dot
                     .getDA()
                     .stream()

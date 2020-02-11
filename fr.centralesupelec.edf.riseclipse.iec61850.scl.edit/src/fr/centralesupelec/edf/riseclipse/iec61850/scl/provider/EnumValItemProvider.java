@@ -112,11 +112,11 @@ public class EnumValItemProvider extends SclObjectItemProvider {
     }
 
     /**
-    * This adds a property descriptor for the Desc feature.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
+     * This adds a property descriptor for the Desc feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     protected void addDescPropertyDescriptor( Object object ) {
         itemPropertyDescriptors.add(
                 createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
@@ -133,11 +133,11 @@ public class EnumValItemProvider extends SclObjectItemProvider {
     }
 
     /**
-    * This returns EnumVal.gif.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
+     * This returns EnumVal.gif.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public Object getImage( Object object ) {
         return overlayImage( object, getResourceLocator().getImage( "full/obj16/EnumVal" ) );
