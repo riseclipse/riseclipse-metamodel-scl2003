@@ -1120,6 +1120,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public String getNamespace() {
+        //@formatter:off
         List< DOI > namPltDoi =
                 getDOI()
                 .stream()
@@ -1196,6 +1197,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         if( getParentLDevice() == null ) return null;
         return getParentLDevice().getNamespace();
+        //@formatter:on
     }
 
     /**
