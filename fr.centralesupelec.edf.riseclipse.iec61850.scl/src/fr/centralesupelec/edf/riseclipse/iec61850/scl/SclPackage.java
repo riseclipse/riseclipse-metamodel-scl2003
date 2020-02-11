@@ -12461,13 +12461,31 @@ public interface SclPackage extends EPackage {
     int LDEVICE__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
+     * The feature id for the '<em><b>Refers To Higher Level LDevice</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE = UN_NAMING_FEATURE_COUNT + 8;
+
+    /**
+     * The feature id for the '<em><b>Refers To Lower Level LDevices</b></em>' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES = UN_NAMING_FEATURE_COUNT + 9;
+
+    /**
      * The number of structural features of the '<em>LDevice</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 8;
+    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -27374,6 +27392,28 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLDevice_ReferredByIEDName();
+
+    /**
+     * Returns the meta object for the reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Refers To Higher Level LDevice</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToHigherLevelLDevice()
+     * @see #getLDevice()
+     * @generated
+     */
+    EReference getLDevice_RefersToHigherLevelLDevice();
+
+    /**
+     * Returns the meta object for the reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference list '<em>Refers To Lower Level LDevices</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getRefersToLowerLevelLDevices()
+     * @see #getLDevice()
+     * @generated
+     */
+    EReference getLDevice_RefersToLowerLevelLDevices();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace() <em>Get Namespace</em>}' operation.

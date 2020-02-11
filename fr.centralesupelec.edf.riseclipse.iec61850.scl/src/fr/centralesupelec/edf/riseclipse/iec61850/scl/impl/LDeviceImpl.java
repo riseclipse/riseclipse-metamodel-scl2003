@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -47,6 +48,8 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Server;
+import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
+
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -65,6 +68,8 @@ import java.lang.reflect.InvocationTargetException;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLN <em>LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToHigherLevelLDevice <em>Refers To Higher Level LDevice</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getRefersToLowerLevelLDevices <em>Refers To Lower Level LDevices</em>}</li>
  * </ul>
  *
  * @generated
@@ -175,6 +180,35 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      * @ordered
      */
     protected boolean referredByIEDNameESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToHigherLevelLDevice() <em>Refers To Higher Level LDevice</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToHigherLevelLDevice()
+     * @generated
+     * @ordered
+     */
+    protected LDevice refersToHigherLevelLDevice;
+
+    /**
+     * This is true if the Refers To Higher Level LDevice reference has been set.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    protected boolean refersToHigherLevelLDeviceESet;
+
+    /**
+     * The cached value of the '{@link #getRefersToLowerLevelLDevices() <em>Refers To Lower Level LDevices</em>}' reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRefersToLowerLevelLDevices()
+     * @generated
+     * @ordered
+     */
+    protected EList< LDevice > refersToLowerLevelLDevices;
 
     /**
      * <!-- begin-user-doc -->
@@ -620,6 +654,160 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public LDevice getRefersToHigherLevelLDevice() {
+        return refersToHigherLevelLDevice;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicSetRefersToHigherLevelLDevice( LDevice newRefersToHigherLevelLDevice,
+            NotificationChain msgs ) {
+        LDevice oldRefersToHigherLevelLDevice = refersToHigherLevelLDevice;
+        refersToHigherLevelLDevice = newRefersToHigherLevelLDevice;
+        boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
+        refersToHigherLevelLDeviceESet = true;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.SET,
+                    SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, oldRefersToHigherLevelLDevice,
+                    newRefersToHigherLevelLDevice, !oldRefersToHigherLevelLDeviceESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setRefersToHigherLevelLDevice( LDevice newRefersToHigherLevelLDevice ) {
+        if( newRefersToHigherLevelLDevice != refersToHigherLevelLDevice ) {
+            NotificationChain msgs = null;
+            if( refersToHigherLevelLDevice != null )
+                msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
+                        SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            if( newRefersToHigherLevelLDevice != null )
+                msgs = ( ( InternalEObject ) newRefersToHigherLevelLDevice ).eInverseAdd( this,
+                        SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            msgs = basicSetRefersToHigherLevelLDevice( newRefersToHigherLevelLDevice, msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
+            refersToHigherLevelLDeviceESet = true;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.SET,
+                        SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, newRefersToHigherLevelLDevice,
+                        newRefersToHigherLevelLDevice, !oldRefersToHigherLevelLDeviceESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public NotificationChain basicUnsetRefersToHigherLevelLDevice( NotificationChain msgs ) {
+        LDevice oldRefersToHigherLevelLDevice = refersToHigherLevelLDevice;
+        refersToHigherLevelLDevice = null;
+        boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
+        refersToHigherLevelLDeviceESet = false;
+        if( eNotificationRequired() ) {
+            ENotificationImpl notification = new ENotificationImpl( this, Notification.UNSET,
+                    SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, oldRefersToHigherLevelLDevice, null,
+                    oldRefersToHigherLevelLDeviceESet );
+            if( msgs == null )
+                msgs = notification;
+            else
+                msgs.add( notification );
+        }
+        return msgs;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToHigherLevelLDevice() {
+        if( refersToHigherLevelLDevice != null ) {
+            NotificationChain msgs = null;
+            msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
+                    SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            msgs = basicUnsetRefersToHigherLevelLDevice( msgs );
+            if( msgs != null ) msgs.dispatch();
+        }
+        else {
+            boolean oldRefersToHigherLevelLDeviceESet = refersToHigherLevelLDeviceESet;
+            refersToHigherLevelLDeviceESet = false;
+            if( eNotificationRequired() )
+                eNotify( new ENotificationImpl( this, Notification.UNSET,
+                        SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE, null, null,
+                        oldRefersToHigherLevelLDeviceESet ) );
+        }
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToHigherLevelLDevice() {
+        return refersToHigherLevelLDeviceESet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EList< LDevice > getRefersToLowerLevelLDevices() {
+        if( refersToLowerLevelLDevices == null ) {
+            refersToLowerLevelLDevices = new EObjectWithInverseEList.Unsettable< LDevice >( LDevice.class, this,
+                    SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES,
+                    SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE );
+        }
+        return refersToLowerLevelLDevices;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void unsetRefersToLowerLevelLDevices() {
+        if( refersToLowerLevelLDevices != null )
+            ( ( InternalEList.Unsettable< ? > ) refersToLowerLevelLDevices ).unset();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public boolean isSetRefersToLowerLevelLDevices() {
+        return refersToLowerLevelLDevices != null
+                && ( ( InternalEList.Unsettable< ? > ) refersToLowerLevelLDevices ).isSet();
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -798,6 +986,14 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                 msgs = ( ( InternalEObject ) referredByIEDName ).eInverseRemove( this,
                         SclPackage.IED_NAME__REFERS_TO_LDEVICE, IEDName.class, msgs );
             return basicSetReferredByIEDName( ( IEDName ) otherEnd, msgs );
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            if( refersToHigherLevelLDevice != null )
+                msgs = ( ( InternalEObject ) refersToHigherLevelLDevice ).eInverseRemove( this,
+                        SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES, LDevice.class, msgs );
+            return basicSetRefersToHigherLevelLDevice( ( LDevice ) otherEnd, msgs );
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            return ( ( InternalEList< InternalEObject > ) ( InternalEList< ? > ) getRefersToLowerLevelLDevices() )
+                    .basicAdd( otherEnd, msgs );
         }
         return super.eInverseAdd( otherEnd, featureID, msgs );
     }
@@ -822,6 +1018,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return ( ( InternalEList< ? > ) getLN() ).basicRemove( otherEnd, msgs );
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
             return basicUnsetReferredByIEDName( msgs );
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            return basicUnsetRefersToHigherLevelLDevice( msgs );
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            return ( ( InternalEList< ? > ) getRefersToLowerLevelLDevices() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -865,6 +1065,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return getLN();
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
             return getReferredByIEDName();
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            return getRefersToHigherLevelLDevice();
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            return getRefersToLowerLevelLDevices();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -903,6 +1107,13 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
             setReferredByIEDName( ( IEDName ) newValue );
             return;
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            setRefersToHigherLevelLDevice( ( LDevice ) newValue );
+            return;
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            getRefersToLowerLevelLDevices().clear();
+            getRefersToLowerLevelLDevices().addAll( ( Collection< ? extends LDevice > ) newValue );
+            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -939,6 +1150,12 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
             unsetReferredByIEDName();
             return;
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            unsetRefersToHigherLevelLDevice();
+            return;
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            unsetRefersToLowerLevelLDevices();
+            return;
         }
         super.eUnset( featureID );
     }
@@ -967,6 +1184,10 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return isSetLN();
         case SclPackage.LDEVICE__REFERRED_BY_IED_NAME:
             return isSetReferredByIEDName();
+        case SclPackage.LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE:
+            return isSetRefersToHigherLevelLDevice();
+        case SclPackage.LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES:
+            return isSetRefersToLowerLevelLDevices();
         }
         return super.eIsSet( featureID );
     }
@@ -1014,6 +1235,101 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public IED getIED() {
         return getParentServer().getParentAccessPoint().getParentIED();
+    }
+
+    @Override
+    protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+        //@formatter:off
+
+        // see Issue #13
+        super.doBuildExplicitLinks( console );
+
+        String messagePrefix = "[SCL links] while resolving link from LDevice on line " + getLineNumber() + ": ";
+        
+        // TODO: warning message ?
+        if( getLN0() == null ) return;
+        
+        // Look for DOI name="GrRef" in LN0
+        List< DOI > grRef =
+                 getLN0()
+                .getDOI()
+                .stream()
+                .filter( doi -> "GrRef".equals(  doi.getName() ))
+                .collect( Collectors.toList() );
+
+        if( grRef.size() > 1 ) {
+            console.warning( messagePrefix, "found several DOI named GrRef in LN0" );
+            return;            
+        }
+
+        if( grRef.size() == 0 ) {
+            console.info( "[SCL links] LDevice " + getInst() + " on line " + getLineNumber() + " is a root LDevice" );
+            return;            
+        }
+        // Look for DAI name="setSrcRef" in GrRef
+        List< DAI > setSrcRef =
+                 grRef
+                .get( 0 )
+                .getDAI()
+                .stream()
+                .filter( dai -> "setSrcRef".equals(  dai.getName() ))
+                .collect( Collectors.toList() );
+        
+        if( setSrcRef.size() == 0 ) {
+            console.warning( messagePrefix, "found no DAI named setSrcRef in GrRef on line " + grRef.get( 0 ).getLineNumber() );
+            return;            
+        }
+        if( setSrcRef.size() > 1 ) {
+            console.warning( messagePrefix, "found several DAI named setSrcRef in GrRef on line " + grRef.get( 0 ).getLineNumber() );
+            return;            
+        }
+        
+        if( setSrcRef.get( 0 ).getVal().size() == 0 ) {
+            console.warning( messagePrefix, "found no Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            return;            
+        }
+        if( setSrcRef.get( 0 ).getVal().size() > 1 ) {
+            console.warning( messagePrefix, "found several Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            return;            
+        }
+        
+        String higherLevelLDeviceName = setSrcRef.get( 0 ).getVal().get( 0 ).getValue();
+        if(( higherLevelLDeviceName == null ) || ( higherLevelLDeviceName.length() <= 1 )) {
+            console.warning( messagePrefix, "found no Val or empty Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() );
+            return;            
+        }
+        
+        // TODO: higherLevelLDeviceName may or must be prefixed by @ ?
+        if( ! higherLevelLDeviceName.startsWith( "@" )) {
+            console.warning( messagePrefix, "Val in setSrcRef on line " + setSrcRef.get( 0 ).getLineNumber() + " does not start with @" );
+        }
+        else {
+            higherLevelLDeviceName = higherLevelLDeviceName.substring( 1 );
+        }
+        
+        // Look for LDevice in same Server with name higherLevelLDeviceName
+        // Must be final or effectively final
+        String temp = higherLevelLDeviceName;
+        List< LDevice > lDevices =
+                 getParentServer()
+                .getLDevice()
+                .stream()
+                .filter( ld -> temp.equals( ld.getInst() ))
+                .collect( Collectors.toList() );
+        
+        if( lDevices.size() == 0 ) {
+            console.warning( messagePrefix, "found no LDevice named " + higherLevelLDeviceName );
+            return;            
+        }
+        if( lDevices.size() > 1 ) {
+            console.warning( messagePrefix, "found several LDevice " + higherLevelLDeviceName );
+            return;            
+        }
+        
+        console.info( "[SCL links] LDevice " + getInst() + " on line " + getLineNumber() + " has " + lDevices.get( 0 ).getInst() + " for higher level LDevice" );
+        setRefersToHigherLevelLDevice( lDevices.get( 0 ));
+        
+        //@formatter:on
     }
 
 } //LDeviceImpl

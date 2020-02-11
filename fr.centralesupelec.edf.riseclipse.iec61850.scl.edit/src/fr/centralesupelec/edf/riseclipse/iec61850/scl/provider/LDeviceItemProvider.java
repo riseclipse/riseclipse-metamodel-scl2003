@@ -65,6 +65,8 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
             addInstPropertyDescriptor( object );
             addLdNamePropertyDescriptor( object );
             addReferredByIEDNamePropertyDescriptor( object );
+            addRefersToHigherLevelLDevicePropertyDescriptor( object );
+            addRefersToLowerLevelLDevicesPropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
     }
@@ -127,6 +129,50 @@ public class LDeviceItemProvider extends UnNamingItemProvider {
                         getString( "_UI_PropertyDescriptor_description", "_UI_LDevice_ReferredByIEDName_feature",
                                 "_UI_LDevice_type" ),
                         SclPackage.eINSTANCE.getLDevice_ReferredByIEDName(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To Higher Level LDevice feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToHigherLevelLDevicePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LDevice_RefersToHigherLevelLDevice_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_LDevice_RefersToHigherLevelLDevice_feature", "_UI_LDevice_type" ),
+                        SclPackage.eINSTANCE.getLDevice_RefersToHigherLevelLDevice(),
+                        true,
+                        false,
+                        true,
+                        null,
+                        null,
+                        null ) );
+    }
+
+    /**
+     * This adds a property descriptor for the Refers To Lower Level LDevices feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addRefersToLowerLevelLDevicesPropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_LDevice_RefersToLowerLevelLDevices_feature" ),
+                        getString( "_UI_PropertyDescriptor_description",
+                                "_UI_LDevice_RefersToLowerLevelLDevices_feature", "_UI_LDevice_type" ),
+                        SclPackage.eINSTANCE.getLDevice_RefersToLowerLevelLDevices(),
                         true,
                         false,
                         true,
