@@ -1091,6 +1091,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
     @Override
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+        //@formatter:off
+        
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1263,13 +1265,29 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         else {
             // daName – if missing, all attributes with functional characteristic given by fc are selected.
-            if( getFc() == null ) return;
+            if( getFc() == null ) {
+                console.warning( "[SCL links] FCDA (line ", getLineNumber(),
+                        ") does not refer to any AbstractDataAttribute because FC is empty" );
+                return;
+            }
 
-            doType
+            // We select either DAs contained in DOType or DAs contained in SDOs contained in DOType
+            if( doType.getDA().size() > 0 ) {
+                doType
                     .getDA()
                     .stream()
                     .filter( da -> da.getFc().equals( getFc() ) )
                     .collect( Collectors.toCollection( () -> getRefersToAbstractDataAttribute() ) );
+            }
+            else {
+                doType
+                    .getSDO()
+                    .stream()
+                    .map( sdo -> sdo.getRefersToDOType() )
+                    .flatMap( dotype -> dotype.getDA().stream() )
+                    .filter( da -> da.getFc().equals( getFc() ) )
+                    .collect( Collectors.toCollection( () -> getRefersToAbstractDataAttribute() ) );
+            }
 
             if( getRefersToAbstractDataAttribute().size() > 0 ) {
                 for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
@@ -1284,6 +1302,7 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             }
         }
 
+        //@formatter:on
     }
 
 } //FCDAImpl
