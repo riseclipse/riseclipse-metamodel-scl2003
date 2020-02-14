@@ -7207,22 +7207,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__CONTROL_WITH_TRIGGER_OPT = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
-     * The feature id for the '<em><b>Control</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__CONTROL = UN_NAMING_FEATURE_COUNT + 16;
-
-    /**
      * The number of structural features of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 17;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12722,15 +12713,6 @@ public interface SclPackage extends EPackage {
     int LN__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
 
     /**
-     * The feature id for the '<em><b>Control</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__CONTROL = ANY_LN__CONTROL;
-
-    /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13008,15 +12990,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
-
-    /**
-     * The feature id for the '<em><b>Control</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__CONTROL = ANY_LN__CONTROL;
 
     /**
      * The feature id for the '<em><b>GSE Control</b></em>' containment reference list.
@@ -25051,17 +25024,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EAttribute getAnyLN_ControlWithTriggerOpt();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EAttribute getAnyLN_Control();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getParentLDevice() <em>Get Parent LDevice</em>}' operation.

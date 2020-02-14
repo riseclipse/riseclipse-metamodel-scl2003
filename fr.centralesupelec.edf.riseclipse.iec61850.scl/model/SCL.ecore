@@ -655,14 +655,6 @@
         eOpposite="#//LNode/RefersToAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlWithTriggerOpt"
         ordered="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        volatile="true" transient="true" unsettable="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-        <details key="group" value="#Control"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Control" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
         transient="true" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="group"/>
@@ -1224,10 +1216,9 @@
         eOpposite="#//SettingControl/ParentLN0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlWithIEDName" ordered="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        volatile="true" transient="true" unsettable="true">
+        transient="true" unsettable="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="group"/>
-        <details key="group" value="#Control"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

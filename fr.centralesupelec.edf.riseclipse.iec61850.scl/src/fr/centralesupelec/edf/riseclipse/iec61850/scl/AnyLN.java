@@ -48,7 +48,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN()
@@ -738,8 +737,8 @@ public interface AnyLN extends UnNaming {
      * @see #isSetControlWithTriggerOpt()
      * @see #unsetControlWithTriggerOpt()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ControlWithTriggerOpt()
-     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" volatile="true" ordered="false"
-     *        extendedMetaData="kind='group' group='#Control'"
+     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
+     *        extendedMetaData="kind='group'"
      * @generated
      */
     FeatureMap getControlWithTriggerOpt();
@@ -764,42 +763,6 @@ public interface AnyLN extends UnNaming {
      * @generated
      */
     boolean isSetControlWithTriggerOpt();
-
-    /**
-     * Returns the value of the '<em><b>Control</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Control</em>' attribute list.
-     * @see #isSetControl()
-     * @see #unsetControl()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_Control()
-     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
-     *        extendedMetaData="kind='group'"
-     * @generated
-     */
-    FeatureMap getControl();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetControl()
-     * @see #getControl()
-     * @generated
-     */
-    void unsetControl();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControl <em>Control</em>}' attribute list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Control</em>' attribute list is set.
-     * @see #unsetControl()
-     * @see #getControl()
-     * @generated
-     */
-    boolean isSetControl();
 
     /**
      * <!-- begin-user-doc -->

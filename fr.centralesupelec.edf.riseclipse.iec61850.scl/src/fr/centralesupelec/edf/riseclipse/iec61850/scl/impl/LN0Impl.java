@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -74,6 +75,16 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      * @ordered
      */
     protected boolean settingControlESet;
+
+    /**
+     * The cached value of the '{@link #getControlWithIEDName() <em>Control With IED Name</em>}' attribute list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getControlWithIEDName()
+     * @generated
+     * @ordered
+     */
+    protected FeatureMap controlWithIEDName;
 
     /**
      * <!-- begin-user-doc -->
@@ -320,8 +331,10 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public FeatureMap getControlWithIEDName() {
-        return ( FeatureMap ) getControl().< FeatureMap.Entry > list(
-                SclPackage.eINSTANCE.getLN0_ControlWithIEDName() );
+        if( controlWithIEDName == null ) {
+            controlWithIEDName = new BasicFeatureMap( this, SclPackage.LN0__CONTROL_WITH_IED_NAME );
+        }
+        return controlWithIEDName;
     }
 
     /**
@@ -331,7 +344,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public void unsetControlWithIEDName() {
-        ( ( FeatureMap.Internal ) getControl() ).clear( SclPackage.eINSTANCE.getLN0_ControlWithIEDName() );
+        if( controlWithIEDName != null ) ( ( InternalEList.Unsettable< ? > ) controlWithIEDName ).unset();
     }
 
     /**
@@ -341,7 +354,7 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
      */
     @Override
     public boolean isSetControlWithIEDName() {
-        return !( ( FeatureMap.Internal ) getControl() ).isEmpty( SclPackage.eINSTANCE.getLN0_ControlWithIEDName() );
+        return controlWithIEDName != null && ( ( InternalEList.Unsettable< ? > ) controlWithIEDName ).isSet();
     }
 
     /**
@@ -508,6 +521,22 @@ public class LN0Impl extends AnyLNImpl implements LN0 {
             return isSetControlWithIEDName();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if( eIsProxy() ) return super.toString();
+
+        StringBuilder result = new StringBuilder( super.toString() );
+        result.append( " (ControlWithIEDName: " );
+        result.append( controlWithIEDName );
+        result.append( ')' );
+        return result.toString();
     }
 
 } //LN0Impl
