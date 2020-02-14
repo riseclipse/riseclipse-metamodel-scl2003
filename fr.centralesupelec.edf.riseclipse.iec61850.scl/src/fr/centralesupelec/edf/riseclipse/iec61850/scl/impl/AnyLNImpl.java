@@ -83,7 +83,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getControl <em>Control</em>}</li>
  * </ul>
  *
  * @generated
@@ -295,14 +294,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     protected EList< LNode > referredByLNode;
 
     /**
-     * The cached value of the '{@link #getControl() <em>Control</em>}' attribute list.
+     * The cached value of the '{@link #getControlWithTriggerOpt() <em>Control With Trigger Opt</em>}' attribute list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getControl()
+     * @see #getControlWithTriggerOpt()
      * @generated
      * @ordered
      */
-    protected FeatureMap control;
+    protected FeatureMap controlWithTriggerOpt;
 
     /**
      * <!-- begin-user-doc -->
@@ -1045,8 +1044,10 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public FeatureMap getControlWithTriggerOpt() {
-        return ( FeatureMap ) getControl().< FeatureMap.Entry > list(
-                SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
+        if( controlWithTriggerOpt == null ) {
+            controlWithTriggerOpt = new BasicFeatureMap( this, SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT );
+        }
+        return controlWithTriggerOpt;
     }
 
     /**
@@ -1056,7 +1057,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetControlWithTriggerOpt() {
-        ( ( FeatureMap.Internal ) getControl() ).clear( SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
+        if( controlWithTriggerOpt != null ) ( ( InternalEList.Unsettable< ? > ) controlWithTriggerOpt ).unset();
     }
 
     /**
@@ -1066,41 +1067,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetControlWithTriggerOpt() {
-        return !( ( FeatureMap.Internal ) getControl() )
-                .isEmpty( SclPackage.eINSTANCE.getAnyLN_ControlWithTriggerOpt() );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public FeatureMap getControl() {
-        if( control == null ) {
-            control = new BasicFeatureMap( this, SclPackage.ANY_LN__CONTROL );
-        }
-        return control;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetControl() {
-        if( control != null ) ( ( InternalEList.Unsettable< ? > ) control ).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetControl() {
-        return control != null && ( ( InternalEList.Unsettable< ? > ) control ).isSet();
+        return controlWithTriggerOpt != null && ( ( InternalEList.Unsettable< ? > ) controlWithTriggerOpt ).isSet();
     }
 
     /**
@@ -1285,8 +1252,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return ( ( InternalEList< ? > ) getReferredByLNode() ).basicRemove( otherEnd, msgs );
         case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
             return ( ( InternalEList< ? > ) getControlWithTriggerOpt() ).basicRemove( otherEnd, msgs );
-        case SclPackage.ANY_LN__CONTROL:
-            return ( ( InternalEList< ? > ) getControl() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1332,9 +1297,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
             if( coreType ) return getControlWithTriggerOpt();
             return ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).getWrapper();
-        case SclPackage.ANY_LN__CONTROL:
-            if( coreType ) return getControl();
-            return ( ( FeatureMap.Internal ) getControl() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1406,9 +1368,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
             ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).set( newValue );
             return;
-        case SclPackage.ANY_LN__CONTROL:
-            ( ( FeatureMap.Internal ) getControl() ).set( newValue );
-            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1469,9 +1428,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
             unsetControlWithTriggerOpt();
             return;
-        case SclPackage.ANY_LN__CONTROL:
-            unsetControl();
-            return;
         }
         super.eUnset( featureID );
     }
@@ -1516,8 +1472,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return isSetReferredByLNode();
         case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
             return isSetControlWithTriggerOpt();
-        case SclPackage.ANY_LN__CONTROL:
-            return isSetControl();
         }
         return super.eIsSet( featureID );
     }
@@ -1563,8 +1517,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             result.append( lnType );
         else
             result.append( "<unset>" );
-        result.append( ", Control: " );
-        result.append( control );
+        result.append( ", ControlWithTriggerOpt: " );
+        result.append( controlWithTriggerOpt );
         result.append( ')' );
         return result.toString();
     }

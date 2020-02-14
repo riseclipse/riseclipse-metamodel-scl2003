@@ -289,7 +289,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_LogControl() );
             childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_DataSet() );
-            childrenFeatures.add( SclPackage.eINSTANCE.getAnyLN_Control() );
         }
         return childrenFeatures;
     }
@@ -353,7 +352,6 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
         case SclPackage.ANY_LN__REPORT_CONTROL:
         case SclPackage.ANY_LN__LOG_CONTROL:
         case SclPackage.ANY_LN__DATA_SET:
-        case SclPackage.ANY_LN__CONTROL:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), true, false ) );
             return;
         }

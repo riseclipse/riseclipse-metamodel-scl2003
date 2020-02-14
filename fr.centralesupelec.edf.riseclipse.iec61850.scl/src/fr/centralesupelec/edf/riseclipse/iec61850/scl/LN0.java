@@ -217,8 +217,8 @@ public interface LN0 extends AnyLN {
      * @see #isSetControlWithIEDName()
      * @see #unsetControlWithIEDName()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_ControlWithIEDName()
-     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" volatile="true" ordered="false"
-     *        extendedMetaData="kind='group' group='#Control'"
+     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
+     *        extendedMetaData="kind='group'"
      * @generated
      */
     FeatureMap getControlWithIEDName();
