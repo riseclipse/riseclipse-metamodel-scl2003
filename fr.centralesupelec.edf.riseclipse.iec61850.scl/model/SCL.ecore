@@ -258,26 +258,11 @@
         upperBound="-1" eType="#//PhysConn" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//PhysConn/ParentConnectedAP"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GSE" ordered="false" upperBound="-1"
-        eType="#//GSE" volatile="true" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//GSE/ParentConnectedAP">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlBlock"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//GSE" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GSE/ParentConnectedAP"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SMV" ordered="false" upperBound="-1"
-        eType="#//SMV" volatile="true" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//SMV/ParentConnectedAP">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlBlock"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlBlock" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//SMV" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SMV/ParentConnectedAP"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlBlock" abstract="true" eSuperTypes="#//UnNaming">
     <eOperations name="getParentConnectedAP" eType="#//ConnectedAP"/>

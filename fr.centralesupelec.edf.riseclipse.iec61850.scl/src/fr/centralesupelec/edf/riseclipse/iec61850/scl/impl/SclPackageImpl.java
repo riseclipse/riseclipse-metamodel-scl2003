@@ -2340,16 +2340,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getConnectedAP_ControlBlock() {
-        return ( EAttribute ) getConnectedAP().getEStructuralFeatures().get( 9 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getControlBlock() {
         if( controlBlockEClass == null ) {
             controlBlockEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI )

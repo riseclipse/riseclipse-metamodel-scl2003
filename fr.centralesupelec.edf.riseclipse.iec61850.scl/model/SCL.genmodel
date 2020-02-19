@@ -214,7 +214,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/PhysConn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/GSE"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/SMV"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/ControlBlock"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ControlBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>

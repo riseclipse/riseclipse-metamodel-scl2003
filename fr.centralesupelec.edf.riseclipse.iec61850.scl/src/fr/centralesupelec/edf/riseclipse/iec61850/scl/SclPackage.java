@@ -3703,22 +3703,13 @@ public interface SclPackage extends EPackage {
     int CONNECTED_AP__SMV = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
-     * The feature id for the '<em><b>Control Block</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONNECTED_AP__CONTROL_BLOCK = UN_NAMING_FEATURE_COUNT + 9;
-
-    /**
      * The number of structural features of the '<em>Connected AP</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTED_AP_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
+    int CONNECTED_AP_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -22766,17 +22757,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getConnectedAP_SMV();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getControlBlock <em>Control Block</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control Block</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getControlBlock()
-     * @see #getConnectedAP()
-     * @generated
-     */
-    EAttribute getConnectedAP_ControlBlock();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock <em>Control Block</em>}'.
