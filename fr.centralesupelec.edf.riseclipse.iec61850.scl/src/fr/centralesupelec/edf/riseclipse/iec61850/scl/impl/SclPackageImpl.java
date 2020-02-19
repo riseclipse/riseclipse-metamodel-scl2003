@@ -6856,18 +6856,8 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getLDevice_AnyLN() {
-        return ( EAttribute ) getLDevice().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EReference getLDevice_LN() {
-        return ( EReference ) getLDevice().getEStructuralFeatures().get( 6 );
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 5 );
     }
 
     /**
@@ -6877,7 +6867,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_ReferredByIEDName() {
-        return ( EReference ) getLDevice().getEStructuralFeatures().get( 7 );
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 6 );
     }
 
     /**
@@ -6887,7 +6877,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_RefersToHigherLevelLDevice() {
-        return ( EReference ) getLDevice().getEStructuralFeatures().get( 8 );
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 7 );
     }
 
     /**
@@ -6897,7 +6887,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_RefersToLowerLevelLDevices() {
-        return ( EReference ) getLDevice().getEStructuralFeatures().get( 9 );
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 8 );
     }
 
     /**
@@ -6917,7 +6907,7 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      */
     @Override
     public EReference getLDevice_LN0() {
-        return ( EReference ) getLDevice().getEStructuralFeatures().get( 5 );
+        return ( EReference ) getLDevice().getEStructuralFeatures().get( 4 );
     }
 
     /**

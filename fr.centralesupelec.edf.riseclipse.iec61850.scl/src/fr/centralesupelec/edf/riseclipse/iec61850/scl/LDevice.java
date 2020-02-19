@@ -21,8 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.util.FeatureMap;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 
 /**
@@ -38,7 +36,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAccessControl <em>Access Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getParentServer <em>Parent Server</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getReferredByIEDName <em>Referred By IED Name</em>}</li>
@@ -237,19 +234,6 @@ public interface LDevice extends UnNaming {
     void setParentServer( Server value );
 
     /**
-     * Returns the value of the '<em><b>Any LN</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Any LN</em>' attribute list.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_AnyLN()
-     * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
-     *        extendedMetaData="kind='group'"
-     * @generated
-     */
-    FeatureMap getAnyLN();
-
-    /**
      * Returns the value of the '<em><b>LN</b></em>' containment reference list.
      * The list contents are of type {@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN}.
      * It is bidirectional and its opposite is '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice <em>Parent LDevice</em>}'.
@@ -264,8 +248,7 @@ public interface LDevice extends UnNaming {
      * @see #unsetLN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN#getParentLDevice
-     * @model opposite="ParentLDevice" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#AnyLN'"
+     * @model opposite="ParentLDevice" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< LN > getLN();
@@ -453,8 +436,7 @@ public interface LDevice extends UnNaming {
      * @see #setLN0(LN0)
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLDevice_LN0()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice
-     * @model opposite="ParentLDevice" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#AnyLN'"
+     * @model opposite="ParentLDevice" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     LN0 getLN0();

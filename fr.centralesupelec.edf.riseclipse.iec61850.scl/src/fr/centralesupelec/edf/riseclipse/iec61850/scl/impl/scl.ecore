@@ -1154,25 +1154,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServer" ordered="false"
         eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Server/LDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnyLN" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
-        volatile="true" unsettable="true" containment="true" eOpposite="#//LN0/ParentLDevice">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#AnyLN"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//LN0/ParentLDevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
-        eType="#//LN" volatile="true" unsettable="true" containment="true" eOpposite="#//LN/ParentLDevice">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#AnyLN"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//LN" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LN/ParentLDevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByIEDName" ordered="false"
         eType="#//IEDName" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//IEDName/RefersToLDevice"/>
