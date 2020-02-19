@@ -12992,22 +12992,13 @@ public interface SclPackage extends EPackage {
     int LN0__SETTING_CONTROL = ANY_LN_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Control With IED Name</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__CONTROL_WITH_IED_NAME = ANY_LN_FEATURE_COUNT + 4;
-
-    /**
      * The number of structural features of the '<em>LN0</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 5;
+    int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -27436,17 +27427,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLN0_SettingControl();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control With IED Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName()
-     * @see #getLN0()
-     * @generated
-     */
-    EAttribute getLN0_ControlWithIEDName();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log <em>Log</em>}'.

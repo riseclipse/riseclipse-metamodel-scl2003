@@ -7004,16 +7004,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getLN0_ControlWithIEDName() {
-        return ( EAttribute ) getLN0().getEStructuralFeatures().get( 4 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getLog() {
         if( logEClass == null ) {
             logEClass = ( EClass ) EPackage.Registry.INSTANCE.getEPackage( SclPackage.eNS_URI ).getEClassifiers()

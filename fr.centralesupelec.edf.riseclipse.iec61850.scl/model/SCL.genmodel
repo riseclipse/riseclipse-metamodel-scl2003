@@ -646,7 +646,6 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//LN0/ParentLDevice"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SampledValueControl"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//LN0/SettingControl"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//LN0/ControlWithIEDName"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Log">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Log/ParentAnyLN"/>
