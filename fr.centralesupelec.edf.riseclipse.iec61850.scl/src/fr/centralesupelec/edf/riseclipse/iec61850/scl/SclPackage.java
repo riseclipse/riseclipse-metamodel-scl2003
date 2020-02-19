@@ -7198,22 +7198,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__CONTROL_WITH_TRIGGER_OPT = UN_NAMING_FEATURE_COUNT + 15;
-
-    /**
      * The number of structural features of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12695,15 +12686,6 @@ public interface SclPackage extends EPackage {
     int LN__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
 
     /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
-
-    /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12972,15 +12954,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
-
-    /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
 
     /**
      * The feature id for the '<em><b>GSE Control</b></em>' containment reference list.
@@ -25004,17 +24977,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getAnyLN_ReferredByLNode();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control With Trigger Opt</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EAttribute getAnyLN_ControlWithTriggerOpt();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getParentLDevice() <em>Get Parent LDevice</em>}' operation.

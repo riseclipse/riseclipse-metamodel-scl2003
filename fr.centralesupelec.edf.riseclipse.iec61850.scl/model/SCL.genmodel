@@ -374,7 +374,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByAssociation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByIEDName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//AnyLN/ReferredByLNode"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AnyLN/ControlWithTriggerOpt"/>
       <genOperations ecoreOperation="SCL.ecore#//AnyLN/getParentLDevice"/>
       <genOperations ecoreOperation="SCL.ecore#//AnyLN/getNamespace"/>
     </genClasses>

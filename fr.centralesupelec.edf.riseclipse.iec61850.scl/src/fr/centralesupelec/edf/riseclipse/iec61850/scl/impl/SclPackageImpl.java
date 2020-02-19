@@ -4548,16 +4548,6 @@ public class SclPackageImpl extends EPackageImpl implements SclPackage {
      * @generated
      */
     @Override
-    public EAttribute getAnyLN_ControlWithTriggerOpt() {
-        return ( EAttribute ) getAnyLN().getEStructuralFeatures().get( 15 );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EOperation getAnyLN__GetParentLDevice() {
         return getAnyLN().getEOperations().get( 0 );
     }
