@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +35,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getParentLDevice <em>Parent LDevice</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSampledValueControl <em>Sampled Value Control</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getSettingControl <em>Setting Control</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0()
@@ -59,8 +57,7 @@ public interface LN0 extends AnyLN {
      * @see #unsetGSEControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_GSEControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.GSEControl#getParentLN0
-     * @model opposite="ParentLN0" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#ControlWithIEDName'"
+     * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< GSEControl > getGSEControl();
@@ -126,8 +123,7 @@ public interface LN0 extends AnyLN {
      * @see #unsetSampledValueControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_SampledValueControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SampledValueControl#getParentLN0
-     * @model opposite="ParentLN0" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#ControlWithIEDName'"
+     * @model opposite="ParentLN0" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< SampledValueControl > getSampledValueControl();
@@ -207,41 +203,5 @@ public interface LN0 extends AnyLN {
      * @generated
      */
     boolean isSetSettingControl();
-
-    /**
-     * Returns the value of the '<em><b>Control With IED Name</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With IED Name</em>' attribute list.
-     * @see #isSetControlWithIEDName()
-     * @see #unsetControlWithIEDName()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getLN0_ControlWithIEDName()
-     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
-     *        extendedMetaData="kind='group'"
-     * @generated
-     */
-    FeatureMap getControlWithIEDName();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetControlWithIEDName()
-     * @see #getControlWithIEDName()
-     * @generated
-     */
-    void unsetControlWithIEDName();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}' attribute list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Control With IED Name</em>' attribute list is set.
-     * @see #unsetControlWithIEDName()
-     * @see #getControlWithIEDName()
-     * @generated
-     */
-    boolean isSetControlWithIEDName();
 
 } // LN0

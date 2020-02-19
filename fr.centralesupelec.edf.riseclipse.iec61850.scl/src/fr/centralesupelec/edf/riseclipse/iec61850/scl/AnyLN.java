@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,7 +46,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByAssociation <em>Referred By Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getReferredByLNode <em>Referred By LNode</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
  * </ul>
  *
  * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN()
@@ -421,8 +419,7 @@ public interface AnyLN extends UnNaming {
      * @see #unsetReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ReportControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ReportControl#getParentAnyLN
-     * @model opposite="ParentAnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#ControlWithTriggerOpt'"
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< ReportControl > getReportControl();
@@ -463,8 +460,7 @@ public interface AnyLN extends UnNaming {
      * @see #unsetLogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_LogControl()
      * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LogControl#getParentAnyLN
-     * @model opposite="ParentAnyLN" containment="true" unsettable="true" volatile="true" ordered="false"
-     *        extendedMetaData="group='#ControlWithTriggerOpt'"
+     * @model opposite="ParentAnyLN" containment="true" unsettable="true" ordered="false"
      * @generated
      */
     EList< LogControl > getLogControl();
@@ -727,42 +723,6 @@ public interface AnyLN extends UnNaming {
      * @generated
      */
     boolean isSetReferredByLNode();
-
-    /**
-     * Returns the value of the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * The list contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the value of the '<em>Control With Trigger Opt</em>' attribute list.
-     * @see #isSetControlWithTriggerOpt()
-     * @see #unsetControlWithTriggerOpt()
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage#getAnyLN_ControlWithTriggerOpt()
-     * @model unsettable="true" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true" transient="true" ordered="false"
-     *        extendedMetaData="kind='group'"
-     * @generated
-     */
-    FeatureMap getControlWithTriggerOpt();
-
-    /**
-     * Unsets the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #isSetControlWithTriggerOpt()
-     * @see #getControlWithTriggerOpt()
-     * @generated
-     */
-    void unsetControlWithTriggerOpt();
-
-    /**
-     * Returns whether the value of the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}' attribute list is set.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return whether the value of the '<em>Control With Trigger Opt</em>' attribute list is set.
-     * @see #unsetControlWithTriggerOpt()
-     * @see #getControlWithTriggerOpt()
-     * @generated
-     */
-    boolean isSetControlWithTriggerOpt();
 
     /**
      * <!-- begin-user-doc -->

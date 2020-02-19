@@ -53,10 +53,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
-import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -82,7 +80,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByAssociation <em>Referred By Association</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByIEDName <em>Referred By IED Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getReferredByLNode <em>Referred By LNode</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}</li>
  * </ul>
  *
  * @generated
@@ -234,6 +231,26 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     protected EList< DOI > doi;
 
     /**
+     * The cached value of the '{@link #getReportControl() <em>Report Control</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getReportControl()
+     * @generated
+     * @ordered
+     */
+    protected EList< ReportControl > reportControl;
+
+    /**
+     * The cached value of the '{@link #getLogControl() <em>Log Control</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLogControl()
+     * @generated
+     * @ordered
+     */
+    protected EList< LogControl > logControl;
+
+    /**
      * The cached value of the '{@link #getDataSet() <em>Data Set</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -292,16 +309,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      * @ordered
      */
     protected EList< LNode > referredByLNode;
-
-    /**
-     * The cached value of the '{@link #getControlWithTriggerOpt() <em>Control With Trigger Opt</em>}' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see #getControlWithTriggerOpt()
-     * @generated
-     * @ordered
-     */
-    protected FeatureMap controlWithTriggerOpt;
 
     /**
      * <!-- begin-user-doc -->
@@ -778,7 +785,11 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public EList< ReportControl > getReportControl() {
-        return getControlWithTriggerOpt().list( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
+        if( reportControl == null ) {
+            reportControl = new EObjectContainmentWithInverseEList.Unsettable< ReportControl >( ReportControl.class,
+                    this, SclPackage.ANY_LN__REPORT_CONTROL, SclPackage.REPORT_CONTROL__PARENT_ANY_LN );
+        }
+        return reportControl;
     }
 
     /**
@@ -788,7 +799,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetReportControl() {
-        ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).clear( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
+        if( reportControl != null ) ( ( InternalEList.Unsettable< ? > ) reportControl ).unset();
     }
 
     /**
@@ -798,8 +809,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetReportControl() {
-        return !( ( FeatureMap.Internal ) getControlWithTriggerOpt() )
-                .isEmpty( SclPackage.eINSTANCE.getAnyLN_ReportControl() );
+        return reportControl != null && ( ( InternalEList.Unsettable< ? > ) reportControl ).isSet();
     }
 
     /**
@@ -809,7 +819,11 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public EList< LogControl > getLogControl() {
-        return getControlWithTriggerOpt().list( SclPackage.eINSTANCE.getAnyLN_LogControl() );
+        if( logControl == null ) {
+            logControl = new EObjectContainmentWithInverseEList.Unsettable< LogControl >( LogControl.class, this,
+                    SclPackage.ANY_LN__LOG_CONTROL, SclPackage.LOG_CONTROL__PARENT_ANY_LN );
+        }
+        return logControl;
     }
 
     /**
@@ -819,7 +833,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public void unsetLogControl() {
-        ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).clear( SclPackage.eINSTANCE.getAnyLN_LogControl() );
+        if( logControl != null ) ( ( InternalEList.Unsettable< ? > ) logControl ).unset();
     }
 
     /**
@@ -829,8 +843,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
      */
     @Override
     public boolean isSetLogControl() {
-        return !( ( FeatureMap.Internal ) getControlWithTriggerOpt() )
-                .isEmpty( SclPackage.eINSTANCE.getAnyLN_LogControl() );
+        return logControl != null && ( ( InternalEList.Unsettable< ? > ) logControl ).isSet();
     }
 
     /**
@@ -1040,39 +1053,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public FeatureMap getControlWithTriggerOpt() {
-        if( controlWithTriggerOpt == null ) {
-            controlWithTriggerOpt = new BasicFeatureMap( this, SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT );
-        }
-        return controlWithTriggerOpt;
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void unsetControlWithTriggerOpt() {
-        if( controlWithTriggerOpt != null ) ( ( InternalEList.Unsettable< ? > ) controlWithTriggerOpt ).unset();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean isSetControlWithTriggerOpt() {
-        return controlWithTriggerOpt != null && ( ( InternalEList.Unsettable< ? > ) controlWithTriggerOpt ).isSet();
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
      * @generated NOT
      */
     @Override
@@ -1250,8 +1230,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return ( ( InternalEList< ? > ) getReferredByIEDName() ).basicRemove( otherEnd, msgs );
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return ( ( InternalEList< ? > ) getReferredByLNode() ).basicRemove( otherEnd, msgs );
-        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-            return ( ( InternalEList< ? > ) getControlWithTriggerOpt() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -1294,9 +1272,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return getReferredByIEDName();
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return getReferredByLNode();
-        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-            if( coreType ) return getControlWithTriggerOpt();
-            return ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -1365,9 +1340,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             getReferredByLNode().clear();
             getReferredByLNode().addAll( ( Collection< ? extends LNode > ) newValue );
             return;
-        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-            ( ( FeatureMap.Internal ) getControlWithTriggerOpt() ).set( newValue );
-            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -1425,9 +1397,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             unsetReferredByLNode();
             return;
-        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-            unsetControlWithTriggerOpt();
-            return;
         }
         super.eUnset( featureID );
     }
@@ -1470,8 +1439,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return isSetReferredByIEDName();
         case SclPackage.ANY_LN__REFERRED_BY_LNODE:
             return isSetReferredByLNode();
-        case SclPackage.ANY_LN__CONTROL_WITH_TRIGGER_OPT:
-            return isSetControlWithTriggerOpt();
         }
         return super.eIsSet( featureID );
     }
@@ -1517,8 +1484,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             result.append( lnType );
         else
             result.append( "<unset>" );
-        result.append( ", ControlWithTriggerOpt: " );
-        result.append( controlWithTriggerOpt );
         result.append( ')' );
         return result.toString();
     }

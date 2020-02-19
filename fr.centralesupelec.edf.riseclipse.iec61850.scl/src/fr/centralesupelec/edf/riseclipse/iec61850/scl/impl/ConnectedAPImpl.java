@@ -40,10 +40,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -63,7 +61,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getPhysConn <em>Phys Conn</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getGSE <em>GSE</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getSMV <em>SMV</em>}</li>
- *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.ConnectedAPImpl#getControlBlock <em>Control Block</em>}</li>
  * </ul>
  *
  * @generated
@@ -205,14 +202,24 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
     protected EList< PhysConn > physConn;
 
     /**
-     * The cached value of the '{@link #getControlBlock() <em>Control Block</em>}' attribute list.
+     * The cached value of the '{@link #getGSE() <em>GSE</em>}' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see #getControlBlock()
+     * @see #getGSE()
      * @generated
      * @ordered
      */
-    protected FeatureMap controlBlock;
+    protected EList< GSE > gse;
+
+    /**
+     * The cached value of the '{@link #getSMV() <em>SMV</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getSMV()
+     * @generated
+     * @ordered
+     */
+    protected EList< SMV > smv;
 
     /**
      * <!-- begin-user-doc -->
@@ -704,7 +711,11 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public EList< GSE > getGSE() {
-        return getControlBlock().list( SclPackage.eINSTANCE.getConnectedAP_GSE() );
+        if( gse == null ) {
+            gse = new EObjectContainmentWithInverseEList.Unsettable< GSE >( GSE.class, this,
+                    SclPackage.CONNECTED_AP__GSE, SclPackage.GSE__PARENT_CONNECTED_AP );
+        }
+        return gse;
     }
 
     /**
@@ -714,7 +725,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public void unsetGSE() {
-        ( ( FeatureMap.Internal ) getControlBlock() ).clear( SclPackage.eINSTANCE.getConnectedAP_GSE() );
+        if( gse != null ) ( ( InternalEList.Unsettable< ? > ) gse ).unset();
     }
 
     /**
@@ -724,7 +735,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public boolean isSetGSE() {
-        return !( ( FeatureMap.Internal ) getControlBlock() ).isEmpty( SclPackage.eINSTANCE.getConnectedAP_GSE() );
+        return gse != null && ( ( InternalEList.Unsettable< ? > ) gse ).isSet();
     }
 
     /**
@@ -734,7 +745,11 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public EList< SMV > getSMV() {
-        return getControlBlock().list( SclPackage.eINSTANCE.getConnectedAP_SMV() );
+        if( smv == null ) {
+            smv = new EObjectContainmentWithInverseEList.Unsettable< SMV >( SMV.class, this,
+                    SclPackage.CONNECTED_AP__SMV, SclPackage.SMV__PARENT_CONNECTED_AP );
+        }
+        return smv;
     }
 
     /**
@@ -744,7 +759,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public void unsetSMV() {
-        ( ( FeatureMap.Internal ) getControlBlock() ).clear( SclPackage.eINSTANCE.getConnectedAP_SMV() );
+        if( smv != null ) ( ( InternalEList.Unsettable< ? > ) smv ).unset();
     }
 
     /**
@@ -754,20 +769,7 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
      */
     @Override
     public boolean isSetSMV() {
-        return !( ( FeatureMap.Internal ) getControlBlock() ).isEmpty( SclPackage.eINSTANCE.getConnectedAP_SMV() );
-    }
-
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public FeatureMap getControlBlock() {
-        if( controlBlock == null ) {
-            controlBlock = new BasicFeatureMap( this, SclPackage.CONNECTED_AP__CONTROL_BLOCK );
-        }
-        return controlBlock;
+        return smv != null && ( ( InternalEList.Unsettable< ? > ) smv ).isSet();
     }
 
     /**
@@ -824,8 +826,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return ( ( InternalEList< ? > ) getGSE() ).basicRemove( otherEnd, msgs );
         case SclPackage.CONNECTED_AP__SMV:
             return ( ( InternalEList< ? > ) getSMV() ).basicRemove( otherEnd, msgs );
-        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-            return ( ( InternalEList< ? > ) getControlBlock() ).basicRemove( otherEnd, msgs );
         }
         return super.eInverseRemove( otherEnd, featureID, msgs );
     }
@@ -871,9 +871,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return getGSE();
         case SclPackage.CONNECTED_AP__SMV:
             return getSMV();
-        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-            if( coreType ) return getControlBlock();
-            return ( ( FeatureMap.Internal ) getControlBlock() ).getWrapper();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -917,9 +914,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             getSMV().clear();
             getSMV().addAll( ( Collection< ? extends SMV > ) newValue );
             return;
-        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-            ( ( FeatureMap.Internal ) getControlBlock() ).set( newValue );
-            return;
         }
         super.eSet( featureID, newValue );
     }
@@ -959,9 +953,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
         case SclPackage.CONNECTED_AP__SMV:
             unsetSMV();
             return;
-        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-            getControlBlock().clear();
-            return;
         }
         super.eUnset( featureID );
     }
@@ -992,8 +983,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             return isSetGSE();
         case SclPackage.CONNECTED_AP__SMV:
             return isSetSMV();
-        case SclPackage.CONNECTED_AP__CONTROL_BLOCK:
-            return controlBlock != null && !controlBlock.isEmpty();
         }
         return super.eIsSet( featureID );
     }
@@ -1023,8 +1012,6 @@ public class ConnectedAPImpl extends UnNamingImpl implements ConnectedAP {
             result.append( redProt );
         else
             result.append( "<unset>" );
-        result.append( ", ControlBlock: " );
-        result.append( controlBlock );
         result.append( ')' );
         return result.toString();
     }

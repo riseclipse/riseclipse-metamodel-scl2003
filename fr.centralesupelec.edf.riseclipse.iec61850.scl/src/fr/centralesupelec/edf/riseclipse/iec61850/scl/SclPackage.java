@@ -3703,22 +3703,13 @@ public interface SclPackage extends EPackage {
     int CONNECTED_AP__SMV = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
-     * The feature id for the '<em><b>Control Block</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int CONNECTED_AP__CONTROL_BLOCK = UN_NAMING_FEATURE_COUNT + 9;
-
-    /**
      * The number of structural features of the '<em>Connected AP</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int CONNECTED_AP_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
+    int CONNECTED_AP_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -7198,22 +7189,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN__REFERRED_BY_LNODE = UN_NAMING_FEATURE_COUNT + 14;
 
     /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN__CONTROL_WITH_TRIGGER_OPT = UN_NAMING_FEATURE_COUNT + 15;
-
-    /**
      * The number of structural features of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 16;
+    int ANY_LN_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 15;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12416,22 +12398,13 @@ public interface SclPackage extends EPackage {
     int LDEVICE__PARENT_SERVER = UN_NAMING_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Any LN</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LDEVICE__ANY_LN = UN_NAMING_FEATURE_COUNT + 4;
-
-    /**
      * The feature id for the '<em><b>LN0</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 5;
+    int LDEVICE__LN0 = UN_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>LN</b></em>' containment reference list.
@@ -12440,7 +12413,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 6;
+    int LDEVICE__LN = UN_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Referred By IED Name</b></em>' reference.
@@ -12449,7 +12422,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 7;
+    int LDEVICE__REFERRED_BY_IED_NAME = UN_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The feature id for the '<em><b>Refers To Higher Level LDevice</b></em>' reference.
@@ -12458,7 +12431,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE = UN_NAMING_FEATURE_COUNT + 8;
+    int LDEVICE__REFERS_TO_HIGHER_LEVEL_LDEVICE = UN_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The feature id for the '<em><b>Refers To Lower Level LDevices</b></em>' reference list.
@@ -12467,7 +12440,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES = UN_NAMING_FEATURE_COUNT + 9;
+    int LDEVICE__REFERS_TO_LOWER_LEVEL_LDEVICES = UN_NAMING_FEATURE_COUNT + 8;
 
     /**
      * The number of structural features of the '<em>LDevice</em>' class.
@@ -12476,7 +12449,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 10;
+    int LDEVICE_FEATURE_COUNT = UN_NAMING_FEATURE_COUNT + 9;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -12702,15 +12675,6 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
-
-    /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
 
     /**
      * The feature id for the '<em><b>Prefix</b></em>' attribute.
@@ -12983,15 +12947,6 @@ public interface SclPackage extends EPackage {
     int LN0__REFERRED_BY_LNODE = ANY_LN__REFERRED_BY_LNODE;
 
     /**
-     * The feature id for the '<em><b>Control With Trigger Opt</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__CONTROL_WITH_TRIGGER_OPT = ANY_LN__CONTROL_WITH_TRIGGER_OPT;
-
-    /**
      * The feature id for the '<em><b>GSE Control</b></em>' containment reference list.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13028,22 +12983,13 @@ public interface SclPackage extends EPackage {
     int LN0__SETTING_CONTROL = ANY_LN_FEATURE_COUNT + 3;
 
     /**
-     * The feature id for the '<em><b>Control With IED Name</b></em>' attribute list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0__CONTROL_WITH_IED_NAME = ANY_LN_FEATURE_COUNT + 4;
-
-    /**
      * The number of structural features of the '<em>LN0</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 5;
+    int LN0_FEATURE_COUNT = ANY_LN_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -22813,17 +22759,6 @@ public interface SclPackage extends EPackage {
     EReference getConnectedAP_SMV();
 
     /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getControlBlock <em>Control Block</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control Block</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.ConnectedAP#getControlBlock()
-     * @see #getConnectedAP()
-     * @generated
-     */
-    EAttribute getConnectedAP_ControlBlock();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.ControlBlock <em>Control Block</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -25013,17 +24948,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getAnyLN_ReferredByLNode();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt <em>Control With Trigger Opt</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control With Trigger Opt</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getControlWithTriggerOpt()
-     * @see #getAnyLN()
-     * @generated
-     */
-    EAttribute getAnyLN_ControlWithTriggerOpt();
 
     /**
      * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getParentLDevice() <em>Get Parent LDevice</em>}' operation.
@@ -27323,17 +27247,6 @@ public interface SclPackage extends EPackage {
     EReference getLDevice_ParentServer();
 
     /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN <em>Any LN</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Any LN</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getAnyLN()
-     * @see #getLDevice()
-     * @generated
-     */
-    EAttribute getLDevice_AnyLN();
-
-    /**
      * Returns the meta object for the containment reference list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN <em>LN</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -27494,17 +27407,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLN0_SettingControl();
-
-    /**
-     * Returns the meta object for the attribute list '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName <em>Control With IED Name</em>}'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the attribute list '<em>Control With IED Name</em>'.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0#getControlWithIEDName()
-     * @see #getLN0()
-     * @generated
-     */
-    EAttribute getLN0_ControlWithIEDName();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Log <em>Log</em>}'.

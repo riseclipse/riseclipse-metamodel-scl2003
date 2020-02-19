@@ -258,26 +258,11 @@
         upperBound="-1" eType="#//PhysConn" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//PhysConn/ParentConnectedAP"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GSE" ordered="false" upperBound="-1"
-        eType="#//GSE" volatile="true" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//GSE/ParentConnectedAP">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlBlock"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//GSE" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//GSE/ParentConnectedAP"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SMV" ordered="false" upperBound="-1"
-        eType="#//SMV" volatile="true" unsettable="true" containment="true" resolveProxies="false"
-        eOpposite="#//SMV/ParentConnectedAP">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlBlock"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlBlock" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//SMV" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//SMV/ParentConnectedAP"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ControlBlock" abstract="true" eSuperTypes="#//UnNaming">
     <eOperations name="getParentConnectedAP" eType="#//ConnectedAP"/>
@@ -622,19 +607,11 @@
         eType="#//DOI" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DOI/ParentAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReportControl" ordered="false"
-        upperBound="-1" eType="#//ReportControl" volatile="true" unsettable="true"
-        containment="true" resolveProxies="false" eOpposite="#//ReportControl/ParentAnyLN">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlWithTriggerOpt"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//ReportControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//ReportControl/ParentAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LogControl" ordered="false"
-        upperBound="-1" eType="#//LogControl" volatile="true" unsettable="true" containment="true"
-        resolveProxies="false" eOpposite="#//LogControl/ParentAnyLN">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlWithTriggerOpt"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//LogControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//LogControl/ParentAnyLN"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="DataSet" ordered="false"
         upperBound="-1" eType="#//DataSet" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//DataSet/ParentAnyLN"/>
@@ -653,13 +630,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByLNode" ordered="false"
         upperBound="-1" eType="#//LNode" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LNode/RefersToAnyLN"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlWithTriggerOpt"
-        ordered="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true" unsettable="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//BaseElement #//AgLNRef">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="associationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -1154,25 +1124,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentServer" ordered="false"
         eType="#//Server" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//Server/LDevice"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnyLN" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN0" ordered="false" eType="#//LN0"
-        volatile="true" unsettable="true" containment="true" eOpposite="#//LN0/ParentLDevice">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#AnyLN"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        unsettable="true" containment="true" resolveProxies="false" eOpposite="#//LN0/ParentLDevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LN" ordered="false" upperBound="-1"
-        eType="#//LN" volatile="true" unsettable="true" containment="true" eOpposite="#//LN/ParentLDevice">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#AnyLN"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        eType="#//LN" unsettable="true" containment="true" resolveProxies="false"
+        eOpposite="#//LN/ParentLDevice"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ReferredByIEDName" ordered="false"
         eType="#//IEDName" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//IEDName/RefersToLDevice"/>
@@ -1195,32 +1151,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LN0" eSuperTypes="#//AnyLN">
     <eStructuralFeatures xsi:type="ecore:EReference" name="GSEControl" ordered="false"
-        upperBound="-1" eType="#//GSEControl" volatile="true" unsettable="true" containment="true"
-        resolveProxies="false" eOpposite="#//GSEControl/ParentLN0">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlWithIEDName"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//GSEControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//GSEControl/ParentLN0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentLDevice" ordered="false"
         eType="#//LDevice" transient="true" unsettable="true" resolveProxies="false"
         eOpposite="#//LDevice/LN0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SampledValueControl" ordered="false"
-        upperBound="-1" eType="#//SampledValueControl" volatile="true" unsettable="true"
-        containment="true" resolveProxies="false" eOpposite="#//SampledValueControl/ParentLN0">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="group" value="#ControlWithIEDName"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        upperBound="-1" eType="#//SampledValueControl" unsettable="true" containment="true"
+        resolveProxies="false" eOpposite="#//SampledValueControl/ParentLN0"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="SettingControl" ordered="false"
         eType="#//SettingControl" unsettable="true" containment="true" resolveProxies="false"
         eOpposite="#//SettingControl/ParentLN0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ControlWithIEDName" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
-        transient="true" unsettable="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="group"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Log" eSuperTypes="#//UnNaming">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParentAnyLN" ordered="false"
