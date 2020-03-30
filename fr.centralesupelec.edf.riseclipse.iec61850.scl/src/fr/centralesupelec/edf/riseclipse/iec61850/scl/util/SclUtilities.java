@@ -21,6 +21,7 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl.util;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -127,11 +128,14 @@ public class SclUtilities {
         if( "LLN0".equals( lnClass )) {
             return Pair.of( lDevice.getLN0(), ( lDevice.getLN0() == null ) ? 0 : 1  );
         }
+        // Null checks must be done as annotation-based null analysis is not enabled (issue #64)
+        if( lnClass == null ) return Pair.of( null, 0 );
+        if( lnInst == null )  return Pair.of( null, 0 );
         List< LN > res =
                 lDevice
                 .getLN()
                 .stream()
-                .filter( ln ->  lnClass.equals( ln.getLnClass() ) && lnInst.equals( ln.getInst() ) && prefix.equals( ln.getPrefix() ))
+                .filter( ln -> lnClass.equals( ln.getLnClass() ) && lnInst.equals( ln.getInst() ) && Objects.equals( prefix, ln.getPrefix() ))
                 .collect( Collectors.toList() );
         if( res.size() != 1 ) {
             return Pair.of( null, res.size() );
