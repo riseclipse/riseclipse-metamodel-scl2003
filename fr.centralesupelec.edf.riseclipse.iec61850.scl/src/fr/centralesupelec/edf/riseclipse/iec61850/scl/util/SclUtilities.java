@@ -60,6 +60,9 @@ public class SclUtilities {
     }
 
     public static Pair< IED, Integer > getIED( @NonNull SCL scl, @NonNull String iedName ) {
+        // protect against NPE
+        if( scl == null ) return Pair.of( null, 0 );
+        
         List< IED > res =
                 scl
                 .getIED()
@@ -74,6 +77,9 @@ public class SclUtilities {
     }
 
     public static Pair< AccessPoint, Integer > getAccessPoint( @NonNull IED ied, @NonNull String apName ) {
+        // protect against NPE
+        if( ied == null ) return Pair.of( null, 0 );
+        
         List< AccessPoint > res =
                 ied
                 .getAccessPoint()
@@ -88,9 +94,11 @@ public class SclUtilities {
     }
 
     public static Pair< LDevice, Integer > getLDevice( @NonNull AccessPoint accessPoint, @NonNull String ldInst ) {
-        if( accessPoint.getServer() == null ) {
-            return Pair.of( null, 0 );
-        }
+        // protect against NPE
+        if( ldInst                  == null ) return Pair.of( null, 0 );
+        if( accessPoint             == null ) return Pair.of( null, 0 );
+        if( accessPoint.getServer() == null ) return Pair.of( null, 0 );
+        
         List< LDevice > res = 
                 accessPoint
                 .getServer()
@@ -106,6 +114,10 @@ public class SclUtilities {
     }
 
     public static Pair< LDevice, Integer > getLDevice( @NonNull IED ied, @NonNull String ldInst ) {
+        // protect against NPE
+        if( ldInst                  == null ) return Pair.of( null, 0 );
+        if( ied                     == null ) return Pair.of( null, 0 );
+        
         List< LDevice > res = 
                 ied
                 .getAccessPoint()
@@ -128,9 +140,11 @@ public class SclUtilities {
         if( "LLN0".equals( lnClass )) {
             return Pair.of( lDevice.getLN0(), ( lDevice.getLN0() == null ) ? 0 : 1  );
         }
+        
         // Null checks must be done as annotation-based null analysis is not enabled (issue #64)
         if( lnClass == null ) return Pair.of( null, 0 );
         if( lnInst == null )  return Pair.of( null, 0 );
+        
         List< LN > res =
                 lDevice
                 .getLN()
