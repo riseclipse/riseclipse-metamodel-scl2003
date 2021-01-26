@@ -54,7 +54,7 @@ public class ServiceConfReportControlImpl extends ServiceWithMaxImpl implements 
      * @generated
      * @ordered
      */
-    protected static final bufModeEnum BUF_MODE_EDEFAULT = bufModeEnum.UNBUFFERED;
+    protected static final bufModeEnum BUF_MODE_EDEFAULT = bufModeEnum.BOTH;
 
     /**
      * The cached value of the '{@link #getBufMode() <em>Buf Mode</em>}' attribute.

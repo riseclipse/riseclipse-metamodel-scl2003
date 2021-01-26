@@ -2105,7 +2105,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceConfReportControl" eSuperTypes="#//ServiceWithMax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufMode" eType="#//bufModeEnum"
-        unsettable="true"/>
+        defaultValueLiteral="both" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bufConf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
         unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBuf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
