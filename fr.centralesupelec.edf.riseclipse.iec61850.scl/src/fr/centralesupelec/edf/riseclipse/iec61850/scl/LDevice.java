@@ -21,7 +21,6 @@
 package fr.centralesupelec.edf.riseclipse.iec61850.scl;
 
 import org.eclipse.emf.common.util.EList;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 
 /**
  * <!-- begin-user-doc -->
