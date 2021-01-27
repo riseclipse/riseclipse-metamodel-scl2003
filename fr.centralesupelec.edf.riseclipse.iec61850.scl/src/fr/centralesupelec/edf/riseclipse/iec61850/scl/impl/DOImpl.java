@@ -23,6 +23,7 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOType;
@@ -530,6 +531,34 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         setRefersToDOType( res.get( 0 ) );
         console.info( "[SCL links] DO on line ", getLineNumber(), " refers to ", mess, " on line ",
                 getRefersToDOType().getLineNumber() );
+    }
+
+    @Override
+    public String getNamespace() {
+        //@formatter:off
+        
+        // The attribute dataNs shall be a DataAttribute of the data.
+        if( getRefersToDOType() != null ) {
+            List< DA > lnNsDa =
+                    getRefersToDOType()
+                   .getDA()
+                   .stream()
+                   .filter( da -> "dataNs".equals( da.getName() ))
+                   .collect( Collectors.toList() );
+            if( lnNsDa.size() == 1 ) {
+                if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+                }
+            }
+        }
+        if( getParentLNodeType() != null ) {
+            return getParentLNodeType().getNamespace();
+        }
+        return null;
+
+        //@formatter:on
     }
 
 } //DOImpl

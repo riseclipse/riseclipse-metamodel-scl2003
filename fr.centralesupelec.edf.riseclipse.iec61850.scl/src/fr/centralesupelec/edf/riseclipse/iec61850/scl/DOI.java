@@ -353,12 +353,4 @@ public interface DOI extends UnNaming {
      */
     boolean isSetRefersToDO();
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @model kind="operation"
-     * @generated
-     */
-    String getNamespace();
-
 } // DOI

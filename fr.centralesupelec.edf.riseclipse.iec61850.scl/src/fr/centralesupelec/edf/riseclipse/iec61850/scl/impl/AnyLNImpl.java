@@ -1068,35 +1068,37 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public String getNamespace() {
         //@formatter:off
+        
+        // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
         List< DOI > namPltDoi =
-                getDOI()
+                 getDOI()
                 .stream()
                 .filter( doi -> "NamPlt".equals( doi.getName() ))
                 .collect( Collectors.toList() );
         if( namPltDoi.size() == 1 ) {
             List< DAI > lnNsDai =
-                    namPltDoi
+                     namPltDoi
                     .get( 0 )
                     .getDAI()
                     .stream()
                     .filter( dai -> "lnNs".equals(  dai.getName() ))
                     .collect( Collectors.toList() );
             if( lnNsDai.size() == 1 ) {
-                if((         lnNsDai.get( 0 ).getVal().size() == 1 )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
-                        && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                if((       lnNsDai.get( 0 ).getVal().size() == 1 )
+                      && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue() != null )
+                      && ( lnNsDai.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                     return lnNsDai.get( 0 ).getVal().get( 0 ).getValue();
                 }
                 if((         lnNsDai.get( 0 ).getRefersToAbstractDataAttribute() != null )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().size() == 1 )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue() != null )
                         && ( lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
+                    return   lnNsDai.get( 0 ).getRefersToAbstractDataAttribute().getVal().get( 0 ).getValue();
                 }
             }
-            if( namPltDoi.get( 0 ).getRefersToDO() != null ) {
+            if(( namPltDoi.get( 0 ).getRefersToDO() != null ) && ( namPltDoi.get( 0 ).getRefersToDO().getRefersToDOType() != null )) {
                 List< DA > lnNsDa =
-                        namPltDoi
+                         namPltDoi
                         .get( 0 )
                         .getRefersToDO()
                         .getRefersToDOType()
@@ -1105,9 +1107,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                         .filter( da -> "lnNs".equals(  da.getName() ))
                         .collect( Collectors.toList() );
                 if( lnNsDa.size() == 1 ) {
-                    if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                            && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                    if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                          && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                         return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
                     }
                 }
@@ -1116,7 +1118,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         if( getRefersToLNodeType() != null ) {
             List< DO > namPltDo =
-                    getRefersToLNodeType()
+                     getRefersToLNodeType()
                     .getDO()
                     .stream()
                     .filter( doi -> "NamPlt".equals( doi.getName() ))
@@ -1124,7 +1126,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             if( namPltDo.size() == 1 ) {
                 if( namPltDo.get( 0 ).getRefersToDOType() != null ) {
                     List< DA > lnNsDa =
-                            namPltDo
+                             namPltDo
                             .get( 0 )
                             .getRefersToDOType()
                             .getDA()
@@ -1132,9 +1134,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
                             .filter( da -> "lnNs".equals(  da.getName() ))
                             .collect( Collectors.toList() );
                     if( lnNsDa.size() == 1 ) {
-                        if((         lnNsDa.get( 0 ).getVal().size() == 1 )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                                && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                        if((       lnNsDa.get( 0 ).getVal().size() == 1 )
+                              && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                              && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
                             return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
                         }
                     }
@@ -1144,6 +1146,7 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
 
         if( getParentLDevice() == null ) return null;
         return getParentLDevice().getNamespace();
+
         //@formatter:on
     }
 
@@ -1453,8 +1456,6 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         switch( operationID ) {
         case SclPackage.ANY_LN___GET_PARENT_LDEVICE:
             return getParentLDevice();
-        case SclPackage.ANY_LN___GET_NAMESPACE:
-            return getNamespace();
         }
         return super.eInvoke( operationID, arguments );
     }

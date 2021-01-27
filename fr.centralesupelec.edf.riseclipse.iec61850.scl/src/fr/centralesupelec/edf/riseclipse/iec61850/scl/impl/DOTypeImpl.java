@@ -22,6 +22,9 @@ package fr.centralesupelec.edf.riseclipse.iec61850.scl.impl;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AbstractDataObject;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -616,6 +619,23 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             result.append( "<unset>" );
         result.append( ')' );
         return result.toString();
+    }
+
+    @Override
+    public String getNamespace() {
+        List< DA > lnNsDa =
+                getDA()
+               .stream()
+               .filter( da -> "dataNs".equals( da.getName() ))
+               .collect( Collectors.toList() );
+        if( lnNsDa.size() == 1 ) {
+            if((         lnNsDa.get( 0 ).getVal().size() == 1 )
+                    && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
+                    && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
+                return   lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
+            }
+        }
+        return getParentDataTypeTemplates().getNamespace();
     }
 
 } //DOTypeImpl

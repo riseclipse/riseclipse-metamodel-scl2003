@@ -123,13 +123,22 @@ public interface SclPackage extends EPackage {
     int SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = 0;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL_OBJECT___GET_NAMESPACE = 1;
+
+    /**
      * The number of operations of the '<em>Object</em>' class.
      * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int SCL_OBJECT_OPERATION_COUNT = 1;
+    int SCL_OBJECT_OPERATION_COUNT = 2;
 
     /**
      * The meta object id for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyContentFromOtherNamespaceImpl <em>Any Content From Other Namespace</em>}' class.
@@ -212,6 +221,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ANY_CONTENT_FROM_OTHER_NAMESPACE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_CONTENT_FROM_OTHER_NAMESPACE___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Any Content From Other Namespace</em>' class.
@@ -303,6 +321,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BASE_ELEMENT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Base Element</em>' class.
@@ -432,6 +459,15 @@ public interface SclPackage extends EPackage {
     int HEADER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HEADER___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Header</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -503,6 +539,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int HISTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HISTORY___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>History</em>' class.
@@ -623,6 +668,15 @@ public interface SclPackage extends EPackage {
     int HITEM___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int HITEM___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Hitem</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -732,6 +786,15 @@ public interface SclPackage extends EPackage {
     int ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ID_NAMING___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>ID Naming</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -839,6 +902,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NAMING___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Naming</em>' class.
@@ -959,6 +1031,15 @@ public interface SclPackage extends EPackage {
     int LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_CONTAINER___GET_NAMESPACE = NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>LNode Container</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1075,6 +1156,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_SYSTEM_RESOURCE___GET_NAMESPACE = LNODE_CONTAINER___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Power System Resource</em>' class.
@@ -1211,6 +1301,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT_CONTAINER___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>General Equipment Container</em>' class.
@@ -1421,6 +1520,15 @@ public interface SclPackage extends EPackage {
     int LINE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LINE___GET_NAMESPACE = GENERAL_EQUIPMENT_CONTAINER___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Line</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1537,6 +1645,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PRIVATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_CONTENT_FROM_OTHER_NAMESPACE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE___GET_NAMESPACE = ANY_CONTENT_FROM_OTHER_NAMESPACE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Private</em>' class.
@@ -1738,6 +1855,15 @@ public interface SclPackage extends EPackage {
     int PROCESS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = GENERAL_EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROCESS___GET_NAMESPACE = GENERAL_EQUIPMENT_CONTAINER___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Process</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1919,6 +2045,15 @@ public interface SclPackage extends EPackage {
     int SCL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SCL___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>SCL</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2010,6 +2145,15 @@ public interface SclPackage extends EPackage {
     int TEXT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TEXT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Text</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2090,6 +2234,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ADDRESS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ADDRESS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Address</em>' class.
@@ -3442,6 +3595,15 @@ public interface SclPackage extends EPackage {
     int UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int UN_NAMING___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Un Naming</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3548,6 +3710,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int COMMUNICATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMMUNICATION___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Communication</em>' class.
@@ -3721,6 +3892,15 @@ public interface SclPackage extends EPackage {
     int CONNECTED_AP___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTED_AP___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Connected AP</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3845,6 +4025,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_BLOCK___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
@@ -4009,6 +4198,15 @@ public interface SclPackage extends EPackage {
     int GSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE___GET_NAMESPACE = CONTROL_BLOCK___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4079,6 +4277,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PADDR___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>PAddr</em>' class.
@@ -4153,6 +4360,15 @@ public interface SclPackage extends EPackage {
     int P___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int P___GET_NAMESPACE = PADDR___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>P</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4223,6 +4439,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PPHYS_CONN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = PADDR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PPHYS_CONN___GET_NAMESPACE = PADDR___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>PPhys Conn</em>' class.
@@ -4340,6 +4565,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PHYS_CONN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PHYS_CONN___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Phys Conn</em>' class.
@@ -4475,6 +4709,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_BLOCK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV___GET_NAMESPACE = CONTROL_BLOCK___GET_NAMESPACE;
 
     /**
      * The operation id for the '<em>Get Parent Connected AP</em>' operation.
@@ -4619,6 +4862,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_NETWORK___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_NETWORK___GET_NAMESPACE = NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Sub Network</em>' class.
@@ -4835,6 +5087,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_ATTRIBUTE___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Abstract Data Attribute</em>' class.
@@ -5060,6 +5321,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BDA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BDA___GET_NAMESPACE = ABSTRACT_DATA_ATTRIBUTE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>BDA</em>' class.
@@ -5332,6 +5602,15 @@ public interface SclPackage extends EPackage {
     int DA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_ATTRIBUTE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA___GET_NAMESPACE = ABSTRACT_DATA_ATTRIBUTE___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>DA</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5476,6 +5755,15 @@ public interface SclPackage extends EPackage {
     int DA_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DA_TYPE___GET_NAMESPACE = ID_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>DA Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5610,6 +5898,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_DATA_OBJECT___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Abstract Data Object</em>' class.
@@ -5774,6 +6071,15 @@ public interface SclPackage extends EPackage {
     int DO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO___GET_NAMESPACE = ABSTRACT_DATA_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>DO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5927,6 +6233,15 @@ public interface SclPackage extends EPackage {
     int DO_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DO_TYPE___GET_NAMESPACE = ID_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>DO Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6015,6 +6330,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_TYPE_TEMPLATES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_TYPE_TEMPLATES___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Data Type Templates</em>' class.
@@ -6143,6 +6467,15 @@ public interface SclPackage extends EPackage {
     int ENUM_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_TYPE___GET_NAMESPACE = ID_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Enum Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6222,6 +6555,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ENUM_VAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ENUM_VAL___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Enum Val</em>' class.
@@ -6377,6 +6719,15 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ID_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE___GET_NAMESPACE = ID_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>LNode Type</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6456,6 +6807,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int PROT_NS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROT_NS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Prot Ns</em>' class.
@@ -6611,6 +6971,15 @@ public interface SclPackage extends EPackage {
     int SDO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_DATA_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDO___GET_NAMESPACE = ABSTRACT_DATA_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>SDO</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6692,6 +7061,15 @@ public interface SclPackage extends EPackage {
     int VAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VAL___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Val</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6764,6 +7142,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_CONTROL___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Access Control</em>' class.
@@ -6980,6 +7367,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ACCESS_POINT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ACCESS_POINT___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Access Point</em>' class.
@@ -7207,6 +7603,15 @@ public interface SclPackage extends EPackage {
     int ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ANY_LN___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent LDevice</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7216,22 +7621,13 @@ public interface SclPackage extends EPackage {
     int ANY_LN___GET_PARENT_LDEVICE = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
-     * The operation id for the '<em>Get Namespace</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int ANY_LN___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 1;
-
-    /**
      * The number of operations of the '<em>Any LN</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 2;
+    int ANY_LN_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -7396,6 +7792,15 @@ public interface SclPackage extends EPackage {
     int ASSOCIATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ASSOCIATION___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Association</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7493,6 +7898,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int AUTHENTICATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int AUTHENTICATION___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Authentication</em>' class.
@@ -7630,6 +8044,15 @@ public interface SclPackage extends EPackage {
     int CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERTIFICATE___GET_NAMESPACE = NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Certificate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7754,6 +8177,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CLIENT_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_LN___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Client LN</em>' class.
@@ -7954,6 +8386,15 @@ public interface SclPackage extends EPackage {
     int CLIENT_SERVICES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CLIENT_SERVICES___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Client Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8017,6 +8458,15 @@ public interface SclPackage extends EPackage {
     int COMM_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int COMM_PROT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Comm Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8069,6 +8519,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Service With Max</em>' class.
@@ -8142,6 +8601,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Service With Max And Max Attributes</em>' class.
@@ -8226,6 +8694,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_FOR_CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_FOR_CONF_DATA_SET___GET_NAMESPACE = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Service For Conf Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8307,6 +8784,15 @@ public interface SclPackage extends EPackage {
     int CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_FOR_CONF_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_DATA_SET___GET_NAMESPACE = SERVICE_FOR_CONF_DATA_SET___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Conf Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8379,6 +8865,15 @@ public interface SclPackage extends EPackage {
     int CONF_LNS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LNS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Conf LNs</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8434,6 +8929,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_YES_NO___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Service Yes No</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8486,6 +8990,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LD_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LD_NAME___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Conf Ld Name</em>' class.
@@ -8552,6 +9065,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_NON_ZERO___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Service With Max Non Zero</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8613,6 +9135,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_LOG_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_LOG_CONTROL___GET_NAMESPACE = SERVICE_WITH_MAX_NON_ZERO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Conf Log Control</em>' class.
@@ -8706,6 +9237,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_CONF_REPORT_CONTROL___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Service Conf Report Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8796,6 +9336,15 @@ public interface SclPackage extends EPackage {
     int CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_CONF_REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_REPORT_CONTROL___GET_NAMESPACE = SERVICE_CONF_REPORT_CONTROL___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Conf Report Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8859,6 +9408,15 @@ public interface SclPackage extends EPackage {
     int CONF_SG___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SG___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Conf SG</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -8920,6 +9478,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONF_SIG_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_NON_ZERO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONF_SIG_REF___GET_NAMESPACE = SERVICE_WITH_MAX_NON_ZERO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Conf Sig Ref</em>' class.
@@ -9046,6 +9613,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
@@ -9219,6 +9795,15 @@ public interface SclPackage extends EPackage {
     int CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_IED_NAME___GET_NAMESPACE = CONTROL___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9370,6 +9955,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONTROL_WITH_TRIGGER_OPT___GET_NAMESPACE = CONTROL___GET_NAMESPACE;
 
     /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
@@ -9552,6 +10146,15 @@ public interface SclPackage extends EPackage {
     int DAI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DAI___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>DAI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9711,7 +10314,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
+    int DOI___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>DOI</em>' class.
@@ -9720,7 +10323,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+    int DOI_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -9766,6 +10369,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_OBJECT_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_OBJECT_DIRECTORY___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Data Object Directory</em>' class.
@@ -9894,6 +10506,15 @@ public interface SclPackage extends EPackage {
     int DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Data Set</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -9946,6 +10567,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DATA_SET_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DATA_SET_DIRECTORY___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Data Set Directory</em>' class.
@@ -10012,6 +10642,15 @@ public interface SclPackage extends EPackage {
     int SERVICE_WITH_OPTIONAL_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_OPTIONAL_MAX___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Service With Optional Max</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10073,6 +10712,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_ASSOCIATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_OPTIONAL_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_ASSOCIATION___GET_NAMESPACE = SERVICE_WITH_OPTIONAL_MAX___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Dyn Association</em>' class.
@@ -10145,6 +10793,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DYN_DATA_SET___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DYN_DATA_SET___GET_NAMESPACE = SERVICE_WITH_MAX_AND_MAX_ATTRIBUTES___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Dyn Data Set</em>' class.
@@ -10435,6 +11092,15 @@ public interface SclPackage extends EPackage {
     int EXT_REF___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BASE_ELEMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EXT_REF___GET_NAMESPACE = BASE_ELEMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Ext Ref</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10570,6 +11236,15 @@ public interface SclPackage extends EPackage {
     int FCDA___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FCDA___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>FCDA</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -10649,6 +11324,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int FILE_HANDLING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FILE_HANDLING___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>File Handling</em>' class.
@@ -10739,6 +11423,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>GOOSE</em>' class.
@@ -10883,6 +11576,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GOOSE_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GOOSE_SECURITY___GET_NAMESPACE = CERTIFICATE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>GOOSE Security</em>' class.
@@ -11092,6 +11794,15 @@ public interface SclPackage extends EPackage {
     int GSE_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_CONTROL___GET_NAMESPACE = CONTROL_WITH_IED_NAME___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11155,6 +11866,15 @@ public interface SclPackage extends EPackage {
     int GSE_DIR___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_DIR___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>GSE Dir</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11216,6 +11936,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_SETTINGS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Service Settings</em>' class.
@@ -11326,6 +12055,15 @@ public interface SclPackage extends EPackage {
     int GSE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSE_SETTINGS___GET_NAMESPACE = SERVICE_SETTINGS___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>GSE Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11389,6 +12127,15 @@ public interface SclPackage extends EPackage {
     int GSSE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GSSE___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>GSSE</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11441,6 +12188,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_CB_VALUES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_CB_VALUES___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Get CB Values</em>' class.
@@ -11497,6 +12253,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_OBJECT_DEFINITION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_OBJECT_DEFINITION___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Get Data Object Definition</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11551,6 +12316,15 @@ public interface SclPackage extends EPackage {
     int GET_DATA_SET_VALUE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DATA_SET_VALUE___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Get Data Set Value</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11603,6 +12377,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int GET_DIRECTORY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GET_DIRECTORY___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Get Directory</em>' class.
@@ -11821,6 +12604,15 @@ public interface SclPackage extends EPackage {
     int IED___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>IED</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -11956,6 +12748,15 @@ public interface SclPackage extends EPackage {
     int IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int IED_NAME___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>IED Name</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12064,6 +12865,15 @@ public interface SclPackage extends EPackage {
     int INPUTS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int INPUTS___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Inputs</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12137,6 +12947,15 @@ public interface SclPackage extends EPackage {
     int CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CERT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Cert</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12207,6 +13026,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int ISSUER_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ISSUER_NAME___GET_NAMESPACE = CERT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Issuer Name</em>' class.
@@ -12288,6 +13116,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int KDC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int KDC___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>KDC</em>' class.
@@ -12467,7 +13304,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE___GET_NAMESPACE = UN_NAMING_OPERATION_COUNT + 0;
+    int LDEVICE___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>LDevice</em>' class.
@@ -12476,7 +13313,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 1;
+    int LDEVICE_OPERATION_COUNT = UN_NAMING_OPERATION_COUNT + 0;
 
     /**
      * The feature id for the '<em><b>Line Number</b></em>' attribute.
@@ -12722,15 +13559,6 @@ public interface SclPackage extends EPackage {
     int LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The operation id for the '<em>Get Parent LDevice</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
-
-    /**
      * The operation id for the '<em>Get Namespace</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -12738,6 +13566,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
+
+    /**
+     * The operation id for the '<em>Get Parent LDevice</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
 
     /**
      * The number of operations of the '<em>LN</em>' class.
@@ -13001,15 +13838,6 @@ public interface SclPackage extends EPackage {
     int LN0___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ANY_LN___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
-     * The operation id for the '<em>Get Parent LDevice</em>' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     * @ordered
-     */
-    int LN0___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
-
-    /**
      * The operation id for the '<em>Get Namespace</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13017,6 +13845,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LN0___GET_NAMESPACE = ANY_LN___GET_NAMESPACE;
+
+    /**
+     * The operation id for the '<em>Get Parent LDevice</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LN0___GET_PARENT_LDEVICE = ANY_LN___GET_PARENT_LDEVICE;
 
     /**
      * The number of operations of the '<em>LN0</em>' class.
@@ -13134,6 +13971,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Log</em>' class.
@@ -13379,6 +14225,15 @@ public interface SclPackage extends EPackage {
     int LOG_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_CONTROL___GET_NAMESPACE = CONTROL_WITH_TRIGGER_OPT___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13485,6 +14340,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LOG_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LOG_SETTINGS___GET_NAMESPACE = SERVICE_SETTINGS___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Log Settings</em>' class.
@@ -13622,6 +14486,15 @@ public interface SclPackage extends EPackage {
     int OPT_FIELDS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int OPT_FIELDS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Opt Fields</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13685,6 +14558,15 @@ public interface SclPackage extends EPackage {
     int PROTOCOL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PROTOCOL___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Protocol</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -13737,6 +14619,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int READ_WRITE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int READ_WRITE___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Read Write</em>' class.
@@ -13818,6 +14709,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RED_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RED_PROT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Red Prot</em>' class.
@@ -14036,6 +14936,15 @@ public interface SclPackage extends EPackage {
     int REPORT_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_TRIGGER_OPT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_CONTROL___GET_NAMESPACE = CONTROL_WITH_TRIGGER_OPT___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14180,6 +15089,15 @@ public interface SclPackage extends EPackage {
     int REPORT_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REPORT_SETTINGS___GET_NAMESPACE = SERVICE_SETTINGS___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Report Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14295,6 +15213,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int RPT_ENABLED___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int RPT_ENABLED___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Rpt Enabled</em>' class.
@@ -14468,6 +15395,15 @@ public interface SclPackage extends EPackage {
     int SDI___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SDI___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>SDI</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14529,6 +15465,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SG_EDIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SG_EDIT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>SG Edit</em>' class.
@@ -14673,6 +15618,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMV_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERTIFICATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SECURITY___GET_NAMESPACE = CERTIFICATE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>SMV Security</em>' class.
@@ -14855,6 +15809,15 @@ public interface SclPackage extends EPackage {
     int SMV_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_SETTINGS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_SETTINGS___GET_NAMESPACE = SERVICE_SETTINGS___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>SMV Settings</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -14952,6 +15915,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SM_VSC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SM_VSC___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>SM Vsc</em>' class.
@@ -15188,6 +16160,15 @@ public interface SclPackage extends EPackage {
     int SAMPLED_VALUE_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CONTROL_WITH_IED_NAME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLED_VALUE_CONTROL___GET_NAMESPACE = CONTROL_WITH_IED_NAME___GET_NAMESPACE;
+
+    /**
      * The operation id for the '<em>Get Parent Any LN</em>' operation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15332,6 +16313,15 @@ public interface SclPackage extends EPackage {
     int SERVER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Server</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15447,6 +16437,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVER_AT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVER_AT___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Server At</em>' class.
@@ -15818,6 +16817,15 @@ public interface SclPackage extends EPackage {
     int SERVICES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICES___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Services</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -15870,6 +16878,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SET_DATA_SET_VALUE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SET_DATA_SET_VALUE___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Set Data Set Value</em>' class.
@@ -15998,6 +17015,15 @@ public interface SclPackage extends EPackage {
     int SETTING_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_CONTROL___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Setting Control</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16068,6 +17094,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SETTING_GROUPS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SETTING_GROUPS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Setting Groups</em>' class.
@@ -16196,6 +17231,15 @@ public interface SclPackage extends EPackage {
     int SMV_OPTS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMV_OPTS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Smv Opts</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16268,6 +17312,15 @@ public interface SclPackage extends EPackage {
     int SUBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = CERT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBJECT___GET_NAMESPACE = CERT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Subject</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16338,6 +17391,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUP_SUBSCRIPTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUP_SUBSCRIPTION___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Sup Subscription</em>' class.
@@ -16439,6 +17501,15 @@ public interface SclPackage extends EPackage {
     int TIME_SYNC_PROT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIME_SYNC_PROT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Time Sync Prot</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16491,6 +17562,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TIMER_ACTIVATED_CONTROL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_YES_NO___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TIMER_ACTIVATED_CONTROL___GET_NAMESPACE = SERVICE_YES_NO___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Timer Activated Control</em>' class.
@@ -16592,6 +17672,15 @@ public interface SclPackage extends EPackage {
     int TRG_OPS___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRG_OPS___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Trg Ops</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -16653,6 +17742,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VALUE_HANDLING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_HANDLING___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Value Handling</em>' class.
@@ -16770,6 +17868,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Equipment</em>' class.
@@ -16907,6 +18014,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_CONDUCTING_EQUIPMENT___GET_NAMESPACE = EQUIPMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Abstract Conducting Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17042,6 +18158,15 @@ public interface SclPackage extends EPackage {
     int ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int ABSTRACT_EQ_FUNC_SUB_FUNC___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Abstract Eq Func Sub Func</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17166,6 +18291,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQUIPMENT_CONTAINER___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Equipment Container</em>' class.
@@ -17328,6 +18462,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int BAY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAY___GET_NAMESPACE = EQUIPMENT_CONTAINER___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Bay</em>' class.
@@ -17528,6 +18671,15 @@ public interface SclPackage extends EPackage {
     int CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONDUCTING_EQUIPMENT___GET_NAMESPACE = ABSTRACT_CONDUCTING_EQUIPMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Conducting Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -17670,6 +18822,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int CONNECTIVITY_NODE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = LNODE_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONNECTIVITY_NODE___GET_NAMESPACE = LNODE_CONTAINER___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Connectivity Node</em>' class.
@@ -17861,6 +19022,15 @@ public interface SclPackage extends EPackage {
     int EQ_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_FUNCTION___GET_NAMESPACE = ABSTRACT_EQ_FUNC_SUB_FUNC___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Eq Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18003,6 +19173,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int EQ_SUB_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_EQ_FUNC_SUB_FUNC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int EQ_SUB_FUNCTION___GET_NAMESPACE = ABSTRACT_EQ_FUNC_SUB_FUNC___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Eq Sub Function</em>' class.
@@ -18185,6 +19364,15 @@ public interface SclPackage extends EPackage {
     int FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int FUNCTION___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Function</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18365,6 +19553,15 @@ public interface SclPackage extends EPackage {
     int GENERAL_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int GENERAL_EQUIPMENT___GET_NAMESPACE = EQUIPMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>General Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -18534,6 +19731,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int LNODE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>LNode</em>' class.
@@ -18714,6 +19920,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TERMINAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = UN_NAMING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TERMINAL___GET_NAMESPACE = UN_NAMING___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Terminal</em>' class.
@@ -18905,6 +20120,15 @@ public interface SclPackage extends EPackage {
     int NEUTRAL_POINT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = TERMINAL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NEUTRAL_POINT___GET_NAMESPACE = TERMINAL___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Neutral Point</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19065,6 +20289,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int POWER_TRANSFORMER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int POWER_TRANSFORMER___GET_NAMESPACE = EQUIPMENT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Power Transformer</em>' class.
@@ -19229,6 +20462,15 @@ public interface SclPackage extends EPackage {
     int SUB_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_EQUIPMENT___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Sub Equipment</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19389,6 +20631,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SUB_FUNCTION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUB_FUNCTION___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Sub Function</em>' class.
@@ -19553,6 +20804,15 @@ public interface SclPackage extends EPackage {
     int SUBSTATION___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SUBSTATION___GET_NAMESPACE = EQUIPMENT_CONTAINER___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Substation</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19704,6 +20964,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int TAP_CHANGER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = POWER_SYSTEM_RESOURCE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TAP_CHANGER___GET_NAMESPACE = POWER_SYSTEM_RESOURCE___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Tap Changer</em>' class.
@@ -19886,6 +21155,15 @@ public interface SclPackage extends EPackage {
     int TRANSFORMER_WINDING___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = ABSTRACT_CONDUCTING_EQUIPMENT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int TRANSFORMER_WINDING___GET_NAMESPACE = ABSTRACT_CONDUCTING_EQUIPMENT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Transformer Winding</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -19966,6 +21244,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VALUE_WITH_UNIT___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Value With Unit</em>' class.
@@ -20056,6 +21343,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int VOLTAGE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE___GET_NAMESPACE = VALUE_WITH_UNIT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Voltage</em>' class.
@@ -20238,6 +21534,15 @@ public interface SclPackage extends EPackage {
     int VOLTAGE_LEVEL___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = EQUIPMENT_CONTAINER___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int VOLTAGE_LEVEL___GET_NAMESPACE = EQUIPMENT_CONTAINER___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Voltage Level</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20309,6 +21614,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SERVICE_WITH_MAX_AND_MODIFY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SERVICE_WITH_MAX___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SERVICE_WITH_MAX_AND_MODIFY___GET_NAMESPACE = SERVICE_WITH_MAX___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Service With Max And Modify</em>' class.
@@ -20393,6 +21707,15 @@ public interface SclPackage extends EPackage {
     int DURATION_IN_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = VALUE_WITH_UNIT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_SEC___GET_NAMESPACE = VALUE_WITH_UNIT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Duration In Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20463,6 +21786,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int DURATION_IN_MILLI_SEC___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Duration In Milli Sec</em>' class.
@@ -20537,6 +21869,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE_IN_MB_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE_IN_MB_PER_SEC___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Bit Rate In Mb Per Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20609,6 +21950,15 @@ public interface SclPackage extends EPackage {
     int MIN_TIME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MIN_TIME___GET_NAMESPACE = DURATION_IN_MILLI_SEC___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Min Time</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20679,6 +22029,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MAX_TIME___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = DURATION_IN_MILLI_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MAX_TIME___GET_NAMESPACE = DURATION_IN_MILLI_SEC___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Max Time</em>' class.
@@ -20772,6 +22131,15 @@ public interface SclPackage extends EPackage {
     int BIT_RATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = BIT_RATE_IN_MB_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BIT_RATE___GET_NAMESPACE = BIT_RATE_IN_MB_PER_SEC___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Bit Rate</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20843,6 +22211,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SMP_RATE___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SMP_RATE___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Smp Rate</em>' class.
@@ -20918,6 +22295,15 @@ public interface SclPackage extends EPackage {
     int SAMPLES_PER_SEC___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
 
     /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SAMPLES_PER_SEC___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
+
+    /**
      * The number of operations of the '<em>Samples Per Sec</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -20989,6 +22375,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int SEC_PER_SAMPLES___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int SEC_PER_SAMPLES___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Sec Per Samples</em>' class.
@@ -21089,6 +22484,15 @@ public interface SclPackage extends EPackage {
      * @ordered
      */
     int MC_SECURITY___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN = SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN;
+
+    /**
+     * The operation id for the '<em>Get Namespace</em>' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MC_SECURITY___GET_NAMESPACE = SCL_OBJECT___GET_NAMESPACE;
 
     /**
      * The number of operations of the '<em>Mc Security</em>' class.
@@ -24960,16 +26364,6 @@ public interface SclPackage extends EPackage {
     EOperation getAnyLN__GetParentLDevice();
 
     /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN#getNamespace()
-     * @generated
-     */
-    EOperation getAnyLN__GetNamespace();
-
-    /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Association <em>Association</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -25895,16 +27289,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getDOI_RefersToDO();
-
-    /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI#getNamespace()
-     * @generated
-     */
-    EOperation getDOI__GetNamespace();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.DataObjectDirectory <em>Data Object Directory</em>}'.
@@ -27289,16 +28673,6 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getLDevice_RefersToLowerLevelLDevices();
-
-    /**
-     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace() <em>Get Namespace</em>}' operation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the meta object for the '<em>Get Namespace</em>' operation.
-     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getNamespace()
-     * @generated
-     */
-    EOperation getLDevice__GetNamespace();
 
     /**
      * Returns the meta object for the containment reference '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice#getLN0 <em>LN0</em>}'.
@@ -30945,6 +32319,16 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EOperation getSclObject__BuildExplicitLinks__IRiseClipseConsole_Boolean();
+
+    /**
+     * Returns the meta object for the '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getNamespace() <em>Get Namespace</em>}' operation.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the '<em>Get Namespace</em>' operation.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject#getNamespace()
+     * @generated
+     */
+    EOperation getSclObject__GetNamespace();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.UnNaming <em>Un Naming</em>}'.
