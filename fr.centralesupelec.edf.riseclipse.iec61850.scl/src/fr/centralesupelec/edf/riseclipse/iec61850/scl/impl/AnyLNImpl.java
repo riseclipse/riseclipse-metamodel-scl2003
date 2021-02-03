@@ -25,7 +25,6 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Association;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.ClientLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DA;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
-import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
@@ -1082,6 +1081,14 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
         //@formatter:off
         
         // The attribute lnNs shall be a DataAttribute of the name plate NamPlt of a logical node.
+        //
+        // 1.  AnyLN.DOI["NamPlt"].DAI["lnNs"].value                   if present
+        // 2.  AnyLN.DOI["NamPlt"].DAI["lnNs"].DA.value                if present
+        // 3.  AnyLN.DOI["NamPlt"].DO.DOType.DA["lnNs"].value          if present
+        // 4.  AnyLN.LNodeType.namespace                               if not null
+        // 5.  AnyLN.ParentLDevice.lnNs                                otherwise
+
+        
         List< DOI > namPltDoi =
                  getDOI()
                 .stream()
@@ -1128,38 +1135,15 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             }
         }
 
+        String ns = null;
         if( getRefersToLNodeType() != null ) {
-            List< DO > namPltDo =
-                     getRefersToLNodeType()
-                    .getDO()
-                    .stream()
-                    .filter( doi -> "NamPlt".equals( doi.getName() ))
-                    .collect( Collectors.toList() );
-            if( namPltDo.size() == 1 ) {
-                if( namPltDo.get( 0 ).getRefersToDOType() != null ) {
-                    List< DA > lnNsDa =
-                             namPltDo
-                            .get( 0 )
-                            .getRefersToDOType()
-                            .getDA()
-                            .stream()
-                            .filter( da -> "lnNs".equals(  da.getName() ))
-                            .collect( Collectors.toList() );
-                    if( lnNsDa.size() == 1 ) {
-                        if((       lnNsDa.get( 0 ).getVal().size() == 1 )
-                              && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                              && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                            return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                        }
-                    }
-                }
-            }
+            ns = getRefersToLNodeType().getNamespace();
         }
 
-        if( getParentLDevice() == null ) {
-            return null;
+        if(( ns == null ) && ( getParentLDevice() != null )) {
+            ns = getParentLDevice().getNamespace();
         }
-        return getParentLDevice().getNamespace();
+        return ns;
 
         //@formatter:on
     }

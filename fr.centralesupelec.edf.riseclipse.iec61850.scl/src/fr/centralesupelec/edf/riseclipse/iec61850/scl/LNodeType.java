@@ -43,7 +43,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LNodeType extends IDNaming {
+public interface LNodeType extends IDNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Ied Type</b></em>' attribute.
      * The default value is <code>""</code>.

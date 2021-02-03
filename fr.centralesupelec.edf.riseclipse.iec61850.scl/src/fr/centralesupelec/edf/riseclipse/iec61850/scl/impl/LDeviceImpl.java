@@ -830,10 +830,33 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
      */
     @Override
     public String getNamespace() {
+        String ns = getNamespace( "lnNs" );
+        if( ns == null ) {
+            ns = getNamespace( "ldNs" );
+        }
+        return ns;
+    }
+    
+    private String getNamespace( String kind ) {
         //@formatter:off
 
         // The attribute ldNs shall be a DataAttribute of the name plate NamPlt of the LOGICAL- NODE-ZERO (LLN0).
-        // The LD namespace may not be the LN0 namespace if the latter use an lnNs attribute
+        //
+        // LDevice.ldNs
+        // 1.  LDevice.LN0.DOI["NamPlt"].DAI["ldNs"].value                 if present
+        // 2.  LDevice.LN0.DOI["NamPlt"].DAI["ldNs"].DA.value              if present
+        // 3.  LDevice.LN0.DOI["NamPlt"].DO.DOType.DA["ldNs"].value        If present
+        // 4.  LDevice.LN0.LNodeType.DO["NamPlt"].DOType.DA["ldNs"].value  if present
+        // 5.  null (should not occur in a valid SCL file)                 otherwise
+        
+        // LDevice.lnNs
+        // 1.  LDevice.LN0.DOI["NamPlt"].DAI["lnNs"].value                 if present
+        // 2.  LDevice.LN0.DOI["NamPlt"].DAI["lnNs"].DA.value              if present
+        // 3.  LDevice.LN0.DOI["NamPlt"].DO.DOType.DA["lnNs"].value        If present
+        // 4.  LDevice.LN0.LNodeType.DO["NamPlt"].DOType.DA["lnNs"].value  if present
+        // 5.  LDevice.ldNs                                    otherwise
+        
+
         if( getLN0() == null ) return null;
         List< DOI > namPltDoi =
                  getLN0()
@@ -847,7 +870,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     .get( 0 )
                     .getDAI()
                     .stream()
-                    .filter( dai -> "ldNs".equals( dai.getName() ) )
+                    .filter( dai -> kind.equals( dai.getName() ) )
                     .collect( Collectors.toList() );
             if( ldNsDai.size() == 1 ) {
                 if( (      ldNsDai.get( 0 ).getVal().size() == 1 )
@@ -870,7 +893,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                         .getRefersToDOType()
                         .getDA()
                         .stream()
-                        .filter( da -> "ldNs".equals( da.getName() ) )
+                        .filter( da -> kind.equals( da.getName() ) )
                         .collect( Collectors.toList() );
                 if( lnNsDa.size() == 1 ) {
                     if( (      lnNsDa.get( 0 ).getVal().size() == 1 )
@@ -898,7 +921,7 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
                     .getRefersToDOType()
                     .getDA()
                     .stream()
-                    .filter( da -> "ldNs".equals( da.getName() ) )
+                    .filter( da -> kind.equals( da.getName() ) )
                     .collect( Collectors.toList() );
             if( ldNsDa.size() == 1 ) {
                 if((       ldNsDa.get( 0 ).getVal().size() == 1 )

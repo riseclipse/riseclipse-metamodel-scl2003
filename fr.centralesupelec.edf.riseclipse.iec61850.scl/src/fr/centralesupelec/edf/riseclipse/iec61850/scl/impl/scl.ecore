@@ -479,7 +479,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming">
+  <eClassifiers xsi:type="ecore:EClass" name="LNodeType" eSuperTypes="#//IDNaming #//INamespaceGetter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iedType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral="" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lnClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"

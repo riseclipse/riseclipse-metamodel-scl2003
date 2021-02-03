@@ -62,12 +62,35 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addNamespacePropertyDescriptor( object );
             addIedTypePropertyDescriptor( object );
             addLnClassPropertyDescriptor( object );
             addReferredByAnyLNPropertyDescriptor( object );
             addReferredByLNodePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_INamespaceGetter_namespace_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_INamespaceGetter_namespace_feature",
+                                "_UI_INamespaceGetter_type" ),
+                        SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -224,6 +247,7 @@ public class LNodeTypeItemProvider extends IDNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( LNodeType.class ) ) {
+        case SclPackage.LNODE_TYPE__NAMESPACE:
         case SclPackage.LNODE_TYPE__IED_TYPE:
         case SclPackage.LNODE_TYPE__LN_CLASS:
             fireNotifyChanged( new ViewerNotification( notification, notification.getNotifier(), false, true ) );

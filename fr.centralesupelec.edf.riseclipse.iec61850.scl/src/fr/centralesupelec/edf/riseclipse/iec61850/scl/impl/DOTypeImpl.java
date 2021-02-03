@@ -677,6 +677,9 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
     public String getNamespace() {
         //@formatter:off
         
+        // 1.  DOType.DA["dataNs"].value                   if present
+        // 2.  null                                        otherwise
+        
         List< DA > lnNsDa =
                  getDA()
                 .stream()
@@ -690,7 +693,6 @@ public class DOTypeImpl extends IDNamingImpl implements DOType {
             }
         }
         return null;
-        //        return getParentDataTypeTemplates().getNamespace();
 
         //@formatter:on
     }

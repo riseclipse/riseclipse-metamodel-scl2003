@@ -591,24 +591,31 @@ public class DOImpl extends AbstractDataObjectImpl implements DO {
         //@formatter:off
         
         // The attribute dataNs shall be a DataAttribute of the data.
+        //
+        // 1.  DO.DOType.namespace                                  if not null
+        // 2.  DO.ParentLNodeType.DO["NamPlt"].DOType.namespace     if not null
+        // 3.  DO.ParentLNodeType.namespace                         otherwise
+
         if( getRefersToDOType() != null ) {
-            List< DA > lnNsDa =
-                    getRefersToDOType()
-                   .getDA()
-                   .stream()
-                   .filter( da -> "dataNs".equals( da.getName() ))
-                   .collect( Collectors.toList() );
-            if( lnNsDa.size() == 1 ) {
-                if((       lnNsDa.get( 0 ).getVal().size() == 1 )
-                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue() != null )
-                      && ( lnNsDa.get( 0 ).getVal().get( 0 ).getValue().length() != 0 )) {
-                    return lnNsDa.get( 0 ).getVal().get( 0 ).getValue();
-                }
-            }
+            String ns = getRefersToDOType().getNamespace();
+            if( ns != null ) return ns;
         }
-//        if( getParentLNodeType() != null ) {
-//            return getParentLNodeType().getNamespace();
-//        }
+        
+        if( getParentLNodeType() != null ) {
+            
+            List< DO > namPltDo =
+                    getParentLNodeType()
+                   .getDO()
+                   .stream()
+                   .filter( do_ -> "NamPlt".equals( do_.getName() ))
+                   .collect( Collectors.toList() );
+            // Avoid infinite recursion
+            if(( namPltDo.size() == 1 ) && ( namPltDo.get( 0 ) != this )) {
+                String ns = namPltDo.get( 0 ).getNamespace();
+                if( ns != null ) return ns;
+            }
+            return getParentLNodeType().getNamespace();
+        }
         return null;
 
         //@formatter:on

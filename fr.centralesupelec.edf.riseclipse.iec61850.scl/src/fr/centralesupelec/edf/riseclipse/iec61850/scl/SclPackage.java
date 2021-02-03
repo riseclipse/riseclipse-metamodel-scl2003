@@ -6323,13 +6323,22 @@ public interface SclPackage extends EPackage {
     int LNODE_TYPE__ID = ID_NAMING__ID;
 
     /**
+     * The feature id for the '<em><b>Namespace</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int LNODE_TYPE__NAMESPACE = ID_NAMING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Ied Type</b></em>' attribute.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 0;
+    int LNODE_TYPE__IED_TYPE = ID_NAMING_FEATURE_COUNT + 1;
 
     /**
      * The feature id for the '<em><b>Ln Class</b></em>' attribute.
@@ -6338,7 +6347,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__LN_CLASS = ID_NAMING_FEATURE_COUNT + 1;
+    int LNODE_TYPE__LN_CLASS = ID_NAMING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>DO</b></em>' containment reference list.
@@ -6347,7 +6356,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__DO = ID_NAMING_FEATURE_COUNT + 2;
+    int LNODE_TYPE__DO = ID_NAMING_FEATURE_COUNT + 3;
 
     /**
      * The feature id for the '<em><b>Parent Data Type Templates</b></em>' container reference.
@@ -6356,7 +6365,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 3;
+    int LNODE_TYPE__PARENT_DATA_TYPE_TEMPLATES = ID_NAMING_FEATURE_COUNT + 4;
 
     /**
      * The feature id for the '<em><b>Referred By Any LN</b></em>' reference list.
@@ -6365,7 +6374,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__REFERRED_BY_ANY_LN = ID_NAMING_FEATURE_COUNT + 4;
+    int LNODE_TYPE__REFERRED_BY_ANY_LN = ID_NAMING_FEATURE_COUNT + 5;
 
     /**
      * The feature id for the '<em><b>Referred By LNode</b></em>' reference list.
@@ -6374,7 +6383,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE__REFERRED_BY_LNODE = ID_NAMING_FEATURE_COUNT + 5;
+    int LNODE_TYPE__REFERRED_BY_LNODE = ID_NAMING_FEATURE_COUNT + 6;
 
     /**
      * The number of structural features of the '<em>LNode Type</em>' class.
@@ -6383,7 +6392,7 @@ public interface SclPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 6;
+    int LNODE_TYPE_FEATURE_COUNT = ID_NAMING_FEATURE_COUNT + 7;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.

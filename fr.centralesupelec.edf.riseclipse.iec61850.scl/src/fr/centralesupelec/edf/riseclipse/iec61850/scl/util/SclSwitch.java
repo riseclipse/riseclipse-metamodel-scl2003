@@ -553,6 +553,7 @@ public class SclSwitch< T > extends Switch< T > {
             LNodeType lNodeType = ( LNodeType ) theEObject;
             T result = caseLNodeType( lNodeType );
             if( result == null ) result = caseIDNaming( lNodeType );
+            if( result == null ) result = caseINamespaceGetter( lNodeType );
             if( result == null ) result = caseBaseElement( lNodeType );
             if( result == null ) result = caseAgDesc( lNodeType );
             if( result == null ) result = caseSclObject( lNodeType );
