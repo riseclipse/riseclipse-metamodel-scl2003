@@ -44,7 +44,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DOI extends UnNaming {
+public interface DOI extends UnNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Ix</b></em>' attribute.
      * <!-- begin-user-doc -->

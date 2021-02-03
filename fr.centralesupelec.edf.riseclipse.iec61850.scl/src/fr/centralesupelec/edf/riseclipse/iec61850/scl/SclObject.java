@@ -99,12 +99,4 @@ public interface SclObject extends EObject {
      */
     boolean buildExplicitLinks( IRiseClipseConsole console, Boolean forceUpdate );
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @model kind="operation"
-     * @generated
-     */
-    String getNamespace();
-
 } // SclObject

@@ -52,7 +52,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface AnyLN extends UnNaming {
+public interface AnyLN extends UnNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->

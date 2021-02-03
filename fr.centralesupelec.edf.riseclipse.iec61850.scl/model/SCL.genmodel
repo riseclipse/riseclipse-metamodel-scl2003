@@ -204,6 +204,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//Communication/SubNetwork"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Communication/ParentSCL"/>
     </genClasses>
+    <genClasses ecoreClass="SCL.ecore#//ControlBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/ldInst"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
+      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getParentConnectedAP"/>
+    </genClasses>
     <genClasses ecoreClass="SCL.ecore#//ConnectedAP">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/apName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ConnectedAP/iedName"/>
@@ -214,13 +221,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/PhysConn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/GSE"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ConnectedAP/SMV"/>
-    </genClasses>
-    <genClasses ecoreClass="SCL.ecore#//ControlBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/cbName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//ControlBlock/ldInst"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/Address"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SCL.ecore#//ControlBlock/RefersToControlWithIEDName"/>
-      <genOperations ecoreOperation="SCL.ecore#//ControlBlock/getParentConnectedAP"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//GSE">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SCL.ecore#//GSE/MinTime"/>
@@ -1028,7 +1028,6 @@
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/console"/>
         <genParameters ecoreParameter="SCL.ecore#//SclObject/buildExplicitLinks/forceUpdate"/>
       </genOperations>
-      <genOperations ecoreOperation="SCL.ecore#//SclObject/getNamespace"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//UnNaming"/>
     <genClasses ecoreClass="SCL.ecore#//ServiceYesNo"/>
@@ -1145,5 +1144,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//AgVirtual/virtual"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SCL.ecore#//IRiseClipseConsole"/>
+    <genClasses image="false" ecoreClass="SCL.ecore#//INamespaceGetter">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//INamespaceGetter/namespace"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

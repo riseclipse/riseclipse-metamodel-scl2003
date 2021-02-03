@@ -107,6 +107,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.Hitem;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IDNaming;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IssuerName;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.KDC;
@@ -372,16 +373,6 @@ public class SclSwitch< T > extends Switch< T > {
             if( result == null ) result = defaultCase( theEObject );
             return result;
         }
-        case SclPackage.CONNECTED_AP: {
-            ConnectedAP connectedAP = ( ConnectedAP ) theEObject;
-            T result = caseConnectedAP( connectedAP );
-            if( result == null ) result = caseUnNaming( connectedAP );
-            if( result == null ) result = caseBaseElement( connectedAP );
-            if( result == null ) result = caseAgDesc( connectedAP );
-            if( result == null ) result = caseSclObject( connectedAP );
-            if( result == null ) result = defaultCase( theEObject );
-            return result;
-        }
         case SclPackage.CONTROL_BLOCK: {
             ControlBlock controlBlock = ( ControlBlock ) theEObject;
             T result = caseControlBlock( controlBlock );
@@ -389,6 +380,16 @@ public class SclSwitch< T > extends Switch< T > {
             if( result == null ) result = caseBaseElement( controlBlock );
             if( result == null ) result = caseAgDesc( controlBlock );
             if( result == null ) result = caseSclObject( controlBlock );
+            if( result == null ) result = defaultCase( theEObject );
+            return result;
+        }
+        case SclPackage.CONNECTED_AP: {
+            ConnectedAP connectedAP = ( ConnectedAP ) theEObject;
+            T result = caseConnectedAP( connectedAP );
+            if( result == null ) result = caseUnNaming( connectedAP );
+            if( result == null ) result = caseBaseElement( connectedAP );
+            if( result == null ) result = caseAgDesc( connectedAP );
+            if( result == null ) result = caseSclObject( connectedAP );
             if( result == null ) result = defaultCase( theEObject );
             return result;
         }
@@ -504,6 +505,7 @@ public class SclSwitch< T > extends Switch< T > {
             DO do_ = ( DO ) theEObject;
             T result = caseDO( do_ );
             if( result == null ) result = caseAbstractDataObject( do_ );
+            if( result == null ) result = caseINamespaceGetter( do_ );
             if( result == null ) result = caseUnNaming( do_ );
             if( result == null ) result = caseBaseElement( do_ );
             if( result == null ) result = caseAgDesc( do_ );
@@ -515,6 +517,7 @@ public class SclSwitch< T > extends Switch< T > {
             DOType doType = ( DOType ) theEObject;
             T result = caseDOType( doType );
             if( result == null ) result = caseIDNaming( doType );
+            if( result == null ) result = caseINamespaceGetter( doType );
             if( result == null ) result = caseBaseElement( doType );
             if( result == null ) result = caseAgDesc( doType );
             if( result == null ) result = caseSclObject( doType );
@@ -602,6 +605,7 @@ public class SclSwitch< T > extends Switch< T > {
             AnyLN anyLN = ( AnyLN ) theEObject;
             T result = caseAnyLN( anyLN );
             if( result == null ) result = caseUnNaming( anyLN );
+            if( result == null ) result = caseINamespaceGetter( anyLN );
             if( result == null ) result = caseBaseElement( anyLN );
             if( result == null ) result = caseAgDesc( anyLN );
             if( result == null ) result = caseSclObject( anyLN );
@@ -764,6 +768,7 @@ public class SclSwitch< T > extends Switch< T > {
             DOI doi = ( DOI ) theEObject;
             T result = caseDOI( doi );
             if( result == null ) result = caseUnNaming( doi );
+            if( result == null ) result = caseINamespaceGetter( doi );
             if( result == null ) result = caseBaseElement( doi );
             if( result == null ) result = caseAgDesc( doi );
             if( result == null ) result = caseSclObject( doi );
@@ -969,6 +974,7 @@ public class SclSwitch< T > extends Switch< T > {
             LDevice lDevice = ( LDevice ) theEObject;
             T result = caseLDevice( lDevice );
             if( result == null ) result = caseUnNaming( lDevice );
+            if( result == null ) result = caseINamespaceGetter( lDevice );
             if( result == null ) result = caseBaseElement( lDevice );
             if( result == null ) result = caseAgDesc( lDevice );
             if( result == null ) result = caseSclObject( lDevice );
@@ -980,6 +986,7 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseLN( ln );
             if( result == null ) result = caseAnyLN( ln );
             if( result == null ) result = caseUnNaming( ln );
+            if( result == null ) result = caseINamespaceGetter( ln );
             if( result == null ) result = caseBaseElement( ln );
             if( result == null ) result = caseAgDesc( ln );
             if( result == null ) result = caseSclObject( ln );
@@ -991,6 +998,7 @@ public class SclSwitch< T > extends Switch< T > {
             T result = caseLN0( ln0 );
             if( result == null ) result = caseAnyLN( ln0 );
             if( result == null ) result = caseUnNaming( ln0 );
+            if( result == null ) result = caseINamespaceGetter( ln0 );
             if( result == null ) result = caseBaseElement( ln0 );
             if( result == null ) result = caseAgDesc( ln0 );
             if( result == null ) result = caseSclObject( ln0 );
@@ -1789,6 +1797,12 @@ public class SclSwitch< T > extends Switch< T > {
         case SclPackage.IRISE_CLIPSE_CONSOLE: {
             IRiseClipseConsole iRiseClipseConsole = ( IRiseClipseConsole ) theEObject;
             T result = caseIRiseClipseConsole( iRiseClipseConsole );
+            if( result == null ) result = defaultCase( theEObject );
+            return result;
+        }
+        case SclPackage.INAMESPACE_GETTER: {
+            INamespaceGetter iNamespaceGetter = ( INamespaceGetter ) theEObject;
+            T result = caseINamespaceGetter( iNamespaceGetter );
             if( result == null ) result = defaultCase( theEObject );
             return result;
         }
@@ -4344,6 +4358,21 @@ public class SclSwitch< T > extends Switch< T > {
      * @generated
      */
     public T caseIRiseClipseConsole( IRiseClipseConsole object ) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>INamespace Getter</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>INamespace Getter</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseINamespaceGetter( INamespaceGetter object ) {
         return null;
     }
 

@@ -62,6 +62,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
         if( itemPropertyDescriptors == null ) {
             super.getPropertyDescriptors( object );
 
+            addNamespacePropertyDescriptor( object );
             addInstPropertyDescriptor( object );
             addLnClassPropertyDescriptor( object );
             addLnTypePropertyDescriptor( object );
@@ -73,6 +74,28 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
             addReferredByLNodePropertyDescriptor( object );
         }
         return itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Namespace feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addNamespacePropertyDescriptor( Object object ) {
+        itemPropertyDescriptors.add(
+                createItemPropertyDescriptor( ( ( ComposeableAdapterFactory ) adapterFactory ).getRootAdapterFactory(),
+                        getResourceLocator(),
+                        getString( "_UI_INamespaceGetter_namespace_feature" ),
+                        getString( "_UI_PropertyDescriptor_description", "_UI_INamespaceGetter_namespace_feature",
+                                "_UI_INamespaceGetter_type" ),
+                        SclPackage.eINSTANCE.getINamespaceGetter_Namespace(),
+                        false,
+                        false,
+                        false,
+                        ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                        null,
+                        null ) );
     }
 
     /**
@@ -325,8 +348,9 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
      */
     @Override
     public String getText( Object object ) {
-        AnyLN anyLN = ( AnyLN ) object;
-        return getString( "_UI_AnyLN_type" ) + " " + anyLN.getLineNumber();
+        String label = ( ( AnyLN ) object ).getNamespace();
+        return label == null || label.length() == 0 ? getString( "_UI_AnyLN_type" )
+                : getString( "_UI_AnyLN_type" ) + " " + label;
     }
 
     /**
@@ -341,6 +365,7 @@ public class AnyLNItemProvider extends UnNamingItemProvider {
         updateChildren( notification );
 
         switch( notification.getFeatureID( AnyLN.class ) ) {
+        case SclPackage.ANY_LN__NAMESPACE:
         case SclPackage.ANY_LN__INST:
         case SclPackage.ANY_LN__LN_CLASS:
         case SclPackage.ANY_LN__LN_TYPE:

@@ -30,6 +30,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataSet;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DataTypeTemplates;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.Inputs;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LNode;
@@ -65,6 +66,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnClass <em>Ln Class</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.AnyLNImpl#getLnType <em>Ln Type</em>}</li>
@@ -85,6 +87,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1144,7 +1156,9 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             }
         }
 
-        if( getParentLDevice() == null ) return null;
+        if( getParentLDevice() == null ) {
+            return null;
+        }
         return getParentLDevice().getNamespace();
 
         //@formatter:on
@@ -1245,6 +1259,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__NAMESPACE:
+            return getNamespace();
         case SclPackage.ANY_LN__INST:
             return getInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1412,6 +1428,8 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.ANY_LN__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.ANY_LN__INST:
             return isSetInst();
         case SclPackage.ANY_LN__LN_CLASS:
@@ -1444,6 +1462,42 @@ public abstract class AnyLNImpl extends UnNamingImpl implements AnyLN {
             return isSetReferredByLNode();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.ANY_LN__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.ANY_LN__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

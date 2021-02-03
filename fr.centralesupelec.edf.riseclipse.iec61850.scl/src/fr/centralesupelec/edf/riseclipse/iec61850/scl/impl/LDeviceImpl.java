@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IED;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.IEDName;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LDevice;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.LN0;
@@ -57,6 +58,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getLdName <em>Ld Name</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.LDeviceImpl#getAccessControl <em>Access Control</em>}</li>
@@ -71,6 +73,16 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * @generated
  */
 public class LDeviceImpl extends UnNamingImpl implements LDevice {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getInst() <em>Inst</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -1103,6 +1115,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__NAMESPACE:
+            return getNamespace();
         case SclPackage.LDEVICE__INST:
             return getInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1214,6 +1228,8 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.LDEVICE__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.LDEVICE__INST:
             return isSetInst();
         case SclPackage.LDEVICE__LD_NAME:
@@ -1234,6 +1250,42 @@ public class LDeviceImpl extends UnNamingImpl implements LDevice {
             return isSetRefersToLowerLevelLDevices();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.LDEVICE__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.LDEVICE__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

@@ -46,7 +46,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LDevice extends UnNaming {
+public interface LDevice extends UnNaming, INamespaceGetter {
     /**
      * Returns the value of the '<em><b>Inst</b></em>' attribute.
      * <!-- begin-user-doc -->

@@ -38,6 +38,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DAI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DO;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.DOI;
+import fr.centralesupelec.edf.riseclipse.iec61850.scl.INamespaceGetter;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SDI;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
@@ -51,6 +52,7 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getIx <em>Ix</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getParentAnyLN <em>Parent Any LN</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.DOIImpl#getDAI <em>DAI</em>}</li>
@@ -63,6 +65,16 @@ import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
  * @generated
  */
 public class DOIImpl extends UnNamingImpl implements DOI {
+    /**
+     * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getNamespace()
+     * @generated
+     * @ordered
+     */
+    protected static final String NAMESPACE_EDEFAULT = null;
+
     /**
      * The default value of the '{@link #getIx() <em>Ix</em>}' attribute.
      * <!-- begin-user-doc -->
@@ -698,6 +710,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public Object eGet( int featureID, boolean resolve, boolean coreType ) {
         switch( featureID ) {
+        case SclPackage.DOI__NAMESPACE:
+            return getNamespace();
         case SclPackage.DOI__IX:
             return getIx();
         case SclPackage.DOI__PARENT_ANY_LN:
@@ -793,6 +807,8 @@ public class DOIImpl extends UnNamingImpl implements DOI {
     @Override
     public boolean eIsSet( int featureID ) {
         switch( featureID ) {
+        case SclPackage.DOI__NAMESPACE:
+            return NAMESPACE_EDEFAULT == null ? getNamespace() != null : !NAMESPACE_EDEFAULT.equals( getNamespace() );
         case SclPackage.DOI__IX:
             return isSetIx();
         case SclPackage.DOI__PARENT_ANY_LN:
@@ -809,6 +825,42 @@ public class DOIImpl extends UnNamingImpl implements DOI {
             return isSetRefersToDO();
         }
         return super.eIsSet( featureID );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eBaseStructuralFeatureID( int derivedFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( derivedFeatureID ) {
+            case SclPackage.DOI__NAMESPACE:
+                return SclPackage.INAMESPACE_GETTER__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eBaseStructuralFeatureID( derivedFeatureID, baseClass );
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public int eDerivedStructuralFeatureID( int baseFeatureID, Class< ? > baseClass ) {
+        if( baseClass == INamespaceGetter.class ) {
+            switch( baseFeatureID ) {
+            case SclPackage.INAMESPACE_GETTER__NAMESPACE:
+                return SclPackage.DOI__NAMESPACE;
+            default:
+                return -1;
+            }
+        }
+        return super.eDerivedStructuralFeatureID( baseFeatureID, baseClass );
     }
 
     /**

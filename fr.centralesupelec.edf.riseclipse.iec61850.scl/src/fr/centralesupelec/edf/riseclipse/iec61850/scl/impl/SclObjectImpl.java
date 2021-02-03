@@ -32,8 +32,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclObject;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
-import fr.centralesupelec.edf.riseclipse.util.RiseClipseFatalException;
-
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -185,18 +183,6 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
         return false;
     }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated NOT
-     */
-    @Override
-    public String getNamespace() {
-        // Not all objects have a namespace, so getNamespace should only be called on
-        // objects for which it make sense.
-        throw new RiseClipseFatalException( "SclObject.getNamespace() called", null );
-    }
-
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
         // Default do nothing
     }
@@ -279,8 +265,6 @@ public abstract class SclObjectImpl extends MinimalEObjectImpl.Container impleme
         switch( operationID ) {
         case SclPackage.SCL_OBJECT___BUILD_EXPLICIT_LINKS__IRISECLIPSECONSOLE_BOOLEAN:
             return buildExplicitLinks( ( IRiseClipseConsole ) arguments.get( 0 ), ( Boolean ) arguments.get( 1 ) );
-        case SclPackage.SCL_OBJECT___GET_NAMESPACE:
-            return getNamespace();
         }
         return super.eInvoke( operationID, arguments );
     }
