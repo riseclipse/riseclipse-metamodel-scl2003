@@ -25,6 +25,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.AccessPoint;
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.AnyLN;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import fr.centralesupelec.edf.riseclipse.iec61850.scl.BDA;
@@ -41,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.util.SclUtilities;
 import fr.centralesupelec.edf.riseclipse.util.IRiseClipseConsole;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.emf.common.notify.Notification;
@@ -1091,6 +1093,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
     @Override
     protected void doBuildExplicitLinks( IRiseClipseConsole console ) {
+        //@formatter:off
+
         // see Issue #13
         super.doBuildExplicitLinks( console );
 
@@ -1172,7 +1176,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
         // If doName is structured, find the SDO and its DOType using remaining doName
 
         final String[] doNames = getDoName().split( "\\.", -1 );
-        List< DO > res3a = anyLN
+        List< DO > res3a =
+                 anyLN
                 .getLeft()
                 .getRefersToLNodeType()
                 .getDO()
@@ -1195,7 +1200,8 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
 
         for( int i = 1; i < doNames.length; ++i ) {
             String name = doNames[i];
-            List< SDO > res3b = doType
+            List< SDO > res3b = 
+                     doType
                     .getSDO()
                     .stream()
                     .filter( sdo -> name.equals( sdo.getName() ) )
@@ -1214,76 +1220,147 @@ public class FCDAImpl extends SclObjectImpl implements FCDA {
             console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
         }
 
+        AbstractDataAttribute attributeLookedFor = null;
+
         if( getDaName() != null ) {
-            // The first daName gives us the DA inside the DOType
-            // If daName is structured, find the DAType and its BDA using remaining doName
-
             final String[] daNames = getDaName().split( "\\.", -1 );
-            List< DA > res4a = doType
-                    .getDA()
-                    .stream()
-                    .filter( da -> da.getName().equals( daNames[0] ) )
-                    .collect( Collectors.toList() );
+            // The first daName gives us the DA or SDO inside the DOType
+            // If daName is structured, find the DAType/DOType and its SDO/DA/BDA using remaining daName
 
-            String mess4a = "DA ( name = " + daNames[0] + " ) in DOType";
-            if( res4a.size() != 1 ) {
-                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4a, res4a.size() );
-                return;
-            }
-            AbstractDataAttribute da = res4a.get( 0 );
-            console.verbose( messagePrefix, "found ", mess4a, " on line ", da.getLineNumber() );
-
-            for( int i = 1; i < daNames.length; ++i ) {
-                da.buildExplicitLinks( console, false );
-
+            for( int i = 0; i < daNames.length; ++i ) {
                 String name = daNames[i];
-                List< BDA > res4b = da
-                        .getRefersToDAType()
-                        .getBDA()
-                        .stream()
-                        .filter( bda -> name.equals( bda.getName() ) )
-                        .collect( Collectors.toList() );
 
-                String mess4b = "BDA ( name = " + name + " ) in DAType on line "
-                        + da.getRefersToDAType().getLineNumber();
-                if( res4b.size() != 1 ) {
+                if( doType != null ) {
+                    List< SDO > res4a = 
+                             doType
+                            .getSDO()
+                            .stream()
+                            .filter( sdo -> sdo.getName().equals( name ) )
+                            .collect( Collectors.toList() );
+
+                    if( res4a.size() == 1 ) {
+                        res4a.get( 0 ).buildExplicitLinks( console, false );
+                        String mess4a = "SDO ( name = " + name + " ) in DOType";
+                        console.verbose( messagePrefix, "found ", mess4a, " on line ", res4a.get( 0 ).getLineNumber() );
+                        doType = res4a.get( 0 ).getRefersToDOType();
+                        if( doType == null ) return;
+                        console.verbose( messagePrefix, "found DOType on line ", doType.getLineNumber() );
+                        continue;
+                    }
+                    
+                    List< DA > res4b = 
+                            doType
+                           .getDA()
+                           .stream()
+                           .filter( da -> da.getName().equals( name ) )
+                           .collect( Collectors.toList() );
+       
+                    if( res4b.size() == 1 ) {
+                        attributeLookedFor = res4b.get( 0 );
+                        String mess4b = "DA ( name = " + name + " ) in DOType";
+                        console.verbose( messagePrefix, "found ", mess4b, " on line ", attributeLookedFor.getLineNumber() );
+                        doType = null;
+                        continue;
+                    }
+
+                    String mess4b = "DA or SDO ( name = " + name + " ) in DOType";
                     SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4b, res4b.size() );
                     return;
                 }
-                da = res4b.get( 0 );
-                console.verbose( messagePrefix, "found ", mess4b, " on line ", da.getLineNumber() );
+                
+                if( attributeLookedFor != null ) {
+                    attributeLookedFor.buildExplicitLinks( console, false );
+                    
+                    List< BDA > res4c = 
+                            attributeLookedFor
+                           .getRefersToDAType()
+                           .getBDA()
+                           .stream()
+                           .filter( bda -> name.equals( bda.getName() ) )
+                           .collect( Collectors.toList() );
+
+                   String mess4c = "BDA ( name = " + name + " ) in DAType on line "
+                           + attributeLookedFor.getRefersToDAType().getLineNumber();
+                   if( res4c.size() != 1 ) {
+                       SclUtilities.displayNotFoundWarning( console, messagePrefix, mess4c, res4c.size() );
+                       return;
+                   }
+                   attributeLookedFor = res4c.get( 0 );
+                   console.verbose( messagePrefix, "found ", mess4c, " on line ", attributeLookedFor.getLineNumber() );
+                   continue;
+                }
+
+                // We should never get there
+                console.fatal( "Unexpected error in FCDA.doBuildExplicitLinks()" );
+                return;
             }
+        }
+
+        if((( doType == null ) && ( attributeLookedFor == null )) || (( doType != null ) && ( attributeLookedFor != null ))) {
+            console.fatal( "Unexpected state in FCDA.doBuildExplicitLinks()" );
+            return;
+        }
+        
+        if( attributeLookedFor != null ) {
             // TODO: do we have to check if fc is right ?
             // TODO: ix is ignored !
 
             console.info( "[SCL links] FCDA on line ", getLineNumber(), " refers to AbstractDataAttribute ( name = ",
-                    da.getName(), " ) on line ", da.getLineNumber() );
-            getRefersToAbstractDataAttribute().add( da );
+                    attributeLookedFor.getName(), " ) on line ", attributeLookedFor.getLineNumber() );
+            getRefersToAbstractDataAttribute().add( attributeLookedFor );
+            return;
         }
 
+        // All attributes with functional characteristic given by fc are selected.
+        if( getFc() == null ) return;
+        
+        getRefersToAbstractDataAttribute().addAll( getAllDAInDOTypeWithFC( doType, getFc(), console ));
+
+        if( getRefersToAbstractDataAttribute().size() > 0 ) {
+            for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
+                console.info( "[SCL links] FCDA on line ", getLineNumber(),
+                        " refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
+                        a.getLineNumber() );
+            }
+        }
         else {
-            // daName – if missing, all attributes with functional characteristic given by fc are selected.
-            if( getFc() == null ) return;
-
-            doType
-                    .getDA()
-                    .stream()
-                    .filter( da -> da.getFc().equals( getFc() ) )
-                    .collect( Collectors.toCollection( () -> getRefersToAbstractDataAttribute() ) );
-
-            if( getRefersToAbstractDataAttribute().size() > 0 ) {
-                for( AbstractDataAttribute a : getRefersToAbstractDataAttribute() ) {
-                    console.info( "[SCL links] FCDA on line ", getLineNumber(),
-                            " refers to AbstractDataAttribute ( name = ", a.getName(), " ) on line ",
-                            a.getLineNumber() );
-                }
-            }
-            else {
-                console.warning( "[SCL links] FCDA (line ", getLineNumber(),
-                        ") does not refer to any AbstractDataAttribute" );
-            }
+            console.warning( "[SCL links] FCDA (line ", getLineNumber(),
+                    ") does not refer to any AbstractDataAttribute" );
         }
 
+        //@formatter:on
+    }
+    
+    private Set< DA > getAllDAInDOTypeWithFC( DOType doType, FCEnum fc, IRiseClipseConsole console ) {
+        //@formatter:off
+
+        Set< DA > das = new HashSet<>();
+        
+        doType
+                .getDA()
+                .stream()
+                .filter( da -> fc.equals( da.getFc() ))
+                .collect( Collectors.toCollection( () -> das ));
+        
+        doType
+                .getSDO()
+                .stream()
+                .forEach( sdo -> sdo.buildExplicitLinks( console, false ));
+        
+        doType
+                .getSDO()
+                .stream()
+                .map( sdo -> sdo.getRefersToDOType() )
+                .distinct()
+                .filter( dot -> dot != null )
+                .forEach( dot -> {
+                    dot.buildExplicitLinks( console, false );
+                    das.addAll( getAllDAInDOTypeWithFC( dot, fc, console ));
+                });
+
+        return das;
+        
+        //@formatter:on
     }
 
 } //FCDAImpl
