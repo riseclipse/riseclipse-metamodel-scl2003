@@ -1175,12 +1175,6 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             return;
         }
 
-        // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
-        if( "LD0".equals( getLdInst() ) ) {
-            console.verbose( messagePrefix, "ldInst is LD0: pure client access point, therefore no link" );
-            return;
-        }
-
         // find an IED with
         //   IED.name == ClientLN.iedName
         Pair< IED, Integer > ied = SclUtilities.getIED( SclUtilities.getSCL( this ), getIedName() );
@@ -1215,16 +1209,23 @@ public class ClientLNImpl extends SclObjectImpl implements ClientLN {
             console.verbose( messagePrefix, "found ", mess2, " on line ", ap.getLeft().getLineNumber() );
         }
 
-        Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
-        String mess3 = "LDevice( inst = " + getLdInst() + " )";
-        if( lDevice.getLeft() == null ) {
-            SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
-            return;
+        Pair< AnyLN, Integer > anyLN = null;
+        // If the reference is to an LN at a pure client access point, then the value of ldInst shall be LD0
+        // It means that the LN is directly in an AccessPoint, not in a LDevice
+        if( "LD0".equals( getLdInst() ) ) {
+            anyLN = SclUtilities.getAnyLN( ap.getLeft(), getLnClass(), getLnInst(), getPrefix() );
         }
-        console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
-
-        Pair< AnyLN, Integer > anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(),
-                getPrefix() );
+        else {
+            Pair< LDevice, Integer > lDevice = SclUtilities.getLDevice( ap.getLeft(), getLdInst() );
+            String mess3 = "LDevice( inst = " + getLdInst() + " )";
+            if( lDevice.getLeft() == null ) {
+                SclUtilities.displayNotFoundWarning( console, messagePrefix, mess3, lDevice.getRight() );
+                return;
+            }
+            console.verbose( messagePrefix, "found ", mess3, " on line ", lDevice.getLeft().getLineNumber() );
+    
+            anyLN = SclUtilities.getAnyLN( lDevice.getLeft(), getLnClass(), getLnInst(), getPrefix() );
+        }
         String mess4 = "LN( lnClass = " + getLnClass();
         if( getLnInst() != null ) {
             mess4 += ", inst = " + getLnInst();
