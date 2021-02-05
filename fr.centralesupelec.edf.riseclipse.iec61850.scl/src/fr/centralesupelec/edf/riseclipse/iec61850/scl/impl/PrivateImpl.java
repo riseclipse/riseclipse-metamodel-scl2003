@@ -42,6 +42,7 @@ import fr.centralesupelec.edf.riseclipse.iec61850.scl.SclPackage;
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getSource <em>Source</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getType <em>Type</em>}</li>
  *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getParentBaseElement <em>Parent Base Element</em>}</li>
+ *   <li>{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.impl.PrivateImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -104,6 +105,16 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
      * @ordered
      */
     protected boolean typeESet;
+
+    /**
+     * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getValue()
+     * @generated
+     * @ordered
+     */
+    protected static final String VALUE_EDEFAULT = null;
 
     /**
      * <!-- begin-user-doc -->
@@ -279,6 +290,20 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    @Override
+    public String getValue() {
+        String mixed_ = getMixed().toString();
+        if( mixed_.startsWith( "[ecore.xml.type:text=" )) {
+            return mixed_.substring( "[ecore.xml.type:text=".length(), mixed_.length() - 1 );
+        }
+        return "";
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
@@ -335,6 +360,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             return getType();
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
             return getParentBaseElement();
+        case SclPackage.PRIVATE__VALUE:
+            return getValue();
         }
         return super.eGet( featureID, resolve, coreType );
     }
@@ -395,6 +422,8 @@ public class PrivateImpl extends AnyContentFromOtherNamespaceImpl implements Pri
             return isSetType();
         case SclPackage.PRIVATE__PARENT_BASE_ELEMENT:
             return getParentBaseElement() != null;
+        case SclPackage.PRIVATE__VALUE:
+            return VALUE_EDEFAULT == null ? getValue() != null : !VALUE_EDEFAULT.equals( getValue() );
         }
         return super.eIsSet( featureID );
     }

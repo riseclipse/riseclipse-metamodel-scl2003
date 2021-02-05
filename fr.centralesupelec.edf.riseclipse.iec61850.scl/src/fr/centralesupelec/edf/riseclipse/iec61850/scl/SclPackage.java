@@ -1521,13 +1521,22 @@ public interface SclPackage extends EPackage {
     int PRIVATE__PARENT_BASE_ELEMENT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int PRIVATE__VALUE = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Private</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int PRIVATE_FEATURE_COUNT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 3;
+    int PRIVATE_FEATURE_COUNT = ANY_CONTENT_FROM_OTHER_NAMESPACE_FEATURE_COUNT + 4;
 
     /**
      * The operation id for the '<em>Build Explicit Links</em>' operation.
@@ -22376,6 +22385,17 @@ public interface SclPackage extends EPackage {
      * @generated
      */
     EReference getPrivate_ParentBaseElement();
+
+    /**
+     * Returns the meta object for the attribute '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see fr.centralesupelec.edf.riseclipse.iec61850.scl.Private#getValue()
+     * @see #getPrivate()
+     * @generated
+     */
+    EAttribute getPrivate_Value();
 
     /**
      * Returns the meta object for class '{@link fr.centralesupelec.edf.riseclipse.iec61850.scl.Process <em>Process</em>}'.

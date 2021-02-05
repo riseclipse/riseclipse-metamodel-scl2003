@@ -167,6 +167,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/source"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/type"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SCL.ecore#//Private/ParentBaseElement"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Private/value"/>
     </genClasses>
     <genClasses ecoreClass="SCL.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SCL.ecore#//Process/type"/>
